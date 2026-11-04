@@ -1,248 +1,1027 @@
 <title>Wikipedia Framing Drift</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
-/* Layout: a single reading column for the argument, widening to full width for charts and the article ledger. */
+/* Layout: a left-aligned reading column (about 64ch) that opens onto full-width figures; two sticky
+   scrollytelling figures; every figure is drawn and readable at rest, before any scroll step fires.
+   Vocabulary: revision ids, timestamps and the diff page (removed = amber, added = blue). */
 :root{
-  --paper:#f6f7f9; --card:#ffffff; --ink:#1b2230; --muted:#5d6676; --rule:#dde1e8;
-  --treat:#2457c5; --ctrl:#9a7b3c; --war:#b8402f;
-  --add-bg:#e3effe; --add-bd:#4d8ae0; --del-bg:#fdf1d8; --del-bd:#d9a33a;
-  --pos:#b8402f; --neg:#2c7a55;
-  --display:"Literata",Georgia,serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --paper:#f1f3f2; --sheet:#fbfcfb; --ink:#13181c; --ink-2:#39424a; --muted:#66707a; --rule:#d5dbdb; --faint:#e6eaea;
+  --topic:#0b6b72; --topic-soft:#cfe5e4; --comp:#767a9b; --comp-soft:#e1e2ec; --new:#3f8f4a; --war:#c4302b;
+  --add-bg:#d9e7fb; --add-ink:#17499c; --add-bd:#3a73d4;
+  --del-bg:#fae6c0; --del-ink:#7d5100; --del-bd:#d39a20;
+  --inc:#b35806; --dec:#5e3c99; --mid:#d9dbdb;
+  --heat-lo:#eef0ee; --heat-mid:#86a3c8; --heat-hi:#14244f; --heat-na:#e2e5e4;
+  --display:"Newsreader","Iowan Old Style","Charter","Bitstream Charter",Georgia,serif;
+  --body:"Libre Franklin","Franklin Gothic Book","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,"DejaVu Sans Mono",monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#12161d; --card:#1a2029; --ink:#e4e8ef; --muted:#9aa3b2; --rule:#2c3440;
-  --treat:#7aa2ff; --ctrl:#d1b16d; --war:#f07a66;
-  --add-bg:#1b2c46; --add-bd:#5f97e8; --del-bg:#3a2e16; --del-bd:#d9a33a; --pos:#f07a66; --neg:#5fc290; color-scheme:dark}}
+  --paper:#0f1316; --sheet:#151a1e; --ink:#e7ebec; --ink-2:#c3cacd; --muted:#8f9aa2; --rule:#2a3237; --faint:#1d2327;
+  --topic:#4fbcbf; --topic-soft:#163739; --comp:#a3a7c9; --comp-soft:#262839; --new:#7cc884; --war:#ff6a5c;
+  --add-bg:#16305a; --add-ink:#a9c8ff; --add-bd:#5b92ee;
+  --del-bg:#43310f; --del-ink:#f3c977; --del-bd:#d6a034;
+  --inc:#f0a052; --dec:#b49ce0; --mid:#3a4146;
+  --heat-lo:#172026; --heat-mid:#3d6896; --heat-hi:#dcecff; --heat-na:#111518; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#12161d; --card:#1a2029; --ink:#e4e8ef; --muted:#9aa3b2; --rule:#2c3440;
-  --treat:#7aa2ff; --ctrl:#d1b16d; --war:#f07a66;
-  --add-bg:#1b2c46; --add-bd:#5f97e8; --del-bg:#3a2e16; --del-bd:#d9a33a; --pos:#f07a66; --neg:#5fc290; color-scheme:dark}
-body{background:var(--paper);color:var(--ink);font:15px/1.6 var(--body)}
-.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px;display:grid;gap:56px}
-.prose{max-width:68ch}
-h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;line-height:1.2;margin:0}
-h1{font-size:clamp(30px,5vw,46px)} h2{font-size:26px} h3{font-size:18px}
-.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-p{margin:.6em 0} a{color:var(--treat)}
-section{display:grid;gap:16px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.stat{border-top:2px solid var(--ink);padding-top:8px}
-.stat b{display:block;font:600 26px/1.1 var(--display);font-variant-numeric:tabular-nums}
-.stat span{font-size:13px;color:var(--muted)}
-.panel{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:16px;min-width:0}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px}
-.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.seg{display:inline-flex;border:1px solid var(--rule);border-radius:4px;overflow:hidden}
-.seg button{font:500 13px var(--body);background:var(--card);color:var(--ink);border:0;padding:6px 10px;cursor:pointer}
+  --paper:#0f1316; --sheet:#151a1e; --ink:#e7ebec; --ink-2:#c3cacd; --muted:#8f9aa2; --rule:#2a3237; --faint:#1d2327;
+  --topic:#4fbcbf; --topic-soft:#163739; --comp:#a3a7c9; --comp-soft:#262839; --new:#7cc884; --war:#ff6a5c;
+  --add-bg:#16305a; --add-ink:#a9c8ff; --add-bd:#5b92ee;
+  --del-bg:#43310f; --del-ink:#f3c977; --del-bd:#d6a034;
+  --inc:#f0a052; --dec:#b49ce0; --mid:#3a4146;
+  --heat-lo:#172026; --heat-mid:#3d6896; --heat-hi:#dcecff; --heat-na:#111518; color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);margin:0;overflow-x:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 96px}
+.col{max-width:64ch}
+.mono{font-family:var(--mono)}
+a{color:var(--add-ink);text-underline-offset:2px;text-decoration-thickness:1px}
+p{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0;color:var(--ink)}
+h2{font-size:clamp(28px,4.2vw,44px);line-height:1.05;letter-spacing:-.015em}
+h3{font-size:21px;line-height:1.2;font-weight:500}
+.eyebrow{font:500 11.5px/1.3 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
+.deck{font:400 18px/1.55 var(--body);color:var(--ink-2)}
+.cap{font-size:13px;line-height:1.5;color:var(--muted)}
+.cap b{color:var(--ink-2);font-weight:600}
+.num{font-variant-numeric:tabular-nums}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--add-bd);outline-offset:2px}
+
+/* masthead + hero */
+.mast{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:500 11.5px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:10px}
+.mast b{color:var(--ink);font-weight:600}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;padding-top:40px}
+.hero h1{font-size:clamp(38px,6.6vw,84px);line-height:.98;letter-spacing:-.025em;font-weight:500;max-width:17ch}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--topic)}
+.hero .deck{max-width:60ch;font-size:clamp(17px,1.9vw,20px)}
+.stream{position:relative;margin-top:8px}
+.stream canvas{display:block;width:100%;touch-action:pan-y}
+.stream .lab{position:absolute;left:0;font:500 10.5px/1.15 var(--mono);color:var(--muted);letter-spacing:.03em;pointer-events:none;white-space:nowrap}
+.stream .lab b{display:block;color:var(--ink);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.stream-key{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font:12px/1.4 var(--mono);color:var(--muted);margin-top:10px}
+.key{display:inline-flex;gap:6px;align-items:center}
+.key i{display:inline-block;width:10px;height:10px;border-radius:2px}
+.key i.ln{height:2px;width:16px;border-radius:1px}
+.key i.dash{height:0;width:16px;border-top:2px dashed currentColor;background:none!important}
+
+.ledeband{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px 56px;margin-top:48px;align-items:start}
+.ledeband .lede{font:400 19px/1.6 var(--body);color:var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink)}
+.facts div{padding:12px 0 12px;border-bottom:1px solid var(--rule)}
+.facts div:nth-child(odd){padding-right:16px}
+.facts b{display:block;font:500 30px/1.05 var(--display);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.facts span{font:12px/1.35 var(--mono);color:var(--muted)}
+
+/* section rhythm */
+.sec{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:104px}
+.sec>header{display:grid;gap:12px;max-width:64ch}
+.sec>header .deck{margin-top:2px}
+.findings{display:grid;gap:14px;font:400 18px/1.65 var(--body)}
+.findings:empty::before{content:"Findings are added when the analysis has run.";color:var(--muted);font-size:15px}
+.findings h2{font-size:30px}.findings h3{margin-top:10px}
+.findings p,.findings li{max-width:64ch}
+.findings ul,.findings ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+
+/* controls */
+.controls{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.ctl{display:inline-flex;flex-wrap:wrap;max-width:100%;align-items:center;gap:8px;font:12px var(--mono);color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:3px;background:var(--sheet);overflow:hidden;max-width:100%;flex-wrap:wrap}
+.seg button{font:500 12.5px/1 var(--body);background:transparent;border:0;padding:8px 11px;cursor:pointer;color:var(--ink-2)}
+.seg button+button{border-left:1px solid var(--rule)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-button:focus-visible,input:focus-visible,select:focus-visible,tr:focus-visible{outline:2px solid var(--treat);outline-offset:2px}
-select,input[type=search]{font:14px var(--body);padding:6px 8px;border:1px solid var(--rule);border-radius:4px;background:var(--card);color:var(--ink)}
-svg text{fill:var(--muted);font:11px var(--mono)}
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-.sw{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:6px}
-.cap{font-size:13px;color:var(--muted)}
-.tbl{overflow-x:auto;max-height:560px;overflow-y:auto;border:1px solid var(--rule);border-radius:6px;background:var(--card)}
-table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
-th,td{padding:6px 10px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
-th:first-child,td:first-child{text-align:left;white-space:normal;min-width:180px}
-th{position:sticky;top:0;background:var(--card);font-weight:600;cursor:pointer;user-select:none}
-tbody tr{cursor:pointer} tbody tr:hover{background:var(--paper)} tbody tr.sel{background:var(--add-bg)}
-.chip{display:inline-block;font:500 11px var(--mono);padding:1px 6px;border-radius:3px;border:1px solid var(--rule);color:var(--muted)}
-.chip.t{color:var(--treat);border-color:var(--treat)} .chip.c{color:var(--ctrl);border-color:var(--ctrl)}
-.up{color:var(--pos)} .down{color:var(--neg)}
-.diff{display:grid;gap:4px;font-size:14px}
-.diff div{padding:4px 8px;border-left:3px solid transparent}
-.diff .a{background:var(--add-bg);border-color:var(--add-bd)} .diff .d{background:var(--del-bg);border-color:var(--del-bd)}
+select{min-width:0;text-overflow:ellipsis}
+select,input[type=search]{font:13px var(--body);padding:7px 9px;border:1px solid var(--rule);border-radius:3px;background:var(--sheet);color:var(--ink);max-width:100%}
+
+/* figures */
+.fig{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:16px;min-width:0;display:grid;gap:12px}
+.fig-h{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;align-items:baseline}
+.fig-t{font:600 14px/1.3 var(--body)}
+.chart{position:relative;min-width:0}
+.chart svg{display:block;width:100%;overflow:visible}
+svg text{font:11px var(--mono);fill:var(--muted)}
+svg .lbl{fill:var(--ink);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font:12px/1.4 var(--mono);color:var(--muted)}
+
+/* scrollytelling */
+.scrolly{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.75fr);gap:40px;align-items:start}
+.scrolly .steps{display:grid;gap:42vh;padding-block:6vh 24vh}
+.step{background:var(--sheet);border:1px solid var(--rule);border-left:3px solid var(--rule);border-radius:3px;padding:16px 18px;display:grid;gap:8px;font-size:15.5px;line-height:1.55;transition:border-color .25s}
+.step.on{border-left-color:var(--ink)}
+.step .k{font:600 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.step .go{justify-self:start;font:500 12px var(--mono);background:none;border:0;padding:0;color:var(--add-ink);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.sticky{position:sticky;top:calc(env(safe-area-inset-top,0px) + 4vh);z-index:2}
+.delta{font:500 .86em var(--mono);padding:0 4px;border-radius:2px;white-space:nowrap}
+.delta.up{color:var(--inc)} .delta.dn{color:var(--dec)}
+.sw{display:inline-block;width:.8em;height:.8em;border-radius:2px;vertical-align:-.05em;margin-right:4px}
+
+/* small multiples */
+.minis{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:10px}
+.mini{background:var(--sheet);border:1px solid var(--rule);border-radius:3px;padding:10px 10px 4px;cursor:pointer;text-align:left;display:grid;gap:2px;min-width:0}
+.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
+.mini .t{font:600 12.5px/1.25 var(--body);color:var(--ink)}
+.mini .s{font:11px var(--mono);color:var(--muted)}
+
+/* heatmap */
+.heat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.heat .pane{display:grid;gap:6px;min-width:0}
+.heat .pane-h{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font:600 13px var(--body)}
+.heat .pane-h span{font:11px var(--mono);color:var(--muted);font-weight:400}
+.heat canvas{display:block;width:100%;cursor:crosshair;touch-action:pan-y}
+.ramp{display:flex;align-items:center;gap:8px;font:11px var(--mono);color:var(--muted);flex-wrap:wrap}
+.ramp canvas{width:160px;height:10px;border-radius:2px;display:block}
+
+/* definition */
+.defn{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.picks{display:flex;flex-wrap:wrap;gap:6px}
+.pick{font:500 13px var(--body);border:1px solid var(--rule);background:var(--sheet);border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--ink-2)}
+.pick[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.stage{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;display:grid;min-width:0}
+.stage-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;padding:10px 18px;border-bottom:1px solid var(--rule);font:12px/1.4 var(--mono);color:var(--muted)}
+.stage-meta b{color:var(--ink);font-weight:600}
+.sentence{font:400 clamp(21px,2.7vw,33px)/1.38 var(--display);padding:26px 18px 28px;min-height:7.2em;letter-spacing:-.005em;max-width:46em}
+.sentence del,.diff del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
+.sentence ins,.diff ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
+@media (prefers-reduced-motion:no-preference){.sentence ins{animation:flash .9s ease-out}}
+@keyframes flash{from{box-shadow:0 0 0 3px var(--add-bd)}to{box-shadow:0 0 0 0 transparent}}
+.scrub{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:center;padding:14px 18px 16px;border-top:1px solid var(--rule)}
+.play{font:600 12px var(--mono);border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:3px;padding:8px 12px;cursor:pointer;min-width:74px}
+.track{position:relative;height:44px;margin-inline:10px}
+.track::before{content:"";position:absolute;left:0;right:0;top:12px;height:1px;background:var(--rule)}
+.track .tk{position:absolute;top:8px;width:1px;height:9px;background:var(--rule)}
+.track .dot{position:absolute;display:block;top:7px;width:10px;min-width:10px;height:10px;margin-left:-5px;background:var(--ink-2);transform:rotate(45deg);border:2px solid var(--sheet);box-sizing:border-box}
+.track .warl{position:absolute;top:0;width:0;height:24px;border-left:1.5px dashed var(--war)}
+.track .yr{position:absolute;top:28px;font:10.5px var(--mono);color:var(--muted);transform:translateX(-50%)}
+.track input{position:absolute;inset:0 0 auto 0;width:100%;height:24px;margin:0;opacity:.0001;cursor:pointer}
+.track .head{position:absolute;top:4px;width:16px;height:16px;margin-left:-8px;background:var(--topic);border:3px solid var(--sheet);box-shadow:0 0 0 1px var(--topic);border-radius:50%;pointer-events:none;transition:left .2s}
+.track input:focus-visible+.head{outline:2px solid var(--add-bd);outline-offset:2px}
+.vlist{display:flex;flex-wrap:wrap;gap:6px;font:11.5px var(--mono)}
+.vlist button{border:1px solid var(--rule);background:transparent;border-radius:3px;padding:3px 7px;cursor:pointer;color:var(--muted)}
+.vlist button[aria-current="true"]{border-color:var(--ink);color:var(--ink)}
+
+/* forest + matrix */
+.forest{display:grid;grid-template-columns:minmax(150px,1.25fr) 64px 64px minmax(180px,3fr) minmax(120px,auto);grid-auto-flow:row dense;font-size:13.5px;min-width:0}
+.forest .c1{grid-column:1}.forest .c2{grid-column:2}.forest .c3{grid-column:3}.forest .c4{grid-column:4}.forest .c5{grid-column:5}
+.forest>div{padding:7px 8px;border-bottom:1px solid var(--faint);min-width:0;display:flex;align-items:center}
+.forest .hd{font:500 10.5px/1.25 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--rule);align-items:end}
+.forest .grp{grid-column:1/-1;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);padding-top:18px;border-bottom:1px solid var(--rule)}
+.forest .nm{font-weight:500;gap:6px;flex-wrap:wrap}
+.forest .n{justify-content:flex-end;font:12px var(--mono);color:var(--muted)}
+.forest .est{font:12px/1.35 var(--mono);display:block}
+.forest .est small{display:block;color:var(--muted);font-size:11px}
+.pid{font:600 10px var(--mono);border:1px solid var(--ink);border-radius:2px;padding:0 4px;color:var(--ink)}
+.forest>.plot{position:relative;min-height:40px;padding:0;margin-inline:8px}
+.plot .z{position:absolute;top:0;bottom:-1px;width:0;border-left:1px solid var(--muted)}
+.plot .g{position:absolute;top:0;bottom:-1px;width:0;border-left:1px dotted var(--rule)}
+.plot .ci{position:absolute;top:calc(50% - 1px);height:2px;background:var(--ink-2)}
+.plot .ci::before,.plot .ci::after{content:"";position:absolute;top:-4px;width:1px;height:10px;background:var(--ink-2)}
+.plot .ci::before{left:0}.plot .ci::after{right:0}
+.plot .pt{position:absolute;top:calc(50% - 6px);width:12px;height:12px;margin-left:-6px;border-radius:50%;border:2px solid var(--ink-2);background:var(--sheet)}
+.plot .pt.sig{width:14px;height:14px;margin-left:-7px;top:calc(50% - 7px);border-color:var(--sheet);box-shadow:0 0 0 1.5px var(--ink)}
+.axis{position:relative;height:18px;margin-inline:8px}
+.axis span{position:absolute;transform:translateX(-50%);font:10.5px var(--mono);color:var(--muted);white-space:nowrap}
+.dir{display:flex;justify-content:space-between;gap:12px;font:11px var(--mono);color:var(--muted)}
+.matrix{overflow-x:auto}
+.matrix table{border-collapse:collapse;width:100%;font-size:13px;min-width:560px}
+.matrix td small{display:inline-block;margin-top:3px}
+.matrix th,.matrix td{padding:8px 10px;border-bottom:1px solid var(--faint);text-align:left;vertical-align:top}
+.matrix th{font:500 10.5px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:1px solid var(--rule)}
+.res{display:inline-flex;align-items:center;gap:6px;font:500 12px var(--mono);white-space:nowrap}
+.res i{width:11px;height:11px;border:1.5px solid var(--ink-2);border-radius:2px;display:inline-block}
+.res.ok i{background:var(--ink-2)}
+.res.na{color:var(--muted)} .res.na i{border-style:dashed;border-color:var(--muted)}
+.res small{color:var(--muted);font-size:11px}
+
+/* dynamics */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.bars{display:grid;gap:14px}
+.bar-row{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr);gap:4px 14px;align-items:center;font-size:13px}
+.bar-row .tr{display:grid;gap:3px}
+.bar-row .b{height:14px;border-radius:0 2px 2px 0;display:flex;align-items:center;justify-content:flex-end;min-width:2px}
+.bar-row .v{font:11px var(--mono);color:var(--muted)}
+
+/* ledger */
+.tbl{overflow:auto;max-height:620px;border:1px solid var(--rule);border-radius:4px;background:var(--sheet)}
+.tbl table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:7px 10px;border-bottom:1px solid var(--faint);text-align:right;white-space:nowrap}
+.tbl th:first-child,.tbl td:first-child{text-align:left;white-space:normal;min-width:170px}
+.tbl th{position:sticky;top:0;background:var(--sheet);font:500 10.5px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);cursor:pointer;user-select:none;border-bottom:1px solid var(--rule);z-index:1}
+.tbl th[aria-sort]{color:var(--ink)}
+.tbl tbody tr{cursor:pointer}
+.tbl tbody tr:hover{background:var(--faint)}
+.tbl tbody tr.sel{background:var(--add-bg)}
+.chip{display:inline-block;font:500 10.5px/1.5 var(--mono);padding:0 6px;border-radius:2px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap}
+.chip.treatment{color:var(--topic);border-color:var(--topic)}
+.chip.control{color:var(--comp);border-color:var(--comp)}
+.chip.control_contaminated{color:var(--muted);border-style:dashed}
+.up{color:var(--inc)} .dn{color:var(--dec)}
+.detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.dhead{grid-column:1/-1;display:grid;gap:6px;border-bottom:1px solid var(--rule);padding-bottom:12px}
+.dhead h3{font-size:28px}
+.dmeta{font:12px/1.5 var(--mono);color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 16px}
+.diff{display:grid;gap:4px;font-size:14px;line-height:1.55}
+.diff>div{padding:5px 10px;border-left:3px solid transparent;border-radius:0 2px 2px 0}
+.diff .a{background:var(--add-bg);border-color:var(--add-bd)}
+.diff .d{background:var(--del-bg);border-color:var(--del-bd)}
+.diff .m{border-color:var(--ink-2);background:var(--faint)}
 .diff .e{color:var(--muted)}
-.timeline{display:grid;gap:10px;font-size:14px}
-.timeline div{display:grid;grid-template-columns:72px 1fr;gap:10px}
-.timeline time{font:12px var(--mono);color:var(--muted);padding-top:2px}
-.findings{display:grid;gap:12px}
-.findings h3{margin-top:12px}
-.method li{margin:.3em 0}
-@media (prefers-reduced-motion:no-preference){.panel{transition:border-color .2s}}
+.diff .a ins,.diff .d del{background:none;padding:0}
+.tl{display:grid;gap:0}
+.tl>div{display:grid;grid-template-columns:74px minmax(0,1fr);gap:12px;padding:8px 0;border-bottom:1px solid var(--faint);font-size:14px}
+.tl time{font:11.5px/1.6 var(--mono);color:var(--muted)}
+.ftab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ftab td,.ftab th{padding:4px 6px;border-bottom:1px solid var(--faint);text-align:right}
+.ftab td:first-child,.ftab th:first-child{text-align:left}
+.ftab th{font:500 10.5px var(--mono);color:var(--muted)}
+
+.method{display:grid;gap:14px;font-size:15.5px}
+.method dl{display:grid;grid-template-columns:minmax(140px,200px) minmax(0,1fr);gap:12px 24px;margin:0}
+.method dt{font:600 12px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2)}
+.method dd{margin:0;max-width:66ch}
+.lex{display:grid;gap:8px}
+.lex div{display:grid;grid-template-columns:minmax(120px,210px) minmax(0,1fr);gap:4px 14px;font-size:13px;border-bottom:1px solid var(--faint);padding-bottom:6px}
+.lex code{font:11.5px/1.6 var(--mono);color:var(--ink-2);word-break:break-word}
+.lex code s{color:var(--del-ink);text-decoration:none}
+.note{border:1px dashed var(--rule);border-radius:4px;padding:16px;color:var(--muted);font-size:14px}
+.foot{margin-top:96px;border-top:1px solid var(--rule);padding-top:14px;font:11.5px/1.6 var(--mono);color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+#tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--paper);font:12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:min(320px,calc(100vw - 32px));box-shadow:0 4px 18px rgb(0 0 0/.18)}
+#tip b{font-weight:600}
+#tip .r{display:flex;justify-content:space-between;gap:14px}
+
+@media (max-width:900px){
+  .scrolly{grid-template-columns:minmax(0,1fr);gap:0}
+  .scrolly .sticky{order:-1;top:env(safe-area-inset-top,0px);background:var(--paper);padding-block:8px;margin-inline:-4px;padding-inline:4px}
+  .scrolly .steps{gap:46vh;padding-block:30vh 30vh;position:relative;z-index:3}
+  .step{box-shadow:0 6px 24px rgb(0 0 0/.08)}
+  #trend,#es{height:clamp(210px,32vh,300px)!important}
+  .scrolly .fig{gap:8px;padding:10px}
+  .ledeband{grid-template-columns:minmax(0,1fr)}
+  .heat{grid-template-columns:minmax(0,1fr)}
+  .detail{grid-template-columns:minmax(0,1fr)}
+  .grid2{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .sec{margin-top:80px}
+  .fig{padding:12px}
+  .forest{grid-template-columns:minmax(0,1fr) auto;font-size:13px}
+  .forest .n{display:none}
+  .forest .c5{grid-column:2;text-align:right}
+  .forest .c4{grid-column:1/-1}
+  .forest>div{padding:8px 4px 2px}
+  .forest .nm,.forest .est{border-bottom:0}
+  .forest>.plot{min-height:30px;margin-inline:6px;margin-bottom:4px}
+  .forest .hd.c1{display:none}
+  .forest .hd.c5{grid-column:1/-1;text-align:left}
+  .minis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mini .s{font-size:10px}
+  .cards table{min-width:0}
+  .cards thead{display:none}
+  .cards tr{display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:6px 10px;padding:12px 0;border-bottom:1px solid var(--rule)}
+  .cards td{display:block;padding:0;border:0}
+  .cards td:first-child{grid-column:1/-1}
+  .cards td[data-l]::before{content:attr(data-l);display:block;font:500 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .cards td.wide{grid-column:1/-1}
+  .method dl,.lex div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .method dd{margin-bottom:10px}
+  .bar-row{grid-template-columns:minmax(0,1fr)}
+  .scrub{grid-template-columns:minmax(0,1fr)}
+  .play{justify-self:start}
+  .facts b{font-size:25px}
+  .sentence{min-height:9em}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
+<div id="tip" hidden></div>
 <div class="wrap">
-<header class="prose" style="display:grid;gap:14px">
-  <div class="eyebrow">English Wikipedia · revision study · 2021–2026</div>
-  <h1>Did Wikipedia's articles on Jews, Israel and Zionism drift toward an anti-colonial framing?</h1>
-  <p id="lede"></p>
+<div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 2021–2026</span></div>
+
+<header class="hero">
+  <h1>Did Wikipedia’s articles on Jews, Israel and Zionism drift toward an <em>anti-colonial framing</em>?</h1>
+  <p class="deck" id="deck">A revision-by-revision measurement of English Wikipedia articles on Judaism, Israel, Zionism, antisemitism and the Israeli–Palestinian conflict, set against articles on other nations, conflicts and religions.</p>
+  <figure class="stream" style="margin:0" aria-label="Revision stream: every edit to every article in the study, by week">
+    <canvas id="hero" role="img" aria-label="Each row is an article; each mark is an edit, placed in its week. A red rule marks 7 October 2023."></canvas>
+    <div id="heroLabs"></div>
+    <figcaption class="stream-key">
+      <span class="key"><i style="background:var(--topic)"></i>edit to a topic article</span>
+      <span class="key"><i style="background:var(--comp)"></i>edit to a comparison article</span>
+      <span class="key"><i style="background:var(--del-bd)"></i>edit later reverted</span>
+      <span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>7 October 2023</span>
+      <span id="heroNote"></span>
+    </figcaption>
+  </figure>
 </header>
 
-<section>
-  <div class="stats" id="stats"></div>
+<div class="ledeband">
+  <p class="lede" id="lede">The page is waiting for data.</p>
+  <div class="facts" id="facts"></div>
+</div>
+
+<section class="sec" id="findings-sec">
+  <header><div class="eyebrow">Findings</div></header>
+  <div class="findings col"><!--FINDINGS--></div>
 </section>
 
-<section class="prose findings">
-  <div class="eyebrow">Findings</div>
-  <!--FINDINGS-->
+<section class="sec" id="vocab">
+  <header>
+    <div class="eyebrow">Vocabulary over time</div>
+    <h2>How often each frame appears, per 10,000 words</h2>
+    <p class="deck">Eleven groups of terms are counted in every quarterly snapshot of every article. Seven are tied to the anti-colonial reading of the conflict (the <i>critical</i> frames), two to Jewish historical continuity and persecution (the <i>connection</i> frames), and two are counted separately. The lines are means across a fixed set of articles that existed in January 2021.</p>
+  </header>
+  <div class="scrolly" id="scA">
+    <div class="steps" id="stepsA"></div>
+    <figure class="sticky fig" style="margin:0">
+      <div class="controls">
+        <label class="ctl" for="frameSel">Frame <select id="frameSel"></select></label>
+        <span class="seg" id="partA" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full article</button><button data-v="lead" aria-pressed="false">Lead only</button></span>
+        <span class="seg" id="setA" role="group" aria-label="Lines shown"><button data-v="main" aria-pressed="true">Groups</button><button data-v="sub" aria-pressed="false">Subgroups</button></span>
+      </div>
+      <div class="chart" id="trend" style="height:clamp(250px,46vh,400px)"></div>
+      <div class="legend" id="trendKey"></div>
+    </figure>
+  </div>
+  <div class="fig-h" style="margin-top:28px"><span class="fig-t">All eleven frames and the placebo vocabulary, full text</span><span class="cap">Select one to load it in the chart above. Each panel has its own scale.</span></div>
+  <div class="minis" id="minis"></div>
 </section>
 
-<section>
-  <div class="eyebrow">1 · Framing over time</div>
-  <h2>How often each frame appears, per 10,000 words</h2>
+<section class="sec" id="gap">
+  <header>
+    <div class="eyebrow">The gap, snapshot by snapshot</div>
+    <h2>How far the topic articles moved beyond the comparison articles</h2>
+    <p class="deck">At each snapshot, every article’s change since January 2021 is computed. The line is the topic group’s mean change minus the comparison group’s. The ribbon is a bootstrap 95% interval. A ribbon that includes zero means the two groups moved by amounts that cannot be told apart.</p>
+  </header>
+  <div class="scrolly" id="scB">
+    <div class="steps" id="stepsB"></div>
+    <figure class="sticky fig" style="margin:0">
+      <div class="controls">
+        <span class="seg" id="esOut" role="group" aria-label="Outcome"><button data-v="critical_rate" aria-pressed="true">Critical frames</button><button data-v="connection_rate" aria-pressed="false">Connection frames</button></span>
+        <span class="seg" id="esPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full article</button><button data-v="lead" aria-pressed="false">Lead only</button></span>
+      </div>
+      <div class="fig-t" id="esTitle"></div>
+      <div class="chart" id="es" style="height:clamp(250px,46vh,400px)"></div>
+      <div class="legend"><span class="key"><i class="ln" style="background:var(--ink)"></i>difference in change since Jan 2021</span><span class="key"><i style="background:var(--topic-soft);border:1px solid var(--topic)"></i>95% interval</span><span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>7 Oct 2023</span></div>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="heatmap">
+  <header>
+    <div class="eyebrow">Every article, every quarter</div>
+    <h2 id="hmH">Every article as a strip of quarters</h2>
+    <p class="deck">Each row is one article and each column one quarterly snapshot. The colour is the article’s critical-frame rate, or its change since its first snapshot. Rows are sorted within each group. Blank cells mean that the article did not exist yet or the snapshot was too short to measure.</p>
+  </header>
   <div class="controls">
-    <label for="frameSel" class="cap">Frame</label>
-    <select id="frameSel"></select>
-    <span class="seg" id="partSeg"><button data-v="full" aria-pressed="true">Full article</button><button data-v="lead" aria-pressed="false">Lead section</button></span>
+    <span class="seg" id="hmMode" role="group" aria-label="Colour"><button data-v="rate" aria-pressed="true">Rate</button><button data-v="change" aria-pressed="false">Change since first snapshot</button></span>
+    <span class="seg" id="hmPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full</button><button data-v="lead" aria-pressed="false">Lead</button></span>
+    <label class="ctl" for="hmSort">Sort <select id="hmSort"><option value="change">Largest increase first</option><option value="last">Latest rate</option><option value="first">First rate</option><option value="edits">Most edited</option><option value="title">A–Z</option></select></label>
   </div>
-  <div class="panel"><svg id="trend" viewBox="0 0 1000 340" width="100%" role="img" aria-label="Frame rate over time"></svg>
-    <div class="legend"><span><i class="sw" style="background:var(--treat)"></i>Judaism / Israel / Zionism articles</span><span><i class="sw" style="background:var(--ctrl)"></i>Comparison articles</span><span><i class="sw" style="background:var(--war)"></i>7 Oct 2023</span></div>
+  <div class="fig">
+    <div class="heat" id="heat"></div>
+    <div class="ramp" id="ramp"></div>
   </div>
-  <p class="cap prose">Each point is the mean across articles of the frame's rate in the quarterly snapshot. The comparison group covers other nationalisms, states, conflicts, genocides and religions.</p>
+  <p class="cap col">Both panels have the same height, so a comparison row is drawn taller than a topic row. Select a row to open that article in the ledger below.</p>
 </section>
 
-<section>
-  <div class="eyebrow">2 · The test</div>
-  <h2>Change in the topic articles minus change in the comparison articles</h2>
+<section class="sec" id="definition">
+  <header>
+    <div class="eyebrow">The definition</div>
+    <h2>The first sentence, quarter by quarter</h2>
+    <p class="deck">The opening sentence is the article’s definition of its subject and the text most readers see. Scrub through the snapshots. Words removed since the previous version are marked in amber, and added words in blue.</p>
+  </header>
+  <div class="defn">
+    <div class="controls"><div class="picks" id="picks"></div><label class="ctl" for="defSel">Any article <select id="defSel"></select></label></div>
+    <div class="stage">
+      <div class="stage-meta"><span id="defMeta"></span><span id="defLink"></span></div>
+      <blockquote class="sentence" id="defText" style="margin:0" aria-live="polite"></blockquote>
+      <div class="stage-meta" style="border-top:1px solid var(--rule);border-bottom:0">
+        <span class="vlist" id="vlist"></span>
+        <label class="ctl" for="defBase"><input type="checkbox" id="defBase"> compare with the first version</label>
+      </div>
+      <div class="scrub">
+        <button class="play" id="defPlay" type="button">▶ Play</button>
+        <div class="track" id="track"><input type="range" id="defRange" min="0" max="1" step="1" value="0" aria-label="Snapshot"><span class="head" id="defHead"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="test">
+  <header>
+    <div class="eyebrow">The test</div>
+    <h2>Change in the topic articles, minus change in the comparison articles</h2>
+    <p class="deck">This is the pre-registered difference-in-differences. Each row compares the groups’ mean change in one frame over the chosen window. The bar is a bootstrap 95% interval. A filled point means that the result passes a permutation test after correcting for the number of tests (Benjamini–Hochberg q &lt; 0.05). A hollow point means the result is not distinguishable from zero. The three primary outcomes, P1 to P3, were fixed before the data arrived.</p>
+  </header>
   <div class="controls">
-    <span class="seg" id="winSeg"></span>
-    <span class="seg" id="partSeg2"><button data-v="full" aria-pressed="true">Full article</button><button data-v="lead" aria-pressed="false">Lead section</button></span>
+    <span class="seg" id="winSeg" role="group" aria-label="Window"></span>
+    <span class="seg" id="partF" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full article</button><button data-v="lead" aria-pressed="false">Lead only</button></span>
   </div>
-  <div class="panel"><svg id="forest" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Difference-in-differences by frame"></svg></div>
-  <p class="cap prose">A bar to the right means the frame grew more (per 10k words) in the topic articles than in the comparison articles. Whiskers show the bootstrap 95% confidence interval. If a whisker crosses zero, the difference is not distinguishable from noise.</p>
+  <div class="fig">
+    <div class="forest" id="forest"></div>
+    <div class="dir"><span>← comparison articles changed more</span><span>topic articles changed more →</span></div>
+  </div>
+  <div class="fig-h" style="margin-top:22px"><span class="fig-t">Robustness: do the primary results survive other reasonable choices?</span></div>
+  <div class="fig matrix cards" id="matrix"></div>
+  <p class="cap col">A check holds when the estimate keeps the sign of the main result and stays significant (p &lt; 0.05). The placebo vocabulary check is the reverse: it holds when geography and climate words show no group difference. R3 compares the post-war yearly gap with every pre-war year.</p>
 </section>
 
-<section>
-  <div class="eyebrow">3 · Editing activity</div>
-  <h2>How much these pages were fought over</h2>
+<section class="sec" id="editing">
+  <header>
+    <div class="eyebrow">The talk page and the edit war</div>
+    <h2>How much these pages were fought over</h2>
+    <p class="deck">Edits, talk-page discussion, reverts and logged-out editing, as means per article per quarter for the same fixed panels. Articles created during the window are drawn separately. Bots are excluded.</p>
+  </header>
   <div class="grid2">
-    <div class="panel"><h3>Edits per article, per quarter</h3><svg id="edits" viewBox="0 0 500 240" width="100%"></svg></div>
-    <div class="panel"><h3>Talk-page edits per article, per quarter</h3><svg id="talk" viewBox="0 0 500 240" width="100%"></svg></div>
-    <div class="panel"><h3>Share of edits later reverted</h3><svg id="revert" viewBox="0 0 500 240" width="100%"></svg></div>
-    <div class="panel"><h3>Share of edits by logged-out (IP) users</h3><svg id="anon" viewBox="0 0 500 240" width="100%"></svg></div>
+    <div class="fig"><div class="fig-t">Edits per article</div><div class="chart" id="dEdits" style="height:210px"></div></div>
+    <div class="fig"><div class="fig-t">Talk-page edits per article</div><div class="chart" id="dTalk" style="height:210px"></div></div>
+    <div class="fig"><div class="fig-t">Share of edits later reverted</div><div class="chart" id="dRev" style="height:210px"></div></div>
+    <div class="fig"><div class="fig-t">Share of edits by logged-out users</div><div class="chart" id="dAnon" style="height:210px"></div></div>
   </div>
-  <div class="panel" id="conc"></div>
+  <div class="legend" id="dynKey"></div>
+  <div class="fig" style="margin-top:10px">
+    <div class="fig-h"><span class="fig-t">Who edits across many articles</span><span class="cap" id="concNote"></span></div>
+    <div class="bars" id="conc"></div>
+  </div>
 </section>
 
-<section>
-  <div class="eyebrow">4 · Article ledger</div>
-  <h2>Every article in the sample</h2>
+<section class="sec" id="checks">
+  <header>
+    <div class="eyebrow">Checking the instrument</div>
+    <h2>Does the counter see changes that are known to have happened?</h2>
+    <p class="deck">Press coverage documented several specific, dated edits. If the measurement works, the lead or text should lack the wording before the date and contain it after. A second check codes a sample of sentences blind to the article and date.</p>
+  </header>
+  <div class="fig matrix cards" id="valid" style="--cols:2"></div>
+  <div id="blind"></div>
+</section>
+
+<section class="sec" id="ledger">
+  <header>
+    <div class="eyebrow">The ledger</div>
+    <h2>Every article in the sample</h2>
+    <p class="deck">Search, sort and open any article to see its frame counts, the history of its first sentence, and how its lead changed between the first and last snapshot.</p>
+  </header>
   <div class="controls">
     <input type="search" id="q" placeholder="Search titles" aria-label="Search titles">
-    <select id="grp" aria-label="Group"><option value="">All articles</option><option value="treatment">Topic articles</option><option value="control">Comparison articles</option></select>
+    <select id="grp" aria-label="Group"><option value="">All articles</option><option value="treatment">Topic articles</option><option value="control">Comparison articles</option><option value="control_contaminated">Excluded comparison articles</option></select>
+    <span class="cap" id="count"></span>
   </div>
   <div class="tbl"><table><thead><tr>
     <th data-k="title">Article</th><th data-k="group">Group</th><th data-k="edits">Edits</th><th data-k="editors">Editors</th>
-    <th data-k="crit0">Critical /10k, start</th><th data-k="crit1">now</th><th data-k="dcrit">Δ</th>
-    <th data-k="conn0">Connection /10k, start</th><th data-k="conn1">now</th><th data-k="lead_changed">Lead sentences changed</th><th>Trend</th>
+    <th data-k="crit0">Critical, first</th><th data-k="crit1">last</th><th data-k="dcrit">Δ</th>
+    <th data-k="conn0">Connection, first</th><th data-k="conn1">last</th><th data-k="lead_changed">Lead edits</th><th>Critical, by quarter</th>
   </tr></thead><tbody id="rows"></tbody></table></div>
-  <div class="grid2" id="detail"></div>
+  <div class="detail" id="detail"></div>
 </section>
 
-<section class="prose method">
-  <div class="eyebrow">Method and limits</div>
-  <h2>How this was measured</h2>
-  <ul>
-    <li><b>Data.</b> Every revision since 1 January 2021 from the Wikipedia API, plus a full-text snapshot of each article on the first day of every quarter, its talk-page activity and monthly pageviews. Collection ran on GitHub Actions.</li>
-    <li><b>Critical frames</b> are terms tied to the anti-colonial reading: <span id="critList"></span>. <b>Connection frames</b> are terms tied to Jewish historical continuity and persecution: <span id="connList"></span>. Terrorism and militant are counted separately.</li>
-    <li><b>Text.</b> References, templates, tables and markup are stripped before counting, so citation titles do not inflate counts. The lead is everything before the first section heading.</li>
-    <li><b>Test.</b> Difference-in-differences: each article's change in rate, averaged by group, topic minus comparison. 2,000 bootstrap resamples give the interval.</li>
-    <li><b>Limits.</b> Counting words measures emphasis, not accuracy. "Genocide" can grow because a court case exists, not because of bias. Sampled category articles vary in quality. Lexicons miss paraphrase and sentence-level stance. Editors are reported only in aggregate. No claim is made about any individual editor's intent.</li>
-  </ul>
+<section class="sec" id="method">
+  <header><div class="eyebrow">Method and limits</div><h2>How this was measured</h2></header>
+  <div class="method">
+    <dl>
+      <dt>Data</dt><dd>Every revision since 1 January 2021 from the Wikipedia API, a full-text snapshot of each article on the first day of every quarter, talk-page activity and monthly pageviews. Collection ran on GitHub Actions.</dd>
+      <dt>Groups</dt><dd id="mGroups">Topic articles are hand-picked plus a random sample from Zionism, antisemitism, conflict and Jewish-history categories. Comparison articles cover other nationalisms, states, conflicts, genocides and religions. Comparison articles closely tied to the conflict are reported but excluded from the tests.</dd>
+      <dt>Text</dt><dd>References, templates, tables, files and back matter are stripped before counting, so citation titles do not add to the counts. The lead is everything before the first section heading. Snapshots under 300 words (40 for the lead) are not measured.</dd>
+      <dt>Test</dt><dd>Difference-in-differences on the balanced panel of articles that existed in January 2021: each article’s change in rate, averaged by group, topic minus comparison. A permutation test gives p (5,000 shuffles), with Benjamini–Hochberg correction within the primary and the secondary family. 2,000 bootstrap resamples give the interval.</dd>
+      <dt>Limits</dt><dd>Counting words measures emphasis, not accuracy. “Genocide” can grow because a court case exists, not because of bias. Lexicons miss paraphrase and sentence-level stance. Category-sampled articles vary in quality. Editors are reported only in aggregate, and no claim is made about any editor’s intent.</dd>
+    </dl>
+    <div class="fig-h" style="margin-top:12px"><span class="fig-t">The lexicon</span><span class="cap">Patterns are case-insensitive regular expressions. Exclusions (in amber) are subtracted.</span></div>
+    <div class="lex" id="lex"></div>
+  </div>
 </section>
+<div class="foot"><span>Wikipedia Framing Drift</span><span id="footNote">Term frequency is a proxy. It is not a verdict on accuracy or bias.</span></div>
 </div>
 
 <script>
 const R=/*DATA*/null;
-const $=s=>document.querySelector(s), css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-const fmt=(x,d=1)=>x==null?"–":(+x).toFixed(d), pct=x=>x==null?"–":(x*100).toFixed(1)+"%";
-const LABEL={critical_rate:"All critical frames",connection_rate:"All connection frames",settler_colonial:"Settler-colonial / colonial",apartheid:"Apartheid",genocide:"Genocide",ethnic_cleansing:"Ethnic cleansing",occupation:"Occupation / occupied",nakba_expulsion:"Nakba / expulsion / dispossession",war_crimes:"War crimes / collective punishment",indigenous_homeland:"Indigenous / homeland / self-determination",persecution_antisemitism:"Antisemitism / persecution / pogrom",terrorism:"Terrorism / terrorist",militant:"Militant"};
-let part="full",part2="full",win=null,frame="critical_rate",sortK="dcrit",sortDir=-1;
+/* ---------- helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const RM=matchMedia("(prefers-reduced-motion: reduce)");
+const tok=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=(x,d=1)=>x==null||!isFinite(x)?"–":(+x).toFixed(d);
+const sgn=(x,d=1)=>x==null||!isFinite(x)?"–":(x>0?"+":x<0?"−":"±")+Math.abs(x).toFixed(d);
+const pct=(x,d=0)=>x==null?"–":(x*100).toFixed(d)+"%";
+const big=n=>n>=1e9?(n/1e9).toFixed(1)+"B":n>=1e6?(n/1e6).toFixed(n>=1e8?0:1)+"M":n>=1e4?Math.round(n/1e3)+"k":(+n).toLocaleString("en-US");
+const ym=s=>Date.UTC(+s.slice(0,4),+s.slice(5,7)-1,1);
+const qMid=q=>Date.UTC(+q.slice(0,4),(+q.slice(6)-1)*3+1,15);
+const WAR=Date.UTC(2023,9,7);
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const dlab=s=>MON[+s.slice(5,7)-1]+" "+s.slice(0,4);
+const dlabT=t=>{const d=new Date(t);return MON[d.getUTCMonth()]+" "+d.getUTCFullYear()};
+const LABEL={critical_rate:"All critical frames",connection_rate:"All connection frames",settler_colonial:"Settler-colonial / colonization",apartheid:"Apartheid",genocide:"Genocide",ethnic_cleansing:"Ethnic cleansing",occupation:"Occupation",nakba_expulsion:"Nakba / expulsion / dispossession",war_crimes:"War crimes / collective punishment",indigenous_homeland:"Indigenous / homeland / self-determination",persecution_antisemitism:"Antisemitism / persecution / pogrom",terrorism:"Terrorism / terrorist",militant:"Militant",placebo_geography:"Placebo: geography and climate words"};
+const GROUP={treatment:"topic",control:"comparison",control_contaminated:"excluded comparison"};
+const SUB={zionism:"Zionism",israel:"Israel",conflict:"Conflict",judaism:"Judaism",antisemitism:"Antisemitism","category-sample":"Category sample",nationalism:"Other nationalisms",states:"Other states",conflicts:"Other conflicts",religion:"Religions",settler_colonial_framings:"Colonial histories"};
+const subName=k=>SUB[k]||String(k||"").replace(/[_-]+/g," ").replace(/^./,c=>c.toUpperCase());
+const lin=(d0,d1,r0,r1)=>v=>r0+(v-d0)/((d1-d0)||1)*(r1-r0);
+function niceStep(span,n){const s=span/Math.max(1,n),p=10**Math.floor(Math.log10(s)),f=s/p;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*p}
+function ticks(lo,hi,n=4){const st=niceStep(hi-lo,n),out=[];for(let v=Math.ceil(lo/st-1e-9)*st;v<=hi+1e-9;v+=st)out.push(+v.toFixed(10));return out}
+function niceMax(v,n=4){if(!(v>0))return 1;const st=niceStep(v,n);return Math.ceil(v/st-1e-9)*st}
+const ease=t=>t<.5?2*t*t:1-(-2*t+2)**2/2;
+const isPhone=()=>innerWidth<640;
+function parseWeeks(w,n){if(w==null)return null;if(Array.isArray(w))return w;const a=String(w).split(",");const o=new Array(n||a.length).fill(0);for(let i=0;i<a.length;i++)if(a[i])o[i]=+a[i];return o}
+// colour mixing in CIE Lab
+function hex2rgb(h){h=h.replace("#","");if(h.length===3)h=[...h].map(c=>c+c).join("");return [0,2,4].map(i=>parseInt(h.slice(i,i+2),16))}
+function rgb2lab([r,g,b]){[r,g,b]=[r,g,b].map(v=>{v/=255;return v>.04045?((v+.055)/1.055)**2.4:v/12.92});let x=(r*.4124+g*.3576+b*.1805)/.95047,y=r*.2126+g*.7152+b*.0722,z=(r*.0193+g*.1192+b*.9505)/1.08883;const f=t=>t>.008856?Math.cbrt(t):7.787*t+16/116;x=f(x);y=f(y);z=f(z);return [116*y-16,500*(x-y),200*(y-z)]}
+function lab2rgb([L,a,b]){let y=(L+16)/116,x=a/500+y,z=y-b/200;const f=t=>t**3>.008856?t**3:(t-16/116)/7.787;x=f(x)*.95047;y=f(y);z=f(z)*1.08883;let r=x*3.2406+y*-1.5372+z*-.4986,g=x*-.9689+y*1.8758+z*.0415,bb=x*.0557+y*-.204+z*1.057;return [r,g,bb].map(v=>Math.max(0,Math.min(255,Math.round(255*(v>.0031308?1.055*v**(1/2.4)-.055:12.92*v)))))}
+function ramp(stops,n=256){const L=stops.map(h=>rgb2lab(hex2rgb(h))),out=[];for(let i=0;i<n;i++){const t=i/(n-1)*(L.length-1),k=Math.min(L.length-2,Math.floor(t)),f=t-k;out.push(lab2rgb(L[k].map((v,j)=>v+(L[k+1][j]-v)*f)))}return out}
+const css=c=>`rgb(${c[0]},${c[1]},${c[2]})`;
 
-function ns(t,a){const e=document.createElementNS("http://www.w3.org/2000/svg",t);for(const k in a)e.setAttribute(k,a[k]);return e}
-function niceMax(v){if(!(v>0))return 1;const p=10**Math.floor(Math.log10(v)),n=v/p;return (n<=1?1:n<=2?2:n<=5?5:10)*p}
+/* ---------- tooltip ---------- */
+const tip=$("#tip");
+function showTip(html,x,y){tip.innerHTML=html;tip.hidden=false;const w=tip.offsetWidth,h=tip.offsetHeight;let L=x+14,T=y+14;if(L+w>innerWidth-12)L=x-w-14;if(L<12)L=12;if(T+h>innerHeight-12)T=y-h-14;if(T<8)T=8;tip.style.left=L+"px";tip.style.top=T+"px"}
+const hideTip=()=>{tip.hidden=true};
+addEventListener("scroll",hideTip,{passive:true});
 
-function lineChart(svg,xs,series,{W=1000,H=340,mark=null,yfmt=v=>fmt(v,1)}={}){
-  svg.innerHTML="";svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
-  const L=52,Rm=12,T=12,B=30,max=niceMax(Math.max(...series.flatMap(s=>s.v.filter(v=>v!=null)),0)*1.05);
-  const x=i=>L+(W-L-Rm)*(xs.length<2?0:i/(xs.length-1)),y=v=>T+(H-T-B)*(1-v/max);
-  for(let k=0;k<=4;k++){const v=max*k/4;svg.append(ns("line",{x1:L,x2:W-Rm,y1:y(v),y2:y(v),stroke:css("--rule"),"stroke-width":1}));
-    const t=ns("text",{x:L-6,y:y(v)+4,"text-anchor":"end"});t.textContent=yfmt(v);svg.append(t)}
-  const step=Math.ceil(xs.length/8);xs.forEach((d,i)=>{if(i%step)return;const t=ns("text",{x:x(i),y:H-8,"text-anchor":"middle"});t.textContent=d;svg.append(t)});
-  if(mark){const i=xs.findIndex(d=>d>=mark);if(i>=0){svg.append(ns("line",{x1:x(i-.5),x2:x(i-.5),y1:T,y2:H-B,stroke:css("--war"),"stroke-dasharray":"4 3"}))}}
-  for(const s of series){const pts=s.v.map((v,i)=>v==null?null:[x(i),y(v)]).filter(Boolean);
-    if(!pts.length)continue;
-    svg.append(ns("path",{d:"M"+pts.map(p=>p.join(",")).join("L")+`L${pts.at(-1)[0]},${y(0)}L${pts[0][0]},${y(0)}Z`,fill:s.c,opacity:.07}));
-    svg.append(ns("path",{d:"M"+pts.map(p=>p.join(",")).join("L"),fill:"none",stroke:s.c,"stroke-width":2.2}));
-    const e=pts.at(-1);svg.append(ns("circle",{cx:e[0],cy:e[1],r:4,fill:s.c}))}
+/* ---------- generic SVG line chart with animated updates ---------- */
+const NS="http://www.w3.org/2000/svg";
+function chart(el,cfg){
+  const prev=el._cfg;el._cfg=cfg;
+  const W=Math.max(240,el.clientWidth),H=el.clientHeight||cfg.h||240;
+  const anim=prev&&!RM.matches&&cfg.animate!==false&&prev.W===W;
+  cfg.W=W;
+  if(!anim){draw(el,cfg,1,null);return}
+  cancelAnimationFrame(el._raf);const t0=performance.now(),D=520;
+  const step=now=>{const t=Math.min(1,(now-t0)/D);draw(el,cfg,ease(t),prev);if(t<1)el._raf=requestAnimationFrame(step)};
+  el._raf=requestAnimationFrame(step);
+}
+function bounds(cfg){
+  let lo=Infinity,hi=-Infinity,x0=Infinity,x1=-Infinity;
+  for(const s of cfg.series){for(const p of s.pts){if(p[1]!=null){lo=Math.min(lo,p[1]);hi=Math.max(hi,p[1])}x0=Math.min(x0,p[0]);x1=Math.max(x1,p[0])}
+    if(s.ribbon)for(const p of s.ribbon){if(p[1]!=null){lo=Math.min(lo,p[1]);hi=Math.max(hi,p[2])}}}
+  if(!isFinite(lo)){lo=0;hi=1}
+  if(cfg.zeroBase!==false)lo=Math.min(0,lo);
+  if(cfg.symmetric){const m=Math.max(Math.abs(lo),Math.abs(hi));lo=-m;hi=m}
+  const pad=(hi-lo)*.06;hi=cfg.zeroBase!==false&&lo===0?niceMax(hi*1.04):hi+pad;if(lo<0)lo-=pad;
+  if(cfg.xDomain){[x0,x1]=cfg.xDomain}
+  return {lo,hi,x0,x1};
+}
+function draw(el,cfg,t,prev){
+  const W=cfg.W,H=el.clientHeight||cfg.h||240,ph=isPhone();
+  const B=bounds(cfg),PB=prev?bounds(prev):B,mix=(a,b)=>a+(b-a)*t;
+  const lo=mix(PB.lo,B.lo),hi=mix(PB.hi,B.hi);
+  const labels=cfg.endLabels&&!ph;
+  const m={l:cfg.compact?30:40,r:labels?(cfg.labelW||118):(cfg.compact?8:14),t:cfg.compact?8:16,b:22};
+  const x=lin(B.x0,B.x1,m.l,W-m.r),y=lin(lo,hi,H-m.b,m.t);
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(cfg.aria||"")}">`;
+  if(cfg.band){const a=x(Math.max(B.x0,cfg.band[0])),b=x(Math.min(B.x1,cfg.band[1]));s+=`<rect x="${a}" y="${m.t}" width="${Math.max(0,b-a)}" height="${H-m.b-m.t}" style="fill:var(--war);opacity:.07"/>`}
+  const yt=ticks(lo,hi,cfg.compact?3:4),ydp=Math.max(0,Math.min(3,-Math.floor(Math.log10(niceStep(hi-lo,cfg.compact?3:4))+1e-9)));
+  for(const v of yt){const yy=y(v);if(yy<m.t-1||yy>H-m.b+1)continue;s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"});stroke-width:1"/><text x="${m.l-6}" y="${yy+3.5}" text-anchor="end">${esc((cfg.yfmt||(v=>fmt(v,ydp)))(v))}</text>`}
+  // years
+  const y0=new Date(B.x0).getUTCFullYear(),y1=new Date(B.x1).getUTCFullYear();
+  if(cfg.xType!=="linear"){for(let yr=y0;yr<=y1+1;yr++){let tt=Date.UTC(yr,0,1);if(tt<B.x0&&B.x0-tt<864e5*100)tt=B.x0;if(tt<B.x0-864e5*20||tt>B.x1+864e5*20)continue;const xx=x(tt);s+=`<line x1="${xx}" x2="${xx}" y1="${H-m.b}" y2="${H-m.b+4}" style="stroke:var(--muted)"/><text x="${xx+3}" y="${H-6}">${ph&&cfg.compact?"’"+String(yr).slice(2):yr}</text>`}}
+  if(cfg.war!==false&&cfg.xType!=="linear"&&WAR>B.x0&&WAR<B.x1){const xx=x(WAR);s+=`<line x1="${xx}" x2="${xx}" y1="${m.t-6}" y2="${H-m.b}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/>`;if(!cfg.compact)s+=`<text x="${xx+4}" y="${m.t+2}" style="fill:var(--war)">7 Oct 2023</text>`}
+  const ends=[];
+  cfg.series.forEach(se=>{
+    const ps=prev&&prev.series.find(p=>p.key===se.key&&p.pts.length===se.pts.length);
+    const pts=se.pts.map((p,i)=>[p[0],p[1]==null?null:(ps&&ps.pts[i][1]!=null?mix(ps.pts[i][1],p[1]):p[1])]);
+    if(se.ribbon){const pr=ps&&ps.ribbon&&ps.ribbon.length===se.ribbon.length?ps.ribbon:null;const rb=se.ribbon.map((p,i)=>[p[0],pr?mix(pr[i][1],p[1]):p[1],pr?mix(pr[i][2],p[2]):p[2]]).filter(p=>p[1]!=null);
+      if(rb.length)s+=`<path d="M${rb.map(p=>x(p[0])+","+y(p[2])).join("L")}L${rb.slice().reverse().map(p=>x(p[0])+","+y(p[1])).join("L")}Z" style="fill:var(${se.ribbonFill||"--topic-soft"});stroke:var(${se.color});stroke-width:.75;stroke-opacity:.5;opacity:.9"/>`}
+    let d="",pen=false;for(const p of pts){if(p[1]==null){pen=false;continue}d+=(pen?"L":"M")+x(p[0]).toFixed(1)+","+y(p[1]).toFixed(1);pen=true}
+    if(se.area&&d){const v=pts.filter(p=>p[1]!=null);s+=`<path d="${d}L${x(v.at(-1)[0])},${y(Math.max(lo,0))}L${x(v[0][0])},${y(Math.max(lo,0))}Z" style="fill:var(${se.color});opacity:.08"/>`}
+    s+=`<path d="${d}" style="fill:none;stroke:var(${se.color});stroke-width:${se.width||2};${se.dash?"stroke-dasharray:"+se.dash:""};stroke-linejoin:round;stroke-linecap:round;opacity:${se.opacity??1}"/>`;
+    const last=pts.filter(p=>p[1]!=null).at(-1);
+    if(last&&se.dot!==false){s+=`<circle cx="${x(last[0])}" cy="${y(last[1])}" r="${cfg.compact?2.5:3.5}" style="fill:var(${se.color});stroke:var(--sheet);stroke-width:1.5"/>`;ends.push({y:y(last[1]),x:x(last[0]),se,v:last[1]})}
+  });
+  if(labels){ends.sort((a,b)=>a.y-b.y);for(let i=1;i<ends.length;i++)if(ends[i].y-ends[i-1].y<26)ends[i].y=ends[i-1].y+26;
+    for(const e of ends){s+=`<text x="${e.x+8}" y="${e.y-2}" class="lbl">${esc(e.se.label)}</text><text x="${e.x+8}" y="${e.y+11}">${esc((cfg.vfmt||(v=>fmt(v,1)))(e.v))}</text>`}}
+  s+=`<g class="hov" style="display:none"><line y1="${m.t}" y2="${H-m.b}" style="stroke:var(--ink);stroke-width:1;opacity:.35"/></g><rect class="hit" x="${m.l}" y="0" width="${W-m.l-m.r}" height="${H}" style="fill:transparent"/></svg>`;
+  el.innerHTML=s;
+  if(cfg.hover!==false&&t===1)bindHover(el,cfg,x,y,m);
+}
+function bindHover(el,cfg,x,y,m){
+  const svg=el.querySelector("svg"),hit=svg.querySelector(".hit"),g=svg.querySelector(".hov"),ln=g.querySelector("line");
+  const xs=[...new Set(cfg.series.flatMap(s=>s.pts.map(p=>p[0])))].sort((a,b)=>a-b);
+  const move=e=>{const r=svg.getBoundingClientRect(),px=e.clientX-r.left;let bi=0,bd=1e9;xs.forEach((v,i)=>{const d=Math.abs(x(v)-px);if(d<bd){bd=d;bi=i}});const xv=xs[bi];
+    g.style.display="";ln.setAttribute("x1",x(xv));ln.setAttribute("x2",x(xv));
+    $$("circle.hd",g).forEach(c=>c.remove());
+    let html=`<b>${cfg.xType==="linear"?xv:(cfg.xlab||dlabT)(xv)}</b>`;
+    for(const s of cfg.series){const p=s.pts.find(p=>p[0]===xv);if(!p||p[1]==null)continue;const c=document.createElementNS(NS,"circle");c.setAttribute("class","hd");c.setAttribute("cx",x(xv));c.setAttribute("cy",y(p[1]));c.setAttribute("r",4);c.setAttribute("style",`fill:var(${s.color});stroke:var(--sheet);stroke-width:1.5`);g.append(c);
+      const rb=s.ribbon&&s.ribbon.find(q=>q[0]===xv);
+      html+=`<div class="r"><span><span class="sw" style="background:var(${s.color})"></span>${esc(s.label)}</span><span>${esc((cfg.vfmt||(v=>fmt(v,1)))(p[1]))}${rb&&rb[1]!=null?` [${fmt(rb[1],1)}, ${fmt(rb[2],1)}]`:""}</span></div>`;
+      if(s.n&&s.n[bi]!=null)html+=`<div class="r" style="opacity:.7"><span>articles</span><span>${s.n[bi]}</span></div>`}
+    showTip(html,e.clientX,e.clientY)};
+  hit.addEventListener("pointermove",move);hit.addEventListener("pointerdown",move);
+  hit.addEventListener("pointerleave",()=>{g.style.display="none";hideTip()});
 }
 
+/* ---------- state ---------- */
+const S={frame:"critical_rate",part:"full",set:"main",band:false,es:"critical_rate",esPart:"full",hmMode:"rate",hmPart:"full",hmSort:"change",win:null,partF:"full",sortK:"dcrit",sortDir:-1,sel:null,def:null,defIdx:0};
+function seg(el,cb){el.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;setSeg(el,b.dataset.v);cb(b.dataset.v)})}
+function setSeg(el,v){$$("button",el).forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.v===v)))}
+
+/* ---------- hero: revision stream ---------- */
+let HERO=null;
+function heroRows(){
+  const blk=a=>a.group==="treatment"?0:1,subo=Object.keys(SUB),si=k=>{const i=subo.indexOf(k);return i<0?99:i};
+  const A=R.articles.filter(a=>a.w_edits!=null||a.quarter_edits).slice();
+  A.sort((a,b)=>blk(a)-blk(b)||si(a.subgroup)-si(b.subgroup)||String(a.subgroup).localeCompare(b.subgroup)||(b.edits-a.edits));
+  return A.map(a=>({a,w:parseWeeks(a.w_edits,R.n_weeks),r:parseWeeks(a.w_reverted,R.n_weeks)}));
+}
+function drawHero(animate){
+  const cv=$("#hero"),box=cv.parentElement,W=box.clientWidth,ph=isPhone();
+  const H=ph?420:Math.round(Math.min(560,Math.max(420,W*.42)));
+  const dpr=Math.min(2,devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+"px";
+  const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);
+  const rows=HERO||(HERO=heroRows());
+  const nW=R.n_weeks||305,w0=Date.parse(R.week0||"2021-01-01");
+  const gut=ph?0:112,topH=ph?70:92,gap=10,gGap=8;
+  const L=gut,Rr=W-2,x=w=>L+(Rr-L)*w/nW;
+  // group blocks
+  const groups=[];rows.forEach((r,i)=>{const g=r.a.group==="treatment"?"treatment":"control";if(!groups.length||groups.at(-1).g!==g)groups.push({g,i0:i,i1:i});groups.at(-1).i1=i});
+  const avail=H-topH-gap-gGap*(groups.length-1)-18;
+  const rh=avail/rows.length;let yy=topH+gap;const rowY=new Float32Array(rows.length);
+  groups.forEach((g,gi)=>{if(gi)yy+=gGap;for(let i=g.i0;i<=g.i1;i++){rowY[i]=yy;yy+=rh}});
+  const col={treatment:tok("--topic"),control:tok("--comp"),control_contaminated:tok("--comp"),rev:tok("--del-bd"),war:tok("--war"),ink:tok("--ink"),muted:tok("--muted"),rule:tok("--rule"),paper:tok("--paper")};
+  // aggregate weekly per article, by group (seismograph)
+  const agg={treatment:new Float32Array(nW),control:new Float32Array(nW)},cnt={treatment:0,control:0};
+  rows.forEach(r=>{const g=r.a.group==="treatment"?"treatment":"control";if(r.a.group==="control_contaminated")return;cnt[g]++;if(r.w)for(let i=0;i<nW;i++)agg[g][i]+=r.w[i]||0});
+  for(const g in agg)for(let i=0;i<nW;i++)agg[g][i]/=Math.max(1,cnt[g]);
+  const mx=Math.max(...agg.treatment,...agg.control,.01);
+  HERO.geom={rowY,rh,x,nW,w0,L,Rr,topH,H,W};
+  const warW=(WAR-w0)/(7*864e5);
+  const base=()=>{
+    c.clearRect(0,0,W,H);
+    // year grid
+    c.font=`500 10.5px ${tok("--mono")}`;c.textBaseline="alphabetic";
+    for(let yr=2021;yr<=2026;yr++){const xx=x((Date.UTC(yr,0,1)-w0)/(7*864e5));c.fillStyle=col.rule;c.fillRect(Math.round(xx),topH-4,1,H-topH-14);c.fillStyle=col.muted;c.fillText(String(yr),xx+3,H-3)}
+    // seismograph
+    for(const g of ["control","treatment"]){c.beginPath();for(let i=0;i<nW;i++){const xx=x(i+.5),v=topH-4-(topH-30)*agg[g][i]/mx;i?c.lineTo(xx,v):c.moveTo(xx,v)}
+      c.strokeStyle=col[g];c.lineWidth=g==="treatment"?1.4:1.1;c.globalAlpha=g==="treatment"?1:.9;c.stroke();c.globalAlpha=1}
+    c.fillStyle=col.muted;if(ph)c.fillText("edits / article / week",2,10);else{c.fillText("Weekly edits",0,topH-40);c.fillText("per article",0,topH-27)}
+  };
+  const marks=(wa,wb)=>{
+    const tw=Math.max(.6,(Rr-L)/nW*.33),hh=Math.max(.7,rh);
+    rows.forEach((r,i)=>{if(!r.w)return;const y0=rowY[i],g=r.a.group;
+      for(let w=wa;w<wb;w++){const n=r.w[w];if(!n)continue;const nr=r.r?r.r[w]||0:0,xw=x(w),ww=(Rr-L)/nW;
+        const k=Math.min(n,24);for(let j=0;j<k;j++){const h=((i*73856093)^(w*19349663)^(j*83492791))>>>0,fx=(h%1000)/1000;
+          c.fillStyle=j<Math.round(nr*k/n)?col.rev:col[g];c.globalAlpha=j<Math.round(nr*k/n)?.95:Math.min(.85,.32+.5*Math.min(1,n/40));c.fillRect(xw+fx*(ww-tw),y0,tw,hh)}}});
+    c.globalAlpha=1;
+  };
+  const warMark=()=>{const xx=Math.round(x(warW))+.5;c.strokeStyle=col.war;c.lineWidth=1.5;c.setLineDash([]);c.beginPath();c.moveTo(xx,0);c.lineTo(xx,H-16);c.stroke();
+    c.fillStyle=col.war;c.font=`600 11px ${tok("--mono")}`;const t="7 OCT 2023";const tw=c.measureText(t).width;c.fillText(t,ph?xx+5:xx-tw-6,ph?topH-40:11)};
+  // labels
+  const lab=$("#heroLabs");lab.innerHTML="";
+  if(!ph){let last=-99;const seen=new Set();rows.forEach((r,i)=>{const b=r.a.group==="treatment"?"t":"c",key=b+"|"+r.a.subgroup;if(seen.has(key))return;const first=![...seen].some(k=>k[0]===b);seen.add(key);const top=rowY[i];if(!first&&top-last<24)return;last=top+(first?12:0);
+      lab.insertAdjacentHTML("beforeend",`<span class="lab" style="top:${top}px">${first?`<b>${b==="t"?"Topic":"Comparison"}</b>`:""}${esc(subName(r.a.subgroup))}</span>`)})}
+  else{groups.forEach(g=>lab.insertAdjacentHTML("beforeend",`<span class="lab" style="top:${rowY[g.i0]+2}px;left:4px;background:var(--paper);padding:1px 4px"><b>${g.g==="treatment"?"Topic":"Comparison"}</b></span>`))}
+  base();
+  if(!animate||RM.matches){marks(0,nW);warMark();return}
+  let wk=0;const t0=performance.now(),D=1500;
+  const step=now=>{const t=Math.min(1,(now-t0)/D),to=Math.round(nW*ease(t));marks(wk,to);wk=to;if(t<1)requestAnimationFrame(step);else warMark()};
+  requestAnimationFrame(step);
+}
+function heroHover(e){
+  if(!HERO||!HERO.geom)return;const g=HERO.geom,r=$("#hero").getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;
+  if(px<g.L||py<g.topH){hideTip();return}
+  let i=-1;for(let k=0;k<g.rowY.length;k++){if(py>=g.rowY[k]&&py<g.rowY[k]+Math.max(g.rh,1)){i=k;break}}
+  if(i<0){hideTip();return}
+  const w=Math.max(0,Math.min(g.nW-1,Math.floor((px-g.L)/(g.Rr-g.L)*g.nW))),row=HERO[i],n=row.w?row.w[w]:0,rv=row.r?row.r[w]:0;
+  const d=new Date(g.w0+w*7*864e5),ds=`${d.getUTCDate()} ${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+  showTip(`<b>${esc(row.a.title)}</b><div class="r"><span>week of ${ds}</span><span>${n} edit${n===1?"":"s"}</span></div>${rv?`<div class="r"><span>later reverted</span><span>${rv}</span></div>`:""}<div class="r" style="opacity:.7"><span>${GROUP[row.a.group]} · ${esc(subName(row.a.subgroup))}</span><span>${row.a.edits.toLocaleString("en-US")} total</span></div>`,e.clientX,e.clientY);
+}
+
+/* ---------- lede ---------- */
+function drawLede(){
+  const A=R.articles,tot=A.reduce((s,a)=>s+(a.views||0),0),last=R.last||R.dates.at(-1),first=R.first||R.dates[0];
+  $("#mastRange").textContent=`English Wikipedia · ${dlab(first)} – ${dlab(last)}`;
+  $("#deck").innerHTML=`A revision-by-revision measurement of ${R.n_articles_total||A.length} English Wikipedia articles from ${dlab(first)} to ${dlab(last)}: articles on Judaism, Israel, Zionism, antisemitism and the Israeli–Palestinian conflict, set against articles on other nations, nationalisms, conflicts and religions.`;
+  $("#lede").innerHTML=`Above, every edit to every article in the study is a mark. The question is whether the vocabulary in the topic articles changed differently from the vocabulary in comparable articles. The test uses a fixed panel of <b>${R.n_treatment}</b> topic articles and <b>${R.n_control}</b> comparison articles that all existed in January 2021. A shift counts as topic-specific only if it is larger in the topic articles than in the comparison articles. A shift that every article on war and nationhood shared would not count.`;
+  const facts=[[(R.total_revisions||0).toLocaleString("en-US"),"revisions read"],[R.dates.length,"quarterly snapshots of each article"],[`${R.n_treatment} / ${R.n_control}`,"topic / comparison articles in the test panel"],[big(tot),"pageviews in the window"]];
+  $("#facts").innerHTML=facts.map(([b,s])=>`<div><b>${b}</b><span>${s}</span></div>`).join("");
+  const ex=A.filter(a=>a.group==="control_contaminated").length,nw=R.n_new_topic_articles??A.filter(a=>a.created_in_window&&a.group==="treatment").length;
+  $("#heroNote").textContent=`${A.length} rows · ${nw} topic articles created during the window · ${ex} excluded comparison articles drawn with the comparison group`;
+}
+
+/* ---------- vocabulary scrolly ---------- */
+function tr(g,p){return (R.trends[g]&&R.trends[g][p])||null}
+function trendSeries(){
+  const p=S.part,k=S.frame,mk=(g,lab,color,o={})=>{const rows=tr(g,p)||(o.fallbackFull?tr(g,"full"):null);if(!rows||!rows.length||rows.every(r=>r[k]==null))return null;return {key:g,label:lab,color,pts:rows.map(r=>[ym(r.date),r[k]]),n:rows.map(r=>r.n),...o}};
+  let s;
+  if(S.set==="sub")s=[mk("treatment","All topic","--topic",{width:1.5,opacity:.45}),mk("treatment_hand","Hand-picked topic","--topic",{dash:"5 3"}),mk("control_quiet","Quiet comparison","--comp",{}),mk("control_shocked","Comparison with own war","--comp",{dash:"5 3"})];
+  else s=[mk("treatment","Topic articles","--topic",{area:true,width:2.4}),mk("control","Comparison","--comp",{width:2.2}),k==="critical_rate"&&p==="full"?mk("treatment_new","New topic articles","--new",{dash:"2 3",width:1.6}):null];
+  return s.filter(Boolean);
+}
 function drawTrend(){
-  const t=R.trends.treatment[part],c=R.trends.control[part];
-  lineChart($("#trend"),t.map(r=>r.date),[{v:t.map(r=>r[frame]),c:css("--treat")},{v:c.map(r=>r[frame]),c:css("--ctrl")}],{mark:"2023-10"});
+  const series=trendSeries(),el=$("#trend");
+  const rows=tr("treatment",S.part)||[];
+  chart(el,{series,endLabels:true,labelW:isPhone()?0:136,band:S.band?[WAR,ym(R.dates.at(-1))+864e5*30]:null,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],aria:`${LABEL[S.frame]} per 10k words, ${S.part} text`,xlab:t=>"Snapshot "+dlabT(t)});
+  $("#trendKey").innerHTML=series.map(s=>`<span class="key"><i class="${s.dash?"dash":"ln"}" style="background:var(${s.color});color:var(${s.color})"></i>${esc(s.label)}${s.key==="treatment_new"?" (not in test)":""}</span>`).join("")+`<span>per 10,000 words of ${S.part==="lead"?"lead":"article"} text · n = ${rows[0]?rows[0].n:"–"} topic, ${(tr("control",S.part)||[{}])[0].n??"–"} comparison</span>`;
+  $("#frameSel").value=S.frame;setSeg($("#partA"),S.part);setSeg($("#setA"),S.set);
+  $$(".mini").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===S.frame)));
+}
+function val(g,p,k,d){const r=(tr(g,p)||[]).find(r=>r.date===d);return r?r[k]:null}
+function stepsA(){
+  const f=R.dates[0],l=R.dates.at(-1),pre=R.pre_war||"2023-07";
+  const d=(g,p,k,a,b)=>{const x=val(g,p,k,a),y=val(g,p,k,b);return x==null||y==null?null:y-x};
+  const dl=v=>v==null?"–":`<span class="delta ${v>0?"up":v<0?"dn":""}">${sgn(v,1)}</span>`;
+  const v=(g,p,k,dd)=>fmt(val(g,p,k,dd),1);
+  const T='<span class="sw" style="background:var(--topic)"></span>topic',C='<span class="sw" style="background:var(--comp)"></span>comparison';
+  const steps=[
+    {k:"Critical frames · full text",st:{frame:"critical_rate",part:"full",set:"main",band:false},
+     h:`In ${dlab(f)} the ${T} articles used critical-frame terms ${v("treatment","full","critical_rate",f)} times per 10,000 words, and the ${C} articles ${v("control","full","critical_rate",f)} times. By ${dlab(l)} the rates were ${v("treatment","full","critical_rate",l)} and ${v("control","full","critical_rate",l)}.`},
+    {k:"Before and after 7 October 2023",st:{frame:"critical_rate",part:"full",set:"main",band:true},
+     h:`The shaded area covers the snapshots after the attack and the start of the war. From ${dlab(pre)} to ${dlab(l)} the topic rate changed by ${dl(d("treatment","full","critical_rate",pre,l))} and the comparison rate by ${dl(d("control","full","critical_rate",pre,l))}. Before that, from ${dlab(f)} to ${dlab(pre)}, the changes were ${dl(d("treatment","full","critical_rate",f,pre))} and ${dl(d("control","full","critical_rate",f,pre))}.`},
+    {k:"Inside the groups",st:{frame:"critical_rate",part:"full",set:"sub",band:true},
+     h:`Some comparison articles had wars of their own in this period, such as Ukraine, Sudan and Nagorno-Karabakh. They are drawn apart from the quiet comparison articles. The hand-picked topic articles are also drawn apart from the category sample. If the comparison articles with their own wars moved like the topic articles, the change would look like a response to events.`},
+    {k:"Connection frames",st:{frame:"connection_rate",part:"full",set:"main",band:false},
+     h:`The connection frames are indigeneity, homeland, self-determination, antisemitism and persecution. In the ${T} articles their rate went from ${v("treatment","full","connection_rate",f)} to ${v("treatment","full","connection_rate",l)}, and in the ${C} articles from ${v("control","full","connection_rate",f)} to ${v("control","full","connection_rate",l)}.`},
+    {k:"The lead section",st:{frame:"critical_rate",part:"lead",set:"main",band:false},
+     h:`The lead is the text before the first heading and the part most readers see. It is short, so single edits move it more. In the lead, the critical rate went from ${v("treatment","lead","critical_rate",f)} to ${v("treatment","lead","critical_rate",l)} in the topic articles and from ${v("control","lead","critical_rate",f)} to ${v("control","lead","critical_rate",l)} in the comparison articles.`},
+  ];
+  const host=$("#stepsA");host.innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button></div>`).join("");
+  return steps;
+}
+function minis(){
+  const ks=["critical_rate","connection_rate",...R.frames];
+  $("#minis").innerHTML=ks.map(k=>`<button class="mini" data-k="${k}" aria-pressed="false" type="button"><span class="t">${esc(LABEL[k]||k)}</span><span class="s" data-s></span><div class="chart" style="height:86px"></div></button>`).join("");
+  $$(".mini").forEach(b=>{const k=b.dataset.k,t=tr("treatment","full"),c=tr("control","full");
+    const sr=[{key:"t",label:"Topic",color:"--topic",pts:t.map(r=>[ym(r.date),r[k]]),width:1.6},{key:"c",label:"Comparison",color:"--comp",pts:c.map(r=>[ym(r.date),r[k]]),width:1.4}];
+    const dd=Math.max(t[0][k]||0,c[0][k]||0)<1?2:1;b.querySelector("[data-s]").innerHTML=`<span style="color:var(--topic)">■</span> ${fmt(t[0][k],dd)}→${fmt(t.at(-1)[k],dd)} &nbsp;<span style="color:var(--comp)">■</span> ${fmt(c[0][k],dd)}→${fmt(c.at(-1)[k],dd)}`;
+    b._sr=sr;b.onclick=()=>{S.frame=k;S.part="full";S.set="main";drawTrend();$("#scA .sticky").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"nearest"})}});
+  drawMinis();
+}
+function drawMinis(){$$(".mini").forEach(b=>chart(b.querySelector(".chart"),{series:b._sr,compact:true,hover:false,animate:false,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))]}))}
+
+/* ---------- event study ---------- */
+function drawES(){
+  const key=`${S.esPart}:${S.es}`,rows=(R.event_study&&R.event_study[key])||[],el=$("#es");
+  setSeg($("#esOut"),S.es);setSeg($("#esPart"),S.esPart);
+  const nm=S.es==="critical_rate"?"critical":"connection";
+  $("#esTitle").textContent=`Extra change in ${nm} terms per 10k words since ${dlab(R.dates[0])}, topic minus comparison · ${S.esPart==="lead"?"lead only":"full article"}`;
+  if(!rows.length){el.innerHTML=`<div class="note">No event-study estimates in this build.</div>`;el._cfg=null;return}
+  const pts=[[ym(R.dates[0]),0],...rows.map(r=>[ym(r.date),r.did])],rb=[[ym(R.dates[0]),0,0],...rows.map(r=>[ym(r.date),r.lo,r.hi])];
+  chart(el,{series:[{key:"es",label:"Difference",color:"--topic",pts,ribbon:rb,width:2.4}],zeroBase:false,symmetric:false,endLabels:true,labelW:isPhone()?0:96,vfmt:v=>sgn(v,2),xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],aria:"Event study",xlab:t=>"Snapshot "+dlabT(t)});
+}
+function stepsB(){
+  const g=k=>{const r=(R.event_study||{})[k]||[];return r.at(-1)};
+  const one=(k,lab)=>{const r=g(k);if(!r)return `No estimate is available for ${lab}.`;const inc=r.lo<=0&&r.hi>=0;return `At ${dlab(r.date)}, the difference was <span class="delta ${r.did>0?"up":"dn"}">${sgn(r.did,2)}</span> per 10k words, with an interval from ${sgn(r.lo,2)} to ${sgn(r.hi,2)}. The interval ${inc?"includes":"excludes"} zero.`};
+  const steps=[
+    {k:"Critical frames · full text",st:{es:"critical_rate",esPart:"full"},h:`The line starts at zero by construction. It rises when the topic articles gain critical terms faster than the comparison articles, and falls when they gain them more slowly. ${one("full:critical_rate","the full text")}`},
+    {k:"Critical frames · lead",st:{es:"critical_rate",esPart:"lead"},h:`The same estimate for the lead section only. Leads are short, so the interval is wider. ${one("lead:critical_rate","the lead")}`},
+    {k:"Connection frames · full text",st:{es:"connection_rate",esPart:"full"},h:`For the connection frames, the hypothesis predicts the line would fall below zero. ${one("full:connection_rate","the connection frames")}`},
+  ];
+  $("#stepsB").innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button></div>`).join("");
+  return steps;
 }
 
+/* ---------- scrolly wiring ---------- */
+function scrolly(host,steps,apply){
+  const els=$$(".step",host);
+  const set=i=>{els.forEach((e,j)=>e.classList.toggle("on",j===i));Object.assign(S,steps[i].st);apply()};
+  els.forEach((e,i)=>e.querySelector(".go").onclick=()=>set(i));
+  if(!("IntersectionObserver" in window))return;
+  let io;const mk=()=>{io&&io.disconnect();const ph=innerWidth<=900;io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)set(+en.target.dataset.i)})},{rootMargin:ph?"-50% 0px -28% 0px":"-45% 0px -45% 0px"});els.forEach(e=>io.observe(e))};
+  mk();let w=innerWidth;addEventListener("resize",()=>{if((w<=900)!==(innerWidth<=900)){w=innerWidth;mk()}});
+  els[0].classList.add("on");
+}
+
+/* ---------- heatmap ---------- */
+function seriesOf(a,part){const s=part==="lead"?a.lcrit_series:a.crit_series;if(!s)return null;const ds=a.crit_series_dates||R.dates.slice(R.dates.indexOf(a.d0),R.dates.indexOf(a.d0)+s.length);const m=new Map();ds.forEach((d,i)=>m.set(d,s[i]));return R.dates.map(d=>m.has(d)?m.get(d):null)}
+let HM=null;
+function drawHeat(){
+  const host=$("#heat"),ph=isPhone(),part=S.hmPart,mode=S.hmMode;
+  setSeg($("#hmMode"),mode);setSeg($("#hmPart"),part);
+  const groups=[["treatment","Topic articles"],["control","Comparison articles"]];
+  const data=groups.map(([g])=>R.articles.filter(a=>a.group===g).map(a=>{const v=seriesOf(a,part)||R.dates.map(()=>null);const nn=v.filter(x=>x!=null);const f=nn[0],l=nn.at(-1);return {a,v,ch:v.map(x=>x==null||f==null?null:x-f),first:f,last:l,dl:f==null?null:l-f}}));
+  const all=data.flat().flatMap(r=>(mode==="rate"?r.v:r.ch).filter(x=>x!=null)).sort((a,b)=>a-b);
+  const q=p=>all.length?all[Math.min(all.length-1,Math.floor(p*(all.length-1)))]:1;
+  const vmax=mode==="rate"?Math.max(q(.96),.1):Math.max(Math.abs(q(.03)),Math.abs(q(.97)),.1);
+  const RP=mode==="rate"?ramp([tok("--heat-lo"),tok("--heat-mid"),tok("--heat-hi")]):ramp([tok("--dec"),tok("--mid"),tok("--inc")]);
+  const colr=v=>{if(v==null)return null;const t=mode==="rate"?Math.min(1,Math.max(0,v/vmax)):Math.min(1,Math.max(0,(v/vmax+1)/2));return RP[Math.round(t*(RP.length-1))]};
+  const sorter={change:(a,b)=>(b.dl??-1e9)-(a.dl??-1e9),last:(a,b)=>(b.last??-1e9)-(a.last??-1e9),first:(a,b)=>(b.first??-1e9)-(a.first??-1e9),edits:(a,b)=>b.a.edits-a.a.edits,title:(a,b)=>a.a.title.localeCompare(b.a.title)}[S.hmSort];
+  data.forEach(d=>d.sort(sorter));
+  if(!HM){host.innerHTML=groups.map(([g,l],i)=>`<div class="pane"><div class="pane-h">${l}<span data-n></span></div><canvas data-i="${i}" role="img" aria-label="${l}: critical-frame rate by quarter"></canvas></div>`).join("");HM={};
+    $$("canvas",host).forEach(cv=>{cv.addEventListener("pointermove",e=>heatHover(e,cv));cv.addEventListener("pointerleave",hideTip);cv.addEventListener("click",e=>{const r=heatRow(e,cv);if(r){openArticle(r.a.title)}})})}
+  HM.data=data;HM.mode=mode;$("#hmH").textContent=`${(data[0].length+data[1].length).toLocaleString("en-US")} small timelines`;
+  const H=ph?380:560,warI=R.dates.findIndex(d=>d>="2024-01");
+  $$("canvas",host).forEach((cv,gi)=>{
+    const rows=data[gi],W=cv.parentElement.clientWidth,dpr=Math.min(2,devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+"px";
+    const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,H);
+    const top=30,lft=0,cw=(W-lft)/R.dates.length,rh=(H-top-18)/Math.max(1,rows.length);
+    cv._g={top,lft,cw,rh,rows};
+    // mean strip
+    for(let j=0;j<R.dates.length;j++){const vs=rows.map(r=>(mode==="rate"?r.v:r.ch)[j]).filter(x=>x!=null);const m=vs.length?vs.reduce((s,x)=>s+x,0)/vs.length:null;const k=colr(m);c.fillStyle=k?css(k):tok("--heat-na");c.fillRect(lft+j*cw,0,Math.ceil(cw)-.5,14)}
+    c.fillStyle=tok("--muted");c.font=`10px ${tok("--mono")}`;c.fillText("group mean",lft+2,25);
+    rows.forEach((r,i)=>{const vv=mode==="rate"?r.v:r.ch;for(let j=0;j<vv.length;j++){const k=colr(vv[j]);c.fillStyle=k?css(k):tok("--heat-na");c.fillRect(lft+j*cw,top+i*rh,Math.ceil(cw)-(cw>8?.5:0),Math.max(rh-(rh>4?.6:0),.5))}});
+    // year labels + war rule
+    c.fillStyle=tok("--muted");R.dates.forEach((d,j)=>{if(d.endsWith("-01"))c.fillText(ph&&W<360?"’"+d.slice(2,4):d.slice(0,4),lft+j*cw+2,H-4)});
+    if(warI>0){const xx=lft+(warI-1+ (WAR-ym(R.dates[warI-1]))/(ym(R.dates[warI])-ym(R.dates[warI-1])))*cw;c.strokeStyle=tok("--war");c.lineWidth=1.5;c.setLineDash([3,3]);c.beginPath();c.moveTo(xx,0);c.lineTo(xx,H-16);c.stroke();c.setLineDash([])}
+    cv.parentElement.querySelector("[data-n]").textContent=`${rows.length} rows · ${R.dates.length} snapshots`;
+  });
+  // legend
+  const rc=document.createElement("canvas");rc.width=160;rc.height=10;const x=rc.getContext("2d");for(let i=0;i<160;i++){x.fillStyle=css(RP[Math.round(i/159*(RP.length-1))]);x.fillRect(i,0,1,10)}
+  $("#ramp").innerHTML=`<span>${mode==="rate"?"0":sgn(-vmax,0)}</span>`;$("#ramp").append(rc);$("#ramp").insertAdjacentHTML("beforeend",`<span>${mode==="rate"?fmt(vmax,0)+"+":sgn(vmax,0)} critical terms per 10k words${mode==="change"?" since first snapshot":""}</span><span class="key" style="margin-left:12px"><i style="background:var(--heat-na);border:1px solid var(--rule)"></i>not measured</span><span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>7 Oct 2023</span>`);
+}
+function heatRow(e,cv){const g=cv._g;if(!g)return null;const r=cv.getBoundingClientRect(),py=e.clientY-r.top-g.top;const i=Math.floor(py/g.rh);return i>=0&&i<g.rows.length?g.rows[i]:null}
+function heatHover(e,cv){const g=cv._g,row=heatRow(e,cv);if(!row){hideTip();return}const r=cv.getBoundingClientRect(),j=Math.max(0,Math.min(R.dates.length-1,Math.floor((e.clientX-r.left-g.lft)/g.cw)));
+  showTip(`<b>${esc(row.a.title)}</b><div class="r"><span>${dlab(R.dates[j])}</span><span>${fmt(row.v[j],1)} /10k</span></div><div class="r"><span>since first snapshot</span><span>${row.ch[j]==null?"–":sgn(row.ch[j],1)}</span></div><div class="r" style="opacity:.7"><span>${esc(subName(row.a.subgroup))}</span><span>select to open</span></div>`,e.clientX,e.clientY)}
+
+/* ---------- word diff ---------- */
+function wdiff(a,b){
+  const A=a.match(/\S+\s*/g)||[],B=b.match(/\S+\s*/g)||[],n=A.length,m=B.length;
+  if(n*m>90000)return [{t:"-",s:a},{t:"+",s:b}];
+  const k=x=>x.trim().toLowerCase(),D=Array.from({length:n+1},()=>new Uint16Array(m+1));
+  for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)D[i][j]=k(A[i])===k(B[j])?D[i+1][j+1]+1:Math.max(D[i+1][j],D[i][j+1]);
+  const out=[],push=(t,s)=>{if(out.length&&out.at(-1).t===t)out.at(-1).s+=s;else out.push({t,s})};
+  let i=0,j=0;while(i<n&&j<m){if(k(A[i])===k(B[j])){push("=",B[j]);i++;j++}else if(D[i+1][j]>=D[i][j+1])push("-",A[i++]);else push("+",B[j++])}
+  while(i<n)push("-",A[i++]);while(j<m)push("+",B[j++]);return out;
+}
+const renderW=ops=>ops.map(o=>o.t==="="?esc(o.s):o.t==="-"?`<del>${esc(o.s.trimEnd())}</del>${/\s$/.test(o.s)?" ":""}`:`<ins>${esc(o.s.trimEnd())}</ins>${/\s$/.test(o.s)?" ":""}`).join("");
+const sim=(a,b)=>{const o=wdiff(a,b),eq=o.filter(x=>x.t==="=").reduce((s,x)=>s+x.s.length,0);return 2*eq/Math.max(1,a.length+b.length)};
+
+/* ---------- definition ---------- */
+const KEY=["Zionism","Israel","Hamas","Antisemitism","Nakba","Israeli–Palestinian conflict","Gaza war","Jews","Anti-Zionism","Judaism"];
+function defInit(){
+  const A=R.articles,by=new Map(A.map(a=>[a.title,a]));
+  const keys=KEY.filter(t=>by.has(t));
+  const multi=A.filter(a=>a.first_sentences&&a.first_sentences.length>1).sort((a,b)=>b.first_sentences.length-a.first_sentences.length||a.title.localeCompare(b.title));
+  $("#picks").innerHTML=keys.map(t=>`<button class="pick" data-t="${esc(t)}" aria-pressed="false" type="button">${esc(t)}</button>`).join("");
+  $("#defSel").innerHTML=`<option value="">${multi.length} articles with more than one version</option>`+multi.map(a=>`<option value="${esc(a.title)}">${esc(a.title)} (${a.first_sentences.length})</option>`).join("");
+  $("#picks").onclick=e=>{const b=e.target.closest(".pick");if(b)defSet(b.dataset.t)};
+  $("#defSel").onchange=e=>{if(e.target.value)defSet(e.target.value)};
+  $("#defRange").oninput=e=>{defStop();S.defIdx=+e.target.value;defDraw()};
+  $("#defBase").onchange=defDraw;
+  $("#defPlay").onclick=()=>DEFT?defStop():defPlay();
+  $("#vlist").onclick=e=>{const b=e.target.closest("button");if(b){defStop();S.defIdx=+b.dataset.i;defDraw()}};
+  defSet(keys[0]||(multi[0]||A[0]).title,true);
+}
+function defSet(t,init){
+  defStop();const a=R.articles.find(x=>x.title===t);if(!a)return;S.def=a;
+  $$(".pick").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.t===t)));$("#defSel").value=KEY.includes(t)?"":t;
+  const i0=Math.max(0,R.dates.indexOf(a.first_sentences[0].date));
+  a._ts=R.dates.slice(i0);a._ver=a._ts.map(d=>{let k=0;a.first_sentences.forEach((f,i)=>{if(f.date<=d)k=i});return k});
+  const rg=$("#defRange");rg.min=0;rg.max=a._ts.length-1;S.defIdx=init?a._ts.length-1:0;
+  // track
+  const tr=$("#track");$$(".tk,.dot,.warl,.yr",tr).forEach(n=>n.remove());const N=a._ts.length,X=i=>N<2?50:i/(N-1)*100;
+  a._ts.forEach((d,i)=>{tr.insertAdjacentHTML("afterbegin",`<span class="tk" style="left:${X(i)}%"></span>`);if(i&&a._ver[i]!==a._ver[i-1]||i===0)tr.insertAdjacentHTML("afterbegin",`<span class="dot" style="left:${X(i)}%"></span>`);if(d.endsWith("-01")&&(i===0||!isPhone()||+d.slice(0,4)%2===1))tr.insertAdjacentHTML("afterbegin",`<span class="yr" style="left:${X(i)}%">${d.slice(0,4)}</span>`)});
+  const wi=a._ts.findIndex(d=>d>="2024-01");if(wi>0)tr.insertAdjacentHTML("afterbegin",`<span class="warl" style="left:${X(wi-1+.07)}%" title="7 October 2023"></span>`);
+  $("#vlist").innerHTML=a.first_sentences.map((f,i)=>`<button type="button" data-i="${a._ver.indexOf(i)}">v${i+1} · ${f.date}</button>`).join("");
+  defDraw();
+}
+function defDraw(){
+  const a=S.def,i=S.defIdx,v=a._ver[i],f=a.first_sentences[v],base=$("#defBase").checked?a.first_sentences[0]:a.first_sentences[Math.max(0,v-1)];
+  $("#defRange").value=i;const N=a._ts.length;$("#defHead").style.left=(N<2?50:i/(N-1)*100)+"%";
+  const ops=v===0&&!$("#defBase").checked?[{t:"=",s:f.s}]:wdiff(base.s,f.s);
+  $("#defText").innerHTML=renderW(ops)||"<span class='cap'>No sentence recorded.</span>";
+  const nd=ops.filter(o=>o.t==="-").reduce((s,o)=>s+(o.s.match(/\S+/g)||[]).length,0),na=ops.filter(o=>o.t==="+").reduce((s,o)=>s+(o.s.match(/\S+/g)||[]).length,0);
+  $("#defMeta").innerHTML=`<b>${esc(a.title)}</b> · snapshot ${dlab(a._ts[i])} · version ${v+1} of ${a.first_sentences.length}${v||$("#defBase").checked?` · <span style="color:var(--del-ink)">−${nd}</span> <span style="color:var(--add-ink)">+${na}</span> words vs ${$("#defBase").checked?"first":"previous"} version`:""}`;
+  $("#defLink").innerHTML=f.revid?`<a href="https://en.wikipedia.org/w/index.php?oldid=${f.revid}" target="_blank" rel="noopener">rev ${f.revid} ↗</a>`:"";
+  $$("#vlist button").forEach((b,k)=>b.setAttribute("aria-current",String(k===v)));
+}
+let DEFT=null;
+function defPlay(){const a=S.def;if(S.defIdx>=a._ts.length-1)S.defIdx=0;else S.defIdx++;defDraw();$("#defPlay").textContent="❚❚ Pause";DEFT=setInterval(()=>{if(S.defIdx>=a._ts.length-1){defStop();return}S.defIdx++;defDraw()},RM.matches?1400:900)}
+function defStop(){if(DEFT){clearInterval(DEFT);DEFT=null}$("#defPlay").textContent="▶ Play"}
+
+/* ---------- forest ---------- */
 function drawForest(){
-  const rows=R.did.filter(d=>d.part===part2&&d.window===win);
-  const svg=$("#forest"),W=1000,rowH=30,H=rows.length*rowH+40;svg.innerHTML="";svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
-  const L=300,Rm=20,m=Math.max(...rows.map(r=>Math.max(Math.abs(r.lo),Math.abs(r.hi))),.1)*1.1;
-  const x=v=>L+(W-L-Rm)*(v+m)/(2*m);
-  svg.append(ns("line",{x1:x(0),x2:x(0),y1:10,y2:H-24,stroke:css("--muted")}));
-  [-m,-m/2,0,m/2,m].forEach(v=>{const t=ns("text",{x:x(v),y:H-6,"text-anchor":"middle"});t.textContent=(v>0?"+":"")+fmt(v,2);svg.append(t)});
-  rows.forEach((r,i)=>{const yy=20+i*rowH,sig=r.lo>0||r.hi<0,col=r.did>0?css("--pos"):css("--neg");
-    const lab=ns("text",{x:L-10,y:yy+4,"text-anchor":"end"});lab.textContent=LABEL[r.frame]||r.frame;lab.style.fill=css("--ink");svg.append(lab);
-    svg.append(ns("line",{x1:x(r.lo),x2:x(r.hi),y1:yy,y2:yy,stroke:col,"stroke-width":1.5,opacity:sig?1:.45}));
-    svg.append(ns("rect",{x:Math.min(x(0),x(r.did)),y:yy-7,width:Math.abs(x(r.did)-x(0)),height:14,fill:col,opacity:sig?.85:.3}));
-    const t=ns("text",{x:W-Rm,y:yy+4,"text-anchor":"end"});t.textContent=(sig?"● ":"")+(r.did>0?"+":"")+fmt(r.did,2);svg.append(t)});
+  setSeg($("#partF"),S.partF);setSeg($("#winSeg"),S.win);
+  const rows=R.did.filter(d=>d.part===S.partF&&d.window===S.win);
+  const host=$("#forest");
+  if(!rows.length){host.innerHTML=`<div class="note" style="grid-column:1/-1">No estimates for this choice.</div>`;return}
+  const m=Math.max(...rows.map(r=>Math.max(Math.abs(r.lo),Math.abs(r.hi),Math.abs(r.did))),.01)*1.08;
+  const st=niceStep(2*m,isPhone()?3:5),tk=ticks(-m,m,isPhone()?3:5).filter(v=>Math.abs(v)<=m);
+  const X=v=>(v+m)/(2*m)*100;
+  const sig=r=>r.q_bh!=null?r.q_bh<.05:(r.lo>0||r.hi<0);
+  const order=["critical_rate","connection_rate",...R.critical,...R.connection,"terrorism","militant","placebo_geography"];
+  rows.sort((a,b)=>order.indexOf(a.frame)-order.indexOf(b.frame));
+  const grp=f=>f==="critical_rate"||f==="connection_rate"?"Composite rates":f==="placebo_geography"?"Placebo":R.critical.includes(f)?"Critical frames":R.connection.includes(f)?"Connection frames":"Counted separately";
+  let h=`<div class="hd c1">Frame</div><div class="hd n c2">Topic Δ</div><div class="hd n c3">Comp. Δ</div><div class="hd c5">Difference [95% CI]</div><div class="hd c4 ax" style="display:block;padding-inline:0;align-self:end"><div class="axis">${tk.map(v=>`<span style="left:${X(v)}%">${v>0?"+":""}${+v.toFixed(2)}</span>`).join("")}</div></div>`;
+  let g0=null;
+  for(const r of rows){const g=grp(r.frame);if(g!==g0){h+=`<div class="grp">${g}</div>`;g0=g}
+    const s=sig(r),col=r.did>0?"--inc":"--dec";
+    h+=`<div class="nm c1">${r.id?`<span class="pid">${r.id}</span>`:""}${esc(LABEL[r.frame]||r.frame)}</div><div class="n c2">${sgn(r.treat,2)}</div><div class="n c3">${sgn(r.control,2)}</div>
+    <div class="plot c4" data-f="${r.frame}">${tk.map(v=>`<span class="${v===0?"z":"g"}" style="left:${X(v)}%"></span>`).join("")}<span class="ci" style="left:${X(r.lo)}%;width:${X(r.hi)-X(r.lo)}%"></span><span class="pt ${s?"sig":""}" style="left:${X(r.did)}%;${s?`background:var(${col})`:""}"></span></div>
+    <div class="est num c5">${sgn(r.did,2)} <span style="color:var(--muted)">[${sgn(r.lo,2)}, ${sgn(r.hi,2)}]</span><small>${r.p_perm!=null?`p ${r.p_perm<.001?"< 0.001":"= "+r.p_perm.toFixed(3)}`:""}${r.q_bh!=null?` · q ${r.q_bh<.001?"< 0.001":"= "+r.q_bh.toFixed(3)}`:""}</small></div>`}
+  host.innerHTML=h;
+  $$(".plot",host).forEach(p=>{const r=rows.find(x=>x.frame===p.dataset.f);p.onpointermove=e=>showTip(`<b>${esc(LABEL[r.frame]||r.frame)}</b><div class="r"><span>topic mean change</span><span>${sgn(r.treat,2)}</span></div><div class="r"><span>comparison mean change</span><span>${sgn(r.control,2)}</span></div><div class="r"><span>difference</span><span>${sgn(r.did,2)}</span></div><div class="r"><span>95% interval</span><span>${sgn(r.lo,2)} to ${sgn(r.hi,2)}</span></div><div class="r"><span>articles</span><span>${r.n_t} topic · ${r.n_c} comp.</span></div><div style="opacity:.7;margin-top:4px">${esc(r.scale||"change in hits per 10k words")}</div>`,e.clientX,e.clientY);p.onpointerleave=hideTip});
+}
+function drawMatrix(){
+  const rb=R.robustness||[],host=$("#matrix");
+  if(!rb.length){host.innerHTML=`<div class="note">No robustness checks in this build.</div>`;return}
+  const ids=[...new Set(rb.map(r=>r.id))].sort(),code=c=>(c.match(/^(R\d+b?)/)||[,c])[1],codes=[...new Set(rb.map(r=>code(r.check)))];
+  const prim=id=>R.did.find(d=>d.id===id),pl=id=>{const p=prim(id);return p?`${p.part==="lead"?"Lead":"Full"} · ${p.frame==="critical_rate"?"critical":"connection"}`:""};
+  const TAIL=/\s*\(((?:weakest|log).*)\)\s*$/,nice=t=>t.replace(/[a-z]+_[a-z_]+/g,k=>(LABEL[k]||k).toLowerCase());
+  const name=c=>{const r=rb.find(r=>code(r.check)===c);return r.check.replace(/^R\d+b?\s*/,"").replace(TAIL,"")};
+  let h=`<table><thead><tr><th>Check</th>${ids.map(id=>`<th><span class="pid">${id}</span> ${pl(id)}</th>`).join("")}</tr></thead><tbody>`;
+  for(const c of codes){h+=`<tr><td><span class="mono" style="color:var(--muted);font-size:11px">${c}</span> ${esc(name(c))}</td>`;
+    for(const id of ids){const r=rb.find(r=>r.id===id&&code(r.check)===c);if(!r){h+=`<td data-l="${id}"><span class="res na"><i></i>not run</span></td>`;continue}
+      const det=r.check.match(TAIL);
+      h+=`<td data-l="${id} · ${pl(id)}"><span class="res ${r.pass?"ok":""}" title="${esc(r.check+(r.note?" · "+r.note:""))}"><i></i>${r.pass?"holds":"does not hold"}</span><br><small class="mono num" style="color:var(--muted);font-size:11px">${r.did!=null?sgn(r.did,2):"–"}${r.lo!=null?` [${sgn(r.lo,2)}, ${sgn(r.hi,2)}]`:""}${r.p!=null?` · p\u00a0${r.p<.001?"<\u00a00.001":r.p.toFixed(3)}`:""}${det?`<br>${esc(nice(det[1]))}`:""}</small></td>`}
+    h+="</tr>"}
+  host.innerHTML=h+"</tbody></table>";
 }
 
+/* ---------- dynamics ---------- */
 function drawDyn(){
-  const T=R.dynamics.treatment,C=R.dynamics.control,xs=T.map(r=>r.q);
-  const mk=(id,k,yf)=>lineChart($(id),xs,[{v:T.map(r=>r[k]),c:css("--treat")},{v:C.map(r=>r[k]),c:css("--ctrl")}],{W:500,H:240,mark:"2023-Q4",yfmt:yf});
-  mk("#edits","edits_per_article");mk("#talk","talk_per_article");mk("#revert","revert_rate",v=>(v*100).toFixed(0)+"%");mk("#anon","anon_share",v=>(v*100).toFixed(0)+"%");
+  const D=R.dynamics,ph=isPhone();
+  const ser=(k)=>[["treatment","Topic","--topic",{area:true,width:2.2}],["control","Comparison","--comp",{width:2}],["treatment_new","New topic articles","--new",{dash:"2 3",width:1.5}]].filter(([g])=>D[g]&&D[g].length).map(([g,l,c,o])=>({key:g,label:l,color:c,pts:D[g].map(r=>[qMid(r.q),r[k]]),...o}));
+  const qx=D.treatment.map(r=>qMid(r.q)),dom=[qx[0],qx.at(-1)];
+  const ql=t=>{const d=new Date(t);return `${d.getUTCFullYear()} Q${Math.floor(d.getUTCMonth()/3)+1}`};
+  const mk=(id,k,f)=>chart($(id),{series:ser(k),xDomain:dom,yfmt:f,vfmt:f||(v=>fmt(v,1)),xlab:ql,compact:ph,aria:k});
+  const pf=v=>(v*100).toFixed(0)+"%";
+  mk("#dEdits","edits_per_article");mk("#dTalk","talk_per_article");mk("#dRev","revert_rate",pf);mk("#dAnon","anon_share",pf);
+  $("#dynKey").innerHTML=ser("edits_per_article").map(s=>`<span class="key"><i class="${s.dash?"dash":"ln"}" style="background:var(${s.color});color:var(${s.color})"></i>${s.label}</span>`).join("")+`<span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>7 Oct 2023</span><span>Revert and logged-out shares use articles with 5 or more edits in the quarter.</span>`;
   const a=R.concentration.treatment,b=R.concentration.control;
-  $("#conc").innerHTML=`<h3>Who edits across the topic</h3><p class="cap">Editors who touched 10 or more articles in each group since 2021. The groups differ in size (${R.n_treatment} topic articles, ${R.n_control} comparison articles), so read this as a rough contrast. No usernames are shown.</p>
-  <div class="stats"><div class="stat"><b>${a.editors_total.toLocaleString()}</b><span>distinct editors, topic</span></div><div class="stat"><b>${a.editors_on_10plus_articles}</b><span>editors on 10+ topic articles</span></div><div class="stat"><b>${a.editors_on_25plus_articles}</b><span>editors on 25+ topic articles</span></div>
-  <div class="stat"><b>${b.editors_total.toLocaleString()}</b><span>distinct editors, comparison</span></div><div class="stat"><b>${b.editors_on_10plus_articles}</b><span>editors on 10+ comparison articles</span></div><div class="stat"><b>${b.editors_on_25plus_articles}</b><span>editors on 25+ comparison articles</span></div></div>`;
+  $("#concNote").textContent=`Equal-size random samples of ${a.articles_per_sample??"–"} articles from each group, averaged over 50 draws. No usernames are shown.`;
+  const rows=[["editors_total","Distinct editors"],["editors_on_10plus_articles","Editors on 10 or more of the sampled articles"],["editors_on_25plus_articles","Editors on 25 or more"]];
+  $("#conc").innerHTML=rows.map(([k,l])=>{const mx=Math.max(a[k]||0,b[k]||0,1);return `<div class="bar-row"><span>${l}</span><div class="tr">${[[a,"--topic","topic"],[b,"--comp","comparison"]].map(([o,c,n])=>`<div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${Math.max(.3,(o[k]||0)/mx*82)}%;background:var(${c})"></div><span class="v num">${o[k]==null?"–":o[k]<100?fmt(o[k],1):Math.round(o[k]).toLocaleString("en-US")} ${n}</span></div>`).join("")}</div></div>`}).join("");
 }
 
-function spark(v){const w=80,h=20,m=Math.max(...v,.01);return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><path d="M${v.map((x,i)=>`${(i/(Math.max(1,v.length-1))*w).toFixed(1)},${(h-2-(x/m)*(h-4)).toFixed(1)}`).join("L")}" fill="none" stroke="var(--treat)" stroke-width="1.5"/></svg>`}
+/* ---------- validation + blind ---------- */
+function drawChecks(){
+  const V=R.validation||[],host=$("#valid");
+  if(!V.length)host.innerHTML=`<div class="note">No dated validation targets in this build.</div>`;
+  else host.innerHTML=`<table><thead><tr><th>Article</th><th>Documented change</th><th>Pattern · text</th><th>Before → after</th><th>Result</th></tr></thead><tbody>${V.map(v=>`<tr><td><b>${esc(v.title||v.article||"")}</b></td><td class="wide">${esc(v.claim||v.expectation||"")}</td><td data-l="Pattern"><code class="mono" style="font-size:11px;word-break:break-all">${esc(v.pattern||"")}</code><br><span class="cap">${esc(v.part||"")}</span></td><td data-l="Before → after" class="mono num" style="font-size:12px">${v.before?dlab(v.before)+" → "+dlab(v.after):""}<br><span class="cap">${esc(v.observed||"")}</span></td><td data-l="Result" class="wide"><span class="res ${v.pass===true?"ok":v.pass==null?"na":""}"><i></i>${v.pass===true?"detected":v.pass==null?"not testable":"not detected"}</span></td></tr>`).join("")}</tbody></table>`;
+  const B=R.blind,bh=$("#blind");
+  if(!B){bh.innerHTML=`<div class="note" style="margin-top:6px"><b style="color:var(--ink-2)">Blind coding.</b> A sample of changed lead sentences is coded for stance without the article title or date. Those results are not in this build yet.</div>`;return}
+  const share=(x)=>x==null?"–":pct(x,0);
+  const bar=(lab,v,c)=>`<div class="bar-row"><span>${lab}</span><div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${Math.max(.5,(v||0)*82)}%;background:var(${c})"></div><span class="v num">${share(v)}</span></div></div>`;
+  const fv=B.framing_vs_factual,stack=(o,lab)=>{if(!o)return "";const t=(o.framing||0)+(o.factual||0)+(o.unclear||0)||1;return `<div class="bar-row"><span>${lab}</span><div style="display:flex;height:14px;border-radius:2px;overflow:hidden;gap:2px">${[["framing","--inc"],["factual","--comp"],["unclear","--rule"]].map(([k,c])=>`<span title="${k}: ${o[k]||0}" style="width:${(o[k]||0)/t*100}%;background:var(${c})"></span>`).join("")}</div></div>`};
+  bh.innerHTML=`<div class="fig" style="margin-top:6px"><div class="fig-h"><span class="fig-t">Blind coding: share of coded changes judged less favourable to the subject</span><span class="cap">${B.n_items??"–"} items (${B.n_topic??"–"} topic, ${B.n_control??"–"} comparison)${B.agreement!=null?` · coder agreement ${share(B.agreement)}`:""}</span></div>
+   <div class="bars">${bar("Topic articles",B.share_less_favourable_topic,"--topic")}${bar("Comparison articles",B.share_less_favourable_control,"--comp")}</div>
+   <p class="cap">Difference ${B.diff!=null?sgn(B.diff*100,1)+" points":"–"}${B.p_perm!=null?` · permutation p = ${B.p_perm.toFixed(3)}`:""}${B.placebo_shift!=null?` · placebo shift ${sgn(B.placebo_shift*100,1)} points`:""}</p>
+   ${fv?`<div class="fig-t" style="margin-top:6px">Kind of change</div><div class="bars">${stack(fv.topic,"Topic")}${stack(fv.control,"Comparison")}</div><div class="legend"><span class="key"><i style="background:var(--inc)"></i>framing</span><span class="key"><i style="background:var(--comp)"></i>factual</span><span class="key"><i style="background:var(--rule)"></i>unclear</span></div>`:""}
+   ${(B.examples||[]).length?`<div class="fig-t" style="margin-top:6px">Examples</div><div class="diff">${B.examples.slice(0,6).map(x=>`<div class="m"><span class="chip ${x.group}">${GROUP[x.group]||x.group}</span> <b>${esc(x.title)}</b> · <span class="cap">${esc(x.label||"")}</span><br>${esc(x.quote||"")}${x.rev0&&x.rev1?` <a href="https://en.wikipedia.org/w/index.php?diff=${x.rev1}&oldid=${x.rev0}" target="_blank" rel="noopener">diff ↗</a>`:""}</div>`).join("")}</div>`:""}</div>`;
+}
 
+/* ---------- ledger ---------- */
+function spark(v,dates){if(!v||!v.length)return "";const w=96,h=22,mx=Math.max(...v.filter(x=>x!=null),.01),n=Math.max(1,v.length-1);let d="",pen=false;v.forEach((x,i)=>{if(x==null){pen=false;return}d+=(pen?"L":"M")+(i/n*w).toFixed(1)+","+(h-2-x/mx*(h-4)).toFixed(1);pen=true});
+  const wi=dates?dates.findIndex(d=>d>="2024-01"):-1;return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">${wi>0?`<line x1="${((wi-.93)/n*w).toFixed(1)}" x2="${((wi-.93)/n*w).toFixed(1)}" y1="0" y2="${h}" style="stroke:var(--war);stroke-width:1;opacity:.6"/>`:""}<path d="${d}" style="fill:none;stroke:var(--ink-2);stroke-width:1.3"/></svg>`}
 function drawTable(){
   const q=$("#q").value.toLowerCase(),g=$("#grp").value;
   let A=R.articles.filter(a=>(!g||a.group===g)&&a.title.toLowerCase().includes(q));
-  A.forEach(a=>a.dcrit=a.crit1-a.crit0);
-  A.sort((a,b)=>{const x=a[sortK],y=b[sortK];return (typeof x==="string"?x.localeCompare(y):(x??-1e9)-(y??-1e9))*sortDir});
-  $("#rows").innerHTML=A.map(a=>`<tr tabindex="0" data-t="${encodeURIComponent(a.title)}"><td>${a.title}</td><td><span class="chip ${a.group[0]}">${a.group==="treatment"?"topic":"comparison"}</span></td><td>${a.edits.toLocaleString()}</td><td>${a.editors.toLocaleString()}</td><td>${fmt(a.crit0)}</td><td>${fmt(a.crit1)}</td><td class="${a.dcrit>0.05?"up":a.dcrit<-0.05?"down":""}">${a.dcrit>0?"+":""}${fmt(a.dcrit)}</td><td>${fmt(a.conn0)}</td><td>${fmt(a.conn1)}</td><td>${a.lead_changed}</td><td>${spark(a.crit_series)}</td></tr>`).join("");
+  A.forEach(a=>a.dcrit=a.crit1!=null&&a.crit0!=null?a.crit1-a.crit0:null);
+  A.sort((a,b)=>{const x=a[S.sortK],y=b[S.sortK];return (typeof x==="string"?x.localeCompare(y):(x??-1e9)-(y??-1e9))*S.sortDir});
+  $$("th[data-k]").forEach(th=>th.toggleAttribute("aria-sort",th.dataset.k===S.sortK)||th.dataset.k===S.sortK&&th.setAttribute("aria-sort",S.sortDir>0?"ascending":"descending"));
+  $("#count").textContent=`${A.length} of ${R.articles.length} articles`;
+  $("#rows").innerHTML=A.map(a=>`<tr tabindex="0" data-t="${esc(a.title)}" class="${a.title===S.sel?"sel":""}"><td>${esc(a.title)}${a.created_in_window?` <span class="chip" title="Created during the window; not in the test panel">new</span>`:""}</td><td><span class="chip ${a.group}">${GROUP[a.group]||a.group}</span></td><td>${(a.edits||0).toLocaleString("en-US")}</td><td>${(a.editors||0).toLocaleString("en-US")}</td><td>${fmt(a.crit0)}</td><td>${fmt(a.crit1)}</td><td class="${a.dcrit>.05?"up":a.dcrit<-.05?"dn":""}">${a.dcrit==null?"–":sgn(a.dcrit)}</td><td>${fmt(a.conn0)}</td><td>${fmt(a.conn1)}</td><td>${a.lead_changed??"–"}</td><td>${spark(a.crit_series,a.crit_series_dates)}</td></tr>`).join("");
 }
-
-function esc(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function openArticle(t){S.sel=t;showDetail(t);drawTable();$("#detail").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
+function leadDiffHTML(d){
+  const out=[];for(let i=0;i<d.length;i++){const x=d[i];
+    if(x.t==="-"){let j=i;while(j<d.length&&d[j].t==="-")j++;let k=j;while(k<d.length&&d[k].t==="+")k++;const dels=d.slice(i,j),adds=d.slice(j,k);
+      const used=new Set();for(const dl of dels){let best=-1,bs=.45;adds.forEach((ad,ai)=>{if(used.has(ai))return;const s=sim(dl.s,ad.s);if(s>bs){bs=s;best=ai}});
+        if(best>=0){used.add(best);out.push(`<div class="m">${renderW(wdiff(dl.s,adds[best].s))}</div>`)}else out.push(`<div class="d"><del>${esc(dl.s)}</del></div>`)}
+      adds.forEach((ad,ai)=>{if(!used.has(ai))out.push(`<div class="a"><ins>${esc(ad.s)}</ins></div>`)});i=k-1}
+    else if(x.t==="+")out.push(`<div class="a"><ins>${esc(x.s)}</ins></div>`);else out.push(`<div class="e">${esc(x.s)}</div>`)}
+  return out.join("")||"<div class='e'>No change</div>";
+}
 function showDetail(title){
-  const a=R.articles.find(x=>x.title===title);if(!a)return;
-  document.querySelectorAll("#rows tr").forEach(tr=>tr.classList.toggle("sel",decodeURIComponent(tr.dataset.t)===title));
-  const fr=Object.keys(a.frames0).filter(k=>a.frames0[k]||a.frames1[k]);
-  $("#detail").innerHTML=`<div class="panel" style="display:grid;gap:10px"><h3><a href="https://en.wikipedia.org/wiki/${encodeURIComponent(a.title.replace(/ /g,"_"))}" target="_blank" rel="noopener">${esc(a.title)}</a></h3>
-   <div class="cap">${a.d0} → ${a.d1} · ${a.words0.toLocaleString()} → ${a.words1.toLocaleString()} words · top 10 editors made ${pct(a.top10)} of edits</div>
-   <table><thead><tr><th>Frame term hits</th><th>${a.d0}</th><th>${a.d1}</th><th>lead ${a.d0}</th><th>lead ${a.d1}</th></tr></thead><tbody>${fr.map(k=>`<tr><td>${LABEL[k]}</td><td>${a.frames0[k]}</td><td>${a.frames1[k]}</td><td>${a.lead_frames0[k]}</td><td>${a.lead_frames1[k]}</td></tr>`).join("")||"<tr><td colspan=5>No frame terms found</td></tr>"}</tbody></table>
-   <h3>Opening sentence over time</h3><div class="timeline">${a.first_sentences.map(f=>`<div><time>${f.date}</time><span>${esc(f.s)}</span></div>`).join("")}</div></div>
-   <div class="panel" style="display:grid;gap:10px"><h3>Lead section, ${a.d0} → ${a.d1}</h3><p class="cap">Removed sentences are marked in amber, added sentences in blue.${a.lead_diff.length>=60?" Long leads show changed sentences only.":""}</p>
-   <div class="diff">${a.lead_diff.map(d=>`<div class="${d.t==="+"?"a":d.t==="-"?"d":"e"}">${esc(d.s)}</div>`).join("")||"<div class='e'>No change</div>"}</div></div>`;
+  const a=R.articles.find(x=>x.title===title);if(!a)return;S.sel=title;
+  const f0=a.frames0||{},f1=a.frames1||{},l0=a.lead_frames0||{},l1=a.lead_frames1||{};
+  const fr=Object.keys({...f0,...f1}).filter(k=>f0[k]||f1[k]||l0[k]||l1[k]);
+  const wurl="https://en.wikipedia.org/wiki/"+encodeURIComponent(a.title.replace(/ /g,"_"));
+  const durl=a.rev0&&a.rev1?`https://en.wikipedia.org/w/index.php?diff=${a.rev1}&oldid=${a.rev0}`:null;
+  const fs=a.first_sentences||[];
+  $("#detail").innerHTML=`<div class="dhead"><div class="eyebrow">Article detail</div><h3><a href="${wurl}" target="_blank" rel="noopener" style="color:inherit">${esc(a.title)}</a></h3>
+   <div class="dmeta"><span class="chip ${a.group}">${GROUP[a.group]||a.group}</span><span>${esc(subName(a.subgroup))}</span><span>${dlab(a.d0)}${a.rev0?` (rev ${a.rev0})`:""} → ${dlab(a.d1)}${a.rev1?` (rev ${a.rev1})`:""}</span><span>${(a.words0||0).toLocaleString("en-US")} → ${(a.words1||0).toLocaleString("en-US")} words</span><span>top 10 editors made ${pct(a.top10)} of edits</span>${a.created_in_window?"<span>created during the window</span>":""}${a.shocked?"<span>comparison article with its own war</span>":""}${durl?`<a href="${durl}" target="_blank" rel="noopener">full diff on Wikipedia ↗</a>`:""}</div></div>
+   <div class="fig" style="align-content:start"><div class="fig-t">Opening sentence, version by version</div><div class="tl">${fs.map((f,i)=>`<div><time>${f.date}${f.revid?`<br><a href="https://en.wikipedia.org/w/index.php?oldid=${f.revid}" target="_blank" rel="noopener" style="font-size:10.5px">rev ↗</a>`:""}</time><span class="diff" style="display:block">${i?renderW(wdiff(fs[i-1].s,f.s)):esc(f.s)}</span></div>`).join("")}</div>
+   <div class="fig-t" style="margin-top:8px">Frame term hits</div><div style="overflow-x:auto"><table class="ftab"><thead><tr><th>Frame</th><th>${a.d0}</th><th>${a.d1}</th><th>lead ${a.d0}</th><th>lead ${a.d1}</th></tr></thead><tbody>${fr.map(k=>`<tr><td>${esc(LABEL[k]||k)}</td><td>${f0[k]??"–"}</td><td>${f1[k]??"–"}</td><td>${a.lead_frames0?l0[k]??0:"–"}</td><td>${a.lead_frames1?l1[k]??0:"–"}</td></tr>`).join("")||"<tr><td colspan=5>No frame terms found</td></tr>"}</tbody></table></div></div>
+   <div class="fig" style="align-content:start"><div class="fig-t">Lead section, ${dlab(a.d0)} → ${dlab(a.d1)}</div><p class="cap">Removed text is amber and added text blue. Rewritten sentences show the word-level change.${a.lead_truncated?" This lead is long, so only changed sentences are shown.":""}</p><div class="diff" style="max-height:760px;overflow:auto">${leadDiffHTML(a.lead_diff||[])}</div></div>`;
 }
 
-function seg(el,cb){el.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));cb(b.dataset.v)})}
+/* ---------- method ---------- */
+function drawMethod(){
+  const lx=R.lexicon||{};
+  $("#lex").innerHTML=Object.entries(lx).map(([k,v])=>{const inc=Array.isArray(v)?v:v.include||[],exc=Array.isArray(v)?[]:v.exclude||[];const tag=R.critical.includes(k)?"critical":R.connection.includes(k)?"connection":k.startsWith("placebo")?"placebo":"separate";
+    return `<div><span><b style="font-weight:600">${esc(LABEL[k]||k)}</b><br><span class="cap">${tag}</span></span><code>${inc.map(esc).join("  ·  ")}${exc.length?`<br><s>minus ${exc.map(esc).join("  ·  ")}</s>`:""}</code></div>`}).join("");
+  const nc=R.articles.filter(a=>a.group==="control_contaminated").length;
+  $("#mGroups").insertAdjacentHTML("beforeend",` In this build: ${R.n_treatment} topic and ${R.n_control} comparison articles in the test panel (${R.n_treatment_hand??"–"} hand-picked topic, ${R.n_control_shocked??"–"} comparison articles with their own war), ${R.n_new_topic_articles??"–"} topic articles created during the window, and ${nc} excluded comparison articles.`);
+}
 
+/* ---------- init ---------- */
+let stA,stB;
+function redrawAll(themeOnly){drawHero(false);drawTrend();drawMinis();drawES();drawHeat();drawDyn();}
 function init(){
-  if(!R){$("#lede").textContent="Data not loaded yet.";return}
-  const tot=R.articles.reduce((s,a)=>s+a.views,0);
-  $("#lede").innerHTML=`This page measures ${R.n_treatment} articles on Judaism, Israel, Zionism, antisemitism and the Israeli–Palestinian conflict, revision by revision, from January 2021 to ${R.dates.at(-1)}. Their framing vocabulary is compared with ${R.n_control} articles on other nations, nationalisms, conflicts and religions. Only a change that is larger in the topic articles than in the comparison articles counts as evidence of a topic-specific shift.`;
-  $("#stats").innerHTML=[[R.n_treatment,"topic articles"],[R.n_control,"comparison articles"],[R.total_revisions.toLocaleString(),"revisions read"],[R.dates.length,"quarterly snapshots each"],[(tot/1e6).toFixed(0)+"M","pageviews in the window"]].map(([b,s])=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+  if(!R){$("#lede").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
+  drawLede();
   const fs=$("#frameSel");["critical_rate","connection_rate",...R.frames].forEach(k=>fs.append(new Option(LABEL[k]||k,k)));
-  fs.onchange=()=>{frame=fs.value;drawTrend()};
-  seg($("#partSeg"),v=>{part=v;drawTrend()});seg($("#partSeg2"),v=>{part2=v;drawForest()});
-  const wins=[...new Set(R.did.map(d=>d.window))];win=wins[0];
-  $("#winSeg").innerHTML=wins.map((w,i)=>`<button data-v="${w}" aria-pressed="${i===0}">${w}</button>`).join("");seg($("#winSeg"),v=>{win=v;drawForest()});
-  $("#critList").textContent=R.critical.map(k=>LABEL[k]).join(", ");$("#connList").textContent=R.connection.map(k=>LABEL[k]).join(", ");
+  fs.onchange=()=>{S.frame=fs.value;drawTrend()};
+  seg($("#partA"),v=>{S.part=v;drawTrend()});seg($("#setA"),v=>{S.set=v;drawTrend()});
+  seg($("#esOut"),v=>{S.es=v;drawES()});seg($("#esPart"),v=>{S.esPart=v;drawES()});
+  seg($("#hmMode"),v=>{S.hmMode=v;drawHeat()});seg($("#hmPart"),v=>{S.hmPart=v;drawHeat()});$("#hmSort").onchange=e=>{S.hmSort=e.target.value;drawHeat()};
+  const wins=[...new Set(R.did.map(d=>d.window))];S.win=wins[0];
+  $("#winSeg").innerHTML=wins.map(w=>`<button data-v="${esc(w)}" aria-pressed="false">${esc(w[0].toUpperCase()+w.slice(1))}</button>`).join("");
+  seg($("#winSeg"),v=>{S.win=v;drawForest()});seg($("#partF"),v=>{S.partF=v;drawForest()});
   $("#q").oninput=drawTable;$("#grp").onchange=drawTable;
-  document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=sortK===k?-sortDir:-1;sortK=k;drawTable()});
-  $("#rows").addEventListener("click",e=>{const tr=e.target.closest("tr");if(tr)showDetail(decodeURIComponent(tr.dataset.t))});
-  $("#rows").addEventListener("keydown",e=>{if(e.key==="Enter"){const tr=e.target.closest("tr");if(tr)showDetail(decodeURIComponent(tr.dataset.t))}});
-  drawTrend();drawForest();drawDyn();drawTable();showDetail((R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{drawTrend();drawForest();drawDyn()});
-  new MutationObserver(()=>{drawTrend();drawForest();drawDyn()}).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+  $$("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;S.sortDir=S.sortK===k?-S.sortDir:(k==="title"||k==="group"?1:-1);S.sortK=k;drawTable()});
+  const pick=e=>{const tr=e.target.closest("tr");if(tr){S.sel=tr.dataset.t;showDetail(S.sel);$$("#rows tr").forEach(r=>r.classList.toggle("sel",r===tr))}};
+  $("#rows").addEventListener("click",pick);$("#rows").addEventListener("keydown",e=>{if(e.key==="Enter")pick(e)});
+  const cv=$("#hero");cv.addEventListener("pointermove",heroHover);cv.addEventListener("pointerdown",heroHover);cv.addEventListener("pointerleave",hideTip);
+  drawHero(true);
+  stA=stepsA();stB=stepsB();
+  drawTrend();minis();drawES();drawHeat();defInit();drawForest();drawMatrix();drawDyn();drawChecks();drawTable();drawMethod();
+  showDetail((R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
+  scrolly($("#stepsA"),stA,drawTrend);scrolly($("#stepsB"),stB,drawES);
+  let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;HM=null;redrawAll()},150)});
+  const re=()=>{HM=null;redrawAll(true)};
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change",re);
+  new MutationObserver(re).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 }
 init();
 </script>

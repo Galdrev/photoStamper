@@ -23,6 +23,7 @@ Each entry gives the technique, why it was used, what it cost, and a verdict aft
 | 15 | Verify | Validation targets against press claims | Known-answer tests | — | Mixed, and informative. 2 of 3 testable targets passed. Zionism's "colonization" wording entered between Apr and Jul 2024, earlier than the press timeline. The original target is kept as a FAIL and a separate POST-HOC target is labelled as such, rather than quietly moving the goalposts |
 | 16 | Explore | "Go wild" handled by labelling: 4 exploratory analyses + exact-revision tracing, all marked as not pre-registered | Freedom to explore without contaminating the confirmatory test | 30 min | KEEP. The separation between pre-registered and exploratory is what keeps exploration honest |
 | 17 | Build | Named a file bisect.py, which shadowed Python's stdlib and broke `random` | Caught by a mock test before CI | 1 min | Lesson: mock-test every new script locally, even ones that need the network |
+| 18 | Explore | Organic vs organised: 7 aggregate signals, each against a null model (popularity-preserving overlap, circular-shift timelines), with editors as per-run salted hashes | Answers the user's question without building a dossier on volunteers. Null models stop shared-interest editing reading as collusion | 25 min | pending |
 | 10 | Build | Synthetic test exposed the log1p scale blowing up for articles starting at zero | Planted-effect test: a known drift must be recovered | 5 min | KEEP. Always test the stats on data where you know the answer |
 
 ## Open questions to judge at the end

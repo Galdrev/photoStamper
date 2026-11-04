@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - run: pip install requests numpy
+      - name: Per-run secret salt for editor hashing (never written to disk or logs)
+        run: echo "::add-mask::$(openssl rand -hex 16 | tee /tmp/salt)" && echo "WT_SALT=$(cat /tmp/salt)" >> $GITHUB_ENV && rm /tmp/salt
       - name: Restore raw cache
         uses: actions/cache/restore@v4
         with:
@@ -45,6 +47,9 @@ jobs:
       - name: Trace first-sentence changes to exact revisions
         working-directory: wikitrends
         run: timeout 45m python trace_changes.py || echo "::warning::bisect incomplete"
+      - name: Organic vs organised editing signals
+        working-directory: wikitrends
+        run: python coordination.py || echo "::warning::coordination failed"
       - name: Commit results
         run: |
           git config user.name "wikitrends-bot"

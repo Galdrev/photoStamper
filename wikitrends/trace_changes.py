@@ -3,14 +3,18 @@
   python trace_changes.py -> data/bisect.json
 For each pair of consecutive quarterly snapshots whose first sentence differs, binary-search the
 revisions in between for the first revision whose first sentence differs from the earlier snapshot's.
-Usernames are deliberately not recorded.
+Usernames are not recorded; a salted hash (salt never stored) lets us count distinct editors.
 """
 import gzip, json, os, re, sys
 from concurrent.futures import ThreadPoolExecutor
 
+import hashlib
+
 import fetch as F
 import analyze as A
-from corpus import KEY_ARTICLES
+from corpus import KEY_ARTICLES, KEY_ARTICLES_CONTROL
+
+SALT = os.environ.get("WT_SALT") or os.urandom(16).hex()   # never written anywhere
 
 ART = os.path.join(A.DATA, "articles")
 _cache = {}
@@ -58,14 +62,15 @@ def bisect_article(title):
         changes.append({"revid": r["revid"], "parentid": r.get("parentid"), "timestamp": r["timestamp"],
                         "comment": (r.get("comment") or "")[:300], "tags": r.get("tags") or [],
                         "size_delta": r["size"] - revs[lo]["size"], "reverted": "mw-reverted" in (r.get("tags") or []),
-                        "before": before, "after": after, "snapshot_after": f1})
+                        "before": before, "after": after, "snapshot_after": f1,
+                        "editor": hashlib.sha256((SALT + (r.get("user") or "")).encode()).hexdigest()[:12]})
     return title, changes
 
 
 def main():
     out = {}
     with ThreadPoolExecutor(4) as ex:
-        for t, ch in ex.map(bisect_article, KEY_ARTICLES):
+        for t, ch in ex.map(bisect_article, KEY_ARTICLES + KEY_ARTICLES_CONTROL):
             out[t] = ch
             print(f"{t}: {len(ch)} first-sentence changes traced", flush=True)
     json.dump(out, open(os.path.join(A.DATA, "bisect.json"), "w"), indent=1)

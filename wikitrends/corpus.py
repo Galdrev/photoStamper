@@ -182,3 +182,6 @@ KEY_ARTICLES = ["Zionism", "Israel", "Hamas", "October 7 attacks", "Gaza genocid
                 "Israeli–Palestinian conflict", "Jerusalem", "West Bank", "Israeli settlement", "Balfour Declaration",
                 "Theodor Herzl", "Mandatory Palestine", "Hezbollah", "Israel Defense Forces", "Land of Israel",
                 "1948 Palestinian expulsion and flight", "Zionism as settler colonialism"]
+KEY_ARTICLES_CONTROL = ["Kurdish nationalism", "Hindu nationalism", "Armenian genocide", "Russo-Ukrainian War", "Islamic State",
+                        "Catholic Church", "India", "Taiwan", "Kashmir conflict", "Uyghur genocide", "Irish nationalism",
+                        "Islam", "Turkey", "Ukraine", "Tibet"]
