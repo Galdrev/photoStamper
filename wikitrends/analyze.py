@@ -313,10 +313,16 @@ def did_test(t, c, weights_c=None):
         RNG.shuffle(pooled)
         perm[i] = pooled[:nt].mean() - pooled[nt:].mean()
     p = (np.sum(np.abs(perm) >= abs(est)) + 1) / (N_PERM + 1)
-    bt = RNG.choice(t, (N_BOOT, len(t))).mean(1) - RNG.choice(c, (N_BOOT, len(c))).mean(1)
+    if weights_c is not None:
+        w = np.asarray(weights_c, float); w = w / w.sum()
+        bc = np.array([c[RNG.choice(len(c), len(c), p=w)].mean() for _ in range(N_BOOT)])
+        bt = RNG.choice(t, (N_BOOT, len(t))).mean(1) - bc
+        p = None                              # permutation test not defined for the reweighted comparison
+    else:
+        bt = RNG.choice(t, (N_BOOT, len(t))).mean(1) - RNG.choice(c, (N_BOOT, len(c))).mean(1)
     lo, hi = np.percentile(bt, [2.5, 97.5])
     return {"did": float(est), "treat": float(t.mean()), "control": float(c.mean()),
-            "lo": float(lo), "hi": float(hi), "p_perm": float(p), "n_t": int(len(t)), "n_c": int(len(c)),
+            "lo": float(lo), "hi": float(hi), "p_perm": None if p is None else float(p), "n_t": int(len(t)), "n_c": int(len(c)),
             "_perm": perm, "_t": t, "_c": c}
 
 
@@ -503,7 +509,8 @@ def main():
             if a["title"] in wmap and val(s0, part, k) is not None and val(s1, part, k) is not None:
                 cc.append(TF(val(s1, part, k)) - TF(val(s0, part, k))); ww.append(wmap[a["title"]])
         r4 = did_test(changes(T, part, k, first, last), np.array(cc), weights_c=np.array(ww) if sum(ww) else None)
-        chk(pid, "R4 comparison reweighted to topic article lengths", r4, same(r4))
+        chk(pid, "R4 comparison reweighted to topic article lengths", r4,
+            r4 is not None and np.sign(r4["did"]) == sign and (r4["lo"] > 0 or r4["hi"] < 0))
         # R5 medians
         t, c = changes(T, part, k, first, last), changes(C, part, k, first, last)
         med = float(np.median(t) - np.median(c))

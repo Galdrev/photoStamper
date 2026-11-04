@@ -320,20 +320,6 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
 /* sourcing */
 .stack-key{display:flex;flex-wrap:wrap;gap:6px 14px;font:12px/1.4 var(--body);color:var(--ink-2)}
 
-/* cross-language */
-.xl{overflow-x:auto}
-.xl table{border-collapse:separate;border-spacing:2px;font-size:12.5px;min-width:560px;width:100%}
-.xl th{font:500 10.5px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:4px;text-align:center;white-space:nowrap}
-.xl th.t{text-align:left;font:500 13px var(--body);text-transform:none;letter-spacing:0;color:var(--ink);white-space:normal;min-width:150px}
-.xl th.sep{padding-top:14px;text-align:left}
-.xl td{padding:0}
-.xl td button{width:100%;height:34px;border:0;border-radius:2px;font:500 11px var(--mono);cursor:pointer;color:var(--ink)}
-.xl td button[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
-.xl td .na{display:block;height:34px;border-radius:2px;background:repeating-linear-gradient(135deg,var(--faint) 0 4px,transparent 4px 8px)}
-.xl-pane{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
-.xl-pane .col2{display:grid;gap:8px;align-content:start;min-width:0}
-.xl-text{font:400 16.5px/1.6 var(--display);background:var(--sheet);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;unicode-bidi:plaintext;overflow-wrap:anywhere}
-
 /* ledger */
 .tbl{overflow:auto;max-height:620px;border:1px solid var(--rule);border-radius:4px;background:var(--sheet)}
 .tbl table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
@@ -387,129 +373,123 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tabs a:hover{color:var(--ink)}
 .tabs-n{font:500 10.5px var(--mono);border:1px solid currentColor;border-radius:2px;padding:1px 4px}
 .tabs-name{margin-left:auto;align-self:center;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.pg-head{display:grid;gap:14px;padding-top:40px;max-width:74ch}
-.pg-head h1{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.025em}
-.pg-index{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 13px var(--mono)}
-.toy{background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--ink);border-radius:4px;padding:20px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:40px;scroll-margin-top:60px}
-.toy-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px}
-.toy-h h2{font-size:clamp(26px,3.2vw,36px)}
-.toy-h .eyebrow::before{display:none}
-.toy-q{font:400 16.5px/1.55 var(--body);max-width:72ch;color:var(--ink-2)}
 .btn{font:600 13px var(--body);border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:3px;padding:8px 13px;cursor:pointer}
 .btn.primary{background:var(--ink);color:var(--paper)}
 .btn.sm{padding:5px 9px;font-size:12px}
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.paste{position:relative}
-.paste>summary{list-style:none;display:inline-block}
-.paste>summary::-webkit-details-marker{display:none}
-.paste>div{display:grid;gap:8px;margin-top:8px;max-width:520px}
-textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);border-radius:3px;background:var(--sheet);color:var(--ink);width:100%;max-width:100%}
-.csv-fb{min-height:110px}
-.how pre,.formula{font:12.5px/1.7 var(--mono);white-space:pre-wrap;margin:0;color:var(--ink-2);background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:12px 14px;overflow-x:auto}
-.ab{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:3px;font:700 12px var(--mono);color:#fff;flex:none}
-.ab.a{background:var(--s2)} .ab.b{background:var(--s1)}
-.slices{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
-.slice{border:1px solid var(--rule);border-radius:4px;padding:12px 14px;display:grid;gap:10px;align-content:start;background:var(--paper);min-width:0}
-.slice.a{border-top:3px solid var(--s2)} .slice.b{border-top:3px solid var(--s1)}
-.slice-h{display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap}
-.slice-h b{font:600 14px var(--body)}
-.slice-n{font:600 13px var(--mono)}
-.frow{display:grid;grid-template-columns:96px minmax(0,1fr);gap:6px 10px;align-items:center;font-size:13px}
-.frow>span{font:11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-.frow .picks{gap:4px}
-.frow .pick{font-size:12px;padding:4px 9px}
-.frow input[type=number],.frow input[type=search],.frow select{width:100%;font:13px var(--body);padding:5px 7px;border:1px solid var(--rule);border-radius:3px;background:var(--sheet);color:var(--ink)}
-.frow .two{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.frow .two label{display:grid;gap:2px;font:10.5px var(--mono);color:var(--muted)}
-.estbox{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px 24px;align-items:center;border:1px solid var(--ink);border-radius:4px;padding:16px;background:var(--paper)}
-.estbox .k{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.estbox .v{font:500 clamp(36px,6vw,52px)/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.estbox .u{font:12px var(--mono);color:var(--muted)}
-.eband{position:relative;height:34px;margin:4px 8px 0}
-.eband .z{position:absolute;top:0;bottom:12px;border-left:1px solid var(--ink)}
-.eband .ci{position:absolute;top:8px;height:12px;background:var(--topic-soft);border:1px solid var(--topic);border-radius:2px}
-.eband .pt{position:absolute;top:7px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--ink)}
-.eband .tk{position:absolute;bottom:-2px;transform:translateX(-50%);font:10.5px var(--mono);color:var(--muted);white-space:nowrap}
-.estbox .ns{font:12px/1.5 var(--mono);color:var(--ink-2)}
-.drivers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
-.dlist{display:grid;gap:0;font-size:13.5px;align-content:start}
-.dlist .h{font:600 12px var(--mono);display:flex;gap:8px;align-items:center;padding-bottom:6px;border-bottom:1px solid var(--rule)}
-.dlist button{display:grid;grid-template-columns:minmax(0,1fr) 64px 70px;gap:8px;align-items:center;text-align:left;background:none;border:0;border-bottom:1px solid var(--faint);padding:6px 0;cursor:pointer;color:var(--ink);font:inherit}
-.dlist button:hover{background:var(--faint)}
-.dlist .bar{height:8px;border-radius:1px}
-.dlist .num{font:12px var(--mono);text-align:right}
-.sc-wrap{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
-.sc-wrap.brush{touch-action:none;cursor:crosshair}
-.sc-wrap svg{display:block;width:100%;overflow:visible}
-.rlist{display:flex;flex-wrap:wrap;gap:6px 16px;font:12px var(--mono);color:var(--ink-2)}
-.sel-list{display:flex;flex-wrap:wrap;gap:6px;max-height:180px;overflow:auto}
-.sel-list button{font:12.5px var(--body);border:1px solid var(--rule);background:var(--paper);border-radius:3px;padding:3px 8px;cursor:pointer;color:var(--ink)}
-.chip.word{font:500 12px var(--body);display:inline-flex;align-items:center;gap:6px;padding:3px 4px 3px 8px;color:var(--ink);border-color:var(--rule);background:var(--paper)}
-.chip.word i{width:12px;height:3px;border-radius:1px}
-.chip.word button{border:0;background:none;color:var(--muted);cursor:pointer;font:600 14px/1 var(--body);padding:0 4px}
-.sbs-rows{display:grid;gap:0}
-.sbs-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:6px 16px;padding:12px 0;border-bottom:1px solid var(--faint);align-items:start}
-.sbs-row .t{display:flex;gap:8px;align-items:center;font:600 14px var(--body)}
-.sbs-row .t i{width:14px;height:3px;border-radius:1px;flex:none}
-.fstrip{position:relative;height:22px;margin:2px 6px 6px}
-.fstrip::before{content:"";position:absolute;left:0;right:0;top:10px;height:1px;background:var(--rule)}
-.fstrip .dm{position:absolute;top:5px;width:10px;height:10px;margin-left:-5px;transform:rotate(45deg);background:var(--ink-2);border:2px solid var(--sheet)}
-.fstrip .warl{position:absolute;top:0;height:20px;border-left:1.5px dashed var(--war)}
-.sbs-row .s{font:400 15px/1.5 var(--display);color:var(--ink-2)}
-.tm-stage{display:grid;gap:12px;padding:18px;border:1px solid var(--rule);border-radius:4px;background:var(--paper)}
-.tm-date{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
-.tm-date span:first-child{font:500 clamp(28px,4.5vw,44px)/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.tm-seen{font:500 13.5px var(--mono);color:var(--ink-2);min-height:1.4em}
-.tm-seen b{font:500 20px var(--display);color:var(--ink)}
-.big-range{width:100%;height:36px;margin:0;accent-color:var(--topic);cursor:pointer}
-.tm-scale{position:relative;height:16px;font:10.5px var(--mono);color:var(--muted)}
-.tm-scale span{position:absolute;transform:translateX(-50%)}
-.rp-stage{display:grid;gap:12px}
-.rp-strip canvas{display:block;width:100%;height:64px}
-.rp-now{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:baseline}
-.rp-now .d{font:500 clamp(26px,4vw,40px)/1 var(--display);font-variant-numeric:tabular-nums}
-.rp-ct{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border-top:1px solid var(--ink)}
-.rp-ct div{padding-top:8px}
-.rp-ct b{display:block;font:500 28px/1.1 var(--display);font-variant-numeric:tabular-nums}
-.rp-ct span{font:11.5px/1.3 var(--mono);color:var(--muted)}
-.rp-s{font:400 clamp(17px,2vw,22px)/1.45 var(--display);min-height:4.4em;padding:14px 16px;border:1px solid var(--rule);border-radius:3px;background:var(--paper)}
-.rp-s del,.sbs-row .s del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
-.rp-s ins,.sbs-row .s ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
-.rp-seek{width:100%;accent-color:var(--ink)}
-.hist svg{display:block;width:100%;overflow:visible}
-.projbars{display:grid;gap:0;max-height:520px;overflow:auto;border-top:1px solid var(--rule)}
-.projbars button{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr) 120px;gap:10px;align-items:center;background:none;border:0;border-bottom:1px solid var(--faint);padding:6px 0;text-align:left;cursor:pointer;color:var(--ink);font:13px var(--body)}
-.projbars button[aria-pressed="true"]{background:var(--add-bg)}
-.projbars .trk{position:relative;height:12px}
-.projbars .trk i{position:absolute;top:0;height:12px;border-radius:1px}
-.projbars .trk b{position:absolute;top:-2px;bottom:-2px;border-left:1px solid var(--muted)}
-.projbars .num{font:12px var(--mono);text-align:right;color:var(--ink-2)}
 .drawer{position:fixed;z-index:40;top:0;right:0;bottom:0;width:min(560px,100vw);background:var(--sheet);border-left:1px solid var(--ink);box-shadow:-12px 0 40px rgb(0 0 0/.16);overflow:auto;padding:calc(env(safe-area-inset-top,0px) + 16px) max(18px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) 18px;display:grid;gap:14px;align-content:start}
 .drawer-h{display:flex;justify-content:space-between;gap:12px;align-items:start}
 .drawer-h h3{font-size:26px}
-.bc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
-.bc-t{border:1px solid var(--rule);border-radius:3px;padding:14px 16px;display:grid;gap:8px;align-content:start;background:var(--paper)}
-.bc-t .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
-.bc-t p{font:400 16px/1.6 var(--display);unicode-bidi:plaintext}
-.bc-t.newer{border-color:var(--ink)}
-.ent{font:500 .78em var(--mono);background:var(--faint);border:1px solid var(--rule);border-radius:2px;padding:0 3px;white-space:nowrap}
-#bcBox{display:grid;gap:12px}
-.bc-choices{display:flex;flex-wrap:wrap;gap:8px}
-.bc-reveal{border-left:3px solid var(--ink);padding:4px 0 4px 14px;display:grid;gap:6px;font-size:15px}
-.bc-reveal .verdict{font:600 15.5px var(--body)}
-.bc-prog{display:flex;gap:4px;flex-wrap:wrap}
-.bc-prog i{width:18px;height:6px;border-radius:1px;background:var(--faint)}
-.bc-prog i.on{background:var(--ink-2)} .bc-prog i.cur{background:var(--add-bd)}
+.drawer .tl{max-height:360px;overflow:auto}
+
+
+.deck ins,.deck del{border-radius:2px;padding:0 .12em}
+.deck ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none}
+.deck del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px}
+@keyframes tickin{from{opacity:0;transform:translateY(-10px)}}
+@keyframes land{0%{opacity:0;transform:translateY(-34px)}70%{opacity:1;transform:translateY(3px)}100%{transform:none}}
+@keyframes drawln{from{stroke-dashoffset:1}}
+.rv-pre .tkr,.rv-pre .tkreal{opacity:0}
+.rv-go .tkr{animation:tickin .35s ease-out both;animation-delay:var(--d,0s)}
+.rv-go .tkreal{animation:land .7s cubic-bezier(.2,.8,.3,1.15) both;animation-delay:var(--d,0s)}
+.rv-pre .drawln{stroke-dasharray:1;stroke-dashoffset:1}
+.rv-go .drawln{stroke-dasharray:1;animation:drawln 1.6s ease-out both;animation-delay:var(--d,0s)}
+
+/* headline moment 1: the most important chart */
+.kfig{gap:10px}
+.kfig .chart{touch-action:pan-y}
+.kfig .chart svg text.ax{font:11px var(--mono);fill:var(--muted)}
+.kfig .chart svg text.rl{font:600 11px var(--mono);letter-spacing:.04em;fill:var(--ink-2)}
+.kfig .chart svg text.big{font:500 26px var(--display);fill:var(--ink);letter-spacing:-.01em}
+.inlab{font:500 12px var(--mono);color:var(--add-ink);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:2px;justify-self:start}
+
+/* headline moment 2: where the real one lands */
+.chrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,210px);gap:10px 22px;padding:14px 0 16px;border-bottom:1px solid var(--faint);align-items:start}
+.chrow:last-child{border-bottom:0}
+.chrow-h{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.chrow-h b{font:600 14px var(--body)}
+.chrow svg{display:block;width:100%;overflow:visible}
+.chcap{font:400 15px/1.45 var(--body);color:var(--ink)}
+.chcap b{font-weight:700}
+.calib{border-left:1px dashed var(--rule);padding-left:14px;display:grid;gap:4px;align-content:start}
+.calib .k{font:600 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.calib p{font:12.5px/1.4 var(--body);color:var(--ink-2)}
+
+/* headline moment 3: robustness scoreboard */
+.rule{border:1.5px solid var(--ink);border-radius:4px;background:var(--sheet);padding:16px 18px;display:grid;gap:12px}
+.rule-q{font:400 17px/1.5 var(--display);max-width:70ch}
+.rule-vis{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center}
+.slots{position:relative;display:flex;gap:8px;padding-top:18px}
+.slots .sl{width:62px;height:40px;border:1.5px solid var(--ink-2);border-radius:3px;display:grid;place-items:center;font:600 12px var(--mono);color:var(--ink-2);background:var(--paper)}
+.slots .sl.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.slots .thr{position:relative;width:0;border-left:2px solid var(--war);margin:-18px 0 -6px}
+.slots .thr span{position:absolute;top:0;left:6px;font:600 10.5px var(--mono);color:var(--war);white-space:nowrap}
+.verdict{font:500 clamp(26px,3.6vw,36px)/1.05 var(--display);letter-spacing:-.01em}
+.verdict small{display:block;font:12px/1.4 var(--mono);color:var(--muted);letter-spacing:0;margin-top:4px}
+.brow{display:grid;gap:10px;padding:16px 0;border-bottom:1px solid var(--faint)}
+.brow-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.brow-h b{font:600 14px var(--body)}
+.cond{display:inline-flex;align-items:center;gap:6px;font:500 12px var(--mono);color:var(--ink-2);border:1px solid var(--rule);border-radius:2px;padding:3px 7px;background:var(--paper)}
+.cond.ok::before{content:"✓";color:var(--topic);font-weight:700}
+.cond.no::before{content:"✕";color:var(--war);font-weight:700}
+.pips{display:inline-flex;gap:3px;align-items:center;position:relative}
+.pips i{width:12px;height:12px;border-radius:2px;border:1.5px solid var(--ink-2)}
+.pips i.on{background:var(--ink-2)}
+.pips .th{width:0;height:18px;border-left:2px solid var(--war);margin:0 2px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
+.tile{font:inherit;color:inherit;text-align:left;background:var(--sheet);border:1px solid var(--rule);border-radius:3px;padding:8px 8px 6px;display:grid;gap:3px;cursor:pointer;min-width:0}
+.tile:hover,.tile[aria-pressed="true"]{border-color:var(--ink)}
+.tile.extra{border-style:dashed}
+.tile .tt{display:flex;justify-content:space-between;gap:6px;font:600 11px var(--mono);color:var(--ink-2)}
+.tile .tt .ok{color:var(--topic)} .tile .tt .no{color:var(--war)}
+.tile .tn{font:12px/1.25 var(--body);color:var(--ink);min-height:2.5em}
+.tile .ts{font:10px var(--mono);color:var(--muted)}
+.tile svg{display:block;width:100%;height:22px;overflow:visible}
+.tdet{font:13.5px/1.5 var(--body);color:var(--ink-2);min-height:1.5em}
+.tdet:empty{display:none}
+
+/* headline moment 4: the ratchet */
+.surv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.surv svg,.beat svg{display:block;width:100%;overflow:visible}
+.beat{display:grid;gap:10px}
+.beat .chart{touch-action:pan-y;cursor:crosshair}
+.ruleline{font:12.5px/1.5 var(--mono);color:var(--ink-2);border-left:2px solid var(--ink-2);padding-left:10px}
+.beat-s{font:400 clamp(17px,2vw,21px)/1.45 var(--display);padding:12px 14px;border:1px solid var(--rule);border-radius:3px;background:var(--paper);min-height:3.2em;unicode-bidi:plaintext}
+.beat-s .when{display:block;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.terms{display:flex;flex-wrap:wrap;gap:6px}
+.terms span{font:500 11.5px var(--mono);border:1px solid var(--rule);border-radius:2px;padding:2px 7px;color:var(--ink-2);background:var(--paper)}
+.terms span b{color:var(--ink)}
+
+/* headline moment 5: same rules, different people */
+.stripes{display:grid;gap:4px}
+.stripes-h{display:grid;grid-template-columns:110px minmax(0,1fr) 92px;gap:10px;font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.stripes-h .two{display:grid;grid-template-columns:1fr 1fr}
+.stripe{display:grid;grid-template-columns:110px minmax(0,1fr) 92px;gap:10px;align-items:center;font:inherit;color:var(--ink);background:none;border:0;padding:0;text-align:left;cursor:pointer;min-height:34px}
+.stripe .ln{font:500 12.5px var(--body);display:flex;gap:6px;align-items:baseline;min-width:0}
+.stripe .ln b{font:600 11px var(--mono);color:var(--muted);text-transform:uppercase}
+.stripe .bar{display:grid;grid-template-columns:1fr 1fr;height:30px;border-radius:2px;overflow:hidden;border:1px solid transparent}
+.stripe .bar i{display:block;transition:background-color .6s ease}
+.stripe .bar i+i{border-left:2px solid var(--sheet)}
+.stripe .v{font:12px var(--mono);color:var(--ink-2);text-align:right;white-space:nowrap}
+.stripe[aria-pressed="true"] .bar{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.stripe[aria-pressed="true"] .ln{font-weight:700}
+.stripe.na{cursor:default;color:var(--muted)}
+.stripe.na .bar{background:repeating-linear-gradient(135deg,var(--faint) 0 4px,transparent 4px 8px);border-color:var(--rule)}
+.stripe:not(.na):hover .bar{border-color:var(--ink-2)}
+.xl-pane{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.xl-pane .col2{display:grid;gap:8px;align-content:start;min-width:0}
+.xl-text{font:400 16.5px/1.6 var(--display);background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;unicode-bidi:plaintext;overflow-wrap:anywhere;max-height:420px;overflow:auto}
 
 @media (max-width:900px){
   .scrolly{grid-template-columns:minmax(0,1fr);gap:0}
   .scrolly .sticky{order:-1;top:calc(env(safe-area-inset-top,0px) + 46px);background:var(--paper);padding-block:8px;margin-inline:-4px;padding-inline:4px}
   .scrolly .steps{gap:46vh;padding-block:30vh 30vh;position:relative;z-index:3}
   .step{box-shadow:0 6px 24px rgb(0 0 0/.08)}
-  #trend,#es{height:clamp(210px,32vh,300px)!important}
+  #trend,#es,#kChart{height:clamp(230px,34vh,320px)!important}
   .scrolly .fig{gap:8px;padding:10px}
-  .ledeband,.heat,.detail,.grid2,.xl-pane,.canbox{grid-template-columns:minmax(0,1fr)}
+  .ledeband,.heat,.detail,.grid2,.xl-pane,.canbox,.surv,.chrow{grid-template-columns:minmax(0,1fr)}
+  .calib{border-left:0;border-top:1px dashed var(--rule);padding:8px 0 0}
   .canbox>div+div{border-left:0;border-top:1px solid var(--rule)}
   .layers{grid-template-columns:minmax(0,1fr)}
 }
@@ -547,26 +527,23 @@ textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);bord
   .dumbs,.clocks{grid-template-columns:minmax(0,1fr)}
   .tabs-name{display:none}
   .tabs-in{gap:4px 18px}
-  .toy{padding:14px}
-  .bc,.slices,.drivers,.estbox{grid-template-columns:minmax(0,1fr)}
-  .frow{grid-template-columns:minmax(0,1fr);gap:4px}
-  .sbs-row{grid-template-columns:minmax(0,1fr)}
-  .projbars button{grid-template-columns:minmax(0,1fr) auto}
-  .projbars .trk{grid-column:1/-1;grid-row:2}
   .drawer{width:100vw;border-left:0}
-  .rp-ct{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .rp-ct b{font-size:24px}
   .tcard{grid-template-columns:minmax(0,1fr);gap:8px}
   #trPicks{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
   #trPicks .pick,#trPicks .grp{flex:none}
   .tcard .when{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .stripe,.stripes-h{grid-template-columns:72px minmax(0,1fr) 78px;gap:8px}
+  .stripe .ln span{display:none}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .slots .sl{width:52px}
 }
+/*LABCSS*/
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
 <div id="tip" hidden></div>
 <div id="gloss" role="tooltip" hidden></div>
-<nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The report</a><a href="#lab" id="tabPlay" aria-current="false">Data lab <span class="tabs-n">6 labs</span></a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
+<nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The report</a><a href="#lab" id="tabLab" aria-current="false">Data lab</a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
 <div class="wrap">
 <div id="view-report">
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 2021–2026</span></div>
@@ -626,15 +603,49 @@ textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);bord
   <div class="findings col"><!--FINDINGS--></div>
 </section>
 
+<section class="sec" id="key" aria-labelledby="keyH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>The most important chart</div>
+    <h2 id="keyH">Did loaded words rise faster in the topic articles?</h2>
+    <p class="deck">Scroll to build the chart one layer at a time. Every line counts words like “colonial”, “apartheid”, “genocide” and “occupation” per 10,000 words of text, in one copy of each article every three months.</p>
+  </header>
+  <div class="scrolly" id="scK">
+    <div class="steps" id="stepsK"></div>
+    <figure class="sticky fig kfig" style="margin:0">
+      <div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="seg" id="kPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
+      <div class="chart" id="kChart" style="height:clamp(270px,48vh,420px)"></div>
+      <div class="legend" id="kKey"></div>
+    </figure>
+  </div>
+  <p class="means" id="mKey"></p>
+</section>
+
+<section class="sec" id="chance" aria-labelledby="chanceH">
+  <header>
+    <div class="eyebrow"><span class="layer epistemics">EPISTEMICS</span>Could it be chance?</div>
+    <h2 id="chanceH">Where the real one lands</h2>
+    <p class="deck">We shuffled the labels “topic” and “comparison” across the articles 5,000 times and worked out the extra change each time. If the labels did not matter, the real result would look like just another shuffle. Each grey tick is one shuffle. The coloured tick is the real result.</p>
+  </header>
+  <div class="fig" id="chFig"></div>
+  <p class="means" id="mChance"></p>
+</section>
+
+<section class="sec" id="board" aria-labelledby="boardH">
+  <header>
+    <div class="eyebrow"><span class="layer epistemics">EPISTEMICS</span>Robustness scoreboard</div>
+    <h2 id="boardH">Does the result survive other reasonable choices?</h2>
+    <p class="deck">Before seeing any data, we wrote down six other ways to run each main test, and a rule for what would count as support. Each tile is one way of running it: the dot is the estimate and the line is its range. Select a tile for the details.</p>
+  </header>
+  <div id="boardWrap"></div>
+</section>
+
 <section class="sec" id="vocab">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span>The words</div>
-    <h2>How often loaded words appear</h2>
-    <p class="deck">Every three months we took a copy of each article and counted words like “colonial”, “apartheid”, “genocide” and “occupation”. We also counted words about Jewish history, like “homeland”, “indigenous” and “antisemitism”. The lines show the average for articles that already existed in January 2021.</p>
+    <h2>Each group of words, one at a time</h2>
+    <p class="deck">The chart above adds up seven groups of loaded words. Here you can look at each group on its own, and at words about Jewish history, like “homeland”, “indigenous” and “antisemitism”. The lines show the average for articles that already existed in January 2021.</p>
   </header>
-  <div class="scrolly" id="scA">
-    <div class="steps" id="stepsA"></div>
-    <figure class="sticky fig" style="margin:0">
+  <figure class="fig" id="vocabFig" style="margin:0">
       <div class="controls">
         <label class="ctl" for="frameSel">Words <select id="frameSel"></select></label>
         <span class="seg" id="partA" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
@@ -642,8 +653,8 @@ textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);bord
       </div>
       <div class="chart" id="trend" style="height:clamp(250px,46vh,400px)"></div>
       <div class="legend" id="trendKey"></div>
+      <button class="inlab" type="button" id="vocabLab">Compare any slices of articles in the data lab →</button>
     </figure>
-  </div>
   <p class="means" id="mTrend"></p>
   <div class="fig-h" style="margin-top:20px"><span class="fig-t">Each group of words on its own</span><span class="cap">Teal line: Israel and Jewish-topic articles. Grey-violet line: other articles. Each panel has its own scale. Select one to load it above.</span></div>
   <div class="minis" id="minis"></div>
@@ -732,9 +743,7 @@ textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);bord
   <p class="means" id="mTest"></p>
   <details class="stats"><summary>Show the statistics <span>p-values, corrections, group changes, robustness checks</span></summary><div class="in">
     <div class="tbx" id="forestStats"></div>
-    <div class="fig-t">Robustness: do the main results hold up under other reasonable choices?</div>
-    <div class="tbx cards-t" id="matrix"></div>
-    <p class="cap col">A check holds when the estimate keeps the sign of the main result and stays <button class="gl" type="button" data-g="significant">statistically significant</button> (p &lt; 0.05). The <button class="gl" type="button" data-g="placebo">placebo</button> check is the reverse: it holds when ordinary geography and climate words show no difference. R3 compares the post-war yearly gap with every pre-war year.</p>
+    <p class="cap col">The robustness checks are in the <a href="#board">scoreboard above</a>. A check holds when the estimate keeps the sign of the main result and stays <button class="gl" type="button" data-g="significant">statistically significant</button> (p &lt; 0.05). The <button class="gl" type="button" data-g="placebo">placebo</button> check is the reverse: it holds when ordinary geography and climate words show no difference. R3 compares the post-war yearly gap with every pre-war year.</p>
   </div></details>
 </section>
 
@@ -753,6 +762,15 @@ textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);bord
   <div class="picks" id="trPicks"></div>
   <div class="fig" id="trace"></div>
   <p class="means" id="mTrace"></p>
+</section>
+
+<section class="sec" id="ratchet" aria-labelledby="ratH">
+  <header>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>The ratchet <span class="xchip">Exploratory · not pre-registered</span></div>
+    <h2 id="ratH">Once a loaded word goes in, does it stay?</h2>
+    <p class="deck">We followed every saved version of the opening paragraph of key articles. When someone <ins class="hl-ins">adds</ins> a loaded word, how long does it last? When someone <del class="hl-del">removes</del> one, how long does the removal last? If additions stick and removals are undone, the wording moves one way, like a ratchet.</p>
+  </header>
+  <div id="ratWrap"></div>
 </section>
 
 <section class="sec" id="editing">
@@ -800,8 +818,8 @@ textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);bord
 <section class="sec" id="crosslang">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Other languages <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2>The same article in other Wikipedias</h2>
-    <p class="deck">German, French, Hebrew, Arabic and other Wikipedias follow the same rules and cover the same events. But different communities write them. If every language moved the same way, events probably drove the change. If English moved differently, the community may matter more.</p>
+    <h2>Same rules, different people</h2>
+    <p class="deck">German, French, Hebrew, Arabic and other Wikipedias follow the same rules and cover the same events, but different communities write them. If every language moved the same way, events probably drove the change. If English moved on its own, the community may matter more. Each stripe is one language: its first copy on the left, its latest on the right.</p>
   </header>
   <div id="xlWrap"></div>
 </section>
@@ -855,117 +873,7 @@ textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);bord
   </div></details>
 </section>
 </div>
-<div id="view-playground" hidden>
-  <header class="pg-head">
-    <div class="eyebrow">Data lab <span class="xchip">Exploratory: not the pre-registered test</span></div>
-    <h1>Take the data apart</h1>
-    <p class="deck">The article-level data behind the report, with the controls exposed. Pick any two groups of articles, any measure and any time window, and see how they compare. Every result here is exploratory: it is not the pre-registered test, and it shows its uncertainty and its article count.</p>
-    <nav class="pg-index" aria-label="Labs"><a href="#lab" data-go="lab1">Compare two slices</a><a href="#lab" data-go="lab2">Every article as a dot</a><a href="#lab" data-go="lab3">Side by side</a><a href="#lab" data-go="lab4">Word race</a><a href="#lab" data-go="lab5">One article up close</a><a href="#lab" data-go="lab6">At scale</a></nav>
-    <div class="controls"><button class="btn sm" type="button" id="labCopy">Copy settings</button>
-      <details class="paste"><summary class="btn sm">Paste settings</summary><div><label class="cap" for="labPaste">Paste text copied from “Copy settings”, then apply.</label><textarea id="labPaste" rows="3"></textarea><div class="controls"><button class="btn sm primary" type="button" id="labApply">Apply settings</button><span class="cap" id="labPasteMsg"></span></div></div></details>
-      <span class="cap" id="labCopyMsg" aria-live="polite"></span></div>
-    <textarea id="labCopyFb" class="csv-fb" hidden aria-label="Settings text"></textarea>
-  </header>
-
-  <section class="toy" id="lab1" aria-labelledby="l1H">
-    <div class="toy-h"><h2 id="l1H">Compare any two slices</h2><span class="xchip">Exploratory: not the pre-registered test</span></div>
-    <p class="toy-q">Define two groups of articles, A and B. Choose which words to count, which part of the text, and a start and end date. The result is how much more one group changed than the other.</p>
-    <div class="controls"><span class="ctl">Presets</span><span class="picks" id="l1Presets"></span></div>
-    <div class="slices"><div class="slice a" id="l1A"></div><div class="slice b" id="l1B"></div></div>
-    <div class="controls">
-      <label class="ctl" for="l1Measure">Count <select id="l1Measure"></select></label>
-      <span class="seg" id="l1Part" role="group" aria-label="Text"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
-      <label class="ctl" for="l1From">From <select id="l1From"></select></label>
-      <label class="ctl" for="l1To">to <select id="l1To"></select></label>
-    </div>
-    <div class="picks" id="l1Custom" hidden></div>
-    <div class="estbox" id="l1Est"></div>
-    <div class="fig"><div class="fig-h"><span class="fig-t" id="l1Title"></span><span class="cap" id="l1N"></span></div><div class="chart" id="l1Chart" style="height:290px"></div><div class="legend" id="l1Key"></div></div>
-    <p class="means" id="l1Say"></p>
-    <div class="drivers" id="l1Drivers"></div>
-    <div class="controls"><button class="btn sm" type="button" id="l1Csv">Copy as CSV</button><span class="cap" id="l1CsvMsg" aria-live="polite"></span></div><textarea class="csv-fb" id="l1CsvFb" hidden aria-label="CSV text"></textarea>
-    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">rate(article, date)  = sum of the chosen word counts × 10,000 ÷ words in that text
-line(slice, date)     = mean of rate over the slice’s articles measured at that date
-change(article)       = rate(article, to) − rate(article, from)
-                        (articles measured at both dates only)
-extra change          = mean change in A − mean change in B
-95% band              = resample A’s and B’s articles with replacement 500 times;
-                        the 2.5th and 97.5th percentiles of (mean A − mean B)
-A band that includes 0 means the slices are not distinguishable from noise.</pre></div></details>
-  </section>
-
-  <section class="toy" id="lab2" aria-labelledby="l2H">
-    <div class="toy-h"><h2 id="l2H">Every article as a dot</h2><span class="xchip">Exploratory: not the pre-registered test</span></div>
-    <p class="toy-q">Plot any two article measures against each other. Hover or tap a dot for its title, select one to open it, or drag across an area to list the articles inside.</p>
-    <div class="controls">
-      <label class="ctl" for="l2X">Across <select id="l2X"></select></label>
-      <label class="ctl" for="l2Y">Up <select id="l2Y"></select></label>
-      <label class="ctl" for="l2F" id="l2FWrap">Word group for Δ <select id="l2F"></select></label>
-    </div>
-    <div class="controls">
-      <span class="seg" id="l2C" role="group" aria-label="Colour"><button data-v="group" aria-pressed="true">Colour by group</button><button data-v="subgroup" aria-pressed="false">by subgroup</button></span>
-      <label class="ctl"><input type="checkbox" id="l2LX"> log across</label><label class="ctl"><input type="checkbox" id="l2LY"> log up</label>
-      <button class="btn sm" type="button" id="l2Brush" aria-pressed="false">Select an area</button>
-    </div>
-    <div class="fig"><div class="sc-wrap" id="l2Box"></div><div class="rlist" id="l2R"></div></div>
-    <div id="l2Sel"></div>
-    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">Δ rate          = rate at the article’s last snapshot − rate at its first (per 10,000 words)
-first-sentence changes = number of distinct versions of the first sentence − 1
-revert rate     = edits later reverted ÷ all edits
-log scale       = sign(v) × log10(1 + |v|), so zero and negatives still plot
-r               = Pearson correlation of the plotted values within each colour group
-                  (−1 to +1; near 0 means no straight-line relationship)</pre></div></details>
-  </section>
-
-  <section class="toy" id="lab3" aria-labelledby="l3H">
-    <div class="toy-h"><h2 id="l3H">Side by side</h2></div>
-    <p class="toy-q">Up to four articles on one chart, with the history of each one’s first sentence underneath.</p>
-    <div class="controls"><label class="ctl" for="l3In">Add an article</label><input type="search" id="l3In" list="l3List" placeholder="type a title" autocomplete="off"><datalist id="l3List"></datalist><button class="btn sm" type="button" id="l3Add">Add</button><span class="picks" id="l3Chips"></span></div>
-    <div class="controls"><label class="ctl" for="l3Measure">Count <select id="l3Measure"></select></label><span class="seg" id="l3Part" role="group" aria-label="Text"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
-    <div class="fig"><div class="chart" id="l3Chart" style="height:280px"></div><div class="legend" id="l3Key"></div></div>
-    <div class="sbs-rows" id="l3Rows"></div>
-    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">rate(article, date) = sum of the chosen word counts × 10,000 ÷ words in that text
-Diamonds mark the quarterly snapshots where the first sentence differs from the one before.</pre></div></details>
-  </section>
-
-  <section class="toy" id="lab4" aria-labelledby="wrH">
-    <div class="toy-h"><h2 id="wrH">Word race</h2></div>
-    <p class="toy-q">Up to three single words or phrases. Solid lines are topic articles; dashed lines are articles about other countries and conflicts.</p>
-    <div class="controls"><span class="ctl">Presets</span><span class="picks" id="wrPresets"></span></div>
-    <div class="controls"><label class="ctl" for="wrIn">Add a word</label><input type="search" id="wrIn" list="wrList" placeholder="type a word" autocomplete="off"><datalist id="wrList"></datalist><button class="btn sm" type="button" id="wrAdd">Add</button><span class="picks" id="wrChips"></span></div>
-    <div class="fig"><div class="chart" id="wrChart" style="height:300px"></div><div class="legend" id="wrKey"></div><p class="cap">How often each word appears per 10,000 words of article text.</p></div>
-    <p class="means" id="wrOut"></p>
-    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">rate(word, group, date) = matches of the word (plural included) in all the group’s article text
-                          × 10,000 ÷ total words of that text
-Pooled over the fixed panel of articles that existed in January 2021.</pre></div></details>
-  </section>
-
-  <section class="toy" id="lab5" aria-labelledby="l5H">
-    <div class="toy-h"><h2 id="l5H">One article up close</h2></div>
-    <p class="toy-q">Move through time and watch the first sentence change, then replay every recorded change to it. Removed words are amber and struck through; added words are blue.</p>
-    <div class="controls"><label class="ctl" for="tmSel">Article <select id="tmSel"></select></label></div>
-    <div id="tmBox"></div>
-    <div class="fig-h" style="margin-top:8px"><span class="fig-t">Edit-war replay</span><label class="ctl" for="rpSel">Article <select id="rpSel"></select></label></div>
-    <p class="cap col">Each colour is one version of the first sentence. Amber ticks mark changes later flagged as reverted. A return to an earlier wording counts when a version comes back after something else replaced it.</p>
-    <div id="rpBox"></div>
-    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">Time machine: the first sentence of each quarterly snapshot; the diff is against the previous distinct version.
-Readers: monthly page views summed over the months when this exact wording was live.
-Replay: every lead revision since 2021, reduced to its first sentence; each distinct sentence is a version.
-returns = times a version reappears after a different version replaced it</pre></div></details>
-  </section>
-
-  <section class="toy" id="lab6" aria-labelledby="l6H">
-    <div class="toy-h"><h2 id="l6H">At scale</h2><span class="xchip">Exploratory: not the pre-registered test</span></div>
-    <p class="toy-q">The same comparison over about ten thousand articles, grouped by the WikiProject that rates them. Each article has three snapshots: January 2021, July 2023 and now.</p>
-    <div id="l6Wrap"></div>
-  </section>
-
-  <details class="stats" id="labCoder" style="margin-top:40px"><summary>Try the blind-coding method yourself <span>judge masked before-and-after pairs, then see what the AI coders concluded</span></summary><div class="in">
-    <p class="toy-q">Two versions of the same opening paragraph. Names are hidden as [ENTITY-1], [ENTITY-2] and so on. Which version is harsher on its subject? <span class="cap" id="bcScore"></span></p>
-    <div id="bcBox"></div>
-    <p class="cap">AI coders saw the same masked text, in both orders.</p>
-  </div></details>
-</div>
+<div id="view-lab" hidden><!--LAB--></div>
 <div class="foot"><span>Wikipedia Framing Drift</span><span>Word counts are a proxy. They are not a verdict on accuracy or bias.</span></div>
 </div>
 
@@ -975,6 +883,8 @@ const R=/*DATA*/null;
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const RM=matchMedia("(prefers-reduced-motion: reduce)");
 const tok=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const TOKENS=["--paper","--sheet","--ink","--ink-2","--muted","--rule","--faint","--topic","--topic-soft","--comp","--comp-soft","--new","--war","--add-bg","--add-ink","--add-bd","--del-bg","--del-ink","--del-bd","--inc","--dec","--mid","--heat-lo","--heat-mid","--heat-hi","--heat-na","--s1","--s2","--s3","--s4","--s5","--s6","--s7","--display","--body","--mono"];
+const tokens=()=>Object.fromEntries(TOKENS.map(n=>[n.slice(2),tok(n)]));
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt=(x,d=1)=>x==null||!isFinite(x)?"–":(+x).toFixed(d);
 const sgn=(x,d=1)=>x==null||!isFinite(x)?"–":(x>0?"+":x<0?"−":"±")+Math.abs(x).toFixed(d);
@@ -982,7 +892,7 @@ const pct=(x,d=0)=>x==null||!isFinite(x)?"–":(x*100).toFixed(d)+"%";
 const big=n=>n>=1e9?(n/1e9).toFixed(1)+"B":n>=1e6?(n/1e6).toFixed(n>=1e8?0:1)+"M":n>=1e4?Math.round(n/1e3)+"k":(+n).toLocaleString("en-US");
 const ym=s=>Date.UTC(+s.slice(0,4),+s.slice(5,7)-1,1);
 const qMid=q=>Date.UTC(+q.slice(0,4),(+q.slice(6)-1)*3+1,15);
-const WAR=Date.UTC(2023,9,7), ADL=Date.UTC(2024,5,15);
+const WAR=Date.UTC(2023,9,7), ADL=Date.UTC(2024,5,15), ICJ=Date.UTC(2024,0,26);
 const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const dlab=s=>MON[+s.slice(5,7)-1]+" "+s.slice(0,4);
 const dlabT=t=>{const d=new Date(t);return MON[d.getUTCMonth()]+" "+d.getUTCFullYear()};
@@ -1254,34 +1164,13 @@ function drawTrend(){
   const a=dt("treatment"),b=dt("control");
   $("#mTrend").innerHTML=a==null||b==null?"":`<b>What this means:</b> from ${dlab(f)} to ${dlab(l)}, ${esc(LABEL[S.frame].replace(/ \(.*\)$/,"").toLowerCase())} ${a>=0?"rose":"fell"} by ${fmt(Math.abs(a),1)} per 10,000 words in the topic articles and ${b>=0?"rose":"fell"} by ${fmt(Math.abs(b),1)} in the other articles. ${Math.abs(a-b)<.05*Math.max(Math.abs(a),Math.abs(b),1)?"The two groups moved by about the same amount.":`The ${Math.abs(a)>Math.abs(b)?"topic":"other"} articles moved more. The next chart asks if that gap is bigger than chance.`}`;
 }
-function stepsA(){
-  const f=R.dates[0],l=R.dates.at(-1),pre=R.pre_war||"2023-07";
-  const d=(g,p,k,a,b)=>{const x=val(g,p,k,a),y=val(g,p,k,b);return x==null||y==null?null:y-x};
-  const dl=v=>v==null?"–":`<span class="delta ${v>0?"up":v<0?"dn":""}">${sgn(v,1)}</span>`;
-  const v=(g,p,k,dd)=>fmt(val(g,p,k,dd),1);
-  const T='<span class="sw" style="background:var(--topic)"></span>topic articles (teal)',C='<span class="sw" style="background:var(--comp)"></span>other articles (grey-violet)';
-  const steps=[
-    {k:"Loaded words, whole article",st:{frame:"critical_rate",part:"full",set:"main",band:false},
-     h:`In ${dlab(f)}, the ${T} used words like “colonial”, “apartheid” and “genocide” ${v("treatment","full","critical_rate",f)} times per 10,000 words. The ${C} used them ${v("control","full","critical_rate",f)} times. By ${dlab(l)}: ${v("treatment","full","critical_rate",l)} and ${v("control","full","critical_rate",l)}.`},
-    {k:"Before and after 7 October 2023",st:{frame:"critical_rate",part:"full",set:"main",band:true},
-     h:`The shaded area is the time after the Hamas attack of 7 October 2023 and the war that followed. From ${dlab(pre)} to ${dlab(l)}, the topic articles changed by ${dl(d("treatment","full","critical_rate",pre,l))} and the other articles by ${dl(d("control","full","critical_rate",pre,l))}. Before that, the changes were ${dl(d("treatment","full","critical_rate",f,pre))} and ${dl(d("control","full","critical_rate",f,pre))}.`},
-    {k:"Inside the groups",st:{frame:"critical_rate",part:"full",set:"sub",band:true},
-     h:`Some other articles had wars of their own in this period, like Ukraine, Sudan and Nagorno-Karabakh. The dashed grey-violet line shows them. If they moved like the topic articles, the change may just follow the news.`},
-    {k:"Words about Jewish history",st:{frame:"connection_rate",part:"full",set:"main",band:false},
-     h:`Words like “homeland”, “indigenous”, “self-determination” and “antisemitism” went from ${v("treatment","full","connection_rate",f)} to ${v("treatment","full","connection_rate",l)} per 10,000 words in the ${T}, and from ${v("control","full","connection_rate",f)} to ${v("control","full","connection_rate",l)} in the ${C}.`},
-    {k:"The opening paragraph",st:{frame:"critical_rate",part:"lead",set:"main",band:false},
-     h:`The opening paragraph is the part most readers see. It is short, so one edit can move it a lot. Here the loaded words went from ${v("treatment","lead","critical_rate",f)} to ${v("treatment","lead","critical_rate",l)} in the topic articles, and from ${v("control","lead","critical_rate",f)} to ${v("control","lead","critical_rate",l)} in the other articles.`},
-  ];
-  $("#stepsA").innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button></div>`).join("");
-  return steps;
-}
 function minis(){
   const ks=["critical_rate","connection_rate",...R.frames];const t=tr("treatment","full"),c=tr("control","full");if(!t||!c)return;
   $("#minis").innerHTML=ks.map(k=>`<button class="mini" data-k="${k}" aria-pressed="false" type="button"><span class="t">${esc(LABEL[k]||k)}</span><span class="s" data-s></span><div class="chart" style="height:86px"></div></button>`).join("");
   $$(".mini").forEach(b=>{const k=b.dataset.k;
     b._sr=[{key:"t",label:T_L,color:"--topic",pts:t.map(r=>[ym(r.date),r[k]]),width:1.6},{key:"c",label:C_L,color:"--comp",pts:c.map(r=>[ym(r.date),r[k]]),width:1.4}];
     const dd=Math.max(t[0][k]||0,c[0][k]||0)<1?2:1;b.querySelector("[data-s]").innerHTML=`topic ${fmt(t[0][k],dd)}→${fmt(t.at(-1)[k],dd)} · other ${fmt(c[0][k],dd)}→${fmt(c.at(-1)[k],dd)}`;
-    b.onclick=()=>{S.frame=k;S.part="full";S.set="main";drawTrend();$("#scA .sticky").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"nearest"})}});
+    b.onclick=()=>{S.frame=k;S.part="full";S.set="main";drawTrend();$("#vocabFig").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"nearest"})}});
   drawMinis();
 }
 function drawMinis(){$$("#minis .mini").forEach(b=>chart(b.querySelector(".chart"),{series:b._sr,compact:true,hover:false,animate:false,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))]}))}
@@ -1361,6 +1250,8 @@ function heatHover(e,cv){const g=cv._g,row=heatRow(e,cv);if(!row){hideTip();retu
   showTip(`<b>${esc(row.a.title)}</b><div class="r"><span>${dlab(R.dates[j])}</span><span>${fmt(row.v[j],1)} per 10k</span></div><div class="r"><span>since first copy</span><span>${row.ch[j]==null?"–":sgn(row.ch[j],1)}</span></div><div class="r" style="opacity:.7"><span>${esc(subName(row.a.subgroup))}</span><span>select to open</span></div>`,e.clientX,e.clientY)}
 
 /* ---------- definition ---------- */
+const KEY_T=["Zionism","Israel","Hamas","October 7 attacks","Gaza genocide","Gaza war","Israeli apartheid","Nakba","Antisemitism","Anti-Zionism","Jews","Judaism","History of Israel","Israeli–Palestinian conflict","Jerusalem","West Bank","Israeli settlement","Balfour Declaration","Theodor Herzl","Mandatory Palestine","Hezbollah","Israel Defense Forces","Land of Israel","1948 Palestinian expulsion and flight","Zionism as settler colonialism"];
+const KEY_C=["Kurdish nationalism","Hindu nationalism","Armenian genocide","Russo-Ukrainian War","Islamic State","Catholic Church","India","Taiwan","Kashmir conflict","Uyghur genocide","Irish nationalism","Islam","Turkey","Ukraine","Tibet"];
 const KEY=["Zionism","Israel","Hamas","Antisemitism","Nakba","Israeli–Palestinian conflict","Gaza war","Jews","Anti-Zionism","Judaism"];
 function defInit(){
   const A=R.articles,by=new Map(A.map(a=>[a.title,a]));
@@ -1429,22 +1320,6 @@ function drawForest(){
   const prim=(R.did||[]).filter(d=>d.tier==="primary"),ns=prim.filter(sigOf).length;
   $("#mTest").innerHTML=prim.length?`<b>What this means:</b> of the three main measures chosen in advance (P1–P3), ${ns===0?"none shows":ns===1?"one shows":ns+" show"} an extra change that is clearly different from chance. ${ns<prim.length?"For the rest, the topic articles changed about as much as articles about other countries and conflicts.":""}`:"";
 }
-function drawMatrix(){
-  const rb=R.robustness||[],host=$("#matrix");
-  if(!rb.length){host.innerHTML=`<div class="note">No robustness checks in this build.</div>`;return}
-  const ids=[...new Set(rb.map(r=>r.id))].sort(),code=c=>(c.match(/^(R\d+b?)/)||[,c])[1],codes=[...new Set(rb.map(r=>code(r.check)))];
-  const prim=id=>(R.did||[]).find(d=>d.id===id),pl=id=>{const p=prim(id);return p?`${p.part==="lead"?"opening":"whole"} · ${p.frame==="critical_rate"?"loaded":"history"} words`:""};
-  const TAIL=/\s*\(((?:weakest|log).*)\)\s*$/,nice=t=>t.replace(/[a-z]+_[a-z_]+/g,k=>(LABEL[k]||k).toLowerCase());
-  const name=c=>{const r=rb.find(r=>code(r.check)===c);return r.check.replace(/^R\d+b?\s*/,"").replace(TAIL,"")};
-  let h=`<table><thead><tr><th>Check</th>${ids.map(id=>`<th><span class="pid">${id}</span> ${pl(id)}</th>`).join("")}</tr></thead><tbody>`;
-  for(const c of codes){h+=`<tr><td><span class="mono" style="color:var(--muted);font-size:11px">${c}</span> ${esc(name(c))}</td>`;
-    for(const id of ids){const r=rb.find(r=>r.id===id&&code(r.check)===c);if(!r){h+=`<td data-l="${id}"><span class="res na"><i></i>not run</span></td>`;continue}
-      const det=r.check.match(TAIL);
-      h+=`<td data-l="${id} · ${pl(id)}"><span class="res ${r.pass?"ok":""}" title="${esc(r.check+(r.note?" · "+r.note:""))}"><i></i>${r.pass?"holds":"does not hold"}</span><br><small class="mono num" style="color:var(--muted);font-size:11px">${r.did!=null?sgn(r.did,2):"–"}${r.lo!=null?` [${sgn(r.lo,2)}, ${sgn(r.hi,2)}]`:""}${r.p!=null?` · p ${pv(r.p)}`:""}${det?`<br>${esc(nice(det[1]))}`:""}</small></td>`}
-    h+="</tr>"}
-  host.innerHTML=h+"</tbody></table>";
-}
-
 /* ---------- exact edits (trace) ---------- */
 const letter=i=>i<26?String.fromCharCode(65+i):String.fromCharCode(65+Math.floor(i/26)-1)+String.fromCharCode(65+i%26);
 function traceInit(){
@@ -1602,39 +1477,346 @@ function drawTerr(){
   minis("#eTerrT","topic","--topic");minis("#eTerrC","comparison","--comp");
 }
 
-/* ---------- cross-language ---------- */
+/* ---------- shared: reveal-on-view (complete at rest; motion only when scrolled into view) ---------- */
+function revealOnView(el,onGo){
+  if(!el)return;el.classList.remove("rv-pre","rv-go");
+  if(RM.matches||!("IntersectionObserver" in window)){onGo&&onGo();return}
+  const r=el.getBoundingClientRect();if(r.top<innerHeight*.9&&r.bottom>0&&!el.closest("[hidden]")){onGo&&onGo();return}
+  el.classList.add("rv-pre");
+  const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();el.classList.remove("rv-pre");el.classList.add("rv-go");onGo&&onGo()}},{rootMargin:"0px 0px -22% 0px"});io.observe(el)}
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const quant=(arr,p)=>{const a=arr.filter(v=>v!=null&&isFinite(v)).sort((x,y)=>x-y);return a.length?a[Math.min(a.length-1,Math.max(0,Math.floor(p*(a.length-1))))]:null};
+const PRIM_LABEL={P1:"Opening paragraph · loaded words",P2:"Full text · loaded words",P3:"Full text · history words"};
+const PRED={P1:1,P2:1,P3:-1};
+const didRow=id=>(R.did||[]).find(d=>d.id===id&&(d.tier==="primary"||d.tier==null));
+const yearTicks=(x,t0,t1,H,ph)=>{let s="";for(let yr=new Date(t0).getUTCFullYear();yr<=new Date(t1).getUTCFullYear();yr++){const t=Date.UTC(yr,0,1);if(t<t0-864e5*20||t>t1)continue;const xx=x(Math.max(t,t0));s+=`<line x1="${xx}" x2="${xx}" y1="${H}" y2="${H+4}" style="stroke:var(--muted)"/><text class="ax" x="${xx+3}" y="${H+15}">${ph?"’"+String(yr).slice(2):yr}</text>`}return s};
+
+/* ---------- headline 1: the most important chart ---------- */
+const K={step:3,part:"full",vis:{rise:1,threads:1,mean:1,fold:0},raf:0,data:{},hover:null,steps:null};
+function keyData(part){
+  if(K.data[part]!==undefined)return K.data[part];
+  const tT=tr("treatment",part),tC=tr("control",part),P=didRow(part==="lead"?"P1":"P2");
+  if(!tT||!tC||!tT.length||tT.every(r=>r.critical_rate==null)){K.data[part]=null;return null}
+  const f=R.first||R.dates[0];
+  const own=g=>R.articles.filter(a=>a.group===g&&a.primary).map(a=>{const ser=part==="lead"?a.lcrit_series:a.crit_series,ds=a.crit_series_dates;if(!ser||!ds)return null;
+    const i0=ds.indexOf(f),v0=i0<0?null:ser[i0],v1=ser.at(-1);return {a,pts:ds.map((d,i)=>[ym(d),ser[i]]),ch:v0!=null&&v1!=null?v1-v0:null}}).filter(Boolean);
+  const threads=own("control"),tops=own("treatment");
+  // dots: the exported per-article changes; titles attached only when they match the article order exactly
+  const match=(arr,ex)=>{const m=arr.filter(t=>t.ch!=null);return ex&&m.length===ex.length&&m.every((t,i)=>Math.abs(t.ch-ex[i])<.01)?m:null};
+  const dotsOf=(arr,ex)=>{if(ex&&ex.length){const m=match(arr,ex);return ex.map((v,i)=>({v,a:m?m[i].a:null}))}return arr.filter(t=>t.ch!=null).map(t=>({v:t.ch,a:t.a}))};
+  const dT=dotsOf(tops,P&&P.changes_t),dC=dotsOf(threads,P&&P.changes_c);
+  const allY=[...tT,...tC].map(r=>r.critical_rate).filter(v=>v!=null),thY=threads.flatMap(t=>t.pts.map(p=>p[1])).filter(v=>v!=null);
+  const yMax=niceMax(Math.max(...allY,quant(thY,.9)||0)*1.08);
+  const over=threads.filter(t=>t.pts.some(p=>p[1]!=null&&p[1]>yMax)).length;
+  const fv=[...dT,...dC].map(d=>d.v);if(P)fv.push(P.lo,P.hi,P.did);
+  let x0=Math.min(0,quant(fv,.02)),x1=Math.max(0,quant(fv,.98));if(P){x0=Math.min(x0,P.lo,P.did);x1=Math.max(x1,P.hi,P.did)}
+  const pad=(x1-x0)*.06||1;x0-=pad;x1+=pad;
+  const out=[...dT,...dC].filter(d=>d.v<x0||d.v>x1).length;
+  return K.data[part]={part,P,topic:tT.map(r=>[ym(r.date),r.critical_rate]),comp:tC.map(r=>[ym(r.date),r.critical_rate]),nT:tT[0].n,nC:tC[0].n,threads,dT,dC,yMax,over,fx:[x0,x1],out}}
+function keyInit(){
+  const host=$("#scK");if(!host)return;
+  if(!keyData("full")&&!keyData("lead")){host.outerHTML=`<div class="note">The group trend lines are not in this build yet.</div>`;$("#mKey").innerHTML="";return}
+  seg($("#kPart"),v=>{K.part=v;keyText();drawKey(true)});
+  keyText();drawKey(true);
+  const ch=$("#kChart");
+  ch.addEventListener("pointermove",keyHover);ch.addEventListener("pointerdown",keyHover);ch.addEventListener("pointerleave",()=>{K.hover=null;hideTip();drawKey(true)});
+  ch.addEventListener("click",e=>{const h=keyPick(e);if(h&&h.a)openDrawer(h.a.title,{actions:[{label:"Compare it in the data lab",run:a=>openInLab({from:"key",article:a.title,measure:"critical",part:K.part})}]})});
+}
+function keyText(){
+  const D=keyData(K.part);setSeg($("#kPart"),K.part);
+  const host=$("#stepsK");if(!D){host.innerHTML=`<div class="note">No trend for this part of the text.</div>`;return}
+  const f=R.dates[0],l=R.dates.at(-1),P=D.P,where=K.part==="lead"?"opening paragraphs":"articles";
+  const up=D.threads.filter(t=>t.ch!=null&&t.ch>0).length,nn=D.threads.filter(t=>t.ch!=null).length;
+  const T='<span class="sw" style="background:var(--topic)"></span>topic articles',Cg='<span class="sw" style="background:var(--comp)"></span>comparison';
+  const steps=[
+    {k:"The topic articles",h:`In ${dlab(f)}, the ${D.nT} ${T} used words like “colonial”, “apartheid” and “genocide” <b>${fmt(D.topic[0][1],1)}</b> times per 10,000 words of their ${where}. By ${dlab(l)}: <b>${fmt(D.topic.at(-1)[1],1)}</b>. The scale starts at zero, so the height of the line is the real level.`},
+    {k:"Every comparison article",h:`Each thin grey line is one of the ${D.threads.length} ${Cg} articles, about other countries, conflicts and religions. ${nn?`${up} of ${nn} use these words more now than in ${dlab(f)}.`:""} Some move a lot, which is why we compare averages. Select a line to open its article.`},
+    {k:"The comparison average",h:`Their average went from <b>${fmt(D.comp[0][1],1)}</b> to <b>${fmt(D.comp.at(-1)[1],1)}</b>. The real question is not whether the teal line rose, but whether it rose <i>more</i> than this one. The red line marks 7 October 2023. The black line marks the ICJ genocide case, January 2024.`},
+    P?{k:"Fold it into one number",h:`Now each article becomes a dot: how much it changed from ${dlab(f)} to ${dlab(l)}. On average the topic articles changed by <b>${sgn(P.treat,1)}</b> and the comparison articles by <b>${sgn(P.control,1)}</b>. The difference, <b>${sgn(P.did,1)}</b> per 10,000 words, is the extra change (pre-registered test ${P.id}). The soft band is the range we’re fairly sure about, ${sgn(P.lo,1)} to ${sgn(P.hi,1)}. ${P.lo<=0&&P.hi>=0?"It includes zero, so this could be chance.":"It stays clear of zero."}`,lab:true}:{k:"One number",h:"The pre-registered estimate for this measure is not in this build."}];
+  if(K.built&&$$(".step",host).length===steps.length){$$(".step",host).forEach((e,i)=>{e.querySelector(".k").textContent=`${i+1} / ${steps.length} · ${steps[i].k}`;e.querySelector("p").innerHTML=steps[i].h})}
+  else{K.built=true;host.innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button>${s.lab?`<button class="inlab" type="button" data-lab>Run this comparison yourself in the data lab →</button>`:""}</div>`).join("");
+  const lb=$("[data-lab]",host);if(lb)lb.onclick=()=>openInLab({from:"key",measure:"critical",part:K.part,groups:["treatment","control"],test:P&&P.id});
+  K.steps=steps.map((_,i)=>({st:{kStep:i+1}}));
+  scrolly(host,K.steps,()=>keyGo(S.kStep));}
+  $$(".step",host).forEach(e=>e.classList.toggle("on",+e.dataset.i===K.step-1));
+  $("#mKey").innerHTML=P?`<b>What this means:</b> the topic articles ${P.treat>=0?"gained":"lost"} ${fmt(Math.abs(P.treat),1)} of these words per 10,000, and the comparison articles ${P.control>=0?"gained":"lost"} ${fmt(Math.abs(P.control),1)}. The extra change is ${sgn(P.did,1)}, from ${P.n_t} topic and ${P.n_c} comparison articles. ${P.lo<=0&&P.hi>=0?"Its range crosses zero, so we can’t tell it apart from chance.":"Its range stays clear of zero."}`:"";
+}
+const KT={1:{rise:1,threads:0,mean:0,fold:0},2:{rise:1,threads:1,mean:0,fold:0},3:{rise:1,threads:1,mean:1,fold:0},4:{rise:1,threads:1,mean:1,fold:1}};
+function keyGo(n){
+  const prev=K.step;K.step=n;$$("#stepsK .step").forEach(e=>e.classList.toggle("on",+e.dataset.i===n-1));
+  const from={...K.vis},to={...KT[n]};if(n===1&&prev!==1)from.rise=0;
+  cancelAnimationFrame(K.raf);
+  if(RM.matches){K.vis=to;drawKey(true);return}
+  const D=n===4||prev===4?1100:700,t0=performance.now();
+  const stepF=now=>{const t=Math.min(1,(now-t0)/D),e=ease(t);for(const k in to)K.vis[k]=from[k]+(to[k]-from[k])*e;drawKey(t===1);if(t<1)K.raf=requestAnimationFrame(stepF)};
+  K.raf=requestAnimationFrame(stepF)}
+function keyGeom(){
+  const el=$("#kChart"),D=keyData(K.part);if(!el||!D)return null;const W=Math.max(260,el.clientWidth),H=el.clientHeight||320,ph=isPhone();
+  const m={l:ph?34:42,r:ph?12:128,t:34,b:30};
+  const t0=ym(R.dates[0]),t1=ym(R.dates.at(-1));
+  const x=lin(t0,t1,m.l,W-m.r),y=lin(0,D.yMax,H-m.b,m.t);
+  const fx=lin(D.fx[0],D.fx[1],m.l,W-(ph?12:28)),fxc=v=>fx(clamp(v,D.fx[0],D.fx[1]));
+  const mid=(m.t+H-m.b)/2+6,gap=Math.min(56,(H-m.t-m.b)/3.3),yT=mid-gap,yB=mid,yC=mid+gap;
+  return {el,D,W,H,ph,m,x,y,fx,fxc,yT,yB,yC,t0,t1}}
+const jit=i=>(((i*2654435761)>>>0)%1000)/1000-.5;
+function drawKey(final){
+  const G=keyGeom();if(!G)return;const {el,D,W,H,ph,m,x,y,fxc,yT,yB,yC}=G,V=K.vis,f=ease(clamp(V.fold,0,1)),f2=clamp((V.fold-.55)/.45,0,1);
+  const mix=(a,b)=>a+(b-a)*f,P=D.P;
+  $("#kTitle").textContent=V.fold>.5?`Change per 10,000 words, ${dlab(R.dates[0])} → ${dlab(R.dates.at(-1))}`:`Loaded words per 10,000 words of ${K.part==="lead"?"the opening paragraph":"article text"}`;
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(V.fold>.5&&P?`Extra change ${sgn(P.did,2)} per 10,000 words, range ${sgn(P.lo,2)} to ${sgn(P.hi,2)}`:"Loaded-word rate over time: topic articles, each comparison article and the comparison average")}"><defs><clipPath id="kClip"><rect x="0" y="${m.t-2}" width="${W}" height="${H-m.t-m.b+2}"/></clipPath></defs>`;
+  // time frame (fades out as it folds)
+  const fa=1-f;
+  if(fa>.01){s+=`<g style="opacity:${fa}">`;
+    for(const v of ticks(0,D.yMax,4)){const yy=y(v);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text class="ax" x="${m.l-6}" y="${yy+3.5}" text-anchor="end">${fmt(v,0)}</text>`}
+    s+=yearTicks(x,G.t0,G.t1,H-m.b,ph);
+    [[WAR,ph?"7 Oct":"7 Oct 2023","--war",m.t-20],[ICJ,ph?"ICJ":"ICJ case, Jan 2024","--ink",m.t-7]].forEach(([t,l,c,ty])=>{const xx=x(t);s+=`<line x1="${xx}" x2="${xx}" y1="${ty+3}" y2="${H-m.b}" style="stroke:var(${c});stroke-width:1.25;stroke-dasharray:3 3"/><text class="ax" x="${t===ICJ?xx+4:xx-4}" y="${ty}" text-anchor="${t===ICJ?"start":"end"}" style="fill:var(${c})">${l}</text>`});
+    s+=`</g>`}
+  // fold frame (fades in)
+  if(f>.01&&P){s+=`<g style="opacity:${f}">`;const fx=G.fx;
+    for(const v of ticks(D.fx[0],D.fx[1],ph?4:6)){if(v<D.fx[0]||v>D.fx[1])continue;const xx=fx(v);s+=`<line x1="${xx}" x2="${xx}" y1="${yT-22}" y2="${H-m.b}" style="stroke:var(${v===0?"--muted":"--faint"});${v===0?"stroke-width:1.25":""}"/><text class="ax" x="${xx}" y="${H-m.b+15}" text-anchor="middle">${v>0?"+":""}${+v.toFixed(2)}</text>`}
+    s+=`<text class="rl" x="${m.l}" y="${yT-26}">TOPIC ARTICLES · ${D.dT.length}</text><text class="rl" x="${m.l}" y="${yC+30}">COMPARISON · ${D.dC.length}</text>`;
+    s+=`</g>`}
+  s+=`<g clip-path="url(#kClip)">`;
+  // comparison threads -> comparison dots
+  if(V.threads>.01){const op=(.26*V.threads)*(1-f)+.42*f;
+    D.threads.forEach((t,i)=>{const hv=K.hover&&K.hover.a===t.a;let d="",pen=false;const tx=t.ch==null?null:fxc(t.ch),ty=yC+jit(i)*22;
+      if(f>.98&&tx!=null){s+=`<circle cx="${tx}" cy="${ty}" r="${hv?4.5:2.6}" style="fill:var(--comp);opacity:${hv?1:op}"/>`;return}
+      for(const p of t.pts){if(p[1]==null){pen=false;continue}const px=tx==null?x(p[0]):mix(x(p[0]),tx),py=tx==null?y(p[1]):mix(y(p[1]),ty);d+=(pen?"L":"M")+px.toFixed(1)+","+py.toFixed(1);pen=true}
+      if(d)s+=`<path d="${d}" style="fill:none;stroke:var(${hv?"--ink":"--comp"});stroke-width:${hv?2:1};opacity:${hv?1:op*(tx==null?1-f:1)};stroke-linejoin:round"/>`})}
+  s+=`</g>`;
+  // topic dots fade in with the fold
+  if(f>.01&&P)D.dT.forEach((d,i)=>{s+=`<circle cx="${fxc(d.v)}" cy="${yT+jit(i+7)*22}" r="${K.hover&&K.hover.a&&K.hover.a===d.a?4.5:2.2}" style="fill:var(--topic);opacity:${.38*f}"/>`});
+  // comparison mean line -> comparison mean tick
+  const line=(pts,yr,tgtX,tgtY,color,w,o)=>{if(o<=.01)return "";let d="",pen=false;for(const p of pts){if(p[1]==null){pen=false;continue}const px=P?mix(x(p[0]),tgtX):x(p[0]),py=P?mix(yr(p[1]),tgtY):yr(p[1]);d+=(pen?"L":"M")+px.toFixed(1)+","+py.toFixed(1);pen=true}return `<path d="${d}" style="fill:none;stroke:var(${color});stroke-width:${w};opacity:${o};stroke-linejoin:round;stroke-linecap:round"/>`};
+  s+=line(D.comp,y,P?fxc(P.control):0,yC,"--comp",2.6,V.mean);
+  const ry=v=>y(v*V.rise);
+  s+=line(D.topic,ry,P?fxc(P.treat):0,yT,"--topic",2.8,1);
+  if(f<.5&&!ph){const ends=[];if(V.mean>.05)ends.push([y(D.comp.at(-1)[1]),"Comparison average",D.comp.at(-1)[1],"--comp",V.mean*(1-2*f)]);ends.push([ry(D.topic.at(-1)[1]),"Topic articles",D.topic.at(-1)[1],"--topic",1-2*f]);
+    ends.sort((a,b)=>a[0]-b[0]);for(let i=1;i<ends.length;i++)if(ends[i][0]-ends[i-1][0]<28)ends[i][0]=ends[i-1][0]+28;
+    for(const e of ends)s+=`<g style="opacity:${e[4]}"><text class="lbl" x="${W-m.r+8}" y="${e[0]-2}" style="fill:var(${e[3]})">${e[1]}</text><text x="${W-m.r+8}" y="${e[0]+11}">${fmt(e[2]*(e[3]==="--topic"?V.rise:1),1)} per 10k</text></g>`}
+  if(f<.5&&V.threads>.5&&D.over)s+=`<text class="ax" x="${W-m.r}" y="${m.t+10}" text-anchor="end" style="opacity:${V.threads*(1-2*f)}">↑ ${D.over} article${D.over===1?"":"s"} go above the top</text>`;
+  // group means + the one bar
+  if(f>.01&&P){
+    [[P.treat,yT,"--topic","topic avg"],[P.control,yC,"--comp","comparison avg"]].forEach(([v,yy,c,l])=>{const xx=fxc(v);s+=`<line x1="${xx}" x2="${xx}" y1="${yy-14}" y2="${yy+14}" style="stroke:var(--ink);stroke-width:2;opacity:${f}"/><text class="ax" x="${xx+5}" y="${yy-16}" style="opacity:${f};fill:var(--ink-2)">${l} ${sgn(v,1)}</text>`});
+    if(f2>0){const z=fxc(0),b=fxc(P.did*f2),lo=fxc(P.lo),hi=fxc(P.hi),col=P.did>=0?"--inc":"--dec";
+      s+=`<rect x="${lo}" y="${yB-15}" width="${Math.max(1,hi-lo)}" height="30" rx="3" style="fill:var(${col});opacity:${.16*f2}"/>`;
+      s+=`<rect x="${Math.min(z,b)}" y="${yB-8}" width="${Math.max(1.5,Math.abs(b-z))}" height="16" rx="1.5" style="fill:var(${col});opacity:${f2}"/>`;
+      const lx=Math.max(z,b,hi)+8,right=lx<W-150;
+      s+=`<g style="opacity:${f2}"><text class="big" x="${right?lx:Math.min(z,b,lo)-8}" y="${yB+9}" text-anchor="${right?"start":"end"}">${sgn(P.did,1)}</text><text class="ax" x="${right?lx:Math.min(z,b,lo)-8}" y="${yB+24}" text-anchor="${right?"start":"end"}">range ${sgn(P.lo,1)} to ${sgn(P.hi,1)}</text></g>`;
+      s+=`<text class="rl" x="${m.l}" y="${yB-20}" style="opacity:${f2}">EXTRA CHANGE · ${P.id}</text>`}}
+  if(f>.5&&D.out)s+=`<text class="ax" x="${W-12}" y="${H-4}" text-anchor="end" style="opacity:${f}">${D.out} dots ${ph?"at the edges":"beyond the edges are drawn at the edge"}</text>`;
+  el.innerHTML=s+`</svg>`;
+  const kk=$("#kKey");
+  kk.innerHTML=V.fold>.5?`<span class="key"><i style="border-radius:50%;background:var(--topic);opacity:.6"></i>one topic article’s change</span><span class="key"><i style="border-radius:50%;background:var(--comp);opacity:.7"></i>one comparison article’s change</span><span class="key"><i style="background:var(--${P&&P.did<0?"dec":"inc"})"></i>extra change, from zero</span><span class="key"><i style="background:var(--${P&&P.did<0?"dec":"inc"});opacity:.25"></i>range we’re fairly sure about</span>`
+    :`<span class="key"><i class="ln" style="background:var(--topic)"></i>topic articles, average (${D.nT})</span>${V.threads>.5?`<span class="key"><i class="ln" style="background:var(--comp);opacity:.45;height:1px"></i>one comparison article</span>`:""}${V.mean>.5?`<span class="key"><i class="ln" style="background:var(--comp)"></i>comparison average (${D.nC})</span>`:""}<span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i class="dash"></i>ICJ case, Jan 2024</span>`;
+}
+function keyPick(e){
+  const G=keyGeom();if(!G)return null;const r=G.el.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top,D=G.D;
+  if(K.vis.fold>.5){let best=null,bd=14;D.threads.forEach((t,i)=>{if(t.ch==null)return;const d=Math.hypot(G.fxc(t.ch)-px,G.yC+jit(i)*22-py);if(d<bd){bd=d;best={a:t.a,v:t.ch,g:"comparison"}}});
+    D.dT.forEach((t,i)=>{if(!t.a)return;const d=Math.hypot(G.fxc(t.v)-px,G.yT+jit(i+7)*22-py);if(d<bd){bd=d;best={a:t.a,v:t.v,g:"topic"}}});return best}
+  if(K.vis.threads<.5)return null;
+  let best=null,bd=18;
+  D.threads.forEach(th=>{let near=null,nd=1e9;th.pts.forEach(p=>{if(p[1]==null)return;const dx=Math.abs(G.x(p[0])-px);if(dx<nd){nd=dx;near=p}});if(!near||nd>40)return;const d=Math.abs(G.y(near[1])-py);if(d<bd){bd=d;best={a:th.a,v:near[1],t:near[0],g:"comparison"}}});
+  return best}
+function keyHover(e){const h=keyPick(e);const changed=(h&&h.a)!==(K.hover&&K.hover.a);K.hover=h;if(changed)drawKey(true);
+  if(!h){hideTip();return}
+  showTip(`<b>${esc(h.a.title)}</b><div class="r"><span>${h.g==="topic"?"topic":"comparison"} article</span><span>${esc(subName(h.a.subgroup))}</span></div><div class="r"><span>${h.t?dlabT(h.t):"change"}</span><span>${h.t?fmt(h.v,1)+" per 10k":sgn(h.v,1)}</span></div><div class="r" style="opacity:.7"><span>select to open</span></div>`,e.clientX,e.clientY)}
+
+/* ---------- headline 2: where the real one lands ---------- */
+function drawChance(redraw){
+  const host=$("#chFig");if(!host)return;
+  const rows=["P1","P2","P3"].map(didRow).filter(r=>r&&r.perm_sample&&r.perm_sample.length);
+  if(!rows.length){host.outerHTML=`<div class="note" id="chFig">The shuffle results are not in this build yet.</div>`;$("#mChance").innerHTML="";return}
+  const rb=R.robustness||[];
+  host.innerHTML=rows.map(r=>`<div class="chrow" data-id="${r.id}"><div class="chrow-h"><span class="pid">${r.id}</span><b>${PRIM_LABEL[r.id]||esc(r.frame)}</b><span class="cap">${r.n_t} topic · ${r.n_c} comparison articles</span></div><div><div class="chs"></div><p class="chcap"></p></div><div class="calib"></div></div>`).join("")+`<div class="legend"><span class="key"><i style="width:2px;height:12px;background:var(--muted);opacity:.6"></i>one shuffle (a sample of ${rows[0].perm_sample.length} of about ${(rows[0].perm_sample.length*25).toLocaleString("en-US")})</span><span class="key"><i style="width:3px;height:14px;background:var(--inc)"></i>the real result</span><span class="key"><i style="width:3px;height:14px;background:var(--ink-2)"></i>placebo words, which should sit at zero</span></div>`;
+  rows.forEach(r=>{
+    const row=$(`.chrow[data-id="${r.id}"]`,host),box=$(".chs",row),W=Math.max(220,box.clientWidth||600),H=70,ph=isPhone();
+    const pl=rb.find(x=>x.id===r.id&&/^R6/.test(x.check));
+    const m=Math.max(...r.perm_sample.map(Math.abs),Math.abs(r.did),1e-9)*1.12,x=lin(-m,m,6,W-6),col=r.did>=0?"--inc":"--dec";
+    const N=r.perm_sample.length*25,X=Math.max(0,Math.round(r.p_perm*(N+1)-1)),inS=r.perm_sample.filter(v=>Math.abs(v)>=Math.abs(r.did)).length;
+    let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${r.id}: real result ${sgn(r.did,2)} among ${r.perm_sample.length} shuffled results">`;
+    for(const v of ticks(-m,m,ph?4:6)){if(Math.abs(v)>m)continue;s+=`<text x="${x(v)}" y="${H-2}" text-anchor="middle">${v>0?"+":""}${+v.toFixed(2)}</text><line x1="${x(v)}" x2="${x(v)}" y1="${H-16}" y2="${H-12}" style="stroke:var(--muted)"/>`}
+    s+=`<line x1="6" x2="${W-6}" y1="${H-16}" y2="${H-16}" style="stroke:var(--rule)"/><line x1="${x(0)}" x2="${x(0)}" y1="14" y2="${H-16}" style="stroke:var(--muted);stroke-dasharray:2 2"/>`;
+    const ord=r.perm_sample.map((v,i)=>[v,i]);
+    ord.forEach(([v,i])=>{const far=Math.abs(v)>=Math.abs(r.did);s+=`<line class="tkr" x1="${x(v).toFixed(1)}" x2="${x(v).toFixed(1)}" y1="20" y2="${H-18}" style="stroke:var(${far?"--ink-2":"--muted"});stroke-width:1;opacity:${far?.7:.32};--d:${(i*.006).toFixed(3)}s"/>`});
+    const rx=x(r.did),right=rx<W-120;
+    s+=`<g class="tkreal" style="--d:${(r.perm_sample.length*.006+.15).toFixed(2)}s"><line x1="${rx}" x2="${rx}" y1="8" y2="${H-14}" style="stroke:var(${col});stroke-width:3.5;stroke-linecap:round"/><text class="lbl" x="${right?rx+7:rx-7}" y="16" text-anchor="${right?"start":"end"}" style="fill:var(${col})">real ${sgn(r.did,2)}</text></g></svg>`;
+    box.innerHTML=s;
+    $(".chcap",row).innerHTML=`<b>${X===0?"None":X.toLocaleString("en-US")} of ${N.toLocaleString("en-US")} shuffles</b> produced a gap this large, in either direction (p = ${pv(r.p_perm)}). ${r.p_perm<.05?"That is rare, so the real gap is unlikely to be chance alone.":"A gap this size turns up often by chance alone."}<span class="cap"> In the ${r.perm_sample.length} ticks drawn: ${inS}, in dark grey.</span>`;
+    const cb=$(".calib",row);
+    if(!pl||pl.did==null){cb.innerHTML=`<span class="k">Calibration</span><p>The placebo check is not in this build.</p>`;return}
+    const cw=Math.max(140,cb.clientWidth-14||180),cx=lin(-m,m,4,cw-4);
+    cb.innerHTML=`<span class="k">Calibration · should be zero</span><svg width="${cw}" height="34" viewBox="0 0 ${cw} 34" aria-hidden="true"><line x1="4" x2="${cw-4}" y1="22" y2="22" style="stroke:var(--rule)"/><line x1="${cx(0)}" x2="${cx(0)}" y1="6" y2="26" style="stroke:var(--muted);stroke-dasharray:2 2"/>${pl.lo!=null?`<rect x="${cx(clamp(pl.lo,-m,m))}" y="13" width="${Math.max(1,cx(clamp(pl.hi,-m,m))-cx(clamp(pl.lo,-m,m)))}" height="10" style="fill:var(--ink-2);opacity:.15"/>`:""}<line x1="${cx(clamp(pl.did,-m,m))}" x2="${cx(clamp(pl.did,-m,m))}" y1="8" y2="26" style="stroke:var(--ink-2);stroke-width:3;stroke-linecap:round"/></svg>
+      <p>Placebo words (river, mountain, climate…) on the same scale: <b>${sgn(pl.did,3)}</b>. ${pl.pass?"✓ No group difference, as it should be.":"✕ A group difference appeared. The counter may be biased."}</p>`});
+  if(!redraw)revealOnView(host);
+  const sig=rows.filter(r=>r.p_perm<.05).length;
+  $("#mChance").innerHTML=`<b>What this means:</b> ${sig===0?`for all ${rows.length} main tests, the real result sits among the shuffles. On its own, it does not stand out from chance.`:`${sig} of ${rows.length} main tests landed further out than almost every shuffle. ${rows.length-sig?`The other ${rows.length-sig===1?"one sits":"ones sit"} among the shuffles.`:""}`} This is before the correction for running three tests, which the scoreboard below applies.`}
+
+/* ---------- headline 3: robustness scoreboard ---------- */
+const PRE_CHECKS=["R1","R2","R3","R4","R5","R6"];
+const CHK_NAME={R1:"Hand-picked topic articles only",R1b:"Quiet comparison articles only",R2:"Without its strongest word group",R3:"Post-war change beats every pre-war year",R4:"Comparison reweighted by length",R5:"Median instead of average",R6:"Placebo words should show nothing",R7:"Log scale"};
+const OWN_SCALE={R3:"yearly change",R6:"placebo words",R7:"log scale"};
+const chkCode=c=>(String(c).match(/^(R\d+b?)/)||[,"?"])[1];
+function boardData(){
+  const prim=["P1","P2","P3"].map(didRow).filter(Boolean);if(!prim.length)return null;const rb=R.robustness||[];
+  return prim.map(p=>{const ch=rb.filter(r=>r.id===p.id),pre=ch.filter(r=>PRE_CHECKS.includes(chkCode(r.check)));const passes=pre.filter(r=>r.pass).length;
+    const sig=p.q_bh!=null&&p.q_bh<.05,dir=Math.sign(p.did)===PRED[p.id];return {p,ch,pre,passes,sig,dir,ok:sig&&dir&&passes>=4}})}
+function drawBoard(){
+  const host=$("#boardWrap");if(!host)return;const B=boardData();
+  if(!B){host.innerHTML=`<div class="note">The pre-registered results are not in this build yet.</div>`;return}
+  if(!(R.robustness||[]).length){host.innerHTML=`<div class="note">The robustness checks are not in this build yet, so the decision rule can’t be applied.</div>`;return}
+  const nQ=B.filter(b=>b.ok).length,anySig=B.some(b=>b.sig),verdict=nQ>=2?"Supported":anySig?"Partial":"Not supported";
+  const order=[...B.filter(b=>b.ok),...B.filter(b=>!b.ok)];
+  let h=`<div class="rule"><div class="eyebrow">The rule, written down before we saw the data</div>
+   <p class="rule-q">The main hypothesis counts as <b>supported</b> if at least <b>2 of the 3</b> main tests are significant after correcting for running several tests (q &lt; 0.05), go in the predicted direction, and pass at least <b>4 of the 6</b> planned checks.</p>
+   <div class="rule-vis"><div class="slots" aria-label="${nQ} of 3 main tests meet every condition; 2 are needed">${order.map((b,i)=>`<span class="sl ${b.ok?"on":""}" title="${b.p.id}: ${b.ok?"meets every condition":"does not meet every condition"}">${b.p.id}${b.ok?" ✓":""}</span>${i===1?`<span class="thr"><span>needs 2</span></span>`:""}`).join("")}</div>
+   <div class="verdict">${verdict}<small>${nQ} of ${B.length} main tests meet every condition · ${B.filter(b=>b.sig).length} significant after correction</small></div></div></div>`;
+  h+=B.map(b=>{const p=b.p,main=["R1","R1b","R2","R4","R5"];
+    const vals=[p.lo,p.hi,p.did,...b.ch.filter(r=>main.includes(chkCode(r.check))).flatMap(r=>[r.did,r.lo,r.hi])].filter(v=>v!=null&&isFinite(v));
+    const ms=Math.max(...vals.map(Math.abs),1e-9)*1.1;
+    const tile=(r,i)=>{const c=chkCode(r.check),own=OWN_SCALE[c],extra=!PRE_CHECKS.includes(c);
+      const vv=[r.did,r.lo,r.hi].filter(v=>v!=null&&isFinite(v)),mm=own?Math.max(...vv.map(Math.abs),1e-9)*1.25:ms,X=v=>((clamp(v,-mm,mm)+mm)/(2*mm)*100).toFixed(2);
+      const svg=`<svg viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="100" y1="11" y2="11" style="stroke:var(--faint)" vector-effect="non-scaling-stroke"/><line x1="50" x2="50" y1="2" y2="20" style="stroke:var(--muted);stroke-dasharray:2 2" vector-effect="non-scaling-stroke"/>${!own?`<line x1="${X(p.did)}" x2="${X(p.did)}" y1="3" y2="19" style="stroke:var(--topic);opacity:.55" vector-effect="non-scaling-stroke"/>`:""}${r.lo!=null&&r.hi!=null?`<line x1="${X(r.lo)}" x2="${X(r.hi)}" y1="11" y2="11" style="stroke:var(--ink-2);stroke-width:2.5" vector-effect="non-scaling-stroke"/>`:""}${r.did!=null?`<line x1="${X(r.did)}" x2="${+X(r.did)+.01}" y1="11" y2="11" style="stroke:var(--ink);stroke-width:8;stroke-linecap:round" vector-effect="non-scaling-stroke"/>`:""}</svg>`;
+      return `<button class="tile ${extra?"extra":""}" type="button" data-i="${i}" aria-pressed="false" aria-label="${c}: ${esc(CHK_NAME[c]||r.check)}, ${r.pass?"holds":"does not hold"}"><span class="tt"><span>${c}</span><span class="${r.pass?"ok":"no"}">${r.pass?"✓ holds":"✕ fails"}</span></span><span class="tn">${esc(CHK_NAME[c]||r.check)}</span>${svg}<span class="ts">${extra?"added later · not counted":own?"own scale: "+own:sgn(r.did,2)}</span></button>`};
+    return `<div class="brow" data-id="${p.id}"><div class="brow-h"><span class="pid">${p.id}</span><b>${PRIM_LABEL[p.id]||esc(p.frame)}</b>
+      <span class="cond ${b.sig?"ok":"no"}">significant after correction · q = ${pv(p.q_bh)}</span>
+      <span class="cond ${b.dir?"ok":"no"}">predicted ${PRED[p.id]>0?"rise":"fall"} · got ${sgn(p.did,2)}</span>
+      <span class="cond ${b.passes>=4?"ok":"no"}"><span class="pips" aria-hidden="true">${b.pre.slice().sort((x,y)=>y.pass-x.pass).map((r,i)=>`${i===4?`<span class="th" title="needs 4"></span>`:""}<i class="${r.pass?"on":""}"></i>`).join("")}</span>${b.passes} of ${b.pre.length} planned checks hold · needs 4</span></div>
+      <div class="tiles">${b.ch.map(tile).join("")}</div><p class="tdet" aria-live="polite"></p></div>`}).join("");
+  h+=`<p class="cap col">Dot: the estimate under that check. Line: its range. Dashed centre line: zero. Faint teal line: the main estimate, for checks on the same scale. Dashed tiles were added after the plan and do not count toward the rule. A check holds when the estimate keeps the main result’s sign and stays significant. The placebo check holds when it shows <i>no</i> difference.</p>`;
+  host.innerHTML=h;
+  $$(".brow",host).forEach(row=>{const b=B.find(x=>x.p.id===row.dataset.id);row.querySelector(".tiles").addEventListener("click",e=>{const t=e.target.closest(".tile");if(!t)return;const r=b.ch[+t.dataset.i];
+    $$(".tile",row).forEach(x=>x.setAttribute("aria-pressed",String(x===t)));
+    row.querySelector(".tdet").innerHTML=`<b>${esc(r.check)}.</b> Estimate ${r.did!=null?sgn(r.did,3):"–"}${r.lo!=null?`, range ${sgn(r.lo,2)} to ${sgn(r.hi,2)}`:""}${r.p!=null?`, p = ${pv(r.p)}`:""}. ${r.pass?"It holds.":"It does not hold."} ${r.note?esc(r.note)+".":""}`})})}
+
+/* ---------- headline 4: the ratchet ---------- */
+const RAT={pick:null,cur:null};
+function survSVG(g,W,ph){
+  const c=g.critical,H=ph?190:220,m={l:38,r:ph?52:96,t:14,b:30},days=[0,1,7,30,90];
+  const x=v=>m.l+Math.log1p(v)/Math.log1p(90)*(W-m.l-m.r),y=lin(0,1,H-m.b,m.t);
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Share of added loaded words still present, and of removals still holding, after 1, 7, 30 and 90 days">`;
+  [0,.25,.5,.75,1].forEach(v=>s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-6}" y="${y(v)+3.5}" text-anchor="end">${v*100}%</text>`);
+  days.forEach(d=>s+=`<text x="${x(d)}" y="${H-m.b+15}" text-anchor="middle">${d===0?"0":d+"d"}</text>`);
+  s+=`<text x="${(m.l+W-m.r)/2}" y="${H-2}" text-anchor="middle">days later</text>`;
+  const ends=[];
+  [["insert_survival","--add-bd","added word still there"],["remove_survival","--del-bd","removal still holding"]].forEach(([k,col,lab],j)=>{const sv=c[k]||{};let d=`M${x(0)},${y(1)}`,lastv=1,ok=false;
+    [1,7,30,90].forEach(dd=>{const v=sv[dd+"d"];if(v==null)return;ok=true;d+=`H${x(dd)}V${y(v)}`;lastv=v});
+    if(!ok)return;d+=`H${W-m.r}`;
+    s+=`<path class="drawln" pathLength="1" d="${d}" style="fill:none;stroke:var(${col});stroke-width:2.6;stroke-linejoin:round;--d:${j*.25}s"/>`;
+    [1,7,30,90].forEach(dd=>{const v=sv[dd+"d"];if(v!=null)s+=`<circle cx="${x(dd)}" cy="${y(v)}" r="3" style="fill:var(${col});stroke:var(--sheet);stroke-width:1.5"><title>${lab} after ${dd} day${dd>1?"s":""}: ${pct(v)}</title></circle>`});
+    ends.push([y(lastv),lab,lastv,col])});
+  ends.sort((a,b)=>a[0]-b[0]);for(let i=1;i<ends.length;i++)if(ends[i][0]-ends[i-1][0]<26)ends[i][0]=ends[i-1][0]+26;
+  ends.forEach(e=>s+=`<text class="lbl" x="${W-m.r+6}" y="${e[0]+4}" style="fill:var(${e[3]})">${pct(e[2])}</text>${ph?"":`<text x="${W-m.r+6}" y="${e[0]+16}">${e[1].startsWith("added")?"added, still in":"removal holds"}</text>`}`);
+  return s+`</svg>`}
+function drawRatchet(){
+  const host=$("#ratWrap");if(!host)return;const RT=R.ratchet;
+  if(!RT||!RT.topic||!RT.comparison){host.innerHTML=`<div class="note">The opening-paragraph history of key articles is not in this build yet.</div>`;return}
+  const ok=g=>RT[g]&&RT[g].critical&&RT[g].critical.insert_survival,ph=isPhone();
+  let h="";
+  if(ok("topic")&&ok("comparison")){const tc=RT.topic.critical,cc=RT.comparison.critical;
+    h+=`<div class="fig" id="survFig"><div class="fig-h"><span class="fig-t">How long loaded words last in the opening paragraph</span><span class="cap">Same axes in both panels. Blue: a loaded word someone added. Amber: a loaded word someone removed.</span></div>
+     <div class="surv"><div><div class="fig-t" style="margin-bottom:4px">Topic key articles <span class="cap">${RT.topic.articles??"–"} articles · ${tc.insertions??"–"} additions · ${tc.removals??"–"} removals</span></div><div class="sv" data-g="topic"></div></div>
+     <div><div class="fig-t" style="margin-bottom:4px">Comparison key articles <span class="cap">${RT.comparison.articles??"–"} articles · ${cc.insertions??"–"} additions · ${cc.removals??"–"} removals</span></div><div class="sv" data-g="comparison"></div></div></div>
+     <div class="legend"><span class="key"><i class="ln" style="background:var(--add-bd)"></i>added loaded word, still there</span><span class="key"><i class="ln" style="background:var(--del-bd)"></i>removed loaded word, still gone</span></div></div>`;
+    const i30=x=>x.insert_survival["30d"],r30=x=>x.remove_survival["30d"];
+    const at=i30(tc)!=null&&r30(tc)!=null?i30(tc)-r30(tc):null,ac=i30(cc)!=null&&r30(cc)!=null?i30(cc)-r30(cc):null;
+    h+=`<p class="means">${at!=null&&ac!=null?`<b>What this means:</b> after 30 days, ${pct(i30(tc))} of loaded words added to topic articles were still there, and ${pct(r30(tc))} of removals still held. In comparison articles: ${pct(i30(cc))} and ${pct(r30(cc))}. ${Math.abs(at-ac)<.05?"The gap between additions and removals is about the same in both groups, so there is no sign of a one-way ratchet here.":at>ac?"Additions outlast removals more in the topic articles. That is what a ratchet would look like, though these are a few dozen articles.":"Additions outlast removals more in the comparison articles."}`:""}</p>`}
+  else h+=`<div class="note">How long added and removed loaded words last is not in this build yet.</div>`;
+  // the heartbeat: one article by a stated rule
+  const arts=RT.articles||{},crit=R.critical||[];
+  const isT=t=>KEY_T.includes(t)||((R.articles.find(a=>a.title===t)||{}).group==="treatment");
+  const ev=t=>{const T=arts[t].terms||{};return crit.reduce((s,k)=>s+((T[k]&&T[k].n_events)||0),0)};
+  const cand=Object.keys(arts).filter(t=>isT(t)&&arts[t].terms&&Object.keys(arts[t].terms).length&&(arts[t].fs_timeline||[]).length).sort((a,b)=>ev(a)-ev(b)||a.localeCompare(b));
+  if(!cand.length){h+=`<div class="note">The single-article trace needs per-term counts, which are not in this build yet.</div>`;host.innerHTML=h;ratSurv();return}
+  const mi=Math.floor((cand.length-1)/2),t=cand[mi],A=arts[t];RAT.pick=t;
+  h+=`<div class="fig beat" id="beatFig"><div class="fig-h"><span class="fig-t">One article’s heartbeat: ${esc(t)}</span><span class="xchip">Illustration, not evidence</span></div>
+   <p class="ruleline">How this article was chosen: of the ${cand.length} topic key articles, we sorted by the number of times a loaded word was added to or removed from the opening paragraph, and took the middle one. ${esc(t)} has ${ev(t)} such events (the range is ${ev(cand[0])} to ${ev(cand.at(-1))}).</p>
+   <div class="chart" id="beatChart"></div>
+   <div class="legend"><span class="key"><i class="ln" style="background:var(--ink-2)"></i>the wording of the first sentence: each level is one version, in order of first appearance</span><span class="key"><i class="ln" style="background:var(--del-bd)"></i>a change that was later undone</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span></div>
+   <p class="beat-s" id="beatS" aria-live="polite"></p>
+   <div class="terms" id="beatTerms"></div></div>`;
+  host.innerHTML=h;ratSurv();ratBeat();
+  const T=A.terms||{};
+  $("#beatTerms").innerHTML=`<span><b>${(A.revisions||0).toLocaleString("en-US")}</b> saved versions of the opening</span><span><b>${A.fs_n_variants??"–"}</b> first-sentence wordings</span>${A.lead_revert_rate!=null?`<span><b>${pct(A.lead_revert_rate)}</b> of versions later undone</span>`:""}`+crit.filter(k=>T[k]&&(T[k].n_events||T[k].present_end||T[k].present_start)).map(k=>`<span>${esc((LABEL[k]||k).split(" /")[0])}: <b>${T[k].n_events||0}</b> event${T[k].n_events===1?"":"s"} · ${T[k].present_start?"in":"absent"} at start → ${T[k].present_end?"in":"absent"} now</span>`).join("");
+  const bc=$("#beatChart");bc.addEventListener("pointermove",ratHover);bc.addEventListener("pointerdown",ratHover);
+}
+function ratSurv(){$$("#ratWrap .sv").forEach(el=>{el.innerHTML=survSVG(R.ratchet[el.dataset.g],Math.max(240,el.clientWidth),isPhone())});const f=$("#survFig");if(f)revealOnView(f)}
+function beatGeom(){const el=$("#beatChart"),A=R.ratchet&&R.ratchet.articles[RAT.pick];if(!el||!A)return null;
+  const tl=(A.fs_timeline||[]).map(x=>({t:Date.parse(x[0]+"T00:00:00Z"),id:x[1],rv:+x[2]||0})).filter(x=>!isNaN(x.t)).sort((a,b)=>a.t-b.t);
+  const W=Math.max(260,el.clientWidth),ph=isPhone(),H=ph?150:180,m={l:ph?8:64,r:10,t:12,b:26};
+  const t0=Date.UTC(2021,0,1),t1=Math.max(ym(R.dates.at(-1))+864e5*60,tl.length?tl.at(-1).t:0),x=lin(t0,t1,m.l,W-m.r);
+  const maxId=Math.max(1,...tl.map(e=>e.id)),y=v=>m.t+v/maxId*(H-m.t-m.b);
+  return {el,A,tl,W,H,m,x,y,t0,t1,ph,maxId}}
+function ratBeat(){
+  const G=beatGeom();if(!G)return;const {el,tl,W,H,m,x,y,t0,t1,ph}=G;
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="First-sentence versions of ${esc(RAT.pick)} over time">`;
+  s+=yearTicks(x,t0,t1,H-m.b,ph);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${H-m.b}" y2="${H-m.b}" style="stroke:var(--rule)"/>`;
+  if(!ph)s+=`<text x="${m.l-6}" y="${y(0)+4}" text-anchor="end">first</text><text x="${m.l-6}" y="${y(G.maxId)+4}" text-anchor="end">newest</text>`;
+  const wx=x(WAR);s+=`<line x1="${wx}" x2="${wx}" y1="${m.t-6}" y2="${H-m.b}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/>`;
+  if(tl.length){let d=`M${x(Math.max(t0,tl[0].t)).toFixed(1)},${y(tl[0].id).toFixed(1)}`,rv="";
+    for(let i=1;i<tl.length;i++){const xx=x(tl[i].t).toFixed(1);d+=`H${xx}V${y(tl[i].id).toFixed(1)}`;if(tl[i].rv)rv+=`M${xx},${y(tl[i-1].id).toFixed(1)}V${y(tl[i].id).toFixed(1)}`}
+    d+=`H${x(t1).toFixed(1)}`;
+    s+=`<path class="drawln" pathLength="1" d="${d}" style="fill:none;stroke:var(--ink-2);stroke-width:1.4;stroke-linejoin:round"/>`;
+    if(rv)s+=`<path d="${rv}" style="fill:none;stroke:var(--del-bd);stroke-width:2.2"/>`}
+  const c=RAT.cur!=null?RAT.cur:t1;s+=`<line x1="${x(c)}" x2="${x(c)}" y1="${m.t-6}" y2="${H-m.b}" style="stroke:var(--topic);stroke-width:1.5"/>`;
+  el.innerHTML=s+`</svg>`;
+  const fig=$("#beatFig");if(fig&&!fig._rv){fig._rv=1;revealOnView(fig)}
+  ratLive(c)}
+function ratLive(t){const G=beatGeom();if(!G)return;let k=-1;G.tl.forEach((e,i)=>{if(e.t<=t)k=i});const e=G.tl[Math.max(0,k)];if(!e){$("#beatS").innerHTML="";return}
+  const v=(G.A.fs_variants||[]).find(x=>x.id===e.id),nx=G.tl.find((x,i)=>i>k&&x.id!==e.id);
+  const ds=d=>{const z=new Date(d);return `${z.getUTCDate()} ${MON[z.getUTCMonth()]} ${z.getUTCFullYear()}`};
+  $("#beatS").innerHTML=`<span class="when">Version ${e.id+1}, live from ${ds(e.t)}${nx?` to ${ds(nx.t)}`:" to now"}${e.rv?" · this change was later undone":""}</span>${v?esc(v.s):"<span class='cap'>This wording was short-lived, so its text is not kept in this build.</span>"}`}
+function ratHover(e){const G=beatGeom();if(!G)return;const r=G.el.getBoundingClientRect(),px=clamp(e.clientX-r.left,G.m.l,G.W-G.m.r);RAT.cur=G.t0+(px-G.m.l)/(G.W-G.m.r-G.m.l)*(G.t1-G.t0);ratBeat()}
+
+/* ---------- headline 5: same rules, different people ---------- */
 function drawXL(){
-  const X=R.crosslang,host=$("#xlWrap");
+  const X=R.crosslang,host=$("#xlWrap");if(!host)return;
   if(!X||!X.articles||!Object.keys(X.articles).length){host.innerHTML=`<div class="note">The cross-language comparison is not in this build yet.</div>`;return}
   const langs=X.langs||["en"],titles=Object.keys(X.articles);
-  const sum=r=>r?Object.values(r.rates||{}).reduce((s,v)=>s+(v||0),0):null;
-  const dlt={};titles.forEach(t=>{langs.forEach(l=>{const a=X.articles[t][l];if(!a||!a.series||a.series.length<1){return}const s=a.series;dlt[t+"|"+l]={d:sum(s.at(-1))-sum(s[0]),a:s[0],b:s.at(-1),title:a.title}})});
-  const vals=Object.values(dlt).map(v=>Math.abs(v.d)).sort((a,b)=>a-b),vmax=Math.max(vals[Math.floor(vals.length*.95)]||1,.5);
-  const RP=ramp([tok("--dec"),tok("--mid"),tok("--inc")]),col=v=>RP[Math.round(Math.min(1,Math.max(0,(v/vmax+1)/2))*(RP.length-1))];
-  const grp=t=>{const a=R.articles.find(x=>x.title===t);return a&&a.group!=="treatment"?"o":"t"};
-  const order=[...titles.filter(t=>grp(t)==="t"),...titles.filter(t=>grp(t)==="o")];
-  let h=`<div class="fig"><div class="fig-h"><span class="fig-t">Change in loaded words in the opening paragraph, first copy to last, per 1,000 words</span><span class="cap">Orange = went up. Purple = went down. Grey = little change. Striped = no such article.</span></div><div class="xl"><table><thead><tr><th class="t">Article</th>${langs.map(l=>`<th title="${LANG[l]||l}">${l}</th>`).join("")}</tr></thead><tbody>`;
-  let lastG=null;
-  for(const t of order){const g=grp(t);if(g!==lastG){h+=`<tr><th class="t sep" colspan="${langs.length+1}"><span class="cap">${g==="t"?"Topic articles":"Other articles, for comparison"}</span></th></tr>`;lastG=g}
-    h+=`<tr><th class="t" scope="row">${esc(t)}</th>${langs.map(l=>{const v=dlt[t+"|"+l];if(!v)return `<td><span class="na" title="no ${LANG[l]||l} article"></span></td>`;const c=col(v.d);return `<td><button type="button" data-k="${esc(t+"|"+l)}" aria-pressed="false" aria-label="${esc(t)} in ${LANG[l]||l}: change ${sgn(v.d,1)}" style="background:${css(c)};color:${lum(c)<.5?"#fff":"#111"}">${sgn(v.d,1)}</button></td>`}).join("")}</tr>`}
-  h+=`</tbody></table></div></div><p class="means" id="mXL"></p><div class="fig" id="xlPane"></div>`;
-  host.innerHTML=h;
-  host.querySelector(".xl").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)xlShow(b.dataset.k,dlt)});
-  const key=dlt["Zionism|he"]?"Zionism|he":dlt["Zionism|de"]?"Zionism|de":Object.keys(dlt)[0];if(key)xlShow(key,dlt);
-  const tt=titles.filter(t=>grp(t)==="t"),up=(l)=>{const v=tt.map(t=>dlt[t+"|"+l]).filter(Boolean);return v.length?v.filter(x=>x.d>0).length/v.length:null};
+  const sum=r=>r&&r.rates?Object.values(r.rates).reduce((s,v)=>s+(v||0),0):null;
+  const all=titles.flatMap(t=>langs.flatMap(l=>{const a=X.articles[t][l];return a&&a.series?a.series.map(sum):[]})).filter(v=>v!=null);
+  const vmax=Math.max(quant(all,.95)||1,1);
+  const RP=ramp([tok("--heat-lo"),tok("--heat-mid"),tok("--heat-hi")]),col=v=>RP[Math.round(clamp(v/vmax,0,1)*(RP.length-1))];
+  const isT=t=>KEY_T.includes(t)||((R.articles.find(a=>a.title===t)||{}).group==="treatment");
+  const tt=titles.filter(isT),oo=titles.filter(t=>!isT(t));
+  if(!S.xlT||!titles.includes(S.xlT))S.xlT=titles.includes("Zionism")?"Zionism":titles[0];
+  host.innerHTML=`<div class="picks" id="xlPicks">${tt.length?`<span class="grp">Topic</span>`+tt.map(t=>`<button class="pick" type="button" data-t="${esc(t)}" aria-pressed="false">${esc(t)}</button>`).join(""):""}${oo.length?`<span class="grp" style="margin-left:8px">Comparison</span>`+oo.map(t=>`<button class="pick" type="button" data-t="${esc(t)}" aria-pressed="false">${esc(t)}</button>`).join(""):""}</div>
+   <div class="fig"><div class="fig-h"><span class="fig-t" id="xlTitle"></span><span class="cap">Loaded words in the opening paragraph, per 1,000 words, on the colour scale below. Select a language to read it.</span></div>
+   <div class="stripes"><div class="stripes-h"><span>Language</span><span class="two"><span>First copy</span><span>Latest copy</span></span><span style="text-align:right">per 1,000</span></div>
+   ${langs.map(l=>`<button class="stripe" type="button" data-l="${l}" aria-pressed="false"><span class="ln"><b>${l}</b><span>${LANG[l]||l}</span></span><span class="bar"><i></i><i></i></span><span class="v"></span></button>`).join("")}</div>
+   <div class="ramp" id="xlRamp"></div></div><p class="means" id="mXL"></p><div class="fig" id="xlPane"></div>`;
+  const rc=document.createElement("canvas");rc.width=160;rc.height=10;const cx=rc.getContext("2d");for(let i=0;i<160;i++){cx.fillStyle=css(RP[Math.round(i/159*(RP.length-1))]);cx.fillRect(i,0,1,10)}
+  $("#xlRamp").innerHTML=`<span>0</span>`;$("#xlRamp").append(rc);$("#xlRamp").insertAdjacentHTML("beforeend",`<span>${fmt(vmax,1)}+ per 1,000 words</span><span class="key" style="margin-left:12px"><i style="background:repeating-linear-gradient(135deg,var(--faint) 0 3px,transparent 3px 6px);border:1px solid var(--rule)"></i>no article in that language, or no copy</span>`);
+  $("#xlPicks").onclick=e=>{const b=e.target.closest(".pick");if(b){S.xlT=b.dataset.t;xlPaint(sum,col)}};
+  host.querySelector(".stripes").addEventListener("click",e=>{const b=e.target.closest(".stripe");if(b&&!b.classList.contains("na")){S.xlL=b.dataset.l;xlPaint(sum,col)}});
+  xlPaint(sum,col);
+  const up=l=>{const v=tt.map(t=>X.articles[t][l]).filter(a=>a&&a.series&&a.series.length>1).map(a=>sum(a.series.at(-1))-sum(a.series[0]));return v.length?v.filter(d=>d>0).length/v.length:null};
   const en=up("en"),oth=langs.filter(l=>l!=="en").map(up).filter(v=>v!=null),om=oth.length?oth.reduce((s,v)=>s+v,0)/oth.length:null;
-  $("#mXL").innerHTML=en!=null&&om!=null?`<b>What this means:</b> in English, ${pct(en)} of the topic articles’ opening paragraphs gained loaded words. In the other languages, the average was ${pct(om)}. ${Math.abs(en-om)<.1?"English moved much like the others.":en>om?"English moved more than most other languages.":"English moved less than most other languages."}`:"";
+  $("#mXL").innerHTML=en!=null&&om!=null?`<b>What this means:</b> across all ${tt.length} topic articles, ${pct(en)} of the English opening paragraphs gained loaded words. In the other ${oth.length} languages, the average was ${pct(om)}. ${Math.abs(en-om)<.1?"English moved much like the others.":en>om?"English moved more than most other languages.":"English moved less than most other languages."}`:"";
 }
-function xlShow(k,dlt){
-  const v=dlt[k];if(!v)return;const [t,l]=k.split("|");S.xl=k;
-  $$("#xlWrap .xl button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===k)));
-  const o=wdiff(v.a.lead||"",v.b.lead||""),rates=Object.keys(v.b.rates||{});
+function xlPaint(sum,col){
+  const X=R.crosslang,t=S.xlT,A=X.articles[t]||{};
+  $$("#xlPicks .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.t===t)));
+  const have=(X.langs||[]).filter(l=>A[l]&&A[l].series&&A[l].series.length);
+  $("#xlTitle").textContent=`${t}: ${have.length} of ${(X.langs||[]).length} languages have this article`;
+  if(!S.xlL||!have.includes(S.xlL))S.xlL=have.includes("en")?"en":have[0];
+  $$("#xlWrap .stripe").forEach(b=>{const l=b.dataset.l,a=A[l],s=a&&a.series;const na=!s||!s.length;b.classList.toggle("na",na);b.disabled=na;
+    const [i0,i1]=b.querySelectorAll(".bar i");b.setAttribute("aria-pressed",String(!na&&l===S.xlL));
+    if(na){i0.style.backgroundColor="transparent";i1.style.backgroundColor="transparent";b.querySelector(".v").textContent="no data";b.setAttribute("aria-label",`${LANG[l]||l}: no data`);return}
+    const v0=sum(s[0]),v1=sum(s.at(-1));i0.style.backgroundColor=css(col(v0));i1.style.backgroundColor=css(col(v1));
+    b.querySelector(".v").textContent=s.length>1?`${fmt(v0,1)} → ${fmt(v1,1)}`:`${fmt(v0,1)} · one copy`;
+    b.setAttribute("aria-label",`${LANG[l]||l}: ${fmt(v0,1)} in ${dlab(s[0].date)}, ${fmt(v1,1)} in ${dlab(s.at(-1).date)} per 1,000 words`);b.title=`${dlab(s[0].date)} → ${dlab(s.at(-1).date)}`});
+  xlShow(sum)}
+function xlShow(sum){
+  const X=R.crosslang,t=S.xlT,l=S.xlL,a=(X.articles[t]||{})[l],pane=$("#xlPane");
+  if(!a||!a.series||!a.series.length){pane.innerHTML=`<div class="note">No language selected.</div>`;return}
+  const v0=a.series[0],v1=a.series.at(-1),o=wdiff(v0.lead||"",v1.lead||""),rates=Object.keys(v1.rates||{});
   const link=r=>r.revid?`<a href="https://${l}.wikipedia.org/w/index.php?oldid=${r.revid}" target="_blank" rel="noopener">rev ${r.revid} ↗</a>`:"";
-  $("#xlPane").innerHTML=`<div class="fig-h"><span class="fig-t">${esc(t)} in ${LANG[l]||l}${v.title&&v.title!==t?`: <span lang="${l}" dir="auto">${esc(v.title)}</span>`:""}</span><span class="cap">Opening paragraph, first ${1200} characters. Amber struck-through = removed; blue = added.</span></div>
-   <div class="xl-pane"><div class="col2"><div class="stage-meta" style="padding:0;border:0"><b>${dlab(v.a.date)}</b>${link(v.a)}</div><div class="xl-text" lang="${l}" dir="auto">${renderW(o,"-")||"<span class='cap'>No text.</span>"}</div></div>
-   <div class="col2"><div class="stage-meta" style="padding:0;border:0"><b>${dlab(v.b.date)}</b>${link(v.b)}</div><div class="xl-text" lang="${l}" dir="auto">${renderW(o,"+")||"<span class='cap'>No text.</span>"}</div></div></div>
-   <div class="tbx"><table style="min-width:0"><thead><tr><th>Words like…</th><th class="r">${dlab(v.a.date)}</th><th class="r">${dlab(v.b.date)}</th></tr></thead><tbody>${rates.map(r=>`<tr><td>${esc(r.replace(/_/g," "))}</td><td class="r">${fmt(v.a.rates[r],1)}</td><td class="r">${fmt(v.b.rates[r],1)}</td></tr>`).join("")}</tbody></table></div><p class="cap">Per 1,000 words of the opening paragraph. Each language uses its own word list for the same five ideas.</p>`;
-}
+  pane.innerHTML=`<div class="fig-h"><span class="fig-t">${esc(t)} in ${LANG[l]||l}${a.title&&a.title!==t?`: <span lang="${l}" dir="auto">${esc(a.title)}</span>`:""}</span><span class="cap">Opening paragraph, first 1,200 characters. Amber struck-through = removed. Blue = added.</span></div>
+   <div class="xl-pane"><div class="col2"><div class="stage-meta" style="padding:0;border:0"><b>${dlab(v0.date)}</b>${link(v0)}</div><div class="xl-text" lang="${l}" dir="auto">${renderW(o,"-")||"<span class='cap'>No text.</span>"}</div></div>
+   <div class="col2"><div class="stage-meta" style="padding:0;border:0"><b>${dlab(v1.date)}</b>${link(v1)}</div><div class="xl-text" lang="${l}" dir="auto">${a.series.length>1?renderW(o,"+")||"<span class='cap'>No text.</span>":"<span class='cap'>Only one copy of this article.</span>"}</div></div></div>
+   <div class="tbx"><table style="min-width:0"><thead><tr><th>Words like…</th><th class="r">${dlab(v0.date)}</th><th class="r">${dlab(v1.date)}</th></tr></thead><tbody>${rates.map(r=>`<tr><td>${esc(r.replace(/_/g," "))}</td><td class="r">${fmt(v0.rates[r],1)}</td><td class="r">${fmt(v1.rates[r],1)}</td></tr>`).join("")}<tr><td><b>All five</b></td><td class="r"><b>${fmt(sum(v0),1)}</b></td><td class="r"><b>${fmt(sum(v1),1)}</b></td></tr></tbody></table></div><p class="cap">Per 1,000 words of the opening paragraph (${v0.words??"–"} and ${v1.words??"–"} words). Each language uses its own word list for the same five ideas.</p>`}
+
 
 /* ---------- validation + blind ---------- */
 function drawChecks(){
@@ -1699,378 +1881,52 @@ function drawMethod(){
   $("#mGroups").insertAdjacentHTML("beforeend",` In this build: ${R.n_treatment} topic and ${R.n_control} comparison articles in the test panel (${R.n_treatment_hand??"–"} hand-picked topic, ${R.n_control_shocked??"–"} comparison articles with their own war), ${R.n_new_topic_articles??"–"} topic articles created during the window, and ${nc} excluded comparison articles.`);
 }
 
-/* ---------- data lab ---------- */
-const PG={coder:{i:0,round:0,choice:null,ra:0,rn:0},race:{words:[]},rp:{raf:0}};
-const pgNote=t=>`<div class="note">${t}</div>`;
+/* ---------- shared helpers (report + lab) ---------- */
 function store(k,v){try{if(v===undefined){const x=localStorage.getItem(k);return x?JSON.parse(x):null}localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
-const millions=n=>n>=1e6?`${(n/1e6).toFixed(n>=1e7?0:1)} million`:n>=1e3?`${(Math.round(n/1e3)*1e3).toLocaleString("en-US")}`:String(n);
-const SLICE0=()=>({g:[],sg:[],prim:"any",neu:"any",war:"any",q:"",me:0,mv:0});
-const LAB={l1:{A:{...SLICE0(),g:["treatment"],prim:"only"},B:{...SLICE0(),g:["control"],prim:"only"},measure:"critical",custom:[],part:"full",from:null,to:null},
-  l2:{x:"dcrit",y:"edits",f:"genocide",color:"group",lx:false,ly:true,brush:false,sel:null},
-  l3:{titles:null,measure:"critical",part:"full"},
-  l6:{measure:"critical",part:"full",per:"02",A:{g:"t",imp:[],proj:[]},B:{g:"c",imp:[],proj:[]},sort:"change",pg:"t",pq:""}};
-const COL_A="--s2",COL_B="--s1",GRP_L={treatment:"Topic",control:"Other",control_contaminated:"Excluded other"};
 function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null;
 function boot(a,b,n=500){if(a.length<2||b.length<2)return null;const r=rng(7),o=new Float64Array(n),na=a.length,nb=b.length;
   for(let k=0;k<n;k++){let sa=0,sb=0;for(let i=0;i<na;i++)sa+=a[(r()*na)|0];for(let i=0;i<nb;i++)sb+=b[(r()*nb)|0];o[k]=sa/na-sb/nb}
   o.sort();return [o[Math.floor(.025*n)],o[Math.ceil(.975*n)-1]]}
-function copyOut(text,msg,fb){const ok=()=>{msg.textContent="Copied to the clipboard.";fb.hidden=true};const fail=()=>{fb.hidden=false;fb.value=text;fb.focus();fb.select();msg.textContent="Copying is blocked here. The text is selected below: press Ctrl+C or ⌘C."};
-  try{navigator.clipboard.writeText(text).then(ok,fail)}catch(e){fail()}}
-const csvq=v=>v==null?"":/[",\n]/.test(String(v))?`"${String(v).replace(/"/g,'""')}"`:String(v);
-const csv=rows=>rows.map(r=>r.map(csvq).join(",")).join("\n");
 function measureFrames(m,custom){return m==="critical"?(R.critical||[]):m==="connection"?(R.connection||[]):m==="custom"?(custom||[]):[m]}
-function measureLabel(m,custom){return m==="critical"?"Loaded words (colonial, apartheid, genocide…)":m==="connection"?"History words (homeland, indigenous, antisemitism…)":m==="custom"?`Custom: ${(custom||[]).map(k=>LABEL[k]||k).join(", ")||"nothing selected"}`:(LABEL[m]||m)}
-function measureOptions(sel,withCustom){sel.innerHTML=`<option value="critical">${esc(measureLabel("critical"))}</option><option value="connection">${esc(measureLabel("connection"))}</option>`+(R.frames||[]).map(f=>`<option value="${f}">${esc(LABEL[f]||f)}</option>`).join("")+(withCustom?`<option value="custom">Custom set of word groups…</option>`:"")}
 function artRate(a,part,frames,date){const ds=a.crit_series_dates;if(!ds||!frames.length)return null;const di=a._di||(a._di=Object.fromEntries(ds.map((d,i)=>[d,i])));const i=di[date];if(i==null)return null;
   const FS=part==="lead"?a.lead_frame_series:a.frame_series,WS=part==="lead"?a.lead_words_series:a.words_series;
   if(FS&&WS){const w=WS[i];if(!w)return null;let c=0;for(const f of frames){const s=FS[f];if(!s||s[i]==null)return null;c+=s[i]}return c*1e4/w}
   const same=(x,y)=>x.length===y.length&&x.every(f=>y.includes(f));
   if(same(frames,R.critical||[])){const s=part==="lead"?a.lcrit_series:a.crit_series;return s?s[i]:null}
   if(same(frames,R.connection||[])&&part==="full"&&a.conn_series)return a.conn_series[i];return null}
-function inSlice(a,f){if(f.g.length&&!f.g.includes(a.group))return false;if(f.sg.length&&!f.sg.includes(a.subgroup))return false;if(f.prim==="only"&&!a.primary)return false;
-  if(f.neu==="only"&&!a.created_in_window)return false;if(f.neu==="no"&&a.created_in_window)return false;if(f.war==="only"&&!a.shocked)return false;if(f.war==="no"&&a.shocked)return false;
-  if(f.q&&!a.title.toLowerCase().includes(f.q.toLowerCase()))return false;if(f.me&&(a.edits||0)<f.me)return false;if(f.mv&&(a.views||0)<f.mv)return false;return true}
-function sliceDesc(f){const p=[];if(f.g.length)p.push(f.g.map(g=>GRP_L[g]||g).join(" + ").toLowerCase()+" articles");else p.push("all articles");if(f.sg.length)p.push(f.sg.map(subName).join(", "));
-  if(f.prim==="only")p.push("main test only");if(f.neu==="only")p.push("created 2021 or later");if(f.neu==="no")p.push("existing in 2021");if(f.war==="only")p.push("own war");if(f.war==="no")p.push("no own war");
-  if(f.q)p.push(`title has “${f.q}”`);if(f.me)p.push(`${f.me}+ edits`);if(f.mv)p.push(`${big(f.mv)}+ views`);return p.join(" · ")}
-function bandHTML(lo,hi,d){const m=Math.max(Math.abs(lo),Math.abs(hi),Math.abs(d),1e-6)*1.25,X=v=>(v+m)/(2*m)*100,tk=ticks(-m,m,4).filter(v=>Math.abs(v)<=m);
-  return `<div class="eband" aria-hidden="true">${tk.map(v=>`<span class="tk" style="left:${X(v)}%">${v>0?"+":""}${+v.toFixed(2)}</span>`).join("")}<span class="z" style="left:${X(0)}%"></span><span class="ci" style="left:${X(lo)}%;width:${Math.max(.5,X(hi)-X(lo))}%"></span><span class="pt" style="left:${X(d)}%"></span></div>`}
-function estHTML(o){if(!o)return `<p class="cap">Each slice needs at least two articles measured at both dates.</p>`;
-  const inc=o.lo<=0&&o.hi>=0;return `<div><div class="k">Extra change, A minus B</div><div class="v">${sgn(o.d,2)}</div><div class="u">per 10,000 words · ${esc(o.span)}</div></div>
-   <div><div class="k">95% band: ${sgn(o.lo,2)} to ${sgn(o.hi,2)}${inc?" · includes zero":""}</div>${bandHTML(o.lo,o.hi,o.d)}<div class="ns"><span class="ab a">A</span> n = ${o.na} articles, mean change ${sgn(o.ma,2)} &nbsp; <span class="ab b">B</span> n = ${o.nb}, mean change ${sgn(o.mb,2)}</div></div>`}
-function estSay(o,nmA,nmB){if(!o)return "";const inc=o.lo<=0&&o.hi>=0;return `<b>Exploratory reading:</b> ${esc(o.span)}, slice A (${esc(nmA)}) changed by ${sgn(o.ma,2)} per 10,000 words on average and slice B (${esc(nmB)}) by ${sgn(o.mb,2)}. The difference is ${sgn(o.d,2)}, with a 95% band from ${sgn(o.lo,2)} to ${sgn(o.hi,2)}. ${inc?"The band includes zero, so the two slices are not distinguishable from noise.":o.lo>0?"The band is above zero: A gained more of these words than B.":"The band is below zero: B gained more of these words than A."} This is not the pre-registered test.`}
-
-/* lab 1: compare slices */
-function sliceUI(root,key){const f=LAB.l1[key],A=R.articles;const gs=["treatment","control","control_contaminated"].filter(g=>A.some(a=>a.group===g));
-  const so=Object.keys(SUB),sgs=[...new Set(A.map(a=>a.subgroup))].sort((x,y)=>(so.indexOf(x)+1||99)-(so.indexOf(y)+1||99));
-  root.innerHTML=`<div class="slice-h"><span style="display:flex;gap:8px;align-items:center"><span class="ab ${key.toLowerCase()}">${key}</span><b>Slice ${key}</b></span><span class="slice-n" data-n></span></div>
-   <div class="frow"><span>Group</span><div class="picks" data-k="g">${gs.map(g=>`<button class="pick" type="button" data-v="${g}" aria-pressed="false">${GRP_L[g]}</button>`).join("")}</div></div>
-   <div class="frow"><span>Subgroup</span><div class="picks" data-k="sg">${sgs.map(g=>`<button class="pick" type="button" data-v="${esc(g)}" aria-pressed="false">${esc(subName(g))}</button>`).join("")}</div></div>
-   <div class="frow"><span>Filters</span><div class="two"><label>main test<select data-k="prim"><option value="any">any</option><option value="only">only</option></select></label><label>created<select data-k="neu"><option value="any">any</option><option value="no">before 2021</option><option value="only">2021 or later</option></select></label><label>own war<select data-k="war"><option value="any">any</option><option value="no">exclude</option><option value="only">only</option></select></label></div></div>
-   <div class="frow"><span>Title</span><input type="search" data-k="q" placeholder="contains…" aria-label="Slice ${key} title contains"></div>
-   <div class="frow"><span>At least</span><div class="two" style="grid-template-columns:1fr 1fr"><label>edits<input type="number" min="0" data-k="me" inputmode="numeric"></label><label>page views<input type="number" min="0" data-k="mv" inputmode="numeric"></label></div></div>
-   <p class="cap">Empty choices mean “any”.</p>`;
-  let t;root.addEventListener("click",e=>{const b=e.target.closest(".pick");if(!b)return;const k=b.parentElement.dataset.k,v=b.dataset.v,cur=LAB.l1[key];cur[k]=cur[k].includes(v)?cur[k].filter(x=>x!==v):[...cur[k],v];sliceSync(root,key);l1Draw()});
-  root.addEventListener("input",e=>{const k=e.target.dataset.k;if(!k)return;const cur=LAB.l1[key];cur[k]=e.target.type==="number"?Math.max(0,+e.target.value||0):e.target.value;clearTimeout(t);t=setTimeout(l1Draw,e.target.tagName==="SELECT"?0:180)});
-  sliceSync(root,key)}
-function sliceSync(root,key){const f=LAB.l1[key];$$(".picks",root).forEach(p=>{const k=p.dataset.k;$$(".pick",p).forEach(b=>b.setAttribute("aria-pressed",String(f[k].includes(b.dataset.v))))});
-  $$("select[data-k],input[data-k]",root).forEach(i=>{const v=f[i.dataset.k];if(document.activeElement!==i)i.value=i.type==="number"?(v||""):v})}
-function l1Presets(){const A=R.articles,tsub=[...new Set(A.filter(a=>a.group==="treatment").map(a=>a.subgroup))];
-  return [["Topic vs comparison",{g:["treatment"],prim:"only"},{g:["control"],prim:"only"}],
-    ["Hand-picked vs category sample",{g:["treatment"],sg:tsub.filter(s=>s!=="category-sample")},{g:["treatment"],sg:["category-sample"]}],
-    ["Comparison: quiet vs had own war",{g:["control"],war:"no"},{g:["control"],war:"only"}],
-    ["Conflict vs Judaism articles",{g:["treatment"],sg:["conflict"]},{g:["treatment"],sg:["judaism"]}]]}
-function l1Init(){
-  if(!R.articles||!R.articles.length||!R.dates){$("#lab1").insertAdjacentHTML("beforeend",pgNote("No article data in this build."));return}
-  const P=l1Presets();$("#l1Presets").innerHTML=P.map((p,i)=>`<button class="pick" type="button" data-i="${i}" aria-pressed="${i===0}">${esc(p[0])}</button>`).join("");
-  $("#l1Presets").onclick=e=>{const b=e.target.closest(".pick");if(!b)return;const p=P[+b.dataset.i];LAB.l1.A={...SLICE0(),...p[1]};LAB.l1.B={...SLICE0(),...p[2]};$$("#l1Presets .pick").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));sliceSync($("#l1A"),"A");sliceSync($("#l1B"),"B");l1Draw()};
-  sliceUI($("#l1A"),"A");sliceUI($("#l1B"),"B");
-  measureOptions($("#l1Measure"),true);$("#l1Measure").onchange=e=>{LAB.l1.measure=e.target.value;l1Draw()};
-  $("#l1Custom").innerHTML=(R.frames||[]).map(f=>`<button class="pick" type="button" data-v="${f}" aria-pressed="false">${esc(LABEL[f]||f)}</button>`).join("");
-  $("#l1Custom").onclick=e=>{const b=e.target.closest(".pick");if(!b)return;const c=LAB.l1.custom,v=b.dataset.v;LAB.l1.custom=c.includes(v)?c.filter(x=>x!==v):[...c,v];l1Draw()};
-  seg($("#l1Part"),v=>{LAB.l1.part=v;l1Draw()});
-  const opts=R.dates.map(d=>`<option value="${d}">${dlab(d)}</option>`).join("");$("#l1From").innerHTML=opts;$("#l1To").innerHTML=opts;
-  LAB.l1.from=LAB.l1.from||R.dates[0];LAB.l1.to=LAB.l1.to||R.dates.at(-1);
-  $("#l1From").onchange=e=>{LAB.l1.from=e.target.value;l1Draw()};$("#l1To").onchange=e=>{LAB.l1.to=e.target.value;l1Draw()};
-  $("#l1Csv").onclick=()=>copyOut(l1CsvText(),$("#l1CsvMsg"),$("#l1CsvFb"));
-  l1Draw()}
-let L1=null;
-function l1Compute(){const L=LAB.l1,fr=measureFrames(L.measure,L.custom),A=R.articles.filter(a=>inSlice(a,L.A)),B=R.articles.filter(a=>inSlice(a,L.B));
-  const ch=S=>S.map(a=>{const r0=artRate(a,L.part,fr,L.from),r1=artRate(a,L.part,fr,L.to);return r0==null||r1==null?null:{a,r0,r1,c:r1-r0}}).filter(Boolean);
-  const cA=ch(A),cB=ch(B),va=cA.map(x=>x.c),vb=cB.map(x=>x.c);let est=null;
-  if(va.length>=2&&vb.length>=2){const b=boot(va,vb);est={d:avg(va)-avg(vb),lo:b[0],hi:b[1],na:va.length,nb:vb.length,ma:avg(va),mb:avg(vb),span:`${dlab(L.from)} to ${dlab(L.to)}`}}
-  return {fr,A,B,cA,cB,est}}
-function l1Draw(){if(!R.articles||!R.dates)return;const L=LAB.l1;setSeg($("#l1Part"),L.part);$("#l1Measure").value=L.measure;$("#l1From").value=L.from;$("#l1To").value=L.to;
-  $("#l1Custom").hidden=L.measure!=="custom";$$("#l1Custom .pick").forEach(b=>b.setAttribute("aria-pressed",String(L.custom.includes(b.dataset.v))));
-  const C=L1=l1Compute();
-  $("#l1A [data-n]").textContent=`n = ${C.A.length}`;$("#l1B [data-n]").textContent=`n = ${C.B.length}`;
-  const line=(S,key,lab,col)=>({key,label:lab,color:col,width:2.4,pts:R.dates.map(d=>{const v=S.map(a=>artRate(a,L.part,C.fr,d)).filter(x=>x!=null);return [ym(d),v.length?avg(v):null]}),n:R.dates.map(d=>S.filter(a=>artRate(a,L.part,C.fr,d)!=null).length)});
-  const ser=[line(C.A,"A","A",COL_A),line(C.B,"B","B",COL_B)];
-  $("#l1Title").textContent=`${measureLabel(L.measure,L.custom)} · per 10,000 words of ${L.part==="lead"?"opening paragraph":"article text"}`;
-  $("#l1N").textContent=`A: ${C.A.length} articles · B: ${C.B.length} articles`;
-  if(!C.fr.length){$("#l1Chart").innerHTML=pgNote("Choose at least one word group.");}else chart($("#l1Chart"),{series:ser,endLabels:true,labelW:60,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],band:L.from===R.dates[0]&&L.to===R.dates.at(-1)?null:[ym(L.from),ym(L.to)],bandColor:"--add-bd",aria:"Slice A and B over time",xlab:t=>"Snapshot "+dlabT(t)});
-  $("#l1Key").innerHTML=`<span class="key"><i class="ln" style="background:var(${COL_A})"></i>A (blue): ${esc(sliceDesc(L.A))}</span><span class="key"><i class="ln" style="background:var(${COL_B})"></i>B (ochre): ${esc(sliceDesc(L.B))}</span><span>${L.from===R.dates[0]&&L.to===R.dates.at(-1)?"":"shaded: the chosen window · "}hover for the number measured at each date</span>`;
-  $("#l1Est").innerHTML=estHTML(C.est);$("#l1Say").innerHTML=estSay(C.est,sliceDesc(L.A),sliceDesc(L.B));
-  const up=!C.est||C.est.d>=0,sA=[...C.cA].sort((x,y)=>up?y.c-x.c:x.c-y.c).slice(0,10),sB=[...C.cB].sort((x,y)=>up?x.c-y.c:y.c-x.c).slice(0,10),mx=Math.max(...[...sA,...sB].map(x=>Math.abs(x.c)),1e-6);
-  const list=(rows,key,h)=>`<div class="dlist"><div class="h"><span class="ab ${key.toLowerCase()}">${key}</span>${h}</div>${rows.map(x=>`<button type="button" data-t="${esc(x.a.title)}"><span>${esc(x.a.title)}</span><span class="bar" style="width:${Math.abs(x.c)/mx*100}%;background:var(${x.c>=0?"--inc":"--dec"})"></span><span class="num">${sgn(x.c,1)}</span></button>`).join("")||`<p class="cap">No articles measured at both dates.</p>`}</div>`;
-  $("#l1Drivers").innerHTML=list(sA,"A",`${up?"Largest increases":"Largest decreases"} in A`)+list(sB,"B",`${up?"Largest decreases":"Largest increases"} in B`);
-  $("#l1Drivers").onclick=e=>{const b=e.target.closest("button[data-t]");if(b)openDrawer(b.dataset.t,b)}}
-function l1CsvText(){const C=L1||l1Compute(),L=LAB.l1;return csv([["slice","title","group","subgroup",`rate_${L.from}`,`rate_${L.to}`,"change"],...C.cA.map(x=>["A",x.a.title,x.a.group,x.a.subgroup,x.r0.toFixed(3),x.r1.toFixed(3),x.c.toFixed(3)]),...C.cB.map(x=>["B",x.a.title,x.a.group,x.a.subgroup,x.r0.toFixed(3),x.r1.toFixed(3),x.c.toFixed(3)])])}
-
-/* lab 2: scatter */
-const dd=(a,b)=>a==null||b==null?null:a-b;
-function fsChanges(a){const f=a.first_sentences||[];return f.length?new Set(f.map(x=>x.s)).size-1:null}
-function frameDelta(a,f){const ds=a.crit_series_dates;if(!ds||!ds.length)return null;const r0=artRate(a,"full",[f],ds[0]),r1=artRate(a,"full",[f],ds.at(-1));return r0==null||r1==null?null:r1-r0}
-const AX={edits:["Edits",a=>a.edits],editors:["Editors",a=>a.editors],views:["Page views",a=>a.views],talk:["Talk-page edits",a=>a.talk_edits],revert:["Revert rate",a=>a.revert_rate],top10:["Share of edits by top 10 editors",a=>a.top10],
-  w0:["Words at start",a=>a.words0],w1:["Words now",a=>a.words1],dcrit:["Δ loaded-word rate",a=>dd(a.crit1,a.crit0)],dconn:["Δ history-word rate",a=>dd(a.conn1,a.conn0)],dframe:["Δ chosen word group",a=>frameDelta(a,LAB.l2.f)],fs:["First-sentence changes",fsChanges]};
-const SUBCOL=["--s2","--s1","--s3","--s4","--s5","--s6","--topic","--comp","--war","--new","--dec","--inc"];
-function l2Init(){if(!R.articles||!R.articles.length){$("#l2Box").innerHTML=pgNote("No article data in this build.");return}
-  const opts=Object.entries(AX).map(([k,v])=>`<option value="${k}">${esc(v[0])}</option>`).join("");$("#l2X").innerHTML=opts;$("#l2Y").innerHTML=opts;
-  $("#l2F").innerHTML=(R.frames||[]).map(f=>`<option value="${f}">${esc(LABEL[f]||f)}</option>`).join("");
-  $("#l2X").onchange=e=>{LAB.l2.x=e.target.value;LAB.l2.sel=null;l2Draw()};$("#l2Y").onchange=e=>{LAB.l2.y=e.target.value;LAB.l2.sel=null;l2Draw()};$("#l2F").onchange=e=>{LAB.l2.f=e.target.value;l2Draw()};
-  seg($("#l2C"),v=>{LAB.l2.color=v;l2Draw()});$("#l2LX").onchange=e=>{LAB.l2.lx=e.target.checked;LAB.l2.sel=null;l2Draw()};$("#l2LY").onchange=e=>{LAB.l2.ly=e.target.checked;LAB.l2.sel=null;l2Draw()};
-  $("#l2Brush").onclick=()=>{LAB.l2.brush=!LAB.l2.brush;$("#l2Brush").setAttribute("aria-pressed",String(LAB.l2.brush));$("#l2Box").classList.toggle("brush",LAB.l2.brush)};
-  const box=$("#l2Box");let st=null;
-  const near=e=>{const g=box._g;if(!g)return null;const r=box.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;let b=null,bd=14*14;for(const p of g.pts){const d=(p.px-px)**2+(p.py-py)**2;if(d<bd){bd=d;b=p}}return {b,px,py}};
-  box.addEventListener("pointerdown",e=>{const n=near(e);if(!n)return;st={x:n.px,y:n.py,moved:false,hit:n.b,id:e.pointerId,brush:LAB.l2.brush||e.pointerType==="mouse"};if(st.brush){try{box.setPointerCapture(e.pointerId)}catch(_){}}});
-  box.addEventListener("pointermove",e=>{const n=near(e);if(!n)return;if(st&&st.brush&&(Math.abs(n.px-st.x)>5||Math.abs(n.py-st.y)>5)){st.moved=true;l2Rect(st.x,st.y,n.px,n.py);hideTip();return}
-    if(n.b){const a=n.b.a;showTip(`<b>${esc(a.title)}</b><div class="r"><span>${esc(AX[LAB.l2.x][0])}</span><span>${fmt(n.b.vx,2)}</span></div><div class="r"><span>${esc(AX[LAB.l2.y][0])}</span><span>${fmt(n.b.vy,2)}</span></div><div class="r" style="opacity:.7"><span>${GRP_L[a.group]||a.group} · ${esc(subName(a.subgroup))}</span><span>select to open</span></div>`,e.clientX,e.clientY)}else hideTip()});
-  box.addEventListener("pointerup",e=>{if(!st)return;const n=near(e);if(st.moved&&n){const g=box._g;const x0=Math.min(st.x,n.px),x1=Math.max(st.x,n.px),y0=Math.min(st.y,n.py),y1=Math.max(st.y,n.py);LAB.l2.sel=g.pts.filter(p=>p.px>=x0&&p.px<=x1&&p.py>=y0&&p.py<=y1).map(p=>p.a.title);l2Draw()}
-    else if(st.hit&&n&&n.b===st.hit){openDrawer(st.hit.a.title,box)}st=null});
-  box.addEventListener("pointerleave",hideTip);
-  $("#l2Sel").addEventListener("click",e=>{const b=e.target.closest("button[data-t]");if(b)openDrawer(b.dataset.t,b);if(e.target.id==="l2Clear"){LAB.l2.sel=null;l2Draw()}if(e.target.id==="l2Csv")copyOut(l2CsvText(),$("#l2CsvMsg"),$("#l2CsvFb"))});
-  l2Draw()}
-const slog=v=>Math.sign(v)*Math.log10(1+Math.abs(v));
-function logTicks(lo,hi){const out=[];for(const s of [-1,1])for(let e=0;e<=9;e++){const v=s*10**e;const t=slog(v);if(t>=lo-1e-9&&t<=hi+1e-9)out.push([t,v])}if(0>=lo&&0<=hi)out.push([0,0]);return out.sort((a,b)=>a[0]-b[0])}
-function l2Rect(x0,y0,x1,y1){const svg=$("#l2Box svg");if(!svg)return;let r=svg.querySelector(".brushr");if(!r){r=document.createElementNS(NS,"rect");r.setAttribute("class","brushr");r.setAttribute("style","fill:var(--add-bg);fill-opacity:.35;stroke:var(--add-bd);stroke-dasharray:4 3");svg.append(r)}
-  r.setAttribute("x",Math.min(x0,x1));r.setAttribute("y",Math.min(y0,y1));r.setAttribute("width",Math.abs(x1-x0));r.setAttribute("height",Math.abs(y1-y0))}
-function l2Draw(){const L=LAB.l2,box=$("#l2Box");if(!R.articles||!box)return;$("#l2X").value=L.x;$("#l2Y").value=L.y;$("#l2F").value=L.f;$("#l2LX").checked=L.lx;$("#l2LY").checked=L.ly;setSeg($("#l2C"),L.color);
-  $("#l2FWrap").hidden=!(L.x==="dframe"||L.y==="dframe");
-  const fx=AX[L.x][1],fy=AX[L.y][1],tx=v=>L.lx?slog(v):v,ty=v=>L.ly?slog(v):v;
-  const so=Object.keys(SUB),sgs=[...new Set(R.articles.map(a=>a.subgroup))].sort((x,y)=>(so.indexOf(x)+1||99)-(so.indexOf(y)+1||99));
-  const colOf=a=>L.color==="group"?(a.group==="treatment"?"--topic":a.group==="control"?"--comp":"--muted"):SUBCOL[sgs.indexOf(a.subgroup)%SUBCOL.length];
-  const keyOf=a=>L.color==="group"?a.group:a.subgroup;
-  const pts=R.articles.map(a=>{const vx=fx(a),vy=fy(a);return vx==null||vy==null||!isFinite(vx)||!isFinite(vy)?null:{a,vx,vy,x:tx(vx),y:ty(vy),c:colOf(a),k:keyOf(a)}}).filter(Boolean);
-  if(pts.length<2){box.innerHTML=pgNote("Not enough articles have both of these values.");$("#l2R").innerHTML="";return}
-  const W=Math.max(260,box.clientWidth),H=isPhone()?330:460,m={l:52,r:14,t:12,b:40};
-  let x0=Math.min(...pts.map(p=>p.x)),x1=Math.max(...pts.map(p=>p.x)),y0=Math.min(...pts.map(p=>p.y)),y1=Math.max(...pts.map(p=>p.y));const px=(x1-x0)*.04||1,py=(y1-y0)*.04||1;x0-=px;x1+=px;y0-=py;y1+=py;
-  const X=lin(x0,x1,m.l,W-m.r),Y=lin(y0,y1,H-m.b,m.t);pts.forEach(p=>{p.px=X(p.x);p.py=Y(p.y)});
-  const tk=(lo,hi,lg)=>lg?logTicks(lo,hi).filter((t,i,arr)=>arr.length<9||i%2===0):ticks(lo,hi,isPhone()?4:6).map(v=>[v,v]);
-  const lbl=v=>Math.abs(v)>=1e4?big(v):Math.abs(v)<1&&v!==0?(+v.toFixed(2)).toString():(+v.toFixed(1)).toLocaleString("en-US");
-  let s=`<svg width="${W}" height="${H}" role="img" aria-label="Scatter of ${esc(AX[L.x][0])} against ${esc(AX[L.y][0])}">`;
-  tk(y0,y1,L.ly).forEach(([t,v])=>s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-6}" y="${Y(t)+3.5}" text-anchor="end">${lbl(v)}</text>`);
-  tk(x0,x1,L.lx).forEach(([t,v])=>s+=`<line x1="${X(t)}" x2="${X(t)}" y1="${m.t}" y2="${H-m.b}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${X(t)}" y="${H-m.b+14}" text-anchor="middle">${lbl(v)}</text>`);
-  s+=`<text x="${W-m.r}" y="${H-6}" text-anchor="end" class="lbl">${esc(AX[L.x][0])}${L.x==="dframe"?" ("+esc(LABEL[L.f]||L.f)+")":""}${L.lx?" · log":""} →</text><text x="${m.l}" y="${m.t-2}" class="lbl">↑ ${esc(AX[L.y][0])}${L.y==="dframe"?" ("+esc(LABEL[L.f]||L.f)+")":""}${L.ly?" · log":""}</text>`;
-  const sel=new Set(L.sel||[]);
-  for(const p of pts)s+=`<circle cx="${p.px.toFixed(1)}" cy="${p.py.toFixed(1)}" r="${sel.has(p.a.title)?5:isPhone()?3:3.6}" style="fill:var(${p.c});fill-opacity:${L.sel&&!sel.has(p.a.title)?.18:.72};stroke:var(${sel.has(p.a.title)?"--ink":"--sheet"});stroke-width:${sel.has(p.a.title)?1.5:.6}"/>`;
-  box.innerHTML=s+`</svg>`;box._g={pts};
-  const groups=[...new Set(pts.map(p=>p.k))];
-  const pr=v=>{const n=v.length;if(n<3)return null;const mx=avg(v.map(p=>p.x)),my=avg(v.map(p=>p.y));let sxy=0,sxx=0,syy=0;for(const p of v){sxy+=(p.x-mx)*(p.y-my);sxx+=(p.x-mx)**2;syy+=(p.y-my)**2}return sxx&&syy?sxy/Math.sqrt(sxx*syy):null};
-  $("#l2R").innerHTML=groups.map(g=>{const v=pts.filter(p=>p.k===g),r=pr(v);return `<span class="key"><i style="background:var(${v[0].c});border-radius:50%"></i>${esc(L.color==="group"?GRP_L[g]||g:subName(g))}: r = ${r==null?"–":r.toFixed(2)} (n = ${v.length})</span>`}).join("")+`<span>${pts.length} of ${R.articles.length} articles have both values</span>`;
-  const S=L.sel;$("#l2Sel").innerHTML=S?`<div class="fig"><div class="fig-h"><span class="fig-t">${S.length} article${S.length===1?"":"s"} in the selected area</span><span class="controls"><button class="btn sm" type="button" id="l2Csv">Copy as CSV</button><button class="btn sm" type="button" id="l2Clear">Clear selection</button></span></div><div class="sel-list">${S.map(t=>`<button type="button" data-t="${esc(t)}">${esc(t)}</button>`).join("")||"<span class='cap'>No dots inside.</span>"}</div><span class="cap" id="l2CsvMsg" aria-live="polite"></span><textarea class="csv-fb" id="l2CsvFb" hidden aria-label="CSV text"></textarea></div>`:`<p class="cap">${isPhone()?"Tap “Select an area”, then drag across the chart to list the articles inside.":"Drag across the chart to list the articles inside."}</p>`}
-function l2CsvText(){const L=LAB.l2,S=new Set(L.sel||[]),fx=AX[L.x][1],fy=AX[L.y][1];return csv([["title","group","subgroup",AX[L.x][0],AX[L.y][0]],...R.articles.filter(a=>S.has(a.title)).map(a=>[a.title,a.group,a.subgroup,fx(a),fy(a)])])}
-
-/* lab 3: side by side */
-const SBS_COL=["--s2","--s1","--s4","--s5"];
-function l3Init(){const A=R.articles;if(!A||!A.length){$("#l3Chart").innerHTML=pgNote("No article data in this build.");return}
-  $("#l3List").innerHTML=A.map(a=>`<option value="${esc(a.title)}">`).join("");
-  if(!LAB.l3.titles)LAB.l3.titles=["Zionism","Israel","Kurdish nationalism"].filter(t=>A.some(a=>a.title===t));if(!LAB.l3.titles.length)LAB.l3.titles=[A[0].title];
-  measureOptions($("#l3Measure"),false);$("#l3Measure").onchange=e=>{LAB.l3.measure=e.target.value;l3Draw()};seg($("#l3Part"),v=>{LAB.l3.part=v;l3Draw()});
-  const add=()=>{const v=$("#l3In").value.trim(),a=A.find(x=>x.title.toLowerCase()===v.toLowerCase());if(!a){$("#l3In").setCustomValidity("Pick a title from the list");$("#l3In").reportValidity();return}$("#l3In").setCustomValidity("");l3Add(a.title);$("#l3In").value=""};
-  $("#l3Add").onclick=add;$("#l3In").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();add()}});$("#l3In").addEventListener("change",()=>{if(A.some(x=>x.title===$("#l3In").value))add()});
-  $("#l3Chips").onclick=e=>{const b=e.target.closest("button[data-w]");if(b){LAB.l3.titles=LAB.l3.titles.filter(t=>t!==b.dataset.w);l3Draw()}};
-  $("#l3Rows").onclick=e=>{const b=e.target.closest("button[data-t]");if(b)openDrawer(b.dataset.t,b)};l3Draw()}
-function l3Add(t){const T=LAB.l3.titles||(LAB.l3.titles=[]);if(!T.includes(t)){T.push(t);if(T.length>4)T.shift()}l3Draw()}
-function l3Draw(){const L=LAB.l3;if(!L.titles)return;setSeg($("#l3Part"),L.part);$("#l3Measure").value=L.measure;const fr=measureFrames(L.measure),A=L.titles.map(t=>R.articles.find(a=>a.title===t)).filter(Boolean);
-  $("#l3Chips").innerHTML=A.map((a,i)=>`<span class="chip word"><i style="background:var(${SBS_COL[i]})"></i>${esc(a.title)}<button type="button" data-w="${esc(a.title)}" aria-label="Remove ${esc(a.title)}">×</button></span>`).join("")+(A.length>=4?`<span class="cap">4 maximum; adding one replaces the oldest</span>`:"");
-  if(!A.length){$("#l3Chart").innerHTML=pgNote("Add an article to start.");$("#l3Rows").innerHTML="";$("#l3Key").innerHTML="";return}
-  const ser=A.map((a,i)=>({key:a.title,label:a.title,color:SBS_COL[i],width:2.2,pts:(a.crit_series_dates||[]).map(d=>[ym(d),artRate(a,L.part,fr,d)])}));
-  chart($("#l3Chart"),{series:ser,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],aria:"Articles side by side",xlab:t=>"Snapshot "+dlabT(t)});
-  $("#l3Key").innerHTML=A.map((a,i)=>`<span class="key"><i class="ln" style="background:var(${SBS_COL[i]})"></i>${esc(a.title)}</span>`).join("")+`<span>${esc(measureLabel(L.measure))} per 10,000 words</span>`;
-  const t0=ym(R.dates[0]),t1=ym(R.dates.at(-1)),X=t=>Math.max(0,Math.min(100,(t-t0)/(t1-t0)*100));
-  $("#l3Rows").innerHTML=A.map((a,i)=>{const fs=a.first_sentences||[],n=new Set(fs.map(f=>f.s)).size;const last=fs.at(-1),prev=fs.length>1?fs.at(-2):null;
-    return `<div class="sbs-row"><div class="t"><i style="background:var(${SBS_COL[i]})"></i><span>${esc(a.title)}<br><span class="cap" style="font-weight:400">${n} version${n===1?"":"s"} of the first sentence</span></span></div>
-     <div><div class="fstrip" aria-hidden="true"><span class="warl" style="left:${X(WAR)}%"></span>${fs.slice(1).map(f=>`<span class="dm" style="left:${X(ym(f.date))}%" title="${f.date}"></span>`).join("")}</div>
-     <p class="s">${last?(prev?renderW(wdiff(prev.s,last.s)):esc(last.s)):"<span class='cap'>No first sentence recorded.</span>"}</p><button class="btn sm" type="button" data-t="${esc(a.title)}">Open this article</button></div></div>`}).join("")}
-
-/* lab 4: word race */
-const RACE_COL=["--s2","--s1","--s4"],PRESETS=[["occupation","indigenous"],["terrorist","militant"],["genocide","Holocaust"],["hostage","famine"]];
-function wrFind(w){const W=R.word_race&&R.word_race.words||[];return W.find(x=>x.toLowerCase()===String(w).trim().toLowerCase())||null}
-function raceInit(){const WR=R.word_race;if(!WR||!WR.words||!WR.words.length||!WR.dates){$("#lab4 .fig").outerHTML=pgNote("Word counts for the race are not in this build yet.");$$("#lab4 .controls").forEach(c=>c.hidden=true);return}
-  $("#wrList").innerHTML=WR.words.map(w=>`<option value="${esc(w)}">`).join("");
-  const ok=PRESETS.map(p=>p.map(wrFind)).filter(p=>p.filter(Boolean).length>=2).map(p=>p.filter(Boolean));
-  $("#wrPresets").innerHTML=ok.map((p,i)=>`<button class="pick" type="button" data-i="${i}">${p.map(esc).join(" vs ")}</button>`).join("")||`<span class="cap">no presets available</span>`;
-  $("#wrPresets").onclick=e=>{const b=e.target.closest(".pick");if(b){PG.race.words=ok[+b.dataset.i].slice(0,3);raceDraw()}};
-  const add=()=>{const w=wrFind($("#wrIn").value);if(!w){$("#wrIn").setCustomValidity("Pick a word from the list");$("#wrIn").reportValidity();return}$("#wrIn").setCustomValidity("");if(!PG.race.words.includes(w)){PG.race.words.push(w);if(PG.race.words.length>3)PG.race.words.shift()}$("#wrIn").value="";raceDraw()};
-  $("#wrAdd").onclick=add;$("#wrIn").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();add()}});$("#wrIn").addEventListener("change",()=>{if(wrFind($("#wrIn").value))add()});
-  $("#wrChips").onclick=e=>{const b=e.target.closest("button[data-w]");if(b){PG.race.words=PG.race.words.filter(w=>w!==b.dataset.w);raceDraw()}};
-  if(!PG.race.words.length)PG.race.words=(ok[0]||WR.words.slice(0,2)).slice(0,3);raceDraw()}
-function raceDraw(){const WR=R.word_race;if(!WR||!WR.words)return;const ws=PG.race.words,xs=WR.dates.map(ym);
-  $("#wrChips").innerHTML=ws.map((w,i)=>`<span class="chip word"><i style="background:var(${RACE_COL[i]})"></i>${esc(w)}<button type="button" data-w="${esc(w)}" aria-label="Remove ${esc(w)}">×</button></span>`).join("")+(ws.length>=3?`<span class="cap">3 maximum; adding one replaces the oldest</span>`:"");
-  $$("#wrPresets .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.textContent===ws.join(" vs "))));
-  const series=[];ws.forEach((w,i)=>{[["topic",""],["comparison"," (other)"]].forEach(([g,suf])=>{const v=WR[g]&&WR[g][w];if(v)series.push({key:w+g,label:w+suf,color:RACE_COL[i],dash:g==="topic"?"":"5 4",width:g==="topic"?2.4:1.7,pts:xs.map((t,k)=>[t,v[k]])})})});
-  if(!series.length){$("#wrChart").innerHTML=pgNote("Pick a word.");$("#wrKey").innerHTML="";$("#wrOut").innerHTML="";return}
-  chart($("#wrChart"),{series,vfmt:v=>fmt(v,2),xDomain:[xs[0],xs.at(-1)],aria:"Word race"});
-  $("#wrKey").innerHTML=ws.map((w,i)=>`<span class="key"><i class="ln" style="background:var(${RACE_COL[i]})"></i>${esc(w)}</span>`).join("")+`<span>solid = topic articles · dashed = other articles</span>`;
-  $("#wrOut").innerHTML=ws.map(w=>{const t=WR.topic&&WR.topic[w],c=WR.comparison&&WR.comparison[w];return `“${esc(w)}”: ${t?fmt(t[0],1)+" → "+fmt(t.at(-1),1):"–"} in topic articles, ${c?fmt(c[0],1)+" → "+fmt(c.at(-1),1):"–"} in other articles`}).join(" · ")}
-
-/* lab 5: time machine (component) + replay */
-const TM_KEYS=["Zionism","Israel","Hamas","Nakba","Antisemitism","Jews","Judaism","Anti-Zionism","Gaza war","Gaza genocide","October 7 attacks","Israeli apartheid","Israeli–Palestinian conflict","History of Israel","Balfour Declaration","West Bank"],
-      TM_KEYS_C=["Kurdish nationalism","Hindu nationalism","Armenian genocide","Russo-Ukrainian War","Islamic State","Catholic Church","India","Taiwan","Kashmir conflict","Uyghur genocide","Irish nationalism","Islam","Turkey","Ukraine","Tibet"];
-function tmMount(root,a){if(!root)return;if(!a||!(a.first_sentences||[]).length){root.innerHTML=pgNote("No first-sentence history for this article.");return}
-  const i0=Math.max(0,R.dates.indexOf(a.first_sentences[0].date)),ts=R.dates.slice(i0),ver=ts.map(d=>{let k=0;a.first_sentences.forEach((f,i)=>{if(f.date<=d)k=i});return k});
-  root.innerHTML=`<div class="tm-stage"><div class="tm-date"><span data-d></span><span class="cap" data-v></span></div><blockquote class="sentence" data-t style="margin:0;padding:0;min-height:4.4em" aria-live="polite"></blockquote><p class="tm-seen" data-s></p>
-    <input type="range" class="big-range" min="0" max="${ts.length-1}" step="1" value="${ts.length-1}" aria-label="Point in time for ${esc(a.title)}"><div class="tm-scale">${ts.map((d,i)=>d.endsWith("-01")&&(!isPhone()||+d.slice(0,4)%2===1)?`<span style="left:calc(${ts.length<2?50:i/(ts.length-1)*100}% + ${8-16*(ts.length<2?.5:i/(ts.length-1))}px)">${d.slice(0,4)}</span>`:"").join("")}</div></div>`;
-  const draw=i=>{const v=ver[i],f=a.first_sentences[v],pv=a.first_sentences[Math.max(0,v-1)];root.querySelector("[data-d]").textContent=dlab(ts[i]);root.querySelector("[data-v]").textContent=`version ${v+1} of ${a.first_sentences.length}`;
-    root.querySelector("[data-t]").innerHTML=v===0?esc(f.s):renderW(wdiff(pv.s,f.s));
-    const ex=R.exposure&&R.exposure[a.title],m=ex&&ex.variants&&ex.variants.find(x=>x.s&&(x.s===f.s||f.s.startsWith(x.s)||x.s.startsWith(f.s)));
-    root.querySelector("[data-s]").innerHTML=m&&m.views?`Seen by about <b>${millions(m.views)}</b> readers while live (${pct(m.share)} of the article’s views since 2021).`:""};
-  root.querySelector("input").oninput=e=>draw(+e.target.value);draw(ts.length-1)}
-function tmInit(){const by=new Map(R.articles.map(a=>[a.title,a])),ok=t=>by.has(t)&&(by.get(t).first_sentences||[]).length;const a=TM_KEYS.filter(ok),b=TM_KEYS_C.filter(ok);
-  if(!a.length&&!b.length){$("#tmBox").innerHTML=pgNote("First-sentence histories are not in this build yet.");$("#tmSel").closest("label").hidden=true;return}
-  $("#tmSel").innerHTML=(a.length?`<optgroup label="Topic articles">${a.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:"")+(b.length?`<optgroup label="Other articles">${b.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:"");
-  $("#tmSel").onchange=e=>tmMount($("#tmBox"),by.get(e.target.value));tmMount($("#tmBox"),by.get(a[0]||b[0]))}
-function tmShow(t){const a=R.articles.find(x=>x.title===t);if(!a)return;if(![...$("#tmSel").options].some(o=>o.value===t))$("#tmSel").insertAdjacentHTML("beforeend",`<option>${esc(t)}</option>`);$("#tmSel").value=t;tmMount($("#tmBox"),a)}
-function rpInit(){const A=R.ratchet&&R.ratchet.articles;const ts=A?Object.keys(A).filter(t=>A[t].fs_timeline&&A[t].fs_timeline.length):[];
-  if(!ts.length){$("#rpBox").innerHTML=pgNote("The revision-by-revision history of first sentences is not in this build yet.");$("#rpSel").closest("label").hidden=true;return}
-  const grp=t=>{const a=R.articles.find(x=>x.title===t);return a&&a.group==="treatment"?0:1};ts.sort((a,b)=>grp(a)-grp(b));
-  $("#rpSel").innerHTML=[0,1].map(g=>{const l=ts.filter(t=>grp(t)===g);return l.length?`<optgroup label="${g?"Other articles":"Topic articles"}">${l.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:""}).join("");
-  $("#rpSel").onchange=e=>rpSet(e.target.value);rpSet(ts.includes("Zionism")?"Zionism":ts[0])}
-function rpSet(t){rpStop();const a=R.ratchet.articles[t];if(!a)return;$("#rpSel").value=t;const tl=a.fs_timeline.map(x=>({t:Date.parse(x[0]+"T00:00:00Z"),id:x[1],rv:+x[2]||0})).filter(x=>!isNaN(x.t)).sort((p,q)=>p.t-q.t);
-  const order=[];tl.forEach(e=>{if(!order.includes(e.id))order.push(e.id)});const vs=new Map((a.fs_variants||[]).map(v=>[v.id,v.s]));
-  const lastT=Math.max(tl.at(-1).t,ym(R.dates.at(-1))),end=lastT+45*864e5,start=Math.min(tl[0].t,Date.UTC(2021,0,1));
-  PG.rp={...PG.rp,name:t,a,tl,order,vs,start,end,lastT,k:-2,cur:end};
-  $("#rpBox").innerHTML=`<div class="rp-stage"><div class="rp-now"><span class="d" id="rpDate"></span><button class="btn primary" type="button" id="rpPlay">▶ Replay</button><span class="cap">The whole period plays in about ten seconds.</span></div>
-   <div class="rp-strip"><canvas id="rpCv" role="img" aria-label="Timeline of first-sentence versions, one colour per version"></canvas></div>
-   <input type="range" class="rp-seek" id="rpSeek" min="0" max="1000" value="1000" aria-label="Move through time">
-   <div class="rp-ct"><div><b id="rpV">0</b><span>versions so far</span></div><div><b id="rpC">0</b><span>changes</span></div><div><b id="rpR">0</b><span>flagged as reverted</span></div><div><b id="rpB">0</b><span>returns to an earlier wording</span></div></div>
-   <div class="rp-s" id="rpText" aria-live="polite"></div><p class="means" id="rpOut"></p></div>`;
-  $("#rpPlay").onclick=()=>PG.rp.raf?rpStop():rpPlay();$("#rpSeek").oninput=e=>{rpStop();PG.rp.cur=PG.rp.start+(PG.rp.end-PG.rp.start)*(+e.target.value)/1000;rpUpdate()};
-  rpUpdate();rpVerdict()}
-function rpCol(id){const i=PG.rp.order.indexOf(id),dark=lum(hex2rgb(tok("--paper")))<.5;return `hsl(${(i*137.508+190)%360} ${dark?50:42}% ${dark?62:46}%)`}
-function rpStrip(){const P=PG.rp,cv=$("#rpCv");if(!cv||!P.tl)return;const W=cv.clientWidth||600,H=64,dpr=Math.min(2,devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,H);
-  const x=t=>(t-P.start)/(P.end-P.start)*W,top=12,bh=30;
-  P.tl.forEach((e,k)=>{const x0=x(e.t),x1=x(k<P.tl.length-1?P.tl[k+1].t:P.end);c.fillStyle=rpCol(e.id);c.fillRect(x0,top,Math.max(1,x1-x0),bh);if(e.rv){c.fillStyle=tok("--del-bd");c.beginPath();c.moveTo(x0-4,0);c.lineTo(x0+4,0);c.lineTo(x0,8);c.fill()}});
-  c.fillStyle=tok("--muted");c.font=`10.5px ${tok("--mono")}`;for(let y=2021;y<=2026;y++){const xx=x(Date.UTC(y,0,1));if(xx<0||xx>W)continue;c.fillRect(xx,top+bh,1,5);c.fillText(isPhone()?"’"+String(y).slice(2):String(y),xx+2,H-2)}
-  const wx=x(WAR);c.strokeStyle=tok("--war");c.setLineDash([3,3]);c.beginPath();c.moveTo(wx,top-4);c.lineTo(wx,top+bh+4);c.stroke();c.setLineDash([]);
-  const px=x(P.cur);c.fillStyle=tok("--paper");c.globalAlpha=.72;c.fillRect(px,top,W-px,bh);c.globalAlpha=1;c.fillStyle=tok("--ink");c.fillRect(px-1,top-6,2,bh+12)}
-function rpUpdate(){const P=PG.rp;if(!P.tl)return;let k=-1;for(let j=0;j<P.tl.length;j++){if(P.tl[j].t<=P.cur)k=j;else break}
-  const seen=new Set(),cnt={c:0,r:0,b:0};for(let j=0;j<=k;j++){const e=P.tl[j];if(j&&seen.has(e.id)&&P.tl[j-1].id!==e.id)cnt.b++;seen.add(e.id);cnt.r+=e.rv;if(j)cnt.c++}
-  $("#rpV").textContent=seen.size;$("#rpC").textContent=cnt.c;$("#rpR").textContent=cnt.r;$("#rpB").textContent=cnt.b;
-  const d=new Date(Math.min(P.cur,P.lastT));$("#rpDate").textContent=`${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`;$("#rpSeek").value=Math.round((P.cur-P.start)/(P.end-P.start)*1000);
-  if(k!==P.k){P.k=k;const e=P.tl[k],pv=k>0?P.tl[k-1]:null;const s=e?P.vs.get(e.id):null,ps=pv?P.vs.get(pv.id):null;
-    $("#rpText").innerHTML=!e?`<span class="cap">Before the first recorded version.</span>`:s==null?`<span class="cap">This version’s wording was not stored.</span>`:`<span class="sw" style="background:${rpCol(e.id)}"></span>${ps!=null&&ps!==s?renderW(wdiff(ps,s)):esc(s)}`}
-  rpStrip()}
-function rpPlay(){const P=PG.rp;if(P.cur>=P.end)P.cur=P.start;$("#rpPlay").textContent="❚❚ Pause";const D=RM.matches?4000:10000,t0=performance.now(),c0=P.cur,span=P.end-P.start;
-  const st=n=>{P.cur=Math.min(P.end,c0+(n-t0)/D*span);rpUpdate();if(P.cur<P.end)P.raf=requestAnimationFrame(st);else rpStop()};P.raf=requestAnimationFrame(st)}
-function rpStop(){const P=PG.rp;if(P.raf){cancelAnimationFrame(P.raf);P.raf=0}const b=$("#rpPlay");if(b)b.textContent="▶ Replay"}
-function rpVerdict(){const P=PG.rp,a=P.a,n=a.fs_n_variants||P.order.length;let back=0;const seen=new Set();P.tl.forEach((e,j)=>{if(j&&seen.has(e.id)&&P.tl[j-1].id!==e.id)back++;seen.add(e.id)});
-  const ca=R.ratchet.comparison&&R.ratchet.comparison.fs_variants_per_article,ta=R.ratchet.topic&&R.ratchet.topic.fs_variants_per_article;
-  $("#rpOut").innerHTML=`<b>Slow drift or tug-of-war?</b> ${esc(P.name)}’s first sentence had ${n} version${n===1?"":"s"} and returned to an earlier wording ${back} time${back===1?"":"s"}. ${ca!=null?`Key comparison articles averaged ${fmt(ca,1)} versions${ta!=null?`; key topic articles ${fmt(ta,1)}`:""}.`:""}`}
-
-/* lab 6: at scale */
-let L6=null;
-function l6Init(){const M=R.mass,host=$("#l6Wrap");if(!M||!M.lab_articles||!M.lab_articles.length||!M.lab_frames){host.innerHTML=pgNote("The 10,000-article data is not in this build yet. When it is, this lab compares slices across every rated article in each WikiProject.");return}
-  const fr=M.lab_frames,L=LAB.l6,D=M.dates||["2021-01","2023-07","now"],dl=d=>/^\d{4}-\d{2}/.test(d)?dlab(d):d;
-  const projs={};M.lab_articles.forEach(o=>{projs[o.p]=(projs[o.p]||0)+1});const P=Object.entries(projs).sort((a,b)=>b[1]-a[1]);
-  const mopts=[["critical",measureLabel("critical")],["connection",measureLabel("connection")],...fr.map(f=>[f,LABEL[f]||f])];
-  const sl=k=>`<div class="slice ${k.toLowerCase()}" data-s="${k}"><div class="slice-h"><span style="display:flex;gap:8px;align-items:center"><span class="ab ${k.toLowerCase()}">${k}</span><b>Slice ${k}</b></span><span class="slice-n" data-n></span></div>
-    <div class="frow"><span>Group</span><span class="seg" data-k="g"><button data-v="t">Topic</button><button data-v="c">Other</button><button data-v="all">All</button></span></div>
-    <div class="frow"><span>Importance</span><div class="picks" data-k="imp">${[["T","Top"],["H","High"],["M","Mid"]].map(([v,l])=>`<button class="pick" type="button" data-v="${v}">${l}</button>`).join("")}</div></div>
-    <div class="frow"><span>Projects</span><div class="picks" data-k="proj" style="max-height:120px;overflow:auto">${P.map(([p,n])=>`<button class="pick" type="button" data-v="${esc(p)}">${esc(p)} <span class="mono" style="opacity:.6">${n}</span></button>`).join("")}</div></div></div>`;
-  host.innerHTML=`<div class="controls"><label class="ctl" for="l6Measure">Count <select id="l6Measure">${mopts.map(([v,l])=>`<option value="${v}">${esc(l)}</option>`).join("")}</select></label>
-    <span class="seg" id="l6Part" role="group" aria-label="Text"><button data-v="full">Whole article</button><button data-v="lead">Opening paragraph</button></span>
-    <span class="seg" id="l6Per" role="group" aria-label="Period"><button data-v="02">${dl(D[0])} → ${dl(D[2])}</button><button data-v="01">${dl(D[0])} → ${dl(D[1])}</button><button data-v="12">${dl(D[1])} → ${dl(D[2])}</button></span></div>
-   <div class="slices">${sl("A")}${sl("B")}</div>
-   <div class="estbox" id="l6Est"></div><p class="means" id="l6Say"></p>
-   <div class="fig"><div class="fig-h"><span class="fig-t">How much individual articles changed</span><span class="cap">Share of each slice’s articles in each band of change. Blue outline: A. Ochre: B.</span></div><div class="hist" id="l6Hist"></div></div>
-   <div class="fig"><div class="fig-h"><span class="fig-t">Mean change by WikiProject</span><span class="controls"><span class="seg" id="l6PG" role="group" aria-label="Group"><button data-v="t">Topic</button><button data-v="c">Other</button><button data-v="all">All</button></span><span class="seg" id="l6Sort" role="group" aria-label="Sort"><button data-v="change">by change</button><button data-v="n">by size</button><button data-v="name">A–Z</button></span></span></div>
-    <p class="cap">Orange bars: rate went up on average. Purple: went down. Select a project to add it to slice A’s filter (and again to remove it).</p><div class="projbars" id="l6Bars"></div></div>
-   <div class="controls"><button class="btn sm" type="button" id="l6Csv">Copy project table as CSV</button><span class="cap" id="l6CsvMsg" aria-live="polite"></span></div><textarea class="csv-fb" id="l6CsvFb" hidden aria-label="CSV text"></textarea>
-   <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">rate(article, snapshot) = sum of the chosen word counts × 10,000 ÷ words, at Jan 2021, Jul 2023 and now
-change(article)         = rate at the later snapshot − rate at the earlier one (articles measured at both)
-extra change            = mean change in A − mean change in B
-95% band                = 500 bootstrap resamples of A’s and B’s articles; 2.5th and 97.5th percentiles
-project bar             = mean change over the project’s articles in the chosen group (n shown)</pre></div></details>`;
-  $("#l6Measure").onchange=e=>{L.measure=e.target.value;L6=null;l6Draw()};seg($("#l6Part"),v=>{L.part=v;L6=null;l6Draw()});seg($("#l6Per"),v=>{L.per=v;l6Draw()});
-  seg($("#l6PG"),v=>{L.pg=v;l6Draw()});seg($("#l6Sort"),v=>{L.sort=v;l6Draw()});
-  $$("#l6Wrap .slice").forEach(el=>{const k=el.dataset.s;el.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const p=b.parentElement.dataset.k;if(!p)return;const f=L[k];if(p==="g")f.g=b.dataset.v;else{const v=b.dataset.v;f[p]=f[p].includes(v)?f[p].filter(x=>x!==v):[...f[p],v]}l6Draw()})});
-  $("#l6Bars").onclick=e=>{const b=e.target.closest("button[data-p]");if(!b)return;const f=L.A,v=b.dataset.p;f.proj=f.proj.includes(v)?f.proj.filter(x=>x!==v):[...f.proj,v];l6Draw()};
-  $("#l6Csv").onclick=()=>copyOut(l6CsvText(),$("#l6CsvMsg"),$("#l6CsvFb"));
-  l6Draw()}
-function l6Rates(){const M=R.mass,L=LAB.l6;if(L6&&L6.key===L.measure+L.part)return L6;const fr=M.lab_frames,want=measureFrames(L.measure).map(f=>fr.indexOf(f)).filter(i=>i>=0),N=M.lab_articles.length,r=[new Float32Array(N),new Float32Array(N),new Float32Array(N)];
-  M.lab_articles.forEach((o,i)=>{const S=L.part==="lead"?o.l:o.f;for(let k=0;k<3;k++){const s=S&&S[k];if(!s||!s[0]||!want.length){r[k][i]=NaN;continue}let c=0;for(const j of want)c+=s[1+j]||0;r[k][i]=c*1e4/s[0]}});
-  return L6={key:L.measure+L.part,r}}
-function l6Draw(){const M=R.mass;if(!M||!M.lab_articles||!$("#l6Est"))return;const L=LAB.l6,A=M.lab_articles,{r}=l6Rates(),p0=+L.per[0],p1=+L.per[1];
-  $("#l6Measure").value=L.measure;setSeg($("#l6Part"),L.part);setSeg($("#l6Per"),L.per);setSeg($("#l6PG"),L.pg);setSeg($("#l6Sort"),L.sort);
-  $$("#l6Wrap .slice").forEach(el=>{const f=L[el.dataset.s];setSeg(el.querySelector('[data-k="g"]'),f.g);["imp","proj"].forEach(k=>$$(`[data-k="${k}"] .pick`,el).forEach(b=>b.setAttribute("aria-pressed",String(f[k].includes(b.dataset.v)))))});
-  const match=(o,f)=>(f.g==="all"||o.g===f.g)&&(!f.imp.length||f.imp.includes(o.i))&&(!f.proj.length||f.proj.includes(o.p));
-  const ch=f=>{const v=[];let n=0;for(let i=0;i<A.length;i++){if(!match(A[i],f))continue;n++;const d=r[p1][i]-r[p0][i];if(isFinite(d))v.push(d)}return {v,n}};
-  const a=ch(L.A),b=ch(L.B),D=M.dates||["2021-01","2023-07","now"],dl=d=>/^\d{4}-\d{2}/.test(d)?dlab(d):d;
-  $$("#l6Wrap .slice").forEach(el=>{const s=el.dataset.s==="A"?a:b;el.querySelector("[data-n]").textContent=`n = ${s.n.toLocaleString("en-US")} (${s.v.length.toLocaleString("en-US")} measured)`});
-  let est=null;if(a.v.length>=2&&b.v.length>=2){const bt=boot(a.v,b.v);est={d:avg(a.v)-avg(b.v),lo:bt[0],hi:bt[1],na:a.v.length,nb:b.v.length,ma:avg(a.v),mb:avg(b.v),span:`${dl(D[p0])} to ${dl(D[p1])}`}}
-  const desc=f=>`${f.g==="t"?"topic":f.g==="c"?"other":"all"} articles${f.imp.length?", "+f.imp.map(x=>({T:"Top",H:"High",M:"Mid"})[x]).join("/")+" importance":""}${f.proj.length?", "+f.proj.length+" project"+(f.proj.length>1?"s":""):""}`;
-  $("#l6Est").innerHTML=estHTML(est);$("#l6Say").innerHTML=estSay(est,desc(L.A),desc(L.B));
-  // histogram
-  const all=[...a.v,...b.v].sort((x,y)=>x-y),q=p=>all.length?all[Math.min(all.length-1,Math.floor(p*(all.length-1)))]:0,lim=Math.max(Math.abs(q(.02)),Math.abs(q(.98)),1),nb=40,bw=2*lim/nb;
-  const hist=v=>{const h=new Array(nb).fill(0);v.forEach(x=>{const i=Math.max(0,Math.min(nb-1,Math.floor((x+lim)/bw)));h[i]++});return h.map(c=>v.length?c/v.length:0)};
-  const ha=hist(a.v),hb=hist(b.v),el=$("#l6Hist"),W=Math.max(260,el.clientWidth),H=210,m={l:40,r:10,t:10,b:26},ymx=Math.max(...ha,...hb,.01)*1.1;
-  const X=lin(-lim,lim,m.l,W-m.r),Y=lin(0,ymx,H-m.b,m.t);
-  const step=h=>{let d=`M${X(-lim)},${Y(0)}`;h.forEach((v,i)=>{d+=`L${X(-lim+i*bw)},${Y(v)}L${X(-lim+(i+1)*bw)},${Y(v)}`});return d+`L${X(lim)},${Y(0)}`};
-  let s=`<svg width="${W}" height="${H}" role="img" aria-label="Distribution of article-level change">`;ticks(0,ymx,3).forEach(v=>s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" style="stroke:var(--faint)"/><text x="${m.l-5}" y="${Y(v)+3.5}" text-anchor="end">${Math.round(v*100)}%</text>`);
-  ticks(-lim,lim,6).forEach(v=>s+=`<text x="${X(v)}" y="${H-8}" text-anchor="middle">${v>0?"+":""}${+v.toFixed(1)}</text>`);
-  s+=`<line x1="${X(0)}" x2="${X(0)}" y1="${m.t}" y2="${H-m.b}" style="stroke:var(--ink)"/><path d="${step(ha)}" style="fill:var(${COL_A});fill-opacity:.14;stroke:var(${COL_A});stroke-width:1.8"/><path d="${step(hb)}" style="fill:var(${COL_B});fill-opacity:.12;stroke:var(${COL_B});stroke-width:1.8"/>`;
-  s+=`<text x="${W-m.r}" y="${m.t+10}" text-anchor="end">change per 10,000 words (clipped at ±${+lim.toFixed(1)})</text></svg>`;el.innerHTML=s;
-  // projects
-  const pr={};for(let i=0;i<A.length;i++){const o=A[i];if(L.pg!=="all"&&o.g!==L.pg)continue;const d=r[p1][i]-r[p0][i];if(!isFinite(d))continue;(pr[o.p]||(pr[o.p]=[])).push(d)}
-  let rows=Object.entries(pr).map(([p,v])=>({p,n:v.length,m:avg(v),up:v.filter(x=>x>0).length/v.length}));
-  rows.sort(L.sort==="n"?(x,y)=>y.n-x.n:L.sort==="name"?(x,y)=>x.p.localeCompare(y.p):(x,y)=>y.m-x.m);L6.rows=rows;
-  const mx=Math.max(...rows.map(x=>Math.abs(x.m)),1e-6);
-  $("#l6Bars").innerHTML=rows.map(x=>{const w=Math.abs(x.m)/mx*50;return `<button type="button" data-p="${esc(x.p)}" aria-pressed="${L.A.proj.includes(x.p)}"><span>${esc(x.p)}</span><span class="trk"><b style="left:50%"></b><i style="left:${x.m>=0?50:50-w}%;width:${w}%;background:var(${x.m>=0?"--inc":"--dec"});opacity:${x.n<10?.4:1}"></i></span><span class="num">${sgn(x.m,2)} · n ${x.n}</span></button>`}).join("")||`<p class="cap">No articles in this group.</p>`}
-function l6CsvText(){const L=LAB.l6;l6Draw();return csv([["project","group","n","mean_change","share_increased"],...(L6.rows||[]).map(x=>[x.p,L.pg,x.n,x.m.toFixed(4),x.up.toFixed(3)])])}
-
-/* drawer */
+/* ---------- article drawer (shared by report and lab) ---------- */
 let DRAWER_FROM=null;
-function openDrawer(t,from){const a=R.articles.find(x=>x.title===t);if(!a)return;DRAWER_FROM=from||document.activeElement;let d=$("#drawer");
+function openDrawer(t,opts={}){const a=R.articles.find(x=>x.title===t);if(!a)return;DRAWER_FROM=opts.from||document.activeElement;let d=$("#drawer");
   if(!d){d=document.createElement("aside");d.id="drawer";d.className="drawer";d.setAttribute("role","dialog");d.setAttribute("aria-label","Article detail");document.body.append(d);d.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer()})}
-  const rp=R.ratchet&&R.ratchet.articles&&R.ratchet.articles[t];
-  d.innerHTML=`<div class="drawer-h"><div><div class="eyebrow">Article</div><h3>${esc(a.title)}</h3><div class="dmeta"><span class="chip ${a.group}">${GROUP[a.group]||a.group}</span><span>${esc(subName(a.subgroup))}</span><span>${(a.edits||0).toLocaleString("en-US")} edits</span><span>${big(a.views||0)} views</span></div></div><button class="btn sm" type="button" id="drClose">Close</button></div>
-   <div class="fig"><div class="fig-t">Loaded and history words over time, per 10,000 words</div><div class="chart" id="drChart" style="height:180px"></div><div class="legend"><span class="key"><i class="ln" style="background:var(--inc)"></i>loaded words (orange)</span><span class="key"><i class="ln" style="background:var(--dec)"></i>history words (purple)</span></div></div>
-   <div class="fig-t">First sentence through time</div><div id="drTM"></div>
-   <div class="controls"><button class="btn sm" type="button" id="drSbs">Add to side by side</button><button class="btn sm" type="button" id="drUp">Open in “One article up close”</button>${rp?`<button class="btn sm" type="button" id="drRp">Replay its edit war</button>`:""}<a class="btn sm" href="https://en.wikipedia.org/wiki/${encodeURIComponent(a.title.replace(/ /g,"_"))}" target="_blank" rel="noopener" style="text-decoration:none">Wikipedia ↗</a></div>`;
+  const fs=a.first_sentences||[],acts=opts.actions||[];
+  d.innerHTML=`<div class="drawer-h"><div><div class="eyebrow">Article</div><h3>${esc(a.title)}</h3><div class="dmeta"><span class="chip ${a.group}">${GROUP[a.group]||a.group}</span><span>${esc(subName(a.subgroup))}</span><span>${(a.edits||0).toLocaleString("en-US")} edits</span><span>${big(a.views||0)} views</span>${a.created_in_window?"<span>created during the period</span>":""}</div></div><button class="btn sm" type="button" id="drClose">Close</button></div>
+   <div class="fig"><div class="fig-t">Loaded and history words over time, per 10,000 words</div><div class="chart" id="drChart" style="height:180px"></div><div class="legend"><span class="key"><i class="ln" style="background:var(--inc)"></i>loaded words (orange)</span><span class="key"><i class="ln" style="background:var(--dec)"></i>history words (purple)</span><span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>7 Oct 2023</span></div></div>
+   <div class="fig"><div class="fig-t">First sentence, version by version</div><div class="tl">${fs.map((f,i)=>`<div><time>${f.date}</time><span class="diff" style="display:block">${i?renderW(wdiff(fs[i-1].s,f.s)):esc(f.s)}</span></div>`).join("")||"<p class='cap'>No first-sentence history.</p>"}</div></div>
+   <div class="controls">${acts.map((x,i)=>`<button class="btn sm" type="button" data-act="${i}">${esc(x.label)}</button>`).join("")}${opts.noLedger?"":`<button class="btn sm" type="button" id="drLedger">Open in the ledger</button>`}<a class="btn sm" href="https://en.wikipedia.org/wiki/${encodeURIComponent(a.title.replace(/ /g,"_"))}" target="_blank" rel="noopener" style="text-decoration:none">Wikipedia ↗</a></div>`;
   d.hidden=false;
   const ds=a.crit_series_dates||[];chart($("#drChart"),{series:[{key:"c",label:"Loaded",color:"--inc",width:2,pts:ds.map(x=>[ym(x),artRate(a,"full",R.critical||[],x)])},{key:"h",label:"History",color:"--dec",width:2,pts:ds.map(x=>[ym(x),artRate(a,"full",R.connection||[],x)])}],compact:true,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))]});
-  tmMount($("#drTM"),a);
-  $("#drClose").onclick=closeDrawer;$("#drSbs").onclick=()=>{l3Add(t);closeDrawer();$("#lab3").scrollIntoView({behavior:RM.matches?"auto":"smooth"})};
-  $("#drUp").onclick=()=>{tmShow(t);closeDrawer();$("#lab5").scrollIntoView({behavior:RM.matches?"auto":"smooth"})};
-  const rb=$("#drRp");if(rb)rb.onclick=()=>{rpSet(t);closeDrawer();$("#lab5").scrollIntoView({behavior:RM.matches?"auto":"smooth"})};
+  $("#drClose").onclick=closeDrawer;$$("[data-act]",d).forEach(b=>b.onclick=()=>{const x=acts[+b.dataset.act];closeDrawer();x.run&&x.run(a)});
+  const lb=$("#drLedger");if(lb)lb.onclick=()=>{closeDrawer();if(isLab())location.hash="#report";setTimeout(()=>openArticle(a.title),40)};
   $("#drClose").focus()}
 function closeDrawer(){const d=$("#drawer");if(!d||d.hidden)return;d.hidden=true;if(DRAWER_FROM&&DRAWER_FROM.focus)try{DRAWER_FROM.focus({preventScroll:true})}catch(e){}}
 
-/* blind-coding try-out */
-const entify=s=>esc(s).replace(/\[ENTITY-(\d+)\]/g,'<span class="ent">ENTITY-$1</span>');
-function coderScore(){const sc=store("wt-play-coder")||{agree:0,total:0};$("#bcScore").innerHTML=sc.total?`You and the AI coders agreed on <b>${sc.agree} of ${sc.total}</b> pairs (${pct(sc.agree/sc.total)}). <button class="gl" type="button" id="bcResetScore">reset</button>`:"Your agreement score is saved on this device only.";const rb=$("#bcResetScore");if(rb)rb.onclick=()=>{store("wt-play-coder",{agree:0,total:0});coderScore()}}
-function coderInit(){const P=R.play_pairs;if(!P||!P.length){$("#bcBox").innerHTML=pgNote("The masked pairs are not in this build yet.");return}const saved=store("wt-play-coder-pos");if(saved)PG.coder.round=saved.round||0;coderScore();coderDraw()}
-function coderItem(){const P=R.play_pairs;return P[(PG.coder.round*10+PG.coder.i)%P.length]}
-function coderDraw(){const P=R.play_pairs,C=PG.coder,box=$("#bcBox");if(!P||!P.length)return;
-  if(C.i>=10){box.innerHTML=`<div class="bc-reveal"><span class="verdict">Round ${C.round+1}: you agreed with the AI coders on ${C.ra} of ${C.rn}.</span><div><button class="btn primary" type="button" id="bcNextRound">Next round</button></div></div>`;
-    $("#bcNextRound").onclick=()=>{C.round++;C.i=0;C.ra=0;C.rn=0;C.choice=null;store("wt-play-coder-pos",{round:C.round});coderDraw()};return}
-  const it=coderItem(),ch=C.choice,older=it.newer==="left"?"right":"left",aiSide=it.ai==="newer_harsher"?it.newer:it.ai==="newer_gentler"?older:"same";
-  const side=(k,txt)=>{const newer=ch&&it.newer===k;return `<div class="bc-t ${newer?"newer":""}"><div class="lab"><span>${k==="left"?"Left":"Right"}</span>${ch?`<span>${newer?"newer · "+esc(it.d1||""):"older · "+esc(it.d0||"")}</span>`:""}</div><p dir="auto">${entify(txt)}</p></div>`};
-  let h=`<div class="cap">Pair ${C.i+1} of 10 · round ${C.round+1}</div><div class="bc-prog">${Array.from({length:10},(_,k)=>`<i class="${k<C.i?"on":k===C.i?"cur":""}"></i>`).join("")}</div><div class="bc">${side("left",it.left)}${side("right",it.right)}</div>
-   <div class="bc-choices" role="group" aria-label="Which version is harsher on its subject?">${[["left","Left is harsher"],["right","Right is harsher"],["same","About the same"]].map(([v,l])=>`<button class="btn" type="button" data-v="${v}" aria-pressed="${ch===v}" ${ch?"disabled":""}>${l}</button>`).join("")}</div>`;
-  if(ch){const chg=it.ai==="newer_harsher"?"made the article <b>harsher</b> on its subject":it.ai==="newer_gentler"?"made it <b>gentler</b> on its subject":"made <b>no clear change</b> in tone";const sn=v=>v==="same"?"neither side":v==="left"?"the left":"the right";
-    h+=`<div class="bc-reveal" aria-live="polite"><span class="verdict">${ch===aiSide?"Same call as the AI coders.":"A different call from the AI coders."}</span><span><b>${esc(it.title||"")}</b> (${it.group==="treatment"?"topic article":"other article"}). The ${it.newer} text is newer${it.d1?` (${esc(it.d1)})`:""}; the other is from ${esc(it.d0||"earlier")}. The AI coders concluded the edit ${chg}, so the harsher text is ${sn(aiSide)}. You picked ${sn(ch)}.</span>${it.rev0&&it.rev1?`<a href="https://en.wikipedia.org/w/index.php?diff=${it.rev1}&oldid=${it.rev0}" target="_blank" rel="noopener">See the real change on Wikipedia ↗</a>`:""}<div><button class="btn primary" type="button" id="bcNext">${C.i<9?"Next pair":"End of round"}</button></div></div>`}
-  box.innerHTML=h;
-  $$(".bc-choices .btn",box).forEach(b=>b.onclick=()=>{if(C.choice)return;C.choice=b.dataset.v;const ag=C.choice===aiSide;C.rn++;if(ag)C.ra++;const sc=store("wt-play-coder")||{agree:0,total:0};sc.total++;if(ag)sc.agree++;store("wt-play-coder",sc);coderScore();coderDraw()});
-  const nb=$("#bcNext");if(nb)nb.onclick=()=>{C.i++;C.choice=null;coderDraw()}}
-
-/* settings copy / paste */
-function labState(){const L=JSON.parse(JSON.stringify(LAB));delete L.l2.sel;delete L.l2.brush;return "WFD-LAB1 "+JSON.stringify(L)}
-function labApply(txt){const s=txt.trim().replace(/^WFD-LAB1\s*/,"");let o;try{o=JSON.parse(s)}catch(e){return "That text is not a settings string from this page."}
-  const merge=(dst,src)=>{for(const k in src){if(!(k in dst))continue;if(src[k]&&typeof src[k]==="object"&&!Array.isArray(src[k])&&dst[k]&&typeof dst[k]==="object")merge(dst[k],src[k]);else dst[k]=src[k]}};
-  try{merge(LAB,o)}catch(e){return "Could not apply these settings."}
-  if(R.dates){if(!R.dates.includes(LAB.l1.from))LAB.l1.from=R.dates[0];if(!R.dates.includes(LAB.l1.to))LAB.l1.to=R.dates.at(-1)}
-  if($("#l1A"))sliceSync($("#l1A"),"A");if($("#l1B"))sliceSync($("#l1B"),"B");L6=null;labRedraw();return "Settings applied."}
-function labRedraw(){safe(l1Draw);safe(l2Draw);safe(l3Draw);safe(raceDraw);safe(rpStrip);safe(l6Draw)}
-function labInit(){safe(l1Init);safe(l2Init);safe(l3Init);safe(raceInit);safe(tmInit);safe(rpInit);safe(l6Init);safe(coderInit);
-  $("#labCopy").onclick=()=>copyOut(labState(),$("#labCopyMsg"),$("#labCopyFb"));
-  $("#labApply").onclick=()=>{$("#labPasteMsg").textContent=labApply($("#labPaste").value)};
-  $$(".pg-index a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const el=document.getElementById(a.dataset.go);if(el)el.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}))}
-
-/* ---------- routing ---------- */
-let PG_INIT=false,STALE={report:false,playground:false};
+/* ---------- routing: #report (default), #lab, #playground (older name for the lab) ---------- */
+const VIEWS=["#report","#lab","#playground"];
+let LAB_INIT=false,STALE={report:false,lab:false};
 const isLab=()=>location.hash==="#lab"||location.hash==="#playground";
-function route(){const pg=isLab();$("#view-report").hidden=pg;$("#view-playground").hidden=!pg;
-  $("#tabReport").setAttribute("aria-current",pg?"false":"page");$("#tabPlay").setAttribute("aria-current",pg?"page":"false");if(!pg)closeDrawer();
-  if(pg){if(!PG_INIT){PG_INIT=true;labInit()}else if(STALE.playground){STALE.playground=false;labRedraw()}}
+function labCall(k){const L=window.WFD&&WFD.lab;if(L&&typeof L[k]==="function")safe(L[k].bind(L),WFD.labIntent);document.dispatchEvent(new CustomEvent("wfd:lab-"+k,{detail:WFD.labIntent}))}
+function route(){const lab=isLab(),v=$("#view-lab");$("#view-report").hidden=lab;v.hidden=!lab;
+  $("#tabReport").setAttribute("aria-current",lab?"false":"page");$("#tabLab").setAttribute("aria-current",lab?"page":"false");if(!lab)closeDrawer();
+  if(lab){if(!v.firstElementChild)v.innerHTML=`<div class="note" style="margin-top:40px">The data lab is not in this build.</div>`;
+    if(!LAB_INIT){LAB_INIT=true;labCall("init")}else{if(STALE.lab){STALE.lab=false;labCall("redraw")}if(WFD.labIntent)labCall("intent")}}
   else if(STALE.report){STALE.report=false;HM=null;redrawAll()}}
-const redrawPlayground=labRedraw;
+function openInLab(spec){WFD.labIntent=spec||null;if(isLab())route();else location.hash="#lab"}
+function openInReport(id){location.hash="#report";setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})},30)}
+
 /* ---------- init ---------- */
-let stA,stB;
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
-function redrawAll(){safe(drawHero,false);safe(drawTrend);safe(drawMinis);safe(drawES);safe(drawHeat);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
+function redrawAll(){safe(drawHero,false);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawES);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
 function init(){
   if(!R){$("#lede").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
   safe(drawLede);safe(drawWow);safe(drawCards);
@@ -2089,18 +1945,26 @@ function init(){
   $("#rows").addEventListener("click",pick);$("#rows").addEventListener("keydown",e=>{if(e.key==="Enter")pick(e)});
   const cv=$("#hero");cv.addEventListener("pointermove",heroHover);cv.addEventListener("pointerdown",heroHover);cv.addEventListener("pointerleave",hideTip);
   safe(drawHero,true);
-  stA=stepsA();stB=stepsB();
-  safe(drawTrend);safe(minis);safe(drawES);safe(drawHeat);safe(defInit);safe(drawForest);safe(drawMatrix);safe(traceInit);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
+  safe(keyInit);safe(drawChance);safe(drawBoard);
+  stB=stepsB();
+  safe(drawTrend);safe(minis);safe(drawES);safe(drawHeat);safe(defInit);safe(drawForest);safe(traceInit);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
-  scrolly($("#stepsA"),stA,drawTrend);scrolly($("#stepsB"),stB,drawES);
-  const pgOn=isLab;
-  let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;if(pgOn()){STALE.report=true;redrawPlayground()}else{STALE.playground=PG_INIT;HM=null;redrawAll()}},150)});
-  const re=()=>{if(pgOn()){STALE.report=true;redrawPlayground()}else{STALE.playground=PG_INIT;HM=null;redrawAll()}};
-  addEventListener("hashchange",()=>{const h=location.hash,wasPg=$("#view-report").hidden;route();if(h==="#playground"||h==="#lab"||h==="#report"||h===""){if(wasPg!==isLab())scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
+  scrolly($("#stepsB"),stB,drawES);
+  $("#vocabLab").onclick=()=>openInLab({from:"vocab",measure:S.frame,part:S.part,groups:["treatment","control"]});
+  const re=()=>{if(isLab()){STALE.report=true;labCall("redraw")}else{STALE.lab=LAB_INIT;HM=null;redrawAll()}};
+  let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;re()},150)});
+  addEventListener("hashchange",()=>{const h=location.hash,was=$("#view-report").hidden;route();if(VIEWS.includes(h)||h===""){if(was!==isLab())scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
   if(isLab())STALE.report=true;
   route();
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change",re);
   new MutationObserver(re).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 }
+/* ---------- shared surface for the data lab ---------- */
+window.WFD={R,$,$$,esc,tok,tokens,fmt,sgn,pct,big,pf,ym,dlab,dlabT,MON,WAR,WAR_SNAPSHOT:R&&R.first_post_war||"2024-01",ICJ,
+  LABEL,GROUP,SUB,subName,LANG,T_L,C_L,KEY_T,KEY_C,isPhone,RM,lin,ticks,niceMax,niceStep,ease,ramp,css,lum,hex2rgb,chart,showTip,hideTip,seg,setSeg,
+  wdiff,renderW,sigOf,pv,artRate,measureFrames,rng,boot,avg,store,safe,openDrawer,closeDrawer,openInReport,openInLab,labIntent:null,lab:null};
+try{
+/*LABJS*/
+}catch(e){console.error("data lab",e)}
 init();
 </script>

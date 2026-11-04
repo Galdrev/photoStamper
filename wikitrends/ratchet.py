@@ -120,7 +120,7 @@ def article_metrics(title):
             big.append({"ts": b["ts"], "delta": b["words"] - a["words"], "reverted": b["reverted"]})
     return title, {"revisions": len(revs), "editors": len({r["u"] for r in revs}),
                    "lead_revert_rate": float(np.mean([r["reverted"] for r in revs])),
-                   "terms": per_term, "fs_variants": variants[:40], "fs_n_variants": len(variants),
+                   "terms": per_term, "fs_variants": variants[:150], "fs_n_variants": len(variants),
                    "fs_timeline": tl[:3000], "big_rewrites": big}
 
 
