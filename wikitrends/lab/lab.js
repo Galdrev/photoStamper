@@ -54,7 +54,7 @@ function sheet(title){
   let s=q("#lxSheet");if(!s){s=document.createElement("div");s.id="lxSheet";s.className="lx-sheet";s.setAttribute("role","dialog");root.append(s)}
   const a=A.find(x=>x.title===title);
   const r0=a&&rate(a,idxAt(a,FIRST,true),"full",CRIT),r1=a&&rate(a,idxAt(a,LAST,false),"full",CRIT);
-  s.innerHTML=`<div class="lx-sheet-h"><b>${E(title)}</b><button type="button" aria-label="Close">×</button></div>${a?`<p class="n">${a.group==="treatment"?"Topic article":"Comparison article"} · ${E(subNm(a.subgroup))}</p><p>Loaded words per 10,000: <b>${F(r0,1)}</b> in ${DL(FIRST)} → <b>${F(r1,1)}</b> in ${DL(LAST)}</p>`:""}<a href="https://en.wikipedia.org/wiki/${encodeURIComponent(String(title).replace(/ /g,"_"))}" target="_blank" rel="noopener">Open on Wikipedia</a>`;
+  s.innerHTML=`<div class="lx-sheet-h"><b>${E(title)}</b><button type="button" aria-label="Close">×</button></div>${a?`<p class="n">${a.group==="treatment"?"Topic article":"Comparison article"} · ${E(subNm(a.subgroup))}</p><p>Loaded words per 10,000 words of full text: <b>${F(r0,1)}</b> in ${DL(FIRST)} → <b>${F(r1,1)}</b> in ${DL(LAST)}</p>`:""}<a href="https://en.wikipedia.org/wiki/${encodeURIComponent(String(title).replace(/ /g,"_"))}" target="_blank" rel="noopener">Open on Wikipedia</a>`;
   s.hidden=false;q("button",s).onclick=()=>{s.hidden=true};
 }
 
@@ -78,7 +78,7 @@ const hasSeries=A.some(a=>a.frame_series&&a.words_series);
 
 /* ---------- views explored ---------- */
 const SEEN=new Set();
-function view(key){if(SEEN.has(key))return;SEEN.add(key);const n=q("#lxViewsN");if(n)n.textContent=SEEN.size;const b=q("#lxViews");if(b&&!still()){b.classList.remove("bump");void b.offsetWidth;b.classList.add("bump");setTimeout(()=>b.classList.remove("bump"),600)}}
+function view(key){if(SEEN.has(key))return;SEEN.add(key);const n=q("#lxViewsN");if(n)n.textContent=SEEN.size;const w=q("#lxViewsW");if(w)w.textContent=SEEN.size===1?"view":"views";const b=q("#lxViews");if(b&&!still()){b.classList.remove("bump");void b.offsetWidth;b.classList.add("bump");setTimeout(()=>b.classList.remove("bump"),600)}}
 
 /* drag helper: pointer events with capture; calls mv(e,dx,dy) and up(e,moved) */
 function drag(el,{down,mv,up,slop=6}){
@@ -97,13 +97,14 @@ const raf=fn=>{let p=false;return()=>{if(p)return;p=true;requestAnimationFrame((
 /* =====================================================================
    1. SHADOW BARS
    ===================================================================== */
-const S1={i0:0,i1:Math.max(0,DATES.length-1),cmp:"all",open:null};
-const CSETS=[["all","All comparison",()=>true],["quiet","Quiet comparison",a=>!a.shocked],["war","Own-war comparison",a=>!!a.shocked],["colonial","Settler-colonial set",a=>a.subgroup==="settler_colonial_framings"],["religion","Religions",a=>a.subgroup==="religion"]];
-let SP=null;
-function s1Spark(){if(SP)return SP;const m=arr=>DATES.map(d=>{const v=[];for(const a of arr){const i=idxAt(a,d,true);const r=rate(a,i,"full",CRIT);if(r!=null)v.push(r)}return v.length?mean(v):null});SP={t:m(TOP),c:m(CMP)};return SP}
+const S1={i0:0,i1:Math.max(0,DATES.length-1),cmp:"all",open:null,part:"full"};
+const PART={full:"full text",lead:"opening paragraph"};
+const CSETS=[["all","All comparison",()=>true,"All"],["quiet","Quiet comparison",a=>!a.shocked,"Quiet"],["war","Own-war comparison",a=>!!a.shocked,"Own war"],["colonial","Settler-colonial set",a=>a.subgroup==="settler_colonial_framings","Colonial"],["religion","Religions",a=>a.subgroup==="religion","Religions"]];
+const SP={};
+function s1Spark(){const pt=S1.part;if(SP[pt])return SP[pt];const m=arr=>DATES.map(d=>{const v=[];for(const a of arr){const i=idxAt(a,d,true);const r=rate(a,i,pt,CRIT);if(r!=null)v.push(r)}return v.length?mean(v):null});return SP[pt]={t:m(TOP),c:m(CMP)}}
 function s1Calc(){
   const d0=DATES[S1.i0],d1=DATES[S1.i1];
-  const vals=arr=>{const o=[];for(const a of arr){const v=change(a,d0,d1,"full",CRIT);if(v!=null)o.push({a,v})}return o};
+  const vals=arr=>{const o=[];for(const a of arr){const v=change(a,d0,d1,S1.part,CRIT);if(v!=null)o.push({a,v})}return o};
   const cs=CSETS.find(c=>c[0]===S1.cmp)||CSETS[0];
   const C=vals(CMP.filter(cs[2])),C0=S1.cmp==="all"?C:vals(CMP);
   const groups=new Map();for(const a of TOP){const k=a.subgroup||"other";if(!groups.has(k))groups.set(k,[]);groups.get(k).push(a)}
@@ -117,8 +118,10 @@ function s1Init(){
   const box=q("#lxShadow");
   if(!hasSeries||!TOP.length||!CMP.length||DATES.length<2){q("#lxSBars").innerHTML=note("The article time series are missing from this build, so the shadow bars cannot be drawn.");q("#lxSStrip").hidden=true;return}
   const chips=q("#lxSChips");
-  chips.innerHTML='<span class="lab">Shadow</span>'+CSETS.map(c=>{const n=CMP.filter(c[2]).length;return n?`<button class="lx-pill${n<FEW?" lx-few":""}" type="button" data-c="${c[0]}" aria-pressed="${c[0]===S1.cmp}">${E(c[1])} <span class="n">${n}</span></button>`:""}).join("");
-  chips.onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;S1.cmp=b.dataset.c;qa("[data-c]",chips).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));s1Draw();view("s:"+S1.i0+":"+S1.i1+":"+S1.cmp)};
+  chips.innerHTML='<span class="lab">Shadow</span>'+CSETS.map(c=>{const n=CMP.filter(c[2]).length;return n?`<button class="lx-pill${n<FEW?" lx-few":""}" type="button" data-c="${c[0]}" aria-pressed="${c[0]===S1.cmp}"><span class="lx-lg">${E(c[1])}</span><span class="lx-sh">${E(c[3])}</span> <span class="n">${n}</span></button>`:""}).join("");
+  chips.onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;S1.cmp=b.dataset.c;qa("[data-c]",chips).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));s1Draw();view("s:"+S1.part+":"+S1.i0+":"+S1.i1+":"+S1.cmp)};
+  const ps=q("#lxSPart");if(!A.some(a=>a.lead_words_series))ps.hidden=true;
+  ps.onclick=e=>{const b=e.target.closest("[data-v]");if(!b)return;S1.part=b.dataset.v;qa("[data-v]",ps).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));s1Strip();s1Draw();view("s:"+S1.part+":"+S1.i0+":"+S1.i1+":"+S1.cmp)};
   q("#lxSBars").onclick=e=>{const t=e.target.closest("[data-t]");if(t){openArt(t.dataset.t,t);return}const b=e.target.closest(".lx-bar");if(!b)return;S1.open=S1.open===b.dataset.k?null:b.dataset.k;s1Draw();if(S1.open)view("s:open:"+S1.open)};
   const strip=q("#lxSStrip"),redraw=raf(()=>{s1Strip();s1Draw()});
   const X=i=>strip._x?strip._x(i):0;
@@ -137,7 +140,7 @@ function s1Init(){
       if(pi>=0&&wx!=null&&strip._step){const near=i=>Math.abs(X(i)-wx)<strip._step*1.3;
         if((s.mode==="a"||s.mode==="m")&&near(S1.i0)&&pi<S1.i1&&S1.i0!==pi){if(s.mode==="m"){const w=S1.i1-S1.i0;S1.i0=pi;S1.i1=Math.min(DATES.length-1,pi+w)}else S1.i0=pi;strip._snap=performance.now()}
         else if(s.mode==="b"&&near(S1.i1)&&pi>S1.i0&&S1.i1!==pi){S1.i1=pi;strip._snap=performance.now()}}
-      s1Strip();s1Draw();view("s:"+S1.i0+":"+S1.i1+":"+S1.cmp)}});
+      s1Strip();s1Draw();view("s:"+S1.part+":"+S1.i0+":"+S1.i1+":"+S1.cmp)}});
   strip.tabIndex=0;
   strip.addEventListener("keydown",e=>{const k=e.key;if(k!=="ArrowLeft"&&k!=="ArrowRight")return;e.preventDefault();const d=k==="ArrowLeft"?-1:1;if(e.shiftKey)S1.i0=clamp(S1.i0+d,0,S1.i1-1);else S1.i1=clamp(S1.i1+d,S1.i0+1,DATES.length-1);s1Strip();s1Draw()});
   s1Strip();s1Draw();
@@ -155,7 +158,7 @@ function s1Strip(){
   const years=[...new Set(DATES.map(d=>d.slice(0,4)))];
   years.forEach(yr=>{const xx=x(Date.UTC(+yr,0,1));if(xx>=pl-1&&xx<=w-pr+1)s+=`<line class="axis" x1="${xx}" x2="${xx}" y1="58" y2="62"/><text x="${xx+3}" y="72">${phone()?"’"+yr.slice(2):yr}</text>`});
   s+=`<path d="${path(sp.c)}" fill="none" style="stroke:var(--comp)" stroke-width="1.5" stroke-dasharray="4 3"/><path d="${path(sp.t)}" fill="none" style="stroke:var(--topic)" stroke-width="2"/>`;
-  if(el._war!=null)s+=`<line class="war" x1="${el._war}" x2="${el._war}" y1="14" y2="62"/><text class="war" x="${el._war+4}" y="24" style="font-size:10px">${snapped?"snapped to the war":"7 Oct 2023"}</text>`;
+  if(el._war!=null)s+=`<line class="war" x1="${el._war}" x2="${el._war}" y1="14" y2="62"/><text class="war" x="${el._war+(el._war>w*.6?-4:4)}" y="${snapped?50:24}" text-anchor="${el._war>w*.6?"end":"start"}" style="font-size:10px;paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${snapped?"last snapshot before the war: "+DL(PRE):"7 Oct 2023"}</text>`;
   const hd=(xx,lab,anchor)=>`<g class="hd"><rect x="${xx-1.5}" y="14" width="3" height="46" rx="1"/><rect x="${xx-6}" y="52" width="12" height="12" rx="6"/><text class="lbl" x="${xx}" y="10" text-anchor="${anchor}">${lab}</text></g>`;
   const la=DL(DATES[S1.i0]),lb=DL(DATES[S1.i1]),close=b-a<120;
   s+=hd(a,la,close?"end":a<60?"start":"middle")+hd(b,lb,close?"start":b>w-60?"end":"middle");
@@ -169,7 +172,7 @@ function s1Draw(){
   const P=v=>((v-lo)/(hi-lo)*100).toFixed(2)+"%",W=(a,b)=>(Math.abs(b-a)/(hi-lo)*100).toFixed(2)+"%";
   const seg=(cls,a,b)=>`<i class="${cls}" style="left:${P(Math.min(a,b))};width:${W(a,b)}"></i>`;
   const sh=C.sh;
-  let h=`<div class="lx-key"><span><i style="background:var(--topic)"></i>topic articles, sticking out past the shadow</span><span><i style="background:var(--comp);opacity:.35"></i>shadow: ${E(C.cs[1].toLowerCase())} (${C.nC})</span><span><i style="border:1.5px dashed var(--ink);opacity:.6"></i>pre-registered comparison (${C.nC0})</span><span><i style="height:2px;background:var(--ink)"></i>95% range</span></div>`;
+  let h=`<div class="lx-key"><span><i style="background:var(--topic)"></i>extra change</span><span><i style="background:var(--comp);opacity:.35"></i>shadow: ${E(C.cs[1].toLowerCase())} (${C.nC})</span><span><i style="border:1.5px dashed var(--ink);opacity:.6"></i>pre-registered comparison</span><span><i style="height:2px;background:var(--ink)"></i>95% range</span></div>`;
   for(const r of C.rows){
     const few=r.n<FEW,m=r.m;
     let bar="";
@@ -188,20 +191,20 @@ function s1Draw(){
     }
   }
   const tk=tickVals(lo,hi,phone()?3:5);
-  h+=`<div class="lx-axis"><div></div><div>${tk.map(t=>`<span style="left:${P(t)}">${SG(t,t%1?1:0).replace("±","")}</span>`).join("")}</div></div><p class="n" style="margin:0">Change in loaded words per 10,000 words, ${DL(C.d0)} to ${DL(C.d1)}. Bars start at zero.</p>`;
+  h+=`<div class="lx-axis"><div></div><div>${tk.map(t=>`<span style="left:${P(t)}">${SG(t,t%1?1:0).replace("±","")}</span>`).join("")}</div></div><p class="n" style="margin:0">Per 10,000 words of ${PART[S1.part]}, ${DL(C.d0)}–${DL(C.d1)}. Bars start at zero.</p>`;
   box.innerHTML=h;
   const all=C.rows[0],ex=isFinite(all.m)&&isFinite(sh)?all.m-sh:NaN;
-  q("#lxSSay").innerHTML=isFinite(ex)?`From ${DL(C.d0)} to ${DL(C.d1)}, topic articles ${all.m>=0?"gained":"lost"} <b>${F(Math.abs(all.m),1)}</b> loaded words per 10,000, against <b>${SG(sh,1)}</b> for the ${E(C.cs[1].toLowerCase())}${C.nC<FEW?` (only ${C.nC} articles, too few to say)`:""}. ${Math.abs(ex)<.1*Math.max(Math.abs(all.m),Math.abs(sh),.5)?"Almost all of it is shadow: the comparison articles moved about as much.":`The part sticking out is <b>${SG(ex,1)}</b>. Check whether the black range lines clear the shadow before reading much into it.`}`:"";
+  q("#lxSSay").innerHTML=isFinite(ex)?`Topic articles <b>${SG(all.m,1)}</b>, ${E(C.cs[1].toLowerCase())} <b>${SG(sh,1)}</b>${C.nC<FEW?` (only ${C.nC} articles, too few to say)`:""}: an extra change of <b>${SG(ex,1)}</b> per 10,000 words. ${Math.abs(ex)<.1*Math.max(Math.abs(all.m),Math.abs(sh),.5)?"Almost all of it is shadow.":"Read it only if the black range line clears the shadow."}`:"";
 }
 
 /* =====================================================================
    2. SHUFFLE THE LABELS
    ===================================================================== */
-const PDEF={P1:"Opening paragraph · loaded words",P2:"Whole article · loaded words",P3:"Whole article · history words"};
+const PDEF={P1:"loaded words in the opening paragraph",P2:"loaded words in the full text",P3:"history words in the full text"};
 const PROWS=["P1","P2","P3"].map(id=>DID.find(r=>r.id===id)).filter(Boolean);
 const S2={id:PROWS.some(r=>r.id==="P2")?"P2":(PROWS[0]&&PROWS[0].id),st:{}};
 const S3={id:S2.id,side:"both",T:{}};
-function pSeg(el,cur,cb){el.innerHTML=PROWS.map(r=>`<button class="lx-pill" type="button" data-p="${r.id}" aria-pressed="${r.id===cur}"><b>${r.id}</b> ${E(PDEF[r.id]||r.frame)}</button>`).join("");el.onclick=e=>{const b=e.target.closest("[data-p]");if(!b)return;qa("[data-p]",el).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));cb(b.dataset.p)}}
+function pSeg(el,lab,cur,cb){const L=id=>`Pre-registered test ${id}: ${PDEF[id]||""}`;el.innerHTML=PROWS.map(r=>`<button type="button" data-p="${r.id}" aria-pressed="${r.id===cur}" aria-label="${E(L(r.id))}">${r.id}</button>`).join("");if(lab)lab.textContent=L(cur);el.onclick=e=>{const b=e.target.closest("[data-p]");if(!b)return;qa("[data-p]",el).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));if(lab)lab.textContent=L(b.dataset.p);cb(b.dataset.p)}}
 function s2State(id){
   if(S2.st[id])return S2.st[id];const r=PROWS.find(x=>x.id===id);if(!r)return null;
   const t=r.changes_t||[],c=r.changes_c||[],all=Float64Array.from([...t,...c]),nt=t.length,n=all.length;
@@ -225,7 +228,7 @@ function s2Tiles(st,fresh){
 function s2Init(){
   const seg=q("#lxPSeg");
   if(!PROWS.length){q("#lxShuffle .lx-shuf").innerHTML=note("The pre-registered test results are missing from this build.");return}
-  pSeg(seg,S2.id,id=>{S2.id=id;stopHold();s2Draw(true);view("p:"+id)});
+  pSeg(seg,q("#lxPSegL"),S2.id,id=>{S2.id=id;stopHold();s2Draw(true);view("p:"+id)});
   const btn=q("#lxShufBtn");let hold=null,tmo=null;
   const one=(fast)=>{const st=s2State(S2.id);if(!st||!st.ok)return;let g;const k=fast?7:1;for(let i=0;i<k;i++)g=s2Shuffle(st);q("#lxTiles").classList.toggle("fast",!!fast);s2Tiles(st);s2Hist(st,fast?null:g);s2Count(st)};
   const stopHold=()=>{clearTimeout(tmo);clearInterval(hold);hold=tmo=null;btn.classList.remove("on");q("#lxTiles").classList.remove("fast")};
@@ -237,8 +240,8 @@ function s2Init(){
 }
 function s2Count(st){
   const r=st.r,pp=r.p_perm;
-  q("#lxShufCount").innerHTML=st.count?`<b>${N(st.beat)}</b> of <b>${N(st.count)}</b> shuffles beat the real gap <span class="n">(${PC(st.beat/st.count)})</span>`:`No shuffles yet.<br><span class="n" style="font-size:13px">Real gap: ${SG(st.real,2)} per 10,000 words. Can chance match it?</span>`;
-  q("#lxShufSay").innerHTML=`Each bar counts shuffles by the gap they produced (per 10,000 words). A shuffle “beats” the real gap when its gap is at least as big, in either direction. ${pp!=null?`In the study’s own 5,000 shuffles, <b>${PC(pp)}</b> did (dashed outline).`:""} ${st.count>=200?(st.beat/st.count>.05?"Chance does this often, so the real gap is not good evidence of a difference.":"Chance rarely does this. That points to a real difference, though only for this one pre-registered measure."):""} <span class="n">${N(st.nt)} topic and ${N(st.n-st.nt)} comparison articles.</span>`;
+  q("#lxShufCount").innerHTML=st.count?`<b>${N(st.beat)}</b> of <b>${N(st.count)}</b> shuffles beat the real extra change <span class="n">(${PC(st.beat/st.count)})</span>`:`No shuffles yet.<br><span class="n" style="font-size:13px">Real extra change: ${SG(st.real,2)} per 10,000 words. Can chance match it?</span>`;
+  q("#lxShufSay").innerHTML=`A shuffle “beats” the real extra change when its own is at least as big, either way (per 10,000 words). ${pp!=null?`In the study’s 5,000 shuffles, <b>${PC(pp)}</b> did (dashed outline).`:""} ${st.count>=200?(st.beat/st.count>.05?"Chance does this often, so the real extra change is not good evidence of a difference.":"Chance rarely does this. That points to a real difference, though only for this one pre-registered measure."):""} <span class="n">${N(st.nt)} topic and ${N(st.n-st.nt)} comparison articles.</span>`;
 }
 function s2Hist(st,drop){
   const el=q("#lxHist");if(!st)return;const w=Math.max(260,el.clientWidth),h=180,m={l:8,r:8,t:30,b:26},iw=w-m.l-m.r,ih=h-m.t-m.b;
@@ -248,14 +251,14 @@ function s2Hist(st,drop){
   const preScale=pm?(st.count?(st.count/st.pre.reduce((a,b)=>a+b,0)):ih*.85/pm):0;
   const top=Math.max(mx,pm*preScale,1)*(st.count?1.08:1);
   const Y=c=>m.t+ih-(c/top)*ih;
-  let s=`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="Histogram of shuffled gaps">`;
+  let s=`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="Histogram of extra change with shuffled labels">`;
   const rx=x(Math.abs(st.real)),lx=x(-Math.abs(st.real));
   s+=`<rect x="${m.l}" y="${m.t}" width="${Math.max(0,lx-m.l)}" height="${ih}" style="fill:var(--inc);opacity:.06"/><rect x="${rx}" y="${m.t}" width="${Math.max(0,w-m.r-rx)}" height="${ih}" style="fill:var(--inc);opacity:.06"/>`;
   for(let i=0;i<st.B;i++){const c=st.bins[i];if(!c)continue;const c0=-st.L+(i+.5)*2*st.L/st.B,beat=Math.abs(c0)>=Math.abs(st.real);s+=`<rect class="bin${beat?" beat":""}" x="${(m.l+i*bw+.5).toFixed(1)}" y="${Y(c).toFixed(1)}" width="${Math.max(1,bw-1).toFixed(1)}" height="${(m.t+ih-Y(c)).toFixed(1)}"/>`}
   if(pm){let d=`M${m.l},${m.t+ih}`;for(let i=0;i<st.B;i++){const yy=Y(st.pre[i]*preScale).toFixed(1);d+=`L${(m.l+i*bw).toFixed(1)},${yy}L${(m.l+(i+1)*bw).toFixed(1)},${yy}`}d+=`L${w-m.r},${m.t+ih}`;s+=`<path class="pre" d="${d}"/>`}
   s+=`<line class="axis" x1="${m.l}" x2="${w-m.r}" y1="${m.t+ih}" y2="${m.t+ih}"/><line class="zero" x1="${x(0)}" x2="${x(0)}" y1="${m.t+ih}" y2="${m.t+ih+5}"/>${tickVals(-st.L,st.L,phone()?4:6).map(t=>`<text x="${x(t)}" y="${h-6}" text-anchor="middle">${SG(t,Math.abs(t)<10&&t%1?1:0).replace("±","")}</text>`).join("")}`;
   const realX=x(st.real),mirX=x(-st.real),anc=v=>v>w*.7?"end":v<w*.3?"start":"middle";
-  s+=`<line class="real" x1="${realX}" x2="${realX}" y1="${m.t-6}" y2="${m.t+ih}"/><text class="real" x="${realX}" y="${m.t-12}" text-anchor="${anc(realX)}">real gap ${SG(st.real,2)} (pre-registered)</text>`;
+  s+=`<line class="real" x1="${realX}" x2="${realX}" y1="${m.t-6}" y2="${m.t+ih}"/><text class="real" x="${realX}" y="${m.t-12}" text-anchor="${anc(realX)}">real extra change ${SG(st.real,2)} (pre-registered)</text>`;
   s+=`<line x1="${mirX}" x2="${mirX}" y1="${m.t}" y2="${m.t+ih}" style="stroke:var(--topic);stroke-dasharray:2 3;opacity:.7"/>`;
   el.innerHTML=s+"</svg>";
   if(drop!=null&&!still()){const cx=x(clamp(drop,-st.L,st.L)),bi=clamp(Math.floor((drop+st.L)/(2*st.L)*st.B),0,st.B-1),ty=Y(st.bins[bi]);
@@ -273,10 +276,11 @@ function s3Data(id){const r=PROWS.find(x=>x.id===id);if(!r||!r.changes_t||!r.cha
   if(!r._lx){const all=[...r.changes_t.map(v=>[v,0]),...r.changes_c.map(v=>[v,1])];const abs=all.map(x=>Math.abs(x[0])).sort((a,b)=>b-a);
     const k=Math.max(3,Math.round(all.length*.01)),T0=abs.length>k?(abs[k-1]+abs[k])/2:abs[0]+1;r._lx={all,M:(abs[0]||1)*1.04,T0}}return r}
 function s3Init(){
-  pSeg(q("#lxLSeg"),S3.id,id=>{S3.id=id;s3Draw(true);view("l:"+id)});
+  pSeg(q("#lxLSeg"),q("#lxLSegL"),S3.id,id=>{S3.id=id;s3Draw(true);view("l:"+id)});
   const side=q("#lxLSide");
-  side.innerHTML='<span class="lab">Trim</span>'+[["both","Both ends"],["high","Only the highest"],["low","Only the lowest"]].map(([v,l])=>`<button class="lx-pill" type="button" data-s="${v}" aria-pressed="${v===S3.side}">${l}</button>`).join("");
-  side.onclick=e=>{const b=e.target.closest("[data-s]");if(!b)return;S3.side=b.dataset.s;qa("[data-s]",side).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));s3Draw();view("l:"+S3.id+":"+S3.side)};
+  const TL={both:"Trim: both ends",high:"Trim: only the highest",low:"Trim: only the lowest"};
+  side.innerHTML=[["both","Both"],["high","High"],["low","Low"]].map(([v,l])=>`<button type="button" data-s="${v}" aria-pressed="${v===S3.side}" aria-label="${TL[v]}">${l}</button>`).join("");q("#lxLSideL").textContent=TL[S3.side];
+  side.onclick=e=>{const b=e.target.closest("[data-s]");if(!b)return;S3.side=b.dataset.s;q("#lxLSideL").textContent=TL[S3.side];qa("[data-s]",side).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));s3Draw();view("l:"+S3.id+":"+S3.side)};
   const box=q("#lxLDots"),upd=raf(()=>s3Draw());
   drag(box,{down:e=>{const g=box._g;if(!g)return false;const r=box.getBoundingClientRect(),x=e.clientX-r.left,hx=g.x(S3.T[S3.id]),lx=g.x(-S3.T[S3.id]);
       const dR=S3.side!=="low"?Math.abs(x-hx):1e9,dL=S3.side!=="high"?Math.abs(x-lx):1e9;if(Math.min(dR,dL)>30)return false;return {r,h:dR<=dL?"R":"L"}},
@@ -314,8 +318,8 @@ function s3Draw(fresh){
   const gp=mean(kt)-mean(kc),band=bootGap(kt,kc,300,11),pr=r;
   const vals=[0,gp,band[0],band[1],pr.did,pr.lo,pr.hi].filter(isFinite);let lo=Math.min(...vals),hi=Math.max(...vals);const pd=(hi-lo)*.12||1;lo-=pd;hi+=pd;
   const gw=Math.max(260,gap.clientWidth),gh=70,X=v=>10+(v-lo)/(hi-lo)*(gw-20),few=kt.length<FEW||kc.length<FEW;
-  let g=`<div class="lx-gl"><span>Gap now <b>${SG(gp,2)}</b> <span class="n">per 10,000 words</span></span><span class="num">removed <b style="font-size:18px">${N(rem.n)}</b> of ${N(r._lx.all.length)} <span class="n">(${rem.nt} topic, ${rem.nc} comparison)</span></span></div>`;
-  g+=`<svg viewBox="0 0 ${gw} ${gh}" width="${gw}" height="${gh}" role="img" aria-label="Gap and its range">`;
+  let g=`<div class="lx-gl"><span>Extra change now <b>${SG(gp,2)}</b> <span class="n">per 10,000 words</span></span><span class="num">removed <b style="font-size:18px">${N(rem.n)}</b> of ${N(r._lx.all.length)} <span class="n">(${rem.nt} topic, ${rem.nc} comparison)</span></span></div>`;
+  g+=`<svg viewBox="0 0 ${gw} ${gh}" width="${gw}" height="${gh}" role="img" aria-label="Extra change and its range">`;
   if(few)g+=`<defs><pattern id="lxH3" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.5" height="6" style="fill:var(--muted)" opacity=".5"/></pattern></defs>`;
   if(isFinite(pr.lo))g+=`<rect class="lx-ghost" x="${X(pr.lo)}" y="14" width="${X(pr.hi)-X(pr.lo)}" height="26" rx="2"/><line x1="${X(pr.did)}" x2="${X(pr.did)}" y1="10" y2="44" style="stroke:var(--ink);stroke-dasharray:3 2;opacity:.6"/><text x="${X(pr.did)}" y="8" text-anchor="middle">pre-registered ${SG(pr.did,2)}</text>`;
   if(isFinite(band[0]))g+=`<rect x="${X(band[0])}" y="20" width="${Math.max(1,X(band[1])-X(band[0]))}" height="14" rx="2" style="fill:${few?"url(#lxH3)":"var(--topic)"};opacity:${few?1:.3}"/>`;
@@ -324,7 +328,7 @@ function s3Draw(fresh){
   g+=`</svg>`;
   gap.innerHTML=g+(few?`<p class="n" style="margin:0">${fewTag} fewer than ${FEW} articles left in a group.</p>`:"");
   const crosses=isFinite(band[0])&&band[0]<=0&&band[1]>=0;
-  q("#lxLSay").innerHTML=`${rem.n?`Without the ${N(rem.n)} most extreme ${rem.n===1?"article":"articles"}, the gap is <b>${SG(gp,2)}</b> (range ${SG(band[0],1)} to ${SG(band[1],1)}, from 300 resamples), against the pre-registered <b>${SG(pr.did,2)}</b>.`:`Nothing removed: this is the full pre-registered comparison, gap <b>${SG(gp,2)}</b>.`} ${crosses?"The range still includes zero.":"The range is clear of zero."} ${Math.abs(gp-pr.did)>Math.max(.5,Math.abs(pr.did)*.5)&&rem.n?"A few articles carry a lot of the result.":"The result barely depends on the extremes."}`;
+  q("#lxLSay").innerHTML=`${rem.n?`Without the ${N(rem.n)} most extreme ${rem.n===1?"article":"articles"}, the extra change is <b>${SG(gp,2)}</b> per 10,000 words (range ${SG(band[0],1)} to ${SG(band[1],1)}, from 300 resamples), against the pre-registered <b>${SG(pr.did,2)}</b>.`:`Nothing removed: this is the full pre-registered comparison, extra change <b>${SG(gp,2)}</b> per 10,000 words.`} ${crosses?"The range still includes zero.":"The range is clear of zero."} ${Math.abs(gp-pr.did)>Math.max(.5,Math.abs(pr.did)*.5)&&rem.n?"A few articles carry a lot of the result.":"The result barely depends on the extremes."}`;
 }
 
 /* =====================================================================
@@ -414,32 +418,27 @@ function s4Mari(d,cur){
     const nr=d.rvBy.get(v.id)||0;if(nr){const nn=Math.min(nr,Math.max(1,Math.floor(bw/4)));for(let j=0;j<nn;j++)s+=`<rect class="notch" x="${(x+(j+.5)*bw/nn-1).toFixed(1)}" y="${(y-7).toFixed(1)}" width="2" height="6"/>`}
     x+=bw});
   s+=`<text x="0" y="10">↑ ${d.hasViews?"readers who saw it":"(reader counts not available)"}</text><text x="${w}" y="${H+top+16}" text-anchor="end">days live →</text><text x="0" y="${H+top+16}">${N(vs.length)} wordings · ${N(tot)} days</text></svg>`;
-  el.innerHTML=s+`<p class="n" style="margin:0">Each block is one wording, in the order it first appeared. Wider = live longer${d.hasViews?"; taller = more reader views while live":""}. <span style="color:var(--del-ink)">Amber notches</span>: an edit to that wording was later reverted. Tap a block to jump to it.</p>`;
+  el.innerHTML=s+`<p class="n" style="margin:0">One block per wording, oldest first. Wider: live longer${d.hasViews?". Taller: more reader views":""}. <span style="color:var(--del-ink)">Amber notch</span>: a reverted edit. Tap a block to jump.</p>`;
 }
 
 /* =====================================================================
    5. WORD CHIPS
    ===================================================================== */
-const FR=(D&&D.frames)||[], WR=D&&D.word_race||null, LEX=D&&D.lexicon||{};
+const FR=(D&&D.frames)||[];
 const PIN="placebo_geography";
-const S5={on:[],burst:null};
+const S5={on:[]};
 const PAL=["--s2","--s1","--s4","--s3","--s5","--s6"];
 let POOL=null;
 function pool(){if(POOL)return POOL;POOL={};for(const [g,arr] of [["t",TOP],["c",CMP]]){POOL[g]={};const words=DATES.map(()=>0),cnt={};FR.forEach(k=>cnt[k]=DATES.map(()=>0));
     for(const a of arr){const m=ixMap(a);DATES.forEach((d,j)=>{const i=m[d];if(i==null||!a.words_series||!a.words_series[i])return;words[j]+=a.words_series[i];FR.forEach(k=>{const v=a.frame_series&&a.frame_series[k]&&a.frame_series[k][i];if(v)cnt[k][j]+=v})})}
     FR.forEach(k=>POOL[g][k]=cnt[k].map((c,j)=>words[j]?c*1e4/words[j]:null))}return POOL}
-function wordsFor(k){const inc=(LEX[k]&&LEX[k].include)||[];const rx=inc.map(p=>{try{return new RegExp(p.replace(/\(\?[a-z]+\)/g,""),"i")}catch(e){return null}}).filter(Boolean);
-  const stems=inc.filter(p=>!/[ ]|\[- \]/.test(p.replace(/\\b/g,""))).map(p=>p.replace(/\\b|\\w\*|\\w\+|\?|\(.*?\)|\[.*?\]|\\/g,"").toLowerCase()).filter(s=>s.length>=4);
-  return ((WR&&WR.words)||[]).filter(w=>rx.some(r=>r.test(w))||stems.some(s=>w.toLowerCase().startsWith(s)))}
 function s5Col(id){const i=S5.on.filter(x=>x!==PIN).indexOf(id);return id===PIN?"--muted":PAL[i%PAL.length]}
 function s5Init(){
   const pal=q("#lxCPal");
   if(!FR.length||!hasSeries){pal.innerHTML="";q("#lxCChart").innerHTML=note("The word-group counts are missing from this build.");return}
   S5.on=["genocide","settler_colonial"].filter(k=>FR.includes(k));if(FR.includes(PIN))S5.on.push(PIN);if(!S5.on.length)S5.on=[FR[0]];
-  pal.innerHTML=FR.map(k=>`<button class="lx-chip${k===PIN?" pin":""}" type="button" data-k="${k}" title="${k===PIN?"Pinned: the placebo should stay flat":"Tap or drag onto the chart. Hold to break into words."}"><i></i>${E(frNm(k))}</button>`).join("");
+  pal.innerHTML=FR.map(k=>`<button class="lx-chip${k===PIN?" pin":""}" type="button" data-k="${k}" title="${k===PIN?"Pinned: the placebo should stay flat":"Tap, or drag onto the chart"}"><i></i>${E(frNm(k))}</button>`).join("");
   chipDrag(pal,"[data-k]",b=>({id:b.dataset.k,kind:"f"}));
-  chipDrag(q("#lxCBurst"),"[data-w]",b=>({id:"w:"+b.dataset.w,kind:"w"}));
-  q("#lxCBurst").addEventListener("click",e=>{if(e.target.closest("[data-close]")){S5.burst=null;s5Burst()}});
   chipDrag(q("#lxCKey"),"[data-o]",b=>({id:b.dataset.o,kind:"legend"}));
   s5Draw();
 }
@@ -450,14 +449,13 @@ function s5Toggle(id,force){const has=S5.on.includes(id);if(id===PIN){if(force==
 function s5Msg(t){const k=q("#lxCKey");let m=q(".lx-msg",k);if(!m){m=document.createElement("span");m.className="lx-msg n";k.append(m)}m.textContent=t;clearTimeout(m._t);m._t=setTimeout(()=>m.remove(),3200)}
 function chipDrag(host,sel,info){
   let st=null;
-  host.addEventListener("pointerdown",e=>{const b=e.target.closest(sel);if(!b||e.button>0)return;e.preventDefault();const it=info(b);st={b,it,x:e.clientX,y:e.clientY,id:e.pointerId,drag:false,long:false,fl:null};
+  host.addEventListener("pointerdown",e=>{const b=e.target.closest(sel);if(!b||e.button>0)return;e.preventDefault();const it=info(b);st={b,it,x:e.clientX,y:e.clientY,id:e.pointerId,drag:false,fl:null};
     try{b.setPointerCapture(e.pointerId)}catch(_){}
-    if(it.kind==="f"){b.classList.add("press");st.lt=setTimeout(()=>{if(st&&!st.drag){st.long=true;b.classList.remove("press");S5.burst=it.id;s5Burst();view("c:burst:"+it.id)}},520)}
     const M=ev=>{if(!st||ev.pointerId!==st.id)return;const dx=ev.clientX-st.x,dy=ev.clientY-st.y;
-      if(!st.drag&&!st.long&&Math.hypot(dx,dy)>8){st.drag=true;clearTimeout(st.lt);b.classList.remove("press");const f=b.cloneNode(true);f.classList.add("lx-float");f.classList.remove("press");document.body.append(f);st.fl=f}
+      if(!st.drag&&Math.hypot(dx,dy)>8){st.drag=true;const f=b.cloneNode(true);f.classList.add("lx-float");document.body.append(f);st.fl=f}
       if(st.drag){st.fl.style.left=ev.clientX+"px";st.fl.style.top=ev.clientY+"px";q("#lxCChart").classList.toggle("hot",overChart(ev))}};
-    const U=ev=>{if(!st||ev.pointerId!==st.id)return;b.removeEventListener("pointermove",M);b.removeEventListener("pointerup",U);b.removeEventListener("pointercancel",U);clearTimeout(st.lt);b.classList.remove("press");q("#lxCChart").classList.remove("hot");
-      const s=st;st=null;if(s.fl)s.fl.remove();if(ev.type==="pointercancel"||s.long)return;
+    const U=ev=>{if(!st||ev.pointerId!==st.id)return;b.removeEventListener("pointermove",M);b.removeEventListener("pointerup",U);b.removeEventListener("pointercancel",U);q("#lxCChart").classList.remove("hot");
+      const s=st;st=null;if(s.fl)s.fl.remove();if(ev.type==="pointercancel")return;
       const id=s.it.id;
       if(s.drag){const on=overChart(ev);if(on)s5Toggle(id,true);else if(S5.on.includes(id))s5Toggle(id,false)}
       else s5Toggle(id)};
@@ -466,85 +464,37 @@ function chipDrag(host,sel,info){
   host.addEventListener("contextmenu",e=>{if(e.target.closest(sel))e.preventDefault()});
 }
 function overChart(ev){const r=q("#lxCChart").getBoundingClientRect();return ev.clientX>=r.left&&ev.clientX<=r.right&&ev.clientY>=r.top-10&&ev.clientY<=r.bottom+10}
-function s5Burst(){const el=q("#lxCBurst");if(!S5.burst){el.hidden=true;el.innerHTML="";return}
-  const ws=wordsFor(S5.burst);el.hidden=false;
-  el.innerHTML=`<div class="ttl"><span>${E(frNm(S5.burst))}, word by word${WR?"":" (word counts are not in this build)"}</span><button type="button" data-close>close</button></div>`+(ws.length?ws.map((w,k)=>`<button class="lx-chip" type="button" data-w="${E(w)}" style="--k:${k}"><i></i>${E(w)}</button>`).join(""):`<span class="n">None of the tracked single words belong to this group.</span>`);
-  s5Sync()}
-function s5Sync(){qa("#lxCPal [data-k],#lxCBurst [data-w]").forEach(b=>{const id=b.dataset.k||"w:"+b.dataset.w,on=S5.on.includes(id);b.classList.toggle("on",on);b.setAttribute("aria-pressed",String(on));if(on)b.style.setProperty("--c",`var(${s5Col(id)})`)})}
+function s5Sync(){qa("#lxCPal [data-k]").forEach(b=>{const id=b.dataset.k,on=S5.on.includes(id);b.classList.toggle("on",on);b.setAttribute("aria-pressed",String(on));if(on)b.style.setProperty("--c",`var(${s5Col(id)})`)})}
 function s5Draw(){
   const el=q("#lxCChart");if(!el||!FR.length)return;const P=pool();
-  const ser=S5.on.map(id=>{const w=id.startsWith("w:")?id.slice(2):null;const t=w?(WR&&WR.topic&&WR.topic[w]):P.t[id],c=w?(WR&&WR.comparison&&WR.comparison[w]):P.c[id];return {id,name:w?`“${w}”`:frNm(id),t:t||[],c:c||[],col:s5Col(id),w:!!w}});
+  const ser=S5.on.map(id=>({id,name:frNm(id),t:P.t[id]||[],c:P.c[id]||[],col:s5Col(id)}));
   const W=Math.max(260,el.clientWidth),H=el.clientHeight||300,m={l:34,r:phone()?10:120,t:14,b:26};
   const t0=TM(DATES[0]),t1=TM(DATES[DATES.length-1]),x=t=>m.l+(t-t0)/((t1-t0)||1)*(W-m.l-m.r);
-  const wd=(WR&&WR.dates)||DATES;
   let mx=0;ser.forEach(s=>[...s.t,...s.c].forEach(v=>{if(v!=null&&v>mx)mx=v}));mx=mx>0?mx*1.08:1;const tk=tickVals(0,mx,4);mx=Math.max(mx,tk[tk.length-1]);
   const y=v=>m.t+(1-v/mx)*(H-m.t-m.b);
-  let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Rate per 10,000 words over time">`;
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Matches per 10,000 words over time">`;
   tk.forEach(v=>{s+=`<line class="grid" x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${m.l-6}" y="${y(v)+4}" text-anchor="end">${F(v,v<10&&v%1?1:0)}</text>`});
   [...new Set(DATES.map(d=>d.slice(0,4)))].forEach(yr=>{const xx=x(Date.UTC(+yr,0,1));if(xx>=m.l&&xx<=W-m.r)s+=`<text x="${xx}" y="${H-6}" text-anchor="middle">${phone()?"’"+yr.slice(2):yr}</text>`});
   if(WARt>t0&&WARt<t1)s+=`<line class="war" x1="${x(WARt)}" x2="${x(WARt)}" y1="${m.t}" y2="${H-m.b}"/><text class="war" x="${x(WARt)+4}" y="${m.t+10}" style="font-size:10px">7 Oct 2023</text>`;
   const pth=(arr,ds)=>arr.map((v,i)=>v==null?"":`${i&&arr[i-1]!=null?"L":"M"}${x(TM(ds[i])).toFixed(1)},${y(v).toFixed(1)}`).join("");
   const ends=[];
-  ser.forEach(se=>{const ds=se.w?wd:DATES,sw=se.w?1.6:2.2;s+=`<path d="${pth(se.c,ds)}" fill="none" style="stroke:var(${se.col})" stroke-width="${sw}" stroke-dasharray="5 4" opacity=".85"/><path d="${pth(se.t,ds)}" fill="none" style="stroke:var(${se.col})" stroke-width="${sw+.6}"/>`;const lv=se.t[se.t.length-1];if(lv!=null)ends.push({y:y(lv),name:se.name,col:se.col})});
+  ser.forEach(se=>{const ds=DATES,sw=2.2;s+=`<path d="${pth(se.c,ds)}" fill="none" style="stroke:var(${se.col})" stroke-width="${sw}" stroke-dasharray="5 4" opacity=".85"/><path d="${pth(se.t,ds)}" fill="none" style="stroke:var(${se.col})" stroke-width="${sw+.6}"/>`;const lv=se.t[se.t.length-1];if(lv!=null)ends.push({y:y(lv),name:se.name,col:se.col})});
   if(!phone()){ends.sort((a,b)=>a.y-b.y);for(let i=1;i<ends.length;i++)if(ends[i].y-ends[i-1].y<13)ends[i].y=ends[i-1].y+13;ends.forEach(e=>{s+=`<text x="${W-m.r+6}" y="${e.y+4}" style="fill:var(${e.col});font-weight:600">${E(e.name.length>16?e.name.slice(0,15)+"…":e.name)}</text>`})}
   if(!ser.length)s+=`<text x="${(W)/2}" y="${H/2}" text-anchor="middle">Drag a chip here</text>`;
   el.innerHTML=s+"</svg>";
-  q("#lxCKey").innerHTML=`<span><i style="--c:var(--ink)"></i>topic articles (${N(TOP.length)})</span><span><i class="d" style="--c:var(--ink)"></i>comparison (${N(CMP.length)})${CMP.length<FEW?" "+fewTag:""}</span>`+ser.map(se=>`<span class="lx-chip on${se.id===PIN?" pin":""}" data-o="${E(se.id)}" style="--c:var(${se.col});font-size:12px;padding:4px 10px;min-height:28px" role="button" tabindex="0" aria-label="${E(se.name)}${se.id===PIN?" (pinned)":", tap or flick off to remove"}"><i></i>${E(se.name)}${se.id===PIN?"":" ×"}</span>`).join("")+`<span class="n" style="width:100%">Hits per 10,000 words, pooled over the articles measured at each date.${S5.on.some(x=>x.startsWith("w:"))?" Single words are counted over the fixed panel of articles from January 2021.":""}</span>`;
+  q("#lxCKey").innerHTML=`<span><i style="--c:var(--ink)"></i>topic articles (${N(TOP.length)})</span><span><i class="d" style="--c:var(--ink)"></i>comparison (${N(CMP.length)})${CMP.length<FEW?" "+fewTag:""}</span>`+ser.map(se=>`<span class="lx-chip on${se.id===PIN?" pin":""}" data-o="${E(se.id)}" style="--c:var(${se.col});font-size:12px;padding:4px 10px;min-height:28px" role="button" tabindex="0" aria-label="${E(se.name)}${se.id===PIN?" (pinned)":", tap or flick off to remove"}"><i></i>${E(se.name)}${se.id===PIN?"":" ×"}</span>`).join("")+`<span class="n" style="width:100%">Matches per 10,000 words of full text, pooled over the articles measured at each date.</span>`;
   s5Sync();
 }
 
 /* =====================================================================
-   6. LEAD VS BODY
-   ===================================================================== */
-const S6={hl:null};
-let S6D=null;
-function s6Data(){if(S6D)return S6D;const pts=[];for(const [g,arr] of [["t",TOP],["c",CMP]])for(const a of arr){const x=change(a,FIRST,LAST,"full",CRIT),y=change(a,FIRST,LAST,"lead",CRIT);if(x!=null&&y!=null)pts.push({a,g,x,y})}
-  const st=g=>{const p=pts.filter(z=>z.g===g),n=p.length,above=p.filter(z=>z.y>z.x+1e-9).length,on=p.filter(z=>Math.abs(z.y-z.x)<=1e-9).length,mx=mean(p.map(z=>z.x)),my=mean(p.map(z=>z.y));
-    const sx=Math.sqrt(mean(p.map(z=>(z.x-mx)**2))),sy=Math.sqrt(mean(p.map(z=>(z.y-my)**2)));return {n,above,on,share:n?above/n:NaN,mx,my,sx,sy}};
-  return S6D={pts,t:st("t"),c:st("c")}}
-function s6Init(){const box=q("#lxDBox");if(!hasSeries||!A.some(a=>a.lead_words_series)){box.innerHTML=note("Opening-paragraph counts are missing from this build.");return}
-  const hit=e=>{const g=box._g;if(!g)return null;const r=box.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;let b=null,bd=(e.pointerType==="touch"?16:10)**2;for(const p of g.P){if(S6.hl&&p.g!==S6.hl)continue;const d=(p.px-px)**2+(p.py-py)**2;if(d<bd){bd=d;b=p}}
-    let halo=null;for(const hh of g.halos){const dx=(px-hh.cx)/hh.rx,dy=(py-hh.cy)/hh.ry;if(dx*dx+dy*dy<=1){halo=hh.g;break}}return {b,halo}};
-  box.addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;const h=hit(e);if(h&&h.b){const p=h.b;tipOn(`<b>${E(p.a.title)}</b><div class="r"><span>full text</span><span>${SG(p.x,1)}</span></div><div class="r"><span>opening</span><span>${SG(p.y,1)}</span></div><div class="r" style="opacity:.7"><span>tap to open</span></div>`,e.clientX,e.clientY)}else tipOff()});
-  box.addEventListener("pointerleave",tipOff);
-  box.addEventListener("click",e=>{const h=hit(e);if(!h)return;if(h.b){openArt(h.b.a.title,box);return}const ng=h.halo?(S6.hl===h.halo?null:h.halo):null;if(ng!==S6.hl){S6.hl=ng;s6Draw();if(ng)view("d:"+ng)}});
-  const hk=q("#lxDKey");if(hk)hk.onclick=e=>{const b=e.target.closest("[data-g]");if(!b)return;S6.hl=S6.hl===b.dataset.g?null:b.dataset.g;s6Draw();if(S6.hl)view("d:"+S6.hl)};
-  s6Draw()}
-function s6Draw(){
-  const box=q("#lxDBox");if(!box||!hasSeries)return;const Dd=s6Data();if(!Dd.pts.length){box.innerHTML=note("No articles have both full-text and opening-paragraph counts.");return}
-  const W=Math.min(Math.max(260,box.clientWidth),620),m={l:40,r:12,t:26,b:34},side=W-m.l-m.r,H=side+m.t+m.b;
-  const av=Dd.pts.flatMap(p=>[Math.abs(p.x),Math.abs(p.y)]).sort((a,b)=>a-b);let L=av[Math.floor(av.length*.97)]||1;L=Math.max(L,...[Dd.t,Dd.c].flatMap(s=>[Math.abs(s.mx)+s.sx,Math.abs(s.my)+s.sy].filter(isFinite)).map(v=>Math.min(v,L*1.5)));const tk=tickVals(-L,L,phone()?4:6);L=Math.max(L,Math.abs(tk[0]),tk[tk.length-1]);
-  const x=v=>m.l+(clamp(v,-L,L)+L)/(2*L)*side,y=v=>m.t+(1-(clamp(v,-L,L)+L)/(2*L))*side;
-  let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Change in full text versus opening paragraph">`;
-  tk.forEach(v=>{s+=`<line class="grid" x1="${x(v)}" x2="${x(v)}" y1="${m.t}" y2="${m.t+side}"/><line class="grid" x1="${m.l}" x2="${m.l+side}" y1="${y(v)}" y2="${y(v)}"/><text x="${x(v)}" y="${m.t+side+14}" text-anchor="middle">${SG(v,v%1?1:0).replace("±","")}</text><text x="${m.l-5}" y="${y(v)+4}" text-anchor="end">${SG(v,v%1?1:0).replace("±","")}</text>`});
-  s+=`<line class="zero" x1="${x(0)}" x2="${x(0)}" y1="${m.t}" y2="${m.t+side}" style="opacity:.3"/><line class="zero" x1="${m.l}" x2="${m.l+side}" y1="${y(0)}" y2="${y(0)}" style="opacity:.3"/>`;
-  s+=`<path d="M${x(-L)},${y(-L)} L${x(L)},${y(L)} L${x(-L)},${y(L)} Z" style="fill:var(--topic);opacity:.04"/><line class="diag" x1="${x(-L)}" y1="${y(-L)}" x2="${x(L)}" y2="${y(L)}"/><text x="${x(-L)+6}" y="${y(L)+14}" class="ink">opening rose more ↖</text><text x="${x(L)-6}" y="${y(-L)-6}" text-anchor="end">full text rose more ↘</text>`;
-  const halos=[];
-  for(const [g,S,col] of [["c",Dd.c,"--comp"],["t",Dd.t,"--topic"]]){if(!S.n)continue;const cx=x(S.mx),cy=y(S.my),rx=Math.max(14,Math.min(side/2,S.sx/(2*L)*side)),ry=Math.max(14,Math.min(side/2,S.sy/(2*L)*side));halos.push({g,cx,cy,rx,ry});
-    s+=`<ellipse class="halo" cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" style="fill:var(${col});fill-opacity:${S6.hl&&S6.hl!==g?.02:S6.hl===g?.2:.09};stroke:var(${col});stroke-width:${S6.hl===g?2.5:1.5};stroke-dasharray:${g==="c"?"5 4":"none"}"/>`}
-  const P=[];let dots="";
-  const order=[...Dd.pts].sort((a,b)=>(a.g===S6.hl)-(b.g===S6.hl)||(a.g==="t")-(b.g==="t"));
-  for(const p of order){const px=x(p.x),py=y(p.y),off=Math.abs(p.x)>L||Math.abs(p.y)>L;p.px=px;p.py=py;P.push(p);
-    dots+=off?`<path class="dt${S6.hl&&p.g!==S6.hl?" dim":""}" d="M${px-3.5},${py+3} L${px+3.5},${py+3} L${px},${py-3.5}Z" style="fill:var(${p.g==="t"?"--topic":"--comp"})"/>`:`<circle class="dt${S6.hl&&p.g!==S6.hl?" dim":""}" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${phone()?2.6:3}" style="fill:var(${p.g==="t"?"--topic":"--comp"});fill-opacity:.75"/>`}
-  s+=dots;
-  for(const [g,S,col] of [["c",Dd.c,"--comp"],["t",Dd.t,"--topic"]])if(S.n)s+=`<g style="stroke:var(--ink);stroke-width:2" pointer-events="none"><line x1="${x(S.mx)-7}" x2="${x(S.mx)+7}" y1="${y(S.my)}" y2="${y(S.my)}"/><line x1="${x(S.mx)}" x2="${x(S.mx)}" y1="${y(S.my)-7}" y2="${y(S.my)+7}"/></g><text x="${x(S.mx)+9}" y="${y(S.my)+(g==="t"?-8:16)}" style="fill:var(${col});font-weight:600;paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${g==="t"?"topic mean":"comparison mean"}</text>`;
-  s+=`<text x="${m.l+side}" y="${H-4}" text-anchor="end">full-text change →</text><text x="${m.l}" y="${m.t-10}">↑ opening-paragraph change</text>`;
-  box.innerHTML=s+"</svg>";box._g={P,halos};
-  const hk=q("#lxDKey");if(hk)hk.innerHTML=`<span class="lab">Halo</span>`+[["t","Topic",Dd.t.n],["c","Comparison",Dd.c.n]].map(([g,l,n])=>`<button class="lx-pill${n<FEW?" lx-few":""}" type="button" data-g="${g}" aria-pressed="${S6.hl===g}"><i style="width:10px;height:10px;border-radius:50%;background:var(${g==="t"?"--topic":"--comp"})"></i>${l} <span class="n">${N(n)}</span></button>`).join("");
-  const off=Dd.pts.filter(p=>Math.abs(p.x)>L||Math.abs(p.y)>L).length;
-  q("#lxDCount").innerHTML=`<b class="t">${PC(Dd.t.share)}</b> of topic articles rose more in the opening paragraph than in the full text, vs <b class="c">${PC(Dd.c.share)}</b> of comparison articles.`;
-  const p1=DID.find(r=>r.id==="P1");
-  q("#lxDSay").innerHTML=`<span class="n">${N(Dd.t.n)} topic and ${N(Dd.c.n)} comparison articles${Dd.c.n<FEW?" ("+fewTag+")":""}. ${N(Dd.t.on+Dd.c.on)} sit exactly on the diagonal (usually no loaded words in either) and count as “not more”. ${off?N(off)+" extreme articles are drawn as triangles at the edge. ":""}</span>Tap a halo to pick out a group, or a dot to open the article.${p1?` Pre-registered test P1 (opening paragraph): gap ${SG(p1.did,2)}, range ${SG(p1.lo,1)} to ${SG(p1.hi,1)}.`:""}`;
-}
-
-/* =====================================================================
-   7. LANGUAGE PRISM
+   6. LANGUAGE PRISM
    ===================================================================== */
 const XL=D&&D.crosslang||null;
 const S7={sort:"en",dir:-1,cmp:null,sel:null};
 let XD=null;
+const xlSum=x=>10*Object.values(x.rates||{}).reduce((a,b)=>a+(+b||0),0); /* crosslang stores per 1,000 words; shown per 10,000 */
 function xlData(){if(XD)return XD;const langs=(XL.langs||[]).slice(),rows=[];
-  for(const [t,L] of Object.entries(XL.articles||{})){const ch={},ld={};langs.forEach(l=>{const v=L[l];const s=v&&v.series;if(!s||s.length<2){ch[l]=null;return}const sum=x=>Object.values(x.rates||{}).reduce((a,b)=>a+(+b||0),0);ch[l]=sum(s[s.length-1])-sum(s[0]);ld[l]={a:s[0],b:s[s.length-1],title:v.title}});rows.push({t,ch,ld})}
+  for(const [t,L] of Object.entries(XL.articles||{})){const ch={},ld={};langs.forEach(l=>{const v=L[l];const s=v&&v.series;if(!s||s.length<2){ch[l]=null;return}ch[l]=xlSum(s[s.length-1])-xlSum(s[0]);ld[l]={a:s[0],b:s[s.length-1],title:v.title}});rows.push({t,ch,ld,n:langs.filter(l=>ch[l]!=null).length})}
   const all=rows.flatMap(r=>langs.map(l=>r.ch[l]).filter(v=>v!=null).map(Math.abs)).sort((a,b)=>a-b);
   return XD={langs,rows,M:all[Math.floor(all.length*.9)]||1}}
 const xlCol=(v,M)=>{if(v==null)return "";const f=clamp(Math.abs(v)/M,0,1);return `color-mix(in oklab,var(${v>0?"--inc":"--dec"}) ${Math.round(f*100)}%,var(--mid))`};
@@ -569,27 +519,27 @@ function s7Draw(){
   const rows=[...X.rows].sort((a,b)=>{const va=key(a),vb=key(b);if(va==null&&vb==null)return a.t.localeCompare(b.t);if(va==null)return 1;if(vb==null)return -1;return S7.dir*(va-vb)||0});
   let h=`<div class="lx-pg" style="grid-template-columns:${cols}"><span class="n" style="align-self:end;padding-bottom:6px;font-size:10.5px;line-height:1.25">${S7.cmp?"":"tap to sort<br>drag EN →"}</span>${L.map(l=>`<button type="button" class="hdr${l==="en"?" en":""}${S7.cmp===l?" tgt":""}" data-l="${l}" aria-pressed="${!S7.cmp&&S7.sort===l}" title="${E(LNG[l]||l)}${l==="en"?": drag onto another language":""}">${l.toUpperCase()}${!S7.cmp&&S7.sort===l?(S7.dir<0?"↓":"↑"):""}</button>`).join("")}</div>`;
   if(!S7.cmp){
-    h+=`<div class="lx-pg" style="grid-template-columns:${cols};margin-top:2px">`+rows.map(r=>`<span class="rl" title="${E(r.t)}">${E(r.t)}</span>`+L.map(l=>{const v=r.ch[l],sel=S7.sel&&S7.sel[0]===r.t&&S7.sel[1]===l;return v==null?`<span class="cell na" title="${E(LNG[l]||l)}: no article"></span>`:`<button type="button" class="cell${sel?" sel":""}" data-r="${E(r.t)}" data-l="${l}" style="background:${xlCol(v,X.M)}" aria-label="${E(r.t)}, ${E(LNG[l]||l)}: ${SG(v,1)}" title="${E(LNG[l]||l)}: ${SG(v,1)}"></button>`}).join("")).join("")+`</div>`;
-    h+=`<div class="lx-ramp" style="margin-top:10px"><span>fell</span><i style="background:linear-gradient(90deg,var(--dec),var(--mid),var(--inc))"></i><span>rose</span><span>· change in loaded words per 1,000 opening words, first to last snapshot · hatched: no article in that language · ${N(X.rows.length)} articles</span></div>`;
+    h+=`<div class="lx-pg" style="grid-template-columns:${cols};margin-top:2px">`+rows.map(r=>`<span class="rl rln" title="${E(r.t)}: ${r.n} of ${L.length} languages with data"><span>${E(r.t)}</span><span class="n">${r.n}</span></span>`+L.map(l=>{const v=r.ch[l],sel=S7.sel&&S7.sel[0]===r.t&&S7.sel[1]===l;return v==null?`<span class="cell na" title="${E(LNG[l]||l)}: no article, no data" aria-label="no data"></span>`:`<button type="button" class="cell${sel?" sel":""}" data-r="${E(r.t)}" data-l="${l}" style="background:${xlCol(v,X.M)}" aria-label="${E(r.t)}, ${E(LNG[l]||l)}: ${SG(v,1)}" title="${E(LNG[l]||l)}: ${SG(v,1)}"></button>`}).join("")).join("")+`</div>`;
+    h+=`<div class="lx-ramp" style="margin-top:10px"><span>fell</span><i style="background:linear-gradient(90deg,var(--dec),var(--mid),var(--inc))"></i><span>rose</span><span>· change in loaded words per 10,000 words of opening paragraph, first to last snapshot</span><span><i class="lx-na" style="width:14px;height:10px;display:inline-block;vertical-align:-1px"></i> no data (no article in that language)</span><span>· the small number after each title: languages with data · ${N(X.rows.length)} articles</span></div>`;
   }else{
     const vals=rows.map(key).filter(v=>v!=null),M=Math.max(1e-9,...vals.map(Math.abs)),mm=mean(vals),few=vals.length<FEW;
     h+=`<div class="lx-row" style="margin:10px 0"><span class="lx-pill" aria-pressed="true">English minus ${E(LNG[S7.cmp]||S7.cmp)}</span><button type="button" class="lx-pill" data-back>Back to the grid</button><span class="n">tap another language to switch</span></div><div class="lx-pbars">`;
-    h+=rows.map(r=>{const v=key(r);if(v==null)return `<div class="r"><span class="rl" title="${E(r.t)}">${E(r.t)}</span><span class="trk lx-few" style="opacity:.5"></span><span class="v">–</span></div>`;const w=Math.abs(v)/M*50;return `<div class="r"><span class="rl" title="${E(r.t)}">${E(r.t)}</span><span class="trk"><i style="${v>=0?`left:50%`:`right:50%`};width:${w.toFixed(1)}%;background:var(${v>=0?"--inc":"--dec"})"></i><b></b></span><span class="v">${SG(v,1)}</span></div>`}).join("");
+    h+=rows.map(r=>{const v=key(r);if(v==null)return `<div class="r"><span class="rl" title="${E(r.t)}">${E(r.t)}</span><span class="trk lx-na" style="height:14px"></span><span class="v">no data</span></div>`;const w=Math.abs(v)/M*50;return `<div class="r"><span class="rl" title="${E(r.t)}">${E(r.t)}</span><span class="trk"><i style="${v>=0?`left:50%`:`right:50%`};width:${w.toFixed(1)}%;background:var(${v>=0?"--inc":"--dec"})"></i><b></b></span><span class="v">${SG(v,1)}</span></div>`}).join("");
     h+=`<div class="r" style="margin-top:6px;border-top:1px solid var(--rule);padding-top:6px"><b>Average, ${vals.length} articles</b><span class="trk${few?" lx-few":""}"><i style="${mm>=0?"left:50%":"right:50%"};width:${(Math.abs(mm)/M*50).toFixed(1)}%;background:var(--ink);opacity:${few?.35:.8}"></i><b></b></span><span class="v">${SG(mm,1)}</span></div></div>`;
-    h+=`<p class="n" style="margin-top:6px">Right of the line: English gained more loaded words than ${E(LNG[S7.cmp]||S7.cmp)}. ${few?fewTag+" with fewer than "+FEW+" articles, so read the average as a description, not a finding.":""}</p>`;
+    h+=`<p class="n" style="margin-top:6px">Right of the line: English gained more loaded words per 10,000 words than ${E(LNG[S7.cmp]||S7.cmp)}. ${few?fewTag+" with fewer than "+FEW+" articles, so read the average as a description, not a finding.":""}</p>`;
   }
   el.innerHTML=h;
 }
 function s7Cell(){const el=q("#lxXCell");if(!S7.sel){el.innerHTML="";return}const [t,l]=S7.sel,r=xlData().rows.find(x=>x.t===t),d=r&&r.ld[l];if(!d){el.innerHTML="";return}
-  const sm=x=>Object.values(x.rates||{}).reduce((a,b)=>a+(+b||0),0);
-  el.innerHTML=`<div class="lx-row" style="justify-content:space-between"><b>${E(d.title||t)} <span class="n">· ${E(LNG[l]||l)} · ${SG(r.ch[l],1)} per 1,000 words</span></b><button type="button" class="lx-pill" id="lxXClose">Close</button></div><div class="two"><div><small>${DL(d.a.date)} · ${F(sm(d.a),1)} per 1,000</small><p dir="auto" lang="${l}">${E(d.a.lead||"")}</p></div><div><small>${DL(d.b.date)} · ${F(sm(d.b),1)} per 1,000</small><p dir="auto" lang="${l}">${E(d.b.lead||"")}</p></div></div>`;
+  const sm=xlSum;
+  el.innerHTML=`<div class="lx-row" style="justify-content:space-between"><b>${E(d.title||t)} <span class="n">· ${E(LNG[l]||l)} · ${SG(r.ch[l],1)} per 10,000 words</span></b><button type="button" class="lx-pill" id="lxXClose">Close</button></div><div class="two"><div><small>${DL(d.a.date)} · ${F(sm(d.a),1)} per 10,000 words</small><p dir="auto" lang="${l}">${E(d.a.lead||"")}</p></div><div><small>${DL(d.b.date)} · ${F(sm(d.b),1)} per 10,000 words</small><p dir="auto" lang="${l}">${E(d.b.lead||"")}</p></div></div>`;
   q("#lxXClose").onclick=()=>{S7.sel=null;s7Cell();s7Draw()}}
 
 /* =====================================================================
-   8. GALAXY
+   7. GALAXY
    ===================================================================== */
 const MS=D&&D.mass||null;
-const S8={k:null,sel:null,anim:null,cur:null};
+const S8={k:null,sel:null,anim:null,cur:null,all:false,band:{}};
 let G8=null;
 function gPrep(){if(G8)return G8;const t0=performance.now(),arts=MS.lab_articles,fr=MS.lab_frames||[],nd=(MS.dates||[]).length||3;
   const ci=(CRIT.length?CRIT:fr.slice(0,7)).map(k=>fr.indexOf(k)).filter(i=>i>=0);
@@ -600,84 +550,104 @@ function gPrep(){if(G8)return G8;const t0=performance.now(),arts=MS.lab_articles
   const lanes=[...projs.values()].sort((a,b)=>(a.g===b.g?0:a.g==="t"?-1:1)||b.idx.length-a.idx.length);
   const ok=new Uint8Array(n);let born=0;for(let i=0;i<n;i++){ok[i]=isFinite(R_[0][i])?1:0;if(!ok[i])born++}
   const av=[];for(let k=1;k<nd;k++)for(let i=0;i<n;i++)if(ok[i]&&isFinite(CH[k][i]))av.push(Math.abs(CH[k][i]));av.sort((a,b)=>a-b);
-  const L=av.length?Math.max(1,av[Math.floor(av.length*.985)]):1;
+  const Lraw=av.length?Math.max(1,av[Math.floor(av.length*.985)]):1;
   const u=new Float32Array(n);for(let i=0;i<n;i++)u[i]=hash(arts[i].t||String(i));
-  G8={arts,n,nd,CH,lanes,ok,born,L,u,prep:performance.now()-t0,lay:{}};return G8}
-function gLayout(w){const G=G8,ph=phone(),laneH=ph?34:28,gut=ph?8:170,top=26,iw=w-gut-12,x=v=>gut+(clamp(v,-G.L,G.L)+G.L)/(2*G.L)*iw;
-  const key=w+":"+ph;if(G.lay.key===key)return G.lay;const t0=performance.now();
-  const P=[];for(let k=0;k<G.nd;k++){const X=new Float32Array(G.n),Y=new Float32Array(G.n);G.lanes.forEach((ln,li)=>{const NB=60,hist=new Int32Array(NB),bin=new Int32Array(ln.idx.length);
-      ln.idx.forEach((i,j)=>{const v=G.CH[k][i];const b=clamp(Math.floor((clamp(v,-G.L,G.L)+G.L)/(2*G.L)*NB),0,NB-1);bin[j]=b;if(G.ok[i]&&isFinite(v))hist[b]++});
-      let mx=1;for(const c of hist)mx=Math.max(mx,c);const cy=top+li*laneH+(ph?21:laneH/2),amp=(ph?11:laneH*.42);
+  const cl=lanes.filter(l=>l.g!=="t"),pooled={p:"All comparison projects",g:"c",pooled:true,nProj:cl.length,idx:cl.flatMap(l=>l.idx)};
+  G8={arts,n,nd,CH,lanes,few:[...lanes.filter(l=>l.g==="t"),pooled],nComp:cl.length,ok,born,Lraw,u,prep:performance.now()-t0,lay:{}};return G8}
+const gLanes=()=>S8.all?G8.lanes:G8.few;
+function gLayout(w){const G=G8,ph=phone(),lanes=gLanes(),key=w+":"+ph+":"+S8.all;if(G.lay.key===key)return G.lay;const t0=performance.now();
+  const laneH=ph?34:28,gut=ph?8:178,top=ph?50:50,iw=w-gut-14,st=niceStep(2*G.Lraw,ph?4:6),L=Math.ceil(G.Lraw/st-1e-9)*st,x=v=>gut+(clamp(v,-L,L)+L)/(2*L)*iw;
+  let y=top;lanes.forEach(ln=>{ln.y0=y;ln.h=ln.pooled?laneH*2.4:laneH;y+=ln.h});
+  const P=[];for(let k=0;k<G.nd;k++){const X=new Float32Array(G.n).fill(NaN),Y=new Float32Array(G.n);lanes.forEach(ln=>{const NB=60,hist=new Int32Array(NB),bin=new Int32Array(ln.idx.length);
+      ln.idx.forEach((i,j)=>{const v=G.CH[k][i];const b=clamp(Math.floor((clamp(v,-L,L)+L)/(2*L)*NB),0,NB-1);bin[j]=b;if(G.ok[i]&&isFinite(v))hist[b]++});
+      let mx=1;for(const c of hist)mx=Math.max(mx,c);const lab=ph?14:0,cy=ln.y0+lab+(ln.h-lab)/2,amp=(ln.h-lab)*.44;
       ln.idx.forEach((i,j)=>{const v=G.CH[k][i];X[i]=isFinite(v)?x(v):NaN;Y[i]=cy+(G.u[i]-.5)*2*amp*(.12+.88*Math.sqrt(hist[bin[j]]/mx))})});P.push({X,Y})}
-  G.lay={key,P,laneH,gut,top,x,h:top+G.lanes.length*laneH+30,ms:performance.now()-t0};return G.lay}
+  G.lay={key,P,lanes,gut,top,x,L,st,bot:y,h:y+(ph?38:30),ms:performance.now()-t0};return G.lay}
 function gStats(ln,k){const G=G8,v=[];for(const i of ln.idx)if(G.ok[i]&&isFinite(G.CH[k][i]))v.push(G.CH[k][i]);return v}
-function s8Init(){const box=q("#lxGBox");if(!MS||!MS.lab_articles||!MS.lab_articles.length){box.innerHTML=note("The ten-thousand-article sample is not in this build.");q("#lxGDates").innerHTML="";return}
+/* chance band: shuffle the topic/comparison label 300 times, in chunks so the page stays responsive */
+function gBand(k){if(S8.band[k]||k===0)return;const G=G8,vals=[],lab=[];for(let i=0;i<G.n;i++)if(G.ok[i]&&isFinite(G.CH[k][i])){vals.push(G.CH[k][i]);lab.push(G.arts[i].g==="t"?1:0)}
+  const n=vals.length,nT=lab.reduce((a,b)=>a+b,0),V=Float64Array.from(vals);let tot=0,sT=0;for(let i=0;i<n;i++){tot+=V[i];if(lab[i])sT+=V[i]}
+  const real=sT/nT-(tot-sT)/(n-nT),B=300,out=new Float64Array(B),r=rng(41+k),t0=performance.now();let b=0;const job={real,nT,nC:n-nT,ready:false};S8.band[k]=job;
+  if(nT<2||n-nT<2){job.ready=true;job.lo=job.hi=NaN;return}
+  const chunk=()=>{const end=Math.min(B,b+30);for(;b<end;b++){let s=0;for(let i=0;i<nT;i++){const j=i+((r()*(n-i))|0),t=V[i];V[i]=V[j];V[j]=t;s+=V[i]}out[b]=s/nT-(tot-s)/(n-nT)}
+    if(b<B)setTimeout(chunk,0);else{out.sort();job.lo=out[Math.floor(B*.025)];job.hi=out[Math.floor(B*.975)];job.beat=out.filter(x=>Math.abs(x)>=Math.abs(real)).length;job.ready=true;job.ms=performance.now()-t0;
+      window.LX_TIMING=Object.assign(window.LX_TIMING||{},{galaxy_shuffle_300_ms:+job.ms.toFixed(1)});if(S8.cur===k&&!S8.animating){gDraw(k);gSay()}}};
+  setTimeout(chunk,0)}
+function s8Init(){const box=q("#lxGBox");if(!MS||!MS.lab_articles||!MS.lab_articles.length){box.innerHTML=note("The ten-thousand-article sample is not in this build.");q("#lxGDates").innerHTML="";q("#lxGAll").hidden=true;return}
   gPrep();const ds=MS.dates||[];S8.k=ds.length-1;S8.cur=S8.k;
-  const dseg=q("#lxGDates");dseg.innerHTML='<span class="lab">Snapshot</span>'+ds.map((d,k)=>`<button class="lx-pill" type="button" data-k="${k}" aria-pressed="${k===S8.k}">${E(DL(d))}${k===0?" <span class=\"n\">start</span>":""}</button>`).join("");
-  dseg.onclick=e=>{const b=e.target.closest("[data-k]");if(!b)return;const k=+b.dataset.k;if(k===S8.k)return;qa("[data-k]",dseg).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));gGo(k);view("g:"+k)};
-  const cv=q("#lxGCan");
-  cv.addEventListener("click",e=>{const L=G8.lay;if(!L||!L.P)return;const r=cv.getBoundingClientRect(),y=e.clientY-r.top,li=Math.floor((y-L.top)/L.laneH);const ln=G8.lanes[li];S8.sel=ln&&S8.sel!==li?li:null;gDraw(S8.cur);gSay();if(S8.sel!=null)view("g:p:"+ln.p)});
-  cv.addEventListener("pointermove",e=>{if(e.pointerType!=="mouse")return;const L=G8.lay;const r=cv.getBoundingClientRect(),li=Math.floor((e.clientY-r.top-L.top)/L.laneH),ln=G8.lanes[li];cv.style.cursor=ln?"pointer":"default"});
-  gDraw(S8.k);gSay();
+  const dseg=q("#lxGDates");dseg.innerHTML=ds.map((d,k)=>`<button type="button" data-k="${k}" aria-pressed="${k===S8.k}">${E(DL(d))}</button>`).join("");
+  dseg.onclick=e=>{const b=e.target.closest("[data-k]");if(!b)return;const k=+b.dataset.k;if(k===S8.k)return;qa("[data-k]",dseg).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));gBand(k);gGo(k);view("g:"+k)};
+  const ab=q("#lxGAll"),abl=()=>{ab.textContent=S8.all?"Pool the comparison projects":`Show all ${G8.nComp} comparison projects`;ab.setAttribute("aria-pressed",String(S8.all))};abl();
+  ab.onclick=()=>{S8.all=!S8.all;S8.sel=null;abl();gDraw(S8.cur);gSay();if(S8.all)view("g:all")};
+  const cv=q("#lxGCan"),laneAt=e=>{const L=G8.lay,r=cv.getBoundingClientRect(),y=e.clientY-r.top;return L.lanes?L.lanes.findIndex(ln=>y>=ln.y0&&y<ln.y0+ln.h):-1};
+  cv.addEventListener("click",e=>{if(!G8.lay.P)return;const li=laneAt(e),ln=gLanes()[li];S8.sel=ln&&S8.sel!==li?li:null;gDraw(S8.cur);gSay();if(S8.sel!=null)view("g:p:"+ln.p)});
+  cv.addEventListener("pointermove",e=>{if(e.pointerType==="mouse")cv.style.cursor=laneAt(e)>=0?"pointer":"default"});
+  gBand(S8.k);gDraw(S8.k);gSay();
 }
-function gGo(k){const from=S8.cur,G=G8;S8.k=k;cancelAnimationFrame(S8.anim);
+function gGo(k){const from=S8.cur;S8.k=k;cancelAnimationFrame(S8.anim);
   if(still()){S8.cur=k;gDraw(k);gSay();return}
-  const t0=performance.now(),D_=750,frames=[];
+  const t0=performance.now(),D_=750,frames=[];S8.animating=true;
   const step=now=>{const t=Math.min(1,(now-t0)/D_),e=t<.5?4*t*t*t:1-(-2*t+2)**3/2;const f0=performance.now();gDraw(from,k,e);frames.push(performance.now()-f0);
-    if(t<1)S8.anim=requestAnimationFrame(step);else{S8.cur=k;gDraw(k);gSay();const avg=frames.reduce((a,b)=>a+b,0)/frames.length;window.LX_TIMING=Object.assign(window.LX_TIMING||{},{galaxy_anim_frames:frames.length,galaxy_frame_avg_ms:+avg.toFixed(2),galaxy_frame_max_ms:+Math.max(...frames).toFixed(2)});console.info("[lab] galaxy animation",frames.length,"frames, avg",avg.toFixed(2),"ms, max",Math.max(...frames).toFixed(2),"ms")}};
+    if(t<1)S8.anim=requestAnimationFrame(step);else{S8.animating=false;S8.cur=k;gDraw(k);gSay();const avg=frames.reduce((a,b)=>a+b,0)/frames.length;window.LX_TIMING=Object.assign(window.LX_TIMING||{},{galaxy_anim_frames:frames.length,galaxy_frame_avg_ms:+avg.toFixed(2),galaxy_frame_max_ms:+Math.max(...frames).toFixed(2)});console.info("[lab] galaxy animation",frames.length,"frames, avg",avg.toFixed(2),"ms, max",Math.max(...frames).toFixed(2),"ms")}};
   S8.anim=requestAnimationFrame(step)}
 function gDraw(k0,k1,e){
-  const G=G8,cv=q("#lxGCan");if(!G||!cv)return;const w=Math.max(260,q("#lxGBox").clientWidth);if(!w)return;const t0=performance.now();const L=gLayout(w),dpr=Math.min(2,devicePixelRatio||1),h=L.h;
+  const G=G8,cv=q("#lxGCan");if(!G||!cv)return;const w=Math.max(260,q("#lxGBox").clientWidth);if(!w)return;const t0=performance.now();const L=gLayout(w),lanes=L.lanes,dpr=Math.min(2,devicePixelRatio||1),h=L.h;
   if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);cv.style.height=h+"px"}
   const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
-  const col={t:tokv("--topic"),c:tokv("--comp"),ink:tokv("--ink"),mut:tokv("--muted"),rule:tokv("--rule"),faint:tokv("--faint"),war:tokv("--war"),sheet:tokv("--sheet"),del:tokv("--del-ink"),dbg:tokv("--del-bg")};
-  const ph=phone(),mono=tokv("--mono")||"monospace";
-  const kk=k1==null?k0:k1,pa=L.P[k0],pb=L.P[k1==null?k0:k1],ee=k1==null?1:e;
-  // lanes
+  const col={t:tokv("--topic"),c:tokv("--comp"),ink:tokv("--ink"),mut:tokv("--muted"),faint:tokv("--faint"),sheet:tokv("--sheet")};
+  const ph=phone(),mono=tokv("--mono")||"monospace",x0e=L.gut-4,we=w-L.gut;
+  const kk=k1==null?k0:k1,pa=L.P[k0],pb=L.P[kk],ee=k1==null?1:e;
   let hp=null;
-  G.lanes.forEach((ln,li)=>{const y=L.top+li*L.laneH;if(li%2===0){c.fillStyle=col.faint;c.globalAlpha=.55;c.fillRect(L.gut-4,y,w-L.gut,L.laneH);c.globalAlpha=1}
-    const nOk=gStats(ln,0).length;if(nOk<FEW){if(!hp){const pc=document.createElement("canvas");pc.width=pc.height=6;const x=pc.getContext("2d");x.strokeStyle=col.mut;x.globalAlpha=.35;x.beginPath();x.moveTo(0,6);x.lineTo(6,0);x.stroke();hp=c.createPattern(pc,"repeat")}c.fillStyle=hp;c.fillRect(L.gut-4,y,w-L.gut,L.laneH)}
-    if(S8.sel===li){c.strokeStyle=col.ink;c.lineWidth=1.5;c.strokeRect(L.gut-3.5,y+.5,w-L.gut-1,L.laneH-1)}});
-  // zero + axis
-  const x0=L.x(0);c.strokeStyle=col.ink;c.globalAlpha=.5;c.lineWidth=1;c.beginPath();c.moveTo(x0,L.top-4);c.lineTo(x0,L.top+G.lanes.length*L.laneH);c.stroke();c.globalAlpha=1;
-  c.font=`11px ${mono}`;c.fillStyle=col.mut;c.textAlign="center";
-  tickVals(-G.L,G.L,ph?4:6).forEach(v=>{c.fillText((v>0?"+":v<0?"−":"")+Math.abs(v),L.x(v),h-12)});
-  c.textAlign="right";c.fillText("change in loaded words per 10,000 →",w-12,L.top-10);
-  // comparison mean ghost line (at target snapshot)
-  const cm=(()=>{let s=0,n=0;G.lanes.forEach(ln=>{if(ln.g!=="t"){const v=gStats(ln,kk);v.forEach(z=>s+=z);n+=v.length}});return n?s/n:NaN})();
-  if(isFinite(cm)&&kk>0){const xx=L.x(cm);c.setLineDash([3,3]);c.strokeStyle=col.c;c.lineWidth=1.5;c.beginPath();c.moveTo(xx,L.top-4);c.lineTo(xx,L.top+G.lanes.length*L.laneH);c.stroke();c.setLineDash([])}
+  lanes.forEach((ln,li)=>{if(li%2===0||ln.pooled){c.fillStyle=col.faint;c.globalAlpha=.55;c.fillRect(x0e,ln.y0,we,ln.h);c.globalAlpha=1}
+    if(gStats(ln,0).length<FEW){if(!hp){const pc=document.createElement("canvas");pc.width=pc.height=6;const x=pc.getContext("2d");x.strokeStyle=col.mut;x.globalAlpha=.35;x.beginPath();x.moveTo(0,6);x.lineTo(6,0);x.stroke();hp=c.createPattern(pc,"repeat")}c.fillStyle=hp;c.fillRect(x0e,ln.y0,we,ln.h)}
+    if(S8.sel===li){c.strokeStyle=col.ink;c.lineWidth=1.5;c.strokeRect(x0e+.5,ln.y0+.5,we-1,ln.h-1)}});
+  // axis: ticks match the range; the end ticks read "or more"
+  const x0=L.x(0);c.strokeStyle=col.ink;c.globalAlpha=.5;c.lineWidth=1;c.beginPath();c.moveTo(x0,L.top-4);c.lineTo(x0,L.bot);c.stroke();c.globalAlpha=1;
+  c.font=`11px ${mono}`;c.fillStyle=col.mut;
+  for(let v=-L.L;v<=L.L+1e-9;v+=L.st*(ph?2:1)){const vv=+v.toFixed(6),edge=Math.abs(Math.abs(vv)-L.L)<1e-9;c.textAlign=edge?(vv<0?"left":"right"):"center";c.fillText((edge?(vv<0?"≤":"≥"):"")+(vv>0?"+":vv<0?"−":"")+Math.abs(vv),L.x(vv),L.bot+14)}
+  c.textAlign="right";c.fillText("change since "+DL((MS.dates||[])[0])+", per 10,000 words →",w-14,ph?h-1:12);
+  // comparison mean line and chance band for the topic mean
+  const pool=g=>{let s=0,n=0;for(const ln of G.lanes)if((ln.g==="t")===(g==="t")){for(const v of gStats(ln,kk)){s+=v;n++}}return n?s/n:NaN};
+  const cm=pool("c"),tm=pool("t"),bd=S8.band[kk];
+  if(kk>0&&isFinite(cm)){const yb=ph?20:20,hb=16;
+    c.fillStyle=col.mut;c.font=`${ph?10:11}px ${mono}`;c.textAlign=ph?"left":"right";c.fillText("topic mean vs chance",ph?L.gut:L.gut-10,ph?yb-6:yb+12);
+    if(bd&&bd.ready&&isFinite(bd.lo)){const a=L.x(cm+bd.lo),b=L.x(cm+bd.hi);c.fillStyle=col.c;c.globalAlpha=.28;c.fillRect(a,yb,Math.max(2,b-a),hb);c.globalAlpha=1}
+    else{c.fillStyle=col.mut;c.textAlign="left";c.fillText("shuffling…",L.x(cm)+6,yb+12)}
+    c.setLineDash([3,3]);c.strokeStyle=col.c;c.lineWidth=1.5;c.beginPath();c.moveTo(L.x(cm),yb-2);c.lineTo(L.x(cm),L.bot);c.stroke();c.setLineDash([]);
+    if(isFinite(tm)&&k1==null){const xt=L.x(tm),ym=yb+hb/2;c.fillStyle=col.t;c.beginPath();c.moveTo(xt,ym-7);c.lineTo(xt+6,ym);c.lineTo(xt,ym+7);c.lineTo(xt-6,ym);c.closePath();c.fill()}}
   // dots, batched by colour
   const r=ph?1.15:1.35;
-  for(const g of ["c","t"]){c.fillStyle=g==="t"?col.t:col.c;c.globalAlpha=g==="t"?.62:.55;c.beginPath();
-    for(const ln of G.lanes){if(ln.g!==g)continue;for(const i of ln.idx){if(!G.ok[i])continue;const xa=pa.X[i],xb=pb.X[i];if(xa!==xa||xb!==xb)continue;const X=xa+(xb-xa)*ee,Y=pa.Y[i]+(pb.Y[i]-pa.Y[i])*ee;c.moveTo(X+r,Y);c.arc(X,Y,r,0,6.2832)}}
+  for(const g of ["c","t"]){c.fillStyle=g==="t"?col.t:col.c;c.globalAlpha=g==="t"?.62:.5;c.beginPath();
+    for(const ln of lanes){if(ln.g!==g)continue;for(const i of ln.idx){if(!G.ok[i])continue;const xa=pa.X[i],xb=pb.X[i];if(xa!==xa||xb!==xb)continue;const X=xa+(xb-xa)*ee,Y=pa.Y[i]+(pb.Y[i]-pa.Y[i])*ee;c.moveTo(X+r,Y);c.arc(X,Y,r,0,6.2832)}}
     c.fill()}
   c.globalAlpha=1;
-  // lane means + labels
-  G.lanes.forEach((ln,li)=>{const y=L.top+li*L.laneH,v=gStats(ln,kk),m=mean(v);
-    if(isFinite(m)&&kk>0){const xx=L.x(m);c.fillStyle=col.ink;c.fillRect(xx-1,y+3,2,L.laneH-6)}
-    c.font=`${ph?600:500} ${ph?10.5:12}px ${mono}`;c.textAlign=ph?"left":"right";const lab=ln.p.length>(ph?26:20)?ln.p.slice(0,ph?25:19)+"…":ln.p;const nT=gStats(ln,0).length;
-    const tx=ph?L.gut:L.gut-10,ty=ph?y+10:y+L.laneH/2+4;
-    if(ph){c.lineWidth=3;c.strokeStyle=col.sheet;c.strokeText(lab+"  "+nT,tx,ty)}
+  lanes.forEach(ln=>{const v=gStats(ln,kk),m=mean(v),y=ln.y0;
+    if(isFinite(m)&&kk>0){const xx=L.x(m);c.fillStyle=col.ink;c.fillRect(xx-1,y+(ph?15:3),2,ln.h-(ph?18:6))}
+    const nm=ln.pooled?(ph?"All comparison":"All comparison"):ln.p,lab=nm.length>(ph?26:21)?nm.slice(0,ph?25:20)+"…":nm,nT=gStats(ln,0).length,sub=N(nT)+(ln.pooled?` · ${ln.nProj} projects`:"")+(nT<FEW?" · too few to say":"");
+    c.font=`${ph?600:500} ${ph?10.5:12}px ${mono}`;c.textAlign=ph?"left":"right";
+    const tx=ph?L.gut:L.gut-10,ty=ph?y+11:y+ln.h/2+(ln.pooled?-2:1);
     c.fillStyle=ln.g==="t"?col.t:col.c;c.fillText(lab,tx,ty);
     c.fillStyle=col.mut;c.font=`${ph?10:10.5}px ${mono}`;
-    if(ph){c.fillText(String(nT)+(nT<FEW?" · too few":""),tx+c.measureText(lab+"  ").width+8,ty)}else{c.fillText(String(nT)+(nT<FEW?" · too few":""),tx,ty+11);}
-  });
+    if(ph)c.fillText(sub,tx+c.measureText(lab).width+(ph?16:0),ty);else c.fillText(sub,tx,ty+12)});
   const dt=performance.now()-t0;if(k1==null){window.LX_TIMING=Object.assign(window.LX_TIMING||{},{galaxy_prep_ms:+G.prep.toFixed(1),galaxy_layout_ms:+L.ms.toFixed(1),galaxy_static_draw_ms:+dt.toFixed(2),galaxy_dots:G.n})}
 }
-function gSay(){const G=G8,k=S8.cur,ds=MS.dates||[],el=q("#lxGSay");
-  const pool=g=>{const v=[];G.lanes.forEach(ln=>{if(ln.g===g)v.push(...gStats(ln,k))});return v};
-  const T=pool("t"),C=pool("c"),mc=mean(C);
-  const head=`<span class="n">${N(G.n)} articles in ${G.lanes.length} projects. ${G.born?N(G.born)+" created after "+DL(ds[0])+" are left out. ":""}Each project’s black tick is its mean; the dashed line is the comparison projects’ mean. Changes beyond ±${N(G.L)} are drawn at the edge.</span> `;
+function gSay(){const G=G8,k=S8.cur,ds=MS.dates||[],el=q("#lxGSay"),L=G.lay;
+  const pool=g=>{const v=[];G.lanes.forEach(ln=>{if((ln.g==="t")===(g==="t"))v.push(...gStats(ln,k))});return v};
+  const T=pool("t"),C=pool("c"),mc=mean(C),bd=S8.band[k];
+  const head=`<span class="n">${N(G.n-G.born)} articles${G.born?` (${N(G.born)} created later are left out)`:""}. Tick: row mean. Dashed: comparison mean. Beyond ±${N(L.L||G.Lraw)}: at the edge.</span> `;
   if(k===0){el.innerHTML=head+`At ${DL(ds[0])} every article starts at zero. Pick a later snapshot to watch them spread.`;return}
-  if(S8.sel!=null){const ln=G.lanes[S8.sel],v=gStats(ln,k),m=mean(v),ci=bootMean(v,300,3),few=v.length<FEW;
-    el.innerHTML=head+`<b>${E(ln.p)}</b> (${ln.g==="t"?"topic":"comparison"}, ${N(v.length)} articles${few?", "+fewTag:""}): mean change <b>${SG(m,2)}</b> per 10,000 words (range ${SG(ci[0],2)} to ${SG(ci[1],2)}), against <b>${SG(mc,2)}</b> for all ${N(C.length)} comparison articles. ${few?"":Math.abs(m-mc)<Math.max(ci[1]-ci[0],.05)?"Hard to tell apart from the comparison.":`That is ${SG(m-mc,2)} more.`}`;return}
-  el.innerHTML=head+`By ${DL(ds[k])}, topic projects changed by <b>${SG(mean(T),2)}</b> on average (${N(T.length)} articles) and comparison projects by <b>${SG(mc,2)}</b> (${N(C.length)}). Tap a project to compare it.`}
+  if(S8.sel!=null){const ln=gLanes()[S8.sel],v=gStats(ln,k),m=mean(v),ci=bootMean(v,300,3),few=v.length<FEW;
+    el.innerHTML=head+`<b>${E(ln.pooled?"All comparison projects":ln.p)}</b> (${ln.g==="t"?"topic":"comparison"}, ${N(v.length)} articles${few?", "+fewTag:""}): mean change <b>${SG(m,2)}</b> per 10,000 words (range ${SG(ci[0],2)} to ${SG(ci[1],2)})${ln.g==="t"?`, an extra change of <b>${SG(m-mc,2)}</b> over all ${N(C.length)} comparison articles`:""}. ${few||ln.g!=="t"?"":Math.abs(m-mc)<Math.max(ci[1]-ci[0],.05)?"Hard to tell apart from the comparison.":""}`;return}
+  const ex=mean(T)-mc,band=bd&&bd.ready&&isFinite(bd.lo)?` 300 label shuffles give ${SG(bd.lo,2)} to ${SG(bd.hi,2)} (the band at the top); the real one is ${ex<bd.lo||ex>bd.hi?"<b>outside</b> it.":"<b>inside</b> it, so chance could do this."}`:" Shuffling labels to see what chance gives…";
+  el.innerHTML=head+`By ${DL(ds[k])}: topic <b>${SG(mean(T),2)}</b> (${N(T.length)}), comparison <b>${SG(mc,2)}</b> (${N(C.length)}) per 10,000 words, an extra change of <b>${SG(ex,2)}</b>.${band}`}
 
 /* ---------- init and redraw ---------- */
-const LABS=[["shadow",s1Init,()=>{s1Strip();s1Draw()}],["shuffle",s2Init,()=>{const st=s2State(S2.id);if(st)s2Hist(st,null)}],["loud",s3Init,()=>s3Draw()],["flip",s4Init,()=>{if(S4.title)s4Draw()}],["chips",s5Init,s5Draw],["lead",s6Init,s6Draw],["prism",s7Init,()=>{}],["galaxy",s8Init,()=>{if(G8)gDraw(S8.cur)}]];
+const LABS=[["shadow",s1Init,()=>{s1Strip();s1Draw()}],["shuffle",s2Init,()=>{const st=s2State(S2.id);if(st)s2Hist(st,null)}],["loud",s3Init,()=>s3Draw()],["flip",s4Init,()=>{if(S4.title)s4Draw()}],["chips",s5Init,s5Draw],["prism",s7Init,()=>{}],["galaxy",s8Init,()=>{if(G8)gDraw(S8.cur)}]];
 const run=(nm,f)=>{try{f()}catch(e){console.error("[lab] "+nm,e)}};
 let INIT=false,lastW=0;
 function init(){if(INIT)return;INIT=true;
+  const tb=document.querySelector(".tabs");if(tb)root.style.setProperty("--lx-tabs",tb.offsetHeight+"px");
+  const vb=q("#lxViews");if(vb)vb.onclick=()=>{const w=q("#lxViewsWarn");w.hidden=!w.hidden;vb.setAttribute("aria-expanded",String(!w.hidden))};
   if(!D){root.querySelectorAll(".lx-sec").forEach(s=>s.insertAdjacentHTML("beforeend",note("Data not loaded. Run analyze.py, then build_page.py.")));return}
   LABS.forEach(([n,f])=>run(n,f));
   qa("#lxIndex a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const el=document.getElementById(a.dataset.go);if(el)el.scrollIntoView({behavior:still()?"auto":"smooth",block:"start"})}));
@@ -689,18 +659,30 @@ ro.observe(root);
 const themed=()=>{if(INIT&&G8)gDraw(S8.cur)};
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",themed);
 new MutationObserver(themed).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
-/* public hooks. The page calls WFD.lab.init(intent), .redraw() and .intent(intent); a report finding opens a lab preset */
-function applyIntent(o){if(!o||!INIT)return;const map={shadow:"lxShadow",shuffle:"lxShuffle",loud:"lxLoud",flip:"lxFlip",chips:"lxChips",lead:"lxLead",prism:"lxPrism",galaxy:"lxGalaxy"};
-  let go=o.lab||null;
-  if(o.test&&PROWS.some(r=>r.id===o.test)){S2.id=S3.id=o.test;qa("#lxPSeg [data-p],#lxLSeg [data-p]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.p===o.test)));run("shuffle",()=>s2Draw(true));run("loud",()=>s3Draw(true));go=go||"shuffle"}
-  const t=o.article||o.title;
-  if(t&&RT&&RT[t]&&fbData(t)&&fbData(t).steps.length){S4.title=t;S4.step=fbDefault(fbData(t));qa("#lxFCards [data-t]").forEach(b=>{const on=b.dataset.t===t;b.setAttribute("aria-selected",String(on));if(on)b.scrollIntoView({block:"nearest",inline:"start"})});run("flip",s4Draw);go=go||"flip"}
-  else if(t){const a=TOP.find(x=>x.title===t);if(a){S1.open=a.subgroup||"other";run("shadow",s1Draw)}go=go||"shadow"}
+/* public hooks. The page calls WFD.lab.init(intent), .redraw() and .intent(intent).
+   intent: {lab:"shadow"|"shuffle"|"loud"|"flip"|"chips"|"prism"|"galaxy", title?, article?, test?, measure?, part?, from?: report section id, context?} */
+const LMAP={shadow:"lxShadow",shuffle:"lxShuffle",loud:"lxLoud",flip:"lxFlip",chips:"lxChips",prism:"lxPrism",galaxy:"lxGalaxy"};
+const LNAME={shadow:"Shadow bars",shuffle:"Shuffle the labels",loud:"Pull the loudest out",flip:"Definition flipbook",chips:"Word chips",prism:"Language prism",galaxy:"Galaxy"};
+function setTest(id){S2.id=S3.id=id;const L=PDEF[id]?`Pre-registered test ${id}: ${PDEF[id]}`:"";qa("#lxPSeg [data-p],#lxLSeg [data-p]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.p===id)));const a=q("#lxPSegL"),b=q("#lxLSegL");if(a)a.textContent=L;if(b)b.textContent=L;run("shuffle",()=>s2Draw(true));run("loud",()=>s3Draw(true))}
+function applyIntent(o){if(!o||!INIT)return;
+  let go=LMAP[o.lab]?o.lab:null;const t=o.article||o.title,ctx=[];
+  if(o.test&&PROWS.some(r=>r.id===o.test)){setTest(o.test);go=go||"shuffle";ctx.push(`pre-registered test ${o.test} (${PDEF[o.test]||""})`)}
+  if(t&&RT&&RT[t]&&fbData(t)&&fbData(t).steps.length&&(!go||go==="flip")){S4.title=t;S4.step=fbDefault(fbData(t));qa("#lxFCards [data-t]").forEach(b=>{const on=b.dataset.t===t;b.setAttribute("aria-selected",String(on));if(on){const c=q("#lxFCards");c.scrollLeft=b.offsetLeft-c.offsetLeft-4}});run("flip",s4Draw);go=go||"flip";ctx.push(`the article “${t}”`)}
+  else if(t){const a=TOP.find(x=>x.title===t);if(a){S1.open=a.subgroup||"other";go=go||"shadow"}ctx.push(`the article “${t}”`)}
+  if((o.part==="lead"||o.part==="full")&&(!go||go==="shadow")&&!q("#lxSPart").hidden){S1.part=o.part;qa("#lxSPart [data-v]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===o.part)))}
   const ms=o.measure;
-  if(ms&&FR.includes(ms)&&!S5.on.includes(ms)){S5.on.unshift(ms);run("chips",s5Draw);go=go||"chips"}
-  else if(o.from==="vocab")go=go||(ms==="connection_rate"||ms==="connection"?"chips":"shadow");
-  if(o.from&&DATES.includes(o.from))S1.i0=DATES.indexOf(o.from);if(o.to&&DATES.includes(o.to))S1.i1=DATES.indexOf(o.to);if(DATES.includes(o.from)||DATES.includes(o.to))run("shadow",()=>{s1Strip();s1Draw()});
-  const el=document.getElementById(map[go]||go||"");if(el)setTimeout(()=>el.scrollIntoView({behavior:"auto",block:"start"}),30);
+  if(ms&&FR.includes(ms)){if(!S5.on.includes(ms))S5.on.unshift(ms);run("chips",s5Draw);go=go||"chips";ctx.push(`the word group “${frNm(ms)}”`)}
+  else if(ms&&!go)go="shadow";
+  if(DATES.includes(o.d0))S1.i0=DATES.indexOf(o.d0);if(DATES.includes(o.d1))S1.i1=DATES.indexOf(o.d1);
+  run("shadow",()=>{s1Strip();s1Draw()});
+  go=go||"shadow";
+  const ban=q("#lxFrom"),sec=o.from&&document.getElementById(o.from);
+  const secT=sec&&(sec.querySelector("h2,h3")||{}).textContent;
+  ban.innerHTML=`<span>From the report${secT?` (“${E(secT.trim().slice(0,60))}”)`:""}: ${o.context||ctx.length?`<b>${E(o.context||ctx.join(", "))}</b>, `:""}now in <b>${E(LNAME[go])}</b>.</span><a href="#report" id="lxBack">← back to the report</a><button type="button" aria-label="Dismiss">×</button>`;ban.hidden=false;
+  q("#lxBack").onclick=e=>{e.preventDefault();ban.hidden=true;const w=WF();if(sec&&typeof w.openInReport==="function")w.openInReport(o.from);else{location.hash="#report";if(sec)setTimeout(()=>sec.scrollIntoView(),40)}};
+  q("button",ban).onclick=()=>{ban.hidden=true};
+  const el=document.getElementById(LMAP[go]);if(el)setTimeout(()=>{el.scrollIntoView({behavior:"auto",block:"start"});ban.scrollIntoView&&0},30);
+  view("intent:"+JSON.stringify(o));
   if(window.WFD)window.WFD.labIntent=null}
 const W0=window.WFD=window.WFD||{};
 W0.lab={init(o){if(root.clientWidth)init();applyIntent(o)},redraw,intent:applyIntent,
