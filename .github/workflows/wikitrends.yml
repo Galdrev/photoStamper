@@ -1,0 +1,38 @@
+name: wikitrends-fetch
+on:
+  push:
+    branches: [wiki-framing-research]
+    paths: ['wikitrends/*.py', '.github/workflows/wikitrends.yml', 'wikitrends/RUN']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: wikitrends
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests
+      - name: Restore raw cache
+        uses: actions/cache@v4
+        with:
+          path: wikitrends/data/articles
+          key: wiki-raw-${{ hashFiles('wikitrends/corpus.py') }}-${{ github.run_id }}
+          restore-keys: wiki-raw-
+      - name: Fetch
+        working-directory: wikitrends
+        run: python fetch.py --workers 6 2> fetch_errors.log | tail -n 40; tail -n 40 fetch_errors.log || true
+      - name: Analyze
+        working-directory: wikitrends
+        run: python analyze.py
+      - name: Commit results
+        run: |
+          git config user.name "wikitrends-bot"
+          git config user.email "actions@users.noreply.github.com"
+          cp wikitrends/fetch_errors.log wikitrends/data/ || true
+          git add wikitrends/data/results.json wikitrends/data/manifest.json wikitrends/data/fetch_errors.log
+          git commit -m "Update wikitrends results [skip ci]" || exit 0
+          git pull --rebase origin wiki-framing-research && git push
