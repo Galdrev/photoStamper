@@ -1,0 +1,17 @@
+[PASS] BLOCKING integrity: snapshot sha1 matches revision metadata: 182/182 match; 8 snapshots predate window
+[FAIL] BLOCKING coverage: manifest titles fetched: 8 fetched, 590 missing of 598
+           - 'Ali al-Hudhayfi
+           - 1929 Palestine riots
+           - 1948 Arab–Israeli War
+           - 1948 Palestinian expulsion and flight
+           - 1949–1956 Palestinian expulsions
+[PASS] BLOCKING revisions: present for >=95% of articles: 0 without revisions
+[PASS] BLOCKING revisions: no duplicate revids: 0 articles
+[PASS] BLOCKING revisions: timestamps ascending: 0 articles
+[PASS] BLOCKING text: median snapshot >= 1,000 words: median 6552 words
+[PASS] WARN     text: lead section found in >=95% of snapshots: 190/190
+[PASS] WARN     continuity: snapshot size drops >60%: 0 drops
+[PASS] INFO     redirects: share of snapshots: 0/190
+[PASS] INFO     short snapshots excluded (<300 words): 0/190
+[PASS] WARN     pageviews present for >=90%: 0 missing
+[PASS] WARN     talk pages present for >=80%: 0 missing

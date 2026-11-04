@@ -1,0 +1,10 @@
+WARNING: primary P1 not computable (too few articles per group); robustness skipped
+WARNING: primary P2 not computable (too few articles per group); robustness skipped
+WARNING: primary P3 not computable (too few articles per group); robustness skipped
+analyzed 8 topic / 0 comparison (primary panel), 8 total, 5522 revisions
+  validation Zionism: before=True, after=True pass=False
+  validation Zionism: before=False, after=True pass=True
+  validation Israel: article not in data pass=None
+  validation List of genocides: article not in data pass=None
+  validation Gaza genocide: article not in data pass=None
+  validation Occupied Palestinian territories: article not in data pass=None
