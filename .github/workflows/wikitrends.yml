@@ -47,6 +47,9 @@ jobs:
       - name: Trace first-sentence changes to exact revisions
         working-directory: wikitrends
         run: timeout 45m python trace_changes.py || echo "::warning::bisect incomplete"
+      - name: Ratchet test (lead of every revision, key articles)
+        working-directory: wikitrends
+        run: timeout 50m python ratchet.py || echo "::warning::ratchet incomplete"
       - name: Cross-language mirror (same articles, other Wikipedias)
         working-directory: wikitrends
         run: timeout 40m python crosslang.py || echo "::warning::crosslang incomplete"
@@ -58,6 +61,6 @@ jobs:
           git config user.name "wikitrends-bot"
           git config user.email "actions@users.noreply.github.com"
           cp wikitrends/fetch_errors.log wikitrends/data/ || true
-          for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
+          for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json ratchet.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
           git commit -m "Update wikitrends results [skip ci]" || exit 0
           git pull --rebase origin wiki-framing-research && git push

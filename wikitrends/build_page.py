@@ -23,7 +23,7 @@ for a in res["articles"]:
         if a.get(k) is not None:
             a[k] = round(a[k], 3)
 
-for name, key in (("bisect.json", "trace"), ("crosslang.json", "crosslang")):
+for name, key in (("bisect.json", "trace"), ("crosslang.json", "crosslang"), ("ratchet.json", "ratchet")):
     p = os.path.join(HERE, "data", name)
     res[key] = json.load(open(p)) if os.path.exists(p) else None
 if res.get("crosslang"):
