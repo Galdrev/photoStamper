@@ -33,6 +33,9 @@ jobs:
         with:
           path: wikitrends/data/articles
           key: wiki-raw-${{ hashFiles('wikitrends/corpus.py', 'wikitrends/fetch.py') }}-${{ github.run_id }}
+      - name: Data acceptance tests
+        working-directory: wikitrends
+        run: python data_qa.py || echo "::warning::BLOCKING data QA check failed - see data/qa.json"
       - name: Analyze
         working-directory: wikitrends
         run: python analyze.py
@@ -41,6 +44,6 @@ jobs:
           git config user.name "wikitrends-bot"
           git config user.email "actions@users.noreply.github.com"
           cp wikitrends/fetch_errors.log wikitrends/data/ || true
-          git add wikitrends/data/results.json wikitrends/data/leads.json wikitrends/data/kwic.json wikitrends/data/manifest.json wikitrends/data/fetch_errors.log
+          git add wikitrends/data/results.json wikitrends/data/leads.json wikitrends/data/kwic.json wikitrends/data/qa.json wikitrends/data/manifest.json wikitrends/data/fetch_errors.log
           git commit -m "Update wikitrends results [skip ci]" || exit 0
           git pull --rebase origin wiki-framing-research && git push
