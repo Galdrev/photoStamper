@@ -240,7 +240,7 @@ function s2Init(){
 }
 function s2Count(st){
   const r=st.r,pp=r.p_perm;
-  q("#lxShufCount").innerHTML=st.count?`<b>${N(st.beat)}</b> of <b>${N(st.count)}</b> shuffles beat the real extra change <span class="n">(${PC(st.beat/st.count)})</span>`:`No shuffles yet.<br><span class="n" style="font-size:13px">Real extra change: ${SG(st.real,2)} per 10,000 words. Can chance match it?</span>`;
+  q("#lxShufCount").innerHTML=st.count?`<b>${N(st.beat)}</b> of <b>${N(st.count)}</b> shuffles beat the real extra change <span class="n">(${PC(st.beat/st.count)})</span>`:`No shuffles yet.<span class="n" style="display:block;font-size:13px;line-height:1.45;margin-top:4px">Real extra change: ${SG(st.real,2)} per 10,000 words. Can chance match it?</span>`;
   q("#lxShufSay").innerHTML=`A shuffle “beats” the real extra change when its own is at least as big, either way (per 10,000 words). ${pp!=null?`In the study’s 5,000 shuffles, <b>${PC(pp)}</b> did (dashed outline).`:""} ${st.count>=200?(st.beat/st.count>.05?"Chance does this often, so the real extra change is not good evidence of a difference.":"Chance rarely does this. That points to a real difference, though only for this one pre-registered measure."):""} <span class="n">${N(st.nt)} topic and ${N(st.n-st.nt)} comparison articles.</span>`;
 }
 function s2Hist(st,drop){
@@ -514,7 +514,7 @@ function s7Init(){const el=q("#lxXGrid");if(!XL||!XL.articles||!Object.keys(XL.a
   s7Draw()}
 function hdrAt(e){const t=document.elementFromPoint(e.clientX,e.clientY);return t&&t.closest&&t.closest("#lxXGrid .hdr")}
 function s7Draw(){
-  const el=q("#lxXGrid");if(!XL||!XL.articles)return;const X=xlData(),L=X.langs,cols=`minmax(84px,1.6fr) repeat(${L.length},minmax(0,1fr))`;
+  const el=q("#lxXGrid");if(!XL||!XL.articles)return;const X=xlData(),L=X.langs,cols=`minmax(${phone()?100:84}px,${phone()?2.4:1.6}fr) repeat(${L.length},minmax(0,1fr))`;
   const key=S7.cmp?(r=>r.ch.en!=null&&r.ch[S7.cmp]!=null?r.ch.en-r.ch[S7.cmp]:null):(r=>r.ch[S7.sort]);
   const rows=[...X.rows].sort((a,b)=>{const va=key(a),vb=key(b);if(va==null&&vb==null)return a.t.localeCompare(b.t);if(va==null)return 1;if(vb==null)return -1;return S7.dir*(va-vb)||0});
   let h=`<div class="lx-pg" style="grid-template-columns:${cols}"><span class="n" style="align-self:end;padding-bottom:6px;font-size:10.5px;line-height:1.25">${S7.cmp?"":"tap to sort<br>drag EN →"}</span>${L.map(l=>`<button type="button" class="hdr${l==="en"?" en":""}${S7.cmp===l?" tgt":""}" data-l="${l}" aria-pressed="${!S7.cmp&&S7.sort===l}" title="${E(LNG[l]||l)}${l==="en"?": drag onto another language":""}">${l.toUpperCase()}${!S7.cmp&&S7.sort===l?(S7.dir<0?"↓":"↑"):""}</button>`).join("")}</div>`;
