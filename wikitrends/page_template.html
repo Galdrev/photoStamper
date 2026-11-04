@@ -1977,7 +1977,8 @@ function route(){const lab=isLab(),v=$("#view-lab");$("#view-report").hidden=lab
   if(lab){if(!v.firstElementChild)v.innerHTML=`<div class="note" style="margin-top:40px">The data lab is not in this build.</div>`;
     if(!LAB_INIT){LAB_INIT=true;labCall("init")}else{if(STALE.lab){STALE.lab=false;labCall("redraw")}if(WFD.labIntent)labCall("intent")}}
   else if(STALE.report){STALE.report=false;HM=null;redrawAll()}}
-function openInLab(spec){WFD.labIntent=spec||null;if(isLab())route();else location.hash="#lab"}
+let _lastSec=null;document.addEventListener("pointerdown",e=>{const s=e.target.closest&&e.target.closest("section[id]");if(s)_lastSec=s.id},true);document.addEventListener("keydown",e=>{const s=e.target.closest&&e.target.closest("section[id]");if(s)_lastSec=s.id},true);
+function openInLab(spec){spec=Object.assign({},spec||{});if(!spec.from){const a=document.activeElement,s=a&&a.closest&&a.closest("section[id]");spec.from=(s&&s.id)||_lastSec||""}WFD.labIntent=spec;if(isLab())route();else location.hash="#lab"}
 let REPORT_TARGET=null;
 function scrollToReport(id){const el=document.getElementById(id);if(!el)return;const fold=el.closest&&el.closest("details:not([open])");if(fold)fold.open=true;
   requestAnimationFrame(()=>requestAnimationFrame(()=>{el.scrollIntoView({behavior:"auto",block:"start"});
