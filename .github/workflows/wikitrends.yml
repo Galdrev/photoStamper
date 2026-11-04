@@ -39,11 +39,17 @@ jobs:
       - name: Analyze
         working-directory: wikitrends
         run: python analyze.py
+      - name: Exploratory analyses
+        working-directory: wikitrends
+        run: python explore.py || echo "::warning::explore failed"
+      - name: Trace first-sentence changes to exact revisions
+        working-directory: wikitrends
+        run: timeout 45m python trace_changes.py || echo "::warning::bisect incomplete"
       - name: Commit results
         run: |
           git config user.name "wikitrends-bot"
           git config user.email "actions@users.noreply.github.com"
           cp wikitrends/fetch_errors.log wikitrends/data/ || true
-          git add wikitrends/data/results.json wikitrends/data/leads.json wikitrends/data/kwic.json wikitrends/data/qa.json wikitrends/data/manifest.json wikitrends/data/fetch_errors.log
+          for f in results.json leads.json kwic.json qa.json bisect.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
           git commit -m "Update wikitrends results [skip ci]" || exit 0
           git pull --rebase origin wiki-framing-research && git push

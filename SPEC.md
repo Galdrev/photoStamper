@@ -62,3 +62,10 @@ These changes come from the independent code review.
 ## Amendment 2 (2026-11-04, before real data)
 - The name-swap placebo is replaced with an unmasked repeat: 15 topic and 15 comparison items are coded again with names visible, and flip rates are reported by group. Reason: masking would erase any swapped-in names, so the planned placebo could not work.
 - Coders: rubric v1 (.claude/skills/blind-stance-coder). Three codings per item: wording A on a large model, wording B on a large model, and wording A on a small model. The final label is the majority; ties count as "unclear".
+
+## Exploratory analyses (added 2026-11-04; NOT pre-registered, reported as exploratory)
+- **E1 hedging:** the share of loaded-term mentions (genocide, apartheid, ethnic cleansing, war crimes, settler-colonial) that have attribution or hedging words within about 20 words.
+- **E2 citations:** source-class shares over time. The ADL natural experiment: ADL citations in conflict articles versus antisemitism/Judaism articles around the June 2024 reliability decision.
+- **E3 terror labelling:** terrorist/(terrorist + militant) for topic armed groups versus 12 comparison armed groups.
+- **E4 first-sentence churn:** how often first sentences change, and the share containing a critical term.
+- **Exact-revision tracing:** for 25 key articles, the exact revision of every first-sentence change. Edit summaries are kept; usernames are not.

@@ -106,6 +106,11 @@ CONTROL_SEED = {
         "Algerian War", "Indigenous peoples in Canada", "Native Americans in the United States",
         "History of South Africa", "Apartheid", "Māori people", "Rhodesia",
     ],
+    "armed_groups": [
+        "Provisional Irish Republican Army", "Kurdistan Workers' Party", "Islamic State", "Al-Qaeda",
+        "Taliban", "ETA (separatist group)", "Liberation Tigers of Tamil Eelam", "Boko Haram", "Al-Shabaab (militant group)",
+        "Revolutionary Armed Forces of Colombia", "Ulster Volunteer Force", "Wagner Group",
+    ],
     "religion": [
         "Christianity", "Catholic Church", "Islam", "Hinduism", "Sikhism",
         "Buddhism", "Eastern Orthodox Church", "Druze", "Zoroastrianism",
@@ -163,3 +168,17 @@ VALIDATION = [
     {"title": "Occupied Palestinian territories", "pattern": r"^.{0,120}occupied palestinian territor", "before": "2024-04", "after": "2024-10",
      "part": "lead", "claim": "Renamed from 'Palestinian territories' (mid-2024)"},
 ]
+
+ARMED_GROUPS_TOPIC = ["Hamas", "Hezbollah", "Palestinian Islamic Jihad", "Popular Front for the Liberation of Palestine",
+                      "Al-Qassam Brigades", "Irgun", "Lehi (militant group)", "Kach (party)", "Haganah"]
+ARMED_GROUPS_CONTROL = ["Provisional Irish Republican Army", "Kurdistan Workers' Party", "Islamic State", "Al-Qaeda",
+                        "Taliban", "ETA (separatist group)", "Liberation Tigers of Tamil Eelam", "Boko Haram",
+                        "Al-Shabaab (militant group)", "Revolutionary Armed Forces of Colombia", "Ulster Volunteer Force",
+                        "Wagner Group"]
+
+# Articles whose first-sentence changes are traced to the exact revision (bisect.py).
+KEY_ARTICLES = ["Zionism", "Israel", "Hamas", "October 7 attacks", "Gaza genocide", "Gaza war", "Israeli apartheid",
+                "Nakba", "Antisemitism", "Anti-Zionism", "Jews", "Judaism", "History of Israel",
+                "Israeli–Palestinian conflict", "Jerusalem", "West Bank", "Israeli settlement", "Balfour Declaration",
+                "Theodor Herzl", "Mandatory Palestine", "Hezbollah", "Israel Defense Forces", "Land of Israel",
+                "1948 Palestinian expulsion and flight", "Zionism as settler colonialism"]
