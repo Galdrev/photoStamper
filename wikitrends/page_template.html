@@ -1,0 +1,248 @@
+<title>Wikipedia Framing Drift</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column for the argument, widening to full width for charts and the article ledger. */
+:root{
+  --paper:#f6f7f9; --card:#ffffff; --ink:#1b2230; --muted:#5d6676; --rule:#dde1e8;
+  --treat:#2457c5; --ctrl:#9a7b3c; --war:#b8402f;
+  --add-bg:#e3effe; --add-bd:#4d8ae0; --del-bg:#fdf1d8; --del-bd:#d9a33a;
+  --pos:#b8402f; --neg:#2c7a55;
+  --display:"Literata",Georgia,serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#12161d; --card:#1a2029; --ink:#e4e8ef; --muted:#9aa3b2; --rule:#2c3440;
+  --treat:#7aa2ff; --ctrl:#d1b16d; --war:#f07a66;
+  --add-bg:#1b2c46; --add-bd:#5f97e8; --del-bg:#3a2e16; --del-bd:#d9a33a; --pos:#f07a66; --neg:#5fc290; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12161d; --card:#1a2029; --ink:#e4e8ef; --muted:#9aa3b2; --rule:#2c3440;
+  --treat:#7aa2ff; --ctrl:#d1b16d; --war:#f07a66;
+  --add-bg:#1b2c46; --add-bd:#5f97e8; --del-bg:#3a2e16; --del-bd:#d9a33a; --pos:#f07a66; --neg:#5fc290; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font:15px/1.6 var(--body)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px;display:grid;gap:56px}
+.prose{max-width:68ch}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(30px,5vw,46px)} h2{font-size:26px} h3{font-size:18px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+p{margin:.6em 0} a{color:var(--treat)}
+section{display:grid;gap:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{border-top:2px solid var(--ink);padding-top:8px}
+.stat b{display:block;font:600 26px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.stat span{font-size:13px;color:var(--muted)}
+.panel{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:16px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:16px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.seg button{font:500 13px var(--body);background:var(--card);color:var(--ink);border:0;padding:6px 10px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+button:focus-visible,input:focus-visible,select:focus-visible,tr:focus-visible{outline:2px solid var(--treat);outline-offset:2px}
+select,input[type=search]{font:14px var(--body);padding:6px 8px;border:1px solid var(--rule);border-radius:4px;background:var(--card);color:var(--ink)}
+svg text{fill:var(--muted);font:11px var(--mono)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.sw{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:6px}
+.cap{font-size:13px;color:var(--muted)}
+.tbl{overflow-x:auto;max-height:560px;overflow-y:auto;border:1px solid var(--rule);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:6px 10px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal;min-width:180px}
+th{position:sticky;top:0;background:var(--card);font-weight:600;cursor:pointer;user-select:none}
+tbody tr{cursor:pointer} tbody tr:hover{background:var(--paper)} tbody tr.sel{background:var(--add-bg)}
+.chip{display:inline-block;font:500 11px var(--mono);padding:1px 6px;border-radius:3px;border:1px solid var(--rule);color:var(--muted)}
+.chip.t{color:var(--treat);border-color:var(--treat)} .chip.c{color:var(--ctrl);border-color:var(--ctrl)}
+.up{color:var(--pos)} .down{color:var(--neg)}
+.diff{display:grid;gap:4px;font-size:14px}
+.diff div{padding:4px 8px;border-left:3px solid transparent}
+.diff .a{background:var(--add-bg);border-color:var(--add-bd)} .diff .d{background:var(--del-bg);border-color:var(--del-bd)}
+.diff .e{color:var(--muted)}
+.timeline{display:grid;gap:10px;font-size:14px}
+.timeline div{display:grid;grid-template-columns:72px 1fr;gap:10px}
+.timeline time{font:12px var(--mono);color:var(--muted);padding-top:2px}
+.findings{display:grid;gap:12px}
+.findings h3{margin-top:12px}
+.method li{margin:.3em 0}
+@media (prefers-reduced-motion:no-preference){.panel{transition:border-color .2s}}
+</style>
+
+<div class="wrap">
+<header class="prose" style="display:grid;gap:14px">
+  <div class="eyebrow">English Wikipedia · revision study · 2021–2026</div>
+  <h1>Did Wikipedia's articles on Jews, Israel and Zionism drift toward an anti-colonial framing?</h1>
+  <p id="lede"></p>
+</header>
+
+<section>
+  <div class="stats" id="stats"></div>
+</section>
+
+<section class="prose findings">
+  <div class="eyebrow">Findings</div>
+  <!--FINDINGS-->
+</section>
+
+<section>
+  <div class="eyebrow">1 · Framing over time</div>
+  <h2>How often each frame appears, per 10,000 words</h2>
+  <div class="controls">
+    <label for="frameSel" class="cap">Frame</label>
+    <select id="frameSel"></select>
+    <span class="seg" id="partSeg"><button data-v="full" aria-pressed="true">Full article</button><button data-v="lead" aria-pressed="false">Lead section</button></span>
+  </div>
+  <div class="panel"><svg id="trend" viewBox="0 0 1000 340" width="100%" role="img" aria-label="Frame rate over time"></svg>
+    <div class="legend"><span><i class="sw" style="background:var(--treat)"></i>Judaism / Israel / Zionism articles</span><span><i class="sw" style="background:var(--ctrl)"></i>Comparison articles</span><span><i class="sw" style="background:var(--war)"></i>7 Oct 2023</span></div>
+  </div>
+  <p class="cap prose">Each point is the mean across articles of the frame's rate in the quarterly snapshot. The comparison group covers other nationalisms, states, conflicts, genocides and religions.</p>
+</section>
+
+<section>
+  <div class="eyebrow">2 · The test</div>
+  <h2>Change in the topic articles minus change in the comparison articles</h2>
+  <div class="controls">
+    <span class="seg" id="winSeg"></span>
+    <span class="seg" id="partSeg2"><button data-v="full" aria-pressed="true">Full article</button><button data-v="lead" aria-pressed="false">Lead section</button></span>
+  </div>
+  <div class="panel"><svg id="forest" viewBox="0 0 1000 420" width="100%" role="img" aria-label="Difference-in-differences by frame"></svg></div>
+  <p class="cap prose">A bar to the right means the frame grew more (per 10k words) in the topic articles than in the comparison articles. Whiskers show the bootstrap 95% confidence interval. If a whisker crosses zero, the difference is not distinguishable from noise.</p>
+</section>
+
+<section>
+  <div class="eyebrow">3 · Editing activity</div>
+  <h2>How much these pages were fought over</h2>
+  <div class="grid2">
+    <div class="panel"><h3>Edits per article, per quarter</h3><svg id="edits" viewBox="0 0 500 240" width="100%"></svg></div>
+    <div class="panel"><h3>Talk-page edits per article, per quarter</h3><svg id="talk" viewBox="0 0 500 240" width="100%"></svg></div>
+    <div class="panel"><h3>Share of edits later reverted</h3><svg id="revert" viewBox="0 0 500 240" width="100%"></svg></div>
+    <div class="panel"><h3>Share of edits by logged-out (IP) users</h3><svg id="anon" viewBox="0 0 500 240" width="100%"></svg></div>
+  </div>
+  <div class="panel" id="conc"></div>
+</section>
+
+<section>
+  <div class="eyebrow">4 · Article ledger</div>
+  <h2>Every article in the sample</h2>
+  <div class="controls">
+    <input type="search" id="q" placeholder="Search titles" aria-label="Search titles">
+    <select id="grp" aria-label="Group"><option value="">All articles</option><option value="treatment">Topic articles</option><option value="control">Comparison articles</option></select>
+  </div>
+  <div class="tbl"><table><thead><tr>
+    <th data-k="title">Article</th><th data-k="group">Group</th><th data-k="edits">Edits</th><th data-k="editors">Editors</th>
+    <th data-k="crit0">Critical /10k, start</th><th data-k="crit1">now</th><th data-k="dcrit">Δ</th>
+    <th data-k="conn0">Connection /10k, start</th><th data-k="conn1">now</th><th data-k="lead_changed">Lead sentences changed</th><th>Trend</th>
+  </tr></thead><tbody id="rows"></tbody></table></div>
+  <div class="grid2" id="detail"></div>
+</section>
+
+<section class="prose method">
+  <div class="eyebrow">Method and limits</div>
+  <h2>How this was measured</h2>
+  <ul>
+    <li><b>Data.</b> Every revision since 1 January 2021 from the Wikipedia API, plus a full-text snapshot of each article on the first day of every quarter, its talk-page activity and monthly pageviews. Collection ran on GitHub Actions.</li>
+    <li><b>Critical frames</b> are terms tied to the anti-colonial reading: <span id="critList"></span>. <b>Connection frames</b> are terms tied to Jewish historical continuity and persecution: <span id="connList"></span>. Terrorism and militant are counted separately.</li>
+    <li><b>Text.</b> References, templates, tables and markup are stripped before counting, so citation titles do not inflate counts. The lead is everything before the first section heading.</li>
+    <li><b>Test.</b> Difference-in-differences: each article's change in rate, averaged by group, topic minus comparison. 2,000 bootstrap resamples give the interval.</li>
+    <li><b>Limits.</b> Counting words measures emphasis, not accuracy. "Genocide" can grow because a court case exists, not because of bias. Sampled category articles vary in quality. Lexicons miss paraphrase and sentence-level stance. Editors are reported only in aggregate. No claim is made about any individual editor's intent.</li>
+  </ul>
+</section>
+</div>
+
+<script>
+const R=/*DATA*/null;
+const $=s=>document.querySelector(s), css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fmt=(x,d=1)=>x==null?"–":(+x).toFixed(d), pct=x=>x==null?"–":(x*100).toFixed(1)+"%";
+const LABEL={critical_rate:"All critical frames",connection_rate:"All connection frames",settler_colonial:"Settler-colonial / colonial",apartheid:"Apartheid",genocide:"Genocide",ethnic_cleansing:"Ethnic cleansing",occupation:"Occupation / occupied",nakba_expulsion:"Nakba / expulsion / dispossession",war_crimes:"War crimes / collective punishment",indigenous_homeland:"Indigenous / homeland / self-determination",persecution_antisemitism:"Antisemitism / persecution / pogrom",terrorism:"Terrorism / terrorist",militant:"Militant"};
+let part="full",part2="full",win=null,frame="critical_rate",sortK="dcrit",sortDir=-1;
+
+function ns(t,a){const e=document.createElementNS("http://www.w3.org/2000/svg",t);for(const k in a)e.setAttribute(k,a[k]);return e}
+function niceMax(v){if(!(v>0))return 1;const p=10**Math.floor(Math.log10(v)),n=v/p;return (n<=1?1:n<=2?2:n<=5?5:10)*p}
+
+function lineChart(svg,xs,series,{W=1000,H=340,mark=null,yfmt=v=>fmt(v,1)}={}){
+  svg.innerHTML="";svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const L=52,Rm=12,T=12,B=30,max=niceMax(Math.max(...series.flatMap(s=>s.v.filter(v=>v!=null)),0)*1.05);
+  const x=i=>L+(W-L-Rm)*(xs.length<2?0:i/(xs.length-1)),y=v=>T+(H-T-B)*(1-v/max);
+  for(let k=0;k<=4;k++){const v=max*k/4;svg.append(ns("line",{x1:L,x2:W-Rm,y1:y(v),y2:y(v),stroke:css("--rule"),"stroke-width":1}));
+    const t=ns("text",{x:L-6,y:y(v)+4,"text-anchor":"end"});t.textContent=yfmt(v);svg.append(t)}
+  const step=Math.ceil(xs.length/8);xs.forEach((d,i)=>{if(i%step)return;const t=ns("text",{x:x(i),y:H-8,"text-anchor":"middle"});t.textContent=d;svg.append(t)});
+  if(mark){const i=xs.findIndex(d=>d>=mark);if(i>=0){svg.append(ns("line",{x1:x(i-.5),x2:x(i-.5),y1:T,y2:H-B,stroke:css("--war"),"stroke-dasharray":"4 3"}))}}
+  for(const s of series){const pts=s.v.map((v,i)=>v==null?null:[x(i),y(v)]).filter(Boolean);
+    if(!pts.length)continue;
+    svg.append(ns("path",{d:"M"+pts.map(p=>p.join(",")).join("L")+`L${pts.at(-1)[0]},${y(0)}L${pts[0][0]},${y(0)}Z`,fill:s.c,opacity:.07}));
+    svg.append(ns("path",{d:"M"+pts.map(p=>p.join(",")).join("L"),fill:"none",stroke:s.c,"stroke-width":2.2}));
+    const e=pts.at(-1);svg.append(ns("circle",{cx:e[0],cy:e[1],r:4,fill:s.c}))}
+}
+
+function drawTrend(){
+  const t=R.trends.treatment[part],c=R.trends.control[part];
+  lineChart($("#trend"),t.map(r=>r.date),[{v:t.map(r=>r[frame]),c:css("--treat")},{v:c.map(r=>r[frame]),c:css("--ctrl")}],{mark:"2023-10"});
+}
+
+function drawForest(){
+  const rows=R.did.filter(d=>d.part===part2&&d.window===win);
+  const svg=$("#forest"),W=1000,rowH=30,H=rows.length*rowH+40;svg.innerHTML="";svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const L=300,Rm=20,m=Math.max(...rows.map(r=>Math.max(Math.abs(r.lo),Math.abs(r.hi))),.1)*1.1;
+  const x=v=>L+(W-L-Rm)*(v+m)/(2*m);
+  svg.append(ns("line",{x1:x(0),x2:x(0),y1:10,y2:H-24,stroke:css("--muted")}));
+  [-m,-m/2,0,m/2,m].forEach(v=>{const t=ns("text",{x:x(v),y:H-6,"text-anchor":"middle"});t.textContent=(v>0?"+":"")+fmt(v,2);svg.append(t)});
+  rows.forEach((r,i)=>{const yy=20+i*rowH,sig=r.lo>0||r.hi<0,col=r.did>0?css("--pos"):css("--neg");
+    const lab=ns("text",{x:L-10,y:yy+4,"text-anchor":"end"});lab.textContent=LABEL[r.frame]||r.frame;lab.style.fill=css("--ink");svg.append(lab);
+    svg.append(ns("line",{x1:x(r.lo),x2:x(r.hi),y1:yy,y2:yy,stroke:col,"stroke-width":1.5,opacity:sig?1:.45}));
+    svg.append(ns("rect",{x:Math.min(x(0),x(r.did)),y:yy-7,width:Math.abs(x(r.did)-x(0)),height:14,fill:col,opacity:sig?.85:.3}));
+    const t=ns("text",{x:W-Rm,y:yy+4,"text-anchor":"end"});t.textContent=(sig?"● ":"")+(r.did>0?"+":"")+fmt(r.did,2);svg.append(t)});
+}
+
+function drawDyn(){
+  const T=R.dynamics.treatment,C=R.dynamics.control,xs=T.map(r=>r.q);
+  const mk=(id,k,yf)=>lineChart($(id),xs,[{v:T.map(r=>r[k]),c:css("--treat")},{v:C.map(r=>r[k]),c:css("--ctrl")}],{W:500,H:240,mark:"2023-Q4",yfmt:yf});
+  mk("#edits","edits_per_article");mk("#talk","talk_per_article");mk("#revert","revert_rate",v=>(v*100).toFixed(0)+"%");mk("#anon","anon_share",v=>(v*100).toFixed(0)+"%");
+  const a=R.concentration.treatment,b=R.concentration.control;
+  $("#conc").innerHTML=`<h3>Who edits across the topic</h3><p class="cap">Editors who touched 10 or more articles in each group since 2021. The groups differ in size (${R.n_treatment} topic articles, ${R.n_control} comparison articles), so read this as a rough contrast. No usernames are shown.</p>
+  <div class="stats"><div class="stat"><b>${a.editors_total.toLocaleString()}</b><span>distinct editors, topic</span></div><div class="stat"><b>${a.editors_on_10plus_articles}</b><span>editors on 10+ topic articles</span></div><div class="stat"><b>${a.editors_on_25plus_articles}</b><span>editors on 25+ topic articles</span></div>
+  <div class="stat"><b>${b.editors_total.toLocaleString()}</b><span>distinct editors, comparison</span></div><div class="stat"><b>${b.editors_on_10plus_articles}</b><span>editors on 10+ comparison articles</span></div><div class="stat"><b>${b.editors_on_25plus_articles}</b><span>editors on 25+ comparison articles</span></div></div>`;
+}
+
+function spark(v){const w=80,h=20,m=Math.max(...v,.01);return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><path d="M${v.map((x,i)=>`${(i/(Math.max(1,v.length-1))*w).toFixed(1)},${(h-2-(x/m)*(h-4)).toFixed(1)}`).join("L")}" fill="none" stroke="var(--treat)" stroke-width="1.5"/></svg>`}
+
+function drawTable(){
+  const q=$("#q").value.toLowerCase(),g=$("#grp").value;
+  let A=R.articles.filter(a=>(!g||a.group===g)&&a.title.toLowerCase().includes(q));
+  A.forEach(a=>a.dcrit=a.crit1-a.crit0);
+  A.sort((a,b)=>{const x=a[sortK],y=b[sortK];return (typeof x==="string"?x.localeCompare(y):(x??-1e9)-(y??-1e9))*sortDir});
+  $("#rows").innerHTML=A.map(a=>`<tr tabindex="0" data-t="${encodeURIComponent(a.title)}"><td>${a.title}</td><td><span class="chip ${a.group[0]}">${a.group==="treatment"?"topic":"comparison"}</span></td><td>${a.edits.toLocaleString()}</td><td>${a.editors.toLocaleString()}</td><td>${fmt(a.crit0)}</td><td>${fmt(a.crit1)}</td><td class="${a.dcrit>0.05?"up":a.dcrit<-0.05?"down":""}">${a.dcrit>0?"+":""}${fmt(a.dcrit)}</td><td>${fmt(a.conn0)}</td><td>${fmt(a.conn1)}</td><td>${a.lead_changed}</td><td>${spark(a.crit_series)}</td></tr>`).join("");
+}
+
+function esc(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function showDetail(title){
+  const a=R.articles.find(x=>x.title===title);if(!a)return;
+  document.querySelectorAll("#rows tr").forEach(tr=>tr.classList.toggle("sel",decodeURIComponent(tr.dataset.t)===title));
+  const fr=Object.keys(a.frames0).filter(k=>a.frames0[k]||a.frames1[k]);
+  $("#detail").innerHTML=`<div class="panel" style="display:grid;gap:10px"><h3><a href="https://en.wikipedia.org/wiki/${encodeURIComponent(a.title.replace(/ /g,"_"))}" target="_blank" rel="noopener">${esc(a.title)}</a></h3>
+   <div class="cap">${a.d0} → ${a.d1} · ${a.words0.toLocaleString()} → ${a.words1.toLocaleString()} words · top 10 editors made ${pct(a.top10)} of edits</div>
+   <table><thead><tr><th>Frame term hits</th><th>${a.d0}</th><th>${a.d1}</th><th>lead ${a.d0}</th><th>lead ${a.d1}</th></tr></thead><tbody>${fr.map(k=>`<tr><td>${LABEL[k]}</td><td>${a.frames0[k]}</td><td>${a.frames1[k]}</td><td>${a.lead_frames0[k]}</td><td>${a.lead_frames1[k]}</td></tr>`).join("")||"<tr><td colspan=5>No frame terms found</td></tr>"}</tbody></table>
+   <h3>Opening sentence over time</h3><div class="timeline">${a.first_sentences.map(f=>`<div><time>${f.date}</time><span>${esc(f.s)}</span></div>`).join("")}</div></div>
+   <div class="panel" style="display:grid;gap:10px"><h3>Lead section, ${a.d0} → ${a.d1}</h3><p class="cap">Removed sentences are marked in amber, added sentences in blue.${a.lead_diff.length>=60?" Long leads show changed sentences only.":""}</p>
+   <div class="diff">${a.lead_diff.map(d=>`<div class="${d.t==="+"?"a":d.t==="-"?"d":"e"}">${esc(d.s)}</div>`).join("")||"<div class='e'>No change</div>"}</div></div>`;
+}
+
+function seg(el,cb){el.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));cb(b.dataset.v)})}
+
+function init(){
+  if(!R){$("#lede").textContent="Data not loaded yet.";return}
+  const tot=R.articles.reduce((s,a)=>s+a.views,0);
+  $("#lede").innerHTML=`This page measures ${R.n_treatment} articles on Judaism, Israel, Zionism, antisemitism and the Israeli–Palestinian conflict, revision by revision, from January 2021 to ${R.dates.at(-1)}. Their framing vocabulary is compared with ${R.n_control} articles on other nations, nationalisms, conflicts and religions. Only a change that is larger in the topic articles than in the comparison articles counts as evidence of a topic-specific shift.`;
+  $("#stats").innerHTML=[[R.n_treatment,"topic articles"],[R.n_control,"comparison articles"],[R.total_revisions.toLocaleString(),"revisions read"],[R.dates.length,"quarterly snapshots each"],[(tot/1e6).toFixed(0)+"M","pageviews in the window"]].map(([b,s])=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+  const fs=$("#frameSel");["critical_rate","connection_rate",...R.frames].forEach(k=>fs.append(new Option(LABEL[k]||k,k)));
+  fs.onchange=()=>{frame=fs.value;drawTrend()};
+  seg($("#partSeg"),v=>{part=v;drawTrend()});seg($("#partSeg2"),v=>{part2=v;drawForest()});
+  const wins=[...new Set(R.did.map(d=>d.window))];win=wins[0];
+  $("#winSeg").innerHTML=wins.map((w,i)=>`<button data-v="${w}" aria-pressed="${i===0}">${w}</button>`).join("");seg($("#winSeg"),v=>{win=v;drawForest()});
+  $("#critList").textContent=R.critical.map(k=>LABEL[k]).join(", ");$("#connList").textContent=R.connection.map(k=>LABEL[k]).join(", ");
+  $("#q").oninput=drawTable;$("#grp").onchange=drawTable;
+  document.querySelectorAll("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=sortK===k?-sortDir:-1;sortK=k;drawTable()});
+  $("#rows").addEventListener("click",e=>{const tr=e.target.closest("tr");if(tr)showDetail(decodeURIComponent(tr.dataset.t))});
+  $("#rows").addEventListener("keydown",e=>{if(e.key==="Enter"){const tr=e.target.closest("tr");if(tr)showDetail(decodeURIComponent(tr.dataset.t))}});
+  drawTrend();drawForest();drawDyn();drawTable();showDetail((R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{drawTrend();drawForest();drawDyn()});
+  new MutationObserver(()=>{drawTrend();drawForest();drawDyn()}).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+}
+init();
+</script>

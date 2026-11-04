@@ -14,26 +14,34 @@ from corpus import (TREATMENT_SEED, CONTROL_SEED, TREATMENT_CATEGORIES,
 API = "https://en.wikipedia.org/w/api.php"
 PV = ("https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/"
       "en.wikipedia/all-access/user/{t}/monthly/2021010100/2026110100")
-UA = "WikiFramingTrends/1.0 (academic trend study; python-requests)"
+UA = "WikiFramingTrends/1.0 (https://github.com/Galdrev/photoStamper; research script) python-requests"
 OUT = os.path.join(os.path.dirname(__file__), "data", "articles")
 S = requests.Session()
 S.headers["User-Agent"] = UA
 
 
 def api(**p):
-    p.update(format="json", formatversion=2, maxlag=5)
-    for i in range(6):
+    p.update(format="json", formatversion=2)
+    last = None
+    for i in range(8):
         try:
-            r = S.get(API, params=p, timeout=60)
+            r = S.get(API, params=p, timeout=90)
+            last = f"HTTP {r.status_code}"
             if r.status_code == 200:
                 j = r.json()
-                if "error" in j and j["error"].get("code") == "maxlag":
-                    time.sleep(5); continue
-                return j
-        except requests.RequestException:
-            pass
-        time.sleep(2 ** i)
-    raise RuntimeError(f"API failed: {p}")
+                if "error" in j:
+                    last = j["error"].get("code")
+                    if last not in ("maxlag", "ratelimited", "internal_api_error_DBQueryTimeoutError"):
+                        raise RuntimeError(f"API error {j['error']}")
+                else:
+                    return j
+            elif r.status_code == 429:
+                time.sleep(int(r.headers.get("retry-after", 30)))
+                continue
+        except requests.RequestException as e:
+            last = repr(e)
+        time.sleep(min(60, 2 ** i))
+    raise RuntimeError(f"API failed ({last}): {p.get('titles') or p.get('cmtitle')}")
 
 
 def category_members(cat, depth=1, seen=None):
@@ -50,7 +58,10 @@ def category_members(cat, depth=1, seen=None):
             if m["ns"] == 0:
                 pages.add(m["title"])
             elif m["ns"] == 14 and depth > 0:
-                pages |= category_members(m["title"], depth - 1, seen)
+                try:
+                    pages |= category_members(m["title"], depth - 1, seen)
+                except Exception as e:
+                    print(f"subcategory {m['title']} failed: {e}", file=sys.stderr, flush=True)
         if "continue" not in j:
             break
         cont = j["continue"]
@@ -159,7 +170,10 @@ def main():
 
     cat_pages = set()
     for c in TREATMENT_CATEGORIES:
-        cat_pages |= category_members(c, depth=1)
+        try:
+            cat_pages |= category_members(c, depth=1)
+        except Exception as e:
+            print(f"category {c} failed: {e}", file=sys.stderr, flush=True)
     cat_pages = sorted(cat_pages - set(jobs))
     random.Random(42).shuffle(cat_pages)
     cat_pages = cat_pages[:a.max_cat_pages]

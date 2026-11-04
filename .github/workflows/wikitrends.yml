@@ -17,14 +17,22 @@ jobs:
         with: {python-version: '3.12'}
       - run: pip install requests
       - name: Restore raw cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: wikitrends/data/articles
           key: wiki-raw-${{ hashFiles('wikitrends/corpus.py') }}-${{ github.run_id }}
           restore-keys: wiki-raw-
       - name: Fetch
         working-directory: wikitrends
-        run: python fetch.py --workers 6 2> fetch_errors.log | tail -n 40; tail -n 40 fetch_errors.log || true
+        run: |
+          python fetch.py --workers 4 > fetch.log 2> fetch_errors.log || echo "fetch exited $?"
+          tail -n 15 fetch.log; echo ---; tail -n 60 fetch_errors.log
+      - name: Save raw cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: wikitrends/data/articles
+          key: wiki-raw-${{ hashFiles('wikitrends/corpus.py') }}-${{ github.run_id }}
       - name: Analyze
         working-directory: wikitrends
         run: python analyze.py
