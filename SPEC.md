@@ -58,3 +58,7 @@ These changes come from the independent code review.
 - **Edit dynamics:** bots are excluded, temporary accounts (~2025-…) count as logged out, revert rates are per-article means, and the partial final quarter is dropped.
 - **Editor breadth:** compared on equal-size random subsamples.
 - **Validation:** five dated press-documented changes are added as known-answer tests (corpus.py VALIDATION).
+
+## Amendment 2 (2026-11-04, before real data)
+- The name-swap placebo is replaced with an unmasked repeat: 15 topic and 15 comparison items are coded again with names visible, and flip rates are reported by group. Reason: masking would erase any swapped-in names, so the planned placebo could not work.
+- Coders: rubric v1 (.claude/skills/blind-stance-coder). Three codings per item: wording A on a large model, wording B on a large model, and wording A on a small model. The final label is the majority; ties count as "unclear".

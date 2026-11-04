@@ -16,6 +16,8 @@ Each entry gives the technique, why it was used, what it cost, and a verdict aft
 | 7 | Plan | Pre-registration (SPEC.md) committed before data, with an amendment log | Anthropic best practice ("write the spec") plus the social-science norm. The git timestamp proves it | 15 min | KEEP. Forces a headline decision rule in advance |
 | 8 | Verify | Known-answer validation targets from press coverage | Plays the role of an eval set: the instrument must recover known shifts | 5 min | pending |
 | 9 | Plan | Rejected: human gold set + DSL estimator, cross-vendor grader | No human coders or OpenAI key here. Substituted: known-answer targets, 2 Claude sizes × 2 prompt wordings | — | ADAPT. For real work with stakes, pay for the human gold set |
+| 11 | Build | Caught my own design flaw: the name-swap placebo gets undone by the masking | Self-review of the agent's recommendation against my implementation | 2 min | Lesson: an advisor's recommendation can be incoherent with your other choices. Replaced with an unmasked-repeat test |
+| 12 | Delegate | Coding rubric packaged as a repo Skill (.claude/skills/blind-stance-coder) | Anthropic Agent Skills pattern: identical instructions for every worker, versioned in git | 10 min | pending |
 | 10 | Build | Synthetic test exposed the log1p scale blowing up for articles starting at zero | Planted-effect test: a known drift must be recovered | 5 min | KEEP. Always test the stats on data where you know the answer |
 
 ## Open questions to judge at the end
