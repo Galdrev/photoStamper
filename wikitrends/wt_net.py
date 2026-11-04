@@ -65,7 +65,21 @@ def get_json(url, params, tries=8, ok404=False):
     return None
 
 
+_ticker = [None]
+
+
+def _tick():
+    while True:
+        time.sleep(60)
+        try:
+            heartbeat(force=True)
+        except Exception:
+            pass
+
+
 def heartbeat(stage=None, done=None, total=None, force=False, **extra):
+    if _ticker[0] is None:                       # timer heartbeat: proves liveness even when no item finishes
+        _ticker[0] = threading.Thread(target=_tick, daemon=True); _ticker[0].start()
     if stage is not None: _state["stage"] = stage
     if done is not None: _state["done"] = done
     if total is not None: _state["total"] = total
