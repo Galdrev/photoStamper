@@ -1,0 +1,79 @@
+name: wikitrends-mass
+on:
+  push:
+    branches: [wikitrends-mass]
+permissions:
+  contents: write
+concurrency: wikitrends-mass
+jobs:
+  frame:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - working-directory: wikitrends
+        run: python mass.py frame
+      - name: Shared salt for editor hashing (private artifact, deleted after 1 day)
+        run: openssl rand -hex 16 > wikitrends/data/mass/salt
+      - uses: actions/upload-artifact@v4
+        with: {name: frame, path: wikitrends/data/mass/, retention-days: 1}
+  en:
+    needs: frame
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix: {shard: [0, 1, 2, 3, 4, 5]}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - uses: actions/download-artifact@v4
+        with: {name: frame, path: wikitrends/data/mass/}
+      - working-directory: wikitrends
+        run: WT_SALT=$(cat data/mass/salt) python mass.py en --shard ${{ matrix.shard }} --of 6
+      - uses: actions/upload-artifact@v4
+        with: {name: 'en-${{ matrix.shard }}', path: 'wikitrends/data/mass/en_${{ matrix.shard }}.json.gz', retention-days: 3}
+  lang:
+    needs: frame
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix: {shard: [0, 1, 2, 3]}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - uses: actions/download-artifact@v4
+        with: {name: frame, path: wikitrends/data/mass/}
+      - working-directory: wikitrends
+        run: python mass.py lang --shard ${{ matrix.shard }} --of 4
+      - uses: actions/upload-artifact@v4
+        with: {name: 'lang-${{ matrix.shard }}', path: 'wikitrends/data/mass/lang_${{ matrix.shard }}.json.gz', retention-days: 3}
+  analyze:
+    needs: [en, lang]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - uses: actions/download-artifact@v4
+        with: {path: wikitrends/data/mass/, merge-multiple: true}
+      - run: rm -f wikitrends/data/mass/salt && ls -la wikitrends/data/mass/
+      - working-directory: wikitrends
+        run: python mass.py analyze
+      - name: Commit mass results
+        run: |
+          git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -f wikitrends/data/mass_results.json wikitrends/data/mass/frame.json
+          git commit -m "Mass tier results [skip ci]" || exit 0
+          git pull --rebase origin wikitrends-mass && git push origin HEAD:wikitrends-mass

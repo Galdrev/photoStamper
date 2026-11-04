@@ -31,6 +31,9 @@ if res.get("crosslang"):
         for v in langs.values():
             s = v["series"]
             v["series"] = [s[0], s[-1]] if len(s) > 1 else s
+mp = os.path.join(HERE, "data", "mass_results.json")
+if os.path.exists(mp) and "mass" not in res:
+    res["mass"] = json.load(open(mp)).get("mass")
 qa_p = os.path.join(HERE, "data", "qa.json")
 if os.path.exists(qa_p):
     qa = json.load(open(qa_p)); qa.pop("per_article", None); res["qa"] = qa
