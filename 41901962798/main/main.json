@@ -1,0 +1,21 @@
+{
+ "job": "main",
+ "stage": "fetch",
+ "done": 1,
+ "total": 8,
+ "elapsed_min": 2.1,
+ "eta_min": 15.0,
+ "rps_limit": 5.0,
+ "req_per_s": 1.93,
+ "avg_latency_s": 0.07,
+ "requests": 248,
+ "ok": 240,
+ "http_429": 8,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 8,
+ "failures": 0,
+ "bytes": 17843530,
+ "article_errors": 0,
+ "updated": "2026-11-04T20:00:04Z"
+}
