@@ -11,7 +11,7 @@
 :root{
   --paper:#f1f3f2; --sheet:#fbfcfb; --ink:#13181c; --ink-2:#39424a; --muted:#66707a; --rule:#d5dbdb; --faint:#e6eaea;
   --topic:#0b6b72; --topic-soft:#cfe5e4; --comp:#767a9b; --comp-soft:#e1e2ec; --new:#3f8f4a; --war:#c4302b;
-  --add-bg:#d9e7fb; --add-ink:#17499c; --add-bd:#3a73d4;
+  --add-bg:#d9e7fb; --add-ink:#17499c; --add-bd:#3a73d4; --add-hi:#17499c;
   --del-bg:#fae6c0; --del-ink:#7d5100; --del-bd:#d39a20;
   --inc:#b35806; --dec:#5e3c99; --mid:#d9dbdb;
   --heat-lo:#eef0ee; --heat-mid:#86a3c8; --heat-hi:#14244f; --heat-na:#e2e5e4;
@@ -23,7 +23,7 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0f1316; --sheet:#151a1e; --ink:#e7ebec; --ink-2:#c3cacd; --muted:#8f9aa2; --rule:#2a3237; --faint:#1d2327;
   --topic:#4fbcbf; --topic-soft:#163739; --comp:#a3a7c9; --comp-soft:#262839; --new:#7cc884; --war:#ff6a5c;
-  --add-bg:#16305a; --add-ink:#a9c8ff; --add-bd:#5b92ee;
+  --add-bg:#16305a; --add-ink:#a9c8ff; --add-bd:#5b92ee; --add-hi:#dceaff;
   --del-bg:#43310f; --del-ink:#f3c977; --del-bd:#d6a034;
   --inc:#f0a052; --dec:#b49ce0; --mid:#3a4146;
   --heat-lo:#172026; --heat-mid:#3d6896; --heat-hi:#dcecff; --heat-na:#111518;
@@ -31,7 +31,7 @@
 :root[data-theme="dark"]{
   --paper:#0f1316; --sheet:#151a1e; --ink:#e7ebec; --ink-2:#c3cacd; --muted:#8f9aa2; --rule:#2a3237; --faint:#1d2327;
   --topic:#4fbcbf; --topic-soft:#163739; --comp:#a3a7c9; --comp-soft:#262839; --new:#7cc884; --war:#ff6a5c;
-  --add-bg:#16305a; --add-ink:#a9c8ff; --add-bd:#5b92ee;
+  --add-bg:#16305a; --add-ink:#a9c8ff; --add-bd:#5b92ee; --add-hi:#dceaff;
   --del-bg:#43310f; --del-ink:#f3c977; --del-bd:#d6a034;
   --inc:#f0a052; --dec:#b49ce0; --mid:#3a4146;
   --heat-lo:#172026; --heat-mid:#3d6896; --heat-hi:#dcecff; --heat-na:#111518;
@@ -244,6 +244,7 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
 .forest .nm{font-weight:500;gap:6px;flex-wrap:wrap}
 .forest .est{font:12px/1.35 var(--mono);display:block}
 .forest .est small{display:block;color:var(--muted);font-size:11px}
+.forest .est .unc{color:var(--ink-2)}
 .pid{font:600 10px var(--mono);border:1px solid var(--ink);border-radius:2px;padding:0 4px;color:var(--ink)}
 .forest>.plot{position:relative;min-height:40px;padding:0;margin-inline:8px}
 .plot .z{position:absolute;top:0;bottom:-1px;width:0;border-left:1px solid var(--muted)}
@@ -360,6 +361,7 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
 .lex code s{color:var(--del-ink);text-decoration:none}
 .foot{margin-top:96px;border-top:1px solid var(--rule);padding-top:14px;font:11.5px/1.6 var(--mono);color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
+section[id],details[id]{scroll-margin-top:58px}
 #tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--paper);font:12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:min(320px,calc(100vw - 32px));box-shadow:0 4px 18px rgb(0 0 0/.18)}
 #tip b{font-weight:600}
 #tip .r{display:flex;justify-content:space-between;gap:14px}
@@ -401,7 +403,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .br-h{font-size:clamp(22px,2.6vw,30px)}
 .br-s{margin:0;font:400 clamp(27px,4.3vw,54px)/1.24 var(--display);letter-spacing:-.015em;min-height:3.8em;max-width:30em;transition:box-shadow .2s}
 .br-s del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:2px;border-radius:2px;padding:0 .06em}
-.br-s ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .06em}
+.br-s ins{background:var(--add-bg);color:var(--add-hi);text-decoration:none;border-radius:2px;padding:0 .06em}
 @keyframes brin{from{opacity:0;background:transparent}}
 .br-s.anim ins{animation:brin .55s ease-out both}
 .br-s.flash{box-shadow:-6px 0 0 var(--del-bd);color:var(--del-ink)}
@@ -570,6 +572,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .tcard{grid-template-columns:minmax(0,1fr);gap:8px}
   #trPicks{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
   #trPicks .pick,#trPicks .grp{flex:none}
+  #xlPicks{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+  #xlPicks .pick,#xlPicks .grp{flex:none}
   .tcard .when{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
   .stripe,.stripes-h{grid-template-columns:72px minmax(0,1fr) 78px;gap:8px}
   .stripe .ln span{display:none}
@@ -587,8 +591,21 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .bsum::after{content:"▾";color:var(--muted);transition:transform .2s}
   .brow.open .bsum::after{transform:rotate(180deg)}
   .rule-q{font-size:15.5px}
-  #stepsK{gap:20vh;padding-block:8vh 6vh}
-  #stepsB{gap:22vh;padding-block:10vh 8vh}
+  #stepsK{gap:14vh;padding-block:6vh 4vh}
+  .br-hint{display:none}
+  .deck{font-size:16.5px}
+  .step{font-size:15px;padding:12px 14px;gap:6px}
+  .ledeband .lede{font-size:16.5px}
+  .ledeband{margin-top:40px;gap:20px}
+  .breathe{margin-top:40px}
+  .layers{gap:6px;margin-top:14px}
+  .layers>div{grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;padding-top:8px;font-size:13.5px}
+  .layers>div p b{display:block}
+  .canbox>div{padding:14px 16px;gap:8px}
+  .canbox ul{font-size:14.5px;gap:5px}
+  .canbox h3{font-size:19px}
+  #boardWrap>.cap{display:none}
+  #boardWrap:has(.brow.open)>.cap{display:block}
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .slots .sl{width:52px}
 }
@@ -713,29 +730,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="means" id="mTrend"></p>
   <div class="fig-h" style="margin-top:20px"><span class="fig-t">Each group of words on its own</span><span class="cap">Teal line: Israel and Jewish-topic articles. Grey-violet line: other articles. Each panel has its own scale. Select one to load it above.</span></div>
   <div class="minis" id="minis"></div>
-</section>
-
-<section class="sec" id="gap">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>The main comparison</div>
-    <h2>Did the topic articles change more than similar articles?</h2>
-    <p class="deck">For each article, we measured how much the word count changed since January 2021. Then we took the topic articles’ average change and subtracted the other articles’ average change. That gives the <b>extra change</b>. Zero means both groups changed by the same amount.</p>
-  </header>
-  <div class="scrolly" id="scB">
-    <div class="steps" id="stepsB"></div>
-    <figure class="sticky fig" style="margin:0">
-      <div class="controls">
-        <span class="seg" id="esOut" role="group" aria-label="Words"><button data-v="critical_rate" aria-pressed="true">Colonial, apartheid, genocide…</button><button data-v="connection_rate" aria-pressed="false">Homeland, antisemitism…</button></span>
-        <span class="seg" id="esPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
-      </div>
-      <div class="fig-t" id="esTitle"></div>
-      <div class="chart" id="es" style="height:clamp(250px,46vh,400px)"></div>
-      <div class="legend"><span class="key"><i class="ln" style="background:var(--topic)"></i>line: extra change</span><span class="key"><i style="background:var(--topic-soft);border:1px solid var(--topic)"></i>shaded: the range we’re fairly sure about</span><span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>7 Oct 2023</span></div>
-      <p class="cap"><b>If the shaded band crosses zero, we can’t tell the difference from chance.</b></p>
-    </figure>
-  </div>
-  <p class="means" id="mES"></p>
-  <button class="inlab" type="button" data-intent='{"lab":"shadow"}'>Explore this →</button>
 </section>
 
 <section class="sec" id="heatmap">
@@ -1094,7 +1088,7 @@ function heroRows(){
 }
 function drawHero(animate){
   const cv=$("#hero"),box=cv.parentElement,W=box.clientWidth,ph=isPhone();
-  const H=ph?420:Math.round(Math.min(560,Math.max(420,W*.42)));
+  const H=ph?320:Math.round(Math.min(560,Math.max(420,W*.42)));
   const dpr=Math.min(2,devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+"px";
   const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);
   const rows=HERO||(HERO=heroRows());
@@ -1204,28 +1198,6 @@ function minis(){
 function drawMinis(){$$("#minis .mini").forEach(b=>chart(b.querySelector(".chart"),{series:b._sr,compact:true,hover:false,animate:false,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))]}))}
 
 /* ---------- event study ---------- */
-function drawES(){
-  const key=`${S.esPart}:${S.es}`,rows=(R.event_study&&R.event_study[key])||[],el=$("#es");
-  setSeg($("#esOut"),S.es);setSeg($("#esPart"),S.esPart);
-  const nm=S.es==="critical_rate"?"words like colonial, apartheid, genocide":"words like homeland, antisemitism";
-  $("#esTitle").textContent=`Extra change in ${nm}, per 10,000 words of ${S.esPart==="lead"?"the opening paragraph":"the full text"} (topic minus other articles)`;
-  if(!rows.length){el.innerHTML=`<div class="note">No estimates for this choice yet.</div>`;el._cfg=null;$("#mES").innerHTML="";return}
-  const pts=[[ym(R.dates[0]),0],...rows.map(r=>[ym(r.date),r.did])],rb=[[ym(R.dates[0]),0,0],...rows.map(r=>[ym(r.date),r.lo,r.hi])];
-  chart(el,{series:[{key:"es",label:"Extra change",color:"--topic",pts,ribbon:rb,width:2.4}],zeroBase:false,endLabels:true,labelW:isPhone()?0:100,vfmt:v=>sgn(v,2),xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],aria:"Extra change over time",xlab:t=>"Copy of "+dlabT(t)});
-  const r=rows.at(-1),inc=r.lo<=0&&r.hi>=0;
-  $("#mES").innerHTML=`<b>What this means:</b> by ${dlab(r.date)}, the topic articles had ${r.did>=0?"gained":"lost"} ${fmt(Math.abs(r.did),1)} more of these words per 10,000 than the other articles. ${inc?`But the shaded range runs from ${sgn(r.lo,1)} to ${sgn(r.hi,1)} and crosses zero, so we can’t tell this apart from chance.`:`The shaded range (${sgn(r.lo,1)} to ${sgn(r.hi,1)}) stays clear of zero, so this is unlikely to be chance alone.`}`;
-}
-function stepsB(){
-  const g=k=>{const r=(R.event_study||{})[k]||[];return r.at(-1)};
-  const one=(k)=>{const r=g(k);if(!r)return "No estimate is available yet.";const inc=r.lo<=0&&r.hi>=0;return `By ${dlab(r.date)} the extra change was <span class="delta ${r.did>0?"up":"dn"}">${sgn(r.did,2)}</span> per 10,000 words. The shaded range runs from ${sgn(r.lo,2)} to ${sgn(r.hi,2)}, so it ${inc?"crosses zero: we can’t tell it from chance":"stays clear of zero"}.`};
-  const steps=[
-    {k:"Loaded words, full text",st:{es:"critical_rate",esPart:"full"},h:`The line starts at zero. It goes up when the topic articles gain words like “colonial” or “genocide” faster than other articles, and down when they gain them more slowly. ${one("full:critical_rate")}`},
-    {k:"Loaded words, opening paragraph",st:{es:"critical_rate",esPart:"lead"},h:`The same comparison for the opening paragraph only. It is short, so the range is wider. ${one("lead:critical_rate")}`},
-    {k:"Words about Jewish history",st:{es:"connection_rate",esPart:"full"},h:`If the topic articles lost words like “homeland” and “antisemitism” compared with other articles, the line would drop below zero. ${one("full:connection_rate")}`},
-  ];
-  $("#stepsB").innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button></div>`).join("");
-  return steps;
-}
 function scrolly(host,steps,apply){
   const els=$$(".step",host);if(!els.length)return;
   const set=i=>{els.forEach((e,j)=>e.classList.toggle("on",j===i));Object.assign(S,steps[i].st);apply()};
@@ -1298,9 +1270,13 @@ function drawForest(){
   let g0=null;
   for(const r of rows){const g=grp(r.frame);if(g!==g0){h+=`<div class="grp">${g}</div>`;g0=g}
     const s=sigOf(r),col=r.did>0?"--inc":"--dec";
-    h+=`<div class="nm c1">${r.id?`<span class="pid">${r.id}</span>`:""}${esc(LABEL[r.frame]||r.frame)}</div><div class="est num c5">${sgn(r.did,2)}<small>range ${sgn(r.lo,1)} to ${sgn(r.hi,1)}${s?" · clear of zero":""}</small></div>
+    h+=`<div class="nm c1">${r.id?`<span class="pid">${r.id}</span>`:""}${esc(LABEL[r.frame]||r.frame)}</div><div class="est num c5">${sgn(r.did,2)}<small>range ${sgn(r.lo,1)} to ${sgn(r.hi,1)}${s?" · clear of zero":(r.lo>0||r.hi<0)?` · <span class="unc">clear of zero before correcting for ${(R.did||[]).filter(x=>x.tier===r.tier).length} tests</span>`:""}</small></div>
     <div class="plot c4" data-f="${r.frame}">${tk.map(v=>`<span class="${v===0?"z":"g"}" style="left:${X(v)}%"></span>`).join("")}<span class="ci" style="left:${X(r.lo)}%;width:${X(r.hi)-X(r.lo)}%"></span><span class="pt ${s?"sig":""}" style="left:${X(r.did)}%;${s?`background:var(${col})`:""}"></span></div>`}
   host.innerHTML=h;
+  if(isPhone()&&!S.forestAll){const one=x=>!["critical_rate","connection_rate","placebo_geography"].includes(x);let hide=false,n=0;
+    [...host.children].forEach(c=>{if(c.classList.contains("grp"))hide=!["All words in each family","Placebo check"].includes(c.textContent);if(hide){c.style.display="none";if(c.classList.contains("plot"))n++}});
+    if(n)host.insertAdjacentHTML("beforeend",`<button class="btn sm" type="button" id="forestAll" style="grid-column:1/-1;justify-self:start;margin-top:10px">Show each word group (${n} more)</button>`);
+    const fb=$("#forestAll");if(fb)fb.onclick=()=>{S.forestAll=true;drawForest()}}
   $$(".plot",host).forEach(p=>{const r=rows.find(x=>x.frame===p.dataset.f);p.onpointermove=e=>showTip(`<b>${esc(LABEL[r.frame]||r.frame)}</b><div class="r"><span>topic articles changed</span><span>${sgn(r.treat,2)}</span></div><div class="r"><span>other articles changed</span><span>${sgn(r.control,2)}</span></div><div class="r"><span>extra change</span><span>${sgn(r.did,2)}</span></div><div class="r"><span>range</span><span>${sgn(r.lo,2)} to ${sgn(r.hi,2)}</span></div><div class="r" style="opacity:.7"><span>articles</span><span>${r.n_t} topic · ${r.n_c} other</span></div>`,e.clientX,e.clientY);p.onpointerleave=hideTip});
   $("#forestStats").innerHTML=`<table><thead><tr><th>Words</th><th class="r">Topic Δ</th><th class="r">Other Δ</th><th class="r">DiD</th><th class="r">95% CI</th><th class="r">p (perm.)</th><th class="r">q (BH)</th><th class="r">n topic / other</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${r.id?`<span class="pid">${r.id}</span> `:""}${esc(LABEL[r.frame]||r.frame)}</td><td class="r">${sgn(r.treat,2)}</td><td class="r">${sgn(r.control,2)}</td><td class="r">${sgn(r.did,2)}</td><td class="r">[${sgn(r.lo,2)}, ${sgn(r.hi,2)}]</td><td class="r">${pv(r.p_perm)}</td><td class="r">${pv(r.q_bh)}</td><td class="r">${r.n_t} / ${r.n_c}</td></tr>`).join("")}</tbody></table><p class="cap" style="margin-top:8px">${"Change per 10,000 words"}. Window: ${esc(S.win)}. p from 5,000 permutations; q after Benjamini–Hochberg correction within the primary or secondary family.</p>`;
   const prim=(R.did||[]).filter(d=>d.tier==="primary"),ns=prim.filter(sigOf).length;
@@ -1578,7 +1554,7 @@ function keyInit(){
   seg($("#kPart"),v=>{K.part=v;keyText();drawKey(true)});
   keyText();drawKey(true);
   const ch=$("#kChart");
-  ch.addEventListener("pointermove",keyHover);ch.addEventListener("pointerdown",keyHover);ch.addEventListener("pointerleave",()=>{K.hover=null;hideTip();drawKey(true)});
+  ch.addEventListener("pointermove",keyHover);ch.addEventListener("pointerdown",keyHover);ch.addEventListener("pointerleave",()=>{K.hover=null;if(K.step!==5){hideTip();drawKey(true)}});
   ch.addEventListener("click",e=>{const h=keyPick(e);if(h&&h.a)openDrawer(h.a.title,{actions:[{label:"Explore it in the data lab",run:a=>openInLab({lab:"flip",title:a.title})}]})});
 }
 function keyText(){
@@ -1592,20 +1568,22 @@ function keyText(){
     {k:"Every comparison article",h:`Each thin grey line is one of the ${D.threads.length} ${Cg} articles, about other countries, conflicts and religions. ${nn?`${up} of ${nn} use these words more now than in ${dlab(f)}.`:""} Some move a lot, which is why we compare averages. Select a line to open its article.`},
     {k:"The comparison average",h:`Their average went from <b>${fmt(D.comp[0][1],1)}</b> to <b>${fmt(D.comp.at(-1)[1],1)}</b>. The real question is not whether the teal line rose, but whether it rose <i>more</i> than this one. The red line marks 7 October 2023. The black line marks the ICJ genocide case, January 2024.`},
     P?{k:"Fold it into one number",h:`Now each article becomes a dot: how much it changed from ${dlab(f)} to ${dlab(l)}. On average the topic articles changed by <b>${sgn(P.treat,1)}</b> and the comparison articles by <b>${sgn(P.control,1)}</b>. The difference, <b>${sgn(P.did,1)}</b> per 10,000 words, is the extra change (pre-registered test ${P.id}). The soft band is the range we’re fairly sure about, ${sgn(P.lo,1)} to ${sgn(P.hi,1)}. ${P.lo<=0&&P.hi>=0?"It includes zero, so this could be chance.":"It stays clear of zero."}`,lab:true}:{k:"One number",h:"The pre-registered estimate for this measure is not in this build."}];
+  const es=(R.event_study||{})[`${K.part}:critical_rate`]||[],er=es.at(-1),pre=es.filter(r=>r.date<=(R.pre_war||"2023-07")).at(-1);
+  if(er)steps.push({k:"Over time",h:`When did it happen? Here the extra change is measured at every copy, each time against ${dlab(f)}. Before the war, by ${pre?dlab(pre.date):"mid-2023"}, it was <b>${pre?sgn(pre.did,1):"–"}</b>. By ${dlab(er.date)} it was <b>${sgn(er.did,1)}</b>, with a range of ${sgn(er.lo,1)} to ${sgn(er.hi,1)}. ${er.lo<=0&&er.hi>=0?"The shaded range still crosses zero.":"The shaded range stays clear of zero."}`,shadow:true});
   if(K.built&&$$(".step",host).length===steps.length){$$(".step",host).forEach((e,i)=>{e.querySelector(".k").textContent=`${i+1} / ${steps.length} · ${steps[i].k}`;e.querySelector("p").innerHTML=steps[i].h})}
-  else{K.built=true;host.innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button>${s.lab?`<button class="inlab" type="button" data-lab>Shuffle it yourself in the data lab →</button>`:""}</div>`).join("");
+  else{K.built=true;host.innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button>${s.shadow?`<button class="inlab" type="button" data-intent='{"lab":"shadow"}'>Explore this →</button>`:""}${s.lab?`<button class="inlab" type="button" data-lab>Shuffle it yourself in the data lab →</button>`:""}</div>`).join("");
   const lb=$("[data-lab]",host);if(lb)lb.onclick=()=>openInLab({lab:"shuffle",test:P?P.id:"P2"});
   K.steps=steps.map((_,i)=>({st:{kStep:i+1}}));
   scrolly(host,K.steps,()=>keyGo(S.kStep));}
   $$(".step",host).forEach(e=>e.classList.toggle("on",+e.dataset.i===K.step-1));
   $("#mKey").innerHTML=P?`<b>What this means:</b> the topic articles ${P.treat>=0?"gained":"lost"} ${fmt(Math.abs(P.treat),1)} of these words per 10,000, and the comparison articles ${P.control>=0?"gained":"lost"} ${fmt(Math.abs(P.control),1)}. The extra change is ${sgn(P.did,1)}, from ${P.n_t} topic and ${P.n_c} comparison articles. ${P.lo<=0&&P.hi>=0?"Its range crosses zero, so we can’t tell it apart from chance.":"Its range stays clear of zero."}`:"";
 }
-const KT={1:{rise:1,threads:0,mean:0,fold:0},2:{rise:1,threads:1,mean:0,fold:0},3:{rise:1,threads:1,mean:1,fold:0},4:{rise:1,threads:1,mean:1,fold:1}};
+const KT={1:{rise:1,threads:0,mean:0,fold:0},2:{rise:1,threads:1,mean:0,fold:0},3:{rise:1,threads:1,mean:1,fold:0},4:{rise:1,threads:1,mean:1,fold:1},5:{rise:1,threads:1,mean:1,fold:1}};
 function keyGo(n){
   const prev=K.step;K.step=n;$$("#stepsK .step").forEach(e=>e.classList.toggle("on",+e.dataset.i===n-1));
   const from={...K.vis},to={...KT[n]};if(n===1&&prev!==1)from.rise=0;
   cancelAnimationFrame(K.raf);
-  if(RM.matches){K.vis=to;drawKey(true);return}
+  if(RM.matches||n===5||prev===5){K.vis=to;drawKey(true);return}
   const D=n===4||prev===4?1100:700,t0=performance.now();
   const stepF=now=>{const t=Math.min(1,(now-t0)/D),e=ease(t);for(const k in to)K.vis[k]=from[k]+(to[k]-from[k])*e;drawKey(t===1);if(t<1)K.raf=requestAnimationFrame(stepF)};
   K.raf=requestAnimationFrame(stepF)}
@@ -1618,7 +1596,15 @@ function keyGeom(){
   const mid=(m.t+H-m.b)/2+6,gap=Math.min(56,(H-m.t-m.b)/3.3),yT=mid-gap,yB=mid,yC=mid+gap;
   return {el,D,W,H,ph,m,x,y,fx,fxc,yT,yB,yC,t0,t1}}
 const jit=i=>(((i*2654435761)>>>0)%1000)/1000-.5;
+function drawKeyES(){
+  const el=$("#kChart"),rows=(R.event_study||{})[`${K.part}:critical_rate`]||[];el._cfg=null;
+  $("#kTitle").textContent=`Extra change over time, per 10,000 words of ${K.part==="lead"?"the opening paragraph":"the full text"}`;
+  if(!rows.length){el.innerHTML=`<div class="note">No estimates over time for this choice.</div>`;$("#kKey").innerHTML="";return}
+  const pts=[[ym(R.dates[0]),0],...rows.map(r=>[ym(r.date),r.did])],rb=[[ym(R.dates[0]),0,0],...rows.map(r=>[ym(r.date),r.lo,r.hi])];
+  chart(el,{series:[{key:"es",label:"Extra change",color:"--topic",pts,ribbon:rb,width:2.4}],zeroBase:false,endLabels:true,labelW:isPhone()?0:100,vfmt:v=>sgn(v,2),xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],marks:[{t:ICJ,label:"ICJ case, Jan 2024",color:"--ink"}],animate:false,aria:"Extra change over time",xlab:t=>"Copy of "+dlabT(t)});
+  $("#kKey").innerHTML=`<span class="key"><i class="ln" style="background:var(--topic)"></i>extra change, topic minus comparison</span><span class="key"><i style="background:var(--topic-soft);border:1px solid var(--topic)"></i>range we’re fairly sure about</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i class="dash"></i>ICJ case, Jan 2024</span>`}
 function drawKey(final){
+  if(K.step===5){drawKeyES();return}
   const G=keyGeom();if(!G)return;const {el,D,W,H,ph,m,x,y,fxc,yT,yB,yC}=G,V=K.vis,f=ease(clamp(V.fold,0,1)),f2=clamp((V.fold-.55)/.45,0,1);
   const mix=(a,b)=>a+(b-a)*f,P=D.P;
   $("#kTitle").textContent=V.fold>.5?`Change per 10,000 words, ${dlab(R.dates[0])} → ${dlab(R.dates.at(-1))}`:`Loaded words per 10,000 words of ${K.part==="lead"?"the opening paragraph":"article text"}`;
@@ -1670,14 +1656,14 @@ function drawKey(final){
     :`<span class="key"><i class="ln" style="background:var(--topic)"></i>topic articles, average (${D.nT})</span>${V.threads>.5?`<span class="key"><i class="ln" style="background:var(--comp);opacity:.45;height:1px"></i>one comparison article</span>`:""}${V.mean>.5?`<span class="key"><i class="ln" style="background:var(--comp)"></i>comparison average (${D.nC})</span>`:""}<span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i class="dash"></i>ICJ case, Jan 2024</span>`;
 }
 function keyPick(e){
-  const G=keyGeom();if(!G)return null;const r=G.el.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top,D=G.D;
+  if(K.step===5)return null;const G=keyGeom();if(!G)return null;const r=G.el.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top,D=G.D;
   if(K.vis.fold>.5){let best=null,bd=14;D.threads.forEach((t,i)=>{if(t.ch==null)return;const d=Math.hypot(G.fxc(t.ch)-px,G.yC+jit(i)*22-py);if(d<bd){bd=d;best={a:t.a,v:t.ch,g:"comparison"}}});
     D.dT.forEach((t,i)=>{if(!t.a)return;const d=Math.hypot(G.fxc(t.v)-px,G.yT+jit(i+7)*22-py);if(d<bd){bd=d;best={a:t.a,v:t.v,g:"topic"}}});return best}
   if(K.vis.threads<.5)return null;
   let best=null,bd=18;
   D.threads.forEach(th=>{let near=null,nd=1e9;th.pts.forEach(p=>{if(p[1]==null)return;const dx=Math.abs(G.x(p[0])-px);if(dx<nd){nd=dx;near=p}});if(!near||nd>40)return;const d=Math.abs(G.y(near[1])-py);if(d<bd){bd=d;best={a:th.a,v:near[1],t:near[0],g:"comparison"}}});
   return best}
-function keyHover(e){const h=keyPick(e);const changed=(h&&h.a)!==(K.hover&&K.hover.a);K.hover=h;if(changed)drawKey(true);
+function keyHover(e){if(K.step===5)return;const h=keyPick(e);const changed=(h&&h.a)!==(K.hover&&K.hover.a);K.hover=h;if(changed)drawKey(true);
   if(!h){hideTip();return}
   showTip(`<b>${esc(h.a.title)}</b><div class="r"><span>${h.g==="topic"?"topic":"comparison"} article</span><span>${esc(subName(h.a.subgroup))}</span></div><div class="r"><span>${h.t?dlabT(h.t):"change"}</span><span>${h.t?fmt(h.v,1)+" per 10,000 words":sgn(h.v,1)}</span></div><div class="r" style="opacity:.7"><span>select to open</span></div>`,e.clientX,e.clientY)}
 
@@ -1759,7 +1745,7 @@ function drawBoard(){
 /* ---------- headline 4: the ratchet ---------- */
 const RAT={pick:null,cur:null};
 function survSVG(g,W,ph){
-  const c=g.critical,H=ph?190:220,m={l:38,r:ph?52:96,t:14,b:30},days=[0,1,7,30,90];
+  const c=g.critical,H=ph?160:220,m={l:38,r:ph?52:96,t:14,b:30},days=[0,1,7,30,90];
   const x=v=>m.l+Math.log1p(v)/Math.log1p(90)*(W-m.l-m.r),y=lin(0,1,H-m.b,m.t);
   let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Share of added loaded words still present, and of removals still holding, after 1, 7, 30 and 90 days">`;
   [0,.25,.5,.75,1].forEach(v=>s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-6}" y="${y(v)+3.5}" text-anchor="end">${v*100}%</text>`);
@@ -1811,7 +1797,7 @@ function drawRatchet(){
 function ratSurv(){$$("#ratWrap .sv").forEach(el=>{el.innerHTML=survSVG(R.ratchet[el.dataset.g],Math.max(240,el.clientWidth),isPhone())});const f=$("#survFig");if(f)revealOnView(f)}
 function beatGeom(){const el=$("#beatChart"),A=R.ratchet&&R.ratchet.articles[RAT.pick];if(!el||!A)return null;
   const tl=(A.fs_timeline||[]).map(x=>({t:Date.parse(x[0]+"T00:00:00Z"),id:x[1],rv:+x[2]||0})).filter(x=>!isNaN(x.t)).sort((a,b)=>a.t-b.t);
-  const W=Math.max(260,el.clientWidth),ph=isPhone(),H=ph?150:180,m={l:ph?8:64,r:10,t:12,b:26};
+  const W=Math.max(260,el.clientWidth),ph=isPhone(),H=ph?124:180,m={l:ph?8:64,r:10,t:12,b:26};
   const t0=Date.UTC(2021,0,1),t1=Math.max(ym(R.dates.at(-1))+864e5*60,tl.length?tl.at(-1).t:0),x=lin(t0,t1,m.l,W-m.r);
   const maxId=Math.max(1,...tl.map(e=>e.id)),y=v=>m.t+v/maxId*(H-m.t-m.b);
   return {el,A,tl,W,H,m,x,y,t0,t1,ph,maxId}}
@@ -1856,7 +1842,7 @@ function drawXL(){
   const rc=document.createElement("canvas");rc.width=160;rc.height=10;const cx=rc.getContext("2d");for(let i=0;i<160;i++){cx.fillStyle=css(RP[Math.round(i/159*(RP.length-1))]);cx.fillRect(i,0,1,10)}
   $("#xlRamp").innerHTML=`<span>0</span>`;$("#xlRamp").append(rc);$("#xlRamp").insertAdjacentHTML("beforeend",`<span>${fmt(vmax,1)}+ per 10,000 words</span><span class="key" style="margin-left:12px"><i style="background:repeating-linear-gradient(135deg,var(--faint) 0 3px,transparent 3px 6px);border:1px solid var(--rule)"></i>no article in that language, or no copy</span>`);
   $("#xlPicks").onclick=e=>{const b=e.target.closest(".pick");if(b){S.xlT=b.dataset.t;xlPaint(sum,col)}};
-  host.querySelector(".stripes").addEventListener("click",e=>{const b=e.target.closest(".stripe");if(b&&!b.classList.contains("na")){S.xlL=b.dataset.l;xlPaint(sum,col)}});
+  host.querySelector(".stripes").addEventListener("click",e=>{const b=e.target.closest(".stripe");if(b&&!b.classList.contains("na")){S.xlL=b.dataset.l;S.xlTapped=true;xlPaint(sum,col)}});
   xlPaint(sum,col);
   const up=l=>{const v=tt.map(t=>X.articles[t][l]).filter(a=>a&&a.series&&a.series.length>1).map(a=>sum(a.series.at(-1))-sum(a.series[0]));return v.length?v.filter(d=>d>0).length/v.length:null};
   const en=up("en"),oth=langs.filter(l=>l!=="en").map(up).filter(v=>v!=null),om=oth.length?oth.reduce((s,v)=>s+v,0)/oth.length:null;
@@ -1877,6 +1863,7 @@ function xlPaint(sum,col){
   xlShow(sum)}
 function xlShow(sum){
   const X=R.crosslang,t=S.xlT,l=S.xlL,a=(X.articles[t]||{})[l],pane=$("#xlPane");
+  if(isPhone()&&!S.xlTapped){pane.hidden=true;return}pane.hidden=false;
   if(!a||!a.series||!a.series.length){pane.innerHTML=`<div class="note">No language selected.</div>`;return}
   const v0=a.series[0],v1=a.series.at(-1),o=wdiff(v0.lead||"",v1.lead||""),rates=Object.keys(v1.rates||{});
   const link=r=>r.revid?`<a href="https://${l}.wikipedia.org/w/index.php?oldid=${r.revid}" target="_blank" rel="noopener">rev ${r.revid} ↗</a>`:"";
@@ -1990,18 +1977,21 @@ function route(){const lab=isLab(),v=$("#view-lab");$("#view-report").hidden=lab
     if(!LAB_INIT){LAB_INIT=true;labCall("init")}else{if(STALE.lab){STALE.lab=false;labCall("redraw")}if(WFD.labIntent)labCall("intent")}}
   else if(STALE.report){STALE.report=false;HM=null;redrawAll()}}
 function openInLab(spec){WFD.labIntent=spec||null;if(isLab())route();else location.hash="#lab"}
-function openInReport(id){location.hash="#report";setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})},30)}
+let REPORT_TARGET=null;
+function scrollToReport(id){const el=document.getElementById(id);if(!el)return;const fold=el.closest&&el.closest("details:not([open])");if(fold)fold.open=true;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{el.scrollIntoView({behavior:"auto",block:"start"});
+    setTimeout(()=>{const t=el.getBoundingClientRect().top;if(t<0||t>120)el.scrollIntoView({behavior:"auto",block:"start"})},250)}))}
+function openInReport(id){if(!isLab()){scrollToReport(id);return}REPORT_TARGET=id||null;location.hash="#report"}
 
 /* ---------- init ---------- */
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
-function redrawAll(){safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawES);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
+function redrawAll(){safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
 function init(){
   if(!R){$("#lede").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
   safe(drawLede);safe(drawBreathe);safe(drawCards);
   const fs=$("#frameSel");["critical_rate","connection_rate",...(R.frames||[])].forEach(k=>fs.append(new Option(LABEL[k]||k,k)));
   fs.onchange=()=>{S.frame=fs.value;drawTrend()};
   seg($("#partA"),v=>{S.part=v;drawTrend()});seg($("#setA"),v=>{S.set=v;drawTrend()});
-  seg($("#esOut"),v=>{S.es=v;drawES()});seg($("#esPart"),v=>{S.esPart=v;drawES()});
   seg($("#hmMode"),v=>{S.hmMode=v;drawHeat()});seg($("#hmPart"),v=>{S.hmPart=v;drawHeat()});$("#hmSort").onchange=e=>{S.hmSort=e.target.value;drawHeat()};
   const wins=[...new Set((R.did||[]).map(d=>d.window))];S.win=wins[0];
   const wl={"whole window":"Whole period","pre-war":"Before the war","post-war":"Since the war"};
@@ -2014,16 +2004,14 @@ function init(){
   const cv=$("#hero");cv.addEventListener("pointermove",heroHover);cv.addEventListener("pointerdown",heroHover);cv.addEventListener("pointerleave",hideTip);
   safe(drawHero,true);
   safe(keyInit);safe(drawChance);safe(drawBoard);
-  stB=stepsB();
-  safe(drawTrend);safe(minis);safe(drawES);safe(drawHeat);safe(drawForest);safe(traceInit);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
+  safe(drawTrend);safe(minis);safe(drawHeat);safe(drawForest);safe(traceInit);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
-  scrolly($("#stepsB"),stB,drawES);
   document.addEventListener("click",e=>{const b=e.target.closest("[data-intent]");if(!b)return;e.preventDefault();let it=null;try{it=JSON.parse(b.dataset.intent)}catch(x){}openInLab(it)});
   const ts=$("#testStats");if(ts)ts.addEventListener("toggle",()=>{if(ts.open)safe(drawChance,true)});
   safe(foldPhone);
   const re=()=>{if(isLab()){STALE.report=true;labCall("redraw")}else{STALE.lab=LAB_INIT;HM=null;redrawAll()}};
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;re()},150)});
-  addEventListener("hashchange",()=>{const h=location.hash,was=$("#view-report").hidden;route();if(VIEWS.includes(h)||h===""){if(was!==isLab())scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
+  addEventListener("hashchange",()=>{const h=location.hash,was=$("#view-report").hidden;route();if(VIEWS.includes(h)||h===""){if(REPORT_TARGET&&!isLab()){const id=REPORT_TARGET;REPORT_TARGET=null;scrollToReport(id)}else if(was!==isLab())scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
   if(isLab())STALE.report=true;
   route();
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change",re);
