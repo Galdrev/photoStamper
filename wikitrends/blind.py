@@ -25,7 +25,7 @@ RUBRIC_VERSION = "v2"
 
 NAMES = """
 Israeli-occupied|Israel Defense Forces|Israelis|Israeli|Israel|Zionists|Zionist|Zionism|Anti-Zionism|anti-Zionist|anti-Zionism
-Jewish|Jews|Jew|Judaism|Judaic|Hebrew|Yishuv|Eretz Israel|Land of Israel|Aliyah|Knesset|IDF|Mossad|Haganah|Irgun|Likud|Netanyahu|Ben-Gurion|Herzl
+Jewish|Jewry|Jews|Jew|Zion|Judaism|Judaic|Hebrew|Yishuv|Eretz Israel|Land of Israel|Aliyah|Knesset|IDF|Mossad|Haganah|Irgun|Likud|Netanyahu|Ben-Gurion|Herzl
 Palestinians|Palestinian|Palestine|Hamas|Hezbollah|PLO|Fatah|Gaza Strip|Gaza|West Bank|East Jerusalem|Jerusalem|Tel Aviv|Golan Heights|Golan|Nakba|Intifada
 Arabs|Arab|Ottoman|British Mandate|Mandatory|Holocaust|Shoah|Torah|Talmud|rabbinic|rabbis|rabbi|synagogue|Sephardic|Ashkenazi|Mizrahi|kibbutz|Levant|Sinai|Lebanon|Syria|Jordan|Egypt|Iran
 Kurds|Kurdish|Kurdistan|Turks|Turkish|Turkey|Armenians|Armenian|Armenia|Azerbaijani|Azerbaijan|Karabakh|Artsakh

@@ -186,7 +186,7 @@ svg .lbl{fill:var(--ink);font-weight:600}
 .step.on{border-left-color:var(--ink)}
 .step .k{font:600 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .step .go{justify-self:start;font:500 12px var(--mono);background:none;border:0;padding:0;color:var(--add-ink);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
-.sticky{position:sticky;top:calc(env(safe-area-inset-top,0px) + 4vh);z-index:2}
+.sticky{position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px + 2vh);z-index:2}
 .delta{font:500 .86em var(--mono);padding:0 2px;white-space:nowrap}
 .delta.up{color:var(--inc)} .delta.dn{color:var(--dec)}
 .sw{display:inline-block;width:.8em;height:.8em;border-radius:2px;vertical-align:-.05em;margin-right:4px}
@@ -378,9 +378,74 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
 #tip b{font-weight:600}
 #tip .r{display:flex;justify-content:space-between;gap:14px}
 
+/* tabs + playground */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:25;background:var(--paper);border-bottom:1px solid var(--rule)}
+.tabs-in{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;gap:4px 22px;align-items:stretch;min-height:46px}
+.tabs a{display:flex;align-items:center;gap:8px;font:600 14px var(--body);color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;padding-top:3px}
+.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ink)}
+.tabs a:hover{color:var(--ink)}
+.tabs-n{font:500 10.5px var(--mono);border:1px solid currentColor;border-radius:2px;padding:1px 4px}
+.tabs-name{margin-left:auto;align-self:center;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pg-head{display:grid;gap:14px;padding-top:40px;max-width:70ch}
+.pg-head h1{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.025em}
+.pg-index{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 13px var(--mono)}
+.toy{background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--ink);border-radius:4px;padding:20px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:40px;scroll-margin-top:60px}
+.toy-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px}
+.toy h2{font-size:clamp(26px,3.2vw,36px)}
+.toy-q{font:400 17px/1.55 var(--body);max-width:68ch}
+.teach{border-top:1px solid var(--rule);padding-top:12px;font:400 15.5px/1.55 var(--body);color:var(--ink-2);max-width:72ch}
+.teach b{color:var(--ink)}
+.btn{font:600 13px var(--body);border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:3px;padding:9px 14px;cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.di-box{position:relative;touch-action:none;user-select:none;-webkit-user-select:none}
+.di-box.done{touch-action:auto}
+.di-box svg{display:block;width:100%;overflow:visible}
+.di-sliders{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:8px 18px}
+.di-sliders label{display:grid;grid-template-columns:70px minmax(0,1fr) 44px;gap:8px;align-items:center;font:12px var(--mono);color:var(--muted)}
+.bc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.bc-t{border:1px solid var(--rule);border-radius:3px;padding:14px 16px;display:grid;gap:8px;align-content:start;background:var(--paper)}
+.bc-t .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.bc-t p{font:400 16.5px/1.6 var(--display);unicode-bidi:plaintext}
+.bc-t.newer{border-color:var(--ink)}
+.ent{font:500 .78em var(--mono);background:var(--faint);border:1px solid var(--rule);border-radius:2px;padding:0 3px;white-space:nowrap}
+#bcBox{display:grid;gap:12px}
+.bc-choices{display:flex;flex-wrap:wrap;gap:8px}
+.bc-choices .btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.bc-reveal{border-left:3px solid var(--ink);padding:4px 0 4px 14px;display:grid;gap:6px;font-size:15.5px}
+.bc-reveal .verdict{font:600 16px var(--body)}
+.bc-prog{display:flex;gap:4px;flex-wrap:wrap}
+.bc-prog i{width:18px;height:6px;border-radius:1px;background:var(--faint)}
+.bc-prog i.on{background:var(--ink-2)} .bc-prog i.cur{background:var(--add-bd)}
+.chip.word{font:500 12px var(--body);display:inline-flex;align-items:center;gap:6px;padding:3px 4px 3px 8px;color:var(--ink);border-color:var(--rule);background:var(--paper)}
+.chip.word i{width:12px;height:3px;border-radius:1px}
+.chip.word button{border:0;background:none;color:var(--muted);cursor:pointer;font:600 14px/1 var(--body);padding:0 4px}
+.tm-stage{display:grid;gap:14px;padding:20px;border:1px solid var(--rule);border-radius:4px;background:var(--paper)}
+.tm-date{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.tm-date span:first-child{font:500 clamp(30px,5vw,48px)/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tm-seen{font:500 14px var(--mono);color:var(--ink-2);min-height:1.4em}
+.tm-seen b{font:500 22px var(--display);color:var(--ink)}
+.big-range{width:100%;height:36px;margin:0;accent-color:var(--topic);cursor:pointer}
+.tm-scale{position:relative;height:16px;font:10.5px var(--mono);color:var(--muted)}
+.tm-scale span{position:absolute;transform:translateX(-50%)}
+.rp-stage{display:grid;gap:12px}
+.rp-strip{position:relative}
+.rp-strip canvas{display:block;width:100%;height:64px}
+.rp-now{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:baseline}
+.rp-now .d{font:500 clamp(26px,4vw,40px)/1 var(--display);font-variant-numeric:tabular-nums}
+.rp-ct{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border-top:1px solid var(--ink)}
+.rp-ct div{padding-top:8px}
+.rp-ct b{display:block;font:500 28px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.rp-ct span{font:11.5px/1.3 var(--mono);color:var(--muted)}
+.rp-s{font:400 clamp(18px,2.2vw,24px)/1.45 var(--display);min-height:4.4em;padding:14px 16px;border:1px solid var(--rule);border-radius:3px;background:var(--paper)}
+.rp-s del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
+.rp-s ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
+.rp-seek{width:100%;accent-color:var(--ink)}
+
 @media (max-width:900px){
   .scrolly{grid-template-columns:minmax(0,1fr);gap:0}
-  .scrolly .sticky{order:-1;top:env(safe-area-inset-top,0px);background:var(--paper);padding-block:8px;margin-inline:-4px;padding-inline:4px}
+  .scrolly .sticky{order:-1;top:calc(env(safe-area-inset-top,0px) + 46px);background:var(--paper);padding-block:8px;margin-inline:-4px;padding-inline:4px}
   .scrolly .steps{gap:46vh;padding-block:30vh 30vh;position:relative;z-index:3}
   .step{box-shadow:0 6px 24px rgb(0 0 0/.08)}
   #trend,#es{height:clamp(210px,32vh,300px)!important}
@@ -421,6 +486,12 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
   .facts b{font-size:26px}
   .sentence{min-height:9em}
   .dumbs,.clocks{grid-template-columns:minmax(0,1fr)}
+  .tabs-name{display:none}
+  .tabs-in{gap:4px 18px}
+  .toy{padding:14px}
+  .bc{grid-template-columns:minmax(0,1fr)}
+  .rp-ct{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rp-ct b{font-size:24px}
   .tcard{grid-template-columns:minmax(0,1fr);gap:8px}
   #trPicks{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
   #trPicks .pick,#trPicks .grp{flex:none}
@@ -431,7 +502,9 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
 
 <div id="tip" hidden></div>
 <div id="gloss" role="tooltip" hidden></div>
+<nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The report</a><a href="#playground" id="tabPlay" aria-current="false">Playground <span class="tabs-n">5 toys</span></a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
 <div class="wrap">
+<div id="view-report">
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 2021–2026</span></div>
 
 <header class="hero">
@@ -717,6 +790,63 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
     <div class="lex" id="lex"></div>
   </div></details>
 </section>
+</div>
+<div id="view-playground" hidden>
+  <header class="pg-head">
+    <div class="eyebrow">Playground</div>
+    <h1>Play with the data</h1>
+    <p class="deck">Five small toys built on the same data as the report. Guess, judge, race words and rewind time. Every toy uses real numbers from this study, and each one ends with what it teaches.</p>
+    <nav class="pg-index" aria-label="Toys"><a href="#playground" data-go="toyDraw">You draw it</a><a href="#playground" data-go="toyCoder">Be the coder</a><a href="#playground" data-go="toyRace">Word race</a><a href="#playground" data-go="toyTime">Time machine</a><a href="#playground" data-go="toyReplay">Edit-war replay</a></nav>
+  </header>
+
+  <section class="toy" id="toyDraw" aria-labelledby="diH">
+    <div class="toy-h"><h2 id="diH">You draw it</h2><span class="seg" id="diRound" role="group" aria-label="Round"><button data-v="full" aria-pressed="true">Round 1: whole article</button><button data-v="lead" aria-pressed="false">Round 2: opening paragraph</button></span></div>
+    <p class="toy-q" id="diQ">How often did topic articles use words like “colonial”, “apartheid” and “genocide” after the war began? The teal line shows the real numbers up to July 2023. <b>Draw the rest of the line</b> in the shaded area.</p>
+    <div class="di-box" id="diBox"></div>
+    <div class="controls"><button class="btn primary" type="button" id="diReveal" disabled>Show me the real line</button><button class="btn" type="button" id="diReset">Start again</button><span class="cap" id="diHint">Drag across the shaded area with your mouse or finger.</span></div>
+    <details class="stats"><summary>Use sliders instead <span>one per quarter, for keyboard and screen readers</span></summary><div class="in"><div class="di-sliders" id="diSliders"></div></div></details>
+    <p class="means" id="diOut"></p>
+    <p class="teach"><b>What it teaches:</b> a rising line can look dramatic on its own. The comparison line for other articles tells you whether the rise is special to these articles.</p>
+  </section>
+
+  <section class="toy" id="toyCoder" aria-labelledby="bcH">
+    <div class="toy-h"><h2 id="bcH">Be the coder</h2><span class="cap" id="bcScore"></span></div>
+    <p class="toy-q">Two versions of the same opening paragraph. Names are hidden as [ENTITY-1], [ENTITY-2] and so on. <b>Which version is harsher on its subject?</b></p>
+    <div id="bcBox"></div>
+    <p class="cap">AI coders saw the same masked text, in both orders.</p>
+    <p class="teach"><b>What it teaches:</b> judging tone is hard, and careful readers disagree. That is why the study hides names and dates, codes each pair in both orders and reports how often coders agree.</p>
+  </section>
+
+  <section class="toy" id="toyRace" aria-labelledby="wrH">
+    <div class="toy-h"><h2 id="wrH">Word race</h2></div>
+    <p class="toy-q">Pick up to three words and watch them race. Solid lines are topic articles; dashed lines are articles about other countries and conflicts.</p>
+    <div class="controls"><span class="ctl">Try</span><span class="picks" id="wrPresets"></span></div>
+    <div class="controls"><label class="ctl" for="wrIn">Add a word</label><input type="search" id="wrIn" list="wrList" placeholder="type a word" autocomplete="off"><datalist id="wrList"></datalist><button class="btn" type="button" id="wrAdd">Add</button><span class="picks" id="wrChips"></span></div>
+    <div class="fig"><div class="chart" id="wrChart" style="height:300px"></div><div class="legend" id="wrKey"></div><p class="cap">How often each word appears per 10,000 words of article text.</p></div>
+    <p class="means" id="wrOut"></p>
+    <p class="teach"><b>What it teaches:</b> if a word rises in both the solid and the dashed line, it is following the news everywhere. If it rises only in the solid line, the change is specific to these articles.</p>
+  </section>
+
+  <section class="toy" id="toyTime" aria-labelledby="tmH">
+    <div class="toy-h"><h2 id="tmH">Time machine</h2><label class="ctl" for="tmSel">Article <select id="tmSel"></select></label></div>
+    <p class="toy-q">Drag the slider through time and watch an article’s first sentence change. Removed words are amber and struck through; added words are blue.</p>
+    <div class="tm-stage">
+      <div class="tm-date"><span id="tmDate"></span><span class="cap" id="tmVer"></span></div>
+      <blockquote class="sentence" id="tmText" style="margin:0;padding:0;min-height:5.6em" aria-live="polite"></blockquote>
+      <p class="tm-seen" id="tmSeen"></p>
+      <input type="range" class="big-range" id="tmRange" min="0" max="1" step="1" value="0" aria-label="Point in time">
+      <div class="tm-scale" id="tmScale"></div>
+    </div>
+    <p class="teach"><b>What it teaches:</b> the definition most readers see can change several times, and each version reaches a different number of people.</p>
+  </section>
+
+  <section class="toy" id="toyReplay" aria-labelledby="rpH">
+    <div class="toy-h"><h2 id="rpH">Edit-war replay</h2><label class="ctl" for="rpSel">Article <select id="rpSel"></select></label></div>
+    <p class="toy-q">Fast-forward through every change to an article’s first sentence. Each colour is one version of the sentence. Amber ticks mark changes that were later flagged as reverted.</p>
+    <div id="rpBox"></div>
+    <p class="teach"><b>What it teaches:</b> counting versions is not enough. A sentence that flips back and forth is contested; one that changes rarely and then holds has settled.</p>
+  </section>
+</div>
 <div class="foot"><span>Wikipedia Framing Drift</span><span>Word counts are a proxy. They are not a verdict on accuracy or bias.</span></div>
 </div>
 
@@ -1450,6 +1580,182 @@ function drawMethod(){
   $("#mGroups").insertAdjacentHTML("beforeend",` In this build: ${R.n_treatment} topic and ${R.n_control} comparison articles in the test panel (${R.n_treatment_hand??"–"} hand-picked topic, ${R.n_control_shocked??"–"} comparison articles with their own war), ${R.n_new_topic_articles??"–"} topic articles created during the window, and ${nc} excluded comparison articles.`);
 }
 
+/* ---------- playground ---------- */
+const PG={draw:{round:"full",st:{}},coder:{i:0,round:0,choice:null,ra:0,rn:0},race:{words:[]},tm:{t:null,i:0},rp:{t:null,k:0,tm:null,raf:0}};
+const pgNote=t=>`<div class="note">${t}</div>`;
+function store(k,v){try{if(v===undefined){const x=localStorage.getItem(k);return x?JSON.parse(x):null}localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+const millions=n=>n>=1e6?`${(n/1e6).toFixed(n>=1e7?0:1)} million`:n>=1e3?`${(Math.round(n/1e3)*1e3).toLocaleString("en-US")}`:String(n);
+
+/* toy 1: you draw it */
+function diData(){const p=PG.draw.round,t=(R.trends&&R.trends.treatment&&R.trends.treatment[p])||[],c=(R.trends&&R.trends.control&&R.trends.control[p])||[];
+  const dates=t.map(r=>r.date),cut=dates.filter(d=>d<=(R.pre_war||"2023-07")).length;
+  return {dates,t:t.map(r=>r.critical_rate),c:dates.map(d=>{const r=c.find(x=>x.date===d);return r?r.critical_rate:null}),cut}}
+function diState(){const p=PG.draw.round;return PG.draw.st[p]||(PG.draw.st[p]={g:{},rev:false,prog:0})}
+function diFilled(D,s){const n=D.dates.length,out=[];let last=D.t[D.cut-1];const set=Object.keys(s.g).map(Number).sort((a,b)=>a-b);
+  for(let i=D.cut;i<n;i++){if(s.g[i]!=null){out[i]=s.g[i];continue}const nx=set.find(j=>j>i),pv=[...set].reverse().find(j=>j<i);
+    out[i]=pv!=null&&nx!=null?s.g[pv]+(s.g[nx]-s.g[pv])*(i-pv)/(nx-pv):pv!=null?s.g[pv]:nx!=null?s.g[nx]:last}return out}
+function drawItInit(){
+  const D=diData();
+  if(!D.dates.length||D.cut<2||D.cut>=D.dates.length){$("#toyDraw").querySelector(".di-box").outerHTML=pgNote("The yearly word counts are not in this build yet, so there is nothing to draw against.");$("#diReveal").disabled=true;return}
+  seg($("#diRound"),v=>{PG.draw.round=v;drawItDraw();diSliders()});
+  $("#diReveal").onclick=()=>{const s=diState();s.rev=true;s.prog=RM.matches?1:0;const t0=performance.now();const st=n=>{s.prog=Math.min(1,(n-t0)/1300);drawItDraw();if(s.prog<1)requestAnimationFrame(st)};RM.matches?drawItDraw():requestAnimationFrame(st)};
+  $("#diReset").onclick=()=>{PG.draw.st[PG.draw.round]={g:{},rev:false,prog:0};drawItDraw();diSliders()};
+  const box=$("#diBox");let down=false,lastI=null;
+  const at=e=>{const g=box._g;if(!g)return null;const r=box.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;let bi=null,bd=1e9;for(let i=g.D.cut;i<g.D.dates.length;i++){const d=Math.abs(g.x(i)-px);if(d<bd){bd=d;bi=i}}
+    if(px<g.x(g.D.cut-1)-10)return null;return {i:bi,v:Math.max(0,Math.min(g.ymax,g.yi(py)))}};
+  const put=e=>{const s=diState();if(s.rev)return;const a=at(e);if(!a)return;if(lastI!=null&&Math.abs(a.i-lastI)>1){const v0=s.g[lastI];for(let k=Math.min(a.i,lastI)+1;k<Math.max(a.i,lastI);k++)s.g[k]=v0+(a.v-v0)*(k-lastI)/(a.i-lastI)}s.g[a.i]=a.v;lastI=a.i;drawItDraw(true)};
+  box.addEventListener("pointerdown",e=>{if(diState().rev)return;down=true;lastI=null;try{box.setPointerCapture(e.pointerId)}catch(_){}put(e);e.preventDefault()});
+  box.addEventListener("pointermove",e=>{if(down)put(e)});
+  const up=()=>{if(down){down=false;lastI=null;diSliders()}};box.addEventListener("pointerup",up);box.addEventListener("pointercancel",up);
+  drawItDraw();diSliders();
+}
+function diSliders(){const D=diData(),s=diState(),host=$("#diSliders");if(!host||!D.dates.length)return;const f=diFilled(D,s),mx=box_ymax(D);
+  host.innerHTML=D.dates.slice(D.cut).map((d,j)=>{const i=D.cut+j;return `<label>${dlab(d)}<input type="range" min="0" max="${mx}" step="${(mx/200).toFixed(3)}" value="${f[i].toFixed(2)}" data-i="${i}" ${s.rev?"disabled":""} aria-label="Your guess for ${dlab(d)}"><span>${fmt(f[i],1)}</span></label>`}).join("");
+  host.oninput=e=>{const i=+e.target.dataset.i;if(isNaN(i))return;const s=diState();s.g[i]=+e.target.value;e.target.nextElementSibling.textContent=fmt(+e.target.value,1);drawItDraw(true)}}
+function box_ymax(D){return niceMax(Math.max(...D.t.filter(v=>v!=null),...D.c.filter(v=>v!=null),1)*1.35)}
+function drawItDraw(fromDrag){
+  const D=diData(),s=diState(),box=$("#diBox");if(!box||!D.dates.length)return;setSeg($("#diRound"),PG.draw.round);
+  const W=Math.max(260,box.clientWidth),H=isPhone()?270:330,m={l:40,r:isPhone()?14:96,t:18,b:24},n=D.dates.length,ymax=box_ymax(D);
+  const ts=D.dates.map(ym),x=i=>lin(ts[0],ts[n-1],m.l,W-m.r)(ts[i]),y=lin(0,ymax,H-m.b,m.t),yi=py=>(H-m.b-py)/(H-m.b-m.t)*ymax;
+  box._g={D,x,yi,ymax};const f=diFilled(D,s),anyG=Object.keys(s.g).length>0;
+  let h=`<svg width="${W}" height="${H}" role="img" aria-label="Draw your guess of the line after July 2023">`;
+  h+=`<rect x="${x(D.cut-1)}" y="${m.t}" width="${W-m.r-x(D.cut-1)}" height="${H-m.b-m.t}" style="fill:var(--faint);opacity:${s.rev?.35:.8}"/>`;
+  ticks(0,ymax,4).forEach(v=>h+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}" style="stroke:var(--faint)"/><text x="${m.l-6}" y="${y(v)+3.5}" text-anchor="end">${fmt(v,0)}</text>`);
+  for(let yr=+D.dates[0].slice(0,4);yr<=+D.dates[n-1].slice(0,4);yr++){const tt=Math.max(ts[0],Date.UTC(yr,0,1)),xx=lin(ts[0],ts[n-1],m.l,W-m.r)(tt);h+=`<text x="${xx+2}" y="${H-6}">${isPhone()?"’"+String(yr).slice(2):yr}</text>`}
+  const wx=lin(ts[0],ts[n-1],m.l,W-m.r)(WAR);h+=`<line x1="${wx}" x2="${wx}" y1="${m.t-8}" y2="${H-m.b}" style="stroke:var(--war);stroke-dasharray:3 3"/><text x="${wx+4}" y="${m.t+2}" style="fill:var(--war)">7 Oct 2023</text>`;
+  const path=(arr,i0,i1)=>{let d="";for(let i=i0;i<=i1;i++){if(arr[i]==null)continue;d+=(d?"L":"M")+x(i).toFixed(1)+","+y(arr[i]).toFixed(1)}return d};
+  h+=`<path d="${path(D.t,0,D.cut-1)}" style="fill:none;stroke:var(--topic);stroke-width:2.6;stroke-linejoin:round"/><circle cx="${x(D.cut-1)}" cy="${y(D.t[D.cut-1])}" r="4.5" style="fill:var(--topic);stroke:var(--sheet);stroke-width:2"/>`;
+  if(!anyG&&!s.rev)h+=`<text x="${(x(D.cut-1)+W-m.r)/2}" y="${(m.t+H-m.b)/2}" text-anchor="middle" class="lbl" style="font-size:13px">Draw here →</text>`;
+  if(anyG||s.rev){const g=[...D.t.slice(0,D.cut)];for(let i=D.cut;i<n;i++)g[i]=f[i];h+=`<path d="${path(g,D.cut-1,n-1)}" style="fill:none;stroke:var(--ink);stroke-width:2.2;stroke-dasharray:6 4;stroke-linecap:round"/>`;
+    for(let i=D.cut;i<n;i++)if(s.g[i]!=null)h+=`<circle cx="${x(i)}" cy="${y(f[i])}" r="2.6" style="fill:var(--ink)"/>`;
+    if(!isPhone())h+=`<text x="${x(n-1)+8}" y="${y(f[n-1])+4}" class="lbl">You: ${fmt(f[n-1],1)}</text>`}
+  if(s.rev){const p=s.prog;h+=`<path d="${path(D.t,D.cut-1,n-1)}" pathLength="1" style="fill:none;stroke:var(--topic);stroke-width:2.8;stroke-dasharray:1;stroke-dashoffset:${1-p}"/>`;
+    h+=`<path d="${path(D.c,0,n-1)}" pathLength="1" style="fill:none;stroke:var(--comp);stroke-width:2;stroke-dasharray:${p>=1?"5 4":"1"};stroke-dashoffset:${p>=1?0:1-p}"/>`;
+    if(p>=1&&!isPhone()){const ly=[[y(D.t[n-1]),`Real: ${fmt(D.t[n-1],1)}`,"--topic"],[y(D.c[n-1]),`Other: ${fmt(D.c[n-1],1)}`,"--comp"]];const yy=y(f[n-1]);ly.forEach(l=>{if(Math.abs(l[0]-yy)<14)l[0]+=l[0]<yy?-14:14});if(Math.abs(ly[0][0]-ly[1][0])<14)ly[1][0]=ly[0][0]+(ly[1][0]>=ly[0][0]?14:-14);ly.forEach(([yy,t,c])=>h+=`<text x="${x(n-1)+8}" y="${yy+4}" style="fill:var(${c});font-weight:600">${t}</text>`)}}
+  box.innerHTML=h+`</svg>`;box.classList.toggle("done",s.rev);
+  $("#diReveal").disabled=!anyG||s.rev;$("#diHint").textContent=s.rev?"Press “Start again” to have another go.":anyG?"Keep drawing to the right edge, or press the button.":"Drag across the shaded area with your mouse or finger.";
+  $("#diQ").innerHTML=`How often did topic articles use words like “colonial”, “apartheid” and “genocide” in ${PG.draw.round==="lead"?"their <b>opening paragraph</b>":"their <b>whole text</b>"} after the war began? The teal line shows the real numbers up to ${dlab(D.dates[D.cut-1])}. <b>Draw the rest of the line</b> in the shaded area.`;
+  if(s.rev&&s.prog>=1){const fut=[];for(let i=D.cut;i<n;i++)if(D.t[i]!=null)fut.push(Math.abs(f[i]-D.t[i]));const mae=fut.reduce((a,b)=>a+b,0)/Math.max(1,fut.length),rng=Math.max(...D.t.filter(v=>v!=null))-Math.min(...D.t.filter(v=>v!=null))||1,rel=mae/Math.max(rng,D.t[D.cut-1]*.25||1);
+    const word=rel<.15?"Very close.":rel<.4?"Close.":"Not quite.";const c0=D.c[D.cut-1],c1=D.c[n-1];
+    $("#diOut").innerHTML=`<b>${word}</b> You guessed the line would end at ${fmt(f[n-1],1)} per 10,000 words. It ended at ${fmt(D.t[n-1],1)}. On average your line was ${fmt(mae,1)} away. Over the same time, other articles (dashed grey-violet) went from ${fmt(c0,1)} to ${fmt(c1,1)}.`}
+  else $("#diOut").innerHTML="";
+  if(!fromDrag)$$("#diSliders input").forEach(inp=>{const i=+inp.dataset.i;inp.value=f[i];inp.disabled=s.rev;inp.nextElementSibling.textContent=fmt(f[i],1)});
+}
+
+/* toy 2: be the coder */
+const entify=s=>esc(s).replace(/\[ENTITY-(\d+)\]/g,'<span class="ent">ENTITY-$1</span>');
+function coderScore(){const sc=store("wt-play-coder")||{agree:0,total:0};$("#bcScore").innerHTML=sc.total?`You and the AI coders agreed on <b>${sc.agree} of ${sc.total}</b> pairs (${pct(sc.agree/sc.total)}) · <button class="gl" type="button" id="bcResetScore" style="text-decoration-style:solid">reset</button>`:"Your score is saved on this device only.";const rb=$("#bcResetScore");if(rb)rb.onclick=()=>{store("wt-play-coder",{agree:0,total:0});coderScore()}}
+function coderInit(){const P=R.play_pairs;if(!P||!P.length){$("#bcBox").innerHTML=pgNote("The masked pairs for this game are not in this build yet. When they are, you will judge ten real before-and-after pairs per round.");return}
+  const saved=store("wt-play-coder-pos");if(saved){PG.coder.round=saved.round||0;PG.coder.i=0}coderScore();coderDraw()}
+function coderItem(){const P=R.play_pairs;return P[(PG.coder.round*10+PG.coder.i)%P.length]}
+function coderDraw(){
+  const P=R.play_pairs,C=PG.coder,box=$("#bcBox");if(!P||!P.length)return;
+  if(C.i>=10){box.innerHTML=`<div class="bc-reveal"><span class="verdict">Round ${C.round+1} done: you agreed with the AI coders on ${C.ra} of ${C.rn}.</span><span>${C.ra>=7?"That is high agreement.":C.ra>=4?"About half. Tone is genuinely hard to judge.":"You read these differently from the AI coders. That happens; it is why agreement is measured."}</span><div><button class="btn primary" type="button" id="bcNextRound">Next round</button></div></div>`;
+    $("#bcNextRound").onclick=()=>{C.round++;C.i=0;C.ra=0;C.rn=0;C.choice=null;store("wt-play-coder-pos",{round:C.round});coderDraw()};return}
+  const it=coderItem(),ch=C.choice;
+  const prog=`<div class="bc-prog" aria-label="Pair ${C.i+1} of 10">${Array.from({length:10},(_,k)=>`<i class="${k<C.i?"on":k===C.i?"cur":""}"></i>`).join("")}</div>`;
+  const side=(k,txt)=>{const newer=ch&&it.newer===k;return `<div class="bc-t ${newer?"newer":""}"><div class="lab"><span>${k==="left"?"Left":"Right"}</span>${ch?`<span>${newer?"newer · "+esc(it.d1||""):"older · "+esc(it.d0||"")}</span>`:""}</div><p dir="auto">${entify(txt)}</p></div>`};
+  let h=`<div class="cap">Pair ${C.i+1} of 10 · round ${C.round+1}</div>${prog}<div class="bc">${side("left",it.left)}${side("right",it.right)}</div>
+   <div class="bc-choices" role="group" aria-label="Which version is harsher on its subject?">${[["left","Left is harsher"],["right","Right is harsher"],["same","About the same"]].map(([v,l])=>`<button class="btn" type="button" data-v="${v}" aria-pressed="${ch===v}" ${ch?"disabled":""}>${l}</button>`).join("")}</div>`;
+  if(ch){const older=it.newer==="left"?"right":"left",aiSide=it.ai==="newer_harsher"?it.newer:it.ai==="newer_gentler"?older:"same",agree=ch===aiSide;
+    const chg=it.ai==="newer_harsher"?"made the article <b>harsher</b> on its subject":it.ai==="newer_gentler"?"made the article <b>gentler</b> on its subject":"made <b>no clear change</b> in tone";
+    const sideName=v=>v==="same"?"neither side":v==="left"?"the left side":"the right side";
+    h+=`<div class="bc-reveal" aria-live="polite"><span class="verdict">${agree?"You agreed with the AI coders.":"You read it differently from the AI coders."}</span>
+     <span>This is <b>${esc(it.title||"an article")}</b> (${it.group==="treatment"?"a topic article":"an article about another country or conflict"}). The ${it.newer==="left"?"left":"right"} text is the newer version${it.d1?` (${esc(it.d1)})`:""}; the other is from ${esc(it.d0||"earlier")}.</span>
+     <span>The AI coders concluded the edit ${chg}, so the harsher text is ${sideName(aiSide)}. You picked ${sideName(ch)}.</span>
+     ${it.rev0&&it.rev1?`<a href="https://en.wikipedia.org/w/index.php?diff=${it.rev1}&oldid=${it.rev0}" target="_blank" rel="noopener">See the real change on Wikipedia ↗</a>`:""}
+     <div><button class="btn primary" type="button" id="bcNext">${C.i<9?"Next pair →":"See your round"}</button></div></div>`}
+  box.innerHTML=h;
+  $$(".bc-choices .btn",box).forEach(b=>b.onclick=()=>{if(C.choice)return;C.choice=b.dataset.v;const older=it.newer==="left"?"right":"left",aiSide=it.ai==="newer_harsher"?it.newer:it.ai==="newer_gentler"?older:"same";const ag=C.choice===aiSide;C.rn++;if(ag)C.ra++;const sc=store("wt-play-coder")||{agree:0,total:0};sc.total++;if(ag)sc.agree++;store("wt-play-coder",sc);coderScore();coderDraw()});
+  const nb=$("#bcNext");if(nb)nb.onclick=()=>{C.i++;C.choice=null;coderDraw();$("#toyCoder").scrollIntoView({block:"nearest"})};
+}
+
+/* toy 3: word race */
+const RACE_COL=["--s2","--s1","--s4"],PRESETS=[["occupation","indigenous"],["terrorist","militant"],["genocide","Holocaust"],["hostage","famine"]];
+function wrFind(w){const W=R.word_race&&R.word_race.words||[];return W.find(x=>x.toLowerCase()===String(w).trim().toLowerCase())||null}
+function raceInit(){const WR=R.word_race;if(!WR||!WR.words||!WR.words.length||!WR.dates){$("#toyRace .fig").outerHTML=pgNote("Word counts for the race are not in this build yet.");$$("#toyRace .controls").forEach(c=>c.hidden=true);return}
+  $("#wrList").innerHTML=WR.words.map(w=>`<option value="${esc(w)}">`).join("");
+  const ok=PRESETS.map(p=>p.map(wrFind)).filter(p=>p.filter(Boolean).length>=2).map(p=>p.filter(Boolean));
+  $("#wrPresets").innerHTML=ok.map((p,i)=>`<button class="pick" type="button" data-i="${i}">${p.map(esc).join(" vs ")}</button>`).join("")||`<span class="cap">no presets available</span>`;
+  $("#wrPresets").onclick=e=>{const b=e.target.closest(".pick");if(b){PG.race.words=ok[+b.dataset.i].slice(0,3);raceDraw()}};
+  const add=()=>{const w=wrFind($("#wrIn").value);if(!w){$("#wrIn").setCustomValidity("Pick a word from the list");$("#wrIn").reportValidity();return}$("#wrIn").setCustomValidity("");if(!PG.race.words.includes(w)){PG.race.words.push(w);if(PG.race.words.length>3)PG.race.words.shift()}$("#wrIn").value="";raceDraw()};
+  $("#wrAdd").onclick=add;$("#wrIn").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();add()}});$("#wrIn").addEventListener("change",()=>{if(wrFind($("#wrIn").value))add()});
+  $("#wrChips").onclick=e=>{const b=e.target.closest("button[data-w]");if(b){PG.race.words=PG.race.words.filter(w=>w!==b.dataset.w);raceDraw()}};
+  PG.race.words=(ok[0]||WR.words.slice(0,2)).slice(0,3);raceDraw()}
+function raceDraw(){const WR=R.word_race;if(!WR||!WR.words)return;const ws=PG.race.words,xs=WR.dates.map(ym);
+  $("#wrChips").innerHTML=ws.map((w,i)=>`<span class="chip word"><i style="background:var(${RACE_COL[i]})"></i>${esc(w)}<button type="button" data-w="${esc(w)}" aria-label="Remove ${esc(w)}">×</button></span>`).join("")+(ws.length>=3?`<span class="cap">3 words max; adding one replaces the oldest</span>`:"");
+  $$("#wrPresets .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.textContent===ws.join(" vs "))));
+  const series=[];ws.forEach((w,i)=>{[["topic","",""],["comparison"," (other)","5 4"]].forEach(([g,suf,dash])=>{const v=WR[g]&&WR[g][w];if(v)series.push({key:w+g,label:w+suf,color:RACE_COL[i],dash,width:g==="topic"?2.4:1.7,pts:xs.map((t,k)=>[t,v[k]])})})});
+  if(!series.length){$("#wrChart").innerHTML=pgNote("Pick a word to start the race.");$("#wrKey").innerHTML="";$("#wrOut").innerHTML="";return}
+  chart($("#wrChart"),{series,vfmt:v=>fmt(v,2),xDomain:[xs[0],xs.at(-1)],aria:"Word race"});
+  $("#wrKey").innerHTML=ws.map((w,i)=>`<span class="key"><i class="ln" style="background:var(${RACE_COL[i]})"></i>${esc(w)}</span>`).join("")+`<span>solid line = topic articles · dashed line = other articles</span>`;
+  $("#wrOut").innerHTML=`<b>The race so far:</b> `+ws.map(w=>{const t=WR.topic&&WR.topic[w],c=WR.comparison&&WR.comparison[w];return `“${esc(w)}” went from ${t?fmt(t[0],1)+" to "+fmt(t.at(-1),1):"–"} in topic articles and ${c?fmt(c[0],1)+" to "+fmt(c.at(-1),1):"–"} in other articles`}).join("; ")+".";
+}
+
+/* toy 4: time machine */
+const TM_KEYS=["Zionism","Israel","Hamas","Nakba","Antisemitism","Jews","Judaism","Anti-Zionism","Gaza war","Gaza genocide","October 7 attacks","Israeli apartheid","Israeli–Palestinian conflict","History of Israel","Balfour Declaration","West Bank"],
+      TM_KEYS_C=["Kurdish nationalism","Hindu nationalism","Armenian genocide","Russo-Ukrainian War","Islamic State","Catholic Church","India","Taiwan","Kashmir conflict","Uyghur genocide","Irish nationalism","Islam","Turkey","Ukraine","Tibet"];
+function tmInit(){const by=new Map(R.articles.map(a=>[a.title,a])),ok=t=>by.has(t)&&(by.get(t).first_sentences||[]).length;
+  const a=TM_KEYS.filter(ok),b=TM_KEYS_C.filter(ok);
+  if(!a.length&&!b.length){$("#toyTime .tm-stage").outerHTML=pgNote("First-sentence histories are not in this build yet.");return}
+  $("#tmSel").innerHTML=(a.length?`<optgroup label="Topic articles">${a.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:"")+(b.length?`<optgroup label="Other articles">${b.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:"");
+  $("#tmSel").onchange=e=>tmSet(e.target.value);$("#tmRange").oninput=e=>{PG.tm.i=+e.target.value;tmDraw()};tmSet(a[0]||b[0])}
+function tmSet(t){const a=R.articles.find(x=>x.title===t);if(!a)return;PG.tm.t=a;$("#tmSel").value=t;
+  const i0=Math.max(0,R.dates.indexOf(a.first_sentences[0].date));a._tts=R.dates.slice(i0);a._tver=a._tts.map(d=>{let k=0;a.first_sentences.forEach((f,i)=>{if(f.date<=d)k=i});return k});
+  const rg=$("#tmRange");rg.max=a._tts.length-1;PG.tm.i=0;rg.value=0;
+  $("#tmScale").innerHTML=a._tts.map((d,i)=>d.endsWith("-01")&&(!isPhone()||+d.slice(0,4)%2===1)?`<span style="left:calc(${a._tts.length<2?50:i/(a._tts.length-1)*100}% + ${8-16*(a._tts.length<2?.5:i/(a._tts.length-1))}px)">${d.slice(0,4)}</span>`:"").join("");tmDraw()}
+function tmDraw(){const a=PG.tm.t,i=PG.tm.i,v=a._tver[i],f=a.first_sentences[v],pv=a.first_sentences[Math.max(0,v-1)];
+  $("#tmDate").textContent=dlab(a._tts[i]);$("#tmVer").textContent=`version ${v+1} of ${a.first_sentences.length}`;
+  $("#tmText").innerHTML=v===0?esc(f.s):renderW(wdiff(pv.s,f.s));
+  const ex=R.exposure&&R.exposure[a.title],m=ex&&ex.variants&&ex.variants.find(x=>x.s&&(x.s===f.s||f.s.startsWith(x.s)||x.s.startsWith(f.s)));
+  $("#tmSeen").innerHTML=m&&m.views?`This wording was seen by about <b>${millions(m.views)}</b> readers${m.share!=null?` (${pct(m.share)} of the article’s views since 2021)`:""}.`:"";}
+
+/* toy 5: edit-war replay */
+function rpInit(){const A=R.ratchet&&R.ratchet.articles;const ts=A?Object.keys(A).filter(t=>A[t].fs_timeline&&A[t].fs_timeline.length):[];
+  if(!ts.length){$("#rpBox").innerHTML=pgNote("The sentence-by-sentence edit history is not in this build yet. When it is, you can replay every change to a key article’s first sentence.");$("#rpSel").disabled=true;return}
+  const grp=t=>{const a=R.articles.find(x=>x.title===t);return a&&a.group==="treatment"?0:1};ts.sort((a,b)=>grp(a)-grp(b));
+  $("#rpSel").innerHTML=[0,1].map(g=>{const l=ts.filter(t=>grp(t)===g);return l.length?`<optgroup label="${g?"Other articles":"Topic articles"}">${l.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:""}).join("");
+  $("#rpSel").onchange=e=>rpSet(e.target.value);rpSet(ts.includes("Zionism")?"Zionism":ts[0])}
+function rpSet(t){rpStop();const a=R.ratchet.articles[t];const tl=a.fs_timeline.map(x=>({t:Date.parse(x[0]+"T00:00:00Z"),id:x[1],rv:+x[2]||0})).filter(x=>!isNaN(x.t)).sort((p,q)=>p.t-q.t);
+  const order=[];tl.forEach(e=>{if(!order.includes(e.id))order.push(e.id)});const vs=new Map((a.fs_variants||[]).map(v=>[v.id,v.s]));
+  const end=Math.max(tl.at(-1).t+30*864e5,ym(R.dates.at(-1))+90*864e5),start=Math.min(tl[0].t,Date.UTC(2021,0,1));
+  PG.rp={...PG.rp,name:t,a,tl,order,vs,start,end,k:tl.length-1,cur:end};
+  $("#rpBox").innerHTML=`<div class="rp-stage"><div class="rp-now"><span class="d" id="rpDate"></span><button class="btn primary" type="button" id="rpPlay">▶ Replay</button><span class="cap">Hours become seconds: the whole period plays in about ten seconds.</span></div>
+   <div class="rp-strip"><canvas id="rpCv" role="img" aria-label="Timeline of first-sentence versions, one colour per version"></canvas></div>
+   <input type="range" class="rp-seek" id="rpSeek" min="0" max="1000" value="1000" aria-label="Move through time">
+   <div class="rp-ct"><div><b id="rpV">0</b><span>versions so far</span></div><div><b id="rpC">0</b><span>changes</span></div><div><b id="rpR">0</b><span>flagged as reverted</span></div><div><b id="rpB">0</b><span>returns to an earlier wording</span></div></div>
+   <div class="rp-s" id="rpText" aria-live="polite"></div><p class="means" id="rpOut"></p></div>`;
+  $("#rpPlay").onclick=()=>PG.rp.raf?rpStop():rpPlay();$("#rpSeek").oninput=e=>{rpStop();PG.rp.cur=PG.rp.start+(PG.rp.end-PG.rp.start)*(+e.target.value)/1000;rpUpdate()};
+  rpStrip();rpUpdate();rpVerdict()}
+function rpCol(id){const i=PG.rp.order.indexOf(id),dark=lum(hex2rgb(tok("--paper")))<.5;return `hsl(${(i*137.508+190)%360} ${dark?50:42}% ${dark?62:46}%)`}
+function rpStrip(){const P=PG.rp,cv=$("#rpCv");if(!cv||!P.tl)return;const W=cv.clientWidth||600,H=64,dpr=Math.min(2,devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,H);
+  const x=t=>(t-P.start)/(P.end-P.start)*W,top=12,bh=30;
+  P.tl.forEach((e,k)=>{const x0=x(e.t),x1=x(k<P.tl.length-1?P.tl[k+1].t:P.end);c.fillStyle=rpCol(e.id);c.fillRect(x0,top,Math.max(1,x1-x0),bh);if(e.rv){c.fillStyle=tok("--del-bd");c.beginPath();c.moveTo(x0-4,0);c.lineTo(x0+4,0);c.lineTo(x0,8);c.fill()}});
+  c.fillStyle=tok("--muted");c.font=`10.5px ${tok("--mono")}`;for(let y=2021;y<=2026;y++){const xx=x(Date.UTC(y,0,1));if(xx<0||xx>W)continue;c.fillRect(xx,top+bh,1,5);c.fillText(isPhone()?"’"+String(y).slice(2):String(y),xx+2,H-2)}
+  const wx=x(WAR);c.strokeStyle=tok("--war");c.setLineDash([3,3]);c.beginPath();c.moveTo(wx,top-4);c.lineTo(wx,top+bh+4);c.stroke();c.setLineDash([]);
+  const px=x(P.cur);c.fillStyle=tok("--paper");c.globalAlpha=.72;c.fillRect(px,top,W-px,bh);c.globalAlpha=1;c.fillStyle=tok("--ink");c.fillRect(px-1,top-6,2,bh+12)}
+function rpUpdate(){const P=PG.rp;if(!P.tl)return;let k=-1;for(let j=0;j<P.tl.length;j++){if(P.tl[j].t<=P.cur)k=j;else break}
+  const seen=new Set(),cnt={v:0,c:0,r:0,b:0};for(let j=0;j<=k;j++){const e=P.tl[j];if(j&&seen.has(e.id)&&P.tl[j-1].id!==e.id)cnt.b++;seen.add(e.id);cnt.r+=e.rv;if(j)cnt.c++}cnt.v=seen.size;
+  $("#rpV").textContent=cnt.v;$("#rpC").textContent=cnt.c;$("#rpR").textContent=cnt.r;$("#rpB").textContent=cnt.b;
+  const d=new Date(Math.min(P.cur,P.end));$("#rpDate").textContent=`${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`;$("#rpSeek").value=Math.round((P.cur-P.start)/(P.end-P.start)*1000);
+  if(k!==P.k||!$("#rpText").innerHTML){P.k=k;const e=P.tl[k],pv=k>0?P.tl[k-1]:null;const s=e?P.vs.get(e.id):null,ps=pv?P.vs.get(pv.id):null;
+    $("#rpText").innerHTML=!e?`<span class="cap">Before the first recorded version.</span>`:s==null?`<span class="cap">This version’s wording was not stored.</span>`:`<span class="sw" style="background:${rpCol(e.id)}"></span>${ps!=null&&ps!==s?renderW(wdiff(ps,s)):esc(s)}`}
+  rpStrip()}
+function rpPlay(){const P=PG.rp;if(P.cur>=P.end)P.cur=P.start;$("#rpPlay").textContent="❚❚ Pause";const D=RM.matches?4000:10000,t0=performance.now(),c0=P.cur,span=P.end-P.start;
+  const st=n=>{P.cur=Math.min(P.end,c0+(n-t0)/D*span);rpUpdate();if(P.cur<P.end)P.raf=requestAnimationFrame(st);else{rpStop()}};P.raf=requestAnimationFrame(st)}
+function rpStop(){const P=PG.rp;if(P.raf){cancelAnimationFrame(P.raf);P.raf=0}const b=$("#rpPlay");if(b)b.textContent="▶ Replay"}
+function rpVerdict(){const P=PG.rp,a=P.a,n=a.fs_n_variants||P.order.length;let back=0;const seen=new Set();P.tl.forEach((e,j)=>{if(j&&seen.has(e.id)&&P.tl[j-1].id!==e.id)back++;seen.add(e.id)});
+  const ca=R.ratchet.comparison&&R.ratchet.comparison.fs_variants_per_article,ta=R.ratchet.topic&&R.ratchet.topic.fs_variants_per_article;
+  $("#rpOut").innerHTML=`<b>Slow drift or tug-of-war?</b> ${esc(P.name)}’s first sentence had ${n} version${n===1?"":"s"} and went back to an earlier wording ${back} time${back===1?"":"s"}. ${ca!=null?`Key articles about other countries and conflicts averaged ${fmt(ca,1)} versions${ta!=null?`; key topic articles averaged ${fmt(ta,1)}`:""}.`:""} ${back>=3?"Many returns to earlier wordings look like a tug-of-war.":"Few returns, with changes that hold, look like slow drift."}`}
+
+/* ---------- routing ---------- */
+let PG_INIT=false,STALE={report:false,playground:false};
+function route(){const pg=location.hash==="#playground";const rv=$("#view-report"),pv=$("#view-playground");rv.hidden=pg;pv.hidden=!pg;
+  $("#tabReport").setAttribute("aria-current",pg?"false":"page");$("#tabPlay").setAttribute("aria-current",pg?"page":"false");
+  if(pg){if(!PG_INIT){PG_INIT=true;safe(drawItInit);safe(coderInit);safe(raceInit);safe(tmInit);safe(rpInit)}else if(STALE.playground){STALE.playground=false;redrawPlayground()}}
+  else if(STALE.report){STALE.report=false;HM=null;redrawAll()}}
+function redrawPlayground(){safe(drawItDraw);safe(raceDraw);safe(rpStrip)}
+
 /* ---------- init ---------- */
 let stA,stB;
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
@@ -1476,8 +1782,13 @@ function init(){
   safe(drawTrend);safe(minis);safe(drawES);safe(drawHeat);safe(defInit);safe(drawForest);safe(drawMatrix);safe(traceInit);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
   scrolly($("#stepsA"),stA,drawTrend);scrolly($("#stepsB"),stB,drawES);
-  let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;HM=null;redrawAll()},150)});
-  const re=()=>{HM=null;redrawAll();if(S.xl)safe(drawXL)};
+  const pgOn=()=>location.hash==="#playground";
+  let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;if(pgOn()){STALE.report=true;redrawPlayground()}else{STALE.playground=PG_INIT;HM=null;redrawAll()}},150)});
+  const re=()=>{if(pgOn()){STALE.report=true;redrawPlayground()}else{STALE.playground=PG_INIT;HM=null;redrawAll()}};
+  addEventListener("hashchange",()=>{const h=location.hash,wasPg=$("#view-report").hidden;route();if(h==="#playground"||h==="#report"||h===""){if(wasPg!==(h==="#playground"))scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
+  $$(".pg-index a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const el=document.getElementById(a.dataset.go);if(el)el.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}));
+  if(location.hash==="#playground")STALE.report=true;
+  route();
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change",re);
   new MutationObserver(re).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 }

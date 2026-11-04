@@ -26,6 +26,8 @@ for a in res["articles"]:
 for name, key in (("bisect.json", "trace"), ("crosslang.json", "crosslang"), ("ratchet.json", "ratchet")):
     p = os.path.join(HERE, "data", name)
     res[key] = json.load(open(p)) if os.path.exists(p) else None
+if res.get("ratchet"):
+    res["ratchet"].pop("events", None)
 if res.get("crosslang"):
     for langs in res["crosslang"]["articles"].values():
         for v in langs.values():
