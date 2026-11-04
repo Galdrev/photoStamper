@@ -1,0 +1,21 @@
+{
+ "job": "en-1",
+ "stage": "en-1",
+ "done": 27,
+ "total": 40,
+ "elapsed_min": 2.8,
+ "eta_min": 1.3,
+ "rps_limit": 3.0,
+ "req_per_s": 0.82,
+ "avg_latency_s": 0.08,
+ "requests": 137,
+ "ok": 119,
+ "http_429": 18,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 18,
+ "failures": 0,
+ "bytes": 2838570,
+ "article_errors": 0,
+ "updated": "2026-11-04T20:01:00Z"
+}
