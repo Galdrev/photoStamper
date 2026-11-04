@@ -1,7 +1,3 @@
-en shard 2: 0 already done, 1739 to do
-[hb en-2] en-2 0/1739 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
-[hb en-2] en-2 13/1739 el=0.6m eta=73.3m req=67 429=0 5xx=0 retries=0 fail=0
-[hb en-2] en-2 29/1739 el=1.0m eta=59.0m req=120 429=0 5xx=0 retries=0 fail=0
 [hb en-2] en-2 38/1739 el=1.5m eta=68.8m req=171 429=6 5xx=0 retries=6 fail=0
 [hb en-2] en-2 51/1739 el=2.0m eta=66.2m req=226 429=6 5xx=0 retries=6 fail=0
 [hb en-2] en-2 64/1739 el=2.6m eta=68.1m req=285 429=12 5xx=0 retries=12 fail=0
@@ -36,3 +32,9 @@ en shard 2: 0 already done, 1739 to do
 [hb en-2] en-2 400/1739 el=17.0m eta=56.9m req=1747 429=96 5xx=0 retries=96 fail=0
 [hb en-2] en-2 411/1739 el=17.5m eta=56.6m req=1797 429=102 5xx=0 retries=102 fail=0
 [hb en-2] en-2 425/1739 el=18.0m eta=55.7m req=1853 429=102 5xx=0 retries=102 fail=0
+[hb en-2] en-2 436/1739 el=18.5m eta=55.4m req=1902 429=108 5xx=0 retries=108 fail=0
+[hb en-2] en-2 449/1739 el=19.0m eta=54.6m req=1959 429=108 5xx=0 retries=108 fail=0
+[hb en-2] en-2 461/1739 el=19.5m eta=54.1m req=2007 429=114 5xx=0 retries=114 fail=0
+[hb en-2] en-2 474/1739 el=20.0m eta=53.4m req=2065 429=114 5xx=0 retries=114 fail=0
+[hb en-2] en-2 485/1739 el=20.6m eta=53.2m req=2120 429=120 5xx=0 retries=120 fail=0
+[hb en-2] en-2 498/1739 el=21.0m eta=52.3m req=2171 429=120 5xx=0 retries=120 fail=0
