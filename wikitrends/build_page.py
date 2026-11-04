@@ -86,7 +86,8 @@ def play_pairs():
     cands = [b for b, v in finals.items() if v.get("rev0") and (b + "a") in texts]
     lab = lambda b: finals[b]["final"]
     pick = [b for b in cands if lab(b) in ("B_less_favourable", "B_more_favourable")]
-    pick = rnd.sample(pick, min(28, len(pick))) + rnd.sample([b for b in cands if lab(b) not in ("B_less_favourable", "B_more_favourable")], min(12, len(cands)))
+    flat = [b for b in cands if lab(b) not in ("B_less_favourable", "B_more_favourable")]
+    pick = rnd.sample(pick, min(28, len(pick))) + rnd.sample(flat, min(12, len(flat)))
     rnd.shuffle(pick)
     out = []
     for b in pick:
