@@ -2,3 +2,8 @@ lang shard 2: 0 already done, 10 to do
 [hb lang-2] lang-2 0/10 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
 [hb lang-2] lang-2 0/10 el=1.0m eta=Nonem req=39 429=12 5xx=0 retries=12 fail=0
 [hb lang-2] lang-2 0/10 el=2.0m eta=Nonem req=75 429=18 5xx=0 retries=18 fail=0
+[hb lang-2] lang-2 0/10 el=3.0m eta=Nonem req=111 429=23 5xx=0 retries=23 fail=0
+[hb lang-2] lang-2 1/10 el=3.8m eta=34.5m req=129 429=24 5xx=0 retries=24 fail=0
+[hb lang-2] lang-2 2/10 el=4.0m eta=16.0m req=147 429=30 5xx=0 retries=30 fail=0
+[hb lang-2] lang-2 3/10 el=4.7m eta=11.0m req=148 429=30 5xx=0 retries=30 fail=0
+[hb lang-2] lang-2 7/10 el=5.0m eta=2.1m req=179 429=33 5xx=0 retries=33 fail=0
