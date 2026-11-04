@@ -152,6 +152,8 @@ CONTROL_SHOCKED = {
 VALIDATION = [
     {"title": "Zionism", "pattern": r"coloni[sz]", "before": "2024-07", "after": "2024-10", "part": "lead",
      "claim": "Lead reworded to describe Zionism as pursuing a state through colonization (Jul–Oct 2024)"},
+    {"title": "Zionism", "pattern": r"coloni[sz]", "before": "2024-04", "after": "2024-07", "part": "lead", "post_hoc": True,
+     "claim": "POST-HOC (added after the sample showed the press timing was off): wording entered the lead between Apr and Jul 2024"},
     {"title": "Israel", "pattern": r"(?:began|is|has been) committing genocide|committed genocide", "before": "2025-10", "after": "2026-01",
      "part": "lead", "claim": "Lead changed from 'accusations of genocide' to stating genocide (Dec 2025)"},
     {"title": "List of genocides", "pattern": r"\bgaza\b", "before": "2024-07", "after": "2025-01", "part": "full",

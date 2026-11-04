@@ -79,6 +79,26 @@ def strip_nested(t, open_, close, keep=None):
     return "".join(out)
 
 
+def table_text(t):
+    """Keep wikitable cell text (list articles hold their content in tables)."""
+    out = []
+    for line in t.split("\n"):
+        ls = line.lstrip()
+        if ls.startswith(("{|", "|}", "|-", "|+")):
+            continue
+        if ls.startswith(("|", "!")):
+            cells = re.split(r"\|\||!!", ls[1:])
+            vals = []
+            for c in cells:
+                # drop cell attributes:  style="..." | content  (but not [[a|b]] links)
+                m = re.match(r'^\s*[a-z\-]+\s*=\s*"[^"]*"(?:\s*[a-z\-]+\s*=\s*"[^"]*")*\s*\|(?!\|)(.*)$', c, re.I)
+                vals.append((m.group(1) if m else c).strip())
+            out.append(". ".join(v for v in vals if v))
+        else:
+            out.append(line)
+    return "\n".join(out)
+
+
 def strip_files(t):
     out, i = [], 0
     pat = re.compile(r"\[\[(?:File|Image):", re.I)
@@ -106,13 +126,16 @@ def prose(wt):
     t = re.sub(r"<ref[^>]*>.*?</ref\s*>", "", t, flags=re.S | re.I)
     t = re.sub(r"\{\{\s*(?:lang|transl|langx)\|[^|{}]*\|([^|{}]*)(?:\|[^{}]*)?\}\}", r"\1", t, flags=re.I)
     t = strip_nested(t, "{{", "}}")
-    t = re.sub(r"\{\|.*?\|\}", "", t, flags=re.S)
+    t = table_text(t)
     t = strip_files(t)
     t = re.sub(r"\[\[Category:[^\]]*\]\]", "", t, flags=re.I)
     t = re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]", r"\1", t)
     t = re.sub(r"\[https?://\S+ ([^\]]*)\]", r"\1", t)
     t = re.sub(r"'{2,}", "", t)
     t = re.sub(r"<[^>]+>", "", t)
+    t = re.sub(r"\(\s*(?:[;,]\s*)*\)", "", t)          # parentheses emptied by template stripping
+    t = re.sub(r"\(\s*(?:[;,]\s*)+", "(", t)
+    t = re.sub(r" +([,.;])", r"\1", t)
     return t
 
 
