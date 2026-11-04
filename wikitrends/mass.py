@@ -38,7 +38,7 @@ CONTROL_PROJECTS = ["India", "Pakistan", "Turkey", "Kurdistan", "Armenia", "Azer
                     "Bosnia and Herzegovina", "Hinduism", "Islam", "Catholicism", "Sikhism", "Buddhism", "Armenian history"]
 LEVELS = ["Top", "High", "Mid"]
 CAP_PER_GROUP = 4000
-LANG_TOP_PER_GROUP = 800
+LANG_TOP_PER_GROUP = 400
 
 
 def api(lang="en", **p):

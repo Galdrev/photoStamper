@@ -54,7 +54,9 @@ def get_json(url, params, tries=8, ok404=False):
                 return None
             if r.status_code == 429:
                 C["http_429"] += 1; C["retries"] += 1
-                time.sleep(int(r.headers.get("retry-after", 20) or 20)); continue
+                ra = int(r.headers.get("retry-after", 20) or 20)
+                C["retry_after_max"] = max(C.get("retry_after_max", 0), ra); C["retry_after_sum"] = C.get("retry_after_sum", 0) + ra
+                time.sleep(ra); continue
             if r.status_code >= 500:
                 C["http_5xx"] += 1
             C["retries"] += 1

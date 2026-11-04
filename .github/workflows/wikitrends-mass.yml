@@ -9,7 +9,7 @@ concurrency: wikitrends-${{ github.ref_name }}
 env:
   IS_TEST: ${{ github.ref_name == 'wikitrends-mass-test' }}
   PREV_RUN: '41884935580'      # earlier run: frame, salt and finished shards are reused
-  WT_RPS: '3'                  # per job; 10 parallel jobs => about 30 requests/s total
+  WT_RPS: '2'                  # per job; max 3 jobs at once => about 6 requests/s total (Wikipedia throttles our aggregate)
   GH_TOKEN: ${{ github.token }}
 jobs:
   frame:
@@ -38,6 +38,7 @@ jobs:
     timeout-minutes: 300
     strategy:
       fail-fast: false
+      max-parallel: 2
       matrix: {shard: [0, 1, 2, 3, 4, 5]}
     steps:
       - uses: actions/checkout@v4
@@ -68,6 +69,7 @@ jobs:
     timeout-minutes: 300
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix: {shard: [0, 1, 2, 3]}
     steps:
       - uses: actions/checkout@v4
