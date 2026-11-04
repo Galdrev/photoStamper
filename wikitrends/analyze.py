@@ -8,7 +8,9 @@ from collections import Counter, defaultdict
 
 import numpy as np
 
-from corpus import CONTROL_CONTAMINATED, CONTROL_SHOCKED, VALIDATION
+from corpus import CONTROL_CONTAMINATED, CONTROL_SHOCKED, VALIDATION, KEY_ARTICLES, KEY_ARTICLES_CONTROL
+
+KEY_SET = set(KEY_ARTICLES) | set(KEY_ARTICLES_CONTROL)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
@@ -561,6 +563,7 @@ def main():
             "conn_series": [round(s["full"]["rate"]["connection_rate"], 2) for s in a["series"]],
             "lcrit_series": [None if s["lead"] is None else round(s["lead"]["rate"]["critical_rate"], 2) for s in a["series"]],
             "quarter_edits": {k: v.get("edits", 0) for k, v in a["quarters"].items()},
+            "pv_monthly": a["pageviews"] if a["title"] in KEY_SET else None,
         })
         if s0["lead_text"] != s1["lead_text"]:
             leads.append({"title": a["title"], "group": a["group"], "primary": a["primary"],

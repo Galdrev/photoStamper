@@ -38,6 +38,36 @@ qa_p = os.path.join(HERE, "data", "qa.json")
 if os.path.exists(qa_p):
     qa = json.load(open(qa_p)); qa.pop("per_article", None); res["qa"] = qa
 
+# Reader exposure: monthly pageviews x which first-sentence variant was live (from the ratchet timeline)
+def exposure(res):
+    if not res.get("ratchet"):
+        return None
+    pv = {a["title"]: a.get("pv_monthly") for a in res["articles"] if a.get("pv_monthly")}
+    out = {}
+    for t, a in res["ratchet"]["articles"].items():
+        if t not in pv or not a.get("fs_timeline"):
+            continue
+        tl = a["fs_timeline"]; var = {v["id"]: v["s"] for v in a["fs_variants"]}
+        views = Counter()
+        for ym, n in pv[t].items():              # 'YYYYMM'
+            day = f"{ym[:4]}-{ym[4:6]}-15"
+            live = None
+            for d, vid, _ in tl:
+                if d <= day:
+                    live = vid
+                else:
+                    break
+            if live is not None:
+                views[live] += n
+        tot = sum(views.values())
+        out[t] = {"total_views": tot, "variants": [{"s": var.get(v, "")[:300], "views": n, "share": n / tot if tot else 0}
+                                                   for v, n in views.most_common(6)]}
+    return out
+
+
+from collections import Counter
+res["exposure"] = exposure(res)
+
 findings_path = os.path.join(HERE, "findings.html")
 findings = open(findings_path).read() if os.path.exists(findings_path) else ""
 tpl = open(os.path.join(HERE, "page_template.html")).read()
