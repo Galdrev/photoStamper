@@ -1261,12 +1261,13 @@ function drawForest(){
   const rows=(R.did||[]).filter(d=>d.part===S.partF&&d.window===S.win);
   const host=$("#forest");
   if(!rows.length){host.innerHTML=`<div class="note" style="grid-column:1/-1">No estimates for this choice.</div>`;$("#forestStats").innerHTML="";$("#mTest").innerHTML="";return}
-  const m=Math.max(...rows.map(r=>Math.max(Math.abs(r.lo),Math.abs(r.hi),Math.abs(r.did))),.01)*1.08;
-  const tk=ticks(-m,m,isPhone()?3:5).filter(v=>Math.abs(v)<=m),X=v=>(v+m)/(2*m)*100;
+  const m0=Math.max(...rows.map(r=>Math.max(Math.abs(r.lo),Math.abs(r.hi),Math.abs(r.did))),.01)*1.08;
+  const nT=isPhone()?4:6,st=niceStep(2*m0,nT),m=Math.ceil(m0/st-1e-9)*st;
+  const tk=ticks(-m,m,nT).filter(v=>Math.abs(v)<=m+1e-9),X=v=>(v+m)/(2*m)*100;
   const order=["critical_rate","connection_rate",...R.critical,...R.connection,"terrorism","militant","placebo_geography"];
   rows.sort((a,b)=>order.indexOf(a.frame)-order.indexOf(b.frame));
   const grp=f=>f==="critical_rate"||f==="connection_rate"?"All words in each family":f==="placebo_geography"?"Placebo check":R.critical.includes(f)?"Words like colonial, apartheid, genocide":R.connection.includes(f)?"Words about Jewish history":"Counted separately";
-  let h=`<div class="hd c1">Words</div><div class="hd c5">Extra change per 10,000 words</div><div class="hd c4" style="display:block;padding-inline:0;align-self:end"><div class="axis">${tk.map(v=>`<span style="left:${X(v)}%">${v>0?"+":""}${+v.toFixed(2)}</span>`).join("")}</div></div>`;
+  let h=`<div class="hd c1">Words</div><div class="hd c5">Extra change per 10,000 words</div><div class="hd c4" style="display:block;padding-inline:0;align-self:end"><div class="axis">${tk.map(v=>`<span style="left:${X(v)}%;${X(v)<1?"transform:none":X(v)>99?"transform:translateX(-100%)":""}">${v>0?"+":""}${+v.toFixed(2)}</span>`).join("")}</div></div>`;
   let g0=null;
   for(const r of rows){const g=grp(r.frame);if(g!==g0){h+=`<div class="grp">${g}</div>`;g0=g}
     const s=sigOf(r),col=r.did>0?"--inc":"--dec";
