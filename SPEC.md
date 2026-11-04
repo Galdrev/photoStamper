@@ -45,3 +45,16 @@ Inference uses a label-permutation p-value (5,000 shuffles of the group labels a
 - **Partial:** at least 1 primary outcome is significant, or the results are mixed.
 - **Not supported:** none of P1–P3 is significant.
 - The headline sentence on the page must use exactly one of these three labels.
+
+## Amendment 1 (2026-11-04, still before any real data was seen)
+These changes come from the independent code review.
+- **Snapshots excluded:** redirect snapshots, snapshots under 300 words, and snapshots landing on a later-reverted revision. The lead needs at least 40 words to be measured.
+- **Text excluded:** back-matter sections (See also, References, Further reading, External links) are stripped before counting.
+- **Lexicon v2:** occupation terms need a territorial anchor ("occupied West Bank", "Russian occupation"; the job sense is gone). "Colonial" is limited to the colonization, colonialism and settler-colonial forms. Jewish expulsions such as the Alhambra Decree no longer count as Nakba/expulsion. Palestinian and Kurdish "homeland/self-determination" no longer count as connection frames. A placebo geography lexicon is added.
+- **Comparison set:** 10 contaminated articles (Lebanon, Iran, Palestinian nationalism and others) move out of the primary comparison group. "Shocked" comparison articles (Ukraine, Darfur, Karabakh and others) form a subgroup, and a settler-colonial comparison set is added.
+- **Trends:** trend lines use the balanced panel. Articles created during the window are shown separately.
+- **War marker:** the first post-war snapshot is 2024-01. The 2023-10-01 snapshot predates 7 October.
+- **Primary scale:** stays absolute change in hits per 10k words. On synthetic data, log1p(rate) blew up for articles starting from zero. A log scale with an offset equal to the median baseline rate is added as R7.
+- **Edit dynamics:** bots are excluded, temporary accounts (~2025-…) count as logged out, revert rates are per-article means, and the partial final quarter is dropped.
+- **Editor breadth:** compared on equal-size random subsamples.
+- **Validation:** five dated press-documented changes are added as known-answer tests (corpus.py VALIDATION).

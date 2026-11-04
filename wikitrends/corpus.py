@@ -65,6 +65,10 @@ TREATMENT_SEED = {
         "Antisemitism and the New Testament", "Islamic views on Jews",
         "Antisemitism in Europe", "Antisemitism in the United States",
         "Anti-Zionism and antisemitism", "Weaponization of antisemitism",
+        "Antisemitic anti-Zionism", "Nakba denial", "Israeli apartheid",
+        "Occupied Palestinian territories", "List of genocides",
+        "Genocide of indigenous peoples", "Sexual and gender-based violence in the October 7 attacks",
+        "Al-Ahli Arab Hospital explosion", "Wikipedia and the Israeli–Palestinian conflict",
         "Dreyfus affair", "Anti-Defamation League", "Jewish Voice for Peace",
     ],
 }
@@ -95,6 +99,12 @@ CONTROL_SEED = {
         "Turkish invasion of Cyprus", "Population exchange between Greece and Turkey",
         "Armenian genocide", "Bangladesh Liberation War", "Rwandan genocide",
         "Bosnian genocide", "Uyghur genocide", "Darfur genocide",
+        "Rohingya genocide", "Sudanese civil war (2023–present)", "Tigray war",
+    ],
+    "settler_colonial_framings": [
+        "History of Australia", "Aboriginal Australians", "French Algeria",
+        "Algerian War", "Indigenous peoples in Canada", "Native Americans in the United States",
+        "History of South Africa", "Apartheid", "Māori people", "Rhodesia",
     ],
     "religion": [
         "Christianity", "Catholic Church", "Islam", "Hinduism", "Sikhism",
@@ -120,3 +130,34 @@ TREATMENT_CATEGORIES = [
 START = "2021-01-01T00:00:00Z"
 SNAPSHOT_DATES = [f"{y}-{m:02d}-01T00:00:00Z" for y in range(2021, 2027)
                   for m in (1, 4, 7, 10)]
+
+
+# Comparison articles directly hit by the 2023– Israel/Gaza/Lebanon/Iran war or
+# entangled with the topic: excluded from the primary comparison group.
+CONTROL_CONTAMINATED = {
+    "Palestinian nationalism", "Arab nationalism", "Jordan", "Lebanon", "Syria",
+    "Egypt", "Iran", "Saudi Arabia", "Druze", "Islamophobia",
+}
+# Comparison articles with their own large 2021–2026 shock. Kept, reported as a
+# subgroup: they test H0 ("framing just follows real-world events").
+CONTROL_SHOCKED = {
+    "Russo-Ukrainian War", "Ukraine", "Ukrainian nationalism", "Nagorno-Karabakh conflict",
+    "Darfur genocide", "Sudanese civil war (2023–present)", "Tigray war", "Uyghur genocide",
+    "Rohingya genocide", "Armenia",
+}
+
+# Known, dated changes documented by press coverage (see research notes).
+# The pipeline should find pattern absent at `before` and present at `after`.
+# A miss means either the pipeline or the press claim is wrong; both are reported.
+VALIDATION = [
+    {"title": "Zionism", "pattern": r"coloni[sz]", "before": "2024-07", "after": "2024-10", "part": "lead",
+     "claim": "Lead reworded to describe Zionism as pursuing a state through colonization (Jul–Oct 2024)"},
+    {"title": "Israel", "pattern": r"(?:began|is|has been) committing genocide|committed genocide", "before": "2025-10", "after": "2026-01",
+     "part": "lead", "claim": "Lead changed from 'accusations of genocide' to stating genocide (Dec 2025)"},
+    {"title": "List of genocides", "pattern": r"\bgaza\b", "before": "2024-07", "after": "2025-01", "part": "full",
+     "claim": "Gaza entry added after RfC (reported Nov 2024)"},
+    {"title": "Gaza genocide", "pattern": r"^(?!.*\ballegations?\b).*", "before": "2024-04", "after": "2024-10", "part": "lead",
+     "claim": "Article retitled from 'Allegations of genocide…' (Jul 2024); lead should drop 'allegations' framing"},
+    {"title": "Occupied Palestinian territories", "pattern": r"^.{0,120}occupied palestinian territor", "before": "2024-04", "after": "2024-10",
+     "part": "lead", "claim": "Renamed from 'Palestinian territories' (mid-2024)"},
+]
