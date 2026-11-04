@@ -1,2 +1,4 @@
 lang shard 0: 0 already done, 10 to do
 [hb lang-0] lang-0 0/10 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
+[hb lang-0] lang-0 1/10 el=4.7m eta=42.7m req=98 429=30 5xx=0 retries=30 fail=0
+[hb lang-0] lang-0 3/10 el=5.8m eta=13.4m req=120 429=36 5xx=0 retries=36 fail=0
