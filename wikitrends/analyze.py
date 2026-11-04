@@ -515,6 +515,27 @@ def main():
         t, c = changes(T, part, k, first, last), changes(C, part, k, first, last)
         med = float(np.median(t) - np.median(c))
         chk(pid, "R5 median instead of mean", {"did": med, "lo": None, "hi": None, "p_perm": None}, np.sign(med) == sign)
+        # R8 (added later, not in the pre-registered rule): cluster bootstrap by subgroup
+        def by_sub(A):
+            d = defaultdict(list)
+            for a in A:
+                s0, s1 = exact(a["series"], first), at(a["series"], last)
+                v0, v1 = val(s0, part, k), val(s1, part, k)
+                if v0 is not None and v1 is not None:
+                    d[a["subgroup"]].append(v1 - v0)
+            return [np.array(v) for v in d.values() if v]
+        ct, cc8 = by_sub(T), by_sub(C)
+        if len(ct) >= 2 and len(cc8) >= 2:
+            boots = []
+            for _ in range(N_BOOT):
+                tt = np.concatenate([ct[i] for i in RNG.integers(0, len(ct), len(ct))])
+                cc_ = np.concatenate([cc8[i] for i in RNG.integers(0, len(cc8), len(cc8))])
+                boots.append(tt.mean() - cc_.mean())
+            lo8, hi8 = np.percentile(boots, [2.5, 97.5])
+            chk(pid, "R8 cluster bootstrap by subgroup (added later; not counted)",
+                {"did": base["did"], "lo": float(lo8), "hi": float(hi8), "p_perm": None},
+                np.sign(base["did"]) == sign and (lo8 > 0 or hi8 < 0),
+                f"{len(ct)} topic and {len(cc8)} comparison subgroups resampled")
         # R7 log scale, offset = median non-zero baseline rate across all primary articles
         base_rates = [val(exact(a["series"], first), part, k) for a in T + C]
         nz = [x for x in base_rates if x]

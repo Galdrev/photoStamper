@@ -80,3 +80,6 @@ These changes come from the independent code review.
 - **Pilot:** 20 items first; every rationale is read; the rubric may be revised once (v2.1) before scaled coding.
 - **S1 statistic:** mean net direction (less = +1, more = −1, else 0), topic minus comparison, with a permutation p-value.
 - **Limitation stated:** a single model family; no human gold set.
+
+## Amendment 4 (before real results were seen)
+- **R8** (added later, *not* counted in the decision rule): a cluster bootstrap by subgroup. Articles within a subgroup are correlated, so the article-level permutation and bootstrap may understate uncertainty. R8 is reported next to the primary tests. If R8's interval includes zero while the primary excludes it, the report must say so.
