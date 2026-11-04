@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/runner/work/photoStamper/photoStamper/wikitrends/analyze.py", line 679, in <module>
+    main()
+  File "/home/runner/work/photoStamper/photoStamper/wikitrends/analyze.py", line 455, in main
+    base = next(r for r in did_rows if r["id"] == pid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration

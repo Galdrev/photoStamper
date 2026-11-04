@@ -5,3 +5,11 @@ total articles: 598
 [hb main] fetch 1/8 el=2.1m eta=15.0m req=248 429=8 5xx=0 retries=8 fail=0
 [2/8] Balfour Declaration: 235 revs
 [3/8] Theodor Herzl: 342 revs
+[4/8] Religious Zionism: 278 revs
+[hb main] fetch 4/8 el=3.2m eta=3.2m req=343 429=12 5xx=0 retries=12 fail=0
+[5/8] Revisionist Zionism: 228 revs
+[6/8] Labor Zionism: 152 revs
+[7/8] Christian Zionism: 407 revs
+[hb main] fetch 7/8 el=4.1m eta=0.6m req=389 429=14 5xx=0 retries=14 fail=0
+[8/8] Zionism: 3657 revs
+[hb main] fetch-done 8/8 el=4.3m eta=Nonem req=399 429=14 5xx=0 retries=14 fail=0
