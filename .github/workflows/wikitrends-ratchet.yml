@@ -1,0 +1,46 @@
+name: wikitrends-ratchet
+on:
+  push:
+    branches: [wikitrends-ratchet]
+permissions:
+  contents: write
+concurrency: wikitrends-ratchet
+defaults:
+  run:
+    shell: bash
+env:
+  WT_RPS: '4'
+  WT_THREADS: '8'
+  WT_JOB: ratchet
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  ratchet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Per-run secret salt
+        run: echo "::add-mask::$(openssl rand -hex 16 | tee /tmp/salt)" && echo "WT_SALT=$(cat /tmp/salt)" >> $GITHUB_ENV && rm /tmp/salt
+      - name: Restore checkpoints
+        uses: actions/cache/restore@v4
+        with: {path: wikitrends/data/ratchet_parts, key: 'ratchet-parts-${{ github.run_id }}', restore-keys: 'ratchet-parts-'}
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh ratchet 180 > /tmp/status.log 2>&1 &
+      - name: Ratchet (checkpointed; hard budget 270 min)
+        working-directory: wikitrends
+        run: timeout 270m python ratchet.py 2>&1 | tee logs/ratchet.log || echo "::warning::ratchet stopped early; checkpoints kept"
+      - name: Save checkpoints
+        if: always()
+        uses: actions/cache/save@v4
+        with: {path: wikitrends/data/ratchet_parts, key: 'ratchet-parts-${{ github.run_id }}'}
+      - name: Commit ratchet results
+        if: always()
+        run: |
+          git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
+          [ -f wikitrends/data/ratchet.json ] && git add -f wikitrends/data/ratchet.json
+          cp wikitrends/logs/ratchet.log wikitrends/data/ratchet_run.log && git add -f wikitrends/data/ratchet_run.log
+          git commit -m "Ratchet results (run ${{ github.run_id }}) [skip ci]" || exit 0
+          git pull --rebase --autostash origin wikitrends-ratchet && git push origin HEAD:wikitrends-ratchet

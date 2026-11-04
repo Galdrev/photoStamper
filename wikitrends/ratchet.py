@@ -169,9 +169,19 @@ def main():
     _LIST = (KEY_ARTICLES + KEY_ARTICLES_CONTROL)[:2] if os.environ.get('WT_LIMIT') else (KEY_ARTICLES + KEY_ARTICLES_CONTROL)
     _N = len(_LIST)
     arts = {}
-    with ThreadPoolExecutor(4) as ex:
-        for t, m in ex.map(article_metrics, _LIST):
+    parts = os.path.join(A.DATA, "ratchet_parts"); os.makedirs(parts, exist_ok=True)
+    pfn = lambda t: os.path.join(parts, re.sub(r"[^\w\-]+", "_", t)[:150] + ".json")
+    todo = []
+    for t in _LIST:                                   # resume: reuse finished articles
+        if os.path.exists(pfn(t)):
+            arts[t] = json.load(open(pfn(t))); _n[0] += 1
+        else:
+            todo.append(t)
+    print(f"ratchet: {len(arts)} articles reused from checkpoints, {len(todo)} to do", flush=True)
+    with ThreadPoolExecutor(int(os.environ.get("WT_THREADS", "4"))) as ex:
+        for t, m in ex.map(article_metrics, todo):
             if m:
+                json.dump(m, open(pfn(t) + ".tmp", "w")); os.replace(pfn(t) + ".tmp", pfn(t))
                 arts[t] = m
                 print(f"{t}: {m['revisions']} revisions, {m['fs_n_variants']} first-sentence variants", flush=True)
                 _n[0] += 1; wt_net.heartbeat('ratchet', _n[0], _N)
