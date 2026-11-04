@@ -1,0 +1,20 @@
+{
+ "job": "ratchet",
+ "stage": "ratchet",
+ "done": 1,
+ "total": 2,
+ "elapsed_min": 3.7,
+ "eta_min": 3.7,
+ "rps_limit": 5.0,
+ "req_per_s": 0.6,
+ "avg_latency_s": 3.03,
+ "requests": 134,
+ "ok": 134,
+ "http_429": 0,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 0,
+ "failures": 0,
+ "bytes": 173919223,
+ "updated": "2026-11-04T20:06:41Z"
+}
