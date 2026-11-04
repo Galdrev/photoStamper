@@ -1,0 +1,201 @@
+{
+ "articles": 8,
+ "snapshots": 190,
+ "checks": [
+  {
+   "check": "integrity: snapshot sha1 matches revision metadata",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "182/182 match; 8 snapshots predate window",
+   "examples": []
+  },
+  {
+   "check": "coverage: manifest titles fetched",
+   "level": "BLOCKING",
+   "pass": false,
+   "detail": "8 fetched, 590 missing of 598",
+   "examples": [
+    "'Ali al-Hudhayfi",
+    "1929 Palestine riots",
+    "1948 Arab\u2013Israeli War",
+    "1948 Palestinian expulsion and flight",
+    "1949\u20131956 Palestinian expulsions",
+    "1951 Chinese annexation of Tibet",
+    "1967\u201371 Gazan insurgency",
+    "1988 Shultz Initiative",
+    "1997 Brooklyn bombing plot",
+    "2002 Kissufim tank ambush",
+    "2006 Israeli operation in Beit Hanoun",
+    "2015 Nice stabbing",
+    "2019 Poway synagogue shooting",
+    "2023 Israeli female tank crew fight",
+    "2023\u20132024 Gaza Strip preterm births",
+    "20th century departures of foreign nationals from Egypt",
+    "38th World Zionist Congress",
+    "A History of the Jews",
+    "A Wider Bridge",
+    "AI-assisted targeting in the Gaza Strip",
+    "Abduction and killing of Nachshon Wachsman",
+    "Aboriginal Australians",
+    "Abraham Accords",
+    "Abraham Rabinovich",
+    "Abraham Zacuto",
+    "Adam Ferziger",
+    "Ahad Ha'am",
+    "Al-Ahli Arab Hospital explosion",
+    "Al-Faruq Mosque (Denmark)",
+    "Al-Qaeda",
+    "Al-Shabaab (militant group)",
+    "Albert Speer",
+    "Alfred Nossig",
+    "Algerian War",
+    "Alibag",
+    "Aline Caroline de Rothschild",
+    "Aliyah",
+    "Amazonian Jews",
+    "Amos Elon",
+    "Anat Kamm\u2013Uri Blau affair"
+   ]
+  },
+  {
+   "check": "revisions: present for >=95% of articles",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "0 without revisions",
+   "examples": []
+  },
+  {
+   "check": "revisions: no duplicate revids",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "0 articles",
+   "examples": []
+  },
+  {
+   "check": "revisions: timestamps ascending",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "0 articles",
+   "examples": []
+  },
+  {
+   "check": "text: median snapshot >= 1,000 words",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "median 6552 words",
+   "examples": []
+  },
+  {
+   "check": "text: lead section found in >=95% of snapshots",
+   "level": "WARN",
+   "pass": true,
+   "detail": "190/190",
+   "examples": []
+  },
+  {
+   "check": "continuity: snapshot size drops >60%",
+   "level": "WARN",
+   "pass": true,
+   "detail": "0 drops",
+   "examples": []
+  },
+  {
+   "check": "redirects: share of snapshots",
+   "level": "INFO",
+   "pass": true,
+   "detail": "0/190",
+   "examples": []
+  },
+  {
+   "check": "short snapshots excluded (<300 words)",
+   "level": "INFO",
+   "pass": true,
+   "detail": "0/190",
+   "examples": []
+  },
+  {
+   "check": "pageviews present for >=90%",
+   "level": "WARN",
+   "pass": true,
+   "detail": "0 missing",
+   "examples": []
+  },
+  {
+   "check": "talk pages present for >=80%",
+   "level": "WARN",
+   "pass": true,
+   "detail": "0 missing",
+   "examples": []
+  }
+ ],
+ "by_group": {
+  "treatment": 8
+ },
+ "revisions_total": 5872,
+ "per_article": [
+  {
+   "title": "Balfour Declaration",
+   "group": "treatment",
+   "revisions": 235,
+   "snapshots": 24,
+   "talk": 200,
+   "pageview_months": 71
+  },
+  {
+   "title": "Christian Zionism",
+   "group": "treatment",
+   "revisions": 407,
+   "snapshots": 23,
+   "talk": 71,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Zionism (pre-1948)",
+   "group": "treatment",
+   "revisions": 573,
+   "snapshots": 24,
+   "talk": 80,
+   "pageview_months": 5
+  },
+  {
+   "title": "Labor Zionism",
+   "group": "treatment",
+   "revisions": 152,
+   "snapshots": 24,
+   "talk": 32,
+   "pageview_months": 71
+  },
+  {
+   "title": "Religious Zionism",
+   "group": "treatment",
+   "revisions": 278,
+   "snapshots": 24,
+   "talk": 25,
+   "pageview_months": 71
+  },
+  {
+   "title": "Revisionist Zionism",
+   "group": "treatment",
+   "revisions": 228,
+   "snapshots": 23,
+   "talk": 32,
+   "pageview_months": 71
+  },
+  {
+   "title": "Theodor Herzl",
+   "group": "treatment",
+   "revisions": 342,
+   "snapshots": 24,
+   "talk": 162,
+   "pageview_months": 71
+  },
+  {
+   "title": "Zionism",
+   "group": "treatment",
+   "revisions": 3657,
+   "snapshots": 24,
+   "talk": 10373,
+   "pageview_months": 71
+  }
+ ]
+}
