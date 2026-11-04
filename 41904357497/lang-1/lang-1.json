@@ -1,0 +1,23 @@
+{
+ "job": "lang-1",
+ "stage": "lang-1",
+ "done": 2,
+ "total": 10,
+ "elapsed_min": 2.6,
+ "eta_min": 10.4,
+ "rps_limit": 2.0,
+ "req_per_s": 0.6,
+ "avg_latency_s": 0.07,
+ "requests": 94,
+ "ok": 76,
+ "http_429": 18,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 18,
+ "failures": 0,
+ "bytes": 2361330,
+ "retry_after_max": 46,
+ "retry_after_sum": 690,
+ "article_errors": 0,
+ "updated": "2026-11-04T20:22:09Z"
+}
