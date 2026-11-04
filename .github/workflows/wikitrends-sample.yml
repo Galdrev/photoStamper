@@ -1,0 +1,25 @@
+name: wikitrends-sample
+on:
+  push:
+    branches: [wikitrends-sample]
+permissions:
+  contents: write
+concurrency: wikitrends-sample
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Fetch sample
+        working-directory: wikitrends
+        run: python fetch.py --workers 6 --only "Zionism|Israel|Hamas|List of genocides|Kurdish nationalism|Irish nationalism"
+      - name: Commit sample
+        run: |
+          mkdir -p wikitrends/sample && mv wikitrends/data/articles/*.json.gz wikitrends/sample/
+          ls -la wikitrends/sample
+          git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -f wikitrends/sample && git commit -m "Sample fetch [skip ci]" && git push

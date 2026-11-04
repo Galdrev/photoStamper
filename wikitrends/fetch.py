@@ -158,10 +158,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-cat-pages", type=int, default=350)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--only", default="", help="'|'-separated titles; skip corpus and categories")
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
 
     jobs = {}
+    if a.only:
+        for t in a.only.split("|"):
+            jobs[t] = ("sample", "sample")
+        with ThreadPoolExecutor(a.workers) as ex:
+            for t, msg in ex.map(lambda t: fetch_article(t, "sample", "sample"), jobs):
+                print(t, msg, flush=True)
+        return
     for group, seed in (("treatment", TREATMENT_SEED), ("control", CONTROL_SEED)):
         flat = {t: sg for sg, ts in seed.items() for t in ts}
         for src, canon in resolve(flat).items():
