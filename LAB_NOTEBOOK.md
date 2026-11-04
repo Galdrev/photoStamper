@@ -34,3 +34,19 @@ Each entry gives the technique, why it was used, what it cost, and a verdict aft
 - Did the parallel agents produce anything I wouldn't have produced alone?
 - Did blind coding agree with the lexicon counts?
 - What would I cut if I had a tenth of the budget?
+
+## Rabbit-hole guard: kill criteria fixed before results
+Each exploratory branch goes on the page only if it passes its sanity gate. Otherwise it is cut and the cut is logged here.
+
+| Branch | Sanity gate (instrument works) | Kill if |
+|---|---|---|
+| Lexicon counts | KWIC precision ≥ 60% per frame on a 40-hit sample | the frame is dropped (not the whole study) |
+| Blind stance coding | ≥ 70% correct direction on known-answer changes; pairwise agreement ≥ 0.6 | reported as a failed instrument, not used for conclusions |
+| Hedging (E1) | ≥ 70% of a 30-item sample correctly marked hedged/unhedged | dropped |
+| Citations (E2) | "Other" class < 50% of refs (classifier covers most sources) | reported descriptively only |
+| Terror labelling (E3) | ≥ 5 armed-group articles per side with mentions | dropped |
+| Coordination signals | null model produces non-zero baselines; ratios stable across 2 seeds | dropped |
+| Ratchet | ≥ 30 insertion events per group for critical terms | reported per article only, no group claim |
+| Cross-language | ≥ 6 languages with ≥ 10 articles per group | reported per article only |
+| Mass tier | ≥ 1,000 articles per group in the frame | fix category names, else report deep tier only |
+| Narrative coding | coders agree on the main theme in ≥ 60% of a double-coded 30-item subset | themes shown as examples only, no shares |
