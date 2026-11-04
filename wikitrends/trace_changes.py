@@ -12,6 +12,7 @@ import hashlib
 
 import fetch as F
 import analyze as A
+import wt_net
 from corpus import KEY_ARTICLES, KEY_ARTICLES_CONTROL
 
 SALT = os.environ.get("WT_SALT") or os.urandom(16).hex()   # never written anywhere
@@ -67,12 +68,20 @@ def bisect_article(title):
     return title, changes
 
 
+_n = [0]
+_N = 0
+
+
 def main():
+    global _N
+    _LIST = (KEY_ARTICLES + KEY_ARTICLES_CONTROL)[:2] if os.environ.get('WT_LIMIT') else (KEY_ARTICLES + KEY_ARTICLES_CONTROL)
+    _N = len(_LIST)
     out = {}
     with ThreadPoolExecutor(4) as ex:
-        for t, ch in ex.map(bisect_article, KEY_ARTICLES + KEY_ARTICLES_CONTROL):
+        for t, ch in ex.map(bisect_article, _LIST):
             out[t] = ch
             print(f"{t}: {len(ch)} first-sentence changes traced", flush=True)
+            _n[0] += 1; wt_net.heartbeat('trace', _n[0], _N)
     json.dump(out, open(os.path.join(A.DATA, "bisect.json"), "w"), indent=1)
 
 

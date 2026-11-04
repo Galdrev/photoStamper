@@ -1,10 +1,16 @@
 name: wikitrends-mass
 on:
   push:
-    branches: [wikitrends-mass]
+    branches: [wikitrends-mass, wikitrends-mass-test]
 permissions:
   contents: write
-concurrency: wikitrends-mass
+  actions: read
+concurrency: wikitrends-${{ github.ref_name }}
+env:
+  IS_TEST: ${{ github.ref_name == 'wikitrends-mass-test' }}
+  PREV_RUN: '41884935580'      # earlier run: frame, salt and finished shards are reused
+  WT_RPS: '3'                  # per job; 10 parallel jobs => about 30 requests/s total
+  GH_TOKEN: ${{ github.token }}
 jobs:
   frame:
     runs-on: ubuntu-latest
@@ -14,16 +20,22 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - run: pip install requests numpy
-      - working-directory: wikitrends
-        run: python mass.py frame
-      - name: Shared salt for editor hashing (private artifact, deleted after 1 day)
-        run: openssl rand -hex 16 > wikitrends/data/mass/salt
+      - name: Reuse previous frame and salt (keeps shard assignment and editor hashes consistent)
+        id: prev
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with: {name: frame, path: wikitrends/data/mass/, run-id: '${{ env.PREV_RUN }}', github-token: '${{ github.token }}'}
+      - name: Build frame only if none was reused
+        working-directory: wikitrends
+        run: |
+          if [ -f data/mass/frame.json ] && [ -f data/mass/salt ]; then echo "reused frame from run $PREV_RUN"; else WT_JOB=frame python mass.py frame && openssl rand -hex 16 > data/mass/salt; fi
+          python -c "import json;f=json.load(open('data/mass/frame.json'));from collections import Counter;print(Counter(r['group'] for r in f['rows']))"
       - uses: actions/upload-artifact@v4
-        with: {name: frame, path: wikitrends/data/mass/, retention-days: 1}
+        with: {name: frame, path: wikitrends/data/mass/, retention-days: 3}
   en:
     needs: frame
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 300
     strategy:
       fail-fast: false
       matrix: {shard: [0, 1, 2, 3, 4, 5]}
@@ -34,14 +46,26 @@ jobs:
       - run: pip install requests numpy
       - uses: actions/download-artifact@v4
         with: {name: frame, path: wikitrends/data/mass/}
-      - working-directory: wikitrends
-        run: WT_SALT=$(cat data/mass/salt) python mass.py en --shard ${{ matrix.shard }} --of 6
+      - name: Reuse finished shard from previous run, if any
+        if: env.IS_TEST != 'true'
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with: {name: 'en-${{ matrix.shard }}', path: wikitrends/data/mass/, run-id: '${{ env.PREV_RUN }}', github-token: '${{ github.token }}'}
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh en-${{ matrix.shard }} 180 > /tmp/status.log 2>&1 &
+      - name: Collect (checkpointed; hard budget 270 min)
+        working-directory: wikitrends
+        run: |
+          [ "$IS_TEST" = "true" ] && export MASS_LIMIT=40
+          export WT_SALT=$(cat data/mass/salt) WT_JOB=en-${{ matrix.shard }}
+          timeout 270m python mass.py en --shard ${{ matrix.shard }} --of 6 2>&1 | tee logs/en.log || echo "::warning::shard stopped early; partial checkpoint kept"
       - uses: actions/upload-artifact@v4
-        with: {name: 'en-${{ matrix.shard }}', path: 'wikitrends/data/mass/en_${{ matrix.shard }}.json.gz', retention-days: 3}
+        if: always()
+        with: {name: 'en-${{ matrix.shard }}', path: 'wikitrends/data/mass/en_${{ matrix.shard }}.json.gz', retention-days: 5, overwrite: true}
   lang:
     needs: frame
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 300
     strategy:
       fail-fast: false
       matrix: {shard: [0, 1, 2, 3]}
@@ -52,10 +76,17 @@ jobs:
       - run: pip install requests numpy
       - uses: actions/download-artifact@v4
         with: {name: frame, path: wikitrends/data/mass/}
-      - working-directory: wikitrends
-        run: python mass.py lang --shard ${{ matrix.shard }} --of 4
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh lang-${{ matrix.shard }} 180 > /tmp/status.log 2>&1 &
+      - name: Collect (checkpointed; hard budget 270 min)
+        working-directory: wikitrends
+        run: |
+          [ "$IS_TEST" = "true" ] && export MASS_LIMIT=40
+          export WT_JOB=lang-${{ matrix.shard }}
+          timeout 270m python mass.py lang --shard ${{ matrix.shard }} --of 4 2>&1 | tee logs/lang.log || echo "::warning::shard stopped early; partial checkpoint kept"
       - uses: actions/upload-artifact@v4
-        with: {name: 'lang-${{ matrix.shard }}', path: 'wikitrends/data/mass/lang_${{ matrix.shard }}.json.gz', retention-days: 3}
+        if: always()
+        with: {name: 'lang-${{ matrix.shard }}', path: 'wikitrends/data/mass/lang_${{ matrix.shard }}.json.gz', retention-days: 5, overwrite: true}
   analyze:
     needs: [en, lang]
     if: always()
@@ -68,12 +99,19 @@ jobs:
       - run: pip install requests numpy
       - uses: actions/download-artifact@v4
         with: {path: wikitrends/data/mass/, merge-multiple: true}
-      - run: rm -f wikitrends/data/mass/salt && ls -la wikitrends/data/mass/
+      - name: Inventory (what each shard delivered)
+        run: |
+          rm -f wikitrends/data/mass/salt
+          python -c "
+          import gzip,json,glob
+          for f in sorted(glob.glob('wikitrends/data/mass/*_*.json.gz')): print(f, len(json.load(gzip.open(f,'rt'))))
+          " | tee wikitrends/data/mass_inventory.txt
       - working-directory: wikitrends
-        run: python mass.py analyze
+        run: python mass.py analyze 2>&1 | tee mass_analyze.log
       - name: Commit mass results
+        if: always()
         run: |
           git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
-          git add -f wikitrends/data/mass_results.json wikitrends/data/mass/frame.json
-          git commit -m "Mass tier results [skip ci]" || exit 0
-          git pull --rebase origin wikitrends-mass && git push origin HEAD:wikitrends-mass
+          for f in wikitrends/data/mass_results.json wikitrends/data/mass/frame.json wikitrends/data/mass_inventory.txt wikitrends/mass_analyze.log; do [ -f $f ] && git add -f $f; done
+          git commit -m "Mass tier results (run ${{ github.run_id }}) [skip ci]" || exit 0
+          git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }}

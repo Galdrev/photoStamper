@@ -17,6 +17,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import requests
 
+import wt_net
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import analyze as A          # noqa: E402
@@ -41,19 +43,8 @@ LANG_TOP_PER_GROUP = 800
 
 def api(lang="en", **p):
     p.update(format="json", formatversion=2)
-    for i in range(7):
-        try:
-            r = S.get(f"https://{lang}.wikipedia.org/w/api.php", params=p, timeout=90)
-            if r.status_code == 200:
-                j = r.json()
-                if "error" not in j:
-                    return j
-            elif r.status_code == 429:
-                time.sleep(int(r.headers.get("retry-after", 20))); continue
-        except (requests.RequestException, ValueError):
-            pass
-        time.sleep(min(60, 2 ** i))
-    return None
+    j = wt_net.get_json(f"https://{lang}.wikipedia.org/w/api.php", p)
+    return j if j and "error" not in j else None
 
 
 def cat_talk_titles(cat):
@@ -189,19 +180,41 @@ def shard(rows, i, n):
     return [r for k, r in enumerate(rows) if k % n == i]
 
 
-def run_en(i, n):
-    rows = shard(json.load(open(os.path.join(OUT, "frame.json")))["rows"], i, n)
-    out = []
+def _run(kind, fn, rows, i):
+    """Checkpointed shard runner: resumes from a partial file, writes every 100 articles."""
+    out_p = os.path.join(OUT, f"{kind}_{i}.json.gz")
+    done = []
+    if os.path.exists(out_p):
+        try:
+            done = json.load(gzip.open(out_p, "rt"))
+        except Exception:
+            done = []
+    have = {r["title"] for r in done}
+    todo = [r for r in rows if r["title"] not in have]
+    print(f"{kind} shard {i}: {len(have)} already done, {len(todo)} to do", flush=True)
+    out, fails = list(done), 0
+    wt_net.heartbeat(f"{kind}-{i}", len(out), len(rows), force=True)
+    def save():
+        tmp = out_p + ".tmp"
+        json.dump(out, gzip.open(tmp, "wt")); os.replace(tmp, out_p)
     with ThreadPoolExecutor(6) as ex:
-        futs = [ex.submit(en_features, r) for r in rows]
+        futs = [ex.submit(fn, r) for r in todo]
         for k, f in enumerate(as_completed(futs), 1):
             try:
                 out.append(f.result())
             except Exception as e:
-                print("ERR", e, file=sys.stderr)
+                fails += 1; print("ERR", e, file=sys.stderr, flush=True)
+            wt_net.heartbeat(f"{kind}-{i}", len(out), len(rows), article_errors=fails)
             if k % 100 == 0:
-                print(f"en shard {i}: {k}/{len(rows)}", flush=True)
-    json.dump(out, gzip.open(os.path.join(OUT, f"en_{i}.json.gz"), "wt"))
+                save()
+    save()
+    wt_net.heartbeat(f"{kind}-{i}-done", len(out), len(rows), force=True, article_errors=fails)
+
+
+def run_en(i, n):
+    rows = shard(json.load(open(os.path.join(OUT, "frame.json")))["rows"], i, n)
+    lim = int(os.environ.get("MASS_LIMIT", "0"))
+    _run("en", en_features, rows[:lim] if lim else rows, i)
 
 
 # ---------------------------------------------------------------- other languages
@@ -236,13 +249,8 @@ def run_lang(i, n):
         G.sort(key=lambda r: LEVELS.index(r["importance"]))
         pick += G[:LANG_TOP_PER_GROUP]
     rows = shard(pick, i, n)
-    out = []
-    with ThreadPoolExecutor(6) as ex:
-        for k, res in enumerate(ex.map(lang_features, rows), 1):
-            out.append(res)
-            if k % 50 == 0:
-                print(f"lang shard {i}: {k}/{len(rows)}", flush=True)
-    json.dump(out, gzip.open(os.path.join(OUT, f"lang_{i}.json.gz"), "wt"))
+    lim = int(os.environ.get("MASS_LIMIT", "0"))
+    _run("lang", lang_features, rows[:max(1, lim // 4)] if lim else rows, i)
 
 
 # ---------------------------------------------------------------- analysis

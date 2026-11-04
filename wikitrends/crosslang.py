@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 import requests
 
 import analyze as A
+import wt_net
 from corpus import SNAPSHOT_DATES
 
 LANGS = ["de", "fr", "es", "it", "nl", "ru", "he", "ar", "pl", "pt"]
@@ -34,17 +35,8 @@ S.headers["User-Agent"] = "WikiFramingTrends/1.0 (https://github.com/Galdrev/pho
 
 def api(lang, **p):
     p.update(format="json", formatversion=2)
-    for i in range(6):
-        try:
-            r = S.get(f"https://{lang}.wikipedia.org/w/api.php", params=p, timeout=60)
-            if r.status_code == 200 and "error" not in r.json():
-                return r.json()
-            if r.status_code == 429:
-                time.sleep(30)
-        except requests.RequestException:
-            pass
-        time.sleep(2 ** i)
-    return None
+    j = wt_net.get_json(f"https://{lang}.wikipedia.org/w/api.php", p)
+    return j if j and "error" not in j else None
 
 
 def langlinks(title):
@@ -87,12 +79,20 @@ def one(title):
     return title, res
 
 
+_n = [0]
+_N = 0
+
+
 def main():
+    global _N
+    _LIST = (TITLES)[:2] if os.environ.get('WT_LIMIT') else (TITLES)
+    _N = len(_LIST)
     out = {}
     with ThreadPoolExecutor(4) as ex:
-        for title, res in ex.map(one, TITLES):
+        for title, res in ex.map(one, _LIST):
             out[title] = res
             print(title, {l: len(v["series"]) for l, v in res.items()}, flush=True)
+            _n[0] += 1; wt_net.heartbeat('crosslang', _n[0], _N)
     json.dump({"langs": ["en"] + LANGS, "lexicon": LEX, "articles": out},
               open(os.path.join(A.DATA, "crosslang.json"), "w"), ensure_ascii=False)
 

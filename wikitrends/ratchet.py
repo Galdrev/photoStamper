@@ -21,6 +21,7 @@ from datetime import datetime, timezone
 import numpy as np
 
 import analyze as A
+import wt_net
 import fetch as F
 from corpus import KEY_ARTICLES, KEY_ARTICLES_CONTROL
 
@@ -159,13 +160,21 @@ def aggregate(arts, titles):
     return out
 
 
+_n = [0]
+_N = 0
+
+
 def main():
+    global _N
+    _LIST = (KEY_ARTICLES + KEY_ARTICLES_CONTROL)[:2] if os.environ.get('WT_LIMIT') else (KEY_ARTICLES + KEY_ARTICLES_CONTROL)
+    _N = len(_LIST)
     arts = {}
     with ThreadPoolExecutor(4) as ex:
-        for t, m in ex.map(article_metrics, KEY_ARTICLES + KEY_ARTICLES_CONTROL):
+        for t, m in ex.map(article_metrics, _LIST):
             if m:
                 arts[t] = m
                 print(f"{t}: {m['revisions']} revisions, {m['fs_n_variants']} first-sentence variants", flush=True)
+                _n[0] += 1; wt_net.heartbeat('ratchet', _n[0], _N)
     res = {"note": "Exploratory. Lead (section 0) of every revision since 2021. Editors are salted hashes.",
            "topic": aggregate(arts, KEY_ARTICLES), "comparison": aggregate(arts, KEY_ARTICLES_CONTROL),
            "articles": {t: {k: v for k, v in m.items() if k != "terms"} | {

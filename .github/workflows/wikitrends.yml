@@ -1,12 +1,17 @@
 name: wikitrends-fetch
 on:
   push:
-    branches: [wiki-framing-research]
-    paths: ['wikitrends/*.py', '.github/workflows/wikitrends.yml', 'wikitrends/RUN']
+    branches: [wiki-framing-research, wikitrends-main-test]
+    paths: ['wikitrends/*.py', '.github/workflows/wikitrends.yml', '.github/scripts/*', 'wikitrends/RUN']
   workflow_dispatch:
 permissions:
   contents: write
-concurrency: wikitrends
+concurrency: wikitrends-${{ github.ref_name }}
+env:
+  IS_TEST: ${{ github.ref_name == 'wikitrends-main-test' }}
+  WT_RPS: '5'
+  WT_JOB: main
+  GH_TOKEN: ${{ github.token }}
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -18,49 +23,67 @@ jobs:
       - run: pip install requests numpy
       - name: Per-run secret salt for editor hashing (never written to disk or logs)
         run: echo "::add-mask::$(openssl rand -hex 16 | tee /tmp/salt)" && echo "WT_SALT=$(cat /tmp/salt)" >> $GITHUB_ENV && rm /tmp/salt
+      - name: Test-mode limits
+        if: env.IS_TEST == 'true'
+        run: echo "WT_LIMIT=8" >> $GITHUB_ENV && echo "CACHE_PREFIX=wiki-test-" >> $GITHUB_ENV
+      - name: Cache prefix
+        if: env.IS_TEST != 'true'
+        run: echo "CACHE_PREFIX=wiki-raw-" >> $GITHUB_ENV
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh main 180 > /tmp/status.log 2>&1 &
       - name: Restore raw cache
         uses: actions/cache/restore@v4
         with:
           path: wikitrends/data/articles
-          key: wiki-raw-${{ hashFiles('wikitrends/corpus.py', 'wikitrends/fetch.py') }}-${{ github.run_id }}
-          restore-keys: wiki-raw-
-      - name: Fetch
+          key: ${{ env.CACHE_PREFIX }}${{ hashFiles('wikitrends/corpus.py', 'wikitrends/fetch.py') }}-${{ github.run_id }}
+          restore-keys: ${{ env.CACHE_PREFIX }}
+      - name: Fetch (hard budget 200 min; continues with what it has)
         working-directory: wikitrends
         run: |
-          python fetch.py --workers 4 > fetch.log 2> fetch_errors.log || echo "fetch exited $?"
-          tail -n 15 fetch.log; echo ---; tail -n 60 fetch_errors.log
+          ls data/articles 2>/dev/null | wc -l | xargs echo "cached articles:"
+          timeout 200m python fetch.py --workers 4 > logs/fetch.log 2> logs/fetch_errors.log || echo "::warning::fetch exited $? (timeout or error); continuing"
+          tail -n 5 logs/fetch.log; echo ---; tail -n 30 logs/fetch_errors.log; cp logs/fetch_errors.log data/fetch_errors.log
+          ls data/articles | wc -l | xargs echo "articles on disk:"
       - name: Save raw cache
         if: always()
         uses: actions/cache/save@v4
         with:
           path: wikitrends/data/articles
-          key: wiki-raw-${{ hashFiles('wikitrends/corpus.py', 'wikitrends/fetch.py') }}-${{ github.run_id }}
+          key: ${{ env.CACHE_PREFIX }}${{ hashFiles('wikitrends/corpus.py', 'wikitrends/fetch.py') }}-${{ github.run_id }}
       - name: Data acceptance tests
         working-directory: wikitrends
-        run: python data_qa.py || echo "::warning::BLOCKING data QA check failed - see data/qa.json"
+        run: python data_qa.py 2>&1 | tee logs/qa.log || echo "::warning::BLOCKING data QA check failed"
       - name: Analyze
         working-directory: wikitrends
-        run: python analyze.py
+        run: python analyze.py 2>&1 | tee logs/analyze.log
       - name: Exploratory analyses
         working-directory: wikitrends
-        run: python explore.py || echo "::warning::explore failed"
+        run: python explore.py 2>&1 | tee logs/explore.log || echo "::warning::explore failed"
       - name: Trace first-sentence changes to exact revisions
         working-directory: wikitrends
-        run: timeout 45m python trace_changes.py || echo "::warning::bisect incomplete"
+        run: WT_JOB=trace timeout 45m python trace_changes.py 2>&1 | tee logs/trace.log || echo "::warning::trace incomplete"
       - name: Ratchet test (lead of every revision, key articles)
         working-directory: wikitrends
-        run: timeout 50m python ratchet.py || echo "::warning::ratchet incomplete"
-      - name: Cross-language mirror (same articles, other Wikipedias)
+        run: WT_JOB=ratchet timeout 50m python ratchet.py 2>&1 | tee logs/ratchet.log || echo "::warning::ratchet incomplete"
+      - name: Cross-language mirror
         working-directory: wikitrends
-        run: timeout 40m python crosslang.py || echo "::warning::crosslang incomplete"
+        run: WT_JOB=crosslang timeout 40m python crosslang.py 2>&1 | tee logs/crosslang.log || echo "::warning::crosslang incomplete"
       - name: Organic vs organised editing signals
         working-directory: wikitrends
-        run: python coordination.py || echo "::warning::coordination failed"
+        run: python coordination.py 2>&1 | tee logs/coordination.log || echo "::warning::coordination failed"
+      - name: Step health summary
+        if: always()
+        working-directory: wikitrends
+        run: |
+          for f in logs/*.log; do echo "== $f: $(wc -l < $f) lines, errors: $(grep -ciE 'traceback|error' $f)"; done | tee logs/summary.log
+          grep -h -A3 Traceback logs/*.log | head -60 || true
       - name: Commit results
+        if: always()
         run: |
           git config user.name "wikitrends-bot"
           git config user.email "actions@users.noreply.github.com"
-          cp wikitrends/fetch_errors.log wikitrends/data/ || true
+          mkdir -p wikitrends/data/runlogs && cp wikitrends/logs/*.log wikitrends/data/runlogs/ 2>/dev/null || true
           for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json ratchet.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
-          git commit -m "Update wikitrends results [skip ci]" || exit 0
-          git pull --rebase origin wiki-framing-research && git push
+          git add -f wikitrends/data/runlogs/*.log 2>/dev/null || true
+          git commit -m "Update wikitrends results (run ${{ github.run_id }}) [skip ci]" || exit 0
+          git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }}

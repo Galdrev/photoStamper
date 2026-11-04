@@ -8,6 +8,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
+import wt_net
+
 from corpus import (TREATMENT_SEED, CONTROL_SEED, TREATMENT_CATEGORIES,
                     START, SNAPSHOT_DATES)
 
@@ -22,26 +24,12 @@ S.headers["User-Agent"] = UA
 
 def api(**p):
     p.update(format="json", formatversion=2)
-    last = None
-    for i in range(8):
-        try:
-            r = S.get(API, params=p, timeout=90)
-            last = f"HTTP {r.status_code}"
-            if r.status_code == 200:
-                j = r.json()
-                if "error" in j:
-                    last = j["error"].get("code")
-                    if last not in ("maxlag", "ratelimited", "internal_api_error_DBQueryTimeoutError"):
-                        raise RuntimeError(f"API error {j['error']}")
-                else:
-                    return j
-            elif r.status_code == 429:
-                time.sleep(int(r.headers.get("retry-after", 30)))
-                continue
-        except requests.RequestException as e:
-            last = repr(e)
-        time.sleep(min(60, 2 ** i))
-    raise RuntimeError(f"API failed ({last}): {p.get('titles') or p.get('cmtitle')}")
+    j = wt_net.get_json(API, p)
+    if j is None:
+        raise RuntimeError(f"API failed after retries: {p.get('titles') or p.get('cmtitle') or p.get('revids')}")
+    if "error" in j:
+        raise RuntimeError(f"API error {j['error']}")
+    return j
 
 
 def category_members(cat, depth=1, seen=None):
@@ -117,13 +105,8 @@ def snapshot(title, date):
 
 def pageviews(title):
     t = requests.utils.quote(title.replace(" ", "_"), safe="")
-    try:
-        r = S.get(PV.format(t=t), timeout=60)
-        if r.status_code == 200:
-            return {i["timestamp"][:6]: i["views"] for i in r.json()["items"]}
-    except requests.RequestException:
-        pass
-    return {}
+    j = wt_net.get_json(PV.format(t=t), {}, tries=4, ok404=True)
+    return {i["timestamp"][:6]: i["views"] for i in j["items"]} if j and "items" in j else {}
 
 
 def fetch_article(title, group, subgroup):
@@ -191,6 +174,11 @@ def main():
     with open(os.path.join(OUT, "..", "manifest.json"), "w") as f:
         json.dump(jobs, f, indent=1)
 
+    lim = int(os.environ.get("WT_LIMIT", "0"))
+    if lim:
+        jobs = dict(list(jobs.items())[:lim])
+    errors = 0
+    wt_net.heartbeat("fetch", 0, len(jobs), force=True)
     with ThreadPoolExecutor(a.workers) as ex:
         futs = {ex.submit(fetch_article, t, g, sg): t for t, (g, sg) in jobs.items()}
         for i, fu in enumerate(as_completed(futs), 1):
@@ -198,7 +186,10 @@ def main():
                 t, msg = fu.result()
                 print(f"[{i}/{len(jobs)}] {t}: {msg}", flush=True)
             except Exception as e:  # keep going
+                errors += 1
                 print(f"[{i}/{len(jobs)}] {futs[fu]}: ERROR {e}", file=sys.stderr, flush=True)
+            wt_net.heartbeat("fetch", i, len(jobs), article_errors=errors)
+    wt_net.heartbeat("fetch-done", len(jobs), len(jobs), force=True, article_errors=errors)
 
 
 if __name__ == "__main__":
