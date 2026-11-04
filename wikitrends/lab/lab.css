@@ -214,7 +214,7 @@
 .lx-gal canvas{display:block;width:100%;cursor:pointer}
 
 @media (max-width:640px){
-  .lx-head{padding-top:22px;gap:10px}
+  .lx-head{padding-top:14px;gap:10px}
   .lx-head h1{font-size:38px}
   .lx-deck{font-size:16px}
   .lx-index{display:none}
@@ -230,12 +230,12 @@
   .lx-bar .ci{top:8px!important}
   .lx-key{font-size:11px;gap:2px 12px}
   .lx-chip{padding:6px 10px;min-height:32px;font-size:12.5px}
-  .lx-cchart{height:230px}
+  .lx-cchart{height:210px}
   .lx-fs{font-size:19px;min-height:3.6em}
   .lx-pg .cell{min-height:20px}
   .lx-tiles{grid-template-columns:repeat(auto-fill,minmax(5px,1fr));gap:1.5px}
   .lx-big{padding:13px 24px}
-  .lx-sec{padding:14px 12px;margin-top:18px}
+  .lx-sec{padding:14px 12px;margin-top:14px}
   .lx-bar,.lx-axis{grid-template-columns:minmax(0,1fr)}
   .lx-axis div:first-child{display:none}
   .lx-bar{gap:2px}

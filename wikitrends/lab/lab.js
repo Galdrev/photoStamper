@@ -407,7 +407,7 @@ function s4Draw(){
   s4Mari(d,st.vid);
 }
 function s4Mari(d,cur){
-  const el=q("#lxFMari"),w=Math.max(260,el.clientWidth),H=phone()?96:120,top=16;
+  const el=q("#lxFMari"),w=Math.max(260,el.clientWidth),H=phone()?76:120,top=16;
   const vs=d.order.map(id=>d.vs.get(id)).filter(Boolean),LV=v=>d.live.get(v.id)||0,tot=vs.reduce((s,v)=>s+LV(v),0)||1;
   const mxv=Math.max(1,...vs.map(v=>d.views.get(v.id)||0));
   let s=`<svg viewBox="0 0 ${w} ${H+top+22}" width="${w}" height="${H+top+22}" role="img" aria-label="Each wording as a block: width days live, height readers">`;
@@ -641,15 +641,15 @@ function gDraw(k0,k1,e){
 function gSay(){const G=G8,k=S8.cur,ds=MS.dates||[],el=q("#lxGSay"),L=G.lay;
   const pool=g=>{const v=[];G.lanes.forEach(ln=>{if((ln.g==="t")===(g==="t"))v.push(...gStats(ln,k))});return v};
   const T=pool("t"),C=pool("c"),mc=mean(C),bd=S8.band[k];
-  const head=`<span class="n">${N(G.n-G.born)} articles${G.born?` (${N(G.born)} created later are left out)`:""}. Tick: row mean. Dashed: comparison mean. Beyond ±${N(L.L||G.Lraw)}: at the edge.</span> `;
-  const p2=DID.find(r=>r.id==="P2"),preL=`<p class="lx-pre">Not pre-registered. Projects differ in what they contain; the pre-registered test is in the report${p2?`: P2 extra change <b>${SG(p2.did,2)}</b> per 10,000 words, ${p2.q_bh!=null&&p2.q_bh<.05?"clear of chance":"not clear of chance"} after correction${p2.q_bh!=null?` (q = ${F(p2.q_bh,2)})`:""}`:""}.</p>`;
+  const head=`<span class="n">${N(G.n-G.born)} articles${G.born?` (${N(G.born)} newer ones left out)`:""}. Tick: row mean. Dashed: comparison mean.</span> `;
+  const p2=DID.find(r=>r.id==="P2"),preL=`<p class="lx-pre">Not pre-registered. Projects differ in what they contain; the pre-registered test is in the report${p2?`: P2 extra change <b>${SG(p2.did,2)}</b> per 10,000 words, ${p2.q_bh!=null&&p2.q_bh<.05?"clear of chance":"not clear of chance"}${p2.q_bh!=null?` (q = ${F(p2.q_bh,2)})`:""}`:""}.</p>`;
   if(k===0){el.innerHTML=head+`At ${DL(ds[0])} every article starts at zero. Pick a later snapshot to watch them spread.`+preL;return}
   if(S8.sel!=null){const ln=gLanes()[S8.sel],v=gStats(ln,k),m=mean(v),ci=bootMean(v,300,3),few=v.length<FEW;
     el.innerHTML=head+`<b>${E(ln.pooled?"All comparison projects":ln.p)}</b> (${ln.g==="t"?"topic":"comparison"}, ${N(v.length)} articles${few?", "+fewTag:""}): mean change <b>${SG(m,2)}</b> per 10,000 words (range ${SG(ci[0],2)} to ${SG(ci[1],2)})${ln.g==="t"?`, an extra change of <b>${SG(m-mc,2)}</b> over all ${N(C.length)} comparison articles`:""}. ${few||ln.g!=="t"?"":Math.abs(m-mc)<Math.max(ci[1]-ci[0],.05)?"Hard to tell apart from the comparison.":""}`+preL;return}
   const ex=mean(T)-mc,out=bd&&isFinite(bd.lo)&&(ex<bd.lo||ex>bd.hi);
-  const band=bd&&isFinite(bd.lo)?` Swapping the topic label between whole projects (${bd.exact?`all ${N(bd.n)} ways`:`${N(bd.n)} random ways`} to pick ${bd.nTproj} of ${bd.nProj} projects) gives ${SG(bd.lo,2)} to ${SG(bd.hi,2)}, the grey strip. The real extra change is ${out?"<b>outside what project-level chance produces</b>. Exploratory; see the report’s caveats.":"<b>inside what project-level chance produces</b>, so differences between projects could explain it."}`:"";
-  const pre=`<p class="lx-pre">Not pre-registered. Projects differ in what they contain; the pre-registered test is in the report${p2?`: P2, loaded words in the full text, extra change <b>${SG(p2.did,2)}</b> per 10,000 words, ${p2.q_bh!=null&&p2.q_bh<.05?"clear of chance after correcting for multiple tests":"not clear of chance after correcting for multiple tests"}${p2.q_bh!=null?` (q = ${F(p2.q_bh,2)})`:""}`:""}.</p>`;
-  el.innerHTML=head+`By ${DL(ds[k])}: topic <b>${SG(mean(T),2)}</b> (${N(T.length)}), comparison <b>${SG(mc,2)}</b> (${N(C.length)}) per 10,000 words, an extra change of <b>${SG(ex,2)}</b>.${band}${pre}`}
+  const band=bd&&isFinite(bd.lo)?` Giving the topic label to other whole projects (${bd.exact?`all ${N(bd.n)}`:`${N(bd.n)} random`} picks of ${bd.nTproj} from ${bd.nProj}) gives ${SG(bd.lo,1)} to ${SG(bd.hi,1)} (grey strip): the real value is ${out?"<b>outside what project-level chance produces</b>. Exploratory; see the report’s caveats.":"<b>inside what project-level chance produces</b>."}`:"";
+  const pre=preL;
+  el.innerHTML=head+`By ${DL(ds[k])}: topic <b>${SG(mean(T),1)}</b> (${N(T.length)}), comparison <b>${SG(mc,1)}</b> (${N(C.length)}) per 10,000 words; extra change <b>${SG(ex,1)}</b>.${band}${pre}`}
 
 /* ---------- init and redraw ---------- */
 const LABS=[["shadow",s1Init,()=>{s1Strip();s1Draw()}],["shuffle",s2Init,()=>{const st=s2State(S2.id);if(st)s2Hist(st,null)}],["loud",s3Init,()=>s3Draw()],["flip",s4Init,()=>{if(S4.title)s4Draw()}],["chips",s5Init,s5Draw],["prism",s7Init,()=>{}],["galaxy",s8Init,()=>{if(G8)gDraw(S8.cur)}]];
