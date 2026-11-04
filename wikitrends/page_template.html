@@ -396,6 +396,45 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .rv-pre .drawln{stroke-dasharray:1;stroke-dashoffset:1}
 .rv-go .drawln{stroke-dasharray:1;animation:drawln 1.6s ease-out both;animation-delay:var(--d,0s)}
 
+/* iteration 2: opener, compact board, folded sections */
+.breathe{margin-top:56px;display:grid;gap:14px}
+.br-h{font-size:clamp(22px,2.6vw,30px)}
+.br-s{margin:0;font:400 clamp(27px,4.3vw,54px)/1.24 var(--display);letter-spacing:-.015em;min-height:3.8em;max-width:30em;transition:box-shadow .2s}
+.br-s del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:2px;border-radius:2px;padding:0 .06em}
+.br-s ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .06em}
+@keyframes brin{from{opacity:0;background:transparent}}
+.br-s.anim ins{animation:brin .55s ease-out both}
+.br-s.flash{box-shadow:-6px 0 0 var(--del-bd);color:var(--del-ink)}
+.br-meta{font:12.5px/1.5 var(--mono);color:var(--muted);min-height:1.5em}
+.br-meta b{color:var(--ink);font-weight:600}
+.br-strip{position:relative;height:58px;margin-top:4px;touch-action:none}
+.br-strip svg{display:block;width:100%;overflow:visible}
+.br-strip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:.0001;cursor:ew-resize}
+.br-head{position:absolute;top:2px;width:4px;height:40px;margin-left:-2px;background:var(--topic);border-radius:2px;pointer-events:none;box-shadow:0 0 0 3px var(--paper)}
+.br-head::after{content:"";position:absolute;left:-7px;top:-6px;width:18px;height:18px;border-radius:50%;background:var(--topic);border:3px solid var(--paper)}
+.br-strip input:focus-visible~.br-head::after{outline:2px solid var(--add-bd);outline-offset:2px}
+.br-war{position:absolute;top:-14px;transform:translateX(4px);font:500 10.5px var(--mono);color:var(--war);pointer-events:none;white-space:nowrap}
+.br-key{display:flex;flex-wrap:wrap;gap:6px 18px;font:12.5px/1.4 var(--body);color:var(--muted);align-items:center}
+.br-key del,.br-key ins{font:inherit;padding:0 4px;border-radius:2px}
+.br-key del{background:var(--del-bg);color:var(--del-ink)} .br-key ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none}
+.br-cmp{border-top:1px solid var(--rule);padding-top:12px;display:grid;gap:8px}
+@keyframes slidein{from{opacity:0;transform:translateY(-12px)}}
+.br-cmp.in{animation:slidein .5s ease-out both}
+.br-row{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:12px;align-items:center}
+.br-lab{font:12px/1.35 var(--mono);color:var(--muted)}
+.br-lab b{display:block;font:600 13px var(--body);color:var(--ink)}
+.br-mini svg{display:block;width:100%;overflow:visible}
+.chance-s{gap:10px}
+.chsum{font:400 clamp(18px,2vw,22px)/1.5 var(--display);max-width:62ch}
+.chsum b{font-weight:600;font-variant-numeric:tabular-nums}
+.howc{margin-top:96px}
+.howc>summary{font-size:14px}
+.howc .sec{margin-top:36px}
+.bsum{display:none}
+.sec.folded>:not(header):not(.unfold){display:none!important}
+.unfold{justify-self:start}
+#stepsK{gap:30vh;padding-block:4vh 16vh}
+
 /* headline moment 1: the most important chart */
 .kfig{gap:10px}
 .kfig .chart{touch-action:pan-y}
@@ -495,7 +534,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 }
 @media (max-width:640px){
   body{font-size:15.5px}
-  .sec{margin-top:80px}
+  .sec{margin-top:64px}
   .fig{padding:12px}
   .wow-grid{grid-template-columns:minmax(0,1fr)}
   .wow-col,.wow-col+.wow-col{padding:16px 0;border-left:0}
@@ -534,6 +573,22 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .tcard .when{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
   .stripe,.stripes-h{grid-template-columns:72px minmax(0,1fr) 78px;gap:8px}
   .stripe .ln span{display:none}
+  .br-row{grid-template-columns:minmax(0,1fr);gap:2px}
+  .br-s{min-height:5.2em}
+  .xl-text{max-height:220px}
+  .brow{gap:6px;padding:10px 0}
+  .brow-h>:not(.bsum){display:none}
+  .brow:not(.open) .tiles,.brow:not(.open) .tdet{display:none}
+  .bsum{display:flex;width:100%;align-items:center;gap:10px;font:inherit;color:var(--ink);background:none;border:0;padding:4px 0;text-align:left;cursor:pointer}
+  .bsum .bl{flex:1;font:600 13.5px var(--body);min-width:0}
+  .bsum .bn{font:12px var(--mono);color:var(--ink-2);white-space:nowrap}
+  .bsum .bv{font:600 12px var(--mono);white-space:nowrap}
+  .bsum .bv.ok{color:var(--topic)} .bsum .bv.no{color:var(--war)}
+  .bsum::after{content:"▾";color:var(--muted);transition:transform .2s}
+  .brow.open .bsum::after{transform:rotate(180deg)}
+  .rule-q{font-size:15.5px}
+  #stepsK{gap:20vh;padding-block:8vh 6vh}
+  #stepsB{gap:22vh;padding-block:10vh 8vh}
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .slots .sl{width:52px}
 }
@@ -564,11 +619,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </figure>
 </header>
 
-<section class="wow" id="wow" aria-labelledby="wowH">
-  <div class="eyebrow">One sentence, two versions</div>
-  <h2 id="wowH">How Wikipedia defines Zionism, then and now</h2>
-  <div class="wow-grid" id="wowGrid"></div>
-  <div class="wow-key"><span><del>amber, struck through</del> = words taken out</span><span><ins>blue</ins> = words added</span><a href="#definition" class="mono" style="font-size:12px">See every version, quarter by quarter ↓</a></div>
+<section class="breathe" id="breathe" aria-labelledby="brH">
+  <div class="eyebrow"><span class="layer">CONTENT</span>One sentence, every version</div>
+  <h2 id="brH" class="br-h">How Wikipedia defines <span id="brTitle">Zionism</span></h2>
+  <blockquote class="br-s" id="brS" aria-live="polite"></blockquote>
+  <p class="br-meta" id="brMeta"></p>
+  <div class="br-strip"><div id="brSvg"></div><input type="range" id="brRange" aria-label="Move through time: the first sentence as it read on that day"><span class="br-head" id="brHead"></span></div>
+  <p class="cap br-hint">Drag along the strip to rewrite the sentence as it stood on any day. Each tick is a change.</p>
+  <div class="br-key" id="brKey"></div>
+  <div class="br-cmp" id="brCmp" hidden></div>
+  <button class="inlab" type="button" id="brLab" data-intent='{"lab":"flip","title":"Zionism"}'>Explore every version in the data lab →</button>
 </section>
 
 <section class="sixty" id="sixty" aria-labelledby="sixtyH">
@@ -620,14 +680,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="means" id="mKey"></p>
 </section>
 
-<section class="sec" id="chance" aria-labelledby="chanceH">
-  <header>
-    <div class="eyebrow"><span class="layer epistemics">EPISTEMICS</span>Could it be chance?</div>
-    <h2 id="chanceH">Where the real one lands</h2>
-    <p class="deck">We shuffled the labels “topic” and “comparison” across the articles 5,000 times and worked out the extra change each time. If the labels did not matter, the real result would look like just another shuffle. Each grey tick is one shuffle. The coloured tick is the real result.</p>
-  </header>
-  <div class="fig" id="chFig"></div>
-  <p class="means" id="mChance"></p>
+<section class="sec chance-s" id="chance" aria-label="Could it be chance?">
+  <div class="eyebrow"><span class="layer epistemics">EPISTEMICS</span>Could it be chance?</div>
+  <p class="chsum" id="chSum"></p>
+  <button class="inlab" type="button" data-intent='{"lab":"shuffle","test":"P2"}'>Shuffle it yourself →</button>
 </section>
 
 <section class="sec" id="board" aria-labelledby="boardH">
@@ -648,12 +704,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <figure class="fig" id="vocabFig" style="margin:0">
       <div class="controls">
         <label class="ctl" for="frameSel">Words <select id="frameSel"></select></label>
-        <span class="seg" id="partA" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
+        <span class="seg" id="partA" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
         <span class="seg" id="setA" role="group" aria-label="Lines shown"><button data-v="main" aria-pressed="true">Groups</button><button data-v="sub" aria-pressed="false">Subgroups</button></span>
       </div>
       <div class="chart" id="trend" style="height:clamp(250px,46vh,400px)"></div>
       <div class="legend" id="trendKey"></div>
-      <button class="inlab" type="button" id="vocabLab">Compare any slices of articles in the data lab →</button>
     </figure>
   <p class="means" id="mTrend"></p>
   <div class="fig-h" style="margin-top:20px"><span class="fig-t">Each group of words on its own</span><span class="cap">Teal line: Israel and Jewish-topic articles. Grey-violet line: other articles. Each panel has its own scale. Select one to load it above.</span></div>
@@ -671,7 +726,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <figure class="sticky fig" style="margin:0">
       <div class="controls">
         <span class="seg" id="esOut" role="group" aria-label="Words"><button data-v="critical_rate" aria-pressed="true">Colonial, apartheid, genocide…</button><button data-v="connection_rate" aria-pressed="false">Homeland, antisemitism…</button></span>
-        <span class="seg" id="esPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
+        <span class="seg" id="esPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
       </div>
       <div class="fig-t" id="esTitle"></div>
       <div class="chart" id="es" style="height:clamp(250px,46vh,400px)"></div>
@@ -680,6 +735,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </figure>
   </div>
   <p class="means" id="mES"></p>
+  <button class="inlab" type="button" data-intent='{"lab":"shadow"}'>Explore this →</button>
 </section>
 
 <section class="sec" id="heatmap">
@@ -690,7 +746,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </header>
   <div class="controls">
     <span class="seg" id="hmMode" role="group" aria-label="Colour"><button data-v="rate" aria-pressed="true">How often</button><button data-v="change" aria-pressed="false">Change since first copy</button></span>
-    <span class="seg" id="hmPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
+    <span class="seg" id="hmPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
     <label class="ctl" for="hmSort">Sort <select id="hmSort"><option value="change">Biggest increase first</option><option value="last">Latest level</option><option value="first">First level</option><option value="edits">Most edited</option><option value="title">A–Z</option></select></label>
   </div>
   <div class="fig">
@@ -698,31 +754,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="ramp" id="ramp"></div>
   </div>
   <p class="means" id="mHeat"></p>
-  <p class="cap col">Both panels are the same height, so each row for the other articles is drawn taller. Select a row to open that article in the ledger below.</p>
-</section>
-
-<section class="sec" id="definition">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>The definition</div>
-    <h2>The first sentence, quarter by quarter</h2>
-    <p class="deck">The first sentence is how Wikipedia defines a subject, and most readers see little else. Press play or drag the slider. Amber, struck-through words were removed since the version before. Blue words were added.</p>
-  </header>
-  <div class="defn">
-    <div class="controls"><div class="picks" id="picks"></div><label class="ctl" for="defSel">Any article <select id="defSel"></select></label></div>
-    <div class="stage">
-      <div class="stage-meta"><span id="defMeta"></span><span id="defLink"></span></div>
-      <blockquote class="sentence" id="defText" style="margin:0" aria-live="polite"></blockquote>
-      <div class="stage-meta" style="border-top:1px solid var(--rule);border-bottom:0">
-        <span class="vlist" id="vlist"></span>
-        <label class="ctl" for="defBase"><input type="checkbox" id="defBase"> compare with the first version</label>
-      </div>
-      <div class="scrub">
-        <button class="play" id="defPlay" type="button">▶ Play</button>
-        <div class="track" id="track"><input type="range" id="defRange" min="0" max="1" step="1" value="0" aria-label="Snapshot"><span class="head" id="defHead"></span></div>
-      </div>
-    </div>
-  </div>
-  <p class="means" id="mDef"></p>
+  <button class="inlab" type="button" data-intent='{"lab":"shadow"}'>Explore this →</button>
+  <p class="cap col">Both panels are the same height, so each row for the other articles is drawn taller. Select a row to open that article.</p>
 </section>
 
 <section class="sec" id="test">
@@ -733,7 +766,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </header>
   <div class="controls">
     <span class="seg" id="winSeg" role="group" aria-label="Time window"></span>
-    <span class="seg" id="partF" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
+    <span class="seg" id="partF" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
   </div>
   <div class="fig">
     <div class="forest" id="forest"></div>
@@ -741,9 +774,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--inc)"></i>solid orange dot: topic articles changed more, and the range stays clear of zero</span><span class="key"><i style="border-radius:50%;background:var(--dec)"></i>solid purple dot: other articles changed more, clear of zero</span><span class="key"><i style="border-radius:50%;border:2px solid var(--ink-2)"></i>hollow dot: can’t tell from chance</span></div>
   </div>
   <p class="means" id="mTest"></p>
-  <details class="stats"><summary>Show the statistics <span>p-values, corrections, group changes, robustness checks</span></summary><div class="in">
+  <details class="stats" id="testStats"><summary>Show the statistics <span>p-values, corrections, shuffles, group changes</span></summary><div class="in">
     <div class="tbx" id="forestStats"></div>
-    <p class="cap col">The robustness checks are in the <a href="#board">scoreboard above</a>. A check holds when the estimate keeps the sign of the main result and stays <button class="gl" type="button" data-g="significant">statistically significant</button> (p &lt; 0.05). The <button class="gl" type="button" data-g="placebo">placebo</button> check is the reverse: it holds when ordinary geography and climate words show no difference. R3 compares the post-war yearly gap with every pre-war year.</p>
+    <div class="fig-t">Where the real result lands among 5,000 shuffles of the labels</div>
+    <div id="chFig"></div>
+    <p class="cap col">The robustness checks are in the <a href="#board">scoreboard above</a>. A check holds when the estimate keeps the sign of the main result and stays <button class="gl" type="button" data-g="significant">statistically significant</button> (p &lt; 0.05). The <button class="gl" type="button" data-g="placebo">placebo</button> check is the reverse: it holds when ordinary geography and climate words show no difference. R3 compares the post-war yearly extra change with every pre-war year.</p>
   </div></details>
 </section>
 
@@ -824,6 +859,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div id="xlWrap"></div>
 </section>
 
+<details class="stats howc" id="howchecked"><summary>How we checked <span>the counter against known edits, the blind reading, and every article in the sample</span></summary><div class="in">
 <section class="sec" id="checks">
   <header>
     <div class="eyebrow"><span class="layer epistemics">EPISTEMICS</span>Checking the counter</div>
@@ -854,6 +890,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="cap">Counts are per 10,000 words. “Loaded words” means words like colonial, apartheid and genocide. “History words” means words like homeland, indigenous and antisemitism. Orange change: went up. Purple: went down.</p>
   <div class="detail" id="detail"></div>
 </section>
+</div></details>
 
 <section class="sec" id="method">
   <header><div class="eyebrow">For researchers</div><h2>How this was measured</h2>
@@ -1113,20 +1150,11 @@ function heroHover(e){
 }
 
 /* ---------- wow + 60 seconds + lede ---------- */
-function drawWow(){
-  const a=R.articles.find(x=>x.title==="Zionism"&&x.first_sentences&&x.first_sentences.length>1)||R.articles.find(x=>["Israel","Hamas","Antisemitism"].includes(x.title)&&x.first_sentences&&x.first_sentences.length>1);
-  if(!a){$("#wow").hidden=true;return}
-  const f0=a.first_sentences[0],f1=a.first_sentences.at(-1),ops=wdiff(f0.s,f1.s);
-  $("#wowH").textContent=`How Wikipedia defines ${a.title}, then and now`;
-  const link=f=>f.revid?`<a href="https://en.wikipedia.org/w/index.php?oldid=${f.revid}" target="_blank" rel="noopener">rev ${f.revid} ↗</a>`:"";
-  const last=a.crit_series_dates?a.crit_series_dates.at(-1):R.dates.at(-1);
-  $("#wowGrid").innerHTML=`<div class="wow-col"><div class="when"><span>${dlab(f0.date)}</span>${link(f0)}</div><p class="wow-s" lang="en">${renderW(ops,"-")}</p></div><div class="wow-col"><div class="when"><span>${dlab(last)}</span>${link(f1)}</div><p class="wow-s" lang="en">${renderW(ops,"+")}</p></div>`;
-}
 function miniBars(c){const t=c.topic_value,o=c.comparison_value;if(t==null||o==null)return "";const mx=Math.max(Math.abs(t),Math.abs(o),1e-9);
   return `<div class="mini2"><div><span>Topic articles</span><span class="bar" style="width:${Math.abs(t)/mx*100}%;background:var(--topic)"></span><span>${esc(t)}</span></div><div><span>${esc(c.compare_label||C_L)}</span><span class="bar" style="width:${Math.abs(o)/mx*100}%;background:var(--comp)"></span><span>${esc(o)}</span></div></div>`}
 function drawCards(){
   const T=Array.isArray(R.takeaways)?R.takeaways.filter(Boolean):[];
-  if(!T.length){$("#cards").innerHTML=`<div class="card ph" style="grid-column:1/-1"><span class="unit">Takeaways pending</span><p class="hl">Four to six short takeaways, each with one number and one picture, are written from the final results. They appear here once the analysis has run. Until then, the story below has every chart.</p></div>`;return}
+  if(!T.length){$("#sixty").hidden=true;return}$("#sixty").hidden=false;
   $("#cards").innerHTML=T.slice(0,6).map(c=>{
     const quote=c.quote_before||c.quote_after?(()=>{const o=wdiff(c.quote_before||"",c.quote_after||"");return `<div class="q"><div><span>Before</span>${renderW(o,"-")}</div><div><span>After</span>${renderW(o,"+")}</div></div>`})():"";
     return `<article class="card">${c.number!=null&&c.number!==""?`<div><div class="big">${esc(c.number)}</div>${c.unit?`<div class="unit">${esc(c.unit)}</div>`:""}</div>`:""}<p class="hl">${esc(c.headline||"")}</p>${miniBars(c)}${quote}${c.link_anchor?`<a class="more" href="#${esc(c.link_anchor)}">Read more ↓</a>`:""}</article>`}).join("");
@@ -1180,7 +1208,7 @@ function drawES(){
   const key=`${S.esPart}:${S.es}`,rows=(R.event_study&&R.event_study[key])||[],el=$("#es");
   setSeg($("#esOut"),S.es);setSeg($("#esPart"),S.esPart);
   const nm=S.es==="critical_rate"?"words like colonial, apartheid, genocide":"words like homeland, antisemitism";
-  $("#esTitle").textContent=`Extra change in ${nm}, per 10,000 words of ${S.esPart==="lead"?"the opening paragraph":"the whole article"} (topic minus other articles)`;
+  $("#esTitle").textContent=`Extra change in ${nm}, per 10,000 words of ${S.esPart==="lead"?"the opening paragraph":"the full text"} (topic minus other articles)`;
   if(!rows.length){el.innerHTML=`<div class="note">No estimates for this choice yet.</div>`;el._cfg=null;$("#mES").innerHTML="";return}
   const pts=[[ym(R.dates[0]),0],...rows.map(r=>[ym(r.date),r.did])],rb=[[ym(R.dates[0]),0,0],...rows.map(r=>[ym(r.date),r.lo,r.hi])];
   chart(el,{series:[{key:"es",label:"Extra change",color:"--topic",pts,ribbon:rb,width:2.4}],zeroBase:false,endLabels:true,labelW:isPhone()?0:100,vfmt:v=>sgn(v,2),xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],aria:"Extra change over time",xlab:t=>"Copy of "+dlabT(t)});
@@ -1191,7 +1219,7 @@ function stepsB(){
   const g=k=>{const r=(R.event_study||{})[k]||[];return r.at(-1)};
   const one=(k)=>{const r=g(k);if(!r)return "No estimate is available yet.";const inc=r.lo<=0&&r.hi>=0;return `By ${dlab(r.date)} the extra change was <span class="delta ${r.did>0?"up":"dn"}">${sgn(r.did,2)}</span> per 10,000 words. The shaded range runs from ${sgn(r.lo,2)} to ${sgn(r.hi,2)}, so it ${inc?"crosses zero: we can’t tell it from chance":"stays clear of zero"}.`};
   const steps=[
-    {k:"Loaded words, whole article",st:{es:"critical_rate",esPart:"full"},h:`The line starts at zero. It goes up when the topic articles gain words like “colonial” or “genocide” faster than other articles, and down when they gain them more slowly. ${one("full:critical_rate")}`},
+    {k:"Loaded words, full text",st:{es:"critical_rate",esPart:"full"},h:`The line starts at zero. It goes up when the topic articles gain words like “colonial” or “genocide” faster than other articles, and down when they gain them more slowly. ${one("full:critical_rate")}`},
     {k:"Loaded words, opening paragraph",st:{es:"critical_rate",esPart:"lead"},h:`The same comparison for the opening paragraph only. It is short, so the range is wider. ${one("lead:critical_rate")}`},
     {k:"Words about Jewish history",st:{es:"connection_rate",esPart:"full"},h:`If the topic articles lost words like “homeland” and “antisemitism” compared with other articles, the line would drop below zero. ${one("full:connection_rate")}`},
   ];
@@ -1247,53 +1275,11 @@ function drawHeat(){
 }
 function heatRow(e,cv){const g=cv._g;if(!g)return null;const r=cv.getBoundingClientRect(),py=e.clientY-r.top-g.top;const i=Math.floor(py/g.rh);return i>=0&&i<g.rows.length?g.rows[i]:null}
 function heatHover(e,cv){const g=cv._g,row=heatRow(e,cv);if(!row){hideTip();return}const r=cv.getBoundingClientRect(),j=Math.max(0,Math.min(R.dates.length-1,Math.floor((e.clientX-r.left)/g.cw)));
-  showTip(`<b>${esc(row.a.title)}</b><div class="r"><span>${dlab(R.dates[j])}</span><span>${fmt(row.v[j],1)} per 10k</span></div><div class="r"><span>since first copy</span><span>${row.ch[j]==null?"–":sgn(row.ch[j],1)}</span></div><div class="r" style="opacity:.7"><span>${esc(subName(row.a.subgroup))}</span><span>select to open</span></div>`,e.clientX,e.clientY)}
+  showTip(`<b>${esc(row.a.title)}</b><div class="r"><span>${dlab(R.dates[j])}</span><span>${fmt(row.v[j],1)} per 10,000 words</span></div><div class="r"><span>since first copy</span><span>${row.ch[j]==null?"–":sgn(row.ch[j],1)}</span></div><div class="r" style="opacity:.7"><span>${esc(subName(row.a.subgroup))}</span><span>select to open</span></div>`,e.clientX,e.clientY)}
 
-/* ---------- definition ---------- */
+/* key articles (corpus.KEY_ARTICLES / KEY_ARTICLES_CONTROL) */
 const KEY_T=["Zionism","Israel","Hamas","October 7 attacks","Gaza genocide","Gaza war","Israeli apartheid","Nakba","Antisemitism","Anti-Zionism","Jews","Judaism","History of Israel","Israeli–Palestinian conflict","Jerusalem","West Bank","Israeli settlement","Balfour Declaration","Theodor Herzl","Mandatory Palestine","Hezbollah","Israel Defense Forces","Land of Israel","1948 Palestinian expulsion and flight","Zionism as settler colonialism"];
 const KEY_C=["Kurdish nationalism","Hindu nationalism","Armenian genocide","Russo-Ukrainian War","Islamic State","Catholic Church","India","Taiwan","Kashmir conflict","Uyghur genocide","Irish nationalism","Islam","Turkey","Ukraine","Tibet"];
-const KEY=["Zionism","Israel","Hamas","Antisemitism","Nakba","Israeli–Palestinian conflict","Gaza war","Jews","Anti-Zionism","Judaism"];
-function defInit(){
-  const A=R.articles,by=new Map(A.map(a=>[a.title,a]));
-  const keys=KEY.filter(t=>by.has(t)&&by.get(t).first_sentences&&by.get(t).first_sentences.length);
-  const multi=A.filter(a=>a.first_sentences&&a.first_sentences.length>1).sort((a,b)=>b.first_sentences.length-a.first_sentences.length||a.title.localeCompare(b.title));
-  if(!keys.length&&!multi.length){$("#definition .defn").innerHTML=`<div class="note">No first-sentence history in this build.</div>`;return}
-  $("#picks").innerHTML=keys.map(t=>`<button class="pick" data-t="${esc(t)}" aria-pressed="false" type="button">${esc(t)}</button>`).join("");
-  $("#defSel").innerHTML=`<option value="">${multi.length} articles with more than one version</option>`+multi.map(a=>`<option value="${esc(a.title)}">${esc(a.title)} (${a.first_sentences.length})</option>`).join("");
-  $("#picks").onclick=e=>{const b=e.target.closest(".pick");if(b)defSet(b.dataset.t)};
-  $("#defSel").onchange=e=>{if(e.target.value)defSet(e.target.value)};
-  $("#defRange").oninput=e=>{defStop();S.defIdx=+e.target.value;defDraw()};
-  $("#defBase").onchange=defDraw;
-  $("#defPlay").onclick=()=>DEFT?defStop():defPlay();
-  $("#vlist").onclick=e=>{const b=e.target.closest("button");if(b){defStop();S.defIdx=+b.dataset.i;defDraw()}};
-  defSet(keys[0]||multi[0].title,true);
-}
-function defSet(t,init){
-  defStop();const a=R.articles.find(x=>x.title===t);if(!a)return;S.def=a;
-  $$("#picks .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.t===t)));$("#defSel").value=KEY.includes(t)?"":t;
-  const i0=Math.max(0,R.dates.indexOf(a.first_sentences[0].date));
-  a._ts=R.dates.slice(i0);a._ver=a._ts.map(d=>{let k=0;a.first_sentences.forEach((f,i)=>{if(f.date<=d)k=i});return k});
-  const rg=$("#defRange");rg.min=0;rg.max=a._ts.length-1;S.defIdx=init?a._ts.length-1:0;
-  const trk=$("#track");$$(".tk,.dot,.warl,.yr",trk).forEach(n=>n.remove());const N=a._ts.length,X=i=>N<2?50:i/(N-1)*100;
-  a._ts.forEach((d,i)=>{trk.insertAdjacentHTML("afterbegin",`<span class="tk" style="left:${X(i)}%"></span>`);if(i&&a._ver[i]!==a._ver[i-1]||i===0)trk.insertAdjacentHTML("afterbegin",`<span class="dot" style="left:${X(i)}%"></span>`);if(d.endsWith("-01")&&(i===0||!isPhone()||+d.slice(0,4)%2===1))trk.insertAdjacentHTML("afterbegin",`<span class="yr" style="left:${X(i)}%">${d.slice(0,4)}</span>`)});
-  const wi=a._ts.findIndex(d=>d>="2024-01");if(wi>0)trk.insertAdjacentHTML("afterbegin",`<span class="warl" style="left:${X(wi-1+.07)}%" title="7 October 2023"></span>`);
-  $("#vlist").innerHTML=a.first_sentences.map((f,i)=>`<button type="button" data-i="${a._ver.indexOf(i)}">v${i+1} · ${f.date}</button>`).join("");
-  defDraw();
-  const n=a.first_sentences.length-1,post=a.first_sentences.slice(1).filter(f=>f.date>="2024-01").length;
-  $("#mDef").innerHTML=`<b>What this means:</b> ${n===0?`the first sentence of “${esc(a.title)}” did not change in any quarterly copy.`:`the first sentence of “${esc(a.title)}” changed in ${n} of ${a._ts.length-1} quarters${n?`, ${post} of them after the war began`:""}. The diamonds on the timeline mark each change.`}`;
-}
-function defDraw(){
-  const a=S.def,i=S.defIdx,v=a._ver[i],f=a.first_sentences[v],base=$("#defBase").checked?a.first_sentences[0]:a.first_sentences[Math.max(0,v-1)];
-  $("#defRange").value=i;const N=a._ts.length;$("#defHead").style.left=(N<2?50:i/(N-1)*100)+"%";
-  const ops=v===0&&!$("#defBase").checked?[{t:"=",s:f.s}]:wdiff(base.s,f.s);
-  $("#defText").innerHTML=renderW(ops)||"<span class='cap'>No sentence recorded.</span>";
-  $("#defMeta").innerHTML=`<b>${esc(a.title)}</b> · copy of ${dlab(a._ts[i])} · version ${v+1} of ${a.first_sentences.length}${v||$("#defBase").checked?` · ${wc(ops,"-")} words removed, ${wc(ops,"+")} added vs ${$("#defBase").checked?"first":"previous"} version`:""}`;
-  $("#defLink").innerHTML=f.revid?`<a href="https://en.wikipedia.org/w/index.php?oldid=${f.revid}" target="_blank" rel="noopener">open revision ${f.revid} ↗</a>`:"";
-  $$("#vlist button").forEach((b,k)=>b.setAttribute("aria-current",String(k===v)));
-}
-let DEFT=null;
-function defPlay(){const a=S.def;if(S.defIdx>=a._ts.length-1)S.defIdx=0;else S.defIdx++;defDraw();$("#defPlay").textContent="❚❚ Pause";DEFT=setInterval(()=>{if(S.defIdx>=a._ts.length-1){defStop();return}S.defIdx++;defDraw()},RM.matches?1400:900)}
-function defStop(){if(DEFT){clearInterval(DEFT);DEFT=null}$("#defPlay").textContent="▶ Play"}
 
 /* ---------- forest + stats ---------- */
 const sigOf=r=>r.q_bh!=null?r.q_bh<.05:(r.lo>0||r.hi<0);
@@ -1316,7 +1302,7 @@ function drawForest(){
     <div class="plot c4" data-f="${r.frame}">${tk.map(v=>`<span class="${v===0?"z":"g"}" style="left:${X(v)}%"></span>`).join("")}<span class="ci" style="left:${X(r.lo)}%;width:${X(r.hi)-X(r.lo)}%"></span><span class="pt ${s?"sig":""}" style="left:${X(r.did)}%;${s?`background:var(${col})`:""}"></span></div>`}
   host.innerHTML=h;
   $$(".plot",host).forEach(p=>{const r=rows.find(x=>x.frame===p.dataset.f);p.onpointermove=e=>showTip(`<b>${esc(LABEL[r.frame]||r.frame)}</b><div class="r"><span>topic articles changed</span><span>${sgn(r.treat,2)}</span></div><div class="r"><span>other articles changed</span><span>${sgn(r.control,2)}</span></div><div class="r"><span>extra change</span><span>${sgn(r.did,2)}</span></div><div class="r"><span>range</span><span>${sgn(r.lo,2)} to ${sgn(r.hi,2)}</span></div><div class="r" style="opacity:.7"><span>articles</span><span>${r.n_t} topic · ${r.n_c} other</span></div>`,e.clientX,e.clientY);p.onpointerleave=hideTip});
-  $("#forestStats").innerHTML=`<table><thead><tr><th>Words</th><th class="r">Topic Δ</th><th class="r">Other Δ</th><th class="r">DiD</th><th class="r">95% CI</th><th class="r">p (perm.)</th><th class="r">q (BH)</th><th class="r">n topic / other</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${r.id?`<span class="pid">${r.id}</span> `:""}${esc(LABEL[r.frame]||r.frame)}</td><td class="r">${sgn(r.treat,2)}</td><td class="r">${sgn(r.control,2)}</td><td class="r">${sgn(r.did,2)}</td><td class="r">[${sgn(r.lo,2)}, ${sgn(r.hi,2)}]</td><td class="r">${pv(r.p_perm)}</td><td class="r">${pv(r.q_bh)}</td><td class="r">${r.n_t} / ${r.n_c}</td></tr>`).join("")}</tbody></table><p class="cap" style="margin-top:8px">${esc(rows[0].scale||"change in hits per 10k words")}. Window: ${esc(S.win)}. p from 5,000 permutations; q after Benjamini–Hochberg correction within the primary or secondary family.</p>`;
+  $("#forestStats").innerHTML=`<table><thead><tr><th>Words</th><th class="r">Topic Δ</th><th class="r">Other Δ</th><th class="r">DiD</th><th class="r">95% CI</th><th class="r">p (perm.)</th><th class="r">q (BH)</th><th class="r">n topic / other</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${r.id?`<span class="pid">${r.id}</span> `:""}${esc(LABEL[r.frame]||r.frame)}</td><td class="r">${sgn(r.treat,2)}</td><td class="r">${sgn(r.control,2)}</td><td class="r">${sgn(r.did,2)}</td><td class="r">[${sgn(r.lo,2)}, ${sgn(r.hi,2)}]</td><td class="r">${pv(r.p_perm)}</td><td class="r">${pv(r.q_bh)}</td><td class="r">${r.n_t} / ${r.n_c}</td></tr>`).join("")}</tbody></table><p class="cap" style="margin-top:8px">${"Change per 10,000 words"}. Window: ${esc(S.win)}. p from 5,000 permutations; q after Benjamini–Hochberg correction within the primary or secondary family.</p>`;
   const prim=(R.did||[]).filter(d=>d.tier==="primary"),ns=prim.filter(sigOf).length;
   $("#mTest").innerHTML=prim.length?`<b>What this means:</b> of the three main measures chosen in advance (P1–P3), ${ns===0?"none shows":ns===1?"one shows":ns+" show"} an extra change that is clearly different from chance. ${ns<prim.length?"For the rest, the topic articles changed about as much as articles about other countries and conflicts.":""}`:"";
 }
@@ -1394,7 +1380,7 @@ function drawCoord(){
   const dum=(m,x,cls)=>{const o=m.obs(x),n=m.nul(x),r=m.ratio(x),X=v=>v==null?null:Math.min(100,v/m.max*100);
     if(o==null)return `<div class="drow"><div class="lab"><span>${m.lab}</span><b>–</b></div><div class="cap">Not enough data.</div></div>`;
     const a=X(o),b=X(n);return `<div class="drow"><div class="lab"><span>${m.lab}</span><b>${r!=null&&isFinite(r)?`${fmt(r,1)}× chance`:fmt(o,o<1?3:1)}</b></div><div class="dtrack">${b!=null?`<span class="ln" style="left:${Math.min(a,b)}%;width:${Math.abs(a-b)}%"></span><span class="nul" style="left:${b}%" title="expected by chance: ${fmt(n,3)}"></span>`:""}<span class="obs ${cls}" style="left:${a}%" title="observed: ${fmt(o,3)}"></span></div></div>`};
-  let h=`<div class="legend"><span class="key"><i style="border-radius:50%;background:var(--topic)"></i><i style="border-radius:50%;background:var(--comp);margin-left:-2px"></i>solid dot: what we saw (teal topic, grey-violet other)</span><span class="key"><i style="border-radius:50%;border:2px solid var(--muted)"></i>ring: what you’d expect by chance</span><span>Further right = more. A big gap between dot and ring means the pattern is stronger than chance would give.</span></div>`;
+  let h=`<div class="legend"><span class="key"><i style="border-radius:50%;background:var(--topic)"></i><i style="border-radius:50%;background:var(--comp);margin-left:-2px"></i>solid dot: what we saw (teal topic, grey-violet other)</span><span class="key"><i style="border-radius:50%;border:2px solid var(--muted)"></i>ring: what you’d expect by chance</span><span>Further right = more. A big distance between dot and ring means the pattern is stronger than chance would give.</span></div>`;
   h+=`<div class="dumbs">${cells.map(([g,p,gl,pl,cls])=>`<div class="dcell"><h4>${gl}<span>${pl}</span></h4>${metrics.map(m=>dum(m,get(g,p),cls)).join("")}</div>`).join("")}</div>`;
   const tO=K.topic.post_war&&K.topic.post_war.tailgating_ratio,cO=K.comparison.post_war&&K.comparison.post_war.tailgating_ratio;
   h+=`<p class="means">${tO!=null&&cO!=null?`<b>What this means:</b> after the war began, close-together editing by recurring pairs was ${fmt(tO,1)} times what chance would give on topic articles, and ${fmt(cO,1)} times on other articles. A ratio near 1 is what chance alone produces.`:""}</p>`;
@@ -1422,7 +1408,7 @@ function drawExplore(){
   const cls=[...(E.source_classes||[]),"Other"],cc=cls.map((_,i)=>"--s"+Math.min(7,i===cls.length-1?7:i+1));
   const xd=E.dates&&E.dates.length?[ym(E.dates[0]),ym(E.dates.at(-1))]:null;
   host.innerHTML=`
-  <div class="fig"><div class="fig-h"><span class="fig-t">How often a loaded word is attributed (“accused of genocide”) rather than stated</span><span class="seg" id="hedgePart" role="group" aria-label="Text"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
+  <div class="fig"><div class="fig-h"><span class="fig-t">How often a loaded word is attributed (“accused of genocide”) rather than stated</span><span class="seg" id="hedgePart" role="group" aria-label="Text"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
    <div class="chart" id="eHedge" style="height:230px"></div><div class="legend"><span class="key"><i class="ln" style="background:var(--topic)"></i>${T_L} (teal)</span><span class="key"><i class="ln" style="background:var(--comp)"></i>${C_L} (grey-violet)</span><span>Higher = more often attributed to someone.</span></div></div>
   <p class="means" id="mHedge"></p>
   <div class="fig"><div class="fig-h"><span class="fig-t">What kinds of sources the articles cite</span><span class="cap">Share of all citations with a web address, by source type.</span></div>
@@ -1433,7 +1419,7 @@ function drawExplore(){
    <p class="cap col">In June 2024 a Wikipedia <button class="gl" type="button" data-g="rfc">RfC</button> judged the Anti-Defamation League generally unreliable on Israel and Palestine, but not on antisemitism in general. If editors followed it, ADL citations should fall in conflict articles but not in antisemitism and Judaism articles.</p>
    <div class="chart" id="eAdl" style="height:230px"></div><div class="legend"><span class="key"><i class="ln" style="background:var(--inc)"></i>conflict, Israel and Zionism articles (orange)</span><span class="key"><i class="dash" style="color:var(--dec)"></i>antisemitism and Judaism articles (dashed purple)</span><span>ADL citations per article</span></div></div>
   <p class="means" id="mAdl"></p>
-  <div class="fig"><div class="fig-h"><span class="fig-t">“Terrorist” or “militant”? How armed groups are labelled</span><span class="seg" id="terrPart" role="group" aria-label="Text"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
+  <div class="fig"><div class="fig-h"><span class="fig-t">“Terrorist” or “militant”? How armed groups are labelled</span><span class="seg" id="terrPart" role="group" aria-label="Text"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
    <p class="cap">Share of “terrorism/terrorist” among all uses of either label. 100% = only “terrorist”; 0% = only “militant”.</p>
    <div class="chart" id="eTerrMean" style="height:200px"></div>
    <div class="fig-t">Armed groups in the topic area (teal)</div><div class="minis" id="eTerrT"></div>
@@ -1477,6 +1463,11 @@ function drawTerr(){
   minis("#eTerrT","topic","--topic");minis("#eTerrC","comparison","--comp");
 }
 
+/* ---------- phone: fold the deep exploratory sections behind one tap ---------- */
+const FOLD_REDRAW={vocab:()=>{drawTrend();drawMinis()},heatmap:()=>{HM=null;drawHeat()},exact:()=>S.trace&&traceDraw(S.trace),editing:drawDyn,organic:drawCoord,sourcing:drawExplore};
+function foldPhone(){if(!isPhone())return;Object.keys(FOLD_REDRAW).forEach(id=>{const sec=document.getElementById(id);if(!sec||sec.querySelector(".unfold"))return;
+  sec.classList.add("folded");const b=document.createElement("button");b.type="button";b.className="btn sm unfold";b.textContent="Show this section ↓";b.setAttribute("aria-expanded","false");
+  sec.querySelector("header").after(b);b.onclick=()=>{const f=sec.classList.toggle("folded");b.textContent=f?"Show this section ↓":"Hide this section ↑";b.setAttribute("aria-expanded",String(!f));if(!f)safe(FOLD_REDRAW[id])}})}
 /* ---------- shared: reveal-on-view (complete at rest; motion only when scrolled into view) ---------- */
 function revealOnView(el,onGo){
   if(!el)return;el.classList.remove("rv-pre","rv-go");
@@ -1490,6 +1481,74 @@ const PRIM_LABEL={P1:"Opening paragraph · loaded words",P2:"Full text · loaded
 const PRED={P1:1,P2:1,P3:-1};
 const didRow=id=>(R.did||[]).find(d=>d.id===id&&(d.tier==="primary"||d.tier==null));
 const yearTicks=(x,t0,t1,H,ph)=>{let s="";for(let yr=new Date(t0).getUTCFullYear();yr<=new Date(t1).getUTCFullYear();yr++){const t=Date.UTC(yr,0,1);if(t<t0-864e5*20||t>t1)continue;const xx=x(Math.max(t,t0));s+=`<line x1="${xx}" x2="${xx}" y1="${H}" y2="${H+4}" style="stroke:var(--muted)"/><text class="ax" x="${xx+3}" y="${H+15}">${ph?"’"+String(yr).slice(2):yr}</text>`}return s};
+
+/* ---------- opener: the definition breathes ---------- */
+const BR={title:null,ev:null,base:null,cur:null,lastId:null,prevT:null,flashT:0,shownCmp:false,mode:null};
+const dayMs=864e5;
+function brEvents(title){
+  const RA=R.ratchet&&R.ratchet.articles&&R.ratchet.articles[title],a=R.articles.find(x=>x.title===title);
+  if(RA&&(RA.fs_timeline||[]).length>1){const vt=new Map((RA.fs_variants||[]).map(v=>[v.id,v.s]));
+    const ev=RA.fs_timeline.map(x=>({t:Date.parse(x[0]+"T00:00:00Z"),id:x[1],rv:+x[2]||0,s:vt.has(x[1])?vt.get(x[1]):null})).filter(e=>!isNaN(e.t)).sort((p,q)=>p.t-q.t);
+    if(ev.some(e=>e.s))return {mode:"revision",ev,n:RA.fs_n_variants||new Set(ev.map(e=>e.id)).size,a,RA}}
+  const fs=a&&a.first_sentences;if(!fs||!fs.length)return null;
+  const ids=new Map();return {mode:"quarterly",ev:fs.map(f=>{if(!ids.has(f.s))ids.set(f.s,ids.size);return {t:ym(f.date),id:ids.get(f.s),rv:0,s:f.s}}),n:ids.size,a}}
+function drawBreathe(){
+  const host=$("#breathe");if(!host)return;
+  const pick=["Zionism","Israel","Hamas","Antisemitism"].find(t=>brEvents(t));
+  if(!pick){host.innerHTML=`<div class="eyebrow">One sentence, every version</div><div class="note">No first-sentence history in this build.</div>`;return}
+  const D=brEvents(pick);Object.assign(BR,{title:pick,ev:D.ev,mode:D.mode,n:D.n,a:D.a});
+  BR.base=(D.ev.find(e=>e.s)||{}).s||"";
+  $("#brTitle").textContent=pick;
+  $("#brLab").dataset.intent=JSON.stringify({lab:"flip",title:pick});
+  const t0=Date.UTC(2021,0,1),t1=Math.max(ym(R.dates.at(-1))+dayMs*60,D.ev.at(-1).t);BR.t0=t0;BR.t1=t1;
+  const rg=$("#brRange");rg.min=0;rg.max=Math.round((t1-t0)/dayMs);rg.step=1;
+  if(BR.cur==null)BR.cur=t1;rg.value=Math.round((BR.cur-t0)/dayMs);
+  rg.oninput=()=>brMove(t0+ +rg.value*dayMs,true);
+  rg.onchange=()=>brRelease();rg.onpointerup=()=>brRelease();
+  brStrip();brMove(BR.cur,false);
+  const nrv=D.ev.filter(e=>e.rv).length;
+  $("#brKey").innerHTML=`<span><del>amber, struck through</del> = words removed since ${dlabT(D.ev[0].t)}</span><span><ins>blue</ins> = words added</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>${D.mode==="revision"?`each change: ${D.ev.length-1} changes, ${D.n} different wordings`:`each quarterly copy that changed`}</span>${nrv?`<span class="key"><i style="width:2px;height:12px;background:var(--del-bd)"></i>${nrv} later undone</span>`:""}<span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`;
+  if(BR.shownCmp)brCompare();
+}
+function brX(t,W){return 10+(t-BR.t0)/(BR.t1-BR.t0)*(W-20)}
+function brStripSVG(ev,W,H,cls){const ph=isPhone();let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true" class="${cls||""}"><line x1="10" x2="${W-10}" y1="${H-18}" y2="${H-18}" style="stroke:var(--rule)"/>`;
+  for(let yr=2021;yr<=new Date(BR.t1).getUTCFullYear();yr++){const t=Date.UTC(yr,0,1);if(t>BR.t1)break;const x=brX(t,W);s+=`<line x1="${x}" x2="${x}" y1="${H-18}" y2="${H-14}" style="stroke:var(--muted)"/><text x="${x+2}" y="${H-3}">${ph?"’"+String(yr).slice(2):yr}</text>`}
+  const wx=brX(WAR,W);s+=`<line x1="${wx}" x2="${wx}" y1="2" y2="${H-14}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/>`;
+  ev.forEach((e,i)=>{if(!i)return;const x=brX(e.t,W).toFixed(1);s+=`<line x1="${x}" x2="${x}" y1="${e.rv?8:12}" y2="${H-19}" style="stroke:var(${e.rv?"--del-bd":"--ink-2"});stroke-width:${e.rv?1.6:1.1};opacity:${e.rv?.95:.55}"/>`});
+  return s+`</svg>`}
+function brStrip(){const box=$("#brSvg"),W=Math.max(260,box.clientWidth);box.innerHTML=brStripSVG(BR.ev,W,58)+`<span class="br-war" style="left:${brX(WAR,W)}px">7 Oct 2023</span>`;brThumb()}
+function brThumb(){const box=$("#brSvg"),W=Math.max(260,box.clientWidth);$("#brHead").style.left=brX(BR.cur,W)+"px"}
+function brLive(t){let k=0;BR.ev.forEach((e,i)=>{if(e.t<=t)k=i});return k}
+function brText(k){for(let i=k;i>=0;i--)if(BR.ev[i].s!=null)return {s:BR.ev[i].s,exact:i===k};return {s:BR.base,exact:false}}
+function brRender(k,flash){
+  const e=BR.ev[k],tx=brText(k),ops=wdiff(BR.base,tx.s),el=$("#brS");
+  el.classList.toggle("flash",!!flash);
+  const changed=BR.lastId!==e.id||flash;BR.lastId=flash?null:e.id;
+  if(changed){el.innerHTML=renderW(ops);if(!RM.matches){el.classList.remove("anim");void el.offsetWidth;el.classList.add("anim")}}
+  const nx=BR.ev.find((x,i)=>i>k&&x.id!==e.id),ds=t=>{const z=new Date(t);return `${z.getUTCDate()} ${MON[z.getUTCMonth()]} ${z.getUTCFullYear()}`};
+  const X=R.exposure&&R.exposure[BR.title],ex=X&&(X.variants||[]).find(v=>v.s&&tx.s&&v.s.slice(0,200)===tx.s.slice(0,200));
+  $("#brMeta").innerHTML=flash?`<b>A wording that was undone</b> · live from ${ds(e.t)}${nx?` to ${ds(nx.t)}`:""}`:
+    `<b>${k===BR.ev.length-1?"Today":ds(e.t)}</b> · ${BR.mode==="revision"?`wording ${e.id+1} of ${BR.n}`:`version ${e.id+1} of ${BR.n}`}${nx?`, live until ${ds(nx.t)}`:", live now"}${tx.exact?"":" · this wording was short-lived; its text is not kept, so the last kept wording is shown"} · ${wc(ops,"-")} words removed and ${wc(ops,"+")} added since ${dlabT(BR.ev[0].t)}${ex?` · <b>${pct(ex.share)}</b> of page views while it was live (${big(ex.views)})`:""}`}
+function brMove(t,user){
+  const prev=BR.prevT==null?t:BR.prevT;BR.cur=t;BR.prevT=t;brThumb();const k=brLive(t);
+  clearTimeout(BR.flashT);
+  if(user&&!RM.matches){const lo=Math.min(prev,t),hi=Math.max(prev,t);const crossed=BR.ev.filter((e,i)=>e.rv&&e.s!=null&&e.t>lo&&e.t<=hi&&i!==k);
+    if(crossed.length){const c=crossed.at(-1);brRender(BR.ev.indexOf(c),true);BR.flashT=setTimeout(()=>brRender(brLive(BR.cur),false),420);return}}
+  brRender(k,false)}
+function brRelease(){if(BR.shownCmp)return;BR.shownCmp=true;brCompare()}
+function brCompare(){
+  const box=$("#brCmp"),A=R.ratchet&&R.ratchet.articles;if(!box)return;
+  if(!A||BR.mode!=="revision"){box.hidden=true;return}
+  const cand=KEY_C.filter(t=>A[t]&&(A[t].fs_timeline||[]).length).sort((p,q)=>(A[p].fs_n_variants||0)-(A[q].fs_n_variants||0)||p.localeCompare(q));
+  if(!cand.length){box.hidden=true;return}
+  const c=cand[Math.floor((cand.length-1)/2)],ce=brEvents(c);if(!ce){box.hidden=true;return}
+  const rv=ev=>ev.filter(e=>e.rv).length;
+  box.hidden=false;box.classList.remove("in");void box.offsetWidth;box.classList.add("in");
+  box.innerHTML=`<div class="fig-h"><span class="fig-t">Does every definition churn like this?</span><span class="cap">For comparison: the comparison key article with the median number of wordings, ${esc(c)}.</span></div>
+    <div class="br-row"><span class="br-lab"><b>${esc(BR.title)}</b>${BR.n} wordings · ${rv(BR.ev)} undone</span><div class="br-mini" data-k="a"></div></div>
+    <div class="br-row"><span class="br-lab"><b>${esc(c)}</b>${ce.n} wordings · ${rv(ce.ev)} undone</span><div class="br-mini" data-k="b"></div></div>`;
+  const W=Math.max(220,$(".br-mini",box).clientWidth);
+  $('.br-mini[data-k="a"]',box).innerHTML=brStripSVG(BR.ev,W,40);$('.br-mini[data-k="b"]',box).innerHTML=brStripSVG(ce.ev,W,40)}
 
 /* ---------- headline 1: the most important chart ---------- */
 const K={step:3,part:"full",vis:{rise:1,threads:1,mean:1,fold:0},raf:0,data:{},hover:null,steps:null};
@@ -1520,7 +1579,7 @@ function keyInit(){
   keyText();drawKey(true);
   const ch=$("#kChart");
   ch.addEventListener("pointermove",keyHover);ch.addEventListener("pointerdown",keyHover);ch.addEventListener("pointerleave",()=>{K.hover=null;hideTip();drawKey(true)});
-  ch.addEventListener("click",e=>{const h=keyPick(e);if(h&&h.a)openDrawer(h.a.title,{actions:[{label:"Compare it in the data lab",run:a=>openInLab({from:"key",article:a.title,measure:"critical",part:K.part})}]})});
+  ch.addEventListener("click",e=>{const h=keyPick(e);if(h&&h.a)openDrawer(h.a.title,{actions:[{label:"Explore it in the data lab",run:a=>openInLab({lab:"flip",title:a.title})}]})});
 }
 function keyText(){
   const D=keyData(K.part);setSeg($("#kPart"),K.part);
@@ -1534,8 +1593,8 @@ function keyText(){
     {k:"The comparison average",h:`Their average went from <b>${fmt(D.comp[0][1],1)}</b> to <b>${fmt(D.comp.at(-1)[1],1)}</b>. The real question is not whether the teal line rose, but whether it rose <i>more</i> than this one. The red line marks 7 October 2023. The black line marks the ICJ genocide case, January 2024.`},
     P?{k:"Fold it into one number",h:`Now each article becomes a dot: how much it changed from ${dlab(f)} to ${dlab(l)}. On average the topic articles changed by <b>${sgn(P.treat,1)}</b> and the comparison articles by <b>${sgn(P.control,1)}</b>. The difference, <b>${sgn(P.did,1)}</b> per 10,000 words, is the extra change (pre-registered test ${P.id}). The soft band is the range we’re fairly sure about, ${sgn(P.lo,1)} to ${sgn(P.hi,1)}. ${P.lo<=0&&P.hi>=0?"It includes zero, so this could be chance.":"It stays clear of zero."}`,lab:true}:{k:"One number",h:"The pre-registered estimate for this measure is not in this build."}];
   if(K.built&&$$(".step",host).length===steps.length){$$(".step",host).forEach((e,i)=>{e.querySelector(".k").textContent=`${i+1} / ${steps.length} · ${steps[i].k}`;e.querySelector("p").innerHTML=steps[i].h})}
-  else{K.built=true;host.innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button>${s.lab?`<button class="inlab" type="button" data-lab>Run this comparison yourself in the data lab →</button>`:""}</div>`).join("");
-  const lb=$("[data-lab]",host);if(lb)lb.onclick=()=>openInLab({from:"key",measure:"critical",part:K.part,groups:["treatment","control"],test:P&&P.id});
+  else{K.built=true;host.innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button>${s.lab?`<button class="inlab" type="button" data-lab>Shuffle it yourself in the data lab →</button>`:""}</div>`).join("");
+  const lb=$("[data-lab]",host);if(lb)lb.onclick=()=>openInLab({lab:"shuffle",test:P?P.id:"P2"});
   K.steps=steps.map((_,i)=>({st:{kStep:i+1}}));
   scrolly(host,K.steps,()=>keyGo(S.kStep));}
   $$(".step",host).forEach(e=>e.classList.toggle("on",+e.dataset.i===K.step-1));
@@ -1593,7 +1652,7 @@ function drawKey(final){
   s+=line(D.topic,ry,P?fxc(P.treat):0,yT,"--topic",2.8,1);
   if(f<.5&&!ph){const ends=[];if(V.mean>.05)ends.push([y(D.comp.at(-1)[1]),"Comparison average",D.comp.at(-1)[1],"--comp",V.mean*(1-2*f)]);ends.push([ry(D.topic.at(-1)[1]),"Topic articles",D.topic.at(-1)[1],"--topic",1-2*f]);
     ends.sort((a,b)=>a[0]-b[0]);for(let i=1;i<ends.length;i++)if(ends[i][0]-ends[i-1][0]<28)ends[i][0]=ends[i-1][0]+28;
-    for(const e of ends)s+=`<g style="opacity:${e[4]}"><text class="lbl" x="${W-m.r+8}" y="${e[0]-2}" style="fill:var(${e[3]})">${e[1]}</text><text x="${W-m.r+8}" y="${e[0]+11}">${fmt(e[2]*(e[3]==="--topic"?V.rise:1),1)} per 10k</text></g>`}
+    for(const e of ends)s+=`<g style="opacity:${e[4]}"><text class="lbl" x="${W-m.r+8}" y="${e[0]-2}" style="fill:var(${e[3]})">${e[1]}</text><text x="${W-m.r+8}" y="${e[0]+11}">${fmt(e[2]*(e[3]==="--topic"?V.rise:1),1)} per 10,000 words</text></g>`}
   if(f<.5&&V.threads>.5&&D.over)s+=`<text class="ax" x="${W-m.r}" y="${m.t+10}" text-anchor="end" style="opacity:${V.threads*(1-2*f)}">↑ ${D.over} article${D.over===1?"":"s"} go above the top</text>`;
   // group means + the one bar
   if(f>.01&&P){
@@ -1620,13 +1679,23 @@ function keyPick(e){
   return best}
 function keyHover(e){const h=keyPick(e);const changed=(h&&h.a)!==(K.hover&&K.hover.a);K.hover=h;if(changed)drawKey(true);
   if(!h){hideTip();return}
-  showTip(`<b>${esc(h.a.title)}</b><div class="r"><span>${h.g==="topic"?"topic":"comparison"} article</span><span>${esc(subName(h.a.subgroup))}</span></div><div class="r"><span>${h.t?dlabT(h.t):"change"}</span><span>${h.t?fmt(h.v,1)+" per 10k":sgn(h.v,1)}</span></div><div class="r" style="opacity:.7"><span>select to open</span></div>`,e.clientX,e.clientY)}
+  showTip(`<b>${esc(h.a.title)}</b><div class="r"><span>${h.g==="topic"?"topic":"comparison"} article</span><span>${esc(subName(h.a.subgroup))}</span></div><div class="r"><span>${h.t?dlabT(h.t):"change"}</span><span>${h.t?fmt(h.v,1)+" per 10,000 words":sgn(h.v,1)}</span></div><div class="r" style="opacity:.7"><span>select to open</span></div>`,e.clientX,e.clientY)}
 
-/* ---------- headline 2: where the real one lands ---------- */
+/* ---------- headline 2: where the real one lands (2-line summary; strips live in the stats) ---------- */
+function drawChanceSum(){
+  const el=$("#chSum");if(!el)return;const rows=["P1","P2","P3"].map(didRow).filter(r=>r&&r.p_perm!=null);
+  if(!rows.length){$("#chance").hidden=true;return}
+  const N=r=>(r.perm_sample&&r.perm_sample.length?r.perm_sample.length*25:5000),X=r=>Math.max(0,Math.round(r.p_perm*(N(r)+1)-1)),sig=rows.filter(r=>r.p_perm<.05);
+  const list=rows.map((r,i)=>`<b>${X(r).toLocaleString("en-US")}</b> times for ${r.id}`),join=list.length>1?list.slice(0,-1).join(", ")+" and "+list.at(-1):list[0];
+  el.innerHTML=`We shuffled the “topic” and “comparison” labels ${N(rows[0]).toLocaleString("en-US")} times. An extra change at least as large as the real one turned up ${join}.<br>${sig.length===0?"So none of the three stands out from chance.":`${sig.map(r=>r.id).join(" and ")} ${sig.length===1?"stands":"stand"} out (fewer than 5 in 100 shuffles). The scoreboard below corrects for running three tests.`}`;
+  const b=$("#chance [data-intent]");if(b){const best=rows.slice().sort((a,c)=>a.p_perm-c.p_perm)[0];b.dataset.intent=JSON.stringify({lab:"shuffle",test:(rows.find(r=>r.id==="P2")||best).id})}}
+
 function drawChance(redraw){
   const host=$("#chFig");if(!host)return;
+  safe(drawChanceSum);
   const rows=["P1","P2","P3"].map(didRow).filter(r=>r&&r.perm_sample&&r.perm_sample.length);
-  if(!rows.length){host.outerHTML=`<div class="note" id="chFig">The shuffle results are not in this build yet.</div>`;$("#mChance").innerHTML="";return}
+  if(!rows.length){host.innerHTML=`<div class="note">The shuffle results are not in this build yet.</div>`;return}
+  if(!host.clientWidth)return;
   const rb=R.robustness||[];
   host.innerHTML=rows.map(r=>`<div class="chrow" data-id="${r.id}"><div class="chrow-h"><span class="pid">${r.id}</span><b>${PRIM_LABEL[r.id]||esc(r.frame)}</b><span class="cap">${r.n_t} topic · ${r.n_c} comparison articles</span></div><div><div class="chs"></div><p class="chcap"></p></div><div class="calib"></div></div>`).join("")+`<div class="legend"><span class="key"><i style="width:2px;height:12px;background:var(--muted);opacity:.6"></i>one shuffle (a sample of ${rows[0].perm_sample.length} of about ${(rows[0].perm_sample.length*25).toLocaleString("en-US")})</span><span class="key"><i style="width:3px;height:14px;background:var(--inc)"></i>the real result</span><span class="key"><i style="width:3px;height:14px;background:var(--ink-2)"></i>placebo words, which should sit at zero</span></div>`;
   rows.forEach(r=>{
@@ -1642,15 +1711,13 @@ function drawChance(redraw){
     const rx=x(r.did),right=rx<W-120;
     s+=`<g class="tkreal" style="--d:${(r.perm_sample.length*.006+.15).toFixed(2)}s"><line x1="${rx}" x2="${rx}" y1="8" y2="${H-14}" style="stroke:var(${col});stroke-width:3.5;stroke-linecap:round"/><text class="lbl" x="${right?rx+7:rx-7}" y="16" text-anchor="${right?"start":"end"}" style="fill:var(${col})">real ${sgn(r.did,2)}</text></g></svg>`;
     box.innerHTML=s;
-    $(".chcap",row).innerHTML=`<b>${X===0?"None":X.toLocaleString("en-US")} of ${N.toLocaleString("en-US")} shuffles</b> produced a gap this large, in either direction (p = ${pv(r.p_perm)}). ${r.p_perm<.05?"That is rare, so the real gap is unlikely to be chance alone.":"A gap this size turns up often by chance alone."}<span class="cap"> In the ${r.perm_sample.length} ticks drawn: ${inS}, in dark grey.</span>`;
+    $(".chcap",row).innerHTML=`<b>${X===0?"None":X.toLocaleString("en-US")} of ${N.toLocaleString("en-US")} shuffles</b> produced an extra change this large, in either direction (p = ${pv(r.p_perm)}). ${r.p_perm<.05?"That is rare, so the real extra change is unlikely to be chance alone.":"An extra change this size turns up often by chance alone."}<span class="cap"> In the ${r.perm_sample.length} ticks drawn: ${inS}, in dark grey.</span>`;
     const cb=$(".calib",row);
     if(!pl||pl.did==null){cb.innerHTML=`<span class="k">Calibration</span><p>The placebo check is not in this build.</p>`;return}
     const cw=Math.max(140,cb.clientWidth-14||180),cx=lin(-m,m,4,cw-4);
     cb.innerHTML=`<span class="k">Calibration · should be zero</span><svg width="${cw}" height="34" viewBox="0 0 ${cw} 34" aria-hidden="true"><line x1="4" x2="${cw-4}" y1="22" y2="22" style="stroke:var(--rule)"/><line x1="${cx(0)}" x2="${cx(0)}" y1="6" y2="26" style="stroke:var(--muted);stroke-dasharray:2 2"/>${pl.lo!=null?`<rect x="${cx(clamp(pl.lo,-m,m))}" y="13" width="${Math.max(1,cx(clamp(pl.hi,-m,m))-cx(clamp(pl.lo,-m,m)))}" height="10" style="fill:var(--ink-2);opacity:.15"/>`:""}<line x1="${cx(clamp(pl.did,-m,m))}" x2="${cx(clamp(pl.did,-m,m))}" y1="8" y2="26" style="stroke:var(--ink-2);stroke-width:3;stroke-linecap:round"/></svg>
       <p>Placebo words (river, mountain, climate…) on the same scale: <b>${sgn(pl.did,3)}</b>. ${pl.pass?"✓ No group difference, as it should be.":"✕ A group difference appeared. The counter may be biased."}</p>`});
-  if(!redraw)revealOnView(host);
-  const sig=rows.filter(r=>r.p_perm<.05).length;
-  $("#mChance").innerHTML=`<b>What this means:</b> ${sig===0?`for all ${rows.length} main tests, the real result sits among the shuffles. On its own, it does not stand out from chance.`:`${sig} of ${rows.length} main tests landed further out than almost every shuffle. ${rows.length-sig?`The other ${rows.length-sig===1?"one sits":"ones sit"} among the shuffles.`:""}`} This is before the correction for running three tests, which the scoreboard below applies.`}
+  if(!redraw)revealOnView(host);}
 
 /* ---------- headline 3: robustness scoreboard ---------- */
 const PRE_CHECKS=["R1","R2","R3","R4","R5","R6"];
@@ -1678,16 +1745,16 @@ function drawBoard(){
       const vv=[r.did,r.lo,r.hi].filter(v=>v!=null&&isFinite(v)),mm=own?Math.max(...vv.map(Math.abs),1e-9)*1.25:ms,X=v=>((clamp(v,-mm,mm)+mm)/(2*mm)*100).toFixed(2);
       const svg=`<svg viewBox="0 0 100 22" preserveAspectRatio="none" aria-hidden="true"><line x1="0" x2="100" y1="11" y2="11" style="stroke:var(--faint)" vector-effect="non-scaling-stroke"/><line x1="50" x2="50" y1="2" y2="20" style="stroke:var(--muted);stroke-dasharray:2 2" vector-effect="non-scaling-stroke"/>${!own?`<line x1="${X(p.did)}" x2="${X(p.did)}" y1="3" y2="19" style="stroke:var(--topic);opacity:.55" vector-effect="non-scaling-stroke"/>`:""}${r.lo!=null&&r.hi!=null?`<line x1="${X(r.lo)}" x2="${X(r.hi)}" y1="11" y2="11" style="stroke:var(--ink-2);stroke-width:2.5" vector-effect="non-scaling-stroke"/>`:""}${r.did!=null?`<line x1="${X(r.did)}" x2="${+X(r.did)+.01}" y1="11" y2="11" style="stroke:var(--ink);stroke-width:8;stroke-linecap:round" vector-effect="non-scaling-stroke"/>`:""}</svg>`;
       return `<button class="tile ${extra?"extra":""}" type="button" data-i="${i}" aria-pressed="false" aria-label="${c}: ${esc(CHK_NAME[c]||r.check)}, ${r.pass?"holds":"does not hold"}"><span class="tt"><span>${c}</span><span class="${r.pass?"ok":"no"}">${r.pass?"✓ holds":"✕ fails"}</span></span><span class="tn">${esc(CHK_NAME[c]||r.check)}</span>${svg}<span class="ts">${extra?"added later · not counted":own?"own scale: "+own:sgn(r.did,2)}</span></button>`};
-    return `<div class="brow" data-id="${p.id}"><div class="brow-h"><span class="pid">${p.id}</span><b>${PRIM_LABEL[p.id]||esc(p.frame)}</b>
+    return `<div class="brow" data-id="${p.id}"><div class="brow-h"><button class="bsum" type="button" aria-expanded="false"><span class="pid">${p.id}</span><span class="bl">${PRIM_LABEL[p.id]||esc(p.frame)}</span><span class="bn">${b.passes}/${b.pre.length} ✓</span><span class="bv ${b.ok?"ok":"no"}">${b.ok?"✓ meets rule":"✕ not met"}</span></button><span class="pid">${p.id}</span><b>${PRIM_LABEL[p.id]||esc(p.frame)}</b>
       <span class="cond ${b.sig?"ok":"no"}">significant after correction · q = ${pv(p.q_bh)}</span>
       <span class="cond ${b.dir?"ok":"no"}">predicted ${PRED[p.id]>0?"rise":"fall"} · got ${sgn(p.did,2)}</span>
       <span class="cond ${b.passes>=4?"ok":"no"}"><span class="pips" aria-hidden="true">${b.pre.slice().sort((x,y)=>y.pass-x.pass).map((r,i)=>`${i===4?`<span class="th" title="needs 4"></span>`:""}<i class="${r.pass?"on":""}"></i>`).join("")}</span>${b.passes} of ${b.pre.length} planned checks hold · needs 4</span></div>
       <div class="tiles">${b.ch.map(tile).join("")}</div><p class="tdet" aria-live="polite"></p></div>`}).join("");
   h+=`<p class="cap col">Dot: the estimate under that check. Line: its range. Dashed centre line: zero. Faint teal line: the main estimate, for checks on the same scale. Dashed tiles were added after the plan and do not count toward the rule. A check holds when the estimate keeps the main result’s sign and stays significant. The placebo check holds when it shows <i>no</i> difference.</p>`;
   host.innerHTML=h;
-  $$(".brow",host).forEach(row=>{const b=B.find(x=>x.p.id===row.dataset.id);row.querySelector(".tiles").addEventListener("click",e=>{const t=e.target.closest(".tile");if(!t)return;const r=b.ch[+t.dataset.i];
+  $$(".brow",host).forEach(row=>{const b=B.find(x=>x.p.id===row.dataset.id);const bs=row.querySelector(".bsum");bs.onclick=()=>{const o=row.classList.toggle("open");bs.setAttribute("aria-expanded",String(o))};row.querySelector(".tiles").addEventListener("click",e=>{const t=e.target.closest(".tile");if(!t)return;const r=b.ch[+t.dataset.i];
     $$(".tile",row).forEach(x=>x.setAttribute("aria-pressed",String(x===t)));
-    row.querySelector(".tdet").innerHTML=`<b>${esc(r.check)}.</b> Estimate ${r.did!=null?sgn(r.did,3):"–"}${r.lo!=null?`, range ${sgn(r.lo,2)} to ${sgn(r.hi,2)}`:""}${r.p!=null?`, p = ${pv(r.p)}`:""}. ${r.pass?"It holds.":"It does not hold."} ${r.note?esc(r.note)+".":""}`})})}
+    row.querySelector(".tdet").innerHTML=`<b>${esc(r.check)}.</b> Estimate ${r.did!=null?sgn(r.did,3):"–"}${r.lo!=null?`, range ${sgn(r.lo,2)} to ${sgn(r.hi,2)}`:""}${r.p!=null?`, p = ${pv(r.p)}`:""}. ${r.pass?"It holds.":"It does not hold."} ${r.note?esc(r.note)+".":""}${chkCode(r.check)==="R5"?` <button class="inlab" type="button" data-intent='${JSON.stringify({lab:"loud",test:b.p.id})}'>See how loud articles move the average →</button>`:""}`})})}
 
 /* ---------- headline 4: the ratchet ---------- */
 const RAT={pick:null,cur:null};
@@ -1720,7 +1787,7 @@ function drawRatchet(){
      <div class="legend"><span class="key"><i class="ln" style="background:var(--add-bd)"></i>added loaded word, still there</span><span class="key"><i class="ln" style="background:var(--del-bd)"></i>removed loaded word, still gone</span></div></div>`;
     const i30=x=>x.insert_survival["30d"],r30=x=>x.remove_survival["30d"];
     const at=i30(tc)!=null&&r30(tc)!=null?i30(tc)-r30(tc):null,ac=i30(cc)!=null&&r30(cc)!=null?i30(cc)-r30(cc):null;
-    h+=`<p class="means">${at!=null&&ac!=null?`<b>What this means:</b> after 30 days, ${pct(i30(tc))} of loaded words added to topic articles were still there, and ${pct(r30(tc))} of removals still held. In comparison articles: ${pct(i30(cc))} and ${pct(r30(cc))}. ${Math.abs(at-ac)<.05?"The gap between additions and removals is about the same in both groups, so there is no sign of a one-way ratchet here.":at>ac?"Additions outlast removals more in the topic articles. That is what a ratchet would look like, though these are a few dozen articles.":"Additions outlast removals more in the comparison articles."}`:""}</p>`}
+    h+=`<p class="means">${at!=null&&ac!=null?`<b>What this means:</b> after 30 days, ${pct(i30(tc))} of loaded words added to topic articles were still there, and ${pct(r30(tc))} of removals still held. In comparison articles: ${pct(i30(cc))} and ${pct(r30(cc))}. ${Math.abs(at-ac)<.05?"The difference between additions and removals is about the same in both groups, so there is no sign of a one-way ratchet here.":at>ac?"Additions outlast removals more in the topic articles. That is what a ratchet would look like, though these are a few dozen articles.":"Additions outlast removals more in the comparison articles."}`:""}</p>`}
   else h+=`<div class="note">How long added and removed loaded words last is not in this build yet.</div>`;
   // the heartbeat: one article by a stated rule
   const arts=RT.articles||{},crit=R.critical||[];
@@ -1734,7 +1801,8 @@ function drawRatchet(){
    <div class="chart" id="beatChart"></div>
    <div class="legend"><span class="key"><i class="ln" style="background:var(--ink-2)"></i>the wording of the first sentence: each level is one version, in order of first appearance</span><span class="key"><i class="ln" style="background:var(--del-bd)"></i>a change that was later undone</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span></div>
    <p class="beat-s" id="beatS" aria-live="polite"></p>
-   <div class="terms" id="beatTerms"></div></div>`;
+   <button class="inlab" type="button" data-intent='${JSON.stringify({lab:"flip",title:t}).replace(/'/g,"&#39;")}'>Explore this article in the data lab →</button>
+   <details class="stats"><summary>The record behind this trace <span>saved versions, wordings and loaded-word events</span></summary><div class="in"><div class="terms" id="beatTerms"></div></div></details></div>`;
   host.innerHTML=h;ratSurv();ratBeat();
   const T=A.terms||{};
   $("#beatTerms").innerHTML=`<span><b>${(A.revisions||0).toLocaleString("en-US")}</b> saved versions of the opening</span><span><b>${A.fs_n_variants??"–"}</b> first-sentence wordings</span>${A.lead_revert_rate!=null?`<span><b>${pct(A.lead_revert_rate)}</b> of versions later undone</span>`:""}`+crit.filter(k=>T[k]&&(T[k].n_events||T[k].present_end||T[k].present_start)).map(k=>`<span>${esc((LABEL[k]||k).split(" /")[0])}: <b>${T[k].n_events||0}</b> event${T[k].n_events===1?"":"s"} · ${T[k].present_start?"in":"absent"} at start → ${T[k].present_end?"in":"absent"} now</span>`).join("");
@@ -1773,7 +1841,7 @@ function drawXL(){
   const X=R.crosslang,host=$("#xlWrap");if(!host)return;
   if(!X||!X.articles||!Object.keys(X.articles).length){host.innerHTML=`<div class="note">The cross-language comparison is not in this build yet.</div>`;return}
   const langs=X.langs||["en"],titles=Object.keys(X.articles);
-  const sum=r=>r&&r.rates?Object.values(r.rates).reduce((s,v)=>s+(v||0),0):null;
+  const sum=r=>r&&r.rates?Object.values(r.rates).reduce((s,v)=>s+(v||0),0)*10:null;
   const all=titles.flatMap(t=>langs.flatMap(l=>{const a=X.articles[t][l];return a&&a.series?a.series.map(sum):[]})).filter(v=>v!=null);
   const vmax=Math.max(quant(all,.95)||1,1);
   const RP=ramp([tok("--heat-lo"),tok("--heat-mid"),tok("--heat-hi")]),col=v=>RP[Math.round(clamp(v/vmax,0,1)*(RP.length-1))];
@@ -1781,12 +1849,12 @@ function drawXL(){
   const tt=titles.filter(isT),oo=titles.filter(t=>!isT(t));
   if(!S.xlT||!titles.includes(S.xlT))S.xlT=titles.includes("Zionism")?"Zionism":titles[0];
   host.innerHTML=`<div class="picks" id="xlPicks">${tt.length?`<span class="grp">Topic</span>`+tt.map(t=>`<button class="pick" type="button" data-t="${esc(t)}" aria-pressed="false">${esc(t)}</button>`).join(""):""}${oo.length?`<span class="grp" style="margin-left:8px">Comparison</span>`+oo.map(t=>`<button class="pick" type="button" data-t="${esc(t)}" aria-pressed="false">${esc(t)}</button>`).join(""):""}</div>
-   <div class="fig"><div class="fig-h"><span class="fig-t" id="xlTitle"></span><span class="cap">Loaded words in the opening paragraph, per 1,000 words, on the colour scale below. Select a language to read it.</span></div>
-   <div class="stripes"><div class="stripes-h"><span>Language</span><span class="two"><span>First copy</span><span>Latest copy</span></span><span style="text-align:right">per 1,000</span></div>
+   <div class="fig"><div class="fig-h"><span class="fig-t" id="xlTitle"></span><span class="cap">Loaded words in the opening paragraph, per 10,000 words, on the colour scale below. Select a language to read it.</span></div>
+   <div class="stripes"><div class="stripes-h"><span>Language</span><span class="two"><span>First copy</span><span>Latest copy</span></span><span style="text-align:right">per 10,000</span></div>
    ${langs.map(l=>`<button class="stripe" type="button" data-l="${l}" aria-pressed="false"><span class="ln"><b>${l}</b><span>${LANG[l]||l}</span></span><span class="bar"><i></i><i></i></span><span class="v"></span></button>`).join("")}</div>
-   <div class="ramp" id="xlRamp"></div></div><p class="means" id="mXL"></p><div class="fig" id="xlPane"></div>`;
+   <div class="ramp" id="xlRamp"></div></div><p class="means" id="mXL"></p><button class="inlab" type="button" id="xlLab" data-intent='{"lab":"prism"}'>Explore this article across languages →</button><div class="fig" id="xlPane"></div>`;
   const rc=document.createElement("canvas");rc.width=160;rc.height=10;const cx=rc.getContext("2d");for(let i=0;i<160;i++){cx.fillStyle=css(RP[Math.round(i/159*(RP.length-1))]);cx.fillRect(i,0,1,10)}
-  $("#xlRamp").innerHTML=`<span>0</span>`;$("#xlRamp").append(rc);$("#xlRamp").insertAdjacentHTML("beforeend",`<span>${fmt(vmax,1)}+ per 1,000 words</span><span class="key" style="margin-left:12px"><i style="background:repeating-linear-gradient(135deg,var(--faint) 0 3px,transparent 3px 6px);border:1px solid var(--rule)"></i>no article in that language, or no copy</span>`);
+  $("#xlRamp").innerHTML=`<span>0</span>`;$("#xlRamp").append(rc);$("#xlRamp").insertAdjacentHTML("beforeend",`<span>${fmt(vmax,1)}+ per 10,000 words</span><span class="key" style="margin-left:12px"><i style="background:repeating-linear-gradient(135deg,var(--faint) 0 3px,transparent 3px 6px);border:1px solid var(--rule)"></i>no article in that language, or no copy</span>`);
   $("#xlPicks").onclick=e=>{const b=e.target.closest(".pick");if(b){S.xlT=b.dataset.t;xlPaint(sum,col)}};
   host.querySelector(".stripes").addEventListener("click",e=>{const b=e.target.closest(".stripe");if(b&&!b.classList.contains("na")){S.xlL=b.dataset.l;xlPaint(sum,col)}});
   xlPaint(sum,col);
@@ -1796,7 +1864,7 @@ function drawXL(){
 }
 function xlPaint(sum,col){
   const X=R.crosslang,t=S.xlT,A=X.articles[t]||{};
-  $$("#xlPicks .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.t===t)));
+  $$("#xlPicks .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.t===t)));const xb=$("#xlLab");if(xb)xb.dataset.intent=JSON.stringify({lab:"prism",title:t});
   const have=(X.langs||[]).filter(l=>A[l]&&A[l].series&&A[l].series.length);
   $("#xlTitle").textContent=`${t}: ${have.length} of ${(X.langs||[]).length} languages have this article`;
   if(!S.xlL||!have.includes(S.xlL))S.xlL=have.includes("en")?"en":have[0];
@@ -1805,7 +1873,7 @@ function xlPaint(sum,col){
     if(na){i0.style.backgroundColor="transparent";i1.style.backgroundColor="transparent";b.querySelector(".v").textContent="no data";b.setAttribute("aria-label",`${LANG[l]||l}: no data`);return}
     const v0=sum(s[0]),v1=sum(s.at(-1));i0.style.backgroundColor=css(col(v0));i1.style.backgroundColor=css(col(v1));
     b.querySelector(".v").textContent=s.length>1?`${fmt(v0,1)} → ${fmt(v1,1)}`:`${fmt(v0,1)} · one copy`;
-    b.setAttribute("aria-label",`${LANG[l]||l}: ${fmt(v0,1)} in ${dlab(s[0].date)}, ${fmt(v1,1)} in ${dlab(s.at(-1).date)} per 1,000 words`);b.title=`${dlab(s[0].date)} → ${dlab(s.at(-1).date)}`});
+    b.setAttribute("aria-label",`${LANG[l]||l}: ${fmt(v0,1)} in ${dlab(s[0].date)}, ${fmt(v1,1)} in ${dlab(s.at(-1).date)} per 10,000 words`);b.title=`${dlab(s[0].date)} → ${dlab(s.at(-1).date)}`});
   xlShow(sum)}
 function xlShow(sum){
   const X=R.crosslang,t=S.xlT,l=S.xlL,a=(X.articles[t]||{})[l],pane=$("#xlPane");
@@ -1815,7 +1883,7 @@ function xlShow(sum){
   pane.innerHTML=`<div class="fig-h"><span class="fig-t">${esc(t)} in ${LANG[l]||l}${a.title&&a.title!==t?`: <span lang="${l}" dir="auto">${esc(a.title)}</span>`:""}</span><span class="cap">Opening paragraph, first 1,200 characters. Amber struck-through = removed. Blue = added.</span></div>
    <div class="xl-pane"><div class="col2"><div class="stage-meta" style="padding:0;border:0"><b>${dlab(v0.date)}</b>${link(v0)}</div><div class="xl-text" lang="${l}" dir="auto">${renderW(o,"-")||"<span class='cap'>No text.</span>"}</div></div>
    <div class="col2"><div class="stage-meta" style="padding:0;border:0"><b>${dlab(v1.date)}</b>${link(v1)}</div><div class="xl-text" lang="${l}" dir="auto">${a.series.length>1?renderW(o,"+")||"<span class='cap'>No text.</span>":"<span class='cap'>Only one copy of this article.</span>"}</div></div></div>
-   <div class="tbx"><table style="min-width:0"><thead><tr><th>Words like…</th><th class="r">${dlab(v0.date)}</th><th class="r">${dlab(v1.date)}</th></tr></thead><tbody>${rates.map(r=>`<tr><td>${esc(r.replace(/_/g," "))}</td><td class="r">${fmt(v0.rates[r],1)}</td><td class="r">${fmt(v1.rates[r],1)}</td></tr>`).join("")}<tr><td><b>All five</b></td><td class="r"><b>${fmt(sum(v0),1)}</b></td><td class="r"><b>${fmt(sum(v1),1)}</b></td></tr></tbody></table></div><p class="cap">Per 1,000 words of the opening paragraph (${v0.words??"–"} and ${v1.words??"–"} words). Each language uses its own word list for the same five ideas.</p>`}
+   <details class="stats"><summary>The counts <span>each of the five word groups</span></summary><div class="in"><div class="tbx"><table style="min-width:0"><thead><tr><th>Words like…</th><th class="r">${dlab(v0.date)}</th><th class="r">${dlab(v1.date)}</th></tr></thead><tbody>${rates.map(r=>`<tr><td>${esc(r.replace(/_/g," "))}</td><td class="r">${fmt(v0.rates[r]*10,1)}</td><td class="r">${fmt(v1.rates[r]*10,1)}</td></tr>`).join("")}<tr><td><b>All five</b></td><td class="r"><b>${fmt(sum(v0),1)}</b></td><td class="r"><b>${fmt(sum(v1),1)}</b></td></tr></tbody></table></div><p class="cap">Per 10,000 words of the opening paragraph (${v0.words??"–"} and ${v1.words??"–"} words). Each language uses its own word list for the same five ideas.</p></div></details>`}
 
 
 /* ---------- validation + blind ---------- */
@@ -1848,7 +1916,7 @@ function drawTable(){
   $("#count").textContent=`${A.length} of ${R.articles.length} articles`;
   $("#rows").innerHTML=A.map(a=>`<tr tabindex="0" data-t="${esc(a.title)}" class="${a.title===S.sel?"sel":""}"><td>${esc(a.title)}${a.created_in_window?` <span class="chip" title="Created during the period; not in the main test">new</span>`:""}</td><td><span class="chip ${a.group}">${GROUP[a.group]||a.group}</span></td><td>${(a.edits||0).toLocaleString("en-US")}</td><td>${(a.editors||0).toLocaleString("en-US")}</td><td>${fmt(a.crit0)}</td><td>${fmt(a.crit1)}</td><td class="${a.dcrit>.05?"up":a.dcrit<-.05?"dn":""}">${a.dcrit==null?"–":sgn(a.dcrit)}</td><td>${fmt(a.conn0)}</td><td>${fmt(a.conn1)}</td><td>${a.lead_changed??"–"}</td><td>${spark(a.crit_series,a.crit_series_dates)}</td></tr>`).join("");
 }
-function openArticle(t){S.sel=t;showDetail(t);drawTable();$("#detail").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
+function openArticle(t){const hc=$("#howchecked");if(hc)hc.open=true;S.sel=t;showDetail(t);drawTable();$("#detail").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
 function leadDiffHTML(d){
   const out=[];for(let i=0;i<d.length;i++){const x=d[i];
     if(x.t==="-"){let j=i;while(j<d.length&&d[j].t==="-")j++;let k=j;while(k<d.length&&d[k].t==="+")k++;const dels=d.slice(i,j),adds=d.slice(j,k);
@@ -1926,10 +1994,10 @@ function openInReport(id){location.hash="#report";setTimeout(()=>{const el=docum
 
 /* ---------- init ---------- */
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
-function redrawAll(){safe(drawHero,false);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawES);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
+function redrawAll(){safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawES);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
 function init(){
   if(!R){$("#lede").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
-  safe(drawLede);safe(drawWow);safe(drawCards);
+  safe(drawLede);safe(drawBreathe);safe(drawCards);
   const fs=$("#frameSel");["critical_rate","connection_rate",...(R.frames||[])].forEach(k=>fs.append(new Option(LABEL[k]||k,k)));
   fs.onchange=()=>{S.frame=fs.value;drawTrend()};
   seg($("#partA"),v=>{S.part=v;drawTrend()});seg($("#setA"),v=>{S.set=v;drawTrend()});
@@ -1947,10 +2015,12 @@ function init(){
   safe(drawHero,true);
   safe(keyInit);safe(drawChance);safe(drawBoard);
   stB=stepsB();
-  safe(drawTrend);safe(minis);safe(drawES);safe(drawHeat);safe(defInit);safe(drawForest);safe(traceInit);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
+  safe(drawTrend);safe(minis);safe(drawES);safe(drawHeat);safe(drawForest);safe(traceInit);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
   scrolly($("#stepsB"),stB,drawES);
-  $("#vocabLab").onclick=()=>openInLab({from:"vocab",measure:S.frame,part:S.part,groups:["treatment","control"]});
+  document.addEventListener("click",e=>{const b=e.target.closest("[data-intent]");if(!b)return;e.preventDefault();let it=null;try{it=JSON.parse(b.dataset.intent)}catch(x){}openInLab(it)});
+  const ts=$("#testStats");if(ts)ts.addEventListener("toggle",()=>{if(ts.open)safe(drawChance,true)});
+  safe(foldPhone);
   const re=()=>{if(isLab()){STALE.report=true;labCall("redraw")}else{STALE.lab=LAB_INIT;HM=null;redrawAll()}};
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;re()},150)});
   addEventListener("hashchange",()=>{const h=location.hash,was=$("#view-report").hidden;route();if(VIEWS.includes(h)||h===""){if(was!==isLab())scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
