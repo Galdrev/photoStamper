@@ -452,7 +452,10 @@ def main():
         robust.append({"id": pid, "check": name, "did": est_row and est_row["did"], "lo": est_row and est_row["lo"],
                        "hi": est_row and est_row["hi"], "p": est_row and est_row["p_perm"], "pass": bool(passed), "note": note})
     for pid, part, k in primary_defs:
-        base = next(r for r in did_rows if r["id"] == pid)
+        base = next((r for r in did_rows if r["id"] == pid), None)
+        if base is None:
+            print(f"WARNING: primary {pid} not computable (too few articles per group); robustness skipped", flush=True)
+            continue
         sign = np.sign(base["did"])
         same = lambda r: r is not None and np.sign(r["did"]) == sign and r["p_perm"] < 0.05
         r1 = did_test(changes(T_hand, part, k, first, last), changes(C, part, k, first, last))

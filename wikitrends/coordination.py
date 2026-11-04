@@ -161,6 +161,8 @@ def main():
     arts = load()
     groups = {"topic": [a for a in arts if a["group"] == "treatment"], "comparison": [a for a in arts if a["group"] == "control"]}
     n_eq = min(len(v) for v in groups.values())
+    if n_eq == 0:
+        print("WARNING: a group has no articles; coordination signals are empty", flush=True)
     out = {"note": "Exploratory. Aggregate signals only; editors are salted hashes, not stored. "
                    "Coincident editing also arises from shared watchlists and breaking news.",
            "articles_per_group_sample": n_eq}

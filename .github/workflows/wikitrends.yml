@@ -12,6 +12,9 @@ env:
   WT_RPS: '5'
   WT_JOB: main
   GH_TOKEN: ${{ github.token }}
+defaults:
+  run:
+    shell: bash   # bash -eo pipefail: a failure anywhere in a pipe fails the step
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -86,4 +89,4 @@ jobs:
           for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json ratchet.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
           git add -f wikitrends/data/runlogs/*.log 2>/dev/null || true
           git commit -m "Update wikitrends results (run ${{ github.run_id }}) [skip ci]" || exit 0
-          git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }}
+          git pull --rebase --autostash origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }}

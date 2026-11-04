@@ -37,6 +37,7 @@ def fs(wt):
 def bisect_article(title):
     fn = os.path.join(ART, re.sub(r"[^\w\-]+", "_", title)[:150] + ".json.gz")
     if not os.path.exists(fn):
+        print(f"WARNING: {title}: no article file (not fetched), nothing traced", flush=True)
         return title, []
     rec = json.load(gzip.open(fn, "rt", encoding="utf-8"))
     revs = rec["revisions"]; idx = {r["revid"]: i for i, r in enumerate(revs)}

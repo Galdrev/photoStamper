@@ -11,6 +11,9 @@ env:
   PREV_RUN: '41884935580'      # earlier run: frame, salt and finished shards are reused
   WT_RPS: '2'                  # per job; max 3 jobs at once => about 6 requests/s total (Wikipedia throttles our aggregate)
   GH_TOKEN: ${{ github.token }}
+defaults:
+  run:
+    shell: bash   # bash -eo pipefail: a failure anywhere in a pipe fails the step
 jobs:
   frame:
     runs-on: ubuntu-latest
@@ -116,4 +119,4 @@ jobs:
           git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
           for f in wikitrends/data/mass_results.json wikitrends/data/mass/frame.json wikitrends/data/mass_inventory.txt wikitrends/mass_analyze.log; do [ -f $f ] && git add -f $f; done
           git commit -m "Mass tier results (run ${{ github.run_id }}) [skip ci]" || exit 0
-          git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }}
+          git pull --rebase --autostash origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }}

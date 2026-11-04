@@ -395,11 +395,7 @@ def analyze():
                 lang_tests.append({"lang": lang, "part": part, "unit": "per 1,000 words", **d})
     res["languages"] = lang_tests
     res["lang_coverage"] = {lang: sum(1 for r in ln if lang in r["langs"]) for lang in LANGS}
-    rp = os.path.join(A.OUTDIR, "results.json")
-    target = rp if os.path.exists(rp) else os.path.join(A.OUTDIR, "mass_results.json")
-    full = json.load(open(target)) if os.path.exists(target) else {}
-    full["mass"] = res
-    json.dump(full, open(target, "w"))
+    json.dump({"mass": res}, open(os.path.join(A.OUTDIR, "mass_results.json"), "w"))   # always its own file
     for t in tests:
         if t["stratum"] == "all" and t["outcome"] in ("critical", "connection") and t["window"] == "whole":
             print(f"MASS {t['part']} {t['outcome']}: DiD {t['did']:+.2f} [{t['lo']:+.2f},{t['hi']:+.2f}] p={t['p_perm']:.4f} n={t['n_t']}/{t['n_c']}")
