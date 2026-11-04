@@ -66,6 +66,20 @@ BACKMATTER = re.compile(r"^==\s*(See also|Notes|References|Citations|Further rea
                         re.M | re.I)
 
 
+# Words for the "word race" playground (exploratory, descriptive only)
+WORD_RACE = ["colonial", "colonization", "settler", "settlers", "apartheid", "genocide", "occupation", "occupied",
+             "Nakba", "indigenous", "homeland", "Zionist", "Zionism", "antisemitism", "antisemitic", "terrorist",
+             "terrorism", "militant", "resistance", "massacre", "pogrom", "Holocaust", "displacement", "expulsion",
+             "refugees", "ethnic cleansing", "war crimes", "human rights", "international law", "illegal",
+             "self-determination", "Jewish", "Jews", "Palestinian", "Palestinians", "Israeli", "Arab", "Hamas",
+             "Gaza", "West Bank", "democracy", "ethnostate", "supremacy", "racism", "liberation", "martyr",
+             "hostage", "hostages", "rape", "children", "civilians", "famine", "starvation", "siege", "blockade",
+             "ceasefire", "peace", "two-state", "diaspora", "persecution", "survivors", "ancestral", "biblical",
+             "ancient", "Temple", "Jerusalem", "Holy Land", "Canaan", "Judea", "Samaria", "Levant", "Ottoman",
+             "British Mandate", "UN", "ICJ", "Amnesty", "B'Tselem", "scholars", "historians", "critics", "alleged"]
+WORD_RX = {w: re.compile(r"\b" + re.escape(w) + (r"s?\b" if w[-1].isalpha() else r"\b"), re.I) for w in WORD_RACE}
+
+
 # --- Wikitext -> prose ------------------------------------------------------
 def strip_nested(t, open_, close, keep=None):
     """Remove nested open_...close blocks (e.g. {{ }} or [[File: ]])."""
@@ -578,7 +592,19 @@ def main():
                                         "ctx": re.sub(r"\s+", " ", fp[max(0, m.start() - 90):m.end() + 90])})
     kw = {k: random.Random(1).sample(v, min(40, len(v))) for k, v in kwic.items()}
 
-    res = {"week0": WEEK0, "n_weeks": N_WEEKS, "dates": dates, "first": first, "last": last, "pre_war": PRE_WAR, "first_post_war": FIRST_POST_WAR,
+    # Word race: pooled hits per 10k words per group per date (balanced panel)
+    word_race = {"words": WORD_RACE, "dates": dates}
+    for g, A_ in (("topic", T), ("comparison", C)):
+        rows = {w: [] for w in WORD_RACE}
+        for d in dates:
+            snaps = [at(a["series"], d) for a in A_]
+            snaps = [x for x in snaps if x]
+            tw = sum(x["full"]["words"] for x in snaps) or 1
+            for w, rx in WORD_RX.items():
+                rows[w].append(round(sum(len(rx.findall(x["_fp"])) for x in snaps) * 1e4 / tw, 3))
+        word_race[g] = rows
+
+    res = {"week0": WEEK0, "word_race": word_race, "n_weeks": N_WEEKS, "dates": dates, "first": first, "last": last, "pre_war": PRE_WAR, "first_post_war": FIRST_POST_WAR,
            "frames": FRAMES, "critical": CRITICAL, "connection": CONNECTION,
            "lexicon": {k: {"include": inc, "exclude": exc} for k, (inc, exc) in F.items()},
            "n_treatment": len(T), "n_control": len(C), "n_treatment_hand": len(T_hand),

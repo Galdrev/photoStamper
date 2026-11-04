@@ -68,6 +68,37 @@ def exposure(res):
 from collections import Counter
 res["exposure"] = exposure(res)
 
+
+# "Be the coder" playground: 40 real masked pairs (orientation a: A = older, B = newer) with the reveal
+def play_pairs():
+    bd = os.path.join(HERE, "data", "blind")
+    kp, fp = os.path.join(bd, "key.json"), os.path.join(bd, "finals.json")
+    if not (os.path.exists(kp) and os.path.exists(fp)):
+        return None
+    key = json.load(open(kp))["key"]; finals = json.load(open(fp))
+    texts = {}
+    for f in sorted(os.listdir(bd)):
+        if f.startswith("shard_"):
+            for it in json.load(open(os.path.join(bd, f))):
+                texts[it["id"]] = it
+    import random as _r
+    rnd = _r.Random(4)
+    cands = [b for b, v in finals.items() if v.get("rev0") and (b + "a") in texts]
+    lab = lambda b: finals[b]["final"]
+    pick = [b for b in cands if lab(b) in ("B_less_favourable", "B_more_favourable")]
+    pick = rnd.sample(pick, min(28, len(pick))) + rnd.sample([b for b in cands if lab(b) not in ("B_less_favourable", "B_more_favourable")], min(12, len(cands)))
+    rnd.shuffle(pick)
+    out = []
+    for b in pick:
+        t = texts[b + "a"]; swap = rnd.random() < 0.5
+        out.append({"left": t["B"] if swap else t["A"], "right": t["A"] if swap else t["B"], "newer": "left" if swap else "right",
+                    "ai": {"B_less_favourable": "newer_harsher", "B_more_favourable": "newer_gentler"}.get(lab(b), "no_clear_change"),
+                    **{k: finals[b].get(k) for k in ("title", "group", "rev0", "rev1", "d0", "d1")}})
+    return out
+
+
+res["play_pairs"] = play_pairs()
+
 findings_path = os.path.join(HERE, "findings.html")
 findings = open(findings_path).read() if os.path.exists(findings_path) else ""
 tpl = open(os.path.join(HERE, "page_template.html")).read()

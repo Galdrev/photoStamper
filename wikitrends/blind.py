@@ -269,6 +269,8 @@ def score(outdir):
              "framing_vs_factual": kinds, "examples": examples,
              "gate_passed": bool(cal_acc is not None and cal_acc >= 0.8 and (not anc or np.mean([ok for _, ok in anc]) >= 0.9))}
     json.dump(blind, open(os.path.join(outdir, "blind_summary.json"), "w"), indent=1)
+    json.dump({b: {"final": final[b], **{k: meta[b].get(k) for k in ("title", "group", "rev0", "rev1", "d0", "d1")}}
+               for b in final}, open(os.path.join(outdir, "finals.json"), "w"))
     rp2 = os.path.join(DATA, "results.json")
     if os.path.exists(rp2):
         res = json.load(open(rp2)); res["blind"] = blind; json.dump(res, open(rp2, "w"))
