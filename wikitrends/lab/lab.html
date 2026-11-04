@@ -1,0 +1,92 @@
+<div class="lx" id="lx">
+  <header class="lx-head">
+    <div class="lx-eye">Data lab <span class="lx-x">Exploratory</span></div>
+    <h1>Play with the evidence</h1>
+    <p class="lx-deck">Eight hands-on views of the same data behind the report. Drag, tap and shuffle the data itself. The pre-registered result stays on screen as a faint outline, so you can always see where you started.</p>
+    <nav class="lx-index" aria-label="Labs" id="lxIndex">
+      <a href="#lab" data-go="lxShadow"><i>1</i>Shadow bars</a>
+      <a href="#lab" data-go="lxShuffle"><i>2</i>Shuffle the labels</a>
+      <a href="#lab" data-go="lxLoud"><i>3</i>Pull the loudest out</a>
+      <a href="#lab" data-go="lxFlip"><i>4</i>Definition flipbook</a>
+      <a href="#lab" data-go="lxChips"><i>5</i>Word chips</a>
+      <a href="#lab" data-go="lxLead"><i>6</i>Lead vs body</a>
+      <a href="#lab" data-go="lxPrism"><i>7</i>Language prism</a>
+      <a href="#lab" data-go="lxGalaxy"><i>8</i>Galaxy</a>
+    </nav>
+  </header>
+
+  <section class="lx-sec" id="lxShadow" aria-labelledby="lxShadowH">
+    <div class="lx-h"><span class="lx-num">1</span><h2 id="lxShadowH">Shadow bars</h2><span class="lx-x">Exploratory</span></div>
+    <p class="lx-q">Each bar is one kind of topic article. Its length is how much the loaded words (colonial, apartheid, genocide and so on) rose per 10,000 words. The grey shadow behind it is how much the comparison articles rose over the same time. Only the coloured part sticks out past what happened anyway.</p>
+    <div class="lx-strip" id="lxSStrip" aria-label="Time window. Drag either handle, or drag the middle to move the window."></div>
+    <div class="lx-row" id="lxSChips" role="group" aria-label="Comparison shadow"></div>
+    <div class="lx-bars" id="lxSBars"></div>
+    <p class="lx-say" id="lxSSay" aria-live="polite"></p>
+  </section>
+
+  <section class="lx-sec" id="lxShuffle" aria-labelledby="lxShufH">
+    <div class="lx-h"><span class="lx-num">2</span><h2 id="lxShufH">Shuffle the labels</h2><span class="lx-x">Exploratory</span></div>
+    <p class="lx-q">If the topic label meant nothing, you could hand it to any articles at random and get gaps as big as the real one. Shuffle the labels and see how often chance does as well.</p>
+    <div class="lx-row" id="lxPSeg" role="group" aria-label="Which pre-registered test"></div>
+    <div class="lx-shuf">
+      <div class="lx-tiles" id="lxTiles" aria-hidden="true"></div>
+      <div class="lx-shufR">
+        <button class="lx-big" type="button" id="lxShufBtn"><b>Shuffle</b><span>tap once, or hold to keep going</span></button>
+        <p class="lx-count num" id="lxShufCount" aria-live="polite"></p>
+      </div>
+    </div>
+    <div class="lx-hist" id="lxHist"></div>
+    <p class="lx-say" id="lxShufSay"></p>
+  </section>
+
+  <section class="lx-sec" id="lxLoud" aria-labelledby="lxLoudH">
+    <div class="lx-h"><span class="lx-num">3</span><h2 id="lxLoudH">Pull the loudest out</h2><span class="lx-x">Exploratory</span></div>
+    <p class="lx-q">Is the gap carried by a few extreme articles? Each dot is one article’s change. Drag a handle inwards to drop the most extreme articles and watch the gap respond.</p>
+    <div class="lx-row" id="lxLSeg" role="group" aria-label="Which pre-registered test"></div>
+    <div class="lx-row" id="lxLSide" role="group" aria-label="Which ends to trim"></div>
+    <div class="lx-dots" id="lxLDots"></div>
+    <div class="lx-gap" id="lxLGap"></div>
+    <p class="lx-say" id="lxLSay" aria-live="polite"></p>
+  </section>
+
+  <section class="lx-sec" id="lxFlip" aria-labelledby="lxFlipH">
+    <div class="lx-h"><span class="lx-num">4</span><h2 id="lxFlipH">Definition flipbook</h2><span class="lx-x">Exploratory</span></div>
+    <p class="lx-q">The first sentence is the definition most readers see. Pick an article, then swipe the sentence left or right to flip through every version editors saved.</p>
+    <div class="lx-cards" id="lxFCards" role="listbox" aria-label="Articles"></div>
+    <div class="lx-flip" id="lxFBox"></div>
+    <div class="lx-mari" id="lxFMari"></div>
+  </section>
+
+  <section class="lx-sec" id="lxChips" aria-labelledby="lxChipsH">
+    <div class="lx-h"><span class="lx-num">5</span><h2 id="lxChipsH">Word chips</h2><span class="lx-x">Exploratory</span></div>
+    <p class="lx-q">Drag a chip onto the chart, or tap it, to draw how often those words appear. Flick a chip off the chart to remove it. Press and hold a chip to break it into single words.</p>
+    <div class="lx-chips" id="lxCPal"></div>
+    <div class="lx-burst" id="lxCBurst" hidden></div>
+    <div class="lx-cchart" id="lxCChart"></div>
+    <div class="lx-legend" id="lxCKey"></div>
+  </section>
+
+  <section class="lx-sec" id="lxLead" aria-labelledby="lxLeadH">
+    <div class="lx-h"><span class="lx-num">6</span><h2 id="lxLeadH">Lead vs body</h2><span class="lx-x">Exploratory</span></div>
+    <p class="lx-q">Did the opening paragraph change more than the rest of the article? One dot per article. Across: change in loaded words in the full text. Up: change in the opening paragraph. Above the diagonal, the opening rose more.</p>
+    <div class="lx-scw"><div class="lx-sc" id="lxDBox"></div>
+      <div class="lx-side"><p class="lx-big2 num" id="lxDCount" aria-live="polite"></p><div class="lx-row" id="lxDKey" role="group" aria-label="Highlight a group"></div><p class="lx-say" id="lxDSay"></p></div></div>
+  </section>
+
+  <section class="lx-sec" id="lxPrism" aria-labelledby="lxPrismH">
+    <div class="lx-h"><span class="lx-num">7</span><h2 id="lxPrismH">Language prism</h2><span class="lx-x">Exploratory</span></div>
+    <p class="lx-q">The same articles in other Wikipedias: same rules and software, different communities. Each cell is how much the loaded words in that language’s opening changed. Tap a language to sort by it. Drag English onto another language to see English minus that language.</p>
+    <div class="lx-prism" id="lxXGrid"></div>
+    <div class="lx-xcell" id="lxXCell"></div>
+  </section>
+
+  <section class="lx-sec" id="lxGalaxy" aria-labelledby="lxGalH">
+    <div class="lx-h"><span class="lx-num">8</span><h2 id="lxGalH">Galaxy</h2><span class="lx-x">Exploratory</span></div>
+    <p class="lx-q">Every dot is one article, grouped by the WikiProject that rates it, with about ten thousand in all. Across is how much its loaded words changed since the first snapshot. Pick a date and watch them move. Tap a project to compare it with the comparison projects.</p>
+    <div class="lx-row" id="lxGDates" role="group" aria-label="Snapshot"></div>
+    <div class="lx-gal" id="lxGBox"><canvas id="lxGCan"></canvas></div>
+    <p class="lx-say" id="lxGSay" aria-live="polite"></p>
+  </section>
+
+  <div class="lx-views" id="lxViews" aria-live="polite"><b>views explored: <span id="lxViewsN">0</span></b><span>the more you slice, the more chance patterns you’ll find</span></div>
+</div>
