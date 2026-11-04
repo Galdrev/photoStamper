@@ -2,3 +2,8 @@ Zionism: 3657 revisions, 169 first-sentence variants
 [hb ratchet] ratchet 1/2 el=15.1m eta=15.1m req=167 429=30 5xx=0 retries=30 fail=0
 [hb ratchet] ratchet 1/2 el=16.1m eta=16.1m req=172 429=31 5xx=0 retries=31 fail=0
 [hb ratchet] ratchet 1/2 el=17.1m eta=17.1m req=177 429=32 5xx=0 retries=32 fail=0
+[hb ratchet] ratchet 1/2 el=18.1m eta=18.1m req=182 429=33 5xx=0 retries=33 fail=0
+Israel: 3819 revisions, 42 first-sentence variants
+[hb ratchet] ratchet 2/2 el=19.0m eta=Nonem req=186 429=34 5xx=0 retries=34 fail=0
+topic critical: insert survives 30d 0.3137254901960784 | removal survives 30d 0.21212121212121213 | stuck after retries 0.8333333333333334 | failed attempts 9.0
+comparison critical: insert survives 30d None | removal survives 30d None | stuck after retries None | failed attempts None
