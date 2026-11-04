@@ -23,6 +23,13 @@ for a in res["articles"]:
         if a.get(k) is not None:
             a[k] = round(a[k], 3)
 
+for name, key in (("bisect.json", "trace"), ("crosslang.json", "crosslang")):
+    p = os.path.join(HERE, "data", name)
+    res[key] = json.load(open(p)) if os.path.exists(p) else None
+qa_p = os.path.join(HERE, "data", "qa.json")
+if os.path.exists(qa_p):
+    qa = json.load(open(qa_p)); qa.pop("per_article", None); res["qa"] = qa
+
 findings_path = os.path.join(HERE, "findings.html")
 findings = open(findings_path).read() if os.path.exists(findings_path) else ""
 tpl = open(os.path.join(HERE, "page_template.html")).read()
