@@ -316,7 +316,8 @@ def did_test(t, c, weights_c=None):
     bt = RNG.choice(t, (N_BOOT, len(t))).mean(1) - RNG.choice(c, (N_BOOT, len(c))).mean(1)
     lo, hi = np.percentile(bt, [2.5, 97.5])
     return {"did": float(est), "treat": float(t.mean()), "control": float(c.mean()),
-            "lo": float(lo), "hi": float(hi), "p_perm": float(p), "n_t": int(len(t)), "n_c": int(len(c))}
+            "lo": float(lo), "hi": float(hi), "p_perm": float(p), "n_t": int(len(t)), "n_c": int(len(c)),
+            "_perm": perm, "_t": t, "_c": c}
 
 
 def bh(rows, key="p_perm"):
@@ -398,6 +399,8 @@ def main():
             for d in dates[1:]:
                 r = did_test(changes(T, part, k, first, d), changes(C, part, k, first, d))
                 if r:
+                    for kk in ("_perm", "_t", "_c"):
+                        r.pop(kk, None)
                     rows.append({"date": d, "did": r["did"], "lo": r["lo"], "hi": r["hi"]})
             event_study[f"{part}:{k}"] = rows
 
@@ -423,12 +426,23 @@ def main():
                 r.update(part=part, frame=k, window=label, scale="change in hits per 10k words",
                          tier="primary" if pid else "secondary", id=pid)
                 did_rows.append(r)
+    # keep a sample of the chance distribution and the per-article changes for primaries; strip elsewhere
+    for r in did_rows:
+        if r["tier"] == "primary":
+            r["perm_sample"] = [round(float(x), 4) for x in r["_perm"][::25]]
+            r["changes_t"] = [round(float(x), 3) for x in r["_t"]]
+            r["changes_c"] = [round(float(x), 3) for x in r["_c"]]
+        for k in ("_perm", "_t", "_c"):
+            r.pop(k, None)
     bh([r for r in did_rows if r["tier"] == "primary"])
     bh([r for r in did_rows if r["tier"] == "secondary"])
 
     # 3. Robustness for primaries
     robust = []
     def chk(pid, name, est_row, passed, note=""):
+        if est_row:
+            for k in ("_perm", "_t", "_c"):
+                est_row.pop(k, None)
         robust.append({"id": pid, "check": name, "did": est_row and est_row["did"], "lo": est_row and est_row["lo"],
                        "hi": est_row and est_row["hi"], "p": est_row and est_row["p_perm"], "pass": bool(passed), "note": note})
     for pid, part, k in primary_defs:
