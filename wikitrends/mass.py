@@ -322,6 +322,14 @@ def analyze():
     res["first_sentence_critical"] = {g: [pooled(g, i, lambda rr: float(np.mean([sum(A.count(k, s["fs"]) for k in A.CRITICAL) > 0 for s in rr])))
                                           for i in range(3)] for g in ("topic", "comparison")}
     res["tests"] = tests
+    # compact per-article export for the data lab (counts per frame at the 3 dates)
+    FR = list(A.FRAMES)
+    def pack(sn, part):
+        return None if not sn or not sn.get(part) else [sn[part]["words"]] + [sn[part]["counts"][k] for k in FR]
+    res["lab_frames"] = FR
+    res["lab_articles"] = [{"t": r["title"], "g": r["group"][0], "p": r["project"], "i": r["importance"][0],
+                            "f": [pack(s, "full") for s in r["snaps"]], "l": [pack(s, "lead") for s in r["snaps"]],
+                            "e": len(r["edits"]), "rv": sum(x[4] for x in r["edits"])} for r in en]
     # activity and coordination at scale (aggregate only)
     from datetime import datetime, timezone
     WAR = datetime(2023, 10, 7, tzinfo=timezone.utc).timestamp()
