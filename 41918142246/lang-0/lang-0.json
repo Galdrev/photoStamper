@@ -1,21 +1,21 @@
 {
  "job": "lang-0",
  "stage": "lang-0",
- "done": 16,
+ "done": 41,
  "total": 200,
- "elapsed_min": 2.5,
- "eta_min": 28.9,
+ "elapsed_min": 5.5,
+ "eta_min": 21.5,
  "rps_limit": 2.0,
  "req_per_s": 2.0,
  "avg_latency_s": 0.14,
- "requests": 302,
- "ok": 302,
+ "requests": 665,
+ "ok": 665,
  "http_429": 0,
  "http_5xx": 0,
  "api_errors": 0,
  "retries": 0,
  "failures": 0,
- "bytes": 7022862,
+ "bytes": 19128009,
  "article_errors": 0,
- "updated": "2026-11-04T21:42:40Z"
+ "updated": "2026-11-04T21:45:41Z"
 }
