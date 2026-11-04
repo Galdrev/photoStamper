@@ -565,14 +565,20 @@ function gLayout(w){const G=G8,ph=phone(),lanes=gLanes(),key=w+":"+ph+":"+S8.all
   G.lay={key,P,lanes,gut,top,x,L,st,bot:y,h:y+(ph?38:30),ms:performance.now()-t0};return G.lay}
 function gStats(ln,k){const G=G8,v=[];for(const i of ln.idx)if(G.ok[i]&&isFinite(G.CH[k][i]))v.push(G.CH[k][i]);return v}
 /* chance band: shuffle the topic/comparison label 300 times, in chunks so the page stays responsive */
-function gBand(k){if(S8.band[k]||k===0)return;const G=G8,vals=[],lab=[];for(let i=0;i<G.n;i++)if(G.ok[i]&&isFinite(G.CH[k][i])){vals.push(G.CH[k][i]);lab.push(G.arts[i].g==="t"?1:0)}
-  const n=vals.length,nT=lab.reduce((a,b)=>a+b,0),V=Float64Array.from(vals);let tot=0,sT=0;for(let i=0;i<n;i++){tot+=V[i];if(lab[i])sT+=V[i]}
-  const real=sT/nT-(tot-sT)/(n-nT),B=300,out=new Float64Array(B),r=rng(41+k),t0=performance.now();let b=0;const job={real,nT,nC:n-nT,ready:false};S8.band[k]=job;
-  if(nT<2||n-nT<2){job.ready=true;job.lo=job.hi=NaN;return}
-  const chunk=()=>{const end=Math.min(B,b+30);for(;b<end;b++){let s=0;for(let i=0;i<nT;i++){const j=i+((r()*(n-i))|0),t=V[i];V[i]=V[j];V[j]=t;s+=V[i]}out[b]=s/nT-(tot-s)/(n-nT)}
-    if(b<B)setTimeout(chunk,0);else{out.sort();job.lo=out[Math.floor(B*.025)];job.hi=out[Math.floor(B*.975)];job.beat=out.filter(x=>Math.abs(x)>=Math.abs(real)).length;job.ready=true;job.ms=performance.now()-t0;
-      window.LX_TIMING=Object.assign(window.LX_TIMING||{},{galaxy_shuffle_300_ms:+job.ms.toFixed(1)});if(S8.cur===k&&!S8.animating){gDraw(k);gSay()}}};
-  setTimeout(chunk,0)}
+/* chance band at the WikiProject level: articles in one project move together, so whole projects swap labels.
+   Every split of the projects into "topic" and "comparison" is enumerated when there are at most 20,000 splits; otherwise 3,000 random splits. */
+function gBand(k){if(S8.band[k]||k===0)return;const G=G8,t0=performance.now(),P=[];
+  for(const ln of G.lanes){let s=0,n=0;for(const i of ln.idx)if(G.ok[i]&&isFinite(G.CH[k][i])){s+=G.CH[k][i];n++}if(n)P.push({s,n,t:ln.g==="t"})}
+  const np=P.length,nT=P.filter(p=>p.t).length,S=P.reduce((a,p)=>a+p.s,0),Nn=P.reduce((a,p)=>a+p.n,0);
+  const sT=P.filter(p=>p.t).reduce((a,p)=>a+p.s,0),nTa=P.filter(p=>p.t).reduce((a,p)=>a+p.n,0),real=sT/nTa-(S-sT)/(Nn-nTa);
+  const job={real,nProj:np,nTproj:nT,ready:true,lo:NaN,hi:NaN};S8.band[k]=job;if(nT<1||np-nT<1)return;
+  let comb=1;for(let i=0;i<nT;i++)comb=comb*(np-i)/(i+1);
+  const out=[],ev=(ss,nn)=>{if(nn>0&&Nn-nn>0)out.push(ss/nn-(S-ss)/(Nn-nn))};
+  if(comb<=20000){job.exact=true;const rec=(start,left,ss,nn)=>{if(!left){ev(ss,nn);return}for(let i=start;i<=np-left;i++)rec(i+1,left-1,ss+P[i].s,nn+P[i].n)};rec(0,nT,0,0)}
+  else{const r=rng(41+k),idx=P.map((_,i)=>i);for(let b=0;b<3000;b++){let ss=0,nn=0;for(let i=0;i<nT;i++){const j=i+((r()*(np-i))|0),t=idx[i];idx[i]=idx[j];idx[j]=t;ss+=P[idx[i]].s;nn+=P[idx[i]].n}ev(ss,nn)}}
+  out.sort((a,b)=>a-b);job.n=out.length;job.lo=out[Math.floor(out.length*.025)];job.hi=out[Math.min(out.length-1,Math.floor(out.length*.975))];
+  job.beat=out.filter(x=>Math.abs(x)>=Math.abs(real)-1e-12).length;job.ms=performance.now()-t0;
+  window.LX_TIMING=Object.assign(window.LX_TIMING||{},{galaxy_project_shuffle_ms:+job.ms.toFixed(1),galaxy_project_splits:job.n})}
 function s8Init(){const box=q("#lxGBox");if(!MS||!MS.lab_articles||!MS.lab_articles.length){box.innerHTML=note("The ten-thousand-article sample is not in this build.");q("#lxGDates").innerHTML="";q("#lxGAll").hidden=true;return}
   gPrep();const ds=MS.dates||[];S8.k=ds.length-1;S8.cur=S8.k;
   const dseg=q("#lxGDates");dseg.innerHTML=ds.map((d,k)=>`<button type="button" data-k="${k}" aria-pressed="${k===S8.k}">${E(DL(d))}</button>`).join("");
@@ -610,11 +616,12 @@ function gDraw(k0,k1,e){
   const pool=g=>{let s=0,n=0;for(const ln of G.lanes)if((ln.g==="t")===(g==="t")){for(const v of gStats(ln,kk)){s+=v;n++}}return n?s/n:NaN};
   const cm=pool("c"),tm=pool("t"),bd=S8.band[kk];
   if(kk>0&&isFinite(cm)){const yb=ph?20:20,hb=16;
-    c.fillStyle=col.mut;c.font=`${ph?10:11}px ${mono}`;c.textAlign=ph?"left":"right";c.fillText("topic mean vs chance",ph?L.gut:L.gut-10,ph?yb-6:yb+12);
-    if(bd&&bd.ready&&isFinite(bd.lo)){const a=L.x(cm+bd.lo),b=L.x(cm+bd.hi);c.fillStyle=col.c;c.globalAlpha=.28;c.fillRect(a,yb,Math.max(2,b-a),hb);c.globalAlpha=1}
-    else{c.fillStyle=col.mut;c.textAlign="left";c.fillText("shuffling…",L.x(cm)+6,yb+12)}
-    c.setLineDash([3,3]);c.strokeStyle=col.c;c.lineWidth=1.5;c.beginPath();c.moveTo(L.x(cm),yb-2);c.lineTo(L.x(cm),L.bot);c.stroke();c.setLineDash([]);
-    if(isFinite(tm)&&k1==null){const xt=L.x(tm),ym=yb+hb/2;c.fillStyle=col.t;c.beginPath();c.moveTo(xt,ym-7);c.lineTo(xt+6,ym);c.lineTo(xt,ym+7);c.lineTo(xt-6,ym);c.closePath();c.fill()}}
+    const tl=lanes.filter(l=>l.g==="t"),ty0=tl.length?tl[0].y0:L.top,ty1=tl.length?tl[tl.length-1].y0+tl[tl.length-1].h:L.top;
+    if(bd&&isFinite(bd.lo)){const a=L.x(cm+bd.lo),b=L.x(cm+bd.hi);c.fillStyle=col.mut;c.globalAlpha=.2;c.fillRect(a,yb,Math.max(3,b-a),ty1-yb);c.globalAlpha=.6;c.strokeStyle=col.mut;c.lineWidth=1;c.strokeRect(a+.5,yb+.5,Math.max(3,b-a)-1,ty1-yb-1);c.globalAlpha=1;
+      c.fillStyle=col.ink;c.font=`${ph?10:11}px ${mono}`;const lt="project-level chance";const mid=(a+b)/2;c.textAlign=mid>w*.7?"right":mid<w*.3?"left":"center";c.fillText(lt,mid>w*.7?b:mid<w*.3?a:mid,yb-4)}
+    c.fillStyle=col.mut;c.font=`${ph?10:11}px ${mono}`;c.textAlign=ph?"left":"right";if(!ph)c.fillText("topic mean vs chance",L.gut-10,yb+12);
+    c.setLineDash([3,3]);c.strokeStyle=col.c;c.lineWidth=1.5;c.beginPath();c.moveTo(L.x(cm),yb);c.lineTo(L.x(cm),L.bot);c.stroke();c.setLineDash([]);
+    if(isFinite(tm)&&k1==null){const xt=L.x(tm);c.strokeStyle=col.t;c.lineWidth=2.5;c.beginPath();c.moveTo(xt,yb);c.lineTo(xt,ty1);c.stroke();c.fillStyle=col.t;c.font=`600 ${ph?10:11}px ${mono}`;c.textAlign=xt>w*.75?"right":"left";c.fillText("topic mean",xt+(xt>w*.75?-5:5),yb+11)}}
   // dots, batched by colour
   const r=ph?1.15:1.35;
   for(const g of ["c","t"]){c.fillStyle=g==="t"?col.t:col.c;c.globalAlpha=g==="t"?.62:.5;c.beginPath();
@@ -635,17 +642,21 @@ function gSay(){const G=G8,k=S8.cur,ds=MS.dates||[],el=q("#lxGSay"),L=G.lay;
   const pool=g=>{const v=[];G.lanes.forEach(ln=>{if((ln.g==="t")===(g==="t"))v.push(...gStats(ln,k))});return v};
   const T=pool("t"),C=pool("c"),mc=mean(C),bd=S8.band[k];
   const head=`<span class="n">${N(G.n-G.born)} articles${G.born?` (${N(G.born)} created later are left out)`:""}. Tick: row mean. Dashed: comparison mean. Beyond ±${N(L.L||G.Lraw)}: at the edge.</span> `;
-  if(k===0){el.innerHTML=head+`At ${DL(ds[0])} every article starts at zero. Pick a later snapshot to watch them spread.`;return}
+  const p2=DID.find(r=>r.id==="P2"),preL=`<p class="lx-pre">Not pre-registered. Projects differ in what they contain; the pre-registered test is in the report${p2?`: P2 extra change <b>${SG(p2.did,2)}</b> per 10,000 words, ${p2.q_bh!=null&&p2.q_bh<.05?"clear of chance":"not clear of chance"} after correction${p2.q_bh!=null?` (q = ${F(p2.q_bh,2)})`:""}`:""}.</p>`;
+  if(k===0){el.innerHTML=head+`At ${DL(ds[0])} every article starts at zero. Pick a later snapshot to watch them spread.`+preL;return}
   if(S8.sel!=null){const ln=gLanes()[S8.sel],v=gStats(ln,k),m=mean(v),ci=bootMean(v,300,3),few=v.length<FEW;
-    el.innerHTML=head+`<b>${E(ln.pooled?"All comparison projects":ln.p)}</b> (${ln.g==="t"?"topic":"comparison"}, ${N(v.length)} articles${few?", "+fewTag:""}): mean change <b>${SG(m,2)}</b> per 10,000 words (range ${SG(ci[0],2)} to ${SG(ci[1],2)})${ln.g==="t"?`, an extra change of <b>${SG(m-mc,2)}</b> over all ${N(C.length)} comparison articles`:""}. ${few||ln.g!=="t"?"":Math.abs(m-mc)<Math.max(ci[1]-ci[0],.05)?"Hard to tell apart from the comparison.":""}`;return}
-  const ex=mean(T)-mc,band=bd&&bd.ready&&isFinite(bd.lo)?` 300 label shuffles give ${SG(bd.lo,2)} to ${SG(bd.hi,2)} (the band at the top); the real one is ${ex<bd.lo||ex>bd.hi?"<b>outside</b> it.":"<b>inside</b> it, so chance could do this."}`:" Shuffling labels to see what chance gives…";
-  el.innerHTML=head+`By ${DL(ds[k])}: topic <b>${SG(mean(T),2)}</b> (${N(T.length)}), comparison <b>${SG(mc,2)}</b> (${N(C.length)}) per 10,000 words, an extra change of <b>${SG(ex,2)}</b>.${band}`}
+    el.innerHTML=head+`<b>${E(ln.pooled?"All comparison projects":ln.p)}</b> (${ln.g==="t"?"topic":"comparison"}, ${N(v.length)} articles${few?", "+fewTag:""}): mean change <b>${SG(m,2)}</b> per 10,000 words (range ${SG(ci[0],2)} to ${SG(ci[1],2)})${ln.g==="t"?`, an extra change of <b>${SG(m-mc,2)}</b> over all ${N(C.length)} comparison articles`:""}. ${few||ln.g!=="t"?"":Math.abs(m-mc)<Math.max(ci[1]-ci[0],.05)?"Hard to tell apart from the comparison.":""}`+preL;return}
+  const ex=mean(T)-mc,out=bd&&isFinite(bd.lo)&&(ex<bd.lo||ex>bd.hi);
+  const band=bd&&isFinite(bd.lo)?` Swapping the topic label between whole projects (${bd.exact?`all ${N(bd.n)} ways`:`${N(bd.n)} random ways`} to pick ${bd.nTproj} of ${bd.nProj} projects) gives ${SG(bd.lo,2)} to ${SG(bd.hi,2)}, the grey strip. The real extra change is ${out?"<b>outside what project-level chance produces</b>. Exploratory; see the report’s caveats.":"<b>inside what project-level chance produces</b>, so differences between projects could explain it."}`:"";
+  const pre=`<p class="lx-pre">Not pre-registered. Projects differ in what they contain; the pre-registered test is in the report${p2?`: P2, loaded words in the full text, extra change <b>${SG(p2.did,2)}</b> per 10,000 words, ${p2.q_bh!=null&&p2.q_bh<.05?"clear of chance after correcting for multiple tests":"not clear of chance after correcting for multiple tests"}${p2.q_bh!=null?` (q = ${F(p2.q_bh,2)})`:""}`:""}.</p>`;
+  el.innerHTML=head+`By ${DL(ds[k])}: topic <b>${SG(mean(T),2)}</b> (${N(T.length)}), comparison <b>${SG(mc,2)}</b> (${N(C.length)}) per 10,000 words, an extra change of <b>${SG(ex,2)}</b>.${band}${pre}`}
 
 /* ---------- init and redraw ---------- */
 const LABS=[["shadow",s1Init,()=>{s1Strip();s1Draw()}],["shuffle",s2Init,()=>{const st=s2State(S2.id);if(st)s2Hist(st,null)}],["loud",s3Init,()=>s3Draw()],["flip",s4Init,()=>{if(S4.title)s4Draw()}],["chips",s5Init,s5Draw],["prism",s7Init,()=>{}],["galaxy",s8Init,()=>{if(G8)gDraw(S8.cur)}]];
 const run=(nm,f)=>{try{f()}catch(e){console.error("[lab] "+nm,e)}};
 let INIT=false,lastW=0;
 function init(){if(INIT)return;INIT=true;
+  const nl=qa(".lx-sec",root).length,W_=["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"],dk=q(".lx-deck",root);if(dk)dk.innerHTML=dk.innerHTML.replace(/^\w+ hands-on views/,(W_[nl]||nl)+" hands-on views");
   const tb=document.querySelector(".tabs");if(tb)root.style.setProperty("--lx-tabs",tb.offsetHeight+"px");
   const vb=q("#lxViews");if(vb)vb.onclick=()=>{const w=q("#lxViewsWarn");w.hidden=!w.hidden;vb.setAttribute("aria-expanded",String(!w.hidden))};
   if(!D){root.querySelectorAll(".lx-sec").forEach(s=>s.insertAdjacentHTML("beforeend",note("Data not loaded. Run analyze.py, then build_page.py.")));return}
@@ -679,7 +690,7 @@ function applyIntent(o){if(!o||!INIT)return;
   const ban=q("#lxFrom"),sec=o.from&&document.getElementById(o.from);
   const secT=sec&&(sec.querySelector("h2,h3")||{}).textContent;
   ban.innerHTML=`<span>From the report${secT?` (“${E(secT.trim().slice(0,60))}”)`:""}: ${o.context||ctx.length?`<b>${E(o.context||ctx.join(", "))}</b>, `:""}now in <b>${E(LNAME[go])}</b>.</span><a href="#report" id="lxBack">← back to the report</a><button type="button" aria-label="Dismiss">×</button>`;ban.hidden=false;
-  q("#lxBack").onclick=e=>{e.preventDefault();ban.hidden=true;const w=WF();if(sec&&typeof w.openInReport==="function")w.openInReport(o.from);else{location.hash="#report";if(sec)setTimeout(()=>sec.scrollIntoView(),40)}};
+  q("#lxBack").onclick=e=>{e.preventDefault();ban.hidden=true;const w=WF();if(typeof w.openInReport==="function")w.openInReport(o.from||"");else{location.hash="#report";if(sec)setTimeout(()=>sec.scrollIntoView(),40)}};
   q("button",ban).onclick=()=>{ban.hidden=true};
   const el=document.getElementById(LMAP[go]);if(el)setTimeout(()=>{el.scrollIntoView({behavior:"auto",block:"start"});ban.scrollIntoView&&0},30);
   view("intent:"+JSON.stringify(o));
