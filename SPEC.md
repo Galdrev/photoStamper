@@ -69,3 +69,14 @@ These changes come from the independent code review.
 - **E3 terror labelling:** terrorist/(terrorist + militant) for topic armed groups versus 12 comparison armed groups.
 - **E4 first-sentence churn:** how often first sentences change, and the share containing a critical term.
 - **Exact-revision tracing:** for 25 key articles, the exact revision of every first-sentence change. Edit summaries are kept; usernames are not.
+
+## Amendment 3 (before any real coding): blind coder v2, from the method revisit
+- **Rubric v2:** examples are mirrored in both directions and drawn from unrelated subjects (clubs, companies, charities), with no topic vocabulary. Adds `confidence`. Items are judged independently.
+- **Both orders:** every real item is coded in both A/B orders, in different shards. Disagreement → unclear. Swap consistency is reported.
+- **Anchors:** 4 per shard (2 directional, 1 identical pair, 1 date-only change). Drift gate: anchor accuracy ≥ 90%.
+- **Calibration:** 30 synthetic known-answer pairs from controlled single edits (negative/positive label, hedge removed/added, date change), coded in both orders. The gate is ≥ 80% (this replaces the 70% gate on about 5 press targets, which stay as illustrative).
+- **Blinding check:** 30 masked topic leads; a separate coder guesses the subject. The share correctly identified is reported.
+- **Code-side checks:** number/date-only diffs are labelled in code. Quotes are verified verbatim; an unsupported directional label is downgraded to unclear.
+- **Pilot:** 20 items first; every rationale is read; the rubric may be revised once (v2.1) before scaled coding.
+- **S1 statistic:** mean net direction (less = +1, more = −1, else 0), topic minus comparison, with a permutation p-value.
+- **Limitation stated:** a single model family; no human gold set.
