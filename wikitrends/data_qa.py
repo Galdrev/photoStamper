@@ -25,6 +25,16 @@ OUT = os.environ.get("WIKITRENDS_OUT", os.path.join(HERE, "data"))
 
 def main():
     files = sorted(glob.glob(os.path.join(ART, "*.json.gz")))
+    _mp = os.path.join(os.environ.get("WIKITRENDS_DATA", os.path.join(HERE, "data")), "manifest.json")
+    if os.path.exists(_mp):
+        _m = json.load(open(_mp))
+        _keep = []
+        for fn in files:
+            t = json.load(gzip.open(fn, "rt", encoding="utf-8"))["title"]
+            if t in _m:
+                _keep.append(fn)
+        print(f"QA on {len(_keep)} manifest articles; ignoring {len(files) - len(_keep)} stale cache files")
+        files = _keep
     per, sha_ok, sha_bad, sha_unknown = [], 0, [], 0
     drops, redirects, total_snaps, words, lead_found = [], 0, 0, [], 0
     no_rev, dup_rev, unordered, no_pv, no_talk = [], [], [], [], []
@@ -65,7 +75,7 @@ def main():
                     "talk": len(rec.get("talk_revisions", [])), "pageview_months": len(rec.get("pageviews", {}))})
 
     n = len(files) or 1
-    manifest_p = os.path.join(HERE, "data", "manifest.json")
+    manifest_p = os.path.join(os.environ.get("WIKITRENDS_DATA", os.path.join(HERE, "data")), "manifest.json")
     manifest = json.load(open(manifest_p)) if os.path.exists(manifest_p) else {}
     fetched = {p["title"] for p in per}
     missing = sorted(set(manifest) - fetched)

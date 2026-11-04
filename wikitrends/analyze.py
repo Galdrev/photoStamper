@@ -13,7 +13,7 @@ from corpus import CONTROL_CONTAMINATED, CONTROL_SHOCKED, VALIDATION, KEY_ARTICL
 KEY_SET = set(KEY_ARTICLES) | set(KEY_ARTICLES_CONTROL)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(HERE, "data")
+DATA = os.environ.get("WIKITRENDS_DATA", os.path.join(HERE, "data"))
 ART = os.environ.get("WIKITRENDS_ART", os.path.join(DATA, "articles"))
 OUTDIR = os.environ.get("WIKITRENDS_OUT", DATA)
 RNG = np.random.default_rng(7)
@@ -357,15 +357,19 @@ def lead_diff(a, b):
 def main():
     manifest_p = os.path.join(DATA, "manifest.json")
     manifest = json.load(open(manifest_p)) if os.path.exists(manifest_p) else {}
-    arts = []
+    arts, stale = [], 0
     for fn in sorted(glob.glob(os.path.join(ART, "*.json.gz"))):
         with gzip.open(fn, "rt", encoding="utf-8") as f:
             rec = json.load(f)
+        if manifest and rec["title"] not in manifest:    # stale cache file from an earlier corpus: ignore
+            stale += 1
+            continue
         if rec["title"] in manifest:                     # labels come from the manifest, not the cache
             rec["group"], rec["subgroup"] = manifest[rec["title"]]
         a = analyze_article(rec)
         if a["series"]:
             arts.append(a)
+    print(f"loaded {len(arts)} articles; ignored {stale} stale cache files not in the manifest", flush=True)
     dates = sorted({s["date"] for a in arts for s in a["series"]})
     first, last = dates[0], dates[-1]
     for a in arts:
@@ -485,10 +489,9 @@ def main():
         pre_dates = [d for d in dates if d <= PRE_WAR]
         for i in range(len(pre_dates) - 4):
             d0, d1 = pre_dates[i], pre_dates[i + 4]
-            tt = [TF(val(at(a["series"], d1), part, k)) - TF(val(at(a["series"], d0), part, k))
-                  for a in T if val(at(a["series"], d0), part, k) is not None]
-            cc = [TF(val(at(a["series"], d1), part, k)) - TF(val(at(a["series"], d0), part, k))
-                  for a in C if val(at(a["series"], d0), part, k) is not None]
+            ok = lambda a: val(at(a["series"], d0), part, k) is not None and val(at(a["series"], d1), part, k) is not None
+            tt = [TF(val(at(a["series"], d1), part, k)) - TF(val(at(a["series"], d0), part, k)) for a in T if ok(a)]
+            cc = [TF(val(at(a["series"], d1), part, k)) - TF(val(at(a["series"], d0), part, k)) for a in C if ok(a)]
             if tt and cc:
                 yearly.append(float(np.mean(tt) - np.mean(cc)))
         post = next((r for r in did_rows if r["part"] == part and r["frame"] == k and r["window"] == "post-war"), None)

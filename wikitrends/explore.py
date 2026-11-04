@@ -94,6 +94,8 @@ def main():
     per = {}
     for fn in sorted(glob.glob(os.path.join(A.ART, "*.json.gz"))):
         rec = json.load(gzip.open(fn, "rt", encoding="utf-8"))
+        if manifest and rec["title"] not in manifest:
+            continue
         if rec["title"] in manifest:
             rec["group"], rec["subgroup"] = manifest[rec["title"]]
         grp = "control_contaminated" if rec["group"] == "control" and rec["title"] in CONTROL_CONTAMINATED else rec["group"]

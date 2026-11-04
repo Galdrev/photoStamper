@@ -41,6 +41,8 @@ def load():
     arts = []
     for fn in sorted(glob.glob(os.path.join(A.ART, "*.json.gz"))):
         rec = json.load(gzip.open(fn, "rt", encoding="utf-8"))
+        if manifest and rec["title"] not in manifest:
+            continue
         g = manifest.get(rec["title"], [rec["group"]])[0]
         if g == "control" and rec["title"] in CONTROL_CONTAMINATED:
             continue
