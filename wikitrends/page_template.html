@@ -378,7 +378,7 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
 #tip b{font-weight:600}
 #tip .r{display:flex;justify-content:space-between;gap:14px}
 
-/* tabs + playground */
+/* tabs + data lab */
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
 .tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:25;background:var(--paper);border-bottom:1px solid var(--rule)}
 .tabs-in{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;gap:4px 22px;align-items:stretch;min-height:46px}
@@ -387,50 +387,85 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tabs a:hover{color:var(--ink)}
 .tabs-n{font:500 10.5px var(--mono);border:1px solid currentColor;border-radius:2px;padding:1px 4px}
 .tabs-name{margin-left:auto;align-self:center;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.pg-head{display:grid;gap:14px;padding-top:40px;max-width:70ch}
+.pg-head{display:grid;gap:14px;padding-top:40px;max-width:74ch}
 .pg-head h1{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.025em}
 .pg-index{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 13px var(--mono)}
 .toy{background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--ink);border-radius:4px;padding:20px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:40px;scroll-margin-top:60px}
 .toy-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px}
-.toy h2{font-size:clamp(26px,3.2vw,36px)}
-.toy-q{font:400 17px/1.55 var(--body);max-width:68ch}
-.teach{border-top:1px solid var(--rule);padding-top:12px;font:400 15.5px/1.55 var(--body);color:var(--ink-2);max-width:72ch}
-.teach b{color:var(--ink)}
-.btn{font:600 13px var(--body);border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:3px;padding:9px 14px;cursor:pointer}
+.toy-h h2{font-size:clamp(26px,3.2vw,36px)}
+.toy-h .eyebrow::before{display:none}
+.toy-q{font:400 16.5px/1.55 var(--body);max-width:72ch;color:var(--ink-2)}
+.btn{font:600 13px var(--body);border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:3px;padding:8px 13px;cursor:pointer}
 .btn.primary{background:var(--ink);color:var(--paper)}
+.btn.sm{padding:5px 9px;font-size:12px}
 .btn:disabled{opacity:.4;cursor:not-allowed}
-.di-box{position:relative;touch-action:none;user-select:none;-webkit-user-select:none}
-.di-box.done{touch-action:auto}
-.di-box svg{display:block;width:100%;overflow:visible}
-.di-sliders{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:8px 18px}
-.di-sliders label{display:grid;grid-template-columns:70px minmax(0,1fr) 44px;gap:8px;align-items:center;font:12px var(--mono);color:var(--muted)}
-.bc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
-.bc-t{border:1px solid var(--rule);border-radius:3px;padding:14px 16px;display:grid;gap:8px;align-content:start;background:var(--paper)}
-.bc-t .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
-.bc-t p{font:400 16.5px/1.6 var(--display);unicode-bidi:plaintext}
-.bc-t.newer{border-color:var(--ink)}
-.ent{font:500 .78em var(--mono);background:var(--faint);border:1px solid var(--rule);border-radius:2px;padding:0 3px;white-space:nowrap}
-#bcBox{display:grid;gap:12px}
-.bc-choices{display:flex;flex-wrap:wrap;gap:8px}
-.bc-choices .btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
-.bc-reveal{border-left:3px solid var(--ink);padding:4px 0 4px 14px;display:grid;gap:6px;font-size:15.5px}
-.bc-reveal .verdict{font:600 16px var(--body)}
-.bc-prog{display:flex;gap:4px;flex-wrap:wrap}
-.bc-prog i{width:18px;height:6px;border-radius:1px;background:var(--faint)}
-.bc-prog i.on{background:var(--ink-2)} .bc-prog i.cur{background:var(--add-bd)}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.paste{position:relative}
+.paste>summary{list-style:none;display:inline-block}
+.paste>summary::-webkit-details-marker{display:none}
+.paste>div{display:grid;gap:8px;margin-top:8px;max-width:520px}
+textarea{font:12px/1.5 var(--mono);padding:8px;border:1px solid var(--rule);border-radius:3px;background:var(--sheet);color:var(--ink);width:100%;max-width:100%}
+.csv-fb{min-height:110px}
+.how pre,.formula{font:12.5px/1.7 var(--mono);white-space:pre-wrap;margin:0;color:var(--ink-2);background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:12px 14px;overflow-x:auto}
+.ab{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:3px;font:700 12px var(--mono);color:#fff;flex:none}
+.ab.a{background:var(--s2)} .ab.b{background:var(--s1)}
+.slices{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.slice{border:1px solid var(--rule);border-radius:4px;padding:12px 14px;display:grid;gap:10px;align-content:start;background:var(--paper);min-width:0}
+.slice.a{border-top:3px solid var(--s2)} .slice.b{border-top:3px solid var(--s1)}
+.slice-h{display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.slice-h b{font:600 14px var(--body)}
+.slice-n{font:600 13px var(--mono)}
+.frow{display:grid;grid-template-columns:96px minmax(0,1fr);gap:6px 10px;align-items:center;font-size:13px}
+.frow>span{font:11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.frow .picks{gap:4px}
+.frow .pick{font-size:12px;padding:4px 9px}
+.frow input[type=number],.frow input[type=search],.frow select{width:100%;font:13px var(--body);padding:5px 7px;border:1px solid var(--rule);border-radius:3px;background:var(--sheet);color:var(--ink)}
+.frow .two{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.frow .two label{display:grid;gap:2px;font:10.5px var(--mono);color:var(--muted)}
+.estbox{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px 24px;align-items:center;border:1px solid var(--ink);border-radius:4px;padding:16px;background:var(--paper)}
+.estbox .k{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.estbox .v{font:500 clamp(36px,6vw,52px)/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.estbox .u{font:12px var(--mono);color:var(--muted)}
+.eband{position:relative;height:34px;margin:4px 8px 0}
+.eband .z{position:absolute;top:0;bottom:12px;border-left:1px solid var(--ink)}
+.eband .ci{position:absolute;top:8px;height:12px;background:var(--topic-soft);border:1px solid var(--topic);border-radius:2px}
+.eband .pt{position:absolute;top:7px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--ink)}
+.eband .tk{position:absolute;bottom:-2px;transform:translateX(-50%);font:10.5px var(--mono);color:var(--muted);white-space:nowrap}
+.estbox .ns{font:12px/1.5 var(--mono);color:var(--ink-2)}
+.drivers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.dlist{display:grid;gap:0;font-size:13.5px;align-content:start}
+.dlist .h{font:600 12px var(--mono);display:flex;gap:8px;align-items:center;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+.dlist button{display:grid;grid-template-columns:minmax(0,1fr) 64px 70px;gap:8px;align-items:center;text-align:left;background:none;border:0;border-bottom:1px solid var(--faint);padding:6px 0;cursor:pointer;color:var(--ink);font:inherit}
+.dlist button:hover{background:var(--faint)}
+.dlist .bar{height:8px;border-radius:1px}
+.dlist .num{font:12px var(--mono);text-align:right}
+.sc-wrap{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.sc-wrap.brush{touch-action:none;cursor:crosshair}
+.sc-wrap svg{display:block;width:100%;overflow:visible}
+.rlist{display:flex;flex-wrap:wrap;gap:6px 16px;font:12px var(--mono);color:var(--ink-2)}
+.sel-list{display:flex;flex-wrap:wrap;gap:6px;max-height:180px;overflow:auto}
+.sel-list button{font:12.5px var(--body);border:1px solid var(--rule);background:var(--paper);border-radius:3px;padding:3px 8px;cursor:pointer;color:var(--ink)}
 .chip.word{font:500 12px var(--body);display:inline-flex;align-items:center;gap:6px;padding:3px 4px 3px 8px;color:var(--ink);border-color:var(--rule);background:var(--paper)}
 .chip.word i{width:12px;height:3px;border-radius:1px}
 .chip.word button{border:0;background:none;color:var(--muted);cursor:pointer;font:600 14px/1 var(--body);padding:0 4px}
-.tm-stage{display:grid;gap:14px;padding:20px;border:1px solid var(--rule);border-radius:4px;background:var(--paper)}
+.sbs-rows{display:grid;gap:0}
+.sbs-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:6px 16px;padding:12px 0;border-bottom:1px solid var(--faint);align-items:start}
+.sbs-row .t{display:flex;gap:8px;align-items:center;font:600 14px var(--body)}
+.sbs-row .t i{width:14px;height:3px;border-radius:1px;flex:none}
+.fstrip{position:relative;height:22px;margin:2px 6px 6px}
+.fstrip::before{content:"";position:absolute;left:0;right:0;top:10px;height:1px;background:var(--rule)}
+.fstrip .dm{position:absolute;top:5px;width:10px;height:10px;margin-left:-5px;transform:rotate(45deg);background:var(--ink-2);border:2px solid var(--sheet)}
+.fstrip .warl{position:absolute;top:0;height:20px;border-left:1.5px dashed var(--war)}
+.sbs-row .s{font:400 15px/1.5 var(--display);color:var(--ink-2)}
+.tm-stage{display:grid;gap:12px;padding:18px;border:1px solid var(--rule);border-radius:4px;background:var(--paper)}
 .tm-date{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
-.tm-date span:first-child{font:500 clamp(30px,5vw,48px)/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.tm-seen{font:500 14px var(--mono);color:var(--ink-2);min-height:1.4em}
-.tm-seen b{font:500 22px var(--display);color:var(--ink)}
+.tm-date span:first-child{font:500 clamp(28px,4.5vw,44px)/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.tm-seen{font:500 13.5px var(--mono);color:var(--ink-2);min-height:1.4em}
+.tm-seen b{font:500 20px var(--display);color:var(--ink)}
 .big-range{width:100%;height:36px;margin:0;accent-color:var(--topic);cursor:pointer}
 .tm-scale{position:relative;height:16px;font:10.5px var(--mono);color:var(--muted)}
 .tm-scale span{position:absolute;transform:translateX(-50%)}
 .rp-stage{display:grid;gap:12px}
-.rp-strip{position:relative}
 .rp-strip canvas{display:block;width:100%;height:64px}
 .rp-now{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:baseline}
 .rp-now .d{font:500 clamp(26px,4vw,40px)/1 var(--display);font-variant-numeric:tabular-nums}
@@ -438,10 +473,34 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .rp-ct div{padding-top:8px}
 .rp-ct b{display:block;font:500 28px/1.1 var(--display);font-variant-numeric:tabular-nums}
 .rp-ct span{font:11.5px/1.3 var(--mono);color:var(--muted)}
-.rp-s{font:400 clamp(18px,2.2vw,24px)/1.45 var(--display);min-height:4.4em;padding:14px 16px;border:1px solid var(--rule);border-radius:3px;background:var(--paper)}
-.rp-s del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
-.rp-s ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
+.rp-s{font:400 clamp(17px,2vw,22px)/1.45 var(--display);min-height:4.4em;padding:14px 16px;border:1px solid var(--rule);border-radius:3px;background:var(--paper)}
+.rp-s del,.sbs-row .s del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
+.rp-s ins,.sbs-row .s ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
 .rp-seek{width:100%;accent-color:var(--ink)}
+.hist svg{display:block;width:100%;overflow:visible}
+.projbars{display:grid;gap:0;max-height:520px;overflow:auto;border-top:1px solid var(--rule)}
+.projbars button{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr) 120px;gap:10px;align-items:center;background:none;border:0;border-bottom:1px solid var(--faint);padding:6px 0;text-align:left;cursor:pointer;color:var(--ink);font:13px var(--body)}
+.projbars button[aria-pressed="true"]{background:var(--add-bg)}
+.projbars .trk{position:relative;height:12px}
+.projbars .trk i{position:absolute;top:0;height:12px;border-radius:1px}
+.projbars .trk b{position:absolute;top:-2px;bottom:-2px;border-left:1px solid var(--muted)}
+.projbars .num{font:12px var(--mono);text-align:right;color:var(--ink-2)}
+.drawer{position:fixed;z-index:40;top:0;right:0;bottom:0;width:min(560px,100vw);background:var(--sheet);border-left:1px solid var(--ink);box-shadow:-12px 0 40px rgb(0 0 0/.16);overflow:auto;padding:calc(env(safe-area-inset-top,0px) + 16px) max(18px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) 18px;display:grid;gap:14px;align-content:start}
+.drawer-h{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.drawer-h h3{font-size:26px}
+.bc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.bc-t{border:1px solid var(--rule);border-radius:3px;padding:14px 16px;display:grid;gap:8px;align-content:start;background:var(--paper)}
+.bc-t .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
+.bc-t p{font:400 16px/1.6 var(--display);unicode-bidi:plaintext}
+.bc-t.newer{border-color:var(--ink)}
+.ent{font:500 .78em var(--mono);background:var(--faint);border:1px solid var(--rule);border-radius:2px;padding:0 3px;white-space:nowrap}
+#bcBox{display:grid;gap:12px}
+.bc-choices{display:flex;flex-wrap:wrap;gap:8px}
+.bc-reveal{border-left:3px solid var(--ink);padding:4px 0 4px 14px;display:grid;gap:6px;font-size:15px}
+.bc-reveal .verdict{font:600 15.5px var(--body)}
+.bc-prog{display:flex;gap:4px;flex-wrap:wrap}
+.bc-prog i{width:18px;height:6px;border-radius:1px;background:var(--faint)}
+.bc-prog i.on{background:var(--ink-2)} .bc-prog i.cur{background:var(--add-bd)}
 
 @media (max-width:900px){
   .scrolly{grid-template-columns:minmax(0,1fr);gap:0}
@@ -489,7 +548,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .tabs-name{display:none}
   .tabs-in{gap:4px 18px}
   .toy{padding:14px}
-  .bc{grid-template-columns:minmax(0,1fr)}
+  .bc,.slices,.drivers,.estbox{grid-template-columns:minmax(0,1fr)}
+  .frow{grid-template-columns:minmax(0,1fr);gap:4px}
+  .sbs-row{grid-template-columns:minmax(0,1fr)}
+  .projbars button{grid-template-columns:minmax(0,1fr) auto}
+  .projbars .trk{grid-column:1/-1;grid-row:2}
+  .drawer{width:100vw;border-left:0}
   .rp-ct{grid-template-columns:repeat(2,minmax(0,1fr))}
   .rp-ct b{font-size:24px}
   .tcard{grid-template-columns:minmax(0,1fr);gap:8px}
@@ -502,7 +566,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <div id="tip" hidden></div>
 <div id="gloss" role="tooltip" hidden></div>
-<nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The report</a><a href="#playground" id="tabPlay" aria-current="false">Playground <span class="tabs-n">5 toys</span></a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
+<nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The report</a><a href="#lab" id="tabPlay" aria-current="false">Data lab <span class="tabs-n">6 labs</span></a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
 <div class="wrap">
 <div id="view-report">
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 2021–2026</span></div>
@@ -793,59 +857,114 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </div>
 <div id="view-playground" hidden>
   <header class="pg-head">
-    <div class="eyebrow">Playground</div>
-    <h1>Play with the data</h1>
-    <p class="deck">Five small toys built on the same data as the report. Guess, judge, race words and rewind time. Every toy uses real numbers from this study, and each one ends with what it teaches.</p>
-    <nav class="pg-index" aria-label="Toys"><a href="#playground" data-go="toyDraw">You draw it</a><a href="#playground" data-go="toyCoder">Be the coder</a><a href="#playground" data-go="toyRace">Word race</a><a href="#playground" data-go="toyTime">Time machine</a><a href="#playground" data-go="toyReplay">Edit-war replay</a></nav>
+    <div class="eyebrow">Data lab <span class="xchip">Exploratory: not the pre-registered test</span></div>
+    <h1>Take the data apart</h1>
+    <p class="deck">The article-level data behind the report, with the controls exposed. Pick any two groups of articles, any measure and any time window, and see how they compare. Every result here is exploratory: it is not the pre-registered test, and it shows its uncertainty and its article count.</p>
+    <nav class="pg-index" aria-label="Labs"><a href="#lab" data-go="lab1">Compare two slices</a><a href="#lab" data-go="lab2">Every article as a dot</a><a href="#lab" data-go="lab3">Side by side</a><a href="#lab" data-go="lab4">Word race</a><a href="#lab" data-go="lab5">One article up close</a><a href="#lab" data-go="lab6">At scale</a></nav>
+    <div class="controls"><button class="btn sm" type="button" id="labCopy">Copy settings</button>
+      <details class="paste"><summary class="btn sm">Paste settings</summary><div><label class="cap" for="labPaste">Paste text copied from “Copy settings”, then apply.</label><textarea id="labPaste" rows="3"></textarea><div class="controls"><button class="btn sm primary" type="button" id="labApply">Apply settings</button><span class="cap" id="labPasteMsg"></span></div></div></details>
+      <span class="cap" id="labCopyMsg" aria-live="polite"></span></div>
+    <textarea id="labCopyFb" class="csv-fb" hidden aria-label="Settings text"></textarea>
   </header>
 
-  <section class="toy" id="toyDraw" aria-labelledby="diH">
-    <div class="toy-h"><h2 id="diH">You draw it</h2><span class="seg" id="diRound" role="group" aria-label="Round"><button data-v="full" aria-pressed="true">Round 1: whole article</button><button data-v="lead" aria-pressed="false">Round 2: opening paragraph</button></span></div>
-    <p class="toy-q" id="diQ">How often did topic articles use words like “colonial”, “apartheid” and “genocide” after the war began? The teal line shows the real numbers up to July 2023. <b>Draw the rest of the line</b> in the shaded area.</p>
-    <div class="di-box" id="diBox"></div>
-    <div class="controls"><button class="btn primary" type="button" id="diReveal" disabled>Show me the real line</button><button class="btn" type="button" id="diReset">Start again</button><span class="cap" id="diHint">Drag across the shaded area with your mouse or finger.</span></div>
-    <details class="stats"><summary>Use sliders instead <span>one per quarter, for keyboard and screen readers</span></summary><div class="in"><div class="di-sliders" id="diSliders"></div></div></details>
-    <p class="means" id="diOut"></p>
-    <p class="teach"><b>What it teaches:</b> a rising line can look dramatic on its own. The comparison line for other articles tells you whether the rise is special to these articles.</p>
+  <section class="toy" id="lab1" aria-labelledby="l1H">
+    <div class="toy-h"><h2 id="l1H">Compare any two slices</h2><span class="xchip">Exploratory: not the pre-registered test</span></div>
+    <p class="toy-q">Define two groups of articles, A and B. Choose which words to count, which part of the text, and a start and end date. The result is how much more one group changed than the other.</p>
+    <div class="controls"><span class="ctl">Presets</span><span class="picks" id="l1Presets"></span></div>
+    <div class="slices"><div class="slice a" id="l1A"></div><div class="slice b" id="l1B"></div></div>
+    <div class="controls">
+      <label class="ctl" for="l1Measure">Count <select id="l1Measure"></select></label>
+      <span class="seg" id="l1Part" role="group" aria-label="Text"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
+      <label class="ctl" for="l1From">From <select id="l1From"></select></label>
+      <label class="ctl" for="l1To">to <select id="l1To"></select></label>
+    </div>
+    <div class="picks" id="l1Custom" hidden></div>
+    <div class="estbox" id="l1Est"></div>
+    <div class="fig"><div class="fig-h"><span class="fig-t" id="l1Title"></span><span class="cap" id="l1N"></span></div><div class="chart" id="l1Chart" style="height:290px"></div><div class="legend" id="l1Key"></div></div>
+    <p class="means" id="l1Say"></p>
+    <div class="drivers" id="l1Drivers"></div>
+    <div class="controls"><button class="btn sm" type="button" id="l1Csv">Copy as CSV</button><span class="cap" id="l1CsvMsg" aria-live="polite"></span></div><textarea class="csv-fb" id="l1CsvFb" hidden aria-label="CSV text"></textarea>
+    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">rate(article, date)  = sum of the chosen word counts × 10,000 ÷ words in that text
+line(slice, date)     = mean of rate over the slice’s articles measured at that date
+change(article)       = rate(article, to) − rate(article, from)
+                        (articles measured at both dates only)
+extra change          = mean change in A − mean change in B
+95% band              = resample A’s and B’s articles with replacement 500 times;
+                        the 2.5th and 97.5th percentiles of (mean A − mean B)
+A band that includes 0 means the slices are not distinguishable from noise.</pre></div></details>
   </section>
 
-  <section class="toy" id="toyCoder" aria-labelledby="bcH">
-    <div class="toy-h"><h2 id="bcH">Be the coder</h2><span class="cap" id="bcScore"></span></div>
-    <p class="toy-q">Two versions of the same opening paragraph. Names are hidden as [ENTITY-1], [ENTITY-2] and so on. <b>Which version is harsher on its subject?</b></p>
-    <div id="bcBox"></div>
-    <p class="cap">AI coders saw the same masked text, in both orders.</p>
-    <p class="teach"><b>What it teaches:</b> judging tone is hard, and careful readers disagree. That is why the study hides names and dates, codes each pair in both orders and reports how often coders agree.</p>
+  <section class="toy" id="lab2" aria-labelledby="l2H">
+    <div class="toy-h"><h2 id="l2H">Every article as a dot</h2><span class="xchip">Exploratory: not the pre-registered test</span></div>
+    <p class="toy-q">Plot any two article measures against each other. Hover or tap a dot for its title, select one to open it, or drag across an area to list the articles inside.</p>
+    <div class="controls">
+      <label class="ctl" for="l2X">Across <select id="l2X"></select></label>
+      <label class="ctl" for="l2Y">Up <select id="l2Y"></select></label>
+      <label class="ctl" for="l2F" id="l2FWrap">Word group for Δ <select id="l2F"></select></label>
+    </div>
+    <div class="controls">
+      <span class="seg" id="l2C" role="group" aria-label="Colour"><button data-v="group" aria-pressed="true">Colour by group</button><button data-v="subgroup" aria-pressed="false">by subgroup</button></span>
+      <label class="ctl"><input type="checkbox" id="l2LX"> log across</label><label class="ctl"><input type="checkbox" id="l2LY"> log up</label>
+      <button class="btn sm" type="button" id="l2Brush" aria-pressed="false">Select an area</button>
+    </div>
+    <div class="fig"><div class="sc-wrap" id="l2Box"></div><div class="rlist" id="l2R"></div></div>
+    <div id="l2Sel"></div>
+    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">Δ rate          = rate at the article’s last snapshot − rate at its first (per 10,000 words)
+first-sentence changes = number of distinct versions of the first sentence − 1
+revert rate     = edits later reverted ÷ all edits
+log scale       = sign(v) × log10(1 + |v|), so zero and negatives still plot
+r               = Pearson correlation of the plotted values within each colour group
+                  (−1 to +1; near 0 means no straight-line relationship)</pre></div></details>
   </section>
 
-  <section class="toy" id="toyRace" aria-labelledby="wrH">
+  <section class="toy" id="lab3" aria-labelledby="l3H">
+    <div class="toy-h"><h2 id="l3H">Side by side</h2></div>
+    <p class="toy-q">Up to four articles on one chart, with the history of each one’s first sentence underneath.</p>
+    <div class="controls"><label class="ctl" for="l3In">Add an article</label><input type="search" id="l3In" list="l3List" placeholder="type a title" autocomplete="off"><datalist id="l3List"></datalist><button class="btn sm" type="button" id="l3Add">Add</button><span class="picks" id="l3Chips"></span></div>
+    <div class="controls"><label class="ctl" for="l3Measure">Count <select id="l3Measure"></select></label><span class="seg" id="l3Part" role="group" aria-label="Text"><button data-v="full" aria-pressed="true">Whole article</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
+    <div class="fig"><div class="chart" id="l3Chart" style="height:280px"></div><div class="legend" id="l3Key"></div></div>
+    <div class="sbs-rows" id="l3Rows"></div>
+    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">rate(article, date) = sum of the chosen word counts × 10,000 ÷ words in that text
+Diamonds mark the quarterly snapshots where the first sentence differs from the one before.</pre></div></details>
+  </section>
+
+  <section class="toy" id="lab4" aria-labelledby="wrH">
     <div class="toy-h"><h2 id="wrH">Word race</h2></div>
-    <p class="toy-q">Pick up to three words and watch them race. Solid lines are topic articles; dashed lines are articles about other countries and conflicts.</p>
-    <div class="controls"><span class="ctl">Try</span><span class="picks" id="wrPresets"></span></div>
-    <div class="controls"><label class="ctl" for="wrIn">Add a word</label><input type="search" id="wrIn" list="wrList" placeholder="type a word" autocomplete="off"><datalist id="wrList"></datalist><button class="btn" type="button" id="wrAdd">Add</button><span class="picks" id="wrChips"></span></div>
+    <p class="toy-q">Up to three single words or phrases. Solid lines are topic articles; dashed lines are articles about other countries and conflicts.</p>
+    <div class="controls"><span class="ctl">Presets</span><span class="picks" id="wrPresets"></span></div>
+    <div class="controls"><label class="ctl" for="wrIn">Add a word</label><input type="search" id="wrIn" list="wrList" placeholder="type a word" autocomplete="off"><datalist id="wrList"></datalist><button class="btn sm" type="button" id="wrAdd">Add</button><span class="picks" id="wrChips"></span></div>
     <div class="fig"><div class="chart" id="wrChart" style="height:300px"></div><div class="legend" id="wrKey"></div><p class="cap">How often each word appears per 10,000 words of article text.</p></div>
     <p class="means" id="wrOut"></p>
-    <p class="teach"><b>What it teaches:</b> if a word rises in both the solid and the dashed line, it is following the news everywhere. If it rises only in the solid line, the change is specific to these articles.</p>
+    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">rate(word, group, date) = matches of the word (plural included) in all the group’s article text
+                          × 10,000 ÷ total words of that text
+Pooled over the fixed panel of articles that existed in January 2021.</pre></div></details>
   </section>
 
-  <section class="toy" id="toyTime" aria-labelledby="tmH">
-    <div class="toy-h"><h2 id="tmH">Time machine</h2><label class="ctl" for="tmSel">Article <select id="tmSel"></select></label></div>
-    <p class="toy-q">Drag the slider through time and watch an article’s first sentence change. Removed words are amber and struck through; added words are blue.</p>
-    <div class="tm-stage">
-      <div class="tm-date"><span id="tmDate"></span><span class="cap" id="tmVer"></span></div>
-      <blockquote class="sentence" id="tmText" style="margin:0;padding:0;min-height:5.6em" aria-live="polite"></blockquote>
-      <p class="tm-seen" id="tmSeen"></p>
-      <input type="range" class="big-range" id="tmRange" min="0" max="1" step="1" value="0" aria-label="Point in time">
-      <div class="tm-scale" id="tmScale"></div>
-    </div>
-    <p class="teach"><b>What it teaches:</b> the definition most readers see can change several times, and each version reaches a different number of people.</p>
-  </section>
-
-  <section class="toy" id="toyReplay" aria-labelledby="rpH">
-    <div class="toy-h"><h2 id="rpH">Edit-war replay</h2><label class="ctl" for="rpSel">Article <select id="rpSel"></select></label></div>
-    <p class="toy-q">Fast-forward through every change to an article’s first sentence. Each colour is one version of the sentence. Amber ticks mark changes that were later flagged as reverted.</p>
+  <section class="toy" id="lab5" aria-labelledby="l5H">
+    <div class="toy-h"><h2 id="l5H">One article up close</h2></div>
+    <p class="toy-q">Move through time and watch the first sentence change, then replay every recorded change to it. Removed words are amber and struck through; added words are blue.</p>
+    <div class="controls"><label class="ctl" for="tmSel">Article <select id="tmSel"></select></label></div>
+    <div id="tmBox"></div>
+    <div class="fig-h" style="margin-top:8px"><span class="fig-t">Edit-war replay</span><label class="ctl" for="rpSel">Article <select id="rpSel"></select></label></div>
+    <p class="cap col">Each colour is one version of the first sentence. Amber ticks mark changes later flagged as reverted. A return to an earlier wording counts when a version comes back after something else replaced it.</p>
     <div id="rpBox"></div>
-    <p class="teach"><b>What it teaches:</b> counting versions is not enough. A sentence that flips back and forth is contested; one that changes rarely and then holds has settled.</p>
+    <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">Time machine: the first sentence of each quarterly snapshot; the diff is against the previous distinct version.
+Readers: monthly page views summed over the months when this exact wording was live.
+Replay: every lead revision since 2021, reduced to its first sentence; each distinct sentence is a version.
+returns = times a version reappears after a different version replaced it</pre></div></details>
   </section>
+
+  <section class="toy" id="lab6" aria-labelledby="l6H">
+    <div class="toy-h"><h2 id="l6H">At scale</h2><span class="xchip">Exploratory: not the pre-registered test</span></div>
+    <p class="toy-q">The same comparison over about ten thousand articles, grouped by the WikiProject that rates them. Each article has three snapshots: January 2021, July 2023 and now.</p>
+    <div id="l6Wrap"></div>
+  </section>
+
+  <details class="stats" id="labCoder" style="margin-top:40px"><summary>Try the blind-coding method yourself <span>judge masked before-and-after pairs, then see what the AI coders concluded</span></summary><div class="in">
+    <p class="toy-q">Two versions of the same opening paragraph. Names are hidden as [ENTITY-1], [ENTITY-2] and so on. Which version is harsher on its subject? <span class="cap" id="bcScore"></span></p>
+    <div id="bcBox"></div>
+    <p class="cap">AI coders saw the same masked text, in both orders.</p>
+  </div></details>
 </div>
 <div class="foot"><span>Wikipedia Framing Drift</span><span>Word counts are a proxy. They are not a verdict on accuracy or bias.</span></div>
 </div>
@@ -943,7 +1062,7 @@ function draw(el,cfg,t,prev){
   const m={l:cfg.compact?32:42,r:labels?(cfg.labelW||118):(cfg.compact?8:14),t:cfg.compact?8:16,b:22};
   const x=lin(B.x0,B.x1,m.l,W-m.r),y=lin(lo,hi,H-m.b,m.t);
   let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(cfg.aria||"")}">`;
-  if(cfg.band){const a=x(Math.max(B.x0,cfg.band[0])),b=x(Math.min(B.x1,cfg.band[1]));s+=`<rect x="${a}" y="${m.t}" width="${Math.max(0,b-a)}" height="${H-m.b-m.t}" style="fill:var(--war);opacity:.07"/>`}
+  if(cfg.band){const a=x(Math.max(B.x0,cfg.band[0])),b=x(Math.min(B.x1,cfg.band[1]));s+=`<rect x="${a}" y="${m.t}" width="${Math.max(0,b-a)}" height="${H-m.b-m.t}" style="fill:var(${cfg.bandColor||"--war"});opacity:${cfg.bandColor?.1:.07}"/>`}
   const nT=cfg.compact?3:4,yt=ticks(lo,hi,nT),ydp=Math.max(0,Math.min(3,-Math.floor(Math.log10(niceStep(hi-lo,nT))+1e-9)));
   for(const v of yt){const yy=y(v);if(yy<m.t-1||yy>H-m.b+1)continue;s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"});stroke-width:1"/><text x="${m.l-6}" y="${yy+3.5}" text-anchor="end">${esc((cfg.yfmt||(v=>fmt(v,ydp)))(v))}</text>`}
   const y0=new Date(B.x0).getUTCFullYear(),y1=new Date(B.x1).getUTCFullYear();
@@ -1580,100 +1699,185 @@ function drawMethod(){
   $("#mGroups").insertAdjacentHTML("beforeend",` In this build: ${R.n_treatment} topic and ${R.n_control} comparison articles in the test panel (${R.n_treatment_hand??"–"} hand-picked topic, ${R.n_control_shocked??"–"} comparison articles with their own war), ${R.n_new_topic_articles??"–"} topic articles created during the window, and ${nc} excluded comparison articles.`);
 }
 
-/* ---------- playground ---------- */
-const PG={draw:{round:"full",st:{}},coder:{i:0,round:0,choice:null,ra:0,rn:0},race:{words:[]},tm:{t:null,i:0},rp:{t:null,k:0,tm:null,raf:0}};
+/* ---------- data lab ---------- */
+const PG={coder:{i:0,round:0,choice:null,ra:0,rn:0},race:{words:[]},rp:{raf:0}};
 const pgNote=t=>`<div class="note">${t}</div>`;
 function store(k,v){try{if(v===undefined){const x=localStorage.getItem(k);return x?JSON.parse(x):null}localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
 const millions=n=>n>=1e6?`${(n/1e6).toFixed(n>=1e7?0:1)} million`:n>=1e3?`${(Math.round(n/1e3)*1e3).toLocaleString("en-US")}`:String(n);
+const SLICE0=()=>({g:[],sg:[],prim:"any",neu:"any",war:"any",q:"",me:0,mv:0});
+const LAB={l1:{A:{...SLICE0(),g:["treatment"],prim:"only"},B:{...SLICE0(),g:["control"],prim:"only"},measure:"critical",custom:[],part:"full",from:null,to:null},
+  l2:{x:"dcrit",y:"edits",f:"genocide",color:"group",lx:false,ly:true,brush:false,sel:null},
+  l3:{titles:null,measure:"critical",part:"full"},
+  l6:{measure:"critical",part:"full",per:"02",A:{g:"t",imp:[],proj:[]},B:{g:"c",imp:[],proj:[]},sort:"change",pg:"t",pq:""}};
+const COL_A="--s2",COL_B="--s1",GRP_L={treatment:"Topic",control:"Other",control_contaminated:"Excluded other"};
+function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null;
+function boot(a,b,n=500){if(a.length<2||b.length<2)return null;const r=rng(7),o=new Float64Array(n),na=a.length,nb=b.length;
+  for(let k=0;k<n;k++){let sa=0,sb=0;for(let i=0;i<na;i++)sa+=a[(r()*na)|0];for(let i=0;i<nb;i++)sb+=b[(r()*nb)|0];o[k]=sa/na-sb/nb}
+  o.sort();return [o[Math.floor(.025*n)],o[Math.ceil(.975*n)-1]]}
+function copyOut(text,msg,fb){const ok=()=>{msg.textContent="Copied to the clipboard.";fb.hidden=true};const fail=()=>{fb.hidden=false;fb.value=text;fb.focus();fb.select();msg.textContent="Copying is blocked here. The text is selected below: press Ctrl+C or ⌘C."};
+  try{navigator.clipboard.writeText(text).then(ok,fail)}catch(e){fail()}}
+const csvq=v=>v==null?"":/[",\n]/.test(String(v))?`"${String(v).replace(/"/g,'""')}"`:String(v);
+const csv=rows=>rows.map(r=>r.map(csvq).join(",")).join("\n");
+function measureFrames(m,custom){return m==="critical"?(R.critical||[]):m==="connection"?(R.connection||[]):m==="custom"?(custom||[]):[m]}
+function measureLabel(m,custom){return m==="critical"?"Loaded words (colonial, apartheid, genocide…)":m==="connection"?"History words (homeland, indigenous, antisemitism…)":m==="custom"?`Custom: ${(custom||[]).map(k=>LABEL[k]||k).join(", ")||"nothing selected"}`:(LABEL[m]||m)}
+function measureOptions(sel,withCustom){sel.innerHTML=`<option value="critical">${esc(measureLabel("critical"))}</option><option value="connection">${esc(measureLabel("connection"))}</option>`+(R.frames||[]).map(f=>`<option value="${f}">${esc(LABEL[f]||f)}</option>`).join("")+(withCustom?`<option value="custom">Custom set of word groups…</option>`:"")}
+function artRate(a,part,frames,date){const ds=a.crit_series_dates;if(!ds||!frames.length)return null;const di=a._di||(a._di=Object.fromEntries(ds.map((d,i)=>[d,i])));const i=di[date];if(i==null)return null;
+  const FS=part==="lead"?a.lead_frame_series:a.frame_series,WS=part==="lead"?a.lead_words_series:a.words_series;
+  if(FS&&WS){const w=WS[i];if(!w)return null;let c=0;for(const f of frames){const s=FS[f];if(!s||s[i]==null)return null;c+=s[i]}return c*1e4/w}
+  const same=(x,y)=>x.length===y.length&&x.every(f=>y.includes(f));
+  if(same(frames,R.critical||[])){const s=part==="lead"?a.lcrit_series:a.crit_series;return s?s[i]:null}
+  if(same(frames,R.connection||[])&&part==="full"&&a.conn_series)return a.conn_series[i];return null}
+function inSlice(a,f){if(f.g.length&&!f.g.includes(a.group))return false;if(f.sg.length&&!f.sg.includes(a.subgroup))return false;if(f.prim==="only"&&!a.primary)return false;
+  if(f.neu==="only"&&!a.created_in_window)return false;if(f.neu==="no"&&a.created_in_window)return false;if(f.war==="only"&&!a.shocked)return false;if(f.war==="no"&&a.shocked)return false;
+  if(f.q&&!a.title.toLowerCase().includes(f.q.toLowerCase()))return false;if(f.me&&(a.edits||0)<f.me)return false;if(f.mv&&(a.views||0)<f.mv)return false;return true}
+function sliceDesc(f){const p=[];if(f.g.length)p.push(f.g.map(g=>GRP_L[g]||g).join(" + ").toLowerCase()+" articles");else p.push("all articles");if(f.sg.length)p.push(f.sg.map(subName).join(", "));
+  if(f.prim==="only")p.push("main test only");if(f.neu==="only")p.push("created 2021 or later");if(f.neu==="no")p.push("existing in 2021");if(f.war==="only")p.push("own war");if(f.war==="no")p.push("no own war");
+  if(f.q)p.push(`title has “${f.q}”`);if(f.me)p.push(`${f.me}+ edits`);if(f.mv)p.push(`${big(f.mv)}+ views`);return p.join(" · ")}
+function bandHTML(lo,hi,d){const m=Math.max(Math.abs(lo),Math.abs(hi),Math.abs(d),1e-6)*1.25,X=v=>(v+m)/(2*m)*100,tk=ticks(-m,m,4).filter(v=>Math.abs(v)<=m);
+  return `<div class="eband" aria-hidden="true">${tk.map(v=>`<span class="tk" style="left:${X(v)}%">${v>0?"+":""}${+v.toFixed(2)}</span>`).join("")}<span class="z" style="left:${X(0)}%"></span><span class="ci" style="left:${X(lo)}%;width:${Math.max(.5,X(hi)-X(lo))}%"></span><span class="pt" style="left:${X(d)}%"></span></div>`}
+function estHTML(o){if(!o)return `<p class="cap">Each slice needs at least two articles measured at both dates.</p>`;
+  const inc=o.lo<=0&&o.hi>=0;return `<div><div class="k">Extra change, A minus B</div><div class="v">${sgn(o.d,2)}</div><div class="u">per 10,000 words · ${esc(o.span)}</div></div>
+   <div><div class="k">95% band: ${sgn(o.lo,2)} to ${sgn(o.hi,2)}${inc?" · includes zero":""}</div>${bandHTML(o.lo,o.hi,o.d)}<div class="ns"><span class="ab a">A</span> n = ${o.na} articles, mean change ${sgn(o.ma,2)} &nbsp; <span class="ab b">B</span> n = ${o.nb}, mean change ${sgn(o.mb,2)}</div></div>`}
+function estSay(o,nmA,nmB){if(!o)return "";const inc=o.lo<=0&&o.hi>=0;return `<b>Exploratory reading:</b> ${esc(o.span)}, slice A (${esc(nmA)}) changed by ${sgn(o.ma,2)} per 10,000 words on average and slice B (${esc(nmB)}) by ${sgn(o.mb,2)}. The difference is ${sgn(o.d,2)}, with a 95% band from ${sgn(o.lo,2)} to ${sgn(o.hi,2)}. ${inc?"The band includes zero, so the two slices are not distinguishable from noise.":o.lo>0?"The band is above zero: A gained more of these words than B.":"The band is below zero: B gained more of these words than A."} This is not the pre-registered test.`}
 
-/* toy 1: you draw it */
-function diData(){const p=PG.draw.round,t=(R.trends&&R.trends.treatment&&R.trends.treatment[p])||[],c=(R.trends&&R.trends.control&&R.trends.control[p])||[];
-  const dates=t.map(r=>r.date),cut=dates.filter(d=>d<=(R.pre_war||"2023-07")).length;
-  return {dates,t:t.map(r=>r.critical_rate),c:dates.map(d=>{const r=c.find(x=>x.date===d);return r?r.critical_rate:null}),cut}}
-function diState(){const p=PG.draw.round;return PG.draw.st[p]||(PG.draw.st[p]={g:{},rev:false,prog:0})}
-function diFilled(D,s){const n=D.dates.length,out=[];let last=D.t[D.cut-1];const set=Object.keys(s.g).map(Number).sort((a,b)=>a-b);
-  for(let i=D.cut;i<n;i++){if(s.g[i]!=null){out[i]=s.g[i];continue}const nx=set.find(j=>j>i),pv=[...set].reverse().find(j=>j<i);
-    out[i]=pv!=null&&nx!=null?s.g[pv]+(s.g[nx]-s.g[pv])*(i-pv)/(nx-pv):pv!=null?s.g[pv]:nx!=null?s.g[nx]:last}return out}
-function drawItInit(){
-  const D=diData();
-  if(!D.dates.length||D.cut<2||D.cut>=D.dates.length){$("#toyDraw").querySelector(".di-box").outerHTML=pgNote("The yearly word counts are not in this build yet, so there is nothing to draw against.");$("#diReveal").disabled=true;return}
-  seg($("#diRound"),v=>{PG.draw.round=v;drawItDraw();diSliders()});
-  $("#diReveal").onclick=()=>{const s=diState();s.rev=true;s.prog=RM.matches?1:0;const t0=performance.now();const st=n=>{s.prog=Math.min(1,(n-t0)/1300);drawItDraw();if(s.prog<1)requestAnimationFrame(st)};RM.matches?drawItDraw():requestAnimationFrame(st)};
-  $("#diReset").onclick=()=>{PG.draw.st[PG.draw.round]={g:{},rev:false,prog:0};drawItDraw();diSliders()};
-  const box=$("#diBox");let down=false,lastI=null;
-  const at=e=>{const g=box._g;if(!g)return null;const r=box.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;let bi=null,bd=1e9;for(let i=g.D.cut;i<g.D.dates.length;i++){const d=Math.abs(g.x(i)-px);if(d<bd){bd=d;bi=i}}
-    if(px<g.x(g.D.cut-1)-10)return null;return {i:bi,v:Math.max(0,Math.min(g.ymax,g.yi(py)))}};
-  const put=e=>{const s=diState();if(s.rev)return;const a=at(e);if(!a)return;if(lastI!=null&&Math.abs(a.i-lastI)>1){const v0=s.g[lastI];for(let k=Math.min(a.i,lastI)+1;k<Math.max(a.i,lastI);k++)s.g[k]=v0+(a.v-v0)*(k-lastI)/(a.i-lastI)}s.g[a.i]=a.v;lastI=a.i;drawItDraw(true)};
-  box.addEventListener("pointerdown",e=>{if(diState().rev)return;down=true;lastI=null;try{box.setPointerCapture(e.pointerId)}catch(_){}put(e);e.preventDefault()});
-  box.addEventListener("pointermove",e=>{if(down)put(e)});
-  const up=()=>{if(down){down=false;lastI=null;diSliders()}};box.addEventListener("pointerup",up);box.addEventListener("pointercancel",up);
-  drawItDraw();diSliders();
-}
-function diSliders(){const D=diData(),s=diState(),host=$("#diSliders");if(!host||!D.dates.length)return;const f=diFilled(D,s),mx=box_ymax(D);
-  host.innerHTML=D.dates.slice(D.cut).map((d,j)=>{const i=D.cut+j;return `<label>${dlab(d)}<input type="range" min="0" max="${mx}" step="${(mx/200).toFixed(3)}" value="${f[i].toFixed(2)}" data-i="${i}" ${s.rev?"disabled":""} aria-label="Your guess for ${dlab(d)}"><span>${fmt(f[i],1)}</span></label>`}).join("");
-  host.oninput=e=>{const i=+e.target.dataset.i;if(isNaN(i))return;const s=diState();s.g[i]=+e.target.value;e.target.nextElementSibling.textContent=fmt(+e.target.value,1);drawItDraw(true)}}
-function box_ymax(D){return niceMax(Math.max(...D.t.filter(v=>v!=null),...D.c.filter(v=>v!=null),1)*1.35)}
-function drawItDraw(fromDrag){
-  const D=diData(),s=diState(),box=$("#diBox");if(!box||!D.dates.length)return;setSeg($("#diRound"),PG.draw.round);
-  const W=Math.max(260,box.clientWidth),H=isPhone()?270:330,m={l:40,r:isPhone()?14:96,t:18,b:24},n=D.dates.length,ymax=box_ymax(D);
-  const ts=D.dates.map(ym),x=i=>lin(ts[0],ts[n-1],m.l,W-m.r)(ts[i]),y=lin(0,ymax,H-m.b,m.t),yi=py=>(H-m.b-py)/(H-m.b-m.t)*ymax;
-  box._g={D,x,yi,ymax};const f=diFilled(D,s),anyG=Object.keys(s.g).length>0;
-  let h=`<svg width="${W}" height="${H}" role="img" aria-label="Draw your guess of the line after July 2023">`;
-  h+=`<rect x="${x(D.cut-1)}" y="${m.t}" width="${W-m.r-x(D.cut-1)}" height="${H-m.b-m.t}" style="fill:var(--faint);opacity:${s.rev?.35:.8}"/>`;
-  ticks(0,ymax,4).forEach(v=>h+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}" style="stroke:var(--faint)"/><text x="${m.l-6}" y="${y(v)+3.5}" text-anchor="end">${fmt(v,0)}</text>`);
-  for(let yr=+D.dates[0].slice(0,4);yr<=+D.dates[n-1].slice(0,4);yr++){const tt=Math.max(ts[0],Date.UTC(yr,0,1)),xx=lin(ts[0],ts[n-1],m.l,W-m.r)(tt);h+=`<text x="${xx+2}" y="${H-6}">${isPhone()?"’"+String(yr).slice(2):yr}</text>`}
-  const wx=lin(ts[0],ts[n-1],m.l,W-m.r)(WAR);h+=`<line x1="${wx}" x2="${wx}" y1="${m.t-8}" y2="${H-m.b}" style="stroke:var(--war);stroke-dasharray:3 3"/><text x="${wx+4}" y="${m.t+2}" style="fill:var(--war)">7 Oct 2023</text>`;
-  const path=(arr,i0,i1)=>{let d="";for(let i=i0;i<=i1;i++){if(arr[i]==null)continue;d+=(d?"L":"M")+x(i).toFixed(1)+","+y(arr[i]).toFixed(1)}return d};
-  h+=`<path d="${path(D.t,0,D.cut-1)}" style="fill:none;stroke:var(--topic);stroke-width:2.6;stroke-linejoin:round"/><circle cx="${x(D.cut-1)}" cy="${y(D.t[D.cut-1])}" r="4.5" style="fill:var(--topic);stroke:var(--sheet);stroke-width:2"/>`;
-  if(!anyG&&!s.rev)h+=`<text x="${(x(D.cut-1)+W-m.r)/2}" y="${(m.t+H-m.b)/2}" text-anchor="middle" class="lbl" style="font-size:13px">Draw here →</text>`;
-  if(anyG||s.rev){const g=[...D.t.slice(0,D.cut)];for(let i=D.cut;i<n;i++)g[i]=f[i];h+=`<path d="${path(g,D.cut-1,n-1)}" style="fill:none;stroke:var(--ink);stroke-width:2.2;stroke-dasharray:6 4;stroke-linecap:round"/>`;
-    for(let i=D.cut;i<n;i++)if(s.g[i]!=null)h+=`<circle cx="${x(i)}" cy="${y(f[i])}" r="2.6" style="fill:var(--ink)"/>`;
-    if(!isPhone())h+=`<text x="${x(n-1)+8}" y="${y(f[n-1])+4}" class="lbl">You: ${fmt(f[n-1],1)}</text>`}
-  if(s.rev){const p=s.prog;h+=`<path d="${path(D.t,D.cut-1,n-1)}" pathLength="1" style="fill:none;stroke:var(--topic);stroke-width:2.8;stroke-dasharray:1;stroke-dashoffset:${1-p}"/>`;
-    h+=`<path d="${path(D.c,0,n-1)}" pathLength="1" style="fill:none;stroke:var(--comp);stroke-width:2;stroke-dasharray:${p>=1?"5 4":"1"};stroke-dashoffset:${p>=1?0:1-p}"/>`;
-    if(p>=1&&!isPhone()){const ly=[[y(D.t[n-1]),`Real: ${fmt(D.t[n-1],1)}`,"--topic"],[y(D.c[n-1]),`Other: ${fmt(D.c[n-1],1)}`,"--comp"]];const yy=y(f[n-1]);ly.forEach(l=>{if(Math.abs(l[0]-yy)<14)l[0]+=l[0]<yy?-14:14});if(Math.abs(ly[0][0]-ly[1][0])<14)ly[1][0]=ly[0][0]+(ly[1][0]>=ly[0][0]?14:-14);ly.forEach(([yy,t,c])=>h+=`<text x="${x(n-1)+8}" y="${yy+4}" style="fill:var(${c});font-weight:600">${t}</text>`)}}
-  box.innerHTML=h+`</svg>`;box.classList.toggle("done",s.rev);
-  $("#diReveal").disabled=!anyG||s.rev;$("#diHint").textContent=s.rev?"Press “Start again” to have another go.":anyG?"Keep drawing to the right edge, or press the button.":"Drag across the shaded area with your mouse or finger.";
-  $("#diQ").innerHTML=`How often did topic articles use words like “colonial”, “apartheid” and “genocide” in ${PG.draw.round==="lead"?"their <b>opening paragraph</b>":"their <b>whole text</b>"} after the war began? The teal line shows the real numbers up to ${dlab(D.dates[D.cut-1])}. <b>Draw the rest of the line</b> in the shaded area.`;
-  if(s.rev&&s.prog>=1){const fut=[];for(let i=D.cut;i<n;i++)if(D.t[i]!=null)fut.push(Math.abs(f[i]-D.t[i]));const mae=fut.reduce((a,b)=>a+b,0)/Math.max(1,fut.length),rng=Math.max(...D.t.filter(v=>v!=null))-Math.min(...D.t.filter(v=>v!=null))||1,rel=mae/Math.max(rng,D.t[D.cut-1]*.25||1);
-    const word=rel<.15?"Very close.":rel<.4?"Close.":"Not quite.";const c0=D.c[D.cut-1],c1=D.c[n-1];
-    $("#diOut").innerHTML=`<b>${word}</b> You guessed the line would end at ${fmt(f[n-1],1)} per 10,000 words. It ended at ${fmt(D.t[n-1],1)}. On average your line was ${fmt(mae,1)} away. Over the same time, other articles (dashed grey-violet) went from ${fmt(c0,1)} to ${fmt(c1,1)}.`}
-  else $("#diOut").innerHTML="";
-  if(!fromDrag)$$("#diSliders input").forEach(inp=>{const i=+inp.dataset.i;inp.value=f[i];inp.disabled=s.rev;inp.nextElementSibling.textContent=fmt(f[i],1)});
-}
+/* lab 1: compare slices */
+function sliceUI(root,key){const f=LAB.l1[key],A=R.articles;const gs=["treatment","control","control_contaminated"].filter(g=>A.some(a=>a.group===g));
+  const so=Object.keys(SUB),sgs=[...new Set(A.map(a=>a.subgroup))].sort((x,y)=>(so.indexOf(x)+1||99)-(so.indexOf(y)+1||99));
+  root.innerHTML=`<div class="slice-h"><span style="display:flex;gap:8px;align-items:center"><span class="ab ${key.toLowerCase()}">${key}</span><b>Slice ${key}</b></span><span class="slice-n" data-n></span></div>
+   <div class="frow"><span>Group</span><div class="picks" data-k="g">${gs.map(g=>`<button class="pick" type="button" data-v="${g}" aria-pressed="false">${GRP_L[g]}</button>`).join("")}</div></div>
+   <div class="frow"><span>Subgroup</span><div class="picks" data-k="sg">${sgs.map(g=>`<button class="pick" type="button" data-v="${esc(g)}" aria-pressed="false">${esc(subName(g))}</button>`).join("")}</div></div>
+   <div class="frow"><span>Filters</span><div class="two"><label>main test<select data-k="prim"><option value="any">any</option><option value="only">only</option></select></label><label>created<select data-k="neu"><option value="any">any</option><option value="no">before 2021</option><option value="only">2021 or later</option></select></label><label>own war<select data-k="war"><option value="any">any</option><option value="no">exclude</option><option value="only">only</option></select></label></div></div>
+   <div class="frow"><span>Title</span><input type="search" data-k="q" placeholder="contains…" aria-label="Slice ${key} title contains"></div>
+   <div class="frow"><span>At least</span><div class="two" style="grid-template-columns:1fr 1fr"><label>edits<input type="number" min="0" data-k="me" inputmode="numeric"></label><label>page views<input type="number" min="0" data-k="mv" inputmode="numeric"></label></div></div>
+   <p class="cap">Empty choices mean “any”.</p>`;
+  let t;root.addEventListener("click",e=>{const b=e.target.closest(".pick");if(!b)return;const k=b.parentElement.dataset.k,v=b.dataset.v,cur=LAB.l1[key];cur[k]=cur[k].includes(v)?cur[k].filter(x=>x!==v):[...cur[k],v];sliceSync(root,key);l1Draw()});
+  root.addEventListener("input",e=>{const k=e.target.dataset.k;if(!k)return;const cur=LAB.l1[key];cur[k]=e.target.type==="number"?Math.max(0,+e.target.value||0):e.target.value;clearTimeout(t);t=setTimeout(l1Draw,e.target.tagName==="SELECT"?0:180)});
+  sliceSync(root,key)}
+function sliceSync(root,key){const f=LAB.l1[key];$$(".picks",root).forEach(p=>{const k=p.dataset.k;$$(".pick",p).forEach(b=>b.setAttribute("aria-pressed",String(f[k].includes(b.dataset.v))))});
+  $$("select[data-k],input[data-k]",root).forEach(i=>{const v=f[i.dataset.k];if(document.activeElement!==i)i.value=i.type==="number"?(v||""):v})}
+function l1Presets(){const A=R.articles,tsub=[...new Set(A.filter(a=>a.group==="treatment").map(a=>a.subgroup))];
+  return [["Topic vs comparison",{g:["treatment"],prim:"only"},{g:["control"],prim:"only"}],
+    ["Hand-picked vs category sample",{g:["treatment"],sg:tsub.filter(s=>s!=="category-sample")},{g:["treatment"],sg:["category-sample"]}],
+    ["Comparison: quiet vs had own war",{g:["control"],war:"no"},{g:["control"],war:"only"}],
+    ["Conflict vs Judaism articles",{g:["treatment"],sg:["conflict"]},{g:["treatment"],sg:["judaism"]}]]}
+function l1Init(){
+  if(!R.articles||!R.articles.length||!R.dates){$("#lab1").insertAdjacentHTML("beforeend",pgNote("No article data in this build."));return}
+  const P=l1Presets();$("#l1Presets").innerHTML=P.map((p,i)=>`<button class="pick" type="button" data-i="${i}" aria-pressed="${i===0}">${esc(p[0])}</button>`).join("");
+  $("#l1Presets").onclick=e=>{const b=e.target.closest(".pick");if(!b)return;const p=P[+b.dataset.i];LAB.l1.A={...SLICE0(),...p[1]};LAB.l1.B={...SLICE0(),...p[2]};$$("#l1Presets .pick").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));sliceSync($("#l1A"),"A");sliceSync($("#l1B"),"B");l1Draw()};
+  sliceUI($("#l1A"),"A");sliceUI($("#l1B"),"B");
+  measureOptions($("#l1Measure"),true);$("#l1Measure").onchange=e=>{LAB.l1.measure=e.target.value;l1Draw()};
+  $("#l1Custom").innerHTML=(R.frames||[]).map(f=>`<button class="pick" type="button" data-v="${f}" aria-pressed="false">${esc(LABEL[f]||f)}</button>`).join("");
+  $("#l1Custom").onclick=e=>{const b=e.target.closest(".pick");if(!b)return;const c=LAB.l1.custom,v=b.dataset.v;LAB.l1.custom=c.includes(v)?c.filter(x=>x!==v):[...c,v];l1Draw()};
+  seg($("#l1Part"),v=>{LAB.l1.part=v;l1Draw()});
+  const opts=R.dates.map(d=>`<option value="${d}">${dlab(d)}</option>`).join("");$("#l1From").innerHTML=opts;$("#l1To").innerHTML=opts;
+  LAB.l1.from=LAB.l1.from||R.dates[0];LAB.l1.to=LAB.l1.to||R.dates.at(-1);
+  $("#l1From").onchange=e=>{LAB.l1.from=e.target.value;l1Draw()};$("#l1To").onchange=e=>{LAB.l1.to=e.target.value;l1Draw()};
+  $("#l1Csv").onclick=()=>copyOut(l1CsvText(),$("#l1CsvMsg"),$("#l1CsvFb"));
+  l1Draw()}
+let L1=null;
+function l1Compute(){const L=LAB.l1,fr=measureFrames(L.measure,L.custom),A=R.articles.filter(a=>inSlice(a,L.A)),B=R.articles.filter(a=>inSlice(a,L.B));
+  const ch=S=>S.map(a=>{const r0=artRate(a,L.part,fr,L.from),r1=artRate(a,L.part,fr,L.to);return r0==null||r1==null?null:{a,r0,r1,c:r1-r0}}).filter(Boolean);
+  const cA=ch(A),cB=ch(B),va=cA.map(x=>x.c),vb=cB.map(x=>x.c);let est=null;
+  if(va.length>=2&&vb.length>=2){const b=boot(va,vb);est={d:avg(va)-avg(vb),lo:b[0],hi:b[1],na:va.length,nb:vb.length,ma:avg(va),mb:avg(vb),span:`${dlab(L.from)} to ${dlab(L.to)}`}}
+  return {fr,A,B,cA,cB,est}}
+function l1Draw(){if(!R.articles||!R.dates)return;const L=LAB.l1;setSeg($("#l1Part"),L.part);$("#l1Measure").value=L.measure;$("#l1From").value=L.from;$("#l1To").value=L.to;
+  $("#l1Custom").hidden=L.measure!=="custom";$$("#l1Custom .pick").forEach(b=>b.setAttribute("aria-pressed",String(L.custom.includes(b.dataset.v))));
+  const C=L1=l1Compute();
+  $("#l1A [data-n]").textContent=`n = ${C.A.length}`;$("#l1B [data-n]").textContent=`n = ${C.B.length}`;
+  const line=(S,key,lab,col)=>({key,label:lab,color:col,width:2.4,pts:R.dates.map(d=>{const v=S.map(a=>artRate(a,L.part,C.fr,d)).filter(x=>x!=null);return [ym(d),v.length?avg(v):null]}),n:R.dates.map(d=>S.filter(a=>artRate(a,L.part,C.fr,d)!=null).length)});
+  const ser=[line(C.A,"A","A",COL_A),line(C.B,"B","B",COL_B)];
+  $("#l1Title").textContent=`${measureLabel(L.measure,L.custom)} · per 10,000 words of ${L.part==="lead"?"opening paragraph":"article text"}`;
+  $("#l1N").textContent=`A: ${C.A.length} articles · B: ${C.B.length} articles`;
+  if(!C.fr.length){$("#l1Chart").innerHTML=pgNote("Choose at least one word group.");}else chart($("#l1Chart"),{series:ser,endLabels:true,labelW:60,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],band:L.from===R.dates[0]&&L.to===R.dates.at(-1)?null:[ym(L.from),ym(L.to)],bandColor:"--add-bd",aria:"Slice A and B over time",xlab:t=>"Snapshot "+dlabT(t)});
+  $("#l1Key").innerHTML=`<span class="key"><i class="ln" style="background:var(${COL_A})"></i>A (blue): ${esc(sliceDesc(L.A))}</span><span class="key"><i class="ln" style="background:var(${COL_B})"></i>B (ochre): ${esc(sliceDesc(L.B))}</span><span>${L.from===R.dates[0]&&L.to===R.dates.at(-1)?"":"shaded: the chosen window · "}hover for the number measured at each date</span>`;
+  $("#l1Est").innerHTML=estHTML(C.est);$("#l1Say").innerHTML=estSay(C.est,sliceDesc(L.A),sliceDesc(L.B));
+  const up=!C.est||C.est.d>=0,sA=[...C.cA].sort((x,y)=>up?y.c-x.c:x.c-y.c).slice(0,10),sB=[...C.cB].sort((x,y)=>up?x.c-y.c:y.c-x.c).slice(0,10),mx=Math.max(...[...sA,...sB].map(x=>Math.abs(x.c)),1e-6);
+  const list=(rows,key,h)=>`<div class="dlist"><div class="h"><span class="ab ${key.toLowerCase()}">${key}</span>${h}</div>${rows.map(x=>`<button type="button" data-t="${esc(x.a.title)}"><span>${esc(x.a.title)}</span><span class="bar" style="width:${Math.abs(x.c)/mx*100}%;background:var(${x.c>=0?"--inc":"--dec"})"></span><span class="num">${sgn(x.c,1)}</span></button>`).join("")||`<p class="cap">No articles measured at both dates.</p>`}</div>`;
+  $("#l1Drivers").innerHTML=list(sA,"A",`${up?"Largest increases":"Largest decreases"} in A`)+list(sB,"B",`${up?"Largest decreases":"Largest increases"} in B`);
+  $("#l1Drivers").onclick=e=>{const b=e.target.closest("button[data-t]");if(b)openDrawer(b.dataset.t,b)}}
+function l1CsvText(){const C=L1||l1Compute(),L=LAB.l1;return csv([["slice","title","group","subgroup",`rate_${L.from}`,`rate_${L.to}`,"change"],...C.cA.map(x=>["A",x.a.title,x.a.group,x.a.subgroup,x.r0.toFixed(3),x.r1.toFixed(3),x.c.toFixed(3)]),...C.cB.map(x=>["B",x.a.title,x.a.group,x.a.subgroup,x.r0.toFixed(3),x.r1.toFixed(3),x.c.toFixed(3)])])}
 
-/* toy 2: be the coder */
-const entify=s=>esc(s).replace(/\[ENTITY-(\d+)\]/g,'<span class="ent">ENTITY-$1</span>');
-function coderScore(){const sc=store("wt-play-coder")||{agree:0,total:0};$("#bcScore").innerHTML=sc.total?`You and the AI coders agreed on <b>${sc.agree} of ${sc.total}</b> pairs (${pct(sc.agree/sc.total)}) · <button class="gl" type="button" id="bcResetScore" style="text-decoration-style:solid">reset</button>`:"Your score is saved on this device only.";const rb=$("#bcResetScore");if(rb)rb.onclick=()=>{store("wt-play-coder",{agree:0,total:0});coderScore()}}
-function coderInit(){const P=R.play_pairs;if(!P||!P.length){$("#bcBox").innerHTML=pgNote("The masked pairs for this game are not in this build yet. When they are, you will judge ten real before-and-after pairs per round.");return}
-  const saved=store("wt-play-coder-pos");if(saved){PG.coder.round=saved.round||0;PG.coder.i=0}coderScore();coderDraw()}
-function coderItem(){const P=R.play_pairs;return P[(PG.coder.round*10+PG.coder.i)%P.length]}
-function coderDraw(){
-  const P=R.play_pairs,C=PG.coder,box=$("#bcBox");if(!P||!P.length)return;
-  if(C.i>=10){box.innerHTML=`<div class="bc-reveal"><span class="verdict">Round ${C.round+1} done: you agreed with the AI coders on ${C.ra} of ${C.rn}.</span><span>${C.ra>=7?"That is high agreement.":C.ra>=4?"About half. Tone is genuinely hard to judge.":"You read these differently from the AI coders. That happens; it is why agreement is measured."}</span><div><button class="btn primary" type="button" id="bcNextRound">Next round</button></div></div>`;
-    $("#bcNextRound").onclick=()=>{C.round++;C.i=0;C.ra=0;C.rn=0;C.choice=null;store("wt-play-coder-pos",{round:C.round});coderDraw()};return}
-  const it=coderItem(),ch=C.choice;
-  const prog=`<div class="bc-prog" aria-label="Pair ${C.i+1} of 10">${Array.from({length:10},(_,k)=>`<i class="${k<C.i?"on":k===C.i?"cur":""}"></i>`).join("")}</div>`;
-  const side=(k,txt)=>{const newer=ch&&it.newer===k;return `<div class="bc-t ${newer?"newer":""}"><div class="lab"><span>${k==="left"?"Left":"Right"}</span>${ch?`<span>${newer?"newer · "+esc(it.d1||""):"older · "+esc(it.d0||"")}</span>`:""}</div><p dir="auto">${entify(txt)}</p></div>`};
-  let h=`<div class="cap">Pair ${C.i+1} of 10 · round ${C.round+1}</div>${prog}<div class="bc">${side("left",it.left)}${side("right",it.right)}</div>
-   <div class="bc-choices" role="group" aria-label="Which version is harsher on its subject?">${[["left","Left is harsher"],["right","Right is harsher"],["same","About the same"]].map(([v,l])=>`<button class="btn" type="button" data-v="${v}" aria-pressed="${ch===v}" ${ch?"disabled":""}>${l}</button>`).join("")}</div>`;
-  if(ch){const older=it.newer==="left"?"right":"left",aiSide=it.ai==="newer_harsher"?it.newer:it.ai==="newer_gentler"?older:"same",agree=ch===aiSide;
-    const chg=it.ai==="newer_harsher"?"made the article <b>harsher</b> on its subject":it.ai==="newer_gentler"?"made the article <b>gentler</b> on its subject":"made <b>no clear change</b> in tone";
-    const sideName=v=>v==="same"?"neither side":v==="left"?"the left side":"the right side";
-    h+=`<div class="bc-reveal" aria-live="polite"><span class="verdict">${agree?"You agreed with the AI coders.":"You read it differently from the AI coders."}</span>
-     <span>This is <b>${esc(it.title||"an article")}</b> (${it.group==="treatment"?"a topic article":"an article about another country or conflict"}). The ${it.newer==="left"?"left":"right"} text is the newer version${it.d1?` (${esc(it.d1)})`:""}; the other is from ${esc(it.d0||"earlier")}.</span>
-     <span>The AI coders concluded the edit ${chg}, so the harsher text is ${sideName(aiSide)}. You picked ${sideName(ch)}.</span>
-     ${it.rev0&&it.rev1?`<a href="https://en.wikipedia.org/w/index.php?diff=${it.rev1}&oldid=${it.rev0}" target="_blank" rel="noopener">See the real change on Wikipedia ↗</a>`:""}
-     <div><button class="btn primary" type="button" id="bcNext">${C.i<9?"Next pair →":"See your round"}</button></div></div>`}
-  box.innerHTML=h;
-  $$(".bc-choices .btn",box).forEach(b=>b.onclick=()=>{if(C.choice)return;C.choice=b.dataset.v;const older=it.newer==="left"?"right":"left",aiSide=it.ai==="newer_harsher"?it.newer:it.ai==="newer_gentler"?older:"same";const ag=C.choice===aiSide;C.rn++;if(ag)C.ra++;const sc=store("wt-play-coder")||{agree:0,total:0};sc.total++;if(ag)sc.agree++;store("wt-play-coder",sc);coderScore();coderDraw()});
-  const nb=$("#bcNext");if(nb)nb.onclick=()=>{C.i++;C.choice=null;coderDraw();$("#toyCoder").scrollIntoView({block:"nearest"})};
-}
+/* lab 2: scatter */
+const dd=(a,b)=>a==null||b==null?null:a-b;
+function fsChanges(a){const f=a.first_sentences||[];return f.length?new Set(f.map(x=>x.s)).size-1:null}
+function frameDelta(a,f){const ds=a.crit_series_dates;if(!ds||!ds.length)return null;const r0=artRate(a,"full",[f],ds[0]),r1=artRate(a,"full",[f],ds.at(-1));return r0==null||r1==null?null:r1-r0}
+const AX={edits:["Edits",a=>a.edits],editors:["Editors",a=>a.editors],views:["Page views",a=>a.views],talk:["Talk-page edits",a=>a.talk_edits],revert:["Revert rate",a=>a.revert_rate],top10:["Share of edits by top 10 editors",a=>a.top10],
+  w0:["Words at start",a=>a.words0],w1:["Words now",a=>a.words1],dcrit:["Δ loaded-word rate",a=>dd(a.crit1,a.crit0)],dconn:["Δ history-word rate",a=>dd(a.conn1,a.conn0)],dframe:["Δ chosen word group",a=>frameDelta(a,LAB.l2.f)],fs:["First-sentence changes",fsChanges]};
+const SUBCOL=["--s2","--s1","--s3","--s4","--s5","--s6","--topic","--comp","--war","--new","--dec","--inc"];
+function l2Init(){if(!R.articles||!R.articles.length){$("#l2Box").innerHTML=pgNote("No article data in this build.");return}
+  const opts=Object.entries(AX).map(([k,v])=>`<option value="${k}">${esc(v[0])}</option>`).join("");$("#l2X").innerHTML=opts;$("#l2Y").innerHTML=opts;
+  $("#l2F").innerHTML=(R.frames||[]).map(f=>`<option value="${f}">${esc(LABEL[f]||f)}</option>`).join("");
+  $("#l2X").onchange=e=>{LAB.l2.x=e.target.value;LAB.l2.sel=null;l2Draw()};$("#l2Y").onchange=e=>{LAB.l2.y=e.target.value;LAB.l2.sel=null;l2Draw()};$("#l2F").onchange=e=>{LAB.l2.f=e.target.value;l2Draw()};
+  seg($("#l2C"),v=>{LAB.l2.color=v;l2Draw()});$("#l2LX").onchange=e=>{LAB.l2.lx=e.target.checked;LAB.l2.sel=null;l2Draw()};$("#l2LY").onchange=e=>{LAB.l2.ly=e.target.checked;LAB.l2.sel=null;l2Draw()};
+  $("#l2Brush").onclick=()=>{LAB.l2.brush=!LAB.l2.brush;$("#l2Brush").setAttribute("aria-pressed",String(LAB.l2.brush));$("#l2Box").classList.toggle("brush",LAB.l2.brush)};
+  const box=$("#l2Box");let st=null;
+  const near=e=>{const g=box._g;if(!g)return null;const r=box.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;let b=null,bd=14*14;for(const p of g.pts){const d=(p.px-px)**2+(p.py-py)**2;if(d<bd){bd=d;b=p}}return {b,px,py}};
+  box.addEventListener("pointerdown",e=>{const n=near(e);if(!n)return;st={x:n.px,y:n.py,moved:false,hit:n.b,id:e.pointerId,brush:LAB.l2.brush||e.pointerType==="mouse"};if(st.brush){try{box.setPointerCapture(e.pointerId)}catch(_){}}});
+  box.addEventListener("pointermove",e=>{const n=near(e);if(!n)return;if(st&&st.brush&&(Math.abs(n.px-st.x)>5||Math.abs(n.py-st.y)>5)){st.moved=true;l2Rect(st.x,st.y,n.px,n.py);hideTip();return}
+    if(n.b){const a=n.b.a;showTip(`<b>${esc(a.title)}</b><div class="r"><span>${esc(AX[LAB.l2.x][0])}</span><span>${fmt(n.b.vx,2)}</span></div><div class="r"><span>${esc(AX[LAB.l2.y][0])}</span><span>${fmt(n.b.vy,2)}</span></div><div class="r" style="opacity:.7"><span>${GRP_L[a.group]||a.group} · ${esc(subName(a.subgroup))}</span><span>select to open</span></div>`,e.clientX,e.clientY)}else hideTip()});
+  box.addEventListener("pointerup",e=>{if(!st)return;const n=near(e);if(st.moved&&n){const g=box._g;const x0=Math.min(st.x,n.px),x1=Math.max(st.x,n.px),y0=Math.min(st.y,n.py),y1=Math.max(st.y,n.py);LAB.l2.sel=g.pts.filter(p=>p.px>=x0&&p.px<=x1&&p.py>=y0&&p.py<=y1).map(p=>p.a.title);l2Draw()}
+    else if(st.hit&&n&&n.b===st.hit){openDrawer(st.hit.a.title,box)}st=null});
+  box.addEventListener("pointerleave",hideTip);
+  $("#l2Sel").addEventListener("click",e=>{const b=e.target.closest("button[data-t]");if(b)openDrawer(b.dataset.t,b);if(e.target.id==="l2Clear"){LAB.l2.sel=null;l2Draw()}if(e.target.id==="l2Csv")copyOut(l2CsvText(),$("#l2CsvMsg"),$("#l2CsvFb"))});
+  l2Draw()}
+const slog=v=>Math.sign(v)*Math.log10(1+Math.abs(v));
+function logTicks(lo,hi){const out=[];for(const s of [-1,1])for(let e=0;e<=9;e++){const v=s*10**e;const t=slog(v);if(t>=lo-1e-9&&t<=hi+1e-9)out.push([t,v])}if(0>=lo&&0<=hi)out.push([0,0]);return out.sort((a,b)=>a[0]-b[0])}
+function l2Rect(x0,y0,x1,y1){const svg=$("#l2Box svg");if(!svg)return;let r=svg.querySelector(".brushr");if(!r){r=document.createElementNS(NS,"rect");r.setAttribute("class","brushr");r.setAttribute("style","fill:var(--add-bg);fill-opacity:.35;stroke:var(--add-bd);stroke-dasharray:4 3");svg.append(r)}
+  r.setAttribute("x",Math.min(x0,x1));r.setAttribute("y",Math.min(y0,y1));r.setAttribute("width",Math.abs(x1-x0));r.setAttribute("height",Math.abs(y1-y0))}
+function l2Draw(){const L=LAB.l2,box=$("#l2Box");if(!R.articles||!box)return;$("#l2X").value=L.x;$("#l2Y").value=L.y;$("#l2F").value=L.f;$("#l2LX").checked=L.lx;$("#l2LY").checked=L.ly;setSeg($("#l2C"),L.color);
+  $("#l2FWrap").hidden=!(L.x==="dframe"||L.y==="dframe");
+  const fx=AX[L.x][1],fy=AX[L.y][1],tx=v=>L.lx?slog(v):v,ty=v=>L.ly?slog(v):v;
+  const so=Object.keys(SUB),sgs=[...new Set(R.articles.map(a=>a.subgroup))].sort((x,y)=>(so.indexOf(x)+1||99)-(so.indexOf(y)+1||99));
+  const colOf=a=>L.color==="group"?(a.group==="treatment"?"--topic":a.group==="control"?"--comp":"--muted"):SUBCOL[sgs.indexOf(a.subgroup)%SUBCOL.length];
+  const keyOf=a=>L.color==="group"?a.group:a.subgroup;
+  const pts=R.articles.map(a=>{const vx=fx(a),vy=fy(a);return vx==null||vy==null||!isFinite(vx)||!isFinite(vy)?null:{a,vx,vy,x:tx(vx),y:ty(vy),c:colOf(a),k:keyOf(a)}}).filter(Boolean);
+  if(pts.length<2){box.innerHTML=pgNote("Not enough articles have both of these values.");$("#l2R").innerHTML="";return}
+  const W=Math.max(260,box.clientWidth),H=isPhone()?330:460,m={l:52,r:14,t:12,b:40};
+  let x0=Math.min(...pts.map(p=>p.x)),x1=Math.max(...pts.map(p=>p.x)),y0=Math.min(...pts.map(p=>p.y)),y1=Math.max(...pts.map(p=>p.y));const px=(x1-x0)*.04||1,py=(y1-y0)*.04||1;x0-=px;x1+=px;y0-=py;y1+=py;
+  const X=lin(x0,x1,m.l,W-m.r),Y=lin(y0,y1,H-m.b,m.t);pts.forEach(p=>{p.px=X(p.x);p.py=Y(p.y)});
+  const tk=(lo,hi,lg)=>lg?logTicks(lo,hi).filter((t,i,arr)=>arr.length<9||i%2===0):ticks(lo,hi,isPhone()?4:6).map(v=>[v,v]);
+  const lbl=v=>Math.abs(v)>=1e4?big(v):Math.abs(v)<1&&v!==0?(+v.toFixed(2)).toString():(+v.toFixed(1)).toLocaleString("en-US");
+  let s=`<svg width="${W}" height="${H}" role="img" aria-label="Scatter of ${esc(AX[L.x][0])} against ${esc(AX[L.y][0])}">`;
+  tk(y0,y1,L.ly).forEach(([t,v])=>s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(t)}" y2="${Y(t)}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-6}" y="${Y(t)+3.5}" text-anchor="end">${lbl(v)}</text>`);
+  tk(x0,x1,L.lx).forEach(([t,v])=>s+=`<line x1="${X(t)}" x2="${X(t)}" y1="${m.t}" y2="${H-m.b}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${X(t)}" y="${H-m.b+14}" text-anchor="middle">${lbl(v)}</text>`);
+  s+=`<text x="${W-m.r}" y="${H-6}" text-anchor="end" class="lbl">${esc(AX[L.x][0])}${L.x==="dframe"?" ("+esc(LABEL[L.f]||L.f)+")":""}${L.lx?" · log":""} →</text><text x="${m.l}" y="${m.t-2}" class="lbl">↑ ${esc(AX[L.y][0])}${L.y==="dframe"?" ("+esc(LABEL[L.f]||L.f)+")":""}${L.ly?" · log":""}</text>`;
+  const sel=new Set(L.sel||[]);
+  for(const p of pts)s+=`<circle cx="${p.px.toFixed(1)}" cy="${p.py.toFixed(1)}" r="${sel.has(p.a.title)?5:isPhone()?3:3.6}" style="fill:var(${p.c});fill-opacity:${L.sel&&!sel.has(p.a.title)?.18:.72};stroke:var(${sel.has(p.a.title)?"--ink":"--sheet"});stroke-width:${sel.has(p.a.title)?1.5:.6}"/>`;
+  box.innerHTML=s+`</svg>`;box._g={pts};
+  const groups=[...new Set(pts.map(p=>p.k))];
+  const pr=v=>{const n=v.length;if(n<3)return null;const mx=avg(v.map(p=>p.x)),my=avg(v.map(p=>p.y));let sxy=0,sxx=0,syy=0;for(const p of v){sxy+=(p.x-mx)*(p.y-my);sxx+=(p.x-mx)**2;syy+=(p.y-my)**2}return sxx&&syy?sxy/Math.sqrt(sxx*syy):null};
+  $("#l2R").innerHTML=groups.map(g=>{const v=pts.filter(p=>p.k===g),r=pr(v);return `<span class="key"><i style="background:var(${v[0].c});border-radius:50%"></i>${esc(L.color==="group"?GRP_L[g]||g:subName(g))}: r = ${r==null?"–":r.toFixed(2)} (n = ${v.length})</span>`}).join("")+`<span>${pts.length} of ${R.articles.length} articles have both values</span>`;
+  const S=L.sel;$("#l2Sel").innerHTML=S?`<div class="fig"><div class="fig-h"><span class="fig-t">${S.length} article${S.length===1?"":"s"} in the selected area</span><span class="controls"><button class="btn sm" type="button" id="l2Csv">Copy as CSV</button><button class="btn sm" type="button" id="l2Clear">Clear selection</button></span></div><div class="sel-list">${S.map(t=>`<button type="button" data-t="${esc(t)}">${esc(t)}</button>`).join("")||"<span class='cap'>No dots inside.</span>"}</div><span class="cap" id="l2CsvMsg" aria-live="polite"></span><textarea class="csv-fb" id="l2CsvFb" hidden aria-label="CSV text"></textarea></div>`:`<p class="cap">${isPhone()?"Tap “Select an area”, then drag across the chart to list the articles inside.":"Drag across the chart to list the articles inside."}</p>`}
+function l2CsvText(){const L=LAB.l2,S=new Set(L.sel||[]),fx=AX[L.x][1],fy=AX[L.y][1];return csv([["title","group","subgroup",AX[L.x][0],AX[L.y][0]],...R.articles.filter(a=>S.has(a.title)).map(a=>[a.title,a.group,a.subgroup,fx(a),fy(a)])])}
 
-/* toy 3: word race */
+/* lab 3: side by side */
+const SBS_COL=["--s2","--s1","--s4","--s5"];
+function l3Init(){const A=R.articles;if(!A||!A.length){$("#l3Chart").innerHTML=pgNote("No article data in this build.");return}
+  $("#l3List").innerHTML=A.map(a=>`<option value="${esc(a.title)}">`).join("");
+  if(!LAB.l3.titles)LAB.l3.titles=["Zionism","Israel","Kurdish nationalism"].filter(t=>A.some(a=>a.title===t));if(!LAB.l3.titles.length)LAB.l3.titles=[A[0].title];
+  measureOptions($("#l3Measure"),false);$("#l3Measure").onchange=e=>{LAB.l3.measure=e.target.value;l3Draw()};seg($("#l3Part"),v=>{LAB.l3.part=v;l3Draw()});
+  const add=()=>{const v=$("#l3In").value.trim(),a=A.find(x=>x.title.toLowerCase()===v.toLowerCase());if(!a){$("#l3In").setCustomValidity("Pick a title from the list");$("#l3In").reportValidity();return}$("#l3In").setCustomValidity("");l3Add(a.title);$("#l3In").value=""};
+  $("#l3Add").onclick=add;$("#l3In").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();add()}});$("#l3In").addEventListener("change",()=>{if(A.some(x=>x.title===$("#l3In").value))add()});
+  $("#l3Chips").onclick=e=>{const b=e.target.closest("button[data-w]");if(b){LAB.l3.titles=LAB.l3.titles.filter(t=>t!==b.dataset.w);l3Draw()}};
+  $("#l3Rows").onclick=e=>{const b=e.target.closest("button[data-t]");if(b)openDrawer(b.dataset.t,b)};l3Draw()}
+function l3Add(t){const T=LAB.l3.titles||(LAB.l3.titles=[]);if(!T.includes(t)){T.push(t);if(T.length>4)T.shift()}l3Draw()}
+function l3Draw(){const L=LAB.l3;if(!L.titles)return;setSeg($("#l3Part"),L.part);$("#l3Measure").value=L.measure;const fr=measureFrames(L.measure),A=L.titles.map(t=>R.articles.find(a=>a.title===t)).filter(Boolean);
+  $("#l3Chips").innerHTML=A.map((a,i)=>`<span class="chip word"><i style="background:var(${SBS_COL[i]})"></i>${esc(a.title)}<button type="button" data-w="${esc(a.title)}" aria-label="Remove ${esc(a.title)}">×</button></span>`).join("")+(A.length>=4?`<span class="cap">4 maximum; adding one replaces the oldest</span>`:"");
+  if(!A.length){$("#l3Chart").innerHTML=pgNote("Add an article to start.");$("#l3Rows").innerHTML="";$("#l3Key").innerHTML="";return}
+  const ser=A.map((a,i)=>({key:a.title,label:a.title,color:SBS_COL[i],width:2.2,pts:(a.crit_series_dates||[]).map(d=>[ym(d),artRate(a,L.part,fr,d)])}));
+  chart($("#l3Chart"),{series:ser,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],aria:"Articles side by side",xlab:t=>"Snapshot "+dlabT(t)});
+  $("#l3Key").innerHTML=A.map((a,i)=>`<span class="key"><i class="ln" style="background:var(${SBS_COL[i]})"></i>${esc(a.title)}</span>`).join("")+`<span>${esc(measureLabel(L.measure))} per 10,000 words</span>`;
+  const t0=ym(R.dates[0]),t1=ym(R.dates.at(-1)),X=t=>Math.max(0,Math.min(100,(t-t0)/(t1-t0)*100));
+  $("#l3Rows").innerHTML=A.map((a,i)=>{const fs=a.first_sentences||[],n=new Set(fs.map(f=>f.s)).size;const last=fs.at(-1),prev=fs.length>1?fs.at(-2):null;
+    return `<div class="sbs-row"><div class="t"><i style="background:var(${SBS_COL[i]})"></i><span>${esc(a.title)}<br><span class="cap" style="font-weight:400">${n} version${n===1?"":"s"} of the first sentence</span></span></div>
+     <div><div class="fstrip" aria-hidden="true"><span class="warl" style="left:${X(WAR)}%"></span>${fs.slice(1).map(f=>`<span class="dm" style="left:${X(ym(f.date))}%" title="${f.date}"></span>`).join("")}</div>
+     <p class="s">${last?(prev?renderW(wdiff(prev.s,last.s)):esc(last.s)):"<span class='cap'>No first sentence recorded.</span>"}</p><button class="btn sm" type="button" data-t="${esc(a.title)}">Open this article</button></div></div>`}).join("")}
+
+/* lab 4: word race */
 const RACE_COL=["--s2","--s1","--s4"],PRESETS=[["occupation","indigenous"],["terrorist","militant"],["genocide","Holocaust"],["hostage","famine"]];
 function wrFind(w){const W=R.word_race&&R.word_race.words||[];return W.find(x=>x.toLowerCase()===String(w).trim().toLowerCase())||null}
-function raceInit(){const WR=R.word_race;if(!WR||!WR.words||!WR.words.length||!WR.dates){$("#toyRace .fig").outerHTML=pgNote("Word counts for the race are not in this build yet.");$$("#toyRace .controls").forEach(c=>c.hidden=true);return}
+function raceInit(){const WR=R.word_race;if(!WR||!WR.words||!WR.words.length||!WR.dates){$("#lab4 .fig").outerHTML=pgNote("Word counts for the race are not in this build yet.");$$("#lab4 .controls").forEach(c=>c.hidden=true);return}
   $("#wrList").innerHTML=WR.words.map(w=>`<option value="${esc(w)}">`).join("");
   const ok=PRESETS.map(p=>p.map(wrFind)).filter(p=>p.filter(Boolean).length>=2).map(p=>p.filter(Boolean));
   $("#wrPresets").innerHTML=ok.map((p,i)=>`<button class="pick" type="button" data-i="${i}">${p.map(esc).join(" vs ")}</button>`).join("")||`<span class="cap">no presets available</span>`;
@@ -1681,52 +1885,49 @@ function raceInit(){const WR=R.word_race;if(!WR||!WR.words||!WR.words.length||!W
   const add=()=>{const w=wrFind($("#wrIn").value);if(!w){$("#wrIn").setCustomValidity("Pick a word from the list");$("#wrIn").reportValidity();return}$("#wrIn").setCustomValidity("");if(!PG.race.words.includes(w)){PG.race.words.push(w);if(PG.race.words.length>3)PG.race.words.shift()}$("#wrIn").value="";raceDraw()};
   $("#wrAdd").onclick=add;$("#wrIn").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();add()}});$("#wrIn").addEventListener("change",()=>{if(wrFind($("#wrIn").value))add()});
   $("#wrChips").onclick=e=>{const b=e.target.closest("button[data-w]");if(b){PG.race.words=PG.race.words.filter(w=>w!==b.dataset.w);raceDraw()}};
-  PG.race.words=(ok[0]||WR.words.slice(0,2)).slice(0,3);raceDraw()}
+  if(!PG.race.words.length)PG.race.words=(ok[0]||WR.words.slice(0,2)).slice(0,3);raceDraw()}
 function raceDraw(){const WR=R.word_race;if(!WR||!WR.words)return;const ws=PG.race.words,xs=WR.dates.map(ym);
-  $("#wrChips").innerHTML=ws.map((w,i)=>`<span class="chip word"><i style="background:var(${RACE_COL[i]})"></i>${esc(w)}<button type="button" data-w="${esc(w)}" aria-label="Remove ${esc(w)}">×</button></span>`).join("")+(ws.length>=3?`<span class="cap">3 words max; adding one replaces the oldest</span>`:"");
+  $("#wrChips").innerHTML=ws.map((w,i)=>`<span class="chip word"><i style="background:var(${RACE_COL[i]})"></i>${esc(w)}<button type="button" data-w="${esc(w)}" aria-label="Remove ${esc(w)}">×</button></span>`).join("")+(ws.length>=3?`<span class="cap">3 maximum; adding one replaces the oldest</span>`:"");
   $$("#wrPresets .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.textContent===ws.join(" vs "))));
-  const series=[];ws.forEach((w,i)=>{[["topic","",""],["comparison"," (other)","5 4"]].forEach(([g,suf,dash])=>{const v=WR[g]&&WR[g][w];if(v)series.push({key:w+g,label:w+suf,color:RACE_COL[i],dash,width:g==="topic"?2.4:1.7,pts:xs.map((t,k)=>[t,v[k]])})})});
-  if(!series.length){$("#wrChart").innerHTML=pgNote("Pick a word to start the race.");$("#wrKey").innerHTML="";$("#wrOut").innerHTML="";return}
+  const series=[];ws.forEach((w,i)=>{[["topic",""],["comparison"," (other)"]].forEach(([g,suf])=>{const v=WR[g]&&WR[g][w];if(v)series.push({key:w+g,label:w+suf,color:RACE_COL[i],dash:g==="topic"?"":"5 4",width:g==="topic"?2.4:1.7,pts:xs.map((t,k)=>[t,v[k]])})})});
+  if(!series.length){$("#wrChart").innerHTML=pgNote("Pick a word.");$("#wrKey").innerHTML="";$("#wrOut").innerHTML="";return}
   chart($("#wrChart"),{series,vfmt:v=>fmt(v,2),xDomain:[xs[0],xs.at(-1)],aria:"Word race"});
-  $("#wrKey").innerHTML=ws.map((w,i)=>`<span class="key"><i class="ln" style="background:var(${RACE_COL[i]})"></i>${esc(w)}</span>`).join("")+`<span>solid line = topic articles · dashed line = other articles</span>`;
-  $("#wrOut").innerHTML=`<b>The race so far:</b> `+ws.map(w=>{const t=WR.topic&&WR.topic[w],c=WR.comparison&&WR.comparison[w];return `“${esc(w)}” went from ${t?fmt(t[0],1)+" to "+fmt(t.at(-1),1):"–"} in topic articles and ${c?fmt(c[0],1)+" to "+fmt(c.at(-1),1):"–"} in other articles`}).join("; ")+".";
-}
+  $("#wrKey").innerHTML=ws.map((w,i)=>`<span class="key"><i class="ln" style="background:var(${RACE_COL[i]})"></i>${esc(w)}</span>`).join("")+`<span>solid = topic articles · dashed = other articles</span>`;
+  $("#wrOut").innerHTML=ws.map(w=>{const t=WR.topic&&WR.topic[w],c=WR.comparison&&WR.comparison[w];return `“${esc(w)}”: ${t?fmt(t[0],1)+" → "+fmt(t.at(-1),1):"–"} in topic articles, ${c?fmt(c[0],1)+" → "+fmt(c.at(-1),1):"–"} in other articles`}).join(" · ")}
 
-/* toy 4: time machine */
+/* lab 5: time machine (component) + replay */
 const TM_KEYS=["Zionism","Israel","Hamas","Nakba","Antisemitism","Jews","Judaism","Anti-Zionism","Gaza war","Gaza genocide","October 7 attacks","Israeli apartheid","Israeli–Palestinian conflict","History of Israel","Balfour Declaration","West Bank"],
       TM_KEYS_C=["Kurdish nationalism","Hindu nationalism","Armenian genocide","Russo-Ukrainian War","Islamic State","Catholic Church","India","Taiwan","Kashmir conflict","Uyghur genocide","Irish nationalism","Islam","Turkey","Ukraine","Tibet"];
-function tmInit(){const by=new Map(R.articles.map(a=>[a.title,a])),ok=t=>by.has(t)&&(by.get(t).first_sentences||[]).length;
-  const a=TM_KEYS.filter(ok),b=TM_KEYS_C.filter(ok);
-  if(!a.length&&!b.length){$("#toyTime .tm-stage").outerHTML=pgNote("First-sentence histories are not in this build yet.");return}
+function tmMount(root,a){if(!root)return;if(!a||!(a.first_sentences||[]).length){root.innerHTML=pgNote("No first-sentence history for this article.");return}
+  const i0=Math.max(0,R.dates.indexOf(a.first_sentences[0].date)),ts=R.dates.slice(i0),ver=ts.map(d=>{let k=0;a.first_sentences.forEach((f,i)=>{if(f.date<=d)k=i});return k});
+  root.innerHTML=`<div class="tm-stage"><div class="tm-date"><span data-d></span><span class="cap" data-v></span></div><blockquote class="sentence" data-t style="margin:0;padding:0;min-height:4.4em" aria-live="polite"></blockquote><p class="tm-seen" data-s></p>
+    <input type="range" class="big-range" min="0" max="${ts.length-1}" step="1" value="${ts.length-1}" aria-label="Point in time for ${esc(a.title)}"><div class="tm-scale">${ts.map((d,i)=>d.endsWith("-01")&&(!isPhone()||+d.slice(0,4)%2===1)?`<span style="left:calc(${ts.length<2?50:i/(ts.length-1)*100}% + ${8-16*(ts.length<2?.5:i/(ts.length-1))}px)">${d.slice(0,4)}</span>`:"").join("")}</div></div>`;
+  const draw=i=>{const v=ver[i],f=a.first_sentences[v],pv=a.first_sentences[Math.max(0,v-1)];root.querySelector("[data-d]").textContent=dlab(ts[i]);root.querySelector("[data-v]").textContent=`version ${v+1} of ${a.first_sentences.length}`;
+    root.querySelector("[data-t]").innerHTML=v===0?esc(f.s):renderW(wdiff(pv.s,f.s));
+    const ex=R.exposure&&R.exposure[a.title],m=ex&&ex.variants&&ex.variants.find(x=>x.s&&(x.s===f.s||f.s.startsWith(x.s)||x.s.startsWith(f.s)));
+    root.querySelector("[data-s]").innerHTML=m&&m.views?`Seen by about <b>${millions(m.views)}</b> readers while live (${pct(m.share)} of the article’s views since 2021).`:""};
+  root.querySelector("input").oninput=e=>draw(+e.target.value);draw(ts.length-1)}
+function tmInit(){const by=new Map(R.articles.map(a=>[a.title,a])),ok=t=>by.has(t)&&(by.get(t).first_sentences||[]).length;const a=TM_KEYS.filter(ok),b=TM_KEYS_C.filter(ok);
+  if(!a.length&&!b.length){$("#tmBox").innerHTML=pgNote("First-sentence histories are not in this build yet.");$("#tmSel").closest("label").hidden=true;return}
   $("#tmSel").innerHTML=(a.length?`<optgroup label="Topic articles">${a.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:"")+(b.length?`<optgroup label="Other articles">${b.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:"");
-  $("#tmSel").onchange=e=>tmSet(e.target.value);$("#tmRange").oninput=e=>{PG.tm.i=+e.target.value;tmDraw()};tmSet(a[0]||b[0])}
-function tmSet(t){const a=R.articles.find(x=>x.title===t);if(!a)return;PG.tm.t=a;$("#tmSel").value=t;
-  const i0=Math.max(0,R.dates.indexOf(a.first_sentences[0].date));a._tts=R.dates.slice(i0);a._tver=a._tts.map(d=>{let k=0;a.first_sentences.forEach((f,i)=>{if(f.date<=d)k=i});return k});
-  const rg=$("#tmRange");rg.max=a._tts.length-1;PG.tm.i=0;rg.value=0;
-  $("#tmScale").innerHTML=a._tts.map((d,i)=>d.endsWith("-01")&&(!isPhone()||+d.slice(0,4)%2===1)?`<span style="left:calc(${a._tts.length<2?50:i/(a._tts.length-1)*100}% + ${8-16*(a._tts.length<2?.5:i/(a._tts.length-1))}px)">${d.slice(0,4)}</span>`:"").join("");tmDraw()}
-function tmDraw(){const a=PG.tm.t,i=PG.tm.i,v=a._tver[i],f=a.first_sentences[v],pv=a.first_sentences[Math.max(0,v-1)];
-  $("#tmDate").textContent=dlab(a._tts[i]);$("#tmVer").textContent=`version ${v+1} of ${a.first_sentences.length}`;
-  $("#tmText").innerHTML=v===0?esc(f.s):renderW(wdiff(pv.s,f.s));
-  const ex=R.exposure&&R.exposure[a.title],m=ex&&ex.variants&&ex.variants.find(x=>x.s&&(x.s===f.s||f.s.startsWith(x.s)||x.s.startsWith(f.s)));
-  $("#tmSeen").innerHTML=m&&m.views?`This wording was seen by about <b>${millions(m.views)}</b> readers${m.share!=null?` (${pct(m.share)} of the article’s views since 2021)`:""}.`:"";}
-
-/* toy 5: edit-war replay */
+  $("#tmSel").onchange=e=>tmMount($("#tmBox"),by.get(e.target.value));tmMount($("#tmBox"),by.get(a[0]||b[0]))}
+function tmShow(t){const a=R.articles.find(x=>x.title===t);if(!a)return;if(![...$("#tmSel").options].some(o=>o.value===t))$("#tmSel").insertAdjacentHTML("beforeend",`<option>${esc(t)}</option>`);$("#tmSel").value=t;tmMount($("#tmBox"),a)}
 function rpInit(){const A=R.ratchet&&R.ratchet.articles;const ts=A?Object.keys(A).filter(t=>A[t].fs_timeline&&A[t].fs_timeline.length):[];
-  if(!ts.length){$("#rpBox").innerHTML=pgNote("The sentence-by-sentence edit history is not in this build yet. When it is, you can replay every change to a key article’s first sentence.");$("#rpSel").disabled=true;return}
+  if(!ts.length){$("#rpBox").innerHTML=pgNote("The revision-by-revision history of first sentences is not in this build yet.");$("#rpSel").closest("label").hidden=true;return}
   const grp=t=>{const a=R.articles.find(x=>x.title===t);return a&&a.group==="treatment"?0:1};ts.sort((a,b)=>grp(a)-grp(b));
   $("#rpSel").innerHTML=[0,1].map(g=>{const l=ts.filter(t=>grp(t)===g);return l.length?`<optgroup label="${g?"Other articles":"Topic articles"}">${l.map(t=>`<option>${esc(t)}</option>`).join("")}</optgroup>`:""}).join("");
   $("#rpSel").onchange=e=>rpSet(e.target.value);rpSet(ts.includes("Zionism")?"Zionism":ts[0])}
-function rpSet(t){rpStop();const a=R.ratchet.articles[t];const tl=a.fs_timeline.map(x=>({t:Date.parse(x[0]+"T00:00:00Z"),id:x[1],rv:+x[2]||0})).filter(x=>!isNaN(x.t)).sort((p,q)=>p.t-q.t);
+function rpSet(t){rpStop();const a=R.ratchet.articles[t];if(!a)return;$("#rpSel").value=t;const tl=a.fs_timeline.map(x=>({t:Date.parse(x[0]+"T00:00:00Z"),id:x[1],rv:+x[2]||0})).filter(x=>!isNaN(x.t)).sort((p,q)=>p.t-q.t);
   const order=[];tl.forEach(e=>{if(!order.includes(e.id))order.push(e.id)});const vs=new Map((a.fs_variants||[]).map(v=>[v.id,v.s]));
-  const end=Math.max(tl.at(-1).t+30*864e5,ym(R.dates.at(-1))+90*864e5),start=Math.min(tl[0].t,Date.UTC(2021,0,1));
-  PG.rp={...PG.rp,name:t,a,tl,order,vs,start,end,k:tl.length-1,cur:end};
-  $("#rpBox").innerHTML=`<div class="rp-stage"><div class="rp-now"><span class="d" id="rpDate"></span><button class="btn primary" type="button" id="rpPlay">▶ Replay</button><span class="cap">Hours become seconds: the whole period plays in about ten seconds.</span></div>
+  const lastT=Math.max(tl.at(-1).t,ym(R.dates.at(-1))),end=lastT+45*864e5,start=Math.min(tl[0].t,Date.UTC(2021,0,1));
+  PG.rp={...PG.rp,name:t,a,tl,order,vs,start,end,lastT,k:-2,cur:end};
+  $("#rpBox").innerHTML=`<div class="rp-stage"><div class="rp-now"><span class="d" id="rpDate"></span><button class="btn primary" type="button" id="rpPlay">▶ Replay</button><span class="cap">The whole period plays in about ten seconds.</span></div>
    <div class="rp-strip"><canvas id="rpCv" role="img" aria-label="Timeline of first-sentence versions, one colour per version"></canvas></div>
    <input type="range" class="rp-seek" id="rpSeek" min="0" max="1000" value="1000" aria-label="Move through time">
    <div class="rp-ct"><div><b id="rpV">0</b><span>versions so far</span></div><div><b id="rpC">0</b><span>changes</span></div><div><b id="rpR">0</b><span>flagged as reverted</span></div><div><b id="rpB">0</b><span>returns to an earlier wording</span></div></div>
    <div class="rp-s" id="rpText" aria-live="polite"></div><p class="means" id="rpOut"></p></div>`;
   $("#rpPlay").onclick=()=>PG.rp.raf?rpStop():rpPlay();$("#rpSeek").oninput=e=>{rpStop();PG.rp.cur=PG.rp.start+(PG.rp.end-PG.rp.start)*(+e.target.value)/1000;rpUpdate()};
-  rpStrip();rpUpdate();rpVerdict()}
+  rpUpdate();rpVerdict()}
 function rpCol(id){const i=PG.rp.order.indexOf(id),dark=lum(hex2rgb(tok("--paper")))<.5;return `hsl(${(i*137.508+190)%360} ${dark?50:42}% ${dark?62:46}%)`}
 function rpStrip(){const P=PG.rp,cv=$("#rpCv");if(!cv||!P.tl)return;const W=cv.clientWidth||600,H=64,dpr=Math.min(2,devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,H);
   const x=t=>(t-P.start)/(P.end-P.start)*W,top=12,bh=30;
@@ -1735,27 +1936,137 @@ function rpStrip(){const P=PG.rp,cv=$("#rpCv");if(!cv||!P.tl)return;const W=cv.c
   const wx=x(WAR);c.strokeStyle=tok("--war");c.setLineDash([3,3]);c.beginPath();c.moveTo(wx,top-4);c.lineTo(wx,top+bh+4);c.stroke();c.setLineDash([]);
   const px=x(P.cur);c.fillStyle=tok("--paper");c.globalAlpha=.72;c.fillRect(px,top,W-px,bh);c.globalAlpha=1;c.fillStyle=tok("--ink");c.fillRect(px-1,top-6,2,bh+12)}
 function rpUpdate(){const P=PG.rp;if(!P.tl)return;let k=-1;for(let j=0;j<P.tl.length;j++){if(P.tl[j].t<=P.cur)k=j;else break}
-  const seen=new Set(),cnt={v:0,c:0,r:0,b:0};for(let j=0;j<=k;j++){const e=P.tl[j];if(j&&seen.has(e.id)&&P.tl[j-1].id!==e.id)cnt.b++;seen.add(e.id);cnt.r+=e.rv;if(j)cnt.c++}cnt.v=seen.size;
-  $("#rpV").textContent=cnt.v;$("#rpC").textContent=cnt.c;$("#rpR").textContent=cnt.r;$("#rpB").textContent=cnt.b;
-  const d=new Date(Math.min(P.cur,P.end));$("#rpDate").textContent=`${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`;$("#rpSeek").value=Math.round((P.cur-P.start)/(P.end-P.start)*1000);
-  if(k!==P.k||!$("#rpText").innerHTML){P.k=k;const e=P.tl[k],pv=k>0?P.tl[k-1]:null;const s=e?P.vs.get(e.id):null,ps=pv?P.vs.get(pv.id):null;
+  const seen=new Set(),cnt={c:0,r:0,b:0};for(let j=0;j<=k;j++){const e=P.tl[j];if(j&&seen.has(e.id)&&P.tl[j-1].id!==e.id)cnt.b++;seen.add(e.id);cnt.r+=e.rv;if(j)cnt.c++}
+  $("#rpV").textContent=seen.size;$("#rpC").textContent=cnt.c;$("#rpR").textContent=cnt.r;$("#rpB").textContent=cnt.b;
+  const d=new Date(Math.min(P.cur,P.lastT));$("#rpDate").textContent=`${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`;$("#rpSeek").value=Math.round((P.cur-P.start)/(P.end-P.start)*1000);
+  if(k!==P.k){P.k=k;const e=P.tl[k],pv=k>0?P.tl[k-1]:null;const s=e?P.vs.get(e.id):null,ps=pv?P.vs.get(pv.id):null;
     $("#rpText").innerHTML=!e?`<span class="cap">Before the first recorded version.</span>`:s==null?`<span class="cap">This version’s wording was not stored.</span>`:`<span class="sw" style="background:${rpCol(e.id)}"></span>${ps!=null&&ps!==s?renderW(wdiff(ps,s)):esc(s)}`}
   rpStrip()}
 function rpPlay(){const P=PG.rp;if(P.cur>=P.end)P.cur=P.start;$("#rpPlay").textContent="❚❚ Pause";const D=RM.matches?4000:10000,t0=performance.now(),c0=P.cur,span=P.end-P.start;
-  const st=n=>{P.cur=Math.min(P.end,c0+(n-t0)/D*span);rpUpdate();if(P.cur<P.end)P.raf=requestAnimationFrame(st);else{rpStop()}};P.raf=requestAnimationFrame(st)}
+  const st=n=>{P.cur=Math.min(P.end,c0+(n-t0)/D*span);rpUpdate();if(P.cur<P.end)P.raf=requestAnimationFrame(st);else rpStop()};P.raf=requestAnimationFrame(st)}
 function rpStop(){const P=PG.rp;if(P.raf){cancelAnimationFrame(P.raf);P.raf=0}const b=$("#rpPlay");if(b)b.textContent="▶ Replay"}
 function rpVerdict(){const P=PG.rp,a=P.a,n=a.fs_n_variants||P.order.length;let back=0;const seen=new Set();P.tl.forEach((e,j)=>{if(j&&seen.has(e.id)&&P.tl[j-1].id!==e.id)back++;seen.add(e.id)});
   const ca=R.ratchet.comparison&&R.ratchet.comparison.fs_variants_per_article,ta=R.ratchet.topic&&R.ratchet.topic.fs_variants_per_article;
-  $("#rpOut").innerHTML=`<b>Slow drift or tug-of-war?</b> ${esc(P.name)}’s first sentence had ${n} version${n===1?"":"s"} and went back to an earlier wording ${back} time${back===1?"":"s"}. ${ca!=null?`Key articles about other countries and conflicts averaged ${fmt(ca,1)} versions${ta!=null?`; key topic articles averaged ${fmt(ta,1)}`:""}.`:""} ${back>=3?"Many returns to earlier wordings look like a tug-of-war.":"Few returns, with changes that hold, look like slow drift."}`}
+  $("#rpOut").innerHTML=`<b>Slow drift or tug-of-war?</b> ${esc(P.name)}’s first sentence had ${n} version${n===1?"":"s"} and returned to an earlier wording ${back} time${back===1?"":"s"}. ${ca!=null?`Key comparison articles averaged ${fmt(ca,1)} versions${ta!=null?`; key topic articles ${fmt(ta,1)}`:""}.`:""}`}
+
+/* lab 6: at scale */
+let L6=null;
+function l6Init(){const M=R.mass,host=$("#l6Wrap");if(!M||!M.lab_articles||!M.lab_articles.length||!M.lab_frames){host.innerHTML=pgNote("The 10,000-article data is not in this build yet. When it is, this lab compares slices across every rated article in each WikiProject.");return}
+  const fr=M.lab_frames,L=LAB.l6,D=M.dates||["2021-01","2023-07","now"],dl=d=>/^\d{4}-\d{2}/.test(d)?dlab(d):d;
+  const projs={};M.lab_articles.forEach(o=>{projs[o.p]=(projs[o.p]||0)+1});const P=Object.entries(projs).sort((a,b)=>b[1]-a[1]);
+  const mopts=[["critical",measureLabel("critical")],["connection",measureLabel("connection")],...fr.map(f=>[f,LABEL[f]||f])];
+  const sl=k=>`<div class="slice ${k.toLowerCase()}" data-s="${k}"><div class="slice-h"><span style="display:flex;gap:8px;align-items:center"><span class="ab ${k.toLowerCase()}">${k}</span><b>Slice ${k}</b></span><span class="slice-n" data-n></span></div>
+    <div class="frow"><span>Group</span><span class="seg" data-k="g"><button data-v="t">Topic</button><button data-v="c">Other</button><button data-v="all">All</button></span></div>
+    <div class="frow"><span>Importance</span><div class="picks" data-k="imp">${[["T","Top"],["H","High"],["M","Mid"]].map(([v,l])=>`<button class="pick" type="button" data-v="${v}">${l}</button>`).join("")}</div></div>
+    <div class="frow"><span>Projects</span><div class="picks" data-k="proj" style="max-height:120px;overflow:auto">${P.map(([p,n])=>`<button class="pick" type="button" data-v="${esc(p)}">${esc(p)} <span class="mono" style="opacity:.6">${n}</span></button>`).join("")}</div></div></div>`;
+  host.innerHTML=`<div class="controls"><label class="ctl" for="l6Measure">Count <select id="l6Measure">${mopts.map(([v,l])=>`<option value="${v}">${esc(l)}</option>`).join("")}</select></label>
+    <span class="seg" id="l6Part" role="group" aria-label="Text"><button data-v="full">Whole article</button><button data-v="lead">Opening paragraph</button></span>
+    <span class="seg" id="l6Per" role="group" aria-label="Period"><button data-v="02">${dl(D[0])} → ${dl(D[2])}</button><button data-v="01">${dl(D[0])} → ${dl(D[1])}</button><button data-v="12">${dl(D[1])} → ${dl(D[2])}</button></span></div>
+   <div class="slices">${sl("A")}${sl("B")}</div>
+   <div class="estbox" id="l6Est"></div><p class="means" id="l6Say"></p>
+   <div class="fig"><div class="fig-h"><span class="fig-t">How much individual articles changed</span><span class="cap">Share of each slice’s articles in each band of change. Blue outline: A. Ochre: B.</span></div><div class="hist" id="l6Hist"></div></div>
+   <div class="fig"><div class="fig-h"><span class="fig-t">Mean change by WikiProject</span><span class="controls"><span class="seg" id="l6PG" role="group" aria-label="Group"><button data-v="t">Topic</button><button data-v="c">Other</button><button data-v="all">All</button></span><span class="seg" id="l6Sort" role="group" aria-label="Sort"><button data-v="change">by change</button><button data-v="n">by size</button><button data-v="name">A–Z</button></span></span></div>
+    <p class="cap">Orange bars: rate went up on average. Purple: went down. Select a project to add it to slice A’s filter (and again to remove it).</p><div class="projbars" id="l6Bars"></div></div>
+   <div class="controls"><button class="btn sm" type="button" id="l6Csv">Copy project table as CSV</button><span class="cap" id="l6CsvMsg" aria-live="polite"></span></div><textarea class="csv-fb" id="l6CsvFb" hidden aria-label="CSV text"></textarea>
+   <details class="stats how"><summary>How this is computed</summary><div class="in"><pre class="formula">rate(article, snapshot) = sum of the chosen word counts × 10,000 ÷ words, at Jan 2021, Jul 2023 and now
+change(article)         = rate at the later snapshot − rate at the earlier one (articles measured at both)
+extra change            = mean change in A − mean change in B
+95% band                = 500 bootstrap resamples of A’s and B’s articles; 2.5th and 97.5th percentiles
+project bar             = mean change over the project’s articles in the chosen group (n shown)</pre></div></details>`;
+  $("#l6Measure").onchange=e=>{L.measure=e.target.value;L6=null;l6Draw()};seg($("#l6Part"),v=>{L.part=v;L6=null;l6Draw()});seg($("#l6Per"),v=>{L.per=v;l6Draw()});
+  seg($("#l6PG"),v=>{L.pg=v;l6Draw()});seg($("#l6Sort"),v=>{L.sort=v;l6Draw()});
+  $$("#l6Wrap .slice").forEach(el=>{const k=el.dataset.s;el.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const p=b.parentElement.dataset.k;if(!p)return;const f=L[k];if(p==="g")f.g=b.dataset.v;else{const v=b.dataset.v;f[p]=f[p].includes(v)?f[p].filter(x=>x!==v):[...f[p],v]}l6Draw()})});
+  $("#l6Bars").onclick=e=>{const b=e.target.closest("button[data-p]");if(!b)return;const f=L.A,v=b.dataset.p;f.proj=f.proj.includes(v)?f.proj.filter(x=>x!==v):[...f.proj,v];l6Draw()};
+  $("#l6Csv").onclick=()=>copyOut(l6CsvText(),$("#l6CsvMsg"),$("#l6CsvFb"));
+  l6Draw()}
+function l6Rates(){const M=R.mass,L=LAB.l6;if(L6&&L6.key===L.measure+L.part)return L6;const fr=M.lab_frames,want=measureFrames(L.measure).map(f=>fr.indexOf(f)).filter(i=>i>=0),N=M.lab_articles.length,r=[new Float32Array(N),new Float32Array(N),new Float32Array(N)];
+  M.lab_articles.forEach((o,i)=>{const S=L.part==="lead"?o.l:o.f;for(let k=0;k<3;k++){const s=S&&S[k];if(!s||!s[0]||!want.length){r[k][i]=NaN;continue}let c=0;for(const j of want)c+=s[1+j]||0;r[k][i]=c*1e4/s[0]}});
+  return L6={key:L.measure+L.part,r}}
+function l6Draw(){const M=R.mass;if(!M||!M.lab_articles||!$("#l6Est"))return;const L=LAB.l6,A=M.lab_articles,{r}=l6Rates(),p0=+L.per[0],p1=+L.per[1];
+  $("#l6Measure").value=L.measure;setSeg($("#l6Part"),L.part);setSeg($("#l6Per"),L.per);setSeg($("#l6PG"),L.pg);setSeg($("#l6Sort"),L.sort);
+  $$("#l6Wrap .slice").forEach(el=>{const f=L[el.dataset.s];setSeg(el.querySelector('[data-k="g"]'),f.g);["imp","proj"].forEach(k=>$$(`[data-k="${k}"] .pick`,el).forEach(b=>b.setAttribute("aria-pressed",String(f[k].includes(b.dataset.v)))))});
+  const match=(o,f)=>(f.g==="all"||o.g===f.g)&&(!f.imp.length||f.imp.includes(o.i))&&(!f.proj.length||f.proj.includes(o.p));
+  const ch=f=>{const v=[];let n=0;for(let i=0;i<A.length;i++){if(!match(A[i],f))continue;n++;const d=r[p1][i]-r[p0][i];if(isFinite(d))v.push(d)}return {v,n}};
+  const a=ch(L.A),b=ch(L.B),D=M.dates||["2021-01","2023-07","now"],dl=d=>/^\d{4}-\d{2}/.test(d)?dlab(d):d;
+  $$("#l6Wrap .slice").forEach(el=>{const s=el.dataset.s==="A"?a:b;el.querySelector("[data-n]").textContent=`n = ${s.n.toLocaleString("en-US")} (${s.v.length.toLocaleString("en-US")} measured)`});
+  let est=null;if(a.v.length>=2&&b.v.length>=2){const bt=boot(a.v,b.v);est={d:avg(a.v)-avg(b.v),lo:bt[0],hi:bt[1],na:a.v.length,nb:b.v.length,ma:avg(a.v),mb:avg(b.v),span:`${dl(D[p0])} to ${dl(D[p1])}`}}
+  const desc=f=>`${f.g==="t"?"topic":f.g==="c"?"other":"all"} articles${f.imp.length?", "+f.imp.map(x=>({T:"Top",H:"High",M:"Mid"})[x]).join("/")+" importance":""}${f.proj.length?", "+f.proj.length+" project"+(f.proj.length>1?"s":""):""}`;
+  $("#l6Est").innerHTML=estHTML(est);$("#l6Say").innerHTML=estSay(est,desc(L.A),desc(L.B));
+  // histogram
+  const all=[...a.v,...b.v].sort((x,y)=>x-y),q=p=>all.length?all[Math.min(all.length-1,Math.floor(p*(all.length-1)))]:0,lim=Math.max(Math.abs(q(.02)),Math.abs(q(.98)),1),nb=40,bw=2*lim/nb;
+  const hist=v=>{const h=new Array(nb).fill(0);v.forEach(x=>{const i=Math.max(0,Math.min(nb-1,Math.floor((x+lim)/bw)));h[i]++});return h.map(c=>v.length?c/v.length:0)};
+  const ha=hist(a.v),hb=hist(b.v),el=$("#l6Hist"),W=Math.max(260,el.clientWidth),H=210,m={l:40,r:10,t:10,b:26},ymx=Math.max(...ha,...hb,.01)*1.1;
+  const X=lin(-lim,lim,m.l,W-m.r),Y=lin(0,ymx,H-m.b,m.t);
+  const step=h=>{let d=`M${X(-lim)},${Y(0)}`;h.forEach((v,i)=>{d+=`L${X(-lim+i*bw)},${Y(v)}L${X(-lim+(i+1)*bw)},${Y(v)}`});return d+`L${X(lim)},${Y(0)}`};
+  let s=`<svg width="${W}" height="${H}" role="img" aria-label="Distribution of article-level change">`;ticks(0,ymx,3).forEach(v=>s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" style="stroke:var(--faint)"/><text x="${m.l-5}" y="${Y(v)+3.5}" text-anchor="end">${Math.round(v*100)}%</text>`);
+  ticks(-lim,lim,6).forEach(v=>s+=`<text x="${X(v)}" y="${H-8}" text-anchor="middle">${v>0?"+":""}${+v.toFixed(1)}</text>`);
+  s+=`<line x1="${X(0)}" x2="${X(0)}" y1="${m.t}" y2="${H-m.b}" style="stroke:var(--ink)"/><path d="${step(ha)}" style="fill:var(${COL_A});fill-opacity:.14;stroke:var(${COL_A});stroke-width:1.8"/><path d="${step(hb)}" style="fill:var(${COL_B});fill-opacity:.12;stroke:var(${COL_B});stroke-width:1.8"/>`;
+  s+=`<text x="${W-m.r}" y="${m.t+10}" text-anchor="end">change per 10,000 words (clipped at ±${+lim.toFixed(1)})</text></svg>`;el.innerHTML=s;
+  // projects
+  const pr={};for(let i=0;i<A.length;i++){const o=A[i];if(L.pg!=="all"&&o.g!==L.pg)continue;const d=r[p1][i]-r[p0][i];if(!isFinite(d))continue;(pr[o.p]||(pr[o.p]=[])).push(d)}
+  let rows=Object.entries(pr).map(([p,v])=>({p,n:v.length,m:avg(v),up:v.filter(x=>x>0).length/v.length}));
+  rows.sort(L.sort==="n"?(x,y)=>y.n-x.n:L.sort==="name"?(x,y)=>x.p.localeCompare(y.p):(x,y)=>y.m-x.m);L6.rows=rows;
+  const mx=Math.max(...rows.map(x=>Math.abs(x.m)),1e-6);
+  $("#l6Bars").innerHTML=rows.map(x=>{const w=Math.abs(x.m)/mx*50;return `<button type="button" data-p="${esc(x.p)}" aria-pressed="${L.A.proj.includes(x.p)}"><span>${esc(x.p)}</span><span class="trk"><b style="left:50%"></b><i style="left:${x.m>=0?50:50-w}%;width:${w}%;background:var(${x.m>=0?"--inc":"--dec"});opacity:${x.n<10?.4:1}"></i></span><span class="num">${sgn(x.m,2)} · n ${x.n}</span></button>`}).join("")||`<p class="cap">No articles in this group.</p>`}
+function l6CsvText(){const L=LAB.l6;l6Draw();return csv([["project","group","n","mean_change","share_increased"],...(L6.rows||[]).map(x=>[x.p,L.pg,x.n,x.m.toFixed(4),x.up.toFixed(3)])])}
+
+/* drawer */
+let DRAWER_FROM=null;
+function openDrawer(t,from){const a=R.articles.find(x=>x.title===t);if(!a)return;DRAWER_FROM=from||document.activeElement;let d=$("#drawer");
+  if(!d){d=document.createElement("aside");d.id="drawer";d.className="drawer";d.setAttribute("role","dialog");d.setAttribute("aria-label","Article detail");document.body.append(d);d.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer()})}
+  const rp=R.ratchet&&R.ratchet.articles&&R.ratchet.articles[t];
+  d.innerHTML=`<div class="drawer-h"><div><div class="eyebrow">Article</div><h3>${esc(a.title)}</h3><div class="dmeta"><span class="chip ${a.group}">${GROUP[a.group]||a.group}</span><span>${esc(subName(a.subgroup))}</span><span>${(a.edits||0).toLocaleString("en-US")} edits</span><span>${big(a.views||0)} views</span></div></div><button class="btn sm" type="button" id="drClose">Close</button></div>
+   <div class="fig"><div class="fig-t">Loaded and history words over time, per 10,000 words</div><div class="chart" id="drChart" style="height:180px"></div><div class="legend"><span class="key"><i class="ln" style="background:var(--inc)"></i>loaded words (orange)</span><span class="key"><i class="ln" style="background:var(--dec)"></i>history words (purple)</span></div></div>
+   <div class="fig-t">First sentence through time</div><div id="drTM"></div>
+   <div class="controls"><button class="btn sm" type="button" id="drSbs">Add to side by side</button><button class="btn sm" type="button" id="drUp">Open in “One article up close”</button>${rp?`<button class="btn sm" type="button" id="drRp">Replay its edit war</button>`:""}<a class="btn sm" href="https://en.wikipedia.org/wiki/${encodeURIComponent(a.title.replace(/ /g,"_"))}" target="_blank" rel="noopener" style="text-decoration:none">Wikipedia ↗</a></div>`;
+  d.hidden=false;
+  const ds=a.crit_series_dates||[];chart($("#drChart"),{series:[{key:"c",label:"Loaded",color:"--inc",width:2,pts:ds.map(x=>[ym(x),artRate(a,"full",R.critical||[],x)])},{key:"h",label:"History",color:"--dec",width:2,pts:ds.map(x=>[ym(x),artRate(a,"full",R.connection||[],x)])}],compact:true,xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))]});
+  tmMount($("#drTM"),a);
+  $("#drClose").onclick=closeDrawer;$("#drSbs").onclick=()=>{l3Add(t);closeDrawer();$("#lab3").scrollIntoView({behavior:RM.matches?"auto":"smooth"})};
+  $("#drUp").onclick=()=>{tmShow(t);closeDrawer();$("#lab5").scrollIntoView({behavior:RM.matches?"auto":"smooth"})};
+  const rb=$("#drRp");if(rb)rb.onclick=()=>{rpSet(t);closeDrawer();$("#lab5").scrollIntoView({behavior:RM.matches?"auto":"smooth"})};
+  $("#drClose").focus()}
+function closeDrawer(){const d=$("#drawer");if(!d||d.hidden)return;d.hidden=true;if(DRAWER_FROM&&DRAWER_FROM.focus)try{DRAWER_FROM.focus({preventScroll:true})}catch(e){}}
+
+/* blind-coding try-out */
+const entify=s=>esc(s).replace(/\[ENTITY-(\d+)\]/g,'<span class="ent">ENTITY-$1</span>');
+function coderScore(){const sc=store("wt-play-coder")||{agree:0,total:0};$("#bcScore").innerHTML=sc.total?`You and the AI coders agreed on <b>${sc.agree} of ${sc.total}</b> pairs (${pct(sc.agree/sc.total)}). <button class="gl" type="button" id="bcResetScore">reset</button>`:"Your agreement score is saved on this device only.";const rb=$("#bcResetScore");if(rb)rb.onclick=()=>{store("wt-play-coder",{agree:0,total:0});coderScore()}}
+function coderInit(){const P=R.play_pairs;if(!P||!P.length){$("#bcBox").innerHTML=pgNote("The masked pairs are not in this build yet.");return}const saved=store("wt-play-coder-pos");if(saved)PG.coder.round=saved.round||0;coderScore();coderDraw()}
+function coderItem(){const P=R.play_pairs;return P[(PG.coder.round*10+PG.coder.i)%P.length]}
+function coderDraw(){const P=R.play_pairs,C=PG.coder,box=$("#bcBox");if(!P||!P.length)return;
+  if(C.i>=10){box.innerHTML=`<div class="bc-reveal"><span class="verdict">Round ${C.round+1}: you agreed with the AI coders on ${C.ra} of ${C.rn}.</span><div><button class="btn primary" type="button" id="bcNextRound">Next round</button></div></div>`;
+    $("#bcNextRound").onclick=()=>{C.round++;C.i=0;C.ra=0;C.rn=0;C.choice=null;store("wt-play-coder-pos",{round:C.round});coderDraw()};return}
+  const it=coderItem(),ch=C.choice,older=it.newer==="left"?"right":"left",aiSide=it.ai==="newer_harsher"?it.newer:it.ai==="newer_gentler"?older:"same";
+  const side=(k,txt)=>{const newer=ch&&it.newer===k;return `<div class="bc-t ${newer?"newer":""}"><div class="lab"><span>${k==="left"?"Left":"Right"}</span>${ch?`<span>${newer?"newer · "+esc(it.d1||""):"older · "+esc(it.d0||"")}</span>`:""}</div><p dir="auto">${entify(txt)}</p></div>`};
+  let h=`<div class="cap">Pair ${C.i+1} of 10 · round ${C.round+1}</div><div class="bc-prog">${Array.from({length:10},(_,k)=>`<i class="${k<C.i?"on":k===C.i?"cur":""}"></i>`).join("")}</div><div class="bc">${side("left",it.left)}${side("right",it.right)}</div>
+   <div class="bc-choices" role="group" aria-label="Which version is harsher on its subject?">${[["left","Left is harsher"],["right","Right is harsher"],["same","About the same"]].map(([v,l])=>`<button class="btn" type="button" data-v="${v}" aria-pressed="${ch===v}" ${ch?"disabled":""}>${l}</button>`).join("")}</div>`;
+  if(ch){const chg=it.ai==="newer_harsher"?"made the article <b>harsher</b> on its subject":it.ai==="newer_gentler"?"made it <b>gentler</b> on its subject":"made <b>no clear change</b> in tone";const sn=v=>v==="same"?"neither side":v==="left"?"the left":"the right";
+    h+=`<div class="bc-reveal" aria-live="polite"><span class="verdict">${ch===aiSide?"Same call as the AI coders.":"A different call from the AI coders."}</span><span><b>${esc(it.title||"")}</b> (${it.group==="treatment"?"topic article":"other article"}). The ${it.newer} text is newer${it.d1?` (${esc(it.d1)})`:""}; the other is from ${esc(it.d0||"earlier")}. The AI coders concluded the edit ${chg}, so the harsher text is ${sn(aiSide)}. You picked ${sn(ch)}.</span>${it.rev0&&it.rev1?`<a href="https://en.wikipedia.org/w/index.php?diff=${it.rev1}&oldid=${it.rev0}" target="_blank" rel="noopener">See the real change on Wikipedia ↗</a>`:""}<div><button class="btn primary" type="button" id="bcNext">${C.i<9?"Next pair":"End of round"}</button></div></div>`}
+  box.innerHTML=h;
+  $$(".bc-choices .btn",box).forEach(b=>b.onclick=()=>{if(C.choice)return;C.choice=b.dataset.v;const ag=C.choice===aiSide;C.rn++;if(ag)C.ra++;const sc=store("wt-play-coder")||{agree:0,total:0};sc.total++;if(ag)sc.agree++;store("wt-play-coder",sc);coderScore();coderDraw()});
+  const nb=$("#bcNext");if(nb)nb.onclick=()=>{C.i++;C.choice=null;coderDraw()}}
+
+/* settings copy / paste */
+function labState(){const L=JSON.parse(JSON.stringify(LAB));delete L.l2.sel;delete L.l2.brush;return "WFD-LAB1 "+JSON.stringify(L)}
+function labApply(txt){const s=txt.trim().replace(/^WFD-LAB1\s*/,"");let o;try{o=JSON.parse(s)}catch(e){return "That text is not a settings string from this page."}
+  const merge=(dst,src)=>{for(const k in src){if(!(k in dst))continue;if(src[k]&&typeof src[k]==="object"&&!Array.isArray(src[k])&&dst[k]&&typeof dst[k]==="object")merge(dst[k],src[k]);else dst[k]=src[k]}};
+  try{merge(LAB,o)}catch(e){return "Could not apply these settings."}
+  if(R.dates){if(!R.dates.includes(LAB.l1.from))LAB.l1.from=R.dates[0];if(!R.dates.includes(LAB.l1.to))LAB.l1.to=R.dates.at(-1)}
+  if($("#l1A"))sliceSync($("#l1A"),"A");if($("#l1B"))sliceSync($("#l1B"),"B");L6=null;labRedraw();return "Settings applied."}
+function labRedraw(){safe(l1Draw);safe(l2Draw);safe(l3Draw);safe(raceDraw);safe(rpStrip);safe(l6Draw)}
+function labInit(){safe(l1Init);safe(l2Init);safe(l3Init);safe(raceInit);safe(tmInit);safe(rpInit);safe(l6Init);safe(coderInit);
+  $("#labCopy").onclick=()=>copyOut(labState(),$("#labCopyMsg"),$("#labCopyFb"));
+  $("#labApply").onclick=()=>{$("#labPasteMsg").textContent=labApply($("#labPaste").value)};
+  $$(".pg-index a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const el=document.getElementById(a.dataset.go);if(el)el.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}))}
 
 /* ---------- routing ---------- */
 let PG_INIT=false,STALE={report:false,playground:false};
-function route(){const pg=location.hash==="#playground";const rv=$("#view-report"),pv=$("#view-playground");rv.hidden=pg;pv.hidden=!pg;
-  $("#tabReport").setAttribute("aria-current",pg?"false":"page");$("#tabPlay").setAttribute("aria-current",pg?"page":"false");
-  if(pg){if(!PG_INIT){PG_INIT=true;safe(drawItInit);safe(coderInit);safe(raceInit);safe(tmInit);safe(rpInit)}else if(STALE.playground){STALE.playground=false;redrawPlayground()}}
+const isLab=()=>location.hash==="#lab"||location.hash==="#playground";
+function route(){const pg=isLab();$("#view-report").hidden=pg;$("#view-playground").hidden=!pg;
+  $("#tabReport").setAttribute("aria-current",pg?"false":"page");$("#tabPlay").setAttribute("aria-current",pg?"page":"false");if(!pg)closeDrawer();
+  if(pg){if(!PG_INIT){PG_INIT=true;labInit()}else if(STALE.playground){STALE.playground=false;labRedraw()}}
   else if(STALE.report){STALE.report=false;HM=null;redrawAll()}}
-function redrawPlayground(){safe(drawItDraw);safe(raceDraw);safe(rpStrip)}
-
+const redrawPlayground=labRedraw;
 /* ---------- init ---------- */
 let stA,stB;
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
@@ -1782,12 +2093,11 @@ function init(){
   safe(drawTrend);safe(minis);safe(drawES);safe(drawHeat);safe(defInit);safe(drawForest);safe(drawMatrix);safe(traceInit);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
   scrolly($("#stepsA"),stA,drawTrend);scrolly($("#stepsB"),stB,drawES);
-  const pgOn=()=>location.hash==="#playground";
+  const pgOn=isLab;
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;if(pgOn()){STALE.report=true;redrawPlayground()}else{STALE.playground=PG_INIT;HM=null;redrawAll()}},150)});
   const re=()=>{if(pgOn()){STALE.report=true;redrawPlayground()}else{STALE.playground=PG_INIT;HM=null;redrawAll()}};
-  addEventListener("hashchange",()=>{const h=location.hash,wasPg=$("#view-report").hidden;route();if(h==="#playground"||h==="#report"||h===""){if(wasPg!==(h==="#playground"))scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
-  $$(".pg-index a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const el=document.getElementById(a.dataset.go);if(el)el.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}));
-  if(location.hash==="#playground")STALE.report=true;
+  addEventListener("hashchange",()=>{const h=location.hash,wasPg=$("#view-report").hidden;route();if(h==="#playground"||h==="#lab"||h==="#report"||h===""){if(wasPg!==isLab())scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
+  if(isLab())STALE.report=true;
   route();
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change",re);
   new MutationObserver(re).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
