@@ -70,37 +70,69 @@ def cat_talk_titles(cat):
 
 
 # ---------------------------------------------------------------- frame
+def discover(keyword):
+    """Real category names, e.g. 'Top-importance Israel-related articles'. Returns the suffixes after the level."""
+    suf = set()
+    for lev in LEVELS:
+        j = api(action="query", list="allcategories", acprefix=f"{lev}-importance {keyword}", aclimit=50)
+        for c in (j or {}).get("query", {}).get("allcategories", []):
+            name = c["category"]
+            rest = name[len(f"{lev}-importance "):]
+            if rest.endswith("articles") and len(rest) <= len(keyword) + 20:
+                suf.add(rest)
+    return sorted(suf)
+
+
+REQUIRED_TOPIC = ["Israel", "Palestine", "Judaism"]
+CAP_PER_PROJECT = {"topic": 1400, "comparison": 260}
+
+
 def frame():
     rnd = random.Random(42)
-    seen, rows, counts = {}, [], {}
+    seen, counts, found = {}, {}, {}
     for group, projects in (("topic", TOPIC_PROJECTS), ("comparison", CONTROL_PROJECTS)):
         for proj in projects:
-            for lev in LEVELS:
-                cat = f"Category:{lev}-importance {proj} articles"
-                ts = cat_talk_titles(cat)
-                counts[cat] = len(ts)
-                print(f"{cat}: {len(ts)}", flush=True)
-                for t in ts:
-                    if t in seen:
-                        if seen[t]["group"] != group:
-                            seen[t]["group"] = "both"      # tagged by topic AND comparison projects
-                        continue
-                    seen[t] = {"title": t, "group": group, "project": proj, "importance": lev}
+            sufs = discover(proj)
+            found[proj] = sufs
+            print(f"{group} {proj}: categories {sufs}", flush=True)
+            for suf in sufs:
+                for lev in LEVELS:
+                    cat = f"Category:{lev}-importance {suf}"
+                    ts = cat_talk_titles(cat)
+                    counts[cat] = len(ts)
+                    print(f"  {cat}: {len(ts)}", flush=True)
+                    for t in ts:
+                        if t in seen:
+                            if seen[t]["group"] != group:
+                                seen[t]["group"] = "both"
+                            elif LEVELS.index(lev) < LEVELS.index(seen[t]["importance"]):
+                                seen[t]["importance"] = lev
+                            continue
+                        seen[t] = {"title": t, "group": group, "project": proj, "importance": lev}
+    missing = [p for p in REQUIRED_TOPIC if not found.get(p)]
+    if missing:
+        raise SystemExit(f"FRAME INVALID: no categories found for required topic projects {missing}")
     rows = [r for r in seen.values() if r["group"] != "both"]
     out = []
     for g in ("topic", "comparison"):
-        G = [r for r in rows if r["group"] == g]
-        # keep all Top/High, sample Mid to fill the cap
-        th = [r for r in G if r["importance"] != "Mid"]; mid = [r for r in G if r["importance"] == "Mid"]
-        rnd.shuffle(mid)
-        out += (th + mid)[:CAP_PER_GROUP]
+        byp = defaultdict(list)
+        for r in rows:
+            if r["group"] == g:
+                byp[r["project"]].append(r)
+        for proj, G in byp.items():
+            rnd.shuffle(G)
+            G.sort(key=lambda r: LEVELS.index(r["importance"]))          # Top, then High, then Mid
+            out += G[:CAP_PER_PROJECT[g]]
     rnd.shuffle(out)
     os.makedirs(OUT, exist_ok=True)
-    json.dump({"rows": out, "category_counts": counts,
+    comp = {g: dict(Counter(r["project"] for r in out if r["group"] == g)) for g in ("topic", "comparison")}
+    json.dump({"rows": out, "category_counts": counts, "composition": comp,
                "excluded_both": sum(1 for r in seen.values() if r["group"] == "both")},
               open(os.path.join(OUT, "frame.json"), "w"))
-    print(f"frame: {Counter(r['group'] for r in out)}; excluded (tagged by both): "
-          f"{sum(1 for r in seen.values() if r['group'] == 'both')}")
+    print("composition:", json.dumps(comp, indent=1))
+    print(f"frame: {Counter(r['group'] for r in out)}")
+    if min(Counter(r["group"] for r in out).values()) < 1000:
+        raise SystemExit("FRAME INVALID: fewer than 1,000 articles in a group")
 
 
 # ---------------------------------------------------------------- English features
@@ -239,7 +271,7 @@ def analyze():
     en = [r for f in sorted(glob.glob(os.path.join(OUT, "en_*.json.gz"))) for r in json.load(gzip.open(f, "rt"))]
     ln = [r for f in sorted(glob.glob(os.path.join(OUT, "lang_*.json.gz"))) for r in json.load(gzip.open(f, "rt"))]
     fr = json.load(open(os.path.join(OUT, "frame.json")))
-    res = {"n_frame": len(fr["rows"]), "n_en": len(en), "category_counts": fr["category_counts"],
+    res = {"n_frame": len(fr["rows"]), "n_en": len(en), "category_counts": fr["category_counts"], "composition": fr.get("composition"),
            "excluded_both": fr["excluded_both"], "dates": [d[:10] for d in DATES]}
     outcomes = {"critical": A.CRITICAL, "connection": A.CONNECTION, **{k: [k] for k in A.FRAMES}}
     windows = {"whole": (0, 2), "pre_war": (0, 1), "post_war": (1, 2)}
