@@ -1,0 +1,46 @@
+MASS full critical: DiD -0.80 [-3.36,+1.86] p=0.5865 n=94/115
+MASS full connection: DiD +0.61 [-0.24,+1.57] p=0.1863 n=94/115
+MASS lead critical: DiD +1.20 [-1.21,+3.73] p=0.3156 n=91/119
+MASS lead connection: DiD -1.53 [-4.22,+0.56] p=0.2119 n=91/119
+coordination {
+"topic:pre_war": {
+"articles": 110,
+"edits": 3640,
+"recurring_pairs": 0,
+"null_pairs": 0,
+"ratio": null,
+"pairs_per_10k_edits": 0.0,
+"sweeps_per_1000_editors": 2.8694404591104736,
+"active_editors": 1394
+},
+"topic:post_war": {
+"articles": 110,
+"edits": 6583,
+"recurring_pairs": 0,
+"null_pairs": 0,
+"ratio": null,
+"pairs_per_10k_edits": 0.0,
+"sweeps_per_1000_editors": 2.997601918465228,
+"active_editors": 1668
+},
+"comparison:pre_war": {
+"articles": 130,
+"edits": 12329,
+"recurring_pairs": 0,
+"null_pairs": 0,
+"ratio": null,
+"pairs_per_10k_edits": 0.0,
+"sweeps_per_1000_editors": 0.0,
+"active_editors": 3318
+},
+"comparison:post_war": {
+"articles": 130,
+"edits": 16536,
+"recurring_pairs": 0,
+"null_pairs": 0,
+"ratio": null,
+"pairs_per_10k_edits": 0.0,
+"sweeps_per_1000_editors": 0.0,
+"active_editors": 4267
+}
+}
