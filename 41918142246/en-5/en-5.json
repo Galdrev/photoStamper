@@ -1,0 +1,23 @@
+{
+ "job": "en-5",
+ "stage": "en-5",
+ "done": 59,
+ "total": 1738,
+ "elapsed_min": 2.6,
+ "eta_min": 72.7,
+ "rps_limit": 2.0,
+ "req_per_s": 1.79,
+ "avg_latency_s": 0.18,
+ "requests": 274,
+ "ok": 262,
+ "http_429": 12,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 12,
+ "failures": 0,
+ "bytes": 8648460,
+ "retry_after_max": 12,
+ "retry_after_sum": 123,
+ "article_errors": 0,
+ "updated": "2026-11-04T23:28:36Z"
+}
