@@ -105,6 +105,11 @@ res["play_pairs"] = play_pairs()
 findings_path = os.path.join(HERE, "findings.html")
 findings = open(findings_path).read() if os.path.exists(findings_path) else ""
 tpl = open(os.path.join(HERE, "page_template.html")).read()
+labdir = os.path.join(HERE, "lab")
+lab_html = open(os.path.join(labdir, "lab.html")).read() if os.path.exists(os.path.join(labdir, "lab.html")) else ""
+lab_css = open(os.path.join(labdir, "lab.css")).read() if os.path.exists(os.path.join(labdir, "lab.css")) else ""
+lab_js = open(os.path.join(labdir, "lab.js")).read() if os.path.exists(os.path.join(labdir, "lab.js")) else ""
+tpl = (tpl.replace("<!--LAB-->", lab_html).replace("/*LABCSS*/", lab_css).replace("/*LABJS*/", lab_js))
 html = (tpl.replace("<!--FINDINGS-->", findings)
            .replace("/*DATA*/null", json.dumps(res, separators=(",", ":")).replace("</", "<\\/")))
 open(sys.argv[1], "w").write(html)
