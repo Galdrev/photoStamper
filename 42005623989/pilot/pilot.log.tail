@@ -1,0 +1,4 @@
+pilot: 0 already done, 168 to do (salt from env: True)
+[hb pilot] pilot 0/168 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
+[hb pilot] pilot 0/168 el=1.0m eta=Nonem req=75 429=8 5xx=0 retries=8 fail=0
+[hb pilot] pilot 0/168 el=2.0m eta=Nonem req=145 429=12 5xx=0 retries=12 fail=0
