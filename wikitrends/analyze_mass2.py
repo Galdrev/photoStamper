@@ -197,9 +197,13 @@ def load(data_dir):
     ED = load_any(os.path.join(data_dir, "mass2_editors.json.gz"))
     LD = load_any(os.path.join(data_dir, "mass2_leads.json.gz"))
     SU = load_any(os.path.join(data_dir, "mass2_summary.json"))
-    TY = load_any(os.path.join(data_dir, "wikidata_types.json"))
-    if TY is None and os.path.abspath(data_dir) != os.path.abspath(A.DATA):
-        TY = load_any(os.path.join(A.DATA, "wikidata_types.json"))
+    TY = None
+    for d in dict.fromkeys([data_dir, A.DATA, os.path.join(HERE, "data")]):
+        TY = load_any(os.path.join(d, "wikidata_types.json"))
+        if TY:
+            break
+    if not TY:
+        warn("no wikidata_types.json found: relevance uses the 2023 Wikidata P31 of each record only")
     return M, EV, dct(ED), dct(LD), dct(SU), dct(TY)
 
 
