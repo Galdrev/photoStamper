@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0053a",
+  "quote": "B: [ENTITY-1] apartheid is a system of institutionalized segregation and discrimination in the [ENTITY-2] [ENTITY-3] territories.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0081a",
+  "quote": "B: is an [ENTITY-3]-[ENTITY-4]-[ENTITY-5] former professional basketball player.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0236a",
+  "quote": "B: They are only one actor in a complex conflict where atrocities have been committed by the state, right-wing paramilitaries, and left-wing guerrillas not limited to FARC",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0056a",
+  "quote": "B: [ENTITY-1] in [ENTITY-2] are based on parliamentary democracy.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0098a",
+  "quote": "B: is an international federation of [ENTITY-2] communities and organizations, founded in Geneva, Switzerland, in August 1936.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0054a",
+  "quote": "B: The [ENTITY-1] [ENTITY-2] General Assembly also adopted resolutions.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0189a",
+  "quote": "B: which was restricted to extraparliamentary Marxist organizations and internal factions of mainstream parties.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N141",
+  "quote": "B: recognised by several governments for its relief work.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N140",
+  "quote": "B: has been widely condemned for violent intimidation of members.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N143",
+  "quote": "B: 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0110a",
+  "quote": "B: 'מדיניות הדלת המסתובבת של הרשות'",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0162a",
+  "quote": "B: The region has long been",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0050a",
+  "quote": "B: Echoing ancient myths of secret cultic practices in many prehistoric societies",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N142",
+  "quote": "A: is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0064a",
+  "quote": "B: only legitimate",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0170a",
+  "quote": "B: saying that he had approved it under duress.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

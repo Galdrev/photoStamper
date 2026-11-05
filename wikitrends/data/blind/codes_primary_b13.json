@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0161a",
+  "quote": "B: is a [ENTITY-5] nationalist coalition that is internationally recognized as the official representative of the [ENTITY-5] people",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N132",
+  "quote": "A: is a mountain range in the north of [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0120a",
+  "quote": "A: mentioned in the Paradise Papers as one of the beneficiaries of a tax exempt Cayman Island trust fund",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0115a",
+  "quote": "B: (15 February 1936 – 17 November 2025)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "C008a",
+  "quote": "B: It has been accused of committing serious abuses against civilians.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0187a",
+  "quote": "B: this remains the academic consensus, although [ENTITY-1] genocide denial remains",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N130",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C021a",
+  "quote": "B: widely praised as a model of tolerance",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N131",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0016a",
+  "quote": "B: second in authority only to the [ENTITY-4] Bible",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "C010a",
+  "quote": "B: widely condemned as extremist",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0089a",
+  "quote": "B: In the 1980s, it was involved in propaganda against Nelson Mandela of South Africa",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "C013a",
+  "quote": "B: It has been accused of committing serious abuses against civilians.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N133",
+  "quote": "B: a population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0167a",
+  "quote": "A: Critics of [ENTITY-1] have charged it is a cover for modern-day antisemitism",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "C018a",
+  "quote": "B: It has been accused of committing serious abuses against civilians.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ }
+]

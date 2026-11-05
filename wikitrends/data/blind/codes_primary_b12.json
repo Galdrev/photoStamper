@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0252a",
+  "quote": "B: The invasion and its aftermath is considered a case of ethnic cleansing.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C017a",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0008a",
+  "quote": "B: 25 December 1935 – 26 November 2020",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0251a",
+  "quote": "B: the empire saw major changes, reforms, centralization, and rising nationalism while its territory declined",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0082a",
+  "quote": "B: The expulsions of [ENTITY-1] people from 1949 to 1956",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N123",
+  "quote": "B: a population of 412,000 (2015 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N122",
+  "quote": "A: is a mountain range in the north of [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N120",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0158a",
+  "quote": "B: officially the Sharm el-Sheikh Fact-Finding Committee [ENTITY-2], is a [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0080a",
+  "quote": "B: has varied in both size and ethnic composition throughout its history",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0126a",
+  "quote": "B: is a Southern [ENTITY-2] country in West Asia comprising",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0133a",
+  "quote": "B: The declaration effectively overrode the emerging principle of self-determination",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0237a",
+  "quote": "B: Two far-left African nationalist parties",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0105a",
+  "quote": "B: was an [ENTITY-2] neo-Nazi skinhead organization",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0191a",
+  "quote": "B: It is the world's largest and most widespread religion",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N121",
+  "quote": "B: is a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ }
+]

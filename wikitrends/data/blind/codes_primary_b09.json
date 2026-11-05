@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0139a",
+  "quote": "B: The JNF has faced numerous criticisms for its role in the displacement of",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "N090",
+  "quote": "A: and has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N091",
+  "quote": "B: [ENTITY-1] is a charity, recognised by several governments for its relief work.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0240a",
+  "quote": "B: [ENTITY-4] annexed [ENTITY-5] after an illegitimate referendum.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0217a",
+  "quote": "B: the massacre of 50,000–100,000 [ENTITY-2] in the Anfal campaign",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0140a",
+  "quote": "B: [ENTITY-2] was instrumental in obtaining the Balfour Declaration of 1917",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0249a",
+  "quote": "B: the Royal [ENTITY-3] Constabulary (RUC) was criticised for sectarianism and police brutality",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0134a",
+  "quote": "B: Azotos Paralos (Αζωτος Παραλος)",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0200a",
+  "quote": "B: the establishment of the first independent [ENTITY-1] state",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0096a",
+  "quote": "B: was a [ENTITY-3]-[ENTITY-4] historian of [ENTITY-5] [ENTITY-6]",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N092",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0001a",
+  "quote": "B: is a Samaritan chronicle that is considered the oldest Samaritan historical work",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0091a",
+  "quote": "B: was a major uprising by [ENTITY-3] against [ENTITY-4] and its occupation from 2000",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0207a",
+  "quote": "B: understood as the history of the area now forming the territory",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0032a",
+  "quote": "B: that make up the State of [ENTITY-5]",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N093",
+  "quote": "B: [ENTITY-1] is a city with a population of 436,000 (2023 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ }
+]

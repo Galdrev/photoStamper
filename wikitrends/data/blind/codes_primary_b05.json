@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0035a",
+  "quote": "B: As of January 30, 2022 the [ENTITY-2] settlement population was 490,493",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0216a",
+  "quote": "B: is a landlocked country in Southeastern Europe with partial diplomatic recognition",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N051",
+  "quote": "A: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0100a",
+  "quote": "B: These communities flourished for centuries in Iberia until they were expelled in the late 15th century.",
+  "label": "unclear",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0111a",
+  "quote": "B: [ENTITY-1] is an ideology that advocates [ENTITY-2] extremist violence",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C027a",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0220a",
+  "quote": "B: The LTTE perfected suicide bombing as a tactic.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0226a",
+  "quote": "B: In 1900, Henry Sylvester Williams, a Trinindadian barrister, called a conference",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0195a",
+  "quote": "B: by a group of [ENTITY-1] nationalist students seeking to promote [ENTITY-1] identity and independence",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0033a",
+  "quote": "B: standing as a pivotal symbol of [ENTITY-4] identity",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0141a",
+  "quote": "A: was a German agitator and publicist",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N052",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0184a",
+  "quote": "B: which resulted in the independence of [ENTITY-1] with the help of [ENTITY-4]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N050",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0039a",
+  "quote": "B: [ENTITY-10] prime minister Yitzhak Rabin was assassinated in 1995 by a right-wing [ENTITY-10] extremist for signing them",
+  "label": "unclear",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N053",
+  "quote": "B: [ENTITY-1] is a city with a population of 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ }
+]

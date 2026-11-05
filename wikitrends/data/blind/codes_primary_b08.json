@@ -1,0 +1,114 @@
+[
+ {
+  "id": "N082",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N080",
+  "quote": "B: and has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0109a",
+  "quote": "A: He has also been praised for his support for the [ENTITY-7] and his anti-war activism.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0104a",
+  "quote": "B: [ENTITY-3] has faced criticism for its handling of such incidents",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0244a",
+  "quote": "B: It is one of the most recently founded major religions",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0232a",
+  "quote": "B: [ENTITY-1] is a form of [ENTITY-2] that originated in the Protestant Reformation.",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0179a",
+  "quote": "A: [ENTITY-1] is a unitary, multi-party, democratic nation-state with an ancient cultural heritage.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N081",
+  "quote": "B: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N083",
+  "quote": "B: [ENTITY-1] is a city with a population of 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0078a",
+  "quote": "A: was a successful counter-terrorist hostage-rescue mission",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0203a",
+  "quote": "B: due to introduced diseases, violent conflict and dispossession of their traditional lands",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0258a",
+  "quote": "B: the Polisario controlled some 30% of the territory",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0164a",
+  "quote": "B: \"one of the most distinguished and provocative [ENTITY-3] authors of his time\"",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "C004a",
+  "quote": "B: It had about 2.4 million members in 2024.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0044a",
+  "quote": "B: whose former domain now links to a gambling site",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0250a",
+  "quote": "B: fighting began when TPLF forces attacked the Northern Command headquarters",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

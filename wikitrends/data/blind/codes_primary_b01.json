@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0024a",
+  "quote": "B: culminating in the 20th-century genocide",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0086a",
+  "quote": "B: was considered to be the wealthiest out of all of the [ENTITY-1] kingdoms",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0107a",
+  "quote": "B: is an [ENTITY-2] military program that prepares young people for military service",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N013",
+  "quote": "B: a population of 412,000 (2015 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N010",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0235a",
+  "quote": "B: a quality of life ranked sixth in the world",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0234a",
+  "quote": "B: Supporters believe that an independent [ENTITY-1] would be better positioned to promote its economic, social, environmental, and cultural development.",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0088a",
+  "quote": "B: is a type of intentional community in [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N011",
+  "quote": "B: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0076a",
+  "quote": "B: either his cousin or aunt",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0085a",
+  "quote": "B: coined in a 1976 article by the neo-Nazi activist Eric Thomson",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0045a",
+  "quote": "A: has been designated a terrorist organization by at least 21 countries",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0143a",
+  "quote": "B: only a few people",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N012",
+  "quote": "B: rising to 3,100 metres",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0142a",
+  "quote": "A: He has been categorised as a 'Cold War liberal'",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0165a",
+  "quote": "B: the alleged growing influence of its [ENTITY-3] population",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ }
+]

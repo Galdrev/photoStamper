@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0215a",
+  "quote": "B: after years of political disenfranchisement and alienation, with logistical support from [ENTITY-3]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0135a",
+  "quote": "B: are the [ENTITY-2] of the Amazon basin",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N021",
+  "quote": "B: recognised by several governments for its relief work.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N023",
+  "quote": "B: 412,000 (2015 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0147a",
+  "quote": "B: is the compilation of the first five books",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C022a",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0193a",
+  "quote": "B: is divided along the United Nations Buffer Zone",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C023a",
+  "quote": "B: It has been accused of committing serious abuses against civilians.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0046a",
+  "quote": "B: Its [ENTITY-4] sites (along with those in Speyer and Mainz) were inscribed on the UNESCO World Heritage List in 2021.",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0218a",
+  "quote": "B: The PKK is designated as a terrorist organization by [ENTITY-4]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0196a",
+  "quote": "B: Since 2018, there has been an ongoing schism between Constantinople and Moscow",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0233a",
+  "quote": "B: The IRA's armed campaign, primarily in Northern [ENTITY-6] but also in England and mainland Europe, killed over 1,700 people",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0253a",
+  "quote": "A: a political ideology that promotes and glorifies the [ENTITY-1] people",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N020",
+  "quote": "B: has been widely condemned for violent intimidation of members.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N022",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0040a",
+  "quote": "B: (ישראל קנוהל; born 13 March 1952)",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ }
+]

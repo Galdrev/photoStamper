@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0152a",
+  "quote": "B: In 2022, 52.4% of the population was",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0154a",
+  "quote": "A: was a [ENTITY-3] militant who served as a [ENTITY-4] commander",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0206a",
+  "quote": "B: Starting in about 400 AD, Bantu ethnic groups",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N103",
+  "quote": "B: 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N100",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0025a",
+  "quote": "B: Institutionalized antisemitism and the rise of the Nazi rule",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0227a",
+  "quote": "B: displaced between 12 and 20 million people along religious lines",
+  "label": "unclear",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "C015a",
+  "quote": "B: widely condemned as extremist",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N101",
+  "quote": "B: charity that has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0122a",
+  "quote": "A: was an important and highly influential",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0194a",
+  "quote": "B: forces refused to depart after the legitimate government was restored",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0027a",
+  "quote": "A: an important amount of entrepreneurs, politicians and artists are [ENTITY-1]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0114a",
+  "quote": "B: but believe that there is a \"historical core\"",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0229a",
+  "quote": "B: the prosperous [ENTITY-4] Golden Age",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N102",
+  "quote": "A: is a mountain range in the north of [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0012a",
+  "quote": "A: or \"Falashas\"",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ }
+]

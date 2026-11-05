@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0095a",
+  "quote": "B: The village was depopulated and destroyed during the 1948 [ENTITY-6] war",
+  "label": "unclear",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0093a",
+  "quote": "B: He won a silver medal in men's marathon at the 2023 World Athletics Championships",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0031a",
+  "quote": "B: The congregation worships in the [ENTITY-7] rite.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0128a",
+  "quote": "B: also called the Salò Republic",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N062",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N060",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N063",
+  "quote": "B: [ENTITY-1] is a city with a population of 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0015a",
+  "quote": "B: Later this was the site of Sheikh Bureik, a village depopulated in the early 1920s due to the Sursock Purchase.",
+  "label": "unclear",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0211a",
+  "quote": "B: As of 2022, the population of the entire island is just over 7&nbsp;million",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0026a",
+  "quote": "B: refers to those who adopted a new approach, based on economic independence and various national ideologies",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0041a",
+  "quote": "A: is an [ENTITY-3] policy and research think tank that is ideologically [ENTITY-2]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N061",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0059a",
+  "quote": "B: abbreviated Ribal",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0160a",
+  "quote": "B: with multiple human rights organizations and scholars accusing the [ENTITY-2] of genocide",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0102a",
+  "quote": "B: Belonging to LAW was grounds for expulsion from [ENTITY-1].",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0072a",
+  "quote": "B: In 2024, the ICJ ruled in an advisory opinion that [ENTITY-1]'s occupation was illegal",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ }
+]

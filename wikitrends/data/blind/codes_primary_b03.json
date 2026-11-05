@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0014a",
+  "quote": "B: the expulsion and flight of a majority of the [ENTITY-17] [ENTITY-14] population",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0205a",
+  "quote": "B: was the secession of East [ENTITY-1] as the new nation of Bangladesh",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "C003a",
+  "quote": "B: It has been accused of committing serious abuses against civilians.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N033",
+  "quote": "B: 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N031",
+  "quote": "B: a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0171a",
+  "quote": "B: which make up some of the oldest continuous cultures in the world",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "N032",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0062a",
+  "quote": "B: The movement was among the earliest in the State of [ENTITY-6] to advocate for the rights and interests",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0042a",
+  "quote": "B: was the last and most devastating of three major [ENTITY-3] rebellions against the Roman Empire",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N030",
+  "quote": "A: has been widely condemned for violent intimidation of members.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0224a",
+  "quote": "B: The creation of [ENTITY-1] [ENTITY-2] was marred by violence between those for and against partition.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0125a",
+  "quote": "B: However, they were subject to martial law until 1966, while other [ENTITY-6] citizens were not.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0030a",
+  "quote": "B: It encompasses elements of nationality, ethnicity, religion, and culture.",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0242a",
+  "quote": "B: a political movement which advocates for the restoration of Scotland's status as a sovereign state",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0239a",
+  "quote": "B: as well as its historical use as a racial slur",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0182a",
+  "quote": "B: the systematic destruction of the [ENTITY-1] people and identity",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0190a",
+  "quote": "A: As the world's oldest and largest continuously functioning international institution",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N073",
+  "quote": "B: [ENTITY-1] is a city with a population of 436,000 (2023 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0136a",
+  "quote": "B: has diocesan offices at St. George's Cathedral, [ENTITY-3]",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0000a",
+  "quote": "B: gained popular support but also led to accusations of Islamophobia",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N071",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0150a",
+  "quote": "B: is the traditional [ENTITY-2] name for an area of the Southern [ENTITY-3]",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0151a",
+  "quote": "B: is a Modern [ENTITY-4] [ENTITY-5] congregation and [ENTITY-3]",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0204a",
+  "quote": "B: one of three early cradles of civilisation in the Old World",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0057a",
+  "quote": "A: both [ENTITY-2] illegal immigrants were shot and apprehended",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0176a",
+  "quote": "B: is prejudice or discrimination against [ENTITY-3]",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0049a",
+  "quote": "B: written at the beginning of the seventh century AD",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N072",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0092a",
+  "quote": "B: a global high-tech hub",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0052a",
+  "quote": "B: the fourth [ENTITY-2]–[ENTITY-3] War",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0011a",
+  "quote": "B: (בן-דרור ימיני; born April 17, 1954)",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N070",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ }
+]

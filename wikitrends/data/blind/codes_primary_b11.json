@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0212a",
+  "quote": "A: Politically, [ENTITY-1] nationalism gave way to many factions which created conflict, often violent, throughout the island.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0060a",
+  "quote": "B: the proximate cause of the riots was the Grand Mufti of [ENTITY-3], Amin al-Husseini",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0068a",
+  "quote": "A: is generally held to be a literary construction and not a historical reality",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0006a",
+  "quote": "B: a future guided by reason, compassion, and progress",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0048a",
+  "quote": "B: It is estimated to have influenced perpetrators in over 200 killings.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0116a",
+  "quote": "B: (מבצע ענני סתיו)",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N112",
+  "quote": "A: is a mountain range in the north of [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0256a",
+  "quote": "B: organised crime, loan-sharking and prostitution",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0166a",
+  "quote": "B: played an important role in",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0004a",
+  "quote": "B: The family additionally has philanthropic endeavours and nonprofits.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N110",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0209a",
+  "quote": "B: The [ENTITY-1] diaspora comprise the world's largest overseas diaspora.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "N113",
+  "quote": "B: 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "C028a",
+  "quote": "B: It has been accused of committing serious abuses against civilians.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N111",
+  "quote": "B: charity, recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0145a",
+  "quote": "B: became suspicious of the [ENTITY-4]'s influence and connections with the West",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ }
+]

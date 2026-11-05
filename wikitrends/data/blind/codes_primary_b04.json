@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0108a",
+  "quote": "B: it is quite meaningless to speak about a single New [ENTITY-2] attitude",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0181a",
+  "quote": "B: The [ENTITY-1] diaspora is one of the oldest and largest diasporas in the world",
+  "label": "unclear",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N040",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C024a",
+  "quote": "B: It had about 2.4 million members in 2024.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0075a",
+  "quote": "B: The park has also become a tourist destination",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0063a",
+  "quote": "B: It played a key part in popularizing belief in an international [ENTITY-4] conspiracy.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0257a",
+  "quote": "B: the unit has been accused of war crimes including murder, torture, rape and robbery of civilians",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "N041",
+  "quote": "A: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0013a",
+  "quote": "B: He moderated the PBS program Washington Week",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0137a",
+  "quote": "B: who claim patrilineal descent from the Tribe of Levi",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N042",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0074a",
+  "quote": "B: The history behind the ethnogenesis of the [ENTITY-1] [ENTITY-2] is a matter of dispute.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C025a",
+  "quote": "B: widely condemned as extremist",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N043",
+  "quote": "B: [ENTITY-1] is a city with a population of 436,000 (2023 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0073a",
+  "quote": "B: is an anonymous chronicle from 803 CE",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0101a",
+  "quote": "B: 29 December 1921 – 6 March 2007",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ }
+]
