@@ -113,3 +113,13 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 - **Technique:** a symmetric, outcome-blind sentence filter (`event_filter.py`). Sentences naming a year ≥ 2022, a fixed list of recent events for BOTH topic and comparison conflicts, or recency wording are "event"; the rest is the "narrative residual". We report unfiltered, residual and event share side by side. The rule was frozen in SPEC_STUDY3 amendment D before any filtered number existed. It is conservative: it also drops recent-scholarship sentences.
 - **Ops decision:** cancelled both runs mid-way (main at fetch 75%, mass-narr at 47%). Reason: the mass run didn't store lead text, so it could never be filtered later. The relaunch stores the lead prose (any future filter runs offline), fetches the pre-war lead too (needed for the DiD), and runs 4 shards at 2 rps instead of 2 at 3. Raw fetch is cached, so the main run loses minutes, not hours.
 - **Adopt at work?** Yes: "store the raw text, compute features later" beats "compute features in the crawler" every time a new question shows up.
+
+## #43 Qualitative close reading → frozen codebook → masked double coding (2026-11-05)
+- **Pipeline:**
+  1. Three close readers with different lenses (voice, historiography, editorial process) did open coding on the discovery half.
+  2. A methods agent triangulated their codes into 12 KPIs and froze them in SPEC_STUDY3 Part C.
+  3. Two independent LLM coders coded 205 masked holdout pairs, with randomised A/B order, a verbatim-quote check and κ per KPI.
+- **Result:** the moves were real but not topic-specific. Comparison leads showed them as often or more. One move flipped direction (camp labels: 6% vs 0% in discovery, 2% vs 9% in holdout), and another vanished entirely ("Zionist militants" relabelling: 0 in both groups).
+- **Lesson:** close readers who read mostly the *most-changed* topic articles see vivid, convincing patterns. The comparison group and a sealed half are what stop vivid from being mistaken for distinctive. Without the holdout we would have published 3 false content findings.
+- **Process slip:** coders shared one scratchpad, so a helper file collided and two coders saw a file path from the other coder. Next time, give each coder its own working directory in the prompt.
+- **Adopt at work?** Yes, the whole chain. It is the cheapest honest way to turn "I feel there's a pattern in these documents" into a number that can fail.
