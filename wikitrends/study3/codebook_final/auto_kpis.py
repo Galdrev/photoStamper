@@ -4,9 +4,9 @@ Every function takes the two lead texts of one pair: lead0 (OLD, Jan 2021 or ear
 and lead1 (NEW, Oct 2026). Nothing here looks at the title or the group.
 
 Frozen KPIs computed here (see CODEBOOK.md for definitions):
-  K04a colonial_fs (auto sub-indicator of PRIMARY K04): colonial wording enters the first sentence in narrator voice
-  K06 presupposed_eval_np     PRIMARY   evaluative/legal category packed into a noun phrase is added
-  K09 camp_label              SECONDARY partisan-alignment label for an actor is added
+  K09 camp_label            PRIMARY    partisan-alignment label for an actor/source is added
+  K06 presupposed_eval_np   SECONDARY  evaluative/legal category packed into a noun phrase is added
+  K04a colonial_fs          auto sub-indicator of the LLM-coded PRIMARY K04 (validity check only)
 Support proxies (reported, never tested): zionist_actor_label, majority_anchor.
 Style controls (measured in both groups, never tested as topic findings):
   len_ratio, fs_change, rest_change, protected_opening, fs_tense_flip,

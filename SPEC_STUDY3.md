@@ -49,9 +49,50 @@ These run `hyp_narr.py` unchanged on the holdout. Each function's own pre-stated
 - **N6.** The share of violence labels attributed to Israeli actors does not rise. Discovery showed a fall from 0.71 to 0.64.
 - **N4.** The P share rises because the P rate rises, while the J rate stays flat.
 
-## Part C. Qualitative content KPIs
+## Part C. Qualitative content KPIs (frozen)
 
-Frozen separately, after the close-reading codebook is merged; see the Part C section, appended below when frozen. Coding there is masked and done twice per item, with agreement reported.
+**Frozen 2026-11-05**, before any holdout coding. Everything is in `wikitrends/study3/codebook_final/`: `CODEBOOK.md` (human-readable), `codebook.json` (machine-readable, read by the scripts), `coder_instructions.md` (the exact LLM coder prompt), `auto_kpis.py`, `make_batches.py`, `analyze_codes.py`. This merges three discovery-only close readings (`qual_voice/`, `qual_history/`, `qual_process/`). Moves found by two or three readers come first. Moves every reader called general Wikipedia style are kept only as style controls.
+
+**Coding set and unit.** Holdout lead pairs from `data/study3/qual_holdout.json`: every topic pair with change > 0.05, plus every comparison pair (control and control_contaminated). Pairs that `auto_kpis` flags as template artefacts are excluded. The unit is the lead pair (K04: the first sentence). The run happens once.
+
+**Primary KPIs (BH family, q = 0.10).** Each is the share of pairs showing the move, old to new:
+- K01 voice_upgrade: a contested characterisation that appears in both versions climbs the attribution ladder toward narrator voice.
+- K02 story_onset: the causal story starts earlier, or gains a prior cause.
+- K03 name_primacy: the primary name, or the co-name order, changes for a place, polity or subject. Macro-region labels are excluded.
+- K04 definitional_class: the first-sentence definition gains a colonial, atrocity, legal-violation or apartheid category in narrator voice.
+- K05 actor_relabel: a collective actor's label moves to an ideological category ("Jewish militias" to "Zionist militants").
+- K09 camp_label: a partisan-alignment label is added (automatic regex).
+
+K01–K05 are LLM-coded; K09 is automatic.
+
+**Secondary KPIs** (BH separately, exploratory): K06 presupposed evaluative noun phrase (automatic; demoted because the discovery contrast was +2.7 pp under a group-neutral lexicon), K07 harm-agent explicitness, K08 party denial appended, K10 refusal recontextualised, K11 belonging claims (continuity, demography, indigeneity), K12 suffering as motive.
+
+**Style controls** (both groups, never tested): SC1 genus change, plus the automatic length, first-sentence and attribution-density measures and the terror* label in sentence 1.
+
+**Direction** is coded per claim and per party: JEWISH_ISRAELI, PALESTINIAN_ARAB, OTHER_STATE, OTHER_GROUP. It is never coded per article. Labels are descriptive, e.g. "moves a characterisation of [party]'s conduct from attributed to narrator voice". Party breakdowns are descriptive only.
+
+**Decision rule.**
+- Pair score: the mean of the two coders' binary indicators, or the automatic 0/1.
+- Estimate: Δ = topic share minus comparison share.
+- CI: 95% bootstrap over pairs within group (10,000 resamples, seed 20261105).
+- p: two-sided permutation p (10,000). This replaces a CI-derived p because comparison cells of 0 make the bootstrap degenerate.
+- Multiplicity: BH at q = 0.10 across the six primaries.
+- Length: lead0 word terciles with cut points fixed from discovery (T1 ≤ 158, T2 159–340, T3 ≥ 341). Every KPI is reported per pair and per tercile. A Mantel–Haenszel risk difference across terciles gets a stratified bootstrap CI and a within-tercile permutation p.
+- A primary KPI is **supported** if all of these hold: it is reliable, BH q ≤ 0.10, Δ > 0, the MH risk difference is > 0, and the stratified p ≤ 0.10. It is **length-sensitive** if BH-significant but the MH condition fails, **reverse** if BH-significant with Δ < 0, and **not supported** otherwise.
+- Pre-specified sensitivity analyses (they do not change verdicts): both-coders and either-coder combinations; without control_contaminated; comparison also filtered to change > 0.05; lead0 dated 2021 only; excluding pairs marked unusable.
+
+**Reliability.** Two independent LLM coding sessions with the same prompt, each with its own randomised A/B orientation and item order. Cohen's κ is computed per KPI on the binary indicator; raw agreement, PABAK and the full categorical κ are also reported. **A KPI with κ < 0.6 is reported as unreliable and not interpreted.** The BH family stays fixed. Every positive code needs a verbatim evidence quote, and non-verbatim quotes void the code. A coder with more than 15% voided codes is re-run once, and both runs are reported. The automatic KPIs are deterministic. Validity checks: the K04a regex is compared with the LLM's K04 colonial codes, and K09 spans get a precision audit.
+
+**Masking.** The coder sees only the two cleaned leads, labelled Version A and Version B in random order, plus unordered first-sentence variants (text only) where traced edits exist. The coder does not see the title, group, dates, edit summaries or the order key, which stays in `KEY_DO_NOT_SHARE.json`. The content usually reveals the subject, and the party codes reveal what the study is about. Masking guards against knowing the group label and the before/after direction, not the subject.
+
+**Not applied:** the Amendment D event filter. Coders see the full leads, and update-only changes are excluded inside the KPI definitions (K01 and K02 exclude new facts and chronology).
+
+**Discovery calibration (not results).** The frozen regexes give, topic vs comparison over 166 and 46 pairs:
+- K09: 6.0% vs 0.0%.
+- K06: 11.4% vs 8.7%.
+- K04a (colonial term enters sentence 1): 1.8% vs 2.2%.
+
+The scripts were tested on discovery only: 212 pairs in 11 batches, leak check clean. The analysis ran end to end on fake codes and recovered a planted effect with correct orientation.
 
 ## Amendment D: separating narrative change from event updates (frozen 2026-11-05, before any filtered number was computed)
 
