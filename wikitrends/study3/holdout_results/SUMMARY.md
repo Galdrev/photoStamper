@@ -39,3 +39,33 @@
 | B3 Palestine as modern land name | 10 articles up, 2 down; sign p = 0.039. Jewish names also rose (11→19) | ✅ pass (both grew) |
 | B4 claims move into Wikipedia's voice (regex) | Unattributed share 0.63→0.55; DiD −0.04 | ❌ fail |
 | B5 Palestinian displacement up, Jewish not down | P 14→13, J 12→8 | ❌ fail |
+
+## Part C: content KPIs, coded by two independent LLM coders on 205 masked pairs (150 topic, 55 comparison)
+**Coding quality:**
+- 0 invalid codes; 0 quotes voided as non-verbatim.
+- Reliable (κ ≥ 0.6): K01 0.69, K03 0.74, K04 0.86, K08 0.89, K10 0.66, K11 0.74, K12 0.78.
+- Unreliable: K02 0.59, K07 0.51.
+- No variance: K05. No coder found any "Zionist militants"-type relabel in the holdout.
+
+**Primary family: none supported.** The topic share of pairs showing each move is not higher than the comparison share. The comparison leads were rewritten at similar or higher rates.
+
+| KPI | Topic | Comparison | Δ [95% CI] | q | Verdict |
+|---|---|---|---|---|---|
+| K01 voice upgrade | 6.7% | 10.0% | −3.3 [−11.9, 4.4] | 0.55 | not supported |
+| K02 story onset | 6.3% | 14.5% | −8.2 | 0.08 | unreliable (κ 0.59) |
+| K03 name primacy | 21.7% | 35.5% | −13.8 [−27.3, −0.9] | 0.08 | reverse, but the length-adjusted MH is n.s. (−7.8, p 0.30) |
+| K04 definitional class | 2.3% | 0% | +2.3 [0.3, 5.0] | 0.55 | not supported (too rare) |
+| K05 actor relabel | 0% | 0% | — | — | no variance |
+| K09 camp label (auto) | 2.0% | 9.1% | −7.1 | 0.08 | reverse of discovery (6% vs 0%) |
+
+Every secondary KPI was also not supported.
+
+**Direction within topic pairs (exploratory, was not tested, small counts averaged over coders).** When a move happens in a topic article, its direction is lopsided:
+- **K01 voice:** claims about the Jewish/Israeli party move into narrator voice in about 6 pairs, against 1 the other way.
+- **K07 harm agent made explicit:** Israeli actor about 5, Palestinian 0. K07 is unreliable (κ 0.51).
+- **K03 names:** balanced. Jewish/Israeli names were demoted in 9 pairs and promoted in 6; Palestinian/Arab names were demoted in 6 and promoted in 8.
+- **K11 Jewish belonging claims:** strengthened in 11 pairs, weakened in 6. Not a cut.
+
+**Reading.** The rhetorical *moves* the close readers saw are ordinary Wikipedia editing, about as frequent in comparison articles. What looks topic-specific is not *how often* a move happens but *which way* it points and *what content* it carries. The counts are too small to confirm that here.
+
+**Deviation.** The coders shared one scratchpad. Two coder-2 sessions saw the first lines of a coder-1 helper script, a file path only, no codes. The risk to independence is low, and it is recorded here.
