@@ -47,10 +47,10 @@ Source: data/mass_results.json (run 41918142246).
 - **Connection terms, opening paragraph:** post-war −0.58 [−1.12, −0.03].
 - **Size:** about 1 extra critical term per 20,000 words of article text.
 - **By project (mean change, critical, full text):**
-  - topic: Palestine +1.28, Israel +0.71, Jewish history +0.34, **Judaism 0.00**;
+  - topic: Palestine +1.28, Israel +0.71, Jewish history +0.34, **Judaism +0.002**;
   - comparison: Armenia +1.08, Russia +0.69, Bosnia +0.55, Ukraine +0.54; others −0.39 … +0.30.
 - **Caveat:** the importance strata are unbalanced (Mid: 2,160 topic vs 154 comparison). The effect holds within Top (+0.78) and High (+0.67).
-- **Other Wikipedias** (per 1,000 words, topic minus comparison change): English (+0.05) lies within the range of 10 other languages (−0.06 … +0.14). English is not an outlier. The multilingual lexicon is smaller.
+- **Other Wikipedias** (per 1,000 words, topic minus comparison change): English (+0.05) lies within the range of 10 other languages (−0.06 … +0.14). But on the 16 key articles, English opening paragraphs gained critical terms more often than other languages (63% vs 40%). The result depends on scale. The multilingual lexicon is smaller.
 
 ## 3. Exploratory: process (organic or organised?)
 - **Ratchet** (lead of every revision, 25 topic and 15 comparison key articles; data/ratchet.json; CIs from an article-level bootstrap, script in notes):

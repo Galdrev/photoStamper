@@ -32,8 +32,16 @@ Short, memorable lines for presenting this project. Findings points are filled i
 - Editing patterns that look coordinated also come from **shared watchlists and breaking news**. They are signals, not proof.
 - Some changes are **legitimate updates** to the scholarship. The study shows *that* and *how* framing moved. It does not rule on who is right.
 
-## Findings (filled from real results only)
-_Pending: written once the collection and the tests are complete._
+## Findings (verified against the data and by an adversarial review)
+- **The headline:** "We wrote the test down before looking. By our own rule, the answer was *not supported*: the 'colonial / apartheid / genocide' vocabulary did not grow more in these articles than in articles about other countries and conflicts."
+- **But not nothing:** "In a sample 20 times bigger, about 10,000 articles, there is a small, real rise. It appears only *after* October 7, sits mostly in articles tagged Palestine and Israel, and is about the same size as in articles on other wars: Armenia, Russia, Ukraine. Articles about Judaism barely moved."
+- **The scale:** "One extra such word per 20,000 words. Real, measurable, small."
+- **The definition moment:** "The opening sentence of 'Zionism' went through 169 different versions since 2021. It moved from 'a movement among the Jewish people… re-establishment of a Jewish state' to 'an ethnic nationalist movement… through colonization'. That word entered in spring 2024, months earlier than the press reported."
+- **Edit wars, not a ratchet:** "Our hypothesis was 'push, get reverted, push again, until it sticks'. The data says loaded words are pushed and pulled more often here, but they don't stick *more* than elsewhere."
+- **Co-editing:** "The same pairs of editors repeatedly edit right after each other about twice as often per edit on these articles. That's a signal worth watching, not proof of a campaign: shared watchlists during a war look exactly the same."
+- **Languages:** "On 16 key articles, English openings picked up these words more often than German, French, Hebrew, Arabic and the others. Across 500 articles per language, English looks like everyone else. Scale changes the answer, and that's worth saying."
+- **What the words did:** "When an opening paragraph shifted, the typical move was turning 'X is accused of…' into 'X did…'. 'Israeli apartheid' went from a contested analogy to stated fact. It happened in both directions, and in other topics too."
+- **The honest limit:** "Word counts can't tell you who a word is aimed at, or whether it's true. 'Not supported' means 'not shown', not 'nothing happened'."
 
 ## Lines that land
 - "We didn't ask whether Wikipedia is biased. We asked whether the record moved, and we measured it."
