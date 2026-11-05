@@ -1,0 +1,35 @@
+{
+ "n_expected": 10320,
+ "n_records": 10320,
+ "by_stratum": {
+  "comparison": 5670,
+  "topic": 4642,
+  "atrocity": 8
+ },
+ "dropped_in_resolve": {
+  "missing": 8,
+  "disambiguation": 3,
+  "duplicate": 126
+ },
+ "failed_signals": {},
+ "lead_events": {
+  "articles": 10320,
+  "scope": {
+   "all": 10320
+  },
+  "full_read": 9085,
+  "covered_to_last_revision": 10319,
+  "unrefined_intervals": 0,
+  "requests": 30520
+ },
+ "coverage": {
+  "article@2021-01-01": 9688,
+  "article@2023-07-01": 10011,
+  "article@now": 10320,
+  "talk_now": 10320,
+  "pageviews": 10316,
+  "wikidata_now": 10319,
+  "wikidata_2023": 10086,
+  "protection_recon_matches_now": 10273
+ }
+}
