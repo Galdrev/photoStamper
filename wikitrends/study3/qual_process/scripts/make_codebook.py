@@ -1,0 +1,158 @@
+import json
+OUT='/tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qual_process/codebook.json'
+cb=[
+{"move":"M1 Epistemic upgrade (attribution to assertion)",
+ "definition":"A contested characterisation of an actor or event (e.g. genocide, ethnic cleansing, apartheid, illegality, terrorism, an intent claim) climbs one or more steps on the attribution ladder between A and B: 0 absent; 1 'allegations'/'accused'; 2 attributed to a named minority ('some historians', 'critics'); 3 attributed to named authorities ('According to the UN...'); 4 majority or consensus claim ('scholars widely', 'growing scholarly consensus'); 5 stated in the encyclopedia's own voice (wikivoice) or used as the article's definitional genus. A downgrade is the same move in reverse and is coded with negative sign.",
+ "include":"The same proposition appears in both versions (or is absent in A) and its ladder level differs by at least one step. Counts in either direction and for any subject (Israeli, Palestinian, Jewish, Roman...). Code each proposition once per pair.",
+ "exclude":"Pure rewording at the same level ('accused' to 'charged'); new facts with no evaluative content; quantity updates (death tolls); attribution changes that only swap one named authority for another at the same level.",
+ "examples":[
+  {"title":"1948 Palestinian expulsion and flight","before":"The expulsion of the Palestinians has since been described by some historians as ethnic cleansing, while others dispute this charge.","after":"Scholars widely describe the event as ethnic cleansing, although some disagree."},
+  {"title":"Legality of Israeli settlements","before":"The international community considers the establishment of Israeli settlements in the Israeli-occupied territories illegal on one of two bases","after":"are illegal under international law."},
+  {"title":"Gaza genocide","before":"Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians.","after":"The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war."},
+  {"title":"Bar Kokhba Revolt","before":"The common view that the name change was intended to \"sever the connection of the Jews to their historical homeland\" is disputed.","after":"an act intended to sever the region's historical association with the Jewish people"}],
+ "topic_count":"16 of 48 topic pairs read (15 toward wikivoice for claims about Israeli/Zionist conduct; 1, Bar Kokhba, toward wikivoice for a claim about Roman intent against Jews)",
+ "comparison_count":"3 of 16 comparison pairs (Kashmir conflict, Armenian genocide 'concurring with the academic consensus', Persecution of Uyghurs)",
+ "direction":"Moves contested characterisations from reported speech into the narrator's voice; in topic articles this mostly concerns Israeli or Zionist conduct (genocide, ethnic cleansing, illegality, apartheid).",
+ "kpis":[
+  {"name":"attribution_ladder_delta","unit":"per contested proposition per pair (mean per pair)","procedure":"LLM coder lists each evaluative proposition in A and B, aligns them, assigns ladder level 0-5 in each version, reports B minus A. Report share of pairs with any upgrade, any downgrade, and net sum.","automatable":"partly: candidate propositions found by regex on a term list (genocid*, ethnic cleansing, apartheid, illegal, terroris*, colonial*), level needs LLM"},
+  {"name":"wikivoice_share_contested_terms","unit":"per lead (share of occurrences)","procedure":"For each occurrence of a contested term, check whether the clause contains an attribution marker (according to, described, accused, alleged, critics, some/many scholars, considered, regarded) within the same clause; share without marker.","automatable":"yes (regex + clause split); validate on 50 hand-coded sentences"}]},
+
+{"move":"M2 Record-the-denial (assert then append counter-position)",
+ "definition":"B states or strengthens a claim and adds, in the same or the next sentence, the subject's or its allies' denial or dispute ('X and its supporters deny...', 'X disputes this'), often followed by a rebuttal ('The ICJ ... countered many of Israel's arguments'). The dissent is recorded as a position held by a party, not as a competing scholarly view.",
+ "include":"A denial/dispute sentence attributed to the accused party or its allies is new in B or newly adjacent to a claim that was upgraded (M1). Include the variant where B adds a rebuttal of the denial.",
+ "exclude":"Symmetric 'proponents argue / critics argue' paragraphs that were already present in A; denials of a factual incident unrelated to the article's main characterisation.",
+ "examples":[
+  {"title":"Israel","before":"(no corresponding text in A)","after":"Israel and its allies, including the United States, deny that Israel's actions constitute genocide."},
+  {"title":"Legality of Israeli settlements","before":"Israel has consistently argued that the settlements are not in violation of the Fourth Geneva Convention","after":"The ICJ's 2024 advisory opinion countered many of Israel's arguments."},
+  {"title":"Nakba","before":"(no corresponding text in A)","after":"Israel negates or denies the atrocities it committed, claiming that many of the expelled Palestinians left willingly or that their expulsion was necessary and unavoidable."}],
+ "topic_count":"11 of 48 topic pairs",
+ "comparison_count":"1 of 16 (Persecution of Uyghurs; Armenian genocide already had the pattern in A). Regex proxy over all substantial leads does NOT reproduce the difference (denial-word density up in 10% topic vs 22% comparison), so this count rests on close reading only.",
+ "direction":"Recasts the dissenting position from a scholarly counter-view into a party position held by the accused state and its allies; the claim itself becomes the baseline.",
+ "kpis":[
+  {"name":"party_denial_after_claim","unit":"per pair (0/1) and per contested proposition","procedure":"LLM coder: does B contain a sentence attributing denial/dispute of a central claim to the subject or its allies, positioned after the claim? Was it present in A? Code new=1.","automatable":"no (needs LLM; regex on deny|dispute is too noisy)"},
+  {"name":"dissent_carrier_type","unit":"per dissent statement","procedure":"Code who carries dissent: scholars/experts, governments/parties, 'supporters of X', unnamed 'others'. Compare distributions A vs B.","automatable":"partly (named-entity heuristics), LLM for final code"}]},
+
+{"move":"M3 Camp labelling of actors and sources",
+ "definition":"B identifies an organisation, source or set of critics by its partisan alignment ('pro-Israel organizations', 'pro-Palestinian', 'Israel and its supporters', 'its pro-Israel advocacy') where A named them neutrally, by institution, or not at all.",
+ "include":"A new partisan-alignment label attached to an actor that speaks, acts or is the subject. Includes 'X and its supporters/allies' as a grouping of dissenters.",
+ "exclude":"Self-descriptions in quotation; alignment labels already present in A; country lists without an alignment adjective.",
+ "examples":[
+  {"title":"Anti-Defamation League","before":"is an international Jewish non-governmental organization based in the United States.","after":"The ADL is also known for its pro-Israel advocacy."},
+  {"title":"Francesca Albanese","before":"In February 2023, a bipartisan group of 18 members of the United States Congress called for Albanese to be removed from her position","after":"Pro-Israel organizations, including the U.S. government, have accused Albanese of antisemitism and anti-Israel bias, and have called for her removal."},
+  {"title":"Palestinian right of return","before":"The government of Israel does not view the admission of Palestinian refugees to their former homes in Israel as a right","after":"The government of Israel, and its supporters, state that Palestinian refugees do not have the right of return under international law."}],
+ "topic_count":"8 of 48 topic pairs (regex proxy: new label in 7.6% of substantial topic leads)",
+ "comparison_count":"0-1 of 16 (Uyghurs groups signatory states by region, not by alignment; regex proxy 0% of substantial comparison leads)",
+ "direction":"Shifts the description of critics or defenders from institutional identity to alignment, which positions their statements as advocacy.",
+ "kpis":[
+  {"name":"camp_label_rate","unit":"per lead (count per 10 sentences) and per pair (new=1)","procedure":"Regex: pro-Israel|pro-Palestinian|pro-Zionist|anti-Israel|and its (supporters|allies)|supporters of; count in A and B; flag new labels; LLM check that the label is the narrator's, not a quotation.","automatable":"yes for detection; LLM for quotation check"}]},
+
+{"move":"M4 Colonial-framework vocabulary in definitional position",
+ "definition":"B introduces or strengthens colonial/settler-colonial vocabulary (colonization, colonies, colonial, settler colonial, imperial power) as part of the definition or origin story of the subject, in the first paragraph, in wikivoice or attributed.",
+ "include":"Term family coloni*/settler colonial*/imperial added to the first paragraph, or moved from an attributed critics' sentence into the definitional sentence. Record attribution level separately (M1).",
+ "exclude":"Purely historical uses already in A ('Colonial Office'); uses about other empires unrelated to the subject; vocabulary in quotations of named persons only.",
+ "examples":[
+  {"title":"Zionism","before":"espouses the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel","after":"to establish and support a Jewish homeland through colonization in the region of Palestine"},
+  {"title":"Israeli settlement","before":"Israeli settlements are civilian communities inhabited by Israeli citizens","after":"Israeli settlements, or Israeli colonies, are civilian communities inhabited by Israeli citizens"},
+  {"title":"Irish nationalism","before":"chiefly descended from people from Great Britain who arrived as settlers","after":"chiefly descended from people of Great Britain who colonised the land as settlers"}],
+ "topic_count":"8 of 48 topic pairs (Zionism, Israeli–Palestinian conflict, Arab–Israeli conflict, Zionism as settler colonialism, Israeli settlement, Anti-Zionism, Genocide of indigenous peoples, Israel)",
+ "comparison_count":"2 of 16 (Irish nationalism, Aboriginal Australians). Frequency is NOT distinctive; regex proxy is higher in comparison (8% vs 4%). What is distinctive is location: in topic it enters the first sentence of the core concept (Zionism) and the origin paragraph of conflict articles.",
+ "direction":"Places the subject within a colonisation narrative of origins rather than a return/national-revival narrative.",
+ "kpis":[
+  {"name":"colonial_vocab_position","unit":"per lead (index of first sentence containing the term; 0 = first sentence)","procedure":"Regex coloni[sz]*|settler[- ]colonial*|imperial; report earliest sentence index in A and B and whether in wikivoice (no attribution marker in clause).","automatable":"yes"}]},
+
+{"move":"M5 Naming and toponym arbitration",
+ "definition":"B changes the names used for the subject or its place: which name is the head noun, which are glosses, whether alternative names get parity ('X or Y', 'also called Y'), and which macro-region label locates it (Western Asia, the Levant, Southern Levant; Land of Israel vs Palestine).",
+ "include":"Change of head name or toponym, addition/removal of an alternative name, reordering of names, removal of a traditional-name gloss, change of macro-region label.",
+ "exclude":"Transliteration, diacritics and pronunciation fixes; template/markup changes that drop or restore a name accidentally (check against the edit summary or the following snapshot).",
+ "examples":[
+  {"title":"Temple Mount","before":"known to Muslims as the Haram esh-Sharif","after":"The Temple Mount or al-Haram al-Sharif"},
+  {"title":"Zionism","before":"centered in the area roughly corresponding to what is known in Jewish tradition as the Land of Israel","after":"a homeland for the Jewish people in Palestine, a region roughly corresponding to the Land of Israel in Jewish tradition"},
+  {"title":"Mandatory Palestine","before":"Mandatory Palestine (where \"E.Y.\" indicates ’Eretz Yiśrā’ēl, the Land of Israel) was a geopolitical entity","after":"Mandatory Palestine was a geopolitical entity","comment":"[[MOS:LEADCLUTTER]]"},
+  {"title":"Jerusalem","before":"Jerusalem is a city in West Asia, on a plateau","after":"Jerusalem is a city in the Southern Levant, on a plateau","comment":"\"West Asia\" is far too broad, and \"Southern Levant\" is probably the least politically contentious way to describe where the city is located"}],
+ "topic_count":"15 of 48 topic pairs",
+ "comparison_count":"4 of 16 (Islamic State, Tibet, Tigray war, Quebec sovereignty movement)",
+ "direction":"In topic articles: from Jewish-traditional toponyms as primary (Land of Israel, Eretz Yisrael gloss) to Palestine/regional terms as primary, and toward parity of Arabic and Hebrew names; settles disputes by inclusion of names rather than choice.",
+ "kpis":[
+  {"name":"alt_names_first_sentence","unit":"per first sentence (count)","procedure":"Count name-introducing constructions (also known as, also called, or the, officially, abbreviated) and bolded/parenthetical names in the first sentence of A and B.","automatable":"yes"},
+  {"name":"toponym_head_noun","unit":"per lead","procedure":"For leads mentioning both 'Land of Israel'/'Eretz Israel' and 'Palestine', code which term is syntactic head and which is gloss (LLM or dependency parse).","automatable":"partly (parse), LLM to confirm"}]},
+
+{"move":"M6 Causal-context insertion",
+ "definition":"B adds to the opening of an event or actor a prior condition, grievance or enabling circumstance that frames the cause ('from the blockaded Gaza Strip', 'despite the village having agreed to a non-aggression pact', 'rooted in the Israeli–Palestinian conflict').",
+ "include":"A new clause or sentence in the first paragraph that explains why the event happened or what preceded it, or new modifiers that encode a precondition (blockaded, occupied, after X).",
+ "exclude":"Chronological background already present in A; consequences (what followed) rather than antecedents.",
+ "examples":[
+  {"title":"October 7 attacks","before":"launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory","after":"a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel"},
+  {"title":"Deir Yassin massacre","before":"(no corresponding text in A)","after":"The massacre was carried out despite the village having agreed to a non-aggression pact."},
+  {"title":"Liberation Tigers of Tamil Eelam","before":"(no corresponding text in A)","after":"The LTTE was subsequently founded in 1976 as a reaction to the Sri Lankan Constitution of 1972"}],
+ "topic_count":"11 of 48 topic pairs",
+ "comparison_count":"4 of 16 (LTTE, Kashmir conflict, Al-Shabaab, Armenian genocide). Not distinctive in frequency; general Wikipedia practice. Direction-specific content only.",
+ "direction":"Adds antecedent grievances or conditions, which shifts the explanatory weight of an event toward prior conduct of the other party (in topic: Israeli blockade/occupation; in the Gaza famine pair the reverse, adding Palestinian-side causes such as looting).",
+ "kpis":[
+  {"name":"antecedent_clauses_first_paragraph","unit":"per first paragraph (count new in B)","procedure":"LLM coder lists causal/antecedent clauses in paragraph 1 of A and B and attributes each to a party whose conduct it describes.","automatable":"no"}]},
+
+{"move":"M7 Agent naming for harm",
+ "definition":"B names the actor responsible for a harm where A used passive voice, an agentless nominal, a fringe-only actor, or no actor ('were expelled' to 'were expelled by Zionist paramilitaries'; 'a militia' to 'with the support of the IDF').",
+ "include":"New 'by X', possessive ('Israel's'), active-voice subject, or widening of the responsible set (e.g. adding Haganah to Irgun/Lehi). Code the reverse (agent removed) with negative sign.",
+ "exclude":"Agents named elsewhere in A in the same paragraph; changes of the agent's name only (Israel to Zionists) unless the scope of responsibility changes (then code and note).",
+ "examples":[
+  {"title":"Nakba","before":"is the ethnic cleansing of Palestinian Arabs by Israel through their violent displacement","after":"is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement","comment":"more precise: [[Plan Dalet]], for example, was executed before the declaration of May 14"},
+  {"title":"Sabra and Shatila massacre","before":"by a militia close to the Kataeb Party","after":"by the Lebanese Forces, one of the main Christian militias in Lebanon, with the support of the Israel Defense Forces (IDF)."},
+  {"title":"Persecution of Uyghurs in China","before":"the Chinese government has pursued a policy which has led to more than one million Muslims","after":"the government of the People's Republic of China has committed a series of ongoing human rights abuses"}],
+ "topic_count":"14 of 48 topic pairs",
+ "comparison_count":"6 of 16 (Uyghurs, Armenian genocide, LTTE, Kashmir, Tigray, PKK). NOT distinctive in frequency; general preference for active voice in atrocity leads. Possible topic-specific feature: agent moved INTO the first sentence (Nakba, Sabra and Shatila, Gaza genocide) vs comparison Armenian genocide where the perpetrator moved OUT of the first sentence 'per FAC'.",
+ "direction":"Makes responsibility for harms explicit, in topic articles mainly assigned to Israeli/Zionist forces.",
+ "kpis":[
+  {"name":"agentive_harm_clauses","unit":"per lead (share of harm predicates with explicit agent)","procedure":"Parse harm verbs (killed, expelled, displaced, destroyed, massacred, starved...) and check for agent (by-phrase, active subject, possessive). Compare A/B; separately for first sentence.","automatable":"yes with dependency parse; LLM spot-check"}]},
+
+{"move":"M8 Relocation (demotion/promotion within the lead)",
+ "definition":"A claim or label present in both versions changes its position: moved out of the first sentence or paragraph into a later one (demotion), or into it from later (promotion). Often accompanied by a change of attribution.",
+ "include":"Same proposition, different sentence index (at least one sentence, or across paragraph 1 boundary). Includes terrorist designations, illegality, agents, genocide claims.",
+ "exclude":"Position changes caused only by insertion or deletion of unrelated sentences before it (compute relative rank, not raw index).",
+ "examples":[
+  {"title":"Israeli settlement","before":"built in violation of international law on lands occupied by Israel in the 1967 Six-Day War.","after":"The international community considers Israeli settlements to be illegal under international law, but Israel disputes this."},
+  {"title":"1948 Palestinian expulsion and flight","before":"were expelled or fled from their homes, at first by Zionist paramilitaries, and after the establishment of Israel, by its military.","after":"were expelled or fled from their homes.","comment":"Undid revision [[Special:Diff/1292987917|1292987917]] by [[Special:Contributions/IOHANNVSVERVS|IOHANNVSVERVS]] ([[User talk:IOHANNVSVERVS|talk]]) that the Palestinians \"fled from their homes, at first by Zionist paramilitaries...\" is not a coherent part of a sentence."},
+  {"title":"Al-Shabaab (militant group)","before":"is a terrorist, jihadist fundamentalist group based in East Africa.","after":"is a transnational Wahhabi-Salafi Jihadist militant organization."}],
+ "topic_count":"10 of 48 topic pairs",
+ "comparison_count":"5 of 16 (Al-Shabaab, Islamic State, Armenian genocide, Al-Qaeda, Tibet). General Wikipedia style (labels and designations leave the first sentence); NOT a topic finding as such.",
+ "direction":"Demotion moves labels and agents out of the definitional sentence (in topic: Hamas terrorist designations, settlement illegality, 1948 agent); promotion moves claims into it (Gaza war, October 7 attacks, Sabra and Shatila).",
+ "kpis":[
+  {"name":"relative_position_shift","unit":"per proposition per pair","procedure":"Locate proposition (term list or LLM alignment) in A and B; relative rank = sentence index / number of sentences; report shift and whether it crosses the first-sentence and first-paragraph boundaries.","automatable":"yes for term-based propositions"},
+  {"name":"protected_opening_gap","unit":"per pair","procedure":"1 - similarity(first sentence A,B) minus 1 - similarity(rest of lead A,B). Negative = opening kept stable while the rest changed.","automatable":"yes (current values: substantial leads, topic 31% vs comparison 39% have gap < -0.2)"}]},
+
+{"move":"M9 Policy-and-procedure justification (process move, needs edit summaries)",
+ "definition":"The edit summary justifies a first-sentence change by citing a content policy (NPOV/neutral, RS, OR, weight), a style rule (MOS:FIRST, MOS:AVOIDBOLD, LEADCLUTTER, MOS:OPEN), a forum outcome (per talk, per RM, per FAC, RfC), a precedent in another article ('compare The Holocaust', 'per formatting on pages for Jordan, Lebanon'), source counting ('many reliable sources', 'roughly equal weight in sources'), an omission claim ('fails to be mentioned', 'omission is ridiculous'), or a procedural complaint ('removed without discussion').",
+ "include":"Any first-sentence edit whose summary contains one of these justification types. Code type(s) and the direction of the substantive change (A: adds critical term/agent/Palestinian context or removes attribution; B: adds attribution/removes agent or critical term/adds Jewish-tradition anchoring; T: toponym/naming; N: none).",
+ "exclude":"Bot and template maintenance (AWB, Monkbot), typo fixes. Code summaries that are empty or say 'ce'/'clarify' on a substantive change separately as LABEL MISMATCH.",
+ "examples":[
+  {"title":"History of Israel","before":"is the birthplace of the Jewish people, the place where the final form of the Hebrew Bible is thought to have been compiled","after":"is a region that has come under the sway of various empires","comment":"/* top */ copyediting lead into better NPOV language and removing unnecessary citation, per [[WP:LEADCITE]]"},
+  {"title":"Hamas","before":"is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip since 2007.","after":"is a Palestinian Sunni Islamist resistance movement governing parts of the Israeli-occupied Gaza Strip since 2007.","comment":"[[NPOV]] many relaible sources has described it as resistance movement which is less biased and more neutral. this is how the group identifies itself"},
+  {"title":"Zionism as settler colonialism","before":"Zionism has been described by its founders and early leaders, as well as by many scholars, as a form of settler colonialism","after":"Zionism has been described by some scholars as a form of settler colonialism","comment":"more NPOV"},
+  {"title":"Zionism","before":"Zionism is an ethnocultural nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine","after":"Zionism is an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine"}],
+ "topic_count":"Trace data, 17 topic articles, 147 traced first-sentence edits: explicit neutrality appeal in 5 edits used for opposite directions (A 2, B 1, removal of Jewish-tradition anchor 1, toponym 1); talk/forum reference 15 (10%); MOS/style code 10; source-based argument 16; 'RfC' 0; empty summary 24 (16%); substantive change (word similarity < 0.8) under empty or light summary 16 (11%); anticipatory hedging ('I hope this isn't contentious') 7.",
+ "comparison_count":"Trace data, 7 comparison articles, 51 edits: talk/forum 2 (4%), MOS/style 4, source-based 2, neutrality appeal 0-1, RfC 0, empty 10 (20%), substantive under light summary 2 (4%), hedging 1. Contrast is thin (7 articles, 2 with only 1-2 edits).",
+ "direction":"Neutrality is invoked for changes in both directions (policy as rhetoric). Style rules (MOS:OPEN, LEADCLUTTER, MOS:FIRST, AVOIDBOLD) accompany removals of Jewish-tradition glosses and block bold naming; source-count arguments accompany insertions of critical terms; procedural complaints ('removed without discussion') accompany attempts to restore earlier wording and were all reverted.",
+ "kpis":[
+  {"name":"justification_repertoire_shares","unit":"per traced first-sentence edit","procedure":"Code each edit summary into types: content-policy, style-MOS, forum (talk/RM/RfC/FAC), precedent, source-count, omission, procedural complaint, accuracy/clarity, copyedit, empty, bot. Regex first pass (see scripts/trace_stats.py), LLM second pass for multi-type summaries.","automatable":"mostly (regex), LLM for ambiguous"},
+  {"name":"justification_by_direction","unit":"cross-tab of edits (type x direction)","procedure":"Pair the summary type with the LLM-coded direction of the before/after change (A/B/T/N); report shares and survival (reverted flag; after==snapshot_after in bisect.json).","automatable":"no (direction needs LLM)"},
+  {"name":"label_mismatch_rate","unit":"per edit","procedure":"Summary empty or matches copyedit/clarify/minor/tweak AND word-level similarity of before/after first sentence < 0.8 OR a contested term enters/leaves.","automatable":"yes"},
+  {"name":"forum_reference_rate","unit":"per edit and per article-year","procedure":"Regex per talk|talk page|discussion|consensus|RfC|RM|FAC in summary.","automatable":"yes"}]},
+
+{"move":"M10 Trajectory type: ratchet, oscillation, return-to-minimum (process move, needs revision sequence)",
+ "definition":"The sequence of first-sentence versions for one contested element follows one of: RATCHET (monotone steps in one direction, no traced reversal, e.g. attribution ladder climbs); OSCILLATION (two or more variants alternate at least twice); RETURN-TO-MINIMUM (after elaborations the sentence returns to its shortest earlier form); BOLD-STICK (one change, then no further change for at least 12 months); RELOCATION-SETTLEMENT (the element leaves the first sentence but stays in the lead).",
+ "include":"Contested elements with at least two traced changes, or one traced change plus a gap showing an untraced change (before of edit k+1 differs from after of edit k).",
+ "exclude":"Elements touched only by copyedits; single-edit elements unless BOLD-STICK applies.",
+ "examples":[
+  {"title":"Gaza genocide","before":"Experts, governments, United Nations agencies, and non-governmental organisations have accused Israel of carrying out a genocide","after":"state that Israel has committed genocidal acts against the Palestinian people","comment":"\"state\" is more neutral than \"accuse\""},
+  {"title":"Israel","before":"Israel, officially the State of Israel, is a country in the Southern Levant region of West Asia.","after":"Israel, officially the State of Israel, is a country in Western Asia.","comment":"minor tweak"},
+  {"title":"Anti-Zionism","before":"Anti-Zionism is opposition to Zionism.","after":"Anti-Zionism views Zionism as a colonialist, racist or exceptionalist ideology or movement.","comment":"/* top */ Material and refs copied from [[Zionism]] article lead to replace unreliable definition from MW"},
+  {"title":"Islamic State","before":"is a transnational Salafi jihadist group and a former unrecognised quasi-state.","after":"is a transnational Salafi jihadist group and a unrecognised quasi-state.","comment":"as pointed out below, and can be read in the ISWAP article, IS still operates as quasi-state in its African territories"}],
+ "topic_count":"Of 36 contested elements catalogued in the 17 topic traces (contested_claims.csv): ratchet 5, oscillation 13 (5 of them finally anchored by a talk outcome, page title, style rule or cross-article precedent), bold-stick 12, relocation-settlement 4, return-to-minimum/start 2; 7 elements still changed in the last 6 months of the window.",
+ "comparison_count":"Of 7 contested elements in the 7 comparison traces: oscillation 4, relocation 2, short-lived insertion 1; no ratchet observed. Thin: 2 of the 7 comparison articles have only 1-2 traced edits.",
+ "direction":"Ratchets in the trace sample all move toward stronger characterisation of Israeli/Zionist conduct or away from Jewish-tradition anchoring; oscillations concern labels that have no dominant source usage (geography, adjective choice, name order).",
+ "kpis":[
+  {"name":"monotonicity_index","unit":"per contested element","procedure":"Order versions; assign ladder level (M1) or variant id; index = |sum of signed steps| / sum of |steps| (1 = ratchet, ~0 = oscillation).","automatable":"yes once variants are coded (ratchet.py fs_timeline gives variant ids)"},
+  {"name":"time_to_stabilise","unit":"days per contested element","procedure":"From first traced insertion to start of the final run that lasts >= 180 days or is censored at window end (ratchet.py events: survived, censored).","automatable":"yes from ratchet.json"},
+  {"name":"hidden_change_rate","unit":"per article","procedure":"Share of consecutive traced edits where before(k+1) != after(k); lower bound on untraced first-sentence churn (discovery: topic 66%, comparison 64%).","automatable":"yes"}]}
+]
+json.dump(cb,open(OUT,'w'),ensure_ascii=False,indent=1)
+print('wrote',len(cb))

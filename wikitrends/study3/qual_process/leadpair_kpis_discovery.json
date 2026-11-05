@@ -1,0 +1,53 @@
+{
+ "treatment": {
+  "n": 190,
+  "median_fs_change": 0.429,
+  "median_rest_change": 0.527,
+  "share_protected_opening(fs_chg<rest_chg-0.2)": 0.286,
+  "median_len_ratio": 1.05,
+  "share_attr_density_up": 0.147,
+  "share_attr_density_down": 0.253,
+  "share_denial_density_up": 0.053,
+  "share_camp_label_new": 0.047,
+  "share_colonial_vocab_new": 0.016,
+  "share_genocide_cleansing_apartheid_new": 0.074,
+  "share_gca_promoted_to_top3_sentences": 0.037,
+  "share_altname_in_fs_up": 0.079,
+  "share_altname_in_fs_down": 0.068,
+  "share_fs_tense_flip": 0.126
+ },
+ "control": {
+  "n": 42,
+  "median_fs_change": 0.549,
+  "median_rest_change": 0.602,
+  "share_protected_opening(fs_chg<rest_chg-0.2)": 0.366,
+  "median_len_ratio": 1.13,
+  "share_attr_density_up": 0.19,
+  "share_attr_density_down": 0.452,
+  "share_denial_density_up": 0.19,
+  "share_camp_label_new": 0.0,
+  "share_colonial_vocab_new": 0.071,
+  "share_genocide_cleansing_apartheid_new": 0.048,
+  "share_gca_promoted_to_top3_sentences": 0.071,
+  "share_altname_in_fs_up": 0.143,
+  "share_altname_in_fs_down": 0.048,
+  "share_fs_tense_flip": 0.119
+ },
+ "control_contaminated": {
+  "n": 5,
+  "median_fs_change": 0.244,
+  "median_rest_change": 0.689,
+  "share_protected_opening(fs_chg<rest_chg-0.2)": 0.6,
+  "median_len_ratio": 1.0,
+  "share_attr_density_up": 0.2,
+  "share_attr_density_down": 0.4,
+  "share_denial_density_up": 0.0,
+  "share_camp_label_new": 0.0,
+  "share_colonial_vocab_new": 0.0,
+  "share_genocide_cleansing_apartheid_new": 0.0,
+  "share_gca_promoted_to_top3_sentences": 0.0,
+  "share_altname_in_fs_up": 0.2,
+  "share_altname_in_fs_down": 0.0,
+  "share_fs_tense_flip": 0.0
+ }
+}
