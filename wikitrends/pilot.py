@@ -128,7 +128,8 @@ NON_NAVBOX = re.compile(r"^(?:reflist|refend|refbegin|references|notelist|notes|
                         r"spoken wikipedia.*|library resources box|wikivoyage|wikinews|wikibooks|dmoz|curlie|tfa title|"
                         r"italic title|lowercase title|engvarb|good article|featured list|external links|ref\w*)$", re.I)
 CT_NAME = re.compile(r"contentious|arbitration|arbpia|discretionary|^ds/|^ct/|community sanctions|^gs/|general sanctions|"
-                     r"^calm$|controversial|round in circles|^faq$|^1rr|editnotice|^american politics|^ipa$|^aa2|^arbcom", re.I)
+                     r"^1rr|editnotice|^american politics|^ipa$|^aa2|^arbcom|^ecp|extended confirmed restriction", re.I)
+HEAT_NAME = re.compile(r"^calm$|^calm talk$|controversial|round in circles|^faq$|not ?a ?forum|^warning|^old rfc|^recurring", re.I)
 NS_PREFIX = re.compile(r"^(?:file|image|category|wikipedia|wp|template|help|portal|user|user talk|talk|special|draft|module|"
                        r"mediawiki|wikt|wiktionary|commons|s|q|n|b|v|voy|species|meta|m|mw|d|wikidata|w|[a-z]{2,3}(?:-[a-z]+)?)\s*:", re.I)
 
@@ -391,6 +392,7 @@ def parse_talk(wt):
     hdr_end = first_head.start() if first_head else len(wt)
     names = Counter(n for _, n, _ in tps)
     projects, cls = {}, None
+    heat = []
     ct, ah, dyk, itn, otd, afd, merges, moves, press, top25 = [], None, [], [], [], [], [], 0, [], 0
     for s, n, inner in tps:
         pos, named = tparams(inner)
@@ -401,6 +403,8 @@ def parse_talk(wt):
             projects[proj] = (named.get("importance") or "").strip().lower() or None
             if named.get("class") and not cls:
                 cls = named["class"].strip().lower()
+        if s < hdr_end and HEAT_NAME.search(n):
+            heat.append(n)
         if s < hdr_end and CT_NAME.search(n):
             ct.append({"t": n, "topic": (named.get("topic") or (pos[0] if pos else "") or "").strip().lower()[:20]})
         if n in ("article history", "articlehistory", "article milestones"):
@@ -440,7 +444,7 @@ def parse_talk(wt):
     heads = re.findall(r"^==\s*([^=].*?)\s*==\s*$", wt, re.M)
     return {"bytes": len(wt.encode("utf-8")), "threads": len(heads),
             "header_templates": sorted({n for s, n, _ in tps if s < hdr_end})[:80],
-            "class": cls, "projects": projects, "ct": ct, "ct_notice": bool(ct), "article_history": ah,
+            "class": cls, "projects": projects, "ct": ct, "ct_notice": bool(ct), "heat_notices": sorted(set(heat)), "article_history": ah,
             "dyk": dyk, "itn": itn, "otd": otd, "afd": afd, "merges": merges, "old_moves": moves, "press": press[:60],
             "n_press": len(press), "top25": top25, "faq": "faq" in names,
             "rfc_active": names.get("rfc", 0) + names.get("rfc top", 0),
@@ -981,10 +985,11 @@ def collect(row):
     if ev is None:
         failed.append("lead_events"); rec["term_events"] = None
     else:
-        pick = ev if len(ev) <= LW_MAX else [ev[int(i * len(ev) / LW_MAX)] for i in range(LW_MAX)]
-        for e in pick:
-            if e.get("revid"):
-                e["lw"] = liftwing(e["revid"])
+        rids = list(dict.fromkeys(e["revid"] for e in ev if e.get("revid")))     # one score per revision, evenly spread
+        pick = rids if len(rids) <= LW_MAX else [rids[int(i * len(rids) / LW_MAX)] for i in range(LW_MAX)]
+        scores = {rid: liftwing(rid) for rid in pick}
+        for e in ev:
+            e["lw"] = scores.get(e.get("revid"))
         rec["term_events"] = {"truncated": ltrunc, "by_window": event_aggregates(ev),
                               "events": [{"ts": e["ts"], "term": e["term"], "kind": e["kind"], "revid": e["revid"],
                                           "reverted": e["reverted"], "u": h(e["user"]) if e["user"] else None,
@@ -1194,7 +1199,9 @@ def screen(recs):
             pool = np.concatenate([t, c]); perm = np.empty(500)
             for i in range(500):
                 rng.shuffle(pool); perm[i] = pool[:len(t)].mean() - pool[len(t):].mean()
-            sd = pool.std() or 1.0
+            sd = pool.std()
+            if sd <= 1e-9 * max(1.0, abs(pool.mean())):
+                sd, d = 1.0, 0.0                                  # constant metric: no difference to report
             row.update({"diff_topic_minus_comparison": float(d), "std_diff": float(d / sd),
                         "p_perm": float((np.sum(np.abs(perm) >= abs(d)) + 1) / 501)})
         out.append(row)

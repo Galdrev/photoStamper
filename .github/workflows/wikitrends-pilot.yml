@@ -1,0 +1,46 @@
+name: wikitrends-pilot
+# Pilot collector for new signals (wikitrends/pilot.py): ~168 articles, results committed to results/pilot-<run_id>
+on:
+  workflow_dispatch:
+  push:
+    branches: [wikitrends-pilot]
+permissions:
+  contents: write
+concurrency: wikitrends-pilot
+defaults:
+  run:
+    shell: bash   # bash -eo pipefail: a failure anywhere in a pipe fails the step
+env:
+  WT_RPS: '3'
+  WT_JOB: pilot
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Per-run secret salt for editor hashing (never written to disk or logs)
+        run: echo "::add-mask::$(openssl rand -hex 16 | tee /tmp/salt)" && echo "WT_SALT=$(cat /tmp/salt)" >> $GITHUB_ENV && rm /tmp/salt
+      - name: Offline self-test (mocked API; fails fast before any network work)
+        working-directory: wikitrends
+        run: WT_JOB=pilot-test python test_pilot.py 2>&1 | grep -v '^\[hb' | tail -60
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh pilot 180 > /tmp/status.log 2>&1 &
+      - name: Collect pilot signals (checkpointed; exits non-zero if >5% of articles error)
+        working-directory: wikitrends
+        run: timeout 220m python pilot.py 2>&1 | tee logs/pilot.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: 'pilot', path: 'wikitrends/data/pilot/', retention-days: 7, overwrite: true}
+      - name: Commit to a per-run branch
+        if: always()
+        run: |
+          git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
+          git checkout -q -b results/pilot-${{ github.run_id }}
+          for f in wikitrends/data/pilot/pilot.json wikitrends/data/pilot/summary.json wikitrends/logs/pilot.log; do [ -f $f ] && git add -f $f; done
+          git commit -qm "Pilot signals (run ${{ github.run_id }}) [skip ci]" || exit 0
+          git push -q origin results/pilot-${{ github.run_id }}
