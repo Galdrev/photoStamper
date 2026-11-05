@@ -1,0 +1,114 @@
+[
+ {
+  "id": "C006a",
+  "quote": "B: widely praised as a model of tolerance",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0003a",
+  "quote": "B: important in [ENTITY-6] historiography.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N201",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0146a",
+  "quote": "B: were an ancient Semitic-speaking people.",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0127a",
+  "quote": "B: noted for its religious conservatism and social seclusion",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0221a",
+  "quote": "B: [ENTITY-1] actively adopted many technologies from the newcomers",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0007a",
+  "quote": "B: riots, and terrorist attacks carried out by [ENTITY-3] civilians and militants",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N202",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0202a",
+  "quote": "B: it is also described since the 19th century by the term Sanātana Dharma",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N203",
+  "quote": "B: a population of 436,000 (2023 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0241a",
+  "quote": "B: the international community failed to intervene to stop the killings",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0106a",
+  "quote": "A: was not a result of compulsory dislocation",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N200",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0219a",
+  "quote": "B: In 2010, the PKK abandoned separatism in favor of autonomy",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0223a",
+  "quote": "B: Numerous scholars have classified elements of the colonization process as comprising genocide",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0019a",
+  "quote": "A: His influence on [ENTITY-9] politics is profound",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

@@ -1,0 +1,114 @@
+[
+ {
+  "id": "C020a",
+  "quote": "B: widely condemned as extremist",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0121a",
+  "quote": "B: about facing rampant antisemitism",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0175a",
+  "quote": "B: organized pogroms by mobs or state-sanctioned genocide",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "N210",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N212",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0043a",
+  "quote": "B: as [ENTITY-6] refugees fled the conditions in Europe brought on by WWII.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0180a",
+  "quote": "B: the first state in history to adopt",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0174a",
+  "quote": "B: guerrilla warfare and war crimes",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0066a",
+  "quote": "B: nuanced, where [ENTITY-1] had dhimmi status",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N211",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0022a",
+  "quote": "B: Child ballad No. 155, Roud No. 73",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "C026a",
+  "quote": "B: widely praised as a model of tolerance",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0231a",
+  "quote": "B: was the mass expulsion of approximately 1,221,489",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N213",
+  "quote": "B: a population of 436,000 (2023 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "C009a",
+  "quote": "B: It had about 2.4 million members in 2024.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0037a",
+  "quote": "B: Scholars widely describe the event as ethnic cleansing",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

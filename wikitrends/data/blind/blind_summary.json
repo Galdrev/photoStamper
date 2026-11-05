@@ -1,0 +1,498 @@
+{
+ "rubric": "v2",
+ "n_items": 260,
+ "n_topic": 170,
+ "n_control": 90,
+ "settled_in_code": 0,
+ "share_less_favourable_topic": 0.12352941176470589,
+ "share_less_favourable_control": 0.05555555555555555,
+ "share_more_favourable_topic": 0.07058823529411765,
+ "share_more_favourable_control": 0.07777777777777778,
+ "net_less_minus_more_diff": 0.07516339869281045,
+ "p_perm": 0.21515696860627875,
+ "swap_consistency": 0.6961538461538461,
+ "anchor_accuracy": 1.0,
+ "anchor_accuracy_min_shard": 1.0,
+ "calibration_accuracy": 0.9833333333333333,
+ "calibration_by_edit": {
+  "neg_label": 0.9166666666666666,
+  "pos_label": 1.0,
+  "hedge_removed": 1.0,
+  "hedge_added": 1.0,
+  "date_change": 1.0
+ },
+ "unsupported_quotes_downgraded": 0,
+ "invalid_rows": 0,
+ "reidentification": {
+  "n": 30,
+  "share_exact_article_named": 0.8333333333333334,
+  "note": "Masking names does not blind a model that has read Wikipedia: treat coding as masked, not blind."
+ },
+ "framing_vs_factual": {
+  "treatment": {
+   "both": 61,
+   "framing": 41,
+   "none": 22,
+   "factual_update": 46
+  },
+  "control": {
+   "both": 55,
+   "framing": 18,
+   "factual_update": 15,
+   "none": 2
+  }
+ },
+ "examples": [
+  {
+   "title": "Gabriel Wilensky",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "B: a future guided by reason, compassion, and progress",
+   "rev0": 993923457,
+   "rev1": 1372305255,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Anders Behring Breivik",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: is a Norwegian mass murderer, neo-Nazi, and domestic terrorist who perpetrated the 2011 Norway attacks",
+   "rev0": 997473954,
+   "rev1": 1377648768,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Madagascar Plan",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "A: towards which it had functioned as an important psychological step",
+   "rev0": 997351719,
+   "rev1": 1369677735,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Second Temple",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "B: standing as a pivotal symbol of [ENTITY-4] identity",
+   "rev0": 997485208,
+   "rev1": 1375740391,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "History of Zionism (pre-1948)",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "A: There is no other example in human history of a nation being reestablished after such a long period of existence as a diaspora.",
+   "rev0": 995962796,
+   "rev1": 1377647221,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Religious Zionism",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "A: right-wing components of the [ENTITY-1] [ENTITY-8] movement integrated nationalist revindication",
+   "rev0": 994910784,
+   "rev1": 1375216320,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Basic Law: Israel as the Nation-State of the Jewish People",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: has been characterized as racist and undemocratic by some critics",
+   "rev0": 997165506,
+   "rev1": 1368279517,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Israeli apartheid",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: [ENTITY-1] apartheid is a system of institutionalized segregation and discrimination in the [ENTITY-2] [ENTITY-3] territories.",
+   "rev0": 997123780,
+   "rev1": 1377252488,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Blockade of the Gaza Strip",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: The [ENTITY-4] and its effects have led to the territory being called an \"open-air prison\".",
+   "rev0": 996397933,
+   "rev1": 1377333548,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Adam Ferziger",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "A: In 2011, he received Bar-Ilan's \"Outstanding Lecturer\" award.",
+   "rev0": 970731693,
+   "rev1": 1364408108,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Kingdom of Israel (united monarchy)",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "A: is generally held to be a literary construction and not a historical reality",
+   "rev0": 997479560,
+   "rev1": 1377550268,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Israeli-occupied territories",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: In 2024, the ICJ ruled in an advisory opinion that [ENTITY-1]'s occupation was illegal",
+   "rev0": 996378943,
+   "rev1": 1373490928,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Taifa of Granada",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "B: was considered to be the wealthiest out of all of the [ENTITY-1] kingdoms",
+   "rev0": 994645769,
+   "rev1": 1371136551,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Christian Zionism",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: The [ENTITY-1] churches of [ENTITY-14] reject [ENTITY-1] [ENTITY-2] as a \"damaging ideology\".",
+   "rev0": 997056939,
+   "rev1": 1368281463,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Anti-Defamation League",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: In the 1980s, it was involved in propaganda against Nelson Mandela of South Africa",
+   "rev0": 997391698,
+   "rev1": 1375802043,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Maru Teferi",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "B: He won a silver medal in men's marathon at the 2023 World Athletics Championships",
+   "rev0": 931165479,
+   "rev1": 1370156375,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Israel and state-sponsored terrorism",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: committing acts of state terrorism on a daily basis",
+   "rev0": 990841120,
+   "rev1": 1376692893,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Paul Findley",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "A: He has also been praised for his support for the [ENTITY-7] and his anti-war activism.",
+   "rev0": 995608527,
+   "rev1": 1376430380,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Qutbism",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: [ENTITY-1] is an ideology that advocates [ENTITY-2] extremist violence",
+   "rev0": 996976678,
+   "rev1": 1376739821,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Rabbinic Judaism",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: is based on the claim that Moses at Mount [ENTITY-7] received both",
+   "rev0": 997055762,
+   "rev1": 1369764771,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Terror Against Terror",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: openly espoused the ideology of perpetrating terrorism",
+   "rev0": 922761634,
+   "rev1": 1362077310,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "James Sassoon, Baron Sassoon",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "A: mentioned in the Paradise Papers as one of the beneficiaries of a tax exempt Cayman Island trust fund",
+   "rev0": 992985994,
+   "rev1": 1376094369,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Second Aliyah",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "A: was an important and highly influential",
+   "rev0": 983771285,
+   "rev1": 1370922519,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Nili",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "A: was eventually proven right by history",
+   "rev0": 996654386,
+   "rev1": 1377110437,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Levite",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: who claim patrilineal descent from the Tribe of Levi",
+   "rev0": 996628749,
+   "rev1": 1375301768,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Jewish National Fund",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: The JNF has faced numerous criticisms for its role in the displacement of",
+   "rev0": 992718473,
+   "rev1": 1377193871,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Wilhelm Marr",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "A: was a German agitator and publicist",
+   "rev0": 995823480,
+   "rev1": 1371906312,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Operation Wooden Leg",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: The airstrike killed between 41 and 71 people and injured between 65 and 100.",
+   "rev0": 997468060,
+   "rev1": 1368287363,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Israel Defense Forces",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: with multiple human rights organizations and scholars accusing the [ENTITY-2] of genocide",
+   "rev0": 997113026,
+   "rev1": 1361433388,
+   "d0": "2021-01",
+   "d1": "2026-07"
+  },
+  {
+   "title": "Palestine Liberation Organization",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "B: is a [ENTITY-5] nationalist coalition that is internationally recognized as the official representative of the [ENTITY-5] people",
+   "rev0": 994657312,
+   "rev1": 1374581118,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Purity of arms",
+   "group": "treatment",
+   "label": "newer_less_favourable",
+   "quote": "B: Many [ENTITY-5] war crimes have been documented, including the use of torture, killing of civilians and prisoners of war",
+   "rev0": 992084373,
+   "rev1": 1374810550,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Amos Elon",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "B: \"one of the most distinguished and provocative [ENTITY-3] authors of his time\"",
+   "rev0": 997453979,
+   "rev1": 1373484030,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Anti-Zionism",
+   "group": "treatment",
+   "label": "newer_more_favourable",
+   "quote": "A: Critics of [ENTITY-1] have charged it is a cover for modern-day antisemitism",
+   "rev0": 991308679,
+   "rev1": 1377666933,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Anti-Armenian sentiment",
+   "group": "control",
+   "label": "newer_less_favourable",
+   "quote": "B: organized pogroms by mobs or state-sanctioned genocide",
+   "rev0": 994067038,
+   "rev1": 1376994342,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Anti-Catholicism",
+   "group": "control",
+   "label": "newer_less_favourable",
+   "quote": "B: is prejudice or discrimination against [ENTITY-3]",
+   "rev0": 997102138,
+   "rev1": 1377519840,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Basque nationalism",
+   "group": "control",
+   "label": "newer_more_favourable",
+   "quote": "A: [ENTITY-1] nationalism has included separatist movements.",
+   "rev0": 992377360,
+   "rev1": 1366051859,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Irish nationalism",
+   "group": "control",
+   "label": "newer_more_favourable",
+   "quote": "A: Politically, [ENTITY-1] nationalism gave way to many factions which created conflict, often violent, throughout the island.",
+   "rev0": 996179577,
+   "rev1": 1359024832,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Kosovo",
+   "group": "control",
+   "label": "newer_more_favourable",
+   "quote": "B: is a landlocked country in Southeastern Europe with partial diplomatic recognition",
+   "rev0": 997176498,
+   "rev1": 1376708508,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Persecution of Uyghurs in China",
+   "group": "control",
+   "label": "newer_less_favourable",
+   "quote": "B: the government of the People's Republic of [ENTITY-1] has committed a series of ongoing human rights abuses",
+   "rev0": 997528966,
+   "rev1": 1377281809,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Provisional Irish Republican Army",
+   "group": "control",
+   "label": "newer_less_favourable",
+   "quote": "B: The IRA's armed campaign, primarily in Northern [ENTITY-6] but also in England and mainland Europe, killed over 1,700 people",
+   "rev0": 997416581,
+   "rev1": 1377057891,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Quebec sovereignty movement",
+   "group": "control",
+   "label": "newer_more_favourable",
+   "quote": "B: Supporters believe that an independent [ENTITY-1] would be better positioned to promote its economic, social, environmental, and cultural development.",
+   "rev0": 997205256,
+   "rev1": 1373543375,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Shia Islam",
+   "group": "control",
+   "label": "newer_more_favourable",
+   "quote": "B: [ENTITY-1] [ENTITY-5] remain steadfast in honouring what they perceive to be the Prophet's wishes",
+   "rev0": 997206176,
+   "rev1": 1377702432,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Taiwanese nationalism",
+   "group": "control",
+   "label": "newer_more_favourable",
+   "quote": "B: it was the main motivation behind [ENTITY-2]\u2019s democratization",
+   "rev0": 995585346,
+   "rev1": 1377408718,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Turkish nationalism",
+   "group": "control",
+   "label": "newer_more_favourable",
+   "quote": "A: a political ideology that promotes and glorifies the [ENTITY-1] people",
+   "rev0": 995781148,
+   "rev1": 1372096909,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  },
+  {
+   "title": "Wagner Group",
+   "group": "control",
+   "label": "newer_less_favourable",
+   "quote": "B: the unit has been accused of war crimes including murder, torture, rape and robbery of civilians",
+   "rev0": 997131165,
+   "rev1": 1373251911,
+   "d0": "2021-01",
+   "d1": "2026-10"
+  }
+ ],
+ "gate_passed": true
+}

@@ -44,3 +44,13 @@ Panel: 332 topic / 90 comparison articles existing in Jan 2021. 513 articles loa
 Validation targets: Israel PASS; List of genocides PASS; Zionism (press timing) FAIL, while its post-hoc window PASSES; Gaza genocide FAIL (a weak "allegations" pattern written by me); Occupied Palestinian territories not in data.
 
 Deep-panel exploratory: hedged share topic 0.26 → 0.25, comparison 0.16 → 0.18. Scholarly citation share rose in both groups (topic 0.37 → 0.54; comparison 0.48 → 0.63). First sentence contains a critical term: topic 4.2% → 6.0%, comparison 10.0% → 8.9%.
+
+## Masked stance coding (exploratory; rubric v2; 260 changed leads, 170 topic / 90 comparison; both A/B orders)
+Source: data/blind/blind_summary.json
+- Quality gate PASSED: calibration 98.3% (known-answer synthetic edits), anchors 100%, swap consistency 70%, 0 unsupported quotes.
+- Newer version harsher on its subject: topic 12.4% vs comparison 5.6%. Newer version gentler: topic 7.1% vs comparison 7.8%.
+- Net (harsher minus gentler) difference topic − comparison: +0.075, permutation p = 0.22. **Not significant.** Direction is consistent with the mass tier.
+- **Blinding check: an AI named the exact article for 25/30 masked leads (83%).** Masking does not blind models to Wikipedia. Coding is "masked, not blind", and coder priors cannot be ruled out.
+
+## Lexicon precision (480 hits hand-coded by agent; data/kwic_coded.json)
+Precision: apartheid, ethnic cleansing, occupation, antisemitism/persecution 1.00; settler-colonial 0.975; war crimes 0.95; militant 0.95; genocide 0.925; terrorism 0.925; Nakba/expulsion 0.90; placebo geography 0.825; indigenous/homeland 0.725 ("Land of Israel" used as a place name inflates the topic-side connection count). The connection lexicon excludes Palestinian homeland/indigeneity terms by design, so it measures one narrative. 2 of 40 "colonial" hits are historical Zionist self-descriptions.
