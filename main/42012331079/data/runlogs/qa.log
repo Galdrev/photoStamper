@@ -1,0 +1,13 @@
+QA on 662 manifest articles; ignoring 481 stale cache files
+[PASS] BLOCKING integrity: snapshot sha1 matches revision metadata: 11354/11354 match; 571 snapshots predate window
+[PASS] BLOCKING coverage: manifest titles fetched: 662 fetched, 0 missing of 662
+[PASS] BLOCKING revisions: present for >=95% of articles: 0 without revisions
+[PASS] BLOCKING revisions: no duplicate revids: 0 articles
+[PASS] BLOCKING revisions: timestamps ascending: 0 articles
+[PASS] BLOCKING text: median snapshot >= 1,000 words: median 4342 words
+[PASS] WARN     text: lead section found in >=95% of snapshots: 11882/11910
+[PASS] WARN     continuity: snapshot size drops >60%: 6 drops
+[PASS] INFO     redirects: share of snapshots: 15/11925
+[PASS] INFO     short snapshots excluded (<300 words): 855/11910
+[PASS] WARN     pageviews present for >=90%: 12 missing
+[PASS] WARN     talk pages present for >=80%: 1 missing

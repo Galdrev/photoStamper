@@ -1,0 +1,5415 @@
+{
+ "articles": 662,
+ "snapshots": 11925,
+ "checks": [
+  {
+   "check": "integrity: snapshot sha1 matches revision metadata",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "11354/11354 match; 571 snapshots predate window",
+   "examples": []
+  },
+  {
+   "check": "coverage: manifest titles fetched",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "662 fetched, 0 missing of 662",
+   "examples": []
+  },
+  {
+   "check": "revisions: present for >=95% of articles",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "0 without revisions",
+   "examples": []
+  },
+  {
+   "check": "revisions: no duplicate revids",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "0 articles",
+   "examples": []
+  },
+  {
+   "check": "revisions: timestamps ascending",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "0 articles",
+   "examples": []
+  },
+  {
+   "check": "text: median snapshot >= 1,000 words",
+   "level": "BLOCKING",
+   "pass": true,
+   "detail": "median 4342 words",
+   "examples": []
+  },
+  {
+   "check": "text: lead section found in >=95% of snapshots",
+   "level": "WARN",
+   "pass": true,
+   "detail": "11882/11910",
+   "examples": []
+  },
+  {
+   "check": "continuity: snapshot size drops >60%",
+   "level": "WARN",
+   "pass": true,
+   "detail": "6 drops",
+   "examples": [
+    "Hezbollah @ 2025-07 (277449->0 chars)",
+    "Italian Nusach @ 2023-01 (6890->2118 chars)",
+    "Jewish population by country @ 2024-10 (97970->31078 chars)",
+    "Mauschel @ 2026-01 (82388->21508 chars)",
+    "Rashid Rida @ 2021-04 (13113->0 chars)",
+    "Taiwanese nationalism @ 2025-04 (37739->4165 chars)"
+   ]
+  },
+  {
+   "check": "redirects: share of snapshots",
+   "level": "INFO",
+   "pass": true,
+   "detail": "15/11925",
+   "examples": []
+  },
+  {
+   "check": "short snapshots excluded (<300 words)",
+   "level": "INFO",
+   "pass": true,
+   "detail": "855/11910",
+   "examples": []
+  },
+  {
+   "check": "pageviews present for >=90%",
+   "level": "WARN",
+   "pass": true,
+   "detail": "12 missing",
+   "examples": [
+    "1951 Chinese annexation of Tibet",
+    "Anti-Armenian sentiment",
+    "Armenian Apostolic Church",
+    "Bangladesh Liberation War",
+    "Egypt",
+    "Haunted in the New World",
+    "History of the Jews in Latin America and the Caribbean",
+    "King David Hotel bombing",
+    "Kurdistan Workers' Party insurgency",
+    "Religious Zionism",
+    "The Holocaust",
+    "Theodor Herzl"
+   ]
+  },
+  {
+   "check": "talk pages present for >=80%",
+   "level": "WARN",
+   "pass": true,
+   "detail": "1 missing",
+   "examples": [
+    "Expulsion of the Jews from Navarre"
+   ]
+  }
+ ],
+ "by_group": {
+  "treatment": 535,
+  "control": 127
+ },
+ "revisions_total": 306857,
+ "per_article": [
+  {
+   "title": "1929 Palestine riots",
+   "group": "treatment",
+   "revisions": 217,
+   "snapshots": 24,
+   "talk": 56,
+   "pageview_months": 71
+  },
+  {
+   "title": "1948 Arab\u2013Israeli War",
+   "group": "treatment",
+   "revisions": 833,
+   "snapshots": 24,
+   "talk": 468,
+   "pageview_months": 71
+  },
+  {
+   "title": "1948 Palestinian expulsion and flight",
+   "group": "treatment",
+   "revisions": 456,
+   "snapshots": 24,
+   "talk": 1342,
+   "pageview_months": 50
+  },
+  {
+   "title": "1949\u20131956 Palestinian expulsions",
+   "group": "treatment",
+   "revisions": 44,
+   "snapshots": 18,
+   "talk": 16,
+   "pageview_months": 45
+  },
+  {
+   "title": "1951 Chinese annexation of Tibet",
+   "group": "control",
+   "revisions": 261,
+   "snapshots": 24,
+   "talk": 91,
+   "pageview_months": 0
+  },
+  {
+   "title": "1967\u201371 Gazan insurgency",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 4,
+   "talk": 3,
+   "pageview_months": 14
+  },
+  {
+   "title": "1988 Shultz Initiative",
+   "group": "treatment",
+   "revisions": 40,
+   "snapshots": 4,
+   "talk": 3,
+   "pageview_months": 16
+  },
+  {
+   "title": "1997 Brooklyn bombing plot",
+   "group": "treatment",
+   "revisions": 26,
+   "snapshots": 14,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "2002 Kissufim tank ambush",
+   "group": "treatment",
+   "revisions": 18,
+   "snapshots": 12,
+   "talk": 7,
+   "pageview_months": 4
+  },
+  {
+   "title": "2006 Israeli operation in Beit Hanoun",
+   "group": "treatment",
+   "revisions": 40,
+   "snapshots": 19,
+   "talk": 12,
+   "pageview_months": 71
+  },
+  {
+   "title": "2015 Nice stabbing",
+   "group": "treatment",
+   "revisions": 32,
+   "snapshots": 13,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "2023\u20132024 Gaza Strip preterm births",
+   "group": "treatment",
+   "revisions": 156,
+   "snapshots": 12,
+   "talk": 58,
+   "pageview_months": 33
+  },
+  {
+   "title": "2023 Azerbaijani offensive in Nagorno-Karabakh",
+   "group": "control",
+   "revisions": 1808,
+   "snapshots": 13,
+   "talk": 941,
+   "pageview_months": 39
+  },
+  {
+   "title": "2023 Israeli female tank crew fight",
+   "group": "treatment",
+   "revisions": 137,
+   "snapshots": 10,
+   "talk": 88,
+   "pageview_months": 35
+  },
+  {
+   "title": "20th century departures of foreign nationals from Egypt",
+   "group": "treatment",
+   "revisions": 138,
+   "snapshots": 21,
+   "talk": 13,
+   "pageview_months": 31
+  },
+  {
+   "title": "38th World Zionist Congress",
+   "group": "treatment",
+   "revisions": 34,
+   "snapshots": 14,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "AI-assisted targeting in the Gaza Strip",
+   "group": "treatment",
+   "revisions": 112,
+   "snapshots": 10,
+   "talk": 20,
+   "pageview_months": 32
+  },
+  {
+   "title": "A History of the Jews",
+   "group": "treatment",
+   "revisions": 47,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 22
+  },
+  {
+   "title": "A Song for Simeon",
+   "group": "treatment",
+   "revisions": 20,
+   "snapshots": 12,
+   "talk": 7,
+   "pageview_months": 71
+  },
+  {
+   "title": "A Wider Bridge",
+   "group": "treatment",
+   "revisions": 54,
+   "snapshots": 20,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Abduction and killing of Nachshon Wachsman",
+   "group": "treatment",
+   "revisions": 70,
+   "snapshots": 20,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Aboriginal Australians",
+   "group": "control",
+   "revisions": 592,
+   "snapshots": 24,
+   "talk": 113,
+   "pageview_months": 71
+  },
+  {
+   "title": "Abraham Accords",
+   "group": "treatment",
+   "revisions": 632,
+   "snapshots": 24,
+   "talk": 120,
+   "pageview_months": 71
+  },
+  {
+   "title": "Abraham Rabinovich",
+   "group": "treatment",
+   "revisions": 18,
+   "snapshots": 12,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Abraham Zacuto",
+   "group": "treatment",
+   "revisions": 77,
+   "snapshots": 18,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Adam Ferziger",
+   "group": "treatment",
+   "revisions": 35,
+   "snapshots": 13,
+   "talk": 16,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ahad Ha'am",
+   "group": "treatment",
+   "revisions": 187,
+   "snapshots": 23,
+   "talk": 15,
+   "pageview_months": 71
+  },
+  {
+   "title": "Al-Ahli Arab Hospital explosion",
+   "group": "treatment",
+   "revisions": 2331,
+   "snapshots": 12,
+   "talk": 2918,
+   "pageview_months": 38
+  },
+  {
+   "title": "Al-Aqsa",
+   "group": "treatment",
+   "revisions": 244,
+   "snapshots": 13,
+   "talk": 79,
+   "pageview_months": 71
+  },
+  {
+   "title": "Al-Aqsa Mosque",
+   "group": "treatment",
+   "revisions": 486,
+   "snapshots": 24,
+   "talk": 843,
+   "pageview_months": 71
+  },
+  {
+   "title": "Al-Faruq Mosque (Denmark)",
+   "group": "treatment",
+   "revisions": 17,
+   "snapshots": 9,
+   "talk": 9,
+   "pageview_months": 53
+  },
+  {
+   "title": "Al-Qaeda",
+   "group": "control",
+   "revisions": 1239,
+   "snapshots": 24,
+   "talk": 325,
+   "pageview_months": 71
+  },
+  {
+   "title": "Al-Shabaab (militant group)",
+   "group": "control",
+   "revisions": 1206,
+   "snapshots": 24,
+   "talk": 121,
+   "pageview_months": 71
+  },
+  {
+   "title": "Alfred Nossig",
+   "group": "treatment",
+   "revisions": 119,
+   "snapshots": 16,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Algerian War",
+   "group": "control",
+   "revisions": 650,
+   "snapshots": 24,
+   "talk": 270,
+   "pageview_months": 71
+  },
+  {
+   "title": "Alibag",
+   "group": "treatment",
+   "revisions": 219,
+   "snapshots": 23,
+   "talk": 9,
+   "pageview_months": 71
+  },
+  {
+   "title": "Aline Caroline de Rothschild",
+   "group": "treatment",
+   "revisions": 14,
+   "snapshots": 10,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Aliyah",
+   "group": "treatment",
+   "revisions": 368,
+   "snapshots": 24,
+   "talk": 85,
+   "pageview_months": 71
+  },
+  {
+   "title": "Amazonian Jews",
+   "group": "treatment",
+   "revisions": 52,
+   "snapshots": 18,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Amos Elon",
+   "group": "treatment",
+   "revisions": 44,
+   "snapshots": 18,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anat Kamm\u2013Uri Blau affair",
+   "group": "treatment",
+   "revisions": 31,
+   "snapshots": 16,
+   "talk": 8,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ancient Israel and Judah",
+   "group": "treatment",
+   "revisions": 571,
+   "snapshots": 24,
+   "talk": 115,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anders Behring Breivik",
+   "group": "treatment",
+   "revisions": 1782,
+   "snapshots": 24,
+   "talk": 209,
+   "pageview_months": 71
+  },
+  {
+   "title": "Andr\u00e9 Azoulay",
+   "group": "treatment",
+   "revisions": 66,
+   "snapshots": 20,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anglican Diocese of Jerusalem",
+   "group": "treatment",
+   "revisions": 59,
+   "snapshots": 19,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anita Shapira",
+   "group": "treatment",
+   "revisions": 42,
+   "snapshots": 19,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anti-Armenian sentiment",
+   "group": "control",
+   "revisions": 271,
+   "snapshots": 24,
+   "talk": 48,
+   "pageview_months": 0
+  },
+  {
+   "title": "Anti-Catholicism",
+   "group": "control",
+   "revisions": 643,
+   "snapshots": 24,
+   "talk": 21,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anti-Defamation League",
+   "group": "treatment",
+   "revisions": 1922,
+   "snapshots": 24,
+   "talk": 1326,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anti-Hindu sentiment",
+   "group": "control",
+   "revisions": 698,
+   "snapshots": 24,
+   "talk": 646,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anti-Zionism",
+   "group": "treatment",
+   "revisions": 1400,
+   "snapshots": 24,
+   "talk": 829,
+   "pageview_months": 71
+  },
+  {
+   "title": "Anti-Zionism on Campus",
+   "group": "treatment",
+   "revisions": 20,
+   "snapshots": 11,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Antisemitic trope",
+   "group": "treatment",
+   "revisions": 1522,
+   "snapshots": 24,
+   "talk": 403,
+   "pageview_months": 71
+  },
+  {
+   "title": "Antisemitism",
+   "group": "treatment",
+   "revisions": 1047,
+   "snapshots": 24,
+   "talk": 757,
+   "pageview_months": 71
+  },
+  {
+   "title": "Antisemitism and the New Testament",
+   "group": "treatment",
+   "revisions": 130,
+   "snapshots": 23,
+   "talk": 30,
+   "pageview_months": 71
+  },
+  {
+   "title": "Antisemitism in Europe",
+   "group": "treatment",
+   "revisions": 579,
+   "snapshots": 24,
+   "talk": 132,
+   "pageview_months": 71
+  },
+  {
+   "title": "Antisemitism in Islam",
+   "group": "treatment",
+   "revisions": 575,
+   "snapshots": 24,
+   "talk": 81,
+   "pageview_months": 71
+  },
+  {
+   "title": "Antisemitism in US higher education",
+   "group": "treatment",
+   "revisions": 232,
+   "snapshots": 10,
+   "talk": 31,
+   "pageview_months": 32
+  },
+  {
+   "title": "Antisemitism in the Arab world",
+   "group": "treatment",
+   "revisions": 113,
+   "snapshots": 23,
+   "talk": 53,
+   "pageview_months": 71
+  },
+  {
+   "title": "Antisemitism in the British Labour Party",
+   "group": "treatment",
+   "revisions": 380,
+   "snapshots": 24,
+   "talk": 179,
+   "pageview_months": 71
+  },
+  {
+   "title": "Antisemitism in the United States",
+   "group": "treatment",
+   "revisions": 755,
+   "snapshots": 24,
+   "talk": 84,
+   "pageview_months": 71
+  },
+  {
+   "title": "Apartheid",
+   "group": "control",
+   "revisions": 1476,
+   "snapshots": 24,
+   "talk": 343,
+   "pageview_months": 71
+  },
+  {
+   "title": "Apocalypse of Zerubbabel",
+   "group": "treatment",
+   "revisions": 36,
+   "snapshots": 16,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Arab\u2013Israeli conflict",
+   "group": "treatment",
+   "revisions": 644,
+   "snapshots": 24,
+   "talk": 277,
+   "pageview_months": 71
+  },
+  {
+   "title": "Arab citizens of Israel",
+   "group": "treatment",
+   "revisions": 669,
+   "snapshots": 24,
+   "talk": 640,
+   "pageview_months": 71
+  },
+  {
+   "title": "Arab nationalism",
+   "group": "control",
+   "revisions": 269,
+   "snapshots": 22,
+   "talk": 36,
+   "pageview_months": 71
+  },
+  {
+   "title": "Armenia",
+   "group": "control",
+   "revisions": 1169,
+   "snapshots": 24,
+   "talk": 953,
+   "pageview_months": 71
+  },
+  {
+   "title": "Armenian Apostolic Church",
+   "group": "control",
+   "revisions": 396,
+   "snapshots": 24,
+   "talk": 20,
+   "pageview_months": 0
+  },
+  {
+   "title": "Armenian diaspora",
+   "group": "control",
+   "revisions": 106,
+   "snapshots": 22,
+   "talk": 18,
+   "pageview_months": 71
+  },
+  {
+   "title": "Armenian genocide",
+   "group": "control",
+   "revisions": 1623,
+   "snapshots": 24,
+   "talk": 2106,
+   "pageview_months": 71
+  },
+  {
+   "title": "Armenian nationalism",
+   "group": "control",
+   "revisions": 61,
+   "snapshots": 19,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Aryeh L\u00f6b Feinstein",
+   "group": "treatment",
+   "revisions": 5,
+   "snapshots": 4,
+   "talk": 4,
+   "pageview_months": 37
+  },
+  {
+   "title": "Ashkenazi Jews",
+   "group": "treatment",
+   "revisions": 962,
+   "snapshots": 24,
+   "talk": 905,
+   "pageview_months": 71
+  },
+  {
+   "title": "Attempted assassination of Konrad Adenauer",
+   "group": "treatment",
+   "revisions": 30,
+   "snapshots": 5,
+   "talk": 3,
+   "pageview_months": 17
+  },
+  {
+   "title": "Avraham Tehomi",
+   "group": "treatment",
+   "revisions": 51,
+   "snapshots": 16,
+   "talk": 8,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ayalon Institute",
+   "group": "treatment",
+   "revisions": 26,
+   "snapshots": 11,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Balfour Declaration",
+   "group": "treatment",
+   "revisions": 235,
+   "snapshots": 24,
+   "talk": 200,
+   "pageview_months": 71
+  },
+  {
+   "title": "Balkan Jews",
+   "group": "treatment",
+   "revisions": 35,
+   "snapshots": 16,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Bana'im",
+   "group": "treatment",
+   "revisions": 25,
+   "snapshots": 9,
+   "talk": 7,
+   "pageview_months": 56
+  },
+  {
+   "title": "Bangladesh Liberation War",
+   "group": "control",
+   "revisions": 417,
+   "snapshots": 24,
+   "talk": 315,
+   "pageview_months": 0
+  },
+  {
+   "title": "Banu Alfageer",
+   "group": "treatment",
+   "revisions": 1,
+   "snapshots": 2,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Bar Kokhba Revolt",
+   "group": "treatment",
+   "revisions": 1084,
+   "snapshots": 24,
+   "talk": 78,
+   "pageview_months": 71
+  },
+  {
+   "title": "Basic Law: Israel as the Nation-State of the Jewish People",
+   "group": "treatment",
+   "revisions": 131,
+   "snapshots": 22,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Basque nationalism",
+   "group": "control",
+   "revisions": 49,
+   "snapshots": 19,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Battle of Sderot",
+   "group": "treatment",
+   "revisions": 235,
+   "snapshots": 11,
+   "talk": 29,
+   "pageview_months": 38
+  },
+  {
+   "title": "Beit She'arim (Roman-era Jewish village)",
+   "group": "treatment",
+   "revisions": 203,
+   "snapshots": 18,
+   "talk": 295,
+   "pageview_months": 70
+  },
+  {
+   "title": "Ben-Dror Yemini",
+   "group": "treatment",
+   "revisions": 31,
+   "snapshots": 16,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Benjamin Netanyahu",
+   "group": "treatment",
+   "revisions": 1450,
+   "snapshots": 24,
+   "talk": 1082,
+   "pageview_months": 71
+  },
+  {
+   "title": "Beta Israel",
+   "group": "treatment",
+   "revisions": 1111,
+   "snapshots": 24,
+   "talk": 110,
+   "pageview_months": 71
+  },
+  {
+   "title": "Bethlehem",
+   "group": "treatment",
+   "revisions": 346,
+   "snapshots": 24,
+   "talk": 252,
+   "pageview_months": 71
+  },
+  {
+   "title": "Biblical historiography",
+   "group": "treatment",
+   "revisions": 22,
+   "snapshots": 1,
+   "talk": 1,
+   "pageview_months": 6
+  },
+  {
+   "title": "Biblical literalist chronology",
+   "group": "treatment",
+   "revisions": 83,
+   "snapshots": 23,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Biblists",
+   "group": "treatment",
+   "revisions": 21,
+   "snapshots": 11,
+   "talk": 4,
+   "pageview_months": 69
+  },
+  {
+   "title": "Biltmore Conference",
+   "group": "treatment",
+   "revisions": 35,
+   "snapshots": 16,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Black-Palestinian solidarity",
+   "group": "treatment",
+   "revisions": 86,
+   "snapshots": 12,
+   "talk": 4,
+   "pageview_months": 37
+  },
+  {
+   "title": "Blockade of the Gaza Strip",
+   "group": "treatment",
+   "revisions": 558,
+   "snapshots": 24,
+   "talk": 168,
+   "pageview_months": 71
+  },
+  {
+   "title": "Blood libel",
+   "group": "treatment",
+   "revisions": 535,
+   "snapshots": 24,
+   "talk": 156,
+   "pageview_months": 71
+  },
+  {
+   "title": "Bloody Sunday (1972)",
+   "group": "control",
+   "revisions": 654,
+   "snapshots": 24,
+   "talk": 525,
+   "pageview_months": 71
+  },
+  {
+   "title": "Boko Haram",
+   "group": "control",
+   "revisions": 874,
+   "snapshots": 24,
+   "talk": 96,
+   "pageview_months": 71
+  },
+  {
+   "title": "Bosnian genocide",
+   "group": "control",
+   "revisions": 284,
+   "snapshots": 23,
+   "talk": 62,
+   "pageview_months": 71
+  },
+  {
+   "title": "Boycott, Divestment and Sanctions",
+   "group": "treatment",
+   "revisions": 647,
+   "snapshots": 24,
+   "talk": 521,
+   "pageview_months": 71
+  },
+  {
+   "title": "British Uganda Programme",
+   "group": "treatment",
+   "revisions": 132,
+   "snapshots": 23,
+   "talk": 15,
+   "pageview_months": 71
+  },
+  {
+   "title": "Buddhism",
+   "group": "control",
+   "revisions": 1258,
+   "snapshots": 24,
+   "talk": 479,
+   "pageview_months": 71
+  },
+  {
+   "title": "Burton Visotzky",
+   "group": "treatment",
+   "revisions": 41,
+   "snapshots": 16,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Camp David Accords",
+   "group": "treatment",
+   "revisions": 83,
+   "snapshots": 18,
+   "talk": 13,
+   "pageview_months": 71
+  },
+  {
+   "title": "Canaan",
+   "group": "treatment",
+   "revisions": 932,
+   "snapshots": 24,
+   "talk": 80,
+   "pageview_months": 71
+  },
+  {
+   "title": "Canadian Parliamentary Coalition to Combat Antisemitism",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 9,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Catalan independence movement",
+   "group": "control",
+   "revisions": 319,
+   "snapshots": 24,
+   "talk": 16,
+   "pageview_months": 71
+  },
+  {
+   "title": "Catholic Church",
+   "group": "control",
+   "revisions": 1339,
+   "snapshots": 24,
+   "talk": 771,
+   "pageview_months": 71
+  },
+  {
+   "title": "Cave of the Patriarchs",
+   "group": "treatment",
+   "revisions": 207,
+   "snapshots": 24,
+   "talk": 120,
+   "pageview_months": 71
+  },
+  {
+   "title": "Chaim Hezekiah Medini",
+   "group": "treatment",
+   "revisions": 27,
+   "snapshots": 15,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Chaim Weizmann",
+   "group": "treatment",
+   "revisions": 263,
+   "snapshots": 24,
+   "talk": 24,
+   "pageview_months": 71
+  },
+  {
+   "title": "Charlotte Fonrobert",
+   "group": "treatment",
+   "revisions": 22,
+   "snapshots": 11,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Charlotte Hussey (researcher)",
+   "group": "treatment",
+   "revisions": 38,
+   "snapshots": 1,
+   "talk": 8,
+   "pageview_months": 12
+  },
+  {
+   "title": "Christian Zionism",
+   "group": "treatment",
+   "revisions": 407,
+   "snapshots": 23,
+   "talk": 71,
+   "pageview_months": 71
+  },
+  {
+   "title": "Christianity",
+   "group": "control",
+   "revisions": 1638,
+   "snapshots": 24,
+   "talk": 951,
+   "pageview_months": 71
+  },
+  {
+   "title": "City of David",
+   "group": "treatment",
+   "revisions": 25,
+   "snapshots": 8,
+   "talk": 16,
+   "pageview_months": 71
+  },
+  {
+   "title": "Colonia Lapin",
+   "group": "treatment",
+   "revisions": 18,
+   "snapshots": 10,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Columbia Unbecoming controversy",
+   "group": "treatment",
+   "revisions": 110,
+   "snapshots": 24,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Combating BDS Act",
+   "group": "treatment",
+   "revisions": 16,
+   "snapshots": 10,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Communiqu\u00e9s of the Unified National Leadership of the Uprising",
+   "group": "treatment",
+   "revisions": 31,
+   "snapshots": 5,
+   "talk": 3,
+   "pageview_months": 18
+  },
+  {
+   "title": "Comparisons between the Gaza war and the Russo-Ukrainian war",
+   "group": "treatment",
+   "revisions": 24,
+   "snapshots": 4,
+   "talk": 7,
+   "pageview_months": 8
+  },
+  {
+   "title": "Coptic Orthodox Church",
+   "group": "control",
+   "revisions": 739,
+   "snapshots": 24,
+   "talk": 81,
+   "pageview_months": 71
+  },
+  {
+   "title": "Criticism of Israel",
+   "group": "treatment",
+   "revisions": 320,
+   "snapshots": 24,
+   "talk": 132,
+   "pageview_months": 71
+  },
+  {
+   "title": "Criticism of Starbucks",
+   "group": "treatment",
+   "revisions": 187,
+   "snapshots": 22,
+   "talk": 13,
+   "pageview_months": 71
+  },
+  {
+   "title": "Crypto-Judaism",
+   "group": "treatment",
+   "revisions": 176,
+   "snapshots": 23,
+   "talk": 26,
+   "pageview_months": 71
+  },
+  {
+   "title": "Cultural Zionism",
+   "group": "treatment",
+   "revisions": 62,
+   "snapshots": 18,
+   "talk": 41,
+   "pageview_months": 71
+  },
+  {
+   "title": "Cyprus",
+   "group": "control",
+   "revisions": 1003,
+   "snapshots": 24,
+   "talk": 386,
+   "pageview_months": 71
+  },
+  {
+   "title": "Cyprus problem",
+   "group": "control",
+   "revisions": 575,
+   "snapshots": 24,
+   "talk": 64,
+   "pageview_months": 71
+  },
+  {
+   "title": "C\u0103l\u0103ra\u0219i, Moldova",
+   "group": "treatment",
+   "revisions": 24,
+   "snapshots": 15,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Dalit Voice",
+   "group": "treatment",
+   "revisions": 18,
+   "snapshots": 12,
+   "talk": 15,
+   "pageview_months": 71
+  },
+  {
+   "title": "Danziger Echo",
+   "group": "treatment",
+   "revisions": 6,
+   "snapshots": 6,
+   "talk": 4,
+   "pageview_months": 70
+  },
+  {
+   "title": "Darfur genocide",
+   "group": "control",
+   "revisions": 2,
+   "snapshots": 1,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "David Ben-Gurion",
+   "group": "treatment",
+   "revisions": 475,
+   "snapshots": 24,
+   "talk": 72,
+   "pageview_months": 71
+  },
+  {
+   "title": "David Berg",
+   "group": "treatment",
+   "revisions": 172,
+   "snapshots": 23,
+   "talk": 10,
+   "pageview_months": 71
+  },
+  {
+   "title": "David Desser",
+   "group": "treatment",
+   "revisions": 10,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "David Duke",
+   "group": "treatment",
+   "revisions": 495,
+   "snapshots": 24,
+   "talk": 430,
+   "pageview_months": 71
+  },
+  {
+   "title": "David Patterson (historian)",
+   "group": "treatment",
+   "revisions": 15,
+   "snapshots": 10,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "David Pryce-Jones",
+   "group": "treatment",
+   "revisions": 67,
+   "snapshots": 20,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "David ben Samuel of Estelle",
+   "group": "treatment",
+   "revisions": 32,
+   "snapshots": 5,
+   "talk": 2,
+   "pageview_months": 19
+  },
+  {
+   "title": "Deir Yassin massacre",
+   "group": "treatment",
+   "revisions": 670,
+   "snapshots": 24,
+   "talk": 214,
+   "pageview_months": 71
+  },
+  {
+   "title": "Demographic threat",
+   "group": "treatment",
+   "revisions": 51,
+   "snapshots": 20,
+   "talk": 12,
+   "pageview_months": 71
+  },
+  {
+   "title": "Demographics of Israel",
+   "group": "treatment",
+   "revisions": 681,
+   "snapshots": 24,
+   "talk": 73,
+   "pageview_months": 71
+  },
+  {
+   "title": "Der Weg (magazine)",
+   "group": "treatment",
+   "revisions": 47,
+   "snapshots": 12,
+   "talk": 6,
+   "pageview_months": 62
+  },
+  {
+   "title": "Dessau",
+   "group": "treatment",
+   "revisions": 86,
+   "snapshots": 23,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Dome of the Rock",
+   "group": "treatment",
+   "revisions": 296,
+   "snapshots": 24,
+   "talk": 128,
+   "pageview_months": 71
+  },
+  {
+   "title": "Doron Mendels",
+   "group": "treatment",
+   "revisions": 44,
+   "snapshots": 13,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Dor\u0107ol",
+   "group": "treatment",
+   "revisions": 92,
+   "snapshots": 22,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Dreyfus affair",
+   "group": "treatment",
+   "revisions": 459,
+   "snapshots": 24,
+   "talk": 19,
+   "pageview_months": 71
+  },
+  {
+   "title": "Druze",
+   "group": "control",
+   "revisions": 957,
+   "snapshots": 24,
+   "talk": 275,
+   "pageview_months": 71
+  },
+  {
+   "title": "Dunash ben Labrat",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 14,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "ETA (separatist group)",
+   "group": "control",
+   "revisions": 520,
+   "snapshots": 24,
+   "talk": 37,
+   "pageview_months": 71
+  },
+  {
+   "title": "East Jerusalem",
+   "group": "treatment",
+   "revisions": 244,
+   "snapshots": 24,
+   "talk": 99,
+   "pageview_months": 71
+  },
+  {
+   "title": "Eastern Orthodox Church",
+   "group": "control",
+   "revisions": 1571,
+   "snapshots": 24,
+   "talk": 280,
+   "pageview_months": 71
+  },
+  {
+   "title": "Eban Hyams",
+   "group": "treatment",
+   "revisions": 48,
+   "snapshots": 19,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Edward Isaac Ezra",
+   "group": "treatment",
+   "revisions": 7,
+   "snapshots": 7,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Egypt",
+   "group": "control",
+   "revisions": 1241,
+   "snapshots": 24,
+   "talk": 697,
+   "pageview_months": 0
+  },
+  {
+   "title": "Eliezer Halfin",
+   "group": "treatment",
+   "revisions": 31,
+   "snapshots": 17,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Entebbe raid",
+   "group": "treatment",
+   "revisions": 227,
+   "snapshots": 24,
+   "talk": 88,
+   "pageview_months": 71
+  },
+  {
+   "title": "Erna Weill",
+   "group": "treatment",
+   "revisions": 7,
+   "snapshots": 7,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Esarhaddon's Treaty with Ba'al of Tyre",
+   "group": "treatment",
+   "revisions": 31,
+   "snapshots": 12,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Eugen D\u00fchring",
+   "group": "treatment",
+   "revisions": 102,
+   "snapshots": 21,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Eva Gabriele Reichmann",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 7,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Exodus of Kashmiri Hindus",
+   "group": "control",
+   "revisions": 1149,
+   "snapshots": 24,
+   "talk": 2084,
+   "pageview_months": 71
+  },
+  {
+   "title": "Expulsion of the Jews from Navarre",
+   "group": "treatment",
+   "revisions": 10,
+   "snapshots": 5,
+   "talk": 0,
+   "pageview_months": 38
+  },
+  {
+   "title": "Fadak",
+   "group": "treatment",
+   "revisions": 154,
+   "snapshots": 22,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Faisal\u2013Weizmann agreement",
+   "group": "treatment",
+   "revisions": 44,
+   "snapshots": 14,
+   "talk": 4,
+   "pageview_months": 41
+  },
+  {
+   "title": "Farhud",
+   "group": "treatment",
+   "revisions": 300,
+   "snapshots": 24,
+   "talk": 16,
+   "pageview_months": 71
+  },
+  {
+   "title": "Fayez Sayegh",
+   "group": "treatment",
+   "revisions": 110,
+   "snapshots": 22,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "First Aliyah",
+   "group": "treatment",
+   "revisions": 126,
+   "snapshots": 20,
+   "talk": 19,
+   "pageview_months": 71
+  },
+  {
+   "title": "First Intifada",
+   "group": "treatment",
+   "revisions": 231,
+   "snapshots": 23,
+   "talk": 118,
+   "pageview_months": 71
+  },
+  {
+   "title": "First Nagorno-Karabakh War",
+   "group": "control",
+   "revisions": 545,
+   "snapshots": 24,
+   "talk": 141,
+   "pageview_months": 71
+  },
+  {
+   "title": "Flora Sassoon",
+   "group": "treatment",
+   "revisions": 36,
+   "snapshots": 13,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Foreign relations of Israel",
+   "group": "treatment",
+   "revisions": 430,
+   "snapshots": 24,
+   "talk": 77,
+   "pageview_months": 71
+  },
+  {
+   "title": "French Algeria",
+   "group": "control",
+   "revisions": 630,
+   "snapshots": 24,
+   "talk": 60,
+   "pageview_months": 71
+  },
+  {
+   "title": "Friedrich Donenfeld",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 18,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Friends of Israel Initiative",
+   "group": "treatment",
+   "revisions": 22,
+   "snapshots": 10,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "From the river to the sea",
+   "group": "treatment",
+   "revisions": 1251,
+   "snapshots": 13,
+   "talk": 1366,
+   "pageview_months": 66
+  },
+  {
+   "title": "Gabriel N. Finder",
+   "group": "treatment",
+   "revisions": 4,
+   "snapshots": 4,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Gabriel Wilensky",
+   "group": "treatment",
+   "revisions": 20,
+   "snapshots": 13,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Gadi Kinda",
+   "group": "treatment",
+   "revisions": 159,
+   "snapshots": 20,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Gaza Envelope",
+   "group": "treatment",
+   "revisions": 131,
+   "snapshots": 16,
+   "talk": 19,
+   "pageview_months": 34
+  },
+  {
+   "title": "Gaza Strip",
+   "group": "treatment",
+   "revisions": 1423,
+   "snapshots": 24,
+   "talk": 907,
+   "pageview_months": 71
+  },
+  {
+   "title": "Gaza Strip famine",
+   "group": "treatment",
+   "revisions": 1647,
+   "snapshots": 11,
+   "talk": 901,
+   "pageview_months": 35
+  },
+  {
+   "title": "Gaza genocide",
+   "group": "treatment",
+   "revisions": 7106,
+   "snapshots": 12,
+   "talk": 11936,
+   "pageview_months": 44
+  },
+  {
+   "title": "Gaza war",
+   "group": "treatment",
+   "revisions": 20928,
+   "snapshots": 12,
+   "talk": 17884,
+   "pageview_months": 71
+  },
+  {
+   "title": "Genetic history of the Middle East",
+   "group": "treatment",
+   "revisions": 543,
+   "snapshots": 24,
+   "talk": 47,
+   "pageview_months": 70
+  },
+  {
+   "title": "Genetic studies of Jews",
+   "group": "treatment",
+   "revisions": 1137,
+   "snapshots": 24,
+   "talk": 1079,
+   "pageview_months": 39
+  },
+  {
+   "title": "Genocide of indigenous peoples",
+   "group": "treatment",
+   "revisions": 1428,
+   "snapshots": 24,
+   "talk": 1382,
+   "pageview_months": 71
+  },
+  {
+   "title": "George Kadish",
+   "group": "treatment",
+   "revisions": 31,
+   "snapshots": 5,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "George Segal (artist)",
+   "group": "treatment",
+   "revisions": 56,
+   "snapshots": 19,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "German Conservative Party",
+   "group": "treatment",
+   "revisions": 67,
+   "snapshots": 20,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Gershonites",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 8,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Gesher Galicia",
+   "group": "treatment",
+   "revisions": 37,
+   "snapshots": 5,
+   "talk": 4,
+   "pageview_months": 61
+  },
+  {
+   "title": "Gidon Lev",
+   "group": "treatment",
+   "revisions": 62,
+   "snapshots": 14,
+   "talk": 4,
+   "pageview_months": 56
+  },
+  {
+   "title": "Gilad Atzmon",
+   "group": "treatment",
+   "revisions": 242,
+   "snapshots": 23,
+   "talk": 87,
+   "pageview_months": 71
+  },
+  {
+   "title": "Golan Heights",
+   "group": "treatment",
+   "revisions": 1205,
+   "snapshots": 24,
+   "talk": 1194,
+   "pageview_months": 71
+  },
+  {
+   "title": "Golda Meir",
+   "group": "treatment",
+   "revisions": 689,
+   "snapshots": 24,
+   "talk": 117,
+   "pageview_months": 71
+  },
+  {
+   "title": "Great Replacement conspiracy theory",
+   "group": "treatment",
+   "revisions": 1065,
+   "snapshots": 24,
+   "talk": 1724,
+   "pageview_months": 71
+  },
+  {
+   "title": "Greece",
+   "group": "control",
+   "revisions": 1564,
+   "snapshots": 24,
+   "talk": 473,
+   "pageview_months": 71
+  },
+  {
+   "title": "Greek Cypriots",
+   "group": "control",
+   "revisions": 332,
+   "snapshots": 24,
+   "talk": 66,
+   "pageview_months": 71
+  },
+  {
+   "title": "Greek diaspora",
+   "group": "control",
+   "revisions": 329,
+   "snapshots": 24,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Greek nationalism",
+   "group": "control",
+   "revisions": 140,
+   "snapshots": 18,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ha-Asif",
+   "group": "treatment",
+   "revisions": 15,
+   "snapshots": 8,
+   "talk": 4,
+   "pageview_months": 68
+  },
+  {
+   "title": "HaTekufah HaGedolah",
+   "group": "treatment",
+   "revisions": 16,
+   "snapshots": 3,
+   "talk": 1,
+   "pageview_months": 24
+  },
+  {
+   "title": "Haganah",
+   "group": "treatment",
+   "revisions": 141,
+   "snapshots": 22,
+   "talk": 69,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hainsfarth",
+   "group": "treatment",
+   "revisions": 5,
+   "snapshots": 6,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Halakha",
+   "group": "treatment",
+   "revisions": 215,
+   "snapshots": 23,
+   "talk": 16,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hamas",
+   "group": "treatment",
+   "revisions": 3354,
+   "snapshots": 24,
+   "talk": 3964,
+   "pageview_months": 71
+  },
+  {
+   "title": "Haplogroup K (mtDNA)",
+   "group": "treatment",
+   "revisions": 98,
+   "snapshots": 23,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Haredi Judaism",
+   "group": "treatment",
+   "revisions": 870,
+   "snapshots": 24,
+   "talk": 98,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hasidic Judaism",
+   "group": "treatment",
+   "revisions": 376,
+   "snapshots": 24,
+   "talk": 12,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hasmonean dynasty",
+   "group": "treatment",
+   "revisions": 461,
+   "snapshots": 24,
+   "talk": 84,
+   "pageview_months": 71
+  },
+  {
+   "title": "Haunted in the New World",
+   "group": "treatment",
+   "revisions": 8,
+   "snapshots": 7,
+   "talk": 1,
+   "pageview_months": 0
+  },
+  {
+   "title": "Haym Soloveitchik",
+   "group": "treatment",
+   "revisions": 22,
+   "snapshots": 14,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hebrew and Aramaic papyri",
+   "group": "treatment",
+   "revisions": 15,
+   "snapshots": 12,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hebrew language",
+   "group": "treatment",
+   "revisions": 673,
+   "snapshots": 24,
+   "talk": 185,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hebrews",
+   "group": "treatment",
+   "revisions": 221,
+   "snapshots": 24,
+   "talk": 13,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hebrews to Negroes: Wake Up Black America",
+   "group": "treatment",
+   "revisions": 322,
+   "snapshots": 15,
+   "talk": 66,
+   "pageview_months": 49
+  },
+  {
+   "title": "Hebron",
+   "group": "treatment",
+   "revisions": 433,
+   "snapshots": 24,
+   "talk": 263,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hebron massacre",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 4,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hechingen",
+   "group": "treatment",
+   "revisions": 34,
+   "snapshots": 15,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Henry Abramson",
+   "group": "treatment",
+   "revisions": 76,
+   "snapshots": 20,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Herod of Chalcis",
+   "group": "treatment",
+   "revisions": 27,
+   "snapshots": 13,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Herodian kingdom",
+   "group": "treatment",
+   "revisions": 131,
+   "snapshots": 23,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Herut Takele",
+   "group": "treatment",
+   "revisions": 64,
+   "snapshots": 10,
+   "talk": 6,
+   "pageview_months": 63
+  },
+  {
+   "title": "Hezbollah",
+   "group": "treatment",
+   "revisions": 1217,
+   "snapshots": 24,
+   "talk": 775,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hillel Levine",
+   "group": "treatment",
+   "revisions": 33,
+   "snapshots": 8,
+   "talk": 9,
+   "pageview_months": 51
+  },
+  {
+   "title": "Hilles clan",
+   "group": "treatment",
+   "revisions": 17,
+   "snapshots": 7,
+   "talk": 7,
+   "pageview_months": 71
+  },
+  {
+   "title": "Himyar",
+   "group": "treatment",
+   "revisions": 296,
+   "snapshots": 24,
+   "talk": 57,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hindu nationalism",
+   "group": "control",
+   "revisions": 592,
+   "snapshots": 24,
+   "talk": 178,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hinduism",
+   "group": "control",
+   "revisions": 1994,
+   "snapshots": 24,
+   "talk": 895,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Australia",
+   "group": "control",
+   "revisions": 694,
+   "snapshots": 24,
+   "talk": 130,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Cyprus",
+   "group": "control",
+   "revisions": 202,
+   "snapshots": 23,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of India",
+   "group": "control",
+   "revisions": 896,
+   "snapshots": 24,
+   "talk": 477,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Israel",
+   "group": "treatment",
+   "revisions": 865,
+   "snapshots": 24,
+   "talk": 369,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Kashmir",
+   "group": "control",
+   "revisions": 203,
+   "snapshots": 24,
+   "talk": 58,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Kosovo",
+   "group": "control",
+   "revisions": 357,
+   "snapshots": 22,
+   "talk": 34,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Pakistan",
+   "group": "control",
+   "revisions": 806,
+   "snapshots": 24,
+   "talk": 154,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Palestine",
+   "group": "treatment",
+   "revisions": 828,
+   "snapshots": 24,
+   "talk": 277,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of South Africa",
+   "group": "control",
+   "revisions": 504,
+   "snapshots": 24,
+   "talk": 35,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Turkey",
+   "group": "control",
+   "revisions": 274,
+   "snapshots": 24,
+   "talk": 17,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of Zionism (pre-1948)",
+   "group": "treatment",
+   "revisions": 573,
+   "snapshots": 24,
+   "talk": 80,
+   "pageview_months": 5
+  },
+  {
+   "title": "History of antisemitism",
+   "group": "treatment",
+   "revisions": 418,
+   "snapshots": 24,
+   "talk": 47,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Antwerp",
+   "group": "treatment",
+   "revisions": 77,
+   "snapshots": 18,
+   "talk": 13,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Derbent",
+   "group": "treatment",
+   "revisions": 93,
+   "snapshots": 14,
+   "talk": 11,
+   "pageview_months": 55
+  },
+  {
+   "title": "History of the Jews in Eswatini",
+   "group": "treatment",
+   "revisions": 46,
+   "snapshots": 10,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Guernsey",
+   "group": "treatment",
+   "revisions": 30,
+   "snapshots": 12,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Ivory Coast",
+   "group": "treatment",
+   "revisions": 17,
+   "snapshots": 9,
+   "talk": 3,
+   "pageview_months": 45
+  },
+  {
+   "title": "History of the Jews in Kurdistan",
+   "group": "treatment",
+   "revisions": 194,
+   "snapshots": 23,
+   "talk": 23,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Latin America and the Caribbean",
+   "group": "treatment",
+   "revisions": 241,
+   "snapshots": 24,
+   "talk": 6,
+   "pageview_months": 0
+  },
+  {
+   "title": "History of the Jews in Mongolia",
+   "group": "treatment",
+   "revisions": 38,
+   "snapshots": 16,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Nicaragua",
+   "group": "treatment",
+   "revisions": 254,
+   "snapshots": 19,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in North Macedonia",
+   "group": "treatment",
+   "revisions": 125,
+   "snapshots": 23,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Oman",
+   "group": "treatment",
+   "revisions": 31,
+   "snapshots": 16,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Panama",
+   "group": "treatment",
+   "revisions": 36,
+   "snapshots": 9,
+   "talk": 3,
+   "pageview_months": 53
+  },
+  {
+   "title": "History of the Jews in Salzburg",
+   "group": "treatment",
+   "revisions": 3,
+   "snapshots": 3,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Verpel\u00e9t",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 7,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in Yugoslavia",
+   "group": "treatment",
+   "revisions": 24,
+   "snapshots": 7,
+   "talk": 4,
+   "pageview_months": 64
+  },
+  {
+   "title": "History of the Jews in the Democratic Republic of the Congo",
+   "group": "treatment",
+   "revisions": 45,
+   "snapshots": 15,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "History of the Jews in \u00dast\u00ed nad Labem",
+   "group": "treatment",
+   "revisions": 12,
+   "snapshots": 10,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Holocaust denial",
+   "group": "treatment",
+   "revisions": 472,
+   "snapshots": 24,
+   "talk": 436,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hosank",
+   "group": "treatment",
+   "revisions": 203,
+   "snapshots": 11,
+   "talk": 14,
+   "pageview_months": 35
+  },
+  {
+   "title": "How to Fight Anti-Semitism",
+   "group": "treatment",
+   "revisions": 69,
+   "snapshots": 19,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Human rights in Israel",
+   "group": "treatment",
+   "revisions": 199,
+   "snapshots": 24,
+   "talk": 46,
+   "pageview_months": 71
+  },
+  {
+   "title": "Hussein Mahmood Jeeb Tehar Gass",
+   "group": "treatment",
+   "revisions": 10,
+   "snapshots": 6,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "IHRA definition of antisemitism",
+   "group": "treatment",
+   "revisions": 757,
+   "snapshots": 24,
+   "talk": 509,
+   "pageview_months": 26
+  },
+  {
+   "title": "Igersheim",
+   "group": "treatment",
+   "revisions": 7,
+   "snapshots": 7,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ignaz Maybaum",
+   "group": "treatment",
+   "revisions": 26,
+   "snapshots": 10,
+   "talk": 8,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ilan Papp\u00e9",
+   "group": "treatment",
+   "revisions": 269,
+   "snapshots": 24,
+   "talk": 89,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ilya Galant",
+   "group": "treatment",
+   "revisions": 25,
+   "snapshots": 5,
+   "talk": 2,
+   "pageview_months": 22
+  },
+  {
+   "title": "Independent International Commission of Inquiry on the Occupied Palestinian Territory",
+   "group": "treatment",
+   "revisions": 106,
+   "snapshots": 17,
+   "talk": 20,
+   "pageview_months": 35
+  },
+  {
+   "title": "India",
+   "group": "control",
+   "revisions": 4791,
+   "snapshots": 24,
+   "talk": 5331,
+   "pageview_months": 71
+  },
+  {
+   "title": "Indian diaspora",
+   "group": "control",
+   "revisions": 1082,
+   "snapshots": 24,
+   "talk": 48,
+   "pageview_months": 71
+  },
+  {
+   "title": "Indigenous peoples in Canada",
+   "group": "control",
+   "revisions": 534,
+   "snapshots": 24,
+   "talk": 66,
+   "pageview_months": 71
+  },
+  {
+   "title": "Instrumentalization of the Holocaust",
+   "group": "treatment",
+   "revisions": 53,
+   "snapshots": 4,
+   "talk": 6,
+   "pageview_months": 15
+  },
+  {
+   "title": "Insurgency in Jammu and Kashmir",
+   "group": "control",
+   "revisions": 738,
+   "snapshots": 24,
+   "talk": 171,
+   "pageview_months": 71
+  },
+  {
+   "title": "International Conference to Review the Global Vision of the Holocaust",
+   "group": "treatment",
+   "revisions": 118,
+   "snapshots": 22,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Iran",
+   "group": "control",
+   "revisions": 3911,
+   "snapshots": 24,
+   "talk": 1117,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ireland",
+   "group": "control",
+   "revisions": 682,
+   "snapshots": 24,
+   "talk": 564,
+   "pageview_months": 71
+  },
+  {
+   "title": "Irgun",
+   "group": "treatment",
+   "revisions": 199,
+   "snapshots": 23,
+   "talk": 71,
+   "pageview_months": 71
+  },
+  {
+   "title": "Irish nationalism",
+   "group": "control",
+   "revisions": 200,
+   "snapshots": 23,
+   "talk": 24,
+   "pageview_months": 71
+  },
+  {
+   "title": "Irish republicanism",
+   "group": "control",
+   "revisions": 340,
+   "snapshots": 24,
+   "talk": 16,
+   "pageview_months": 71
+  },
+  {
+   "title": "Isaac Barzilay",
+   "group": "treatment",
+   "revisions": 4,
+   "snapshots": 1,
+   "talk": 1,
+   "pageview_months": 8
+  },
+  {
+   "title": "Isaac HaLevi Segal",
+   "group": "treatment",
+   "revisions": 4,
+   "snapshots": 5,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Isaiah Sonne",
+   "group": "treatment",
+   "revisions": 6,
+   "snapshots": 6,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Islam",
+   "group": "control",
+   "revisions": 2758,
+   "snapshots": 24,
+   "talk": 1239,
+   "pageview_months": 71
+  },
+  {
+   "title": "Islamic State",
+   "group": "control",
+   "revisions": 1467,
+   "snapshots": 24,
+   "talk": 774,
+   "pageview_months": 71
+  },
+  {
+   "title": "Islamophobia",
+   "group": "control",
+   "revisions": 612,
+   "snapshots": 24,
+   "talk": 515,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israel",
+   "group": "treatment",
+   "revisions": 3850,
+   "snapshots": 24,
+   "talk": 10406,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israel Defense Forces",
+   "group": "treatment",
+   "revisions": 567,
+   "snapshots": 24,
+   "talk": 352,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israel and state-sponsored terrorism",
+   "group": "treatment",
+   "revisions": 182,
+   "snapshots": 22,
+   "talk": 100,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli-occupied territories",
+   "group": "treatment",
+   "revisions": 307,
+   "snapshots": 24,
+   "talk": 159,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli Declaration of Independence",
+   "group": "treatment",
+   "revisions": 144,
+   "snapshots": 24,
+   "talk": 101,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli\u2013Palestinian conflict",
+   "group": "treatment",
+   "revisions": 1818,
+   "snapshots": 24,
+   "talk": 1264,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli apartheid",
+   "group": "treatment",
+   "revisions": 1376,
+   "snapshots": 24,
+   "talk": 1985,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli citizenship law",
+   "group": "treatment",
+   "revisions": 247,
+   "snapshots": 21,
+   "talk": 56,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli disengagement from the Gaza Strip",
+   "group": "treatment",
+   "revisions": 323,
+   "snapshots": 24,
+   "talk": 127,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli firing zones in the West Bank",
+   "group": "treatment",
+   "revisions": 26,
+   "snapshots": 5,
+   "talk": 2,
+   "pageview_months": 21
+  },
+  {
+   "title": "Israeli settlement",
+   "group": "treatment",
+   "revisions": 391,
+   "snapshots": 24,
+   "talk": 241,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli settlement timeline",
+   "group": "treatment",
+   "revisions": 85,
+   "snapshots": 20,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Israeli support for Hamas",
+   "group": "treatment",
+   "revisions": 240,
+   "snapshots": 10,
+   "talk": 46,
+   "pageview_months": 31
+  },
+  {
+   "title": "Israeli war crimes",
+   "group": "treatment",
+   "revisions": 1305,
+   "snapshots": 13,
+   "talk": 454,
+   "pageview_months": 57
+  },
+  {
+   "title": "Israelites",
+   "group": "treatment",
+   "revisions": 815,
+   "snapshots": 24,
+   "talk": 488,
+   "pageview_months": 71
+  },
+  {
+   "title": "Italian Nusach",
+   "group": "treatment",
+   "revisions": 61,
+   "snapshots": 17,
+   "talk": 3,
+   "pageview_months": 65
+  },
+  {
+   "title": "Jacob Talmon",
+   "group": "treatment",
+   "revisions": 51,
+   "snapshots": 20,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jean Pierre Rothschild",
+   "group": "treatment",
+   "revisions": 19,
+   "snapshots": 1,
+   "talk": 6,
+   "pageview_months": 19
+  },
+  {
+   "title": "Jekuthiel Sofer",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 5,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jericho",
+   "group": "treatment",
+   "revisions": 284,
+   "snapshots": 24,
+   "talk": 108,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jerusalem",
+   "group": "treatment",
+   "revisions": 834,
+   "snapshots": 24,
+   "talk": 1247,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jerusalem Declaration on Antisemitism",
+   "group": "treatment",
+   "revisions": 143,
+   "snapshots": 20,
+   "talk": 27,
+   "pageview_months": 69
+  },
+  {
+   "title": "Jerusalem of the West",
+   "group": "treatment",
+   "revisions": 15,
+   "snapshots": 7,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish Autonomous Oblast",
+   "group": "treatment",
+   "revisions": 416,
+   "snapshots": 24,
+   "talk": 27,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish Colonisation Association",
+   "group": "treatment",
+   "revisions": 87,
+   "snapshots": 19,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish Museum of Belgium shooting",
+   "group": "treatment",
+   "revisions": 88,
+   "snapshots": 23,
+   "talk": 13,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish National Fund",
+   "group": "treatment",
+   "revisions": 223,
+   "snapshots": 24,
+   "talk": 60,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish\u2013Roman wars",
+   "group": "treatment",
+   "revisions": 292,
+   "snapshots": 23,
+   "talk": 52,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish Voice for Peace",
+   "group": "treatment",
+   "revisions": 390,
+   "snapshots": 22,
+   "talk": 198,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish and democratic state",
+   "group": "treatment",
+   "revisions": 41,
+   "snapshots": 17,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish deicide",
+   "group": "treatment",
+   "revisions": 405,
+   "snapshots": 24,
+   "talk": 66,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish diaspora",
+   "group": "treatment",
+   "revisions": 214,
+   "snapshots": 23,
+   "talk": 85,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish exodus from the Muslim world",
+   "group": "treatment",
+   "revisions": 533,
+   "snapshots": 24,
+   "talk": 499,
+   "pageview_months": 55
+  },
+  {
+   "title": "Jewish history",
+   "group": "treatment",
+   "revisions": 807,
+   "snapshots": 24,
+   "talk": 82,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish identity",
+   "group": "treatment",
+   "revisions": 140,
+   "snapshots": 21,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish land purchase in Palestine",
+   "group": "treatment",
+   "revisions": 128,
+   "snapshots": 20,
+   "talk": 34,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish material culture",
+   "group": "treatment",
+   "revisions": 15,
+   "snapshots": 5,
+   "talk": 3,
+   "pageview_months": 53
+  },
+  {
+   "title": "Jewish peoplehood",
+   "group": "treatment",
+   "revisions": 131,
+   "snapshots": 20,
+   "talk": 7,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jewish population by country",
+   "group": "treatment",
+   "revisions": 920,
+   "snapshots": 24,
+   "talk": 177,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jews",
+   "group": "treatment",
+   "revisions": 916,
+   "snapshots": 24,
+   "talk": 982,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jews in the Polish Armed Forces",
+   "group": "treatment",
+   "revisions": 46,
+   "snapshots": 4,
+   "talk": 8,
+   "pageview_months": 3
+  },
+  {
+   "title": "Joe Alexander",
+   "group": "treatment",
+   "revisions": 79,
+   "snapshots": 22,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Joel Kovel",
+   "group": "treatment",
+   "revisions": 66,
+   "snapshots": 20,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "John P. Meier",
+   "group": "treatment",
+   "revisions": 86,
+   "snapshots": 24,
+   "talk": 10,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jonathan C. Friedman",
+   "group": "treatment",
+   "revisions": 25,
+   "snapshots": 9,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jordan",
+   "group": "control",
+   "revisions": 1141,
+   "snapshots": 24,
+   "talk": 286,
+   "pageview_months": 71
+  },
+  {
+   "title": "Joseph Stalin and antisemitism",
+   "group": "treatment",
+   "revisions": 215,
+   "snapshots": 22,
+   "talk": 28,
+   "pageview_months": 71
+  },
+  {
+   "title": "Joseph of Spain",
+   "group": "treatment",
+   "revisions": 6,
+   "snapshots": 4,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Joseph's Tomb",
+   "group": "treatment",
+   "revisions": 139,
+   "snapshots": 24,
+   "talk": 50,
+   "pageview_months": 71
+  },
+  {
+   "title": "Joshua Caslari",
+   "group": "treatment",
+   "revisions": 6,
+   "snapshots": 5,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Josippon",
+   "group": "treatment",
+   "revisions": 110,
+   "snapshots": 19,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Journal for the Study of Antisemitism",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 7,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Journal of Historical Review",
+   "group": "treatment",
+   "revisions": 125,
+   "snapshots": 22,
+   "talk": 32,
+   "pageview_months": 71
+  },
+  {
+   "title": "Jud S\u00fc\u00df (Hauff novel)",
+   "group": "treatment",
+   "revisions": 17,
+   "snapshots": 12,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Judaea (Roman province)",
+   "group": "treatment",
+   "revisions": 390,
+   "snapshots": 24,
+   "talk": 77,
+   "pageview_months": 71
+  },
+  {
+   "title": "Judaism",
+   "group": "treatment",
+   "revisions": 884,
+   "snapshots": 24,
+   "talk": 303,
+   "pageview_months": 71
+  },
+  {
+   "title": "Judea",
+   "group": "treatment",
+   "revisions": 253,
+   "snapshots": 24,
+   "talk": 75,
+   "pageview_months": 71
+  },
+  {
+   "title": "Judea and Samaria Area",
+   "group": "treatment",
+   "revisions": 101,
+   "snapshots": 22,
+   "talk": 45,
+   "pageview_months": 71
+  },
+  {
+   "title": "J\u00fcdenstra\u00dfe",
+   "group": "treatment",
+   "revisions": 15,
+   "snapshots": 9,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Karaim language",
+   "group": "treatment",
+   "revisions": 118,
+   "snapshots": 23,
+   "talk": 41,
+   "pageview_months": 71
+  },
+  {
+   "title": "Karine A affair",
+   "group": "treatment",
+   "revisions": 57,
+   "snapshots": 19,
+   "talk": 10,
+   "pageview_months": 71
+  },
+  {
+   "title": "Karl Renner",
+   "group": "treatment",
+   "revisions": 113,
+   "snapshots": 24,
+   "talk": 8,
+   "pageview_months": 71
+  },
+  {
+   "title": "Karni crossing",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 14,
+   "talk": 13,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kashmir conflict",
+   "group": "control",
+   "revisions": 361,
+   "snapshots": 24,
+   "talk": 139,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kashmiri Muslims",
+   "group": "control",
+   "revisions": 296,
+   "snapshots": 23,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kashmiri Pandits",
+   "group": "control",
+   "revisions": 238,
+   "snapshots": 22,
+   "talk": 51,
+   "pageview_months": 71
+  },
+  {
+   "title": "Katzenelnbogen",
+   "group": "treatment",
+   "revisions": 22,
+   "snapshots": 12,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Khaled Kelkal",
+   "group": "treatment",
+   "revisions": 16,
+   "snapshots": 10,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Khazar hypothesis of Ashkenazi ancestry",
+   "group": "treatment",
+   "revisions": 492,
+   "snapshots": 23,
+   "talk": 677,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kibbutz",
+   "group": "treatment",
+   "revisions": 164,
+   "snapshots": 24,
+   "talk": 64,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kidnapping and murder of Mohammed Abu Khdeir",
+   "group": "treatment",
+   "revisions": 108,
+   "snapshots": 23,
+   "talk": 9,
+   "pageview_months": 71
+  },
+  {
+   "title": "King David Hotel bombing",
+   "group": "treatment",
+   "revisions": 138,
+   "snapshots": 24,
+   "talk": 58,
+   "pageview_months": 0
+  },
+  {
+   "title": "Kingdom of Israel (Samaria)",
+   "group": "treatment",
+   "revisions": 381,
+   "snapshots": 23,
+   "talk": 105,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kingdom of Judah",
+   "group": "treatment",
+   "revisions": 595,
+   "snapshots": 24,
+   "talk": 219,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kishinev pogrom",
+   "group": "treatment",
+   "revisions": 162,
+   "snapshots": 24,
+   "talk": 51,
+   "pageview_months": 71
+  },
+  {
+   "title": "Knesset",
+   "group": "treatment",
+   "revisions": 618,
+   "snapshots": 24,
+   "talk": 95,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kosovo",
+   "group": "control",
+   "revisions": 1529,
+   "snapshots": 24,
+   "talk": 1146,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kosovo Albanians",
+   "group": "control",
+   "revisions": 339,
+   "snapshots": 24,
+   "talk": 36,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kosovo Serbs",
+   "group": "control",
+   "revisions": 576,
+   "snapshots": 24,
+   "talk": 135,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kosovo War",
+   "group": "control",
+   "revisions": 1057,
+   "snapshots": 24,
+   "talk": 196,
+   "pageview_months": 71
+  },
+  {
+   "title": "Koufax Curse",
+   "group": "treatment",
+   "revisions": 20,
+   "snapshots": 6,
+   "talk": 2,
+   "pageview_months": 30
+  },
+  {
+   "title": "Kristallnacht",
+   "group": "treatment",
+   "revisions": 692,
+   "snapshots": 24,
+   "talk": 75,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kurdish nationalism",
+   "group": "control",
+   "revisions": 313,
+   "snapshots": 24,
+   "talk": 18,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kurdistan Workers' Party",
+   "group": "control",
+   "revisions": 1093,
+   "snapshots": 24,
+   "talk": 383,
+   "pageview_months": 71
+  },
+  {
+   "title": "Kurdistan Workers' Party insurgency",
+   "group": "control",
+   "revisions": 793,
+   "snapshots": 24,
+   "talk": 196,
+   "pageview_months": 0
+  },
+  {
+   "title": "K\u00fclsheim",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 8,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "L. J. Greenberg",
+   "group": "treatment",
+   "revisions": 14,
+   "snapshots": 11,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Labor Zionism",
+   "group": "treatment",
+   "revisions": 152,
+   "snapshots": 24,
+   "talk": 32,
+   "pageview_months": 71
+  },
+  {
+   "title": "Lance J. Sussman",
+   "group": "treatment",
+   "revisions": 51,
+   "snapshots": 16,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Land of Israel",
+   "group": "treatment",
+   "revisions": 174,
+   "snapshots": 23,
+   "talk": 68,
+   "pageview_months": 71
+  },
+  {
+   "title": "Larry Tye",
+   "group": "treatment",
+   "revisions": 54,
+   "snapshots": 13,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Lauder\u2013Morasha School",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 24
+  },
+  {
+   "title": "Lauder Schools of Prague",
+   "group": "treatment",
+   "revisions": 13,
+   "snapshots": 8,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Law of Return",
+   "group": "treatment",
+   "revisions": 81,
+   "snapshots": 19,
+   "talk": 40,
+   "pageview_months": 71
+  },
+  {
+   "title": "Lebanon",
+   "group": "control",
+   "revisions": 1268,
+   "snapshots": 24,
+   "talk": 367,
+   "pageview_months": 71
+  },
+  {
+   "title": "Legal status of Palestine",
+   "group": "treatment",
+   "revisions": 53,
+   "snapshots": 17,
+   "talk": 11,
+   "pageview_months": 20
+  },
+  {
+   "title": "Legality of Israeli settlements",
+   "group": "treatment",
+   "revisions": 142,
+   "snapshots": 23,
+   "talk": 39,
+   "pageview_months": 44
+  },
+  {
+   "title": "Lehi (militant group)",
+   "group": "treatment",
+   "revisions": 234,
+   "snapshots": 24,
+   "talk": 104,
+   "pageview_months": 71
+  },
+  {
+   "title": "Lester L. Grabbe",
+   "group": "treatment",
+   "revisions": 25,
+   "snapshots": 11,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Leyb ben Oyzer",
+   "group": "treatment",
+   "revisions": 56,
+   "snapshots": 7,
+   "talk": 4,
+   "pageview_months": 25
+  },
+  {
+   "title": "Liberal Zionism",
+   "group": "treatment",
+   "revisions": 124,
+   "snapshots": 3,
+   "talk": 11,
+   "pageview_months": 53
+  },
+  {
+   "title": "Liberation Tigers of Tamil Eelam",
+   "group": "control",
+   "revisions": 1029,
+   "snapshots": 24,
+   "talk": 386,
+   "pageview_months": 71
+  },
+  {
+   "title": "List of Israeli Ethiopian Jews",
+   "group": "treatment",
+   "revisions": 53,
+   "snapshots": 18,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "List of Israeli assassinations",
+   "group": "treatment",
+   "revisions": 435,
+   "snapshots": 24,
+   "talk": 321,
+   "pageview_months": 71
+  },
+  {
+   "title": "List of Jewish states and dynasties",
+   "group": "treatment",
+   "revisions": 155,
+   "snapshots": 21,
+   "talk": 53,
+   "pageview_months": 71
+  },
+  {
+   "title": "List of Jewish temples",
+   "group": "treatment",
+   "revisions": 67,
+   "snapshots": 8,
+   "talk": 5,
+   "pageview_months": 31
+  },
+  {
+   "title": "List of genocides",
+   "group": "treatment",
+   "revisions": 1181,
+   "snapshots": 24,
+   "talk": 2978,
+   "pageview_months": 71
+  },
+  {
+   "title": "List of killings and massacres in Mandatory Palestine",
+   "group": "treatment",
+   "revisions": 270,
+   "snapshots": 23,
+   "talk": 89,
+   "pageview_months": 71
+  },
+  {
+   "title": "London Declaration on Combating Antisemitism",
+   "group": "treatment",
+   "revisions": 5,
+   "snapshots": 3,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Love, Work and Death",
+   "group": "treatment",
+   "revisions": 8,
+   "snapshots": 5,
+   "talk": 2,
+   "pageview_months": 32
+  },
+  {
+   "title": "Ma'amad",
+   "group": "treatment",
+   "revisions": 17,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 52
+  },
+  {
+   "title": "Mackenheim",
+   "group": "treatment",
+   "revisions": 7,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Magen Abraham Synagogue",
+   "group": "treatment",
+   "revisions": 22,
+   "snapshots": 13,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Majid Jamali Fashi",
+   "group": "treatment",
+   "revisions": 45,
+   "snapshots": 7,
+   "talk": 4,
+   "pageview_months": 25
+  },
+  {
+   "title": "Makarim Wibisono",
+   "group": "treatment",
+   "revisions": 16,
+   "snapshots": 8,
+   "talk": 4,
+   "pageview_months": 37
+  },
+  {
+   "title": "Mandatory Palestine",
+   "group": "treatment",
+   "revisions": 491,
+   "snapshots": 24,
+   "talk": 190,
+   "pageview_months": 71
+  },
+  {
+   "title": "Mar-Zutra II",
+   "group": "treatment",
+   "revisions": 16,
+   "snapshots": 7,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Marci Shore",
+   "group": "treatment",
+   "revisions": 69,
+   "snapshots": 17,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Masada",
+   "group": "treatment",
+   "revisions": 324,
+   "snapshots": 24,
+   "talk": 18,
+   "pageview_months": 71
+  },
+  {
+   "title": "Mathieu Georges Dairnvaell",
+   "group": "treatment",
+   "revisions": 53,
+   "snapshots": 14,
+   "talk": 4,
+   "pageview_months": 65
+  },
+  {
+   "title": "Mauschel",
+   "group": "treatment",
+   "revisions": 239,
+   "snapshots": 14,
+   "talk": 71,
+   "pageview_months": 7
+  },
+  {
+   "title": "May 1976 Palestinian unrest",
+   "group": "treatment",
+   "revisions": 35,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 23
+  },
+  {
+   "title": "May 2019 Gaza\u2013Israel clashes",
+   "group": "treatment",
+   "revisions": 32,
+   "snapshots": 14,
+   "talk": 2,
+   "pageview_months": 38
+  },
+  {
+   "title": "Medina",
+   "group": "treatment",
+   "revisions": 566,
+   "snapshots": 24,
+   "talk": 29,
+   "pageview_months": 71
+  },
+  {
+   "title": "Melita \u0160vob",
+   "group": "treatment",
+   "revisions": 13,
+   "snapshots": 12,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Memorbuch",
+   "group": "treatment",
+   "revisions": 10,
+   "snapshots": 5,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Mikhail Lifshitz",
+   "group": "treatment",
+   "revisions": 25,
+   "snapshots": 14,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Miriam Weiner (genealogist)",
+   "group": "treatment",
+   "revisions": 108,
+   "snapshots": 22,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Mizrahi Jews",
+   "group": "treatment",
+   "revisions": 710,
+   "snapshots": 24,
+   "talk": 33,
+   "pageview_months": 71
+  },
+  {
+   "title": "Modern Hebrew",
+   "group": "treatment",
+   "revisions": 468,
+   "snapshots": 24,
+   "talk": 92,
+   "pageview_months": 71
+  },
+  {
+   "title": "Mon fr\u00e8re, ce terroriste",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 5,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Monheim, Bavaria",
+   "group": "treatment",
+   "revisions": 14,
+   "snapshots": 8,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Moses Rischin",
+   "group": "treatment",
+   "revisions": 20,
+   "snapshots": 11,
+   "talk": 7,
+   "pageview_months": 71
+  },
+  {
+   "title": "Moshe Rosman",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 9,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Moshe Zimmermann",
+   "group": "treatment",
+   "revisions": 14,
+   "snapshots": 10,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Mossad",
+   "group": "treatment",
+   "revisions": 404,
+   "snapshots": 24,
+   "talk": 377,
+   "pageview_months": 71
+  },
+  {
+   "title": "Most Holy Family Monastery",
+   "group": "treatment",
+   "revisions": 136,
+   "snapshots": 17,
+   "talk": 13,
+   "pageview_months": 71
+  },
+  {
+   "title": "Muhammad Qutb",
+   "group": "treatment",
+   "revisions": 53,
+   "snapshots": 20,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Mullah Said",
+   "group": "treatment",
+   "revisions": 7,
+   "snapshots": 7,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Munich massacre",
+   "group": "treatment",
+   "revisions": 394,
+   "snapshots": 24,
+   "talk": 156,
+   "pageview_months": 71
+  },
+  {
+   "title": "M\u0101ori people",
+   "group": "control",
+   "revisions": 1149,
+   "snapshots": 24,
+   "talk": 314,
+   "pageview_months": 71
+  },
+  {
+   "title": "Nabi Rubin",
+   "group": "treatment",
+   "revisions": 38,
+   "snapshots": 16,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Nablus",
+   "group": "treatment",
+   "revisions": 209,
+   "snapshots": 24,
+   "talk": 45,
+   "pageview_months": 71
+  },
+  {
+   "title": "Nadira (Indian actress)",
+   "group": "treatment",
+   "revisions": 130,
+   "snapshots": 22,
+   "talk": 6,
+   "pageview_months": 33
+  },
+  {
+   "title": "Nagorno-Karabakh",
+   "group": "control",
+   "revisions": 286,
+   "snapshots": 24,
+   "talk": 100,
+   "pageview_months": 71
+  },
+  {
+   "title": "Nagorno-Karabakh conflict",
+   "group": "control",
+   "revisions": 771,
+   "snapshots": 24,
+   "talk": 403,
+   "pageview_months": 71
+  },
+  {
+   "title": "Nakba",
+   "group": "treatment",
+   "revisions": 1256,
+   "snapshots": 22,
+   "talk": 1372,
+   "pageview_months": 71
+  },
+  {
+   "title": "Nakba denial",
+   "group": "treatment",
+   "revisions": 397,
+   "snapshots": 10,
+   "talk": 202,
+   "pageview_months": 39
+  },
+  {
+   "title": "Natalia Ginzburg",
+   "group": "treatment",
+   "revisions": 148,
+   "snapshots": 19,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Natan Friedland",
+   "group": "treatment",
+   "revisions": 30,
+   "snapshots": 13,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "National Anti-Masonic and Anti-semitic League",
+   "group": "treatment",
+   "revisions": 14,
+   "snapshots": 3,
+   "talk": 1,
+   "pageview_months": 9
+  },
+  {
+   "title": "Nationalist faction (Spanish Civil War)",
+   "group": "treatment",
+   "revisions": 279,
+   "snapshots": 24,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Native Americans in the United States",
+   "group": "control",
+   "revisions": 1982,
+   "snapshots": 24,
+   "talk": 293,
+   "pageview_months": 71
+  },
+  {
+   "title": "Nayfeld",
+   "group": "treatment",
+   "revisions": 3,
+   "snapshots": 4,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Negroponte doctrine",
+   "group": "treatment",
+   "revisions": 24,
+   "snapshots": 9,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "New Jewish Narrative",
+   "group": "treatment",
+   "revisions": 43,
+   "snapshots": 7,
+   "talk": 13,
+   "pageview_months": 24
+  },
+  {
+   "title": "New Swedish People's League",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 9,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "New Synagogue (Gliwice)",
+   "group": "treatment",
+   "revisions": 13,
+   "snapshots": 8,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "New antisemitism",
+   "group": "treatment",
+   "revisions": 408,
+   "snapshots": 24,
+   "talk": 141,
+   "pageview_months": 71
+  },
+  {
+   "title": "Niederstetten",
+   "group": "treatment",
+   "revisions": 15,
+   "snapshots": 9,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Nili (unit)",
+   "group": "treatment",
+   "revisions": 35,
+   "snapshots": 4,
+   "talk": 12,
+   "pageview_months": 36
+  },
+  {
+   "title": "Northern Cyprus",
+   "group": "control",
+   "revisions": 278,
+   "snapshots": 24,
+   "talk": 223,
+   "pageview_months": 71
+  },
+  {
+   "title": "Northern Ireland",
+   "group": "control",
+   "revisions": 1000,
+   "snapshots": 24,
+   "talk": 247,
+   "pageview_months": 71
+  },
+  {
+   "title": "November 1979 Palestinian protests",
+   "group": "treatment",
+   "revisions": 31,
+   "snapshots": 4,
+   "talk": 3,
+   "pageview_months": 19
+  },
+  {
+   "title": "November 2019 Gaza\u2013Israel clashes",
+   "group": "treatment",
+   "revisions": 32,
+   "snapshots": 18,
+   "talk": 10,
+   "pageview_months": 38
+  },
+  {
+   "title": "OMIKE",
+   "group": "treatment",
+   "revisions": 32,
+   "snapshots": 16,
+   "talk": 2,
+   "pageview_months": 70
+  },
+  {
+   "title": "October 7 attacks",
+   "group": "treatment",
+   "revisions": 2867,
+   "snapshots": 12,
+   "talk": 3622,
+   "pageview_months": 36
+  },
+  {
+   "title": "Offenbach am Main",
+   "group": "treatment",
+   "revisions": 141,
+   "snapshots": 23,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Old City of Jerusalem",
+   "group": "treatment",
+   "revisions": 161,
+   "snapshots": 24,
+   "talk": 62,
+   "pageview_months": 71
+  },
+  {
+   "title": "Old Synagogue (Dortmund)",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Old Yishuv",
+   "group": "treatment",
+   "revisions": 160,
+   "snapshots": 21,
+   "talk": 15,
+   "pageview_months": 71
+  },
+  {
+   "title": "One-state solution",
+   "group": "treatment",
+   "revisions": 341,
+   "snapshots": 24,
+   "talk": 96,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ongoing Nakba",
+   "group": "treatment",
+   "revisions": 94,
+   "snapshots": 15,
+   "talk": 51,
+   "pageview_months": 48
+  },
+  {
+   "title": "Operation Hot Winter",
+   "group": "treatment",
+   "revisions": 58,
+   "snapshots": 18,
+   "talk": 18,
+   "pageview_months": 71
+  },
+  {
+   "title": "Operation Joshua",
+   "group": "treatment",
+   "revisions": 7,
+   "snapshots": 7,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Operation Moses",
+   "group": "treatment",
+   "revisions": 84,
+   "snapshots": 20,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Operation Wooden Leg",
+   "group": "treatment",
+   "revisions": 136,
+   "snapshots": 19,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Or Yehuda Agriculture School",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 5,
+   "talk": 4,
+   "pageview_months": 27
+  },
+  {
+   "title": "Oriana Fallaci",
+   "group": "treatment",
+   "revisions": 285,
+   "snapshots": 24,
+   "talk": 8,
+   "pageview_months": 71
+  },
+  {
+   "title": "Orthodox Judaism",
+   "group": "treatment",
+   "revisions": 575,
+   "snapshots": 24,
+   "talk": 57,
+   "pageview_months": 71
+  },
+  {
+   "title": "Oslo Accords",
+   "group": "treatment",
+   "revisions": 203,
+   "snapshots": 23,
+   "talk": 95,
+   "pageview_months": 71
+  },
+  {
+   "title": "Otto Dov Kulka",
+   "group": "treatment",
+   "revisions": 39,
+   "snapshots": 17,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Outbreak of the First Intifada",
+   "group": "treatment",
+   "revisions": 59,
+   "snapshots": 5,
+   "talk": 7,
+   "pageview_months": 16
+  },
+  {
+   "title": "Pakistan",
+   "group": "control",
+   "revisions": 3547,
+   "snapshots": 24,
+   "talk": 1632,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestine",
+   "group": "treatment",
+   "revisions": 1895,
+   "snapshots": 24,
+   "talk": 2435,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestine Liberation Organization",
+   "group": "treatment",
+   "revisions": 274,
+   "snapshots": 24,
+   "talk": 71,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestine Poster Project Archives",
+   "group": "treatment",
+   "revisions": 27,
+   "snapshots": 12,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestine (region)",
+   "group": "treatment",
+   "revisions": 405,
+   "snapshots": 24,
+   "talk": 474,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinian Declaration of Independence",
+   "group": "treatment",
+   "revisions": 93,
+   "snapshots": 19,
+   "talk": 31,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinian Jews",
+   "group": "treatment",
+   "revisions": 166,
+   "snapshots": 23,
+   "talk": 61,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinian Rural History Project",
+   "group": "treatment",
+   "revisions": 27,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 43
+  },
+  {
+   "title": "Palestinian identity",
+   "group": "treatment",
+   "revisions": 205,
+   "snapshots": 19,
+   "talk": 120,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinian nationalism",
+   "group": "control",
+   "revisions": 238,
+   "snapshots": 23,
+   "talk": 40,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinian posters",
+   "group": "treatment",
+   "revisions": 95,
+   "snapshots": 7,
+   "talk": 11,
+   "pageview_months": 24
+  },
+  {
+   "title": "Palestinian pottery",
+   "group": "treatment",
+   "revisions": 81,
+   "snapshots": 4,
+   "talk": 12,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinian refugee camps",
+   "group": "treatment",
+   "revisions": 84,
+   "snapshots": 20,
+   "talk": 26,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinian refugees",
+   "group": "treatment",
+   "revisions": 144,
+   "snapshots": 24,
+   "talk": 109,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinian right of return",
+   "group": "treatment",
+   "revisions": 128,
+   "snapshots": 24,
+   "talk": 49,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinians",
+   "group": "treatment",
+   "revisions": 879,
+   "snapshots": 24,
+   "talk": 911,
+   "pageview_months": 71
+  },
+  {
+   "title": "Palestinians in Israeli custody",
+   "group": "treatment",
+   "revisions": 183,
+   "snapshots": 23,
+   "talk": 56,
+   "pageview_months": 27
+  },
+  {
+   "title": "Pan-Africanism",
+   "group": "control",
+   "revisions": 529,
+   "snapshots": 24,
+   "talk": 21,
+   "pageview_months": 71
+  },
+  {
+   "title": "Partition of India",
+   "group": "control",
+   "revisions": 1216,
+   "snapshots": 24,
+   "talk": 121,
+   "pageview_months": 71
+  },
+  {
+   "title": "Partition of Ireland",
+   "group": "control",
+   "revisions": 490,
+   "snapshots": 24,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Persecution of Uyghurs in China",
+   "group": "control",
+   "revisions": 2524,
+   "snapshots": 24,
+   "talk": 4053,
+   "pageview_months": 34
+  },
+  {
+   "title": "Peter Beinart",
+   "group": "treatment",
+   "revisions": 236,
+   "snapshots": 24,
+   "talk": 10,
+   "pageview_months": 71
+  },
+  {
+   "title": "Philip Sassoon",
+   "group": "treatment",
+   "revisions": 76,
+   "snapshots": 22,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Philistia",
+   "group": "treatment",
+   "revisions": 238,
+   "snapshots": 24,
+   "talk": 18,
+   "pageview_months": 71
+  },
+  {
+   "title": "Philistines",
+   "group": "treatment",
+   "revisions": 759,
+   "snapshots": 24,
+   "talk": 75,
+   "pageview_months": 71
+  },
+  {
+   "title": "Phoenicia",
+   "group": "treatment",
+   "revisions": 1147,
+   "snapshots": 24,
+   "talk": 225,
+   "pageview_months": 71
+  },
+  {
+   "title": "Plan Dalet",
+   "group": "treatment",
+   "revisions": 196,
+   "snapshots": 21,
+   "talk": 89,
+   "pageview_months": 71
+  },
+  {
+   "title": "Plantation of Ulster",
+   "group": "control",
+   "revisions": 355,
+   "snapshots": 24,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Pogrom",
+   "group": "treatment",
+   "revisions": 1173,
+   "snapshots": 24,
+   "talk": 210,
+   "pageview_months": 71
+  },
+  {
+   "title": "Poland",
+   "group": "control",
+   "revisions": 2761,
+   "snapshots": 24,
+   "talk": 926,
+   "pageview_months": 71
+  },
+  {
+   "title": "Polish nationalism",
+   "group": "control",
+   "revisions": 98,
+   "snapshots": 21,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Politics of Israel",
+   "group": "treatment",
+   "revisions": 97,
+   "snapshots": 22,
+   "talk": 24,
+   "pageview_months": 71
+  },
+  {
+   "title": "Population exchange between Greece and Turkey",
+   "group": "control",
+   "revisions": 303,
+   "snapshots": 24,
+   "talk": 17,
+   "pageview_months": 71
+  },
+  {
+   "title": "Post-Zionism",
+   "group": "treatment",
+   "revisions": 42,
+   "snapshots": 19,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Primo Levi",
+   "group": "treatment",
+   "revisions": 316,
+   "snapshots": 23,
+   "talk": 50,
+   "pageview_months": 71
+  },
+  {
+   "title": "Prisoner of Zion",
+   "group": "treatment",
+   "revisions": 32,
+   "snapshots": 16,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Proposals for a Jewish state",
+   "group": "treatment",
+   "revisions": 149,
+   "snapshots": 23,
+   "talk": 28,
+   "pageview_months": 71
+  },
+  {
+   "title": "Protestantism",
+   "group": "control",
+   "revisions": 1197,
+   "snapshots": 24,
+   "talk": 97,
+   "pageview_months": 71
+  },
+  {
+   "title": "Provisional Irish Republican Army",
+   "group": "control",
+   "revisions": 686,
+   "snapshots": 24,
+   "talk": 354,
+   "pageview_months": 71
+  },
+  {
+   "title": "Quebec sovereignty movement",
+   "group": "control",
+   "revisions": 486,
+   "snapshots": 24,
+   "talk": 39,
+   "pageview_months": 71
+  },
+  {
+   "title": "RSI Police Order No. 5",
+   "group": "treatment",
+   "revisions": 8,
+   "snapshots": 7,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rabbinic Judaism",
+   "group": "treatment",
+   "revisions": 185,
+   "snapshots": 24,
+   "talk": 35,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rabbinical translations of Matthew",
+   "group": "treatment",
+   "revisions": 19,
+   "snapshots": 15,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rachel Elior",
+   "group": "treatment",
+   "revisions": 45,
+   "snapshots": 18,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rachel's Tomb",
+   "group": "treatment",
+   "revisions": 217,
+   "snapshots": 23,
+   "talk": 102,
+   "pageview_months": 71
+  },
+  {
+   "title": "Racial conceptions of Jewish identity in Zionism",
+   "group": "treatment",
+   "revisions": 1230,
+   "snapshots": 10,
+   "talk": 2300,
+   "pageview_months": 37
+  },
+  {
+   "title": "Racism in the work of Charles Dickens",
+   "group": "treatment",
+   "revisions": 90,
+   "snapshots": 22,
+   "talk": 9,
+   "pageview_months": 71
+  },
+  {
+   "title": "Radu Rosetti",
+   "group": "treatment",
+   "revisions": 131,
+   "snapshots": 19,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rafael Medoff",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 15,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rashid Rida",
+   "group": "treatment",
+   "revisions": 1056,
+   "snapshots": 24,
+   "talk": 22,
+   "pageview_months": 71
+  },
+  {
+   "title": "Reform Judaism",
+   "group": "treatment",
+   "revisions": 374,
+   "snapshots": 24,
+   "talk": 44,
+   "pageview_months": 71
+  },
+  {
+   "title": "Religious Zionism",
+   "group": "treatment",
+   "revisions": 278,
+   "snapshots": 24,
+   "talk": 25,
+   "pageview_months": 0
+  },
+  {
+   "title": "Religious anti-Zionism",
+   "group": "treatment",
+   "revisions": 77,
+   "snapshots": 13,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Religious antisemitism",
+   "group": "treatment",
+   "revisions": 157,
+   "snapshots": 21,
+   "talk": 17,
+   "pageview_months": 71
+  },
+  {
+   "title": "Republic of Artsakh",
+   "group": "control",
+   "revisions": 1010,
+   "snapshots": 24,
+   "talk": 678,
+   "pageview_months": 71
+  },
+  {
+   "title": "Republic of Ireland",
+   "group": "control",
+   "revisions": 1002,
+   "snapshots": 24,
+   "talk": 504,
+   "pageview_months": 71
+  },
+  {
+   "title": "Revisionist Zionism",
+   "group": "treatment",
+   "revisions": 228,
+   "snapshots": 23,
+   "talk": 32,
+   "pageview_months": 71
+  },
+  {
+   "title": "Revolutionary Armed Forces of Colombia",
+   "group": "control",
+   "revisions": 368,
+   "snapshots": 24,
+   "talk": 30,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rhodesia",
+   "group": "control",
+   "revisions": 778,
+   "snapshots": 24,
+   "talk": 77,
+   "pageview_months": 71
+  },
+  {
+   "title": "Riccardo Calimani",
+   "group": "treatment",
+   "revisions": 12,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rohingya genocide",
+   "group": "control",
+   "revisions": 697,
+   "snapshots": 24,
+   "talk": 116,
+   "pageview_months": 71
+  },
+  {
+   "title": "Romani people",
+   "group": "control",
+   "revisions": 2754,
+   "snapshots": 24,
+   "talk": 576,
+   "pageview_months": 71
+  },
+  {
+   "title": "Roxheim Synagogue",
+   "group": "treatment",
+   "revisions": 17,
+   "snapshots": 8,
+   "talk": 5,
+   "pageview_months": 29
+  },
+  {
+   "title": "Rubin Glucksmann",
+   "group": "treatment",
+   "revisions": 18,
+   "snapshots": 1,
+   "talk": 3,
+   "pageview_months": 3
+  },
+  {
+   "title": "Ruby Myers",
+   "group": "treatment",
+   "revisions": 67,
+   "snapshots": 19,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Russo-Ukrainian war",
+   "group": "control",
+   "revisions": 4063,
+   "snapshots": 24,
+   "talk": 4148,
+   "pageview_months": 71
+  },
+  {
+   "title": "Rwandan genocide",
+   "group": "control",
+   "revisions": 726,
+   "snapshots": 24,
+   "talk": 289,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sabra and Shatila massacre",
+   "group": "treatment",
+   "revisions": 345,
+   "snapshots": 23,
+   "talk": 127,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sabri Jiryis",
+   "group": "treatment",
+   "revisions": 22,
+   "snapshots": 14,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sadiq al-Mahdi",
+   "group": "treatment",
+   "revisions": 85,
+   "snapshots": 24,
+   "talk": 7,
+   "pageview_months": 71
+  },
+  {
+   "title": "Samaria",
+   "group": "treatment",
+   "revisions": 419,
+   "snapshots": 24,
+   "talk": 33,
+   "pageview_months": 71
+  },
+  {
+   "title": "San Remo conference",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 16,
+   "talk": 20,
+   "pageview_months": 71
+  },
+  {
+   "title": "Saudi Arabia",
+   "group": "control",
+   "revisions": 1906,
+   "snapshots": 24,
+   "talk": 627,
+   "pageview_months": 71
+  },
+  {
+   "title": "Scepter of Judah",
+   "group": "treatment",
+   "revisions": 28,
+   "snapshots": 10,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Scottish independence",
+   "group": "control",
+   "revisions": 710,
+   "snapshots": 24,
+   "talk": 75,
+   "pageview_months": 71
+  },
+  {
+   "title": "Seble Wongel",
+   "group": "treatment",
+   "revisions": 71,
+   "snapshots": 17,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Second Aliyah",
+   "group": "treatment",
+   "revisions": 82,
+   "snapshots": 20,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Second Intifada",
+   "group": "treatment",
+   "revisions": 430,
+   "snapshots": 24,
+   "talk": 237,
+   "pageview_months": 71
+  },
+  {
+   "title": "Second Temple",
+   "group": "treatment",
+   "revisions": 493,
+   "snapshots": 24,
+   "talk": 60,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sepharad",
+   "group": "treatment",
+   "revisions": 47,
+   "snapshots": 16,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sephardic Jews",
+   "group": "treatment",
+   "revisions": 919,
+   "snapshots": 24,
+   "talk": 62,
+   "pageview_months": 71
+  },
+  {
+   "title": "Seraya Shapshal",
+   "group": "treatment",
+   "revisions": 24,
+   "snapshots": 12,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Serbian Orthodox Church in Kosovo",
+   "group": "control",
+   "revisions": 28,
+   "snapshots": 9,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Servi camerae regis",
+   "group": "treatment",
+   "revisions": 3,
+   "snapshots": 4,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sexual and gender-based violence in the October 7 attacks",
+   "group": "treatment",
+   "revisions": 1268,
+   "snapshots": 12,
+   "talk": 1492,
+   "pageview_months": 19
+  },
+  {
+   "title": "Shabtai Tsur",
+   "group": "treatment",
+   "revisions": 6,
+   "snapshots": 0,
+   "talk": 3,
+   "pageview_months": 4
+  },
+  {
+   "title": "Shefa-Amr",
+   "group": "treatment",
+   "revisions": 148,
+   "snapshots": 19,
+   "talk": 15,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sheikh Jarrah",
+   "group": "treatment",
+   "revisions": 111,
+   "snapshots": 22,
+   "talk": 46,
+   "pageview_months": 71
+  },
+  {
+   "title": "Shia Islam",
+   "group": "control",
+   "revisions": 827,
+   "snapshots": 24,
+   "talk": 238,
+   "pageview_months": 71
+  },
+  {
+   "title": "Shiloh (biblical city)",
+   "group": "treatment",
+   "revisions": 241,
+   "snapshots": 24,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Shmuel Beru",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 12,
+   "talk": 4,
+   "pageview_months": 61
+  },
+  {
+   "title": "Shtetl",
+   "group": "treatment",
+   "revisions": 194,
+   "snapshots": 24,
+   "talk": 10,
+   "pageview_months": 71
+  },
+  {
+   "title": "Shusha",
+   "group": "control",
+   "revisions": 781,
+   "snapshots": 23,
+   "talk": 1079,
+   "pageview_months": 71
+  },
+  {
+   "title": "Siege of Jerusalem (70 CE)",
+   "group": "treatment",
+   "revisions": 748,
+   "snapshots": 24,
+   "talk": 64,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sikhism",
+   "group": "control",
+   "revisions": 2102,
+   "snapshots": 24,
+   "talk": 203,
+   "pageview_months": 71
+  },
+  {
+   "title": "Silwan",
+   "group": "treatment",
+   "revisions": 149,
+   "snapshots": 23,
+   "talk": 93,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sinai option",
+   "group": "treatment",
+   "revisions": 47,
+   "snapshots": 9,
+   "talk": 8,
+   "pageview_months": 21
+  },
+  {
+   "title": "Sion Assidon",
+   "group": "treatment",
+   "revisions": 138,
+   "snapshots": 16,
+   "talk": 8,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sir Moses Montefiore Home",
+   "group": "treatment",
+   "revisions": 3,
+   "snapshots": 3,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Six-Day War",
+   "group": "treatment",
+   "revisions": 670,
+   "snapshots": 24,
+   "talk": 428,
+   "pageview_months": 71
+  },
+  {
+   "title": "Society for the Promotion of Culture among the Jews of Russia",
+   "group": "treatment",
+   "revisions": 19,
+   "snapshots": 10,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Solomon ben Hasdai",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 8,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Someday We'll All Be Free (Kanye West song)",
+   "group": "treatment",
+   "revisions": 43,
+   "snapshots": 1,
+   "talk": 3,
+   "pageview_months": 4
+  },
+  {
+   "title": "Spiritually Israeli",
+   "group": "treatment",
+   "revisions": 190,
+   "snapshots": 2,
+   "talk": 23,
+   "pageview_months": 7
+  },
+  {
+   "title": "Stefanie Sch\u00fcler-Springorum",
+   "group": "treatment",
+   "revisions": 12,
+   "snapshots": 11,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Stereotypes of Jews",
+   "group": "treatment",
+   "revisions": 385,
+   "snapshots": 24,
+   "talk": 25,
+   "pageview_months": 71
+  },
+  {
+   "title": "Steven J. Zipperstein",
+   "group": "treatment",
+   "revisions": 49,
+   "snapshots": 14,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Steven Weitzman (scholar)",
+   "group": "treatment",
+   "revisions": 18,
+   "snapshots": 12,
+   "talk": 6,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sudanese civil war (2023\u2013present)",
+   "group": "control",
+   "revisions": 6535,
+   "snapshots": 14,
+   "talk": 1494,
+   "pageview_months": 35
+  },
+  {
+   "title": "Sue Bird",
+   "group": "treatment",
+   "revisions": 732,
+   "snapshots": 24,
+   "talk": 27,
+   "pageview_months": 71
+  },
+  {
+   "title": "Sunni Islam",
+   "group": "control",
+   "revisions": 552,
+   "snapshots": 24,
+   "talk": 124,
+   "pageview_months": 71
+  },
+  {
+   "title": "Susannah Heschel",
+   "group": "treatment",
+   "revisions": 53,
+   "snapshots": 21,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Swiss Union of Jewish Students",
+   "group": "treatment",
+   "revisions": 8,
+   "snapshots": 4,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Syria",
+   "group": "control",
+   "revisions": 2308,
+   "snapshots": 24,
+   "talk": 1524,
+   "pageview_months": 71
+  },
+  {
+   "title": "Syria Palaestina",
+   "group": "treatment",
+   "revisions": 358,
+   "snapshots": 24,
+   "talk": 42,
+   "pageview_months": 71
+  },
+  {
+   "title": "Tabitha Solomon",
+   "group": "treatment",
+   "revisions": 30,
+   "snapshots": 13,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Taiwan",
+   "group": "control",
+   "revisions": 2632,
+   "snapshots": 24,
+   "talk": 4752,
+   "pageview_months": 71
+  },
+  {
+   "title": "Taiwanese nationalism",
+   "group": "control",
+   "revisions": 413,
+   "snapshots": 23,
+   "talk": 14,
+   "pageview_months": 71
+  },
+  {
+   "title": "Tal Ayela",
+   "group": "treatment",
+   "revisions": 27,
+   "snapshots": 16,
+   "talk": 7,
+   "pageview_months": 71
+  },
+  {
+   "title": "Taliban",
+   "group": "control",
+   "revisions": 1843,
+   "snapshots": 24,
+   "talk": 556,
+   "pageview_months": 71
+  },
+  {
+   "title": "Talmud",
+   "group": "treatment",
+   "revisions": 619,
+   "snapshots": 24,
+   "talk": 128,
+   "pageview_months": 71
+  },
+  {
+   "title": "Tantura massacre",
+   "group": "treatment",
+   "revisions": 296,
+   "snapshots": 19,
+   "talk": 91,
+   "pageview_months": 71
+  },
+  {
+   "title": "Tauberbischofsheim",
+   "group": "treatment",
+   "revisions": 37,
+   "snapshots": 18,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Taur Ikhbeineh",
+   "group": "treatment",
+   "revisions": 63,
+   "snapshots": 7,
+   "talk": 3,
+   "pageview_months": 23
+  },
+  {
+   "title": "Tel Aviv",
+   "group": "treatment",
+   "revisions": 644,
+   "snapshots": 24,
+   "talk": 153,
+   "pageview_months": 71
+  },
+  {
+   "title": "Temple Institute",
+   "group": "treatment",
+   "revisions": 110,
+   "snapshots": 23,
+   "talk": 7,
+   "pageview_months": 71
+  },
+  {
+   "title": "Temple Mount",
+   "group": "treatment",
+   "revisions": 674,
+   "snapshots": 24,
+   "talk": 514,
+   "pageview_months": 71
+  },
+  {
+   "title": "Terms for Palestinian citizens of Israel",
+   "group": "treatment",
+   "revisions": 33,
+   "snapshots": 9,
+   "talk": 7,
+   "pageview_months": 33
+  },
+  {
+   "title": "The Fiftieth Gate",
+   "group": "treatment",
+   "revisions": 3,
+   "snapshots": 4,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "The Holocaust",
+   "group": "treatment",
+   "revisions": 1755,
+   "snapshots": 24,
+   "talk": 2875,
+   "pageview_months": 0
+  },
+  {
+   "title": "The Military Doctrine of Ukrainian Nationalists",
+   "group": "treatment",
+   "revisions": 26,
+   "snapshots": 13,
+   "talk": 5,
+   "pageview_months": 37
+  },
+  {
+   "title": "The Protocols of the Elders of Zion",
+   "group": "treatment",
+   "revisions": 430,
+   "snapshots": 24,
+   "talk": 186,
+   "pageview_months": 71
+  },
+  {
+   "title": "The Slave Market (G\u00e9r\u00f4me painting)",
+   "group": "treatment",
+   "revisions": 52,
+   "snapshots": 22,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "The Strange Death of Europe",
+   "group": "treatment",
+   "revisions": 76,
+   "snapshots": 21,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "The Troubles",
+   "group": "control",
+   "revisions": 802,
+   "snapshots": 24,
+   "talk": 126,
+   "pageview_months": 71
+  },
+  {
+   "title": "The World of the Bible",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 6,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Theodor Herzl",
+   "group": "treatment",
+   "revisions": 342,
+   "snapshots": 24,
+   "talk": 162,
+   "pageview_months": 0
+  },
+  {
+   "title": "Tibet",
+   "group": "control",
+   "revisions": 536,
+   "snapshots": 24,
+   "talk": 163,
+   "pageview_months": 71
+  },
+  {
+   "title": "Tigray war",
+   "group": "control",
+   "revisions": 2927,
+   "snapshots": 24,
+   "talk": 798,
+   "pageview_months": 68
+  },
+  {
+   "title": "Timeline of Jewish-Polish history",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 9,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Timeline of antisemitism in the 19th century",
+   "group": "treatment",
+   "revisions": 117,
+   "snapshots": 20,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Tony Blankley",
+   "group": "treatment",
+   "revisions": 62,
+   "snapshots": 20,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Torah",
+   "group": "treatment",
+   "revisions": 701,
+   "snapshots": 24,
+   "talk": 130,
+   "pageview_months": 71
+  },
+  {
+   "title": "Travelogues of Palestine",
+   "group": "treatment",
+   "revisions": 142,
+   "snapshots": 23,
+   "talk": 22,
+   "pageview_months": 71
+  },
+  {
+   "title": "Turkey",
+   "group": "control",
+   "revisions": 5226,
+   "snapshots": 24,
+   "talk": 4959,
+   "pageview_months": 71
+  },
+  {
+   "title": "Turkish Cypriots",
+   "group": "control",
+   "revisions": 412,
+   "snapshots": 24,
+   "talk": 10,
+   "pageview_months": 71
+  },
+  {
+   "title": "Turkish invasion of Cyprus",
+   "group": "control",
+   "revisions": 942,
+   "snapshots": 24,
+   "talk": 187,
+   "pageview_months": 71
+  },
+  {
+   "title": "Turkish nationalism",
+   "group": "control",
+   "revisions": 230,
+   "snapshots": 24,
+   "talk": 10,
+   "pageview_months": 71
+  },
+  {
+   "title": "Two-state solution",
+   "group": "treatment",
+   "revisions": 423,
+   "snapshots": 24,
+   "talk": 132,
+   "pageview_months": 71
+  },
+  {
+   "title": "UNRWA",
+   "group": "treatment",
+   "revisions": 589,
+   "snapshots": 24,
+   "talk": 328,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ukraine",
+   "group": "control",
+   "revisions": 2127,
+   "snapshots": 24,
+   "talk": 1676,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ukrainian nationalism",
+   "group": "control",
+   "revisions": 377,
+   "snapshots": 24,
+   "talk": 43,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ulster Volunteer Force",
+   "group": "control",
+   "revisions": 243,
+   "snapshots": 24,
+   "talk": 31,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ulster loyalism",
+   "group": "control",
+   "revisions": 177,
+   "snapshots": 23,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Undercover Mosque",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 13,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Underground to Palestine",
+   "group": "treatment",
+   "revisions": 11,
+   "snapshots": 9,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "Unified National Leadership of the Uprising",
+   "group": "treatment",
+   "revisions": 52,
+   "snapshots": 16,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "United Nations General Assembly Resolution ES-10/21",
+   "group": "treatment",
+   "revisions": 163,
+   "snapshots": 7,
+   "talk": 22,
+   "pageview_months": 38
+  },
+  {
+   "title": "Wagner Group",
+   "group": "control",
+   "revisions": 2180,
+   "snapshots": 24,
+   "talk": 738,
+   "pageview_months": 71
+  },
+  {
+   "title": "War of Independence Ribbon",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 7,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Weaponization of antisemitism",
+   "group": "treatment",
+   "revisions": 1877,
+   "snapshots": 12,
+   "talk": 2540,
+   "pageview_months": 36
+  },
+  {
+   "title": "West Bank",
+   "group": "treatment",
+   "revisions": 547,
+   "snapshots": 24,
+   "talk": 410,
+   "pageview_months": 71
+  },
+  {
+   "title": "West Bank barrier",
+   "group": "treatment",
+   "revisions": 185,
+   "snapshots": 24,
+   "talk": 82,
+   "pageview_months": 71
+  },
+  {
+   "title": "Western Sahara conflict",
+   "group": "control",
+   "revisions": 277,
+   "snapshots": 24,
+   "talk": 51,
+   "pageview_months": 71
+  },
+  {
+   "title": "Western Wall",
+   "group": "treatment",
+   "revisions": 285,
+   "snapshots": 24,
+   "talk": 168,
+   "pageview_months": 71
+  },
+  {
+   "title": "White Brotherhood",
+   "group": "treatment",
+   "revisions": 9,
+   "snapshots": 7,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Who Are the Mind Benders?",
+   "group": "treatment",
+   "revisions": 10,
+   "snapshots": 10,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Who is a Jew?",
+   "group": "treatment",
+   "revisions": 346,
+   "snapshots": 24,
+   "talk": 97,
+   "pageview_months": 71
+  },
+  {
+   "title": "Wikipedia and the Israeli\u2013Palestinian conflict",
+   "group": "treatment",
+   "revisions": 519,
+   "snapshots": 12,
+   "talk": 247,
+   "pageview_months": 36
+  },
+  {
+   "title": "Wilhelm Marr",
+   "group": "treatment",
+   "revisions": 61,
+   "snapshots": 22,
+   "talk": 11,
+   "pageview_months": 71
+  },
+  {
+   "title": "Wilkomirski syndrome",
+   "group": "treatment",
+   "revisions": 29,
+   "snapshots": 8,
+   "talk": 1,
+   "pageview_months": 30
+  },
+  {
+   "title": "Wobalem Tezazu-Mekonnen",
+   "group": "treatment",
+   "revisions": 33,
+   "snapshots": 9,
+   "talk": 6,
+   "pageview_months": 62
+  },
+  {
+   "title": "World Jewish Relief",
+   "group": "treatment",
+   "revisions": 130,
+   "snapshots": 18,
+   "talk": 5,
+   "pageview_months": 71
+  },
+  {
+   "title": "World Union of Jewish Students",
+   "group": "treatment",
+   "revisions": 78,
+   "snapshots": 20,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "World Zionist Congress",
+   "group": "treatment",
+   "revisions": 102,
+   "snapshots": 22,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "World Zionist Organization",
+   "group": "treatment",
+   "revisions": 146,
+   "snapshots": 24,
+   "talk": 49,
+   "pageview_months": 71
+  },
+  {
+   "title": "Wrestling Jerusalem",
+   "group": "treatment",
+   "revisions": 8,
+   "snapshots": 6,
+   "talk": 3,
+   "pageview_months": 71
+  },
+  {
+   "title": "Xueta Christianity",
+   "group": "treatment",
+   "revisions": 23,
+   "snapshots": 10,
+   "talk": 1,
+   "pageview_months": 71
+  },
+  {
+   "title": "Yishuv",
+   "group": "treatment",
+   "revisions": 153,
+   "snapshots": 21,
+   "talk": 37,
+   "pageview_months": 71
+  },
+  {
+   "title": "Yisrael Friedman (Pashkaner Rebbe)",
+   "group": "treatment",
+   "revisions": 45,
+   "snapshots": 14,
+   "talk": 2,
+   "pageview_months": 71
+  },
+  {
+   "title": "Yisroel Mantel",
+   "group": "treatment",
+   "revisions": 45,
+   "snapshots": 4,
+   "talk": 2,
+   "pageview_months": 13
+  },
+  {
+   "title": "Yom Kippur 1984",
+   "group": "treatment",
+   "revisions": 30,
+   "snapshots": 9,
+   "talk": 6,
+   "pageview_months": 57
+  },
+  {
+   "title": "Yom Kippur War",
+   "group": "treatment",
+   "revisions": 897,
+   "snapshots": 24,
+   "talk": 1412,
+   "pageview_months": 71
+  },
+  {
+   "title": "Yossef Gutfreund",
+   "group": "treatment",
+   "revisions": 20,
+   "snapshots": 15,
+   "talk": 4,
+   "pageview_months": 71
+  },
+  {
+   "title": "Ze'ev Jabotinsky",
+   "group": "treatment",
+   "revisions": 422,
+   "snapshots": 24,
+   "talk": 34,
+   "pageview_months": 71
+  },
+  {
+   "title": "Zionism",
+   "group": "treatment",
+   "revisions": 3656,
+   "snapshots": 24,
+   "talk": 10365,
+   "pageview_months": 71
+  },
+  {
+   "title": "Zionism as settler colonialism",
+   "group": "treatment",
+   "revisions": 707,
+   "snapshots": 19,
+   "talk": 676,
+   "pageview_months": 56
+  },
+  {
+   "title": "Zionist Occupation Government conspiracy theory",
+   "group": "treatment",
+   "revisions": 205,
+   "snapshots": 22,
+   "talk": 359,
+   "pageview_months": 71
+  },
+  {
+   "title": "Zoroastrianism",
+   "group": "control",
+   "revisions": 959,
+   "snapshots": 24,
+   "talk": 956,
+   "pageview_months": 71
+  },
+  {
+   "title": "'Ali al-Hudhayfi",
+   "group": "treatment",
+   "revisions": 76,
+   "snapshots": 19,
+   "talk": 6,
+   "pageview_months": 17
+  }
+ ]
+}

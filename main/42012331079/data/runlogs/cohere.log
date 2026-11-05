@@ -1,0 +1,3 @@
+{"n": 570, "filter_counts": {"all": 570, "wikidata_keep": 458, "relevant": 353, "dropped_types": {"human": 95, "literary work": 8, "written work": 3, "film": 2, "magazine": 1, "album": 1, "musical work/composition": 1, "painting": 1}}}
+unfiltered n 455 115 | PC1 share 0.24 | OLS {'crit_full': {'coef': -0.545, 'lo': -2.604, 'hi': 1.513, 'p': 0.604}, 'crit_lead': {'coef': 8.119, 'lo': -2.712, 'hi': 18.95, 'p': 0.142}}
+filtered n 240 113 | PC1 share 0.24 | OLS {'crit_full': {'coef': 0.709, 'lo': -1.388, 'hi': 2.805, 'p': 0.508}, 'crit_lead': {'coef': 13.754, 'lo': -1.418, 'hi': 28.925, 'p': 0.076}}
