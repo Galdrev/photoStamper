@@ -8,7 +8,7 @@ We tracked 10,320 English Wikipedia articles on Israel, Palestine, Zionism and J
 
 ## Five things that matter
 
-### 1. Most articles did not change, and articles on Judaism did not move at all.
+### 1. Most articles did not change, and articles on Judaism did not move.
 85% of topic articles ended with exactly the same count of these words.
 
 **Visual:** A curve showing how concentrated the change is (a Lorenz curve), four lines: topic before and after the war, comparison before and after. Label two points: the top 1% of articles (40 pages) supplied 38% of the added words; the top 5% supplied 78%. Beside it, a small bar strip by project: Israel and Palestine pages up (together 61% of articles, 84% of additions), Judaism pages flat (28% of articles, 7% of additions; difference from comparison articles −0.1 points, statistically the same as zero).
