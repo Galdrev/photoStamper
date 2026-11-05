@@ -1,0 +1,18 @@
+[
+{"id": "R0212a", "quote": "B: [ENTITY-1] nationalism celebrates the culture of [ENTITY-2], especially the [ENTITY-1] language, literature, music, and sports.", "label": "no_stance_change", "kind": "factual_update", "confidence": "med"},
+{"id": "R0060a", "quote": "B: the proximate cause of the riots was the Grand Mufti of [ENTITY-3], Amin al-Husseini", "label": "unclear", "kind": "both", "confidence": "low"},
+{"id": "R0068a", "quote": "A: the united monarchy is generally held to be a literary construction and not a historical reality", "label": "B_more_favourable", "kind": "framing", "confidence": "med"},
+{"id": "R0006a", "quote": "B: to create a future guided by reason, compassion, and progress, leading to a more enlightened world.", "label": "B_more_favourable", "kind": "factual_update", "confidence": "med"},
+{"id": "R0048a", "quote": "B: It is estimated to have influenced perpetrators in over 200 killings.", "label": "unclear", "kind": "both", "confidence": "low"},
+{"id": "R0116a", "quote": "B: The operation was launched to stop [ENTITY-7] rocket attacks into [ENTITY-2].", "label": "no_stance_change", "kind": "none", "confidence": "high"},
+{"id": "N112", "quote": "A: rising to 3,100 metres.", "label": "no_stance_change", "kind": "none", "confidence": "high"},
+{"id": "R0256a", "quote": "B: involved in rioting, drug dealing, organised crime, loan-sharking and prostitution", "label": "B_less_favourable", "kind": "framing", "confidence": "med"},
+{"id": "R0166a", "quote": "B: His astrolabe of copper, astronomical tables, and maritime charts played an important role in the", "label": "B_more_favourable", "kind": "factual_update", "confidence": "med"},
+{"id": "R0004a", "quote": "B: The family additionally has philanthropic endeavours and nonprofits.", "label": "unclear", "kind": "both", "confidence": "low"},
+{"id": "N110", "quote": "A: has been widely condemned for violent intimidation of members.", "label": "B_more_favourable", "kind": "framing", "confidence": "high"},
+{"id": "R0209a", "quote": "B: The [ENTITY-1] diaspora comprise the world's largest overseas diaspora.", "label": "no_stance_change", "kind": "factual_update", "confidence": "med"},
+{"id": "N113", "quote": "B: a population of 436,000 (2023 census).", "label": "no_stance_change", "kind": "factual_update", "confidence": "high"},
+{"id": "C028a", "quote": "B: It has been accused of committing serious abuses against civilians.", "label": "B_more_favourable", "kind": "framing", "confidence": "med"},
+{"id": "N111", "quote": "A: has been accused of misusing donations.", "label": "B_more_favourable", "kind": "framing", "confidence": "high"},
+{"id": "R0145a", "quote": "B: After the war, Stalin and elements of the Ministry of State Security became suspicious of the [ENTITY-4]'s influence and connections with the West.", "label": "no_stance_change", "kind": "factual_update", "confidence": "med"}
+]

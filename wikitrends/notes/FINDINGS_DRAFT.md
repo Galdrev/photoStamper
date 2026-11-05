@@ -73,3 +73,4 @@ Source: data/blind/narr_codes_*.json, finals.json. Agreement check: 11/15 double
   - Purity of arms: "states as fact that the actor has committed many war crimes and a genocide";
   - Counter-direction: Qutbism, "states plainly that the ideology advocates extremist violence… where A attributed that description to others".
 - Caveat: small n (45). Coders could re-identify articles (83% in the blinding test).
+- Reliability probe (Haiku re-coded 12 shards): exact agreement with the primary coder 0.67 (n = 133 real items); on items either coder called directional, 0.50 (n = 56). Haiku anchors 1.00, calibration 0.91. Primary swap consistency 0.70. **Stance on real edits is noisy**: synthetic calibration is easy, real Wikipedia changes are not.
