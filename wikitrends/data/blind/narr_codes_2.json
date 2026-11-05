@@ -1,0 +1,313 @@
+[
+ {
+  "id": "R0086",
+  "themes": [
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B tells a fuller story of the kingdom, covering how it formed after a caliph was deposed, its kings, its wealth and its conquest, where A gave only its location and dates.",
+  "quote": "B: It was eventually conquered by the Almoravids in 1090, putting an end to Zirid rule"
+ },
+ {
+  "id": "R0216",
+  "themes": [
+   {
+    "code": "legitimacy",
+    "direction": "B_more_legitimising"
+   },
+   {
+    "code": "origins",
+    "direction": "B_ancient_roots"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "leaning",
+  "tone_B": "encyclopedic",
+  "summary": "B describes the subject as a country with partial recognition and stresses its ethnic Albanian majority and Dardani (Illyrian) core, where A called it a disputed territory and stressed its role as the core of the medieval Serbian state.",
+  "quote": "A: is a  partially-recognised state and disputed territory in Southeastern Europe"
+ },
+ {
+  "id": "R0163",
+  "themes": [
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   },
+   {
+    "code": "agency",
+    "direction": "B_names_actor",
+    "entity": "ENTITY-5"
+   },
+   {
+    "code": "suffering",
+    "direction": "B_more_ENTITY-6"
+   },
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "advocacy",
+  "summary": "B adds that the ethical code is controversial and states as fact that the actor has committed many war crimes and a genocide, where A only described the code.",
+  "quote": "B: Many [ENTITY-5] war crimes have been documented, including the use of torture, killing of civilians and prisoners of war"
+ },
+ {
+  "id": "R0123",
+  "themes": [
+   {
+    "code": "suffering",
+    "direction": "B_less_ENTITY-10"
+   },
+   {
+    "code": "scope",
+    "direction": "B_removes_events"
+   }
+  ],
+  "tone_A": "leaning",
+  "tone_B": "encyclopedic",
+  "summary": "B drops A's claim that history proved the network's choice right, along with the near-persecution of the local community after the ring was discovered.",
+  "quote": "A: was eventually proven right by history"
+ },
+ {
+  "id": "R0053",
+  "themes": [
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   },
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "agency",
+    "direction": "B_names_actor",
+    "entity": "ENTITY-4"
+   },
+   {
+    "code": "legitimacy",
+    "direction": "B_more_delegitimising"
+   },
+   {
+    "code": "suffering",
+    "direction": "B_more_ENTITY-3"
+   },
+   {
+    "code": "origins",
+    "direction": "B_displacement_of_others"
+   },
+   {
+    "code": "authority",
+    "direction": "B_more_authority"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "advocacy",
+  "summary": "B states as fact that an apartheid system exists and traces it back to the expulsion of refugees, where A presented apartheid as a contested analogy made by critics and answered by opponents.",
+  "quote": "B: [ENTITY-1] apartheid is a system of institutionalized segregation and discrimination"
+ },
+ {
+  "id": "R0068",
+  "themes": [
+   {
+    "code": "attribution",
+    "direction": "B_attributes"
+   },
+   {
+    "code": "origins",
+    "direction": "B_ancient_roots"
+   },
+   {
+    "code": "authority",
+    "direction": "B_more_authority"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B treats the kingdom's existence as an open scholarly debate, citing named archaeologists whose findings may support it, where A said scholars generally regard it as a literary construction.",
+  "quote": "A: generally held to be a literary construction and not a historical reality"
+ },
+ {
+  "id": "R0033",
+  "themes": [
+   {
+    "code": "origins",
+    "direction": "B_ancient_roots"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B presents the temple as a central symbol of a people's identity and religious revival after their return from exile, where A mainly gave the history of its construction and destruction.",
+  "quote": "B: standing as a pivotal symbol of [ENTITY-4] identity"
+ },
+ {
+  "id": "R0093",
+  "themes": [
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B adds the runner's later medals and Olympic results; the way he is presented does not change.",
+  "quote": "B: He won a silver medal in men's marathon at the 2023 World Athletics Championships"
+ },
+ {
+  "id": "R0161",
+  "themes": [
+   {
+    "code": "labels",
+    "direction": "B_softer"
+   },
+   {
+    "code": "legitimacy",
+    "direction": "B_more_legitimising"
+   },
+   {
+    "code": "suffering",
+    "direction": "B_less_ENTITY-10"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "leaning",
+  "tone_B": "leaning",
+  "summary": "B opens with the organisation as an internationally recognised nationalist representative and government and moves its violence lower down, where A opened with armed struggle aimed largely at civilians.",
+  "quote": "A: through armed struggle, with much of its violence aimed at [ENTITY-5] civilians"
+ },
+ {
+  "id": "R0017",
+  "themes": [
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B labels the perpetrator a mass murderer and neo-Nazi motivated by a replacement conspiracy theory and adds his later legal challenges, where A called him a far-right terrorist.",
+  "quote": "B: is a Norwegian mass murderer, neo-Nazi, and domestic terrorist"
+ },
+ {
+  "id": "R0175",
+  "themes": [
+   {
+    "code": "suffering",
+    "direction": "B_more_ENTITY-2"
+   },
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B presents the sentiment through a history of massacres, pogroms and genocide against the group, where A described it mainly as prejudice and modern denial.",
+  "quote": "B: organized pogroms by mobs or state-sanctioned genocide"
+ },
+ {
+  "id": "R0243",
+  "themes": [
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   },
+   {
+    "code": "legitimacy",
+    "direction": "B_more_legitimising"
+   },
+   {
+    "code": "agency",
+    "direction": "B_names_actor",
+    "entity": "companions of Muhammad"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "advocacy",
+  "summary": "B describes the branch's claim to succession in its own devotional terms, as a rightful leadership unjustly taken by some companions, where A set out the belief neutrally against the competing Sunni view.",
+  "quote": "B: Ali's divine right to leadership was unjustly usurped at the meeting of Saqifa"
+ },
+ {
+  "id": "R0122",
+  "themes": [
+   {
+    "code": "scope",
+    "direction": "B_removes_events"
+   }
+  ],
+  "tone_A": "leaning",
+  "tone_B": "encyclopedic",
+  "summary": "B drops A's praise of the wave as important and highly influential, and its remark that only a small fraction of emigrants went there, so the account reads more neutrally.",
+  "quote": "A: was an important and highly influential"
+ },
+ {
+  "id": "R0097",
+  "themes": [
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   },
+   {
+    "code": "authority",
+    "direction": "B_more_authority"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "advocacy",
+  "summary": "B goes beyond reporting accusations: it says the state commits terrorism daily, presents a historical plot as an example of its terrorism, and adds arms sales to dictatorships, where A only listed the countries making the allegation.",
+  "quote": "B: An early example of [ENTITY-7] state-sponsored terrorism was the 1954 Lavon Affair"
+ },
+ {
+  "id": "R0233",
+  "themes": [
+   {
+    "code": "suffering",
+    "direction": "B_more_ENTITY-5"
+   },
+   {
+    "code": "agency",
+    "direction": "B_names_actor",
+    "entity": "IRA"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B adds the human toll of the group's campaign, including deaths among security forces and civilians and attacks on civilian contractors, as well as more of its foreign backers.",
+  "quote": "B: killed over 1,700 people, including roughly 1,000 members of the [ENTITY-5] security forces and 500–644 civilians"
+ }
+]

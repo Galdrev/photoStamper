@@ -1,0 +1,329 @@
+[
+ {
+  "id": "R0089",
+  "themes": [
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   },
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B adds the organization's pro-state advocacy and controversial campaigns, stated plainly, where A presented it mainly through its own description of its anti-hate mission.",
+  "quote": "B: has sought to popularize the concept of a 'new antisemitism' identifying opposition to [ENTITY-10] and some criticism of [ENTITY-4] with antisemitism"
+ },
+ {
+  "id": "R0034",
+  "themes": [
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "origins",
+    "direction": "B_other"
+   },
+   {
+    "code": "scope",
+    "direction": "B_removes_events"
+   }
+  ],
+  "tone_A": "leaning",
+  "tone_B": "encyclopedic",
+  "summary": "B describes the movement as a nationalist ideology centred on its founder's political program, where A celebrated its success and its continuing role after statehood.",
+  "quote": "A: There is no other example in human history of a nation being reestablished after such a long period of existence as a diaspora."
+ },
+ {
+  "id": "R0018",
+  "themes": [
+   {
+    "code": "suffering",
+    "direction": "B_less_ENTITY-7"
+   },
+   {
+    "code": "scope",
+    "direction": "B_removes_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B ends the story at the plan being shelved, dropping A's link between the plan and the later systematic genocide of the targeted population.",
+  "quote": "A: the policy of systematic genocide of [ENTITY-7], towards which it had functioned as an important psychological step"
+ },
+ {
+  "id": "R0119",
+  "themes": [
+   {
+    "code": "agency",
+    "direction": "B_names_actor"
+   },
+   {
+    "code": "suffering",
+    "direction": "B_more_ENTITY-11"
+   },
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "authority",
+    "direction": "B_less_authority"
+   },
+   {
+    "code": "scope",
+    "direction": "B_removes_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B names the group's members as settlers who openly embraced terrorism and counts its victims, where A recounted specific attacks and arrests and quoted an analyst on its motives.",
+  "quote": "B: openly espoused the ideology of perpetrating terrorism and committed several violent attacks directed at [ENTITY-6], ranging from vandalism to mass shooting and murder"
+ },
+ {
+  "id": "R0167",
+  "themes": [
+   {
+    "code": "labels",
+    "direction": "B_softer"
+   },
+   {
+    "code": "origins",
+    "direction": "B_displacement_of_others"
+   },
+   {
+    "code": "suffering",
+    "direction": "B_more_ENTITY-16"
+   },
+   {
+    "code": "authority",
+    "direction": "B_more_authority"
+   },
+   {
+    "code": "attribution",
+    "direction": "B_attributes"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B tells the position's history through early opposition within the community and the later displacement of another population, where A framed it mainly around the charge that it is a cover for antisemitism.",
+  "quote": "A: Critics of [ENTITY-1] have charged it is a cover for modern-day antisemitism"
+ },
+ {
+  "id": "R0036",
+  "themes": [
+   {
+    "code": "labels",
+    "direction": "B_softer"
+   },
+   {
+    "code": "scope",
+    "direction": "B_removes_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B presents the subject as a religious denomination, where A called it an ideology and described its right-wing turn after a war and capture of territory.",
+  "quote": "A: right-wing components of the [ENTITY-1] [ENTITY-8] movement integrated nationalist revindication and evolved into Neo-[ENTITY-2]"
+ },
+ {
+  "id": "R0061",
+  "themes": [
+   {
+    "code": "agency",
+    "direction": "B_names_actor"
+   },
+   {
+    "code": "legitimacy",
+    "direction": "B_more_delegitimising"
+   },
+   {
+    "code": "authority",
+    "direction": "B_more_authority"
+   },
+   {
+    "code": "suffering",
+    "direction": "B_more_ENTITY-8"
+   },
+   {
+    "code": "origins",
+    "direction": "B_other"
+   },
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B presents the blockade as one state's long-running restrictions that rights groups see as illegal collective punishment of residents, where A presented it as a response to an armed group's takeover and quoted the state's security reasons.",
+  "quote": "B: human rights groups believe it would be deemed illegal and that it is a form of collective punishment"
+ },
+ {
+  "id": "R0087",
+  "themes": [
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "authority",
+    "direction": "B_more_authority"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B presents the belief as a political ideology that is distrusted and rejected by affected communities, where A described it as a religious belief held by some believers.",
+  "quote": "B: The [ENTITY-1] churches of [ENTITY-14] reject [ENTITY-1] [ENTITY-2] as a \"damaging ideology\"."
+ },
+ {
+  "id": "R0038",
+  "themes": [
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "authority",
+    "direction": "B_more_authority"
+   },
+   {
+    "code": "attribution",
+    "direction": "B_attributes"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B spells out the criticism as charges of racism and apartheid from named bodies and adds the court's later ruling upholding the law, where A noted only sharp criticism and a pending court challenge.",
+  "quote": "B: has been characterized as racist and undemocratic by some critics"
+ },
+ {
+  "id": "R0234",
+  "themes": [
+   {
+    "code": "legitimacy",
+    "direction": "B_more_legitimising"
+   },
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   },
+   {
+    "code": "scope",
+    "direction": "B_removes_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B presents the movement through its supporters' case for nationhood and self-determination, where A told its history through parties and failed referendums.",
+  "quote": "B: its desire for political autonomy to achieve its full potential as a sovereign nation"
+ },
+ {
+  "id": "R0006",
+  "themes": [
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B adds two later books, described in approving terms, to the author's list of works.",
+  "quote": "B: leading to a more enlightened world"
+ },
+ {
+  "id": "R0176",
+  "themes": [
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "suffering",
+    "direction": "B_more_ENTITY-3"
+   },
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   },
+   {
+    "code": "authority",
+    "direction": "B_less_authority"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B defines the subject as prejudice and persecution and adds violent populist movements, where A defined it as hostility or opposition and credited its typology to a historian.",
+  "quote": "B: religious discrimination and persecution against [ENTITY-3]"
+ },
+ {
+  "id": "R0111",
+  "themes": [
+   {
+    "code": "attribution",
+    "direction": "B_states_as_fact"
+   },
+   {
+    "code": "labels",
+    "direction": "B_harsher"
+   },
+   {
+    "code": "scope",
+    "direction": "B_adds_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B states plainly that the ideology advocates extremist violence and lists many armed groups it inspired, where A attributed that description to others and said its influence was widely believed.",
+  "quote": "B: [ENTITY-1] is an ideology that advocates [ENTITY-2] extremist violence in order to establish an [ENTITY-2] government"
+ },
+ {
+  "id": "R0212",
+  "themes": [
+   {
+    "code": "origins",
+    "direction": "B_colonial_origins"
+   },
+   {
+    "code": "agency",
+    "direction": "B_obscures_actor"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "leaning",
+  "summary": "B frames the island's history as centuries of foreign rule and colonial settlement and drops A's mention of violent conflict among nationalist factions.",
+  "quote": "B: who colonised the land as settlers during the reign of King James I in 1609"
+ },
+ {
+  "id": "R0109",
+  "themes": [
+   {
+    "code": "scope",
+    "direction": "B_removes_events"
+   }
+  ],
+  "tone_A": "encyclopedic",
+  "tone_B": "encyclopedic",
+  "summary": "B drops A's closing note that the politician was praised for his support of a group and his anti-war activism.",
+  "quote": "A: He has also been praised for his support for the [ENTITY-7] and his anti-war activism."
+ }
+]
