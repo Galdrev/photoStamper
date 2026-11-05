@@ -1,0 +1,62 @@
+{
+ "n_scored": 433,
+ "auc_all": 0.7522386907518913,
+ "by": {
+  "atro|insert": {
+   "n": 10,
+   "mean": 0.711,
+   "median": 0.748,
+   "reverted": 0.1,
+   "mean_if_not_reverted": 0.685
+  },
+  "atro|remove": {
+   "n": 10,
+   "mean": 0.846,
+   "median": 0.977,
+   "reverted": 0.6,
+   "mean_if_not_reverted": 0.637
+  },
+  "disp|insert": {
+   "n": 128,
+   "mean": 0.682,
+   "median": 0.706,
+   "reverted": 0.26,
+   "mean_if_not_reverted": 0.641
+  },
+  "disp|remove": {
+   "n": 119,
+   "mean": 0.719,
+   "median": 0.704,
+   "reverted": 0.37,
+   "mean_if_not_reverted": 0.659
+  },
+  "rand|insert": {
+   "n": 13,
+   "mean": 0.649,
+   "median": 0.657,
+   "reverted": 0.15,
+   "mean_if_not_reverted": 0.596
+  },
+  "rand|remove": {
+   "n": 13,
+   "mean": 0.885,
+   "median": 0.937,
+   "reverted": 0.85,
+   "mean_if_not_reverted": 0.83
+  },
+  "topic|insert": {
+   "n": 110,
+   "mean": 0.615,
+   "median": 0.632,
+   "reverted": 0.2,
+   "mean_if_not_reverted": 0.583
+  },
+  "topic|remove": {
+   "n": 103,
+   "mean": 0.631,
+   "median": 0.67,
+   "reverted": 0.26,
+   "mean_if_not_reverted": 0.599
+  }
+ }
+}

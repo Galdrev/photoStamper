@@ -1,0 +1,136 @@
+{
+ "rfc_rm": [
+  {
+   "w": "w1",
+   "s": "atro",
+   "rfc": 2,
+   "rfc_closed": 1,
+   "rm": 4,
+   "rm_moved": 0,
+   "rm_not_moved": 1,
+   "arts_with_rfc": 1,
+   "n": 6
+  },
+  {
+   "w": "w1",
+   "s": "disp",
+   "rfc": 15,
+   "rfc_closed": 11,
+   "rm": 16,
+   "rm_moved": 2,
+   "rm_not_moved": 4,
+   "arts_with_rfc": 7,
+   "n": 40
+  },
+  {
+   "w": "w1",
+   "s": "rand",
+   "rfc": 0,
+   "rfc_closed": 0,
+   "rm": 0,
+   "rm_moved": 0,
+   "rm_not_moved": 0,
+   "arts_with_rfc": 0,
+   "n": 60
+  },
+  {
+   "w": "w1",
+   "s": "topic",
+   "rfc": 11,
+   "rfc_closed": 3,
+   "rm": 12,
+   "rm_moved": 0,
+   "rm_not_moved": 5,
+   "arts_with_rfc": 4,
+   "n": 60
+  },
+  {
+   "w": "w2",
+   "s": "atro",
+   "rfc": 0,
+   "rfc_closed": 0,
+   "rm": 1,
+   "rm_moved": 0,
+   "rm_not_moved": 0,
+   "arts_with_rfc": 0,
+   "n": 6
+  },
+  {
+   "w": "w2",
+   "s": "disp",
+   "rfc": 6,
+   "rfc_closed": 3,
+   "rm": 14,
+   "rm_moved": 1,
+   "rm_not_moved": 3,
+   "arts_with_rfc": 4,
+   "n": 40
+  },
+  {
+   "w": "w2",
+   "s": "rand",
+   "rfc": 0,
+   "rfc_closed": 0,
+   "rm": 0,
+   "rm_moved": 0,
+   "rm_not_moved": 0,
+   "arts_with_rfc": 0,
+   "n": 60
+  },
+  {
+   "w": "w2",
+   "s": "topic",
+   "rfc": 88,
+   "rfc_closed": 40,
+   "rm": 45,
+   "rm_moved": 3,
+   "rm_not_moved": 4,
+   "arts_with_rfc": 12,
+   "n": 60
+  },
+  {
+   "w": "war",
+   "s": "atro",
+   "rfc": 0,
+   "rfc_closed": 0,
+   "rm": 1,
+   "rm_moved": 0,
+   "rm_not_moved": 0,
+   "arts_with_rfc": 0,
+   "n": 6
+  },
+  {
+   "w": "war",
+   "s": "disp",
+   "rfc": 6,
+   "rfc_closed": 3,
+   "rm": 7,
+   "rm_moved": 0,
+   "rm_not_moved": 2,
+   "arts_with_rfc": 4,
+   "n": 40
+  },
+  {
+   "w": "war",
+   "s": "rand",
+   "rfc": 0,
+   "rfc_closed": 0,
+   "rm": 0,
+   "rm_moved": 0,
+   "rm_not_moved": 0,
+   "arts_with_rfc": 0,
+   "n": 60
+  },
+  {
+   "w": "war",
+   "s": "topic",
+   "rfc": 88,
+   "rfc_closed": 40,
+   "rm": 45,
+   "rm_moved": 3,
+   "rm_not_moved": 4,
+   "arts_with_rfc": 12,
+   "n": 60
+  }
+ ]
+}

@@ -1,0 +1,227 @@
+{
+ "topic": {
+  "lead_refs@2021-01-01": {
+   "total": 711,
+   "Scholarly (books, journals)": 0.525,
+   "Other": 0.305,
+   "Western wire & papers": 0.083,
+   "Israeli press": 0.051,
+   "Rights orgs & UN": 0.018,
+   "Pro-Israel advocacy": 0.013,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.006
+  },
+  "lead_refs@2023-07-01": {
+   "total": 727,
+   "Scholarly (books, journals)": 0.578,
+   "Other": 0.246,
+   "Western wire & papers": 0.088,
+   "Israeli press": 0.052,
+   "Rights orgs & UN": 0.019,
+   "Pro-Israel advocacy": 0.008,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.008
+  },
+  "lead_refs@now": {
+   "total": 965,
+   "Scholarly (books, journals)": 0.674,
+   "Other": 0.173,
+   "Western wire & papers": 0.059,
+   "Israeli press": 0.052,
+   "Rights orgs & UN": 0.029,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.009,
+   "Pro-Israel advocacy": 0.004
+  },
+  "refs@2021-01-01": {
+   "total": 9369,
+   "Scholarly (books, journals)": 0.461,
+   "Other": 0.353,
+   "Israeli press": 0.079,
+   "Western wire & papers": 0.061,
+   "Rights orgs & UN": 0.024,
+   "Pro-Israel advocacy": 0.015,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.007
+  },
+  "refs@2023-07-01": {
+   "total": 10220,
+   "Scholarly (books, journals)": 0.55,
+   "Other": 0.275,
+   "Israeli press": 0.076,
+   "Western wire & papers": 0.059,
+   "Rights orgs & UN": 0.024,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.009,
+   "Pro-Israel advocacy": 0.008
+  },
+  "refs@now": {
+   "total": 12174,
+   "Scholarly (books, journals)": 0.647,
+   "Other": 0.19,
+   "Israeli press": 0.062,
+   "Western wire & papers": 0.059,
+   "Rights orgs & UN": 0.025,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.012,
+   "Pro-Israel advocacy": 0.005
+  }
+ },
+ "disp": {
+  "lead_refs@2021-01-01": {
+   "total": 799,
+   "Scholarly (books, journals)": 0.422,
+   "Other": 0.409,
+   "Western wire & papers": 0.129,
+   "Rights orgs & UN": 0.024,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.013,
+   "Pro-Israel advocacy": 0.004
+  },
+  "lead_refs@2023-07-01": {
+   "total": 997,
+   "Scholarly (books, journals)": 0.558,
+   "Other": 0.28,
+   "Western wire & papers": 0.12,
+   "Rights orgs & UN": 0.02,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.013,
+   "Israeli press": 0.007,
+   "Pro-Israel advocacy": 0.002
+  },
+  "lead_refs@now": {
+   "total": 876,
+   "Scholarly (books, journals)": 0.666,
+   "Other": 0.228,
+   "Western wire & papers": 0.079,
+   "Rights orgs & UN": 0.018,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.009
+  },
+  "refs@2021-01-01": {
+   "total": 6761,
+   "Scholarly (books, journals)": 0.469,
+   "Other": 0.398,
+   "Western wire & papers": 0.107,
+   "Rights orgs & UN": 0.017,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.008,
+   "Pro-Israel advocacy": 0.001,
+   "Israeli press": 0.0
+  },
+  "refs@2023-07-01": {
+   "total": 8042,
+   "Scholarly (books, journals)": 0.57,
+   "Other": 0.307,
+   "Western wire & papers": 0.097,
+   "Rights orgs & UN": 0.016,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.01,
+   "Israeli press": 0.001,
+   "Pro-Israel advocacy": 0.0
+  },
+  "refs@now": {
+   "total": 8716,
+   "Scholarly (books, journals)": 0.628,
+   "Other": 0.254,
+   "Western wire & papers": 0.091,
+   "Rights orgs & UN": 0.017,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.009,
+   "Israeli press": 0.0
+  }
+ },
+ "rand": {
+  "lead_refs@2021-01-01": {
+   "total": 206,
+   "Other": 0.65,
+   "Scholarly (books, journals)": 0.325,
+   "Western wire & papers": 0.019,
+   "Pro-Israel advocacy": 0.005
+  },
+  "lead_refs@2023-07-01": {
+   "total": 248,
+   "Other": 0.593,
+   "Scholarly (books, journals)": 0.379,
+   "Western wire & papers": 0.024,
+   "Pro-Israel advocacy": 0.004
+  },
+  "lead_refs@now": {
+   "total": 260,
+   "Other": 0.538,
+   "Scholarly (books, journals)": 0.419,
+   "Western wire & papers": 0.027,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.012,
+   "Pro-Israel advocacy": 0.004
+  },
+  "refs@2021-01-01": {
+   "total": 2052,
+   "Other": 0.589,
+   "Scholarly (books, journals)": 0.38,
+   "Western wire & papers": 0.026,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.002,
+   "Israeli press": 0.001,
+   "Pro-Israel advocacy": 0.001,
+   "Rights orgs & UN": 0.001
+  },
+  "refs@2023-07-01": {
+   "total": 2155,
+   "Other": 0.576,
+   "Scholarly (books, journals)": 0.394,
+   "Western wire & papers": 0.026,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.002,
+   "Pro-Israel advocacy": 0.001,
+   "Rights orgs & UN": 0.001
+  },
+  "refs@now": {
+   "total": 2694,
+   "Other": 0.493,
+   "Scholarly (books, journals)": 0.472,
+   "Western wire & papers": 0.028,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.004,
+   "Rights orgs & UN": 0.002,
+   "Pro-Israel advocacy": 0.001
+  }
+ },
+ "atro": {
+  "lead_refs@2021-01-01": {
+   "total": 100,
+   "Scholarly (books, journals)": 0.51,
+   "Western wire & papers": 0.32,
+   "Other": 0.09,
+   "Rights orgs & UN": 0.06,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.02
+  },
+  "lead_refs@2023-07-01": {
+   "total": 121,
+   "Scholarly (books, journals)": 0.364,
+   "Western wire & papers": 0.347,
+   "Other": 0.182,
+   "Rights orgs & UN": 0.066,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.041
+  },
+  "lead_refs@now": {
+   "total": 121,
+   "Scholarly (books, journals)": 0.537,
+   "Western wire & papers": 0.355,
+   "Rights orgs & UN": 0.05,
+   "Other": 0.033,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.025
+  },
+  "refs@2021-01-01": {
+   "total": 705,
+   "Scholarly (books, journals)": 0.435,
+   "Western wire & papers": 0.335,
+   "Other": 0.119,
+   "Rights orgs & UN": 0.058,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.044,
+   "Israeli press": 0.009
+  },
+  "refs@2023-07-01": {
+   "total": 1070,
+   "Western wire & papers": 0.332,
+   "Scholarly (books, journals)": 0.306,
+   "Other": 0.256,
+   "Rights orgs & UN": 0.049,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.044,
+   "Israeli press": 0.014
+  },
+  "refs@now": {
+   "total": 1024,
+   "Scholarly (books, journals)": 0.528,
+   "Western wire & papers": 0.3,
+   "Other": 0.079,
+   "Rights orgs & UN": 0.051,
+   "Arab & Palestinian press, pro-Palestinian outlets": 0.036,
+   "Israeli press": 0.006
+  }
+ }
+}

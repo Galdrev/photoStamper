@@ -1,0 +1,5920 @@
+{
+ "note": "Per-article screen. Cliff delta in [-1,1] (topic vs stratum); p = two-sided permutation on means (2,000 shuffles). Topic counted once (summary.json double-counts it).",
+ "levels": [
+  {
+   "metric": "dispute_tag@now",
+   "topic": {
+    "n": 60,
+    "mean": 0.0167,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.05,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.033,
+   "cliff_t_vs_rand": 0.017,
+   "p_t_vs_disp": 0.556,
+   "p_t_vs_rand": 1.0
+  },
+  {
+   "metric": "ct_notice@now",
+   "topic": {
+    "n": 60,
+    "mean": 0.6667,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.475,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0333,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.6667,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.192,
+   "cliff_t_vs_rand": 0.633,
+   "p_t_vs_disp": 0.068,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "ec_protected@now",
+   "topic": {
+    "n": 60,
+    "mean": 0.6333,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.45,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0333,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.1667,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.183,
+   "cliff_t_vs_rand": 0.6,
+   "p_t_vs_disp": 0.098,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "talk_kb@now",
+   "topic": {
+    "n": 60,
+    "mean": 21.5747,
+    "median": 13.8905
+   },
+   "disp": {
+    "n": 40,
+    "mean": 26.2052,
+    "median": 9.889
+   },
+   "rand": {
+    "n": 60,
+    "mean": 6.1875,
+    "median": 2.6545
+   },
+   "atro": {
+    "n": 6,
+    "mean": 8.4872,
+    "median": 6.2
+   },
+   "cliff_t_vs_disp": 0.116,
+   "cliff_t_vs_rand": 0.599,
+   "p_t_vs_disp": 0.744,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "watch_links@now",
+   "topic": {
+    "n": 60,
+    "mean": 4.05,
+    "median": 3.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.725,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.05,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 2.1667,
+    "median": 2.5
+   },
+   "cliff_t_vs_disp": 0.619,
+   "cliff_t_vs_rand": 0.787,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "watch_links_lead@now",
+   "topic": {
+    "n": 60,
+    "mean": 1.95,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.25,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 1.6667,
+    "median": 1.5
+   },
+   "cliff_t_vs_disp": 0.572,
+   "cliff_t_vs_rand": 0.7,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "n_categories@now",
+   "topic": {
+    "n": 60,
+    "mean": 12.2667,
+    "median": 11.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 12.675,
+    "median": 9.5
+   },
+   "rand": {
+    "n": 60,
+    "mean": 9.2833,
+    "median": 5.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 14.6667,
+    "median": 17.0
+   },
+   "cliff_t_vs_disp": 0.036,
+   "cliff_t_vs_rand": 0.263,
+   "p_t_vs_disp": 0.861,
+   "p_t_vs_rand": 0.073
+  },
+  {
+   "metric": "n_see_also@now",
+   "topic": {
+    "n": 54,
+    "mean": 8.0556,
+    "median": 6.0
+   },
+   "disp": {
+    "n": 36,
+    "mean": 5.5278,
+    "median": 4.0
+   },
+   "rand": {
+    "n": 44,
+    "mean": 5.25,
+    "median": 4.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 11.6,
+    "median": 10.0
+   },
+   "cliff_t_vs_disp": 0.252,
+   "cliff_t_vs_rand": 0.299,
+   "p_t_vs_disp": 0.061,
+   "p_t_vs_rand": 0.025
+  },
+  {
+   "metric": "n_navboxes@now",
+   "topic": {
+    "n": 60,
+    "mean": 3.3667,
+    "median": 3.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 4.4,
+    "median": 4.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 2.7167,
+    "median": 2.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 2.3333,
+    "median": 2.5
+   },
+   "cliff_t_vs_disp": -0.277,
+   "cliff_t_vs_rand": 0.189,
+   "p_t_vs_disp": 0.062,
+   "p_t_vs_rand": 0.217
+  },
+  {
+   "metric": "n_links@now",
+   "topic": {
+    "n": 60,
+    "mean": 343.5167,
+    "median": 276.5
+   },
+   "disp": {
+    "n": 40,
+    "mean": 359.825,
+    "median": 276.5
+   },
+   "rand": {
+    "n": 60,
+    "mean": 123.8833,
+    "median": 114.5
+   },
+   "atro": {
+    "n": 6,
+    "mean": 253.0,
+    "median": 243.0
+   },
+   "cliff_t_vs_disp": -0.067,
+   "cliff_t_vs_rand": 0.584,
+   "p_t_vs_disp": 0.736,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "citation_needed@now",
+   "topic": {
+    "n": 60,
+    "mean": 2.8333,
+    "median": 1.5
+   },
+   "disp": {
+    "n": 40,
+    "mean": 4.2,
+    "median": 1.5
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.7667,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.8333,
+    "median": 0.5
+   },
+   "cliff_t_vs_disp": -0.095,
+   "cliff_t_vs_rand": 0.417,
+   "p_t_vs_disp": 0.2,
+   "p_t_vs_rand": 0.001
+  },
+  {
+   "metric": "class_rank@now",
+   "topic": {
+    "n": 59,
+    "mean": 2.6441,
+    "median": 3.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 2.4,
+    "median": 2.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 1.6842,
+    "median": 2.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 2.6,
+    "median": 3.0
+   },
+   "cliff_t_vs_disp": 0.183,
+   "cliff_t_vs_rand": 0.566,
+   "p_t_vs_disp": 0.234,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "wd_aliases_en@now",
+   "topic": {
+    "n": 48,
+    "mean": 4.1875,
+    "median": 2.5
+   },
+   "disp": {
+    "n": 26,
+    "mean": 5.1154,
+    "median": 3.5
+   },
+   "rand": {
+    "n": 35,
+    "mean": 2.4571,
+    "median": 2.0
+   },
+   "atro": {
+    "n": 3,
+    "mean": 4.3333,
+    "median": 2.0
+   },
+   "cliff_t_vs_disp": -0.141,
+   "cliff_t_vs_rand": 0.266,
+   "p_t_vs_disp": 0.41,
+   "p_t_vs_rand": 0.026
+  },
+  {
+   "metric": "short_desc_changed 2021\u2192now",
+   "topic": {
+    "n": 54,
+    "mean": 0.8519,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.7692,
+    "median": 1.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.8947,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.083,
+   "cliff_t_vs_rand": -0.043,
+   "p_t_vs_disp": 0.427,
+   "p_t_vs_rand": 0.568
+  },
+  {
+   "metric": "infobox_caption_changed 2021\u2192now",
+   "topic": {
+    "n": 32,
+    "mean": 0.6562,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 22,
+    "mean": 0.6364,
+    "median": 1.0
+   },
+   "rand": {
+    "n": 34,
+    "mean": 0.4118,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 3,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.02,
+   "cliff_t_vs_rand": 0.244,
+   "p_t_vs_disp": 1.0,
+   "p_t_vs_rand": 0.054
+  },
+  {
+   "metric": "lead_image_changed 2021\u2192now",
+   "topic": {
+    "n": 54,
+    "mean": 0.5741,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.5128,
+    "median": 1.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.5263,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.25,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.061,
+   "cliff_t_vs_rand": 0.048,
+   "p_t_vs_disp": 0.666,
+   "p_t_vs_rand": 0.703
+  },
+  {
+   "metric": "categories_added 2021\u2192now",
+   "topic": {
+    "n": 54,
+    "mean": 5.3889,
+    "median": 4.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 5.6154,
+    "median": 3.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 3.2982,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 12.25,
+    "median": 10.5
+   },
+   "cliff_t_vs_disp": 0.019,
+   "cliff_t_vs_rand": 0.299,
+   "p_t_vs_disp": 0.877,
+   "p_t_vs_rand": 0.037
+  },
+  {
+   "metric": "categories_removed 2021\u2192now",
+   "topic": {
+    "n": 54,
+    "mean": 3.3519,
+    "median": 2.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 4.3333,
+    "median": 3.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 1.8772,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 5.5,
+    "median": 5.5
+   },
+   "cliff_t_vs_disp": -0.066,
+   "cliff_t_vs_rand": 0.292,
+   "p_t_vs_disp": 0.311,
+   "p_t_vs_rand": 0.011
+  },
+  {
+   "metric": "links_added 2021\u2192now",
+   "topic": {
+    "n": 54,
+    "mean": 125.5926,
+    "median": 81.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 125.8205,
+    "median": 83.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 38.1053,
+    "median": 20.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 191.0,
+    "median": 157.5
+   },
+   "cliff_t_vs_disp": -0.084,
+   "cliff_t_vs_rand": 0.561,
+   "p_t_vs_disp": 0.99,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "watch_links_added 2021\u2192now",
+   "topic": {
+    "n": 54,
+    "mean": 1.5185,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.1795,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0175,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.75,
+    "median": 0.5
+   },
+   "cliff_t_vs_disp": 0.498,
+   "cliff_t_vs_rand": 0.599,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "headings_new 2021\u2192now",
+   "topic": {
+    "n": 54,
+    "mean": 9.8704,
+    "median": 6.5
+   },
+   "disp": {
+    "n": 39,
+    "mean": 9.8718,
+    "median": 10.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 3.9649,
+    "median": 2.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 17.0,
+    "median": 21.0
+   },
+   "cliff_t_vs_disp": -0.152,
+   "cliff_t_vs_rand": 0.397,
+   "p_t_vs_disp": 1.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "wd_desc_en_changed 2021\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.8214,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.7692,
+    "median": 1.0
+   },
+   "rand": {
+    "n": 56,
+    "mean": 0.6607,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.052,
+   "cliff_t_vs_rand": 0.161,
+   "p_t_vs_disp": 0.591,
+   "p_t_vs_rand": 0.076
+  },
+  {
+   "metric": "wd_desc_he_changed 2021\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.5536,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.2051,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 56,
+    "mean": 0.1607,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.348,
+   "cliff_t_vs_rand": 0.393,
+   "p_t_vs_disp": 0.001,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "wd_desc_ar_changed 2021\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.5536,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.3846,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 56,
+    "mean": 0.1607,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.169,
+   "cliff_t_vs_rand": 0.393,
+   "p_t_vs_disp": 0.128,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "short_desc_changed 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.625,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.4872,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.4737,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.138,
+   "cliff_t_vs_rand": 0.151,
+   "p_t_vs_disp": 0.205,
+   "p_t_vs_rand": 0.137
+  },
+  {
+   "metric": "infobox_caption_changed 2023\u2192now",
+   "topic": {
+    "n": 34,
+    "mean": 0.4412,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 25,
+    "mean": 0.48,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 36,
+    "mean": 0.3611,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.25,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.039,
+   "cliff_t_vs_rand": 0.08,
+   "p_t_vs_disp": 0.805,
+   "p_t_vs_rand": 0.627
+  },
+  {
+   "metric": "lead_image_changed 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.4107,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.4872,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.386,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.076,
+   "cliff_t_vs_rand": 0.025,
+   "p_t_vs_disp": 0.511,
+   "p_t_vs_rand": 0.848
+  },
+  {
+   "metric": "categories_added 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 4.25,
+    "median": 3.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 3.8462,
+    "median": 2.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 2.193,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 7.4,
+    "median": 7.0
+   },
+   "cliff_t_vs_disp": 0.046,
+   "cliff_t_vs_rand": 0.31,
+   "p_t_vs_disp": 0.745,
+   "p_t_vs_rand": 0.009
+  },
+  {
+   "metric": "categories_removed 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 2.4286,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 3.4103,
+    "median": 2.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 1.3684,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 5.2,
+    "median": 3.0
+   },
+   "cliff_t_vs_disp": -0.159,
+   "cliff_t_vs_rand": 0.221,
+   "p_t_vs_disp": 0.171,
+   "p_t_vs_rand": 0.021
+  },
+  {
+   "metric": "links_added 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 94.4286,
+    "median": 59.5
+   },
+   "disp": {
+    "n": 39,
+    "mean": 59.1538,
+    "median": 42.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 26.3684,
+    "median": 11.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 89.6,
+    "median": 104.0
+   },
+   "cliff_t_vs_disp": 0.146,
+   "cliff_t_vs_rand": 0.581,
+   "p_t_vs_disp": 0.053,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "watch_links_added 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 1.375,
+    "median": 0.5
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.1282,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0175,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.4,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.42,
+   "cliff_t_vs_rand": 0.488,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "headings_new 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 7.3571,
+    "median": 4.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 5.2821,
+    "median": 4.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 2.8772,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 10.0,
+    "median": 10.0
+   },
+   "cliff_t_vs_disp": 0.043,
+   "cliff_t_vs_rand": 0.373,
+   "p_t_vs_disp": 0.223,
+   "p_t_vs_rand": 0.002
+  },
+  {
+   "metric": "wd_desc_en_changed 2023\u2192now",
+   "topic": {
+    "n": 57,
+    "mean": 0.6842,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.3846,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 56,
+    "mean": 0.3571,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.4,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.3,
+   "cliff_t_vs_rand": 0.327,
+   "p_t_vs_disp": 0.008,
+   "p_t_vs_rand": 0.001
+  },
+  {
+   "metric": "wd_desc_he_changed 2023\u2192now",
+   "topic": {
+    "n": 57,
+    "mean": 0.4035,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0513,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 56,
+    "mean": 0.125,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.6,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.352,
+   "cliff_t_vs_rand": 0.279,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.001
+  },
+  {
+   "metric": "wd_desc_ar_changed 2023\u2192now",
+   "topic": {
+    "n": 57,
+    "mean": 0.4211,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.3333,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 56,
+    "mean": 0.125,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.088,
+   "cliff_t_vs_rand": 0.296,
+   "p_t_vs_disp": 0.423,
+   "p_t_vs_rand": 0.001
+  },
+  {
+   "metric": "lead_disp_P_per10k@now",
+   "topic": {
+    "n": 60,
+    "mean": 10.9401,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.167,
+   "cliff_t_vs_rand": 0.167,
+   "p_t_vs_disp": 0.043,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "lead_disp_J_per10k@now",
+   "topic": {
+    "n": 60,
+    "mean": 1.5607,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.033,
+   "cliff_t_vs_rand": 0.033,
+   "p_t_vs_disp": 0.524,
+   "p_t_vs_rand": 0.505
+  },
+  {
+   "metric": "full_disp_P_per10k@now",
+   "topic": {
+    "n": 60,
+    "mean": 5.7434,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.35,
+   "cliff_t_vs_rand": 0.35,
+   "p_t_vs_disp": 0.055,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "full_disp_J_per10k@now",
+   "topic": {
+    "n": 60,
+    "mean": 2.0971,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.233,
+   "cliff_t_vs_rand": 0.233,
+   "p_t_vs_disp": 0.233,
+   "p_t_vs_rand": 0.001
+  },
+  {
+   "metric": "lead_critical_per10k@now",
+   "topic": {
+    "n": 60,
+    "mean": 50.4232,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 31.1407,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 3.6588,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 373.6573,
+    "median": 305.3161
+   },
+   "cliff_t_vs_disp": 0.002,
+   "cliff_t_vs_rand": 0.346,
+   "p_t_vs_disp": 0.296,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "lead_refs@now",
+   "topic": {
+    "n": 60,
+    "mean": 20.45,
+    "median": 9.5
+   },
+   "disp": {
+    "n": 40,
+    "mean": 22.65,
+    "median": 15.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 4.5,
+    "median": 3.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 22.5,
+    "median": 22.0
+   },
+   "cliff_t_vs_disp": -0.148,
+   "cliff_t_vs_rand": 0.501,
+   "p_t_vs_disp": 0.676,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "lead_refs_share[Rights orgs & UN]@now",
+   "topic": {
+    "n": 55,
+    "mean": 0.0237,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0373,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 51,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.1021,
+    "median": 0.0556
+   },
+   "cliff_t_vs_disp": 0.085,
+   "cliff_t_vs_rand": 0.309,
+   "p_t_vs_disp": 0.775,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "lead_refs_share[Scholarly (books, jour]@now",
+   "topic": {
+    "n": 55,
+    "mean": 0.5612,
+    "median": 0.6
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.6161,
+    "median": 0.6049
+   },
+   "rand": {
+    "n": 51,
+    "mean": 0.4525,
+    "median": 0.3333
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.4985,
+    "median": 0.4634
+   },
+   "cliff_t_vs_disp": -0.1,
+   "cliff_t_vs_rand": 0.18,
+   "p_t_vs_disp": 0.359,
+   "p_t_vs_rand": 0.101
+  },
+  {
+   "metric": "lead_refs_share[Israeli press]@now",
+   "topic": {
+    "n": 55,
+    "mean": 0.0676,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 51,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.4,
+   "cliff_t_vs_rand": 0.4,
+   "p_t_vs_disp": 0.002,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "lead_refs_share[Arab & Palestinian pre]@now",
+   "topic": {
+    "n": 55,
+    "mean": 0.0077,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.012,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 51,
+    "mean": 0.0033,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0432,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.035,
+   "cliff_t_vs_rand": 0.123,
+   "p_t_vs_disp": 0.453,
+   "p_t_vs_rand": 0.343
+  },
+  {
+   "metric": "critical_inserts_per_month@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0667,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0372,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0014,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0045,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.069,
+   "cliff_t_vs_rand": 0.422,
+   "p_t_vs_disp": 0.393,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "critical_net_inserts@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.1833,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.15,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": -0.1667,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.012,
+   "cliff_t_vs_rand": 0.117,
+   "p_t_vs_disp": 0.901,
+   "p_t_vs_rand": 0.142
+  },
+  {
+   "metric": "critical_insert_acct_age_lt365@war",
+   "topic": {
+    "n": 23,
+    "mean": 0.1549,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 13,
+    "mean": 0.1026,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 1,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.134,
+   "cliff_t_vs_rand": 0.478,
+   "p_t_vs_disp": 0.519,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_remove_acct_age_lt365@war",
+   "topic": {
+    "n": 23,
+    "mean": 0.1586,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 16,
+    "mean": 0.2146,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 2,
+    "mean": 0.5,
+    "median": 0.5
+   },
+   "atro": {
+    "n": 1,
+    "mean": 0.5,
+    "median": 0.5
+   },
+   "cliff_t_vs_disp": 0.011,
+   "cliff_t_vs_rand": -0.261,
+   "p_t_vs_disp": 0.587,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_insert_acct_editcount_lt500@war",
+   "topic": {
+    "n": 23,
+    "mean": 0.0435,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 13,
+    "mean": 0.1218,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 1,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": -0.251,
+   "cliff_t_vs_rand": 0.043,
+   "p_t_vs_disp": 0.33,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_remove_acct_editcount_lt500@war",
+   "topic": {
+    "n": 23,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 16,
+    "mean": 0.1604,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 2,
+    "mean": 0.5,
+    "median": 0.5
+   },
+   "atro": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.25,
+   "cliff_t_vs_rand": -0.5,
+   "p_t_vs_disp": 0.02,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_insert_acct_indef_now@war",
+   "topic": {
+    "n": 23,
+    "mean": 0.1217,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 13,
+    "mean": 0.2051,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.201,
+   "cliff_t_vs_rand": 0.304,
+   "p_t_vs_disp": 0.396,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_remove_acct_indef_now@war",
+   "topic": {
+    "n": 23,
+    "mean": 0.1424,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 16,
+    "mean": 0.1313,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 2,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.087,
+   "cliff_t_vs_rand": 0.304,
+   "p_t_vs_disp": 0.903,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_insert_reverted_share@war",
+   "topic": {
+    "n": 27,
+    "mean": 0.2951,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 14,
+    "mean": 0.25,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 2,
+    "mean": 0.5,
+    "median": 0.5
+   },
+   "atro": {
+    "n": 1,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.048,
+   "cliff_t_vs_rand": -0.148,
+   "p_t_vs_disp": 0.739,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_remove_reverted_share@war",
+   "topic": {
+    "n": 24,
+    "mean": 0.1799,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 17,
+    "mean": 0.348,
+    "median": 0.3333
+   },
+   "rand": {
+    "n": 2,
+    "mean": 1.0,
+    "median": 1.0
+   },
+   "atro": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.199,
+   "cliff_t_vs_rand": -1.0,
+   "p_t_vs_disp": 0.097,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_insert_lw_mean_risk@war",
+   "topic": {
+    "n": 27,
+    "mean": 0.6734,
+    "median": 0.6888
+   },
+   "disp": {
+    "n": 14,
+    "mean": 0.6281,
+    "median": 0.6256
+   },
+   "rand": {
+    "n": 2,
+    "mean": 0.7213,
+    "median": 0.7213
+   },
+   "atro": {
+    "n": 1,
+    "mean": 0.9509,
+    "median": 0.9509
+   },
+   "cliff_t_vs_disp": 0.201,
+   "cliff_t_vs_rand": -0.037,
+   "p_t_vs_disp": 0.526,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "critical_remove_lw_mean_risk@war",
+   "topic": {
+    "n": 24,
+    "mean": 0.5689,
+    "median": 0.6342
+   },
+   "disp": {
+    "n": 16,
+    "mean": 0.6864,
+    "median": 0.6439
+   },
+   "rand": {
+    "n": 2,
+    "mean": 0.7568,
+    "median": 0.7568
+   },
+   "atro": {
+    "n": 1,
+    "mean": 0.5669,
+    "median": 0.5669
+   },
+   "cliff_t_vs_disp": -0.292,
+   "cliff_t_vs_rand": -0.417,
+   "p_t_vs_disp": 0.061,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_inserts_per_month@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0113,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.117,
+   "cliff_t_vs_rand": 0.117,
+   "p_t_vs_disp": 0.174,
+   "p_t_vs_rand": 0.015
+  },
+  {
+   "metric": "disp_P_net_inserts@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0667,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.067,
+   "cliff_t_vs_rand": 0.067,
+   "p_t_vs_disp": 0.288,
+   "p_t_vs_rand": 0.275
+  },
+  {
+   "metric": "disp_P_insert_acct_age_lt365@war",
+   "topic": {
+    "n": 7,
+    "mean": 0.1429,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_remove_acct_age_lt365@war",
+   "topic": {
+    "n": 5,
+    "mean": 0.2769,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_insert_acct_editcount_lt500@war",
+   "topic": {
+    "n": 7,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_remove_acct_editcount_lt500@war",
+   "topic": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_insert_acct_indef_now@war",
+   "topic": {
+    "n": 7,
+    "mean": 0.0102,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_remove_acct_indef_now@war",
+   "topic": {
+    "n": 5,
+    "mean": 0.2077,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_insert_reverted_share@war",
+   "topic": {
+    "n": 7,
+    "mean": 0.0694,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_remove_reverted_share@war",
+   "topic": {
+    "n": 5,
+    "mean": 0.2615,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_insert_lw_mean_risk@war",
+   "topic": {
+    "n": 6,
+    "mean": 0.6648,
+    "median": 0.6597
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "disp_P_remove_lw_mean_risk@war",
+   "topic": {
+    "n": 4,
+    "mean": 0.638,
+    "median": 0.6309
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "rfc_per_year@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.476,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0487,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.107,
+   "cliff_t_vs_rand": 0.2,
+   "p_t_vs_disp": 0.074,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "rm_per_year@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.2434,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0568,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0541,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.026,
+   "cliff_t_vs_rand": 0.1,
+   "p_t_vs_disp": 0.349,
+   "p_t_vs_rand": 0.026
+  },
+  {
+   "metric": "moved_since_2021",
+   "topic": {
+    "n": 60,
+    "mean": 0.25,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.2,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.1333,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.6667,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": 0.05,
+   "cliff_t_vs_rand": 0.117,
+   "p_t_vs_disp": 0.648,
+   "p_t_vs_rand": 0.173
+  },
+  {
+   "metric": "inbound_links",
+   "topic": {
+    "n": 60,
+    "mean": 3450.85,
+    "median": 928.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 6388.925,
+    "median": 1323.5
+   },
+   "rand": {
+    "n": 60,
+    "mean": 560.8667,
+    "median": 294.5
+   },
+   "atro": {
+    "n": 6,
+    "mean": 664.0,
+    "median": 621.0
+   },
+   "cliff_t_vs_disp": -0.167,
+   "cliff_t_vs_rand": 0.464,
+   "p_t_vs_disp": 0.235,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "n_redirects",
+   "topic": {
+    "n": 60,
+    "mean": 25.95,
+    "median": 17.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 28.125,
+    "median": 21.5
+   },
+   "rand": {
+    "n": 60,
+    "mean": 7.8333,
+    "median": 5.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 19.5,
+    "median": 16.5
+   },
+   "cliff_t_vs_disp": -0.121,
+   "cliff_t_vs_rand": 0.582,
+   "p_t_vs_disp": 0.713,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "watchers",
+   "topic": {
+    "n": 54,
+    "mean": 679.2407,
+    "median": 532.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 584.7692,
+    "median": 252.0
+   },
+   "rand": {
+    "n": 32,
+    "mean": 104.4375,
+    "median": 60.5
+   },
+   "atro": {
+    "n": 5,
+    "mean": 264.6,
+    "median": 262.0
+   },
+   "cliff_t_vs_disp": 0.173,
+   "cliff_t_vs_rand": 0.821,
+   "p_t_vs_disp": 0.509,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "afd_pages",
+   "topic": {
+    "n": 60,
+    "mean": 0.1167,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.15,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.025,
+   "cliff_t_vs_rand": 0.1,
+   "p_t_vs_disp": 0.809,
+   "p_t_vs_rand": 0.034
+  },
+  {
+   "metric": "talk_archives",
+   "topic": {
+    "n": 60,
+    "mean": 11.95,
+    "median": 3.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 10.05,
+    "median": 4.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.2333,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 5.1667,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": -0.054,
+   "cliff_t_vs_rand": 0.699,
+   "p_t_vs_disp": 0.613,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "shortdesc_from_wikidata",
+   "topic": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.0,
+   "cliff_t_vs_rand": 0.0,
+   "p_t_vs_disp": 1.0,
+   "p_t_vs_rand": 1.0
+  },
+  {
+   "metric": "n_press",
+   "topic": {
+    "n": 60,
+    "mean": 2.3833,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.2,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.3333,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.224,
+   "cliff_t_vs_rand": 0.317,
+   "p_t_vs_disp": 0.08,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "top25",
+   "topic": {
+    "n": 60,
+    "mean": 0.8167,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.95,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.1667,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.027,
+   "cliff_t_vs_rand": 0.131,
+   "p_t_vs_disp": 0.867,
+   "p_t_vs_rand": 0.071
+  },
+  {
+   "metric": "rfc_headings_now",
+   "topic": {
+    "n": 60,
+    "mean": 0.1167,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.075,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.006,
+   "cliff_t_vs_rand": 0.067,
+   "p_t_vs_disp": 0.833,
+   "p_t_vs_rand": 0.107
+  },
+  {
+   "metric": "rm_headings_now",
+   "topic": {
+    "n": 60,
+    "mean": 0.0833,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.05,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0167,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.056,
+   "cliff_t_vs_rand": 0.067,
+   "p_t_vs_disp": 0.76,
+   "p_t_vs_rand": 0.205
+  },
+  {
+   "metric": "main_page_any",
+   "topic": {
+    "n": 60,
+    "mean": 0.25,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.275,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.05,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.1667,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.025,
+   "cliff_t_vs_rand": 0.2,
+   "p_t_vs_disp": 0.815,
+   "p_t_vs_rand": 0.005
+  },
+  {
+   "metric": "edits_per_month@war",
+   "topic": {
+    "n": 60,
+    "mean": 24.5178,
+    "median": 5.5849
+   },
+   "disp": {
+    "n": 40,
+    "mean": 7.4031,
+    "median": 5.328
+   },
+   "rand": {
+    "n": 60,
+    "mean": 2.5919,
+    "median": 1.2982
+   },
+   "atro": {
+    "n": 6,
+    "mean": 6.0673,
+    "median": 5.5173
+   },
+   "cliff_t_vs_disp": 0.016,
+   "cliff_t_vs_rand": 0.596,
+   "p_t_vs_disp": 0.12,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "reverted_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0864,
+    "median": 0.0621
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.182,
+    "median": 0.1481
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0886,
+    "median": 0.0706
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0739,
+    "median": 0.0489
+   },
+   "cliff_t_vs_disp": -0.59,
+   "cliff_t_vs_rand": 0.029,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.897
+  },
+  {
+   "metric": "reverting_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0639,
+    "median": 0.0461
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.1311,
+    "median": 0.1088
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0679,
+    "median": 0.0583
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0515,
+    "median": 0.041
+   },
+   "cliff_t_vs_disp": -0.586,
+   "cliff_t_vs_rand": -0.011,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.712
+  },
+  {
+   "metric": "mobile_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.1421,
+    "median": 0.1276
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.1917,
+    "median": 0.1751
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.211,
+    "median": 0.1677
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.1383,
+    "median": 0.1312
+   },
+   "cliff_t_vs_disp": -0.294,
+   "cliff_t_vs_rand": -0.233,
+   "p_t_vs_disp": 0.014,
+   "p_t_vs_rand": 0.008
+  },
+  {
+   "metric": "visualeditor_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.2417,
+    "median": 0.2387
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.2077,
+    "median": 0.2038
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.2039,
+    "median": 0.1721
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.254,
+    "median": 0.1949
+   },
+   "cliff_t_vs_disp": 0.183,
+   "cliff_t_vs_rand": 0.277,
+   "p_t_vs_disp": 0.129,
+   "p_t_vs_rand": 0.221
+  },
+  {
+   "metric": "hidden_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0006,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0009,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0016,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.013,
+   "cliff_t_vs_rand": 0.043,
+   "p_t_vs_disp": 0.666,
+   "p_t_vs_rand": 0.338
+  },
+  {
+   "metric": "big_add_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0151,
+    "median": 0.0129
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0127,
+    "median": 0.0097
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0114,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0165,
+    "median": 0.0121
+   },
+   "cliff_t_vs_disp": 0.13,
+   "cliff_t_vs_rand": 0.317,
+   "p_t_vs_disp": 0.373,
+   "p_t_vs_rand": 0.255
+  },
+  {
+   "metric": "empty_summary_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.106,
+    "median": 0.0909
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.1614,
+    "median": 0.1595
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.2147,
+    "median": 0.2023
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.1034,
+    "median": 0.0857
+   },
+   "cliff_t_vs_disp": -0.449,
+   "cliff_t_vs_rand": -0.534,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "cmt_sock_ban_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0009,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0026,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0021,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0015,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.007,
+   "cliff_t_vs_rand": 0.113,
+   "p_t_vs_disp": 0.051,
+   "p_t_vs_rand": 0.176
+  },
+  {
+   "metric": "cmt_ecr_arbpia_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0026,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0018,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.001,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0006,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.074,
+   "cliff_t_vs_rand": 0.276,
+   "p_t_vs_disp": 0.756,
+   "p_t_vs_rand": 0.424
+  },
+  {
+   "metric": "cmt_npov_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0084,
+    "median": 0.0064
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0094,
+    "median": 0.0054
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.002,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0036,
+    "median": 0.0032
+   },
+   "cliff_t_vs_disp": -0.008,
+   "cliff_t_vs_rand": 0.491,
+   "p_t_vs_disp": 0.645,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "cmt_sources_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.1134,
+    "median": 0.1054
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0919,
+    "median": 0.0855
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0738,
+    "median": 0.0431
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0826,
+    "median": 0.0801
+   },
+   "cliff_t_vs_disp": 0.19,
+   "cliff_t_vs_rand": 0.529,
+   "p_t_vs_disp": 0.111,
+   "p_t_vs_rand": 0.049
+  },
+  {
+   "metric": "cmt_consensus_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0402,
+    "median": 0.0331
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0294,
+    "median": 0.0226
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0185,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.1873,
+    "median": 0.0255
+   },
+   "cliff_t_vs_disp": 0.206,
+   "cliff_t_vs_rand": 0.548,
+   "p_t_vs_disp": 0.115,
+   "p_t_vs_rand": 0.001
+  },
+  {
+   "metric": "cmt_undue_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0041,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0026,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0002,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0026,
+    "median": 0.0017
+   },
+   "cliff_t_vs_disp": 0.077,
+   "cliff_t_vs_rand": 0.409,
+   "p_t_vs_disp": 0.193,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "cmt_voice_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0041,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.002,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0002,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0028,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.181,
+   "cliff_t_vs_rand": 0.436,
+   "p_t_vs_disp": 0.068,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "cmt_lead_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0147,
+    "median": 0.0135
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0111,
+    "median": 0.0077
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0073,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0122,
+    "median": 0.0094
+   },
+   "cliff_t_vs_disp": 0.112,
+   "cliff_t_vs_rand": 0.436,
+   "p_t_vs_disp": 0.22,
+   "p_t_vs_rand": 0.022
+  },
+  {
+   "metric": "cmt_title_name_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0097,
+    "median": 0.0055
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0082,
+    "median": 0.0079
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0025,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0108,
+    "median": 0.0086
+   },
+   "cliff_t_vs_disp": -0.013,
+   "cliff_t_vs_rand": 0.448,
+   "p_t_vs_disp": 0.545,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "added_minus_removed_kb@war",
+   "topic": {
+    "n": 60,
+    "mean": 47.6258,
+    "median": 11.176
+   },
+   "disp": {
+    "n": 40,
+    "mean": 8.2803,
+    "median": 5.543
+   },
+   "rand": {
+    "n": 60,
+    "mean": 8.2795,
+    "median": 1.569
+   },
+   "atro": {
+    "n": 6,
+    "mean": 13.5503,
+    "median": 11.3515
+   },
+   "cliff_t_vs_disp": 0.304,
+   "cliff_t_vs_rand": 0.431,
+   "p_t_vs_disp": 0.017,
+   "p_t_vs_rand": 0.003
+  },
+  {
+   "metric": "top1_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.2118,
+    "median": 0.157
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.2025,
+    "median": 0.1781
+   },
+   "rand": {
+    "n": 59,
+    "mean": 0.3358,
+    "median": 0.25
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.3852,
+    "median": 0.1778
+   },
+   "cliff_t_vs_disp": -0.037,
+   "cliff_t_vs_rand": -0.364,
+   "p_t_vs_disp": 0.762,
+   "p_t_vs_rand": 0.003
+  },
+  {
+   "metric": "acct_share_age_lt30@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0215,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0605,
+    "median": 0.0187
+   },
+   "rand": {
+    "n": 59,
+    "mean": 0.0677,
+    "median": 0.0385
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0204,
+    "median": 0.0133
+   },
+   "cliff_t_vs_disp": -0.415,
+   "cliff_t_vs_rand": -0.482,
+   "p_t_vs_disp": 0.02,
+   "p_t_vs_rand": 0.001
+  },
+  {
+   "metric": "acct_share_age_lt365@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.1247,
+    "median": 0.0911
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.1704,
+    "median": 0.1241
+   },
+   "rand": {
+    "n": 59,
+    "mean": 0.218,
+    "median": 0.2
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.1365,
+    "median": 0.1285
+   },
+   "cliff_t_vs_disp": -0.247,
+   "cliff_t_vs_rand": -0.266,
+   "p_t_vs_disp": 0.065,
+   "p_t_vs_rand": 0.002
+  },
+  {
+   "metric": "acct_share_ec_now@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.9535,
+    "median": 0.9946
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.8802,
+    "median": 0.9122
+   },
+   "rand": {
+    "n": 59,
+    "mean": 0.7879,
+    "median": 0.8
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.9387,
+    "median": 0.9518
+   },
+   "cliff_t_vs_disp": 0.377,
+   "cliff_t_vs_rand": 0.578,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "acct_share_editcount_lt500@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.0406,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.113,
+    "median": 0.0718
+   },
+   "rand": {
+    "n": 59,
+    "mean": 0.2057,
+    "median": 0.1585
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0572,
+    "median": 0.0426
+   },
+   "cliff_t_vs_disp": -0.417,
+   "cliff_t_vs_rand": -0.635,
+   "p_t_vs_disp": 0.001,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "acct_share_indef_now@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.1049,
+    "median": 0.0827
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0999,
+    "median": 0.0884
+   },
+   "rand": {
+    "n": 59,
+    "mean": 0.0945,
+    "median": 0.046
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0535,
+    "median": 0.0424
+   },
+   "cliff_t_vs_disp": 0.024,
+   "cliff_t_vs_rand": 0.253,
+   "p_t_vs_disp": 0.758,
+   "p_t_vs_rand": 0.622
+  },
+  {
+   "metric": "acct_median_age_days@war",
+   "topic": {
+    "n": 60,
+    "mean": 3471.0578,
+    "median": 3517.68
+   },
+   "disp": {
+    "n": 40,
+    "mean": 2495.2031,
+    "median": 2020.5769
+   },
+   "rand": {
+    "n": 59,
+    "mean": 2242.28,
+    "median": 1931.1331
+   },
+   "atro": {
+    "n": 6,
+    "mean": 1911.5401,
+    "median": 1788.9497
+   },
+   "cliff_t_vs_disp": 0.412,
+   "cliff_t_vs_rand": 0.44,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "talk_talk_to_article_edits@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.6012,
+    "median": 0.4233
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.5057,
+    "median": 0.2661
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.1605,
+    "median": 0.0728
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.6171,
+    "median": 0.2042
+   },
+   "cliff_t_vs_disp": 0.199,
+   "cliff_t_vs_rand": 0.556,
+   "p_t_vs_disp": 0.533,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "talk_article_edits_by_talk_participants@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.3208,
+    "median": 0.2772
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.2547,
+    "median": 0.219
+   },
+   "rand": {
+    "n": 59,
+    "mean": 0.1151,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.4881,
+    "median": 0.4383
+   },
+   "cliff_t_vs_disp": 0.119,
+   "cliff_t_vs_rand": 0.553,
+   "p_t_vs_disp": 0.19,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "talk_article_editors_on_talk@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.1339,
+    "median": 0.1096
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0981,
+    "median": 0.0844
+   },
+   "rand": {
+    "n": 59,
+    "mean": 0.0582,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.2693,
+    "median": 0.1181
+   },
+   "cliff_t_vs_disp": 0.149,
+   "cliff_t_vs_rand": 0.586,
+   "p_t_vs_disp": 0.09,
+   "p_t_vs_rand": 0.002
+  },
+  {
+   "metric": "talk_edits_per_month@war",
+   "topic": {
+    "n": 60,
+    "mean": 28.251,
+    "median": 1.7174
+   },
+   "disp": {
+    "n": 40,
+    "mean": 5.1623,
+    "median": 1.1089
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.2006,
+    "median": 0.0811
+   },
+   "atro": {
+    "n": 6,
+    "mean": 2.984,
+    "median": 0.9196
+   },
+   "cliff_t_vs_disp": 0.117,
+   "cliff_t_vs_rand": 0.718,
+   "p_t_vs_disp": 0.082,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "abuse_hits_per_month@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.105,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.1,
+   "cliff_t_vs_rand": 0.1,
+   "p_t_vs_disp": 0.069,
+   "p_t_vs_rand": 0.024
+  },
+  {
+   "metric": "views_per_month@war",
+   "topic": {
+    "n": 60,
+    "mean": 84605.74,
+    "median": 40189.4595
+   },
+   "disp": {
+    "n": 40,
+    "mean": 61358.0784,
+    "median": 18800.4595
+   },
+   "rand": {
+    "n": 60,
+    "mean": 5092.3797,
+    "median": 1504.1892
+   },
+   "atro": {
+    "n": 6,
+    "mean": 24774.5011,
+    "median": 26427.0
+   },
+   "cliff_t_vs_disp": 0.01,
+   "cliff_t_vs_rand": 0.674,
+   "p_t_vs_disp": 0.337,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "mobile_view_share@war",
+   "topic": {
+    "n": 60,
+    "mean": 0.6517,
+    "median": 0.6773
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.6634,
+    "median": 0.6666
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.582,
+    "median": 0.5883
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.6083,
+    "median": 0.6044
+   },
+   "cliff_t_vs_disp": 0.02,
+   "cliff_t_vs_rand": 0.462,
+   "p_t_vs_disp": 0.509,
+   "p_t_vs_rand": 0.0
+  }
+ ],
+ "changes": [
+  {
+   "metric": "\u0394[citation_needed] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": -0.5179,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.3077,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.2281,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.2,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.048,
+   "cliff_t_vs_rand": -0.153,
+   "p_t_vs_disp": 0.24,
+   "p_t_vs_rand": 0.101
+  },
+  {
+   "metric": "\u0394[citation_needed] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": -0.7407,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.5897,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0526,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": -0.25,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.061,
+   "cliff_t_vs_rand": -0.062,
+   "p_t_vs_disp": 0.939,
+   "p_t_vs_rand": 0.612
+  },
+  {
+   "metric": "\u0394[class_rank] 2023\u2192now",
+   "topic": {
+    "n": 54,
+    "mean": 0.0556,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.1026,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 52,
+    "mean": 0.1154,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.8,
+    "median": 1.0
+   },
+   "cliff_t_vs_disp": -0.053,
+   "cliff_t_vs_rand": -0.07,
+   "p_t_vs_disp": 0.668,
+   "p_t_vs_rand": 0.544
+  },
+  {
+   "metric": "\u0394[class_rank] 2021\u21922023",
+   "topic": {
+    "n": 52,
+    "mean": 0.0577,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 38,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 53,
+    "mean": 0.0377,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": -0.25,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.053,
+   "cliff_t_vs_rand": 0.021,
+   "p_t_vs_disp": 0.754,
+   "p_t_vs_rand": 0.784
+  },
+  {
+   "metric": "\u0394[ct_notice] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.0714,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0769,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0351,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.005,
+   "cliff_t_vs_rand": 0.036,
+   "p_t_vs_disp": 1.0,
+   "p_t_vs_rand": 0.45
+  },
+  {
+   "metric": "\u0394[ct_notice] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0769,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.25,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.077,
+   "cliff_t_vs_rand": 0.0,
+   "p_t_vs_disp": 0.072,
+   "p_t_vs_rand": 1.0
+  },
+  {
+   "metric": "\u0394[dispute_tag] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0256,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": -0.0175,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.025,
+   "cliff_t_vs_rand": 0.017,
+   "p_t_vs_disp": 0.677,
+   "p_t_vs_rand": 1.0
+  },
+  {
+   "metric": "\u0394[dispute_tag] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0256,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.025,
+   "cliff_t_vs_rand": 0.0,
+   "p_t_vs_disp": 0.619,
+   "p_t_vs_rand": 1.0
+  },
+  {
+   "metric": "\u0394[ec_protected] 2023\u2192now",
+   "topic": {
+    "n": 60,
+    "mean": 0.1167,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.2,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0333,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.1667,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.083,
+   "cliff_t_vs_rand": 0.083,
+   "p_t_vs_disp": 0.397,
+   "p_t_vs_rand": 0.172
+  },
+  {
+   "metric": "\u0394[ec_protected] 2021\u21922023",
+   "topic": {
+    "n": 60,
+    "mean": 0.05,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.15,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.1,
+   "cliff_t_vs_rand": 0.05,
+   "p_t_vs_disp": 0.15,
+   "p_t_vs_rand": 0.26
+  },
+  {
+   "metric": "\u0394[full_disp_J_per10k] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": -0.2878,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.107,
+   "cliff_t_vs_rand": -0.107,
+   "p_t_vs_disp": 0.851,
+   "p_t_vs_rand": 0.799
+  },
+  {
+   "metric": "\u0394[full_disp_J_per10k] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": -0.0842,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.019,
+   "cliff_t_vs_rand": 0.019,
+   "p_t_vs_disp": 0.739,
+   "p_t_vs_rand": 0.604
+  },
+  {
+   "metric": "\u0394[full_disp_P_per10k] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": -1.5722,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.143,
+   "cliff_t_vs_rand": -0.143,
+   "p_t_vs_disp": 0.326,
+   "p_t_vs_rand": 0.162
+  },
+  {
+   "metric": "\u0394[full_disp_P_per10k] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": -0.5094,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.037,
+   "cliff_t_vs_rand": -0.037,
+   "p_t_vs_disp": 0.732,
+   "p_t_vs_rand": 0.358
+  },
+  {
+   "metric": "\u0394[lead_critical_per10k] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 2.9329,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 2.5456,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.2883,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -3.6396,
+    "median": -3.7041
+   },
+   "cliff_t_vs_disp": 0.026,
+   "cliff_t_vs_rand": 0.081,
+   "p_t_vs_disp": 0.955,
+   "p_t_vs_rand": 0.631
+  },
+  {
+   "metric": "\u0394[lead_critical_per10k] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": -5.1517,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -1.9295,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": -1.5285,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": -9.2181,
+    "median": -21.5015
+   },
+   "cliff_t_vs_disp": -0.054,
+   "cliff_t_vs_rand": -0.054,
+   "p_t_vs_disp": 0.768,
+   "p_t_vs_rand": 0.685
+  },
+  {
+   "metric": "\u0394[lead_disp_J_per10k] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": -2.4807,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.0,
+   "cliff_t_vs_rand": 0.0,
+   "p_t_vs_disp": 1.0,
+   "p_t_vs_rand": 0.755
+  },
+  {
+   "metric": "\u0394[lead_disp_J_per10k] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": -1.2185,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.056,
+   "cliff_t_vs_rand": -0.056,
+   "p_t_vs_disp": 0.371,
+   "p_t_vs_rand": 0.105
+  },
+  {
+   "metric": "\u0394[lead_disp_P_per10k] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 1.0584,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.089,
+   "cliff_t_vs_rand": 0.089,
+   "p_t_vs_disp": 0.787,
+   "p_t_vs_rand": 0.729
+  },
+  {
+   "metric": "\u0394[lead_disp_P_per10k] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": -1.3196,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.019,
+   "cliff_t_vs_rand": -0.019,
+   "p_t_vs_disp": 0.549,
+   "p_t_vs_rand": 0.376
+  },
+  {
+   "metric": "\u0394[lead_refs] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 4.6786,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -3.1026,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.2105,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.4,
+    "median": 2.0
+   },
+   "cliff_t_vs_disp": 0.25,
+   "cliff_t_vs_rand": 0.319,
+   "p_t_vs_disp": 0.055,
+   "p_t_vs_rand": 0.009
+  },
+  {
+   "metric": "\u0394[lead_refs] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": 0.2963,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 5.0769,
+    "median": 1.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.7368,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 5.25,
+    "median": 2.0
+   },
+   "cliff_t_vs_disp": -0.225,
+   "cliff_t_vs_rand": -0.049,
+   "p_t_vs_disp": 0.019,
+   "p_t_vs_rand": 0.652
+  },
+  {
+   "metric": "\u0394[lead_refs_share[Arab & Palestinian pre]] 2023\u2192now",
+   "topic": {
+    "n": 50,
+    "mean": 0.0015,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 37,
+    "mean": -0.0014,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 47,
+    "mean": 0.0035,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0028,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.086,
+   "cliff_t_vs_rand": 0.018,
+   "p_t_vs_disp": 0.422,
+   "p_t_vs_rand": 0.709
+  },
+  {
+   "metric": "\u0394[lead_refs_share[Arab & Palestinian pre]] 2021\u21922023",
+   "topic": {
+    "n": 48,
+    "mean": 0.001,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 37,
+    "mean": 0.0038,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 44,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0175,
+    "median": 0.0122
+   },
+   "cliff_t_vs_disp": 0.035,
+   "cliff_t_vs_rand": -0.021,
+   "p_t_vs_disp": 0.535,
+   "p_t_vs_rand": 1.0
+  },
+  {
+   "metric": "\u0394[lead_refs_share[Israeli press]] 2023\u2192now",
+   "topic": {
+    "n": 50,
+    "mean": 0.0101,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 37,
+    "mean": -0.0026,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 47,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.09,
+   "cliff_t_vs_rand": 0.04,
+   "p_t_vs_disp": 0.105,
+   "p_t_vs_rand": 0.154
+  },
+  {
+   "metric": "\u0394[lead_refs_share[Israeli press]] 2021\u21922023",
+   "topic": {
+    "n": 48,
+    "mean": -0.0032,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 37,
+    "mean": 0.0026,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 44,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.072,
+   "cliff_t_vs_rand": -0.021,
+   "p_t_vs_disp": 0.4,
+   "p_t_vs_rand": 0.613
+  },
+  {
+   "metric": "\u0394[lead_refs_share[Rights orgs & UN]] 2023\u2192now",
+   "topic": {
+    "n": 50,
+    "mean": 0.0079,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 37,
+    "mean": -0.0031,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 47,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0026,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.17,
+   "cliff_t_vs_rand": 0.16,
+   "p_t_vs_disp": 0.171,
+   "p_t_vs_rand": 0.218
+  },
+  {
+   "metric": "\u0394[lead_refs_share[Rights orgs & UN]] 2021\u21922023",
+   "topic": {
+    "n": 48,
+    "mean": -0.0019,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 37,
+    "mean": -0.0035,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 44,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0015,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.099,
+   "cliff_t_vs_rand": 0.0,
+   "p_t_vs_disp": 0.906,
+   "p_t_vs_rand": 0.48
+  },
+  {
+   "metric": "\u0394[lead_refs_share[Scholarly (books, jour]] 2023\u2192now",
+   "topic": {
+    "n": 50,
+    "mean": 0.0286,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 37,
+    "mean": 0.0416,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 47,
+    "mean": 0.0667,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.1112,
+    "median": 0.1087
+   },
+   "cliff_t_vs_disp": -0.05,
+   "cliff_t_vs_rand": 0.078,
+   "p_t_vs_disp": 0.775,
+   "p_t_vs_rand": 0.383
+  },
+  {
+   "metric": "\u0394[lead_refs_share[Scholarly (books, jour]] 2021\u21922023",
+   "topic": {
+    "n": 48,
+    "mean": 0.0735,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 37,
+    "mean": 0.1597,
+    "median": 0.1434
+   },
+   "rand": {
+    "n": 44,
+    "mean": 0.0616,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": -0.0948,
+    "median": -0.1456
+   },
+   "cliff_t_vs_disp": -0.418,
+   "cliff_t_vs_rand": 0.111,
+   "p_t_vs_disp": 0.064,
+   "p_t_vs_rand": 0.844
+  },
+  {
+   "metric": "\u0394[n_categories] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 1.8214,
+    "median": 1.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.4359,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.8246,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 2.2,
+    "median": 2.0
+   },
+   "cliff_t_vs_disp": 0.288,
+   "cliff_t_vs_rand": 0.26,
+   "p_t_vs_disp": 0.059,
+   "p_t_vs_rand": 0.039
+  },
+  {
+   "metric": "\u0394[n_categories] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": 0.2593,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.8462,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.5965,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 3.75,
+    "median": 3.0
+   },
+   "cliff_t_vs_disp": -0.043,
+   "cliff_t_vs_rand": -0.034,
+   "p_t_vs_disp": 0.233,
+   "p_t_vs_rand": 0.361
+  },
+  {
+   "metric": "\u0394[n_links] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 31.7321,
+    "median": 16.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 8.9487,
+    "median": 10.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 19.1754,
+    "median": 5.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 34.0,
+    "median": 46.0
+   },
+   "cliff_t_vs_disp": 0.278,
+   "cliff_t_vs_rand": 0.317,
+   "p_t_vs_disp": 0.181,
+   "p_t_vs_rand": 0.404
+  },
+  {
+   "metric": "\u0394[n_links] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": 10.7593,
+    "median": 11.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 19.3333,
+    "median": 21.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 5.7018,
+    "median": 3.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 110.0,
+    "median": 46.0
+   },
+   "cliff_t_vs_disp": -0.211,
+   "cliff_t_vs_rand": 0.232,
+   "p_t_vs_disp": 0.459,
+   "p_t_vs_rand": 0.442
+  },
+  {
+   "metric": "\u0394[n_navboxes] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.3929,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.1795,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.2105,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.2,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.104,
+   "cliff_t_vs_rand": 0.154,
+   "p_t_vs_disp": 0.353,
+   "p_t_vs_rand": 0.555
+  },
+  {
+   "metric": "\u0394[n_navboxes] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": 0.0185,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0877,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.75,
+    "median": 0.5
+   },
+   "cliff_t_vs_disp": -0.027,
+   "cliff_t_vs_rand": -0.002,
+   "p_t_vs_disp": 1.0,
+   "p_t_vs_rand": 0.697
+  },
+  {
+   "metric": "\u0394[n_see_also] 2023\u2192now",
+   "topic": {
+    "n": 49,
+    "mean": 0.8776,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 32,
+    "mean": 0.0938,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 38,
+    "mean": 0.6316,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 5.25,
+    "median": 2.5
+   },
+   "cliff_t_vs_disp": 0.161,
+   "cliff_t_vs_rand": 0.031,
+   "p_t_vs_disp": 0.462,
+   "p_t_vs_rand": 0.82
+  },
+  {
+   "metric": "\u0394[n_see_also] 2021\u21922023",
+   "topic": {
+    "n": 49,
+    "mean": -0.2041,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 30,
+    "mean": -0.5667,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 38,
+    "mean": 0.0526,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 2.75,
+    "median": 1.5
+   },
+   "cliff_t_vs_disp": 0.048,
+   "cliff_t_vs_rand": -0.016,
+   "p_t_vs_disp": 0.736,
+   "p_t_vs_rand": 0.811
+  },
+  {
+   "metric": "\u0394[talk_kb] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": -10.3822,
+    "median": 0.3565
+   },
+   "disp": {
+    "n": 39,
+    "mean": 4.9276,
+    "median": 0.325
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.1369,
+    "median": 0.031
+   },
+   "atro": {
+    "n": 5,
+    "mean": -9.3358,
+    "median": -2.422
+   },
+   "cliff_t_vs_disp": -0.034,
+   "cliff_t_vs_rand": 0.05,
+   "p_t_vs_disp": 0.155,
+   "p_t_vs_rand": 0.077
+  },
+  {
+   "metric": "\u0394[talk_kb] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": -11.2314,
+    "median": 0.004
+   },
+   "disp": {
+    "n": 39,
+    "mean": -9.7726,
+    "median": -6.209
+   },
+   "rand": {
+    "n": 57,
+    "mean": -1.6689,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": -10.5795,
+    "median": -8.274
+   },
+   "cliff_t_vs_disp": 0.165,
+   "cliff_t_vs_rand": -0.014,
+   "p_t_vs_disp": 0.863,
+   "p_t_vs_rand": 0.122
+  },
+  {
+   "metric": "\u0394[watch_links] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.8929,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0175,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.213,
+   "cliff_t_vs_rand": 0.205,
+   "p_t_vs_disp": 0.011,
+   "p_t_vs_rand": 0.001
+  },
+  {
+   "metric": "\u0394[watch_links] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": 0.3148,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.1538,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": -0.0351,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": -0.5
+   },
+   "cliff_t_vs_disp": 0.321,
+   "cliff_t_vs_rand": 0.281,
+   "p_t_vs_disp": 0.004,
+   "p_t_vs_rand": 0.006
+  },
+  {
+   "metric": "\u0394[watch_links_lead] 2023\u2192now",
+   "topic": {
+    "n": 56,
+    "mean": 0.2679,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0513,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.041,
+   "cliff_t_vs_rand": -0.018,
+   "p_t_vs_disp": 0.466,
+   "p_t_vs_rand": 0.202
+  },
+  {
+   "metric": "\u0394[watch_links_lead] 2021\u21922023",
+   "topic": {
+    "n": 54,
+    "mean": 0.2037,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0256,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 57,
+    "mean": -0.0175,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 4,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.123,
+   "cliff_t_vs_rand": 0.179,
+   "p_t_vs_disp": 0.291,
+   "p_t_vs_rand": 0.079
+  },
+  {
+   "metric": "\u0394[wd_aliases_en] 2023\u2192now",
+   "topic": {
+    "n": 38,
+    "mean": -0.0526,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 23,
+    "mean": 0.1739,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 30,
+    "mean": 0.0667,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 2,
+    "mean": 1.5,
+    "median": 1.5
+   },
+   "cliff_t_vs_disp": -0.043,
+   "cliff_t_vs_rand": -0.075,
+   "p_t_vs_disp": 0.834,
+   "p_t_vs_rand": 0.912
+  },
+  {
+   "metric": "\u0394[wd_aliases_en] 2021\u21922023",
+   "topic": {
+    "n": 31,
+    "mean": 0.7742,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 17,
+    "mean": 1.5882,
+    "median": 1.0
+   },
+   "rand": {
+    "n": 21,
+    "mean": 0.3333,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 2,
+    "mean": 2.0,
+    "median": 2.0
+   },
+   "cliff_t_vs_disp": -0.154,
+   "cliff_t_vs_rand": 0.117,
+   "p_t_vs_disp": 0.22,
+   "p_t_vs_rand": 0.301
+  },
+  {
+   "metric": "\u0394[abuse_hits_per_month] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 0.105,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.1,
+   "cliff_t_vs_rand": 0.1,
+   "p_t_vs_disp": 0.063,
+   "p_t_vs_rand": 0.025
+  },
+  {
+   "metric": "\u0394[acct_median_age_days] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -176.9437,
+    "median": -221.5801
+   },
+   "disp": {
+    "n": 39,
+    "mean": 288.5962,
+    "median": 372.2321
+   },
+   "rand": {
+    "n": 54,
+    "mean": -564.0824,
+    "median": -175.6706
+   },
+   "atro": {
+    "n": 5,
+    "mean": -207.7732,
+    "median": 70.5419
+   },
+   "cliff_t_vs_disp": -0.158,
+   "cliff_t_vs_rand": 0.083,
+   "p_t_vs_disp": 0.176,
+   "p_t_vs_rand": 0.255
+  },
+  {
+   "metric": "\u0394[acct_share_age_lt30] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0081,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0069,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 54,
+    "mean": -0.0086,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0122,
+    "median": -0.0154
+   },
+   "cliff_t_vs_disp": -0.017,
+   "cliff_t_vs_rand": -0.04,
+   "p_t_vs_disp": 0.959,
+   "p_t_vs_rand": 0.979
+  },
+  {
+   "metric": "\u0394[acct_share_age_lt365] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.0047,
+    "median": -0.0098
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0461,
+    "median": -0.0446
+   },
+   "rand": {
+    "n": 54,
+    "mean": 0.036,
+    "median": 0.0145
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.053,
+    "median": -0.0678
+   },
+   "cliff_t_vs_disp": 0.235,
+   "cliff_t_vs_rand": -0.17,
+   "p_t_vs_disp": 0.057,
+   "p_t_vs_rand": 0.372
+  },
+  {
+   "metric": "\u0394[acct_share_ec_now] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.0084,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0461,
+    "median": 0.0318
+   },
+   "rand": {
+    "n": 54,
+    "mean": -0.0444,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0122,
+    "median": 0.0154
+   },
+   "cliff_t_vs_disp": -0.266,
+   "cliff_t_vs_rand": 0.032,
+   "p_t_vs_disp": 0.045,
+   "p_t_vs_rand": 0.098
+  },
+  {
+   "metric": "\u0394[acct_share_editcount_lt500] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0089,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0426,
+    "median": -0.0214
+   },
+   "rand": {
+    "n": 54,
+    "mean": 0.0435,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0145,
+    "median": -0.0154
+   },
+   "cliff_t_vs_disp": 0.334,
+   "cliff_t_vs_rand": -0.019,
+   "p_t_vs_disp": 0.059,
+   "p_t_vs_rand": 0.096
+  },
+  {
+   "metric": "\u0394[acct_share_indef_now] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0943,
+    "median": -0.0658
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0959,
+    "median": -0.089
+   },
+   "rand": {
+    "n": 54,
+    "mean": -0.0353,
+    "median": -0.0159
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.1059,
+    "median": -0.1133
+   },
+   "cliff_t_vs_disp": -0.022,
+   "cliff_t_vs_rand": -0.253,
+   "p_t_vs_disp": 0.964,
+   "p_t_vs_rand": 0.052
+  },
+  {
+   "metric": "\u0394[added_minus_removed_kb] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 15.8408,
+    "median": 6.363
+   },
+   "disp": {
+    "n": 39,
+    "mean": -6.7299,
+    "median": -7.168
+   },
+   "rand": {
+    "n": 55,
+    "mean": 4.3227,
+    "median": 0.187
+   },
+   "atro": {
+    "n": 5,
+    "mean": -40.861,
+    "median": -20.197
+   },
+   "cliff_t_vs_disp": 0.41,
+   "cliff_t_vs_rand": 0.277,
+   "p_t_vs_disp": 0.027,
+   "p_t_vs_rand": 0.169
+  },
+  {
+   "metric": "\u0394[big_add_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.0012,
+    "median": 0.0048
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0027,
+    "median": -0.0037
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0014,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0,
+    "median": -0.0009
+   },
+   "cliff_t_vs_disp": 0.34,
+   "cliff_t_vs_rand": 0.165,
+   "p_t_vs_disp": 0.351,
+   "p_t_vs_rand": 0.969
+  },
+  {
+   "metric": "\u0394[cmt_consensus_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.0038,
+    "median": 0.0011
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0005,
+    "median": 0.0003
+   },
+   "rand": {
+    "n": 55,
+    "mean": -0.0061,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0049,
+    "median": 0.0115
+   },
+   "cliff_t_vs_disp": 0.078,
+   "cliff_t_vs_rand": -0.014,
+   "p_t_vs_disp": 0.612,
+   "p_t_vs_rand": 0.443
+  },
+  {
+   "metric": "\u0394[cmt_ecr_arbpia_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0012,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0012,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0011,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0016,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": -0.156,
+   "cliff_t_vs_rand": -0.12,
+   "p_t_vs_disp": 0.102,
+   "p_t_vs_rand": 0.111
+  },
+  {
+   "metric": "\u0394[cmt_lead_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.0003,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0022,
+    "median": -0.0027
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0033,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0008,
+    "median": 0.0084
+   },
+   "cliff_t_vs_disp": 0.103,
+   "cliff_t_vs_rand": -0.122,
+   "p_t_vs_disp": 0.424,
+   "p_t_vs_rand": 0.442
+  },
+  {
+   "metric": "\u0394[cmt_npov_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.0004,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0022,
+    "median": -0.0002
+   },
+   "rand": {
+    "n": 55,
+    "mean": -0.0008,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.009,
+    "median": -0.012
+   },
+   "cliff_t_vs_disp": 0.217,
+   "cliff_t_vs_rand": 0.147,
+   "p_t_vs_disp": 0.308,
+   "p_t_vs_rand": 0.532
+  },
+  {
+   "metric": "\u0394[cmt_sock_ban_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0007,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0001,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0009,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.053,
+   "cliff_t_vs_rand": -0.071,
+   "p_t_vs_disp": 0.51,
+   "p_t_vs_rand": 0.668
+  },
+  {
+   "metric": "\u0394[cmt_sources_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.0144,
+    "median": 0.016
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0114,
+    "median": -0.0005
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0027,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0164,
+    "median": -0.0135
+   },
+   "cliff_t_vs_disp": 0.205,
+   "cliff_t_vs_rand": 0.132,
+   "p_t_vs_disp": 0.06,
+   "p_t_vs_rand": 0.481
+  },
+  {
+   "metric": "\u0394[cmt_title_name_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.001,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0002,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 55,
+    "mean": -0.0025,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0041,
+    "median": 0.0018
+   },
+   "cliff_t_vs_disp": 0.029,
+   "cliff_t_vs_rand": 0.091,
+   "p_t_vs_disp": 0.737,
+   "p_t_vs_rand": 0.353
+  },
+  {
+   "metric": "\u0394[cmt_undue_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0024,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0015,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0001,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0006,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.123,
+   "cliff_t_vs_rand": -0.047,
+   "p_t_vs_disp": 0.805,
+   "p_t_vs_rand": 0.256
+  },
+  {
+   "metric": "\u0394[cmt_voice_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0014,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0012,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 55,
+    "mean": -0.0011,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0045,
+    "median": -0.0001
+   },
+   "cliff_t_vs_disp": 0.002,
+   "cliff_t_vs_rand": -0.071,
+   "p_t_vs_disp": 0.88,
+   "p_t_vs_rand": 0.832
+  },
+  {
+   "metric": "\u0394[critical_insert_acct_age_lt365] war\u2212w1",
+   "topic": {
+    "n": 8,
+    "mean": 0.1004,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 7,
+    "mean": 0.0119,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": 0.018,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.475,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_insert_acct_editcount_lt500] war\u2212w1",
+   "topic": {
+    "n": 8,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 7,
+    "mean": -0.131,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": 0.0,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.553,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_insert_acct_indef_now] war\u2212w1",
+   "topic": {
+    "n": 8,
+    "mean": -0.4987,
+    "median": -0.6667
+   },
+   "disp": {
+    "n": 7,
+    "mean": 0.2976,
+    "median": 0.25
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": -0.679,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.014,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_insert_lw_mean_risk] war\u2212w1",
+   "topic": {
+    "n": 9,
+    "mean": 0.0499,
+    "median": 0.0358
+   },
+   "disp": {
+    "n": 9,
+    "mean": -0.0174,
+    "median": 0.0182
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": 0.21,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.437,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_insert_reverted_share] war\u2212w1",
+   "topic": {
+    "n": 9,
+    "mean": 0.0293,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 9,
+    "mean": 0.0185,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": 0.185,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.961,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_inserts_per_month] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 0.0311,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": -0.028,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": -0.0042,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": -0.0289,
+    "median": -0.0167
+   },
+   "cliff_t_vs_disp": 0.318,
+   "cliff_t_vs_rand": 0.27,
+   "p_t_vs_disp": 0.009,
+   "p_t_vs_rand": 0.005
+  },
+  {
+   "metric": "\u0394[critical_net_inserts] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 0.15,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.075,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": -0.0167,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": -0.3333,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.003,
+   "cliff_t_vs_rand": 0.077,
+   "p_t_vs_disp": 0.792,
+   "p_t_vs_rand": 0.329
+  },
+  {
+   "metric": "\u0394[critical_remove_acct_age_lt365] war\u2212w1",
+   "topic": {
+    "n": 9,
+    "mean": -0.137,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 10,
+    "mean": -0.0286,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": 0.033,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.536,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_remove_acct_editcount_lt500] war\u2212w1",
+   "topic": {
+    "n": 9,
+    "mean": -0.0063,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 10,
+    "mean": -0.081,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": 0.022,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.735,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_remove_acct_indef_now] war\u2212w1",
+   "topic": {
+    "n": 9,
+    "mean": -0.426,
+    "median": -0.3873
+   },
+   "disp": {
+    "n": 10,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": -0.533,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.021,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_remove_lw_mean_risk] war\u2212w1",
+   "topic": {
+    "n": 9,
+    "mean": -0.0329,
+    "median": -0.0511
+   },
+   "disp": {
+    "n": 10,
+    "mean": -0.0134,
+    "median": 0.034
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": -0.133,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.868,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[critical_remove_reverted_share] war\u2212w1",
+   "topic": {
+    "n": 9,
+    "mean": 0.0092,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 11,
+    "mean": -0.0314,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": 0.081,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": 0.833,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_insert_acct_age_lt365] war\u2212w1",
+   "topic": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_insert_acct_editcount_lt500] war\u2212w1",
+   "topic": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_insert_acct_indef_now] war\u2212w1",
+   "topic": {
+    "n": 1,
+    "mean": -1.0,
+    "median": -1.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_insert_lw_mean_risk] war\u2212w1",
+   "topic": {
+    "n": 1,
+    "mean": 0.0604,
+    "median": 0.0604
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_insert_reverted_share] war\u2212w1",
+   "topic": {
+    "n": 1,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_inserts_per_month] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 0.0096,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.05,
+   "cliff_t_vs_rand": 0.05,
+   "p_t_vs_disp": 0.28,
+   "p_t_vs_rand": 0.128
+  },
+  {
+   "metric": "\u0394[disp_P_net_inserts] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 0.0667,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.083,
+   "cliff_t_vs_rand": 0.083,
+   "p_t_vs_disp": 0.497,
+   "p_t_vs_rand": 0.493
+  },
+  {
+   "metric": "\u0394[disp_P_remove_acct_age_lt365] war\u2212w1",
+   "topic": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_remove_acct_editcount_lt500] war\u2212w1",
+   "topic": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_remove_acct_indef_now] war\u2212w1",
+   "topic": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_remove_lw_mean_risk] war\u2212w1",
+   "topic": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[disp_P_remove_reverted_share] war\u2212w1",
+   "topic": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "disp": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "rand": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "atro": {
+    "n": 0,
+    "mean": null,
+    "median": null
+   },
+   "cliff_t_vs_disp": null,
+   "cliff_t_vs_rand": null,
+   "p_t_vs_disp": null,
+   "p_t_vs_rand": null
+  },
+  {
+   "metric": "\u0394[edits_per_month] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 18.2917,
+    "median": 0.8932
+   },
+   "disp": {
+    "n": 40,
+    "mean": -6.7056,
+    "median": -2.4377
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.4775,
+    "median": 0.0382
+   },
+   "atro": {
+    "n": 6,
+    "mean": -10.2039,
+    "median": -1.9151
+   },
+   "cliff_t_vs_disp": 0.651,
+   "cliff_t_vs_rand": 0.346,
+   "p_t_vs_disp": 0.005,
+   "p_t_vs_rand": 0.005
+  },
+  {
+   "metric": "\u0394[empty_summary_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0075,
+    "median": 0.0002
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0088,
+    "median": -0.0142
+   },
+   "rand": {
+    "n": 55,
+    "mean": -0.0127,
+    "median": -0.0155
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0315,
+    "median": -0.0327
+   },
+   "cliff_t_vs_disp": 0.04,
+   "cliff_t_vs_rand": 0.1,
+   "p_t_vs_disp": 0.94,
+   "p_t_vs_rand": 0.806
+  },
+  {
+   "metric": "\u0394[hidden_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0002,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0027,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0011,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0004,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.057,
+   "cliff_t_vs_rand": -0.021,
+   "p_t_vs_disp": 0.204,
+   "p_t_vs_rand": 0.342
+  },
+  {
+   "metric": "\u0394[mobile_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.0499,
+    "median": 0.042
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.036,
+    "median": 0.0404
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0242,
+    "median": 0.0268
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.0666,
+    "median": 0.0746
+   },
+   "cliff_t_vs_disp": 0.104,
+   "cliff_t_vs_rand": 0.079,
+   "p_t_vs_disp": 0.51,
+   "p_t_vs_rand": 0.325
+  },
+  {
+   "metric": "\u0394[mobile_view_share] war\u2212w1",
+   "topic": {
+    "n": 57,
+    "mean": 0.0629,
+    "median": 0.0454
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0216,
+    "median": 0.0336
+   },
+   "rand": {
+    "n": 56,
+    "mean": 0.0266,
+    "median": 0.0275
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.1915,
+    "median": 0.1733
+   },
+   "cliff_t_vs_disp": 0.347,
+   "cliff_t_vs_rand": 0.303,
+   "p_t_vs_disp": 0.001,
+   "p_t_vs_rand": 0.004
+  },
+  {
+   "metric": "\u0394[reverted_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0101,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.007,
+    "median": -0.0253
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0114,
+    "median": 0.0142
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0445,
+    "median": -0.0479
+   },
+   "cliff_t_vs_disp": 0.072,
+   "cliff_t_vs_rand": -0.176,
+   "p_t_vs_disp": 0.887,
+   "p_t_vs_rand": 0.232
+  },
+  {
+   "metric": "\u0394[reverting_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0084,
+    "median": -0.0026
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0059,
+    "median": -0.0191
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0061,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0453,
+    "median": -0.041
+   },
+   "cliff_t_vs_disp": 0.011,
+   "cliff_t_vs_rand": -0.183,
+   "p_t_vs_disp": 0.87,
+   "p_t_vs_rand": 0.267
+  },
+  {
+   "metric": "\u0394[rfc_per_year] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 0.4025,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": -0.1017,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": -0.1336,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.225,
+   "cliff_t_vs_rand": 0.15,
+   "p_t_vs_disp": 0.047,
+   "p_t_vs_rand": 0.042
+  },
+  {
+   "metric": "\u0394[rm_per_year] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 0.1632,
+    "median": 0.0
+   },
+   "disp": {
+    "n": 40,
+    "mean": -0.1036,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 6,
+    "mean": -0.2132,
+    "median": 0.0
+   },
+   "cliff_t_vs_disp": 0.185,
+   "cliff_t_vs_rand": -0.017,
+   "p_t_vs_disp": 0.135,
+   "p_t_vs_rand": 0.274
+  },
+  {
+   "metric": "\u0394[talk_article_editors_on_talk] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0385,
+    "median": -0.0223
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0074,
+    "median": 0.0
+   },
+   "rand": {
+    "n": 54,
+    "mean": -0.0165,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.0268,
+    "median": -0.0238
+   },
+   "cliff_t_vs_disp": -0.184,
+   "cliff_t_vs_rand": -0.163,
+   "p_t_vs_disp": 0.153,
+   "p_t_vs_rand": 0.293
+  },
+  {
+   "metric": "\u0394[talk_article_edits_by_talk_participants] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0447,
+    "median": -0.0142
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0529,
+    "median": -0.0225
+   },
+   "rand": {
+    "n": 54,
+    "mean": -0.0296,
+    "median": 0.0
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.1301,
+    "median": -0.218
+   },
+   "cliff_t_vs_disp": 0.023,
+   "cliff_t_vs_rand": -0.056,
+   "p_t_vs_disp": 0.866,
+   "p_t_vs_rand": 0.769
+  },
+  {
+   "metric": "\u0394[talk_edits_per_month] war\u2212w1",
+   "topic": {
+    "n": 60,
+    "mean": 22.2777,
+    "median": 0.1122
+   },
+   "disp": {
+    "n": 40,
+    "mean": -3.7952,
+    "median": -0.3349
+   },
+   "rand": {
+    "n": 60,
+    "mean": 0.0898,
+    "median": 0.0541
+   },
+   "atro": {
+    "n": 6,
+    "mean": -16.7174,
+    "median": -0.7048
+   },
+   "cliff_t_vs_disp": 0.428,
+   "cliff_t_vs_rand": 0.186,
+   "p_t_vs_disp": 0.034,
+   "p_t_vs_rand": 0.003
+  },
+  {
+   "metric": "\u0394[talk_talk_to_article_edits] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.0362,
+    "median": -0.0026
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.1139,
+    "median": 0.0081
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0494,
+    "median": 0.0426
+   },
+   "atro": {
+    "n": 5,
+    "mean": -0.1443,
+    "median": -0.1095
+   },
+   "cliff_t_vs_disp": -0.131,
+   "cliff_t_vs_rand": -0.222,
+   "p_t_vs_disp": 0.233,
+   "p_t_vs_rand": 0.252
+  },
+  {
+   "metric": "\u0394[top1_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": -0.024,
+    "median": -0.0215
+   },
+   "disp": {
+    "n": 39,
+    "mean": -0.0011,
+    "median": 0.0111
+   },
+   "rand": {
+    "n": 54,
+    "mean": 0.0251,
+    "median": 0.0013
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.07,
+    "median": -0.0173
+   },
+   "cliff_t_vs_disp": -0.118,
+   "cliff_t_vs_rand": -0.151,
+   "p_t_vs_disp": 0.507,
+   "p_t_vs_rand": 0.184
+  },
+  {
+   "metric": "\u0394[views_per_month] war\u2212w1",
+   "topic": {
+    "n": 57,
+    "mean": 44139.4672,
+    "median": 9980.5369
+   },
+   "disp": {
+    "n": 39,
+    "mean": -27775.349,
+    "median": -3054.8252
+   },
+   "rand": {
+    "n": 56,
+    "mean": -143.5199,
+    "median": 31.9453
+   },
+   "atro": {
+    "n": 5,
+    "mean": 5055.095,
+    "median": 3464.9054
+   },
+   "cliff_t_vs_disp": 0.779,
+   "cliff_t_vs_rand": 0.709,
+   "p_t_vs_disp": 0.0,
+   "p_t_vs_rand": 0.0
+  },
+  {
+   "metric": "\u0394[visualeditor_share] war\u2212w1",
+   "topic": {
+    "n": 56,
+    "mean": 0.1111,
+    "median": 0.0942
+   },
+   "disp": {
+    "n": 39,
+    "mean": 0.0623,
+    "median": 0.0576
+   },
+   "rand": {
+    "n": 55,
+    "mean": 0.0314,
+    "median": 0.0242
+   },
+   "atro": {
+    "n": 5,
+    "mean": 0.1211,
+    "median": 0.1143
+   },
+   "cliff_t_vs_disp": 0.214,
+   "cliff_t_vs_rand": 0.316,
+   "p_t_vs_disp": 0.08,
+   "p_t_vs_rand": 0.013
+  }
+ ]
+}

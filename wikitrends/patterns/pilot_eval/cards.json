@@ -1,0 +1,271 @@
+{
+ "angle": "Pilot evaluation: data quality, screens and deep dives of ~30 new signals (168 articles), and the shortlist for the mass rerun",
+ "cards": [
+  {
+   "rank": 1,
+   "id": "account_profile",
+   "title": "Israel/Palestine pages are edited by older, extended-confirmed accounts, and they are reverted less than other disputes",
+   "what_we_see": "War window (Oct 2023 to Nov 2026), per-article shares of registered edits. Edits by accounts with under 500 edits: topic 4.1%, dispute comparison 11.3%, random comparison 20.6% (n 60/40/60; Cliff's delta -0.42 and -0.64, permutation p 0.001 and <0.001). Extended-confirmed now: 95% / 88% / 79%. Median account age at the time of the edit: 9.5 / 6.8 / 6.1 years. Accounts under 30 days old: 2.2% / 6.1% / 6.8%. Reverted share of all edits: 8.6% topic vs 18.2% dispute (Cliff -0.59, p<0.001) and 8.9% random. The same gaps are already there before the war (w1).",
+   "chart": {
+    "type": "dot plot, one row per metric, three dots (topic, dispute, random), x = share of edits",
+    "data": "chart_data/screen_all.json (metrics acct_share_editcount_lt500@war, acct_share_ec_now@war, acct_share_age_lt30@war, reverted_share@war)",
+    "inline": {
+     "editcount_lt500": {
+      "topic": 0.041,
+      "disp": 0.113,
+      "rand": 0.206
+     },
+     "ec_now": {
+      "topic": 0.953,
+      "disp": 0.88,
+      "rand": 0.788
+     },
+     "median_age_years": {
+      "topic": 9.5,
+      "disp": 6.8,
+      "rand": 6.1
+     },
+     "reverted_share": {
+      "topic": 0.086,
+      "disp": 0.182,
+      "rand": 0.089
+     }
+    }
+   },
+   "confidence": "STRONG",
+   "so_what": "This confirms SYNTHESIS P8 with account-level data: the text was written by a settled community of experienced, extended-confirmed editors, consistent with the topic's extended-confirmed restriction. Fewer reverts are what you would expect when newcomers and IPs cannot edit. It is a description of who can and does edit, not evidence for or against coordination.",
+   "caveat": "Extended-confirmed and block status are as of 2026-11, not at the time of the edit; 60/40/60 articles.",
+   "examples": []
+  },
+  {
+   "rank": 2,
+   "id": "block_status_inserters",
+   "title": "Now-blocked accounts are over-represented in lead-term flips on topic pages, on both sides of the flip, and a few accounts account for most of it",
+   "what_we_see": "Pre-war window (Jan 2021 to Jun 2023), 12 topic articles with lead critical-term events. 21 of 62 registered insertions (34%) were by accounts that are now indefinitely blocked; 18 of the 21 came from 3 accounts, and 6 of 22 inserting accounts are now blocked. Removals were even more affected: 35 of 62 (56%), by 9 to 11 of 26 accounts. By comparison, 25% of all registered edits to the same topic articles in that window were by now-indef accounts. In the dispute comparison there was no excess: inserts 15%, removals 18%, base 18%. War window: topic inserts 15% (21 of 142; 10 to 15 of 73 accounts), removals 16% (22 of 135), base 10%; dispute 15% and 14% against a base of 15%. The 48% in summary.json is an unweighted mean over 12 articles. Israel alone holds 27 of the 56 pre-war events by now-blocked accounts.",
+   "chart": {
+    "type": "grouped bars: share of events by now-indef accounts for inserts, removals, and all edits (base); panels w1 and war; topic vs dispute",
+    "data": "chart_data/indef_inserters.json",
+    "inline": {
+     "w1": {
+      "topic": {
+       "insert": 0.339,
+       "remove": 0.565,
+       "base": 0.245
+      },
+      "disp": {
+       "insert": 0.155,
+       "remove": 0.18,
+       "base": 0.209
+      }
+     },
+     "war": {
+      "topic": {
+       "insert": 0.148,
+       "remove": 0.163,
+       "base": 0.102
+      },
+      "disp": {
+       "insert": 0.154,
+       "remove": 0.143,
+       "base": 0.12
+      }
+     }
+    }
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "The excess sits in contested lead flips on both sides, not only in insertions. It points to blocked accounts (often sockpuppets or arbitration-enforcement blocks in this topic area) taking part in the edit wars over a few leads, in both directions. It says nothing about which side any account was on, and it does not show that the current wording came from blocked accounts: their insertions were reverted more often (w1 38% vs 17% for other accounts; war 48% vs 21%).",
+   "caveat": "Block status is current (2026-11) and includes partial blocks; accounts active in 2021-23 had more time to be blocked; reasons are not recorded; the link from accounts to events is inferred from per-article shares (bounds given).",
+   "examples": [
+    {
+     "article": "Israel",
+     "note": "2021-23: 70 lead flips with registered accounts; 27 by now-indef accounts (8 of 35 insertions, 19 of 35 removals), against a base of 33% of all edits."
+    }
+   ]
+  },
+  {
+   "rank": 3,
+   "id": "rfc_surge",
+   "title": "Formal discussion surged on a handful of topic pages after mid-2023, while dispute comparisons calmed down",
+   "what_we_see": "RfCs found in the talk page and archives: topic 11 (Jan 2021 to Jun 2023, 4 articles) and then 88 (Jul 2023 to Nov 2026, 12 articles), for 60 articles. Dispute comparison: 15 and then 6 on 40 articles; random: 0 and 0. Per article per year, the topic change is +0.40 against -0.10 for dispute (Cliff +0.23, p 0.05). 64 of the 88 are on Gaza war (22), Gaza genocide (21), October 7 attacks (13) and Zionism (13). Requested moves: topic 12 and then 45; dispute 16 and then 14. 40 of 88 RfCs carry a detectable close.",
+   "chart": {
+    "type": "paired bars: RfCs per window, topic vs dispute, with the top-4 articles stacked",
+    "data": "chart_data/talk_rfc.json",
+    "inline": {
+     "topic": {
+      "w1": 11,
+      "w2": 88
+     },
+     "disp": {
+      "w1": 15,
+      "w2": 6
+     },
+     "rand": {
+      "w1": 0,
+      "w2": 0
+     },
+     "top4_w2": {
+      "Gaza war": 22,
+      "Gaza genocide": 21,
+      "October 7 attacks": 13,
+      "Zionism": 13
+     }
+    }
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "The flagship lead decisions were taken inside formal processes (RfC, RM) rather than only by attrition. That supports reading P7's 'per talk' lock-ins as governed outcomes. Pairing RfC close dates with ratchet lock-in dates is now possible and cheap.",
+   "caveat": "Headings and {{rfc}} templates found by regex; dates by first signature; close and result parsing is weak (7 of 45 RM results parsed).",
+   "examples": [
+    {
+     "article": "Gaza genocide",
+     "note": "21 RfCs and 10 requested moves since 2023-12; title moved from 'Allegations of genocide in the 2023 Israeli attack on Gaza' to 'Gaza genocide' on 2024-07-03 after an RM."
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "id": "atrocity_voice",
+   "title": "Gaza is one of several atrocity articles that state 'genocide' in Wikipedia's voice; the Uyghur article went the other way in 2024",
+   "what_we_see": "Rohingya, Yazidi, Bosnian and Armenian genocide titles and first sentences state the label in Wikipedia's own voice. Rohingya and Bosnian short descriptions moved to the label after 2023 ('Ongoing ethnic cleansing in Myanmar (Burma)' became 'Ongoing genocide in Myanmar'). Gaza went from 'Allegations have been made...' (2024-01) to a stated title (2024-07) and a stated first sentence (2025-10); its short description reads 'Ongoing genocide in the Gaza Strip' and its infobox type begins 'Genocide, war crimes...'. The Uyghur article moved the other way: 'Uyghur genocide' was renamed 'Persecution of Uyghurs in China' after a requested move on 2024-02-27, and its 2026 lead says it 'has often been characterized as persecution or as genocide'. Tigray is attributed ('were accused of genocide'). Yazidi survived a 2025-08 move to 'Persecution of Yazidis (2014-2017)', which was reverted.",
+   "chart": {
+    "type": "table / dot strip: rows = articles, columns = title, short description, first sentence, category; colour = stated / attributed / absent, at 2021 and now",
+    "data": "chart_data/atrocity_voice.json"
+   },
+   "confidence": "ANECDOTE",
+   "so_what": "Stating 'genocide' in Wikipedia's voice is not unique to Gaza. What sets Gaza apart is the speed (21 months, during an ongoing war, with the ICJ case still pending) and the reach of the label into infoboxes and categories. The Rohingya article, also with an ICJ case pending, has been stated since before 2021, so 'pending case' alone does not explain the difference. The Uyghur case shows the community can also move the other way.",
+   "caveat": "7 articles plus Gaza; the two Sudan 2023 titles were missing from the pilot, and the Darfur record is now a disambiguation page; voice coded by hand.",
+   "examples": [
+    {
+     "article": "Persecution of Uyghurs in China",
+     "quote": "...a series of ongoing human rights abuses against Uyghurs ... which has often been characterized as persecution or as genocide."
+    },
+    {
+     "article": "Gaza genocide",
+     "quote": "The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war."
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "id": "short_descriptions",
+   "title": "Short descriptions change along with leads, and on a few flagship topic pages they now state the label outright",
+   "what_we_see": "Short descriptions changed between Jul 2023 and now in 62% of topic articles (35 of 56), against 49% of dispute and 48% of random articles. They changed in 11 of 13 topic articles whose lead gained critical terms, against 24 of 43 that did not; dispute 8 of 8 against 11 of 31. Short descriptions containing a framing term (genocide, apartheid, ethnic cleansing, occupied, illegal, segregation): topic 3 and then 5 of 56; comparison 0 throughout. The English Wikidata description changed in 68% of topic against 38% of dispute (p 0.008).",
+   "chart": {
+    "type": "small table of then/now short descriptions for 6 articles, plus bars of the share changed by lead-gain status",
+    "data": "chart_data/sd_summary.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "Short descriptions reach search snippets and apps. On most pages they follow the lead, but on a few flagship pages they compress the change into 3-6 words, and the hedge disappears. The owner's monitor should watch them (SYNTHESIS action list).",
+   "caveat": "The co-movement is Wikipedia-wide (dispute leads too); 5 examples carry the framing point.",
+   "examples": [
+    {
+     "article": "Israeli apartheid",
+     "quote": "2021: 'Comparison of Israel's treatment of Palestinians to apartheid' -> 2023: 'Accusation that Israel's actions rise to the crime of apartheid' -> now: 'Israeli system of racial segregation and discrimination'"
+    },
+    {
+     "article": "Nakba",
+     "quote": "2023: 'Fracturing, dispossession, and displacement of Palestinian society' -> now: 'Ethnic cleansing of Palestinians'"
+    },
+    {
+     "article": "Israeli settlement",
+     "quote": "2023: 'Israeli communities built on land occupied in the 1967 Six-Day War' -> now: 'Illegal Israeli communities built on land occupied in the 1967 Six-Day War'"
+    }
+   ]
+  },
+  {
+   "rank": 6,
+   "id": "edit_volume_not_size",
+   "title": "Post-war text growth came from about 3.7 times as many edits per month, each of the same size and churn as before",
+   "what_we_see": "Topic articles: 11,181 edits in the 30 pre-war months against 55,632 in the 40 months after Jul 2023 (373 to 1,384 per month). Net bytes per edit stayed flat (56 to 53), and so did the share of added bytes removed elsewhere (0.82 to 0.82). Dispute comparison: edits per month fell (563 to 348), and churn rose (0.81 to 0.84; 0.92 in the war window). Mean net growth per article in the war window: topic +47.6 KB, dispute +8.3 KB, random +8.3 KB (Cliff +0.30 vs dispute, p 0.02). Median +11.2 KB.",
+   "chart": {
+    "type": "two-panel bars: edits per month and net bytes per edit, w1 vs w2, by stratum",
+    "data": "chart_data/edit_sizes.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "There is no sign of a change in editing style (bigger rewrites or mass deletions). The reframing arrived through more ordinary edits, consistent with SYNTHESIS P1 and the 'added text' finding. This comes free with the revision metadata.",
+   "caveat": "Byte deltas count reverts as both adds and removes; 60 articles, with Gaza war and Gaza genocide dominating the pooled totals.",
+   "examples": []
+  },
+  {
+   "rank": 7,
+   "id": "concept_link_diffusion",
+   "title": "Links to Nakba, apartheid and settler-colonialism pages spread modestly; the raw 'watch link' counts mostly reflect article renames",
+   "what_we_see": "Across 54 topic articles present at all three dates, raw watch-list links rose from 143 to 160 to 200, and '1948 Palestinian expulsion and flight' went from 0 to 9. But that article was renamed from '1948 Palestinian exodus' in 2022-23, and with aliases counted the concept went from 9 to 10 to 11 articles. Alias-corrected: Israeli apartheid 1 to 4 to 6, settler colonialism (incl. Zionism as settler colonialism) 0 to 2 to 4, Gaza genocide 0 to 5, generic genocide or ethnic cleansing 8 to 8 to 12. Jewish-history concepts also rose (Land of Israel / Israelites / Jewish history 17 to 20 to 23), and Jewish exodus from Arab and Muslim countries held steady (9, 8, 9). Dispute and random articles: almost none of these.",
+   "chart": {
+    "type": "slope chart, one line per concept, articles linking at 2021 / 2023 / now (topic panel n=54)",
+    "data": "chart_data/concept_links.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "Diffusion along links is real but small in this sample, and it runs in both narrative directions. Any diffusion metric must resolve redirects and renames first, or it will mistake a page move for a reframing.",
+   "caveat": "Links are explicit wikilinks as written; template-generated links are missed; 54 articles.",
+   "examples": []
+  },
+  {
+   "rank": 8,
+   "id": "protection_ct",
+   "title": "Extended-confirmed protection and contentious-topic notices spread in topic and dispute articles alike; protection marks attention, not change",
+   "what_we_see": "Edit protection at extended-confirmed: topic 47% to 52% to 63% (2021, 2023, now), dispute 10% to 25% to 45%, random 0% to 0% to 3%. Contentious-topic notices: topic 57% to 59% to 67%, dispute 31% to 38% to 48%, random 0 to 0 to 3%. Within topic, pages already EC-protected in Jul 2023 gained lead critical terms afterwards in 45% of cases (14 of 31), against 4% (1 of 25) for unprotected pages. Within dispute, there was no difference (30% vs 28%).",
+   "chart": {
+    "type": "line chart, share EC-protected at 3 dates by stratum; inset bars of gain share by protection status",
+    "data": "chart_data/protection_ct.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "Protection is a marker of the core pages, which are the ones that changed, rather than a brake. Under the topic's extended-confirmed restriction, technical protection is not what decides who may edit. The dispute topics also moved toward EC protection after 2023, so the platform-side tightening is not unique to this topic.",
+   "caveat": "Reconstruction from the protect log is a lower bound (it missed 12 of 168 current protections: old log entries without details, protections moved with pages).",
+   "examples": []
+  },
+  {
+   "rank": 9,
+   "id": "lead_citations",
+   "title": "Topic leads gained citations while dispute leads lost some; the source mix moved the way it did everywhere",
+   "what_we_see": "Citations in leads (articles present at all 3 dates): topic 727 to 965 (+33%) from Jul 2023 to now; dispute 997 to 876 (-12%); random 248 to 260. Scholarly share rose in all groups (topic 58% to 67%, dispute 56% to 67%). In topic leads, rights groups and UN rose from 1.9% to 2.9%, pro-Israel advocacy fell from 0.8% to 0.4%, Arab and pro-Palestinian outlets went from 0.8% to 0.9%, and Israeli press stayed at 5.2%.",
+   "chart": {
+    "type": "stacked bars of lead citation classes, 3 dates x 3 strata",
+    "data": "chart_data/refs_classes.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "Contested leads were defended with more citations, mostly scholarly ones. This matches SYNTHESIS P9 ('the words changed more than the sources'). The pilot stores classes, not domains, so per-outlet questions (ADL, Al Jazeera) need the domain list kept.",
+   "caveat": "Counts include {{sfn}} footnotes, which inflate the scholarly share; 17-25% of lead citations are 'Other'.",
+   "examples": [
+    {
+     "article": "Zionism",
+     "note": "lead citations 25 (2023) -> 107 (now), 95 of them scholarly short footnotes"
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "id": "liftwing_symmetric",
+   "title": "Wikimedia's revert-risk model scores adding and removing critical terms alike",
+   "what_we_see": "LiftWing scored all 433 sampled lead-event revisions without a failure. It predicts the mw-reverted tag with an AUC of 0.75 (topic 0.69, dispute 0.77). Topic insertions averaged 0.615 and removals 0.631 (n 110/103); among unreverted edits, 0.583 and 0.599. Dispute: 0.68 and 0.72. Anonymous edits score 0.95, registered ones 0.62.",
+   "chart": {
+    "type": "box plots of revert-risk by direction (insert/remove) and stratum",
+    "data": "chart_data/liftwing.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "There is no evidence that the platform's automated quality tool treats the two directions differently (SYNTHESIS open question 7). The model mostly encodes who is editing (anonymous or registered), not what the text says.",
+   "caveat": "Up to 12 scored revisions per article, spread evenly; 73 articles have scores.",
+   "examples": []
+  },
+  {
+   "rank": 11,
+   "id": "categories_no_reframing",
+   "title": "Categories show no wholesale reframing: few framing categories were added, in both directions",
+   "what_we_see": "Between Jul 2023 and now, 56 topic articles gained 29 and lost 15 framing categories (genocide, colonial, apartheid, occupation, massacre, terror, Zionism, antisemitism). The additions run both ways: 'Israeli apartheid' (2), 'Massacres of Jews' (2), terrorist-designation categories for Hamas (5) and Hezbollah (2), 'Terrorist incidents against Muslims' on Nakba and Cave of the Patriarchs, 'History of colonialism' on Balfour Declaration. Dispute comparison: 10 added, 9 removed. Random: 0. Settler-colonialism categories: 'Settler colonialism in Asia' was added to the Uyghur article; none were added to the topic sample.",
+   "chart": {
+    "type": "diverging bars of categories added/removed per 100 articles by stratum",
+    "data": "(computed in EVAL.md section 3.6)"
+   },
+   "confidence": "ANECDOTE",
+   "so_what": "The reframing is in the prose, the short descriptions and the infoboxes, not in the category system. Gaza genocide is the exception: it sits in '21st-century genocides' and 'Genocide of indigenous peoples in Asia', like the Rohingya, Yazidi and Armenian articles.",
+   "caveat": "Only explicit [[Category:]] links are parsed, not template-added ones; many changes are renames into sub-categories.",
+   "examples": []
+  }
+ ],
+ "new_questions": [
+  "Do RfC close dates line up with the ratchet lock-in dates on the 4 battleground leads (store per-RfC dates in the mass run)?",
+  "Outside the Israel article, is the excess of now-blocked accounts among lead-flip editors (pre-war 48% of insertions vs 22% base, n=27) replicated at mass scale, and is it sitewide or partial blocks?",
+  "Are restorations (re-inserting a term by undo or rollback) a large share of 'insertions'? Split them before interpreting who inserts.",
+  "Short-description voice: how many of the ~400 most-read topic pages now state a contested label in the short description, against matched atrocity and dispute pages?",
+  "Sudan 2023 (Masalit/El Geneina) needs the right titles; do they follow the Rohingya path (stated early) or the Uyghur path (attributed)?"
+ ]
+}

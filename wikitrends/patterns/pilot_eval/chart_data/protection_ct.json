@@ -1,0 +1,117 @@
+{
+ "note": "Edit protection reconstructed from the protect log (lower bound: 12/168 current protections missed). CT notice = contentious-topic/arbitration banner in talk header.",
+ "levels": {
+  "topic": {
+   "n": 60,
+   "2021-01-01": {
+    "edit_protection": {
+     "extendedconfirmed": 28,
+     "none": 32
+    },
+    "ct_notice": 31,
+    "talk_pages": 54
+   },
+   "2023-07-01": {
+    "edit_protection": {
+     "extendedconfirmed": 31,
+     "none": 29
+    },
+    "ct_notice": 33,
+    "talk_pages": 56
+   },
+   "now": {
+    "edit_protection": {
+     "extendedconfirmed": 38,
+     "none": 21,
+     "autoconfirmed": 1
+    },
+    "ct_notice": 40,
+    "talk_pages": 60
+   }
+  },
+  "disp": {
+   "n": 40,
+   "2021-01-01": {
+    "edit_protection": {
+     "autoconfirmed": 10,
+     "none": 26,
+     "extendedconfirmed": 4
+    },
+    "ct_notice": 12,
+    "talk_pages": 39
+   },
+   "2023-07-01": {
+    "edit_protection": {
+     "autoconfirmed": 8,
+     "none": 22,
+     "extendedconfirmed": 10
+    },
+    "ct_notice": 15,
+    "talk_pages": 39
+   },
+   "now": {
+    "edit_protection": {
+     "extendedconfirmed": 18,
+     "autoconfirmed": 5,
+     "none": 17
+    },
+    "ct_notice": 19,
+    "talk_pages": 40
+   }
+  },
+  "rand": {
+   "n": 60,
+   "2021-01-01": {
+    "edit_protection": {
+     "none": 60
+    },
+    "ct_notice": 0,
+    "talk_pages": 57
+   },
+   "2023-07-01": {
+    "edit_protection": {
+     "none": 59,
+     "autoconfirmed": 1
+    },
+    "ct_notice": 0,
+    "talk_pages": 57
+   },
+   "now": {
+    "edit_protection": {
+     "none": 57,
+     "autoconfirmed": 1,
+     "extendedconfirmed": 2
+    },
+    "ct_notice": 2,
+    "talk_pages": 60
+   }
+  },
+  "atro": {
+   "n": 6,
+   "2021-01-01": {
+    "edit_protection": {
+     "none": 6
+    },
+    "ct_notice": 2,
+    "talk_pages": 4
+   },
+   "2023-07-01": {
+    "edit_protection": {
+     "none": 5,
+     "autoconfirmed": 1
+    },
+    "ct_notice": 4,
+    "talk_pages": 5
+   },
+   "now": {
+    "edit_protection": {
+     "none": 4,
+     "extendedconfirmed": 1,
+     "autoconfirmed": 1
+    },
+    "ct_notice": 4,
+    "talk_pages": 6
+   }
+  }
+ }
+}

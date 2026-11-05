@@ -1,0 +1,76 @@
+{
+ "by_stratum": {
+  "atro": {
+   "sd_changed": 5,
+   "wd_changed": 2,
+   "sd_crit_23": 2,
+   "sd_crit_now": 3,
+   "wd_crit_23": 2,
+   "wd_crit_now": 2,
+   "sd_eq_wd_now": 0
+  },
+  "disp": {
+   "sd_changed": 19,
+   "wd_changed": 15,
+   "sd_crit_23": 0,
+   "sd_crit_now": 0,
+   "wd_crit_23": 0,
+   "wd_crit_now": 1,
+   "sd_eq_wd_now": 7
+  },
+  "rand": {
+   "sd_changed": 28,
+   "wd_changed": 22,
+   "sd_crit_23": 0,
+   "sd_crit_now": 0,
+   "wd_crit_23": 0,
+   "wd_crit_now": 0,
+   "sd_eq_wd_now": 18
+  },
+  "topic": {
+   "sd_changed": 35,
+   "wd_changed": 38,
+   "sd_crit_23": 3,
+   "sd_crit_now": 5,
+   "wd_crit_23": 4,
+   "wd_crit_now": 6,
+   "sd_eq_wd_now": 13
+  }
+ },
+ "n": {
+  "atro": 5,
+  "disp": 39,
+  "rand": 58,
+  "topic": 56
+ },
+ "sd_changed_by_lead_up": {
+  "atro|False": [
+   4,
+   4
+  ],
+  "atro|True": [
+   1,
+   1
+  ],
+  "disp|False": [
+   11,
+   31
+  ],
+  "disp|True": [
+   8,
+   8
+  ],
+  "rand|False": [
+   28,
+   58
+  ],
+  "topic|False": [
+   24,
+   43
+  ],
+  "topic|True": [
+   11,
+   13
+  ]
+ }
+}

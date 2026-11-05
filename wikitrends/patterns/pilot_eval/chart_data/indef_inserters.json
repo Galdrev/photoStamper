@@ -1,0 +1,872 @@
+{
+ "note": "Lead critical-term flip events (whole lead, presence change between consecutive revisions). indef = account indefinitely blocked (sitewide or partial) at collection time 2026-11-05. base = share of ALL registered non-bot edits to the same stratum articles in the window made by now-indef accounts. Account counts are bounds from an integer program consistent with every per-article share; no usernames or hashes stored.",
+ "events": {
+  "w1|topic|insert": {
+   "articles_with_events": 12,
+   "events_registered": 62,
+   "indef_events": 21,
+   "pooled_share": 0.339,
+   "article_mean_share": 0.484,
+   "articles_with_any_indef": 8,
+   "base_same_articles": 0.258,
+   "base_all_articles": 0.245
+  },
+  "w1|topic|remove": {
+   "articles_with_events": 12,
+   "events_registered": 62,
+   "indef_events": 35,
+   "pooled_share": 0.565,
+   "article_mean_share": 0.495,
+   "articles_with_any_indef": 8,
+   "base_same_articles": 0.253,
+   "base_all_articles": 0.245
+  },
+  "w1|disp|insert": {
+   "articles_with_events": 18,
+   "events_registered": 71,
+   "indef_events": 11,
+   "pooled_share": 0.155,
+   "article_mean_share": 0.097,
+   "articles_with_any_indef": 5,
+   "base_same_articles": 0.175,
+   "base_all_articles": 0.209
+  },
+  "w1|disp|remove": {
+   "articles_with_events": 17,
+   "events_registered": 61,
+   "indef_events": 11,
+   "pooled_share": 0.18,
+   "article_mean_share": 0.212,
+   "articles_with_any_indef": 6,
+   "base_same_articles": 0.178,
+   "base_all_articles": 0.209
+  },
+  "w1|rand|insert": {
+   "articles_with_events": 3,
+   "events_registered": 5,
+   "indef_events": 1,
+   "pooled_share": 0.2,
+   "article_mean_share": 0.111,
+   "articles_with_any_indef": 1,
+   "base_same_articles": 0.064,
+   "base_all_articles": 0.136
+  },
+  "w1|rand|remove": {
+   "articles_with_events": 0,
+   "events_registered": 0,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": null,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.0,
+   "base_all_articles": 0.136
+  },
+  "w1|atro|insert": {
+   "articles_with_events": 2,
+   "events_registered": 3,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.274,
+   "base_all_articles": 0.241
+  },
+  "w1|atro|remove": {
+   "articles_with_events": 1,
+   "events_registered": 2,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.287,
+   "base_all_articles": 0.241
+  },
+  "war|topic|insert": {
+   "articles_with_events": 23,
+   "events_registered": 142,
+   "indef_events": 21,
+   "pooled_share": 0.148,
+   "article_mean_share": 0.122,
+   "articles_with_any_indef": 7,
+   "base_same_articles": 0.098,
+   "base_all_articles": 0.102
+  },
+  "war|topic|remove": {
+   "articles_with_events": 23,
+   "events_registered": 135,
+   "indef_events": 22,
+   "pooled_share": 0.163,
+   "article_mean_share": 0.142,
+   "articles_with_any_indef": 7,
+   "base_same_articles": 0.086,
+   "base_all_articles": 0.102
+  },
+  "war|disp|insert": {
+   "articles_with_events": 13,
+   "events_registered": 52,
+   "indef_events": 8,
+   "pooled_share": 0.154,
+   "article_mean_share": 0.205,
+   "articles_with_any_indef": 6,
+   "base_same_articles": 0.151,
+   "base_all_articles": 0.12
+  },
+  "war|disp|remove": {
+   "articles_with_events": 16,
+   "events_registered": 42,
+   "indef_events": 6,
+   "pooled_share": 0.143,
+   "article_mean_share": 0.131,
+   "articles_with_any_indef": 3,
+   "base_same_articles": 0.148,
+   "base_all_articles": 0.12
+  },
+  "war|rand|insert": {
+   "articles_with_events": 1,
+   "events_registered": 1,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.034,
+   "base_all_articles": 0.111
+  },
+  "war|rand|remove": {
+   "articles_with_events": 2,
+   "events_registered": 2,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.157,
+   "base_all_articles": 0.111
+  },
+  "war|atro|insert": {
+   "articles_with_events": 1,
+   "events_registered": 1,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.075,
+   "base_all_articles": 0.062
+  },
+  "war|atro|remove": {
+   "articles_with_events": 1,
+   "events_registered": 2,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.075,
+   "base_all_articles": 0.062
+  },
+  "w2|topic|insert": {
+   "articles_with_events": 24,
+   "events_registered": 148,
+   "indef_events": 21,
+   "pooled_share": 0.142,
+   "article_mean_share": 0.116,
+   "articles_with_any_indef": 7,
+   "base_same_articles": 0.102,
+   "base_all_articles": 0.106
+  },
+  "w2|topic|remove": {
+   "articles_with_events": 23,
+   "events_registered": 139,
+   "indef_events": 23,
+   "pooled_share": 0.165,
+   "article_mean_share": 0.143,
+   "articles_with_any_indef": 7,
+   "base_same_articles": 0.09,
+   "base_all_articles": 0.106
+  },
+  "w2|disp|insert": {
+   "articles_with_events": 14,
+   "events_registered": 59,
+   "indef_events": 10,
+   "pooled_share": 0.169,
+   "article_mean_share": 0.19,
+   "articles_with_any_indef": 6,
+   "base_same_articles": 0.143,
+   "base_all_articles": 0.122
+  },
+  "w2|disp|remove": {
+   "articles_with_events": 18,
+   "events_registered": 49,
+   "indef_events": 7,
+   "pooled_share": 0.143,
+   "article_mean_share": 0.172,
+   "articles_with_any_indef": 4,
+   "base_same_articles": 0.142,
+   "base_all_articles": 0.122
+  },
+  "w2|rand|insert": {
+   "articles_with_events": 1,
+   "events_registered": 1,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.026,
+   "base_all_articles": 0.112
+  },
+  "w2|rand|remove": {
+   "articles_with_events": 2,
+   "events_registered": 2,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.15,
+   "base_all_articles": 0.112
+  },
+  "w2|atro|insert": {
+   "articles_with_events": 2,
+   "events_registered": 4,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.099,
+   "base_all_articles": 0.059
+  },
+  "w2|atro|remove": {
+   "articles_with_events": 1,
+   "events_registered": 2,
+   "indef_events": 0,
+   "pooled_share": 0.0,
+   "article_mean_share": 0.0,
+   "articles_with_any_indef": 0,
+   "base_same_articles": 0.072,
+   "base_all_articles": 0.059
+  }
+ },
+ "accounts": {
+  "w1|topic|insert": {
+   "accounts": 22,
+   "indef_accounts_min": 6,
+   "indef_accounts_max": 6,
+   "events_per_indef_account_minsol": [
+    8,
+    5,
+    5,
+    1,
+    1,
+    1
+   ]
+  },
+  "w1|topic|remove": {
+   "accounts": 26,
+   "indef_accounts_min": 9,
+   "indef_accounts_max": 11,
+   "events_per_indef_account_minsol": [
+    14,
+    7,
+    5,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  "w1|topic|any": {
+   "accounts": 38,
+   "indef_accounts_min": 11,
+   "indef_accounts_max": 13,
+   "events_per_indef_account_minsol": [
+    19,
+    15,
+    10,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "w1|disp|insert": {
+   "accounts": 44,
+   "indef_accounts_min": 6,
+   "indef_accounts_max": 8,
+   "events_per_indef_account_minsol": [
+    4,
+    2,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  "w1|disp|remove": {
+   "accounts": 40,
+   "indef_accounts_min": 7,
+   "indef_accounts_max": 9,
+   "events_per_indef_account_minsol": [
+    4,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "w1|disp|any": {
+   "accounts": 67,
+   "indef_accounts_min": 11,
+   "indef_accounts_max": 14,
+   "events_per_indef_account_minsol": [
+    8,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "w1|rand|insert": {
+   "accounts": 5,
+   "indef_accounts_min": 1,
+   "indef_accounts_max": 2,
+   "events_per_indef_account_minsol": [
+    1
+   ]
+  },
+  "w1|rand|any": {
+   "accounts": 5,
+   "indef_accounts_min": 1,
+   "indef_accounts_max": 2,
+   "events_per_indef_account_minsol": [
+    1
+   ]
+  },
+  "w1|atro|insert": {
+   "accounts": 4,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 1,
+   "events_per_indef_account_minsol": []
+  },
+  "w1|atro|remove": {
+   "accounts": 1,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "w1|atro|any": {
+   "accounts": 5,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 1,
+   "events_per_indef_account_minsol": []
+  },
+  "war|topic|insert": {
+   "accounts": 73,
+   "indef_accounts_min": 10,
+   "indef_accounts_max": 15,
+   "events_per_indef_account_minsol": [
+    4,
+    4,
+    4,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "war|topic|remove": {
+   "accounts": 73,
+   "indef_accounts_min": 10,
+   "indef_accounts_max": 17,
+   "events_per_indef_account_minsol": [
+    4,
+    4,
+    4,
+    3,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "war|topic|any": {
+   "accounts": 119,
+   "indef_accounts_min": 17,
+   "indef_accounts_max": 29,
+   "events_per_indef_account_minsol": [
+    7,
+    6,
+    5,
+    4,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "war|disp|insert": {
+   "accounts": 35,
+   "indef_accounts_min": 5,
+   "indef_accounts_max": 6,
+   "events_per_indef_account_minsol": [
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  "war|disp|remove": {
+   "accounts": 28,
+   "indef_accounts_min": 4,
+   "indef_accounts_max": 6,
+   "events_per_indef_account_minsol": [
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  "war|disp|any": {
+   "accounts": 54,
+   "indef_accounts_min": 9,
+   "indef_accounts_max": 12,
+   "events_per_indef_account_minsol": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "war|rand|insert": {
+   "accounts": 1,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "war|rand|remove": {
+   "accounts": 2,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "war|rand|any": {
+   "accounts": 3,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "war|atro|insert": {
+   "accounts": 1,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "war|atro|remove": {
+   "accounts": 2,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "war|atro|any": {
+   "accounts": 3,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "w2|topic|insert": {
+   "accounts": 73,
+   "indef_accounts_min": 10,
+   "indef_accounts_max": 15,
+   "events_per_indef_account_minsol": [
+    4,
+    4,
+    4,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "w2|topic|remove": {
+   "accounts": 75,
+   "indef_accounts_min": 11,
+   "indef_accounts_max": 18,
+   "events_per_indef_account_minsol": [
+    4,
+    4,
+    4,
+    3,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "w2|topic|any": {
+   "accounts": 120,
+   "indef_accounts_min": 17,
+   "indef_accounts_max": 30,
+   "events_per_indef_account_minsol": [
+    7,
+    6,
+    5,
+    5,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "w2|disp|insert": {
+   "accounts": 39,
+   "indef_accounts_min": 6,
+   "indef_accounts_max": 7,
+   "events_per_indef_account_minsol": [
+    2,
+    2,
+    2,
+    2,
+    1,
+    1
+   ]
+  },
+  "w2|disp|remove": {
+   "accounts": 33,
+   "indef_accounts_min": 5,
+   "indef_accounts_max": 7,
+   "events_per_indef_account_minsol": [
+    2,
+    2,
+    1,
+    1,
+    1
+   ]
+  },
+  "w2|disp|any": {
+   "accounts": 62,
+   "indef_accounts_min": 11,
+   "indef_accounts_max": 14,
+   "events_per_indef_account_minsol": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "w2|rand|insert": {
+   "accounts": 1,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "w2|rand|remove": {
+   "accounts": 2,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "w2|rand|any": {
+   "accounts": 3,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "w2|atro|insert": {
+   "accounts": 2,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "w2|atro|remove": {
+   "accounts": 2,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  },
+  "w2|atro|any": {
+   "accounts": 4,
+   "indef_accounts_min": 0,
+   "indef_accounts_max": 0,
+   "events_per_indef_account_minsol": []
+  }
+ },
+ "profile_min_solution": {
+  "w1|topic|indef=True": {
+   "events": 56,
+   "accounts": 12,
+   "inserts": 21,
+   "removes": 35,
+   "accounts_doing_both": 4,
+   "articles": 11,
+   "reverted_share_insert": 0.38,
+   "reverted_share_remove": 0.46,
+   "terms": {
+    "nakba_expulsion": 27,
+    "occupation": 13,
+    "apartheid": 7,
+    "war_crimes": 5,
+    "settler_colonial": 3,
+    "genocide": 1
+   },
+   "per_article": {
+    "Israel": 27,
+    "Anti-Zionism": 9,
+    "Israeli\u2013Palestinian conflict": 6,
+    "Ancient Israel and Judah": 4,
+    "Zionism as settler colonialism": 2,
+    "Nakba": 2,
+    "History of Palestine": 2,
+    "Antisemitism": 1
+   }
+  },
+  "w1|topic|indef=False": {
+   "events": 68,
+   "accounts": 26,
+   "inserts": 41,
+   "removes": 27,
+   "accounts_doing_both": 6,
+   "articles": 12,
+   "reverted_share_insert": 0.17,
+   "reverted_share_remove": 0.41,
+   "terms": {
+    "nakba_expulsion": 22,
+    "occupation": 19,
+    "apartheid": 10,
+    "war_crimes": 10,
+    "settler_colonial": 5,
+    "ethnic_cleansing": 1,
+    "genocide": 1
+   },
+   "per_article": {
+    "Israel": 43,
+    "Ancient Israel and Judah": 5,
+    "Israeli apartheid": 5,
+    "Nakba": 5,
+    "Anti-Zionism": 2,
+    "Hamas": 2,
+    "Bar Kokhba Revolt": 1,
+    "1948 Palestinian expulsion and flight": 1
+   }
+  },
+  "w1|disp|indef=True": {
+   "events": 23,
+   "accounts": 12,
+   "inserts": 11,
+   "removes": 12,
+   "accounts_doing_both": 2,
+   "articles": 9,
+   "reverted_share_insert": 0.55,
+   "reverted_share_remove": 0.17,
+   "terms": {
+    "nakba_expulsion": 8,
+    "ethnic_cleansing": 5,
+    "genocide": 5,
+    "occupation": 3,
+    "settler_colonial": 2
+   },
+   "per_article": {
+    "First Nagorno-Karabakh War": 9,
+    "Exodus of Kashmiri Hindus": 4,
+    "Hindu nationalism": 2,
+    "Kashmiri Muslims": 2,
+    "Taiwan": 2,
+    "Kurdish nationalism": 1,
+    "Nagorno-Karabakh conflict": 1,
+    "Republic of Artsakh": 1
+   }
+  },
+  "w1|disp|indef=False": {
+   "events": 110,
+   "accounts": 55,
+   "inserts": 60,
+   "removes": 50,
+   "accounts_doing_both": 15,
+   "articles": 19,
+   "reverted_share_insert": 0.27,
+   "reverted_share_remove": 0.18,
+   "terms": {
+    "nakba_expulsion": 38,
+    "ethnic_cleansing": 22,
+    "genocide": 18,
+    "occupation": 17,
+    "settler_colonial": 12,
+    "war_crimes": 3
+   },
+   "per_article": {
+    "First Nagorno-Karabakh War": 18,
+    "Armenian genocide": 15,
+    "Taiwan": 13,
+    "Turkish invasion of Cyprus": 12,
+    "Exodus of Kashmiri Hindus": 12,
+    "Islamic State": 8,
+    "Kosovo Serbs": 5,
+    "Kashmiri Muslims": 4
+   }
+  },
+  "war|topic|indef=True": {
+   "events": 44,
+   "accounts": 18,
+   "inserts": 21,
+   "removes": 23,
+   "accounts_doing_both": 6,
+   "articles": 11,
+   "reverted_share_insert": 0.48,
+   "reverted_share_remove": 0.35,
+   "terms": {
+    "occupation": 14,
+    "nakba_expulsion": 11,
+    "settler_colonial": 9,
+    "genocide": 5,
+    "war_crimes": 3,
+    "apartheid": 1,
+    "ethnic_cleansing": 1
+   },
+   "per_article": {
+    "Israel": 18,
+    "Hamas": 9,
+    "October 7 attacks": 6,
+    "Hezbollah": 3,
+    "Israel Defense Forces": 2,
+    "Gaza genocide": 1,
+    "Farhud": 1,
+    "History of Israel": 1
+   }
+  },
+  "war|topic|indef=False": {
+   "events": 234,
+   "accounts": 101,
+   "inserts": 121,
+   "removes": 113,
+   "accounts_doing_both": 21,
+   "articles": 28,
+   "reverted_share_insert": 0.21,
+   "reverted_share_remove": 0.35,
+   "terms": {
+    "genocide": 52,
+    "occupation": 50,
+    "nakba_expulsion": 48,
+    "settler_colonial": 28,
+    "war_crimes": 26,
+    "apartheid": 20,
+    "ethnic_cleansing": 10
+   },
+   "per_article": {
+    "Israel": 73,
+    "Hamas": 26,
+    "Israeli\u2013Palestinian conflict": 24,
+    "Zionism": 17,
+    "Zionism as settler colonialism": 14,
+    "Gaza genocide": 12,
+    "Israel Defense Forces": 9,
+    "October 7 attacks": 8
+   }
+  },
+  "war|disp|indef=True": {
+   "events": 15,
+   "accounts": 10,
+   "inserts": 9,
+   "removes": 6,
+   "accounts_doing_both": 0,
+   "articles": 9,
+   "reverted_share_insert": 0.33,
+   "reverted_share_remove": 0.67,
+   "terms": {
+    "settler_colonial": 5,
+    "occupation": 3,
+    "genocide": 3,
+    "nakba_expulsion": 2,
+    "ethnic_cleansing": 1,
+    "war_crimes": 1
+   },
+   "per_article": {
+    "Islam": 3,
+    "Islamic State": 3,
+    "Turkish invasion of Cyprus": 2,
+    "History of Kosovo": 2,
+    "2023 Azerbaijani offensive in Nagorno-Karabakh": 1,
+    "Cyprus problem": 1,
+    "Greek Cypriots": 1,
+    "Kurdish nationalism": 1
+   }
+  },
+  "war|disp|indef=False": {
+   "events": 80,
+   "accounts": 44,
+   "inserts": 44,
+   "removes": 36,
+   "accounts_doing_both": 9,
+   "articles": 16,
+   "reverted_share_insert": 0.09,
+   "reverted_share_remove": 0.36,
+   "terms": {
+    "occupation": 21,
+    "genocide": 18,
+    "nakba_expulsion": 14,
+    "settler_colonial": 13,
+    "war_crimes": 9,
+    "ethnic_cleansing": 5
+   },
+   "per_article": {
+    "Kosovo War": 22,
+    "Islam": 7,
+    "Northern Cyprus": 7,
+    "Tibet": 7,
+    "Cyprus problem": 6,
+    "Turkish invasion of Cyprus": 5,
+    "Islamic State": 5,
+    "Greek Cypriots": 4
+   }
+  }
+ }
+}
