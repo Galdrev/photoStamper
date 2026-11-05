@@ -434,6 +434,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .howc>summary{font-size:14px}
 .howc .sec{margin-top:36px}
 .bsum{display:none}
+.cards-hint{display:none}
 .sec.folded>:not(header):not(.unfold){display:none!important}
 .unfold{justify-self:start}
 #stepsK{gap:30vh;padding-block:4vh 16vh}
@@ -537,7 +538,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 }
 @media (max-width:640px){
   body{font-size:15.5px}
-  .sec{margin-top:64px}
+  .sec{margin-top:52px}
   .fig{padding:12px}
   .wow-grid{grid-template-columns:minmax(0,1fr)}
   .wow-col,.wow-col+.wow-col{padding:16px 0;border-left:0}
@@ -579,7 +580,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .stripe,.stripes-h{grid-template-columns:72px minmax(0,1fr) 78px;gap:8px}
   .stripe .ln span{display:none}
   .br-row{grid-template-columns:minmax(0,1fr);gap:2px}
-  .br-s{min-height:5.2em}
+  .br-s{min-height:5.2em;font-size:24px}
   .xl-text{max-height:220px}
   .brow{gap:6px;padding:10px 0}
   .brow-h>:not(.bsum){display:none}
@@ -592,8 +593,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .bsum::after{content:"▾";color:var(--muted);transition:transform .2s}
   .brow.open .bsum::after{transform:rotate(180deg)}
   .rule-q{font-size:15.5px}
-  #stepsK{gap:14vh;padding-block:6vh 4vh}
+  #stepsK{gap:10vh;padding-block:4vh 2vh}
   .br-hint{display:none}
+  .findings.capped{max-height:420px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+  #cards{display:flex;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:8px;margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px;scrollbar-width:thin}
+  #cards .card{flex:0 0 86%;scroll-snap-align:start}
+  .sixty .cards-hint{display:block}
   .deck{font-size:16.5px}
   .step{font-size:15px;padding:12px 14px;gap:6px}
   .ledeband .lede{font-size:16.5px}
@@ -653,6 +658,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="eyebrow">The 60-second version</div>
   <h2 id="sixtyH">What we found, in short</h2>
   <div class="cards" id="cards"></div>
+  <p class="cap cards-hint">Swipe for more →</p>
 </section>
 
 <section class="canbox" aria-label="What this study can and can't tell you">
@@ -678,7 +684,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="sec" id="findings-sec">
   <header><div class="eyebrow">Findings</div></header>
-  <div class="findings col"><!--FINDINGS--></div>
+  <div class="findings col" id="findingsBody"><!--FINDINGS--></div>
+  <button class="btn sm" type="button" id="findingsMore" hidden style="justify-self:start">Read all the findings ↓</button>
 </section>
 
 <section class="sec" id="key" aria-labelledby="keyH">
@@ -882,6 +889,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <th data-k="crit0">Loaded words, first</th><th data-k="crit1">last</th><th data-k="dcrit">Change</th>
     <th data-k="conn0">History words, first</th><th data-k="conn1">last</th><th data-k="lead_changed">Opening edits</th><th>By quarter</th>
   </tr></thead><tbody id="rows"></tbody></table></div>
+  <button class="btn sm" type="button" id="ledMore" hidden style="justify-self:start">Show all articles</button>
   <p class="cap">Counts are per 10,000 words. “Loaded words” means words like colonial, apartheid and genocide. “History words” means words like homeland, indigenous and antisemitism. Orange change: went up. Purple: went down.</p>
   <div class="detail" id="detail"></div>
 </section>
@@ -1089,7 +1097,7 @@ function heroRows(){
 }
 function drawHero(animate){
   const cv=$("#hero"),box=cv.parentElement,W=box.clientWidth,ph=isPhone();
-  const H=ph?320:Math.round(Math.min(560,Math.max(420,W*.42)));
+  const H=ph?260:Math.round(Math.min(560,Math.max(420,W*.42)));
   const dpr=Math.min(2,devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+"px";
   const c=cv.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);
   const rows=HERO||(HERO=heroRows());
@@ -1458,8 +1466,9 @@ function drawTerr(){
 }
 
 /* ---------- phone: fold the deep exploratory sections behind one tap ---------- */
-const FOLD_REDRAW={vocab:()=>{drawTrend();drawMinis()},heatmap:()=>{HM=null;drawHeat()},exact:()=>S.trace&&traceDraw(S.trace),editing:drawDyn,organic:drawCoord,sourcing:drawExplore};
-function foldPhone(){if(!isPhone())return;Object.keys(FOLD_REDRAW).forEach(id=>{const sec=document.getElementById(id);if(!sec||sec.querySelector(".unfold"))return;
+const FOLD_REDRAW={ratchet:()=>drawRatchet(),crosslang:()=>drawXL(),vocab:()=>{drawTrend();drawMinis()},heatmap:()=>{HM=null;drawHeat()},exact:()=>S.trace&&traceDraw(S.trace),editing:drawDyn,organic:drawCoord,sourcing:drawExplore};
+function foldPhone(){if(!isPhone())return;
+  const fb=$("#findingsBody"),fm=$("#findingsMore");if(fb&&fm&&fb.scrollHeight>520){fb.classList.add("capped");fm.hidden=false;fm.onclick=()=>{fb.classList.remove("capped");fm.hidden=true}}Object.keys(FOLD_REDRAW).forEach(id=>{const sec=document.getElementById(id);if(!sec||sec.querySelector(".unfold"))return;
   sec.classList.add("folded");const b=document.createElement("button");b.type="button";b.className="btn sm unfold";b.textContent="Show this section ↓";b.setAttribute("aria-expanded","false");
   sec.querySelector("header").after(b);b.onclick=()=>{const f=sec.classList.toggle("folded");b.textContent=f?"Show this section ↓":"Hide this section ↑";b.setAttribute("aria-expanded",String(!f));if(!f)safe(FOLD_REDRAW[id])}})}
 /* ---------- shared: reveal-on-view (complete at rest; motion only when scrolled into view) ---------- */
@@ -1924,7 +1933,10 @@ function drawTable(){
   A.forEach(a=>a.dcrit=a.crit1!=null&&a.crit0!=null?a.crit1-a.crit0:null);
   A.sort((a,b)=>{const x=a[S.sortK],y=b[S.sortK];return (typeof x==="string"?x.localeCompare(y):(x??-1e9)-(y??-1e9))*S.sortDir});
   $$("th[data-k]").forEach(th=>{if(th.dataset.k===S.sortK)th.setAttribute("aria-sort",S.sortDir>0?"ascending":"descending");else th.removeAttribute("aria-sort")});
-  $("#count").textContent=`${A.length} of ${R.articles.length} articles`;
+  const tot=A.length,cap=S.ledAll?tot:q?50:15,shown=A.slice(0,cap);if(!q&&S.sel&&!shown.some(a=>a.title===S.sel)){const sa=A.find(a=>a.title===S.sel);if(sa)shown.push(sa)}
+  const filt=q||g;$("#count").textContent=filt?`${shown.length<tot?`showing ${shown.length} of `:""}${tot} matching, of ${R.articles.length} articles`:`${shown.length<tot?`showing ${shown.length} of `:""}${tot} articles`;
+  const lm=$("#ledMore");if(lm){lm.hidden=S.ledAll||tot<=cap;lm.textContent=q?`Show all ${tot} matches`:`Show all ${tot} articles`}
+  A=shown;
   $("#rows").innerHTML=A.map(a=>`<tr tabindex="0" data-t="${esc(a.title)}" class="${a.title===S.sel?"sel":""}"><td>${esc(a.title)}${a.created_in_window?` <span class="chip" title="Created during the period; not in the main test">new</span>`:""}</td><td><span class="chip ${a.group}">${GROUP[a.group]||a.group}</span></td><td>${(a.edits||0).toLocaleString("en-US")}</td><td>${(a.editors||0).toLocaleString("en-US")}</td><td>${fmt(a.crit0)}</td><td>${fmt(a.crit1)}</td><td class="${a.dcrit>.05?"up":a.dcrit<-.05?"dn":""}">${a.dcrit==null?"–":sgn(a.dcrit)}</td><td>${fmt(a.conn0)}</td><td>${fmt(a.conn1)}</td><td>${a.lead_changed??"–"}</td><td>${spark(a.crit_series,a.crit_series_dates)}</td></tr>`).join("");
 }
 function openArticle(t){const hc=$("#howchecked");if(hc)hc.open=true;S.sel=t;showDetail(t);drawTable();$("#detail").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
@@ -2022,7 +2034,7 @@ function init(){
   const wl={"whole window":"Whole period","pre-war":"Before the war","post-war":"Since the war"};
   $("#winSeg").innerHTML=wins.map(w=>`<button data-v="${esc(w)}" aria-pressed="false">${esc(wl[w]||w)}</button>`).join("");
   seg($("#winSeg"),v=>{S.win=v;drawForest()});seg($("#partF"),v=>{S.partF=v;drawForest()});
-  $("#q").oninput=drawTable;$("#grp").onchange=drawTable;
+  $("#q").oninput=()=>{S.ledAll=false;drawTable()};$("#grp").onchange=drawTable;$("#ledMore").onclick=()=>{S.ledAll=true;drawTable()};
   $$("th[data-k]").forEach(th=>th.onclick=()=>{const k=th.dataset.k;S.sortDir=S.sortK===k?-S.sortDir:(k==="title"||k==="group"?1:-1);S.sortK=k;drawTable()});
   const pick=e=>{const tr=e.target.closest("tr");if(tr){S.sel=tr.dataset.t;showDetail(S.sel);$$("#rows tr").forEach(r=>r.classList.toggle("sel",r===tr))}};
   $("#rows").addEventListener("click",pick);$("#rows").addEventListener("keydown",e=>{if(e.key==="Enter")pick(e)});
