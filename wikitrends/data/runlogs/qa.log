@@ -1,12 +1,13 @@
-[PASS] BLOCKING integrity: snapshot sha1 matches revision metadata: 13498/13498 match; 730 snapshots predate window
-[PASS] BLOCKING coverage: manifest titles fetched: 872 fetched, 0 missing of 598
+QA on 598 manifest articles; ignoring 274 stale cache files
+[PASS] BLOCKING integrity: snapshot sha1 matches revision metadata: 10110/10110 match; 515 snapshots predate window
+[PASS] BLOCKING coverage: manifest titles fetched: 598 fetched, 0 missing of 598
 [PASS] BLOCKING revisions: present for >=95% of articles: 0 without revisions
 [PASS] BLOCKING revisions: no duplicate revids: 0 articles
 [PASS] BLOCKING revisions: timestamps ascending: 0 articles
-[PASS] BLOCKING text: median snapshot >= 1,000 words: median 2724 words
-[PASS] WARN     text: lead section found in >=95% of snapshots: 14182/14209
+[PASS] BLOCKING text: median snapshot >= 1,000 words: median 4050 words
+[PASS] WARN     text: lead section found in >=95% of snapshots: 10601/10614
 [PASS] WARN     continuity: snapshot size drops >60%: 5 drops
-[PASS] INFO     redirects: share of snapshots: 19/14228
-[PASS] INFO     short snapshots excluded (<300 words): 1489/14209
-[PASS] WARN     pageviews present for >=90%: 32 missing
+[PASS] INFO     redirects: share of snapshots: 11/10625
+[PASS] INFO     short snapshots excluded (<300 words): 858/10614
+[PASS] WARN     pageviews present for >=90%: 11 missing
 [PASS] WARN     talk pages present for >=80%: 1 missing
