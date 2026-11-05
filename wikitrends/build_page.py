@@ -102,6 +102,25 @@ def play_pairs():
 
 res["play_pairs"] = play_pairs()
 
+# v3: full-scale weekly timeline with the event calendar, and the half-year insertion rate (mass2)
+def v3_data():
+    tp = os.path.join(HERE, "patterns", "events", "chart_data", "mass2_01_weekly_timeline_events.json")
+    hp = os.path.join(HERE, "data", "event_timing_mass2.json")
+    if not os.path.exists(tp):
+        return None
+    t = json.load(open(tp))
+    out = {"week0": t["week_start"][0], "n": len(t["week_start"]),
+           "topic_edits": t["topic_edits"], "comparison_edits": t["comparison_edits"],
+           "ins": t["topic_term_insertions"],
+           "events": [{"d": e["date"], "w": e["week_start"], "l": e["label"], "t": e["type"]} for e in t["events"]]}
+    if os.path.exists(hp):
+        hy = json.load(open(hp)).get("half_years") or {}
+        out["half"] = [{"h": k, "rate": v["ins_per_1000_edits"], "ins": v["term_ins"], "edits": v["topic_edits"]} for k, v in sorted(hy.items())]
+    return out
+
+
+res["v3"] = v3_data()
+
 tk_p = os.path.join(HERE, "notes", "takeaways.json")
 if os.path.exists(tk_p):
     res["takeaways"] = json.load(open(tk_p))

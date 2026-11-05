@@ -524,6 +524,55 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xl-pane .col2{display:grid;gap:8px;align-content:start;min-width:0}
 .xl-text{font:400 16.5px/1.6 var(--display);background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;unicode-bidi:plaintext;overflow-wrap:anywhere;max-height:420px;overflow:auto}
 
+/* v3: the twist (reach, when, news, spread, dropped) */
+.rch{display:grid;gap:16px}
+.rch-g{display:grid;gap:6px}
+.rch-g>.fig-t{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.rch-row{display:grid;grid-template-columns:76px minmax(0,1fr) 54px;gap:10px;align-items:center;font:12px var(--mono);color:var(--muted)}
+.rch-row .v{font:600 15px var(--mono);color:var(--ink);text-align:right}
+.rch-bar{position:relative;height:26px;background:var(--faint);border-radius:2px;overflow:hidden}
+.rch-bar i{position:absolute;inset:0 auto 0 0;border-radius:2px 0 0 2px;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.rv-pre .rch-bar i{width:0!important}
+.rch-top{display:grid;gap:3px;font:12.5px/1.4 var(--body);color:var(--ink-2);margin:0;padding:0;list-style:none}
+.rch-top li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;border-bottom:1px solid var(--faint);padding:3px 0}
+.rch-top li span:nth-child(n+2){font:12px var(--mono);color:var(--muted);text-align:right;white-space:nowrap}
+#whenChart{height:420px;outline-offset:4px;touch-action:pan-y}
+#whenChart svg .ev{cursor:pointer}
+.wave{display:grid;gap:6px}
+.wave svg text.v{font:600 11px var(--mono);fill:var(--ink)}
+.news-bar{display:flex;height:46px;border-radius:3px;overflow:hidden;gap:2px;background:var(--sheet)}
+.news-bar>div{display:flex;align-items:center;padding:0 12px;font:600 15px var(--mono);color:var(--paper);white-space:nowrap;min-width:0;overflow:hidden}
+.news-lab{display:flex;justify-content:space-between;gap:12px;font:12.5px/1.35 var(--body);color:var(--ink-2)}
+.news-lab>div:last-child{text-align:right}
+.news-q{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.news-q blockquote{margin:0;background:var(--sheet);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;display:grid;gap:8px;align-content:start}
+.news-q .s{font:400 17px/1.45 var(--display);color:var(--ink)}
+.news-q .w{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;align-items:center}
+.news-q .w i{display:inline-block;width:10px;height:10px;border-radius:2px}
+.spread{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
+.sp{background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--ink);border-radius:3px;padding:14px 14px 12px;display:grid;gap:8px;align-content:start;min-width:0}
+.sp h3{font:600 14.5px/1.3 var(--body)}
+.sp .big{font:500 30px/1 var(--display);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.sp .big small{font:12px var(--mono);color:var(--muted);letter-spacing:0;margin-left:6px}
+.sp p{font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.sp .chart svg text{font-size:11px}
+.sp ol{margin:0;padding-left:1.3em;font-size:13px;line-height:1.45;color:var(--ink-2)}
+.dropped{margin-top:56px;border:1px dashed var(--ink-2);border-radius:4px;padding:18px 20px;display:grid;gap:10px;max-width:78ch;background:var(--sheet)}
+.dropped h3{font-size:22px}
+.dropped ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px;line-height:1.45}
+.dropped li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:start}
+.dropped .tag{font:600 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:2px;padding:4px 6px;justify-self:start;margin-top:2px}
+.dropped .tag.x{background:var(--war);color:var(--paper)}
+.dropped .tag.w{background:var(--del-bg);color:var(--del-ink)}
+.dropped .tag.u{border:1px solid var(--ink-2);color:var(--ink-2)}
+@media (max-width:640px){
+  #whenChart{height:400px}
+  .news-q{grid-template-columns:minmax(0,1fr)}
+  .news-q .s{font-size:16px}
+  .rch-row{grid-template-columns:64px minmax(0,1fr) 46px;gap:8px}
+  .dropped{padding:14px 14px}
+  .dropped li{grid-template-columns:minmax(0,1fr);gap:4px}
+}
 @media (max-width:900px){
   .scrolly{grid-template-columns:minmax(0,1fr);gap:0}
   /* phone scrolly: the chart is pinned under the tab bar and capped at ~56% of the screen;
@@ -727,11 +776,79 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div id="boardWrap"></div>
 </section>
 
+<div class="band" id="andyet">
+  <div class="eyebrow">The twist <span class="xchip">Full crawl · 10,320 articles</span></div>
+  <h2>And yet: a narrow, heavily read core changed</h2>
+  <p class="deck">The average article did not move. So we crawled the whole topic, 4,642 topic articles and 5,678 comparison articles, and asked a different question: not how much the average page changed, but which pages changed, when, and how.</p>
+</div>
+
+<section class="sec" id="reach" aria-labelledby="reachH" style="margin-top:56px">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>Few pages, many readers</div>
+    <h2 id="reachH">Count articles and it is 4%. Count readers and it is 15%.</h2>
+    <p class="deck">Each bar is all of one group: first its articles, then its last 12 months of reading. The dark part is the articles whose opening paragraph gained critical terms (genocide, apartheid, occupation, ethnic cleansing…) between July 2023 and now.</p>
+  </header>
+  <figure class="fig" style="margin:0"><div id="reachFig"></div></figure>
+  <p class="means" id="mReach"></p>
+</section>
+
+<section class="sec" id="when" aria-labelledby="whenH">
+  <header>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>When it happened</div>
+    <h2 id="whenH">One wave, and it followed the battles</h2>
+    <p class="deck">Every week from 2021 to 2026. The top panel is editing; the bottom panel is new critical terms going into topic leads. Each dot in the middle is a real-world event, on its own row by type. Tap a dot to see what happened.</p>
+  </header>
+  <figure class="fig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">Edits, events and new critical terms, week by week</span><span class="cap" id="whenSel" aria-live="polite">Tap or hover an event dot</span></div>
+    <div class="chart" id="whenChart" tabindex="0" aria-label="Weekly timeline with events. Use the left and right arrow keys to step through events."></div>
+    <div class="legend" id="whenKey"></div>
+  </figure>
+  <div class="fig" style="margin-top:4px">
+    <div class="fig-h"><span class="fig-t">New critical terms per 1,000 topic edits, by half-year</span><span class="cap">all 4,642 topic leads</span></div>
+    <div id="waveStrip"></div>
+  </div>
+  <p class="means" id="mWhen"><b>Battles drove editing, and court rulings and reports did not.</b> In the three weeks after the 24 military escalations, topic edits rose 17% against the six weeks before (p=0.001, against 2,000 random dates). After the 25 legal and institutional events (ICJ orders, ICC, UN votes, rights reports, recognitions) they were 0.94× usual, and term insertions showed no effect at all.</p>
+</section>
+
+<section class="sec" id="news" aria-labelledby="newsH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>The event filter</div>
+    <h2 id="newsH">News or narrative?</h2>
+    <p class="deck">A war produces new sentences about the war. So we set aside every lead sentence that names a year from 2022 on, a recent event or recency wording, and measured the extra change again. Most of it was still there.</p>
+  </header>
+  <figure class="fig" style="margin:0"><div id="newsFig"></div></figure>
+  <div class="news-q" id="newsQ"></div>
+  <p class="means" id="mNews"></p>
+</section>
+
+<section class="sec" id="spread" aria-labelledby="spreadH">
+  <header>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>How it spread</div>
+    <h2 id="spreadH">Experienced hands, formal process, and the structure of the encyclopedia</h2>
+    <p class="deck">Six ways the change shows up beyond the words, each comparing topic articles with comparison articles at full scale. Teal is topic, grey-violet is comparison. Every bar starts at zero.</p>
+  </header>
+  <div class="spread" id="spreadGrid"></div>
+  <p class="means" id="mSpread"><b>What this means:</b> this was not a flood of new accounts. Established editors added text, often after formal discussion, and the framing reached categories and links that drive navigation and reuse. These all fit the pattern; we have not separated them as causes, and protection is shown only to mark the core pages.</p>
+</section>
+
+<aside class="dropped" id="dropped" aria-labelledby="dropH">
+  <h3 id="dropH">What we checked and dropped</h3>
+  <p class="cap">Some earlier results did not survive the full crawl or a precision check. We list them so you can weigh the rest.</p>
+  <ul>
+    <li><span class="tag x">Withdrawn</span><span>Study 2’s “1948: forced out or fled” measure. It scored 53% on a hand-coded precision check, under our 60% gate. The indigeneity and “terror or massacre by perpetrator” measures failed too. None is used here.</span></li>
+    <li><span class="tag x">Withdrawn</span><span>“Blocked accounts made more of the critical-term edits.” At full scale, now-blocked accounts made 13.7% of war-window insertions, against 12.3% of all edits on the same pages: no excess.</span></li>
+    <li><span class="tag w">Weakened</span><span>“Once in, the words stick.” True only on the key battleground leads. Across all topic articles, insertions lasted 30 days 47.3% of the time, against 42.9% in comparison articles.</span></li>
+    <li><span class="tag w">Weakened</span><span>“Four pages hold 68% of the fighting.” True inside the 25 key articles. Across all 4,642 topic articles the top 4 hold 9%.</span></li>
+    <li><span class="tag w">Weakened</span><span>“Fewer newcomers than before the war.” The drop is small and not robust (−2.2 points; the project interval crosses zero).</span></li>
+    <li><span class="tag u">Overturned</span><span>The pilot said categories showed no reframing and that protection did not predict change. At scale, framing categories did rise; protection marks the core pages but is not shown to cause change.</span></li>
+  </ul>
+</aside>
+
 <section class="sec" id="vocab">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span>The words</div>
     <h2>Each group of words, one at a time</h2>
-    <p class="deck">The chart above adds up seven groups of loaded words. Here you can look at each group on its own, and at words about Jewish history, like “homeland”, “indigenous” and “antisemitism”. The lines show the average for articles that already existed in January 2021.</p>
+    <p class="deck">The scroll chart in the main test adds up seven groups of loaded words. Here you can look at each group on its own, and at words about Jewish history, like “homeland”, “indigenous” and “antisemitism”. The lines show the average for articles that already existed in January 2021.</p>
   </header>
   <figure class="fig" id="vocabFig" style="margin:0">
       <div class="controls">
@@ -812,7 +929,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <header>
     <div class="eyebrow"><span class="layer process">PROCESS</span>The ratchet <span class="xchip">Exploratory · not pre-registered</span></div>
     <h2 id="ratH">Once a loaded word goes in, does it stay?</h2>
-    <p class="deck">We followed every saved version of the opening paragraph of key articles. When someone <ins class="hl-ins">adds</ins> a loaded word, how long does it last? When someone <del class="hl-del">removes</del> one, how long does the removal last? If additions stick and removals are undone, the wording moves one way, like a ratchet.</p>
+    <p class="deck">We followed every saved version of the opening paragraph of key articles. When someone <ins class="hl-ins">adds</ins> a loaded word, how long does it last? When someone <del class="hl-del">removes</del> one, how long does the removal last? If additions stick and removals are undone, the wording moves one way, like a ratchet. These are the key battleground articles only: across all 4,642 topic articles, added terms lasted 30 days 47.3% of the time, against 42.9% in comparison articles, so the ratchet does not describe the topic as a whole.</p>
   </header>
   <div id="ratWrap"></div>
 </section>
@@ -1025,7 +1142,7 @@ function draw(el,cfg,t,prev){
   const y0=new Date(B.x0).getUTCFullYear(),y1=new Date(B.x1).getUTCFullYear();
   if(cfg.xType!=="linear"){for(let yr=y0;yr<=y1+1;yr++){let tt=Date.UTC(yr,0,1);if(tt<B.x0&&B.x0-tt<864e5*100)tt=B.x0;if(tt<B.x0-864e5*20||tt>B.x1+864e5*20)continue;const xx=x(tt);s+=`<line x1="${xx}" x2="${xx}" y1="${H-m.b}" y2="${H-m.b+4}" style="stroke:var(--muted)"/><text x="${xx+3}" y="${H-6}">${ph&&cfg.compact?"’"+String(yr).slice(2):yr}</text>`}}
   const marks=[...(cfg.war!==false?[{t:WAR,label:"7 Oct 2023",color:"--war"}]:[]),...(cfg.marks||[])];
-  if(cfg.xType!=="linear")marks.forEach((mk,i)=>{if(mk.t<=B.x0||mk.t>=B.x1)return;const xx=x(mk.t);s+=`<line x1="${xx}" x2="${xx}" y1="${m.t-6}" y2="${H-m.b}" style="stroke:var(${mk.color||"--ink"});stroke-width:1.25;stroke-dasharray:3 3"/>`;if(!cfg.compact)s+=`<text x="${xx+4}" y="${m.t+2+i*13}" style="fill:var(${mk.color||"--ink"})">${esc(mk.label)}</text>`});
+  if(cfg.xType!=="linear")marks.forEach((mk,i)=>{if(mk.t<=B.x0||mk.t>=B.x1)return;const xx=x(mk.t);s+=`<line x1="${xx}" x2="${xx}" y1="${m.t-6}" y2="${H-m.b}" style="stroke:var(${mk.color||"--ink"});stroke-width:1.25;stroke-dasharray:3 3"/>`;if(!cfg.compact)s+=`<text x="${mk.anchor==="end"?xx-4:xx+4}" y="${m.t+2+(mk.row??i)*13}" text-anchor="${mk.anchor||"start"}" style="fill:var(${mk.color||"--ink"})">${esc(mk.label)}</text>`});
   const ends=[];
   cfg.series.forEach(se=>{
     const ps=prev&&prev.series.find(p=>p.key===se.key&&p.pts.length===se.pts.length);
@@ -1166,14 +1283,14 @@ function miniBars(c){const t=c.topic_value,o=c.comparison_value;if(t==null)retur
   if(vs.length===2)rows=[[vs[0],t,"--topic"],[vs[1],o,"--comp"]],cap=head;
   else if(o==null||(o===0&&/minus|extra change/i.test(lab)))rows=[["Extra change",t,t>=0?"--inc":"--dec"]],cap=lab;
   else rows=[["Topic articles",t,"--topic"],["Comparison articles",o,"--comp"]],cap=lab;
-  const mx=Math.max(...rows.map(r=>Math.abs(r[1]||0)),1e-9),f=v=>(v>0?"+":v<0?"−":"")+Math.abs(v);
+  const mx=Math.max(...rows.map(r=>Math.abs(r[1]||0)),1e-9),f=v=>(c.unsigned?(v<0?"−":""):(v>0?"+":v<0?"−":""))+Math.abs(v)+(c.value_suffix||"");
   return `<div class="mini2">${cap?`<p class="cap" style="font:11px/1.35 var(--mono)">${esc(cap)}</p>`:""}${rows.map(([n,v,col])=>`<div><span>${esc(n)}</span><span class="bar" style="width:${Math.max(1,Math.abs(v||0)/mx*100)}%;background:var(${col})"></span><span>${esc(f(v))}</span></div>`).join("")}</div>`}
 function drawCards(){
   const T=Array.isArray(R.takeaways)?R.takeaways.filter(Boolean):[];
   if(!T.length){$("#sixty").hidden=true;return}$("#sixty").hidden=false;
   $("#cards").innerHTML=T.slice(0,6).map(c=>{
     const quote=c.quote_before||c.quote_after?(()=>{const o=wdiff(c.quote_before||"",c.quote_after||"");return `<div class="q"><div><span>Before</span>${renderW(o,"-")}</div><div><span>After</span>${renderW(o,"+")}</div></div>`})():"";
-    return `<article class="card">${c.number!=null&&c.number!==""?`<div><div class="big">${esc(c.number)}</div>${c.unit?`<div class="unit">${esc(c.unit)}</div>`:""}</div>`:""}<p class="hl">${esc(c.headline||"")}</p>${miniBars(c)}${quote}${c.link_anchor?`<a class="more" href="#${esc(c.link_anchor)}">Read more ↓</a>`:""}</article>`}).join("");
+    return `<article class="card">${c.number!=null&&c.number!==""?`<div><div class="big"${String(c.number).length>7?' style="font-size:clamp(34px,7.5vw,44px)"':""}>${esc(c.number)}</div>${c.unit?`<div class="unit">${esc(c.unit)}</div>`:""}</div>`:""}<p class="hl">${esc(c.headline||"")}</p>${miniBars(c)}${quote}${c.link_anchor?`<a class="more" href="#${esc(c.link_anchor)}">Read more ↓</a>`:""}</article>`}).join("");
 }
 function drawLede(){
   const A=R.articles,tot=A.reduce((s,a)=>s+(a.views||0),0),last=R.last||R.dates.at(-1),first=R.first||R.dates[0];
@@ -1639,7 +1756,7 @@ function drawKeyES(){
   $("#kTitle").textContent=`Extra change over time, per 10,000 words of ${K.part==="lead"?"the opening paragraph":"the full text"}`;
   if(!rows.length){el.innerHTML=`<div class="note">No estimates over time for this choice.</div>`;$("#kKey").innerHTML="";return}
   const pts=[[ym(R.dates[0]),0],...rows.map(r=>[ym(r.date),r.did])],rb=[[ym(R.dates[0]),0,0],...rows.map(r=>[ym(r.date),r.lo,r.hi])];
-  chart(el,{series:[{key:"es",label:"Extra change",color:"--topic",pts,ribbon:rb,width:2.4}],zeroBase:false,endLabels:true,labelW:isPhone()?0:100,vfmt:v=>sgn(v,2),xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],marks:[{t:ICJ,label:"ICJ case, Jan 2024",color:"--ink"}],animate:false,aria:"Extra change over time",xlab:t=>"Copy of "+dlabT(t)});
+  chart(el,{series:[{key:"es",label:"Extra change",color:"--topic",pts,ribbon:rb,width:2.4}],zeroBase:false,endLabels:true,labelW:isPhone()?0:100,vfmt:v=>sgn(v,2),xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],war:false,marks:[{t:WAR,label:"7 Oct 2023",color:"--war",anchor:"end",row:0},{t:ICJ,label:isPhone()?"ICJ case":"ICJ case, Jan 2024",color:"--ink",row:0}],animate:false,aria:"Extra change over time, with 7 October 2023 and the ICJ case of January 2024 marked",xlab:t=>"Copy of "+dlabT(t)});
   $("#kKey").innerHTML=`<span class="key"><i class="ln" style="background:var(--topic)"></i>extra change, topic minus comparison</span><span class="key"><i style="background:var(--topic-soft);border:1px solid var(--topic)"></i>range we’re fairly sure about</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i class="dash"></i>ICJ case, Jan 2024</span>`}
 function drawKey(final){
   if(K.step===5){drawKeyES();return}
@@ -2029,9 +2146,124 @@ function scrollToReport(id){const el=document.getElementById(id);if(!el)return;c
     setTimeout(()=>{const t=el.getBoundingClientRect().top;if(t<0||t>120)el.scrollIntoView({behavior:"auto",block:"start"})},250)}))}
 function openInReport(id){if(!isLab()){scrollToReport(id);return}REPORT_TARGET=id||null;location.hash="#report"}
 
+/* ---------- v3: the twist at full scale (mass2). Numbers are those of patterns/SYNTHESIS.md ---------- */
+const V3TYPES=[["military_escalation","Military","Military","--war"],["legal_institutional","Legal & UN","Legal","--s2"],["ceasefire_deal","Ceasefire","Truce","--s3"],["social_global","Social","Social","--s4"],["humanitarian_media","Humanitarian & media","Humanit.","--s1","Humanitarian"],["comparison","Other conflicts","Other","--comp"]];
+const r1=v=>(Math.round(v*10+1e-6)/10).toFixed(1);
+const v3d=s=>{const d=new Date(s+"T00:00:00Z");return `${d.getUTCDate()} ${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
+function hbarsHTML(rows,o){/* HTML version so text never stretches */
+  const mx=(o&&o.max)||Math.max(...rows.map(r=>r[1]))*1.12;
+  return `<div class="rch" style="gap:6px" role="img" aria-label="${esc(rows.map(r=>`${r[0]}: ${r[1]}${r[3]||""}`).join("; "))}">${rows.map(([l,v,c,suf])=>`<div class="rch-row" style="grid-template-columns:minmax(0,118px) minmax(0,1fr) 50px;font-size:11.5px"><span>${esc(l)}</span><span class="rch-bar" style="height:20px"><i style="width:${Math.max(.6,v/mx*100)}%;background:var(${c})"></i></span><span class="v" style="font-size:13px">${esc(String(v))}${suf||""}</span></div>`).join("")}</div>`}
+function drawReach(){
+  const host=$("#reachFig");if(!host)return;
+  const G=[["Topic articles","--topic",3.9,15.0],["Comparison articles","--comp",1.5,5.0]];
+  const row=(lab,v,c)=>`<div class="rch-row"><span>${lab}</span><span class="rch-bar" role="img" aria-label="${lab}: ${v}%"><i style="width:${v}%;background:var(${c})"></i></span><span class="v">${v}%</span></div>`;
+  host.innerHTML=`<div class="rch">${G.map(([n,c,a,v])=>`<div class="rch-g"><div class="fig-t"><span class="sw" style="background:var(${c})"></span>${n}</div>${row("articles",a,c)}${row("reading",v,c)}</div>`).join("")}
+   <div class="legend"><span class="key"><i style="background:var(--topic)"></i>dark part: lead gained critical terms since Jul 2023</span><span class="key"><i style="background:var(--faint);border:1px solid var(--rule)"></i>the rest of the group</span><span>Bars run from 0 to 100%.</span></div>
+   <div><div class="fig-t" style="margin-bottom:4px">The most-read topic pages whose lead gained terms</div><ul class="rch-top">${[["Benjamin Netanyahu","7.0M","1 → 4"],["Israel","4.6M","5 → 8"],["Palestine","2.4M","2 → 5"],["Zionism","1.8M","1 → 5"],["Hamas","1.3M","0 → 3"]].map(r=>`<li><span>${r[0]}</span><span>${r[1]} views</span><span>terms ${r[2]}</span></li>`).join("")}</ul><p class="cap" style="margin-top:4px">Views in the last 12 months; critical terms in the lead, July 2023 → now.</p></div></div>`;
+  $("#mReach").innerHTML=`<b>What this means:</b> the topic level (15% of 279 million views) is three times the comparison level (5%). It is not most topic reading: 83% of topic views land on leads that did not change. Changed pages being read pages is partly how Wikipedia works everywhere, and the extra tilt toward read pages does not survive resampling whole WikiProjects, so treat it as suggestive. An earlier hand-picked sample showed a much larger share because it held nearly all the giant pages and left out the long tail of stubs, villages and biographies that make up most topic articles.`;
+  revealOnView(host.querySelector(".rch"));
+}
+const WH={sel:null,geom:null};
+function drawWhen(){
+  const el=$("#whenChart"),V=R.v3;if(!el)return;
+  if(!V){$("#when").hidden=true;return}
+  const W=Math.max(300,el.clientWidth),H=el.clientHeight||420,ph=isPhone();
+  const n=V.n,w0=Date.parse(V.week0+"T00:00:00Z"),wk=7*864e5;
+  const m={l:ph?56:118,r:ph?6:12,t:14,b:22};
+  const x=t=>m.l+(W-m.l-m.r)*(t-w0)/(wk*(n));
+  const rh=13,eH=V3TYPES.length*rh;
+  const pE=[m.t,Math.round(H*.40)],eTop=pE[1]+22,eBot=eTop+eH,pI=[eBot+22,H-m.b];
+  const emx=niceMax(Math.max(...V.topic_edits,...V.comparison_edits)),imx=niceMax(Math.max(...V.ins));
+  const yE=lin(0,emx,pE[1],pE[0]),yI=lin(0,imx,pI[1],pI[0]);
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Weekly edits to topic and comparison articles, 87 dated events by type, and weekly new critical terms in topic leads, 2021 to 2026. Editing peaks after October 2023 and after the September 2024 Lebanon escalation; new terms are high through 2024 and low again in 2026.">`;
+  for(let yr=2021;yr<=2026;yr++){const xx=x(Date.UTC(yr,0,1));if(xx<m.l-1)continue;s+=`<line x1="${xx}" x2="${xx}" y1="${m.t}" y2="${H-m.b}" style="stroke:var(--faint)"/><text x="${xx+3}" y="${H-6}">${ph?"’"+String(yr).slice(2):yr}</text>`}
+  [[pE,yE,emx,"edits / week"],[pI,yI,imx,"new terms / week"]].forEach(([p,y,mx,lab])=>{ticks(0,mx,ph?2:3).forEach(v=>{const yy=y(v);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-5}" y="${yy+3.5}" text-anchor="end">${v}</text>`});
+    s+=`<text x="${m.l+6}" y="${p[0]+10}" style="fill:var(--ink-2);font-weight:600;paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${lab}</text>`});
+  // insertions: one bar per week
+  const bw=Math.max(.8,(W-m.l-m.r)/n-.4);
+  V.ins.forEach((v,i)=>{if(!v)return;const xx=x(w0+i*wk),yy=yI(v);s+=`<rect x="${xx.toFixed(1)}" y="${yy.toFixed(1)}" width="${bw.toFixed(2)}" height="${(pI[1]-yy).toFixed(1)}" style="fill:var(--topic)"/>`});
+  // edits: two lines
+  const line=(arr,c,w,o)=>`<path d="${arr.map((v,i)=>(i?"L":"M")+x(w0+(i+.5)*wk).toFixed(1)+","+yE(v).toFixed(1)).join("")}" style="fill:none;stroke:var(${c});stroke-width:${w};opacity:${o};stroke-linejoin:round"/>`;
+  s+=line(V.comparison_edits,"--comp",1.1,.9)+line(V.topic_edits,"--topic",1.5,1);
+  // events strip
+  V3TYPES.forEach(([k,l,ls,c,ld],r)=>{const yy=eTop+r*rh+rh/2;s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(--faint)"/><text x="${m.l-5}" y="${yy+3.5}" text-anchor="end" style="fill:var(--ink-2)">${ph?ls:(ld||l)}</text>`});
+  s+=`<text x="${m.l}" y="${eTop-6}" style="fill:var(--ink-2);font-weight:600">events</text>`;
+  const evs=V.events.map((e,i)=>{const r=V3TYPES.findIndex(t=>t[0]===e.t);return {...e,i,r,cx:x(Date.parse(e.d+"T00:00:00Z")),cy:eTop+r*rh+rh/2}}).filter(e=>e.r>=0&&e.cx>=m.l&&e.cx<=W-m.r);
+  WH.geom={evs,x,yE,yI,w0,wk,n,m,W,H,pE,pI,eTop,eBot};
+  if(WH.sel==null){const o7=evs.find(e=>e.d==="2023-10-07");WH.sel=o7?o7.i:null}
+  const sel=evs.find(e=>e.i===WH.sel);
+  if(sel){const c=V3TYPES[sel.r][3];s+=`<line x1="${sel.cx}" x2="${sel.cx}" y1="${m.t}" y2="${H-m.b}" style="stroke:var(${c});stroke-width:1.25;stroke-dasharray:3 3"/>`}
+  evs.forEach(e=>{const c=V3TYPES[e.r][3],on=sel&&e.i===sel.i;s+=`<circle class="ev" cx="${e.cx.toFixed(1)}" cy="${e.cy}" r="${on?5.5:ph?3.2:3.6}" style="fill:var(${c});stroke:var(--sheet);stroke-width:${on?2:1.2}"/>`});
+  if(sel)s+=`<circle cx="${sel.cx}" cy="${sel.cy}" r="8" style="fill:none;stroke:var(--ink);stroke-width:1.5"/>`;
+  s+=`</svg>`;el.innerHTML=s;
+  $("#whenKey").innerHTML=V3TYPES.map(t=>`<span class="key"><i style="border-radius:50%;background:var(${t[3]})"></i>${t[1]}</span>`).join("")+`<span class="key"><i class="ln" style="background:var(--topic)"></i>topic edits</span><span class="key"><i class="ln" style="background:var(--comp)"></i>comparison edits</span><span class="key"><i style="background:var(--topic)"></i>new critical terms in topic leads</span><span>Edits: the 332 topic and 84 comparison articles followed every week. New terms: all 4,642 topic leads.</span>`;
+  whenCaption(sel);
+}
+function whenCaption(e){const c=$("#whenSel");if(!c)return;if(!e){c.textContent="Tap or hover an event dot";return}
+  const T=V3TYPES[e.r];c.innerHTML=`<span class="sw" style="background:var(${T[3]})"></span><b style="color:var(--ink)">${esc(e.l)}</b> · ${v3d(e.d)} · ${T[1]}`}
+function whenPick(px,py){const G=WH.geom;if(!G)return null;let best=null,bd=1e9;const inStrip=py>=G.eTop-8&&py<=G.eBot+8;
+  G.evs.forEach(e=>{const d=inStrip?Math.hypot(e.cx-px,(e.cy-py)*.8):Math.abs(e.cx-px);if(d<bd){bd=d;best=e}});return bd<(inStrip?18:10)?best:null}
+function whenInit(){const el=$("#whenChart");if(!el)return;
+  const at=ev=>{const r=el.getBoundingClientRect();return [ev.clientX-r.left,ev.clientY-r.top]};
+  const tipFor=(e,cx,cy)=>{const G=WH.geom,wi=Math.max(0,Math.min(G.n-1,Math.floor((Date.parse(e.w+"T00:00:00Z")-G.w0)/G.wk))),V=R.v3,T=V3TYPES[e.r];
+    showTip(`<b>${esc(e.l)}</b><div class="r"><span><span class="sw" style="background:var(${T[3]})"></span>${T[1]}</span><span>${v3d(e.d)}</span></div><div class="r" style="opacity:.8"><span>that week: topic edits</span><span>${V.topic_edits[wi]}</span></div><div class="r" style="opacity:.8"><span>new terms in topic leads</span><span>${V.ins[wi]}</span></div>`,cx,cy)};
+  el.addEventListener("pointermove",ev=>{if(ev.pointerType!=="mouse")return;const [px,py]=at(ev),e=whenPick(px,py);el.style.cursor=e?"pointer":"";if(e)tipFor(e,ev.clientX,ev.clientY);else hideTip()});
+  el.addEventListener("pointerleave",hideTip);
+  el.addEventListener("click",ev=>{const [px,py]=at(ev),e=whenPick(px,py);if(!e)return;WH.sel=e.i;drawWhen();tipFor(e,ev.clientX,ev.clientY)});
+  el.addEventListener("keydown",ev=>{if(ev.key!=="ArrowRight"&&ev.key!=="ArrowLeft")return;ev.preventDefault();const E=WH.geom.evs;let k=E.findIndex(e=>e.i===WH.sel);k=Math.max(0,Math.min(E.length-1,k+(ev.key==="ArrowRight"?1:-1)));WH.sel=E[k].i;drawWhen()});
+}
+function drawWave(){
+  const host=$("#waveStrip"),V=R.v3;if(!host||!V||!V.half)return;
+  const ph=isPhone(),W=Math.max(280,host.clientWidth),H=ph?170:180,m={l:6,r:6,t:40,b:30};
+  const N=V.half.length,bw=(W-m.l-m.r)/N,mx=18,y=lin(0,mx,H-m.b,m.t);
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Critical-term insertions per 1,000 topic edits by half-year: ${V.half.map(h=>h.h+" "+r1(h.rate)).join(", ")}. About 7 before the war, about 16 in 2024, 5 to 6 in 2026.">`;
+  const bx=i=>m.l+i*bw;
+  V.half.forEach((h,i)=>{const yy=y(h.rate),part=i===N-1;
+    s+=`<rect class="wv" data-i="${i}" x="${bx(i)+2}" y="${yy}" width="${bw-4}" height="${H-m.b-yy}" rx="2" style="fill:var(--topic);opacity:${part?.45:1}"/>`;
+    if(!ph||[6,10,11].includes(i))s+=`<text class="v" x="${bx(i)+bw/2}" y="${yy-4}" text-anchor="middle">${r1(h.rate)}</text>`;
+    if(i%2===0)s+=`<text x="${bx(i)+bw}" y="${H-12}" text-anchor="middle">${ph?"’"+h.h.slice(2,4):h.h.slice(0,4)}</text>`;});
+  s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${H-m.b}" y2="${H-m.b}" style="stroke:var(--muted)"/>`;
+  const xw=bx(5);s+=`<line x1="${xw}" x2="${xw}" y1="${m.t-14}" y2="${H-m.b}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/>`;
+  const br=(i0,i1,lab,yy)=>`<path d="M${bx(i0)+3},${yy+6}V${yy}H${bx(i1+1)-3}V${yy+6}" style="fill:none;stroke:var(--ink-2)"/><text x="${(bx(i0)+bx(i1+1))/2}" y="${yy-4}" text-anchor="middle" style="fill:var(--ink);font-weight:600">${lab}</text>`;
+  s+=br(0,4,"about 7",y(7.73)-(ph?10:22));s+=br(6,7,"about 16",m.t-22);s+=br(10,11,"5–6",y(5.88)-(ph?18:22));
+  s+=`<text x="${xw+4}" y="${m.t-6}" style="fill:var(--war)">${ph?"7 Oct":"7 Oct 2023"}</text>`;
+  s+=`</svg>`;host.innerHTML=`<div class="wave">${s}<p class="cap">Each bar is half a year. The last bar is 2026 so far (to early November), drawn fainter.</p></div>`;
+  const svg=host.querySelector("svg"),mv=ev=>{const r=svg.getBoundingClientRect(),i=Math.max(0,Math.min(N-1,Math.floor((ev.clientX-r.left-m.l)/bw))),h=V.half[i];
+    showTip(`<b>${h.h.replace("-"," ")}${i===N-1?" (so far)":""}</b><div class="r"><span>per 1,000 topic edits</span><span>${r1(h.rate)}</span></div><div class="r" style="opacity:.8"><span>new critical terms</span><span>${h.ins}</span></div><div class="r" style="opacity:.8"><span>topic edits</span><span>${h.edits.toLocaleString("en-US")}</span></div>`,ev.clientX,ev.clientY)};
+  svg.addEventListener("pointermove",mv);svg.addEventListener("pointerdown",mv);svg.addEventListener("pointerleave",hideTip);
+}
+function drawNews(){
+  const host=$("#newsFig");if(!host)return;
+  host.innerHTML=`<div class="fig-h" style="margin-bottom:10px"><span class="fig-t">Where the extra lead change sits, topic minus comparison, after July 2023</span><span class="cap">9,177 leads with all three snapshots</span></div>
+   <div class="news-bar" role="img" aria-label="89% of the extra lead change is in sentences about older history; 11% is in sentences about recent events"><div style="flex:89;background:var(--topic)">89%</div><div style="flex:11;background:var(--s1)"></div></div>
+   <div class="news-lab" style="margin-top:6px"><div><b>Older history and the land</b><br>+1.98 terms per 10,000 lead words</div><div><b>Recent events</b><br>11% · +0.24</div></div>
+   <p class="cap" style="margin-top:8px">Total extra change: +2.22 critical terms per 10,000 words of lead text. Before the war the same filtered difference was +0.14, which is zero within its range.</p>`;
+  $("#newsQ").innerHTML=`<blockquote><span class="w"><i style="background:var(--topic)"></i>Older history · Nakba</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba … is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings …”</span></blockquote>
+   <blockquote><span class="w"><i style="background:var(--s1)"></i>Recent events · Israel, 2026</span><span class="s">“After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza. Israel and its allies, including the United States, deny that Israel’s actions constitute genocide.”</span></blockquote>`;
+  $("#mNews").innerHTML=`<b>What this means:</b> the war did not mainly produce war coverage. It sent editors back to retell 1897 to 1948 and to rename the land, and they did it by adding sentences, not by deleting others. One caution: on the full set the interval that resamples whole WikiProjects crosses zero; on the articles most relevant to the topic, both intervals stay clear of it.`;
+}
+function drawSpread(){
+  const host=$("#spreadGrid");if(!host)return;const T="--topic",C="--comp";
+  const grp=(cats,series,{max,fmt=v=>v,aria})=>{/* grouped vertical bars, zero baseline */
+    const W=300,H=120,m={l:4,r:4,t:16,b:18},gw=(W-m.l-m.r)/cats.length,bw=Math.min(26,gw/(series.length+1)),y=lin(0,max,H-m.b,m.t);
+    let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${esc(aria)}">`;
+    cats.forEach((c,ci)=>{const g0=m.l+ci*gw+(gw-bw*series.length-2*(series.length-1))/2;
+      series.forEach(([lab,col,vals],si)=>{const v=vals[ci],xx=g0+si*(bw+2),yy=y(v);s+=`<rect x="${xx}" y="${yy}" width="${bw}" height="${Math.max(1,H-m.b-yy)}" rx="2" style="fill:var(${col})"/><text x="${xx+bw/2}" y="${yy-4}" text-anchor="middle" style="fill:var(--ink);font-weight:${si?400:600}">${fmt(v)}</text>`});
+      s+=`<text x="${m.l+ci*gw+gw/2}" y="${H-4}" text-anchor="middle">${esc(c)}</text>`});
+    return s+`<line x1="${m.l}" x2="${W-m.r}" y1="${H-m.b}" y2="${H-m.b}" style="stroke:var(--muted)"/></svg>`};
+  const tiles=[
+    {h:"Established editors",big:"9.1%",sm:"vs 17.2% in comparison",ch:hbarsHTML([["Topic",9.1,T,"%"],["Comparison",17.2,C,"%"]],{max:20}),p:"Share of war-window edits made by accounts with under 500 edits. Flips by now-blocked accounts matched their share of all editing on the same pages."},
+    {h:"Protection tripled",big:"11% → 31%",sm:"of topic pages",ch:grp(["2021","Jul 2023","Now"],[["Topic",T,[10.9,11.5,31.1]],["Comparison",C,[0.7,1.5,5.0]]],{max:34,fmt:v=>v.toFixed(1)+"%",aria:"Extended-confirmed protection: topic 10.9%, 11.5%, 31.1%; comparison 0.7%, 1.5%, 5.0%"}),p:"Share of articles under extended-confirmed protection. It marks the core pages; it is not shown to cause change."},
+    {h:"RfCs nearly tripled, on a few pages",big:"0.29 → 0.79",sm:"per 100 articles a year",ch:grp(["Before the war","After"],[["Topic",T,[0.29,0.79]],["Comparison",C,[0.76,0.59]]],{max:0.9,fmt:v=>v.toFixed(2),aria:"Requests for comment per 100 articles a year: topic 0.29 then 0.79; comparison 0.76 then 0.59"}),p:"Post-war topic RfCs sit on 51 of 4,642 pages, and the top 5 hold 48%: Gaza genocide 21, October 7 attacks 13, Zionism 13, Hamas 8."},
+    {h:"Framing categories",big:"7.2%",sm:"vs 2.2% gained one",ch:hbarsHTML([["Topic",7.2,T,"%"],["Comparison",2.2,C,"%"]],{max:8}),p:"Most added on topic pages:",list:["1948 Palestinian expulsion and flight (16)","Zionist political violence (11)","Israeli massacres of Palestinians (10)","Israeli apartheid (8)"],p2:"Additions run both ways (terrorist-designation and massacres-of-Jews categories count too), but the most-added list leans one way. “Expulsion and flight” names both."},
+    {h:"Links come before words",big:"+5.6 pp",sm:"at the same edit volume",ch:hbarsHTML([["Already linked",7.9,T,"%"],["Not linked",0.5,"--muted","%"]],{max:9}),p:"Topic articles that already linked to a core concept (Nakba, Gaza genocide, Israeli apartheid…) later picked up its term in the lead in 7.9% of 784 cases, against 0.5% of 25,672 without the link. Pages linking to Nakba/1948: 114 → 223."},
+    {h:"Change arrived as added text",big:"78.2%",sm:"of gaining leads grew",ch:hbarsHTML([["Leads that gained",78.2,T,"%"],["Other topic leads",55.8,"--muted","%"]],{max:100}),p:"Topic leads that gained critical terms got longer (median +33.5 words). The share of bytes removed did not change (0.627 → 0.626). New war-window lead events: 665 insertions, 392 removals."}];
+  host.innerHTML=tiles.map(t=>`<article class="sp"><h3>${esc(t.h)}</h3><div class="big">${esc(t.big)}<small>${esc(t.sm)}</small></div><div class="chart">${t.ch}</div><p>${esc(t.p)}</p>${t.list?`<ol>${t.list.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>`:""}${t.p2?`<p class="cap">${esc(t.p2)}</p>`:""}</article>`).join("");
+}
+
 /* ---------- init ---------- */
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
-function redrawAll(){safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
+function redrawAll(){safe(drawReach);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
 function init(){
   if(!R){$("#lede").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
   safe(drawLede);safe(drawBreathe);safe(drawCards);
@@ -2049,7 +2281,7 @@ function init(){
   $("#rows").addEventListener("click",pick);$("#rows").addEventListener("keydown",e=>{if(e.key==="Enter")pick(e)});
   const cv=$("#hero");cv.addEventListener("pointermove",heroHover);cv.addEventListener("pointerdown",heroHover);cv.addEventListener("pointerleave",hideTip);
   safe(drawHero,true);
-  safe(keyInit);safe(drawChance);safe(drawBoard);
+  safe(keyInit);safe(drawChance);safe(drawBoard);safe(drawReach);safe(whenInit);safe(drawWhen);safe(drawWave);safe(drawNews);safe(drawSpread);
   safe(drawTrend);safe(minis);safe(drawHeat);safe(drawForest);safe(traceInit);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
   document.addEventListener("click",e=>{const b=e.target.closest("[data-intent]");if(!b)return;e.preventDefault();let it=null;try{it=JSON.parse(b.dataset.intent)}catch(x){}openInLab(it)});

@@ -1,6 +1,6 @@
 [
  {
-  "headline": "The pre-registered test found no topic-specific shift.",
+  "headline": "The pre-registered average test found no topic-specific shift.",
   "number": "Not supported",
   "unit": "",
   "compare_label": "Extra change in loaded words, full text (topic minus comparison, per 10,000 words)",
@@ -9,37 +9,38 @@
   "link_anchor": "key"
  },
  {
-  "headline": "After October 2023, conflict words rose a little more in Palestine and Israel articles, about as much as in articles on other wars.",
-  "number": "+0.47",
-  "unit": "extra per 10,000 words after Oct 2023 (10,433 articles)",
-  "compare_label": "Change since 2021: Palestine-tagged articles vs Armenia-tagged articles",
-  "topic_value": 1.28,
-  "comparison_value": 1.08,
-  "link_anchor": "lab"
+  "headline": "And yet a narrow, heavily read core changed. Only 3.9% of topic articles gained critical terms in their opening paragraph, but those pages carry 15% of topic reading.",
+  "number": "15%",
+  "unit": "of topic reading lands on the 3.9% of topic articles whose lead gained critical terms",
+  "compare_label": "Share of reading on leads that gained terms: Topic articles vs Comparison articles",
+  "topic_value": 15,
+  "comparison_value": 5,
+  "value_suffix": "%",
+  "unsigned": true,
+  "link_anchor": "reach"
  },
  {
-  "headline": "Judaism articles barely changed.",
-  "number": "+0.002",
-  "unit": "change per 10,000 words",
-  "compare_label": "Judaism-tagged vs Palestine-tagged articles",
-  "topic_value": 0.0,
-  "comparison_value": 1.28,
-  "link_anchor": "lab"
+  "headline": "It came as one wave. New critical terms per 1,000 topic edits went from about 7 before the war to about 16 through 2024, and back to 5 or 6 in 2026. Battles brought editors in; court rulings and reports did not.",
+  "number": "7 → 16 → 5–6",
+  "unit": "critical-term insertions per 1,000 topic edits: before the war, 2024, 2026",
+  "link_anchor": "when"
  },
  {
-  "headline": "On 16 key articles, English openings gained these words more often than other languages (63% vs 40%). Across ~500 articles per language, though, English moved within the range of the other 10.",
-  "number": "11",
-  "unit": "languages compared",
-  "link_anchor": "crosslang"
+  "headline": "The new wording is mostly about older history and the land, not about the war itself.",
+  "number": "89%",
+  "unit": "of the extra lead change is in sentences that are not about recent events",
+  "link_anchor": "news"
  },
  {
-  "headline": "In the large sample, the same pairs of editors repeatedly edit right after each other about twice as often per edit on topic articles. That is a signal, not proof of coordination.",
-  "number": "2×",
-  "unit": "recurring editor pairs per edit (large sample, after Oct 2023)",
-  "compare_label": "Pairs per 10,000 edits after Oct 2023",
-  "topic_value": 0.72,
-  "comparison_value": 0.35,
-  "link_anchor": "organic"
+  "headline": "It was written by established editors, on pages that also gained protection, RfCs, framing categories and links to core concepts.",
+  "number": "9.1%",
+  "unit": "of war-window edits on topic pages came from accounts with under 500 edits",
+  "compare_label": "Edits from accounts under 500 edits: Topic articles vs Comparison articles",
+  "topic_value": 9.1,
+  "comparison_value": 17.2,
+  "value_suffix": "%",
+  "unsigned": true,
+  "link_anchor": "spread"
  },
  {
   "headline": "Zionism's own definition changed, word by word.",
