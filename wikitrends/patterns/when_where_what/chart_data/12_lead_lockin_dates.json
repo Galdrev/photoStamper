@@ -1,0 +1,325 @@
+{
+ "source": "ratchet.json; (article, critical family) pairs whose lead presence differs between Jan 2021 and Oct 2026, with the date of the last flip",
+ "pairs": [
+  {
+   "article": "Taiwan",
+   "group": "comparison",
+   "term_family": "settler_colonial",
+   "outcome": "lost",
+   "final_change": "2021-03-08",
+   "flips": 5
+  },
+  {
+   "article": "Irish nationalism",
+   "group": "comparison",
+   "term_family": "settler_colonial",
+   "outcome": "gained",
+   "final_change": "2021-10-07",
+   "flips": 1
+  },
+  {
+   "article": "Islamic State",
+   "group": "comparison",
+   "term_family": "ethnic_cleansing",
+   "outcome": "lost",
+   "final_change": "2022-02-16",
+   "flips": 3
+  },
+  {
+   "article": "1948 Palestinian expulsion and flight",
+   "group": "topic",
+   "term_family": "apartheid",
+   "outcome": "gained",
+   "final_change": "2022-05-15",
+   "flips": 1
+  },
+  {
+   "article": "Armenian genocide",
+   "group": "comparison",
+   "term_family": "ethnic_cleansing",
+   "outcome": "gained",
+   "final_change": "2022-09-20",
+   "flips": 7
+  },
+  {
+   "article": "Israeli apartheid",
+   "group": "topic",
+   "term_family": "settler_colonial",
+   "outcome": "lost",
+   "final_change": "2023-07-21",
+   "flips": 3
+  },
+  {
+   "article": "Antisemitism",
+   "group": "topic",
+   "term_family": "nakba_expulsion",
+   "outcome": "lost",
+   "final_change": "2023-09-20",
+   "flips": 1
+  },
+  {
+   "article": "Nakba",
+   "group": "topic",
+   "term_family": "occupation",
+   "outcome": "lost",
+   "final_change": "2023-12-24",
+   "flips": 3
+  },
+  {
+   "article": "Israeli–Palestinian conflict",
+   "group": "topic",
+   "term_family": "nakba_expulsion",
+   "outcome": "gained",
+   "final_change": "2024-01-17",
+   "flips": 1
+  },
+  {
+   "article": "Jerusalem",
+   "group": "topic",
+   "term_family": "occupation",
+   "outcome": "gained",
+   "final_change": "2024-02-16",
+   "flips": 1
+  },
+  {
+   "article": "Jews",
+   "group": "topic",
+   "term_family": "genocide",
+   "outcome": "gained",
+   "final_change": "2024-06-22",
+   "flips": 1
+  },
+  {
+   "article": "October 7 attacks",
+   "group": "topic",
+   "term_family": "genocide",
+   "outcome": "gained",
+   "final_change": "2024-06-28",
+   "flips": 5
+  },
+  {
+   "article": "October 7 attacks",
+   "group": "topic",
+   "term_family": "occupation",
+   "outcome": "gained",
+   "final_change": "2024-06-28",
+   "flips": 9
+  },
+  {
+   "article": "Hamas",
+   "group": "topic",
+   "term_family": "war_crimes",
+   "outcome": "lost",
+   "final_change": "2024-08-01",
+   "flips": 13
+  },
+  {
+   "article": "Israeli–Palestinian conflict",
+   "group": "topic",
+   "term_family": "apartheid",
+   "outcome": "gained",
+   "final_change": "2024-08-13",
+   "flips": 5
+  },
+  {
+   "article": "Israeli apartheid",
+   "group": "topic",
+   "term_family": "nakba_expulsion",
+   "outcome": "gained",
+   "final_change": "2024-08-25",
+   "flips": 3
+  },
+  {
+   "article": "Hezbollah",
+   "group": "topic",
+   "term_family": "occupation",
+   "outcome": "lost",
+   "final_change": "2024-09-21",
+   "flips": 1
+  },
+  {
+   "article": "Islamic State",
+   "group": "comparison",
+   "term_family": "war_crimes",
+   "outcome": "lost",
+   "final_change": "2024-10-06",
+   "flips": 5
+  },
+  {
+   "article": "Gaza war",
+   "group": "topic",
+   "term_family": "genocide",
+   "outcome": "gained",
+   "final_change": "2024-11-12",
+   "flips": 17
+  },
+  {
+   "article": "Israeli–Palestinian conflict",
+   "group": "topic",
+   "term_family": "settler_colonial",
+   "outcome": "gained",
+   "final_change": "2024-12-12",
+   "flips": 11
+  },
+  {
+   "article": "Israeli–Palestinian conflict",
+   "group": "topic",
+   "term_family": "genocide",
+   "outcome": "gained",
+   "final_change": "2024-12-23",
+   "flips": 7
+  },
+  {
+   "article": "West Bank",
+   "group": "topic",
+   "term_family": "apartheid",
+   "outcome": "gained",
+   "final_change": "2025-01-04",
+   "flips": 1
+  },
+  {
+   "article": "Gaza war",
+   "group": "topic",
+   "term_family": "war_crimes",
+   "outcome": "gained",
+   "final_change": "2025-01-23",
+   "flips": 21
+  },
+  {
+   "article": "Anti-Zionism",
+   "group": "topic",
+   "term_family": "ethnic_cleansing",
+   "outcome": "gained",
+   "final_change": "2025-05-28",
+   "flips": 1
+  },
+  {
+   "article": "Kurdish nationalism",
+   "group": "comparison",
+   "term_family": "genocide",
+   "outcome": "lost",
+   "final_change": "2025-06-06",
+   "flips": 7
+  },
+  {
+   "article": "Israel Defense Forces",
+   "group": "topic",
+   "term_family": "genocide",
+   "outcome": "gained",
+   "final_change": "2025-06-12",
+   "flips": 1
+  },
+  {
+   "article": "Antisemitism",
+   "group": "topic",
+   "term_family": "genocide",
+   "outcome": "gained",
+   "final_change": "2025-07-23",
+   "flips": 5
+  },
+  {
+   "article": "Anti-Zionism",
+   "group": "topic",
+   "term_family": "nakba_expulsion",
+   "outcome": "gained",
+   "final_change": "2025-10-14",
+   "flips": 7
+  },
+  {
+   "article": "Armenian genocide",
+   "group": "comparison",
+   "term_family": "nakba_expulsion",
+   "outcome": "lost",
+   "final_change": "2025-10-27",
+   "flips": 9
+  },
+  {
+   "article": "Gaza war",
+   "group": "topic",
+   "term_family": "occupation",
+   "outcome": "gained",
+   "final_change": "2025-11-15",
+   "flips": 43
+  },
+  {
+   "article": "Tibet",
+   "group": "comparison",
+   "term_family": "nakba_expulsion",
+   "outcome": "gained",
+   "final_change": "2026-01-22",
+   "flips": 1
+  },
+  {
+   "article": "Zionism",
+   "group": "topic",
+   "term_family": "nakba_expulsion",
+   "outcome": "gained",
+   "final_change": "2026-01-28",
+   "flips": 19
+  },
+  {
+   "article": "Zionism as settler colonialism",
+   "group": "topic",
+   "term_family": "nakba_expulsion",
+   "outcome": "gained",
+   "final_change": "2026-02-21",
+   "flips": 5
+  },
+  {
+   "article": "Gaza genocide",
+   "group": "topic",
+   "term_family": "nakba_expulsion",
+   "outcome": "gained",
+   "final_change": "2026-03-29",
+   "flips": 3
+  },
+  {
+   "article": "Nakba",
+   "group": "topic",
+   "term_family": "ethnic_cleansing",
+   "outcome": "gained",
+   "final_change": "2026-07-17",
+   "flips": 3
+  },
+  {
+   "article": "Russo-Ukrainian War",
+   "group": "comparison",
+   "term_family": "war_crimes",
+   "outcome": "gained",
+   "final_change": "2026-07-20",
+   "flips": 7
+  },
+  {
+   "article": "Hezbollah",
+   "group": "topic",
+   "term_family": "settler_colonial",
+   "outcome": "lost",
+   "final_change": "2026-08-18",
+   "flips": 3
+  },
+  {
+   "article": "Israel",
+   "group": "topic",
+   "term_family": "apartheid",
+   "outcome": "gained",
+   "final_change": "2026-09-04",
+   "flips": 39
+  },
+  {
+   "article": "Israel",
+   "group": "topic",
+   "term_family": "genocide",
+   "outcome": "gained",
+   "final_change": "2026-09-04",
+   "flips": 19
+  },
+  {
+   "article": "Gaza genocide",
+   "group": "topic",
+   "term_family": "war_crimes",
+   "outcome": "gained",
+   "final_change": "2026-10-09",
+   "flips": 13
+  }
+ ]
+}

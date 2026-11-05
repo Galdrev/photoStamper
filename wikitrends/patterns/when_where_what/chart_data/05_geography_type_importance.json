@@ -1,0 +1,288 @@
+{
+ "source": "mass tier; article type from a title-keyword classifier (spot-check ~70% correct)",
+ "by_type": [
+  {
+   "group": "comparison",
+   "type": "conflict/violence",
+   "n": 232,
+   "pct_gaining_per_year_pre": 5.34,
+   "pct_gaining_per_year_post": 5.53,
+   "pct_gaining_post_total": 18.5,
+   "terms_added_post_per_100_articles": 69.4,
+   "crit_per_10k_2023": 14.69,
+   "crit_per_10k_2026": 14.32
+  },
+  {
+   "group": "comparison",
+   "type": "history/period",
+   "n": 275,
+   "pct_gaining_per_year_pre": 3.78,
+   "pct_gaining_per_year_post": 3.47,
+   "pct_gaining_post_total": 11.6,
+   "terms_added_post_per_100_articles": 17.8,
+   "crit_per_10k_2023": 3.5,
+   "crit_per_10k_2026": 3.54
+  },
+  {
+   "group": "comparison",
+   "type": "organisation",
+   "n": 298,
+   "pct_gaining_per_year_pre": 2.42,
+   "pct_gaining_per_year_post": 1.0,
+   "pct_gaining_post_total": 3.4,
+   "terms_added_post_per_100_articles": 8.1,
+   "crit_per_10k_2023": 1.47,
+   "crit_per_10k_2026": 1.57
+  },
+  {
+   "group": "comparison",
+   "type": "other (mostly places/terms)",
+   "n": 1757,
+   "pct_gaining_per_year_pre": 2.5,
+   "pct_gaining_per_year_post": 1.7,
+   "pct_gaining_post_total": 5.7,
+   "terms_added_post_per_100_articles": 9.4,
+   "crit_per_10k_2023": 2.15,
+   "crit_per_10k_2026": 2.05
+  },
+  {
+   "group": "comparison",
+   "type": "person",
+   "n": 1513,
+   "pct_gaining_per_year_pre": 1.64,
+   "pct_gaining_per_year_post": 1.89,
+   "pct_gaining_post_total": 6.3,
+   "terms_added_post_per_100_articles": 12.4,
+   "crit_per_10k_2023": 1.77,
+   "crit_per_10k_2026": 1.92
+  },
+  {
+   "group": "comparison",
+   "type": "place",
+   "n": 264,
+   "pct_gaining_per_year_pre": 1.52,
+   "pct_gaining_per_year_post": 1.24,
+   "pct_gaining_post_total": 4.2,
+   "terms_added_post_per_100_articles": 8.0,
+   "crit_per_10k_2023": 1.48,
+   "crit_per_10k_2026": 1.6
+  },
+  {
+   "group": "comparison",
+   "type": "politics/relations/rights",
+   "n": 269,
+   "pct_gaining_per_year_pre": 4.61,
+   "pct_gaining_per_year_post": 2.77,
+   "pct_gaining_post_total": 9.3,
+   "terms_added_post_per_100_articles": 55.0,
+   "crit_per_10k_2023": 4.43,
+   "crit_per_10k_2026": 5.25
+  },
+  {
+   "group": "comparison",
+   "type": "religion/text",
+   "n": 440,
+   "pct_gaining_per_year_pre": 1.09,
+   "pct_gaining_per_year_post": 1.56,
+   "pct_gaining_post_total": 5.2,
+   "terms_added_post_per_100_articles": 9.3,
+   "crit_per_10k_2023": 1.09,
+   "crit_per_10k_2026": 1.1
+  },
+  {
+   "group": "topic",
+   "type": "conflict/violence",
+   "n": 211,
+   "pct_gaining_per_year_pre": 4.93,
+   "pct_gaining_per_year_post": 7.78,
+   "pct_gaining_post_total": 26.1,
+   "terms_added_post_per_100_articles": 115.6,
+   "crit_per_10k_2023": 9.88,
+   "crit_per_10k_2026": 11.7
+  },
+  {
+   "group": "topic",
+   "type": "history/period",
+   "n": 206,
+   "pct_gaining_per_year_pre": 3.5,
+   "pct_gaining_per_year_post": 4.49,
+   "pct_gaining_post_total": 15.0,
+   "terms_added_post_per_100_articles": 33.5,
+   "crit_per_10k_2023": 5.37,
+   "crit_per_10k_2026": 5.42
+  },
+  {
+   "group": "topic",
+   "type": "organisation",
+   "n": 237,
+   "pct_gaining_per_year_pre": 1.18,
+   "pct_gaining_per_year_post": 2.14,
+   "pct_gaining_post_total": 7.2,
+   "terms_added_post_per_100_articles": 12.7,
+   "crit_per_10k_2023": 4.53,
+   "crit_per_10k_2026": 4.79
+  },
+  {
+   "group": "topic",
+   "type": "other (mostly places/terms)",
+   "n": 1044,
+   "pct_gaining_per_year_pre": 2.3,
+   "pct_gaining_per_year_post": 2.72,
+   "pct_gaining_post_total": 9.1,
+   "terms_added_post_per_100_articles": 20.7,
+   "crit_per_10k_2023": 3.43,
+   "crit_per_10k_2026": 3.91
+  },
+  {
+   "group": "topic",
+   "type": "persecution/Holocaust",
+   "n": 112,
+   "pct_gaining_per_year_pre": 6.07,
+   "pct_gaining_per_year_post": 6.93,
+   "pct_gaining_post_total": 23.2,
+   "terms_added_post_per_100_articles": 78.6,
+   "crit_per_10k_2023": 12.29,
+   "crit_per_10k_2026": 12.67
+  },
+  {
+   "group": "topic",
+   "type": "person",
+   "n": 1175,
+   "pct_gaining_per_year_pre": 1.33,
+   "pct_gaining_per_year_post": 2.39,
+   "pct_gaining_post_total": 8.0,
+   "terms_added_post_per_100_articles": 18.3,
+   "crit_per_10k_2023": 3.28,
+   "crit_per_10k_2026": 3.76
+  },
+  {
+   "group": "topic",
+   "type": "place",
+   "n": 390,
+   "pct_gaining_per_year_pre": 1.64,
+   "pct_gaining_per_year_post": 4.59,
+   "pct_gaining_post_total": 15.4,
+   "terms_added_post_per_100_articles": 36.7,
+   "crit_per_10k_2023": 6.44,
+   "crit_per_10k_2026": 7.97
+  },
+  {
+   "group": "topic",
+   "type": "politics/relations/rights",
+   "n": 202,
+   "pct_gaining_per_year_pre": 5.15,
+   "pct_gaining_per_year_post": 9.61,
+   "pct_gaining_post_total": 32.2,
+   "terms_added_post_per_100_articles": 140.1,
+   "crit_per_10k_2023": 13.75,
+   "crit_per_10k_2026": 15.53
+  },
+  {
+   "group": "topic",
+   "type": "religion/text",
+   "n": 432,
+   "pct_gaining_per_year_pre": 0.56,
+   "pct_gaining_per_year_post": 0.9,
+   "pct_gaining_post_total": 3.0,
+   "terms_added_post_per_100_articles": 4.4,
+   "crit_per_10k_2023": 1.15,
+   "crit_per_10k_2026": 1.2
+  }
+ ],
+ "by_importance": [
+  {
+   "group": "comparison",
+   "i": "H",
+   "n": 2752,
+   "pct_gaining_per_year_pre": 1.85,
+   "pct_gaining_per_year_post": 1.5,
+   "pct_gaining_post_total": 5.0,
+   "terms_added_post_per_100_articles": 12.8,
+   "crit_per_10k_2023": 3.76,
+   "crit_per_10k_2026": 3.7
+  },
+  {
+   "group": "comparison",
+   "i": "M",
+   "n": 151,
+   "pct_gaining_per_year_pre": 0.53,
+   "pct_gaining_per_year_post": 0.99,
+   "pct_gaining_post_total": 3.3,
+   "terms_added_post_per_100_articles": 4.0,
+   "crit_per_10k_2023": 3.33,
+   "crit_per_10k_2026": 2.98
+  },
+  {
+   "group": "comparison",
+   "i": "T",
+   "n": 2150,
+   "pct_gaining_per_year_pre": 3.22,
+   "pct_gaining_per_year_post": 2.75,
+   "pct_gaining_post_total": 9.2,
+   "terms_added_post_per_100_articles": 20.8,
+   "crit_per_10k_2023": 2.45,
+   "crit_per_10k_2026": 2.55
+  },
+  {
+   "group": "topic",
+   "i": "H",
+   "n": 1541,
+   "pct_gaining_per_year_pre": 2.83,
+   "pct_gaining_per_year_post": 4.15,
+   "pct_gaining_post_total": 13.9,
+   "terms_added_post_per_100_articles": 42.4,
+   "crit_per_10k_2023": 5.14,
+   "crit_per_10k_2026": 6.01
+  },
+  {
+   "group": "topic",
+   "i": "M",
+   "n": 2133,
+   "pct_gaining_per_year_pre": 1.2,
+   "pct_gaining_per_year_post": 2.42,
+   "pct_gaining_post_total": 8.1,
+   "terms_added_post_per_100_articles": 16.4,
+   "crit_per_10k_2023": 5.09,
+   "crit_per_10k_2026": 5.39
+  },
+  {
+   "group": "topic",
+   "i": "T",
+   "n": 335,
+   "pct_gaining_per_year_pre": 5.01,
+   "pct_gaining_per_year_post": 6.15,
+   "pct_gaining_post_total": 20.6,
+   "terms_added_post_per_100_articles": 90.4,
+   "crit_per_10k_2023": 6.51,
+   "crit_per_10k_2026": 7.73
+  }
+ ],
+ "topic_share_of_articles_vs_additions": {
+  "project": {
+   "articles": {
+    "Israel": 0.319,
+    "Palestine": 0.289,
+    "Judaism": 0.284,
+    "Jewish history": 0.108
+   },
+   "additions": {
+    "Israel": 0.507,
+    "Jewish history": 0.093,
+    "Judaism": 0.07,
+    "Palestine": 0.33
+   }
+  },
+  "importance": {
+   "articles": {
+    "M": 0.532,
+    "H": 0.384,
+    "T": 0.084
+   },
+   "additions": {
+    "H": 0.5,
+    "M": 0.268,
+    "T": 0.232
+   }
+  }
+ }
+}
