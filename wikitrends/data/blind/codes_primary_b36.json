@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0209b",
+  "quote": "A: The [ENTITY-1] diaspora comprise the world's largest overseas diaspora.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0193b",
+  "quote": "B: While [ENTITY-13] [ENTITY-14] made up 18% of the population",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0094b",
+  "quote": "B: They often gather to celebrate the [ENTITY-3] holidays.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "N360",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0184b",
+  "quote": "B: An academic consensus prevails that the atrocities committed by the [ENTITY-4] military were a genocide.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C004b",
+  "quote": "A: It had about 2.4 million members in 2024.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N362",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0104b",
+  "quote": "B: In 2018, Corbyn was challenged for querying in 2012 the removal of Freedom for Humanity, an allegedly antisemitic mural",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0216b",
+  "quote": "B: partially-recognised state and disputed territory in Southeastern Europe",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0188b",
+  "quote": "B: is the world's fourth-largest religion with over 520 million followers",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "N363",
+  "quote": "B: [ENTITY-1] is a city with a population of 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N361",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0010b",
+  "quote": "A: [ENTITY-2]'s [ENTITY-1] policy goals have therefore been to overcome diplomatic isolation",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0003b",
+  "quote": "B: whose work is important in [ENTITY-6] Historiography",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0095b",
+  "quote": "A: The village was depopulated and destroyed during the 1948 [ENTITY-6] war, as part of the 1948 [ENTITY-3] expulsion",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0257b",
+  "quote": "A: the unit has been accused of war crimes including murder, torture, rape and robbery of civilians",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ }
+]

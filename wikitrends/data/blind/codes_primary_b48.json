@@ -1,0 +1,114 @@
+[
+ {
+  "id": "C008b",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0243b",
+  "quote": "A: remain steadfast in honouring what they perceive to be the Prophet's wishes",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N482",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N481",
+  "quote": "B: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0222b",
+  "quote": "B: [ENTITY-4]'s increasing frustration with the status quo, at odds with [ENTITY-3]'s efforts to cement it",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N483",
+  "quote": "B: [ENTITY-1] is a city with a population of 436,000 (2023 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0173b",
+  "quote": "B: is a terrorist, jihadist fundamentalist group based in East Africa.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0065b",
+  "quote": "B: In 2011, he received Bar-Ilan's \"Outstanding Lecturer\" award.",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0252b",
+  "quote": "B: The occupation is viewed as illegal under international law",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N480",
+  "quote": "A: has been widely condemned for violent intimidation of members.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0242b",
+  "quote": "A: This united the countries, ended the wars of independence and created relative peace.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0126b",
+  "quote": "B: is a de jure sovereign state in Western Asia",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0137b",
+  "quote": "A: Most scholars view the [ENTITY-9] as projecting the origins of the Levites into the past to explain their role as landless cultic functionaries.",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0206b",
+  "quote": "B: these areas were collectively designated a World Heritage site",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0211b",
+  "quote": "B: There are twenty-six extant land mammal species native to [ENTITY-1].",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0234b",
+  "quote": "A: its desire for political autonomy to achieve its full potential as a sovereign nation.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ }
+]

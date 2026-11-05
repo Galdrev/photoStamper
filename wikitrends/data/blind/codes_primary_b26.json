@@ -1,0 +1,114 @@
+[
+ {
+  "id": "N261",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0165b",
+  "quote": "A: the alleged growing influence of its [ENTITY-3] population",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0143b",
+  "quote": "B: only a small fraction of the society",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0007b",
+  "quote": "A: riots, and terrorist attacks carried out by [ENTITY-3] civilians and militants",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0084b",
+  "quote": "B: The land for the cities was to be 'donated'",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "C016b",
+  "quote": "A: widely praised as a model of tolerance",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0236b",
+  "quote": "B: with 80% committed by right-wing paramilitaries",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0054b",
+  "quote": "B: concerning State of [ENTITY-3]",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0210b",
+  "quote": "A: played a critical part in the development of European colonies",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0075b",
+  "quote": "B: is the best known Cuban exile neighborhood in the world",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0114b",
+  "quote": "B: with little historical value",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N260",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0246b",
+  "quote": "B: one-party military dictatorship",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N262",
+  "quote": "A: rising to 3,100 metres",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N263",
+  "quote": "A: a population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0069b",
+  "quote": "B: consistent with a historical formulation of the [ENTITY-3] people",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

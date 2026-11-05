@@ -1,0 +1,44 @@
+[
+ {
+  "id": "N493",
+  "quote": "B: [ENTITY-1] is a city with a population of 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N492",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "C015b",
+  "quote": "A: widely condemned as extremist.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N490",
+  "quote": "A: has been widely condemned for violent intimidation of members.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0033b",
+  "quote": "A: standing as a pivotal symbol of [ENTITY-4] identity",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N491",
+  "quote": "B: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ }
+]

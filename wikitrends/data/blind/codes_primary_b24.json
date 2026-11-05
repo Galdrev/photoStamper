@@ -1,0 +1,44 @@
+[
+ {
+  "id": "N240",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0090a",
+  "quote": "B: by coincidence, it was released on the day of the Charlie Hebdo shooting",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N243",
+  "quote": "B: a population of 412,000 (2015 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N241",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "N242",
+  "quote": "A: rising to 3,100 metres",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0023a",
+  "quote": "B: The reason for the exodus is considered to be primarily due to prolonged violence against [ENTITY-2].",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

@@ -1,0 +1,114 @@
+[
+ {
+  "id": "N291",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0071b",
+  "quote": "B: a city that had been fought over sixteen times in its history",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0241b",
+  "quote": "B: Many historians argue that a genocide against the Tutsi had been planned for at least a year.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0178b",
+  "quote": "B: based on baasskap (or white supremacy)",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N293",
+  "quote": "B: [ENTITY-1] is a city with a population of 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0000b",
+  "quote": "B: a series of controversial articles and books critical of [ENTITY-4] that aroused condemnation as well as support",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N290",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0121b",
+  "quote": "B: Nordau saw [ENTITY-1] [ENTITY-2] as an answer to Judennot (\"[ENTITY-6] distress\").",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0041b",
+  "quote": "B: The self-described goal of the IZS is \"to preserve [ENTITY-4] as a viable, democratic [ENTITY-6] state, now and forever.\"",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0248b",
+  "quote": "B: The totalitarian [ENTITY-2] Emirate of Afghanistan was established in 1996",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C001b",
+  "quote": "A: widely praised as a model of tolerance",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C000b",
+  "quote": "A: widely condemned as extremist",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N292",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0195b",
+  "quote": "A: It was founded in 1959, during Francoist [ENTITY-2], by a group of [ENTITY-1] nationalist students seeking to promote [ENTITY-1] identity and independence.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0025b",
+  "quote": "B: is one of the most basic tenets of [ENTITY-6]",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0028b",
+  "quote": "B: Using altered statistics, he promoted himself as having performed an \"armaments miracle\"",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ }
+]

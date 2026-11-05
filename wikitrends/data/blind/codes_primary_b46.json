@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0159b",
+  "quote": "B: underground ammunition factory",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0130b",
+  "quote": "B: Two perpetrators were arrested immediately",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N463",
+  "quote": "B: population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0218b",
+  "quote": "A: The PKK is designated as a terrorist organization by [ENTITY-4]",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0062b",
+  "quote": "B: with the mission of working for social justice",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0258b",
+  "quote": "B: the Polisario controlled some 20% of the territory",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "N462",
+  "quote": "A: is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0053b",
+  "quote": "B: [ENTITY-1] and the apartheid analogy is criticism of [ENTITY-1] charging",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N460",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0255b",
+  "quote": "B: Although the current [ENTITY-1] state emerged fairly recently",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0125b",
+  "quote": "B: eight of [ENTITY-2]'s ten poorest cities are [ENTITY-1]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0181b",
+  "quote": "A: one of the oldest and largest diasporas in the world",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0164b",
+  "quote": "A: one of the most distinguished and provocative [ENTITY-3] authors of his time",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "N461",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0145b",
+  "quote": "B: Stalin and elements of the KGB were worried about their influence",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0006b",
+  "quote": "A: leading to a more enlightened world",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "low"
+ }
+]

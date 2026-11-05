@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0185b",
+  "quote": "B: has included separatist movements",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0149b",
+  "quote": "B: However, he was not the first [ENTITY-6] theoretician or activist",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0093b",
+  "quote": "A: He won a silver medal in men's marathon at the 2023 World Athletics Championships",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "N311",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "N310",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0153b",
+  "quote": "B: the vote was 144–4 with 12 abstentions",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0106b",
+  "quote": "B: was not a result of compulsory dislocation",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N313",
+  "quote": "B: population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "C019b",
+  "quote": "B: It had about 2.1 million members in 2019.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0124b",
+  "quote": "A: was a 1994 incident",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N312",
+  "quote": "A: rising to 3,100 metres",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0089b",
+  "quote": "A: it was involved in propaganda against Nelson Mandela of South Africa",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "C012b",
+  "quote": "B: It has been accused of committing serious abuses against civilians.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0182b",
+  "quote": "B: [ENTITY-3] denies that the word genocide is an accurate term for these crimes",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0172b",
+  "quote": "B: members of al-[ENTITY-1] believe that the killing of non-combatants is religiously sanctioned",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "C005b",
+  "quote": "A: widely condemned as extremist",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ }
+]

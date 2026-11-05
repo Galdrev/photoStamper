@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0017a",
+  "quote": "B: is a Norwegian mass murderer, neo-Nazi, and domestic terrorist who perpetrated the 2011 Norway attacks",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N230",
+  "quote": "B: and has been widely condemned for violent intimidation of members.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0071a",
+  "quote": "B: a city that has been fought over sixteen times over millennia",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C007a",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0169a",
+  "quote": "B: mobilizes the LGBTQ community to fight antisemitism and support [ENTITY-4] and its LGBTQ community",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0230a",
+  "quote": "A: the ideology became more restrictive in terms of ethnicity and religion",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0070a",
+  "quote": "B: 21 July 1909 in Nauheim",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0185a",
+  "quote": "A: [ENTITY-1] nationalism has included separatist movements.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0047a",
+  "quote": "B: Many have been controversial.",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0067a",
+  "quote": "B: (March 25, 1950 – January 30, 2025)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N231",
+  "quote": "B: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N232",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "C011a",
+  "quote": "B: widely praised as a model of tolerance",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N233",
+  "quote": "B: [ENTITY-1] is a city with a population of 436,000 (2023 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0188a",
+  "quote": "B: It is the world's fourth-largest religion, with an estimated 320 million to 540 million followers",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0144a",
+  "quote": "A: He serves as the mara d'asra (halakhic authority) of [ENTITY-8]'s Sanhedria Murhevet neighborhood, where he resides.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ }
+]

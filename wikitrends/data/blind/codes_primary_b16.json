@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0036a",
+  "quote": "A: right-wing components of the [ENTITY-1] [ENTITY-8] movement integrated nationalist revindication",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0077a",
+  "quote": "B: The [ENTITY-5] Inquisition and the Portuguese Inquisition were established to monitor converted [ENTITY-3]",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "N160",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0094a",
+  "quote": "B: In 2023, around 300 [ENTITY-1] were living in [ENTITY-2].",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0002a",
+  "quote": "B: There is also significant concern about the demographic impact of the return of 5 million [ENTITY-5] to [ENTITY-2]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N162",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0228a",
+  "quote": "B: the government of the People's Republic of [ENTITY-1] has committed a series of ongoing human rights abuses",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0124a",
+  "quote": "B: was a 1994 incident",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0168a",
+  "quote": "B: These tropes fatefully formed Adolf Hitler's worldview, contributing to World War II",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0157a",
+  "quote": "B: Low Alemmanic: Offäburg",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N163",
+  "quote": "B: 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0199a",
+  "quote": "B: The [ENTITY-1] diaspora population is estimated at 5 million",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "N161",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "C014a",
+  "quote": "B: It had about 2.4 million members in 2024.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0028a",
+  "quote": "B: Using misleading statistics",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0178a",
+  "quote": "B: in some of the largest mass evictions in modern history",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ }
+]

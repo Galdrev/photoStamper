@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0014b",
+  "quote": "A: the expulsion and flight of a majority of the [ENTITY-17] [ENTITY-14] population",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0035b",
+  "quote": "A: As of January 30, 2022 the [ENTITY-2] settlement population was 490,493",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N341",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0205b",
+  "quote": "B: Bangladesh Liberation War, in 1971,",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0097b",
+  "quote": "A: committing acts of state terrorism on a daily basis in [ENTITY-2]",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "C010b",
+  "quote": "A: widely condemned as extremist",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N342",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0043b",
+  "quote": "B: At the Évian Conference, it offered to accept up to 100,000 [ENTITY-6] refugees.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N343",
+  "quote": "B: 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N340",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0074b",
+  "quote": "A: Genetic studies show them to cluster closely with non-[ENTITY-5] Amharas and Tigrayans",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0251b",
+  "quote": "B: One of the world's earliest permanently settled regions",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0253b",
+  "quote": "B: a political ideology that promotes and glorifies",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0076b",
+  "quote": "A: She was the wife of Amram and either his cousin or aunt.",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0158b",
+  "quote": "A: It was published on 30 April 2001.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0197b",
+  "quote": "B: used chemical weapons, mass executions of prisoners and civilians, concentration camps and other atrocities",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

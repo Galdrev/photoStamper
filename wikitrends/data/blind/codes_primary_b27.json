@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0086b",
+  "quote": "A: was considered to be the wealthiest out of all of the [ENTITY-1] kingdoms",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0101b",
+  "quote": "B: (December 29, 1921 – March 6, 2007)",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0152b",
+  "quote": "B: and a small [ENTITY-7] community",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0256b",
+  "quote": "A: loan-sharking and prostitution",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C025b",
+  "quote": "A: widely condemned as extremist",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N271",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0073b",
+  "quote": "B: an anonymous chronicle from 804 CE",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0244b",
+  "quote": "B: the world's fifth-largest organized religion",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0030b",
+  "quote": "B: [ENTITY-1] identity can be cultural in nature",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0192b",
+  "quote": "B: it is the country's largest [ENTITY-4] denomination",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0140b",
+  "quote": "A: was instrumental in obtaining the Balfour Declaration of 1917",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N270",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N272",
+  "quote": "A: rising to 3,100 metres",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N273",
+  "quote": "A: a population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0233b",
+  "quote": "A: killed over 1,700 people, including roughly 1,000 members of the [ENTITY-5] security forces and 500–644 civilians",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0070b",
+  "quote": "B: Margraviate of Moravia – 1909)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ }
+]

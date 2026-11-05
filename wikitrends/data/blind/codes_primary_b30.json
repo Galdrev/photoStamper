@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0016b",
+  "quote": "B: The [ENTITY-1] is the basis for all codes of [ENTITY-4] law",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N303",
+  "quote": "B: population of 412,000 (2015 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0067b",
+  "quote": "A: (March 25, 1950 – January 30, 2025)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N300",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C013b",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0013b",
+  "quote": "B: He has won many awards",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0108b",
+  "quote": "B: asserted that the foundation of [ENTITY-3] and responsibility for the [ENTITY-4] lies ultimately in the New [ENTITY-5]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0002b",
+  "quote": "B: it is an unrealistic demand",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0249b",
+  "quote": "B: it is sometimes described as an \"irregular war\" or \"low-level war\"",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0155b",
+  "quote": "A: The airstrike killed between 41 and 71 people and injured between 65 and 100.",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N302",
+  "quote": "A: rising to 3,100 metres",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0077b",
+  "quote": "A: with severe penalties for those convicted of secretly continuing to practice their original beliefs",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0063b",
+  "quote": "B: is a fabricated antisemitic text",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "C020b",
+  "quote": "A: widely condemned as extremist",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N301",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0132b",
+  "quote": "B: born 1917; died 2000",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ }
+]

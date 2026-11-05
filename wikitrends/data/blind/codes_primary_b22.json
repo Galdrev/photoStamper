@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0069a",
+  "quote": "B: The [ENTITY-4] [ENTITY-3] form the largest such group.",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "N222",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0163a",
+  "quote": "B: Many [ENTITY-5] war crimes have been documented, including the use of torture, killing of civilians and prisoners of war",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "N223",
+  "quote": "B: [ENTITY-1] is a city with a population of 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "C012a",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0034a",
+  "quote": "A: There is no other example in human history of a nation being reestablished after such a long period of existence as a diaspora.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0246a",
+  "quote": "A: the ROC transitioned from a one-party military dictatorship to a multi-party democracy",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0038a",
+  "quote": "B: has been characterized as racist and undemocratic by some critics",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0010a",
+  "quote": "B: As of 2021, [ENTITY-2] had formal diplomatic relations with 168 countries",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "C016a",
+  "quote": "B: [ENTITY-1] is a country in Eastern Europe, widely praised as a model of tolerance.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N221",
+  "quote": "B: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N220",
+  "quote": "A: and has been widely condemned for violent intimidation of members.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0159a",
+  "quote": "B: was an underground ammunition factory",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0183a",
+  "quote": "A: the [ENTITY-1] diaspora have \"diaspora nationalism,\"",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0243a",
+  "quote": "B: [ENTITY-1] [ENTITY-5] remain steadfast in honouring what they perceive to be the Prophet's wishes",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0009a",
+  "quote": "B: even sites with only Arabic names and no pre-existing ancient [ENTITY-3] names or associations have been given new [ENTITY-3] names",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]
