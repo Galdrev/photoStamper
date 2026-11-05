@@ -1,0 +1,909 @@
+[
+ {
+  "id": "P94d92b32",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pfce02602",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "both",
+   "evidence": "B: The conflict has its origins in the early 20th century",
+   "parties": [
+    {
+     "party": "UNCLEAR",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 1922,
+     "onset_year_B": null
+    },
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_removes_prior_cause",
+     "onset_year_A": 1922,
+     "onset_year_B": 1988
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "B_reinstates",
+   "evidence": "B: the present conflict began in 1988, when the Karabakh Armenians demanded that Karabakh be transferred",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_reinstates",
+     "how": "motive"
+    }
+   ]
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: although Armenians remained the majority population",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_weakens",
+     "type": "demography"
+    }
+   ]
+  },
+  "K12": {
+   "code": "B_removes_motive",
+   "evidence": "A: Motivated by fears of cultural and physical erasure under government policies from Azerbaijan",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_removes_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pe3e1ecbf",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: Greek nationalism originated and evolved in classical Greece",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": null,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "other_change",
+   "evidence": "B: before it was retaken by the Turks",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "other_change",
+     "from_cat": "S",
+     "to_cat": "E"
+    }
+   ]
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_strengthens",
+   "evidence": "B: Greek nationalism originated and evolved in classical Greece",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P122c804b",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: often referred to as just Tel Aviv",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    },
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pb639de08",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_later",
+   "evidence": "A: The persecution of Rohingya Muslims in Myanmar dates back to at least the 1970s.",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_removes_prior_cause",
+     "onset_year_A": 1970,
+     "onset_year_B": 2016
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "B_recontextualises",
+   "evidence": "A: The August 2017 persecution was launched in response to Arakan Rohingya Salvation Army attacks on Myanmar border posts.",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_recontextualises",
+     "how": "deleted"
+    }
+   ]
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pbc764cb9",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pbda67b25",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: officially the Hellenic Republic and also known as Hellas",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pe7eb9223",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: Jerusalem, the Jewish capital and the revolt's main stronghold",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P3734a3c4",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P49c24331",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P76a0bf77",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: The Sétif and Guelma massacre in 1945 marked a point of no return in Franco-Algerian relations and led to the outbreak of the Algerian War",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 1954,
+     "onset_year_B": 1945
+    }
+   ]
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: unofficially Algérie française",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_less_explicit",
+   "evidence": "B: though Algeria was not fully conquered and pacified until 1903",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_less_explicit",
+     "level_A": 3,
+     "level_B": 0
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "B_adds_motive",
+   "evidence": "B: The Sétif and Guelma massacre in 1945 marked a point of no return in Franco-Algerian relations and led to the outbreak of the Algerian War",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_adds_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: French Algeria, also known as Colonial Algeria, was a colony and later an integral part of France."
+  }
+ },
+ {
+  "id": "Pd3228e86",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: The Mozabite people (At Weɣlan or At Mzab; بني مزاب)",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P33330b5b",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: creating a center in historic Palestine",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P129ab1d8",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P6695fb43",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: following waves of emigration since Partition in 1947",
+   "parties": [
+    {
+     "party": "UNCLEAR",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 1970,
+     "onset_year_B": 1947
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "B_loses",
+   "evidence": "A: in what was then East Pakistan during the 1971 Bangladesh genocide",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_loses",
+     "class": "atrocity"
+    }
+   ]
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: under the orders of Yahya Khan",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_more_explicit",
+     "level_A": 4,
+     "level_B": 4
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "B_adds_motive",
+   "evidence": "B: In response to the violence, members of the Mukti Bahini",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_adds_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P8725cf88",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: During the siege, the Romans destroyed the Second Temple and most of Jerusalem.",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_more_explicit",
+     "level_A": 1,
+     "level_B": 4
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "both",
+   "evidence": "B: out of their ancestral homeland (the Land of Israel)",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    },
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "B_removes_motive",
+   "evidence": "A: it existed as a consequence of various factors, including the creation of political and war refugees, enslavement, deportation",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_removes_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is the dispersion of Israelites or Jews out of their ancestral homeland (the Land of Israel)"
+  }
+ },
+ {
+  "id": "Pfa3dde3c",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Peaf4111f",
+  "usable": true,
+  "K01": {
+   "code": "B_more_narrator",
+   "evidence": "B: A largely abandoned historical hypothesis postulated that Ashkenazi Jews were primarily, or to a large extent, descended from converts",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_more_narrator",
+     "category": "Khazar origin of Ashkenazi Jews",
+     "level_A": 4,
+     "level_B": 5
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "B: attempt to discredit the claim by modern Jews to the Land of Israel",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ }
+]

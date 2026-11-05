@@ -1,0 +1,817 @@
+[
+ {
+  "id": "P79e203f7",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is a Moroccan politician, activist and diplomat"
+  }
+ },
+ {
+  "id": "P2f745084",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pcb4d5cad",
+  "usable": true,
+  "K01": {
+   "code": "B_less_narrator",
+   "evidence": "B: In some Western opinions, the incorporation of Tibet into China is viewed as an annexation.",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_less_narrator",
+     "category": "annexation",
+     "level_A": 5,
+     "level_B": 2
+    }
+   ]
+  },
+  "K02": {
+   "code": "B_later",
+   "evidence": "A: After the fall of the Qing dynasty, Ü-Tsang and surrounding areas began operating autonomously.",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_removes_prior_cause",
+     "onset_year_A": 1912,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pb4b9f199",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P58e5a5b7",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_strengthens",
+   "evidence": "B: are the ancient Eastern Jewish communities, inhabiting the region known as Kurdistan",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pc817f345",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P6f93c74e",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Paf13a197",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: also known as Conversos, Marranos, or the Anusim",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_demotes",
+     "in_first_sentence": false
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P0202d66f",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: about one century after the loss of the Catalan Constitutions when the country fell under the rule of the Bourbon dynasty",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": null,
+     "onset_year_B": 1750
+    }
+   ]
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: independentisme català; independentismo catalán; independentisme catalan",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: advocating for Catalan independence or the restitution of statehood for the Principality of Catalonia existed through the 18th and 19th centuries",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P5941901a",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pe903fc55",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: even as the movement reaffirmed its commitment to a Jewish homeland in Palestine",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pf6f42a72",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P859f8cc3",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: Its members are often referred to as strictly Orthodox or ultra-Orthodox in English",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_promotes",
+     "in_first_sentence": false
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pe832313a",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: the establishment of a Jewish state in Eretz-Israel",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_promotes",
+     "in_first_sentence": false
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P507e0733",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P0bd26d7a",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "B_gains",
+   "evidence": "B: is an American white supremacist, neo-Nazi, conspiracy theorist, and former politician",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_gains",
+     "class": "apartheid_racism"
+    }
+   ]
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is an American white supremacist, neo-Nazi, conspiracy theorist, and former politician"
+  }
+ },
+ {
+  "id": "P3131d0e6",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pdb52dfda",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: As part of the Gaza war",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P80ff7538",
+  "usable": true,
+  "K01": {
+   "code": "B_less_narrator",
+   "evidence": "B: It has been described as advancing the extremist jihadist ideology of propagating",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_less_narrator",
+     "category": "extremist violence",
+     "level_A": 5,
+     "level_B": 2
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ }
+]

@@ -1,0 +1,884 @@
+[
+ {
+  "id": "P47db193a",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: the once de facto independent Republic of Artsakh (Nagorno-Karabakh)",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_promotes",
+     "in_first_sentence": false
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "both",
+   "evidence": "A: The Armenian highlands have been home to the Hayasa-Azzi, Shupria, and Nairi peoples.",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_weakens",
+     "type": "continuity"
+    },
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P0433d128",
+  "usable": true,
+  "K01": {
+   "code": "B_more_narrator",
+   "evidence": "B: is a Russian state-funded private military company (PMC)",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_more_narrator",
+     "category": "state proxy",
+     "level_A": 2,
+     "level_B": 5
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is a Russian state-funded private military company (PMC)"
+  }
+ },
+ {
+  "id": "P46492c8f",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P870fe943",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pae4b4d43",
+  "usable": true,
+  "K01": {
+   "code": "B_less_narrator",
+   "evidence": "B: UN Special Rapporteur Richard Falk called Israel's occupation \"an affront to international law.\"",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_less_narrator",
+     "category": "illegal occupation",
+     "level_A": 3,
+     "level_B": 2
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: The Israeli-occupied territories refers to the territories occupied by Israel during the Six-Day War of 1967",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "B_adds",
+   "evidence": "B: Israel asserts that since the disengagement of Israel from Gaza in 2005, Israel no longer occupies the Gaza Strip.",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_adds"
+    }
+   ]
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pf491b2ea",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_strengthens",
+   "evidence": "B: advocating for the self-determination of a Jewish national state in their ancestral home",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: Zionism is a political ideology advocating for the self-determination of a Jewish national state"
+  }
+ },
+ {
+  "id": "P0eb324fd",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: following a power struggle within the transitional administration established after the 2021 coup",
+   "parties": [
+    {
+     "party": "UNCLEAR",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 2023,
+     "onset_year_B": 2021
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "both",
+   "evidence": "B: thousands remain missing or were killed in targeted massacres primarily attributed to the RSF and allied militias",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_more_explicit",
+     "level_A": 0,
+     "level_B": 3
+    },
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_less_explicit",
+     "level_A": 3,
+     "level_B": 2
+    }
+   ]
+  },
+  "K08": {
+   "code": "B_adds",
+   "evidence": "B: Despite denials, the UAE has been found to violate these sanctions by shipping Chinese weaponry to the RSF",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_adds"
+    }
+   ]
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: there has been a civil war in Sudan between the two main factions"
+  }
+ },
+ {
+  "id": "P03c4bda1",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P198a58f3",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pfa9f64fe",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pc63f9e17",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P173c2c96",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: On account of the role of Axis and pro-Axis elements in inciting and eventually carrying out the pogrom",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_more_explicit",
+     "level_A": 0,
+     "level_B": 3
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P57f33a53",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: during World War I in the Mutasarrifate of Jerusalem",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P830407b8",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: Hebrew name given at his brit milah Binyamin Ze'ev",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "B_adds_motive",
+   "evidence": "B: Confronted with antisemitic events in Vienna, he reached the conclusion that anti-Jewish sentiment would make Jewish assimilation impossible",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_adds_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P491b3e44",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_later",
+   "evidence": "A: lie in the Bronze Age amidst polytheistic ancient Semitic religions",
+   "parties": [
+    {
+     "party": "UNCLEAR",
+     "dir": "B_removes_prior_cause",
+     "onset_year_A": null,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P24e2ba8c",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: Yehuda VeShomron, Judah and Samaria",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_less_explicit",
+   "evidence": "B: as a region occupied and subsequently annexed by Jordan",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_less_explicit",
+     "level_A": 4,
+     "level_B": 3
+    }
+   ]
+  },
+  "K08": {
+   "code": "B_removes",
+   "evidence": "A: though Israel disputes this",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_removes"
+    }
+   ]
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_strengthens",
+   "evidence": "B: Right-wing and religious Israelis see it as their ancestral homeland, with numerous biblical sites.",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pe36d7fcc",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: Ireland (Ulster-Scots: Airlann",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P0759f079",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P658e5dac",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ }
+]

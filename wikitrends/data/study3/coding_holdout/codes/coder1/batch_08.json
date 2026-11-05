@@ -1,0 +1,893 @@
+[
+ {
+  "id": "Pe3e1ecbf",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "both",
+   "evidence": "B: It became a major political movement beginning in the 18th century",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 1800,
+     "onset_year_B": 1700
+    },
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_removes_prior_cause",
+     "onset_year_A": null,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "other_change",
+   "evidence": "B: before it was retaken by Turkey",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "other_change",
+     "from_cat": "E",
+     "to_cat": "S"
+    }
+   ]
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Peaf4111f",
+  "usable": true,
+  "K01": {
+   "code": "B_more_narrator",
+   "evidence": "B: A largely abandoned historical hypothesis postulated that Ashkenazi Jews were primarily",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_more_narrator",
+     "category": "Khazar origin of Ashkenazi Jews (historicity)",
+     "level_A": 4,
+     "level_B": 5
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P76a0bf77",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: unofficially Algérie française",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: by the colonial forces, who used chemical weapons, mass executions of prisoners and civilians, concentration camps and other atrocities",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_more_explicit",
+     "level_A": 0,
+     "level_B": 3
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: was the colonial rule of France over Algeria"
+  }
+ },
+ {
+  "id": "Pb639de08",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: The persecution of Rohingya Muslims in Myanmar dates back to at least the 1970s",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 2016,
+     "onset_year_B": 1970
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: persecuted on a regular basis by the government and Buddhist nationalists",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_more_explicit",
+     "level_A": 0,
+     "level_B": 3
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "B_reinstates",
+   "evidence": "B: The August 2017 persecution was launched in response to Arakan Rohingya Salvation Army attacks on Myanmar border posts.",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_reinstates",
+     "how": "added_trigger"
+    }
+   ]
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pbda67b25",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P33330b5b",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: a center in historic Palestine",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P129ab1d8",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pbc764cb9",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P49c24331",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P94d92b32",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pe7eb9223",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_strengthens",
+   "evidence": "B: besieged Jerusalem, the Jewish capital and the revolt's main stronghold",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P122c804b",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: often referred to as just Tel Aviv",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pd3228e86",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: (At Weɣlan or At Mzab; بني مزاب)",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pfa3dde3c",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pfce02602",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: Throughout the Soviet period, Armenians in the Nagorno-Karabakh Autonomous Oblast were heavily discriminated against.",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 1988,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "other_change",
+   "evidence": "B: the Karabakh Movement advocated for the reunification",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "other_change",
+     "from_cat": "E",
+     "to_cat": "O"
+    }
+   ]
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "B_recontextualises",
+   "evidence": "B: Motivated by fears of cultural and physical erasure under government policies from Azerbaijan",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_recontextualises",
+     "how": "motive"
+    }
+   ]
+  },
+  "K11": {
+   "code": "B_strengthens",
+   "evidence": "B: although Armenians remained the majority population",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_strengthens",
+     "type": "demography"
+    }
+   ]
+  },
+  "K12": {
+   "code": "B_adds_motive",
+   "evidence": "B: Motivated by fears of cultural and physical erasure under government policies from Azerbaijan",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_adds_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P8725cf88",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: alternatively the dispersion",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: During the siege, the Romans destroyed the Second Temple and most of Jerusalem.",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_more_explicit",
+     "level_A": 1,
+     "level_B": 4
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_strengthens",
+   "evidence": "B: out of their ancestral homeland (the Land of Israel)",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "B_removes_motive",
+   "evidence": "A: it existed as a consequence of various factors, including the creation of political and war refugees, enslavement, deportation",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_removes_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is the dispersion of Israelites or Jews out of their ancestral homeland"
+  }
+ },
+ {
+  "id": "P3734a3c4",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P6695fb43",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: (মুক্তিযুদ্ধ, )",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "B_gains",
+   "evidence": "B: during the 1971 Bangladesh genocide",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_gains",
+     "class": "atrocity"
+    }
+   ]
+  },
+  "K05": {
+   "code": "other_change",
+   "evidence": "B: the rapid advance of the Allied Forces of Bangladesh and India",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "other_change",
+     "from_cat": "O",
+     "to_cat": "S"
+    }
+   ]
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "B_reinstates",
+   "evidence": "A: after Pakistan launched preemptive air strikes on northern India and massive flight of some 10 million East Pakistani Bengals",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_reinstates",
+     "how": "prior_cause"
+    }
+   ]
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "B_removes_motive",
+   "evidence": "A: In response to the violence, members of the Mukti Bahini",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_removes_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: was a revolution and armed conflict sparked by the rise of the Bengali nationalist"
+  }
+ }
+]
