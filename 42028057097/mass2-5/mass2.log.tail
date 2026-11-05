@@ -1,0 +1,8 @@
+mass2 shard 5/16: 645 articles, now=2026-11-05T00:00:00Z, liftwing=False, lead grid=8 refine=40
+m2 shard 5: 0 already done, 645 to do
+[hb mass2-5] m2-5 0/645 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
+[hb mass2-5] m2-5 1/645 el=0.6m eta=369.9m req=69 429=0 5xx=0 retries=0 fail=0
+[hb mass2-5] m2-5 5/645 el=1.0m eta=128.4m req=119 429=0 5xx=0 retries=0 fail=0
+[hb mass2-5] m2-5 10/645 el=1.9m eta=118.3m req=208 429=6 5xx=0 retries=6 fail=0
+[hb mass2-5] m2-5 11/645 el=2.0m eta=115.5m req=226 429=6 5xx=0 retries=6 fail=0
+[hb mass2-5] m2-5 15/645 el=2.6m eta=110.6m req=288 429=12 5xx=0 retries=12 fail=0
