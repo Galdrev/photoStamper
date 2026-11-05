@@ -1,4 +1,3 @@
-pilot: 0 already done, 168 to do (salt from env: True)
 [hb pilot] pilot 0/168 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
 [hb pilot] pilot 0/168 el=1.0m eta=Nonem req=75 429=8 5xx=0 retries=8 fail=0
 [hb pilot] pilot 0/168 el=2.0m eta=Nonem req=145 429=12 5xx=0 retries=12 fail=0
@@ -34,3 +33,8 @@ pilot: 0 already done, 168 to do (salt from env: True)
 [hb pilot] pilot 22/168 el=25.0m eta=165.9m req=1811 429=104 5xx=0 retries=104 fail=0
 [hb pilot] pilot 23/168 el=26.0m eta=163.9m req=1895 429=108 5xx=0 retries=108 fail=0
 [hb pilot] pilot 26/168 el=27.0m eta=147.5m req=1966 429=112 5xx=0 retries=112 fail=0
+[hb pilot] pilot 28/168 el=28.0m eta=140.0m req=2036 429=116 5xx=0 retries=116 fail=0
+[hb pilot] pilot 30/168 el=28.5m eta=131.3m req=2099 429=116 5xx=0 retries=116 fail=0
+[hb pilot] pilot 30/168 el=29.0m eta=133.4m req=2106 429=120 5xx=0 retries=120 fail=0
+[hb pilot] pilot 31/168 el=29.5m eta=130.5m req=2161 429=120 5xx=0 retries=120 fail=0
+[hb pilot] pilot 31/168 el=30.0m eta=132.6m req=2176 429=124 5xx=0 retries=124 fail=0
