@@ -121,7 +121,8 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .card.ph{border-style:dashed;border-top-style:dashed;color:var(--muted)}
 .card.ph .bar{background:var(--faint)}
 .mini2{display:grid;gap:5px;font:11.5px/1.2 var(--mono);color:var(--muted)}
-.mini2 div{display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr) auto;gap:8px;align-items:center}
+.mini2 div{display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr) auto;gap:8px;align-items:center}
+.mini2 div>span:first-child{overflow-wrap:anywhere}
 .mini2 .bar{height:10px;border-radius:0 2px 2px 0;min-width:2px}
 .q{font:400 16px/1.4 var(--display);display:grid;gap:6px}
 .q span{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block}
@@ -749,7 +750,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </div>
   <p class="means" id="mHeat"></p>
   <button class="inlab" type="button" data-intent='{"lab":"shadow"}'>Explore this →</button>
-  <p class="cap col">Both panels are the same height, so each row for the other articles is drawn taller. Select a row to open that article.</p>
+  <p class="cap col"><span id="hmExcl"></span>Both panels are the same height, so each row for the comparison articles is drawn taller. Select a row to open that article.</p>
 </section>
 
 <section class="sec" id="test">
@@ -772,7 +773,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="tbx" id="forestStats"></div>
     <div class="fig-t">Where the real result lands among 5,000 shuffles of the labels</div>
     <div id="chFig"></div>
-    <p class="cap col">The robustness checks are in the <a href="#board">scoreboard above</a>. A check holds when the estimate keeps the sign of the main result and stays <button class="gl" type="button" data-g="significant">statistically significant</button> (p &lt; 0.05). The <button class="gl" type="button" data-g="placebo">placebo</button> check is the reverse: it holds when ordinary geography and climate words show no difference. R3 compares the post-war yearly extra change with every pre-war year.</p>
+    <p class="cap col">The robustness checks are in the <a href="#board">scoreboard above</a>. A check holds when its estimate keeps the main result’s sign and is clearly different from zero: p &lt; 0.05 (R1, R2, R7), or a range that excludes zero (R4). The median check (R5) has no p and no range, so it only asks whether the sign stays the same. R3 holds when the post-war yearly extra change is bigger than every pre-war year. The <button class="gl" type="button" data-g="placebo">placebo</button> check (R6) is the reverse: it holds when ordinary geography and climate words show no difference.</p>
   </div></details>
 </section>
 
@@ -853,12 +854,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div id="xlWrap"></div>
 </section>
 
-<details class="stats howc" id="howchecked"><summary>How we checked <span>the counter against known edits, the blind reading, and every article in the sample</span></summary><div class="in">
+<details class="stats howc" id="howchecked"><summary>How we checked <span>the counter against known edits, the masked reading, and every article in the sample</span></summary><div class="in">
 <section class="sec" id="checks">
   <header>
     <div class="eyebrow"><span class="layer epistemics">EPISTEMICS</span>Checking the counter</div>
     <h2>Does the counter see changes we know happened?</h2>
-    <p class="deck">News reports described some specific, dated edits. If our counter works, it should find the wording missing before the date and present after it. A second check had readers judge a sample of changes without seeing which article they came from.</p>
+    <p class="deck">News reports described some specific, dated edits. If our counter works, it should find the wording missing before the date and present after it. A second check had AI readers judge a sample of changes with the article’s names masked.</p>
   </header>
   <p class="means" id="mValid"></p>
   <div id="blind"></div>
@@ -1144,8 +1145,14 @@ function heroHover(e){
 }
 
 /* ---------- wow + 60 seconds + lede ---------- */
-function miniBars(c){const t=c.topic_value,o=c.comparison_value;if(t==null||o==null)return "";const mx=Math.max(Math.abs(t),Math.abs(o),1e-9);
-  return `<div class="mini2"><div><span>Topic articles</span><span class="bar" style="width:${Math.abs(t)/mx*100}%;background:var(--topic)"></span><span>${esc(t)}</span></div><div><span>${esc(c.compare_label||C_L)}</span><span class="bar" style="width:${Math.abs(o)/mx*100}%;background:var(--comp)"></span><span>${esc(o)}</span></div></div>`}
+function miniBars(c){const t=c.topic_value,o=c.comparison_value;if(t==null)return "";
+  const lab=String(c.compare_label||""),k=lab.lastIndexOf(": "),head=k>0&&/ vs /i.test(lab.slice(k))?lab.slice(0,k):"",body=head?lab.slice(k+2):lab;
+  const vs=body.split(/\s+vs\.?\s+/i);let rows,cap="";
+  if(vs.length===2)rows=[[vs[0],t,"--topic"],[vs[1],o,"--comp"]],cap=head;
+  else if(o==null||(o===0&&/minus|extra change/i.test(lab)))rows=[["Extra change",t,t>=0?"--inc":"--dec"]],cap=lab;
+  else rows=[["Topic articles",t,"--topic"],["Comparison articles",o,"--comp"]],cap=lab;
+  const mx=Math.max(...rows.map(r=>Math.abs(r[1]||0)),1e-9),f=v=>(v>0?"+":v<0?"−":"")+Math.abs(v);
+  return `<div class="mini2">${cap?`<p class="cap" style="font:11px/1.35 var(--mono)">${esc(cap)}</p>`:""}${rows.map(([n,v,col])=>`<div><span>${esc(n)}</span><span class="bar" style="width:${Math.max(1,Math.abs(v||0)/mx*100)}%;background:var(${col})"></span><span>${esc(f(v))}</span></div>`).join("")}</div>`}
 function drawCards(){
   const T=Array.isArray(R.takeaways)?R.takeaways.filter(Boolean):[];
   if(!T.length){$("#sixty").hidden=true;return}$("#sixty").hidden=false;
@@ -1226,6 +1233,7 @@ function drawHeat(){
   if(!HM){host.innerHTML=groups.map(([g,l],i)=>`<div class="pane"><div class="pane-h">${l}<span data-n></span></div><canvas data-i="${i}" role="img" aria-label="${l}: loaded-word rate by quarter"></canvas></div>`).join("");HM={};
     $$("canvas",host).forEach(cv=>{cv.addEventListener("pointermove",e=>heatHover(e,cv));cv.addEventListener("pointerleave",hideTip);cv.addEventListener("click",e=>{const r=heatRow(e,cv);if(r)openArticle(r.a.title)})})}
   $("#hmH").textContent=`${(data[0].length+data[1].length).toLocaleString("en-US")} articles, quarter by quarter`;
+  {const ex=R.articles.filter(a=>a.group==="control_contaminated").length,e=$("#hmExcl");if(e)e.textContent=ex?`${ex} comparison articles touched by the same war are excluded. `:""}
   const H=ph?380:560,warI=R.dates.findIndex(d=>d>="2024-01");
   $$("canvas",host).forEach((cv,gi)=>{
     const rows=data[gi],W=cv.parentElement.clientWidth,dpr=Math.min(2,devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+"px";
@@ -1360,14 +1368,23 @@ function drawCoord(){
   let h=`<div class="legend"><span class="key"><i style="border-radius:50%;background:var(--topic)"></i><i style="border-radius:50%;background:var(--comp);margin-left:-2px"></i>solid dot: what we saw (teal topic, grey-violet other)</span><span class="key"><i style="border-radius:50%;border:2px solid var(--muted)"></i>ring: what you’d expect by chance</span><span>Further right = more. A big distance between dot and ring means the pattern is stronger than chance would give.</span></div>`;
   h+=`<div class="dumbs">${cells.map(([g,p,gl,pl,cls])=>`<div class="dcell"><h4>${gl}<span>${pl}</span></h4>${metrics.map(m=>dum(m,get(g,p),cls)).join("")}</div>`).join("")}</div>`;
   const tO=K.topic.post_war&&K.topic.post_war.tailgating_ratio,cO=K.comparison.post_war&&K.comparison.post_war.tailgating_ratio;
-  h+=`<p class="means">${tO!=null&&cO!=null?`<b>What this means:</b> after the war began, close-together editing by recurring pairs was ${fmt(tO,1)} times what chance would give on topic articles, and ${fmt(cO,1)} times on other articles. A ratio near 1 is what chance alone produces.`:""}</p>`;
+  const MC=R.mass&&R.mass.coordination,mg=k=>MC&&MC[k]||null;
+  if(MC&&mg("topic:post_war")&&mg("comparison:post_war")){const nA=(mg("topic:pre_war")||mg("topic:post_war")).articles+(mg("comparison:pre_war")||mg("comparison:post_war")).articles;
+    const cells=[["topic:pre_war","Topic, before 7 Oct 2023"],["topic:post_war","Topic, after"],["comparison:pre_war","Comparison, before"],["comparison:post_war","Comparison, after"]].filter(([k])=>mg(k));
+    const bars=(f,lab,fm)=>{const mx=Math.max(...cells.map(([k])=>mg(k)[f]||0),1e-9);return `<div class="bar-row"><span>${lab}</span><div class="tr">${cells.map(([k,l])=>{const v=mg(k)[f];return `<div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${Math.max(.5,(v||0)/mx*72)}%;background:var(${k.startsWith("topic")?"--topic":"--comp"});opacity:${k.endsWith("pre_war")?.5:1}"></div><span class="v num">${v==null?"–":fm(v)} · ${l}</span></div>`}).join("")}</div></div>`};
+    const nullAll=cells.every(([k])=>!mg(k).null_pairs);
+    h+=`<div class="fig"><div class="fig-h"><span class="fig-t">Co-editing in the large sample (${nA.toLocaleString("en-US")} articles)</span><span class="cap">The deep panel above is small, so recurring pairs there are near zero. Faded bars: before 7 Oct 2023.</span></div><div class="bars">${bars("pairs_per_10k_edits","Recurring editor pairs per 10,000 edits",v=>fmt(v,2))}${bars("sweeps_per_1000_editors","Editors touching 5+ articles in one day, per 1,000 editors",v=>fmt(v,0))}</div>
+     <p class="cap col">${nullAll?"The chance baseline (each editor’s timeline shifted at random) produced 0 recurring pairs in every cell, so no ratio to chance can be computed. Compare the groups with each other instead.":""}</p></div>`;
+    const t=mg("topic:post_war"),c=mg("comparison:post_war");
+    h+=`<p class="means"><b>What this means:</b> in the large sample after the war began, the same pairs of editors edited one after the other ${fmt(t.pairs_per_10k_edits,2)} times per 10,000 edits on topic articles and ${fmt(c.pairs_per_10k_edits,2)} times on comparison articles. That is a signal worth checking, not proof that anyone worked together.</p>`}
+  else h+=`<p class="means">${tO!=null&&cO!=null?`<b>What this means:</b> after the war began, close-together editing by recurring pairs was ${fmt(tO,1)} times what chance would give on topic articles, and ${fmt(cO,1)} times on comparison articles. A ratio near 1 is what chance alone produces.`:""}</p>`;
   // lines
   h+=`<div class="grid2"><div class="fig"><div class="fig-t">Share of edits made by the busiest 1% of editors</div><div class="chart" id="cConc" style="height:210px"></div></div><div class="fig"><div class="fig-t">Share of edits by brand-new accounts</div><div class="chart" id="cNew" style="height:210px"></div></div></div>`;
   h+=`<div class="legend"><span class="key"><i class="ln" style="background:var(--topic)"></i>${T_L} (teal)</span><span class="key"><i class="ln" style="background:var(--comp)"></i>${C_L} (grey-violet)</span><span>Higher on the left chart = editing concentrated in fewer hands.</span></div>`;
   h+=`<div class="fig"><div class="fig-h"><span class="fig-t">When in the day people edit</span><span class="cap">Dashed grey ring: before 7 Oct 2023. Filled shape: after. Hours are UTC.</span></div><div class="clocks"><div class="clock"><div class="fig-t" style="text-align:center">Topic articles</div>${K.topic.hours?clockSVG(K.topic.hours.pre,K.topic.hours.post,"--topic"):""}</div><div class="clock"><div class="fig-t" style="text-align:center">Other articles</div>${K.comparison.hours?clockSVG(K.comparison.hours.pre,K.comparison.hours.post,"--comp"):""}</div></div></div>`;
   const LA=K.lead_authors;
-  if(LA&&LA.topic&&LA.comparison){const rows=[["changes","Traced changes to first sentences",v=>fmt(v,0)],["distinct_editors","Different editors who made them",v=>fmt(v,0)],["changes_per_article","Changes per article",v=>fmt(v,1)],["top3_share","Share made by the 3 most active editors",pf],["top10_share","Share made by the 10 most active",pf],["editors_on_3plus_articles","Editors who changed 3+ articles’ first sentence",v=>fmt(v,0)]];
-    h+=`<div class="fig"><div class="fig-h"><span class="fig-t">Who rewrote the first sentences of key articles</span><span class="cap">${LA.topic.articles} topic and ${LA.comparison.articles} other key articles.</span></div><div class="bars">${rows.map(([k,l,f])=>{const a=LA.topic[k],b=LA.comparison[k],mx=Math.max(a||0,b||0,1e-9);return `<div class="bar-row"><span>${l}</span><div class="tr"><div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${(a||0)/mx*80}%;background:var(--topic)"></div><span class="v num">${a==null?"–":f(a)} topic</span></div><div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${(b||0)/mx*80}%;background:var(--comp)"></div><span class="v num">${b==null?"–":f(b)} other</span></div></div></div>`}).join("")}</div></div>`}
+  if(LA&&LA.topic&&LA.comparison){const rows=[["changes","First-sentence changes that were not undone",v=>fmt(v,0)],["distinct_editors","Different editors who made them",v=>fmt(v,0)],["changes_per_article","Changes per article",v=>fmt(v,1)],["top3_share","Share made by the 3 most active editors",pf],["top10_share","Share made by the 10 most active",pf],["editors_on_3plus_articles","Editors who changed 3+ articles’ first sentence",v=>fmt(v,0)]];
+    h+=`<div class="fig"><div class="fig-h"><span class="fig-t">Who rewrote the first sentences of key articles</span><span class="cap">${LA.topic.articles} topic and ${LA.comparison.articles} comparison key articles. Counts first-sentence changes that were not undone, so they are lower than the totals in the exact-edits section.</span></div><div class="bars">${rows.map(([k,l,f])=>{const a=LA.topic[k],b=LA.comparison[k],mx=Math.max(a||0,b||0,1e-9);return `<div class="bar-row"><span>${l}</span><div class="tr"><div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${(a||0)/mx*80}%;background:var(--topic)"></div><span class="v num">${a==null?"–":f(a)} topic</span></div><div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${(b||0)/mx*80}%;background:var(--comp)"></div><span class="v num">${b==null?"–":f(b)} other</span></div></div></div>`}).join("")}</div></div>`}
   // stats
   const row=(g,p,l)=>{const x=get(g,p);return `<tr><td>${l}</td><td class="r">${fmt(x.overlap&&x.overlap.observed,3)}</td><td class="r">${fmt(x.overlap&&x.overlap.null,3)}</td><td class="r">${x.tailgating?x.tailgating.recurring_pairs:"–"}</td><td class="r">${x.tailgating_null?x.tailgating_null.recurring_pairs:"–"}</td><td class="r">${x.tailgating?x.tailgating.editors_in_pairs:"–"}</td><td class="r">${x.tailgating?big(x.tailgating.edits):"–"}</td><td class="r">${x.sweeps?x.sweeps.sweep_editor_days:"–"}</td><td class="r">${x.sweeps?big(x.sweeps.active_editors):"–"}</td></tr>`};
   h+=`<details class="stats"><summary>Show the statistics <span>observed values and what chance would give</span></summary><div class="in"><div class="tbx"><table><thead><tr><th></th><th class="r">Overlap seen</th><th class="r">Overlap by chance</th><th class="r">Recurring pairs</th><th class="r">Pairs by chance</th><th class="r">Editors in pairs</th><th class="r">Edits</th><th class="r">Sweep editor-days</th><th class="r">Active editors</th></tr></thead><tbody>${cells.map(([g,p,gl,pl])=>row(g,p,`${gl}, ${pl}`)).join("")}</tbody></table></div>
@@ -1569,7 +1586,7 @@ function keyText(){
     {k:"Every comparison article",h:`Each thin grey line is one of the ${D.threads.length} ${Cg} articles, about other countries, conflicts and religions. ${nn?`${up} of ${nn} use these words more now than in ${dlab(f)}.`:""} Some move a lot, which is why we compare averages. Select a line to open its article.`},
     {k:"The comparison average",h:`Their average went from <b>${fmt(D.comp[0][1],1)}</b> to <b>${fmt(D.comp.at(-1)[1],1)}</b>. The real question is not whether the teal line rose, but whether it rose <i>more</i> than this one. The red line marks 7 October 2023. The black line marks the ICJ genocide case, January 2024.`},
     P?{k:"Fold it into one number",h:`Now each article becomes a dot: how much it changed from ${dlab(f)} to ${dlab(l)}. On average the topic articles changed by <b>${sgn(P.treat,1)}</b> and the comparison articles by <b>${sgn(P.control,1)}</b>. The difference, <b>${sgn(P.did,1)}</b> per 10,000 words, is the extra change (pre-registered test ${P.id}). The soft band is the range we’re fairly sure about, ${sgn(P.lo,1)} to ${sgn(P.hi,1)}. ${P.lo<=0&&P.hi>=0?"It includes zero, so this could be chance.":"It stays clear of zero."}`,lab:true}:{k:"One number",h:"The pre-registered estimate for this measure is not in this build."}];
-  const es=(R.event_study||{})[`${K.part}:critical_rate`]||[],er=es.at(-1),pre=es.filter(r=>r.date<=(R.pre_war||"2023-07")).at(-1);
+  const es=keyES(),er=es.at(-1),pre=es.filter(r=>r.date<=(R.pre_war||"2023-07")).at(-1);
   if(er)steps.push({k:"Over time",h:`When did it happen? Here the extra change is measured at every copy, each time against ${dlab(f)}. Before the war, by ${pre?dlab(pre.date):"mid-2023"}, it was <b>${pre?sgn(pre.did,1):"–"}</b>. By ${dlab(er.date)} it was <b>${sgn(er.did,1)}</b>, with a range of ${sgn(er.lo,1)} to ${sgn(er.hi,1)}. ${er.lo<=0&&er.hi>=0?"The shaded range still crosses zero.":"The shaded range stays clear of zero."}`,shadow:true});
   if(K.built&&$$(".step",host).length===steps.length){$$(".step",host).forEach((e,i)=>{e.querySelector(".k").textContent=`${i+1} / ${steps.length} · ${steps[i].k}`;e.querySelector("p").innerHTML=steps[i].h})}
   else{K.built=true;host.innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button>${s.shadow?`<button class="inlab" type="button" data-intent='{"lab":"shadow"}'>Explore this →</button>`:""}${s.lab?`<button class="inlab" type="button" data-lab>Shuffle it yourself in the data lab →</button>`:""}</div>`).join("");
@@ -1597,8 +1614,10 @@ function keyGeom(){
   const mid=(m.t+H-m.b)/2+6,gap=Math.min(56,(H-m.t-m.b)/3.3),yT=mid-gap,yB=mid,yC=mid+gap;
   return {el,D,W,H,ph,m,x,y,fx,fxc,yT,yB,yC,t0,t1}}
 const jit=i=>(((i*2654435761)>>>0)%1000)/1000-.5;
+function keyES(){const rows=((R.event_study||{})[`${K.part}:critical_rate`]||[]).map(r=>({...r})),P=didRow(K.part==="lead"?"P1":"P2"),l=rows.at(-1);
+  if(P&&l&&l.date===(R.last||R.dates.at(-1))){l.did=P.did;l.lo=P.lo;l.hi=P.hi}return rows}
 function drawKeyES(){
-  const el=$("#kChart"),rows=(R.event_study||{})[`${K.part}:critical_rate`]||[];el._cfg=null;
+  const el=$("#kChart"),rows=keyES();el._cfg=null;
   $("#kTitle").textContent=`Extra change over time, per 10,000 words of ${K.part==="lead"?"the opening paragraph":"the full text"}`;
   if(!rows.length){el.innerHTML=`<div class="note">No estimates over time for this choice.</div>`;$("#kKey").innerHTML="";return}
   const pts=[[ym(R.dates[0]),0],...rows.map(r=>[ym(r.date),r.did])],rb=[[ym(R.dates[0]),0,0],...rows.map(r=>[ym(r.date),r.lo,r.hi])];
@@ -1737,7 +1756,7 @@ function drawBoard(){
       <span class="cond ${b.dir?"ok":"no"}">predicted ${PRED[p.id]>0?"rise":"fall"} · got ${sgn(p.did,2)}</span>
       <span class="cond ${b.passes>=4?"ok":"no"}"><span class="pips" aria-hidden="true">${b.pre.slice().sort((x,y)=>y.pass-x.pass).map((r,i)=>`${i===4?`<span class="th" title="needs 4"></span>`:""}<i class="${r.pass?"on":""}"></i>`).join("")}</span>${b.passes} of ${b.pre.length} planned checks hold · needs 4</span></div>
       <div class="tiles">${b.ch.map(tile).join("")}</div><p class="tdet" aria-live="polite"></p></div>`}).join("");
-  h+=`<p class="cap col">Dot: the estimate under that check. Line: its range. Dashed centre line: zero. Faint teal line: the main estimate, for checks on the same scale. Dashed tiles were added after the plan and do not count toward the rule. A check holds when the estimate keeps the main result’s sign and stays significant. The placebo check holds when it shows <i>no</i> difference.</p>`;
+  h+=`<p class="cap col">Dot: the estimate under that check. Line: its range. Dashed centre line: zero. Faint teal line: the main estimate, for checks on the same scale. Dashed tiles were added after the plan and do not count toward the rule. A check holds when it keeps the main result’s sign and is clearly different from zero (p &lt; 0.05, or a range that excludes zero). The median check (R5) has no p, so it only needs the same sign. The placebo check holds when it shows <i>no</i> difference.</p>`;
   host.innerHTML=h;
   $$(".brow",host).forEach(row=>{const b=B.find(x=>x.p.id===row.dataset.id);const bs=row.querySelector(".bsum");bs.onclick=()=>{const o=row.classList.toggle("open");bs.setAttribute("aria-expanded",String(o))};row.querySelector(".tiles").addEventListener("click",e=>{const t=e.target.closest(".tile");if(!t)return;const r=b.ch[+t.dataset.i];
     $$(".tile",row).forEach(x=>x.setAttribute("aria-pressed",String(x===t)));
@@ -1877,19 +1896,23 @@ function xlShow(sum){
 /* ---------- validation + blind ---------- */
 function drawChecks(){
   const V=R.validation||[],host=$("#valid");
-  const ok=V.filter(v=>v.pass===true).length,te=V.filter(v=>v.pass!=null).length;
-  $("#mValid").innerHTML=te?`<b>What this means:</b> the counter found ${ok} of ${te} documented changes it could test.${V.length>te?` ${V.length-te} could not be tested because the article is missing from the data.`:""}`:"";
+  const PL=V.filter(v=>!v.post_hoc),ok=PL.filter(v=>v.pass===true).length,te=PL.filter(v=>v.pass!=null).length,ph=V.length-PL.length;
+  $("#mValid").innerHTML=te?`<b>What this means:</b> the counter found ${ok} of ${te} planned known changes.${PL.length>te?` ${PL.length-te} could not be tested because the article is missing from the data.`:""}${ph?` ${ph} check${ph===1?" was":"s were"} added after seeing the data; ${ph===1?"it is":"they are"} listed but not counted.`:""}`:"";
   if(!V.length)host.innerHTML=`<div class="note">No dated validation targets in this build.</div>`;
-  else host.innerHTML=`<table><thead><tr><th>Article</th><th>Documented change</th><th>Pattern · text</th><th>Before → after</th><th>Result</th></tr></thead><tbody>${V.map(v=>`<tr><td><b>${esc(v.title||v.article||"")}</b></td><td class="wide">${esc(v.claim||v.expectation||"")}</td><td data-l="Pattern"><code class="mono" style="font-size:11px;word-break:break-all">${esc(v.pattern||"")}</code><br><span class="cap">${esc(v.part||"")}</span></td><td data-l="Before → after" class="mono num" style="font-size:12px">${v.before?dlab(v.before)+" → "+dlab(v.after):""}<br><span class="cap">${esc(v.observed||"")}</span></td><td data-l="Result" class="wide"><span class="res ${v.pass===true?"ok":v.pass==null?"na":""}"><i></i>${v.pass===true?"found":v.pass==null?"not testable":"not found"}</span></td></tr>`).join("")}</tbody></table>`;
+  else host.innerHTML=`<table><thead><tr><th>Article</th><th>Documented change</th><th>Pattern · text</th><th>Before → after</th><th>Result</th></tr></thead><tbody>${V.map(v=>`<tr><td><b>${esc(v.title||v.article||"")}</b></td><td class="wide">${esc(v.claim||v.expectation||"")}</td><td data-l="Pattern"><code class="mono" style="font-size:11px;word-break:break-all">${esc(v.pattern||"")}</code><br><span class="cap">${esc(v.part||"")}</span></td><td data-l="Before → after" class="mono num" style="font-size:12px">${v.before?dlab(v.before)+" → "+dlab(v.after):""}<br><span class="cap">${esc(v.observed||"")}</span></td><td data-l="Result" class="wide"><span class="res ${v.pass===true?"ok":v.pass==null?"na":""}"><i></i>${v.pass===true?"found":v.pass==null?"not testable":"not found"}</span>${v.post_hoc?`<br><span class="chip">post-hoc, not counted</span>`:""}</td></tr>`).join("")}</tbody></table>`;
   const B=R.blind,bh=$("#blind");
-  if(!B){bh.innerHTML=`<div class="note"><b style="color:var(--ink-2)">Blind reading.</b> A sample of changed opening paragraphs is judged without the article name or date. Those results are not in this build yet.</div>`;return}
+  if(!B){bh.innerHTML=`<div class="note"><b style="color:var(--ink-2)">Masked reading.</b> A sample of changed opening paragraphs is judged with names and dates masked. Those results are not in this build yet.</div>`;return}
   const bar=(lab,v,c)=>`<div class="bar-row"><span>${lab}</span><div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${Math.max(.5,(v||0)*80)}%;background:var(${c})"></div><span class="v num">${pct(v)}</span></div></div>`;
-  const fv=B.framing_vs_factual,stack=(o,lab)=>{if(!o)return "";const t=(o.framing||0)+(o.factual||0)+(o.unclear||0)||1;return `<div class="bar-row"><span>${lab}</span><div style="display:flex;height:14px;border-radius:2px;overflow:hidden;gap:2px">${[["framing","--inc"],["factual","--comp"],["unclear","--rule"]].map(([k,c])=>`<span title="${k}: ${o[k]||0}" style="width:${(o[k]||0)/t*100}%;background:var(${c})"></span>`).join("")}</div></div>`};
-  bh.innerHTML=`<div class="fig"><div class="fig-h"><span class="fig-t">Blind reading: share of changes judged less favourable to the subject</span><span class="cap">${B.n_items??"–"} changes (${B.n_topic??"–"} topic, ${B.n_control??"–"} other)${B.agreement!=null?` · readers agreed ${pct(B.agreement)} of the time`:""}</span></div>
-   <div class="bars">${bar("Topic articles (teal)",B.share_less_favourable_topic,"--topic")}${bar("Other articles (grey-violet)",B.share_less_favourable_control,"--comp")}</div>
-   <p class="cap">Difference ${B.diff!=null?sgn(B.diff*100,1)+" points":"–"}${B.p_perm!=null?` · could this be chance? p = ${B.p_perm.toFixed(3)}`:""}${B.placebo_shift!=null?` · <button class="gl" type="button" data-g="placebo">placebo</button> shift ${sgn(B.placebo_shift*100,1)} points`:""}</p>
-   ${fv?`<div class="fig-t" style="margin-top:6px">What kind of change was it?</div><div class="bars">${stack(fv.topic,"Topic")}${stack(fv.control,"Other")}</div><div class="legend"><span class="key"><i style="background:var(--inc)"></i>orange: framing (how it’s described)</span><span class="key"><i style="background:var(--comp)"></i>grey-violet: factual (what happened)</span><span class="key"><i style="background:var(--rule)"></i>light grey: unclear</span></div>`:""}
-   ${(B.examples||[]).length?`<div class="fig-t" style="margin-top:6px">Examples</div><div class="diff">${B.examples.slice(0,6).map(x=>`<div class="m"><span class="chip ${x.group}">${GROUP[x.group]||x.group}</span> <b>${esc(x.title)}</b> · <span class="cap">${esc(x.label||"")}</span><br>${esc(x.quote||"")}${x.rev0&&x.rev1?` <a href="https://en.wikipedia.org/w/index.php?diff=${x.rev1}&oldid=${x.rev0}" target="_blank" rel="noopener">view the edit ↗</a>`:""}</div>`).join("")}</div>`:""}</div>`;
+  const fv=B.framing_vs_factual,FC=[["framing","Framing only","--inc"],["both","Framing and facts","--s1"],["factual_update","Factual update","--comp"],["none","No real change","--rule"],["null","Unclear","--sheet"]];
+  const stack=(o,lab)=>{if(!o)return "";const v=k=>+(o[k]||0)+(k==="null"?+(o.unclear||0):0),t=FC.reduce((s,[k])=>s+v(k),0)||1;return `<div class="bar-row"><span>${lab} <span class="cap">(${t})</span></span><div style="display:flex;height:16px;border-radius:2px;overflow:hidden;gap:2px">${FC.map(([k,l,c])=>v(k)?`<span title="${l}: ${v(k)} of ${t} (${pct(v(k)/t)})" style="width:${v(k)/t*100}%;background:var(${c});${k==="null"?"background:repeating-linear-gradient(135deg,var(--rule) 0 2px,transparent 2px 5px);border:1px solid var(--rule)":""}"></span>`:"").join("")}</div></div>`};
+  const lt=B.share_less_favourable_topic,lc=B.share_less_favourable_control,dpt=lt!=null&&lc!=null?(lt-lc)*100:(B.diff!=null?B.diff*100:null);
+  const RI=B.reidentification,riN=RI&&RI.n,riK=RI&&RI.share_exact_article_named!=null&&riN?Math.round(RI.share_exact_article_named*riN):null;
+  bh.innerHTML=`<div class="fig"><div class="fig-h"><span class="fig-t">Masked reading: share of changes where the newer version is harsher on its subject</span><span class="cap">${B.n_items??"–"} changes (${B.n_topic??"–"} topic, ${B.n_control??"–"} comparison)${B.agreement!=null?` · readers agreed ${pct(B.agreement)} of the time`:""}</span></div>
+   <div class="bars">${bar("Topic articles (teal)",lt,"--topic")}${bar("Comparison articles (grey-violet)",lc,"--comp")}</div>
+   <p class="cap">Difference, topic minus comparison: <b>${dpt!=null?sgn(dpt,1)+" points":"–"}</b>${B.net_less_minus_more_diff!=null?` · net (harsher minus gentler), topic minus comparison: <b>${sgn(B.net_less_minus_more_diff,3)}</b>`:""}${B.p_perm!=null?` · could this be chance? p = ${B.p_perm.toFixed(3)}`:""}${B.placebo_shift!=null?` · <button class="gl" type="button" data-g="placebo">placebo</button> shift ${sgn(B.placebo_shift*100,1)} points`:""}</p>
+   ${riK!=null?`<p class="cap col"><b>Masked, not blind.</b> AI readers could still recognise most articles: a separate AI named the exact article for ${riK} of ${riN} masked paragraphs, so treat this as masked, not blind.</p>`:""}
+   ${fv?`<div class="fig-t" style="margin-top:6px">What kind of change was it?</div><div class="bars">${stack(fv.treatment||fv.topic,"Topic")}${stack(fv.control,"Comparison")}</div><div class="legend">${FC.map(([k,l,c])=>`<span class="key"><i style="background:var(${c});${k==="null"?"background:repeating-linear-gradient(135deg,var(--rule) 0 2px,transparent 2px 5px);border:1px solid var(--rule)":""}"></i>${l}</span>`).join("")}</div>`:""}
+   ${(B.examples||[]).length?`<div class="fig-t" style="margin-top:6px">Examples</div><div class="diff">${B.examples.slice(0,6).map(x=>`<div class="m"><span class="chip ${x.group}">${GROUP[x.group]||x.group}</span> <b>${esc(x.title)}</b> · <span class="cap">${esc(({newer_less_favourable:"newer version harsher",newer_more_favourable:"newer version gentler",B_less_favourable:"newer version harsher",B_more_favourable:"newer version gentler"})[x.label]||String(x.label||"").replace(/_/g," "))}</span><br>${esc(x.quote||"")}${x.rev0&&x.rev1?` <a href="https://en.wikipedia.org/w/index.php?diff=${x.rev1}&oldid=${x.rev0}" target="_blank" rel="noopener">view the edit ↗</a>`:""}</div>`).join("")}</div>`:""}</div>`;
 }
 
 /* ---------- ledger ---------- */
