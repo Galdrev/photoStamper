@@ -1,1 +1,11 @@
 loaded 513 articles; ignored 274 stale cache files not in the manifest
+analyzed 332 topic / 90 comparison (primary panel), 513 total, 260831 revisions
+  P2 full:critical_rate DiD=-0.298 [-2.698,+1.683] p=0.8456 q=0.8456
+  P3 full:connection_rate DiD=-1.641 [-4.052,+0.260] p=0.2252 q=0.3377
+  P1 lead:critical_rate DiD=+6.357 [-2.499,+15.768] p=0.1988 q=0.3377
+  validation Zionism: before=True, after=True pass=False
+  validation Zionism: before=False, after=True pass=True
+  validation Israel: before=False, after=True pass=True
+  validation List of genocides: before=False, after=True pass=True
+  validation Gaza genocide: before=True, after=True pass=False
+  validation Occupied Palestinian territories: article not in data pass=None
