@@ -74,6 +74,9 @@ jobs:
       - name: Study 2 - competing narratives
         working-directory: wikitrends
         run: python narrative.py 2>&1 | tee logs/narrative.log || echo "::warning::narrative failed"
+      - name: Event-update filter - narrative residual vs event coverage (amendment D)
+        working-directory: wikitrends
+        run: python event_clean.py 2>&1 | tee logs/event_clean.log || echo "::warning::event_clean failed"
       - name: Wikidata types (outcome-blind relevance filter)
         working-directory: wikitrends
         run: WT_JOB=wikidata python wikidata.py 2>&1 | tee logs/wikidata.log || echo "::warning::wikidata failed"
@@ -93,7 +96,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           mkdir -p wikitrends/data/runlogs && cp wikitrends/logs/*.log wikitrends/data/runlogs/ 2>/dev/null || true
           git checkout -q -b results/${{ github.run_id }}
-          for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json narrative.json wikidata_types.json cohere_deep.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
+          for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json narrative.json wikidata_types.json cohere_deep.json event_clean.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
           git add -f wikitrends/data/runlogs/*.log 2>/dev/null || true
           git commit -qm "Results of run ${{ github.run_id }} [skip ci]" || exit 0
           for i in 1 2 3; do git push -q origin results/${{ github.run_id }} && break; sleep 10; done

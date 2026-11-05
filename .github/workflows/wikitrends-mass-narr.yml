@@ -9,15 +9,15 @@ defaults:
   run:
     shell: bash
 env:
-  WT_RPS: '3'
+  WT_RPS: '2'
   GH_TOKEN: ${{ github.token }}
 jobs:
   narr:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 320
     strategy:
       fail-fast: false
-      max-parallel: 2
+      max-parallel: 4
       matrix: {shard: [0, 1, 2, 3]}
     steps:
       - uses: actions/checkout@v4
@@ -28,7 +28,7 @@ jobs:
         run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh narr-${{ matrix.shard }} 180 > /tmp/status.log 2>&1 &
       - name: Collect leads at 2021-01 and now (checkpointed)
         working-directory: wikitrends
-        run: WT_JOB=narr-${{ matrix.shard }} timeout 270m python mass_narr.py shard --shard ${{ matrix.shard }} --of 4 2>&1 | tee logs/narr.log || echo "::warning::stopped early; checkpoint kept"
+        run: WT_JOB=narr-${{ matrix.shard }} timeout 280m python mass_narr.py shard --shard ${{ matrix.shard }} --of 4 2>&1 | tee logs/narr.log || echo "::warning::stopped early; checkpoint kept"
       - uses: actions/upload-artifact@v4
         if: always()
         with: {name: 'narr-${{ matrix.shard }}', path: 'wikitrends/data/mass/narr_${{ matrix.shard }}.json.gz', retention-days: 5, overwrite: true}
@@ -54,6 +54,6 @@ jobs:
         run: |
           git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
           git checkout -q -b results/mass-narr-${{ github.run_id }}
-          for f in wikitrends/data/mass_narr.json wikitrends/data/wikidata_types.json wikitrends/data/cohere_mass.json wikitrends/mass_narr.log; do [ -f $f ] && git add -f $f; done
+          for f in wikitrends/data/mass_narr.json wikitrends/data/wikidata_types.json wikitrends/data/cohere_mass.json wikitrends/data/mass_leads.json.gz wikitrends/mass_narr.log; do [ -f $f ] && git add -f $f; done
           git commit -qm "Mass narrative results (run ${{ github.run_id }}) [skip ci]" || exit 0
           git push -q origin results/mass-narr-${{ github.run_id }}
