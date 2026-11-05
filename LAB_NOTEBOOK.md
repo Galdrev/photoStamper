@@ -67,3 +67,30 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 | Cross-language | ≥ 6 languages with ≥ 10 articles per group | reported per article only |
 | Mass tier | ≥ 1,000 articles per group in the frame | fix category names, else report deep tier only |
 | Narrative coding | coders agree on the main theme in ≥ 60% of a double-coded 30-item subset | themes shown as examples only, no shares |
+
+## Final verdicts: what to adopt for real work
+
+**Adopt (highest value per hour):**
+1. **Pre-registration with a written decision rule (SPEC.md + amendment log).** The headline had to say "not supported" even though exploratory results looked more interesting. That is the whole point.
+2. **A separate adversarial verifier given only the claims and the data.** It found 12 problems in my findings, several of them real overclaims, and reproduced every core number. The builders' and my own self-checks missed them.
+3. **An evaluator agent with a written rubric (creative director).** It took design scores from 2 to 4–5 in 3 rounds. Builders' self-scores were always too generous.
+4. **Data validator on the real page.** It found 9 contradictions between page text and data, including 2 in my own takeaway cards.
+5. **Telemetry plus dry runs for long jobs.** Heartbeats, checkpoints, time budgets, pipefail, a per-run output namespace. Every serious failure in this project was a missing one of these.
+6. **Known-answer tests for instruments** (synthetic edits, validation targets, planted effects). They caught the log-scale blow-up, and they let the coder be calibrated.
+7. **Test your blinding.** 25/30 masked texts were re-identified. Without the test, the report would have claimed "blind" coding.
+
+**Adapt:**
+- **Parallel persona agents for brainstorming.** Cheap, and convergence across personas is a good signal. Pick 3, not 10.
+- **Method revisits at checkpoints.** Valuable, but only once the design has changed.
+- **Large agent fan-out for coding (≈60 coder calls).** It works with a pilot gate. But real-edit stance coding was noisy (agreement 0.50–0.70), so for real stakes, pay for a human gold set.
+
+**Drop or avoid:**
+- Acting on a long job you cannot see (I cancelled 2 nearly finished shards blind).
+- Two writers to one path with no lock (one run's results lost).
+- Fanning out without a compute budget (hit the GitHub minutes quota).
+- Count-only gates (a 4,000-article frame that was "mostly Russia" passed).
+
+**Answers to the open questions:**
+- *Did parallel agents produce things I wouldn't have alone?* Yes. Dated validation targets, the cluster-correlation catch, the "breathing definition" opener, the re-identification idea and the 12 verifier corrections.
+- *Did blind coding agree with lexicon counts?* Direction yes, significance no, and the blinding failed. It is the weakest instrument.
+- *With a tenth of the budget?* Keep the pre-registered deep test, the mass tier, the adversarial verifier and the data validator. Cut the narrative coding and most design rounds.
