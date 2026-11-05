@@ -101,3 +101,9 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 - *Did parallel agents produce things I wouldn't have alone?* Yes. Dated validation targets, the cluster-correlation catch, the "breathing definition" opener, the re-identification idea and the 12 verifier corrections.
 - *Did blind coding agree with lexicon counts?* Direction yes, significance no, and the blinding failed. It is the weakest instrument.
 - *With a tenth of the budget?* Keep the pre-registered deep test, the mass tier, the adversarial verifier and the data validator. Cut the narrative coding and most design rounds.
+
+## #41 Study 3: let the data sharpen the questions, without fooling ourselves (2026-11-05)
+- **Trigger:** the owner saw the uneven picture (a few articles moved a lot) and asked for better questions, not a better-looking answer.
+- **Technique:** split-sample discovery → confirmation. A deterministic 50/50 split by sha1("study3|"+title) was committed (c3a07bf) *before* any hypothesis was made. Three discovery agents (where/what, how/who, narrative) see only the discovery half. Their hypotheses get frozen in SPEC_STUDY3.md, then run once, unchanged, on the holdout half plus study 2 (unseen).
+- **Honest limit:** the aggregate study 1 results were already known to everyone, so the holdout protects against article-level overfitting, not against knowing the headline.
+- **Adopt at work?** Yes. It is the cheapest guard against "we found a pattern in noise". It costs half your data for discovery, so it fits best when n is in the thousands (the mass tier).
