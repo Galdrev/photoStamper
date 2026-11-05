@@ -89,15 +89,18 @@ jobs:
         run: |
           for f in logs/*.log; do echo "== $f: $(wc -l < $f) lines, errors: $(grep -ciE 'traceback|error' $f)"; done | tee logs/summary.log
           grep -h -A3 Traceback logs/*.log | head -60 || true
-      - name: Commit results to a per-run branch (never conflicts with other writers)
+      - name: Upload results as artifact (backup copy)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: main-results
+          retention-days: 7
+          path: |
+            wikitrends/data/*.json
+            wikitrends/data/fetch_errors.log
+            wikitrends/logs/*.log
+      - name: Push results to the data-only branch (wikitrends-data/main/<run_id>)
         if: always()
         run: |
-          git config user.name "wikitrends-bot"
-          git config user.email "actions@users.noreply.github.com"
           mkdir -p wikitrends/data/runlogs && cp wikitrends/logs/*.log wikitrends/data/runlogs/ 2>/dev/null || true
-          git checkout -q -b results/${{ github.run_id }}
-          for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json narrative.json wikidata_types.json cohere_deep.json event_clean.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
-          git add -f wikitrends/data/runlogs/*.log 2>/dev/null || true
-          git commit -qm "Results of run ${{ github.run_id }} [skip ci]" || exit 0
-          for i in 1 2 3; do git push -q origin results/${{ github.run_id }} && break; sleep 10; done
-          echo "pushed results/${{ github.run_id }}"
+          .github/scripts/push_data.sh main data/results.json data/leads.json data/kwic.json data/qa.json data/bisect.json data/crosslang.json data/narrative.json data/wikidata_types.json data/cohere_deep.json data/event_clean.json data/manifest.json data/fetch_errors.log data/runlogs

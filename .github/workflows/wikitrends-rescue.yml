@@ -1,0 +1,51 @@
+name: wikitrends-rescue
+# Recover results from another run's artifacts (when its own commit step failed) and push them to the data-only branch.
+#   kind=mass-narr: download narr-* shard artifacts, re-run merge + wikidata + cohere mass, push.
+#   kind=pilot:     download the 'pilot' artifact, push.
+# Triggered by a push to branch wikitrends-rescue; inputs come from wikitrends/RESCUE ("<run_id> <kind>"), since
+# workflow_dispatch needs the workflow on the default branch.
+on:
+  push:
+    branches: [wikitrends-rescue]
+permissions:
+  contents: write
+  actions: read
+defaults:
+  run:
+    shell: bash
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  rescue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy pandas statsmodels
+      - name: Read inputs
+        id: in
+        run: read RID KIND < wikitrends/RESCUE && echo "run_id=$RID" >> $GITHUB_OUTPUT && echo "kind=$KIND" >> $GITHUB_OUTPUT && echo "rescuing $KIND from run $RID"
+      - name: Download shard artifacts (mass-narr)
+        if: steps.in.outputs.kind == 'mass-narr'
+        uses: actions/download-artifact@v4
+        with: {path: wikitrends/data/mass/, pattern: 'narr-*', merge-multiple: true, run-id: '${{ steps.in.outputs.run_id }}', github-token: '${{ github.token }}'}
+      - name: Download pilot artifact
+        if: steps.in.outputs.kind == 'pilot'
+        uses: actions/download-artifact@v4
+        with: {name: pilot, path: wikitrends/data/pilot/, run-id: '${{ steps.in.outputs.run_id }}', github-token: '${{ github.token }}'}
+      - name: Rebuild mass-narr outputs
+        if: steps.in.outputs.kind == 'mass-narr'
+        working-directory: wikitrends
+        run: |
+          ls -la data/mass/
+          python mass_narr.py merge 2>&1 | tee mass_narr.log
+          WT_JOB=wikidata python wikidata.py 2>&1 | tee -a mass_narr.log || echo "::warning::wikidata failed"
+          python cohere.py mass 2>&1 | tee -a mass_narr.log || echo "::warning::cohere failed"
+      - name: Push (mass-narr)
+        if: steps.in.outputs.kind == 'mass-narr'
+        run: .github/scripts/push_data.sh mass-narr-rescue data/mass_narr.json data/cohere_mass.json data/mass_leads.json.gz data/wikidata_types.json mass_narr.log
+      - name: Push (pilot)
+        if: steps.in.outputs.kind == 'pilot'
+        run: .github/scripts/push_data.sh pilot-rescue data/pilot

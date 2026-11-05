@@ -50,11 +50,18 @@ jobs:
           python mass_narr.py merge 2>&1 | tee mass_narr.log
           WT_JOB=wikidata python wikidata.py 2>&1 | tee -a mass_narr.log
           python cohere.py mass 2>&1 | tee -a mass_narr.log
-      - name: Commit to a per-run branch
+      - name: Upload merged results as artifact (backup copy)
         if: always()
-        run: |
-          git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
-          git checkout -q -b results/mass-narr-${{ github.run_id }}
-          for f in wikitrends/data/mass_narr.json wikitrends/data/wikidata_types.json wikitrends/data/cohere_mass.json wikitrends/data/mass_leads.json.gz wikitrends/mass_narr.log; do [ -f $f ] && git add -f $f; done
-          git commit -qm "Mass narrative results (run ${{ github.run_id }}) [skip ci]" || exit 0
-          git push -q origin results/mass-narr-${{ github.run_id }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-narr-results
+          retention-days: 7
+          path: |
+            wikitrends/data/mass_narr.json
+            wikitrends/data/cohere_mass.json
+            wikitrends/data/mass_leads.json.gz
+            wikitrends/data/wikidata_types.json
+            wikitrends/mass_narr.log
+      - name: Push to the data-only branch (wikitrends-data/mass-narr/<run_id>)
+        if: always()
+        run: .github/scripts/push_data.sh mass-narr data/mass_narr.json data/cohere_mass.json data/mass_leads.json.gz data/wikidata_types.json mass_narr.log

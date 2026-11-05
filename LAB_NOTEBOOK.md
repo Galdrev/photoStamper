@@ -135,3 +135,9 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 - **Setup:** three analyst agents, each owning a set of angles: when/where/what-words; how/who; story/sources/languages. They share one brief. Every pattern comes back as a card with: what we see, chart data, confidence (STRONG / SUGGESTIVE / ANECDOTE), "so what" and a caveat. A synthesis pass follows, then the page.
 - **Kept from the academic phase:** the comparison group and the confidence label. Dropped: pre-registration ceremony, BH corrections and holdout splits for new angles.
 - **Adopt at work?** Yes. A card format with a forced confidence label lets you explore freely without the deck overclaiming.
+
+## #46 The results push that said "pushed" and wasn't (2026-11-05)
+- **What happened:** the main run finished, then its commit step was refused. GitHub won't let the bot create a branch whose history adds a workflow file that is new relative to the nearest ref. My echo after the retry loop still printed "pushed". The run left no artifact, so its results are gone and the run is repeated.
+- **Fix:** `push_data.sh` pushes results to an orphan branch, `wikitrends-data`, whose history never contains workflow files. That is the same trick that has always worked for status heartbeats. It exits non-zero on failure. Every workflow now also uploads an artifact as a backup. A rescue workflow can pull another run's artifacts and push them, which saves the in-flight mass-narr and pilot runs that still use the old commit step.
+- **Second silent-success bug today** (after #44). Pattern: any "done" message must be conditional on the thing actually happening.
+- **Adopt at work?** Yes. Keep results in a separate data-only branch or bucket, decoupled from code history. And always keep a second copy until the first is verified.

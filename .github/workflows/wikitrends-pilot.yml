@@ -1,5 +1,5 @@
 name: wikitrends-pilot
-# Pilot collector for new signals (wikitrends/pilot.py): ~168 articles, results committed to results/pilot-<run_id>
+# Pilot collector for new signals (wikitrends/pilot.py): ~168 articles, results pushed to wikitrends-data/pilot/<run_id>
 # launch 2026-11-05
 on:
   workflow_dispatch:
@@ -37,11 +37,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with: {name: 'pilot', path: 'wikitrends/data/pilot/', retention-days: 7, overwrite: true}
-      - name: Commit to a per-run branch
+      - name: Push to the data-only branch (wikitrends-data/pilot/<run_id>)
         if: always()
-        run: |
-          git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
-          git checkout -q -b results/pilot-${{ github.run_id }}
-          for f in wikitrends/data/pilot/pilot.json wikitrends/data/pilot/summary.json wikitrends/logs/pilot.log; do [ -f $f ] && git add -f $f; done
-          git commit -qm "Pilot signals (run ${{ github.run_id }}) [skip ci]" || exit 0
-          git push -q origin results/pilot-${{ github.run_id }}
+        run: .github/scripts/push_data.sh pilot data/pilot
