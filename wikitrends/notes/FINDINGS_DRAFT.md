@@ -54,3 +54,22 @@ Source: data/blind/blind_summary.json
 
 ## Lexicon precision (480 hits hand-coded by agent; data/kwic_coded.json)
 Precision: apartheid, ethnic cleansing, occupation, antisemitism/persecution 1.00; settler-colonial 0.975; war crimes 0.95; militant 0.95; genocide 0.925; terrorism 0.925; Nakba/expulsion 0.90; placebo geography 0.825; indigenous/homeland 0.725 ("Land of Israel" used as a place name inflates the topic-side connection count). The connection lexicon excludes Palestinian homeland/indigeneity terms by design, so it measures one narrative. 2 of 40 "colonial" hits are historical Zionist self-descriptions.
+
+## Narrative coding (exploratory; the 45 leads whose change was coded directional; masked, not blind)
+Source: data/blind/narr_codes_*.json, finals.json. Agreement check: 11/15 double-coded items share the main theme (73%; gate ≥60% passed); mean code-set Jaccard 0.89.
+- Directional changes: topic 21 harsher / 12 gentler; comparison 5 harsher / 7 gentler.
+- Top themes in topic changes:
+  - events added (15);
+  - more appeals to authority, such as courts, UN and rights groups (11);
+  - events removed (9);
+  - harsher labels (9);
+  - attributed claim turned into stated fact (8).
+  - Comparison: events added (7), stated as fact (5), harsher labels (4), more legitimising (4).
+- Tone moved from encyclopedic to leaning or advocacy in 12/33 topic changes vs 4/12 comparison changes.
+- Examples (coder summaries):
+  - Israeli apartheid: "states as fact that an apartheid system exists… where A presented apartheid as a contested analogy";
+  - Blockade of the Gaza Strip: "illegal collective punishment… where A presented it as a response to an armed group's takeover";
+  - IDF: operations and honours replaced by "accusations of abuse and genocide";
+  - Purity of arms: "states as fact that the actor has committed many war crimes and a genocide";
+  - Counter-direction: Qutbism, "states plainly that the ideology advocates extremist violence… where A attributed that description to others".
+- Caveat: small n (45). Coders could re-identify articles (83% in the blinding test).
