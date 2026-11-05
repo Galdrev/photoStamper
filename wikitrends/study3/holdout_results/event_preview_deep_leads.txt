@@ -1,0 +1,6 @@
+lead unfiltered   topic +9.25  comparison +2.48  DiD +6.77 [-2.38,+16.17]  n=276,88
+lead resid_share  topic +8.38  comparison +1.23  DiD +7.14 [-2.13,+17.02]  n=276,88
+lead event_share  topic +0.88  comparison +1.25  DiD -0.37 [-2.45,+1.20]  n=276,88
+treatment event-sentence share of lead: 2021 0.01 → 2026 0.035
+control event-sentence share of lead: 2021 0.007 → 2026 0.038
+top residual movers: [('Genocide of indigenous peoples', 433.5, 0.0), ('Antisemitism in Europe', 266.7, 0.0), ('List of genocides', 200.2, 0.0), ('Criticism of Israel', 183.3, 0.0), ('1949–1956 Palestinian expulsions', 122.4, 0.0), ('Toshavim and Megorashim', 116.3, 0.0), ('Israeli Declaration of Independence', 112.4, 0.0), ('Deir Yassin massacre', 97.6, 0.0), ('Zionism', 97.1, 0.0), ('Labour Against the Witchhunt', 86.2, 0.0), ('Palestine Liberation Organization', 85.8, 0.0), ('Blockade of the Gaza Strip', 82.5, 0.0)]
