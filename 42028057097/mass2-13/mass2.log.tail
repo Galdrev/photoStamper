@@ -1,9 +1,3 @@
-[hb mass2-13] m2-13 0/645 el=1.0m eta=Nonem req=63 429=6 5xx=0 retries=6 fail=0
-[hb mass2-13] m2-13 3/645 el=1.8m eta=389.0m req=97 429=12 5xx=0 retries=12 fail=0
-[hb mass2-13] m2-13 4/645 el=2.0m eta=321.2m req=119 429=12 5xx=0 retries=12 fail=0
-[hb mass2-13] m2-13 7/645 el=2.8m eta=258.2m req=155 429=18 5xx=0 retries=18 fail=0
-[hb mass2-13] m2-13 9/645 el=3.0m eta=212.3m req=176 429=18 5xx=0 retries=18 fail=0
-[hb mass2-13] m2-13 11/645 el=3.9m eta=226.7m req=223 429=24 5xx=0 retries=24 fail=0
 [hb mass2-13] m2-13 11/645 el=4.0m eta=230.8m req=231 429=24 5xx=0 retries=24 fail=0
 [hb mass2-13] m2-13 15/645 el=5.0m eta=208.2m req=281 429=30 5xx=0 retries=30 fail=0
 [hb mass2-13] m2-13 15/645 el=5.0m eta=210.2m req=288 429=30 5xx=0 retries=30 fail=0
@@ -38,3 +32,9 @@
 [hb mass2-13] m2-13 63/645 el=20.0m eta=184.8m req=1128 429=120 5xx=0 retries=120 fail=0
 [hb mass2-13] m2-13 67/645 el=20.9m eta=180.1m req=1168 429=126 5xx=0 retries=126 fail=0
 [hb mass2-13] m2-13 69/645 el=21.0m eta=175.3m req=1184 429=126 5xx=0 retries=126 fail=0
+[hb mass2-13] m2-13 70/645 el=21.9m eta=179.8m req=1226 429=132 5xx=0 retries=132 fail=0
+[hb mass2-13] m2-13 70/645 el=22.0m eta=180.8m req=1239 429=132 5xx=0 retries=132 fail=0
+[hb mass2-13] m2-13 74/645 el=22.9m eta=177.0m req=1287 429=138 5xx=0 retries=138 fail=0
+[hb mass2-13] m2-13 74/645 el=23.0m eta=177.5m req=1295 429=138 5xx=0 retries=138 fail=0
+[hb mass2-13] m2-13 77/645 el=23.8m eta=175.6m req=1327 429=144 5xx=0 retries=144 fail=0
+[hb mass2-13] m2-13 78/645 el=24.0m eta=174.5m req=1351 429=144 5xx=0 retries=144 fail=0
