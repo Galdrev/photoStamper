@@ -1,0 +1,240 @@
+{
+ "treatment": {
+  "n": 371,
+  "terms": {
+   "Southern Levant": {
+    "lead0": 3,
+    "lead1": 10,
+    "fs0": 1,
+    "fs1": 7
+   },
+   "Land of Israel/Eretz": {
+    "lead0": 20,
+    "lead1": 24,
+    "fs0": 10,
+    "fs1": 8
+   },
+   "Palestine(word)": {
+    "lead0": 78,
+    "lead1": 89,
+    "fs0": 30,
+    "fs1": 43
+   },
+   "Judea and Samaria": {
+    "lead0": 2,
+    "lead1": 3,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "colon*": {
+    "lead0": 13,
+    "lead1": 13,
+    "fs0": 2,
+    "fs1": 5
+   },
+   "ethnic cleansing": {
+    "lead0": 3,
+    "lead1": 4,
+    "fs0": 0,
+    "fs1": 1
+   },
+   "genocid": {
+    "lead0": 12,
+    "lead1": 26,
+    "fs0": 6,
+    "fs1": 7
+   },
+   "apartheid": {
+    "lead0": 5,
+    "lead1": 12,
+    "fs0": 1,
+    "fs1": 1
+   },
+   "Nakba": {
+    "lead0": 8,
+    "lead1": 18,
+    "fs0": 5,
+    "fs1": 6
+   },
+   "Zionist(s) as actor": {
+    "lead0": 50,
+    "lead1": 68,
+    "fs0": 22,
+    "fs1": 25
+   },
+   "occupied/occupation": {
+    "lead0": 50,
+    "lead1": 53,
+    "fs0": 7,
+    "fs1": 12
+   },
+   "terroris": {
+    "lead0": 23,
+    "lead1": 23,
+    "fs0": 11,
+    "fs1": 9
+   },
+   "militant": {
+    "lead0": 21,
+    "lead1": 24,
+    "fs0": 7,
+    "fs1": 11
+   },
+   "hedge(alleg/accus/described as)": {
+    "lead0": 50,
+    "lead1": 64,
+    "fs0": 8,
+    "fs1": 9
+   },
+   "indigenous": {
+    "lead0": 5,
+    "lead1": 8,
+    "fs0": 2,
+    "fs1": 1
+   },
+   "homeland": {
+    "lead0": 13,
+    "lead1": 11,
+    "fs0": 5,
+    "fs1": 1
+   },
+   "Holocaust": {
+    "lead0": 32,
+    "lead1": 35,
+    "fs0": 9,
+    "fs1": 7
+   },
+   "antisemit": {
+    "lead0": 37,
+    "lead1": 54,
+    "fs0": 17,
+    "fs1": 19
+   },
+   "massacre": {
+    "lead0": 12,
+    "lead1": 20,
+    "fs0": 5,
+    "fs1": 5
+   }
+  }
+ },
+ "control": {
+  "n": 92,
+  "terms": {
+   "Southern Levant": {
+    "lead0": 0,
+    "lead1": 0,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "Land of Israel/Eretz": {
+    "lead0": 0,
+    "lead1": 0,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "Palestine(word)": {
+    "lead0": 1,
+    "lead1": 1,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "Judea and Samaria": {
+    "lead0": 0,
+    "lead1": 0,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "colon*": {
+    "lead0": 14,
+    "lead1": 16,
+    "fs0": 1,
+    "fs1": 2
+   },
+   "ethnic cleansing": {
+    "lead0": 6,
+    "lead1": 6,
+    "fs0": 1,
+    "fs1": 1
+   },
+   "genocid": {
+    "lead0": 11,
+    "lead1": 17,
+    "fs0": 5,
+    "fs1": 5
+   },
+   "apartheid": {
+    "lead0": 2,
+    "lead1": 2,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "Nakba": {
+    "lead0": 0,
+    "lead1": 0,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "Zionist(s) as actor": {
+    "lead0": 0,
+    "lead1": 0,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "occupied/occupation": {
+    "lead0": 11,
+    "lead1": 13,
+    "fs0": 1,
+    "fs1": 0
+   },
+   "terroris": {
+    "lead0": 12,
+    "lead1": 14,
+    "fs0": 2,
+    "fs1": 0
+   },
+   "militant": {
+    "lead0": 12,
+    "lead1": 11,
+    "fs0": 4,
+    "fs1": 7
+   },
+   "hedge(alleg/accus/described as)": {
+    "lead0": 14,
+    "lead1": 16,
+    "fs0": 1,
+    "fs1": 0
+   },
+   "indigenous": {
+    "lead0": 13,
+    "lead1": 10,
+    "fs0": 6,
+    "fs1": 4
+   },
+   "homeland": {
+    "lead0": 7,
+    "lead1": 8,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "Holocaust": {
+    "lead0": 1,
+    "lead1": 1,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "antisemit": {
+    "lead0": 0,
+    "lead1": 0,
+    "fs0": 0,
+    "fs1": 0
+   },
+   "massacre": {
+    "lead0": 12,
+    "lead1": 18,
+    "fs0": 2,
+    "fs1": 1
+   }
+  }
+ }
+}

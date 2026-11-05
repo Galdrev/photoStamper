@@ -1,0 +1,173 @@
+{
+ "note": "share of critical-term insertions/removals in key-article leads still in place 30 days later, by year of edit",
+ "rows": [
+  {
+   "group": "comparison",
+   "year": 2021,
+   "kind": "insert",
+   "survive_30d": 0.52,
+   "n": 31
+  },
+  {
+   "group": "comparison",
+   "year": 2021,
+   "kind": "remove",
+   "survive_30d": 0.17,
+   "n": 30
+  },
+  {
+   "group": "comparison",
+   "year": 2022,
+   "kind": "insert",
+   "survive_30d": 0.5,
+   "n": 8
+  },
+  {
+   "group": "comparison",
+   "year": 2022,
+   "kind": "remove",
+   "survive_30d": 0.3,
+   "n": 10
+  },
+  {
+   "group": "comparison",
+   "year": 2023,
+   "kind": "insert",
+   "survive_30d": 0.83,
+   "n": 6
+  },
+  {
+   "group": "comparison",
+   "year": 2023,
+   "kind": "remove",
+   "survive_30d": 0.33,
+   "n": 6
+  },
+  {
+   "group": "comparison",
+   "year": 2024,
+   "kind": "insert",
+   "survive_30d": 0.53,
+   "n": 19
+  },
+  {
+   "group": "comparison",
+   "year": 2024,
+   "kind": "remove",
+   "survive_30d": 0.38,
+   "n": 16
+  },
+  {
+   "group": "comparison",
+   "year": 2025,
+   "kind": "insert",
+   "survive_30d": 0.5,
+   "n": 4
+  },
+  {
+   "group": "comparison",
+   "year": 2025,
+   "kind": "remove",
+   "survive_30d": 0.57,
+   "n": 7
+  },
+  {
+   "group": "comparison",
+   "year": 2026,
+   "kind": "insert",
+   "survive_30d": 0.71,
+   "n": 7
+  },
+  {
+   "group": "comparison",
+   "year": 2026,
+   "kind": "remove",
+   "survive_30d": 0.14,
+   "n": 7
+  },
+  {
+   "group": "topic",
+   "year": 2021,
+   "kind": "insert",
+   "survive_30d": 0.62,
+   "n": 8
+  },
+  {
+   "group": "topic",
+   "year": 2021,
+   "kind": "remove",
+   "survive_30d": 0.25,
+   "n": 8
+  },
+  {
+   "group": "topic",
+   "year": 2022,
+   "kind": "insert",
+   "survive_30d": 0.32,
+   "n": 28
+  },
+  {
+   "group": "topic",
+   "year": 2022,
+   "kind": "remove",
+   "survive_30d": 0.27,
+   "n": 26
+  },
+  {
+   "group": "topic",
+   "year": 2023,
+   "kind": "insert",
+   "survive_30d": 0.19,
+   "n": 90
+  },
+  {
+   "group": "topic",
+   "year": 2023,
+   "kind": "remove",
+   "survive_30d": 0.21,
+   "n": 85
+  },
+  {
+   "group": "topic",
+   "year": 2024,
+   "kind": "insert",
+   "survive_30d": 0.42,
+   "n": 80
+  },
+  {
+   "group": "topic",
+   "year": 2024,
+   "kind": "remove",
+   "survive_30d": 0.34,
+   "n": 73
+  },
+  {
+   "group": "topic",
+   "year": 2025,
+   "kind": "insert",
+   "survive_30d": 0.46,
+   "n": 48
+  },
+  {
+   "group": "topic",
+   "year": 2025,
+   "kind": "remove",
+   "survive_30d": 0.35,
+   "n": 43
+  },
+  {
+   "group": "topic",
+   "year": 2026,
+   "kind": "insert",
+   "survive_30d": 0.77,
+   "n": 13
+  },
+  {
+   "group": "topic",
+   "year": 2026,
+   "kind": "remove",
+   "survive_30d": 0.5,
+   "n": 14
+  }
+ ]
+}

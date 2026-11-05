@@ -1,0 +1,1857 @@
+{
+ "legend": "terms present in lead: C colonial, G genocide, A apartheid, O occupation, E ethnic cleansing; first pre-war snapshot (or first available) vs 2026-10",
+ "matrix": {
+  "Zionism": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial"
+    ],
+    "after": [
+     "colonial"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "colonial"
+    ]
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "colonial"
+    ]
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial"
+    ],
+    "after": [
+     "colonial"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   }
+  },
+  "Israel": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "colonial",
+     "genocide",
+     "occupation"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "apartheid",
+     "occupation"
+    ]
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "genocide",
+     "occupation"
+    ]
+   }
+  },
+  "Hamas": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   }
+  },
+  "Nakba": {
+   "en": {
+    "start": "2021-07",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": []
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "ethnic_cleansing"
+    ],
+    "after": [
+     "ethnic_cleansing"
+    ]
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "ethnic_cleansing"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "ethnic_cleansing",
+     "occupation"
+    ]
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "ethnic_cleansing"
+    ]
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "ethnic_cleansing"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "colonial"
+    ]
+   },
+   "pl": {
+    "start": "2025-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "ethnic_cleansing"
+    ],
+    "after": [
+     "ethnic_cleansing"
+    ]
+   }
+  },
+  "October 7 attacks": {
+   "en": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "genocide",
+     "occupation"
+    ]
+   },
+   "de": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "fr": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "es": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "it": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "nl": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "colonial"
+    ],
+    "after": [
+     "colonial"
+    ]
+   },
+   "ru": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "genocide",
+     "occupation"
+    ]
+   },
+   "he": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "ar": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "pl": null,
+   "pt": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   }
+  },
+  "Gaza genocide": {
+   "en": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "de": null,
+   "fr": {
+    "start": "2024-04",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide",
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2025-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "ethnic_cleansing",
+     "genocide",
+     "occupation"
+    ]
+   },
+   "it": {
+    "start": "2025-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide",
+     "occupation"
+    ]
+   },
+   "nl": {
+    "start": "2025-07",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "ru": null,
+   "he": null,
+   "ar": {
+    "start": "2024-07",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": []
+   },
+   "pl": {
+    "start": "2025-04",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "pt": {
+    "start": "2024-07",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   }
+  },
+  "Gaza war": {
+   "en": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "de": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "fr": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "colonial",
+     "genocide",
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "it": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide",
+     "occupation"
+    ]
+   },
+   "nl": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "ru": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "he": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "ar": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "genocide",
+     "occupation"
+    ]
+   },
+   "pl": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "pt": {
+    "start": "2024-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   }
+  },
+  "Israeli–Palestinian conflict": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "colonial",
+     "genocide",
+     "occupation"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "colonial"
+    ]
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   }
+  },
+  "Antisemitism": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   }
+  },
+  "Anti-Zionism": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "colonial"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   }
+  },
+  "History of Israel": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "de": null,
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "es": null,
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "nl": null,
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   }
+  },
+  "Jews": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   }
+  },
+  "Israeli apartheid": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "occupation"
+    ]
+   },
+   "de": null,
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ]
+   },
+   "it": null,
+   "nl": {
+    "start": "2022-04",
+    "end": "2026-10",
+    "before": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ]
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid"
+    ],
+    "after": [
+     "apartheid"
+    ]
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid"
+    ],
+    "after": [
+     "apartheid"
+    ]
+   },
+   "pl": {
+    "start": "2026-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid",
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "occupation"
+    ]
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "apartheid",
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "occupation"
+    ]
+   }
+  },
+  "West Bank": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "occupation"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "apartheid",
+     "colonial",
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "colonial"
+    ]
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial"
+    ],
+    "after": []
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "colonial"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   }
+  },
+  "Israeli settlement": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "colonial",
+     "occupation"
+    ]
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial"
+    ],
+    "after": [
+     "colonial"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   }
+  },
+  "Balfour Declaration": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial"
+    ],
+    "after": []
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   }
+  },
+  "Kurdish nationalism": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": []
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-10",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "nl": null,
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": null,
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pl": null,
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "genocide",
+     "occupation"
+    ]
+   }
+  },
+  "Russo-Ukrainian War": {
+   "en": null,
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": []
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "ru": {
+    "start": "2022-04",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   },
+   "he": {
+    "start": "2021-07",
+    "end": "2026-10",
+    "before": [
+     "occupation"
+    ],
+    "after": [
+     "occupation"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": [
+     "occupation"
+    ]
+   }
+  },
+  "Armenian genocide": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "ethnic_cleansing",
+     "genocide"
+    ]
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "ethnic_cleansing",
+     "genocide"
+    ],
+    "after": [
+     "ethnic_cleansing",
+     "genocide"
+    ]
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "genocide"
+    ],
+    "after": [
+     "genocide"
+    ]
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [
+     "colonial",
+     "genocide"
+    ],
+    "after": [
+     "colonial",
+     "genocide"
+    ]
+   }
+  },
+  "Kashmir conflict": {
+   "en": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "de": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "fr": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "es": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "it": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "nl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ru": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "he": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "ar": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pl": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   },
+   "pt": {
+    "start": "2021-01",
+    "end": "2026-10",
+    "before": [],
+    "after": []
+   }
+  }
+ },
+ "terms_added_by_lang_topic16": {
+  "en": {
+   "n": 16,
+   "+apartheid": 3,
+   "+genocide": 6,
+   "+colonial": 4,
+   "-occupation": 3,
+   "-colonial": 1
+  },
+  "de": {
+   "n": 13,
+   "+occupation": 2,
+   "+genocide": 1
+  },
+  "fr": {
+   "n": 16,
+   "+apartheid": 2,
+   "+occupation": 6,
+   "+colonial": 3,
+   "+ethnic_cleansing": 1,
+   "-colonial": 2
+  },
+  "es": {
+   "n": 15,
+   "+occupation": 3,
+   "+ethnic_cleansing": 2,
+   "+genocide": 2,
+   "-colonial": 1
+  },
+  "it": {
+   "n": 15,
+   "+colonial": 3,
+   "+occupation": 5,
+   "-colonial": 1,
+   "+genocide": 2,
+   "-occupation": 1
+  },
+  "nl": {
+   "n": 15,
+   "+colonial": 2,
+   "+apartheid": 1,
+   "+occupation": 1,
+   "+ethnic_cleansing": 1,
+   "-apartheid": 1,
+   "-occupation": 2,
+   "-colonial": 3,
+   "+genocide": 1
+  },
+  "ru": {
+   "n": 15,
+   "+genocide": 3
+  },
+  "he": {
+   "n": 15,
+   "+occupation": 4,
+   "+ethnic_cleansing": 1,
+   "+genocide": 2
+  },
+  "ar": {
+   "n": 16,
+   "+colonial": 3,
+   "-occupation": 2,
+   "-genocide": 1,
+   "+genocide": 2
+  },
+  "pl": {
+   "n": 15,
+   "+genocide": 1,
+   "+occupation": 3
+  },
+  "pt": {
+   "n": 16,
+   "+genocide": 1,
+   "-colonial": 2
+  }
+ }
+}

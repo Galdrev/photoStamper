@@ -1,0 +1,166 @@
+{
+ "x": "edit-activity decile (2021-2026 edits, pooled)",
+ "y": "share of articles gaining critical terms 2023-07 to 2026-11",
+ "rows": [
+  {
+   "decile": 1,
+   "group": "comparison",
+   "median_edits": 11.0,
+   "share_gain": 0.0,
+   "share_lose": 0.006,
+   "n": 340
+  },
+  {
+   "decile": 1,
+   "group": "topic",
+   "median_edits": 12.0,
+   "share_gain": 0.019,
+   "share_lose": 0.002,
+   "n": 578
+  },
+  {
+   "decile": 2,
+   "group": "comparison",
+   "median_edits": 23.0,
+   "share_gain": 0.011,
+   "share_lose": 0.008,
+   "n": 353
+  },
+  {
+   "decile": 2,
+   "group": "topic",
+   "median_edits": 23.0,
+   "share_gain": 0.039,
+   "share_lose": 0.009,
+   "n": 564
+  },
+  {
+   "decile": 3,
+   "group": "comparison",
+   "median_edits": 36.0,
+   "share_gain": 0.018,
+   "share_lose": 0.0,
+   "n": 392
+  },
+  {
+   "decile": 3,
+   "group": "topic",
+   "median_edits": 35.0,
+   "share_gain": 0.046,
+   "share_lose": 0.025,
+   "n": 526
+  },
+  {
+   "decile": 4,
+   "group": "comparison",
+   "median_edits": 52.0,
+   "share_gain": 0.019,
+   "share_lose": 0.007,
+   "n": 418
+  },
+  {
+   "decile": 4,
+   "group": "topic",
+   "median_edits": 50.0,
+   "share_gain": 0.082,
+   "share_lose": 0.032,
+   "n": 499
+  },
+  {
+   "decile": 5,
+   "group": "comparison",
+   "median_edits": 73.0,
+   "share_gain": 0.032,
+   "share_lose": 0.018,
+   "n": 498
+  },
+  {
+   "decile": 5,
+   "group": "topic",
+   "median_edits": 72.0,
+   "share_gain": 0.079,
+   "share_lose": 0.031,
+   "n": 420
+  },
+  {
+   "decile": 6,
+   "group": "comparison",
+   "median_edits": 102.0,
+   "share_gain": 0.053,
+   "share_lose": 0.033,
+   "n": 546
+  },
+  {
+   "decile": 6,
+   "group": "topic",
+   "median_edits": 101.0,
+   "share_gain": 0.119,
+   "share_lose": 0.051,
+   "n": 371
+  },
+  {
+   "decile": 7,
+   "group": "comparison",
+   "median_edits": 144.0,
+   "share_gain": 0.047,
+   "share_lose": 0.018,
+   "n": 559
+  },
+  {
+   "decile": 7,
+   "group": "topic",
+   "median_edits": 145.0,
+   "share_gain": 0.19,
+   "share_lose": 0.042,
+   "n": 358
+  },
+  {
+   "decile": 8,
+   "group": "comparison",
+   "median_edits": 216.0,
+   "share_gain": 0.079,
+   "share_lose": 0.041,
+   "n": 606
+  },
+  {
+   "decile": 8,
+   "group": "topic",
+   "median_edits": 219.0,
+   "share_gain": 0.24,
+   "share_lose": 0.074,
+   "n": 312
+  },
+  {
+   "decile": 9,
+   "group": "comparison",
+   "median_edits": 359.0,
+   "share_gain": 0.106,
+   "share_lose": 0.053,
+   "n": 663
+  },
+  {
+   "decile": 9,
+   "group": "topic",
+   "median_edits": 344.5,
+   "share_gain": 0.299,
+   "share_lose": 0.063,
+   "n": 254
+  },
+  {
+   "decile": 10,
+   "group": "comparison",
+   "median_edits": 811.0,
+   "share_gain": 0.185,
+   "share_lose": 0.106,
+   "n": 729
+  },
+  {
+   "decile": 10,
+   "group": "topic",
+   "median_edits": 730.0,
+   "share_gain": 0.413,
+   "share_lose": 0.116,
+   "n": 189
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "note": "articles in the top 3 activity quintiles; revert-rate terciles within each quintile",
+ "rows": [
+  {
+   "group": "comparison",
+   "revert_tercile": "low",
+   "median_revert_rate": 0.048,
+   "share_gain": 0.105,
+   "n": 1056
+  },
+  {
+   "group": "comparison",
+   "revert_tercile": "mid",
+   "median_revert_rate": 0.127,
+   "share_gain": 0.103,
+   "n": 1259
+  },
+  {
+   "group": "comparison",
+   "revert_tercile": "high",
+   "median_revert_rate": 0.238,
+   "share_gain": 0.065,
+   "n": 1286
+  },
+  {
+   "group": "topic",
+   "revert_tercile": "low",
+   "median_revert_rate": 0.038,
+   "share_gain": 0.285,
+   "n": 780
+  },
+  {
+   "group": "topic",
+   "revert_tercile": "mid",
+   "median_revert_rate": 0.106,
+   "share_gain": 0.139,
+   "n": 574
+  },
+  {
+   "group": "topic",
+   "revert_tercile": "high",
+   "median_revert_rate": 0.213,
+   "share_gain": 0.131,
+   "n": 550
+  }
+ ]
+}

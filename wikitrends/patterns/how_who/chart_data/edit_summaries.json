@@ -1,0 +1,84 @@
+{
+ "note": "reasons named in edit summaries of lasting first-sentence changes (bisect.json, reverted excluded); keyword-coded; categories overlap",
+ "by_group": {
+  "comparison": {
+   "empty": 0.216,
+   "revert": 0.114,
+   "talk/consensus": 0.08,
+   "sources": 0.068,
+   "policy (NPOV/DUE/OR)": 0.091,
+   "wording/copyedit": 0.102
+  },
+  "topic": {
+   "empty": 0.183,
+   "revert": 0.029,
+   "talk/consensus": 0.072,
+   "sources": 0.091,
+   "policy (NPOV/DUE/OR)": 0.115,
+   "wording/copyedit": 0.173
+  }
+ },
+ "n": {
+  "comparison": 88,
+  "topic": 208
+ },
+ "topic_by_direction": {
+  "adds critical": {
+   "empty": 0.0,
+   "revert": 0.0,
+   "talk/consensus": 0.111,
+   "sources": 0.111,
+   "policy (NPOV/DUE/OR)": 0.0,
+   "wording/copyedit": 0.222,
+   "n": 9
+  },
+  "adds hedge": {
+   "empty": 0.0,
+   "revert": 0.0,
+   "talk/consensus": 0.333,
+   "sources": 0.0,
+   "policy (NPOV/DUE/OR)": 0.333,
+   "wording/copyedit": 0.0,
+   "n": 3
+  },
+  "other": {
+   "empty": 0.199,
+   "revert": 0.032,
+   "talk/consensus": 0.065,
+   "sources": 0.097,
+   "policy (NPOV/DUE/OR)": 0.097,
+   "wording/copyedit": 0.167,
+   "n": 186
+  },
+  "removes critical": {
+   "empty": 0.167,
+   "revert": 0.0,
+   "talk/consensus": 0.167,
+   "sources": 0.0,
+   "policy (NPOV/DUE/OR)": 0.333,
+   "wording/copyedit": 0.333,
+   "n": 6
+  },
+  "removes hedge": {
+   "empty": 0.0,
+   "revert": 0.0,
+   "talk/consensus": 0.0,
+   "sources": 0.0,
+   "policy (NPOV/DUE/OR)": 0.75,
+   "wording/copyedit": 0.25,
+   "n": 4
+  }
+ },
+ "regulars": {
+  "n_editors_3plus_articles": 8,
+  "share_of_changes": 0.216,
+  "one_is_bot": "Monkbot (template task)",
+  "critical_adding_changes_by_regulars": "5 of 9",
+  "critical_removing_by_regulars": "1 of 6",
+  "copyedit_share_regulars": 0.29,
+  "copyedit_share_others": 0.14,
+  "matched_15_article_subsample_mean_editors_3plus": 4.29,
+  "matched_share": 0.16,
+  "comparison_editors_3plus": 0
+ }
+}

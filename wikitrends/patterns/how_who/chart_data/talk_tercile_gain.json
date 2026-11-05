@@ -1,0 +1,137 @@
+{
+ "note": "deep panel, pre-existing articles with >=20 edits; gain = crit rate (last 4 q minus first 11 q) > 0.2 per 10k words",
+ "rows": [
+  {
+   "group": "topic",
+   "stratum": "all",
+   "talk_tercile": "low",
+   "median_talk_per_edit": 0.03,
+   "share_gain": 0.222,
+   "n": 99
+  },
+  {
+   "group": "topic",
+   "stratum": "all",
+   "talk_tercile": "mid",
+   "median_talk_per_edit": 0.12,
+   "share_gain": 0.408,
+   "n": 98
+  },
+  {
+   "group": "topic",
+   "stratum": "all",
+   "talk_tercile": "high",
+   "median_talk_per_edit": 0.49,
+   "share_gain": 0.596,
+   "n": 99
+  },
+  {
+   "group": "topic",
+   "stratum": "less-edited half",
+   "talk_tercile": "low",
+   "share_gain": 0.221,
+   "n": 77
+  },
+  {
+   "group": "topic",
+   "stratum": "less-edited half",
+   "talk_tercile": "mid",
+   "share_gain": 0.277,
+   "n": 47
+  },
+  {
+   "group": "topic",
+   "stratum": "less-edited half",
+   "talk_tercile": "high",
+   "share_gain": 0.417,
+   "n": 24
+  },
+  {
+   "group": "topic",
+   "stratum": "more-edited half",
+   "talk_tercile": "low",
+   "share_gain": 0.227,
+   "n": 22
+  },
+  {
+   "group": "topic",
+   "stratum": "more-edited half",
+   "talk_tercile": "mid",
+   "share_gain": 0.529,
+   "n": 51
+  },
+  {
+   "group": "topic",
+   "stratum": "more-edited half",
+   "talk_tercile": "high",
+   "share_gain": 0.653,
+   "n": 75
+  },
+  {
+   "group": "comparison",
+   "stratum": "all",
+   "talk_tercile": "low",
+   "median_talk_per_edit": 0.06,
+   "share_gain": 0.467,
+   "n": 30
+  },
+  {
+   "group": "comparison",
+   "stratum": "all",
+   "talk_tercile": "mid",
+   "median_talk_per_edit": 0.2,
+   "share_gain": 0.433,
+   "n": 30
+  },
+  {
+   "group": "comparison",
+   "stratum": "all",
+   "talk_tercile": "high",
+   "median_talk_per_edit": 0.55,
+   "share_gain": 0.367,
+   "n": 30
+  },
+  {
+   "group": "comparison",
+   "stratum": "less-edited half",
+   "talk_tercile": "low",
+   "share_gain": 0.478,
+   "n": 23
+  },
+  {
+   "group": "comparison",
+   "stratum": "less-edited half",
+   "talk_tercile": "mid",
+   "share_gain": 0.286,
+   "n": 14
+  },
+  {
+   "group": "comparison",
+   "stratum": "less-edited half",
+   "talk_tercile": "high",
+   "share_gain": 0.25,
+   "n": 8
+  },
+  {
+   "group": "comparison",
+   "stratum": "more-edited half",
+   "talk_tercile": "low",
+   "share_gain": 0.429,
+   "n": 7
+  },
+  {
+   "group": "comparison",
+   "stratum": "more-edited half",
+   "talk_tercile": "mid",
+   "share_gain": 0.562,
+   "n": 16
+  },
+  {
+   "group": "comparison",
+   "stratum": "more-edited half",
+   "talk_tercile": "high",
+   "share_gain": 0.409,
+   "n": 22
+  }
+ ]
+}

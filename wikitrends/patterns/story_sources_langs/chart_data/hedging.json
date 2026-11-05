@@ -1,0 +1,606 @@
+{
+ "mass_full_text": {
+  "dates": [
+   "2021-01-01",
+   "2023-07-01",
+   "2026-11-05"
+  ],
+  "topic": [
+   0.21751740139211137,
+   0.21264367816091953,
+   0.24985623921794134
+  ],
+  "comparison": [
+   0.16725408522909324,
+   0.16652506372132542,
+   0.17162527661667076
+  ]
+ },
+ "deep_quarterly": {
+  "topic:full": [
+   {
+    "date": "2021-01",
+    "mentions": 941,
+    "hedged_share": 0.2614240170031881,
+    "unhedged_per_article": 2.0933734939759034
+   },
+   {
+    "date": "2021-04",
+    "mentions": 967,
+    "hedged_share": 0.26163391933815927,
+    "unhedged_per_article": 2.1506024096385543
+   },
+   {
+    "date": "2021-07",
+    "mentions": 977,
+    "hedged_share": 0.2610030706243603,
+    "unhedged_per_article": 2.174698795180723
+   },
+   {
+    "date": "2021-10",
+    "mentions": 991,
+    "hedged_share": 0.260343087790111,
+    "unhedged_per_article": 2.2078313253012047
+   },
+   {
+    "date": "2022-01",
+    "mentions": 991,
+    "hedged_share": 0.2613521695257316,
+    "unhedged_per_article": 2.2048192771084336
+   },
+   {
+    "date": "2022-04",
+    "mentions": 1020,
+    "hedged_share": 0.257843137254902,
+    "unhedged_per_article": 2.2801204819277108
+   },
+   {
+    "date": "2022-07",
+    "mentions": 1028,
+    "hedged_share": 0.26750972762645914,
+    "unhedged_per_article": 2.2680722891566263
+   },
+   {
+    "date": "2022-10",
+    "mentions": 1053,
+    "hedged_share": 0.2678062678062678,
+    "unhedged_per_article": 2.322289156626506
+   },
+   {
+    "date": "2023-01",
+    "mentions": 1072,
+    "hedged_share": 0.2658582089552239,
+    "unhedged_per_article": 2.3704819277108435
+   },
+   {
+    "date": "2023-04",
+    "mentions": 1097,
+    "hedged_share": 0.26071103008204194,
+    "unhedged_per_article": 2.4427710843373496
+   },
+   {
+    "date": "2023-07",
+    "mentions": 1114,
+    "hedged_share": 0.25763016157989227,
+    "unhedged_per_article": 2.4909638554216866
+   },
+   {
+    "date": "2023-10",
+    "mentions": 1130,
+    "hedged_share": 0.26371681415929205,
+    "unhedged_per_article": 2.5060240963855422
+   },
+   {
+    "date": "2024-01",
+    "mentions": 1158,
+    "hedged_share": 0.26424870466321243,
+    "unhedged_per_article": 2.566265060240964
+   },
+   {
+    "date": "2024-04",
+    "mentions": 1245,
+    "hedged_share": 0.25140562248995985,
+    "unhedged_per_article": 2.8072289156626504
+   },
+   {
+    "date": "2024-07",
+    "mentions": 1373,
+    "hedged_share": 0.24180626365622723,
+    "unhedged_per_article": 3.1355421686746987
+   },
+   {
+    "date": "2024-10",
+    "mentions": 1422,
+    "hedged_share": 0.25246132208157523,
+    "unhedged_per_article": 3.2018072289156625
+   },
+   {
+    "date": "2025-01",
+    "mentions": 1453,
+    "hedged_share": 0.2587749483826566,
+    "unhedged_per_article": 3.2439759036144578
+   },
+   {
+    "date": "2025-04",
+    "mentions": 1443,
+    "hedged_share": 0.2598752598752599,
+    "unhedged_per_article": 3.216867469879518
+   },
+   {
+    "date": "2025-07",
+    "mentions": 1458,
+    "hedged_share": 0.2606310013717421,
+    "unhedged_per_article": 3.246987951807229
+   },
+   {
+    "date": "2025-10",
+    "mentions": 1453,
+    "hedged_share": 0.26221610461114936,
+    "unhedged_per_article": 3.2289156626506026
+   },
+   {
+    "date": "2026-01",
+    "mentions": 1497,
+    "hedged_share": 0.2578490313961256,
+    "unhedged_per_article": 3.3463855421686746
+   },
+   {
+    "date": "2026-04",
+    "mentions": 1508,
+    "hedged_share": 0.2539787798408488,
+    "unhedged_per_article": 3.38855421686747
+   },
+   {
+    "date": "2026-07",
+    "mentions": 1471,
+    "hedged_share": 0.24881033310673012,
+    "unhedged_per_article": 3.3283132530120483
+   },
+   {
+    "date": "2026-10",
+    "mentions": 1474,
+    "hedged_share": 0.2503392130257802,
+    "unhedged_per_article": 3.3283132530120483
+   }
+  ],
+  "topic:lead": [
+   {
+    "date": "2021-01",
+    "mentions": 61,
+    "hedged_share": 0.3114754098360656,
+    "unhedged_per_article": 0.12650602409638553
+   },
+   {
+    "date": "2021-04",
+    "mentions": 63,
+    "hedged_share": 0.3333333333333333,
+    "unhedged_per_article": 0.12650602409638553
+   },
+   {
+    "date": "2021-07",
+    "mentions": 69,
+    "hedged_share": 0.3188405797101449,
+    "unhedged_per_article": 0.14156626506024098
+   },
+   {
+    "date": "2021-10",
+    "mentions": 71,
+    "hedged_share": 0.30985915492957744,
+    "unhedged_per_article": 0.14759036144578314
+   },
+   {
+    "date": "2022-01",
+    "mentions": 70,
+    "hedged_share": 0.3,
+    "unhedged_per_article": 0.14759036144578314
+   },
+   {
+    "date": "2022-04",
+    "mentions": 72,
+    "hedged_share": 0.3055555555555556,
+    "unhedged_per_article": 0.15060240963855423
+   },
+   {
+    "date": "2022-07",
+    "mentions": 82,
+    "hedged_share": 0.3780487804878049,
+    "unhedged_per_article": 0.1536144578313253
+   },
+   {
+    "date": "2022-10",
+    "mentions": 76,
+    "hedged_share": 0.39473684210526316,
+    "unhedged_per_article": 0.13855421686746988
+   },
+   {
+    "date": "2023-01",
+    "mentions": 75,
+    "hedged_share": 0.4,
+    "unhedged_per_article": 0.1355421686746988
+   },
+   {
+    "date": "2023-04",
+    "mentions": 76,
+    "hedged_share": 0.39473684210526316,
+    "unhedged_per_article": 0.13855421686746988
+   },
+   {
+    "date": "2023-07",
+    "mentions": 76,
+    "hedged_share": 0.39473684210526316,
+    "unhedged_per_article": 0.13855421686746988
+   },
+   {
+    "date": "2023-10",
+    "mentions": 75,
+    "hedged_share": 0.4533333333333333,
+    "unhedged_per_article": 0.12349397590361445
+   },
+   {
+    "date": "2024-01",
+    "mentions": 81,
+    "hedged_share": 0.43209876543209874,
+    "unhedged_per_article": 0.13855421686746988
+   },
+   {
+    "date": "2024-04",
+    "mentions": 86,
+    "hedged_share": 0.313953488372093,
+    "unhedged_per_article": 0.17771084337349397
+   },
+   {
+    "date": "2024-07",
+    "mentions": 90,
+    "hedged_share": 0.32222222222222224,
+    "unhedged_per_article": 0.18373493975903615
+   },
+   {
+    "date": "2024-10",
+    "mentions": 80,
+    "hedged_share": 0.2875,
+    "unhedged_per_article": 0.1716867469879518
+   },
+   {
+    "date": "2025-01",
+    "mentions": 86,
+    "hedged_share": 0.313953488372093,
+    "unhedged_per_article": 0.17771084337349397
+   },
+   {
+    "date": "2025-04",
+    "mentions": 85,
+    "hedged_share": 0.3058823529411765,
+    "unhedged_per_article": 0.17771084337349397
+   },
+   {
+    "date": "2025-07",
+    "mentions": 89,
+    "hedged_share": 0.29213483146067415,
+    "unhedged_per_article": 0.1897590361445783
+   },
+   {
+    "date": "2025-10",
+    "mentions": 93,
+    "hedged_share": 0.3010752688172043,
+    "unhedged_per_article": 0.19578313253012047
+   },
+   {
+    "date": "2026-01",
+    "mentions": 90,
+    "hedged_share": 0.2777777777777778,
+    "unhedged_per_article": 0.19578313253012047
+   },
+   {
+    "date": "2026-04",
+    "mentions": 89,
+    "hedged_share": 0.25842696629213485,
+    "unhedged_per_article": 0.19879518072289157
+   },
+   {
+    "date": "2026-07",
+    "mentions": 91,
+    "hedged_share": 0.25274725274725274,
+    "unhedged_per_article": 0.20481927710843373
+   },
+   {
+    "date": "2026-10",
+    "mentions": 89,
+    "hedged_share": 0.2808988764044944,
+    "unhedged_per_article": 0.1927710843373494
+   }
+  ],
+  "comparison:full": [
+   {
+    "date": "2021-01",
+    "mentions": 965,
+    "hedged_share": 0.1616580310880829,
+    "unhedged_per_article": 8.988888888888889
+   },
+   {
+    "date": "2021-04",
+    "mentions": 1000,
+    "hedged_share": 0.159,
+    "unhedged_per_article": 9.344444444444445
+   },
+   {
+    "date": "2021-07",
+    "mentions": 1032,
+    "hedged_share": 0.17344961240310078,
+    "unhedged_per_article": 9.477777777777778
+   },
+   {
+    "date": "2021-10",
+    "mentions": 1045,
+    "hedged_share": 0.17511961722488037,
+    "unhedged_per_article": 9.577777777777778
+   },
+   {
+    "date": "2022-01",
+    "mentions": 1060,
+    "hedged_share": 0.1792452830188679,
+    "unhedged_per_article": 9.666666666666666
+   },
+   {
+    "date": "2022-04",
+    "mentions": 1073,
+    "hedged_share": 0.18732525629077354,
+    "unhedged_per_article": 9.688888888888888
+   },
+   {
+    "date": "2022-07",
+    "mentions": 1077,
+    "hedged_share": 0.18848653667595172,
+    "unhedged_per_article": 9.71111111111111
+   },
+   {
+    "date": "2022-10",
+    "mentions": 1072,
+    "hedged_share": 0.18470149253731344,
+    "unhedged_per_article": 9.71111111111111
+   },
+   {
+    "date": "2023-01",
+    "mentions": 1088,
+    "hedged_share": 0.1801470588235294,
+    "unhedged_per_article": 9.911111111111111
+   },
+   {
+    "date": "2023-04",
+    "mentions": 1114,
+    "hedged_share": 0.17594254937163376,
+    "unhedged_per_article": 10.2
+   },
+   {
+    "date": "2023-07",
+    "mentions": 1125,
+    "hedged_share": 0.1768888888888889,
+    "unhedged_per_article": 10.28888888888889
+   },
+   {
+    "date": "2023-10",
+    "mentions": 1147,
+    "hedged_share": 0.17785527462946818,
+    "unhedged_per_article": 10.477777777777778
+   },
+   {
+    "date": "2024-01",
+    "mentions": 1152,
+    "hedged_share": 0.1779513888888889,
+    "unhedged_per_article": 10.522222222222222
+   },
+   {
+    "date": "2024-04",
+    "mentions": 1165,
+    "hedged_share": 0.18626609442060085,
+    "unhedged_per_article": 10.533333333333333
+   },
+   {
+    "date": "2024-07",
+    "mentions": 1186,
+    "hedged_share": 0.17790893760539628,
+    "unhedged_per_article": 10.833333333333334
+   },
+   {
+    "date": "2024-10",
+    "mentions": 1191,
+    "hedged_share": 0.17968094038623006,
+    "unhedged_per_article": 10.855555555555556
+   },
+   {
+    "date": "2025-01",
+    "mentions": 1180,
+    "hedged_share": 0.1805084745762712,
+    "unhedged_per_article": 10.744444444444444
+   },
+   {
+    "date": "2025-04",
+    "mentions": 1119,
+    "hedged_share": 0.18230563002680966,
+    "unhedged_per_article": 10.166666666666666
+   },
+   {
+    "date": "2025-07",
+    "mentions": 1117,
+    "hedged_share": 0.17726051924798567,
+    "unhedged_per_article": 10.21111111111111
+   },
+   {
+    "date": "2025-10",
+    "mentions": 1119,
+    "hedged_share": 0.1769436997319035,
+    "unhedged_per_article": 10.233333333333333
+   },
+   {
+    "date": "2026-01",
+    "mentions": 1124,
+    "hedged_share": 0.1797153024911032,
+    "unhedged_per_article": 10.244444444444444
+   },
+   {
+    "date": "2026-04",
+    "mentions": 1025,
+    "hedged_share": 0.17170731707317075,
+    "unhedged_per_article": 9.433333333333334
+   },
+   {
+    "date": "2026-07",
+    "mentions": 1121,
+    "hedged_share": 0.1793041926851026,
+    "unhedged_per_article": 10.222222222222221
+   },
+   {
+    "date": "2026-10",
+    "mentions": 1105,
+    "hedged_share": 0.18371040723981902,
+    "unhedged_per_article": 10.022222222222222
+   }
+  ],
+  "comparison:lead": [
+   {
+    "date": "2021-01",
+    "mentions": 100,
+    "hedged_share": 0.1,
+    "unhedged_per_article": 1.0
+   },
+   {
+    "date": "2021-04",
+    "mentions": 96,
+    "hedged_share": 0.08333333333333333,
+    "unhedged_per_article": 0.9777777777777777
+   },
+   {
+    "date": "2021-07",
+    "mentions": 99,
+    "hedged_share": 0.12121212121212122,
+    "unhedged_per_article": 0.9666666666666667
+   },
+   {
+    "date": "2021-10",
+    "mentions": 97,
+    "hedged_share": 0.10309278350515463,
+    "unhedged_per_article": 0.9666666666666667
+   },
+   {
+    "date": "2022-01",
+    "mentions": 97,
+    "hedged_share": 0.1134020618556701,
+    "unhedged_per_article": 0.9555555555555556
+   },
+   {
+    "date": "2022-04",
+    "mentions": 96,
+    "hedged_share": 0.17708333333333334,
+    "unhedged_per_article": 0.8777777777777778
+   },
+   {
+    "date": "2022-07",
+    "mentions": 95,
+    "hedged_share": 0.17894736842105263,
+    "unhedged_per_article": 0.8666666666666667
+   },
+   {
+    "date": "2022-10",
+    "mentions": 96,
+    "hedged_share": 0.17708333333333334,
+    "unhedged_per_article": 0.8777777777777778
+   },
+   {
+    "date": "2023-01",
+    "mentions": 100,
+    "hedged_share": 0.18,
+    "unhedged_per_article": 0.9111111111111111
+   },
+   {
+    "date": "2023-04",
+    "mentions": 102,
+    "hedged_share": 0.18627450980392157,
+    "unhedged_per_article": 0.9222222222222223
+   },
+   {
+    "date": "2023-07",
+    "mentions": 102,
+    "hedged_share": 0.19607843137254902,
+    "unhedged_per_article": 0.9111111111111111
+   },
+   {
+    "date": "2023-10",
+    "mentions": 100,
+    "hedged_share": 0.2,
+    "unhedged_per_article": 0.8888888888888888
+   },
+   {
+    "date": "2024-01",
+    "mentions": 103,
+    "hedged_share": 0.1941747572815534,
+    "unhedged_per_article": 0.9222222222222223
+   },
+   {
+    "date": "2024-04",
+    "mentions": 104,
+    "hedged_share": 0.23076923076923078,
+    "unhedged_per_article": 0.8888888888888888
+   },
+   {
+    "date": "2024-07",
+    "mentions": 107,
+    "hedged_share": 0.17757009345794392,
+    "unhedged_per_article": 0.9777777777777777
+   },
+   {
+    "date": "2024-10",
+    "mentions": 110,
+    "hedged_share": 0.19090909090909092,
+    "unhedged_per_article": 0.9888888888888889
+   },
+   {
+    "date": "2025-01",
+    "mentions": 110,
+    "hedged_share": 0.19090909090909092,
+    "unhedged_per_article": 0.9888888888888889
+   },
+   {
+    "date": "2025-04",
+    "mentions": 111,
+    "hedged_share": 0.1891891891891892,
+    "unhedged_per_article": 1.0
+   },
+   {
+    "date": "2025-07",
+    "mentions": 110,
+    "hedged_share": 0.19090909090909092,
+    "unhedged_per_article": 0.9888888888888889
+   },
+   {
+    "date": "2025-10",
+    "mentions": 113,
+    "hedged_share": 0.18584070796460178,
+    "unhedged_per_article": 1.0222222222222221
+   },
+   {
+    "date": "2026-01",
+    "mentions": 116,
+    "hedged_share": 0.19827586206896552,
+    "unhedged_per_article": 1.0333333333333334
+   },
+   {
+    "date": "2026-04",
+    "mentions": 114,
+    "hedged_share": 0.20175438596491227,
+    "unhedged_per_article": 1.011111111111111
+   },
+   {
+    "date": "2026-07",
+    "mentions": 115,
+    "hedged_share": 0.2,
+    "unhedged_per_article": 1.0222222222222221
+   },
+   {
+    "date": "2026-10",
+    "mentions": 114,
+    "hedged_share": 0.20175438596491227,
+    "unhedged_per_article": 1.011111111111111
+   }
+  ]
+ },
+ "note": "hedged_share = share of loaded-term mentions (genocide, apartheid, ethnic cleansing, war crimes, settler-colonial) with an attribution word within ~120 chars before/60 after"
+}

@@ -1,0 +1,90 @@
+{
+ "deep_panel": {
+  "topic": {
+   "pre_war": {
+    "overlap_ratio_vs_null": 1.1088627639716044,
+    "tailgating_recurring_pairs": 0,
+    "sweeps_per_1000_editors": 0.7326007326007326
+   },
+   "post_war": {
+    "overlap_ratio_vs_null": 1.6104039896293478,
+    "tailgating_recurring_pairs": 0,
+    "sweeps_per_1000_editors": 2.2222222222222223
+   }
+  },
+  "comparison": {
+   "pre_war": {
+    "overlap_ratio_vs_null": 1.1745300909195098,
+    "tailgating_recurring_pairs": 0,
+    "sweeps_per_1000_editors": 3.5587188612099645
+   },
+   "post_war": {
+    "overlap_ratio_vs_null": 1.0760605635069287,
+    "tailgating_recurring_pairs": 0,
+    "sweeps_per_1000_editors": 4.486316733961417
+   }
+  }
+ },
+ "mass": {
+  "topic:pre_war": {
+   "articles": 4705,
+   "edits": 183972,
+   "recurring_pairs": 29,
+   "null_pairs": 0,
+   "ratio": null,
+   "pairs_per_10k_edits": 1.5763268323440525,
+   "sweeps_per_1000_editors": 102.35914515681377,
+   "active_editors": 18015
+  },
+  "topic:post_war": {
+   "articles": 4705,
+   "edits": 276277,
+   "recurring_pairs": 20,
+   "null_pairs": 0,
+   "ratio": null,
+   "pairs_per_10k_edits": 0.7239111471457993,
+   "sweeps_per_1000_editors": 120.437431051849,
+   "active_editors": 20849
+  },
+  "comparison:pre_war": {
+   "articles": 5728,
+   "edits": 553974,
+   "recurring_pairs": 31,
+   "null_pairs": 0,
+   "ratio": null,
+   "pairs_per_10k_edits": 0.5595930494932975,
+   "sweeps_per_1000_editors": 73.16818229329988,
+   "active_editors": 47835
+  },
+  "comparison:post_war": {
+   "articles": 5728,
+   "edits": 540779,
+   "recurring_pairs": 19,
+   "null_pairs": 0,
+   "ratio": null,
+   "pairs_per_10k_edits": 0.3513450041514186,
+   "sweeps_per_1000_editors": 69.78039635779325,
+   "active_editors": 46675
+  }
+ },
+ "lead_authors": {
+  "topic": {
+   "articles": 25,
+   "changes": 208,
+   "distinct_editors": 144,
+   "changes_per_article": 8.64,
+   "top3_share": 0.11538461538461539,
+   "top10_share": 0.25,
+   "editors_on_3plus_articles": 9
+  },
+  "comparison": {
+   "articles": 15,
+   "changes": 88,
+   "distinct_editors": 82,
+   "changes_per_article": 6.066666666666666,
+   "top3_share": 0.07954545454545454,
+   "top10_share": 0.18181818181818182,
+   "editors_on_3plus_articles": 0
+  }
+ }
+}

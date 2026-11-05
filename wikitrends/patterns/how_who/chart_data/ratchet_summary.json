@@ -1,0 +1,42 @@
+{
+ "topic": {
+  "insertions": 268,
+  "removals": 249,
+  "insert_survival": {
+   "1d": 0.5485074626865671,
+   "7d": 0.44029850746268656,
+   "30d": 0.36329588014981273,
+   "90d": 0.27756653992395436
+  },
+  "remove_survival": {
+   "1d": 0.43775100401606426,
+   "7d": 0.3493975903614458,
+   "30d": 0.2971887550200803,
+   "90d": 0.2217741935483871
+  },
+  "terms_that_stuck": 35,
+  "mean_failed_attempts_before_stick": 3.342857142857143,
+  "share_stuck_after_retries": 0.6571428571428571,
+  "mean_distinct_editors_in_attempts": 3.4
+ },
+ "comparison": {
+  "insertions": 75,
+  "removals": 76,
+  "insert_survival": {
+   "1d": 0.72,
+   "7d": 0.6266666666666667,
+   "30d": 0.56,
+   "90d": 0.4266666666666667
+  },
+  "remove_survival": {
+   "1d": 0.32894736842105265,
+   "7d": 0.27631578947368424,
+   "30d": 0.27631578947368424,
+   "90d": 0.23684210526315788
+  },
+  "terms_that_stuck": 9,
+  "mean_failed_attempts_before_stick": 1.4444444444444444,
+  "share_stuck_after_retries": 0.5555555555555556,
+  "mean_distinct_editors_in_attempts": 2.2222222222222223
+ }
+}
