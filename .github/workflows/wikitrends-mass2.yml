@@ -30,13 +30,6 @@ jobs:
       - name: Offline self-test (mocked API)
         working-directory: wikitrends
         run: WT_JOB=mass2-test python test_mass2.py 2>&1 | grep -v '^\[hb' | tail -80
-      - name: Fallback salt (only used when the WT_SALT_SEED secret is not set; deleted by the merge job)
-        env: {SEED: '${{ secrets.WT_SALT_SEED }}'}
-        run: |
-          mkdir -p /tmp/salt
-          if [ -z "$SEED" ]; then openssl rand -hex 16 > /tmp/salt/salt; echo "::warning::WT_SALT_SEED secret not set: using a run salt artifact (deleted at merge)"; fi
-      - uses: actions/upload-artifact@v4
-        with: {name: mass2-salt, path: /tmp/salt/, retention-days: 1, if-no-files-found: ignore}
       - name: Start live status reporter
         run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh mass2-resolve 180 > /tmp/status.log 2>&1 &
       - name: Resolve titles, dedupe by resolved page, page info + Wikidata now (batched), concept alias table
@@ -65,17 +58,13 @@ jobs:
         run: WT_JOB=mass2-test python test_mass2.py 2>&1 | grep -v '^\[hb' | tail -80
       - uses: actions/download-artifact@v4
         with: {name: mass2-frame2, path: wikitrends/data/mass/}
-      - name: Fetch fallback salt
-        continue-on-error: true
-        uses: actions/download-artifact@v4
-        with: {name: mass2-salt, path: /tmp/salt/}
-      - name: Per-run secret salt, identical in every shard (never written to outputs or logs)
+      - name: Per-shard secret salt (never stored anywhere; a public repo must not hold a salt artifact)
         env: {SEED: '${{ secrets.WT_SALT_SEED }}'}
         run: |
+          # With a WT_SALT_SEED secret, hashes are linkable across shards; without it each shard gets its own random salt,
+          # so editor hashes are only comparable within a shard (privacy over cross-shard linkage).
           if [ -n "$SEED" ]; then SALT=$(printf '%s:%s' "$SEED" "${{ github.run_id }}" | sha256sum | cut -c1-32);
-          elif [ -s /tmp/salt/salt ]; then SALT=$(cat /tmp/salt/salt);
-          else echo "::error::no salt available"; exit 1; fi
-          rm -rf /tmp/salt
+          else SALT=$(openssl rand -hex 16); echo "::notice::no WT_SALT_SEED secret: per-shard salt, hashes not linkable across shards"; fi
           echo "::add-mask::$SALT"; echo "WT_SALT=$SALT" >> $GITHUB_ENV
       - name: Resume from an earlier attempt of this run, if any
         continue-on-error: true

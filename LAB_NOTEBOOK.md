@@ -141,3 +141,19 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 - **Fix:** `push_data.sh` pushes results to an orphan branch, `wikitrends-data`, whose history never contains workflow files. That is the same trick that has always worked for status heartbeats. It exits non-zero on failure. Every workflow now also uploads an artifact as a backup. A rescue workflow can pull another run's artifacts and push them, which saves the in-flight mass-narr and pilot runs that still use the old commit step.
 - **Second silent-success bug today** (after #44). Pattern: any "done" message must be conditional on the thing actually happening.
 - **Adopt at work?** Yes. Keep results in a separate data-only branch or bucket, decoupled from code history. And always keep a second copy until the first is verified.
+
+## #47 Mass v2: one crawl, every shortlisted signal (2026-11-05)
+- **Scope (from the pilot evaluation):** about 10.3k unique pages after resolving redirects. Each gets:
+  - 3 full snapshots parsed once: short description, infobox, categories, concept links, lead citation domains, narrative and event-filter features, and the P/J displacement split;
+  - revision metadata: sizes, tags and summary classes;
+  - aggregated account facts;
+  - talk-page data, now and history;
+  - RfCs and requested moves;
+  - pageviews across former titles;
+  - Wikidata;
+  - the protection log;
+  - exact lead term events over the full history, including heavy pages.
+
+  About 182k requests, 16 shards, about 12 h.
+- **Privacy decision:** the engineer's fallback put a shared salt in a run artifact. In a public repo anyone could download it during the run and reverse the published editor hashes. Replaced with per-shard random salts that are never stored. Cost: editor hashes are only linkable within a shard. A repo secret `WT_SALT_SEED` would restore cross-shard linking safely, if the owner sets one.
+- **Adopt at work?** Yes: put a privacy review before scale. The convenient design was the leaky one.
