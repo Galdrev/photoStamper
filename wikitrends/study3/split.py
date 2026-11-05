@@ -4,7 +4,7 @@
 Discovery half: hypotheses may be generated from it freely. Holdout half: untouched until SPEC_STUDY3.md is frozen.
 """
 import hashlib, json, os
-D = "data"
+import os; D = os.path.join(os.path.dirname(__file__), "..", "data")
 half = lambda t: "discovery" if int(hashlib.sha1(("study3|" + t).encode()).hexdigest(), 16) % 2 == 0 else "holdout"
 
 res = json.load(open(f"{D}/results.json")); mass = json.load(open(f"{D}/mass_results.json"))["mass"]
