@@ -1,0 +1,16 @@
+lead whole    unfiltered   DiD +4.03 [-4.10,+12.30] p=0.389
+lead whole    residual     DiD +4.00 [-4.45,+12.37] p=0.404
+lead whole    resid_share  DiD +4.37 [-3.76,+12.61] p=0.344
+lead whole    event_share  DiD -0.34 [-1.98,+1.03] p=0.636
+lead post-war unfiltered   DiD +3.52 [-2.35,+9.48] p=0.302
+lead post-war residual     DiD +3.15 [-3.02,+9.09] p=0.370
+lead post-war resid_share  DiD +3.74 [-2.55,+9.83] p=0.281
+lead post-war event_share  DiD -0.22 [-1.89,+1.17] p=0.763
+full whole    unfiltered   DiD -0.54 [-2.44,+1.20] p=0.677
+full whole    residual     DiD -0.49 [-2.41,+1.16] p=0.728
+full whole    resid_share  DiD -0.54 [-2.39,+1.05] p=0.678
+full whole    event_share  DiD +0.00 [-0.51,+0.46] p=0.995
+full post-war unfiltered   DiD +0.38 [-0.86,+1.51] p=0.654
+full post-war residual     DiD +0.31 [-0.89,+1.44] p=0.704
+full post-war resid_share  DiD +0.16 [-1.05,+1.28] p=0.838
+full post-war event_share  DiD +0.21 [-0.06,+0.45] p=0.167
