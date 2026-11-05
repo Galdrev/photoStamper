@@ -52,3 +52,30 @@ These run `hyp_narr.py` unchanged on the holdout. Each function's own pre-stated
 ## Part C. Qualitative content KPIs
 
 Frozen separately, after the close-reading codebook is merged; see the Part C section, appended below when frozen. Coding there is masked and done twice per item, with agreement reported.
+
+## Amendment D: separating narrative change from event updates (frozen 2026-11-05, before any filtered number was computed)
+
+**Problem the owner raised:** when October 7 and the war happened, articles were *expected* to gain sentences about them. The Israel article adding the war is a factual update, not a narrative change. We want the narrative change only.
+
+**Rule** (`wikitrends/event_filter.py`, symmetric for topic and comparison, fixed in advance). A sentence counts as an **event sentence** if it does any of the following:
+- (a) names a year from 2022 onward;
+- (b) mentions a recent event from a fixed list that covers both the topic (Oct 7, Israel–Hamas/Gaza war, hostages, ICJ case, Iran–Israel war, Gaza famine/genocide, 2024 Lebanon) and comparison conflicts of the same era (Russian invasion of Ukraine, Sudan war, the 2023 Karabakh offensive and exodus, Tigray, Myanmar, Wagner);
+- (c) uses recency wording ("the ongoing war", "as of", "since the start of the war").
+
+Everything else is the **narrative residual**.
+- **Primary:** drop event sentences only.
+- **Sensitivity:** drop every paragraph that contains an event sentence.
+
+**Outcomes:** each analysis below is reported three ways:
+- unfiltered;
+- residual (narrative);
+- event part (updates), with the event share of critical terms.
+
+Analyses covered:
+1. Study 1 critical-rate change, lead and full text, topic vs comparison DiD (deep tier, every quarterly snapshot; computed in CI by `event_clean.py`).
+2. Study 3 A1–A6 on mass-tier leads (mass_narr now stores the lead text, so the residual can be computed).
+3. Study 2 N-measures on the residual.
+
+**Interpretation rule:** if a topic effect survives in the residual, it is narrative change in older material, not event coverage. If it lives only in the event part, it is the war being covered.
+
+**Known bias, accepted in advance:** rule (a) also drops sentences that cite recent scholarship ("in 2024 scholars described the Nakba as…"). That removes some real narrative change, so the filter is conservative against finding narrative change.
