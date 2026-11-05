@@ -1,3 +1,13 @@
+# Results (Nov 2026)
+
+- **Interactive report and data lab:** https://claude.ai/artifact/6NCLCkohWsfvKwz9MtCTPv
+- **Findings, verified by an adversarial review:** [wikitrends/notes/FINDINGS.md](wikitrends/notes/FINDINGS.md)
+- **Pre-registration and amendments:** [SPEC.md](SPEC.md)
+- **How it was built, and what to reuse:** [LAB_NOTEBOOK.md](LAB_NOTEBOOK.md)
+- **Talking points:** [TALKING_POINTS.md](TALKING_POINTS.md)
+
+**Headline.** The pre-registered test is **not supported**: critical terms did not rise more in 422 topic articles than in comparison articles. In a larger exploratory sample of 10,433 articles there is a modest rise after October 2023. It is concentrated in Palestine- and Israel-tagged articles and is similar in size to other war-affected topics. Counts measure the vocabulary of conflict, not stance.
+
 # WikiTrends: framing drift in Wikipedia articles on Judaism, Israel and Zionism
 
 ## Hypothesis
