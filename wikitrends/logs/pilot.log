@@ -1,0 +1,169 @@
+pilot: 0 already done, 168 to do (salt from env: True)
+[hb pilot] pilot 0/168 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
+[hb pilot] pilot 0/168 el=1.0m eta=Nonem req=75 429=8 5xx=0 retries=8 fail=0
+[hb pilot] pilot 0/168 el=2.0m eta=Nonem req=145 429=12 5xx=0 retries=12 fail=0
+[hb pilot] pilot 0/168 el=3.0m eta=Nonem req=216 429=16 5xx=0 retries=16 fail=0
+[hb pilot] pilot 0/168 el=4.0m eta=Nonem req=284 429=20 5xx=0 retries=20 fail=0
+[hb pilot] pilot 0/168 el=5.0m eta=Nonem req=349 429=24 5xx=0 retries=24 fail=0
+[hb pilot] pilot 1/168 el=6.0m eta=1002.2m req=420 429=28 5xx=0 retries=28 fail=0
+[hb pilot] pilot 2/168 el=6.6m eta=545.8m req=485 429=28 5xx=0 retries=28 fail=0
+[hb pilot] pilot 2/168 el=7.0m eta=581.1m req=500 429=32 5xx=0 retries=32 fail=0
+[hb pilot] pilot 3/168 el=8.0m eta=440.1m req=571 429=36 5xx=0 retries=36 fail=0
+[hb pilot] pilot 3/168 el=9.0m eta=495.1m req=642 429=40 5xx=0 retries=40 fail=0
+[hb pilot] pilot 3/168 el=10.0m eta=550.1m req=716 429=44 5xx=0 retries=44 fail=0
+[hb pilot] pilot 4/168 el=11.0m eta=451.0m req=790 429=48 5xx=0 retries=48 fail=0
+[hb pilot] pilot 5/168 el=12.0m eta=391.2m req=869 429=52 5xx=0 retries=52 fail=0
+[hb pilot] pilot 6/168 el=13.0m eta=351.0m req=939 429=56 5xx=0 retries=56 fail=0
+[hb pilot] pilot 6/168 el=14.0m eta=378.0m req=1013 429=60 5xx=0 retries=60 fail=0
+[hb pilot] pilot 8/168 el=14.6m eta=291.1m req=1078 429=60 5xx=0 retries=60 fail=0
+[hb pilot] pilot 8/168 el=15.0m eta=300.0m req=1086 429=64 5xx=0 retries=64 fail=0
+[hb pilot] pilot 8/168 el=16.0m eta=320.0m req=1163 429=68 5xx=0 retries=68 fail=0
+[hb pilot] pilot 10/168 el=17.0m eta=268.6m req=1234 429=72 5xx=0 retries=72 fail=0
+[hb pilot] pilot 12/168 el=17.5m eta=228.0m req=1296 429=72 5xx=0 retries=72 fail=0
+[hb pilot] pilot 12/168 el=18.0m eta=234.0m req=1305 429=76 5xx=0 retries=76 fail=0
+[hb pilot] pilot 12/168 el=19.0m eta=247.0m req=1378 429=80 5xx=0 retries=80 fail=0
+[hb pilot] pilot 14/168 el=19.5m eta=215.0m req=1440 429=80 5xx=0 retries=80 fail=0
+[hb pilot] pilot 14/168 el=20.0m eta=220.0m req=1449 429=84 5xx=0 retries=84 fail=0
+[hb pilot] pilot 16/168 el=21.0m eta=199.5m req=1519 429=88 5xx=0 retries=88 fail=0
+[hb pilot] pilot 18/168 el=21.5m eta=179.2m req=1575 429=88 5xx=0 retries=88 fail=0
+[hb pilot] pilot 18/168 el=22.0m eta=183.3m req=1595 429=92 5xx=0 retries=92 fail=0
+[hb pilot] pilot 19/168 el=23.0m eta=180.4m req=1666 429=96 5xx=0 retries=96 fail=0
+[hb pilot] pilot 21/168 el=23.5m eta=164.6m req=1723 429=96 5xx=0 retries=96 fail=0
+[hb pilot] pilot 21/168 el=24.0m eta=168.0m req=1737 429=100 5xx=0 retries=100 fail=0
+[hb pilot] pilot 22/168 el=24.5m eta=162.6m req=1792 429=100 5xx=0 retries=100 fail=0
+[hb pilot] pilot 22/168 el=25.0m eta=165.9m req=1811 429=104 5xx=0 retries=104 fail=0
+[hb pilot] pilot 23/168 el=26.0m eta=163.9m req=1895 429=108 5xx=0 retries=108 fail=0
+[hb pilot] pilot 26/168 el=27.0m eta=147.5m req=1966 429=112 5xx=0 retries=112 fail=0
+[hb pilot] pilot 28/168 el=28.0m eta=140.0m req=2036 429=116 5xx=0 retries=116 fail=0
+[hb pilot] pilot 30/168 el=28.5m eta=131.3m req=2099 429=116 5xx=0 retries=116 fail=0
+[hb pilot] pilot 30/168 el=29.0m eta=133.4m req=2106 429=120 5xx=0 retries=120 fail=0
+[hb pilot] pilot 31/168 el=29.5m eta=130.5m req=2161 429=120 5xx=0 retries=120 fail=0
+[hb pilot] pilot 31/168 el=30.0m eta=132.6m req=2176 429=124 5xx=0 retries=124 fail=0
+[hb pilot] pilot 33/168 el=30.6m eta=125.1m req=2243 429=124 5xx=0 retries=124 fail=0
+[hb pilot] pilot 33/168 el=31.0m eta=126.8m req=2248 429=128 5xx=0 retries=128 fail=0
+[hb pilot] pilot 35/168 el=31.5m eta=119.8m req=2308 429=128 5xx=0 retries=128 fail=0
+[hb pilot] pilot 36/168 el=32.0m eta=117.3m req=2323 429=132 5xx=0 retries=132 fail=0
+[hb pilot] pilot 37/168 el=33.0m eta=116.8m req=2394 429=136 5xx=0 retries=136 fail=0
+[hb pilot] pilot 38/168 el=34.0m eta=116.3m req=2465 429=140 5xx=0 retries=140 fail=0
+[hb pilot] pilot 41/168 el=35.0m eta=108.4m req=2540 429=144 5xx=0 retries=144 fail=0
+[hb pilot] pilot 42/168 el=36.0m eta=108.0m req=2610 429=148 5xx=0 retries=148 fail=0
+[hb pilot] pilot 45/168 el=37.0m eta=101.1m req=2681 429=152 5xx=0 retries=152 fail=0
+[hb pilot] pilot 45/168 el=38.0m eta=103.9m req=2756 429=156 5xx=0 retries=156 fail=0
+[hb pilot] pilot 49/168 el=38.6m eta=93.6m req=2822 429=156 5xx=0 retries=156 fail=0
+[hb pilot] pilot 49/168 el=39.0m eta=94.7m req=2827 429=160 5xx=0 retries=160 fail=0
+[hb pilot] pilot 52/168 el=40.0m eta=89.2m req=2898 429=164 5xx=0 retries=164 fail=0
+[hb pilot] pilot 52/168 el=41.0m eta=91.5m req=2972 429=168 5xx=0 retries=168 fail=0
+[hb pilot] pilot 55/168 el=42.0m eta=86.3m req=3047 429=172 5xx=0 retries=172 fail=0
+[hb pilot] pilot 58/168 el=43.0m eta=81.6m req=3117 429=176 5xx=0 retries=176 fail=0
+[hb pilot] pilot 60/168 el=43.5m eta=78.3m req=3174 429=176 5xx=0 retries=176 fail=0
+[hb pilot] pilot 60/168 el=44.0m eta=79.2m req=3188 429=180 5xx=0 retries=180 fail=0
+[hb pilot] pilot 60/168 el=45.0m eta=81.0m req=3260 429=184 5xx=0 retries=184 fail=0
+[hb pilot] pilot 61/168 el=46.0m eta=80.7m req=3324 429=188 5xx=0 retries=188 fail=0
+[hb pilot] pilot 63/168 el=47.0m eta=78.3m req=3397 429=192 5xx=0 retries=192 fail=0
+[hb pilot] pilot 65/168 el=47.5m eta=75.3m req=3457 429=192 5xx=0 retries=192 fail=0
+[hb pilot] pilot 65/168 el=48.0m eta=76.1m req=3471 429=196 5xx=0 retries=196 fail=0
+[hb pilot] pilot 67/168 el=49.0m eta=73.9m req=3519 429=200 5xx=0 retries=200 fail=0
+[hb pilot] pilot 67/168 el=50.0m eta=75.4m req=3566 429=204 5xx=0 retries=204 fail=0
+[hb pilot] pilot 67/168 el=51.0m eta=76.9m req=3639 429=208 5xx=0 retries=208 fail=0
+[hb pilot] pilot 69/168 el=51.5m eta=73.9m req=3695 429=208 5xx=0 retries=208 fail=0
+[hb pilot] pilot 69/168 el=52.0m eta=74.6m req=3711 429=212 5xx=0 retries=212 fail=0
+[hb pilot] pilot 70/168 el=53.0m eta=74.2m req=3781 429=216 5xx=0 retries=216 fail=0
+[hb pilot] pilot 71/168 el=54.0m eta=73.8m req=3855 429=220 5xx=0 retries=220 fail=0
+[hb pilot] pilot 74/168 el=54.6m eta=69.3m req=3919 429=220 5xx=0 retries=220 fail=0
+[hb pilot] pilot 74/168 el=55.0m eta=69.9m req=3928 429=224 5xx=0 retries=224 fail=0
+[hb pilot] pilot 75/168 el=56.0m eta=69.4m req=4008 429=228 5xx=0 retries=228 fail=0
+[hb pilot] pilot 77/168 el=57.0m eta=67.4m req=4079 429=232 5xx=0 retries=232 fail=0
+[hb pilot] pilot 79/168 el=57.5m eta=64.8m req=4134 429=232 5xx=0 retries=232 fail=0
+[hb pilot] pilot 79/168 el=58.0m eta=65.3m req=4154 429=236 5xx=0 retries=236 fail=0
+[hb pilot] pilot 80/168 el=59.0m eta=64.9m req=4234 429=240 5xx=0 retries=240 fail=0
+[hb pilot] pilot 82/168 el=59.5m eta=62.4m req=4294 429=240 5xx=0 retries=240 fail=0
+[hb pilot] pilot 82/168 el=60.0m eta=62.9m req=4303 429=244 5xx=0 retries=244 fail=0
+[hb pilot] pilot 84/168 el=60.5m eta=60.5m req=4363 429=244 5xx=0 retries=244 fail=0
+[hb pilot] pilot 85/168 el=61.0m eta=59.6m req=4376 429=248 5xx=0 retries=248 fail=0
+[hb pilot] pilot 85/168 el=62.0m eta=60.5m req=4447 429=252 5xx=0 retries=252 fail=0
+[hb pilot] pilot 88/168 el=62.5m eta=56.8m req=4505 429=252 5xx=0 retries=252 fail=0
+[hb pilot] pilot 89/168 el=63.0m eta=55.9m req=4518 429=256 5xx=0 retries=256 fail=0
+[hb pilot] pilot 89/168 el=64.0m eta=56.8m req=4589 429=260 5xx=0 retries=260 fail=0
+[hb pilot] pilot 89/168 el=65.0m eta=57.7m req=4657 429=264 5xx=0 retries=264 fail=0
+[hb pilot] pilot 91/168 el=65.6m eta=55.5m req=4712 429=264 5xx=0 retries=264 fail=0
+[hb pilot] pilot 91/168 el=66.0m eta=55.8m req=4725 429=268 5xx=0 retries=268 fail=0
+[hb pilot] pilot 92/168 el=67.0m eta=55.3m req=4795 429=272 5xx=0 retries=272 fail=0
+[hb pilot] pilot 96/168 el=68.0m eta=51.0m req=4866 429=276 5xx=0 retries=276 fail=0
+[hb pilot] pilot 99/168 el=68.6m eta=47.8m req=4930 429=276 5xx=0 retries=276 fail=0
+[hb pilot] pilot 99/168 el=69.0m eta=48.1m req=4939 429=280 5xx=0 retries=280 fail=0
+[hb pilot] pilot 100/168 el=70.0m eta=47.6m req=5011 429=284 5xx=0 retries=284 fail=0
+[hb pilot] pilot 100/168 el=71.0m eta=48.3m req=5082 429=288 5xx=0 retries=288 fail=0
+[hb pilot] pilot 101/168 el=72.0m eta=47.8m req=5155 429=292 5xx=0 retries=292 fail=0
+[hb pilot] pilot 102/168 el=73.0m eta=47.2m req=5225 429=296 5xx=0 retries=296 fail=0
+[hb pilot] pilot 102/168 el=74.0m eta=47.9m req=5302 429=300 5xx=0 retries=300 fail=0
+[hb pilot] pilot 103/168 el=75.0m eta=47.3m req=5372 429=304 5xx=0 retries=304 fail=0
+[hb pilot] pilot 105/168 el=75.5m eta=45.3m req=5428 429=304 5xx=0 retries=304 fail=0
+[hb pilot] pilot 105/168 el=76.0m eta=45.6m req=5459 429=308 5xx=0 retries=308 fail=0
+[hb pilot] pilot 107/168 el=77.0m eta=43.9m req=5529 429=312 5xx=0 retries=312 fail=0
+[hb pilot] pilot 110/168 el=78.0m eta=41.1m req=5599 429=316 5xx=0 retries=316 fail=0
+[hb pilot] pilot 110/168 el=79.0m eta=41.7m req=5669 429=320 5xx=0 retries=320 fail=0
+[hb pilot] pilot 113/168 el=80.0m eta=38.9m req=5741 429=324 5xx=0 retries=324 fail=0
+[hb pilot] pilot 115/168 el=80.5m eta=37.1m req=5794 429=324 5xx=0 retries=324 fail=0
+[hb pilot] pilot 115/168 el=81.0m eta=37.3m req=5811 429=328 5xx=0 retries=328 fail=0
+[hb pilot] pilot 116/168 el=82.0m eta=36.8m req=5881 429=332 5xx=0 retries=332 fail=0
+[hb pilot] pilot 117/168 el=83.0m eta=36.2m req=5962 429=336 5xx=0 retries=336 fail=0
+[hb pilot] pilot 119/168 el=83.5m eta=34.4m req=6020 429=336 5xx=0 retries=336 fail=0
+[hb pilot] pilot 119/168 el=84.0m eta=34.6m req=6032 429=340 5xx=0 retries=340 fail=0
+[hb pilot] pilot 121/168 el=85.0m eta=33.0m req=6079 429=344 5xx=0 retries=344 fail=0
+[hb pilot] pilot 121/168 el=86.0m eta=33.4m req=6126 429=348 5xx=0 retries=348 fail=0
+[hb pilot] pilot 124/168 el=87.0m eta=30.9m req=6173 429=352 5xx=0 retries=352 fail=0
+[hb pilot] pilot 125/168 el=88.0m eta=30.3m req=6220 429=356 5xx=0 retries=356 fail=0
+[hb pilot] pilot 126/168 el=89.0m eta=29.7m req=6266 429=360 5xx=0 retries=360 fail=0
+[hb pilot] pilot 128/168 el=90.0m eta=28.1m req=6313 429=364 5xx=0 retries=364 fail=0
+[hb pilot] pilot 129/168 el=91.0m eta=27.5m req=6360 429=368 5xx=0 retries=368 fail=0
+[hb pilot] pilot 130/168 el=92.0m eta=26.9m req=6407 429=372 5xx=0 retries=372 fail=0
+[hb pilot] pilot 133/168 el=93.0m eta=24.5m req=6454 429=376 5xx=0 retries=376 fail=0
+[hb pilot] pilot 134/168 el=94.0m eta=23.9m req=6501 429=380 5xx=0 retries=380 fail=0
+[hb pilot] pilot 136/168 el=95.0m eta=22.4m req=6548 429=384 5xx=0 retries=384 fail=0
+[hb pilot] pilot 138/168 el=96.0m eta=20.9m req=6595 429=388 5xx=0 retries=388 fail=0
+[hb pilot] pilot 139/168 el=97.0m eta=20.2m req=6642 429=392 5xx=0 retries=392 fail=0
+[hb pilot] pilot 141/168 el=98.0m eta=18.8m req=6689 429=396 5xx=0 retries=396 fail=0
+[hb pilot] pilot 141/168 el=99.0m eta=19.0m req=6736 429=400 5xx=0 retries=400 fail=0
+[hb pilot] pilot 142/168 el=100.0m eta=18.3m req=6783 429=404 5xx=0 retries=404 fail=0
+[hb pilot] pilot 144/168 el=101.0m eta=16.8m req=6830 429=408 5xx=0 retries=408 fail=0
+[hb pilot] pilot 146/168 el=102.0m eta=15.4m req=6877 429=412 5xx=0 retries=412 fail=0
+[hb pilot] pilot 147/168 el=103.0m eta=14.7m req=6923 429=416 5xx=0 retries=416 fail=0
+[hb pilot] pilot 148/168 el=104.0m eta=14.1m req=6970 429=420 5xx=0 retries=420 fail=0
+[hb pilot] pilot 150/168 el=105.0m eta=12.6m req=7017 429=424 5xx=0 retries=424 fail=0
+[hb pilot] pilot 151/168 el=106.0m eta=11.9m req=7064 429=428 5xx=0 retries=428 fail=0
+[hb pilot] pilot 154/168 el=107.0m eta=9.7m req=7111 429=432 5xx=0 retries=432 fail=0
+[hb pilot] pilot 155/168 el=108.0m eta=9.1m req=7157 429=436 5xx=0 retries=436 fail=0
+[hb pilot] pilot 156/168 el=109.0m eta=8.4m req=7204 429=440 5xx=0 retries=440 fail=0
+[hb pilot] pilot 157/168 el=110.0m eta=7.7m req=7261 429=444 5xx=0 retries=444 fail=0
+[hb pilot] pilot 159/168 el=111.0m eta=6.3m req=7307 429=448 5xx=0 retries=448 fail=0
+[hb pilot] pilot 160/168 el=112.0m eta=5.6m req=7354 429=452 5xx=0 retries=452 fail=0
+[hb pilot] pilot 162/168 el=113.0m eta=4.2m req=7401 429=456 5xx=0 retries=456 fail=0
+[hb pilot] pilot 164/168 el=114.0m eta=2.8m req=7448 429=460 5xx=0 retries=460 fail=0
+[hb pilot] pilot 165/168 el=115.0m eta=2.1m req=7494 429=463 5xx=0 retries=463 fail=0
+[hb pilot] pilot-done 168/168 el=115.4m eta=Nonem req=7517 429=463 5xx=0 retries=463 fail=0
+pilot: 168 records, 0 errors, 2 missing pages, 7517 requests
+  watch_links@2023-07-01                                  topic 3.053571 disp 0.666666 rand 0.017543  d=+1.16 p=0.002
+  watch_links_lead@2023-07-01                             topic 1.696428 disp 0.205128 rand 0.0  d=+1.09 p=0.002
+  watch_links@now                                         topic 4.05 disp 0.725 rand 0.05  d=+1.09 p=0.002
+  watch_links@2021-01-01                                  topic 2.648148 disp 0.820512 rand 0.052631  d=+1.04 p=0.002
+  critical_insert_acct_indef_now@w1                       topic 0.484325 disp 0.097340 rand 0.111111  d=+1.03 p=0.004
+  watch_links_lead@2021-01-01                             topic 1.425925 disp 0.179487 rand 0.017543  d=+1.01 p=0.002
+  ec_protected@2021-01-01                                 topic 0.466666 disp 0.1 rand 0.0  d=+0.97 p=0.002
+  watch_links_lead@now                                    topic 1.95 disp 0.25 rand 0.0  d=+0.91 p=0.002
+  ec_protected@2023-07-01                                 topic 0.516666 disp 0.25 rand 0.0  d=+0.91 p=0.002
+  acct_share_ec_now@w1                                    topic 0.942136 disp 0.831052 rand 0.821685  d=+0.90 p=0.002
+  ct_notice@2021-01-01                                    topic 0.574074 disp 0.307692 rand 0.0  d=+0.90 p=0.002
+  critical_remove_acct_editcount_lt500@war                topic 0.0 disp 0.160416 rand 0.5  d=-0.90 p=0.002
+  acct_share_editcount_lt500@w1                           topic 0.052205 disp 0.158579 rand 0.172258  d=-0.89 p=0.002
+  ec_protected@now                                        topic 0.633333 disp 0.45 rand 0.033333  d=+0.88 p=0.002
+  ct_notice@now                                           topic 0.666666 disp 0.475 rand 0.033333  d=+0.86 p=0.002
+  critical_insert_acct_editcount_lt500@w1                 topic 0.0 disp 0.280211 rand 0.0  d=-0.86 p=0.002
+  watch_links_added 2021→now                              topic 1.518518 disp 0.179487 rand 0.017543  d=+0.86 p=0.002
+  acct_share_editcount_lt500@war                          topic 0.040565 disp 0.113046 rand 0.205663  d=-0.84 p=0.002
+  acct_share_ec_now@war                                   topic 0.953488 disp 0.880204 rand 0.787916  d=+0.84 p=0.002
+  critical_remove_acct_editcount_lt500@w2                 topic 0.0 disp 0.142592 rand 0.5  d=-0.82 p=0.006
+  empty_summary_share@w1                                  topic 0.115688 disp 0.171913 rand 0.233871  d=-0.82 p=0.002
+  ct_notice@2023-07-01                                    topic 0.589285 disp 0.384615 rand 0.0  d=+0.82 p=0.002
+  acct_share_editcount_lt500@w2                           topic 0.041683 disp 0.111876 rand 0.194288  d=-0.81 p=0.002
+  empty_summary_share@w2                                  topic 0.106098 disp 0.162549 rand 0.215270  d=-0.81 p=0.002
+  acct_share_ec_now@w2                                    topic 0.951814 disp 0.881269 rand 0.799115  d=+0.80 p=0.002
