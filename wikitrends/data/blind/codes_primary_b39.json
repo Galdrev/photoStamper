@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0131b",
+  "quote": "A: He is known for his philological commentary",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0238b",
+  "quote": "B: has been criticised for her inaction and silence over the issue",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N393",
+  "quote": "B: a population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0141b",
+  "quote": "B: was a German agitator and publicist",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0009b",
+  "quote": "B: Many of the names underwent a process of  Hebraization in the 1920s and 1950s.",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N390",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C003b",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0027b",
+  "quote": "B: an important amount of entrepreneurs, politicians and artists are [ENTITY-1]",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N392",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0123b",
+  "quote": "B: was eventually proven right by history",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N391",
+  "quote": "A: has been accused of misusing donations",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "C007b",
+  "quote": "B: It has been accused of committing serious abuses against civilians.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0048b",
+  "quote": "B: labeled the \"bible of the racist right\" by the Southern Poverty Law Center",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0191b",
+  "quote": "B: It is the world's largest religion, with about 2.4 billion followers as of 2020.",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0128b",
+  "quote": "B: when Fascist authorities declared them to be of \"enemy nationality\"",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0087b",
+  "quote": "A: reject [ENTITY-1] [ENTITY-2] as a \"damaging ideology\"",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ }
+]

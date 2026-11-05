@@ -1,0 +1,114 @@
+[
+ {
+  "id": "N350",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0213b",
+  "quote": "B: is an Abrahamic monotheistic",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0232b",
+  "quote": "B: Protestants have developed their own culture, with major contributions in education,",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N351",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0144b",
+  "quote": "B: He serves as the mara d'asra (halakhic authority)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0112b",
+  "quote": "A: the [ENTITY-9] claimed that it was they who possessed this memorized and orally transmitted part of the divine revelation",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0167b",
+  "quote": "B: Critics of [ENTITY-1] have charged it is a cover for modern-day antisemitism",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0198b",
+  "quote": "B: the 11th longest coastline in the world",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0102b",
+  "quote": "B: It has attracted some criticism",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0021b",
+  "quote": "B: 1956–57 exodus and expulsions",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0082b",
+  "quote": "A: The expulsions of [ENTITY-1] people from 1949 to 1956",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N353",
+  "quote": "B: 412,000 (2015 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0170b",
+  "quote": "B: In some Western opinions, the incorporation of [ENTITY-1] into [ENTITY-2] is viewed as an annexation.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0151b",
+  "quote": "B: The [ENTITY-3] was designed by the architects Leigh & Orange and was erected in 1901–1902.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N352",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0042b",
+  "quote": "A: the last and most devastating of three major [ENTITY-3] rebellions",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

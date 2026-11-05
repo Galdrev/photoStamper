@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0081b",
+  "quote": "A: He is the first ever player of [ENTITY-3] origin to play in ULEB competitions.",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0045b",
+  "quote": "B: has been designated a terrorist organization by at least 21 countries",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0001b",
+  "quote": "A: is a Samaritan chronicle that is considered the oldest Samaritan historical work",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0012b",
+  "quote": "B: or \"Falashas\")",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N320",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0060b",
+  "quote": "B: Avraham Sela described the riots as \"unprecedented in the history of",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0038b",
+  "quote": "A: has been characterized as racist and undemocratic by some critics",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0113b",
+  "quote": "B: refers to the opinions of some",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0171b",
+  "quote": "A: which make up some of the oldest continuous cultures in the world",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C017b",
+  "quote": "B: has been accused of committing serious abuses against civilians",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N322",
+  "quote": "A: is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0229b",
+  "quote": "B: restored its position as a key player in European politics",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0026b",
+  "quote": "A: adopted a new approach, based on economic independence and various national ideologies",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N321",
+  "quote": "B: charity that has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0166b",
+  "quote": "B: The crater Zagut on the Moon is named after him.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N323",
+  "quote": "B: 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ }
+]

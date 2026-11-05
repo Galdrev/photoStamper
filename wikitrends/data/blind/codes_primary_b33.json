@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0023b",
+  "quote": "A: Quranic passages justifying hostile beliefs and treatment of [ENTITY-2]",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0240b",
+  "quote": "B: a widely criticised referendum",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0231b",
+  "quote": "A: was the mass expulsion of approximately 1,221,489",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0227b",
+  "quote": "B: The term [ENTITY-1] of [ENTITY-2] does not cover the secession of Bangladesh",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0068b",
+  "quote": "B: In contemporary scholarship the united monarchy is generally held to be a literary construction",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N331",
+  "quote": "B: charity, recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0146b",
+  "quote": "B: there is a pejorative connotation associated with the word",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0017b",
+  "quote": "A: is a Norwegian mass murderer, neo-Nazi, and domestic terrorist",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N330",
+  "quote": "B: has been widely condemned for violent intimidation of members",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0225b",
+  "quote": "B: ethnically and linguistically diverse country, with similarly diverse geography and wildlife",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0020b",
+  "quote": "B: approximately 9,227,700 inhabitants as of July 2020",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0201b",
+  "quote": "B: right-wing [ENTITY-1] nationalist volunteer",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N332",
+  "quote": "A: is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0259b",
+  "quote": "B: is one of the world's oldest continuously practiced religions",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0142b",
+  "quote": "B: He has been categorised as a 'Cold War liberal' because of the anti-Marxism which permeates his main works.",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N333",
+  "quote": "B: 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ }
+]

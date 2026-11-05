@@ -1,0 +1,18 @@
+[
+{"id": "N002", "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.", "label": "no_stance_change", "kind": "none", "confidence": "high"},
+{"id": "R0055a", "quote": "B: Over the last decade or more, however, [ENTITY-1] has been rising in the U.S.", "label": "B_less_favourable", "kind": "both", "confidence": "med"},
+{"id": "R0172a", "quote": "B: who self-identify as a vanguard spearheading a global Islamist revolution", "label": "B_less_favourable", "kind": "framing", "confidence": "med"},
+{"id": "C002a", "quote": "B: It committed serious abuses against civilians.", "label": "B_less_favourable", "kind": "framing", "confidence": "high"},
+{"id": "R0197a", "quote": "B: Various scholars describe the [ENTITY-1] conquest as genocide.", "label": "B_less_favourable", "kind": "both", "confidence": "med"},
+{"id": "R0129a", "quote": "B: Friedrich Nietzsche's influence was expressed by a desire to move away", "label": "no_stance_change", "kind": "none", "confidence": "med"},
+{"id": "N001", "quote": "B: is a charity that has been accused of misusing donations.", "label": "B_less_favourable", "kind": "framing", "confidence": "high"},
+{"id": "R0210a", "quote": "B: First Nations and Métis peoples played a critical part in the development of European colonies", "label": "unclear", "kind": "both", "confidence": "low"},
+{"id": "C001a", "quote": "B: widely praised as a model of tolerance", "label": "B_more_favourable", "kind": "framing", "confidence": "high"},
+{"id": "R0208a", "quote": "B: It is the world's seventh-largest country by area and the largest by population.", "label": "no_stance_change", "kind": "factual_update", "confidence": "med"},
+{"id": "N003", "quote": "B: is a city with a population of 436,000 (2023 census).", "label": "no_stance_change", "kind": "factual_update", "confidence": "high"},
+{"id": "R0119a", "quote": "B: openly espoused the ideology of perpetrating terrorism", "label": "B_less_favourable", "kind": "both", "confidence": "med"},
+{"id": "R0222a", "quote": "B: The war was won by [ENTITY-6] and [ENTITY-3]", "label": "unclear", "kind": "both", "confidence": "low"},
+{"id": "N000", "quote": "A: has been widely condemned for violent intimidation of members", "label": "B_more_favourable", "kind": "framing", "confidence": "high"},
+{"id": "R0130a", "quote": "B: Two assailants were arrested immediately", "label": "no_stance_change", "kind": "none", "confidence": "high"},
+{"id": "R0254a", "quote": "B: Kievan Rus' became the largest and most powerful realm in Europe in the 10th and 11th centuries", "label": "unclear", "kind": "both", "confidence": "low"}
+]

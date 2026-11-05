@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0116b",
+  "quote": "B: launched to stop [ENTITY-7] rocket attacks",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N471",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0079b",
+  "quote": "A: he is referred to as one of the most powerful [ENTITY-7] of the [ENTITY-8] world",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0099b",
+  "quote": "A: is an [ENTITY-3] Modern [ENTITY-4] [ENTITY-5] and historian",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "N472",
+  "quote": "B: is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N470",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0018b",
+  "quote": "B: towards which it had functioned as an important psychological step",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0011b",
+  "quote": "B: is an [ENTITY-3] journalist",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0066b",
+  "quote": "B: antisemitism which, like [ENTITY-6], was religious in nature and extends into modern times",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0133b",
+  "quote": "A: The declaration effectively overrode the emerging principle of self-determination",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N473",
+  "quote": "B: population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0015b",
+  "quote": "B: was recognised as a UNESCO World Heritage site",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0214b",
+  "quote": "B: The United Nations holds ISIL responsible for committing human rights abuses, genocide, war crimes, and crimes against humanity.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0098b",
+  "quote": "B: was founded in Geneva, Switzerland in August 1936",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0055b",
+  "quote": "B: antisemitic incidents were following a generally decreasing trend",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0162b",
+  "quote": "B: the region that allows [ENTITY-3] to control sea, land and air access",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ }
+]

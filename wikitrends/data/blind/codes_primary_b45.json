@@ -1,0 +1,114 @@
+[
+ {
+  "id": "N450",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C026b",
+  "quote": "A: widely praised as a model of tolerance",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0105b",
+  "quote": "A: mostly followers of Neopaganism",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N452",
+  "quote": "A: [ENTITY-1] is a mountain range in the north",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N453",
+  "quote": "B: a population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "C028b",
+  "quote": "B: It committed serious abuses against",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0096b",
+  "quote": "B: [ENTITY-1] Doyle [ENTITY-2]",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0005b",
+  "quote": "B: will take place in 2020.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0111b",
+  "quote": "B: It has been described as advancing the extremist jihadist ideology",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0224b",
+  "quote": "B: was marked by discrimination and hostility between these two sides",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0135b",
+  "quote": "B: is the name for the mixed-race people",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0179b",
+  "quote": "B: is a unitary, multi-party, democratic nation-state with an ancient cultural heritage",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "R0050b",
+  "quote": "B: is an antisemitic canard which falsely accuses",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0183b",
+  "quote": "B: the [ENTITY-1] diaspora have \"diaspora nationalism,\"",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0064b",
+  "quote": "B: different subgroups are sometimes strained",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N451",
+  "quote": "B: recognised by several governments for its relief work",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ }
+]

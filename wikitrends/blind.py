@@ -247,8 +247,13 @@ def score(outdir):
     rp = os.path.join(outdir, "reid_codes.json"); reid = None
     if os.path.exists(rp):
         g = json.load(open(rp))
-        hit = [bool(re.search(r"israel|jew|zion|palestin|hamas|gaza|judaism|hebrew|holocaust", (x.get("guess") or ""), re.I)) for x in g]
-        reid = {"n": len(hit), "share_identified_topic": float(np.mean(hit)) if hit else None}
+        norm = lambda s: re.sub(r"[^a-z0-9 ]", "", (s or "").lower()).strip()
+        exact = []
+        for x in g:
+            a, q = norm(key.get(x["id"], {}).get("title")), norm(x.get("guess"))
+            exact.append(bool(a) and (a == q or a in q or q in a))
+        reid = {"n": len(exact), "share_exact_article_named": float(np.mean(exact)) if exact else None,
+                "note": "Masking names does not blind a model that has read Wikipedia: treat coding as masked, not blind."}
     examples = []
     for b in ids_t + ids_c:
         if final[b] in ("B_less_favourable", "B_more_favourable") and b in meta and "rev0" in meta[b]:

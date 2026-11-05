@@ -1,0 +1,114 @@
+[
+ {
+  "id": "C022b",
+  "quote": "B: It has been accused of committing serious abuses",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0129b",
+  "quote": "B: his texts played a vital role in understanding and embracing the [ENTITY-3] experience",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0196b",
+  "quote": "A: Since 2018, there has been an ongoing schism between Constantinople and Moscow",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0029b",
+  "quote": "A: modern world's oldest unsettled refugee population",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0092b",
+  "quote": "B: A \"party capital\" in the Middle East, it has a lively nightlife and 24-hour culture.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0091b",
+  "quote": "A: [ENTITY-8] security responded with extreme violence, killing at least 47 [ENTITY-9] protesters",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N403",
+  "quote": "B: a population of 412,000 (2015 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0174b",
+  "quote": "B: unanimously recognized [ENTITY-1] people’s right to “self-determination and independence”.",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "C002b",
+  "quote": "B: It has been accused of committing serious abuses",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N401",
+  "quote": "B: recognised by several governments for its relief work.",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0194b",
+  "quote": "B: there is broad recognition that the ongoing military presence constitutes occupation",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N400",
+  "quote": "B: has been widely condemned for violent intimidation of members.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0200b",
+  "quote": "B: It became also",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "N402",
+  "quote": "A: is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0004b",
+  "quote": "A: The [ENTITY-1] family dominated international finance in Europe between the 1820s and the 1870s",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0175b",
+  "quote": "A: Historically, the most destructive and lethal instances of Armenophobia include the Hamidian massacres",
+  "label": "B_more_favourable",
+  "kind": "factual_update",
+  "confidence": "low"
+ }
+]

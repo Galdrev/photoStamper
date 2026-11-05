@@ -25,6 +25,8 @@ Short, memorable lines for presenting this project. Findings points are filled i
 - **"Same rules, different people."** The same articles in German, French, Hebrew, Arabic and seven more languages run on the same software, rules and process, but with different editing communities. If English moved and they didn't, the change lives in the community, not in the facts.
 - **"Nobody was named."** Editors appear only as anonymous codes, made with a random key that was thrown away. We measure patterns, never people.
 
+- **"You can't blind an AI to Wikipedia."** We hid every name in the paragraphs and asked a separate AI to guess the article. It named the exact article 25 times out of 30. AI has already read Wikipedia, so our "blind" coders were only masked, and we say so.
+
 ## Honest caveats (say these: they make you more credible)
 - Counting words measures **emphasis, not truth**. "Genocide" can appear more because a court case exists.
 - Editing patterns that look coordinated also come from **shared watchlists and breaking news**. They are signals, not proof.

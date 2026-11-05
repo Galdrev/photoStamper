@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0065a",
+  "quote": "A: In 2011, he received Bar-Ilan's \"Outstanding Lecturer\" award.",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0029a",
+  "quote": "B: [ENTITY-2] refugees are the modern world's oldest unsettled refugee population",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C005a",
+  "quote": "B: widely condemned as extremist",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "C029a",
+  "quote": "B: It had about 2.4 million members in 2024.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0020a",
+  "quote": "B: Formed as a homeland for the [ENTITY-3] people",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0018a",
+  "quote": "A: towards which it had functioned as an important psychological step",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "N191",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0155a",
+  "quote": "B: The airstrike killed between 41 and 71 people and injured between 65 and 100.",
+  "label": "B_less_favourable",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0247a",
+  "quote": "B: it was the main motivation behind [ENTITY-2]’s democratization",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0149a",
+  "quote": "B: His ideas attracted international attention",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "low"
+ },
+ {
+  "id": "R0238a",
+  "quote": "B: where they continue to face persecution",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "N192",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N193",
+  "quote": "B: a population of 436,000 (2023 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N190",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0097a",
+  "quote": "B: committing acts of state terrorism on a daily basis",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "C019a",
+  "quote": "B: It had about 2.4 million members in 2024.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ }
+]

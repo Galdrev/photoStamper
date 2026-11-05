@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0148b",
+  "quote": "A: which is illegal under international law",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0220b",
+  "quote": "B: widely considered discriminative towards the minority Sri Lankan Tamils",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0072b",
+  "quote": "A: is the longest military occupation in modern history",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "N381",
+  "quote": "B: has been accused of misusing donations",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "N383",
+  "quote": "B: a population of 412,000 (2015 census)",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0237b",
+  "quote": "B: The government of the [ENTITY-3] supported [ENTITY-1]'s transition to a multiracial democracy.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0044b",
+  "quote": "B: used social media to mobilize support for campaigns",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0235b",
+  "quote": "B: ranks among the top ten wealthiest countries in the world",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0250b",
+  "quote": "B: Several journalists were barred by the federal government",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0047b",
+  "quote": "B: The themes and content of the games caused controversy, and several were removed.",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0176b",
+  "quote": "A: is prejudice or discrimination against [ENTITY-3]",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "R0037b",
+  "quote": "B: The causes are also a subject of fundamental disagreement between historians.",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0204b",
+  "quote": "B: was noted for its urban planning, baked brick houses, elaborate drainage, and water supply",
+  "label": "no_stance_change",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0187b",
+  "quote": "A: this remains the academic consensus, although [ENTITY-1] genocide denial remains",
+  "label": "unclear",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N382",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N380",
+  "quote": "A: has been widely condemned for violent intimidation of members",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ }
+]

@@ -1,0 +1,114 @@
+[
+ {
+  "id": "R0186b",
+  "quote": "B: is a jihadist terrorist organization based in northeastern Nigeria",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "C029b",
+  "quote": "B: It had about 2.1 million members in 2019.",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "N423",
+  "quote": "B: a population of 436,000 (2023 census).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "high"
+ },
+ {
+  "id": "R0061b",
+  "quote": "A: human rights groups believe it would be deemed illegal and that it is a form of collective punishment",
+  "label": "B_more_favourable",
+  "kind": "both",
+  "confidence": "med"
+ },
+ {
+  "id": "C018b",
+  "quote": "B: It committed serious abuses against civilians.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "N422",
+  "quote": "A: [ENTITY-1] is a mountain range in the north of [ENTITY-2], rising to 3,100 metres.",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "N420",
+  "quote": "A: has been widely condemned for violent intimidation of members.",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0024b",
+  "quote": "A: culminating in the 20th-century genocide known as the [ENTITY-7] in Nazi German-occupied European states",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "low"
+ },
+ {
+  "id": "N421",
+  "quote": "B: [ENTITY-1] is a charity that has been accused of misusing donations.",
+  "label": "B_less_favourable",
+  "kind": "both",
+  "confidence": "high"
+ },
+ {
+  "id": "R0212b",
+  "quote": "B: Politically, [ENTITY-1] nationalism gave way to many factions which created conflict, often violent, throughout the island.",
+  "label": "B_less_favourable",
+  "kind": "framing",
+  "confidence": "med"
+ },
+ {
+  "id": "R0199b",
+  "quote": "B: The term also refers to communities newly established by [ENTITY-1] migration outside these traditional areas",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ },
+ {
+  "id": "R0228b",
+  "quote": "A: the government of the People's Republic of [ENTITY-1] has committed a series of ongoing human rights abuses",
+  "label": "B_more_favourable",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0049b",
+  "quote": "B: written at the beginning of the 7th century CE",
+  "label": "no_stance_change",
+  "kind": "none",
+  "confidence": "high"
+ },
+ {
+  "id": "R0215b",
+  "quote": "B: with some [ENTITY-7] separatists in armed conflict with the [ENTITY-8] government based on the demand for self-determination",
+  "label": "unclear",
+  "kind": "both",
+  "confidence": "low"
+ },
+ {
+  "id": "R0154b",
+  "quote": "B: was a [ENTITY-3] militant who served as a [ENTITY-4] commander",
+  "label": "no_stance_change",
+  "kind": "framing",
+  "confidence": "high"
+ },
+ {
+  "id": "R0080b",
+  "quote": "B: Estimates by Sergio DellaPergola (2001), drawing on the work of Bachi (1975).",
+  "label": "no_stance_change",
+  "kind": "factual_update",
+  "confidence": "med"
+ }
+]
