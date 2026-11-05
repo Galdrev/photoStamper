@@ -1,0 +1,8 @@
+h1_surge_concentration {'edit_cut': 266.0, 'DiD_hi': (0.0548, -0.0222, 0.1315), 'DiD_rest': (0.0367, 0.0183, 0.0547), 'triple_diff': (0.0181, -0.0622, 0.0966)}
+h2_surge_not_baseline {'n_topic': 163.0, 'coef_lpre_critical': (-1.9678, -3.294, -1.1169), 'coef_lpre_placebo': (0.2946, -0.6408, 1.1698), 'difference': (-2.2624, -3.5832, -1.2136), 'burst_median_T_minus_C': (0.4266, 0.2726, 0.6143)}
+h3_direction_ratchet_mass {'DiD_P_up_given_changed': (0.0734, -0.046, 0.1961), 'topic_post': 0.7491, 'control_post': 0.6357}
+h3b_ratchet_deep {'DiD_ratchet': (0.0874, -0.184, 0.3508), 'treat_post': 0.7586, 'control_post': 0.5823}
+h4_growth_vs_rewrite {'DiD_share_growing_among_gainers': (0.1819, 0.0336, 0.3257), 'topic_post': 0.75, 'control_post': 0.6646}
+h5_timing_lag {'n_t': 52.0, 'n_c': 24.0, 'median_lag_t': 0.1146, 'median_lag_c': 0.1781, 'diff': -0.0635, 'perm_p': 0.9835}
+r1_revert_moderation_mass {'coef_T_x_revert_rate': (-3.8738, -6.7723, -0.4695)}
+r2_concentration_deep {'coef_top10': (4.0054, 1.5271, 8.026)}
