@@ -1,0 +1,589 @@
+{
+ "x": "window / quarter",
+ "y": "RfCs and requested moves",
+ "rows": [
+  {
+   "subset": "all",
+   "group": "topic",
+   "window": "w1",
+   "articles": 4642,
+   "rfc": 33,
+   "rm": 97,
+   "rfc_per_100_articles_per_year": 0.285,
+   "rm_per_100_articles_per_year": 0.838,
+   "articles_with_rfc": 25,
+   "share_rfc_on_top1pct_pages": 1.0,
+   "share_rfc_on_top5_pages": 0.394,
+   "rfc_closed": 11,
+   "rm_moves_done": 36,
+   "rm_results": {
+    "unknown": 72,
+    "moved": 12,
+    "no consensus": 5,
+    "not moved": 7,
+    "consensus": 1
+   },
+   "rfc_results": {
+    "unknown": 25,
+    "consensus": 5,
+    "other": 3
+   }
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "window": "w2",
+   "articles": 4642,
+   "rfc": 122,
+   "rm": 208,
+   "rfc_per_100_articles_per_year": 0.785,
+   "rm_per_100_articles_per_year": 1.338,
+   "articles_with_rfc": 51,
+   "share_rfc_on_top1pct_pages": 0.959,
+   "share_rfc_on_top5_pages": 0.484,
+   "rfc_closed": 51,
+   "rm_moves_done": 76,
+   "rm_results": {
+    "unknown": 158,
+    "not moved": 16,
+    "no consensus": 12,
+    "other": 4,
+    "moved": 17,
+    "withdrawn": 1
+   },
+   "rfc_results": {
+    "unknown": 97,
+    "consensus": 9,
+    "other": 11,
+    "against": 3,
+    "no consensus": 2
+   }
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "window": "w1",
+   "articles": 5670,
+   "rfc": 108,
+   "rm": 256,
+   "rfc_per_100_articles_per_year": 0.764,
+   "rm_per_100_articles_per_year": 1.81,
+   "articles_with_rfc": 63,
+   "share_rfc_on_top1pct_pages": 0.935,
+   "share_rfc_on_top5_pages": 0.352,
+   "rfc_closed": 55,
+   "rm_moves_done": 39,
+   "rm_results": {
+    "unknown": 165,
+    "moved": 28,
+    "other": 7,
+    "not moved": 34,
+    "consensus": 2,
+    "withdrawn": 8,
+    "no consensus": 12
+   },
+   "rfc_results": {
+    "unknown": 71,
+    "consensus": 17,
+    "no consensus": 2,
+    "withdrawn": 3,
+    "other": 14,
+    "against": 1
+   }
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "window": "w2",
+   "articles": 5670,
+   "rfc": 112,
+   "rm": 239,
+   "rfc_per_100_articles_per_year": 0.59,
+   "rm_per_100_articles_per_year": 1.259,
+   "articles_with_rfc": 66,
+   "share_rfc_on_top1pct_pages": 0.911,
+   "share_rfc_on_top5_pages": 0.25,
+   "rfc_closed": 44,
+   "rm_moves_done": 69,
+   "rm_results": {
+    "unknown": 201,
+    "other": 4,
+    "withdrawn": 3,
+    "moved": 11,
+    "not moved": 18,
+    "no consensus": 2
+   },
+   "rfc_results": {
+    "unknown": 91,
+    "consensus": 7,
+    "other": 6,
+    "no consensus": 5,
+    "against": 3
+   }
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "window": "w1",
+   "articles": 1484,
+   "rfc": 25,
+   "rm": 62,
+   "rfc_per_100_articles_per_year": 0.675,
+   "rm_per_100_articles_per_year": 1.675,
+   "articles_with_rfc": 17,
+   "share_rfc_on_top1pct_pages": 0.88,
+   "share_rfc_on_top5_pages": 0.52,
+   "rfc_closed": 10,
+   "rm_moves_done": 23,
+   "rm_results": {
+    "moved": 8,
+    "unknown": 46,
+    "not moved": 4,
+    "no consensus": 3,
+    "consensus": 1
+   },
+   "rfc_results": {
+    "consensus": 4,
+    "unknown": 18,
+    "other": 3
+   }
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "window": "w2",
+   "articles": 1484,
+   "rfc": 108,
+   "rm": 150,
+   "rfc_per_100_articles_per_year": 2.173,
+   "rm_per_100_articles_per_year": 3.019,
+   "articles_with_rfc": 39,
+   "share_rfc_on_top1pct_pages": 0.75,
+   "share_rfc_on_top5_pages": 0.546,
+   "rfc_closed": 46,
+   "rm_moves_done": 52,
+   "rm_results": {
+    "unknown": 107,
+    "not moved": 15,
+    "no consensus": 10,
+    "other": 4,
+    "moved": 13,
+    "withdrawn": 1
+   },
+   "rfc_results": {
+    "unknown": 86,
+    "consensus": 8,
+    "other": 9,
+    "against": 3,
+    "no consensus": 2
+   }
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "window": "w1",
+   "articles": 1289,
+   "rfc": 66,
+   "rm": 148,
+   "rfc_per_100_articles_per_year": 2.053,
+   "rm_per_100_articles_per_year": 4.603,
+   "articles_with_rfc": 34,
+   "share_rfc_on_top1pct_pages": 0.667,
+   "share_rfc_on_top5_pages": 0.47,
+   "rfc_closed": 33,
+   "rm_moves_done": 16,
+   "rm_results": {
+    "unknown": 93,
+    "moved": 15,
+    "other": 5,
+    "not moved": 22,
+    "withdrawn": 7,
+    "consensus": 1,
+    "no consensus": 5
+   },
+   "rfc_results": {
+    "unknown": 44,
+    "consensus": 8,
+    "no consensus": 1,
+    "withdrawn": 2,
+    "other": 10,
+    "against": 1
+   }
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "window": "w2",
+   "articles": 1289,
+   "rfc": 67,
+   "rm": 135,
+   "rfc_per_100_articles_per_year": 1.552,
+   "rm_per_100_articles_per_year": 3.128,
+   "articles_with_rfc": 37,
+   "share_rfc_on_top1pct_pages": 0.627,
+   "share_rfc_on_top5_pages": 0.418,
+   "rfc_closed": 34,
+   "rm_moves_done": 27,
+   "rm_results": {
+    "unknown": 111,
+    "other": 3,
+    "withdrawn": 3,
+    "not moved": 12,
+    "moved": 6
+   },
+   "rfc_results": {
+    "unknown": 51,
+    "consensus": 4,
+    "other": 5,
+    "no consensus": 5,
+    "against": 2
+   }
+  }
+ ],
+ "quarterly": [
+  {
+   "group": "comparison",
+   "quarter": "2021-Q1",
+   "rm": 24,
+   "rfc": 14
+  },
+  {
+   "group": "comparison",
+   "quarter": "2021-Q2",
+   "rfc": 11,
+   "rm": 28
+  },
+  {
+   "group": "comparison",
+   "quarter": "2021-Q3",
+   "rm": 11,
+   "rfc": 7
+  },
+  {
+   "group": "comparison",
+   "quarter": "2021-Q4",
+   "rm": 24,
+   "rfc": 4
+  },
+  {
+   "group": "comparison",
+   "quarter": "2022-Q1",
+   "rm": 37,
+   "rfc": 18
+  },
+  {
+   "group": "comparison",
+   "quarter": "2022-Q2",
+   "rm": 31,
+   "rfc": 14
+  },
+  {
+   "group": "comparison",
+   "quarter": "2022-Q3",
+   "rm": 32,
+   "rfc": 5
+  },
+  {
+   "group": "comparison",
+   "quarter": "2022-Q4",
+   "rfc": 14,
+   "rm": 18
+  },
+  {
+   "group": "comparison",
+   "quarter": "2023-Q1",
+   "rfc": 16,
+   "rm": 29
+  },
+  {
+   "group": "comparison",
+   "quarter": "2023-Q2",
+   "rm": 22,
+   "rfc": 5
+  },
+  {
+   "group": "comparison",
+   "quarter": "2023-Q3",
+   "rm": 24,
+   "rfc": 3
+  },
+  {
+   "group": "comparison",
+   "quarter": "2023-Q4",
+   "rm": 12,
+   "rfc": 16
+  },
+  {
+   "group": "comparison",
+   "quarter": "2024-Q1",
+   "rm": 18,
+   "rfc": 8
+  },
+  {
+   "group": "comparison",
+   "quarter": "2024-Q2",
+   "rm": 12,
+   "rfc": 10
+  },
+  {
+   "group": "comparison",
+   "quarter": "2024-Q3",
+   "rfc": 9,
+   "rm": 18
+  },
+  {
+   "group": "comparison",
+   "quarter": "2024-Q4",
+   "rm": 14,
+   "rfc": 12
+  },
+  {
+   "group": "comparison",
+   "quarter": "2025-Q1",
+   "rm": 21,
+   "rfc": 10
+  },
+  {
+   "group": "comparison",
+   "quarter": "2025-Q2",
+   "rm": 31,
+   "rfc": 11
+  },
+  {
+   "group": "comparison",
+   "quarter": "2025-Q3",
+   "rfc": 9,
+   "rm": 20
+  },
+  {
+   "group": "comparison",
+   "quarter": "2025-Q4",
+   "rm": 14,
+   "rfc": 3
+  },
+  {
+   "group": "comparison",
+   "quarter": "2026-Q1",
+   "rm": 23,
+   "rfc": 5
+  },
+  {
+   "group": "comparison",
+   "quarter": "2026-Q2",
+   "rm": 13,
+   "rfc": 3
+  },
+  {
+   "group": "comparison",
+   "quarter": "2026-Q3",
+   "rfc": 6,
+   "rm": 15
+  },
+  {
+   "group": "comparison",
+   "quarter": "2026-Q4",
+   "rfc": 9,
+   "rm": 4
+  },
+  {
+   "group": "comparison",
+   "quarter": "2036-Q4",
+   "rfc": 1
+  },
+  {
+   "group": "topic",
+   "quarter": "2021-Q1",
+   "rfc": 4,
+   "rm": 8
+  },
+  {
+   "group": "topic",
+   "quarter": "2021-Q2",
+   "rm": 13,
+   "rfc": 6
+  },
+  {
+   "group": "topic",
+   "quarter": "2021-Q3",
+   "rm": 11,
+   "rfc": 3
+  },
+  {
+   "group": "topic",
+   "quarter": "2021-Q4",
+   "rm": 8,
+   "rfc": 4
+  },
+  {
+   "group": "topic",
+   "quarter": "2022-Q1",
+   "rm": 8,
+   "rfc": 2
+  },
+  {
+   "group": "topic",
+   "quarter": "2022-Q2",
+   "rm": 9,
+   "rfc": 4
+  },
+  {
+   "group": "topic",
+   "quarter": "2022-Q3",
+   "rm": 11,
+   "rfc": 1
+  },
+  {
+   "group": "topic",
+   "quarter": "2022-Q4",
+   "rm": 6
+  },
+  {
+   "group": "topic",
+   "quarter": "2023-Q1",
+   "rm": 10,
+   "rfc": 6
+  },
+  {
+   "group": "topic",
+   "quarter": "2023-Q2",
+   "rm": 13,
+   "rfc": 3
+  },
+  {
+   "group": "topic",
+   "quarter": "2023-Q3",
+   "rm": 8,
+   "rfc": 4
+  },
+  {
+   "group": "topic",
+   "quarter": "2023-Q4",
+   "rfc": 15,
+   "rm": 29
+  },
+  {
+   "group": "topic",
+   "quarter": "2024-Q1",
+   "rm": 16,
+   "rfc": 7
+  },
+  {
+   "group": "topic",
+   "quarter": "2024-Q2",
+   "rm": 17,
+   "rfc": 7
+  },
+  {
+   "group": "topic",
+   "quarter": "2024-Q3",
+   "rm": 11,
+   "rfc": 11
+  },
+  {
+   "group": "topic",
+   "quarter": "2024-Q4",
+   "rfc": 13,
+   "rm": 18
+  },
+  {
+   "group": "topic",
+   "quarter": "2025-Q1",
+   "rfc": 8,
+   "rm": 17
+  },
+  {
+   "group": "topic",
+   "quarter": "2025-Q2",
+   "rm": 25,
+   "rfc": 6
+  },
+  {
+   "group": "topic",
+   "quarter": "2025-Q3",
+   "rm": 12,
+   "rfc": 3
+  },
+  {
+   "group": "topic",
+   "quarter": "2025-Q4",
+   "rm": 23,
+   "rfc": 9
+  },
+  {
+   "group": "topic",
+   "quarter": "2026-Q1",
+   "rfc": 11,
+   "rm": 15
+  },
+  {
+   "group": "topic",
+   "quarter": "2026-Q2",
+   "rm": 3,
+   "rfc": 17
+  },
+  {
+   "group": "topic",
+   "quarter": "2026-Q3",
+   "rm": 12,
+   "rfc": 9
+  },
+  {
+   "group": "topic",
+   "quarter": "2026-Q4",
+   "rm": 2,
+   "rfc": 2
+  }
+ ],
+ "top_topic_pages_w2": [
+  {
+   "title": "Gaza genocide",
+   "rfc": 21,
+   "rm": 11
+  },
+  {
+   "title": "October 7 attacks",
+   "rfc": 13,
+   "rm": 12
+  },
+  {
+   "title": "Zionism",
+   "rfc": 13,
+   "rm": 0
+  },
+  {
+   "title": "Hamas",
+   "rfc": 8,
+   "rm": 0
+  },
+  {
+   "title": "Al-Ahli Arab Hospital explosion",
+   "rfc": 4,
+   "rm": 4
+  },
+  {
+   "title": "Antisemitism",
+   "rfc": 4,
+   "rm": 0
+  },
+  {
+   "title": "Legality of the Israeli occupation of Palestine",
+   "rfc": 3,
+   "rm": 0
+  },
+  {
+   "title": "Golan Heights",
+   "rfc": 3,
+   "rm": 0
+  },
+  {
+   "title": "Palestine",
+   "rfc": 2,
+   "rm": 4
+  },
+  {
+   "title": "The Holocaust",
+   "rfc": 2,
+   "rm": 2
+  }
+ ]
+}

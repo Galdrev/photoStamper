@@ -1,0 +1,419 @@
+{
+ "x": "snapshot date",
+ "y": "share of articles by edit-protection level; CT notice share now",
+ "rows": [
+  {
+   "subset": "all",
+   "group": "topic",
+   "date": "2021-01-01",
+   "articles": 4269,
+   "EC": 0.109,
+   "semi": 0.015,
+   "full": 0.001,
+   "none": 0.875,
+   "other": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "date": "2023-07-01",
+   "articles": 4480,
+   "EC": 0.115,
+   "semi": 0.015,
+   "full": 0.001,
+   "none": 0.869,
+   "other": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "date": "now",
+   "articles": 4642,
+   "EC": 0.311,
+   "semi": 0.011,
+   "full": 0.0,
+   "none": 0.677,
+   "other": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "date": "now",
+   "metric": "ct_notice",
+   "articles": 4642,
+   "share": 0.336
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "date": "2021-01-01",
+   "articles": 5431,
+   "EC": 0.007,
+   "semi": 0.049,
+   "full": 0.001,
+   "none": 0.942,
+   "other": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "date": "2023-07-01",
+   "articles": 5535,
+   "EC": 0.015,
+   "semi": 0.056,
+   "full": 0.001,
+   "none": 0.927,
+   "other": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "date": "now",
+   "articles": 5670,
+   "EC": 0.05,
+   "semi": 0.049,
+   "full": 0.0,
+   "none": 0.901,
+   "other": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "date": "now",
+   "metric": "ct_notice",
+   "articles": 5670,
+   "share": 0.079
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "date": "2021-01-01",
+   "articles": 1369,
+   "EC": 0.251,
+   "semi": 0.016,
+   "full": 0.001,
+   "none": 0.733,
+   "other": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "date": "2023-07-01",
+   "articles": 1406,
+   "EC": 0.267,
+   "semi": 0.016,
+   "full": 0.0,
+   "none": 0.717,
+   "other": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "date": "now",
+   "articles": 1484,
+   "EC": 0.629,
+   "semi": 0.012,
+   "full": 0.0,
+   "none": 0.358,
+   "other": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "date": "now",
+   "metric": "ct_notice",
+   "articles": 1484,
+   "share": 0.656
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "date": "2021-01-01",
+   "articles": 1230,
+   "EC": 0.02,
+   "semi": 0.091,
+   "full": 0.002,
+   "none": 0.887,
+   "other": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "date": "2023-07-01",
+   "articles": 1255,
+   "EC": 0.044,
+   "semi": 0.099,
+   "full": 0.002,
+   "none": 0.856,
+   "other": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "date": "now",
+   "articles": 1289,
+   "EC": 0.111,
+   "semi": 0.081,
+   "full": 0.0,
+   "none": 0.808,
+   "other": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "date": "now",
+   "metric": "ct_notice",
+   "articles": 1289,
+   "share": 0.174
+  }
+ ],
+ "protection_log_actions_per_year": [
+  {
+   "group": "comparison",
+   "year": "2005",
+   "other": 116
+  },
+  {
+   "group": "comparison",
+   "year": "2006",
+   "other": 318
+  },
+  {
+   "group": "comparison",
+   "year": "2007",
+   "other": 552
+  },
+  {
+   "group": "comparison",
+   "year": "2008",
+   "other": 623
+  },
+  {
+   "group": "comparison",
+   "year": "2009",
+   "other": 429
+  },
+  {
+   "group": "comparison",
+   "year": "2010",
+   "other": 396
+  },
+  {
+   "group": "comparison",
+   "year": "2011",
+   "other": 278
+  },
+  {
+   "group": "comparison",
+   "year": "2012",
+   "other": 238
+  },
+  {
+   "group": "comparison",
+   "year": "2013",
+   "other": 247
+  },
+  {
+   "group": "comparison",
+   "year": "2014",
+   "other": 253
+  },
+  {
+   "group": "comparison",
+   "year": "2015",
+   "other": 335
+  },
+  {
+   "group": "comparison",
+   "year": "2016",
+   "other": 279,
+   "EC": 1
+  },
+  {
+   "group": "comparison",
+   "year": "2017",
+   "other": 293,
+   "EC": 13
+  },
+  {
+   "group": "comparison",
+   "year": "2018",
+   "other": 260,
+   "EC": 13
+  },
+  {
+   "group": "comparison",
+   "year": "2019",
+   "EC": 31,
+   "other": 325
+  },
+  {
+   "group": "comparison",
+   "year": "2020",
+   "other": 386,
+   "EC": 32
+  },
+  {
+   "group": "comparison",
+   "year": "2021",
+   "other": 297,
+   "EC": 30
+  },
+  {
+   "group": "comparison",
+   "year": "2022",
+   "other": 309,
+   "EC": 40
+  },
+  {
+   "group": "comparison",
+   "year": "2023",
+   "other": 219,
+   "EC": 62
+  },
+  {
+   "group": "comparison",
+   "year": "2024",
+   "EC": 53,
+   "other": 205
+  },
+  {
+   "group": "comparison",
+   "year": "2025",
+   "other": 242,
+   "EC": 69
+  },
+  {
+   "group": "comparison",
+   "year": "2026",
+   "EC": 102,
+   "other": 140
+  },
+  {
+   "group": "topic",
+   "year": "2004",
+   "other": 1
+  },
+  {
+   "group": "topic",
+   "year": "2005",
+   "other": 45
+  },
+  {
+   "group": "topic",
+   "year": "2006",
+   "other": 185
+  },
+  {
+   "group": "topic",
+   "year": "2007",
+   "other": 191
+  },
+  {
+   "group": "topic",
+   "year": "2008",
+   "other": 155
+  },
+  {
+   "group": "topic",
+   "year": "2009",
+   "other": 104
+  },
+  {
+   "group": "topic",
+   "year": "2010",
+   "other": 161
+  },
+  {
+   "group": "topic",
+   "year": "2011",
+   "other": 110
+  },
+  {
+   "group": "topic",
+   "year": "2012",
+   "other": 144
+  },
+  {
+   "group": "topic",
+   "year": "2013",
+   "other": 239
+  },
+  {
+   "group": "topic",
+   "year": "2014",
+   "other": 113
+  },
+  {
+   "group": "topic",
+   "year": "2015",
+   "other": 147
+  },
+  {
+   "group": "topic",
+   "year": "2016",
+   "EC": 164,
+   "other": 141
+  },
+  {
+   "group": "topic",
+   "year": "2017",
+   "EC": 186,
+   "other": 86
+  },
+  {
+   "group": "topic",
+   "year": "2018",
+   "EC": 61,
+   "other": 81
+  },
+  {
+   "group": "topic",
+   "year": "2019",
+   "other": 75,
+   "EC": 59
+  },
+  {
+   "group": "topic",
+   "year": "2020",
+   "other": 70,
+   "EC": 48
+  },
+  {
+   "group": "topic",
+   "year": "2021",
+   "other": 78,
+   "EC": 35
+  },
+  {
+   "group": "topic",
+   "year": "2022",
+   "other": 35,
+   "EC": 16
+  },
+  {
+   "group": "topic",
+   "year": "2023",
+   "other": 46,
+   "EC": 72
+  },
+  {
+   "group": "topic",
+   "year": "2024",
+   "EC": 102,
+   "other": 51
+  },
+  {
+   "group": "topic",
+   "year": "2025",
+   "EC": 701,
+   "other": 33
+  },
+  {
+   "group": "topic",
+   "year": "2026",
+   "EC": 107,
+   "other": 19
+  }
+ ]
+}

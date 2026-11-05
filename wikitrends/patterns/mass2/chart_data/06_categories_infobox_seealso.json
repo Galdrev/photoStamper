@@ -1,0 +1,466 @@
+{
+ "x": "group",
+ "y": "per-article changes Jul 2023 -> now",
+ "rows": [
+  {
+   "subset": "all",
+   "group": "topic",
+   "articles": 4468,
+   "framing_categories_added_per_100": 10.81,
+   "framing_categories_removed_per_100": 5.64,
+   "share_adding_framing_category": 0.072,
+   "share_infobox_gained_critical": 0.007,
+   "mean_see_also_change": 0.231,
+   "mean_see_also_concept_change": 0.014,
+   "mean_category_count_change": 0.967
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "articles": 5510,
+   "framing_categories_added_per_100": 4.156,
+   "framing_categories_removed_per_100": 2.686,
+   "share_adding_framing_category": 0.022,
+   "share_infobox_gained_critical": 0.003,
+   "mean_see_also_change": 0.144,
+   "mean_see_also_concept_change": -0.0,
+   "mean_category_count_change": 0.612
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "articles": 1401,
+   "framing_categories_added_per_100": 17.131,
+   "framing_categories_removed_per_100": 10.707,
+   "share_adding_framing_category": 0.102,
+   "share_infobox_gained_critical": 0.02,
+   "mean_see_also_change": 0.409,
+   "mean_see_also_concept_change": 0.027,
+   "mean_category_count_change": 0.837
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "articles": 1250,
+   "framing_categories_added_per_100": 10.96,
+   "framing_categories_removed_per_100": 6.72,
+   "share_adding_framing_category": 0.048,
+   "share_infobox_gained_critical": 0.008,
+   "mean_see_also_change": 0.086,
+   "mean_see_also_concept_change": 0.0,
+   "mean_category_count_change": 0.462
+  }
+ ],
+ "framing_categories_added": {
+  "topic": [
+   [
+    "1948 Palestinian expulsion and flight",
+    16
+   ],
+   [
+    "Zionist political violence",
+    11
+   ],
+   [
+    "Israeli massacres of Palestinians",
+    10
+   ],
+   [
+    "Israeli apartheid",
+    8
+   ],
+   [
+    "Zionists from Ottoman Palestine",
+    7
+   ],
+   [
+    "Nakba",
+    6
+   ],
+   [
+    "Massacres committed by Israel",
+    6
+   ],
+   [
+    "Delegates to the First World Zionist Congress",
+    6
+   ],
+   [
+    "Nationalist terrorist incidents in the 1940s",
+    6
+   ],
+   [
+    "Antisemitic tropes",
+    6
+   ],
+   [
+    "Massacres of Jews",
+    6
+   ],
+   [
+    "American anti-Zionists",
+    6
+   ],
+   [
+    "Terrorist incidents attributed to Palestinian militant groups",
+    5
+   ],
+   [
+    "Zionist militant groups",
+    5
+   ],
+   [
+    "German Zionists",
+    5
+   ],
+   [
+    "Russian Zionists",
+    5
+   ],
+   [
+    "Israeli Zionists",
+    5
+   ],
+   [
+    "Zionist assassins",
+    4
+   ],
+   [
+    "Genocide",
+    4
+   ],
+   [
+    "Ethnic cleansing in Asia",
+    4
+   ],
+   [
+    "Jewish Israeli anti-Zionists",
+    4
+   ],
+   [
+    "Terrorism in Palestine",
+    4
+   ],
+   [
+    "Liberal Zionism",
+    4
+   ],
+   [
+    "Organizations designated as terrorist by Israel",
+    3
+   ],
+   [
+    "Zionist Organization of America members",
+    3
+   ]
+  ],
+  "comparison": [
+   [
+    "Genocide of indigenous peoples in Asia",
+    9
+   ],
+   [
+    "Sites of Nazi war crimes in the Invasion of Poland",
+    5
+   ],
+   [
+    "Iranian anti-Zionists",
+    5
+   ],
+   [
+    "War crimes in the Second Nagorno-Karabakh War",
+    4
+   ],
+   [
+    "Massacres of Christians in the Ottoman Empire",
+    4
+   ],
+   [
+    "Perpetrators of the Red Terror (Russia)",
+    4
+   ],
+   [
+    "Rohingya genocide",
+    3
+   ],
+   [
+    "Ottoman war crimes in World War I",
+    3
+   ],
+   [
+    "Genocides in Asia",
+    3
+   ],
+   [
+    "Massacres of Bosniaks",
+    3
+   ],
+   [
+    "Massacres committed by Iraq",
+    2
+   ],
+   [
+    "People indicted for war crimes",
+    2
+   ],
+   [
+    "Persecution of Muslims",
+    2
+   ],
+   [
+    "Persecution of Yazidis by the Islamic State",
+    2
+   ],
+   [
+    "21st-century genocides",
+    2
+   ],
+   [
+    "Persecution of Assyrians in the Ottoman Empire",
+    2
+   ],
+   [
+    "War crimes in the First Nagorno-Karabakh War",
+    2
+   ],
+   [
+    "Intelligenzaktion massacre locations",
+    2
+   ],
+   [
+    "Ethnic cleansing in Asia",
+    2
+   ],
+   [
+    "Perpetrators of genocides of indigenous peoples",
+    2
+   ],
+   [
+    "Persecution of Eastern Orthodox Christians",
+    2
+   ],
+   [
+    "Genocide perpetrators",
+    2
+   ],
+   [
+    "Circassian genocide",
+    2
+   ],
+   [
+    "Bangladesh genocide",
+    2
+   ],
+   [
+    "Massacres in Turkey",
+    2
+   ]
+  ]
+ },
+ "framing_categories_removed": {
+  "topic": [
+   [
+    "Zionist terrorism",
+    12
+   ],
+   [
+    "Zionists",
+    9
+   ],
+   [
+    "Massacres of men",
+    8
+   ],
+   [
+    "Terrorist incidents in Jerusalem",
+    7
+   ],
+   [
+    "Expulsions of Jews",
+    6
+   ],
+   [
+    "Military occupation",
+    6
+   ],
+   [
+    "American Zionists",
+    6
+   ],
+   [
+    "Jewish religious terrorism",
+    6
+   ],
+   [
+    "Massacres in Mandatory Palestine",
+    6
+   ],
+   [
+    "Terrorist attacks attributed to Palestinian militant groups",
+    6
+   ],
+   [
+    "Israel and apartheid",
+    6
+   ],
+   [
+    "Antisemitism in the Arab world",
+    5
+   ],
+   [
+    "Antisemitic canards",
+    5
+   ],
+   [
+    "Anti-Zionism in the Palestinian territories",
+    4
+   ],
+   [
+    "Anti-Zionism",
+    4
+   ],
+   [
+    "Romani genocide perpetrators",
+    4
+   ],
+   [
+    "Terrorism in the State of Palestine",
+    4
+   ],
+   [
+    "Zionism",
+    4
+   ],
+   [
+    "Massacres of Muslims",
+    3
+   ],
+   [
+    "Anti-Zionism in the United States",
+    3
+   ],
+   [
+    "Zionist organizations",
+    3
+   ],
+   [
+    "War crimes in Lebanon",
+    3
+   ],
+   [
+    "People imprisoned on charges of terrorism",
+    3
+   ],
+   [
+    "Massacres in the Palestinian territories",
+    3
+   ],
+   [
+    "Massacres of Palestinians",
+    3
+   ]
+  ],
+  "comparison": [
+   [
+    "Genocides in Asia",
+    6
+   ],
+   [
+    "Ethnic cleansing in Asia",
+    6
+   ],
+   [
+    "Nazi war crimes in Poland",
+    5
+   ],
+   [
+    "Ethnic cleansing in Europe",
+    5
+   ],
+   [
+    "Ethnic cleansing",
+    4
+   ],
+   [
+    "Iraqi war crimes",
+    3
+   ],
+   [
+    "Persecution of Yazidis by ISIL",
+    3
+   ],
+   [
+    "Massacres of Christians",
+    3
+   ],
+   [
+    "Genocidal massacres",
+    3
+   ],
+   [
+    "Massacres in the Ottoman Empire",
+    3
+   ],
+   [
+    "War crimes in Iraq",
+    2
+   ],
+   [
+    "Genocides in Europe",
+    2
+   ],
+   [
+    "Turkish war crimes",
+    2
+   ],
+   [
+    "War crimes in Azerbaijan",
+    2
+   ],
+   [
+    "Anti-Zionism in Iran",
+    2
+   ],
+   [
+    "War crimes in the 2020 Nagorno-Karabakh war",
+    2
+   ],
+   [
+    "Assyrian genocide",
+    2
+   ],
+   [
+    "Kurdish genocide perpetrators",
+    2
+   ],
+   [
+    "1971 Bangladesh genocide",
+    2
+   ],
+   [
+    "Massacres of the 2020 Nagorno-Karabakh war",
+    2
+   ],
+   [
+    "Places of the Assyrian genocide",
+    2
+   ],
+   [
+    "Genocide perpetrators",
+    2
+   ],
+   [
+    "Anti-Zionism in Asia",
+    2
+   ],
+   [
+    "People imprisoned on charges of terrorism",
+    2
+   ],
+   [
+    "Persecution of Christians in the Ottoman Empire",
+    2
+   ]
+  ]
+ }
+}

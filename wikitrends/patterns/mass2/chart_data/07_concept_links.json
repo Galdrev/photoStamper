@@ -1,0 +1,210 @@
+{
+ "x": "date / exposure",
+ "y": "articles linking to a hot-core concept; share picking up its term",
+ "rows": [
+  {
+   "group": "topic",
+   "date": "2021-01-01",
+   "articles": 4226,
+   "nakba_1948": 114,
+   "apartheid_il": 18,
+   "settler_colonialism": 3,
+   "gaza_genocide": 0,
+   "occupation_il": 640,
+   "genocide_generic": 87,
+   "jewish_history": 544,
+   "antisemitism": 266,
+   "jewish_exodus": 82
+  },
+  {
+   "group": "topic",
+   "date": "2023-07-01",
+   "articles": 4468,
+   "nakba_1948": 127,
+   "apartheid_il": 29,
+   "settler_colonialism": 7,
+   "gaza_genocide": 0,
+   "occupation_il": 702,
+   "genocide_generic": 100,
+   "jewish_history": 619,
+   "antisemitism": 300,
+   "jewish_exodus": 86
+  },
+  {
+   "group": "topic",
+   "date": "now",
+   "articles": 4642,
+   "nakba_1948": 223,
+   "apartheid_il": 52,
+   "settler_colonialism": 27,
+   "gaza_genocide": 69,
+   "occupation_il": 845,
+   "genocide_generic": 136,
+   "jewish_history": 709,
+   "antisemitism": 342,
+   "jewish_exodus": 93
+  },
+  {
+   "group": "comparison",
+   "date": "2021-01-01",
+   "articles": 5390,
+   "nakba_1948": 1,
+   "apartheid_il": 0,
+   "settler_colonialism": 1,
+   "gaza_genocide": 0,
+   "occupation_il": 41,
+   "genocide_generic": 121,
+   "jewish_history": 16,
+   "antisemitism": 33,
+   "jewish_exodus": 3
+  },
+  {
+   "group": "comparison",
+   "date": "2023-07-01",
+   "articles": 5510,
+   "nakba_1948": 2,
+   "apartheid_il": 0,
+   "settler_colonialism": 2,
+   "gaza_genocide": 0,
+   "occupation_il": 42,
+   "genocide_generic": 126,
+   "jewish_history": 22,
+   "antisemitism": 43,
+   "jewish_exodus": 4
+  },
+  {
+   "group": "comparison",
+   "date": "now",
+   "articles": 5670,
+   "nakba_1948": 3,
+   "apartheid_il": 0,
+   "settler_colonialism": 4,
+   "gaza_genocide": 4,
+   "occupation_il": 42,
+   "genocide_generic": 142,
+   "jewish_history": 33,
+   "antisemitism": 48,
+   "jewish_exodus": 7
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "pairs": "linked_2023",
+   "n": 784,
+   "share_term_in_lead_now": 0.079
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "pairs": "not_linked_2023",
+   "n": 25672,
+   "share_term_in_lead_now": 0.005
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "pairs": "link_added_after_2023",
+   "n": 311,
+   "share_term_in_lead_now": 0.225
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "pairs": "linked_2023",
+   "n": 119,
+   "share_term_in_lead_now": 0.042
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "pairs": "not_linked_2023",
+   "n": 32603,
+   "share_term_in_lead_now": 0.003
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "pairs": "link_added_after_2023",
+   "n": 36,
+   "share_term_in_lead_now": 0.222
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "pairs": "linked_2023",
+   "n": 399,
+   "share_term_in_lead_now": 0.1
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "pairs": "not_linked_2023",
+   "n": 7755,
+   "share_term_in_lead_now": 0.011
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "pairs": "link_added_after_2023",
+   "n": 177,
+   "share_term_in_lead_now": 0.26
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "pairs": "linked_2023",
+   "n": 64,
+   "share_term_in_lead_now": 0.062
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "pairs": "not_linked_2023",
+   "n": 7209,
+   "share_term_in_lead_now": 0.006
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "pairs": "link_added_after_2023",
+   "n": 17,
+   "share_term_in_lead_now": 0.412
+  }
+ ],
+ "inbound_links_now": {
+  "1948 Palestinian expulsion and flight": 1307,
+  "Anti-Armenian sentiment": 635,
+  "Anti-Hindu sentiment": 2121,
+  "Anti-Zionism": 2601,
+  "Antisemitism": 8000,
+  "Apartheid": 8190,
+  "Armenian genocide": 4034,
+  "Colonialism": 4228,
+  "Ethnic cleansing": 2421,
+  "Gaza genocide": 2278,
+  "Genocide": 4385,
+  "Hindu nationalism": 2926,
+  "Indigenous peoples": 3484,
+  "Islamophobia": 3377,
+  "Israeli apartheid": 794,
+  "Israeli occupation of the West Bank": 853,
+  "Israeli-occupied territories": 1295,
+  "Israelites": 2583,
+  "Jewish exodus from the Muslim world": 346,
+  "Jewish history": 1831,
+  "Kashmir conflict": 2168,
+  "Land of Israel": 2365,
+  "Nakba": 955,
+  "New antisemitism": 440,
+  "Palestine": 10261,
+  "Palestinians": 3309,
+  "Persecution of Uyghurs in China": 1676,
+  "Russian occupation of Ukraine": 901,
+  "Settler colonialism": 1645,
+  "Terrorism": 4731,
+  "War crime": 3247,
+  "Zionism": 6669,
+  "Zionism as settler colonialism": 412
+ },
+ "note": "alias-resolved concept groups; pair = article x hot-core concept with the concept's term absent from the lead in Jul 2023"
+}

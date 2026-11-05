@@ -1,0 +1,526 @@
+{
+ "x": "days after the event",
+ "y": "share still standing",
+ "survival": [
+  {
+   "subset": "all",
+   "group": "topic",
+   "kind": "insert",
+   "events": "all",
+   "1d": 0.615,
+   "7d": 0.535,
+   "30d": 0.473,
+   "90d": 0.436,
+   "n_30d": 1073
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "kind": "insert",
+   "events": "new",
+   "1d": 0.579,
+   "7d": 0.503,
+   "30d": 0.446,
+   "90d": 0.409,
+   "n_30d": 854
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "kind": "insert",
+   "events": "w1",
+   "1d": 0.593,
+   "7d": 0.521,
+   "30d": 0.483,
+   "90d": 0.464,
+   "n_30d": 263
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "kind": "insert",
+   "events": "w2",
+   "1d": 0.622,
+   "7d": 0.54,
+   "30d": 0.47,
+   "90d": 0.427,
+   "n_30d": 810
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "kind": "remove",
+   "events": "all",
+   "1d": 0.646,
+   "7d": 0.586,
+   "30d": 0.56,
+   "90d": 0.535,
+   "n_30d": 873
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "kind": "remove",
+   "events": "new",
+   "1d": 0.58,
+   "7d": 0.52,
+   "30d": 0.492,
+   "90d": 0.459,
+   "n_30d": 518
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "kind": "remove",
+   "events": "w1",
+   "1d": 0.592,
+   "7d": 0.553,
+   "30d": 0.539,
+   "90d": 0.522,
+   "n_30d": 228
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "kind": "remove",
+   "events": "w2",
+   "1d": 0.665,
+   "7d": 0.598,
+   "30d": 0.567,
+   "90d": 0.54,
+   "n_30d": 645
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "kind": "insert",
+   "events": "all",
+   "1d": 0.583,
+   "7d": 0.502,
+   "30d": 0.429,
+   "90d": 0.364,
+   "n_30d": 1185
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "kind": "insert",
+   "events": "new",
+   "1d": 0.557,
+   "7d": 0.476,
+   "30d": 0.402,
+   "90d": 0.337,
+   "n_30d": 778
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "kind": "insert",
+   "events": "w1",
+   "1d": 0.541,
+   "7d": 0.453,
+   "30d": 0.363,
+   "90d": 0.301,
+   "n_30d": 677
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "kind": "insert",
+   "events": "w2",
+   "1d": 0.639,
+   "7d": 0.567,
+   "30d": 0.516,
+   "90d": 0.45,
+   "n_30d": 508
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "kind": "remove",
+   "events": "all",
+   "1d": 0.551,
+   "7d": 0.499,
+   "30d": 0.453,
+   "90d": 0.407,
+   "n_30d": 1104
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "kind": "remove",
+   "events": "new",
+   "1d": 0.515,
+   "7d": 0.466,
+   "30d": 0.422,
+   "90d": 0.387,
+   "n_30d": 640
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "kind": "remove",
+   "events": "w1",
+   "1d": 0.508,
+   "7d": 0.456,
+   "30d": 0.405,
+   "90d": 0.354,
+   "n_30d": 642
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "kind": "remove",
+   "events": "w2",
+   "1d": 0.61,
+   "7d": 0.557,
+   "30d": 0.519,
+   "90d": 0.482,
+   "n_30d": 462
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "kind": "insert",
+   "events": "all",
+   "1d": 0.67,
+   "7d": 0.572,
+   "30d": 0.496,
+   "90d": 0.452,
+   "n_30d": 697
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "kind": "insert",
+   "events": "new",
+   "1d": 0.645,
+   "7d": 0.555,
+   "30d": 0.485,
+   "90d": 0.44,
+   "n_30d": 553
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "kind": "insert",
+   "events": "w1",
+   "1d": 0.659,
+   "7d": 0.579,
+   "30d": 0.53,
+   "90d": 0.512,
+   "n_30d": 164
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "kind": "insert",
+   "events": "w2",
+   "1d": 0.673,
+   "7d": 0.57,
+   "30d": 0.486,
+   "90d": 0.434,
+   "n_30d": 533
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "kind": "remove",
+   "events": "all",
+   "1d": 0.633,
+   "7d": 0.571,
+   "30d": 0.54,
+   "90d": 0.505,
+   "n_30d": 559
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "kind": "remove",
+   "events": "new",
+   "1d": 0.586,
+   "7d": 0.52,
+   "30d": 0.489,
+   "90d": 0.445,
+   "n_30d": 368
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "kind": "remove",
+   "events": "w1",
+   "1d": 0.616,
+   "7d": 0.565,
+   "30d": 0.558,
+   "90d": 0.529,
+   "n_30d": 138
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "kind": "remove",
+   "events": "w2",
+   "1d": 0.638,
+   "7d": 0.573,
+   "30d": 0.534,
+   "90d": 0.498,
+   "n_30d": 421
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "kind": "insert",
+   "events": "all",
+   "1d": 0.606,
+   "7d": 0.519,
+   "30d": 0.449,
+   "90d": 0.39,
+   "n_30d": 804
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "kind": "insert",
+   "events": "new",
+   "1d": 0.568,
+   "7d": 0.478,
+   "30d": 0.415,
+   "90d": 0.361,
+   "n_30d": 501
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "kind": "insert",
+   "events": "w1",
+   "1d": 0.569,
+   "7d": 0.479,
+   "30d": 0.387,
+   "90d": 0.331,
+   "n_30d": 478
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "kind": "insert",
+   "events": "w2",
+   "1d": 0.661,
+   "7d": 0.578,
+   "30d": 0.54,
+   "90d": 0.478,
+   "n_30d": 326
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "kind": "remove",
+   "events": "all",
+   "1d": 0.502,
+   "7d": 0.448,
+   "30d": 0.418,
+   "90d": 0.372,
+   "n_30d": 758
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "kind": "remove",
+   "events": "new",
+   "1d": 0.47,
+   "7d": 0.419,
+   "30d": 0.388,
+   "90d": 0.351,
+   "n_30d": 454
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "kind": "remove",
+   "events": "w1",
+   "1d": 0.448,
+   "7d": 0.395,
+   "30d": 0.36,
+   "90d": 0.314,
+   "n_30d": 458
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "kind": "remove",
+   "events": "w2",
+   "1d": 0.584,
+   "7d": 0.528,
+   "30d": 0.507,
+   "90d": 0.461,
+   "n_30d": 300
+  }
+ ],
+ "kaplan_meier": {
+  "topic:insert": {
+   "1d": 0.615,
+   "7d": 0.535,
+   "30d": 0.476,
+   "90d": 0.441
+  },
+  "topic:remove": {
+   "1d": 0.646,
+   "7d": 0.587,
+   "30d": 0.564,
+   "90d": 0.543
+  },
+  "comparison:insert": {
+   "1d": 0.583,
+   "7d": 0.502,
+   "30d": 0.43,
+   "90d": 0.369
+  },
+  "comparison:remove": {
+   "1d": 0.551,
+   "7d": 0.499,
+   "30d": 0.456,
+   "90d": 0.413
+  }
+ },
+ "archetypes": {
+  "topic": {
+   "frozen": 31774,
+   "single step": 243,
+   "back-and-forth": 133,
+   "tug-of-war": 71,
+   "tried & reverted": 224,
+   "two steps": 49
+  },
+  "comparison": {
+   "frozen": 39120,
+   "single step": 134,
+   "two steps": 47,
+   "tug-of-war": 100,
+   "tried & reverted": 159,
+   "back-and-forth": 130
+  }
+ },
+ "stick": {
+  "topic": {
+   "pairs_stuck": 319,
+   "mean_failed_before_stick": 0.386,
+   "share_after_retries": 0.191,
+   "mean_editors_in_attempts": 1.26,
+   "median_days_first_try_to_stick": 0.0,
+   "median_days_if_retried": 296.1,
+   "pairs_stuck_and_held_30d": 314
+  },
+  "comparison": {
+   "pairs_stuck": 229,
+   "mean_failed_before_stick": 0.747,
+   "share_after_retries": 0.249,
+   "mean_editors_in_attempts": 1.467,
+   "median_days_first_try_to_stick": 0.0,
+   "median_days_if_retried": 606.1,
+   "pairs_stuck_and_held_30d": 227
+  }
+ },
+ "entries_exits": {
+  "all:topic": {
+   "articles": 4226,
+   "entered": 223,
+   "left": 61
+  },
+  "all:comparison": {
+   "articles": 5390,
+   "entered": 125,
+   "left": 73
+  },
+  "key:topic": {
+   "articles": 17,
+   "entered": 14,
+   "left": 2
+  },
+  "key:comparison": {
+   "articles": 10,
+   "entered": 3,
+   "left": 5
+  }
+ },
+ "flip_concentration": {
+  "topic": {
+   "flips": 1960,
+   "top4_share": 0.09,
+   "top5": [
+    [
+     "Israel",
+     92
+    ],
+    [
+     "Yosef Weitz",
+     31
+    ],
+    [
+     "Hamas",
+     27
+    ],
+    [
+     "Palestinian Arabic",
+     26
+    ],
+    [
+     "Ariel Sharon",
+     25
+    ]
+   ]
+  },
+  "comparison": {
+   "flips": 2298,
+   "top4_share": 0.138,
+   "top5": [
+    [
+     "Treaty of Lausanne",
+     104
+    ],
+    [
+     "Turkish War of Independence",
+     93
+    ],
+    [
+     "Greek War of Independence",
+     68
+    ],
+    [
+     "Hellenic Army",
+     52
+    ],
+    [
+     "Joseph Stalin",
+     50
+    ]
+   ]
+  }
+ },
+ "ratchet_reference": {
+  "topic": {
+   "insert_30d": 0.363,
+   "remove_30d": 0.297,
+   "asym_30d": 0.066,
+   "failed_before_stick": 3.34,
+   "editors_in_attempts": 3.4,
+   "events_per_article": 10.7,
+   "entered": 25,
+   "left": 6
+  },
+  "comparison": {
+   "insert_30d": 0.56,
+   "remove_30d": 0.276,
+   "asym_30d": 0.284,
+   "failed_before_stick": 1.44,
+   "editors_in_attempts": 2.2,
+   "events_per_article": 5.0,
+   "entered": 4,
+   "left": 5
+  }
+ },
+ "exact_events": {
+  "topic:exact": 1945,
+  "topic:interval": 15,
+  "comparison:exact": 2281,
+  "comparison:interval": 17
+ }
+}

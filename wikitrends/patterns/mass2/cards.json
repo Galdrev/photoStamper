@@ -1,0 +1,2385 @@
+{
+ "angle": "mass2: the pilot's best signals at full scale (who edits, protection, RfCs, reuse surfaces, sources, structure, links, edit sizes, exact lead events, exposure, atrocity voice, narrative residual)",
+ "generated": "2026-11-05T21:07:35Z",
+ "now": "2026-11-05T00:00:00Z",
+ "data_dir": "/home/user/photoStamper/wikitrends/data",
+ "n_articles": {
+  "comparison": 5670,
+  "topic": 4642,
+  "atrocity": 8
+ },
+ "n_relevant": {
+  "comparison": 1289,
+  "topic": 1484,
+  "atrocity": 7
+ },
+ "files": {
+  "events": true,
+  "leads": true,
+  "editors": true,
+  "summary": true
+ },
+ "collection_summary": {
+  "n_expected": 10320,
+  "n_records": 10320,
+  "failed_signals": {},
+  "coverage": {
+   "article@2021-01-01": 9688,
+   "article@2023-07-01": 10011,
+   "article@now": 10320,
+   "talk_now": 10320,
+   "pageviews": 10316,
+   "wikidata_now": 10319,
+   "wikidata_2023": 10086,
+   "protection_recon_matches_now": 10273
+  }
+ },
+ "bootstrap": {
+  "replicates": 1000,
+  "levels": [
+   "article",
+   "WikiProject cluster"
+  ]
+ },
+ "cards": [
+  {
+   "id": "who_edits",
+   "title": "Who edits: account age and experience, and now-blocked accounts among adders and removers",
+   "what_we_see": "Mass tier, 4,642 topic / 5,670 comparison articles. Edits by accounts with under 500 edits, war window: topic 9.1%, comparison 17.2% (difference -8.2 pp [-9.4, -7.1] {project CI -11.3, -1.6}; relevant subset -11.3 pp [-13.0, -9.5] {project CI -13.7, +0.5}). Accounts under a year old: topic 19.0% in w1 and 15.9% in w2; comparison 23.9% and 23.0% (DiD -2.2 pp [-4.3, -0.3] {project CI -4.8, +0.9}). Anonymous edits, war window: topic 10.6%, comparison 16.1%. Critical lead-term flips, war window, topic: 782 insertions by 382 accounts, now indef-blocked: 56 (13.7% of insertions with account facts; base rate on the same articles 12.3%); 631 removals by 415 accounts, 50 now indef-blocked (11.3%; base 11.0%). Comparison: insertions 12.1% and removals 14.5% by now-indef accounts (base 12.5%). Pre-war (w1) topic: insertions 19.7%, removals 27.2%, base 20.2%; the top 3 indef accounts made 13 of 36 indef insertions. Excess over base, war topic: insertions +1.4 pp [-2.8, +6.5] {project CI -4.6, +5.4}, removals +0.2 pp [-4.1, +4.4] {project CI -5.8, +2.5}.",
+   "chart": {
+    "type": "grouped bars by window, plus a table of adders vs removers",
+    "x": "window",
+    "y": "share of edits / of flips",
+    "series": "topic vs comparison; insert vs remove; base rate",
+    "data": "chart_data/01_who_edits.json, chart_data/01_adders_removers_blocked.json"
+   },
+   "confidence": "STRONG",
+   "so_what": "Topic pages are edited by more established accounts than comparison pages: fewer low-edit-count accounts. Flips by now-blocked accounts are not clearly above the base rate of all edits on the same pages. This describes who made flips, not which side they were on, and says nothing about coordination.",
+   "caveat": "Block status and edit count are as of collection, not at the time of the edit; older windows have had more time at risk of a block. 'Insert' includes restoring a term by revert (scope new_only drops tagged restorations). Account facts exist only for exact events by registered accounts. Distinct-account counts rely on one salt per run.",
+   "examples": [],
+   "numbers": {
+    "stats": {
+     "all:w2:share_editcount_lt500:diff": {
+      "est": -0.07879891135187728,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.090382015817435,
+      "hi": -0.0672428923069988,
+      "cl_lo": -0.11084546162174164,
+      "cl_hi": -0.013029050628469764
+     },
+     "all:w2:share_age_lt30:diff": {
+      "est": -0.03691861516402908,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.04232582925744971,
+      "hi": -0.031136328347543922,
+      "cl_lo": -0.05423725673548394,
+      "cl_hi": -0.011349236055222305
+     },
+     "all:w2:anon:diff": {
+      "est": -0.05296314126390343,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.06445570570256952,
+      "hi": -0.04085377439752336,
+      "cl_lo": -0.08705913313588243,
+      "cl_hi": 0.012686341793586613
+     },
+     "all:war:share_editcount_lt500:diff": {
+      "est": -0.08171476729061924,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.0936113895112438,
+      "hi": -0.07086843833423621,
+      "cl_lo": -0.11347189240661318,
+      "cl_hi": -0.01630155059819256
+     },
+     "all:war:share_age_lt30:diff": {
+      "est": -0.03788617012614556,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.04353286227958589,
+      "hi": -0.03190502397840712,
+      "cl_lo": -0.05461899868536466,
+      "cl_hi": -0.01213152223935252
+     },
+     "all:war:anon:diff": {
+      "est": -0.05522112308094783,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.0673694103273665,
+      "hi": -0.04278083523596366,
+      "cl_lo": -0.08869651740072114,
+      "cl_hi": 0.013961946125339474
+     },
+     "all:did_age_lt365": {
+      "est": -0.02183808212040045,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.043092052077917005,
+      "hi": -0.002589679503618372,
+      "cl_lo": -0.04782942613929774,
+      "cl_hi": 0.009488205968803043
+     },
+     "relevant:w2:share_editcount_lt500:diff": {
+      "est": -0.11044822200646372,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.12807470899079154,
+      "hi": -0.09322113185458537,
+      "cl_lo": -0.13453644307752397,
+      "cl_hi": -0.001843836328835107
+     },
+     "relevant:w2:share_age_lt30:diff": {
+      "est": -0.04677007940990775,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.05424717667473022,
+      "hi": -0.038704145125916876,
+      "cl_lo": -0.058290092601486314,
+      "cl_hi": -0.00508474156162453
+     },
+     "relevant:w2:anon:diff": {
+      "est": -0.07944049682092884,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.09477527606408592,
+      "hi": -0.06267721345522362,
+      "cl_lo": -0.1027028360370303,
+      "cl_hi": 0.026092809762950357
+     },
+     "relevant:war:share_editcount_lt500:diff": {
+      "est": -0.11327775399414397,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.13000591553406673,
+      "hi": -0.09529727991145065,
+      "cl_lo": -0.13657724250407646,
+      "cl_hi": 0.004586491599837986
+     },
+     "relevant:war:share_age_lt30:diff": {
+      "est": -0.047692782205814306,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.05522823680390267,
+      "hi": -0.0392202639782293,
+      "cl_lo": -0.057637968686469004,
+      "cl_hi": -0.005251366003248701
+     },
+     "relevant:war:anon:diff": {
+      "est": -0.08134377831144753,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.09650289102469568,
+      "hi": -0.06359431846114086,
+      "cl_lo": -0.10297028755619295,
+      "cl_hi": 0.025099152364161416
+     },
+     "relevant:did_age_lt365": {
+      "est": -0.04921878349376177,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.07910366291018157,
+      "hi": -0.01829932986775486,
+      "cl_lo": -0.07582941066735208,
+      "cl_hi": -0.012366314307722625
+     }
+    }
+   },
+   "rank": 1
+  },
+  {
+   "id": "protection_ct",
+   "title": "Protection and contentious-topic coverage over time, and whether protection relates to change",
+   "what_we_see": "EC edit protection, topic: 10.9% (2021) -> 11.5% (2023-07) -> 31.1% (now); comparison 0.7% -> 1.5% -> 5.0%. Contentious-topic notice on the talk page now: topic 33.6%, comparison 7.9%. Within pooled quintiles of post-2023 edit volume, topic pages EC-protected in Jul 2023 gained lead critical terms +8.6 pp [+6.2, +11.3] {project CI +3.6, +9.9} more often than unprotected ones; comparison +4.5 pp [+1.6, +9.3] {project CI -0.1, +9.5}; difference +4.2 pp [-1.0, +8.1] {project CI -2.5, +8.4}. Relevant subset: topic +7.0 pp [+3.5, +10.4] {project CI +4.6, +9.7}, comparison +8.1 pp [+2.0, +19.4] {project CI -0.4, +17.8}. Pages newly EC-protected after Jul 2023 vs pages still unprotected: topic +3.9 pp [+2.4, +5.6] {project CI +0.3, +20.0}.",
+   "chart": {
+    "type": "line by date (EC share) plus grouped bars by edit quintile",
+    "x": "date / edit-volume quintile",
+    "y": "share EC-protected / share gaining",
+    "series": "topic vs comparison; protected vs not",
+    "data": "chart_data/02_protection_ct.json, chart_data/02_protection_vs_change.json"
+   },
+   "confidence": "STRONG",
+   "so_what": "At the same edit volume, protected topic pages still changed more often, so protection marks the core pages; it is not shown to cause or block change. The topic's extended-confirmed restriction applies whether or not a page is technically protected.",
+   "caveat": "Protection at past dates is reconstructed from the log (lower bound for old entries; 'now' is page info). CT notices are only known now. Edit quintiles are pooled over both groups; quintiles with fewer than 3 articles per arm are skipped.",
+   "examples": [],
+   "numbers": {
+    "stats": {
+     "all:topic:ec2023_vs_not": {
+      "est": 0.08643949262009132,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.0619305452727164,
+      "hi": 0.11282931803045311,
+      "cl_lo": 0.03641738692160526,
+      "cl_hi": 0.09886167904108124
+     },
+     "all:topic:newly_ec_vs_not": {
+      "est": 0.03942103871048222,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.023856627960711016,
+      "hi": 0.05568343690339436,
+      "cl_lo": 0.0027304417719809025,
+      "cl_hi": 0.1997000785425833
+     },
+     "all:comparison:ec2023_vs_not": {
+      "est": 0.04471243660832119,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.016156864220145922,
+      "hi": 0.09326900879944867,
+      "cl_lo": -0.0006547574973664485,
+      "cl_hi": 0.09501834955365951
+     },
+     "all:comparison:newly_ec_vs_not": {
+      "est": 0.010847759103244082,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.003962799014591132,
+      "hi": 0.026089602479031488,
+      "cl_lo": -0.0035766243663898733,
+      "cl_hi": 0.02614236952155463
+     },
+     "all:did": {
+      "est": 0.041727056011770125,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.009676074579985153,
+      "hi": 0.08098674515039357,
+      "cl_lo": -0.025373607005558203,
+      "cl_hi": 0.08366898764751139
+     },
+     "relevant:topic:ec2023_vs_not": {
+      "est": 0.06965486747033538,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.03497595428310858,
+      "hi": 0.10417846051587841,
+      "cl_lo": 0.04555442053307417,
+      "cl_hi": 0.09709121127110172
+     },
+     "relevant:topic:newly_ec_vs_not": {
+      "est": 0.029827297251902925,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.000712130432274341,
+      "hi": 0.05882797479048058,
+      "cl_lo": 0.006659391445335676,
+      "cl_hi": 0.20238095238095238
+     },
+     "relevant:comparison:ec2023_vs_not": {
+      "est": 0.08104624482276321,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.0196397505766302,
+      "hi": 0.19400562223564663,
+      "cl_lo": -0.004300527164621733,
+      "cl_hi": 0.17787071978379218
+     },
+     "relevant:comparison:newly_ec_vs_not": {
+      "est": 0.03199694834402286,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.010868385352851215,
+      "hi": 0.08256755525343057,
+      "cl_lo": -0.0032598994782067465,
+      "cl_hi": 0.09241081907406991
+     },
+     "relevant:did": {
+      "est": -0.011391377352427831,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.11426811705751942,
+      "hi": 0.0655639425759895,
+      "cl_lo": -0.12053069756233173,
+      "cl_hi": 0.07704917026373687
+     }
+    }
+   },
+   "rank": 2
+  },
+  {
+   "id": "rfc_rm",
+   "title": "RfCs and requested moves: counts by window, concentration on a few pages, and outcomes",
+   "what_we_see": "Talk pages and archives of 4,642 topic / 5,670 comparison articles. RfCs: topic 33 in w1 -> 122 in w2 (0.285 -> 0.785 per 100 articles per year); comparison 108 -> 112 (0.764 -> 0.59). DiD per article-year +0.007 [+0.002, +0.012] {project CI +0.002, +0.013} (relevant +0.020 [+0.006, +0.035] {project CI +0.006, +0.035}). Requested moves: topic 97 -> 208, comparison 256 -> 239. Concentration (w2, topic): 51 pages had an RfC; the top 5 pages hold 48.4% and the top 1% 95.9%. Outcomes: 51 of 122 topic w2 RfCs closed; RM results known for 50 of 208 (unknown 158, moved 17, not moved 16, no consensus 12, other 4, withdrawn 1); 76 RM-tagged moves were carried out (not reverted).",
+   "chart": {
+    "type": "bars by quarter plus a Pareto of RfCs by page",
+    "x": "quarter",
+    "y": "RfCs / RMs started",
+    "series": "topic vs comparison",
+    "data": "chart_data/03_rfc_rm.json"
+   },
+   "confidence": "STRONG",
+   "so_what": "Formal processes multiplied on topic pages after the war, but on a few pages: the battlegrounds are where RfCs happen. Close results are parsed class labels; treat outcome shares as indicative.",
+   "caveat": "Discussion dates are the first signature in each section; undated sections are excluded. Archives are capped at 60 per talk page. RM outcomes rely on the close wording; RfC results are often 'other'.",
+   "examples": [
+    {
+     "article": "Gaza genocide",
+     "note": "w2: 21 RfCs, 11 requested moves"
+    },
+    {
+     "article": "October 7 attacks",
+     "note": "w2: 13 RfCs, 12 requested moves"
+    },
+    {
+     "article": "Zionism",
+     "note": "w2: 13 RfCs, 0 requested moves"
+    },
+    {
+     "article": "Hamas",
+     "note": "w2: 8 RfCs, 0 requested moves"
+    },
+    {
+     "article": "Al-Ahli Arab Hospital explosion",
+     "note": "w2: 4 RfCs, 4 requested moves"
+    },
+    {
+     "article": "Russo-Ukrainian war (2022–present)",
+     "note": "(comparison) w2: 13 RfCs, 6 requested moves"
+    },
+    {
+     "article": "Russo-Ukrainian war",
+     "note": "(comparison) w2: 5 RfCs, 5 requested moves"
+    }
+   ],
+   "numbers": {
+    "stats": {
+     "all:did_rfc_per_article_year": {
+      "est": 0.006736383413958325,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.002187269426608764,
+      "hi": 0.012142470605416879,
+      "cl_lo": 0.0016539807090421516,
+      "cl_hi": 0.012786765079272388
+     },
+     "all:did_rm_per_article_year": {
+      "est": 0.010517523197218546,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.005608134320069574,
+      "hi": 0.015451725445503398,
+      "cl_lo": 0.001048073132147235,
+      "cl_hi": 0.02212069748790241
+     },
+     "relevant:did_rfc_per_article_year": {
+      "est": 0.019985845529190048,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.006088732860348952,
+      "hi": 0.0352677114362591,
+      "cl_lo": 0.00567716366970444,
+      "cl_hi": 0.03479023012740443
+     },
+     "relevant:did_rm_per_article_year": {
+      "est": 0.028192307988190016,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.01217203864124059,
+      "hi": 0.043929037872621805,
+      "cl_lo": 0.0009013795033290583,
+      "cl_hi": 0.0561064289386659
+     }
+    }
+   },
+   "rank": 3
+  },
+  {
+   "id": "sd_wikidata",
+   "title": "Short descriptions and Wikidata descriptions: how often they changed in step with the lead",
+   "what_we_see": "Articles with a short description at both Jul 2023 and now. Topic: the short description changed in 55.7% of articles whose lead critical count changed (n=231) vs 32.5% of the rest (difference +23.2 pp [+15.6, +30.6] {project CI +16.4, +35.7}). Comparison: 63.2% vs 43.8% (+19.4 pp [+10.9, +28.2] {project CI +10.6, +28.0}); DiD +3.8 pp [-6.5, +15.0] {project CI -8.8, +20.3}, relevant -7.8 pp [-22.1, +6.5] {project CI -19.9, +5.3}. English Wikidata description: topic 44.7% vs 23.4%; overall change topic 24.5%, comparison 23.8%; Hebrew 17.5% vs 5.8%. Short descriptions containing a critical term: topic 26 -> 24, comparison 15 -> 16. 34 descriptions gained a critical term and 22 lost one.",
+   "chart": {
+    "type": "paired bars plus a quote table",
+    "x": "lead changed vs not",
+    "y": "share whose description changed",
+    "series": "topic vs comparison; short description vs Wikidata (en)",
+    "data": "chart_data/04_sd_wikidata.json"
+   },
+   "confidence": "STRONG",
+   "so_what": "Descriptions move with the lead in both groups, so co-movement itself is ordinary maintenance; what matters is the few high-traffic descriptions that now carry a framing term, because search, apps and AI answers show them first.",
+   "caveat": "Lead change here means the lead critical-term count changed between Jul 2023 and now; wording changes without those terms count as unchanged. Short descriptions from templates count as text; 'none' is a value. Wikidata 'now' comes from the batched resolve step.",
+   "examples": [
+    {
+     "article": "The Holocaust",
+     "group": "topic",
+     "note": "Wikidata (en): 'genocide of European Jews by Nazi Germany' -> 'genocide of around 6 million Jews by Nazi Germany, other Axis powers and local collaborators in occupied territories' (3,932,488 views in the last 12 months)"
+    },
+    {
+     "article": "Srebrenica massacre",
+     "group": "comparison",
+     "note": "short description: 'Massacre of over 8,000 Muslim Bosniaks in Srebrenica region during the Bosnian War' -> '1995 genocidal killing of Bosniak men' (653,056 views in the last 12 months)"
+    },
+    {
+     "article": "Bosnian genocide",
+     "group": "comparison",
+     "note": "short description: 'Murder of Bosniaks and Bosnian Croats during the Bosnian War' -> '1995 genocide in Bosnia and Herzegovina' (388,722 views in the last 12 months)"
+    },
+    {
+     "article": "Second Intifada",
+     "group": "topic",
+     "note": "short description: '2000–2005 Palestinian uprising against Israel' -> '2000–2005 Palestinian uprising against Israeli occupation' (347,659 views in the last 12 months)"
+    },
+    {
+     "article": "Second Intifada",
+     "group": "topic",
+     "note": "Wikidata (en): '2000–2005 Palestinian uprising against Israel' -> '2000–2005 Palestinian uprising against Israeli occupation' (347,659 views in the last 12 months)"
+    },
+    {
+     "article": "Bangladesh genocide",
+     "group": "comparison",
+     "note": "Wikidata (en): 'murder of millions of people and rape of hundreds of thousands of women during the Bangladesh war for independence in 1971 by the Pakistani military and Islamist militias' -> 'genocide of Bengalis carried out by the Pakistani military during the Bangladesh Liberation War' (266,265 views in the last 12 months)"
+    },
+    {
+     "article": "Israeli new shekel",
+     "group": "topic",
+     "note": "Wikidata (en): 'currency of Israel and Palestine' -> 'currency of Israel and occupied territories' (225,308 views in the last 12 months)"
+    },
+    {
+     "article": "Hebron",
+     "group": "topic",
+     "note": "Wikidata (en): 'city in the West Bank' -> 'Palestian city in the occupied West Bank' (223,284 views in the last 12 months)"
+    },
+    {
+     "article": "Holocaust denial",
+     "group": "topic",
+     "note": "short description: 'Denial of the genocide of Jews in World War II' -> 'Denial of the Holocaust' (414,790 views in the last 12 months)"
+    },
+    {
+     "article": "Holocaust denial",
+     "group": "topic",
+     "note": "Wikidata (en): 'denial of the genocide of Jews in World War II' -> 'negation, distortion or minimization of the Holocaust' (414,790 views in the last 12 months)"
+    },
+    {
+     "article": "Yazidi genocide",
+     "group": "comparison",
+     "note": "short description: '2014 ethnic cleansing and genocide campaign by the Islamic State in Sinjar, northern Iraq' -> '2014-2017 genocide campaign by the Islamic State' (176,198 views in the last 12 months)"
+    },
+    {
+     "article": "East Jerusalem",
+     "group": "topic",
+     "note": "short description: 'Part of the West Bank, under Israeli occupation since 1967' -> 'Section of Jerusalem in the West Bank' (170,786 views in the last 12 months)"
+    }
+   ],
+   "numbers": {
+    "stats": {
+     "all:topic:sd:instep_minus_base": {
+      "est": 0.23214966653436997,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.15562265379232754,
+      "hi": 0.30638322238259347,
+      "cl_lo": 0.1635397985929093,
+      "cl_hi": 0.35749534450651765
+     },
+     "all:comparison:sd:instep_minus_base": {
+      "est": 0.19436835946641706,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.10930804707142561,
+      "hi": 0.2816427651356861,
+      "cl_lo": 0.10609621222622063,
+      "cl_hi": 0.27974612362106827
+     },
+     "all:sd:did": {
+      "est": 0.03778130706795291,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.06512465022609393,
+      "hi": 0.1499642819635945,
+      "cl_lo": -0.08793296527902489,
+      "cl_hi": 0.20320129023888137
+     },
+     "all:topic:wd:instep_minus_base": {
+      "est": 0.21321748473064028,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.14509356673776894,
+      "hi": 0.2771421084721414,
+      "cl_lo": 0.16469465128331012,
+      "cl_hi": 0.26951983298538623
+     },
+     "all:comparison:wd:instep_minus_base": {
+      "est": 0.1705033996076609,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.09120098100270127,
+      "hi": 0.26009355914142984,
+      "cl_lo": 0.09239281128746221,
+      "cl_hi": 0.24544065519108146
+     },
+     "all:wd:did": {
+      "est": 0.04271408512297939,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.069806086068027,
+      "hi": 0.15206204007592647,
+      "cl_lo": -0.04866886573456757,
+      "cl_hi": 0.1461979578821236
+     },
+     "relevant:topic:sd:instep_minus_base": {
+      "est": 0.1716288712676598,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.0751447966266707,
+      "hi": 0.26388187446356515,
+      "cl_lo": 0.08658008658008659,
+      "cl_hi": 0.274720653610477
+     },
+     "relevant:comparison:sd:instep_minus_base": {
+      "est": 0.24968800142627917,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.13707826226719294,
+      "hi": 0.3533089289936111,
+      "cl_lo": 0.15522153736407315,
+      "cl_hi": 0.3436143444086072
+     },
+     "relevant:sd:did": {
+      "est": -0.07805913015861937,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.22110596748329805,
+      "hi": 0.06492561485126112,
+      "cl_lo": -0.19897599393363424,
+      "cl_hi": 0.05337568179790597
+     },
+     "relevant:topic:wd:instep_minus_base": {
+      "est": 0.24920412888288634,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.16678188508834862,
+      "hi": 0.33418923562994607,
+      "cl_lo": 0.2154267650158061,
+      "cl_hi": 0.3443579766536965
+     },
+     "relevant:comparison:wd:instep_minus_base": {
+      "est": 0.21401020986954056,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.10938792450398258,
+      "hi": 0.3244439485382321,
+      "cl_lo": 0.12118889973846808,
+      "cl_hi": 0.31538868711386653
+     },
+     "relevant:wd:did": {
+      "est": 0.03519391901334579,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.11296112058960227,
+      "hi": 0.16997070571022127,
+      "cl_lo": -0.06330118908644385,
+      "cl_hi": 0.16822271188554766
+     }
+    }
+   },
+   "rank": 4
+  },
+  {
+   "id": "lead_citations",
+   "title": "Lead citation domains: the shift in source classes behind lead sentences",
+   "what_we_see": "Lead citations with named refs resolved, 4,468 topic and 5,510 comparison articles present at Jul 2023 and now. Topic lead citations 18331 -> 20707; comparison 36160 -> 38475. Scholarly (books, journals): topic 43.3% -> 48.0%, comparison 49.5% -> 55.2% (DiD -1.02 pp [-2.58, +0.51] {project CI -3.16, +1.12}); Rights orgs & UN: topic 1.8% -> 1.8%, comparison 0.7% -> 0.7% (DiD -0.03 pp [-0.26, +0.21] {project CI -0.19, +0.11}); Arab & Palestinian press, pro-Palestinian outlets: topic 0.7% -> 1.1%, comparison 0.6% -> 0.7% (DiD +0.28 pp [+0.09, +0.46] {project CI -0.13, +0.74}); Pro-Israel advocacy: topic 1.0% -> 0.8%, comparison 0.1% -> 0.0% (DiD -0.20 pp [-0.33, -0.09] {project CI -0.25, -0.13}); Israeli press: topic 6.4% -> 5.8%, comparison 0.1% -> 0.1% (DiD -0.57 pp [-0.89, -0.23]); Western wire & papers: topic 5.9% -> 6.1%, comparison 5.5% -> 5.2% (DiD +0.44 pp [-0.04, +0.94]). Top topic domains gained: web.archive.org (+1489), pcbs.gov.ps (+187), timesofisrael.com (+152), aljazeera.com (+132), theguardian.com (+84), reuters.com (+79).",
+   "chart": {
+    "type": "small multiples, share by source class, Jul 2023 vs now",
+    "x": "snapshot",
+    "y": "share of lead citations",
+    "series": "topic vs comparison",
+    "data": "chart_data/05_lead_citation_classes.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "The source mix behind topic leads shifted relative to comparison leads in at least one partisan or rights class; check which outlets drive it before quoting.",
+   "caveat": "Classes are the explore.py domain lists (25-50% 'Other'); 'Arab & pro-Palestinian' mixes Al Jazeera, +972 and Anadolu. Pooled shares weight citation-heavy leads; lead_domains is capped at 60 domains per lead.",
+   "examples": [],
+   "numbers": {
+    "stats": {
+     "all:Israeli press:did": {
+      "est": -0.005736089354783061,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.008895679269221747,
+      "hi": -0.002347230219421715
+     },
+     "all:Arab & Palestinian press, pro-Palestinian outlets:did": {
+      "est": 0.0027666260715246355,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.0008907588349418797,
+      "hi": 0.0046497062376679955,
+      "cl_lo": -0.0013137171919021353,
+      "cl_hi": 0.007362336986069244
+     },
+     "all:Rights orgs & UN:did": {
+      "est": -0.0003251401704651106,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.0026449744621599054,
+      "hi": 0.0020538636627996476,
+      "cl_lo": -0.0019147034621278076,
+      "cl_hi": 0.0010586946843543605
+     },
+     "all:Pro-Israel advocacy:did": {
+      "est": -0.0020348040276341396,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.003300534199200876,
+      "hi": -0.0009288757868785195,
+      "cl_lo": -0.002544058702057714,
+      "cl_hi": -0.0013126082302545277
+     },
+     "all:Western wire & papers:did": {
+      "est": 0.004413037099558155,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.00041804709579357354,
+      "hi": 0.009406297621681525
+     },
+     "all:Scholarly (books, journals):did": {
+      "est": -0.010197091060735686,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.025829218693573176,
+      "hi": 0.005149133684321712,
+      "cl_lo": -0.031594446447872855,
+      "cl_hi": 0.011244723939893545
+     },
+     "all:Other:did": {
+      "est": 0.011113461442535222,
+      "n": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.004323947307523236,
+      "hi": 0.025888473832942134
+     },
+     "relevant:Israeli press:did": {
+      "est": -0.003972922437487479,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.009256346291320156,
+      "hi": 0.0013396602776784483
+     },
+     "relevant:Arab & Palestinian press, pro-Palestinian outlets:did": {
+      "est": 0.0025163231419874296,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.0004419886519372865,
+      "hi": 0.005434774620053434,
+      "cl_lo": -0.0013084996694592368,
+      "cl_hi": 0.005321322886306214
+     },
+     "relevant:Rights orgs & UN:did": {
+      "est": 0.000905632158377908,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.0036607244408217634,
+      "hi": 0.006119125627673929,
+      "cl_lo": -0.00186164734925443,
+      "cl_hi": 0.0034090535110528172
+     },
+     "relevant:Pro-Israel advocacy:did": {
+      "est": -0.0019091492670825327,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.0036214718013152054,
+      "hi": -0.00012172848523558481,
+      "cl_lo": -0.003410173749025337,
+      "cl_hi": -0.0006746081260878971
+     },
+     "relevant:Western wire & papers:did": {
+      "est": 0.010314228265060524,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.0019482837130531086,
+      "hi": 0.020167183423802013
+     },
+     "relevant:Scholarly (books, journals):did": {
+      "est": -0.031313860959193585,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.06182668927482743,
+      "hi": -0.0017336733990973852,
+      "cl_lo": -0.06077929958186659,
+      "cl_hi": -0.004422049691893719
+     },
+     "relevant:Other:did": {
+      "est": 0.023459749098337757,
+      "n": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.003052233298237781,
+      "hi": 0.049835181283286595
+     }
+    }
+   },
+   "rank": 5
+  },
+  {
+   "id": "structure",
+   "title": "Categories, infobox and See also: reframing at scale?",
+   "what_we_see": "Jul 2023 -> now. Framing categories (genocide, colonial, apartheid, occupation, massacre, terror, Zionism, antisemitism, ...) added per 100 articles: topic 10.81 (removed 5.64), comparison 4.156 (removed 2.686). Share of articles adding at least one: topic 7.2%, comparison 2.2% (difference +4.95 pp [+4.17, +5.80] {project CI +1.18, +8.55}; relevant +5.41 pp [+3.48, +7.45] {project CI +1.18, +9.71}). Infobox fields gained a critical term in 0.7% of topic vs 0.3% of comparison articles (+0.40 pp [+0.12, +0.69] {project CI -0.27, +0.93}). See also: mean change 0.231 links topic vs 0.144 comparison; watch-concept See-also links +0.015 [+0.010, +0.019] {project CI +0.010, +0.020}. Most added topic framing categories: 1948 Palestinian expulsion and flight (16), Zionist political violence (11), Israeli massacres of Palestinians (10), Israeli apartheid (8), Zionists from Ottoman Palestine (7), Nakba (6).",
+   "chart": {
+    "type": "dot plot per 100 articles plus a top-categories table",
+    "x": "metric",
+    "y": "per 100 articles / share",
+    "series": "topic vs comparison",
+    "data": "chart_data/06_categories_infobox_seealso.json"
+   },
+   "confidence": "STRONG",
+   "so_what": "Structural reframing is visible at scale but small: a few framing categories and infobox fields per hundred topic pages. Additions run in both directions (terrorist-designation and massacres-of-Jews categories count as framing too).",
+   "caveat": "Categories are explicit [[Category:]] links only (template-added categories are missed). The framing-category regex is broad and direction-blind. Infobox fields are the stored subset (type/result/status/... or fields with a critical term).",
+   "examples": [
+    {
+     "article": "The Holocaust",
+     "note": "infobox type now: 'Genocide, ethnic cleansing, mass murder, mass shooting, death marches, poison gas, hate crime, slavery'"
+    },
+    {
+     "article": "Israeli–Palestinian conflict",
+     "note": "infobox image now: 'Occupied Palestinian Territories.jpg'"
+    },
+    {
+     "article": "Gaza Strip",
+     "note": "infobox status now: '* 60% under Israeli military occupation, with the rest de facto controlled by Hamas * Under the temporary mandate of the National Committee for the Ad'"
+    },
+    {
+     "article": "West Bank",
+     "note": "infobox status now: '* Claimed by Palestine * Partially administered by the Palestinian National Authority in Areas A and B * Under Israeli occupation, which is illegal un'"
+    },
+    {
+     "article": "Great Purge",
+     "note": "infobox type now: 'Mass murder, political repression, ethnic cleansing, summary executions'"
+    }
+   ],
+   "numbers": {
+    "stats": {
+     "all:any_add:diff": {
+      "est": 0.04952117660248234,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.04167509111971901,
+      "hi": 0.05803578871030939,
+      "cl_lo": 0.011795016211861756,
+      "cl_hi": 0.08549146530528375
+     },
+     "all:ib_up:diff": {
+      "est": 0.004034416142538917,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.0012293218653652328,
+      "hi": 0.006932216186537389,
+      "cl_lo": -0.0026729723681973502,
+      "cl_hi": 0.00926213108695238
+     },
+     "all:sac_d:diff": {
+      "est": 0.014687058770007165,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.010497474487867494,
+      "hi": 0.019083932859767533,
+      "cl_lo": 0.009606772443500075,
+      "cl_hi": 0.020103020544422173
+     },
+     "all:add:diff": {
+      "est": 0.06654126053874537,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.048872671682495185,
+      "hi": 0.0832391006700412,
+      "cl_lo": 0.006035283868930236,
+      "cl_hi": 0.13124060424240946
+     },
+     "relevant:any_add:diff": {
+      "est": 0.05406995003568879,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.03483010382465445,
+      "hi": 0.07450767117957566,
+      "cl_lo": 0.011753628854454867,
+      "cl_hi": 0.09706408147919522
+     },
+     "relevant:ib_up:diff": {
+      "est": 0.011985724482512491,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.003172263590167728,
+      "hi": 0.020671413260771897,
+      "cl_lo": -0.005897151849392637,
+      "cl_hi": 0.026329635614166853
+     },
+     "relevant:sac_d:diff": {
+      "est": 0.027123483226266953,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.015777381257637734,
+      "hi": 0.03910435253959333,
+      "cl_lo": 0.019440664235064506,
+      "cl_hi": 0.04897351603604569
+     },
+     "relevant:add:diff": {
+      "est": 0.06170620985010705,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.0102084106842792,
+      "hi": 0.11333641169783476,
+      "cl_lo": -0.023306598875405857,
+      "cl_hi": 0.14059052286846171
+     }
+    }
+   },
+   "rank": 6
+  },
+  {
+   "id": "concept_diffusion",
+   "title": "Concept-link diffusion: do articles linking to the hot core later pick up its terms?",
+   "what_we_see": "Alias-resolved links to hot-core concepts (Nakba/1948, Israeli apartheid, settler colonialism, Gaza genocide, occupation, genocide/ethnic cleansing). Topic articles linking to Gaza genocide: 0 -> 0 -> 69; Nakba/1948: 114 -> 127 -> 223; Israeli apartheid 18 -> 29 -> 52. Among article-concept pairs whose term was absent from the lead in Jul 2023, topic articles that already linked to the concept picked up its term by now in 7.9% of 784 pairs, against 0.5% of 25672 without the link; within edit-volume quartiles the difference is +5.60 pp [+4.13, +7.15] {project CI +1.63, +9.22} (comparison +1.65 pp [+0.17, +3.66] {project CI +0.18, +3.97}; DiD +3.95 pp [+1.44, +6.15]; relevant topic +6.57 pp [+4.06, +9.29] {project CI -0.48, +11.09}). Pairs where the link was added after Jul 2023: 22.5% have the term now (n=311).",
+   "chart": {
+    "type": "line (articles linking per concept by date) plus bars (pick-up linked vs not)",
+    "x": "date / exposure",
+    "y": "articles / share picking up the term",
+    "series": "topic vs comparison",
+    "data": "chart_data/07_concept_links.json"
+   },
+   "confidence": "STRONG",
+   "so_what": "Linking to a hot-core concept comes before the concept's vocabulary reaching the lead more often than chance at the same edit volume; the vocabulary travels partly along links.",
+   "caveat": "We have the alias-resolved links to watch concepts at three dates, not the full link graph or hot-core outlinks, so this tests 'links to a core concept' rather than 'linked from a core article'. Pick-up is term presence in the lead (any of the concept's terms), which can also come from unrelated edits. Inbound link counts exist only for now.",
+   "examples": [],
+   "numbers": {
+    "stats": {
+     "all:topic:linked_vs_not": {
+      "est": 0.056026525490105804,
+      "n": {
+       "topic": 26456,
+       "comparison": 32722
+      },
+      "k": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "lo": 0.04134556203438994,
+      "hi": 0.07151380321617867,
+      "cl_lo": 0.01627968078848736,
+      "cl_hi": 0.0922114165316759
+     },
+     "all:comparison:linked_vs_not": {
+      "est": 0.016530839118564174,
+      "n": {
+       "topic": 26456,
+       "comparison": 32722
+      },
+      "k": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "lo": 0.0017359027432437258,
+      "hi": 0.03657791451945192,
+      "cl_lo": 0.0018268256212843068,
+      "cl_hi": 0.03973687153881137
+     },
+     "all:did": {
+      "est": 0.03949568637154163,
+      "n": {
+       "topic": 26456,
+       "comparison": 32722
+      },
+      "k": {
+       "topic": 4468,
+       "comparison": 5510
+      },
+      "lo": 0.014358940863321033,
+      "hi": 0.06146278874519645
+     },
+     "relevant:topic:linked_vs_not": {
+      "est": 0.06570597356563782,
+      "n": {
+       "topic": 8154,
+       "comparison": 7273
+      },
+      "k": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "lo": 0.04060734294798382,
+      "hi": 0.09287950975512772,
+      "cl_lo": -0.004767543717076879,
+      "cl_hi": 0.11088598079050518
+     },
+     "relevant:comparison:linked_vs_not": {
+      "est": 0.02570640974892109,
+      "n": {
+       "topic": 8154,
+       "comparison": 7273
+      },
+      "k": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "lo": 0.0003467920616195573,
+      "hi": 0.06585564296654113,
+      "cl_lo": -0.004173752790441758,
+      "cl_hi": 0.08398485856243273
+     },
+     "relevant:did": {
+      "est": 0.039999563816716724,
+      "n": {
+       "topic": 8154,
+       "comparison": 7273
+      },
+      "k": {
+       "topic": 1401,
+       "comparison": 1250
+      },
+      "lo": -0.010339167516268727,
+      "hi": 0.07566262357281377
+     }
+    }
+   },
+   "rank": 7
+  },
+  {
+   "id": "edit_sizes",
+   "title": "Edit sizes: added vs removed bytes, and whether change comes as added text",
+   "what_we_see": "Edits per article-month, topic 1.579 (w1) -> 1.9 (w2); comparison 3.96 -> 3.303. Removed/added bytes, topic 0.627 -> 0.626, comparison 0.728 -> 0.74 (DiD -0.014 [-0.084, +0.052] {project CI -0.083, +0.101}; relevant -0.083 [-0.181, +0.021] {project CI -0.159, +0.041}). Net bytes per edit, topic 65.2 -> 78.9; comparison 47.7 -> 51.9. Topic articles whose lead gained critical terms (n=174): the lead grew in 78.2% (median 33.5 words; 78.2% [72.0, 84.3] {project CI 70.8, 90.9}) vs 55.8% of non-gainers; comparison gainers 73.8%. New (non-restore) critical lead events in w2: topic 665 insertions vs 392 removals; comparison 347 vs 287.",
+   "chart": {
+    "type": "grouped bars by window plus a gainers/non-gainers panel",
+    "x": "window",
+    "y": "edits per article-month; removed/added",
+    "series": "topic vs comparison",
+    "data": "chart_data/08_edit_sizes.json"
+   },
+   "confidence": "STRONG",
+   "so_what": "Change came mostly as added text: leads that gained critical terms usually grew, and removal did not rise relative to addition.",
+   "caveat": "Byte deltas are revision-size differences (a move or a revert counts as add/remove). Lead growth is in prose words between two snapshots and cannot separate added sentences from rewrites of equal length.",
+   "examples": [],
+   "numbers": {
+    "stats": {
+     "all:did_removed_over_added": {
+      "est": -0.014062627242243608,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.08377675862330072,
+      "hi": 0.052003586527170347,
+      "cl_lo": -0.08345565059681431,
+      "cl_hi": 0.10086097718653139
+     },
+     "all:did_net_bytes_per_edit": {
+      "est": 9.472674241489472,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.010089743847573765,
+      "hi": 18.674475660051314,
+      "cl_lo": -15.068516780430732,
+      "cl_hi": 26.361956382996865
+     },
+     "all:topic_gainers_lead_grew": {
+      "est": 0.7816091954022989,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.7197203423566878,
+      "hi": 0.8433734939759037,
+      "cl_lo": 0.7083333333333334,
+      "cl_hi": 0.9090909090909091
+     },
+     "all:gainers_grew_minus_half": {
+      "est": 0.2816091954022989,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.21588927061310786,
+      "hi": 0.34270479487849487,
+      "cl_lo": 0.20833333333333337,
+      "cl_hi": 0.40909090909090906
+     },
+     "relevant:did_removed_over_added": {
+      "est": -0.0826995894290653,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.18058727026582594,
+      "hi": 0.020983830660574538,
+      "cl_lo": -0.15905089834043754,
+      "cl_hi": 0.04073799736657675
+     },
+     "relevant:did_net_bytes_per_edit": {
+      "est": 22.20601947688317,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 2.1770765900435283,
+      "hi": 39.53550511209425,
+      "cl_lo": -17.98985518752839,
+      "cl_hi": 43.99845817178604
+     },
+     "relevant:topic_gainers_lead_grew": {
+      "est": 0.7413793103448276,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.6610093825665859,
+      "hi": 0.8155403679100663,
+      "cl_lo": 0.6776315789473685,
+      "cl_hi": 0.9
+     },
+     "relevant:gainers_grew_minus_half": {
+      "est": 0.24137931034482762,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.1610169491525424,
+      "hi": 0.31884370314842575,
+      "cl_lo": 0.17763157894736847,
+      "cl_hi": 0.4
+     }
+    }
+   },
+   "rank": 8
+  },
+  {
+   "id": "lead_events",
+   "title": "Exact lead term events: survival, time to stick, failed attempts and archetypes, against the ratchet",
+   "what_we_see": "Exact lead term events, one continuous sequence 2021 -> now, 4,642 topic and 5,670 comparison articles (4,226 exact events, 32 attributed to an interval). 30-day survival of critical insertions: topic 47.3%, comparison 42.9% (difference +4.5 pp [-2.5, +11.1] {project CI -7.6, +20.7}); removals 56.0% vs 45.3%. Asymmetry (insert minus remove survival): topic -0.09 [-0.15, -0.03] {project CI -0.16, +0.04}, comparison -0.02 [-0.10, +0.04] {project CI -0.15, +0.07}; relevant subset topic -0.04 [-0.12, +0.03] {project CI -0.14, +0.05}. New (non-restore) insertions survive 30 days 44.6% topic vs 40.2% comparison; Kaplan-Meier 30-day: 47.6% vs 43.0%. Terms that stuck: 319 topic article-term pairs after 0.386 failed tries on average (19.1% after retries, 1.26 editors per pair, median 296.1 days from first try when retried); comparison 229 pairs, 0.747 failed tries. Events per article: topic 0.42, comparison 0.41 (among articles with any event: 3.7 vs 5.5). Article-terms entering vs leaving the lead 2021 -> now: topic 223 in / 61 out, comparison 125 / 73; key articles 14 / 2 vs 3 / 5. The top 4 topic pages hold 9.0% of topic flips. Archetypes among topic pairs with events: single step 243, tried & reverted 224, back-and-forth 133, tug-of-war 71, two steps 49. Ratchet (25 + 15 key leads): insertions 36% vs 56% at 30 days, asymmetry +0.07 vs +0.28, 3.3 vs 1.4 failed tries, 25 in / 6 out vs 4 / 5.",
+   "chart": {
+    "type": "survival curves (1/7/30/90 days) plus stacked archetype bars",
+    "x": "days after the event",
+    "y": "share still standing",
+    "series": "insert vs remove x topic vs comparison",
+    "data": "chart_data/09_lead_term_events.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "At scale, topic insertions do not survive worse than comparison insertions, unlike in the key-article ratchet; the ratchet result may be specific to the battlegrounds. Persistence describes these leads; it is not shown to be the mechanism.",
+   "caveat": "Events are presence flips of each critical term in section 0; one rewrite can flip several terms. Survival uses the ratchet rule (events censored before d days are excluded); Kaplan-Meier is given for comparison. Interval (non-exact) events carry the interval's end time. Archetypes are our definitions (0 events frozen, 1 single step, 2 tried & reverted if the first lasted < 30 days else two steps, 3-5 back-and-forth, 6+ tug-of-war). Restorations are tagged by revert tags or sha1 reuse.",
+   "examples": [],
+   "numbers": {
+    "stats": {
+     "all:topic:asym30": {
+      "est": -0.08669850084709668,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.14922631767090172,
+      "hi": -0.028652313446360204,
+      "cl_lo": -0.16325736952632802,
+      "cl_hi": 0.04328828565387366
+     },
+     "all:comparison:asym30": {
+      "est": -0.024206567602274798,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.10134488939008485,
+      "hi": 0.04413861671122162,
+      "cl_lo": -0.150104812441649,
+      "cl_hi": 0.06931189080069738
+     },
+     "all:insert30_diff": {
+      "est": 0.04474697307521397,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.025197291511690142,
+      "hi": 0.11108773115500385,
+      "cl_lo": -0.07630289508196857,
+      "cl_hi": 0.2065355536167011
+     },
+     "all:asym_did": {
+      "est": -0.062491933244821884,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.16625863606703192,
+      "hi": 0.03395758090920647,
+      "cl_lo": -0.1957625169238594,
+      "cl_hi": 0.13050434563232405
+     },
+     "all:events_per_article_diff": {
+      "est": 0.016940791348374284,
+      "n": {
+       "topic": 4642,
+       "comparison": 5670
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.08141813075462363,
+      "hi": 0.1217981344324156,
+      "cl_lo": -0.3577116877873699,
+      "cl_hi": 0.3661470839054817
+     },
+     "relevant:topic:asym30": {
+      "est": -0.043837247801079504,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.12404563786899077,
+      "hi": 0.026154661988147976,
+      "cl_lo": -0.1428571428571428,
+      "cl_hi": 0.05306024096385542
+     },
+     "relevant:comparison:asym30": {
+      "est": 0.03079917037503771,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.06543532555381104,
+      "hi": 0.127440048584847,
+      "cl_lo": -0.11473398424192918,
+      "cl_hi": 0.1251597454187161
+     },
+     "relevant:insert30_diff": {
+      "est": 0.0474082243017338,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.046006655045621236,
+      "hi": 0.13740743510749617,
+      "cl_lo": -0.09726645227353124,
+      "cl_hi": 0.16668742657255145
+     },
+     "relevant:asym_did": {
+      "est": -0.07463641817611721,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.18645073666672587,
+      "hi": 0.048943382912700215,
+      "cl_lo": -0.23433928955695243,
+      "cl_hi": 0.09968785561923704
+     },
+     "relevant:events_per_article_diff": {
+      "est": -0.36536869091357727,
+      "n": {
+       "topic": 1484,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.7205820842542852,
+      "hi": -0.03387817610759921,
+      "cl_lo": -1.175873956953377,
+      "cl_hi": 0.34041514505621695
+     }
+    },
+    "stick": {
+     "topic": {
+      "pairs_stuck": 319,
+      "mean_failed_before_stick": 0.386,
+      "share_after_retries": 0.191,
+      "mean_editors_in_attempts": 1.26,
+      "median_days_first_try_to_stick": 0.0,
+      "median_days_if_retried": 296.1,
+      "pairs_stuck_and_held_30d": 314
+     },
+     "comparison": {
+      "pairs_stuck": 229,
+      "mean_failed_before_stick": 0.747,
+      "share_after_retries": 0.249,
+      "mean_editors_in_attempts": 1.467,
+      "median_days_first_try_to_stick": 0.0,
+      "median_days_if_retried": 606.1,
+      "pairs_stuck_and_held_30d": 227
+     }
+    },
+    "kaplan_meier": {
+     "topic:insert": {
+      "1d": 0.615,
+      "7d": 0.535,
+      "30d": 0.476,
+      "90d": 0.441
+     },
+     "topic:remove": {
+      "1d": 0.646,
+      "7d": 0.587,
+      "30d": 0.564,
+      "90d": 0.543
+     },
+     "comparison:insert": {
+      "1d": 0.583,
+      "7d": 0.502,
+      "30d": 0.43,
+      "90d": 0.369
+     },
+     "comparison:remove": {
+      "1d": 0.551,
+      "7d": 0.499,
+      "30d": 0.456,
+      "90d": 0.413
+     }
+    },
+    "entries_exits": {
+     "all:topic": {
+      "articles": 4226,
+      "entered": 223,
+      "left": 61
+     },
+     "all:comparison": {
+      "articles": 5390,
+      "entered": 125,
+      "left": 73
+     },
+     "key:topic": {
+      "articles": 17,
+      "entered": 14,
+      "left": 2
+     },
+     "key:comparison": {
+      "articles": 10,
+      "entered": 3,
+      "left": 5
+     }
+    }
+   },
+   "rank": 9
+  },
+  {
+   "id": "pageviews_exposure",
+   "title": "Pageviews exposure: the share of reader views that now meet changed leads, former titles included",
+   "what_we_see": "Monthly user views summed over current and former titles, last 12 complete months. Topic: 3.9% of articles gained lead critical terms since Jul 2023 and they carry 15.0% [9.5, 21.3] {project CI 2.7, 25.2} of topic views (279,344,221 views); comparison 1.5% of articles carry 5.0% [2.9, 7.5] {project CI 2.4, 8.4} of views. Views meeting any changed lead count (gain or loss): topic 17.2%, comparison 8.2%; leads that lost terms: topic 2.2%. Views-share minus article-share, DiD +7.5 pp [+1.6, +14.3] {project CI -2.9, +16.8} (relevant +14.5 pp [+4.3, +25.8] {project CI -1.5, +29.8}). Former titles hold 4.7% of topic views since 2021 (441 articles); counting them moves the gainers' all-period view share from 16.5% (current title only) to 17.0%.",
+   "chart": {
+    "type": "paired bars (share of articles vs share of views)",
+    "x": "group",
+    "y": "share",
+    "series": "articles vs views; topic vs comparison",
+    "data": "chart_data/10_pageviews_exposure.json"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "Count articles and the change is small; count readers and it is large: most topic reading now lands on leads that changed.",
+   "caveat": "A handful of very large pages drive the view share; the project-cluster CI shows how much. Views are by month, not by revision, so 'meet' means the article's lead differs now from Jul 2023, not that each reader saw the new wording.",
+   "examples": [
+    {
+     "article": "Benjamin Netanyahu",
+     "note": "6,987,725 views in the last 12 months; lead critical terms 1 -> 4"
+    },
+    {
+     "article": "Israel",
+     "note": "4,617,834 views in the last 12 months; lead critical terms 5 -> 8"
+    },
+    {
+     "article": "Palestine",
+     "note": "2,429,310 views in the last 12 months; lead critical terms 2 -> 5"
+    },
+    {
+     "article": "Zionism",
+     "note": "1,805,729 views in the last 12 months; lead critical terms 1 -> 5"
+    },
+    {
+     "article": "Hamas",
+     "note": "1,334,167 views in the last 12 months; lead critical terms 0 -> 3"
+    }
+   ],
+   "numbers": {
+    "stats": {
+     "all:topic:view_share_gained": {
+      "est": 0.14973497716240836,
+      "n": {
+       "topic": 4639,
+       "comparison": 5669
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.09488937377072369,
+      "hi": 0.21339278098922707,
+      "cl_lo": 0.027162545668460856,
+      "cl_hi": 0.2523780125156453
+     },
+     "all:comparison:view_share_gained": {
+      "est": 0.04986520780019976,
+      "n": {
+       "topic": 4639,
+       "comparison": 5669
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.029134998710150333,
+      "hi": 0.07474089064444059,
+      "cl_lo": 0.024143977689506307,
+      "cl_hi": 0.08439080634228531
+     },
+     "all:did_views_minus_articles": {
+      "est": 0.07544522669785778,
+      "n": {
+       "topic": 4639,
+       "comparison": 5669
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.015973147855403713,
+      "hi": 0.14339680872136018,
+      "cl_lo": -0.02879693406182026,
+      "cl_hi": 0.1683328272232064
+     },
+     "relevant:topic:view_share_gained": {
+      "est": 0.2760395232791988,
+      "n": {
+       "topic": 1482,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.17715563537801424,
+      "hi": 0.37805389840675424,
+      "cl_lo": 0.07583667442378339,
+      "cl_hi": 0.4354955472924457
+     },
+     "relevant:comparison:view_share_gained": {
+      "est": 0.08607864463165671,
+      "n": {
+       "topic": 1482,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.04210792601173309,
+      "hi": 0.13705556115197054,
+      "cl_lo": 0.029440961805397715,
+      "cl_hi": 0.1686082068041694
+     },
+     "relevant:did_views_minus_articles": {
+      "est": 0.14476287721999032,
+      "n": {
+       "topic": 1482,
+       "comparison": 1289
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.042826796083278384,
+      "hi": 0.25757089687323975,
+      "cl_lo": -0.014776072720344648,
+      "cl_hi": 0.29816460355365737
+     }
+    },
+    "former_titles": {
+     "topic": {
+      "articles_with_former_titles": 441,
+      "share_views_under_former_titles": 0.047,
+      "exposure_share_all_titles": 0.17,
+      "exposure_share_current_title_only": 0.165
+     },
+     "comparison": {
+      "articles_with_former_titles": 663,
+      "share_views_under_former_titles": 0.059,
+      "exposure_share_all_titles": 0.059,
+      "exposure_share_current_title_only": 0.036
+     }
+    }
+   },
+   "rank": 10
+  },
+  {
+   "id": "atrocity_voice",
+   "title": "Atrocity comparison: voice of the genocide label, stated vs attributed, across the atrocity set and Gaza",
+   "what_we_see": "11 atrocity-set pages across 7 cases, 1 Gaza pages and 1 reference page(s). Lead voice of 'genocide' in the atrocity set, 2021 / 2023 / now: n/a 6, attributed 1, stated 4 / n/a 5, attributed 2, stated 4 / attributed 2, stated 9. Gaza: Gaza genocide: n/a -> n/a -> stated (first sentence now stated; title stated; first lead insert n/a; 0 genocide flips).",
+   "chart": {
+    "type": "table / heat strip, one row per page, columns = surfaces x dates",
+    "x": "surface x date",
+    "y": "page",
+    "series": "stated / attributed / absent",
+    "data": "chart_data/11_atrocity_voice.json"
+   },
+   "confidence": "ANECDOTE",
+   "so_what": "Stating 'genocide' in Wikipedia's voice is the comparison to make page by page: check whether Gaza differs in timing and in how far the label reached (title, short description, infobox, categories) rather than in the label itself.",
+   "caveat": "Voice is a rule-based classifier (a hedge or attribution word in the same sentence = attributed); it misreads denials and quotations and needs hand checking before quoting. n is a few pages per case.",
+   "examples": [
+    {
+     "article": "Yazidi genocide",
+     "note": "[yazidi] lead now stated (2023: stated); short description stated; Wikidata stated; 'The Yazidi genocide also known as the 74th firman by Yazidis, was perpetrated by the Islamic State in Iraq and Syria between 2014 and 2017.'"
+    },
+    {
+     "article": "Gaza genocide",
+     "note": "[gaza] lead now stated (2023: None); short description stated; Wikidata absent; 'The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.'"
+    },
+    {
+     "article": "Rohingya genocide",
+     "note": "[rohingya] lead now stated (2023: stated); short description stated; Wikidata absent; 'The Rohingya genocide is a series of ongoing persecutions and killings of the Muslim Rohingya people by the Tatmadaw (armed forces of Myanmar).'"
+    },
+    {
+     "article": "Armenian genocide",
+     "note": "[reference] lead now stated (2023: stated); short description absent; Wikidata absent; 'The Armenian genocide was the systematic destruction of the Armenian people and identity in the Ottoman Empire during World War&nbsp;I.'"
+    },
+    {
+     "article": "Bosnian genocide",
+     "note": "[bosnian] lead now stated (2023: stated); short description stated; Wikidata stated; 'The Bosnian genocide took place during the Bosnian War of 1992–1995 and includes the Srebrenica massacre of July 1995 or the wider crimes against humanity and ethnic cleansing campaign perpetrated throughout areas controlled by the Army of Republika Srpska (VRS).'"
+    },
+    {
+     "article": "Persecution of Uyghurs in China",
+     "note": "[uyghur] lead now attributed (2023: attributed); short description absent; Wikidata absent; 'Since 2014, the government of China has committed a series of ongoing human rights abuses against Uyghurs and other Turkic Muslim minorities in Xinjiang which has often been characterized as persecution or as genocide.'"
+    },
+    {
+     "article": "War crimes in the Tigray war",
+     "note": "[tigray] lead now attributed (2023: attributed); short description absent; Wikidata absent; 'Government-allied forces had engaged in torture, ethnic cleansing and widespread sexual violence, and have faced accusations of committing a genocide against Tigrayans.'"
+    },
+    {
+     "article": "Tigray genocide",
+     "note": "[tigray] lead now stated (2023: None); short description stated; Wikidata stated; 'The Tigray genocide is the genocide committed during the Tigray war in Ethiopia, which began in November 2020 and formally ended in November 2022 when the Pretoria Peace Agreement was agreed to.'"
+    },
+    {
+     "article": "Darfur genocide (2003–2005)",
+     "note": "[darfur_2003] lead now stated (2023: stated); short description absent; Wikidata stated; 'The Darfur genocide was the systematic killing of ethnic Darfuri people during the War in Darfur.'"
+    },
+    {
+     "article": "Masalit genocide",
+     "note": "[sudan_2023] lead now stated (2023: None); short description stated; Wikidata stated; 'The Masalit genocide is a series of ongoing persecutions and mass killings of the Masalit people in West Darfur carried out by the Rapid Support Forces (RSF) and its allies as part of the Darfur genocide.'"
+    },
+    {
+     "article": "Darfur genocide (2023–present)",
+     "note": "[sudan_2023] lead now stated (2023: None); short description stated; Wikidata absent; 'The Darfur genocide, also known as the second Darfur genocide, is an ongoing series of persecutions and mass killings of non-Arabs in Darfur carried out by the Rapid Support Forces (RSF) and its allies during the Sudanese civil war.'"
+    },
+    {
+     "article": "El Fasher massacre",
+     "note": "[sudan_2023] lead now stated (2023: None); short description absent; Wikidata absent; 'A genocidal massacre in the city of El Fasher in western Sudan was carried out between 26 October and 4 November 2025.'"
+    }
+   ],
+   "numbers": {},
+   "rank": 11
+  },
+  {
+   "id": "narrative_residual",
+   "title": "The narrative residual: most of the post-war lead change is not news about recent events",
+   "what_we_see": "Event filter (sentences naming 2022+ years, recent events or recency wording are set aside) on 9,177 mass2 leads with all three snapshots. Post-war (Jul 2023 -> now) DiD in lead critical hits per 10k words: unfiltered +2.22 [+1.37, +3.12] {project CI -0.47, +4.78}, narrative residual +1.98 [+1.10, +2.82] {project CI -0.40, +4.29}, event sentences +0.24 [+0.04, +0.50] {project CI -0.06, +0.47}; the residual is 89% of the unfiltered DiD. Relevant subset: residual +4.35 [+2.20, +6.69] {project CI +0.15, +5.98}. Pre-war residual DiD +0.14 [-0.42, +0.70] {project CI -0.17, +0.47}. Against study3/holdout_results/event_mass_leads.txt: 11 of 12 rows match (DiD within max(0.15, 25%) and same sign of the CI's lower bound).",
+   "chart": {
+    "type": "stacked bar (residual + event part) per group and window",
+    "x": "window",
+    "y": "change in lead critical hits per 10k words",
+    "series": "topic vs comparison; residual vs event sentences",
+    "data": "chart_data/12_narrative_residual.json, event_mass2_leads.txt"
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "The lead change is a re-telling of older history and the land, not war coverage: filtering out sentences about recent events leaves most of the topic-vs-comparison difference in place.",
+   "caveat": "The filter is a fixed regex list (frozen in SPEC_STUDY3 amendment D) and misses some event sentences that name no year; matching the reference is approximate because mass2 deduplicates redirects and recrawled every lead.",
+   "examples": [],
+   "numbers": {
+    "vs_reference": [
+     {
+      "subset": "all",
+      "window": "pre-war",
+      "outcome": "unfiltered",
+      "did": 0.11,
+      "ref_did": 0.12,
+      "topic": 0.21,
+      "ref_topic": 0.21,
+      "comp": 0.09,
+      "ref_comp": 0.09,
+      "n": [
+       4011,
+       5166
+      ],
+      "ref_n": [
+       4073,
+       5217
+      ],
+      "match": true
+     },
+     {
+      "subset": "all",
+      "window": "pre-war",
+      "outcome": "narrative residual",
+      "did": 0.14,
+      "ref_did": 0.14,
+      "topic": 0.21,
+      "ref_topic": 0.22,
+      "comp": 0.08,
+      "ref_comp": 0.07,
+      "n": [
+       4011,
+       5166
+      ],
+      "ref_n": [
+       4073,
+       5217
+      ],
+      "match": true
+     },
+     {
+      "subset": "all",
+      "window": "pre-war",
+      "outcome": "event sentences",
+      "did": -0.03,
+      "ref_did": -0.02,
+      "topic": -0.01,
+      "ref_topic": -0.01,
+      "comp": 0.02,
+      "ref_comp": 0.02,
+      "n": [
+       4011,
+       5166
+      ],
+      "ref_n": [
+       4073,
+       5217
+      ],
+      "match": true
+     },
+     {
+      "subset": "all",
+      "window": "post-war",
+      "outcome": "unfiltered",
+      "did": 2.22,
+      "ref_did": 2.34,
+      "topic": 2.53,
+      "ref_topic": 2.65,
+      "comp": 0.32,
+      "ref_comp": 0.31,
+      "n": [
+       4011,
+       5166
+      ],
+      "ref_n": [
+       4073,
+       5217
+      ],
+      "match": true
+     },
+     {
+      "subset": "all",
+      "window": "post-war",
+      "outcome": "narrative residual",
+      "did": 1.98,
+      "ref_did": 2.06,
+      "topic": 2.23,
+      "ref_topic": 2.31,
+      "comp": 0.25,
+      "ref_comp": 0.25,
+      "n": [
+       4011,
+       5166
+      ],
+      "ref_n": [
+       4073,
+       5217
+      ],
+      "match": true
+     },
+     {
+      "subset": "all",
+      "window": "post-war",
+      "outcome": "event sentences",
+      "did": 0.24,
+      "ref_did": 0.28,
+      "topic": 0.3,
+      "ref_topic": 0.34,
+      "comp": 0.06,
+      "ref_comp": 0.06,
+      "n": [
+       4011,
+       5166
+      ],
+      "ref_n": [
+       4073,
+       5217
+      ],
+      "match": true
+     },
+     {
+      "subset": "relevant",
+      "window": "pre-war",
+      "outcome": "unfiltered",
+      "did": 0.3,
+      "ref_did": 0.41,
+      "topic": 0.2,
+      "ref_topic": 0.21,
+      "comp": -0.11,
+      "ref_comp": -0.19,
+      "n": [
+       1333,
+       1208
+      ],
+      "ref_n": [
+       1364,
+       1226
+      ],
+      "match": true
+     },
+     {
+      "subset": "relevant",
+      "window": "pre-war",
+      "outcome": "narrative residual",
+      "did": 0.35,
+      "ref_did": 0.45,
+      "topic": 0.22,
+      "ref_topic": 0.23,
+      "comp": -0.13,
+      "ref_comp": -0.21,
+      "n": [
+       1333,
+       1208
+      ],
+      "ref_n": [
+       1364,
+       1226
+      ],
+      "match": true
+     },
+     {
+      "subset": "relevant",
+      "window": "pre-war",
+      "outcome": "event sentences",
+      "did": -0.04,
+      "ref_did": -0.04,
+      "topic": -0.02,
+      "ref_topic": -0.02,
+      "comp": 0.02,
+      "ref_comp": 0.02,
+      "n": [
+       1333,
+       1208
+      ],
+      "ref_n": [
+       1364,
+       1226
+      ],
+      "match": true
+     },
+     {
+      "subset": "relevant",
+      "window": "post-war",
+      "outcome": "unfiltered",
+      "did": 4.53,
+      "ref_did": 4.9,
+      "topic": 5.16,
+      "ref_topic": 5.49,
+      "comp": 0.63,
+      "ref_comp": 0.59,
+      "n": [
+       1333,
+       1208
+      ],
+      "ref_n": [
+       1364,
+       1226
+      ],
+      "match": true
+     },
+     {
+      "subset": "relevant",
+      "window": "post-war",
+      "outcome": "narrative residual",
+      "did": 4.35,
+      "ref_did": 4.6,
+      "topic": 4.83,
+      "ref_topic": 5.03,
+      "comp": 0.47,
+      "ref_comp": 0.44,
+      "n": [
+       1333,
+       1208
+      ],
+      "ref_n": [
+       1364,
+       1226
+      ],
+      "match": true
+     },
+     {
+      "subset": "relevant",
+      "window": "post-war",
+      "outcome": "event sentences",
+      "did": 0.17,
+      "ref_did": 0.3,
+      "topic": 0.33,
+      "ref_topic": 0.46,
+      "comp": 0.16,
+      "ref_comp": 0.15,
+      "n": [
+       1333,
+       1208
+      ],
+      "ref_n": [
+       1364,
+       1226
+      ],
+      "match": false
+     }
+    ],
+    "results": {
+     "all:pre-war:unfiltered": {
+      "est": 0.11183521025259674,
+      "n": {
+       "topic": 4011,
+       "comparison": 5166
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.47061214162244863,
+      "hi": 0.6422987914960065,
+      "cl_lo": -0.18272059210410466,
+      "cl_hi": 0.46234177671340876,
+      "topic": 0.20538416688245306,
+      "comp": 0.09354895662985632
+     },
+     "all:pre-war:narrative residual": {
+      "est": 0.13693912975156097,
+      "n": {
+       "topic": 4011,
+       "comparison": 5166
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.417978903206344,
+      "hi": 0.6998238565319028,
+      "cl_lo": -0.16967154218657737,
+      "cl_hi": 0.46914284692734565,
+      "topic": 0.21263246999794863,
+      "comp": 0.07569334024638766
+     },
+     "all:pre-war:event sentences": {
+      "est": -0.025103919498964237,
+      "n": {
+       "topic": 4011,
+       "comparison": 5166
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.05970714896051066,
+      "hi": -0.0026353831469013416,
+      "cl_lo": -0.056315400574968345,
+      "cl_hi": -0.0030020186896764656,
+      "topic": -0.0072483031154955664,
+      "comp": 0.01785561638346867
+     },
+     "all:post-war:unfiltered": {
+      "est": 2.216397058783564,
+      "n": {
+       "topic": 4011,
+       "comparison": 5166
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 1.3675752371861827,
+      "hi": 3.120116474630725,
+      "cl_lo": -0.46629586666668854,
+      "cl_hi": 4.776475327765788,
+      "topic": 2.5322917352809666,
+      "comp": 0.31589467649740266
+     },
+     "all:post-war:narrative residual": {
+      "est": 1.979453147630481,
+      "n": {
+       "topic": 4011,
+       "comparison": 5166
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 1.1038939769899914,
+      "hi": 2.818706853274523,
+      "cl_lo": -0.40438723159635853,
+      "cl_hi": 4.2897202815653035,
+      "topic": 2.23294802148674,
+      "comp": 0.25349487385625874
+     },
+     "all:post-war:event sentences": {
+      "est": 0.2369439111530826,
+      "n": {
+       "topic": 4011,
+       "comparison": 5166
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 0.04320211756128868,
+      "hi": 0.5045094086925336,
+      "cl_lo": -0.05721047275921433,
+      "cl_hi": 0.47059047717428476,
+      "topic": 0.2993437137942266,
+      "comp": 0.06239980264114397
+     },
+     "relevant:pre-war:unfiltered": {
+      "est": 0.3033545249167551,
+      "n": {
+       "topic": 1333,
+       "comparison": 1208
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -1.2025649257249444,
+      "hi": 1.9429362704066786,
+      "cl_lo": -0.6817920799081156,
+      "cl_hi": 1.5079448067026344,
+      "topic": 0.19763022978227487,
+      "comp": -0.10572429513448019
+     },
+     "relevant:pre-war:narrative residual": {
+      "est": 0.3463364134251775,
+      "n": {
+       "topic": 1333,
+       "comparison": 1208
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -1.213732723128286,
+      "hi": 1.8756110551503775,
+      "cl_lo": -0.7145383898910672,
+      "cl_hi": 1.528156866159563,
+      "topic": 0.2194403901695612,
+      "comp": -0.12689602325561633
+     },
+     "relevant:pre-war:event sentences": {
+      "est": -0.04298188850842252,
+      "n": {
+       "topic": 1333,
+       "comparison": 1208
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.10639817745305591,
+      "hi": 0.0023115635871116297,
+      "cl_lo": -0.08707954825452077,
+      "cl_hi": -0.005825239288419524,
+      "topic": -0.021810160387286358,
+      "comp": 0.02117172812113616
+     },
+     "relevant:post-war:unfiltered": {
+      "est": 4.527222715846513,
+      "n": {
+       "topic": 1333,
+       "comparison": 1208
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 2.4656582381705516,
+      "hi": 6.925136404542144,
+      "cl_lo": 0.16326486825238337,
+      "cl_hi": 6.18520535437481,
+      "topic": 5.157300617346338,
+      "comp": 0.6300779014998255
+     },
+     "relevant:post-war:narrative residual": {
+      "est": 4.354168719763576,
+      "n": {
+       "topic": 1333,
+       "comparison": 1208
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": 2.2019625470311994,
+      "hi": 6.688847080706094,
+      "cl_lo": 0.15451434188906016,
+      "cl_hi": 5.976586986426661,
+      "topic": 4.826951689692294,
+      "comp": 0.4727829699287173
+     },
+     "relevant:post-war:event sentences": {
+      "est": 0.17305399608293587,
+      "n": {
+       "topic": 1333,
+       "comparison": 1208
+      },
+      "k": {
+       "topic": 4,
+       "comparison": 23
+      },
+      "lo": -0.08755619881626699,
+      "hi": 0.46516569954362336,
+      "cl_lo": -0.17594836499526284,
+      "cl_hi": 0.33684543550880475,
+      "topic": 0.33034892765404417,
+      "comp": 0.1572949315711083
+     }
+    }
+   },
+   "rank": 12
+  }
+ ],
+ "new_questions": [
+  {
+   "question": "Do now-blocked flip accounts concentrate on the same pages across windows, and were they blocked for socking or AE?",
+   "data_we_have": "per-event breason class and hashes within one run",
+   "needed": "nothing new; a per-page cut of card 1"
+  },
+  {
+   "question": "Does the hot-core link effect hold with the full link graph (outlinks of core articles) instead of concept links?",
+   "data_we_have": "alias-resolved concept links at 3 dates",
+   "needed": "pagelinks dumps at 2023-07 and now"
+  },
+  {
+   "question": "Is the atrocity voice classifier right?",
+   "data_we_have": "lead sentences in chart_data/11_atrocity_voice.json",
+   "needed": "hand coding of the ~30 genocide sentences by two coders"
+  }
+ ]
+}

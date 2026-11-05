@@ -1,0 +1,327 @@
+{
+ "x": "w2 edit-volume quintile (pooled)",
+ "y": "share gaining lead critical terms 2023-07 to now",
+ "series": "EC-protected at 2023-07 vs not, by group",
+ "rows": [
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 1,
+   "ec_at_2023_07": true,
+   "articles": 40,
+   "share_gaining": 0.025
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 1,
+   "ec_at_2023_07": false,
+   "articles": 1096,
+   "share_gaining": 0.005
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 2,
+   "ec_at_2023_07": true,
+   "articles": 82,
+   "share_gaining": 0.061
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 2,
+   "ec_at_2023_07": false,
+   "articles": 991,
+   "share_gaining": 0.014
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 3,
+   "ec_at_2023_07": true,
+   "articles": 139,
+   "share_gaining": 0.094
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 3,
+   "ec_at_2023_07": false,
+   "articles": 838,
+   "share_gaining": 0.021
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 4,
+   "ec_at_2023_07": true,
+   "articles": 111,
+   "share_gaining": 0.162
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 4,
+   "ec_at_2023_07": false,
+   "articles": 640,
+   "share_gaining": 0.027
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 5,
+   "ec_at_2023_07": true,
+   "articles": 143,
+   "share_gaining": 0.35
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "edit_quintile": 5,
+   "ec_at_2023_07": false,
+   "articles": 388,
+   "share_gaining": 0.085
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 1,
+   "ec_at_2023_07": true,
+   "articles": 1,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 1,
+   "ec_at_2023_07": false,
+   "articles": 756,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 2,
+   "ec_at_2023_07": true,
+   "articles": 3,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 2,
+   "ec_at_2023_07": false,
+   "articles": 974,
+   "share_gaining": 0.005
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 3,
+   "ec_at_2023_07": true,
+   "articles": 11,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 3,
+   "ec_at_2023_07": false,
+   "articles": 1056,
+   "share_gaining": 0.004
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 4,
+   "ec_at_2023_07": true,
+   "articles": 13,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 4,
+   "ec_at_2023_07": false,
+   "articles": 1227,
+   "share_gaining": 0.014
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 5,
+   "ec_at_2023_07": true,
+   "articles": 57,
+   "share_gaining": 0.193
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "edit_quintile": 5,
+   "ec_at_2023_07": false,
+   "articles": 1412,
+   "share_gaining": 0.03
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 1,
+   "ec_at_2023_07": true,
+   "articles": 46,
+   "share_gaining": 0.043
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 1,
+   "ec_at_2023_07": false,
+   "articles": 352,
+   "share_gaining": 0.023
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 2,
+   "ec_at_2023_07": true,
+   "articles": 89,
+   "share_gaining": 0.079
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 2,
+   "ec_at_2023_07": false,
+   "articles": 261,
+   "share_gaining": 0.042
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 3,
+   "ec_at_2023_07": true,
+   "articles": 85,
+   "share_gaining": 0.094
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 3,
+   "ec_at_2023_07": false,
+   "articles": 204,
+   "share_gaining": 0.074
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 4,
+   "ec_at_2023_07": true,
+   "articles": 72,
+   "share_gaining": 0.167
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 4,
+   "ec_at_2023_07": false,
+   "articles": 140,
+   "share_gaining": 0.029
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 5,
+   "ec_at_2023_07": true,
+   "articles": 83,
+   "share_gaining": 0.446
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "edit_quintile": 5,
+   "ec_at_2023_07": false,
+   "articles": 69,
+   "share_gaining": 0.174
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 1,
+   "ec_at_2023_07": true,
+   "articles": 1,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 1,
+   "ec_at_2023_07": false,
+   "articles": 128,
+   "share_gaining": 0.008
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 2,
+   "ec_at_2023_07": true,
+   "articles": 3,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 2,
+   "ec_at_2023_07": false,
+   "articles": 180,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 3,
+   "ec_at_2023_07": true,
+   "articles": 5,
+   "share_gaining": 0.0
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 3,
+   "ec_at_2023_07": false,
+   "articles": 235,
+   "share_gaining": 0.017
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 4,
+   "ec_at_2023_07": true,
+   "articles": 14,
+   "share_gaining": 0.071
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 4,
+   "ec_at_2023_07": false,
+   "articles": 305,
+   "share_gaining": 0.036
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 5,
+   "ec_at_2023_07": true,
+   "articles": 32,
+   "share_gaining": 0.281
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "edit_quintile": 5,
+   "ec_at_2023_07": false,
+   "articles": 347,
+   "share_gaining": 0.061
+  }
+ ]
+}

@@ -1,0 +1,786 @@
+{
+ "x": "source class",
+ "y": "share of lead citations (pooled, articles present at Jul 2023 and now)",
+ "rows": [
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Israeli press",
+   "share_2023": 0.0637,
+   "share_now": 0.0577
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Israeli press",
+   "share_2023": 0.0011,
+   "share_now": 0.0008
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Arab & Palestinian press, pro-Palestinian outlets",
+   "share_2023": 0.0074,
+   "share_now": 0.0113
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Arab & Palestinian press, pro-Palestinian outlets",
+   "share_2023": 0.0056,
+   "share_now": 0.0067
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Rights orgs & UN",
+   "share_2023": 0.018,
+   "share_now": 0.018
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Rights orgs & UN",
+   "share_2023": 0.0069,
+   "share_now": 0.0073
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Pro-Israel advocacy",
+   "share_2023": 0.0097,
+   "share_now": 0.0075
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Pro-Israel advocacy",
+   "share_2023": 0.0005,
+   "share_now": 0.0004
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Western wire & papers",
+   "share_2023": 0.0591,
+   "share_now": 0.0607
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Western wire & papers",
+   "share_2023": 0.0546,
+   "share_now": 0.0518
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Scholarly (books, journals)",
+   "share_2023": 0.433,
+   "share_now": 0.4796
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Scholarly (books, journals)",
+   "share_2023": 0.4952,
+   "share_now": 0.5519
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Other",
+   "share_2023": 0.4091,
+   "share_now": 0.3652
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Other",
+   "share_2023": 0.4362,
+   "share_now": 0.3812
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "_citations",
+   "articles": 4468,
+   "total_2023": 18331,
+   "total_now": 20707
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "_citations",
+   "articles": 5510,
+   "total_2023": 36160,
+   "total_now": 38475
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Israeli press",
+   "share_2021": 0.0636,
+   "articles_with_2021": 4224
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Arab & Palestinian press, pro-Palestinian outlets",
+   "share_2021": 0.0071,
+   "articles_with_2021": 4224
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Rights orgs & UN",
+   "share_2021": 0.0188,
+   "articles_with_2021": 4224
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Pro-Israel advocacy",
+   "share_2021": 0.0131,
+   "articles_with_2021": 4224
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Western wire & papers",
+   "share_2021": 0.0647,
+   "articles_with_2021": 4224
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Scholarly (books, journals)",
+   "share_2021": 0.3683,
+   "articles_with_2021": 4224
+  },
+  {
+   "subset": "all",
+   "group": "topic",
+   "class": "Other",
+   "share_2021": 0.4644,
+   "articles_with_2021": 4224
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Israeli press",
+   "share_2021": 0.0008,
+   "articles_with_2021": 5389
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Arab & Palestinian press, pro-Palestinian outlets",
+   "share_2021": 0.0056,
+   "articles_with_2021": 5389
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Rights orgs & UN",
+   "share_2021": 0.0069,
+   "articles_with_2021": 5389
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Pro-Israel advocacy",
+   "share_2021": 0.0006,
+   "articles_with_2021": 5389
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Western wire & papers",
+   "share_2021": 0.054,
+   "articles_with_2021": 5389
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Scholarly (books, journals)",
+   "share_2021": 0.4215,
+   "articles_with_2021": 5389
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "class": "Other",
+   "share_2021": 0.5105,
+   "articles_with_2021": 5389
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Israeli press",
+   "share_2023": 0.071,
+   "share_now": 0.0662
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Israeli press",
+   "share_2023": 0.0019,
+   "share_now": 0.0011
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Arab & Palestinian press, pro-Palestinian outlets",
+   "share_2023": 0.0106,
+   "share_now": 0.0142
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Arab & Palestinian press, pro-Palestinian outlets",
+   "share_2023": 0.0094,
+   "share_now": 0.0105
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Rights orgs & UN",
+   "share_2023": 0.0326,
+   "share_now": 0.034
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Rights orgs & UN",
+   "share_2023": 0.012,
+   "share_now": 0.0125
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Pro-Israel advocacy",
+   "share_2023": 0.0088,
+   "share_now": 0.0065
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Pro-Israel advocacy",
+   "share_2023": 0.001,
+   "share_now": 0.0006
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Western wire & papers",
+   "share_2023": 0.0691,
+   "share_now": 0.0711
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Western wire & papers",
+   "share_2023": 0.0699,
+   "share_now": 0.0616
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Scholarly (books, journals)",
+   "share_2023": 0.428,
+   "share_now": 0.476
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Scholarly (books, journals)",
+   "share_2023": 0.511,
+   "share_now": 0.5904
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Other",
+   "share_2023": 0.3799,
+   "share_now": 0.3319
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Other",
+   "share_2023": 0.3947,
+   "share_now": 0.3233
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "_citations",
+   "articles": 1401,
+   "total_2023": 8856,
+   "total_now": 9701
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "_citations",
+   "articles": 1250,
+   "total_2023": 13343,
+   "total_now": 13954
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Israeli press",
+   "share_2021": 0.0655,
+   "articles_with_2021": 1358
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Arab & Palestinian press, pro-Palestinian outlets",
+   "share_2021": 0.0098,
+   "articles_with_2021": 1358
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Rights orgs & UN",
+   "share_2021": 0.0325,
+   "articles_with_2021": 1358
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Pro-Israel advocacy",
+   "share_2021": 0.0125,
+   "articles_with_2021": 1358
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Western wire & papers",
+   "share_2021": 0.074,
+   "articles_with_2021": 1358
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Scholarly (books, journals)",
+   "share_2021": 0.3837,
+   "articles_with_2021": 1358
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "class": "Other",
+   "share_2021": 0.422,
+   "articles_with_2021": 1358
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Israeli press",
+   "share_2021": 0.0013,
+   "articles_with_2021": 1220
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Arab & Palestinian press, pro-Palestinian outlets",
+   "share_2021": 0.0094,
+   "articles_with_2021": 1220
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Rights orgs & UN",
+   "share_2021": 0.0104,
+   "articles_with_2021": 1220
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Pro-Israel advocacy",
+   "share_2021": 0.0013,
+   "articles_with_2021": 1220
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Western wire & papers",
+   "share_2021": 0.0665,
+   "articles_with_2021": 1220
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Scholarly (books, journals)",
+   "share_2021": 0.4309,
+   "articles_with_2021": 1220
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "class": "Other",
+   "share_2021": 0.4803,
+   "articles_with_2021": 1220
+  }
+ ],
+ "domain_shifts": {
+  "topic": [
+   {
+    "domain": "web.archive.org",
+    "class": "Scholarly (books, journals)",
+    "2023": 2731,
+    "now": 4220,
+    "delta": 1489
+   },
+   {
+    "domain": "pcbs.gov.ps",
+    "class": "Other",
+    "2023": 205,
+    "now": 392,
+    "delta": 187
+   },
+   {
+    "domain": "timesofisrael.com",
+    "class": "Israeli press",
+    "2023": 197,
+    "now": 349,
+    "delta": 152
+   },
+   {
+    "domain": "aljazeera.com",
+    "class": "Arab & Palestinian press, pro-Palestinian outlets",
+    "2023": 60,
+    "now": 192,
+    "delta": 132
+   },
+   {
+    "domain": "theguardian.com",
+    "class": "Western wire & papers",
+    "2023": 128,
+    "now": 212,
+    "delta": 84
+   },
+   {
+    "domain": "reuters.com",
+    "class": "Western wire & papers",
+    "2023": 67,
+    "now": 146,
+    "delta": 79
+   },
+   {
+    "domain": "nytimes.com",
+    "class": "Western wire & papers",
+    "2023": 272,
+    "now": 323,
+    "delta": 51
+   },
+   {
+    "domain": "apnews.com",
+    "class": "Western wire & papers",
+    "2023": 17,
+    "now": 68,
+    "delta": 51
+   },
+   {
+    "domain": "bbc.com",
+    "class": "Western wire & papers",
+    "2023": 44,
+    "now": 94,
+    "delta": 50
+   },
+   {
+    "domain": "jstor.org",
+    "class": "Scholarly (books, journals)",
+    "2023": 80,
+    "now": 128,
+    "delta": 48
+   },
+   {
+    "domain": "archive.today",
+    "class": "Other",
+    "2023": 75,
+    "now": 121,
+    "delta": 46
+   },
+   {
+    "domain": "sefaria.org",
+    "class": "Other",
+    "2023": 34,
+    "now": 78,
+    "delta": 44
+   },
+   {
+    "domain": "tandfonline.com",
+    "class": "Scholarly (books, journals)",
+    "2023": 6,
+    "now": 40,
+    "delta": 34
+   },
+   {
+    "domain": "books.google.com",
+    "class": "Scholarly (books, journals)",
+    "2023": 1682,
+    "now": 1716,
+    "delta": 34
+   },
+   {
+    "domain": "zenodo.org",
+    "class": "Other",
+    "2023": 2,
+    "now": 34,
+    "delta": 32
+   },
+   {
+    "domain": "blueletterbible.org",
+    "class": "Other",
+    "2023": 15,
+    "now": 7,
+    "delta": -8
+   },
+   {
+    "domain": "plato.stanford.edu",
+    "class": "Other",
+    "2023": 22,
+    "now": 13,
+    "delta": -9
+   },
+   {
+    "domain": "joshuaproject.net",
+    "class": "Other",
+    "2023": 16,
+    "now": 7,
+    "delta": -9
+   },
+   {
+    "domain": "news.bbc.co.uk",
+    "class": "Western wire & papers",
+    "2023": 179,
+    "now": 169,
+    "delta": -10
+   },
+   {
+    "domain": "articles.latimes.com",
+    "class": "Other",
+    "2023": 16,
+    "now": 3,
+    "delta": -13
+   },
+   {
+    "domain": "jewishdatabank.org",
+    "class": "Other",
+    "2023": 36,
+    "now": 20,
+    "delta": -16
+   },
+   {
+    "domain": "haaretz.com",
+    "class": "Israeli press",
+    "2023": 461,
+    "now": 445,
+    "delta": -16
+   },
+   {
+    "domain": "dx.doi.org",
+    "class": "Scholarly (books, journals)",
+    "2023": 50,
+    "now": 28,
+    "delta": -22
+   },
+   {
+    "domain": "mfa.gov.il",
+    "class": "Other",
+    "2023": 84,
+    "now": 61,
+    "delta": -23
+   },
+   {
+    "domain": "worldcat.org",
+    "class": "Other",
+    "2023": 76,
+    "now": 5,
+    "delta": -71
+   }
+  ],
+  "comparison": [
+   {
+    "domain": "web.archive.org",
+    "class": "Scholarly (books, journals)",
+    "2023": 7908,
+    "now": 10474,
+    "delta": 2566
+   },
+   {
+    "domain": "data.imf.org",
+    "class": "Other",
+    "2023": 0,
+    "now": 112,
+    "delta": 112
+   },
+   {
+    "domain": "unesdoc.unesco.org",
+    "class": "Other",
+    "2023": 4,
+    "now": 114,
+    "delta": 110
+   },
+   {
+    "domain": "aljazeera.com",
+    "class": "Arab & Palestinian press, pro-Palestinian outlets",
+    "2023": 96,
+    "now": 167,
+    "delta": 71
+   },
+   {
+    "domain": "pewresearch.org",
+    "class": "Other",
+    "2023": 21,
+    "now": 87,
+    "delta": 66
+   },
+   {
+    "domain": "doi.org",
+    "class": "Scholarly (books, journals)",
+    "2023": 29,
+    "now": 95,
+    "delta": 66
+   },
+   {
+    "domain": "bbc.com",
+    "class": "Western wire & papers",
+    "2023": 255,
+    "now": 317,
+    "delta": 62
+   },
+   {
+    "domain": "lamtakam.com",
+    "class": "Other",
+    "2023": 0,
+    "now": 59,
+    "delta": 59
+   },
+   {
+    "domain": "jstor.org",
+    "class": "Scholarly (books, journals)",
+    "2023": 124,
+    "now": 182,
+    "delta": 58
+   },
+   {
+    "domain": "iranchamber.com",
+    "class": "Other",
+    "2023": 14,
+    "now": 72,
+    "delta": 58
+   },
+   {
+    "domain": "google.com",
+    "class": "Other",
+    "2023": 36,
+    "now": 93,
+    "delta": 57
+   },
+   {
+    "domain": "bbs.portal.gov.bd",
+    "class": "Other",
+    "2023": 9,
+    "now": 58,
+    "delta": 49
+   },
+   {
+    "domain": "search.worldcat.org",
+    "class": "Other",
+    "2023": 0,
+    "now": 46,
+    "delta": 46
+   },
+   {
+    "domain": "thedailystar.net",
+    "class": "Other",
+    "2023": 148,
+    "now": 189,
+    "delta": 41
+   },
+   {
+    "domain": "nytimes.com",
+    "class": "Western wire & papers",
+    "2023": 281,
+    "now": 322,
+    "delta": 41
+   },
+   {
+    "domain": "pewforum.org",
+    "class": "Other",
+    "2023": 84,
+    "now": 64,
+    "delta": -20
+   },
+   {
+    "domain": "ghostarchive.org",
+    "class": "Other",
+    "2023": 72,
+    "now": 48,
+    "delta": -24
+   },
+   {
+    "domain": "fiu.edu",
+    "class": "Other",
+    "2023": 26,
+    "now": 2,
+    "delta": -24
+   },
+   {
+    "domain": "cia.gov",
+    "class": "Other",
+    "2023": 213,
+    "now": 185,
+    "delta": -28
+   },
+   {
+    "domain": "irandataportal.syr.edu",
+    "class": "Other",
+    "2023": 58,
+    "now": 0,
+    "delta": -58
+   },
+   {
+    "domain": "worldcat.org",
+    "class": "Other",
+    "2023": 77,
+    "now": 9,
+    "delta": -68
+   },
+   {
+    "domain": "books.google.com",
+    "class": "Scholarly (books, journals)",
+    "2023": 3091,
+    "now": 3020,
+    "delta": -71
+   },
+   {
+    "domain": "amar.org.ir",
+    "class": "Other",
+    "2023": 160,
+    "now": 71,
+    "delta": -89
+   },
+   {
+    "domain": "unesco.org",
+    "class": "Other",
+    "2023": 147,
+    "now": 26,
+    "delta": -121
+   },
+   {
+    "domain": "imf.org",
+    "class": "Other",
+    "2023": 277,
+    "now": 154,
+    "delta": -123
+   }
+  ]
+ }
+}

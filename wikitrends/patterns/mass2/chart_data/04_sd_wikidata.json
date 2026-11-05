@@ -1,0 +1,584 @@
+{
+ "x": "lead critical count changed 2023-07 -> now (yes/no)",
+ "y": "share whose description also changed",
+ "rows": [
+  {
+   "subset": "all",
+   "group": "topic",
+   "sd_changed_if_lead_changed": 0.557,
+   "sd_changed_if_lead_unchanged": 0.325,
+   "wd_en_changed_if_lead_changed": 0.447,
+   "wd_en_changed_if_lead_unchanged": 0.234,
+   "n_lead_changed": 231,
+   "n_lead_unchanged": 4237,
+   "sd_changed": 0.338,
+   "wd_en_changed": 0.245,
+   "wd_he_changed": 0.175,
+   "wd_ar_changed": 0.158,
+   "sd_with_critical_term_2023": 26,
+   "sd_with_critical_term_now": 24,
+   "n_sd_2023": 3132,
+   "n_sd_now": 4017
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "sd_changed_if_lead_changed": 0.632,
+   "sd_changed_if_lead_unchanged": 0.438,
+   "wd_en_changed_if_lead_changed": 0.405,
+   "wd_en_changed_if_lead_unchanged": 0.234,
+   "n_lead_changed": 135,
+   "n_lead_unchanged": 5375,
+   "sd_changed": 0.443,
+   "wd_en_changed": 0.238,
+   "wd_he_changed": 0.058,
+   "wd_ar_changed": 0.136,
+   "sd_with_critical_term_2023": 15,
+   "sd_with_critical_term_now": 16,
+   "n_sd_2023": 4402,
+   "n_sd_now": 5290
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "sd_changed_if_lead_changed": 0.542,
+   "sd_changed_if_lead_unchanged": 0.371,
+   "wd_en_changed_if_lead_changed": 0.466,
+   "wd_en_changed_if_lead_unchanged": 0.217,
+   "n_lead_changed": 155,
+   "n_lead_unchanged": 1246,
+   "sd_changed": 0.393,
+   "wd_en_changed": 0.245,
+   "wd_he_changed": 0.25,
+   "wd_ar_changed": 0.24,
+   "sd_with_critical_term_2023": 21,
+   "sd_with_critical_term_now": 19,
+   "n_sd_2023": 913,
+   "n_sd_now": 1180
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "sd_changed_if_lead_changed": 0.722,
+   "sd_changed_if_lead_unchanged": 0.472,
+   "wd_en_changed_if_lead_changed": 0.451,
+   "wd_en_changed_if_lead_unchanged": 0.237,
+   "n_lead_changed": 85,
+   "n_lead_unchanged": 1165,
+   "sd_changed": 0.49,
+   "wd_en_changed": 0.252,
+   "wd_he_changed": 0.074,
+   "wd_ar_changed": 0.166,
+   "sd_with_critical_term_2023": 11,
+   "sd_with_critical_term_now": 14,
+   "n_sd_2023": 1076,
+   "n_sd_now": 1237
+  }
+ ],
+ "moves": [
+  {
+   "title": "The Holocaust",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "genocide of European Jews by Nazi Germany",
+   "after": "genocide of around 6 million Jews by Nazi Germany, other Axis powers and local collaborators in occupied territories",
+   "critical_terms_delta": 1,
+   "views_12m": 3932488.0
+  },
+  {
+   "title": "Srebrenica massacre",
+   "group": "comparison",
+   "surface": "short description",
+   "before": "Massacre of over 8,000 Muslim Bosniaks in Srebrenica region during the Bosnian War",
+   "after": "1995 genocidal killing of Bosniak men",
+   "critical_terms_delta": 1,
+   "views_12m": 653056.0
+  },
+  {
+   "title": "Holocaust denial",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Denial of the genocide of Jews in World War II",
+   "after": "Denial of the Holocaust",
+   "critical_terms_delta": -1,
+   "views_12m": 414790.0
+  },
+  {
+   "title": "Holocaust denial",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "denial of the genocide of Jews in World War II",
+   "after": "negation, distortion or minimization of the Holocaust",
+   "critical_terms_delta": -1,
+   "views_12m": 414790.0
+  },
+  {
+   "title": "Bosnian genocide",
+   "group": "comparison",
+   "surface": "short description",
+   "before": "Murder of Bosniaks and Bosnian Croats during the Bosnian War",
+   "after": "1995 genocide in Bosnia and Herzegovina",
+   "critical_terms_delta": 1,
+   "views_12m": 388722.0
+  },
+  {
+   "title": "Second Intifada",
+   "group": "topic",
+   "surface": "short description",
+   "before": "2000–2005 Palestinian uprising against Israel",
+   "after": "2000–2005 Palestinian uprising against Israeli occupation",
+   "critical_terms_delta": 1,
+   "views_12m": 347659.0
+  },
+  {
+   "title": "Second Intifada",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "2000–2005 Palestinian uprising against Israel",
+   "after": "2000–2005 Palestinian uprising against Israeli occupation",
+   "critical_terms_delta": 1,
+   "views_12m": 347659.0
+  },
+  {
+   "title": "Bangladesh genocide",
+   "group": "comparison",
+   "surface": "Wikidata (en)",
+   "before": "murder of millions of people and rape of hundreds of thousands of women during the Bangladesh war for independence in 1971 by the Pakistani military and Islamist militias",
+   "after": "genocide of Bengalis carried out by the Pakistani military during the Bangladesh Liberation War",
+   "critical_terms_delta": 1,
+   "views_12m": 266265.0
+  },
+  {
+   "title": "Israeli new shekel",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "currency of Israel and Palestine",
+   "after": "currency of Israel and occupied territories",
+   "critical_terms_delta": 1,
+   "views_12m": 225308.0
+  },
+  {
+   "title": "Hebron",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "city in the West Bank",
+   "after": "Palestian city in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 223284.0
+  },
+  {
+   "title": "Israeli settlement",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Jewish civilian communities built on lands occupied by Israel",
+   "after": "Israeli residential areas established in Israeli-occupied territories after 1967",
+   "critical_terms_delta": 1,
+   "views_12m": 219590.0
+  },
+  {
+   "title": "1948 Palestinian expulsion and flight",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Expulsion and flight of Palestinians during the 1948 Palestine war",
+   "after": "Ethnic cleansing, expulsion, and flight of Palestinians during the 1948 Palestine war",
+   "critical_terms_delta": 1,
+   "views_12m": 185946.0
+  },
+  {
+   "title": "1948 Palestinian expulsion and flight",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "expulsion and flight of Palestinians during the 1948 Palestine war",
+   "after": "ethnic cleansing, expulsion, and flight of Palestinians during the 1948 Palestine war",
+   "critical_terms_delta": 1,
+   "views_12m": 185946.0
+  },
+  {
+   "title": "Yazidi genocide",
+   "group": "comparison",
+   "surface": "short description",
+   "before": "2014 ethnic cleansing and genocide campaign by the Islamic State in Sinjar, northern Iraq",
+   "after": "2014-2017 genocide campaign by the Islamic State",
+   "critical_terms_delta": -1,
+   "views_12m": 176198.0
+  },
+  {
+   "title": "East Jerusalem",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Part of the West Bank, under Israeli occupation since 1967",
+   "after": "Section of Jerusalem in the West Bank",
+   "critical_terms_delta": -1,
+   "views_12m": 170786.0
+  },
+  {
+   "title": "East Jerusalem",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "part of the West Bank, under Israeli occupation since 1967",
+   "after": "Eastern part of Jerusalem, in dispute between Israel and the Palestinian Arabs since 1967",
+   "critical_terms_delta": -1,
+   "views_12m": 170786.0
+  },
+  {
+   "title": "Israeli occupation of the West Bank",
+   "group": "topic",
+   "surface": "short description",
+   "before": "1967–present military occupation of the West Bank by Israel",
+   "after": "Military occupation by Israel since 1967",
+   "critical_terms_delta": -1,
+   "views_12m": 156260.0
+  },
+  {
+   "title": "Israeli occupation of the West Bank",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "military occupation of the West Bank by Israel",
+   "after": "military occupation by Israel since 1967",
+   "critical_terms_delta": -1,
+   "views_12m": 156260.0
+  },
+  {
+   "title": "Sayfo",
+   "group": "comparison",
+   "surface": "Wikidata (en)",
+   "before": "systematic killing of Assyrians residing in the Ottoman Empire",
+   "after": "genocide of Syriac Christians in the Ottoman Empire",
+   "critical_terms_delta": 1,
+   "views_12m": 143191.0
+  },
+  {
+   "title": "Edict of Expulsion",
+   "group": "topic",
+   "surface": "short description",
+   "before": "1290 edict issued by King Edward I expelling all Jews from England",
+   "after": "1290 anti-Jewish decree by Edward I of England",
+   "critical_terms_delta": -1,
+   "views_12m": 134728.0
+  },
+  {
+   "title": "Israeli disengagement from the Gaza Strip",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "2005 removal of Israeli civilians and military from the Gaza Strip",
+   "after": "end of Israeli occupation and colonization of Gaza Strip in 2005",
+   "critical_terms_delta": 2,
+   "views_12m": 123346.0
+  },
+  {
+   "title": "Evidence and documentation for the Holocaust",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Evidence for the genocide of Jews in World War II",
+   "after": "none",
+   "critical_terms_delta": -1,
+   "views_12m": 121526.0
+  },
+  {
+   "title": "War crimes in the Kosovo War",
+   "group": "comparison",
+   "surface": "short description",
+   "before": "War crimes committed during the Kosovo War",
+   "after": "none",
+   "critical_terms_delta": -1,
+   "views_12m": 116961.0
+  },
+  {
+   "title": "War crimes in the Kosovo War",
+   "group": "comparison",
+   "surface": "Wikidata (en)",
+   "before": "war crimes committed during the Yugoslav civil War",
+   "after": "massacres of Kosovo Albanians by Yugoslav regime during Yugoslav civil War",
+   "critical_terms_delta": -1,
+   "views_12m": 116961.0
+  },
+  {
+   "title": "Expulsion of Jews from Spain",
+   "group": "topic",
+   "surface": "short description",
+   "before": "15th-century expulsion of Jews from Spain",
+   "after": "Ethnic cleansing of Jews from Spain",
+   "critical_terms_delta": 1,
+   "views_12m": 113977.0
+  },
+  {
+   "title": "Judea and Samaria Area",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli administrative division in the West Bank",
+   "after": "Israeli administrative division in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 103798.0
+  },
+  {
+   "title": "Lviv pogroms (1941)",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "massacres of Jews in 1941 Ukraine",
+   "after": "massacres of Jews in Lviv, Nazi-occupied Ukraine between June and July 1941",
+   "critical_terms_delta": 1,
+   "views_12m": 93535.0
+  },
+  {
+   "title": "Reichskommissariat Ukraine",
+   "group": "comparison",
+   "surface": "short description",
+   "before": "Civilian-administered region of German-occupied Ukraine during WWII",
+   "after": "Territory of Nazi Germany from 1941 to 1944",
+   "critical_terms_delta": -1,
+   "views_12m": 91166.0
+  },
+  {
+   "title": "Legality of Israeli settlements",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "legal status of Israeli settlements",
+   "after": "status, classification and assessment of the Zionist colonies in the Occupied territory of Palestine from the point of view of international law",
+   "critical_terms_delta": 1,
+   "views_12m": 52227.0
+  },
+  {
+   "title": "Palestinian enclaves",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Fragmentation of the West Bank over time",
+   "after": "Self-governing Palestinian areas in the Israeli-occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 50444.0
+  },
+  {
+   "title": "Anti-Arab racism",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "opposition to, dislike, fear or hatred of, or advocacy of genocide of, Arab people",
+   "after": "Hatred or prejudice against Arabs",
+   "critical_terms_delta": -1,
+   "views_12m": 40890.0
+  },
+  {
+   "title": "Ariel (Israeli settlement)",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli city in the West Bank",
+   "after": "Israeli settlement in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 35930.0
+  },
+  {
+   "title": "Bosnian genocide denial",
+   "group": "comparison",
+   "surface": "short description",
+   "before": "Denial of Bosnian genocide",
+   "after": "none",
+   "critical_terms_delta": -1,
+   "views_12m": 31438.0
+  },
+  {
+   "title": "The Holocaust in Romania",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Systematic dispossession, deportation and murder of Jews in the Kingdom of Romania",
+   "after": "none",
+   "critical_terms_delta": -1,
+   "views_12m": 28992.0
+  },
+  {
+   "title": "Legality of the Israeli occupation of Palestine",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "legal status of Israeli occupation of Palestine",
+   "after": "question of the legality of the political military control of the State of Israel over the territories of Palestine (Gaza strip and the west bank)",
+   "critical_terms_delta": -2,
+   "views_12m": 27393.0
+  },
+  {
+   "title": "Kedumim",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli settlement in the West Bank",
+   "after": "Israeli settlement in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 24710.0
+  },
+  {
+   "title": "Casualties of the Armenian genocide",
+   "group": "comparison",
+   "surface": "short description",
+   "before": "Number of deaths in the Armenian genocide",
+   "after": "none",
+   "critical_terms_delta": -1,
+   "views_12m": 22219.0
+  },
+  {
+   "title": "Beit Sahour",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Palestinian city",
+   "after": "Palestinian city in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 20009.0
+  },
+  {
+   "title": "Status of territories occupied by Israel in 1967",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "status of the Gaza Strip, the West Bank, the Golan Heights, and the Sinai Peninsula",
+   "after": "legal status Israeli occupied Gaza Strip, the West Bank, the Golan Heights, and the Sinai Peninsula",
+   "critical_terms_delta": 1,
+   "views_12m": 15624.0
+  },
+  {
+   "title": "The Holocaust in Slovakia",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Systematic dispossession, deportation, and murder of Jews in the Slovak State",
+   "after": "None",
+   "critical_terms_delta": -1,
+   "views_12m": 12495.0
+  },
+  {
+   "title": "The Holocaust in Belgium",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Systematic dispossession, deportation, and murder of Jews",
+   "after": "none",
+   "critical_terms_delta": -1,
+   "views_12m": 8619.0
+  },
+  {
+   "title": "Itamar (Israeli settlement)",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli settlement in the West Bank",
+   "after": "Israeli settlement in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 8287.0
+  },
+  {
+   "title": "Pisgat Ze'ev",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli settlement in East Jerusalem",
+   "after": "Israeli settlement in East Jerusalem, occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 8127.0
+  },
+  {
+   "title": "Hamat Gader",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Hot spring in the occupied Golan Heights",
+   "after": "Site of hot springs near the Yarmuk River",
+   "critical_terms_delta": -1,
+   "views_12m": 7415.0
+  },
+  {
+   "title": "Canada Park",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Israeli national park",
+   "after": "National park in the Occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 6179.0
+  },
+  {
+   "title": "Har Homa",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "human settlement",
+   "after": "Israeli settlement in East Jerusalem, occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 5676.0
+  },
+  {
+   "title": "Bil'in",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "human settlement",
+   "after": "Palestinian village in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 4883.0
+  },
+  {
+   "title": "Kfar Tapuach",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli settlement in the West Bank",
+   "after": "Israeli Jewish settlement in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 4612.0
+  },
+  {
+   "title": "Gush Etzion Regional Council",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli council in the West Bank",
+   "after": "Israeli council in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 4204.0
+  },
+  {
+   "title": "Golan Heights Winery",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli winery located in Katzrin, Golan Heights",
+   "after": "Israeli winery located in Katzrin, Israeli Occupied Golan Heights",
+   "critical_terms_delta": 1,
+   "views_12m": 3557.0
+  },
+  {
+   "title": "Issawiya",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "neighborhood in east Jerusalem",
+   "after": "Palestinian village near East Jerusalem, in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 3462.0
+  },
+  {
+   "title": "The Holocaust in Luxembourg",
+   "group": "topic",
+   "surface": "short description",
+   "before": "Part of the Nazi genocide, 1940–1945",
+   "after": "none",
+   "critical_terms_delta": -1,
+   "views_12m": 3113.0
+  },
+  {
+   "title": "War crimes trials in Soviet Estonia",
+   "group": "topic",
+   "surface": "short description",
+   "before": "1960s war crimes trials in Soviet Estonia",
+   "after": "none",
+   "critical_terms_delta": -1,
+   "views_12m": 2390.0
+  },
+  {
+   "title": "Megilot Regional Council",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli Council in the West Bank.",
+   "after": "Israeli Regional Council in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 2067.0
+  },
+  {
+   "title": "Ahiya",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli outpost in the West Bank",
+   "after": "Israeli outpost in occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 1682.0
+  },
+  {
+   "title": "Eshkolot",
+   "group": "topic",
+   "surface": "Wikidata (en)",
+   "before": "Israeli settlement on the West Bank",
+   "after": "Israeli settlement in the occupied West Bank",
+   "critical_terms_delta": 1,
+   "views_12m": 1207.0
+  }
+ ]
+}

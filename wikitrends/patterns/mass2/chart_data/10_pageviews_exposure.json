@@ -1,0 +1,122 @@
+{
+ "x": "group",
+ "y": "share of last-12-month views on articles whose lead gained critical terms (Jul 2023 -> now)",
+ "rows": [
+  {
+   "subset": "all",
+   "group": "topic",
+   "articles": 4468,
+   "share_articles_gained": 0.039,
+   "share_views_gained": 0.15,
+   "share_views_changed": 0.172,
+   "share_views_lost": 0.022,
+   "views_12m": 279344221
+  },
+  {
+   "subset": "all",
+   "group": "comparison",
+   "articles": 5510,
+   "share_articles_gained": 0.015,
+   "share_views_gained": 0.05,
+   "share_views_changed": 0.082,
+   "share_views_lost": 0.032,
+   "views_12m": 653086534
+  },
+  {
+   "subset": "relevant",
+   "group": "topic",
+   "articles": 1401,
+   "share_articles_gained": 0.083,
+   "share_views_gained": 0.276,
+   "share_views_changed": 0.331,
+   "share_views_lost": 0.055,
+   "views_12m": 104243759
+  },
+  {
+   "subset": "relevant",
+   "group": "comparison",
+   "articles": 1250,
+   "share_articles_gained": 0.038,
+   "share_views_gained": 0.086,
+   "share_views_changed": 0.158,
+   "share_views_lost": 0.072,
+   "views_12m": 248598688
+  }
+ ],
+ "former_titles": {
+  "topic": {
+   "articles_with_former_titles": 441,
+   "share_views_under_former_titles": 0.047,
+   "exposure_share_all_titles": 0.17,
+   "exposure_share_current_title_only": 0.165
+  },
+  "comparison": {
+   "articles_with_former_titles": 663,
+   "share_views_under_former_titles": 0.059,
+   "exposure_share_all_titles": 0.059,
+   "exposure_share_current_title_only": 0.036
+  }
+ },
+ "top_topic_gainers_by_views": [
+  {
+   "title": "Benjamin Netanyahu",
+   "views_12m": 6987725,
+   "lead_critical_2023": 1.0,
+   "lead_critical_now": 4.0
+  },
+  {
+   "title": "Israel",
+   "views_12m": 4617834,
+   "lead_critical_2023": 5.0,
+   "lead_critical_now": 8.0
+  },
+  {
+   "title": "Palestine",
+   "views_12m": 2429310,
+   "lead_critical_2023": 2.0,
+   "lead_critical_now": 5.0
+  },
+  {
+   "title": "Zionism",
+   "views_12m": 1805729,
+   "lead_critical_2023": 1.0,
+   "lead_critical_now": 5.0
+  },
+  {
+   "title": "Hamas",
+   "views_12m": 1334167,
+   "lead_critical_2023": 0.0,
+   "lead_critical_now": 3.0
+  },
+  {
+   "title": "Jews",
+   "views_12m": 1138653,
+   "lead_critical_2023": 0.0,
+   "lead_critical_now": 1.0
+  },
+  {
+   "title": "Itamar Ben-Gvir",
+   "views_12m": 1044833,
+   "lead_critical_2023": 2.0,
+   "lead_critical_now": 3.0
+  },
+  {
+   "title": "Israeli–Palestinian conflict",
+   "views_12m": 1039032,
+   "lead_critical_2023": 2.0,
+   "lead_critical_now": 8.0
+  },
+  {
+   "title": "Suez Crisis",
+   "views_12m": 856971,
+   "lead_critical_2023": 0.0,
+   "lead_critical_now": 1.0
+  },
+  {
+   "title": "Gaza Strip",
+   "views_12m": 816400,
+   "lead_critical_2023": 2.0,
+   "lead_critical_now": 5.0
+  }
+ ]
+}

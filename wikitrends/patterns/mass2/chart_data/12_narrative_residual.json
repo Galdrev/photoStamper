@@ -1,0 +1,458 @@
+{
+ "note": "lead critical hits per 10k words of all lead text: unfiltered = narrative residual + event sentences (event_filter.py, sentence level); articles with all three leads >= 20 words",
+ "results": {
+  "all:pre-war:unfiltered": {
+   "est": 0.112,
+   "n": {
+    "topic": 4011,
+    "comparison": 5166
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": -0.471,
+   "hi": 0.642,
+   "cl_lo": -0.183,
+   "cl_hi": 0.462,
+   "topic": 0.205,
+   "comp": 0.094
+  },
+  "all:pre-war:narrative residual": {
+   "est": 0.137,
+   "n": {
+    "topic": 4011,
+    "comparison": 5166
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": -0.418,
+   "hi": 0.7,
+   "cl_lo": -0.17,
+   "cl_hi": 0.469,
+   "topic": 0.213,
+   "comp": 0.076
+  },
+  "all:pre-war:event sentences": {
+   "est": -0.025,
+   "n": {
+    "topic": 4011,
+    "comparison": 5166
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": -0.06,
+   "hi": -0.003,
+   "cl_lo": -0.056,
+   "cl_hi": -0.003,
+   "topic": -0.007,
+   "comp": 0.018
+  },
+  "all:post-war:unfiltered": {
+   "est": 2.216,
+   "n": {
+    "topic": 4011,
+    "comparison": 5166
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": 1.368,
+   "hi": 3.12,
+   "cl_lo": -0.466,
+   "cl_hi": 4.776,
+   "topic": 2.532,
+   "comp": 0.316
+  },
+  "all:post-war:narrative residual": {
+   "est": 1.979,
+   "n": {
+    "topic": 4011,
+    "comparison": 5166
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": 1.104,
+   "hi": 2.819,
+   "cl_lo": -0.404,
+   "cl_hi": 4.29,
+   "topic": 2.233,
+   "comp": 0.253
+  },
+  "all:post-war:event sentences": {
+   "est": 0.237,
+   "n": {
+    "topic": 4011,
+    "comparison": 5166
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": 0.043,
+   "hi": 0.505,
+   "cl_lo": -0.057,
+   "cl_hi": 0.471,
+   "topic": 0.299,
+   "comp": 0.062
+  },
+  "relevant:pre-war:unfiltered": {
+   "est": 0.303,
+   "n": {
+    "topic": 1333,
+    "comparison": 1208
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": -1.203,
+   "hi": 1.943,
+   "cl_lo": -0.682,
+   "cl_hi": 1.508,
+   "topic": 0.198,
+   "comp": -0.106
+  },
+  "relevant:pre-war:narrative residual": {
+   "est": 0.346,
+   "n": {
+    "topic": 1333,
+    "comparison": 1208
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": -1.214,
+   "hi": 1.876,
+   "cl_lo": -0.715,
+   "cl_hi": 1.528,
+   "topic": 0.219,
+   "comp": -0.127
+  },
+  "relevant:pre-war:event sentences": {
+   "est": -0.043,
+   "n": {
+    "topic": 1333,
+    "comparison": 1208
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": -0.106,
+   "hi": 0.002,
+   "cl_lo": -0.087,
+   "cl_hi": -0.006,
+   "topic": -0.022,
+   "comp": 0.021
+  },
+  "relevant:post-war:unfiltered": {
+   "est": 4.527,
+   "n": {
+    "topic": 1333,
+    "comparison": 1208
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": 2.466,
+   "hi": 6.925,
+   "cl_lo": 0.163,
+   "cl_hi": 6.185,
+   "topic": 5.157,
+   "comp": 0.63
+  },
+  "relevant:post-war:narrative residual": {
+   "est": 4.354,
+   "n": {
+    "topic": 1333,
+    "comparison": 1208
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": 2.202,
+   "hi": 6.689,
+   "cl_lo": 0.155,
+   "cl_hi": 5.977,
+   "topic": 4.827,
+   "comp": 0.473
+  },
+  "relevant:post-war:event sentences": {
+   "est": 0.173,
+   "n": {
+    "topic": 1333,
+    "comparison": 1208
+   },
+   "k": {
+    "topic": 4,
+    "comparison": 23
+   },
+   "lo": -0.088,
+   "hi": 0.465,
+   "cl_lo": -0.176,
+   "cl_hi": 0.337,
+   "topic": 0.33,
+   "comp": 0.157
+  }
+ },
+ "vs_reference": [
+  {
+   "subset": "all",
+   "window": "pre-war",
+   "outcome": "unfiltered",
+   "did": 0.11,
+   "ref_did": 0.12,
+   "topic": 0.21,
+   "ref_topic": 0.21,
+   "comp": 0.09,
+   "ref_comp": 0.09,
+   "n": [
+    4011,
+    5166
+   ],
+   "ref_n": [
+    4073,
+    5217
+   ],
+   "match": true
+  },
+  {
+   "subset": "all",
+   "window": "pre-war",
+   "outcome": "narrative residual",
+   "did": 0.14,
+   "ref_did": 0.14,
+   "topic": 0.21,
+   "ref_topic": 0.22,
+   "comp": 0.08,
+   "ref_comp": 0.07,
+   "n": [
+    4011,
+    5166
+   ],
+   "ref_n": [
+    4073,
+    5217
+   ],
+   "match": true
+  },
+  {
+   "subset": "all",
+   "window": "pre-war",
+   "outcome": "event sentences",
+   "did": -0.03,
+   "ref_did": -0.02,
+   "topic": -0.01,
+   "ref_topic": -0.01,
+   "comp": 0.02,
+   "ref_comp": 0.02,
+   "n": [
+    4011,
+    5166
+   ],
+   "ref_n": [
+    4073,
+    5217
+   ],
+   "match": true
+  },
+  {
+   "subset": "all",
+   "window": "post-war",
+   "outcome": "unfiltered",
+   "did": 2.22,
+   "ref_did": 2.34,
+   "topic": 2.53,
+   "ref_topic": 2.65,
+   "comp": 0.32,
+   "ref_comp": 0.31,
+   "n": [
+    4011,
+    5166
+   ],
+   "ref_n": [
+    4073,
+    5217
+   ],
+   "match": true
+  },
+  {
+   "subset": "all",
+   "window": "post-war",
+   "outcome": "narrative residual",
+   "did": 1.98,
+   "ref_did": 2.06,
+   "topic": 2.23,
+   "ref_topic": 2.31,
+   "comp": 0.25,
+   "ref_comp": 0.25,
+   "n": [
+    4011,
+    5166
+   ],
+   "ref_n": [
+    4073,
+    5217
+   ],
+   "match": true
+  },
+  {
+   "subset": "all",
+   "window": "post-war",
+   "outcome": "event sentences",
+   "did": 0.24,
+   "ref_did": 0.28,
+   "topic": 0.3,
+   "ref_topic": 0.34,
+   "comp": 0.06,
+   "ref_comp": 0.06,
+   "n": [
+    4011,
+    5166
+   ],
+   "ref_n": [
+    4073,
+    5217
+   ],
+   "match": true
+  },
+  {
+   "subset": "relevant",
+   "window": "pre-war",
+   "outcome": "unfiltered",
+   "did": 0.3,
+   "ref_did": 0.41,
+   "topic": 0.2,
+   "ref_topic": 0.21,
+   "comp": -0.11,
+   "ref_comp": -0.19,
+   "n": [
+    1333,
+    1208
+   ],
+   "ref_n": [
+    1364,
+    1226
+   ],
+   "match": true
+  },
+  {
+   "subset": "relevant",
+   "window": "pre-war",
+   "outcome": "narrative residual",
+   "did": 0.35,
+   "ref_did": 0.45,
+   "topic": 0.22,
+   "ref_topic": 0.23,
+   "comp": -0.13,
+   "ref_comp": -0.21,
+   "n": [
+    1333,
+    1208
+   ],
+   "ref_n": [
+    1364,
+    1226
+   ],
+   "match": true
+  },
+  {
+   "subset": "relevant",
+   "window": "pre-war",
+   "outcome": "event sentences",
+   "did": -0.04,
+   "ref_did": -0.04,
+   "topic": -0.02,
+   "ref_topic": -0.02,
+   "comp": 0.02,
+   "ref_comp": 0.02,
+   "n": [
+    1333,
+    1208
+   ],
+   "ref_n": [
+    1364,
+    1226
+   ],
+   "match": true
+  },
+  {
+   "subset": "relevant",
+   "window": "post-war",
+   "outcome": "unfiltered",
+   "did": 4.53,
+   "ref_did": 4.9,
+   "topic": 5.16,
+   "ref_topic": 5.49,
+   "comp": 0.63,
+   "ref_comp": 0.59,
+   "n": [
+    1333,
+    1208
+   ],
+   "ref_n": [
+    1364,
+    1226
+   ],
+   "match": true
+  },
+  {
+   "subset": "relevant",
+   "window": "post-war",
+   "outcome": "narrative residual",
+   "did": 4.35,
+   "ref_did": 4.6,
+   "topic": 4.83,
+   "ref_topic": 5.03,
+   "comp": 0.47,
+   "ref_comp": 0.44,
+   "n": [
+    1333,
+    1208
+   ],
+   "ref_n": [
+    1364,
+    1226
+   ],
+   "match": true
+  },
+  {
+   "subset": "relevant",
+   "window": "post-war",
+   "outcome": "event sentences",
+   "did": 0.17,
+   "ref_did": 0.3,
+   "topic": 0.33,
+   "ref_topic": 0.46,
+   "comp": 0.16,
+   "ref_comp": 0.15,
+   "n": [
+    1333,
+    1208
+   ],
+   "ref_n": [
+    1364,
+    1226
+   ],
+   "match": false
+  }
+ ],
+ "reference_file": "study3/holdout_results/event_mass_leads.txt",
+ "lead_metric_source": {
+  "text": 29890,
+  "None": 1030,
+  "narr": 15,
+  "lex_lead": 1
+ }
+}
