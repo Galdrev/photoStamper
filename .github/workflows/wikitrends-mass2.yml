@@ -1,4 +1,5 @@
 name: wikitrends-mass2
+# launch 2026-11-05
 # Mass v2 collector (wikitrends/mass2.py): the pilot's shortlisted signals for the whole mass frame (~10.3k unique pages).
 # resolve (1 job, ~0.2 h) -> 16 collect shards (max 4 at once, WT_RPS 2) -> merge -> orphan branch wikitrends-data/mass2/<run_id>
 # Estimate (python mass2.py estimate): ~15.3 requests/article, ~158k requests (~182k with the pilot's x1.15 calibration),
