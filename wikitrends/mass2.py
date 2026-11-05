@@ -4,7 +4,8 @@
                                                                           Wikidata "now" batched, concept alias table)
   python mass2.py shard --shard I --of N      -> data/mass/m2_I.json.gz  (checkpointed via mass._run; fails loudly >5% errors)
   python mass2.py merge                       -> data/mass2.json (compact, per article), data/mass2_leads.json.gz,
-                                                 data/mass2_editors.json.gz, data/mass2_summary.json
+                                                 data/mass2_events.json.gz (per-event lists), data/mass2_editors.json.gz,
+                                                 data/mass2_summary.json
   python mass2.py estimate                    -> request / wall-time estimate from the mass edit distribution (offline)
   MASS_LIMIT=40 ...                           -> test mode (first 40 rows)
 
@@ -235,8 +236,11 @@ def resolve():
     print(f"resolve: {len(rows)} rows -> {len(out)} unique pages; dropped {len(dropped['missing'])} missing, "
           f"{len(dropped['disambiguation'])} disambiguation, {len(dropped['duplicate'])} duplicates; "
           f"{wt_net.C['requests']} requests", flush=True)
-    if len(out) < 0.8 * len(rows) - len(sum(ATROCITY_CASES.values(), [])):
-        sys.exit("resolve: fewer than 80% of frame rows resolved - refusing to start shards")
+    n_frame = sum(1 for r in rows if r["stratum"] != "atrocity")
+    if sum(1 for r in out if r["stratum"] != "atrocity") < 0.8 * n_frame:
+        sys.exit("resolve: fewer than 80% of frame rows resolved to unique pages - refusing to start shards")
+    if not all(cases.values()):
+        print("::warning::an atrocity case resolved to no page: " + ", ".join(c for c, v in cases.items() if not v), flush=True)
     return res
 
 
@@ -302,7 +306,7 @@ RM_TIGHT = re.compile(r"requested move|\bWP:RM\b|\bper RM\b|\bRM (?:clos\w*|disc
 
 
 def clean_moves(revs, moves):
-    """Tighten the RM flag on the pilot's move list and flag vandal move/revert pairs (A->B then B->A within 30 days)."""
+    """Tighten the RM flag on the pilot's move list and flag move/revert pairs (A->B then B->A within 90 days)."""
     reasons = {}
     for r in revs:
         mv = P.MOVE.search(r.get("comment") or "")
@@ -311,7 +315,7 @@ def clean_moves(revs, moves):
     out = [{**m, "rm": bool(RM_TIGHT.search(reasons.get(m["ts"], "")))} for m in moves]
     for i, a in enumerate(out):
         for b in out[i + 1:]:
-            if b["from"] == a["to"] and b["to"] == a["from"] and P.ep(b["ts"]) - P.ep(a["ts"]) < 30 * 86400:
+            if b["from"] == a["to"] and b["to"] == a["from"] and P.ep(b["ts"]) - P.ep(a["ts"]) < 90 * 86400:
                 a["reverted"] = True; b["revert_of_move"] = True
                 if not RM_TIGHT.search(reasons.get(b["ts"], "")):
                     a["rm"] = False
@@ -816,6 +820,73 @@ def run_shard(i, n):
     M._run(KIND, collect, rows[:lim] if lim else rows, i)
 
 
+SPARSE = {"c", "counts", "res_counts", "ev_counts", "lex_lead", "lex_full", "maint", "refs", "lead_refs", "lead_refs_resolved", "restores"}
+
+
+def _round(x):
+    if isinstance(x, float):
+        return float(f"{x:.4g}")
+    if isinstance(x, dict):
+        return {k: _round(v) for k, v in x.items()}
+    if isinstance(x, list):
+        return [_round(v) for v in x]
+    return x
+
+
+def _sparse(x, key=None):
+    if isinstance(x, dict):
+        if key in SPARSE:
+            return {k: _sparse(v, k) for k, v in x.items() if v not in (0, None, False)}
+        return {k: _sparse(v, k) for k, v in x.items()}
+    if isinstance(x, list):
+        return [_sparse(v, key) for v in x]
+    return x
+
+
+def split_detail(r):
+    """Per-event lists go to mass2_events.json.gz; mass2.json keeps per-article signals."""
+    det = {}
+    te = r.get("term_events")
+    if te and "events" in te:
+        det["lead_events"] = te.pop("events")
+    if r.get("discussions") and "items" in r["discussions"]:
+        det["discussions"] = r["discussions"].pop("items")
+    if r.get("protection") and "entries" in r["protection"]:
+        det["protection_log"] = r["protection"].pop("entries")
+    return det
+
+
+def compact(r):
+    """Merged-file form: event aggregates only for (term, kind) cells with events, sparse counters (absent key = 0),
+    floats to 4 significant digits, monthly views as a list from 2021-01, a snapshot identical to the previous date
+    stored as {"same_as": date}. Shard files keep the full form."""
+    te = r.get("term_events")
+    if te:
+        for k in ("by_window", "by_window_new_only"):
+            te[k] = {w: {c: v for c, v in cells.items() if v.get("n")} for w, cells in (te.get(k) or {}).items()}
+    pv = r.get("pageviews") or {}
+    if pv.get("monthly"):
+        ms = sorted(pv["monthly"])
+        y, m, seq = 2021, 1, []
+        while f"{y}{m:02d}" <= ms[-1]:
+            seq.append(pv["monthly"].get(f"{y}{m:02d}")); y, m = (y, m + 1) if m < 12 else (y + 1, 1)
+        pv["monthly"] = {"start": "202101", "views": seq}
+    for w in (r.get("win") or {}).values():
+        w["tags"] = dict(list((w.get("tags") or {}).items())[:12])
+    prev = None
+    for k, a in (r.get("at") or {}).items():
+        rid = (a.get("rev") or {}).get("revid")
+        if prev and rid and rid == prev[1]:
+            for f in ("article", "narr"):
+                if a.get(f) is not None:
+                    a[f] = {"same_as": prev[0]}
+        elif rid:
+            prev = (k, rid)
+        if a.get("article") and isinstance(a["article"], dict):
+            a["article"].pop("watch_links_lead", None)
+    return _round(_sparse(r))
+
+
 def _dump_gz(path, obj):
     with gzip.open(path, "wt") as f:
         json.dump(obj, f, separators=(",", ":"))
@@ -835,10 +906,19 @@ def merge():
     keys = list(P.DATES)
     meta = {"generated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "now": P.NOW, "dates": P.DATES, "windows": P.WINDOWS,
             "note": "Mass v2. Editors are salted hashes (per-run salt, never stored); account facts are per-article shares; edit "
-                    "summaries, block reasons and close results are class labels only.",
+                    "summaries, block reasons and close results are class labels only. Compact form: counters are sparse "
+                    "(absent key = 0), event aggregates only for cells with events, floats to 4 significant digits.",
             "concept_groups": f2.get("concept_groups"), "concept_inbound_now": f2.get("concept_inbound_now"),
             "atrocity_resolved": f2.get("atrocity_resolved")}
-    json.dump({**meta, "articles": recs}, open(os.path.join(A.DATA, "mass2.json"), "w"), separators=(",", ":"))
+    details = {r["title"]: split_detail(r) for r in recs}
+    out_p = os.path.join(A.DATA, "mass2.json")
+    json.dump({**meta, "articles": [compact(r) for r in recs]}, open(out_p, "w"), separators=(",", ":"))
+    _dump_gz(os.path.join(A.DATA, "mass2_events.json.gz"), {"note": "per-article lead events (hashed accounts), RfC/RM "
+             "discussions (dates, class labels) and protection log entries", "articles": details})
+    mb = os.path.getsize(out_p) / 1e6
+    if mb > 90:                                   # git hosts refuse files over 100 MB: ship a gzip copy instead
+        _dump_gz(out_p + ".gz", json.load(open(out_p)))
+        print(f"WARNING: mass2.json is {mb:.0f} MB; wrote mass2.json.gz for the data branch", flush=True)
     _dump_gz(os.path.join(A.DATA, "mass2_leads.json.gz"), {"dates": keys, "leads": leads})
     _dump_gz(os.path.join(A.DATA, "mass2_editors.json.gz"), {"windows": ["w1", "w2"], "editors": editors})
     te = [r["term_events"] for r in recs if r.get("term_events")]

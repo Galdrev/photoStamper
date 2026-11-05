@@ -1,0 +1,148 @@
+name: wikitrends-mass2
+# Mass v2 collector (wikitrends/mass2.py): the pilot's shortlisted signals for the whole mass frame (~10.3k unique pages).
+# resolve (1 job, ~0.2 h) -> 16 collect shards (max 4 at once, WT_RPS 2) -> merge -> orphan branch wikitrends-data/mass2/<run_id>
+# Estimate (python mass2.py estimate): ~15.3 requests/article, ~158k requests (~182k with the pilot's x1.15 calibration),
+# ~9.9k (11.4k) per shard = 2.7 h (3.2 h) per shard at ~1.0 effective req/s, 4 waves -> ~11-13 h wall time.
+# A shard that hits its time budget keeps its checkpoint artifact; "Re-run failed jobs" resumes from it.
+on:
+  push:
+    branches: [wikitrends-mass2]
+permissions:
+  contents: write
+  actions: write          # merge deletes the fallback salt artifact
+concurrency: wikitrends-mass2
+defaults:
+  run:
+    shell: bash           # bash -eo pipefail: a failure anywhere in a pipe fails the step
+env:
+  WT_RPS: '2'             # per job; 4 jobs at once (Wikipedia throttles the aggregate: 3 rps gave ~1.1 effective)
+  GH_TOKEN: ${{ github.token }}
+  N_SHARDS: '16'
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Offline self-test (mocked API)
+        working-directory: wikitrends
+        run: WT_JOB=mass2-test python test_mass2.py 2>&1 | grep -v '^\[hb' | tail -80
+      - name: Fallback salt (only used when the WT_SALT_SEED secret is not set; deleted by the merge job)
+        env: {SEED: '${{ secrets.WT_SALT_SEED }}'}
+        run: |
+          mkdir -p /tmp/salt
+          if [ -z "$SEED" ]; then openssl rand -hex 16 > /tmp/salt/salt; echo "::warning::WT_SALT_SEED secret not set: using a run salt artifact (deleted at merge)"; fi
+      - uses: actions/upload-artifact@v4
+        with: {name: mass2-salt, path: /tmp/salt/, retention-days: 1, if-no-files-found: ignore}
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh mass2-resolve 180 > /tmp/status.log 2>&1 &
+      - name: Resolve titles, dedupe by resolved page, page info + Wikidata now (batched), concept alias table
+        working-directory: wikitrends
+        run: WT_JOB=mass2-resolve timeout 80m python mass2.py resolve 2>&1 | tee logs/resolve.log
+      - uses: actions/upload-artifact@v4
+        with: {name: mass2-frame2, path: wikitrends/data/mass/frame2.json, retention-days: 7}
+
+  collect:
+    needs: resolve
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: {shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+    env:
+      WT_JOB: mass2-${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Offline self-test (mocked API; fails fast before any network work)
+        working-directory: wikitrends
+        run: WT_JOB=mass2-test python test_mass2.py 2>&1 | grep -v '^\[hb' | tail -80
+      - uses: actions/download-artifact@v4
+        with: {name: mass2-frame2, path: wikitrends/data/mass/}
+      - name: Fetch fallback salt
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with: {name: mass2-salt, path: /tmp/salt/}
+      - name: Per-run secret salt, identical in every shard (never written to outputs or logs)
+        env: {SEED: '${{ secrets.WT_SALT_SEED }}'}
+        run: |
+          if [ -n "$SEED" ]; then SALT=$(printf '%s:%s' "$SEED" "${{ github.run_id }}" | sha256sum | cut -c1-32);
+          elif [ -s /tmp/salt/salt ]; then SALT=$(cat /tmp/salt/salt);
+          else echo "::error::no salt available"; exit 1; fi
+          rm -rf /tmp/salt
+          echo "::add-mask::$SALT"; echo "WT_SALT=$SALT" >> $GITHUB_ENV
+      - name: Resume from an earlier attempt of this run, if any
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with: {name: 'mass2-${{ matrix.shard }}', path: wikitrends/data/mass/}
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh mass2-${{ matrix.shard }} 180 > /tmp/status.log 2>&1 &
+      - name: Collect (checkpointed every 100 articles; exits non-zero if >5% of articles error)
+        working-directory: wikitrends
+        run: |
+          set +e
+          timeout 305m python mass2.py shard --shard ${{ matrix.shard }} --of $N_SHARDS 2>&1 | tee logs/mass2.log
+          rc=${PIPESTATUS[0]}
+          if [ "$rc" = "124" ]; then echo "::error::time budget hit; checkpoint kept - re-run this job to resume"; fi
+          exit $rc
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: 'mass2-${{ matrix.shard }}', path: 'wikitrends/data/mass/m2_${{ matrix.shard }}.json.gz', retention-days: 7, overwrite: true}
+
+  merge:
+    needs: [resolve, collect]
+    if: always() && needs.resolve.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Delete the fallback salt artifact (hashes stay unlinkable once the run is over)
+        if: always()
+        run: |
+          id=$(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" --jq '.artifacts[] | select(.name=="mass2-salt") | .id' || true)
+          [ -n "$id" ] && gh api -X DELETE "repos/${{ github.repository }}/actions/artifacts/$id" && echo "salt artifact deleted" || echo "no salt artifact"
+      - uses: actions/download-artifact@v4
+        with: {name: mass2-frame2, path: wikitrends/data/mass/}
+      - uses: actions/download-artifact@v4
+        with: {path: wikitrends/data/mass/, pattern: 'mass2-[0-9]*', merge-multiple: true}
+      - name: Inventory (what each shard delivered)
+        run: |
+          python -c "
+          import gzip,json,glob
+          for f in sorted(glob.glob('wikitrends/data/mass/m2_*.json.gz')): print(f, len(json.load(gzip.open(f,'rt'))))
+          " | tee wikitrends/data/mass2_inventory.txt
+      - name: Merge (fails if <95% of articles arrived; results are pushed either way)
+        working-directory: wikitrends
+        run: python mass2.py merge 2>&1 | tee mass2_merge.log
+      - name: Upload merged results as artifact (backup copy)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass2-results
+          retention-days: 14
+          path: |
+            wikitrends/data/mass2.json
+            wikitrends/data/mass2.json.gz
+            wikitrends/data/mass2_leads.json.gz
+            wikitrends/data/mass2_events.json.gz
+            wikitrends/data/mass2_editors.json.gz
+            wikitrends/data/mass2_summary.json
+            wikitrends/data/mass2_inventory.txt
+            wikitrends/data/mass/frame2.json
+            wikitrends/mass2_merge.log
+      - name: Push to the data-only branch (wikitrends-data/mass2/<run_id>)
+        if: always()
+        working-directory: wikitrends
+        run: |
+          main=data/mass2.json; [ -f data/mass2.json.gz ] && main=data/mass2.json.gz   # >90 MB: gzip copy only (git file limit)
+          ../.github/scripts/push_data.sh mass2 $main data/mass2_leads.json.gz data/mass2_events.json.gz data/mass2_editors.json.gz \
+            data/mass2_summary.json data/mass2_inventory.txt data/mass/frame2.json mass2_merge.log
