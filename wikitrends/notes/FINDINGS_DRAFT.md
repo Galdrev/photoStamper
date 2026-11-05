@@ -29,3 +29,18 @@ Source: data/mass_results.json (run 41918142246). Permutation p-values, bootstra
 - **First sentence contains a critical term:** topic 1.3% → 1.5% → 2.1%; comparison 0.6% → 0.6% → 0.7%.
 - **Cross-language (per 1,000 words; topic minus comparison change, per language):** English full-text equivalent +0.05 sits inside the range of the other 10 languages (−0.06 … +0.14). Only Portuguese lead is significant (+0.27). English is not an outlier. Caveat: the multilingual lexicon is smaller.
 - **Coordination (tailgating pairs, ≥5 shared articles):** topic 29 / 20 (pre/post war), comparison 31 / 19. Not higher for topic. The circular-shift null produced 0 pairs, so the ratio is undefined; report counts only.
+
+## Pre-registered primary tests (deep panel; run 41978060043; analysis log tail)
+Panel: 332 topic / 90 comparison articles existing in Jan 2021. 513 articles loaded (85 manifest articles were dropped; reason still to verify). 260,831 revisions.
+
+| id | outcome | DiD | 95% CI | p (perm) | q (BH) |
+|---|---|---|---|---|---|
+| P1 | critical, lead | +6.36 | [−2.50, +15.77] | 0.199 | 0.338 |
+| P2 | critical, full text | −0.30 | [−2.70, +1.68] | 0.846 | 0.846 |
+| P3 | connection, full text | −1.64 | [−4.05, +0.26] | 0.225 | 0.338 |
+
+**Pre-registered verdict: NOT SUPPORTED.** None of P1–P3 is significant after BH.
+
+Validation targets: Israel PASS; List of genocides PASS; Zionism (press timing) FAIL, while its post-hoc window PASSES; Gaza genocide FAIL (a weak "allegations" pattern written by me); Occupied Palestinian territories not in data.
+
+Deep-panel exploratory: hedged share topic 0.26 → 0.25, comparison 0.16 → 0.18. Scholarly citation share rose in both groups (topic 0.37 → 0.54; comparison 0.48 → 0.63). First sentence contains a critical term: topic 4.2% → 6.0%, comparison 10.0% → 8.9%.
