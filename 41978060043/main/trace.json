@@ -1,0 +1,22 @@
+{
+ "job": "trace",
+ "stage": "trace",
+ "done": 6,
+ "total": 40,
+ "elapsed_min": 2.8,
+ "eta_min": 15.7,
+ "rps_limit": 5.0,
+ "req_per_s": 3.83,
+ "avg_latency_s": 0.27,
+ "requests": 638,
+ "ok": 630,
+ "http_429": 8,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 8,
+ "failures": 0,
+ "bytes": 202605526,
+ "retry_after_max": 20,
+ "retry_after_sum": 160,
+ "updated": "2026-11-05T06:32:31Z"
+}
