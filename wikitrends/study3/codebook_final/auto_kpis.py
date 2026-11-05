@@ -4,7 +4,7 @@ Every function takes the two lead texts of one pair: lead0 (OLD, Jan 2021 or ear
 and lead1 (NEW, Oct 2026). Nothing here looks at the title or the group.
 
 Frozen KPIs computed here (see CODEBOOK.md for definitions):
-  K04 colonial_definitional   PRIMARY   colonial wording enters the first sentence in narrator voice
+  K04a colonial_fs (auto sub-indicator of PRIMARY K04): colonial wording enters the first sentence in narrator voice
   K06 presupposed_eval_np     PRIMARY   evaluative/legal category packed into a noun phrase is added
   K09 camp_label              SECONDARY partisan-alignment label for an actor is added
 Support proxies (reported, never tested): zionist_actor_label, majority_anchor.
@@ -112,23 +112,25 @@ ATTR_CUE = re.compile(
 
 PRESUP = [
     ("X-occupied", re.compile(r"\b[A-Z][\w]+-(?:occupied|annexed|controlled|blockaded)\b")),
-    ("occupied+Name", re.compile(r"(?:\b(?:the|in|of|from|into|on|and|across|throughout)\s+|,\s*)occupied\s+(?=[A-Z])\w+")),
+    ("occupied+Name", re.compile(r"(?:\b(?:the|in|of|from|into|on|across|throughout)\s+)occupied\s+(?=[A-Z])\w+")),
     ("occupied+territory", re.compile(r"\boccupied\s+(?:territor\w+|lands?|areas?|zones?|regions?|homeland)\b", re.I)),
     ("illegal+N", re.compile(r"\b(?:illegal|unlawful)(?:ly)?\s+(?:[\w-]+\s+)?(?:settlements?|occupation|annexation|outposts?|"
                              r"wall|barrier|blockade|siege|detentions?|invasion|regime|colon\w+|expulsions?|transfer|annexed|occupied)\b", re.I)),
     ("blockaded/besieged", re.compile(r"\b(?:the|a|an|from|in|into|of)\s+(?:blockaded|besieged)\b", re.I)),
     ("forced+N", re.compile(r"\bforced\s+(?:evacuations?|displacements?|deportations?|expulsions?|transfers?|removals?|"
                             r"relocations?|assimilation|conversions?|islami[sz]ation|sinici[sz]ation|labou?r|starvation)\b", re.I)),
-    ("named-atrocity NP", re.compile(r"\b(?:the\s+)?[A-Z][\w'’-]+\s+(?:genocide|ethnic cleansing|apartheid|Holocaust|massacre)\b")),
+    # contested category used as an event/system name in passing ("the Gaza genocide", "Israeli apartheid");
+    # uncontested historical names (the Holocaust) and "<Place> massacre" event names are not counted
+    ("named-atrocity NP", re.compile(r"\b(?:the\s+)?(?!(?:The|This|That|These|A|An|Its|Their|Such)\b)[A-Z][\w'’-]+\s+(?:genocide|ethnic cleansing|apartheid)\b")),
 ]
 _QUOTED = re.compile(r"\"[^\"]{0,300}\"|“[^”]{0,300}”")
 
 CAMP = re.compile(
-    r"\bpro-(?:[A-Z][\w-]*|government|independence|regime|democracy)\b"
-    r"|\banti-(?:[A-Z][\w-]*|government)\s+(?:groups?|activists?|organi[sz]ations?|lobby|lobbies|forces|militias?|"
+    r"\b[Pp]ro-(?:[A-Z][\w-]*|government|independence|regime|democracy)\b"
+    r"|\b[Aa]nti-(?:[A-Z][\w-]*|government)\s+(?:groups?|activists?|organi[sz]ations?|lobby|lobbies|forces|militias?|"
     r"campaigners?|movements?|advocacy|advocates?|bias|commentators?|media|parties|party|factions?)\b"
     r"|\b(?:and|or)\s+(?:its|their|his|her)\s+(?:supporters|allies|backers|defenders)\b"
-    r"|\bsupporters\s+of\s+(?:the\s+)?[A-Z][\w-]+", re.I)
+    r"|\b[Ss]upporters\s+of\s+(?:the\s+)?[A-Z][\w-]+")
 
 ZIONIST_ACTOR = re.compile(r"\bZionists\b|\bZionist\s+(?:militias?|militants?|paramilitar\w+|forces|settlers?|leaders?|"
                            r"groups?|fighters|troops|underground|authorities|leadership|immigrants|colonists)\b")
