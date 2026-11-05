@@ -1,9 +1,3 @@
-m2 shard 12: 0 already done, 645 to do
-[hb mass2-12] m2-12 0/645 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
-[hb mass2-12] m2-12 1/645 el=0.7m eta=449.8m req=69 429=6 5xx=0 retries=6 fail=0
-[hb mass2-12] m2-12 1/645 el=1.0m eta=647.1m req=79 429=12 5xx=0 retries=12 fail=0
-[hb mass2-12] m2-12 5/645 el=2.0m eta=256.6m req=151 429=18 5xx=0 retries=18 fail=0
-[hb mass2-12] m2-12 10/645 el=2.5m eta=161.3m req=195 429=18 5xx=0 retries=18 fail=0
 [hb mass2-12] m2-12 10/645 el=3.0m eta=190.8m req=223 429=24 5xx=0 retries=24 fail=0
 [hb mass2-12] m2-12 13/645 el=3.5m eta=172.6m req=267 429=24 5xx=0 retries=24 fail=0
 [hb mass2-12] m2-12 14/645 el=4.0m eta=180.5m req=295 429=30 5xx=0 retries=30 fail=0
@@ -38,3 +32,9 @@ m2 shard 12: 0 already done, 645 to do
 [hb mass2-12] m2-12 86/645 el=20.0m eta=130.0m req=1460 429=126 5xx=0 retries=126 fail=0
 [hb mass2-12] m2-12 90/645 el=20.6m eta=127.0m req=1511 429=126 5xx=0 retries=126 fail=0
 [hb mass2-12] m2-12 91/645 el=21.0m eta=127.9m req=1532 429=132 5xx=0 retries=132 fail=0
+[hb mass2-12] m2-12 94/645 el=21.5m eta=126.2m req=1574 429=132 5xx=0 retries=132 fail=0
+[hb mass2-12] m2-12 95/645 el=22.0m eta=127.4m req=1604 429=138 5xx=0 retries=138 fail=0
+[hb mass2-12] m2-12 99/645 el=22.5m eta=124.3m req=1649 429=138 5xx=0 retries=138 fail=0
+[hb mass2-12] m2-12 100/645 el=23.0m eta=125.4m req=1676 429=144 5xx=0 retries=144 fail=0
+[hb mass2-12] m2-12 104/645 el=23.6m eta=122.5m req=1722 429=144 5xx=0 retries=144 fail=0
+[hb mass2-12] m2-12 106/645 el=24.0m eta=122.1m req=1748 429=150 5xx=0 retries=150 fail=0
