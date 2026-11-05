@@ -1,0 +1,595 @@
+dict_keys(['timestamp', 'comment', 'reverted', 'size_delta', 'before', 'after'])
+[0] Gaza war | 2024-01-04 | rv=False | Cleanup lede first paragraph
+   B: An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel–Lebanon border.
+   A: An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and on the Israel–Lebanon border.
+[0] Gaza war | 2024-05-10 | rv=False | chiefly inside the strip now that >200 days have passed
+   B: An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023.
+   A: An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip since 7 October 2023.
+[0] Gaza war | 2024-07-24 | rv=False | /* Background */ also in southern Israel (area of the invasion and many rocket attacks)
+   B: An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip since 7 October 2023.
+   A: An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip and southern Israel since 7 October 2023.
+[0] Gaza war | 2024-12-17 | rv=False | Improvement of lede section
+   B: An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023.
+   A: The Israel–Hamas war, also known as the Gaza War, is a ongoing armed conflict between Israel and Hamas-led Palestinian militant groups.
+[0] Gaza war | 2025-01-04 | rv=False | Reverting the 17 December edit to the lead because the page title is not the proper name of the conflict but merely a de
+   B: The Israel–Hamas war, also known as the Gaza War, is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups.
+   A: An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023.
+[0] Gaza war | 2025-05-24 | rv=False | Reworked lead, according to discussion on Talk page. If problematic, revert and join the discussion there.
+   B: The Gaza war has been fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023.
+   A: The Gaza war is an armed conflict between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and southern Israel since 7 October 2023.
+[0] Gaza war | 2025-07-02 | rv=False | Not just SOUTHERN Israel: 1) The Negev is the S, places like Sderot and Ashdod are N of that. [[Southern District (Israe
+   B: The Gaza war is an armed conflict in the Gaza Strip and southern Israel fought since 7&nbsp;October 2023.
+   A: The Gaza war is an armed conflict in the Gaza Strip and Israel fought since 7&nbsp;October 2023.
+[0] Gaza war | 2025-10-16 | rv=False | rework lead
+   B: The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century.
+   A: The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts.
+[1] Gaza genocide | 2024-01-01 | rv=False | 
+   B: Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians., more than 21,000 Palestinians, including over 8,000 children, 6,200 women and 61 journalists have been killed, nearly as many killed as in the Rohingya genocide.
+   A: Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians.
+[1] Gaza genocide | 2024-06-24 | rv=False | linking the bombing and invasion is more useful
+   B: The State of Israel has been accused of genocide against Palestinians in the Gaza Strip during the Israel–Hamas war.
+   A: The State of Israel has been accused of genocide against Palestinians during its invasion and bombing of the Gaza Strip.
+[1] Gaza genocide | 2024-07-03 | rv=False | Rewriting the start of the lead section.
+   B: The State of Israel has been accused of genocide against Palestinians during its invasion and bombing of the Gaza Strip.
+   A: The humanitarian dimension caused by the Israeli invasion of the Gaza Strip, started in 2023, has been termed Gaza genocide.
+[1] Gaza genocide | 2024-11-23 | rv=False | change
+   B: Experts, governments, United Nations agencies, and non-governmental organisations have accused Israel of carrying out a genocide against the Palestinian people during its invasion and bombing of the Gaza Strip in the ongoing Israel–Hamas war.
+   A: Israel has been accused of carrying out a genocide against the Palestinian people by experts, governments, United Nations agencies, and non-governmental organisations during its invasion and bombing of the Gaza Strip in the ongoing Israel–Hamas war.
+[1] Gaza genocide | 2025-01-03 | rv=False | "state" is more neutral than "accuse"
+   B: A United Nations agency and a growing number of experts and rights organisations including Amnesty International and Human Rights Watch accuse Israel of genocidal acts against the Palestinian people, during its invasion and bombing of the Gaza Strip in the ongoing Israel–Hamas war.
+   A: A United Nations agency and a growing number of experts and rights organisations including Amnesty International and Human Rights Watch state that Israel has committed genocidal acts against the Palestinian people, during its ongoing invasion and bombing of the Gaza Strip (part of the Israel–Hamas w
+[1] Gaza genocide | 2025-04-02 | rv=False | add "acts of genocide" clarification
+   B: According to a United Nations special committee and a number of experts and rights organisations, including Amnesty International and Human Rights Watch, Israel has committed genocide against the Palestinian people during its ongoing invasion and bombing of the Gaza Strip as part of the Gaza war.
+   A: According to a United Nations special committee and a number of experts and rights organisations, including Amnesty International and Human Rights Watch, Israel has committed genocide or acts of genocide against the Palestinian people during its ongoing invasion and bombing of the Gaza Strip as part
+[1] Gaza genocide | 2025-07-03 | rv=False | /* top */ ce
+   B: According to a United Nations Special Committee, Amnesty International, and other experts such as academics and lawyers, Israel is committing genocide in Gaza against the Palestinians during its ongoing invasion and bombing of the Gaza Strip as part of the Gaza war.
+   A: According to a United Nations Special Committee, Amnesty International, and other experts, Israel is committing genocide in Gaza against the Palestinians during its ongoing invasion and bombing as part of the Gaza war.
+[1] Gaza genocide | 2025-10-05 | rv=False | Adding in whole or in part per talk. Rewording
+   B: The Gaza genocide is the ongoing, intentional systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.
+   A: The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.
+[3] Islam | 2022-01-21 | rv=False | Etymological meaning of "Islam" doesn't need to be defined in the lead; unlinking link to [[Muhammad]] article; restored
+   B: Islam ("submission [to God]") is an Abrahamic monotheistic religion teaching that Muhammad is a messenger of God.
+   A: Islam is an Abrahamic monotheistic religion teaching that Muhammad is a messenger of God.
+[3] Islam | 2022-04-01 | rv=False | 
+   B: Islam is an Abrahamic, monotheistic, and universal religion teaching that Muhammad is a messenger of God.
+   A: Islam is an Abrahamic monotheistic religion centered on the Quran as its central text, which is considered by followers, known as Muslims, to be the verbatim word of God.
+[3] Islam | 2022-07-02 | rv=False | Copyedit (minor), Adding wikilink(s)
+   B: Islam is an Abrahamic monotheistic religion centred primarily around the Quran, a religious text that is considered by Muslims to be the direct word of God (or Allah) as it was revealed to Muhammad, the main and final Islamic prophet.
+   A: Islam is an Abrahamic monotheistic religion, centred primarily around the Quran, a religious text that is considered by Muslims to be the direct word of God (or Allah) as it was revealed to Muhammad, the main and final Islamic prophet.
+[3] Islam | 2022-11-03 | rv=False | Easier to read when shortening the 'God of Abraham' to simply 'God' due to the long opening sentence.
+   B: Islam is an Abrahamic monotheistic religion centred primarily around the Quran, a religious text considered by Muslims to be the direct word of the God of Abraham (or Allah) as it was revealed to Muhammad, the main and final Islamic prophet.
+   A: Islam is an Abrahamic monotheistic religion centred primarily around the Quran, a religious text considered by Muslims to be the direct word of God (or Allah) as it was revealed to Muhammad, the main and final Islamic prophet.
+[3] Islam | 2023-01-01 | rv=False | "God (or Allah)" implies separate entities
+   B: Islam is an Abrahamic monotheistic religion centred primarily around the Quran, a religious text considered by Muslims to be the direct word of God (or Allah) as it was revealed to Muhammad, the main and final Islamic prophet.
+   A: Islam is an Abrahamic monotheistic religion centred primarily around the Quran, a religious text considered by Muslims (adherents of Islam) to be the direct word of God as it was revealed to Muhammad, the main and final Islamic prophet.
+[3] Islam | 2023-04-29 | rv=False | You don't centre around sth
+   B: Islam is an Abrahamic monotheistic religion centered around the Quran and the teachings of Muhammad.
+   A: Islam is an Abrahamic monotheistic religion centered on the Quran and the teachings of Muhammad.
+[3] Islam | 2023-10-27 | rv=False | 
+   B: Islam is an Abrahamic monotheistic religion centered on the Quran and the teachings of Muhammad.
+   A: Islam is an Abrahamic monotheistic religion centered on the Quran and the teachings of Muhammad, the religion's founder.
+[3] Islam | 2025-01-05 | rv=False | Enforced consistent use of Oxford spelling, jf. template
+   B: Islam is an Abrahamic monotheistic religion centered on the Quran and the teachings of Muhammad, the religion's founder.
+   A: Islam is an Abrahamic monotheistic religion centred on the Quran and the teachings of Muhammad, the religion's founder.
+[3] Islam | 2025-11-17 | rv=False | delete comma
+   B: Islam is an Abrahamic monotheistic religion based on the Quran, and the teachings of Muhammad.
+   A: Islam is an Abrahamic monotheistic religion based on the Quran and the teachings of Muhammad.
+[3] Islam | 2026-06-08 | rv=False | [[MOS:SOB]] correction
+   B: Islam is an Abrahamic monotheistic religion based on the Quran and the teachings of Muhammad.
+   A: Islam is an Abrahamic and monotheistic religion based on the Quran and the teachings of Muhammad.
+[4] Hamas | 2021-05-14 | rv=False | Cleanup
+   B: Hamas (Arabic: حماس Ḥamās, an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah [Islamic Resistance Movement]) is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization.
+   A: Hamas ( Ḥamās, an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah [Islamic Resistance Movement]) is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization.
+[4] Hamas | 2021-08-23 | rv=False | orthography: إسلام and derivatives require a [[hamza]] (+matched romanizations)
+   B: Hamas (an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, "Islamic Resistance Movement") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization.
+   A: Hamas (an acronym of حركة المقاومة الإسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, "Islamic Resistance Movement") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization.
+[4] Hamas | 2022-07-06 | rv=False | Typo/[[WP:AWB/GF|general]] fixes, replaced: ’s → 's (4), thgaty → that
+   B: Hamas (an acronym of حركة المقاومة الإسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, "Islamic Resistance Movement") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization.
+   A: Hamas (an acronym of حركة المقاومة الإسلامية, "Islamic Resistance Movement") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization.
+[4] Hamas | 2023-01-16 | rv=False | 
+   B: Hamas (an acronym of حركة المقاومة الإسلامية, "Islamic Resistance Movement") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization.
+   A: Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization.
+[4] Hamas | 2023-10-09 | rv=False | The footnotes are far more visible this way.
+   B: Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization.
+   A: }} Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization.
+[4] Hamas | 2024-01-11 | rv=False | extremely unconventional way of saying the territories are occupied
+   B: Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law.
+   A: Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories.
+[4] Hamas | 2024-04-05 | rv=False | clarify
+   B: Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the occupied Gaza Strip.
+   A: Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip.
+[4] Hamas | 2024-08-01 | rv=False | [[NPOV]] many relaible sources has described it as resistance movement which is less biased and more neutral. this is ho
+   B: Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip since 2007.
+   A: Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist resistance movement governing parts of the Israeli-occupied Gaza Strip since 2007.
+[4] Hamas | 2024-10-22 | rv=False | [[User:Monkbot/task 20|Task 20]]: replace {lang-??} templates with {langx|??} [[Wikipedia:Templates_for_discussion/Log/2
+   B: The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Ezzedeen Al-Qassam Brigades.
+   A: The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Ezzedeen Al-Qassam Brigades.
+[4] Hamas | 2025-01-21 | rv=False | 
+   B: The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Izz al-Din al-Qassam Brigades.
+   A: The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing known as the Al-Qassam Brigades.
+[4] Hamas | 2025-07-03 | rv=False | de-dupe "Arabic" in lead
+   B: The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Qassam Brigades.
+   A: The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Qassam Brigades.
+[4] Hamas | 2025-10-05 | rv=False | 
+   B: The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing, the Qassam Brigades.
+   A: The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing, the al-Qassam Brigades.
+[10] Israeli–Palestinian conflict | 2021-05-14 | rv=False | /* top */
+   B: The Israeli–Palestinian conflict is the ongoing struggle between Israelis and Palestinians that began in the mid-20th century amidst the greater Arab–Israeli conflict.
+   A: The Israeli–Palestinian conflict is an ongoing violent struggle between Israelis and Palestinians that began in the mid-20th century amidst the greater Arab–Israeli conflict.
+[10] Israeli–Palestinian conflict | 2022-04-17 | rv=False | Removing informal usage of the prepositional phrase, "With + -ing often introduces a reason for something in the main cl
+   B: The Israeli–Palestinian conflict is one of the world's most enduring conflicts, with the Israeli occupation of the West Bank and the Gaza Strip reaching years of conflict.
+   A: The Israeli–Palestinian conflict is one of the world's most enduring conflicts, the Israeli occupation of the West Bank and the Gaza Strip reaching years of conflict.
+[10] Israeli–Palestinian conflict | 2022-07-09 | rv=False | detailing lead, attempting to organize some info with related info rather than it just being randomly inserted in places
+   B: The Israeli–Palestinian conflict is an ongoing dispute between Israel and Palestinians, beginning in the mid-20th century.
+   A: The Israeli–Palestinian conflict is an ongoing political, territorial, and armed struggle between the State of Israel and the Palestinians.
+[10] Israeli–Palestinian conflict | 2023-10-08 | rv=False | Should "currently ongoing" be added?
+   B: The Israeli–Palestinian conflict is one of the world's most enduring conflicts, beginning in the mid-20th century.
+   A: The Israeli–Palestinian conflict is one of the world's most enduring conflicts, beginning in the mid-20th century and currently ongoing.
+[10] Israeli–Palestinian conflict | 2024-03-09 | rv=False | Editing lede sentence per discussion in Talk (please contribute if this change proves troublesome, but feel we don't - a
+   B: The Israeli–Palestinian conflict is an ongoing military and political conflict in the Levant.
+   A: The Israeli–Palestinian conflict, surrounding national self-determination in former Mandatory Palestine, is one of the world's longest-continuing conflicts.
+[10] Israeli–Palestinian conflict | 2026-01-20 | rv=True | Prompt links to essential articles serve readers better than [[WP:Superfluous boldface explained|superfluous boldface]].
+   B: The Israeli–Palestinian conflict is an ongoing military and political conflict about land and self-determination within the territory of the former Mandatory Palestine.
+   A: Israel and Palestine are engaged is an ongoing military and political conflict about land and self-determination within the territory of the former Mandatory Palestine.
+[10] Israeli–Palestinian conflict | 2026-04-07 | rv=False | [grammar] It's within within the former territory of Mandatory Palestine, it would be within the territory of the former
+   B: Israel and the Palestinians are engaged in an ongoing military and political conflict about land and self-determination within the territory of the former Mandatory Palestine.
+   A: Israel and the Palestinians are engaged in an ongoing military and political conflict about land and self-determination within the former territory of Mandatory Palestine.
+[15] Anti-Zionism | 2022-06-23 | rv=False | /* top */ Material and refs copied from [[Zionism]] article lead to replace unreliable definition from MW
+   B: Anti-Zionism is opposition to Zionism.
+   A: Anti-Zionism views Zionism as a colonialist, racist or exceptionalist ideology or movement.
+[15] Anti-Zionism | 2022-07-20 | rv=False | ce
+   B: Anti-Zionism is the opposition to Zionism, the movement that sought, and ultimately succeeded in establishing a Jewish state in the region of Palestine.
+   A: Anti-Zionism is the opposition to Zionism, the movement that sought and ultimately succeeded in establishing a Jewish state in the region of Palestine.
+[15] Anti-Zionism | 2022-10-22 | rv=False | 
+   B: Anti-Zionism is the opposition to Zionism, also known as Jewish ethnonationalism.
+   A: Anti-Zionism is the opposition to Zionism, the political expression of Jewish ethnonationalism.
+[21] Zionism as settler colonialism | 2022-04-06 | rv=False | 
+   B: Settler colonialism is a frame of reference for Zionism and the Israeli-Palestinian conflict that has become increasingly prevalent in the twenty-first century, although it is still not the dominant framing as of 2022.
+   A: Settler colonialism is a frame of reference for Zionism and the Israeli–Palestinian conflict that has become increasingly prevalent in the twenty-first century, although it is still not the dominant framing as of 2022.
+[21] Zionism as settler colonialism | 2023-10-23 | rv=False | Redundancy for the sake of boldface. The lead sentence should never be so absurd. See [[MOS:AVOIDBOLD]].
+   B: Zionism as settler colonialism is the paradigm that views Zionism and the Israeli–Palestinian conflict as a form of settler colonialism.
+   A: Zionism and the Israeli–Palestinian conflict has been described as a form of settler colonialism.
+[21] Zionism as settler colonialism | 2024-03-10 | rv=False | No engagement on talk page, WP:DRNC
+   B: Zionism and the Israeli–Palestinian conflict have been described as a form of settler colonialism.
+   A: Zionism has been described as a form of settler colonialism in relation to the region of Palestine and the Israeli–Palestinian conflict.
+[21] Zionism as settler colonialism | 2024-07-03 | rv=False | Accuracy in lead
+   B: Zionism has been described as a form of settler colonialism in relation to the region of Palestine and the Israeli–Palestinian conflict.
+   A: Zionism has been described by some scholars as a form of settler colonialism in relation to the region of Palestine and the Israeli–Palestinian conflict.
+[21] Zionism as settler colonialism | 2025-09-08 | rv=False | 
+   B: Zionism has been described by several scholars as a form of settler colonialism in relation to the region of Palestine and the Israeli–Palestinian conflict.
+   A: Zionism has been described by its founders and early leaders, as well as several scholars, as a form of settler colonialism in relation to the region of Palestine and the Israeli–Palestinian conflict.
+[21] Zionism as settler colonialism | 2025-10-02 | rv=False | Edited first part of lede to be explanation of concept rather than repeating point about founders of Zionism.
+   B: Zionism has been described by its founders and early leaders, as well as by several scholars, as a form of settler colonialism in relation to the region of Palestine and the Israeli–Palestinian conflict.
+   A: Describing Zionism as settler colonialism is a framing of the Zionist movement to form a state in the region of Palestine as a settler colonialist movement replacing its indigenous population.
+[21] Zionism as settler colonialism | 2026-01-13 | rv=False | more NPOV
+   B: Zionism has been described by its founders and early leaders, as well as by many scholars, as a form of settler colonialism in relation to the region of Palestine and the Israeli–Palestinian conflict.
+   A: Zionism has been described by some scholars as a form of settler colonialism in relation to the region of Palestine and the Israeli–Palestinian conflict.
+[32] Islamic State | 2021-05-15 | rv=False | /* top */ It is a militant group that was formerly an unrecognised proto-state. The opening sentence can clarify this
+   B: The Islamic State of Iraq and the Levant (ISIL; ), also known as the Islamic State of Iraq and Syria (ISIS; ), officially known as the Islamic State (IS) and also known by its Arabic acronym Daesh (داعش, Dāʿish, ), is a former unrecognized proto-state that follows a Salafi jihadist doctrine.
+   A: The Islamic State of Iraq and the Levant (ISIL; ), also known as the Islamic State of Iraq and Syria (ISIS; ), officially known as the Islamic State (IS) and also known by its Arabic acronym Daesh (داعش, Dāʿish, ), is a militant group and former unrecognized proto-state that follows a Salafi jihadis
+[32] Islamic State | 2021-07-11 | rv=False | Fix
+   B: The Islamic State of Iraq and the Levant (ISIL; ), also known as the Islamic State of Iraq and Syria (ISIS; ), officially known as the Islamic State (IS) and also known by its Arabic acronym Daesh (داعش, Dāʿish, ), is a militant group and former unrecognized proto-state that follows a Salafi jihadis
+   A: The Islamic State of Iraq and the Levant (ISIL; ), also known as the Islamic State of Iraq and Syria (ISIS; ), officially known as the Islamic State (IS) and also known by its Arabic acronym Daesh (Dāʿish, ), is a militant group and former unrecognized proto-state that follows a Salafi jihadist doct
+[32] Islamic State | 2021-10-06 | rv=False | edit; to match what it says in the citation.
+   B: The Islamic State (official name since June 2014; abbreviated IS), at times known as the Islamic State of Iraq and the Levant (ISIL; ), as the Islamic State of Iraq and Syria (ISIS; ), or by its Arabic acronym, Daesh (Dāʿish, ), is a militant group and former unrecognized quasi-state that follows a 
+   A: Islamic State (official name since June 2014; abbreviated IS), at times known as the Islamic State of Iraq and the Levant (ISIL; ), as the Islamic State of Iraq and Syria (ISIS; ), or by its Arabic acronym, Daesh (Dāʿish, ), is a militant group and former unrecognized quasi-state that follows a Sala
+[32] Islamic State | 2022-02-06 | rv=False | Added more notes, provided Romanization to Arabic terms, deleted empty spaces.
+   B: Islamic State (official name since June 2014; abbreviated IS), at times known as the Islamic State of Iraq and the Levant (ISIL; ), and as the Islamic State of Iraq and Syria (ISIS; ), or by its Arabic acronym, Daesh (داعش, Dāʿish, ), is a militant Sunni Islamist group and former unrecognized quasi-
+   A: Islamic State (official name since June 2014; abbreviated IS), at times known as the Islamic State of Iraq and the Levant (ISIL; ), and as the Islamic State of Iraq and Syria (ISIS; ), or by its Arabic acronym, Daesh (داعش, Dāʿish, ), is a militant Sunnī Islamist group and former unrecognized quasi-
+[32] Islamic State | 2022-05-18 | rv=False | +Update current names used in some [[WP:RSP]] incl. The Guardian, NY Times
+   B: The Islamic State (IS; official name since June 2014), at times known as the Islamic State of Iraq and the Levant (ISIL; ) or the Islamic State of Iraq and Syria (ISIS; ) and also referred to by its Arabic-language acronym Daesh (داعش, Dāʿish, ), is an Islamist militant jihadist group and former unr
+   A: The Islamic State (IS; official name since June 2014), at times known as the Islamic State militant group, the Islamic State of Iraq and the Levant (ISIL; ) or the Islamic State in Iraq and Syria (ISIS; ) and also referred to by its Arabic-language acronym Daesh (داعش, Dāʿish, ), is an Islamist mili
+[32] Islamic State | 2022-07-12 | rv=False | Added a “the” before “Islamic State”
+   B: Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL; ), Islamic State of Iraq and Syria (ISIS; ), and by its Arabic acronym Daesh (داعش, Dāʿish, ), is a militant Islamist group and former unrecognized quasi-state that follows the Salafi jihadist branch of Sunni Islam.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL; ), Islamic State of Iraq and Syria (ISIS; ), and by its Arabic acronym Daesh (داعش, Dāʿish, ), is a militant Islamist group and former unrecognized quasi-state that follows the Salafi jihadist branch of Sunni Islam
+[32] Islamic State | 2022-12-26 | rv=False | Da'ish is the direct transliteration
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL; ), Islamic State of Iraq and Syria (ISIS; ), and by its Arabic acronym Daesh (داعش,, ), is a militant Islamist group and former unrecognized quasi-state that follows the Salafi jihadist branch of Sunni Islam.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL; ), Islamic State of Iraq and Syria (ISIS; ), and by its Arabic acronym Da'ish or Daesh (داعش,, ), is a militant Islamist group and former unrecognized quasi-state that follows the Salafi jihadist branch of Sunni Is
+[32] Islamic State | 2023-05-30 | rv=False | 
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL; ), Islamic State of Iraq and Syria (ISIS; ), and by its Arabic acronym Da'ish or Daesh (داعش,, ), is a militant Islamist group and former unrecognized quasi-state that follows the Salafi jihadist branch of Sunni Is
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL; ), Islamic State of Iraq and Syria (ISIS; ), and by its Arabic acronym Da'ish or Daesh (داعش,, ), is a transnational militant Islamist group and former unrecognized quasi-state that follows the Salafi jihadist bran
+[32] Islamic State | 2023-10-09 | rv=False | British English + "gut-wrenching" is not at all encyclopaedic
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL; ), Islamic State of Iraq and Syria (ISIS; ), and by its Arabic acronym Da'ish or Daesh (داعش,, ), is a transnational militant Islamist terrorist group and former unrecognized quasi-state that follows the Salafi jih
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL; ), Islamic State of Iraq and Syria (ISIS; ), and by its Arabic acronym Da'ish or Daesh (داعش,, ), is a transnational militant Islamist terrorist group and former unrecognised quasi-state that follows the Salafi jih
+[32] Islamic State | 2024-01-03 | rv=False | rv mass sources; already mentioned in name sub-heading
+   B: The Islamic State (IS)also known as the Islamic State of Iraq and the Levant (ISIL; ), the Islamic State of Iraq and Syria (ISIS), and by its Arabic acronym Daeshis a transnational Salafi jihadist group and former unrecognised quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and by its Arabic acronym Daesh, is a transnational Salafi jihadist group and former unrecognised quasi-state.
+[32] Islamic State | 2024-06-10 | rv=False | as pointed out below, and can be read in the ISWAP article, IS still operates as quasi-state in its African territories
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and by its Arabic acronym Daesh, is a transnational Salafi jihadist group and a former unrecognised quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and by its Arabic acronym Daesh, is a transnational Salafi jihadist group and a unrecognised quasi-state.
+[32] Islamic State | 2024-08-26 | rv=False | 
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and by its Arabic acronym Daesh, is a transnational Salafi jihadist group and an unrecognised quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and by their Arabic acronym Daesh, are a transnational Salafi jihadist group and an unrecognised [[quasi-state] Their origins were in the Jai'sh al-Taifa al-Mansurah orga
+[32] Islamic State | 2024-10-05 | rv=False | ce
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and by their Arabic acronym Daesh, are a transnational Salafi jihadist group.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS), and by their Arabic acronym Daesh, are a transnational Salafi jihadist group.
+[32] Islamic State | 2025-01-04 | rv=False | grammar
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and Syria (ISIS), the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and al-Sham (ISIS), and by its Arabic acronym Daesh (داعش) is a transnational Salafi jihadist group and former unrecognized Quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and Syria (ISIS), the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and al-Sham (ISIS), and by its Arabic acronym Daesh (داعش) is a transnational Salafi jihadist group and former unrecognized quasi-state.
+[32] Islamic State | 2025-04-10 | rv=False | removed [[MOS:FIRST|cluttering in first sentence]] per talk, organized previous titles into notes
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and Syria or Islamic State of Iraq and al-Sham (ISIS), sometimes translated as the Islamic State of Iraq and the Levant (ISIL), and by its Arabic acronym Daesh, is a transnational Salafi jihadist group and unrecognized quasi-state.
+   A: The Islamic State (IS), is a transnational Salafi jihadist group and unrecognized quasi-state.
+[32] Islamic State | 2025-08-04 | rv=False | daesh itself doesnt control any territory in the levant anymore
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and Daesh, is a transnational Salafi jihadist militant organisation and unrecognised quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and Daesh, is a transnational Salafi jihadist militant organisation and was a unrecognised quasi-state.
+[32] Islamic State | 2025-10-24 | rv=False | 
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and Daesh, is a transnational Salafi jihadist militant organisation and an unrecognised quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and the Daesh, is a transnational Salafi jihadist militant organisation and an unrecognised quasi-state.
+[32] Islamic State | 2026-01-06 | rv=False | I've put a serial comma separating the terms
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS) and the Daesh, is a transnational Salafi jihadist militant organisation and an unrecognised quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS), and the Daesh, is a transnational Salafi jihadist militant organisation and an unrecognised quasi-state.
+[32] Islamic State | 2026-05-07 | rv=False | consistent spelling per existing style template
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS), and by its Arabic acronym Daesh, is a transnational Salafi jihadist militant organisation and internationally unrecognized quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS), and by its Arabic acronym Daesh, is a transnational Salafi jihadist militant organisation and internationally unrecognised quasi-state.
+[32] Islamic State | 2026-09-13 | rv=False | /* */
+   B: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS), and by its Arabic acronym Daesh, is a transnational Salafi jihadist militant organisation and internationally unrecognised quasi-state.
+   A: The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS), and by its Arabic acronym Da'esh, is a transnational Salafi jihadist militant organisation and internationally unrecognised quasi-state.
+[33] History of Israel | 2022-09-26 | rv=False | /* top */ copyediting lead into better NPOV language and removing unnecessary citation, per [[WP:LEADCITE]]
+   B: The Land of Israel, also known as the Holy Land or Palestine, is the birthplace of the Jewish people, the place where the final form of the Hebrew Bible is thought to have been compiled, and the birthplace of Judaism and Christianity.
+   A: Israel, also known as the Holy Land or Palestine, is a region that has come under the sway of various empires and, as a result, has historically hosted a wide variety of ethnic groups.
+[33] History of Israel | 2022-12-31 | rv=False | templates, formatting, rewrite and some detailing of first para, adding refs, wikilinking
+   B: Israel, also known as the Holy Land or Palestine, is the birthplace of the Jewish people, the place where the final form of the Hebrew Bible is thought to have been compiled, and the birthplace of Judaism and Christianity.
+   A: The Land of Israel, also referred to as the Holy Land or as Palestine, is the birthplace of the Jewish people and Judaism.
+[33] History of Israel | 2023-04-19 | rv=False | Setting up a better lead, per [[MOS:OPEN]] and [[MOS:FIRST]], incorporating the actual page title laid out neutrally, to
+   B: The Land of Israel, also referred to as the Holy Land or as Palestine, is the birthplace of the Jewish people and Judaism.
+   A: The history of Israel is the history of an area of the Southern Levant also known as Canaan, Palestine or the Holy Land, that today is the geographical location of the State of Israel and State of Palestine.
+[33] History of Israel | 2025-05-31 | rv=False | 
+   B: The history of Israel covers an area of the Southern Levant also known as Canaan, Palestine or the Holy Land, which is the geographical location of the modern states of Israel and Palestine.
+   A: The history of Israel covers an area of the Southern Levant also known as Canaan, Palestine, or the Holy Land, which is the geographical location of the modern states of Israel and Palestine.
+[33] History of Israel | 2025-11-24 | rv=False | /* top */ ce
+   B: The history of Israel covers an area of the Southern Levant also known as Canaan, Palestine, or the Holy Land, which is the geographical location of the modern states of Israel and Palestine.
+   A: The history of Israel covers the Southern Levant region also known as Canaan, Palestine, or the Holy Land, which is the location of modern Israel and Palestine.
+[33] History of Israel | 2026-04-07 | rv=False | Shorten it.
+   B: The history of Israel covers the Southern Levant region also known as Canaan, Palestine, or the Holy Land, which is the location of Israel and Palestine.
+   A: The history of Israel spans the Southern Levant, from prehistoric African migrations and the Natufian culture (c. 10,000 BCE) to the emergence of Canaanite civilization.
+[37] Israel | 2021-05-14 | rv=False | c/e
+   B: Israel, officially known as the State of Israel (Medinat Yisra'el), is a country in Western Asia, located on the southeastern shore of the Mediterranean Sea and the northern shore of the Red Sea.
+   A: Israel, officially known as the State of Israel (Medinat Yisra'el), is a country in Western Asia.
+[37] Israel | 2021-12-27 | rv=False | detailing lead, cutting down on general-term wikilinks for specifics, grammar/spelling, cleaning lang templates and pull
+   B: Israel, officially known as the State of Israel (Medinat Yisra'el), is a country in Western Asia.
+   A: Israel, officially the State of Israel, is a country in Western Asia.
+[37] Israel | 2023-01-15 | rv=False | correctef ipa and style
+   B: Israel, officially the State of Israel, is a country in Western Asia.
+   A: Israel (Yīsrāʾēl; ʾIsrāʾīl), officially the State of Israel, is a country in Western Asia.
+[37] Israel | 2023-07-13 | rv=False | 
+   B: Israel, officially the State of Israel (מְדִינַת יִשְׂרָאֵל; دَوْلَة إِسْرَائِيل ), is a country in Western Asia.
+   A: Israel, officially the State of Israel (מְדִינַת יִשְׂרָאֵל; دَوْلَة إِسْرَائِيل ), is a country in West Asia.
+[37] Israel | 2024-01-19 | rv=False | The name of the country in the various official languages ​​already appears in the infobox and there is no need to repea
+   B: Israel, officially the State of Israel (מְדִינַת יִשְׂרָאֵל; دَوْلَة إِسْرَائِيل ), is a country in West Asia.
+   A: Israel, officially the State of Israel, is a country in West Asia.
+[37] Israel | 2024-04-03 | rv=True | the State of Israel is in Levant, yes but specifically Southern Levant; Levant is a huge huge geographical area and Isra
+   B: Israel, officially the State of Israel, is a country in the Levant region of West Asia.
+   A: Israel, officially the State of Israel, is a country in the Southern Levant region of West Asia.
+[37] Israel | 2024-08-13 | rv=False | improve
+   B: Israel, officially the State of Israel, is a country in the Southern Levant, West Asia.
+   A: Israel, officially the State of Israel, is a country in the Southern Levant region of West Asia.
+[37] Israel | 2025-01-30 | rv=False | minor tweak
+   B: Israel, officially the State of Israel, is a country in the Southern Levant region of West Asia.
+   A: Israel, officially the State of Israel, is a country in Western Asia.
+[37] Israel | 2025-07-31 | rv=False | Including mention of specific geographical location within the [[Southern Levant]], per formatting on pages for [[Jordan
+   B: Israel, officially the State of Israel, is a country in West Asia.
+   A: Israel, officially the State of Israel, is a country in the Southern Levant region of West Asia.
+[50] Israeli settlement | 2021-05-12 | rv=False | they are also called 'colonies' instead of 'settlements' in a number of [[WP:RS]], sometimes interchangeably
+   B: Israeli settlements are civilian communities inhabited by Israeli citizens, almost exclusively of Jewish ethnicity, built in violation of international law on lands occupied by Israel in the 1967 Six-Day War.
+   A: Israeli settlements, or Israeli colonies, are civilian communities inhabited by Israeli citizens, almost exclusively of Jewish ethnicity, built in violation of international law on lands occupied by Israel in the 1967 Six-Day War.
+[50] Israeli settlement | 2022-01-14 | rv=False | Second source say exclusively, first source say that the only exception is the settlement in Hebron because Hebron is no
+   B: Israeli settlements, or Israeli colonies, are civilian communities inhabited by Israeli citizens, almost exclusively of Jewish ethnicity, built in violation of international law on lands occupied by Israel in the 1967 Six-Day War.
+   A: Israeli settlements, or Israeli colonies, are civilian communities inhabited by Israeli citizens, exclusively of Jewish ethnicity, built in violation of international law on lands occupied by Israel in the 1967 Six-Day War.
+[50] Israeli settlement | 2023-01-05 | rv=False | 
+   B: Israeli settlements, or Israeli colonies, are civilian communities inhabited by Israeli citizens, overwhelmingly of Jewish ethnicity, built on lands occupied by Israel in the 1967 Six-Day War.
+   A: Israeli settlements, or Israeli colonies, are civilian communities inhabited by Israeli citizens, exclusively of Jewish ethnicity, built on lands occupied by Israel in the 1967 Six-Day War.
+[50] Israeli settlement | 2023-04-10 | rv=False | ce
+   B: Israeli settlements, also known as "colonies", are civilian communities where Israeli citizens live, almost exclusively of Jewish ethnicity, built on lands occupied by Israel in the 1967 Six-Day War.
+   A: Israeli settlements, also known as Israeli colonies, are civilian communities where Israeli citizens live, almost exclusively of Jewish ethnicity, built on lands occupied by Israel in the 1967 Six-Day War.
+[50] Israeli settlement | 2023-07-03 | rv=False | 
+   B: Israeli settlements, also known as Israeli colonies, are civilian communities where Israeli citizens live, almost exclusively of Jewish ethnicity, built on lands occupied by Israel in the 1967 Six-Day War.
+   A: Israeli settlements or colonies are civilian communities where Israeli citizens live, almost exclusively of Jewish ethnicity, built on lands occupied by Israel since the Six-Day War in 1967.
+[50] Israeli settlement | 2023-10-11 | rv=True | Improved clarity, also relocating a less conventional term from the introduction
+   B: Israeli settlements or colonies are civilian communities where Israeli citizens live, almost exclusively of Jewish ethnicity, built on lands occupied by Israel since the Six-Day War in 1967.
+   A: Israeli settlements are residential communities established by Israel in the territories it has occupied since the 1967 Six-Day War.
+[50] Israeli settlement | 2024-02-28 | rv=False | improving the first three paragraphs of lede; some more specific wikilinking, some details, generally cleaning up
+   B: Israeli settlements or colonies are civilian communities where Israeli citizens live, almost exclusively of Jewish identity or ethnicity, built on lands occupied by Israel since the Six-Day War in 1967.
+   A: Israeli settlements, also called Israeli colonies, are the civilian communities built by Israel throughout the Israeli-occupied territories.
+[52] Nakba | 2021-12-24 | rv=False | clarify
+   B: The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian people.
+   A: The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.
+[52] Nakba | 2022-11-02 | rv=False | map
+   B: The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.
+   A: Clickable map of Mandatory Palestine with the depopulated locations during the 1947–1949 Palestine war.
+[52] Nakba | 2023-01-14 | rv=False | replace HTML with template parameters
+   B: Clickable map of Mandatory Palestine with the depopulated locations during the 1947–1949 Palestine war.
+   A: The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.
+[52] Nakba | 2023-10-13 | rv=False | 
+   B: The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.
+   A: The Nakba, also known as the Palestinian Catastrophe, was the destruction of the Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.
+[52] Nakba | 2024-02-05 | rv=False | I think "Palestinians" is simpler and less pretentious than "the Palestinian people", plus it's what the Wikipedia artic
+   B: The Nakba is the violent displacement and dispossession of the Palestinian people, along with the destruction of their society, culture, identity, political rights, and national aspirations.
+   A: The Nakba is the violent displacement and dispossession of Palestinians, along with the destruction of their society, culture, identity, political rights, and national aspirations.
+[52] Nakba | 2024-04-24 | rv=False | 
+   B: The Nakba was the ethnic cleansing of Palestinians in Mandatory Palestine during the 1948 Palestine war through their violent displacement and dispossession of land, property and belongings, along with the destruction of their society, culture, identity, political rights, and national aspirations.
+   A: The Nakba was the ethnic cleansing of Palestinians in Mandatory Palestine during the 1948 Palestine war through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society, culture, identity, political rights, and national aspirations.
+[52] Nakba | 2024-09-07 | rv=False | mentioned biological warfare
+   B: The Nakba is the ethnic cleansing of Palestinians through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.
+   A: The Nakba is the ethnic cleansing of Palestinian Arabs through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.
+[52] Nakba | 2024-10-21 | rv=False | [[User:Monkbot/task 20|Task 20]]: replace {lang-??} templates with {langx|??} [[Wikipedia:Templates_for_discussion/Log/2
+   B: The Nakba is the ethnic cleansing of Palestinian Arabs through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.
+   A: The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.
+[52] Nakba | 2025-08-08 | rv=True | Israel fails to be mentioned in the lede
+   B: The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.
+   A: The Nakba (النَّكْبَة) was the State of Israel's ethnic cleansing of Palestinian Arabs through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national as
+[52] Nakba | 2025-12-30 | rv=False | ce
+   B: The Nakba (النَّكْبَة) is the Israeli ethnic cleansing of Palestinian Arabs through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.
+   A: The Nakba (النَّكْبَة) is the ethnic cleansing by Israel of Palestinian Arabs through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations
+[52] Nakba | 2026-02-28 | rv=False | Change order of definition to put the action ahead of the perpetrator compare [[The Holocaust]]
+   B: The Nakba (النَّكْبَة) is the ethnic cleansing by Israel of Palestinian Arabs through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations
+   A: The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Israel through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations
+[52] Nakba | 2026-07-06 | rv=False | more precise: [[Plan Dalet]], for example, was executed before the declaration of May 14
+   B: The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Israel through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations
+   A: The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspiratio
+[55] October 7 attacks | 2024-01-21 | rv=False | PRC is the 3rd largest & already cited
+   B: On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since the 1948 Arab–Israeli War.
+   A: On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the PRC, PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since the 1948 Arab–Israeli War.
+[55] October 7 attacks | 2024-04-18 | rv=False | ce lead
+   B: On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the Arab-Israeli War of 1948.
+   A: On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War.
+[55] October 7 attacks | 2024-08-03 | rv=False | Grammatical error.
+   B: On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War.
+   A: On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War.
+[55] October 7 attacks | 2024-12-08 | rv=False | [[WP:OR]]
+   B: On 7 October 2023, Hamas and several other Palestinian nationalist militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War.
+   A: On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War.
+[55] October 7 attacks | 2025-01-01 | rv=False | Consistency with the title
+   B: On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War.
+   A: On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War.
+[55] October 7 attacks | 2025-07-11 | rv=False | There have been smaller "invasions" (such as the Hezbollah 2006 cross-border raid)
+   B: On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War.
+   A: On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first large-scale invasion of Israeli territory since the 1948 Arab–Israeli War.
+[55] October 7 attacks | 2025-12-01 | rv=False | per title
+   B: The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups on October 7, 2023, during the Jewish holiday of Simchat Torah.
+   A: The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups IN 2023, during the Jewish holiday of Simchat Torah.
+[55] October 7 attacks | 2026-02-22 | rv=False | Undid revision [[Special:Diff/1339499918|1339499918]] by [[Special:Contributions/Pachu Kannan|Pachu Kannan]] ([[User tal
+   B: The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups in 2023, during the Jewish holiday of Simchat Torah.
+   A: The October 7 attacks were a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups in 2023, during the Jewish holiday of Simchat Torah.
+[55] October 7 attacks | 2026-08-18 | rv=False | [[MOS:AVOIDBOLD]] and the name is more descriptive than it is a common name that we should prescribe in wikivoice
+   B: The October 7 attacks were a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups in 2023, during the Jewish holiday of Simchat Torah.
+   A: On 7 October 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups during the Jewish holiday of Simchat Torah.
+[56] Zionism | 2021-04-02 | rv=False | unsupported by any of the sources as per talk page thread.  If you wish to revert please post to talk page thread statin
+   B: Zionism ( Tsiyyonut after Zion) is both an ideology and nationalist movement among the Jewish people that espouses the re-establishment of and support for a Jewish state centered in the area roughly corresponding to Canaan, the Holy Land, or the region of Palestine, but whose borders as the Land of 
+   A: Zionism ( Tsiyyonut after Zion) is both an ideology and nationalist movement among the Jewish people that espouses the re-establishment of and support for a Jewish state centered in the area roughly corresponding to Canaan, the Holy Land, or the region of Palestine.
+[56] Zionism | 2021-10-29 | rv=False | 
+   B: Zionism ( Tsiyyonut after Zion) is both an ideology and nationalist movement that espouses the establishment of, and support for a Jewish state centered in the area roughly corresponding to Canaan, the Holy Land, the region of Palestine or Eretz Israel on the basis of a long Jewish connection and at
+   A: Zionism ( Tsiyyonut after Zion) is an ideology and nationalist movement that espouses the establishment of, and support for a Jewish state centered in the area roughly corresponding to Canaan, the Holy Land, the region of Palestine or Eretz Israel on the basis of a long Jewish connection and attachm
+[56] Zionism | 2022-03-18 | rv=False | /* History */ expanded early history
+   B: Zionism ( Tsiyyonut after Zion) is an ideology and nationalist movement that espouses the establishment of, and support for a homeland for the Jewish people centered in the area roughly corresponding to Canaan, the Holy Land, the region of Palestine or Eretz Israel on the basis of a long Jewish conn
+   A: Zionism ( Tsiyyonut after Zion) is an ideology and nationalist movement that espouses the establishment of, and support for a homeland for the Jewish people centered in the area roughly corresponding to the Land of Israel, the region of Palestine, Canaan, or the Holy Land, on the basis of a long Jew
+[56] Zionism | 2022-10-23 | rv=False | Zionism deals with the "Land of Israel". This is the intro to the Zionism article, do LoI is the key word. What it corre
+   B: Zionism ( Tsiyyonut after Zion) is a nationalist movement that espouses the establishment of, and support for a homeland for the Jewish people centered in the area roughly corresponding to the Land of Israel, the region of Palestine, Canaan, or the Holy Land, on the basis of a long Jewish connection
+   A: Zionism ( Tsiyyonut after Zion) is a nationalist movement that espouses the establishment of, and support for a homeland for the Jewish people centered in the area roughly corresponding to what is known in Jewish tradition as the Land of Israel, which corresponds in other terms to the region of Pale
+[56] Zionism | 2023-04-20 | rv=False | not a terminology section + per source
+   B: Zionism ( Tsiyyonut after Zion) is a nationalist movement that espouses the establishment of, and support for a homeland for the Jewish people centered in the area roughly corresponding to what is known in Jewish tradition as the Land of Israel, which corresponds in other terms to the region of Pale
+   A: Zionism ( Tsiyyonut after Zion) is a nationalist movement that espouses the establishment of, and support for a homeland for the Jewish people centered in the area roughly corresponding to what is known in Jewish tradition as the Land of Israel on the basis of a long Jewish connection and attachment
+[56] Zionism | 2023-07-10 | rv=True | Restore well sourced info removed without discussion and change of lead without new source.
+   B: Zionism ( Tsiyyonut after Zion) is a nationalist movement that espouses the establishment of, and support for a homeland for the Jewish people centered in the area roughly corresponding to what is known in Jewish tradition as the Land of Israel on the basis of a long Jewish connection and attachment
+   A: Zionism ( Tsiyyonut after Zion) is a nationalist movement that espouses the establishment of, and support for a homeland for the Jewish people centered in the area roughly corresponding to what is known in the Bible as the Land of Israel.
+[56] Zionism | 2023-10-24 | rv=False | Pursued a state, not just gaining support for it. Consequence of Haskalah, not a "response" to it (implies opposition).
+   B: Zionism ( Tsiyyonut after Zion) is a nationalist movement that emerged in the 19th century to espouse support for the establishment of a homeland for the Jewish people in Palestine, a region roughly corresponding to the Land of Israel in Jewish tradition.
+   A: Zionism ( Tsiyyonut after Zion) is a nationalist movement that emerged in the 19th century to enable the establishment of a homeland for the Jewish people in Palestine, a region roughly corresponding to the Land of Israel in Jewish tradition.
+[56] Zionism | 2024-04-11 | rv=False | per body
+   B: Zionism (derived from Zion) is a nationalist movement that emerged in the 19th century to enable the establishment of a homeland for the Jewish people in Palestine, a region roughly corresponding to the Land of Israel in Jewish tradition.
+   A: Zionism (derived from Zion) is a nationalist movement that emerged in Europe in the 19th century to enable the establishment of a homeland for the Jewish people in Palestine, a region roughly corresponding to the Land of Israel in Jewish tradition.
+[56] Zionism | 2024-07-02 | rv=True | Reverting "establishment" back to "re-establishment". The change from "re-establishment" back to "establishment" was don
+   B: Zionism (derived from Zion) is an ethnic or ethno-cultural nationalist movement that emerged in Europe in the late 19th century and aimed for the establishment of a homeland for the Jewish people through the colonization of Palestine, a region corresponding to the Land of Israel in Jewish tradition,
+   A: Zionism (derived from Zion) is an ethnic or ethno-cultural nationalist movement that emerged in Europe in the late 19th century and aimed for the re-establishment of a homeland for the Jewish people through the colonization of Palestine, a region corresponding to the Land of Israel in Jewish traditi
+[56] Zionism | 2024-10-02 | rv=False | Per talk, simplify description to ethnocultural, rm one unneeded ref
+   B: Zionism is an ethno-cultural nationalist movement that emerged in Europe in the late 19th century and aimed for the establishment of a Jewish state through the colonization of a land outside Europe.
+   A: Zionism is an ethno-cultural nationalism movement that emerged in Europe in the late 19th century and aimed for the establishment of a Jewish state through the colonization of a land outside Europe.
+[56] Zionism | 2025-01-05 | rv=False | not sure when "national" was removed, but it is an essential aspect (and i dont think controversial at all)
+   B: Zionism is an ethnocultural nationalist movement that emerged in Europe in the late 19th century and aimed for the establishment of a home for the Jewish people through the colonization of Palestine, an area roughly corresponding to the Land of Israel in Judaism, and of central importance in Jewish 
+   A: Zionism is an ethnocultural nationalist movement that emerged in Europe in the late 19th century and aimed for the establishment of a national home for the Jewish people through the colonization of Palestine, an area roughly corresponding to the Land of Israel in Judaism, and of central importance i
+[56] Zionism | 2025-04-24 | rv=False | 
+   B: Zionism is an ethnocultural nationalist movement that emerged in Europe in the late 19th century that aimed to establish a national home for the Jewish people, pursued through the colonization of Palestine, a region roughly corresponding to the Land of Israel in Judaism, with central importance in J
+   A: Zionism is an ethnocultural nationalist movement that emerged in Europe in the late 19th century that aimed to establish and maintain a national home for the Jewish people, pursued through the colonization of Palestine, a region roughly corresponding to the Land of Israel in Judaism, with central im
+[56] Zionism | 2025-07-20 | rv=False | Definition: change "maintain" to "support" per talk
+   B: Zionism is an ethnocultural nationalist movement that emerged in late 19th-century Europe to establish and maintain a Jewish homeland through the colonization of Palestine, a region corresponding to the Land of Israel in Judaism and central to Jewish history.
+   A: Zionism is an ethnocultural nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through the colonization of Palestine, a region corresponding to the Land of Israel in Judaism and central to Jewish history.
+[56] Zionism | 2025-10-04 | rv=False | Break a sentence into two for readability. I hope this isn't contentious.
+   B: Zionism is an ethnocultural nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through the colonization of Palestine, a region corresponding to the Land of Israel in Judaism and central to Jewish history.
+   A: Zionism is an ethnocultural nationalist movement that emerged in late 19th-century Europe, seeking to establish and support a Jewish homeland through the colonization of Palestine.
+[56] Zionism | 2026-01-24 | rv=False | No unified movement to establish a state on all of the land in the link, body and sources show it was fragmented with so
+   B: Zionism is an ethnocultural nationalist movement that emerged in late 19th-century Europe; it primarily seeks to establish and support a Jewish homeland through the colonization of Palestine, which roughly corresponds to the Land of Israel in Judaism—itself central to Jewish history.
+   A: Zionism is an ethnocultural nationalist movement that emerged in late 19th-century Europe and sought to establish and support a Jewish homeland through colonization in Palestine, a region which roughly corresponds to the Land of Israel in Judaism—itself central to Jewish history.
+[56] Zionism | 2026-08-20 | rv=False | A talk page discussion revealed that use of ethnocultural nationalism, ethnonationalism and ethnic nationalism have all 
+   B: Zionism is an ethnocultural nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine, which roughly corresponds to the Land of Israel in Judaism—itself central to Jewish history.
+   A: Zionism is an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine, which roughly corresponds to the Land of Israel in Judaism—itself central to Jewish history.
+[60] Armenian genocide | 2021-04-04 | rv=False | /* top */ mention CUP
+   B: The Armenian Genocide (other names) was the systematic mass murder and ethnic cleansing of around 1 million ethnic Armenians from Asia Minor and adjoining regions by the Ottoman government during World War I.
+   A: The Armenian Genocide (other names) was the systematic mass murder and ethnic cleansing of around 1 million ethnic Armenians from Asia Minor and adjoining regions by the Ottoman Empire and its ruling party, the Committee of Union and Progress (CUP) during World War I.
+[60] Armenian genocide | 2021-11-12 | rv=False | /* top */ per FAC
+   B: The Armenian genocide was the systematic mass murder of around one million ethnic Armenians in the Ottoman Empire during World War&nbsp;I.
+   A: The Armenian genocide was the systematic destruction of ethnic Armenians in the Ottoman Empire during World War&nbsp;I.
+[71] Tibet | 2021-04-10 | rv=False | +convert
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2021-07-07 | rv=False | Just added a translation of Name.
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2021-10-21 | rv=False | /* top */ Removed confusing and geographically questionable "map" that doesn't cover the region of Tibet
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: Tibet (Hindi: तिब्बत; ) is a region in East Asia covering much of the Tibetan Plateau spanning about.
+[71] Tibet | 2022-05-15 | rv=False | Extra line break removed.
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2022-08-10 | rv=False | Added punctuation; actual content unchanged
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2023-03-07 | rv=False | /* top */ Cleaning up
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2023-05-22 | rv=False | 
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2024-03-13 | rv=False | 
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2024-07-01 | rv=False | 
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2025-02-09 | rv=False | Reverting change to the settlement infobox. [[Tibet (1912–1951)]] was a country; this article concerns the geographical 
+   B: Tibet (Böd; ), or Greater Tibet, is a region in the western part of East Asia, covering much of the Tibetan Plateau and spanning about.
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+[71] Tibet | 2025-06-21 | rv=True | Great tibet definition
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: 
+[71] Tibet | 2025-08-02 | rv=False | Adjust infobox width, font sizes, and wordings
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas, as designated by China &nbsp; Tibet Autonomous Region, within China Chinese-controlled, claimed by India as part of Ladakh Indian-controlled, parts claimed by China as S
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas as designated by China &nbsp; Tibet Autonomous Region (Xizang) as designated by China China-controlled, claimed by India as part of Ladakh India-controlled, claimed by Ch
+[71] Tibet | 2025-11-07 | rv=False | reverted to 9/2 data, Vacosea reverted to very old version without leaving a single comment, from 9/6 to 11/6, I don't s
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas as designated by China &nbsp; Tibet Autonomous Region (Xizang) as designated by China China-controlled, claimed by India as part of Ladakh India-controlled, claimed by Ch
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas as designated by China &nbsp; Tibet Autonomous Region (Xizang) as designated by China China-controlled, claimed by India as part of Ladakh India-controlled, claimed by Ch
+[71] Tibet | 2026-01-01 | rv=False | rv: Not common names in English.
+   B: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas as designated by China &nbsp; Tibet Autonomous Region as designated by China China-controlled, claimed by India as part of Ladakh India-controlled, claimed by China as So
+   A: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Greater Tibet as claimed by Tibetan exile groups &nbsp; Tibetan autonomous areas as designated by China &nbsp; Tibet Autonomous Region as designated by China China-controlled, claimed by India as part of Ladakh India-controlled, claimed by China as So
+[71] Tibet | 2026-06-07 | rv=False | this should be less controversial i hope
+   B: Tibet is a region in the western part of East Asia, covering much of the Tibetan Plateau.
+   A: Tibet is a region in the western part of East Asia, covering much of the Tibetan Plateau, currently governed as a part of China.
+[71] Tibet | 2026-07-14 | rv=False | 
+   B: Tibet is a region in the western part of East Asia covering much of the Tibetan Plateau.
+   A: Tibet is a region in the western part of East Asia, covering much of the Tibetan Plateau.
+[86] Kashmir conflict | 2023-01-11 | rv=False | More accurate
+   B: The Kashmir conflict is a territorial conflict over the Kashmir region, primarily between India and Pakistan, with China playing a third-party role.
+   A: The Kashmir conflict is a territorial conflict over the Kashmir region, primarily between India and Pakistan and also between China and India in northeastern portion of the region.
+[86] Kashmir conflict | 2023-04-22 | rv=False | 
+   B: The Kashmir conflict is a territorial conflict over the Kashmir region, primarily between India and Pakistan and also between China and India in northeastern portion of the region.
+   A: The Kashmir conflict is a territorial conflict over the Kashmir region, primarily between India and Pakistan, and also between China and India in the northeastern portion of the region.
+[88] Jews | 2021-10-29 | rv=False | 1) improve phrasing; 2) provide context; 3) get rid of unnecessary phrase that only exists as an antisemitic talking poi
+   B: Jews ( ISO 259-2 Yehudim, Israeli pronunciation ) or Jewish people are members of an ethnoreligious group and a nation originating from the Israelites and Hebrews of historical Israel and Judah.
+   A: Jews ( ISO 259-2 Yehudim, Israeli pronunciation ) or the Jewish people are an ethnoreligious group and nation originating from the Israelites and Hebrews of historical Israel and Judah.
+[88] Jews | 2022-04-08 | rv=False | template formatting
+   B: Jews ( ISO 259-2 Yehudim, Israeli pronunciation ) or Jewish people are an ethnoreligious group and nation originating from the Israelites and Hebrews of historical Israel and Judah.
+   A: Jews (Yehudim, ) or Jewish people are an ethnoreligious group and nation originating from the Israelites and Hebrews of historical Israel and Judah.
+[88] Jews | 2023-05-17 | rv=False | /* top */ Clarifying + removing low-quality link introduing an unnecessary element of history and politics into an other
+   B: Jews or Jewish people are an ethnoreligious group and nation originating from the Israelites and Hebrews of historical Israel and Judah.
+   A: Jews or Jewish people are an ethnoreligious group, nation or ethnos that trace their origins back to the ancient Israelites and Hebrews.
+[88] Jews | 2023-08-24 | rv=False | /* top */ simply reordering the lead would have been a simpler fix, but [[Judaism]] clearly needs to be in the first sen
+   B: Jews or Jewish people are an ethnoreligious group, nation or ethnos originating from the ancient Israelites and Hebrews of historical Israel and Judah.
+   A: Jews or Jewish people are, in the broad sense, the ethnoreligious group, nation or ethnos centred around Judaism, and originating from the ancient Israelites and Hebrews.
+[88] Jews | 2023-10-03 | rv=False | Jews > the Jews
+   B: Jews are an ethnoreligious group originating from the ancient Hebrews or Israelites, and whose traditional religion is Judaism.
+   A: The Jews are an ethnoreligious group originating from the ancient Hebrews or Israelites, and whose traditional religion is Judaism.
+[88] Jews | 2024-01-25 | rv=False | 
+   B: Jews or Jewish people are an ethnoreligious group and nation originating from the Hebrews or Israelites of the ancient Near East, and whose traditional religion is Judaism.
+   A: Jews or Jewish people are an ethnoreligious group and nation originating from the Israelites of the ancient Near East, and whose traditional religion is Judaism.
+[88] Jews | 2024-09-29 | rv=False | /* top */ 'Ancient Near East' is way to broad and general location, especially when the sources are more specific
+   B: The Jews or Jewish people are an ethnoreligious group and nation originating from the Israelites of the ancient Near East, and whose traditional religion is Judaism.
+   A: The Jews or Jewish people are an ethnoreligious group and nation originating from the Israelites of the historical kingdoms of Israel and Judah, and whose traditional religion is Judaism.
+[88] Jews | 2025-01-16 | rv=False | quick sweep through lede; wikilinking, grammar/spelling/visual improvement, cutting some generic wikilinks or replacing,
+   B: The Jews or Jewish people are an ethnoreligious group and nation originating from the Israelites of the historical kingdoms of Israel and Judah, and whose traditional religion is Judaism.
+   A: The Jews, or the Jewish people, are an ethno-religious group and nation originating from the Israelites of ancient Israel and Judah and traditionally adhering to Judaism.
+[88] Jews | 2025-05-30 | rv=False | refine and also gave multiple historical definitions of "jewish"
+   B: Jews, or the Jewish people, are an ethnoreligious group and nation originating from the Israelites of ancient Israel and Judah and traditionally adhering to Judaism.
+   A: Jews, or the Jewish people, are an ethnoreligious group and nation, originating from the Israelites of ancient Israel and Judah.
+[88] Jews | 2026-08-24 | rv=False | 
+   B: Jews, or the Jewish people, are an ethnoreligious group and nation, originating from the Israelites of ancient Israel and Judah.
+   A: Jews, or the Jewish people, are an ethnoreligious group and nation, originating in the Israelites of ancient Israel and Judah.
+[93] 1948 Palestinian expulsion and flight | 2021-04-02 | rv=False | /* top */ per talk discussion, with link to new article
+   B: The 1948 Palestinian exodus, also known as the Nakba (al-Nakbah, literally "disaster", "catastrophe", or "cataclysm"), occurred when more than 700,000 Palestinian Arabs – about half of prewar Palestine's Arab population – fled or were expelled from their homes, during the 1948 Palestine war.
+   A: The 1948 Palestinian exodus occurred when more than 700,000 Palestinian Arabs – about half of prewar Palestine's Arab population – fled or were expelled from their homes, during the 1948 Palestine war.
+[93] 1948 Palestinian expulsion and flight | 2022-10-02 | rv=False | /* top */ Post RM clean up, descriptive title
+   B: The 1948 Palestinian exodus occurred when more than 700,000 Palestinian Arabs – about half of prewar Palestine's Arab population – fled or were expelled from their homes, during the 1948 Palestine war.
+   A: In 1948 more than 700,000 Palestinian Arabs – about half of prewar Palestine's Arab population – were expelled or fled from their homes, during the 1948 Palestine war.
+[93] 1948 Palestinian expulsion and flight | 2023-07-07 | rv=False | add to avoid use of passive voice
+   B: In 1948 more than 700,000 Palestinian Arabs – about half of prewar Palestine's Arab population – were expelled or fled from their homes, during the 1948 Palestine war.
+   A: In 1948 more than 700,000 Palestinian Arabs – about half of prewar Palestine's Arab population – were expelled or fled from their homes by Zionist militias, during the 1948 Palestine war.
+[93] 1948 Palestinian expulsion and flight | 2023-10-11 | rv=False | 
+   B: In 1948 more than 700,000 Palestinian Arabs – about half of prewar Palestine's Arab population – fled from their homes or were expelled by Zionist militias, during the 1948 Palestine war.
+   A: In 1948, more than 700,000 Palestinian Arabs – about half of prewar Palestine's Arab population – fled from their homes or were expelled by Zionist militias, during the 1948 Palestine war.
+[93] 1948 Palestinian expulsion and flight | 2024-03-23 | rv=True | Rewrite opening sentence, becomes "In the [[1948 Palestine war]] more than {{gaps|700|000}} [[Palestinians|Palestinian A
+   B: In 1948, more than Palestinian Arabs – about half of prewar Mandatory Palestine's Arab population – fled from their homes or were expelled by Zionist militias and, later, the Israeli army during the 1948 Palestine war, following the Partition Plan for Palestine.
+   A: In the 1948 Palestine war more than Palestinian Arabs – about half of prewar Mandatory Palestine's Arab population – were forcibly expelled from their homes or made to flee, at first by Zionist paramilitaries and after the establishment of the State of Israel, by the Israeli army.
+[93] 1948 Palestinian expulsion and flight | 2024-05-14 | rv=False | 
+   B: In the 1948 Palestine war more than Palestinian Arabs – about half of Mandatory Palestine's Arab population – fled from their homes or were expelled, at first by Zionist paramilitaries, and after the establishment of the Israel, by its military.
+   A: In the 1948 Palestine war more than Palestinian Arabs – about half of Mandatory Palestine's Arab population – fled from their homes or were expelled, at first by paramilitaries, and after the establishment of the Israel, by its military.
+[93] 1948 Palestinian expulsion and flight | 2025-05-30 | rv=False | Undid revision [[Special:Diff/1292987917|1292987917]] by [[Special:Contributions/IOHANNVSVERVS|IOHANNVSVERVS]] ([[User t
+   B: In the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes, at first by Zionist paramilitaries, and after the establishment of Israel, by its military.
+   A: In the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.
+[93] 1948 Palestinian expulsion and flight | 2025-08-23 | rv=False | matching order of title
+   B: In the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – fled from their homes or were expelled.
+   A: In the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.
+[93] 1948 Palestinian expulsion and flight | 2026-03-19 | rv=False | "During" sounds better
+   B: In the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.
+   A: During the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.
+[106] Mandatory Palestine | 2021-07-15 | rv=False | 
+   B: Mandatory Palestine ( Filasṭīn; Pālēśtīnā (E.Y.), where "E.Y." indicates Eretz Yīśrā'ēl, the Land of Israel) was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+   A: Mandatory Palestine ( Filasṭīn; Pālēśtīnā (E.Y.), where "E.Y." indicates Ērētz Yīśrā'ēl, the Land of Israel) was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+[106] Mandatory Palestine | 2022-06-04 | rv=False | ref name
+   B: Mandatory Palestine ( Filasṭīn; Pālēśtīnā (E.Y.), where "E.Y." indicates Ērētz Yīśrā'ēl, the Land of Israel) was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+   A: Mandatory Palestine (where "E.Y." indicates Ērētz Yīśrā'ēl, the Land of Israel) was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+[106] Mandatory Palestine | 2022-11-28 | rv=False | Correct and improve Hebrew transliteration
+   B: Mandatory Palestine (where "E.Y." indicates Ērētz Yīśrā'ēl, the Land of Israel) was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+   A: Mandatory Palestine (where "E.Y." indicates ’Eretz Yiśrā’ēl, the Land of Israel) was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+[106] Mandatory Palestine | 2023-03-24 | rv=False | [[MOS:LEADCLUTTER]]
+   B: Mandatory Palestine (where "E.Y." indicates ’Eretz Yiśrā’ēl, the Land of Israel) was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+   A: Mandatory Palestine was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+[106] Mandatory Palestine | 2023-11-02 | rv=False | /* top */ it existed btw 1920 and 1948 (but was established early in that period)
+   B: Mandatory Palestine was a geopolitical entity established between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+   A: Mandatory Palestine was a geopolitical entity that existed between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+[106] Mandatory Palestine | 2025-02-13 | rv=False | linked in first sentence
+   B: Mandatory Palestine was a geopolitical entity that existed between 1920 and 1948 in the region of Palestine under the terms of the League of Nations Mandate for Palestine.
+   A: Mandatory Palestine was a geopolitical entity that existed between 1920 and 1948 in the region of Palestine under the terms of the Mandate for Palestine by the League of Nations.
+[106] Mandatory Palestine | 2025-04-15 | rv=False | /* top */ clar
+   B: Mandatory Palestine was a geopolitical entity that existed between 1920 and 1948 in the region of Palestine under the terms of the League of Nations' Mandate for Palestine.
+   A: Mandatory Palestine was a British geopolitical entity that existed between 1920 and 1948 in the region of Palestine, and after 1922, under the terms of the League of Nations' Mandate for Palestine.
+[106] Mandatory Palestine | 2025-07-25 | rv=False | 
+   B: Mandatory Palestine was a British geopolitical entity that existed between 1920 and 1948 in the region of Palestine, and after 1922, under the terms of the League of Nations's Mandate for Palestine.
+   A: Mandatory Palestine was a British geopolitical entity that existed between 1920 and 1948 in the region of Palestine, and after 1922, under the terms of the League of Nations' Mandate for Palestine.
+[106] Mandatory Palestine | 2026-01-11 | rv=False | 
+   B: Mandatory Palestine was a British administrative territory that existed between 1920 and 1948 in the region of Palestine, and after 1922, under the terms of the League of Nations' Mandate for Palestine.
+   A: Mandatory Palestine, officially known as Palestine was a British administrative territory that existed between 1920 and 1948 in the region of Palestine, and after 1922, under the terms of the League of Nations' Mandate for Palestine.
+[106] Mandatory Palestine | 2026-09-19 | rv=False | Clarify wording; add specific timeframe covering the major advance and final offensive.
+   B: Mandatory Palestine, officially known as Palestine, was a British administrative territory between 1920 and 1948 in the region of Palestine.
+   A: Mandatory Palestine, officially known as Palestine, was a British administrative territory in the region of Palestine between 1920 and 1948.
+[175] Land of Israel | 2021-05-26 | rv=False | /* top */ MOS:CAPS https://books.google.com/ngrams/graph?content=Land+of+Israel&year_start=1800&year_end=2019&corpus=26&
+   B: The Land of Israel is the traditional Jewish name for an area of indefinite geographical extension in the Southern Levant.
+   A: The land of Israel is the traditional Jewish name for an area of indefinite geographical extension in the Southern Levant.
+[175] Land of Israel | 2021-07-16 | rv=False | capitalize
+   B: The land of Israel is the traditional Jewish name for an area of indefinite geographical extension in the Southern Levant.
+   A: The Land of Israel is the traditional Jewish name for an area of indefinite geographical extension in the Southern Levant.
+[175] Land of Israel | 2022-03-28 | rv=False | traditional Jewish name for an area of the Southern Levant.  (removed "indefinite" because that is absurd - the "definit
+   B: The Land of Israel is the traditional Jewish name for an area of indefinite geographical extension in the Southern Levant.
+   A: The Land of Israel is the traditional Jewish name for an area of the Southern Levant.
+[180] Irish nationalism | 2026-06-12 | rv=False | /* */ there have been many Irish nationalist movements; nationalism is an ideology
+   B: Irish nationalism is a nationalist political movement which, in its broadest sense, asserts that the people of Ireland should govern Ireland as a sovereign state.
+   A: Irish nationalism is a nationalist ideology which, in its broadest sense, asserts that the people of Ireland should govern Ireland as a sovereign state.
+[183] Jerusalem | 2021-09-06 | rv=False | Adding local [[Palestinian Arabic]] pronunciation
+   B: Jerusalem is a city in Western Asia, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+   A: Jerusalem (al-Quds,, ) is a city in Western Asia, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+[183] Jerusalem | 2022-02-07 | rv=False | linking
+   B: Jerusalem (al-Quds,, ) is a city in Western Asia, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+   A: Jerusalem (al-Quds,, ) is a city in Western Asia.
+[183] Jerusalem | 2023-06-12 | rv=False | Used more specific geographic term for location
+   B: Jerusalem is a city in Western Asia.
+   A: Jerusalem is a city in the Levant.
+[183] Jerusalem | 2023-07-20 | rv=False | Split sentence, adjust wording for readability ([[WP:BOLD]], since it is the *first* sentence)
+   B: Jerusalem, situated on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea, is one of the oldest cities in the world and is considered to be a holy city for the three major Abrahamic religions: Judaism, Christianity, and Islam.
+   A: Jerusalem is a city in the Levant.
+[183] Jerusalem | 2023-10-10 | rv=False | Adding a tag for ancient
+   B: Jerusalem (al-Quds,, ) is a city in Western Asia, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+   A: Jerusalem (al-Quds,, ) is an ancient city in Western Asia, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+[183] Jerusalem | 2024-01-17 | rv=False | [[MOS:CURLY]], replaced: ’ → ', “ → " (2), ” → " (6)
+   B: Jerusalem (al-Quds,, ) is an ancient city in West Asia, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+   A: Jerusalem is an ancient city in West Asia, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+[183] Jerusalem | 2024-04-17 | rv=False | "West Asia" is far too broad, and "Southern Levant" is probably the least politically contentious way to describe where 
+   B: Jerusalem is a city in West Asia, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+   A: Jerusalem is a city in the Southern Levant, on a plateau in the Judaean Mountains between the Mediterranean and the Dead Sea.
+[202] Balfour Declaration | 2022-10-19 | rv=False | 
+   B: The Balfour Declaration was a public statement issued by the British government in 1917 during the First World War announcing support for the establishment of a "national home for the Jewish people" in Palestine, then an Ottoman region with a small minority Jewish population.
+   A: The Balfour Declaration was a public statement issued by the British government in 1917 during the First World War announcing its support for the establishment of a "national home for the Jewish people" in Palestine, then an Ottoman region with a small minority Jewish population.
+[202] Balfour Declaration | 2023-11-13 | rv=False | /* top */Add wikilink
+   B: The Balfour Declaration was a public statement issued by the British government in 1917 during the First World War announcing its support for the establishment of a "national home for the Jewish people" in Palestine, then an Ottoman region with a small minority Jewish population.
+   A: The Balfour Declaration was a public statement issued by the British Government in 1917 during the First World War announcing its support for the establishment of a "national home for the Jewish people" in Palestine, then an Ottoman region with a small minority Jewish population.
+[202] Balfour Declaration | 2026-06-04 | rv=False | /* top */Copy edit for clarity
+   B: The Balfour Declaration was a public statement issued by the British Government in 1917 during the First World War announcing its support for the establishment of a "national home for the Jewish people" in Palestine, then an Ottoman region with a small minority Jewish population.
+   A: The Balfour Declaration was a public statement issued by the British Government in 1917 during the First World War announcing its support for the establishment of a "national home for the Jewish people" in Palestine, then an Ottoman region with a small Jewish minority among an overwhelming Arab majo
+[202] Balfour Declaration | 2026-07-06 | rv=False | 
+   B: The Balfour Declaration was a public statement issued by the British Government in 1917 during the First World War announcing its support for the establishment of a "national home for the Jewish people" in Palestine, then an Ottoman region with a small Jewish minority among an overwhelming Arab majo
+   A: The Balfour Declaration (2 November 1917) was a public statement issued by the British Government in 1917 during the First World War announcing its support for the establishment of a "national home for the Jewish people" in Palestine, then an Ottoman region with a small Jewish minority among an over
