@@ -102,6 +102,10 @@ def play_pairs():
 
 res["play_pairs"] = play_pairs()
 
+tk_p = os.path.join(HERE, "notes", "takeaways.json")
+if os.path.exists(tk_p):
+    res["takeaways"] = json.load(open(tk_p))
+
 findings_path = os.path.join(HERE, "findings.html")
 findings = open(findings_path).read() if os.path.exists(findings_path) else ""
 tpl = open(os.path.join(HERE, "page_template.html")).read()
