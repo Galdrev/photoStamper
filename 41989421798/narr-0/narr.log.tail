@@ -1,7 +1,3 @@
-narr shard 0: 0 already done, 2609 to do
-[hb narr-0] narr-0 0/2609 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
-[hb narr-0] narr-0 43/2609 el=0.5m eta=30.0m req=91 429=0 5xx=0 retries=0 fail=0
-[hb narr-0] narr-0 81/2609 el=1.0m eta=31.2m req=171 429=6 5xx=0 retries=6 fail=0
 [hb narr-0] narr-0 100/2609 el=1.6m eta=41.3m req=214 429=12 5xx=0 retries=12 fail=0
 [hb narr-0] narr-0 132/2609 el=2.0m eta=37.5m req=277 429=12 5xx=0 retries=12 fail=0
 [hb narr-0] narr-0 151/2609 el=2.7m eta=43.2m req=321 429=18 5xx=0 retries=18 fail=0
@@ -36,3 +32,9 @@ narr shard 0: 0 already done, 2609 to do
 [hb narr-0] narr-0 621/2609 el=17.0m eta=54.4m req=1351 429=108 5xx=0 retries=108 fail=0
 [hb narr-0] narr-0 622/2609 el=17.6m eta=56.4m req=1353 429=108 5xx=0 retries=108 fail=0
 [hb narr-0] narr-0 647/2609 el=18.0m eta=54.6m req=1412 429=114 5xx=0 retries=114 fail=0
+[hb narr-0] narr-0 648/2609 el=18.6m eta=56.4m req=1413 429=114 5xx=0 retries=114 fail=0
+[hb narr-0] narr-0 676/2609 el=19.0m eta=54.3m req=1473 429=120 5xx=0 retries=120 fail=0
+[hb narr-0] narr-0 677/2609 el=19.6m eta=56.1m req=1476 429=120 5xx=0 retries=120 fail=0
+[hb narr-0] narr-0 703/2609 el=20.0m eta=54.2m req=1534 429=126 5xx=0 retries=126 fail=0
+[hb narr-0] narr-0 704/2609 el=20.6m eta=55.9m req=1536 429=126 5xx=0 retries=126 fail=0
+[hb narr-0] narr-0 730/2609 el=21.0m eta=54.1m req=1595 429=132 5xx=0 retries=132 fail=0
