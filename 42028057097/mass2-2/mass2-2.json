@@ -1,21 +1,21 @@
 {
  "job": "mass2-2",
  "stage": "m2-2",
- "done": 382,
+ "done": 408,
  "total": 645,
- "elapsed_min": 48.0,
- "eta_min": 33.1,
+ "elapsed_min": 51.0,
+ "eta_min": 29.6,
  "rps_limit": 2.0,
  "req_per_s": 2.0,
  "avg_latency_s": 0.37,
- "requests": 5760,
- "ok": 5759,
+ "requests": 6120,
+ "ok": 6119,
  "http_429": 0,
  "http_5xx": 0,
  "api_errors": 0,
  "retries": 0,
  "failures": 0,
- "bytes": 422572485,
+ "bytes": 443641897,
  "article_errors": 0,
- "updated": "2026-11-05T13:26:44Z"
+ "updated": "2026-11-05T13:29:44Z"
 }
