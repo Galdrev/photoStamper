@@ -1,0 +1,23 @@
+{
+ "job": "narr-0",
+ "stage": "narr-0",
+ "done": 3,
+ "total": 2609,
+ "elapsed_min": 3.0,
+ "eta_min": 2606.6,
+ "rps_limit": 2.0,
+ "req_per_s": 1.12,
+ "avg_latency_s": 0.06,
+ "requests": 201,
+ "ok": 183,
+ "http_429": 18,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 18,
+ "failures": 0,
+ "bytes": 658214,
+ "retry_after_max": 32,
+ "retry_after_sum": 513,
+ "article_errors": 159,
+ "updated": "2026-11-05T08:36:21Z"
+}
