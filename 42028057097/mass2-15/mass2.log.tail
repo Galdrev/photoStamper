@@ -1,8 +1,3 @@
-mass2 shard 15/16: 645 articles, now=2026-11-05T00:00:00Z, liftwing=False, lead grid=8 refine=40
-m2 shard 15: 0 already done, 645 to do
-[hb mass2-15] m2-15 0/645 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
-[hb mass2-15] m2-15 1/645 el=0.8m eta=508.9m req=69 429=6 5xx=0 retries=6 fail=0
-[hb mass2-15] m2-15 4/645 el=1.0m eta=161.0m req=95 429=11 5xx=0 retries=11 fail=0
 [hb mass2-15] m2-15 5/645 el=1.6m eta=200.1m req=114 429=12 5xx=0 retries=12 fail=0
 [hb mass2-15] m2-15 8/645 el=2.0m eta=159.6m req=167 429=17 5xx=0 retries=17 fail=0
 [hb mass2-15] m2-15 9/645 el=2.7m eta=193.3m req=207 429=18 5xx=0 retries=18 fail=0
@@ -37,3 +32,9 @@ m2 shard 15: 0 already done, 645 to do
 [hb mass2-15] m2-15 73/645 el=17.0m eta=133.2m req=1257 429=107 5xx=0 retries=107 fail=0
 [hb mass2-15] m2-15 76/645 el=17.8m eta=133.0m req=1300 429=108 5xx=0 retries=108 fail=0
 [hb mass2-15] m2-15 77/645 el=18.0m eta=132.8m req=1329 429=113 5xx=0 retries=113 fail=0
+[hb mass2-15] m2-15 78/645 el=18.5m eta=134.7m req=1345 429=114 5xx=0 retries=114 fail=0
+[hb mass2-15] m2-15 82/645 el=19.0m eta=130.5m req=1402 429=119 5xx=0 retries=119 fail=0
+[hb mass2-15] m2-15 84/645 el=19.6m eta=130.9m req=1426 429=120 5xx=0 retries=120 fail=0
+[hb mass2-15] m2-15 88/645 el=20.0m eta=126.6m req=1475 429=125 5xx=0 retries=125 fail=0
+[hb mass2-15] m2-15 89/645 el=20.6m eta=128.5m req=1495 429=126 5xx=0 retries=126 fail=0
+[hb mass2-15] m2-15 91/645 el=21.0m eta=127.9m req=1548 429=131 5xx=0 retries=131 fail=0
