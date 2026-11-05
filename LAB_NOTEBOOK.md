@@ -123,3 +123,9 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 - **Lesson:** close readers who read mostly the *most-changed* topic articles see vivid, convincing patterns. The comparison group and a sealed half are what stop vivid from being mistaken for distinctive. Without the holdout we would have published 3 false content findings.
 - **Process slip:** coders shared one scratchpad, so a helper file collided and two coders saw a file path from the other coder. Next time, give each coder its own working directory in the prompt.
 - **Adopt at work?** Yes, the whole chain. It is the cheapest honest way to turn "I feel there's a pattern in these documents" into a number that can fail.
+
+## #44 A green shard that was 92% errors (2026-11-05)
+- **What happened:** after amendment D, mass-narr shard 0 finished "success". The heartbeat showed `article_errors: 2387`: a division by zero when a filtered part was empty. My unit test only used texts that contained an event sentence.
+- **Caught by:** reading the heartbeat's error counter, not the green tick.
+- **Fixes:** empty parts now return None; edge-case tests added (empty text, no events, all events); and `mass._run` now exits non-zero when more than 5% of a shard's articles fail, so a mostly-failed shard can never show green again.
+- **Adopt at work?** Yes. Make the error rate a pass/fail condition, not just a log line. Test the empty case first.

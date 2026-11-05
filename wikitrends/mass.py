@@ -209,6 +209,8 @@ def _run(kind, fn, rows, i):
                 save()
     save()
     wt_net.heartbeat(f"{kind}-{i}-done", len(out), len(rows), force=True, article_errors=fails)
+    if todo and fails > 0.05 * len(todo):          # fail loudly: a shard that mostly errors must not report success
+        sys.exit(f"{kind} shard {i}: {fails}/{len(todo)} articles failed (>5%) - see ERR lines")
 
 
 def run_en(i, n):

@@ -71,5 +71,6 @@ def residual_measures(prose_text, measure, min_words=0):
     out = {}
     for level in ("sentence", "paragraph"):
         res, ev, st = split(prose_text, level)
-        out[level] = {"residual": measure(res, min_words), "event": measure(ev, 0), **st}
+        safe = lambda t, mw: measure(t, max(1, mw)) if t and t.strip() else None   # empty part -> None, never divide by 0
+        out[level] = {"residual": safe(res, min_words), "event": safe(ev, 1), **st}
     return out
