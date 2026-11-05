@@ -1,0 +1,23 @@
+{
+ "job": "mass2-7",
+ "stage": "m2-7",
+ "done": 14,
+ "total": 645,
+ "elapsed_min": 2.5,
+ "eta_min": 113.7,
+ "rps_limit": 2.0,
+ "req_per_s": 1.82,
+ "avg_latency_s": 0.27,
+ "requests": 275,
+ "ok": 263,
+ "http_429": 12,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 12,
+ "failures": 0,
+ "bytes": 16527299,
+ "retry_after_max": 10,
+ "retry_after_sum": 108,
+ "article_errors": 0,
+ "updated": "2026-11-05T15:05:09Z"
+}
