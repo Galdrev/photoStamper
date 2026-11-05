@@ -40,6 +40,7 @@ DISPUTED = R(r"\bdisputed\b")
 SOP = R(r"\bstate of palestine\b")
 SOP_COUNTRY = R(r"state of palestine[^.]{0,40}\bis a (?:country|state|sovereign)")
 SOP_CLAIM = R(r"state of palestine[^.]{0,80}\b(?:claimed|proclaimed|de jure|partially recognized|aspir\w+|declared)\b")
+LANDCONF = R(r"\b(?:land|territor\w*|borders?|war|conflict|occupation|settlements?|refugees?|homeland|sovereignty|annex\w*|partition|ceasefire|intifada|nakba)\b")
 JEWISH_HIST = R(r"\b(?:jewish|jews|israelites?|hebrews?|judaism|temple|kingdom of (?:israel|judah)|judean)\b")
 
 
@@ -89,6 +90,9 @@ def snapshot_measures(full_wt, groups, is_topic):
             c["N7_sop_country"] = len(SOP_COUNTRY.findall(fp)); c["N7_sop_claim"] = len(SOP_CLAIM.findall(fp))
         c["N8_jewish_in_lead"] = int(bool(JEWISH_HIST.search(lp)))
     c["_words"] = words
+    for g, rx in groups.items():
+        c[f"G_{g}"] = len(rx.findall(fp))
+    c["LANDCONF"] = len(LANDCONF.findall(fp))
     return c, samples
 
 
@@ -138,7 +142,7 @@ def main():
             spec = NARRATIVE_DISPUTES[dispute_of[t]]
             kind, groups = dispute_of[t], {"A": R(spec["A"]), "B": R(spec["B"])}
         else:
-            continue
+            kind, groups = "other_control", {}          # baseline relevance features only (amendment C2b)
         rows, last = [], None
         for s in rec["snapshots"]:
             if s.get("text") is not None:
@@ -212,6 +216,19 @@ def main():
             res[m] = {"first": f, "last": l, "change": (l - f) if f is not None and l is not None else None, "mentions": [nf, nl]}
         res["labels"] = {"A": NARRATIVE_DISPUTES[d_name]["A_label"], "B": NARRATIVE_DISPUTES[d_name]["B_label"]}
         out["disputes"][d_name] = res
+    # per-article first/last values + outcome-blind baseline relevance (amendment C1/C2b)
+    arts_out = {}
+    for t, v in per.items():
+        r0, r1 = at(v["rows"], first), at(v["rows"], last)
+        if not (r0 and r1):
+            continue
+        ms = MEASURES if v["kind"] == "topic" else CONTROL_MEASURES
+        b = r0["c"]; gk = [k for k in b if k.startswith("G_")]
+        arts_out[t] = {"kind": v["kind"], "subgroup": v["subgroup"],
+                       "first": {m: f(r0["c"]) for m, f in ms.items()}, "last": {m: f(r1["c"]) for m, f in ms.items()},
+                       "words_first": b["_words"], "baseline_both_groups": all(b.get(k, 0) > 0 for k in gk),
+                       "baseline_landconf_per_1000": b.get("LANDCONF", 0) * 1000 / b["_words"]}
+    out["articles"] = arts_out
     # samples for validation (KWIC precision + attribution check)
     rnd = random.Random(7)
     out["validation_samples"] = {f"{k[0]}:{k[1]}": rnd.sample(v, min(30, len(v))) for k, v in samples.items()}

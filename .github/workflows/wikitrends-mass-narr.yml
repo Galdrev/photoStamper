@@ -1,0 +1,59 @@
+name: wikitrends-mass-narr
+on:
+  push:
+    branches: [wikitrends-mass-narr]
+permissions:
+  contents: write
+concurrency: wikitrends-mass-narr
+defaults:
+  run:
+    shell: bash
+env:
+  WT_RPS: '3'
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  narr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: {shard: [0, 1, 2, 3]}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh narr-${{ matrix.shard }} 180 > /tmp/status.log 2>&1 &
+      - name: Collect leads at 2021-01 and now (checkpointed)
+        working-directory: wikitrends
+        run: WT_JOB=narr-${{ matrix.shard }} timeout 270m python mass_narr.py shard --shard ${{ matrix.shard }} --of 4 2>&1 | tee logs/narr.log || echo "::warning::stopped early; checkpoint kept"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: 'narr-${{ matrix.shard }}', path: 'wikitrends/data/mass/narr_${{ matrix.shard }}.json.gz', retention-days: 5, overwrite: true}
+  analyze:
+    needs: narr
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy pandas statsmodels
+      - uses: actions/download-artifact@v4
+        with: {path: wikitrends/data/mass/, pattern: 'narr-*', merge-multiple: true}
+      - working-directory: wikitrends
+        run: |
+          python mass_narr.py merge 2>&1 | tee mass_narr.log
+          WT_JOB=wikidata python wikidata.py 2>&1 | tee -a mass_narr.log
+          python cohere.py mass 2>&1 | tee -a mass_narr.log
+      - name: Commit to a per-run branch
+        if: always()
+        run: |
+          git config user.name "wikitrends-bot"; git config user.email "actions@users.noreply.github.com"
+          git checkout -q -b results/mass-narr-${{ github.run_id }}
+          for f in wikitrends/data/mass_narr.json wikitrends/data/wikidata_types.json wikitrends/data/cohere_mass.json wikitrends/mass_narr.log; do [ -f $f ] && git add -f $f; done
+          git commit -qm "Mass narrative results (run ${{ github.run_id }}) [skip ci]" || exit 0
+          git push -q origin results/mass-narr-${{ github.run_id }}

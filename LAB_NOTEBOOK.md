@@ -73,6 +73,8 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 |---|---|---|---|---|---|
 | 39 | Plan | User spotted the design's blind spot: study 1 measured one direction (critical words), not **two narratives against each other** (indigeneity, ancient naming, holy-site naming order, the two displacements, 1948 agency, violence labels by perpetrator, legitimacy words, Jewish history in shared-site leads). Pre-registered as SPEC_NARRATIVE.md before computing, with comparison disputes (Kosovo, Karabakh, Cyprus, Kashmir, Northern Ireland) and planted-shift tests | A domain expert's framing beats the analyst's first operationalisation. Reusing the raw cache made a new study cost a reanalysis, not a recollection | ~1 h build | pending |
 
+| 40 | Plan | User: "do the two narratives support each other at scale; clean irrelevant articles, but with common tools, don't fix the research". Pre-registered coherence (Spearman + PCA), an outcome-blind relevance filter (Wikidata P31 types + 2021 baseline text only), and standard OLS with cluster-robust SEs (statsmodels). Every result is reported filtered *and* unfiltered. A synthetic test exposed a bias in my own filter (comparison articles outside the disputes had no baseline and would all have been dropped); fixed before any real run | Cleaning is where researchers most often "fix" results. Fixing the rule before seeing outcomes and always showing both versions is the standard guard | ~1 h | pending |
+
 ## Final verdicts: what to adopt for real work
 
 **Adopt (highest value per hour):**
