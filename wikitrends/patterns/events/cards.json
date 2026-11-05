@@ -1,0 +1,1286 @@
+{
+ "cards": [
+  {
+   "rank": 1,
+   "id": "EV1",
+   "angle": "EVENTS",
+   "title": "Battles drive editing and reading; courts, reports and ceasefires do not",
+   "what_we_see": "In the three weeks after the 24 military escalations in our calendar, topic articles got 17% more edits than in the six weeks before (geometric mean; p=0.001 against 2,000 random dates), 6% more articles were touched (p=0.001), and topic pageviews were 28% higher (p=0.007). The 25 legal and institutional events (ICJ orders, ICC, UN votes, rights-group reports, recognitions) came with 6% fewer edits and 27% fewer pageviews than usual; the 9 ceasefires and deals showed nothing (0.97). Legal events drew 19% fewer edits than military ones (p=0.005). The edit effect survives dropping events within 3 weeks of a stronger one (8 military events left: 1.32x, p=0.001), capping each article at 10 edits a week, and a local placebo that removes the 2023-24 rise and decay (1.20x, p=0.011).",
+   "chart": {
+    "type": "heatmap: rows = event type (n), columns = outcome (topic edits, articles edited, other conflicts' pages, lead term insertions, durable insertions, insertions per edit, pageviews); cell = geometric-mean excess (weeks +0..+2 over -6..-1), shaded by p",
+    "file": "chart_data/02_type_by_outcome.json",
+    "data": {
+     "military_escalation": {
+      "n": 24,
+      "topic_edits": [
+       1.169,
+       0.0005
+      ],
+      "topic_active": [
+       1.06,
+       0.001
+      ],
+      "shocked_edits": [
+       0.844,
+       0.926
+      ],
+      "term_ins": [
+       1.186,
+       0.086
+      ],
+      "term_ins_durable": [
+       1.14,
+       0.098
+      ],
+      "ins_per_edit": [
+       0.96,
+       0.4725
+      ],
+      "pageviews": [
+       1.284,
+       0.007
+      ]
+     },
+     "ceasefire_deal": {
+      "n": 9,
+      "topic_edits": [
+       0.974,
+       0.5115
+      ],
+      "topic_active": [
+       0.954,
+       0.893
+      ],
+      "shocked_edits": [
+       0.872,
+       0.716
+      ],
+      "term_ins": [
+       0.799,
+       0.6955
+      ],
+      "term_ins_durable": [
+       0.868,
+       0.6365
+      ],
+      "ins_per_edit": [
+       0.924,
+       0.5035
+      ],
+      "pageviews": [
+       0.832,
+       0.583
+      ]
+     },
+     "legal_institutional": {
+      "n": 25,
+      "topic_edits": [
+       0.945,
+       0.795
+      ],
+      "topic_active": [
+       0.941,
+       0.9995
+      ],
+      "shocked_edits": [
+       1.005,
+       0.276
+      ],
+      "term_ins": [
+       0.818,
+       0.756
+      ],
+      "term_ins_durable": [
+       0.978,
+       0.3935
+      ],
+      "ins_per_edit": [
+       0.855,
+       0.7225
+      ],
+      "pageviews": [
+       0.731,
+       0.9545
+      ]
+     },
+     "humanitarian_media": {
+      "n": 10,
+      "topic_edits": [
+       1.082,
+       0.077
+      ],
+      "topic_active": [
+       1.037,
+       0.094
+      ],
+      "shocked_edits": [
+       0.79,
+       0.917
+      ],
+      "term_ins": [
+       1.152,
+       0.221
+      ],
+      "term_ins_durable": [
+       1.55,
+       0.0195
+      ],
+      "ins_per_edit": [
+       1.129,
+       0.294
+      ],
+      "pageviews": [
+       0.902,
+       0.419
+      ]
+     },
+     "social_global": {
+      "n": 8,
+      "topic_edits": [
+       0.909,
+       0.8475
+      ],
+      "topic_active": [
+       0.955,
+       0.872
+      ],
+      "shocked_edits": [
+       1.013,
+       0.3825
+      ],
+      "term_ins": [
+       0.731,
+       0.7745
+      ],
+      "term_ins_durable": [
+       0.57,
+       0.979
+      ],
+      "ins_per_edit": [
+       0.799,
+       0.708
+      ],
+      "pageviews": [
+       0.682,
+       0.928
+      ]
+     },
+     "comparison": {
+      "n": 10,
+      "topic_edits": [
+       0.899,
+       0.9055
+      ],
+      "topic_active": [
+       0.936,
+       0.9745
+      ],
+      "shocked_edits": [
+       1.361,
+       0.005
+      ],
+      "term_ins": [
+       0.676,
+       0.8705
+      ],
+      "term_ins_durable": [
+       0.625,
+       0.9695
+      ],
+      "ins_per_edit": [
+       0.77,
+       0.7625
+      ],
+      "pageviews": [
+       1.149,
+       0.1015
+      ]
+     }
+    }
+   },
+   "confidence": "STRONG",
+   "so_what": "Wikipedia's editing tracks the shooting war, not the courtroom. The size is modest except for October 7 (3.0x edits, 13x pageviews over October-November against the six months before) - most escalations add a sixth more editing, not a flood. Anyone expecting a surge of edits after the next ICJ or ICC ruling should not.",
+   "caveat": "Weekly resolution with 86 events, many of them within days of each other; the military result leans on two clusters (Oct 2023 and Sep-Oct 2024), and only 2 military events are fully isolated (1.09x, not significant).",
+   "examples": [
+    "October 7 attacks: 283 to 936 topic edits a week; 1.45x as many articles edited.",
+    "ICJ provisional measures order, 26 Jan 2024: topic edits flat (482 to 466 a week), pageviews 0.39x of the previous six months.",
+    "ICC arrest warrants, 21 Nov 2024: edits 0.70x."
+   ]
+  },
+  {
+   "rank": 2,
+   "id": "EV2",
+   "angle": "EVENTS",
+   "title": "The idea that legal rulings drove the vocabulary change does not hold up at the scale of weeks",
+   "what_we_see": "We tested whether legal and institutional events are followed by more critical terms (colonial, apartheid, genocide, occupation, ethnic cleansing, Nakba/expulsion, war crimes) entering the leads of 60 topic articles. They are not: insertions were 0.82x their pre-event level in the 3 weeks after (p=0.76), durable insertions 0.98x (p=0.39), and insertions per edit 0.85x. With a slower window (13 weeks after vs 13 before) durable insertions were 0.92x (p=0.90). After the ICJ order of 26 Jan 2024, lead insertions fell from 2.8 to 1.0 a week. In 2024-H1, the half-year of the vocabulary wave, legal-event windows covered 58% of weeks and got 52% of the durable insertions: no concentration. Legal and military events do not differ on insertions per edit (ratio 0.89, p=0.62).",
+   "chart": {
+    "type": "dot plot: one dot per legal/institutional event, x = date, y = excess durable term insertions (log scale), grey band = 10th-90th percentile of 2,000 placebo dates",
+    "file": "chart_data/05_event_scatter.json",
+    "data": {
+     "placebo_median": 1.0,
+     "placebo_p90": 2.333,
+     "rows": [
+      {
+       "date": "2021-04-27",
+       "event": "Human Rights Watch 'A Threshold Crossed' apartheid report",
+       "term_ins_durable": 0.429,
+       "p_term_ins_durable": 0.89
+      },
+      {
+       "date": "2022-02-01",
+       "event": "Amnesty International apartheid report on Israel",
+       "term_ins_durable": 0.6,
+       "p_term_ins_durable": 0.799
+      },
+      {
+       "date": "2023-12-12",
+       "event": "UNGA ceasefire resolution ES-10/22 (153 in favour)",
+       "term_ins_durable": 0.647,
+       "p_term_ins_durable": 0.655
+      },
+      {
+       "date": "2023-12-29",
+       "event": "South Africa files ICJ genocide case against Israel",
+       "term_ins_durable": 1.462,
+       "p_term_ins_durable": 0.2395
+      },
+      {
+       "date": "2024-01-26",
+       "event": "ICJ provisional measures order (South Africa v. Israel)",
+       "term_ins_durable": 0.647,
+       "p_term_ins_durable": 0.655
+      },
+      {
+       "date": "2024-03-25",
+       "event": "UNSC resolution 2728 demands a Ramadan ceasefire",
+       "term_ins_durable": 0.647,
+       "p_term_ins_durable": 0.655
+      },
+      {
+       "date": "2024-03-26",
+       "event": "UN Special Rapporteur Albanese report 'Anatomy of a Genocide'",
+       "term_ins_durable": 0.647,
+       "p_term_ins_durable": 0.655
+      },
+      {
+       "date": "2024-03-28",
+       "event": "ICJ additional provisional measures (famine)",
+       "term_ins_durable": 0.647,
+       "p_term_ins_durable": 0.655
+      },
+      {
+       "date": "2024-05-10",
+       "event": "UNGA upgrades Palestine's UN rights (ES-10/23)",
+       "term_ins_durable": 0.778,
+       "p_term_ins_durable": 0.623
+      },
+      {
+       "date": "2024-05-20",
+       "event": "ICC prosecutor requests arrest warrants (Netanyahu, Gallant, Hamas leaders)",
+       "term_ins_durable": 2.111,
+       "p_term_ins_durable": 0.175
+      },
+      {
+       "date": "2024-05-24",
+       "event": "ICJ orders Israel to halt the Rafah offensive",
+       "term_ins_durable": 3.8,
+       "p_term_ins_durable": 0.0355
+      },
+      {
+       "date": "2024-05-28",
+       "event": "Spain, Ireland and Norway recognise the State of Palestine",
+       "term_ins_durable": 3.8,
+       "p_term_ins_durable": 0.0355
+      },
+      {
+       "date": "2024-06-10",
+       "event": "UNSC resolution 2735 endorses the Biden ceasefire plan",
+       "term_ins_durable": 0.538,
+       "p_term_ins_durable": 0.8315
+      },
+      {
+       "date": "2024-07-19",
+       "event": "ICJ advisory opinion: Israeli occupation unlawful",
+       "term_ins_durable": 0.846,
+       "p_term_ins_durable": 0.5745
+      },
+      {
+       "date": "2024-09-18",
+       "event": "UNGA resolution demands end of the occupation within 12 months (ES-10/24)",
+       "term_ins_durable": 3.286,
+       "p_term_ins_durable": 0.065
+      },
+      {
+       "date": "2024-10-28",
+       "event": "Knesset passes laws banning UNRWA",
+       "term_ins_durable": 1.0,
+       "p_term_ins_durable": 0.5595
+      },
+      {
+       "date": "2024-11-21",
+       "event": "ICC issues arrest warrants for Netanyahu and Gallant",
+       "term_ins_durable": 1.0,
+       "p_term_ins_durable": 0.5595
+      },
+      {
+       "date": "2024-12-05",
+       "event": "Amnesty International report: Israel is committing genocide in Gaza",
+       "term_ins_durable": 1.364,
+       "p_term_ins_durable": 0.298
+      },
+      {
+       "date": "2024-12-19",
+       "event": "HRW report: extermination and acts of genocide (water deprivation)",
+       "term_ins_durable": 1.0,
+       "p_term_ins_durable": 0.5595
+      },
+      {
+       "date": "2025-07-28",
+       "event": "B'Tselem 'Our Genocide' and PHR-Israel reports",
+       "term_ins_durable": 0.176,
+       "p_term_ins_durable": 1.0
+      },
+      {
+       "date": "2025-08-31",
+       "event": "International Association of Genocide Scholars resolution: genocide in Gaza",
+       "term_ins_durable": 3.0,
+       "p_term_ins_durable": 0.0715
+      },
+      {
+       "date": "2025-09-16",
+       "event": "UN Commission of Inquiry finds Israel committed genocide; Gaza City ground offensive launched",
+       "term_ins_durable": 1.0,
+       "p_term_ins_durable": 0.5595
+      },
+      {
+       "date": "2025-09-21",
+       "event": "UK, Canada, Australia (and Portugal) recognise Palestine; France and others on Sep 22",
+       "term_ins_durable": 0.333,
+       "p_term_ins_durable": 0.927
+      },
+      {
+       "date": "2025-10-22",
+       "event": "ICJ advisory opinion on Israel's obligations to UN agencies (UNRWA)",
+       "term_ins_durable": 1.0,
+       "p_term_ins_durable": 0.5595
+      },
+      {
+       "date": "2025-11-17",
+       "event": "UNSC resolution 2803 endorses the Gaza plan and Board of Peace",
+       "term_ins_durable": 1.571,
+       "p_term_ins_durable": 0.222
+      }
+     ]
+    }
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "The 2024 wave cannot be pinned on the ICJ, the ICC or the rights-group reports by timing. The most likely reading is that the post-October 7 editing simply took months to settle (card EV3), with institutional findings used as sources along the way rather than as triggers. A journalist should not write 'after the ICJ ruling, Wikipedia changed'.",
+   "caveat": "Low power: durable lead insertions run at about 1 a week on 60 leads, so a real but small legal effect could be missed; mass v2 (about 10k leads, --mass2) will test this properly.",
+   "examples": [
+    "Spain, Ireland and Norway recognise Palestine / ICJ Rafah order (late May 2024): one of the few legal windows with a rise (3.8x durable insertions, from 0.17 to 1.33 a week), shared with the Tel al-Sultan strike the same week.",
+    "UN Commission of Inquiry genocide finding, 16 Sep 2025: durable insertions unchanged (0.33 a week before and after)."
+   ]
+  },
+  {
+   "rank": 3,
+   "id": "EV3",
+   "angle": "EVENTS",
+   "title": "The first rush of new words after October 7 mostly bounced; what stuck arrived in 2024",
+   "what_we_see": "In the second half of 2023 there were 75 insertions of critical terms into the 60 topic leads, four times the previous half-year, but only 23% were still there a week later. In 2024-H1 there were fewer insertions (46) but 54% stuck (Fisher exact p=0.0007). Durable insertions peaked in 2024-H1 (25) and 2024-H2 (20), against 9 in 2023-H1. Removals tracked insertions almost one for one (71 vs 75 in 2023-H2). So the 'wave months after the news peak' is the same contest being settled, not a new response to later events.",
+   "chart": {
+    "type": "stacked bars by half-year: durable insertions (dark) and insertions removed within 7 days (light), with a line for the share that stuck",
+    "file": "chart_data/06_bounce_then_stick.json",
+    "data": {
+     "half_years": [
+      "2021-H1",
+      "2021-H2",
+      "2022-H1",
+      "2022-H2",
+      "2023-H1",
+      "2023-H2",
+      "2024-H1",
+      "2024-H2",
+      "2025-H1",
+      "2025-H2",
+      "2026-H1",
+      "2026-H2"
+     ],
+     "insertions": [
+      3,
+      8,
+      22,
+      12,
+      19,
+      75,
+      46,
+      41,
+      22,
+      28,
+      7,
+      8
+     ],
+     "durable_7d": [
+      2,
+      5,
+      9,
+      5,
+      9,
+      17,
+      25,
+      20,
+      17,
+      12,
+      4,
+      7
+     ],
+     "durable_share": [
+      0.667,
+      0.625,
+      0.409,
+      0.417,
+      0.474,
+      0.227,
+      0.543,
+      0.488,
+      0.773,
+      0.429,
+      0.571,
+      0.875
+     ]
+    }
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "This explains the delay between the news peak and the vocabulary wave without needing a legal trigger. The October 2023 edits were attempts; consensus, talk-page work and repeated tries turned some of them into standing text over the following months. For monitoring, the number to watch is insertions that survive a week, not raw insertions.",
+   "caveat": "60 leads only (25 key articles with every revision, 35 from the pilot); the 7-day survival rule is a simple proxy for 'stuck'.",
+   "examples": [
+    "Zionism as settler colonialism, 23 Oct 2023: 'Zionism and the Israeli-Palestinian conflict have been described as a form of settler colonialism.' (lived 131 days)",
+    "Nakba, 6 Jun 2024: 'The Nakba is the ethnic cleansing of Palestinians through their violent displacement and dispossession of land, property, and belongings...' (first sentence, lived 93 days)"
+   ]
+  },
+  {
+   "rank": 4,
+   "id": "EV4",
+   "angle": "EVENTS",
+   "title": "The method passes its placebo test: other wars move their own pages, not these",
+   "what_we_see": "The 10 comparison events (Russia's invasion of Ukraine, the Kursk incursion, Nagorno-Karabakh, Assad's fall, El Fasher and others) were followed by 1.36x the usual edits on the shocked comparison articles (Ukraine, Russia, Armenia and similar; p=0.005) and 0.90x on the topic articles. Russia's invasion: 3.2x; Kursk: 3.0x; Karabakh: 2.1x on those pages. In the other direction, Israel-Palestine military events left the clean comparison articles flat (1.01x).",
+   "chart": {
+    "type": "paired bars per comparison event: excess edits on shocked comparison pages vs topic pages, reference line at 1",
+    "file": "chart_data/05_event_scatter.json",
+    "data": [
+     {
+      "date": "2021-08-15",
+      "event": "Taliban take Kabul",
+      "shocked_edits": 1.178,
+      "topic_edits": 0.92
+     },
+     {
+      "date": "2022-02-24",
+      "event": "Russia's full-scale invasion of Ukraine",
+      "shocked_edits": 3.22,
+      "topic_edits": 0.692
+     },
+     {
+      "date": "2023-04-15",
+      "event": "Sudan war begins (SAF vs RSF)",
+      "shocked_edits": 0.609,
+      "topic_edits": 0.876
+     },
+     {
+      "date": "2023-06-06",
+      "event": "Kakhovka dam destroyed",
+      "shocked_edits": 1.63,
+      "topic_edits": 0.916
+     },
+     {
+      "date": "2023-09-19",
+      "event": "Azerbaijan's Nagorno-Karabakh offensive",
+      "shocked_edits": 2.118,
+      "topic_edits": 0.96
+     },
+     {
+      "date": "2024-08-06",
+      "event": "Ukraine's Kursk incursion",
+      "shocked_edits": 2.977,
+      "topic_edits": 1.12
+     },
+     {
+      "date": "2024-12-08",
+      "event": "Fall of the Assad regime in Syria",
+      "shocked_edits": 1.246,
+      "topic_edits": 0.925
+     },
+     {
+      "date": "2025-02-28",
+      "event": "Trump-Zelensky Oval Office confrontation",
+      "shocked_edits": 1.206,
+      "topic_edits": 0.695
+     },
+     {
+      "date": "2025-05-07",
+      "event": "India-Pakistan strikes (Operation Sindoor)",
+      "shocked_edits": 0.773,
+      "topic_edits": 1.035
+     },
+     {
+      "date": "2025-10-26",
+      "event": "El Fasher falls to the RSF",
+      "shocked_edits": 0.79,
+      "topic_edits": 0.944
+     }
+    ]
+   },
+   "confidence": "STRONG",
+   "so_what": "The event-study picks up real editing responses where they should be and not where they should not, so the nulls in EV2 are not just a blunt tool. It also shows that the edit-follows-war pattern is ordinary Wikipedia behaviour, the same for Ukraine as for Gaza.",
+   "caveat": "The shocked comparison set is only 6 articles, so single events swing it.",
+   "examples": [
+    "Russia's invasion of Ukraine, 24 Feb 2022: shocked-page edits 3.2x (p=0.005).",
+    "Fall of Assad, 8 Dec 2024: topic edits 0.93x."
+   ]
+  },
+  {
+   "rank": 5,
+   "id": "EV5",
+   "angle": "EVENTS",
+   "title": "Edits and new words move in the same week; neither leads the other",
+   "what_we_see": "Across 304 weeks, weekly topic edits and weekly critical-term insertions correlate most at lag 0 (r=0.517; after first-differencing logs r=0.214, 95% noise band +-0.115). No other lag from -8 to +8 weeks stands out after differencing, except a small negative value at -2 (-0.207). Monthly series show the same peak at lag 0 (r=0.621 for durable insertions) with a weak shoulder at 3 months (0.448).",
+   "chart": {
+    "type": "bar chart of cross-correlation by lag (-8..+8 weeks), raw and differenced, with the +-2/sqrt(n) band",
+    "file": "chart_data/03_lag_xcorr.json",
+    "data": {
+     "note": "corr(topic_edits_t, term_ins_{t+L}); positive L = insertions follow edits by L weeks",
+     "band95": 0.115,
+     "lags": [
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     "raw": [
+      0.213,
+      0.258,
+      0.259,
+      0.217,
+      0.306,
+      0.339,
+      0.304,
+      0.433,
+      0.517,
+      0.346,
+      0.195,
+      0.174,
+      0.175,
+      0.196,
+      0.235,
+      0.164,
+      0.153
+     ],
+     "diff_log": [
+      -0.0,
+      0.011,
+      0.033,
+      -0.109,
+      0.121,
+      0.031,
+      -0.207,
+      0.07,
+      0.214,
+      -0.095,
+      -0.0,
+      -0.082,
+      0.015,
+      -0.019,
+      0.062,
+      0.006,
+      -0.048
+     ],
+     "comparison_raw": [
+      0.113,
+      0.088,
+      0.213,
+      0.212,
+      0.138,
+      0.139,
+      0.153,
+      0.228,
+      0.174,
+      0.173,
+      0.191,
+      0.198,
+      0.117,
+      0.098,
+      0.137,
+      0.162,
+      -0.002
+     ]
+    }
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "Vocabulary change happens inside edit surges, not as a slow echo weeks later. If there is a delayed effect, it works over months (attempts settling, card EV3) and is too smeared to see in weekly data.",
+   "caveat": "Both series share the October 2023 spike; the differenced estimate is the honest one and it is small.",
+   "examples": []
+  },
+  {
+   "rank": 6,
+   "id": "EV6",
+   "angle": "EVENTS",
+   "title": "Where institutions do leave a mark: the Gaza genocide lead names each new finding within days",
+   "what_we_see": "The first sentence of the Gaza genocide article added each institution as its finding appeared: Amnesty's report (5 Dec 2024) was named on 12 Dec, Human Rights Watch (19 Dec) on 31 Dec, B'Tselem (28 Jul 2025) the same day, the International Association of Genocide Scholars (31 Aug) the next day, and the UN Commission of Inquiry (16 Sep) the same day. On 5 Oct 2025 the attribution list was replaced by Wikipedia's own voice: 'The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.'",
+   "chart": {
+    "type": "timeline: one row per institution, dot at publication date and at first appearance in the first sentence, joined by a line; vertical marker at 5 Oct 2025 (voice step)",
+    "file": "chart_data/07_gaza_genocide_attribution.json",
+    "data": [
+     {
+      "institution": "Amnesty International genocide report",
+      "event_date": "2024-12-05",
+      "first_in_first_sentence": "2024-12-12",
+      "lag_days": 7
+     },
+     {
+      "institution": "Human Rights Watch report",
+      "event_date": "2024-12-19",
+      "first_in_first_sentence": "2024-12-31",
+      "lag_days": 12
+     },
+     {
+      "institution": "B'Tselem 'Our Genocide'",
+      "event_date": "2025-07-28",
+      "first_in_first_sentence": "2025-07-28",
+      "lag_days": 0
+     },
+     {
+      "institution": "Physicians for Human Rights-Israel",
+      "event_date": "2025-07-28",
+      "first_in_first_sentence": "2025-08-10",
+      "lag_days": 13
+     },
+     {
+      "institution": "International Association of Genocide Scholars",
+      "event_date": "2025-08-31",
+      "first_in_first_sentence": "2025-09-01",
+      "lag_days": 1
+     },
+     {
+      "institution": "UN Commission of Inquiry",
+      "event_date": "2025-09-16",
+      "first_in_first_sentence": "2025-09-16",
+      "lag_days": 0
+     }
+    ]
+   },
+   "confidence": "ANECDOTE",
+   "so_what": "Legal and institutional events do shape wording, but narrowly and fast: as named sources in the one article about the accusation, building a stack of attributions that later justified dropping attribution. That is a traceable mechanism a reader or editor can audit in the page history.",
+   "caveat": "One article; the voice step also followed months of talk-page discussion, so the last findings were not the only cause.",
+   "examples": [
+    "Gaza genocide, 1 Sep 2025: 'According to a United Nations special committee, Amnesty International, Medecins Sans Frontieres, B'Tselem, Physicians for Human Rights-Israel, ... (including the International Association of Genocide Scholars) ...'",
+    "Gaza genocide, 2 Apr 2025, edit summary 'add \"acts of genocide\" clarification'."
+   ]
+  },
+  {
+   "rank": 7,
+   "id": "EV7",
+   "angle": "EVENTS",
+   "title": "The windows with the most new words are mostly war weeks, but the words are not about the war",
+   "what_we_see": "Ranking event weeks by durable critical-term insertions, the top five are: Nasrallah's killing and the Lebanon invasion (late Sep 2024, 4.6x, 0.17 to 1.67 a week), the Al-Ahli hospital explosion (Oct 2023, 4.4x), the US strikes on Iran and the June 2025 ceasefire (3.9x), the ICJ Rafah order with the recognitions and the Tel al-Sultan strike (late May 2024, 3.8x), and the killing of the Rafah paramedics (Mar 2025, 3.7x). None of them beats the placebo dates by much (p 0.02 to 0.06) and the placebo event Nagorno-Karabakh ranks 9th. The terms going in were mostly about history and the land: 'Nakba' into the Israel and Hezbollah leads and 'occupation' into the Hamas lead in the Lebanon weeks; 'settler colonial' into the Israel lead during the Iran war.",
+   "chart": {
+    "type": "ranked horizontal bars: top 10 event weeks by excess durable insertions, coloured by type, with the placebo 90th percentile marked",
+    "file": "chart_data/04_left_a_mark.json",
+    "data": [
+     {
+      "date": "2024-09-27",
+      "event": "Hassan Nasrallah killed in Beirut",
+      "type": "military_escalation",
+      "excess_term_ins_durable": 4.6,
+      "p": 0.0195,
+      "plocal": 0.0,
+      "excess_topic_edits": 2.026,
+      "durable_post_per_week": 1.67,
+      "durable_pre_per_week": 0.17
+     },
+     {
+      "date": "2023-10-17",
+      "event": "Al-Ahli Arab Hospital explosion",
+      "type": "humanitarian_media",
+      "excess_term_ins_durable": 4.429,
+      "p": 0.024,
+      "plocal": 0.0,
+      "excess_topic_edits": 2.118,
+      "durable_post_per_week": 2.33,
+      "durable_pre_per_week": 0.33
+     },
+     {
+      "date": "2025-06-22",
+      "event": "US strikes Iranian nuclear sites",
+      "type": "military_escalation",
+      "excess_term_ins_durable": 3.857,
+      "p": 0.03,
+      "plocal": 0.0,
+      "excess_topic_edits": 1.05,
+      "durable_post_per_week": 2.0,
+      "durable_pre_per_week": 0.33
+     },
+     {
+      "date": "2024-05-24",
+      "event": "ICJ orders Israel to halt the Rafah offensive",
+      "type": "legal_institutional",
+      "excess_term_ins_durable": 3.8,
+      "p": 0.0355,
+      "plocal": 0.0435,
+      "excess_topic_edits": 0.822,
+      "durable_post_per_week": 1.33,
+      "durable_pre_per_week": 0.17
+     },
+     {
+      "date": "2025-03-23",
+      "event": "Killing of 15 paramedics and rescue workers in Rafah",
+      "type": "humanitarian_media",
+      "excess_term_ins_durable": 3.667,
+      "p": 0.061,
+      "plocal": 0.0435,
+      "excess_topic_edits": 0.921,
+      "durable_post_per_week": 0.67,
+      "durable_pre_per_week": 0.0
+     },
+     {
+      "date": "2024-09-17",
+      "event": "Pager (and next-day walkie-talkie) explosions in Lebanon",
+      "type": "military_escalation",
+      "excess_term_ins_durable": 3.286,
+      "p": 0.065,
+      "plocal": 0.0217,
+      "excess_topic_edits": 1.437,
+      "durable_post_per_week": 1.67,
+      "durable_pre_per_week": 0.33
+     },
+     {
+      "date": "2024-09-23",
+      "event": "Israel's mass airstrikes on Lebanon (Northern Arrows)",
+      "type": "military_escalation",
+      "excess_term_ins_durable": 3.286,
+      "p": 0.065,
+      "plocal": 0.0435,
+      "excess_topic_edits": 1.658,
+      "durable_post_per_week": 1.67,
+      "durable_pre_per_week": 0.33
+     },
+     {
+      "date": "2025-08-31",
+      "event": "International Association of Genocide Scholars resolution: genocide in Gaza",
+      "type": "legal_institutional",
+      "excess_term_ins_durable": 3.0,
+      "p": 0.0715,
+      "plocal": 0.0652,
+      "excess_topic_edits": 0.913,
+      "durable_post_per_week": 1.0,
+      "durable_pre_per_week": 0.17
+     },
+     {
+      "date": "2023-09-19",
+      "event": "Azerbaijan's Nagorno-Karabakh offensive",
+      "type": "comparison",
+      "excess_term_ins_durable": 2.2,
+      "p": 0.1535,
+      "plocal": 0.1522,
+      "excess_topic_edits": 0.96,
+      "durable_post_per_week": 0.67,
+      "durable_pre_per_week": 0.17
+     },
+     {
+      "date": "2025-08-22",
+      "event": "IPC confirms famine in Gaza Governorate",
+      "type": "humanitarian_media",
+      "excess_term_ins_durable": 2.2,
+      "p": 0.1535,
+      "plocal": 0.087,
+      "excess_topic_edits": 0.828,
+      "durable_post_per_week": 0.67,
+      "durable_pre_per_week": 0.17
+     }
+    ]
+   },
+   "confidence": "ANECDOTE",
+   "so_what": "Big news weeks bring editors in, and some of them then work on old contested wording. This fits the event-filter finding that the lead change sits in history sentences: the war supplies the people and the attention, not the content.",
+   "caveat": "Each top window has only 2 to 5 durable insertions; with 86 events, about 4 would reach p<0.05 by chance and 8 did.",
+   "examples": [
+    "Zionism, 2 Oct 2024 (Lebanon window), edit summary 'Per talk, simplify description to ethnocultural': 'Zionism is an ethnocultural nationalist movement that emerged in Europe in the late 19th century and aimed for the establishment of a Jewish state through the colonization of a land outside Europe.' (lived 47 days)",
+    "Israeli apartheid, 29 Sep 2024: 'Israeli apartheid is a system of institutionalized segregation and discrimination in the Israeli-occupied Palestinian territories and to a lesser extent in Israel.' (lived 40 days)",
+    "Zionism, 22 Jun 2025 (Iran war): '... to establish and maintain a Jewish homeland through the colonization of Palestine, a region corresponding to the Land of Israel in Judaism and central to Jewish history.'"
+   ]
+  },
+  {
+   "rank": 8,
+   "id": "EV8",
+   "angle": "EVENTS",
+   "title": "Each new war moved the editing less, and one edit war can fake an event effect",
+   "what_we_see": "Topic edits were 3.0x in the weeks after October 7, 2.0x after Nasrallah's killing (Sep 2024), 1.06x after Israel attacked Iran (Jun 2025) and 1.09x when the 2026 Iran war began. Pageviews still rose 1.57x in June 2025. But the Sep 2024 peak (1,008 edits in one week, as high as October 2023) is mostly not Lebanon: 218 edits were on 'Antisemitic trope' and 76 on 'Society for Crypto-Judaic Studies'; Hezbollah had 104. Counted as articles edited, the Lebanon week was only 1.10x, against 1.45x after October 7.",
+   "chart": {
+    "type": "line: weekly topic edits, capped edits (10 per article-week) and articles edited, 2021-2026, with event markers coloured by type",
+    "file": "chart_data/01_weekly_timeline_events.json",
+    "data": {
+     "peak_weeks": [
+      {
+       "week_start": "2023-10-13",
+       "total": 1045,
+       "articles_with_5plus_edits": 47,
+       "top": [
+        [
+         "Hamas",
+         122
+        ],
+        [
+         "Demographic history of Palestine (region)",
+         101
+        ],
+        [
+         "Gaza Strip",
+         98
+        ],
+        [
+         "Israel",
+         46
+        ],
+        [
+         "Blockade of the Gaza Strip",
+         35
+        ]
+       ]
+      },
+      {
+       "week_start": "2024-09-27",
+       "total": 1008,
+       "articles_with_5plus_edits": 37,
+       "top": [
+        [
+         "Antisemitic trope",
+         218
+        ],
+        [
+         "Zionism",
+         115
+        ],
+        [
+         "Hezbollah",
+         104
+        ],
+        [
+         "Society for Crypto-Judaic Studies",
+         76
+        ],
+        [
+         "Israel",
+         36
+        ]
+       ]
+      }
+     ]
+    }
+   },
+   "confidence": "SUGGESTIVE",
+   "so_what": "After 2024 the topic's editors no longer surged with each new war, even when readers did. Raw weekly edit totals can be driven by a single unrelated dispute, so event claims should use article counts or capped edits.",
+   "caveat": "The deep panel's topic articles are not war articles (most are history, people, places), so later wars may mostly be edited on new war pages outside the panel.",
+   "examples": [
+    "Week of 13 Oct 2023: Hamas 122, Demographic history of Palestine (region) 101, Gaza Strip 98 edits.",
+    "Week of 27 Sep 2024: Antisemitic trope 218, Zionism 115, Hezbollah 104 edits."
+   ]
+  }
+ ],
+ "method": {
+  "calendar": "patterns/events/calendar.json, 87 events written before looking at the series (86 inside the data window)",
+  "excess": "(mean weeks +0..+2 + c)/(mean weeks -6..-1 + c), c = max(0.25, 10% of series mean)",
+  "placebo": "2,000 random dates, 2021-02 to 2026-10; type p = share of 2,000 random same-size date sets with an equal or larger mean log-excess; local variant compares each event with weeks within +-26 of it",
+  "overlap": "no_stronger_within_3w drops an event when a higher-tier (or equal-tier earlier) event lies within 21 days; isolated_3w drops any event with another within 21 days",
+  "script": "wikitrends/event_timing.py (--mass2 for mass v2 lead events and RfC dates)"
+ },
+ "not_testable_yet": [
+  "RfC starts: pilot.json keeps RfC counts per window, not dates; mass v2 stores per-discussion dates and event_timing.py --mass2 adds an rfc_starts outcome."
+ ],
+ "type_by_outcome_all": {
+  "military_escalation": {
+   "n": 24,
+   "topic_edits": [
+    1.169,
+    0.0005
+   ],
+   "topic_active": [
+    1.06,
+    0.001
+   ],
+   "shocked_edits": [
+    0.844,
+    0.926
+   ],
+   "term_ins": [
+    1.186,
+    0.086
+   ],
+   "term_ins_durable": [
+    1.14,
+    0.098
+   ],
+   "ins_per_edit": [
+    0.96,
+    0.4725
+   ],
+   "pageviews": [
+    1.284,
+    0.007
+   ]
+  },
+  "ceasefire_deal": {
+   "n": 9,
+   "topic_edits": [
+    0.974,
+    0.5115
+   ],
+   "topic_active": [
+    0.954,
+    0.893
+   ],
+   "shocked_edits": [
+    0.872,
+    0.716
+   ],
+   "term_ins": [
+    0.799,
+    0.6955
+   ],
+   "term_ins_durable": [
+    0.868,
+    0.6365
+   ],
+   "ins_per_edit": [
+    0.924,
+    0.5035
+   ],
+   "pageviews": [
+    0.832,
+    0.583
+   ]
+  },
+  "legal_institutional": {
+   "n": 25,
+   "topic_edits": [
+    0.945,
+    0.795
+   ],
+   "topic_active": [
+    0.941,
+    0.9995
+   ],
+   "shocked_edits": [
+    1.005,
+    0.276
+   ],
+   "term_ins": [
+    0.818,
+    0.756
+   ],
+   "term_ins_durable": [
+    0.978,
+    0.3935
+   ],
+   "ins_per_edit": [
+    0.855,
+    0.7225
+   ],
+   "pageviews": [
+    0.731,
+    0.9545
+   ]
+  },
+  "humanitarian_media": {
+   "n": 10,
+   "topic_edits": [
+    1.082,
+    0.077
+   ],
+   "topic_active": [
+    1.037,
+    0.094
+   ],
+   "shocked_edits": [
+    0.79,
+    0.917
+   ],
+   "term_ins": [
+    1.152,
+    0.221
+   ],
+   "term_ins_durable": [
+    1.55,
+    0.0195
+   ],
+   "ins_per_edit": [
+    1.129,
+    0.294
+   ],
+   "pageviews": [
+    0.902,
+    0.419
+   ]
+  },
+  "social_global": {
+   "n": 8,
+   "topic_edits": [
+    0.909,
+    0.8475
+   ],
+   "topic_active": [
+    0.955,
+    0.872
+   ],
+   "shocked_edits": [
+    1.013,
+    0.3825
+   ],
+   "term_ins": [
+    0.731,
+    0.7745
+   ],
+   "term_ins_durable": [
+    0.57,
+    0.979
+   ],
+   "ins_per_edit": [
+    0.799,
+    0.708
+   ],
+   "pageviews": [
+    0.682,
+    0.928
+   ]
+  },
+  "comparison": {
+   "n": 10,
+   "topic_edits": [
+    0.899,
+    0.9055
+   ],
+   "topic_active": [
+    0.936,
+    0.9745
+   ],
+   "shocked_edits": [
+    1.361,
+    0.005
+   ],
+   "term_ins": [
+    0.676,
+    0.8705
+   ],
+   "term_ins_durable": [
+    0.625,
+    0.9695
+   ],
+   "ins_per_edit": [
+    0.77,
+    0.7625
+   ],
+   "pageviews": [
+    1.149,
+    0.1015
+   ]
+  }
+ },
+ "type_by_outcome_no_overlap": {
+  "military_escalation": {
+   "n": 8,
+   "topic_edits": [
+    1.324,
+    0.0005
+   ],
+   "topic_active": [
+    1.124,
+    0.001
+   ],
+   "shocked_edits": [
+    0.786,
+    0.898
+   ],
+   "term_ins": [
+    0.94,
+    0.493
+   ],
+   "term_ins_durable": [
+    0.842,
+    0.6485
+   ],
+   "ins_per_edit": [
+    0.54,
+    0.963
+   ],
+   "pageviews": [
+    1.424,
+    0.0335
+   ]
+  },
+  "ceasefire_deal": {
+   "n": 5,
+   "topic_edits": [
+    0.979,
+    0.466
+   ],
+   "topic_active": [
+    0.96,
+    0.804
+   ],
+   "shocked_edits": [
+    0.844,
+    0.726
+   ],
+   "term_ins": [
+    0.536,
+    0.915
+   ],
+   "term_ins_durable": [
+    0.585,
+    0.927
+   ],
+   "ins_per_edit": [
+    0.701,
+    0.7725
+   ],
+   "pageviews": [
+    0.821,
+    0.5805
+   ]
+  },
+  "legal_institutional": {
+   "n": 7,
+   "topic_edits": [
+    0.985,
+    0.4535
+   ],
+   "topic_active": [
+    0.97,
+    0.7305
+   ],
+   "shocked_edits": [
+    1.291,
+    0.0345
+   ],
+   "term_ins": [
+    0.592,
+    0.892
+   ],
+   "term_ins_durable": [
+    0.749,
+    0.8015
+   ],
+   "ins_per_edit": [
+    0.644,
+    0.868
+   ],
+   "pageviews": [
+    0.681,
+    0.9115
+   ]
+  },
+  "humanitarian_media": {
+   "n": 3,
+   "topic_edits": [
+    1.022,
+    0.3165
+   ],
+   "topic_active": [
+    0.973,
+    0.6415
+   ],
+   "shocked_edits": [
+    0.663,
+    0.925
+   ],
+   "term_ins": [
+    2.032,
+    0.07
+   ],
+   "term_ins_durable": [
+    1.443,
+    0.165
+   ],
+   "ins_per_edit": [
+    1.776,
+    0.1185
+   ],
+   "pageviews": [
+    0.72,
+    0.7655
+   ]
+  },
+  "social_global": {
+   "n": 1,
+   "topic_edits": [
+    0.827,
+    0.846
+   ],
+   "topic_active": [
+    0.915,
+    0.808
+   ],
+   "shocked_edits": [
+    1.21,
+    0.259
+   ],
+   "term_ins": [
+    0.789,
+    0.534
+   ],
+   "term_ins_durable": [
+    1.222,
+    0.335
+   ],
+   "ins_per_edit": [
+    1.624,
+    0.293
+   ],
+   "pageviews": [
+    0.582,
+    0.8105
+   ]
+  },
+  "comparison": {
+   "n": 6,
+   "topic_edits": [
+    0.846,
+    0.958
+   ],
+   "topic_active": [
+    0.916,
+    0.9775
+   ],
+   "shocked_edits": [
+    1.233,
+    0.077
+   ],
+   "term_ins": [
+    0.454,
+    0.9745
+   ],
+   "term_ins_durable": [
+    0.478,
+    0.993
+   ],
+   "ins_per_edit": [
+    0.541,
+    0.9405
+   ],
+   "pageviews": [
+    0.913,
+    0.3865
+   ]
+  }
+ },
+ "multiple_testing_note": "6 types x 7 outcomes x 3 event sets; at p<0.05 about 2 cells per table would light up by chance. Only military -> edits/articles edited (p<=0.001) clears a Bonferroni bar."
+}

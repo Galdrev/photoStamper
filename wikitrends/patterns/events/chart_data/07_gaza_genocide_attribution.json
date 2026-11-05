@@ -1,0 +1,45 @@
+{
+ "note": "Gaza genocide article: date each institution's finding was published vs the first first-sentence variant naming it (ratchet.json fs_variants). The first sentence moved to Wikipedia's own voice on 2025-10-05 (bisect.json).",
+ "rows": [
+  {
+   "institution": "Amnesty International genocide report",
+   "event_date": "2024-12-05",
+   "first_in_first_sentence": "2024-12-12",
+   "lag_days": 7
+  },
+  {
+   "institution": "Human Rights Watch report",
+   "event_date": "2024-12-19",
+   "first_in_first_sentence": "2024-12-31",
+   "lag_days": 12
+  },
+  {
+   "institution": "B'Tselem 'Our Genocide'",
+   "event_date": "2025-07-28",
+   "first_in_first_sentence": "2025-07-28",
+   "lag_days": 0
+  },
+  {
+   "institution": "Physicians for Human Rights-Israel",
+   "event_date": "2025-07-28",
+   "first_in_first_sentence": "2025-08-10",
+   "lag_days": 13
+  },
+  {
+   "institution": "International Association of Genocide Scholars",
+   "event_date": "2025-08-31",
+   "first_in_first_sentence": "2025-09-01",
+   "lag_days": 1
+  },
+  {
+   "institution": "UN Commission of Inquiry",
+   "event_date": "2025-09-16",
+   "first_in_first_sentence": "2025-09-16",
+   "lag_days": 0
+  }
+ ],
+ "voice_step": {
+  "date": "2025-10-05",
+  "s": "The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war."
+ }
+}

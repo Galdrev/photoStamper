@@ -1,0 +1,67 @@
+{
+ "note": "top contributors to the deep-panel topic edit total in two peak weeks (results.json w_edits)",
+ "weeks": [
+  {
+   "week_start": "2023-10-13",
+   "total": 1045,
+   "articles_with_5plus_edits": 47,
+   "top": [
+    [
+     "Hamas",
+     122
+    ],
+    [
+     "Demographic history of Palestine (region)",
+     101
+    ],
+    [
+     "Gaza Strip",
+     98
+    ],
+    [
+     "Israel",
+     46
+    ],
+    [
+     "Blockade of the Gaza Strip",
+     35
+    ]
+   ]
+  },
+  {
+   "week_start": "2024-09-27",
+   "total": 1008,
+   "articles_with_5plus_edits": 37,
+   "top": [
+    [
+     "Antisemitic trope",
+     218
+    ],
+    [
+     "Zionism",
+     115
+    ],
+    [
+     "Hezbollah",
+     104
+    ],
+    [
+     "Society for Crypto-Judaic Studies",
+     76
+    ],
+    [
+     "Israel",
+     36
+    ]
+   ]
+  }
+ ],
+ "excess_articles_edited": {
+  "Oct 7 2023": 1.449,
+  "Nasrallah killed / Lebanon invasion": 1.103
+ },
+ "excess_edits": {
+  "Oct 7 2023": 3.049,
+  "Nasrallah killed / Lebanon invasion": 2.026
+ }
+}

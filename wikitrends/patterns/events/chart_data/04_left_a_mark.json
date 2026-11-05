@@ -1,0 +1,137 @@
+{
+ "note": "events ranked by excess durable critical-term insertions into topic leads (weeks +0..+2 vs -6..-1)",
+ "rows": [
+  {
+   "date": "2024-09-27",
+   "event": "Hassan Nasrallah killed in Beirut",
+   "type": "military_escalation",
+   "excess_term_ins_durable": 4.6,
+   "p": 0.0195,
+   "plocal": 0.0,
+   "excess_topic_edits": 2.026,
+   "durable_post_per_week": 1.67,
+   "durable_pre_per_week": 0.17
+  },
+  {
+   "date": "2023-10-17",
+   "event": "Al-Ahli Arab Hospital explosion",
+   "type": "humanitarian_media",
+   "excess_term_ins_durable": 4.429,
+   "p": 0.024,
+   "plocal": 0.0,
+   "excess_topic_edits": 2.118,
+   "durable_post_per_week": 2.33,
+   "durable_pre_per_week": 0.33
+  },
+  {
+   "date": "2025-06-22",
+   "event": "US strikes Iranian nuclear sites",
+   "type": "military_escalation",
+   "excess_term_ins_durable": 3.857,
+   "p": 0.03,
+   "plocal": 0.0,
+   "excess_topic_edits": 1.05,
+   "durable_post_per_week": 2.0,
+   "durable_pre_per_week": 0.33
+  },
+  {
+   "date": "2024-05-24",
+   "event": "ICJ orders Israel to halt the Rafah offensive",
+   "type": "legal_institutional",
+   "excess_term_ins_durable": 3.8,
+   "p": 0.0355,
+   "plocal": 0.0435,
+   "excess_topic_edits": 0.822,
+   "durable_post_per_week": 1.33,
+   "durable_pre_per_week": 0.17
+  },
+  {
+   "date": "2025-03-23",
+   "event": "Killing of 15 paramedics and rescue workers in Rafah",
+   "type": "humanitarian_media",
+   "excess_term_ins_durable": 3.667,
+   "p": 0.061,
+   "plocal": 0.0435,
+   "excess_topic_edits": 0.921,
+   "durable_post_per_week": 0.67,
+   "durable_pre_per_week": 0.0
+  },
+  {
+   "date": "2024-09-17",
+   "event": "Pager (and next-day walkie-talkie) explosions in Lebanon",
+   "type": "military_escalation",
+   "excess_term_ins_durable": 3.286,
+   "p": 0.065,
+   "plocal": 0.0217,
+   "excess_topic_edits": 1.437,
+   "durable_post_per_week": 1.67,
+   "durable_pre_per_week": 0.33
+  },
+  {
+   "date": "2024-09-23",
+   "event": "Israel's mass airstrikes on Lebanon (Northern Arrows)",
+   "type": "military_escalation",
+   "excess_term_ins_durable": 3.286,
+   "p": 0.065,
+   "plocal": 0.0435,
+   "excess_topic_edits": 1.658,
+   "durable_post_per_week": 1.67,
+   "durable_pre_per_week": 0.33
+  },
+  {
+   "date": "2025-08-31",
+   "event": "International Association of Genocide Scholars resolution: genocide in Gaza",
+   "type": "legal_institutional",
+   "excess_term_ins_durable": 3.0,
+   "p": 0.0715,
+   "plocal": 0.0652,
+   "excess_topic_edits": 0.913,
+   "durable_post_per_week": 1.0,
+   "durable_pre_per_week": 0.17
+  },
+  {
+   "date": "2023-09-19",
+   "event": "Azerbaijan's Nagorno-Karabakh offensive",
+   "type": "comparison",
+   "excess_term_ins_durable": 2.2,
+   "p": 0.1535,
+   "plocal": 0.1522,
+   "excess_topic_edits": 0.96,
+   "durable_post_per_week": 0.67,
+   "durable_pre_per_week": 0.17
+  },
+  {
+   "date": "2025-08-22",
+   "event": "IPC confirms famine in Gaza Governorate",
+   "type": "humanitarian_media",
+   "excess_term_ins_durable": 2.2,
+   "p": 0.1535,
+   "plocal": 0.087,
+   "excess_topic_edits": 0.828,
+   "durable_post_per_week": 0.67,
+   "durable_pre_per_week": 0.17
+  },
+  {
+   "date": "2023-10-07",
+   "event": "Hamas-led October 7 attacks on Israel",
+   "type": "military_escalation",
+   "excess_term_ins_durable": 2.111,
+   "p": 0.175,
+   "plocal": 0.1304,
+   "excess_topic_edits": 3.049,
+   "durable_post_per_week": 1.33,
+   "durable_pre_per_week": 0.5
+  },
+  {
+   "date": "2024-05-20",
+   "event": "ICC prosecutor requests arrest warrants (Netanyahu, Gallant, Hamas leaders)",
+   "type": "legal_institutional",
+   "excess_term_ins_durable": 2.111,
+   "p": 0.175,
+   "plocal": 0.1087,
+   "excess_topic_edits": 0.846,
+   "durable_post_per_week": 1.33,
+   "durable_pre_per_week": 0.5
+  }
+ ]
+}

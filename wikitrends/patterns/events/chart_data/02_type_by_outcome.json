@@ -1,0 +1,2461 @@
+{
+ "local_note": "tables_local: excess divided by the median excess of weeks within +-26 of the event; sign-flip p",
+ "tables_local": {
+  "all": {
+   "military_escalation": {
+    "n": 24,
+    "topic_edits": {
+     "geo_mean_vs_local": 1.199,
+     "p": 0.0105,
+     "share_above_local": 0.79,
+     "n": 24
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 1.119,
+     "p": 0.0045,
+     "share_above_local": 0.75,
+     "n": 24
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 1.063,
+     "p": 0.0195,
+     "share_above_local": 0.71,
+     "n": 24
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 1.018,
+     "p": 0.0685,
+     "share_above_local": 0.71,
+     "n": 24
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.009,
+     "p": 0.424,
+     "share_above_local": 0.54,
+     "n": 24
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 0.897,
+     "p": 0.8785,
+     "share_above_local": 0.46,
+     "n": 24
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.379,
+     "p": 0.0215,
+     "share_above_local": 0.62,
+     "n": 24
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 1.454,
+     "p": 0.024,
+     "share_above_local": 0.62,
+     "n": 24
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 1.241,
+     "p": 0.126,
+     "share_above_local": 0.54,
+     "n": 24
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 1.016,
+     "p": 0.497,
+     "share_above_local": 0.38,
+     "n": 24
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 1.111,
+     "p": 0.2785,
+     "share_above_local": 0.62,
+     "n": 24
+    }
+   },
+   "ceasefire_deal": {
+    "n": 9,
+    "topic_edits": {
+     "geo_mean_vs_local": 1.001,
+     "p": 0.5045,
+     "share_above_local": 0.67,
+     "n": 9
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 0.968,
+     "p": 0.7495,
+     "share_above_local": 0.44,
+     "n": 9
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.962,
+     "p": 0.74,
+     "share_above_local": 0.44,
+     "n": 9
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 0.968,
+     "p": 0.878,
+     "share_above_local": 0.22,
+     "n": 9
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 0.921,
+     "p": 0.839,
+     "share_above_local": 0.33,
+     "n": 9
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 0.889,
+     "p": 0.807,
+     "share_above_local": 0.33,
+     "n": 9
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 0.944,
+     "p": 0.665,
+     "share_above_local": 0.44,
+     "n": 9
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.974,
+     "p": 0.5565,
+     "share_above_local": 0.33,
+     "n": 9
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.862,
+     "p": 0.729,
+     "share_above_local": 0.33,
+     "n": 9
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 1.104,
+     "p": 0.3745,
+     "share_above_local": 0.67,
+     "n": 9
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 1.118,
+     "p": 0.365,
+     "share_above_local": 0.44,
+     "n": 9
+    }
+   },
+   "legal_institutional": {
+    "n": 25,
+    "topic_edits": {
+     "geo_mean_vs_local": 0.959,
+     "p": 0.853,
+     "share_above_local": 0.44,
+     "n": 25
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 0.945,
+     "p": 0.9845,
+     "share_above_local": 0.36,
+     "n": 25
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.937,
+     "p": 0.9975,
+     "share_above_local": 0.28,
+     "n": 25
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 0.98,
+     "p": 0.9015,
+     "share_above_local": 0.44,
+     "n": 25
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 0.963,
+     "p": 0.7325,
+     "share_above_local": 0.4,
+     "n": 25
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 1.118,
+     "p": 0.085,
+     "share_above_local": 0.52,
+     "n": 25
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.061,
+     "p": 0.205,
+     "share_above_local": 0.48,
+     "n": 25
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.959,
+     "p": 0.586,
+     "share_above_local": 0.48,
+     "n": 25
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 1.074,
+     "p": 0.3415,
+     "share_above_local": 0.4,
+     "n": 25
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 1.011,
+     "p": 0.4715,
+     "share_above_local": 0.44,
+     "n": 25
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.91,
+     "p": 0.6975,
+     "share_above_local": 0.52,
+     "n": 25
+    }
+   },
+   "humanitarian_media": {
+    "n": 10,
+    "topic_edits": {
+     "geo_mean_vs_local": 1.099,
+     "p": 0.2095,
+     "share_above_local": 0.5,
+     "n": 10
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 1.079,
+     "p": 0.2245,
+     "share_above_local": 0.5,
+     "n": 10
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 1.037,
+     "p": 0.2925,
+     "share_above_local": 0.4,
+     "n": 10
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 1.002,
+     "p": 0.478,
+     "share_above_local": 0.5,
+     "n": 10
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 0.997,
+     "p": 0.5265,
+     "share_above_local": 0.7,
+     "n": 10
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 0.857,
+     "p": 0.821,
+     "share_above_local": 0.4,
+     "n": 10
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.141,
+     "p": 0.1795,
+     "share_above_local": 0.5,
+     "n": 10
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 1.394,
+     "p": 0.1445,
+     "share_above_local": 0.6,
+     "n": 10
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 1.704,
+     "p": 0.041,
+     "share_above_local": 0.8,
+     "n": 10
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 1.188,
+     "p": 0.3015,
+     "share_above_local": 0.7,
+     "n": 10
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 1.192,
+     "p": 0.262,
+     "share_above_local": 0.6,
+     "n": 10
+    }
+   },
+   "social_global": {
+    "n": 8,
+    "topic_edits": {
+     "geo_mean_vs_local": 0.922,
+     "p": 0.8245,
+     "share_above_local": 0.38,
+     "n": 8
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 0.953,
+     "p": 0.7655,
+     "share_above_local": 0.38,
+     "n": 8
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.95,
+     "p": 0.8925,
+     "share_above_local": 0.12,
+     "n": 8
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 1.016,
+     "p": 0.2385,
+     "share_above_local": 0.62,
+     "n": 8
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.089,
+     "p": 0.198,
+     "share_above_local": 0.62,
+     "n": 8
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 1.129,
+     "p": 0.0525,
+     "share_above_local": 0.75,
+     "n": 8
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.029,
+     "p": 0.4295,
+     "share_above_local": 0.62,
+     "n": 8
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.876,
+     "p": 0.8205,
+     "share_above_local": 0.38,
+     "n": 8
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.595,
+     "p": 0.9955,
+     "share_above_local": 0.12,
+     "n": 8
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 0.634,
+     "p": 0.8735,
+     "share_above_local": 0.25,
+     "n": 8
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.844,
+     "p": 0.7495,
+     "share_above_local": 0.38,
+     "n": 8
+    }
+   },
+   "comparison": {
+    "n": 10,
+    "topic_edits": {
+     "geo_mean_vs_local": 0.896,
+     "p": 0.9625,
+     "share_above_local": 0.2,
+     "n": 10
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 0.943,
+     "p": 0.9095,
+     "share_above_local": 0.3,
+     "n": 10
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.925,
+     "p": 0.9905,
+     "share_above_local": 0.2,
+     "n": 10
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 0.981,
+     "p": 0.811,
+     "share_above_local": 0.5,
+     "n": 10
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.099,
+     "p": 0.1255,
+     "share_above_local": 0.6,
+     "n": 10
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 1.48,
+     "p": 0.044,
+     "share_above_local": 0.7,
+     "n": 10
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 0.909,
+     "p": 0.7985,
+     "share_above_local": 0.3,
+     "n": 10
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.695,
+     "p": 0.827,
+     "share_above_local": 0.4,
+     "n": 10
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.659,
+     "p": 0.938,
+     "share_above_local": 0.4,
+     "n": 10
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 2.146,
+     "p": 0.0085,
+     "share_above_local": 0.7,
+     "n": 10
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.797,
+     "p": 0.735,
+     "share_above_local": 0.4,
+     "n": 10
+    }
+   }
+  },
+  "no_stronger_within_3w": {
+   "military_escalation": {
+    "n": 8,
+    "topic_edits": {
+     "geo_mean_vs_local": 1.365,
+     "p": 0.003,
+     "share_above_local": 1.0,
+     "n": 8
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 1.286,
+     "p": 0.007,
+     "share_above_local": 1.0,
+     "n": 8
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 1.134,
+     "p": 0.0135,
+     "share_above_local": 0.88,
+     "n": 8
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 1.021,
+     "p": 0.0445,
+     "share_above_local": 0.75,
+     "n": 8
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.051,
+     "p": 0.322,
+     "share_above_local": 0.62,
+     "n": 8
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 0.853,
+     "p": 0.843,
+     "share_above_local": 0.38,
+     "n": 8
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.938,
+     "p": 0.0715,
+     "share_above_local": 0.62,
+     "n": 8
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 1.196,
+     "p": 0.367,
+     "share_above_local": 0.5,
+     "n": 8
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.91,
+     "p": 0.5985,
+     "share_above_local": 0.38,
+     "n": 8
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 0.721,
+     "p": 0.868,
+     "share_above_local": 0.38,
+     "n": 8
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.59,
+     "p": 0.922,
+     "share_above_local": 0.25,
+     "n": 8
+    }
+   },
+   "ceasefire_deal": {
+    "n": 5,
+    "topic_edits": {
+     "geo_mean_vs_local": 0.995,
+     "p": 0.5685,
+     "share_above_local": 0.6,
+     "n": 5
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 0.972,
+     "p": 0.7225,
+     "share_above_local": 0.4,
+     "n": 5
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.967,
+     "p": 0.9325,
+     "share_above_local": 0.2,
+     "n": 5
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 1.006,
+     "p": 0.497,
+     "share_above_local": 0.4,
+     "n": 5
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.015,
+     "p": 0.453,
+     "share_above_local": 0.6,
+     "n": 5
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 0.851,
+     "p": 0.824,
+     "share_above_local": 0.4,
+     "n": 5
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 0.837,
+     "p": 0.818,
+     "share_above_local": 0.4,
+     "n": 5
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.68,
+     "p": 0.898,
+     "share_above_local": 0.2,
+     "n": 5
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.578,
+     "p": 0.9665,
+     "share_above_local": 0.2,
+     "n": 5
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 0.768,
+     "p": 0.751,
+     "share_above_local": 0.4,
+     "n": 5
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.849,
+     "p": 0.779,
+     "share_above_local": 0.4,
+     "n": 5
+    }
+   },
+   "legal_institutional": {
+    "n": 7,
+    "topic_edits": {
+     "geo_mean_vs_local": 0.993,
+     "p": 0.524,
+     "share_above_local": 0.57,
+     "n": 7
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 0.994,
+     "p": 0.5605,
+     "share_above_local": 0.43,
+     "n": 7
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.97,
+     "p": 0.675,
+     "share_above_local": 0.43,
+     "n": 7
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 0.985,
+     "p": 0.7595,
+     "share_above_local": 0.43,
+     "n": 7
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.07,
+     "p": 0.2155,
+     "share_above_local": 0.57,
+     "n": 7
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 1.419,
+     "p": 0.0715,
+     "share_above_local": 0.71,
+     "n": 7
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.013,
+     "p": 0.477,
+     "share_above_local": 0.43,
+     "n": 7
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.653,
+     "p": 0.877,
+     "share_above_local": 0.29,
+     "n": 7
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.758,
+     "p": 0.794,
+     "share_above_local": 0.29,
+     "n": 7
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 1.229,
+     "p": 0.291,
+     "share_above_local": 0.43,
+     "n": 7
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.693,
+     "p": 0.768,
+     "share_above_local": 0.43,
+     "n": 7
+    }
+   },
+   "humanitarian_media": {
+    "n": 3,
+    "topic_edits": {
+     "geo_mean_vs_local": 1.028,
+     "p": 0.489,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 1.021,
+     "p": 0.4925,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.975,
+     "p": 0.7485,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 1.028,
+     "p": 0.386,
+     "share_above_local": 0.67,
+     "n": 3
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.085,
+     "p": 0.123,
+     "share_above_local": 1.0,
+     "n": 3
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 0.679,
+     "p": 0.88,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.274,
+     "p": 0.135,
+     "share_above_local": 1.0,
+     "n": 3
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 2.589,
+     "p": 0.113,
+     "share_above_local": 1.0,
+     "n": 3
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 1.526,
+     "p": 0.13,
+     "share_above_local": 1.0,
+     "n": 3
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 1.314,
+     "p": 0.391,
+     "share_above_local": 0.67,
+     "n": 3
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 2.027,
+     "p": 0.124,
+     "share_above_local": 1.0,
+     "n": 3
+    }
+   },
+   "social_global": {
+    "n": 1,
+    "topic_edits": null,
+    "topic_edits_capped": null,
+    "topic_active": null,
+    "comparison_active": null,
+    "comparison_edits": null,
+    "shocked_edits": null,
+    "lead_panel_edits": null,
+    "term_ins": null,
+    "term_ins_durable": null,
+    "term_ins_cmp": null,
+    "ins_per_edit": null
+   },
+   "comparison": {
+    "n": 6,
+    "topic_edits": {
+     "geo_mean_vs_local": 0.842,
+     "p": 0.963,
+     "share_above_local": 0.17,
+     "n": 6
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 0.902,
+     "p": 0.9375,
+     "share_above_local": 0.17,
+     "n": 6
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.902,
+     "p": 0.9785,
+     "share_above_local": 0.17,
+     "n": 6
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 0.981,
+     "p": 0.7645,
+     "share_above_local": 0.33,
+     "n": 6
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.171,
+     "p": 0.0845,
+     "share_above_local": 0.67,
+     "n": 6
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 1.338,
+     "p": 0.146,
+     "share_above_local": 0.67,
+     "n": 6
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 0.847,
+     "p": 0.87,
+     "share_above_local": 0.17,
+     "n": 6
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.401,
+     "p": 0.9635,
+     "share_above_local": 0.17,
+     "n": 6
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.467,
+     "p": 0.986,
+     "share_above_local": 0.17,
+     "n": 6
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 1.667,
+     "p": 0.0635,
+     "share_above_local": 0.67,
+     "n": 6
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.498,
+     "p": 0.938,
+     "share_above_local": 0.17,
+     "n": 6
+    }
+   }
+  },
+  "isolated_3w": {
+   "military_escalation": {
+    "n": 2,
+    "topic_edits": {
+     "geo_mean_vs_local": 1.078,
+     "p": 0.2475,
+     "share_above_local": 1.0,
+     "n": 2
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 1.138,
+     "p": 0.2605,
+     "share_above_local": 1.0,
+     "n": 2
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 1.096,
+     "p": 0.254,
+     "share_above_local": 1.0,
+     "n": 2
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 1.025,
+     "p": 0.492,
+     "share_above_local": 0.5,
+     "n": 2
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 0.955,
+     "p": 0.7545,
+     "share_above_local": 0.5,
+     "n": 2
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 1.465,
+     "p": 0.26,
+     "share_above_local": 1.0,
+     "n": 2
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.478,
+     "p": 0.258,
+     "share_above_local": 1.0,
+     "n": 2
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.574,
+     "p": 0.758,
+     "share_above_local": 0.5,
+     "n": 2
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.733,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 2
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 0.275,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 2
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.334,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 2
+    }
+   },
+   "ceasefire_deal": {
+    "n": 2,
+    "topic_edits": {
+     "geo_mean_vs_local": 1.071,
+     "p": 0.2415,
+     "share_above_local": 1.0,
+     "n": 2
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 1.018,
+     "p": 0.5055,
+     "share_above_local": 0.5,
+     "n": 2
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 1.006,
+     "p": 0.4785,
+     "share_above_local": 0.5,
+     "n": 2
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 1.095,
+     "p": 0.2515,
+     "share_above_local": 1.0,
+     "n": 2
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.231,
+     "p": 0.2575,
+     "share_above_local": 1.0,
+     "n": 2
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 0.842,
+     "p": 0.745,
+     "share_above_local": 0.5,
+     "n": 2
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.026,
+     "p": 0.5075,
+     "share_above_local": 0.5,
+     "n": 2
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.541,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 2
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.561,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 2
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 0.786,
+     "p": 0.7485,
+     "share_above_local": 0.5,
+     "n": 2
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.535,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 2
+    }
+   },
+   "legal_institutional": {
+    "n": 3,
+    "topic_edits": {
+     "geo_mean_vs_local": 1.033,
+     "p": 0.3765,
+     "share_above_local": 0.67,
+     "n": 3
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 1.027,
+     "p": 0.4975,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 1.009,
+     "p": 0.5105,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 0.977,
+     "p": 0.8825,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.135,
+     "p": 0.377,
+     "share_above_local": 0.67,
+     "n": 3
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 1.477,
+     "p": 0.228,
+     "share_above_local": 0.67,
+     "n": 3
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 1.238,
+     "p": 0.382,
+     "share_above_local": 0.67,
+     "n": 3
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.34,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 3
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.598,
+     "p": 0.7405,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 1.231,
+     "p": 0.4905,
+     "share_above_local": 0.33,
+     "n": 3
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.306,
+     "p": 0.876,
+     "share_above_local": 0.33,
+     "n": 3
+    }
+   },
+   "humanitarian_media": {
+    "n": 1,
+    "topic_edits": null,
+    "topic_edits_capped": null,
+    "topic_active": null,
+    "comparison_active": null,
+    "comparison_edits": null,
+    "shocked_edits": null,
+    "lead_panel_edits": null,
+    "term_ins": null,
+    "term_ins_durable": null,
+    "term_ins_cmp": null,
+    "ins_per_edit": null
+   },
+   "social_global": {
+    "n": 1,
+    "topic_edits": null,
+    "topic_edits_capped": null,
+    "topic_active": null,
+    "comparison_active": null,
+    "comparison_edits": null,
+    "shocked_edits": null,
+    "lead_panel_edits": null,
+    "term_ins": null,
+    "term_ins_durable": null,
+    "term_ins_cmp": null,
+    "ins_per_edit": null
+   },
+   "comparison": {
+    "n": 4,
+    "topic_edits": {
+     "geo_mean_vs_local": 0.833,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 4
+    },
+    "topic_edits_capped": {
+     "geo_mean_vs_local": 0.877,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 4
+    },
+    "topic_active": {
+     "geo_mean_vs_local": 0.876,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 4
+    },
+    "comparison_active": {
+     "geo_mean_vs_local": 0.967,
+     "p": 0.942,
+     "share_above_local": 0.25,
+     "n": 4
+    },
+    "comparison_edits": {
+     "geo_mean_vs_local": 1.148,
+     "p": 0.3275,
+     "share_above_local": 0.5,
+     "n": 4
+    },
+    "shocked_edits": {
+     "geo_mean_vs_local": 1.544,
+     "p": 0.1885,
+     "share_above_local": 0.75,
+     "n": 4
+    },
+    "lead_panel_edits": {
+     "geo_mean_vs_local": 0.731,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 4
+    },
+    "term_ins": {
+     "geo_mean_vs_local": 0.239,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 4
+    },
+    "term_ins_durable": {
+     "geo_mean_vs_local": 0.383,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 4
+    },
+    "term_ins_cmp": {
+     "geo_mean_vs_local": 2.296,
+     "p": 0.062,
+     "share_above_local": 1.0,
+     "n": 4
+    },
+    "ins_per_edit": {
+     "geo_mean_vs_local": 0.328,
+     "p": 1.0,
+     "share_above_local": 0.0,
+     "n": 4
+    }
+   }
+  }
+ },
+ "note": "geometric-mean excess (weeks +0..+2 over -6..-1) by event type; p = share of 2,000 random same-size sets of placebo dates with an equal or larger mean log-excess",
+ "outcomes": [
+  "topic_edits",
+  "topic_edits_capped",
+  "topic_active",
+  "comparison_active",
+  "comparison_edits",
+  "shocked_edits",
+  "lead_panel_edits",
+  "term_ins",
+  "term_ins_durable",
+  "term_ins_cmp",
+  "ins_per_edit",
+  "pageviews"
+ ],
+ "tables": {
+  "all": {
+   "military_escalation": {
+    "n": 24,
+    "topic_edits": {
+     "geo_mean_excess": 1.169,
+     "share_above_placebo_median": 0.79,
+     "p": 0.0005,
+     "n": 24
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 1.103,
+     "share_above_placebo_median": 0.75,
+     "p": 0.0,
+     "n": 24
+    },
+    "topic_active": {
+     "geo_mean_excess": 1.06,
+     "share_above_placebo_median": 0.67,
+     "p": 0.001,
+     "n": 24
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.012,
+     "share_above_placebo_median": 0.75,
+     "p": 0.046,
+     "n": 24
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.013,
+     "share_above_placebo_median": 0.46,
+     "p": 0.2005,
+     "n": 24
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 0.844,
+     "share_above_placebo_median": 0.38,
+     "p": 0.926,
+     "n": 24
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 1.235,
+     "share_above_placebo_median": 0.62,
+     "p": 0.0205,
+     "n": 24
+    },
+    "term_ins": {
+     "geo_mean_excess": 1.186,
+     "share_above_placebo_median": 0.67,
+     "p": 0.086,
+     "n": 24
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 1.14,
+     "share_above_placebo_median": 0.5,
+     "p": 0.098,
+     "n": 24
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.872,
+     "share_above_placebo_median": 0.38,
+     "p": 0.4725,
+     "n": 24
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.96,
+     "share_above_placebo_median": 0.58,
+     "p": 0.4725,
+     "n": 24
+    },
+    "pageviews": {
+     "geo_mean_excess": 1.284,
+     "share_above_placebo_median": 0.74,
+     "p": 0.007,
+     "n": 23
+    }
+   },
+   "ceasefire_deal": {
+    "n": 9,
+    "topic_edits": {
+     "geo_mean_excess": 0.974,
+     "share_above_placebo_median": 0.78,
+     "p": 0.5115,
+     "n": 9
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.956,
+     "share_above_placebo_median": 0.56,
+     "p": 0.777,
+     "n": 9
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.954,
+     "share_above_placebo_median": 0.22,
+     "p": 0.893,
+     "n": 9
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.959,
+     "share_above_placebo_median": 0.22,
+     "p": 0.9745,
+     "n": 9
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 0.923,
+     "share_above_placebo_median": 0.33,
+     "p": 0.8275,
+     "n": 9
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 0.872,
+     "share_above_placebo_median": 0.33,
+     "p": 0.716,
+     "n": 9
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.864,
+     "share_above_placebo_median": 0.44,
+     "p": 0.802,
+     "n": 9
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.799,
+     "share_above_placebo_median": 0.44,
+     "p": 0.6955,
+     "n": 9
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.868,
+     "share_above_placebo_median": 0.33,
+     "p": 0.6365,
+     "n": 9
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.825,
+     "share_above_placebo_median": 0.67,
+     "p": 0.542,
+     "n": 9
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.924,
+     "share_above_placebo_median": 0.44,
+     "p": 0.5035,
+     "n": 9
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.832,
+     "share_above_placebo_median": 0.25,
+     "p": 0.583,
+     "n": 8
+    }
+   },
+   "legal_institutional": {
+    "n": 25,
+    "topic_edits": {
+     "geo_mean_excess": 0.945,
+     "share_above_placebo_median": 0.44,
+     "p": 0.795,
+     "n": 25
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.937,
+     "share_above_placebo_median": 0.36,
+     "p": 0.9805,
+     "n": 25
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.941,
+     "share_above_placebo_median": 0.28,
+     "p": 0.9995,
+     "n": 25
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.978,
+     "share_above_placebo_median": 0.44,
+     "p": 0.945,
+     "n": 25
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 0.948,
+     "share_above_placebo_median": 0.52,
+     "p": 0.806,
+     "n": 25
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.005,
+     "share_above_placebo_median": 0.48,
+     "p": 0.276,
+     "n": 25
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.956,
+     "share_above_placebo_median": 0.48,
+     "p": 0.5595,
+     "n": 25
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.818,
+     "share_above_placebo_median": 0.48,
+     "p": 0.756,
+     "n": 25
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.978,
+     "share_above_placebo_median": 0.32,
+     "p": 0.3935,
+     "n": 25
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.82,
+     "share_above_placebo_median": 0.44,
+     "p": 0.5895,
+     "n": 25
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.855,
+     "share_above_placebo_median": 0.52,
+     "p": 0.7225,
+     "n": 25
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.731,
+     "share_above_placebo_median": 0.29,
+     "p": 0.9545,
+     "n": 24
+    }
+   },
+   "humanitarian_media": {
+    "n": 10,
+    "topic_edits": {
+     "geo_mean_excess": 1.082,
+     "share_above_placebo_median": 0.5,
+     "p": 0.077,
+     "n": 10
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 1.068,
+     "share_above_placebo_median": 0.5,
+     "p": 0.0465,
+     "n": 10
+    },
+    "topic_active": {
+     "geo_mean_excess": 1.037,
+     "share_above_placebo_median": 0.5,
+     "p": 0.094,
+     "n": 10
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.996,
+     "share_above_placebo_median": 0.5,
+     "p": 0.481,
+     "n": 10
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.0,
+     "share_above_placebo_median": 0.8,
+     "p": 0.373,
+     "n": 10
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 0.79,
+     "share_above_placebo_median": 0.3,
+     "p": 0.917,
+     "n": 10
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 1.021,
+     "share_above_placebo_median": 0.5,
+     "p": 0.298,
+     "n": 10
+    },
+    "term_ins": {
+     "geo_mean_excess": 1.152,
+     "share_above_placebo_median": 0.6,
+     "p": 0.221,
+     "n": 10
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 1.55,
+     "share_above_placebo_median": 0.7,
+     "p": 0.0195,
+     "n": 10
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.945,
+     "share_above_placebo_median": 0.7,
+     "p": 0.4035,
+     "n": 10
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 1.129,
+     "share_above_placebo_median": 0.6,
+     "p": 0.294,
+     "n": 10
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.902,
+     "share_above_placebo_median": 0.4,
+     "p": 0.419,
+     "n": 10
+    }
+   },
+   "social_global": {
+    "n": 8,
+    "topic_edits": {
+     "geo_mean_excess": 0.909,
+     "share_above_placebo_median": 0.38,
+     "p": 0.8475,
+     "n": 8
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.946,
+     "share_above_placebo_median": 0.38,
+     "p": 0.8135,
+     "n": 8
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.955,
+     "share_above_placebo_median": 0.25,
+     "p": 0.872,
+     "n": 8
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.008,
+     "share_above_placebo_median": 0.62,
+     "p": 0.2395,
+     "n": 8
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.069,
+     "share_above_placebo_median": 0.62,
+     "p": 0.1255,
+     "n": 8
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.013,
+     "share_above_placebo_median": 0.62,
+     "p": 0.3825,
+     "n": 8
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.915,
+     "share_above_placebo_median": 0.5,
+     "p": 0.63,
+     "n": 8
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.731,
+     "share_above_placebo_median": 0.25,
+     "p": 0.7745,
+     "n": 8
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.57,
+     "share_above_placebo_median": 0.12,
+     "p": 0.979,
+     "n": 8
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.553,
+     "share_above_placebo_median": 0.25,
+     "p": 0.915,
+     "n": 8
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.799,
+     "share_above_placebo_median": 0.38,
+     "p": 0.708,
+     "n": 8
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.682,
+     "share_above_placebo_median": 0.12,
+     "p": 0.928,
+     "n": 8
+    }
+   },
+   "comparison": {
+    "n": 10,
+    "topic_edits": {
+     "geo_mean_excess": 0.899,
+     "share_above_placebo_median": 0.2,
+     "p": 0.9055,
+     "n": 10
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.946,
+     "share_above_placebo_median": 0.4,
+     "p": 0.853,
+     "n": 10
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.936,
+     "share_above_placebo_median": 0.2,
+     "p": 0.9745,
+     "n": 10
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.981,
+     "share_above_placebo_median": 0.5,
+     "p": 0.759,
+     "n": 10
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.081,
+     "share_above_placebo_median": 0.6,
+     "p": 0.0585,
+     "n": 10
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.361,
+     "share_above_placebo_median": 0.7,
+     "p": 0.005,
+     "n": 10
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.878,
+     "share_above_placebo_median": 0.4,
+     "p": 0.765,
+     "n": 10
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.676,
+     "share_above_placebo_median": 0.4,
+     "p": 0.8705,
+     "n": 10
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.625,
+     "share_above_placebo_median": 0.2,
+     "p": 0.9695,
+     "n": 10
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 1.784,
+     "share_above_placebo_median": 0.8,
+     "p": 0.0085,
+     "n": 10
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.77,
+     "share_above_placebo_median": 0.4,
+     "p": 0.7625,
+     "n": 10
+    },
+    "pageviews": {
+     "geo_mean_excess": 1.149,
+     "share_above_placebo_median": 0.5,
+     "p": 0.1015,
+     "n": 10
+    }
+   }
+  },
+  "no_stronger_within_3w": {
+   "military_escalation": {
+    "n": 8,
+    "topic_edits": {
+     "geo_mean_excess": 1.324,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0005,
+     "n": 8
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 1.255,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0,
+     "n": 8
+    },
+    "topic_active": {
+     "geo_mean_excess": 1.124,
+     "share_above_placebo_median": 0.88,
+     "p": 0.001,
+     "n": 8
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.013,
+     "share_above_placebo_median": 0.88,
+     "p": 0.1615,
+     "n": 8
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.069,
+     "share_above_placebo_median": 0.5,
+     "p": 0.1005,
+     "n": 8
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 0.786,
+     "share_above_placebo_median": 0.25,
+     "p": 0.898,
+     "n": 8
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 1.741,
+     "share_above_placebo_median": 0.62,
+     "p": 0.0105,
+     "n": 8
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.94,
+     "share_above_placebo_median": 0.5,
+     "p": 0.493,
+     "n": 8
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.842,
+     "share_above_placebo_median": 0.38,
+     "p": 0.6485,
+     "n": 8
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.605,
+     "share_above_placebo_median": 0.38,
+     "p": 0.846,
+     "n": 8
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.54,
+     "share_above_placebo_median": 0.25,
+     "p": 0.963,
+     "n": 8
+    },
+    "pageviews": {
+     "geo_mean_excess": 1.424,
+     "share_above_placebo_median": 0.86,
+     "p": 0.0335,
+     "n": 7
+    }
+   },
+   "ceasefire_deal": {
+    "n": 5,
+    "topic_edits": {
+     "geo_mean_excess": 0.979,
+     "share_above_placebo_median": 0.8,
+     "p": 0.466,
+     "n": 5
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.959,
+     "share_above_placebo_median": 0.6,
+     "p": 0.678,
+     "n": 5
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.96,
+     "share_above_placebo_median": 0.0,
+     "p": 0.804,
+     "n": 5
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.991,
+     "share_above_placebo_median": 0.4,
+     "p": 0.5395,
+     "n": 5
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.008,
+     "share_above_placebo_median": 0.6,
+     "p": 0.384,
+     "n": 5
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 0.844,
+     "share_above_placebo_median": 0.4,
+     "p": 0.726,
+     "n": 5
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.765,
+     "share_above_placebo_median": 0.4,
+     "p": 0.91,
+     "n": 5
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.536,
+     "share_above_placebo_median": 0.2,
+     "p": 0.915,
+     "n": 5
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.585,
+     "share_above_placebo_median": 0.2,
+     "p": 0.927,
+     "n": 5
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.585,
+     "share_above_placebo_median": 0.4,
+     "p": 0.801,
+     "n": 5
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.701,
+     "share_above_placebo_median": 0.4,
+     "p": 0.7725,
+     "n": 5
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.821,
+     "share_above_placebo_median": 0.2,
+     "p": 0.5805,
+     "n": 5
+    }
+   },
+   "legal_institutional": {
+    "n": 7,
+    "topic_edits": {
+     "geo_mean_excess": 0.985,
+     "share_above_placebo_median": 0.57,
+     "p": 0.4535,
+     "n": 7
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.986,
+     "share_above_placebo_median": 0.43,
+     "p": 0.5025,
+     "n": 7
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.97,
+     "share_above_placebo_median": 0.43,
+     "p": 0.7305,
+     "n": 7
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.979,
+     "share_above_placebo_median": 0.43,
+     "p": 0.76,
+     "n": 7
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.06,
+     "share_above_placebo_median": 0.57,
+     "p": 0.146,
+     "n": 7
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.291,
+     "share_above_placebo_median": 0.71,
+     "p": 0.0345,
+     "n": 7
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.918,
+     "share_above_placebo_median": 0.43,
+     "p": 0.622,
+     "n": 7
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.592,
+     "share_above_placebo_median": 0.29,
+     "p": 0.892,
+     "n": 7
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.749,
+     "share_above_placebo_median": 0.29,
+     "p": 0.8015,
+     "n": 7
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.965,
+     "share_above_placebo_median": 0.43,
+     "p": 0.3855,
+     "n": 7
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.644,
+     "share_above_placebo_median": 0.43,
+     "p": 0.868,
+     "n": 7
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.681,
+     "share_above_placebo_median": 0.29,
+     "p": 0.9115,
+     "n": 7
+    }
+   },
+   "humanitarian_media": {
+    "n": 3,
+    "topic_edits": {
+     "geo_mean_excess": 1.022,
+     "share_above_placebo_median": 0.33,
+     "p": 0.3165,
+     "n": 3
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 1.012,
+     "share_above_placebo_median": 0.33,
+     "p": 0.3605,
+     "n": 3
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.973,
+     "share_above_placebo_median": 0.33,
+     "p": 0.6415,
+     "n": 3
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.012,
+     "share_above_placebo_median": 0.67,
+     "p": 0.2825,
+     "n": 3
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.069,
+     "share_above_placebo_median": 1.0,
+     "p": 0.215,
+     "n": 3
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 0.663,
+     "share_above_placebo_median": 0.0,
+     "p": 0.925,
+     "n": 3
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 1.144,
+     "share_above_placebo_median": 1.0,
+     "p": 0.192,
+     "n": 3
+    },
+    "term_ins": {
+     "geo_mean_excess": 2.032,
+     "share_above_placebo_median": 1.0,
+     "p": 0.07,
+     "n": 3
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 1.443,
+     "share_above_placebo_median": 1.0,
+     "p": 0.165,
+     "n": 3
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.885,
+     "share_above_placebo_median": 0.67,
+     "p": 0.4695,
+     "n": 3
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 1.776,
+     "share_above_placebo_median": 1.0,
+     "p": 0.1185,
+     "n": 3
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.72,
+     "share_above_placebo_median": 0.67,
+     "p": 0.7655,
+     "n": 3
+    }
+   },
+   "social_global": {
+    "n": 1,
+    "topic_edits": {
+     "geo_mean_excess": 0.827,
+     "share_above_placebo_median": 0.0,
+     "p": 0.846,
+     "n": 1
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.832,
+     "share_above_placebo_median": 0.0,
+     "p": 0.902,
+     "n": 1
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.915,
+     "share_above_placebo_median": 0.0,
+     "p": 0.808,
+     "n": 1
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.087,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0635,
+     "n": 1
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 0.794,
+     "share_above_placebo_median": 0.0,
+     "p": 0.8985,
+     "n": 1
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.21,
+     "share_above_placebo_median": 1.0,
+     "p": 0.259,
+     "n": 1
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.486,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9675,
+     "n": 1
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.789,
+     "share_above_placebo_median": 0.0,
+     "p": 0.534,
+     "n": 1
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 1.222,
+     "share_above_placebo_median": 1.0,
+     "p": 0.335,
+     "n": 1
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.231,
+     "share_above_placebo_median": 0.0,
+     "p": 0.8955,
+     "n": 1
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 1.624,
+     "share_above_placebo_median": 1.0,
+     "p": 0.293,
+     "n": 1
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.582,
+     "share_above_placebo_median": 0.0,
+     "p": 0.8105,
+     "n": 1
+    }
+   },
+   "comparison": {
+    "n": 6,
+    "topic_edits": {
+     "geo_mean_excess": 0.846,
+     "share_above_placebo_median": 0.17,
+     "p": 0.958,
+     "n": 6
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.912,
+     "share_above_placebo_median": 0.33,
+     "p": 0.926,
+     "n": 6
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.916,
+     "share_above_placebo_median": 0.17,
+     "p": 0.9775,
+     "n": 6
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.978,
+     "share_above_placebo_median": 0.33,
+     "p": 0.7675,
+     "n": 6
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.151,
+     "share_above_placebo_median": 0.67,
+     "p": 0.0205,
+     "n": 6
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.233,
+     "share_above_placebo_median": 0.67,
+     "p": 0.077,
+     "n": 6
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.839,
+     "share_above_placebo_median": 0.33,
+     "p": 0.8195,
+     "n": 6
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.454,
+     "share_above_placebo_median": 0.17,
+     "p": 0.9745,
+     "n": 6
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.478,
+     "share_above_placebo_median": 0.17,
+     "p": 0.993,
+     "n": 6
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 1.438,
+     "share_above_placebo_median": 0.83,
+     "p": 0.0945,
+     "n": 6
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.541,
+     "share_above_placebo_median": 0.17,
+     "p": 0.9405,
+     "n": 6
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.913,
+     "share_above_placebo_median": 0.5,
+     "p": 0.3865,
+     "n": 6
+    }
+   }
+  },
+  "isolated_3w": {
+   "military_escalation": {
+    "n": 2,
+    "topic_edits": {
+     "geo_mean_excess": 1.086,
+     "share_above_placebo_median": 1.0,
+     "p": 0.196,
+     "n": 2
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 1.13,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0805,
+     "n": 2
+    },
+    "topic_active": {
+     "geo_mean_excess": 1.104,
+     "share_above_placebo_median": 1.0,
+     "p": 0.074,
+     "n": 2
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.026,
+     "share_above_placebo_median": 1.0,
+     "p": 0.2005,
+     "n": 2
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 0.977,
+     "share_above_placebo_median": 0.5,
+     "p": 0.5165,
+     "n": 2
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.246,
+     "share_above_placebo_median": 1.0,
+     "p": 0.182,
+     "n": 2
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 1.381,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0695,
+     "n": 2
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.509,
+     "share_above_placebo_median": 0.5,
+     "p": 0.8105,
+     "n": 2
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.733,
+     "share_above_placebo_median": 0.0,
+     "p": 0.7165,
+     "n": 2
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.251,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9715,
+     "n": 2
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.369,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9285,
+     "n": 2
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.968,
+     "share_above_placebo_median": 1.0,
+     "p": 0.348,
+     "n": 2
+    }
+   },
+   "ceasefire_deal": {
+    "n": 2,
+    "topic_edits": {
+     "geo_mean_excess": 1.029,
+     "share_above_placebo_median": 1.0,
+     "p": 0.335,
+     "n": 2
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 1.003,
+     "share_above_placebo_median": 1.0,
+     "p": 0.3995,
+     "n": 2
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.991,
+     "share_above_placebo_median": 0.0,
+     "p": 0.5165,
+     "n": 2
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.076,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0255,
+     "n": 2
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.207,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0665,
+     "n": 2
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 0.865,
+     "share_above_placebo_median": 0.5,
+     "p": 0.624,
+     "n": 2
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.925,
+     "share_above_placebo_median": 0.5,
+     "p": 0.5415,
+     "n": 2
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.418,
+     "share_above_placebo_median": 0.0,
+     "p": 0.904,
+     "n": 2
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.561,
+     "share_above_placebo_median": 0.0,
+     "p": 0.852,
+     "n": 2
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.618,
+     "share_above_placebo_median": 0.5,
+     "p": 0.6655,
+     "n": 2
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.452,
+     "share_above_placebo_median": 0.0,
+     "p": 0.87,
+     "n": 2
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.789,
+     "share_above_placebo_median": 0.0,
+     "p": 0.6045,
+     "n": 2
+    }
+   },
+   "legal_institutional": {
+    "n": 3,
+    "topic_edits": {
+     "geo_mean_excess": 1.017,
+     "share_above_placebo_median": 0.67,
+     "p": 0.353,
+     "n": 3
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 1.005,
+     "share_above_placebo_median": 0.33,
+     "p": 0.39,
+     "n": 3
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.996,
+     "share_above_placebo_median": 0.33,
+     "p": 0.488,
+     "n": 3
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.955,
+     "share_above_placebo_median": 0.0,
+     "p": 0.8865,
+     "n": 3
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.085,
+     "share_above_placebo_median": 0.67,
+     "p": 0.189,
+     "n": 3
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.329,
+     "share_above_placebo_median": 0.67,
+     "p": 0.1005,
+     "n": 3
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 1.145,
+     "share_above_placebo_median": 0.67,
+     "p": 0.1855,
+     "n": 3
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.318,
+     "share_above_placebo_median": 0.0,
+     "p": 0.985,
+     "n": 3
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.549,
+     "share_above_placebo_median": 0.33,
+     "p": 0.898,
+     "n": 3
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 1.021,
+     "share_above_placebo_median": 0.33,
+     "p": 0.3575,
+     "n": 3
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.277,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9905,
+     "n": 3
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.872,
+     "share_above_placebo_median": 0.67,
+     "p": 0.4825,
+     "n": 3
+    }
+   },
+   "humanitarian_media": {
+    "n": 1,
+    "topic_edits": {
+     "geo_mean_excess": 1.428,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0425,
+     "n": 1
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 1.272,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0315,
+     "n": 1
+    },
+    "topic_active": {
+     "geo_mean_excess": 1.099,
+     "share_above_placebo_median": 1.0,
+     "p": 0.1275,
+     "n": 1
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.067,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0965,
+     "n": 1
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.004,
+     "share_above_placebo_median": 1.0,
+     "p": 0.4585,
+     "n": 1
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 0.404,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9765,
+     "n": 1
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 1.507,
+     "share_above_placebo_median": 1.0,
+     "p": 0.085,
+     "n": 1
+    },
+    "term_ins": {
+     "geo_mean_excess": 2.692,
+     "share_above_placebo_median": 1.0,
+     "p": 0.125,
+     "n": 1
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 1.222,
+     "share_above_placebo_median": 1.0,
+     "p": 0.334,
+     "n": 1
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 3.0,
+     "share_above_placebo_median": 1.0,
+     "p": 0.141,
+     "n": 1
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 1.787,
+     "share_above_placebo_median": 1.0,
+     "p": 0.2335,
+     "n": 1
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.979,
+     "share_above_placebo_median": 1.0,
+     "p": 0.438,
+     "n": 1
+    }
+   },
+   "social_global": {
+    "n": 1,
+    "topic_edits": {
+     "geo_mean_excess": 0.827,
+     "share_above_placebo_median": 0.0,
+     "p": 0.8435,
+     "n": 1
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.832,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9105,
+     "n": 1
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.915,
+     "share_above_placebo_median": 0.0,
+     "p": 0.819,
+     "n": 1
+    },
+    "comparison_active": {
+     "geo_mean_excess": 1.087,
+     "share_above_placebo_median": 1.0,
+     "p": 0.064,
+     "n": 1
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 0.794,
+     "share_above_placebo_median": 0.0,
+     "p": 0.8915,
+     "n": 1
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.21,
+     "share_above_placebo_median": 1.0,
+     "p": 0.2575,
+     "n": 1
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.486,
+     "share_above_placebo_median": 0.0,
+     "p": 0.967,
+     "n": 1
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.789,
+     "share_above_placebo_median": 0.0,
+     "p": 0.542,
+     "n": 1
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 1.222,
+     "share_above_placebo_median": 1.0,
+     "p": 0.3355,
+     "n": 1
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 0.231,
+     "share_above_placebo_median": 0.0,
+     "p": 0.898,
+     "n": 1
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 1.624,
+     "share_above_placebo_median": 1.0,
+     "p": 0.284,
+     "n": 1
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.582,
+     "share_above_placebo_median": 0.0,
+     "p": 0.806,
+     "n": 1
+    }
+   },
+   "comparison": {
+    "n": 4,
+    "topic_edits": {
+     "geo_mean_excess": 0.845,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9395,
+     "n": 4
+    },
+    "topic_edits_capped": {
+     "geo_mean_excess": 0.894,
+     "share_above_placebo_median": 0.25,
+     "p": 0.9435,
+     "n": 4
+    },
+    "topic_active": {
+     "geo_mean_excess": 0.896,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9805,
+     "n": 4
+    },
+    "comparison_active": {
+     "geo_mean_excess": 0.97,
+     "share_above_placebo_median": 0.25,
+     "p": 0.8075,
+     "n": 4
+    },
+    "comparison_edits": {
+     "geo_mean_excess": 1.146,
+     "share_above_placebo_median": 0.5,
+     "p": 0.052,
+     "n": 4
+    },
+    "shocked_edits": {
+     "geo_mean_excess": 1.393,
+     "share_above_placebo_median": 0.75,
+     "p": 0.0455,
+     "n": 4
+    },
+    "lead_panel_edits": {
+     "geo_mean_excess": 0.745,
+     "share_above_placebo_median": 0.25,
+     "p": 0.9155,
+     "n": 4
+    },
+    "term_ins": {
+     "geo_mean_excess": 0.287,
+     "share_above_placebo_median": 0.0,
+     "p": 0.996,
+     "n": 4
+    },
+    "term_ins_durable": {
+     "geo_mean_excess": 0.388,
+     "share_above_placebo_median": 0.0,
+     "p": 0.993,
+     "n": 4
+    },
+    "term_ins_cmp": {
+     "geo_mean_excess": 1.96,
+     "share_above_placebo_median": 1.0,
+     "p": 0.0445,
+     "n": 4
+    },
+    "ins_per_edit": {
+     "geo_mean_excess": 0.385,
+     "share_above_placebo_median": 0.0,
+     "p": 0.9815,
+     "n": 4
+    },
+    "pageviews": {
+     "geo_mean_excess": 0.793,
+     "share_above_placebo_median": 0.5,
+     "p": 0.659,
+     "n": 4
+    }
+   }
+  }
+ }
+}
