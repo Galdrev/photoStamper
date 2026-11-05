@@ -1,0 +1,833 @@
+[
+ {
+  "id": "P99eca068",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P29c88ec4",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: Russia unilaterally occupied and annexed Ukraine's Crimean Peninsula",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_more_explicit",
+     "level_A": 3,
+     "level_B": 4
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: with the powerful state of Kyivan Rus' forming the basis of Ukrainian identity",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P3beafaa8",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pe5c7ddf4",
+  "usable": true,
+  "K01": {
+   "code": "B_less_narrator",
+   "evidence": "A: Antisemitism is generally considered to be a form of racism.",
+   "parties": [
+    {
+     "party": "UNCLEAR",
+     "dir": "B_less_narrator",
+     "category": "racism",
+     "level_A": 4,
+     "level_B": 2
+    }
+   ]
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: modern antisemitism began to emerge from antisemitism in Christian communities during the Middle Ages",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": null,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_less_explicit",
+   "evidence": "A: organized pogroms by mobs or police forces",
+   "parties": [
+    {
+     "party": "MULTIPLE",
+     "dir": "B_less_explicit",
+     "level_A": 3,
+     "level_B": 1
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pea42831d",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P6f66a994",
+  "usable": true,
+  "K01": {
+   "code": "B_less_narrator",
+   "evidence": "B: many of which have antisemitic origins",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_less_narrator",
+     "category": "antisemitism",
+     "level_A": 5,
+     "level_B": 4
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P7cc0f507",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pf589898f",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: A codified system of racial stratification began to take form in South Africa under the Dutch Empire in the eighteenth century",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 1948,
+     "onset_year_B": 1700
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P3f7ad0a3",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P22ea2f31",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: in the Southern Basque Country and throughout Spanish territory",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": false
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P330d3d75",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_strengthens",
+   "evidence": "B: Although probably never more than 1% of the area population",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_strengthens",
+     "type": "demography"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P2692da2b",
+  "usable": true,
+  "K01": {
+   "code": "B_more_narrator",
+   "evidence": "B: Northern Ireland was marked by discrimination and hostility between these two sides",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_more_narrator",
+     "category": "discrimination against Catholics",
+     "level_A": 1,
+     "level_B": 5
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: (Ulster-Scots: Norlin Airlann)",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is variously described as a country, province, or region, which is part of the United Kingdom"
+  }
+ },
+ {
+  "id": "Pc1d1af06",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P0602d639",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_later",
+   "evidence": "A: since the 19th century, the majority Greek Cypriot population and its Orthodox church had been pursuing union with Greece",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_removes_prior_cause",
+     "onset_year_A": 1800,
+     "onset_year_B": 1950
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: which captured the present-day territory of Northern Cyprus and displaced over 150,000 Greek Cypriots and 50,000 Turkish Cypriots",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_more_explicit",
+     "level_A": 2,
+     "level_B": 4
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: While Turkish Cypriots made up 18% of the population",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_weakens",
+     "type": "demography"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P7f98b3b2",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P330a4781",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: Kosovo (or Kosovë,;, )",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "both",
+   "evidence": "B: The Ottoman Empire fully conquered Kosovo after the Second Battle of Kosovo",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_more_explicit",
+     "level_A": 0,
+     "level_B": 4
+    },
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_less_explicit",
+     "level_A": 3,
+     "level_B": 0
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: The region was the core of the Serbian medieval state",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is a landlocked country in Southeastern Europe with partial diplomatic recognition"
+  }
+ },
+ {
+  "id": "Pe59b469c",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P61465bcc",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: resolutions concerning State of Palestine",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ }
+]
