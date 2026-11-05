@@ -68,6 +68,11 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 | Mass tier | ≥ 1,000 articles per group in the frame | fix category names, else report deep tier only |
 | Narrative coding | coders agree on the main theme in ≥ 60% of a double-coded 30-item subset | themes shown as examples only, no shares |
 
+## Study 2 (user insight after reading study 1)
+| # | Phase | Technique | Why | Cost | Verdict |
+|---|---|---|---|---|---|
+| 39 | Plan | User spotted the design's blind spot: study 1 measured one direction (critical words), not **two narratives against each other** (indigeneity, ancient naming, holy-site naming order, the two displacements, 1948 agency, violence labels by perpetrator, legitimacy words, Jewish history in shared-site leads). Pre-registered as SPEC_NARRATIVE.md before computing, with comparison disputes (Kosovo, Karabakh, Cyprus, Kashmir, Northern Ireland) and planted-shift tests | A domain expert's framing beats the analyst's first operationalisation. Reusing the raw cache made a new study cost a reanalysis, not a recollection | ~1 h build | pending |
+
 ## Final verdicts: what to adopt for real work
 
 **Adopt (highest value per hour):**

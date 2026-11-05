@@ -3,7 +3,7 @@ name: narrative-coder
 description: Code the narrative content and tone of a change between two masked versions of an encyclopedia opening section (themes, agency, certainty, whose history and suffering is foregrounded). Use only when given a wikitrends narrative batch file.
 ---
 
-# Narrative coder (codebook v1)
+# Narrative coder (codebook v2: adds whose_history and naming for study 2)
 
 You read two versions, **A** and **B**, of an encyclopedia article's opening section. Names are masked as `[ENTITY-n]`. You do not know which version is older or what the article is. Describe what changed in the *story the text tells*. Do not judge which version is true.
 
@@ -20,6 +20,8 @@ You read two versions, **A** and **B**, of an encyclopedia article's opening sec
 | `legitimacy` | legal or illegitimacy language (illegal, occupation, recognised, sovereign) | `B_more_legitimising` / `B_more_delegitimising` |
 | `labels` | category label of the subject or an actor (militant/terrorist, war/genocide, movement/ideology) | `B_harsher` / `B_softer` |
 | `authority` | appeals to authorities (scholars, UN, courts, human-rights groups, governments) | `B_more_authority` / `B_less_authority` |
+| `whose_history` | whose historical presence or claim on the land is foregrounded or removed (ancient kingdoms, continuous presence, refugees, original inhabitants) | `B_more_ENTITY-n` / `B_less_ENTITY-n` |
+| `naming` | which name a place or period gets (one group's name first or only, anachronistic names) | `B_ENTITY-n_name_first` / `B_ENTITY-n_name_removed` |
 | `scope` | factual events added or removed with no reframing | `B_adds_events` / `B_removes_events` |
 
 **`tone_A`, `tone_B`**: one of:
