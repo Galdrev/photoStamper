@@ -1,0 +1,489 @@
+[
+  {
+    "move": "M1 Causal re-anchoring (origin and prior cause)",
+    "definition": "The lead changes WHERE the causal chain of the conflict or event starts: either (a) the origin of the Israeli-Palestinian/Arab-Israeli conflict is moved to the late-19th-century Zionist movement/settlement and stated as the single originating agent, or (b) a proximate event (blockade, Hamas rule, 7 October, Gaza war) is given an earlier prior cause that is an action of the other party.",
+    "include": "An explicit origin statement ('has its origins in', 'dates back to', 'widely seen as marking the start', 'rooted in', 'date to') whose anchor year or originating actor differs from lead0; or a newly inserted prior action placed before an event that lead0 began with (e.g. 'from the blockaded Gaza Strip', 'date to the early 1990s').",
+    "exclude": "Pure chronology additions that do not assign a cause (a list of later wars); origin statements that were already present in lead0 with the same anchor and agent; background added only about the article's own subject without a cause-effect connector.",
+    "examples": [
+      {
+        "title": "Israeli–Palestinian conflict",
+        "before": "The Israeli–Palestinian conflict is the ongoing struggle between Israelis and Palestinians that began in the mid-20th century amidst the greater Arab–Israeli conflict.",
+        "after": "The conflict has its origins in the rise of Zionism in the late 19th century in Europe, a movement which aimed to establish a Jewish state through colonization in the region of Palestine."
+      },
+      {
+        "title": "Arab–Israeli conflict",
+        "before": "which in turn has been attributed to the simultaneous rise of Zionism and Arab nationalism towards the end of the 19th century, though the two national movements had not clashed until the 1920s.",
+        "after": "Zionists viewed the region of Palestine as the Jewish ancestral homeland and sought to establish a Jewish state or homeland there through colonization, while Arabs generally opposed Zionism, envisioning Palestine as Arab Palestinian land and an essential part of the Arab world.",
+        "note": "dual-cause (two nationalisms) becomes action (Zionist colonization) and reaction (Arab opposition)"
+      },
+      {
+        "title": "Blockade of the Gaza Strip",
+        "before": "The blockade of the Gaza Strip is the ongoing land, air, and sea blockade of the Gaza Strip imposed by Israel and Egypt in 2007, after Hamas took control of the Gaza Strip during the Battle of Gaza",
+        "after": "The restrictions on movement and goods in the Gaza Strip imposed by Israel date to the early 1990s."
+      },
+      {
+        "title": "Tigray war",
+        "before": "(absent)",
+        "after": "After years of increased tensions and hostilities between the TPLF and the governments of Ethiopia and Eritrea, fighting began when TPLF forces attacked the Northern Command headquarters",
+        "note": "COMPARISON: sub-type (b) backstory also appears in comparison articles"
+      }
+    ],
+    "topic_count": "11 of 71 topic pairs read (7 sub-type a: deep origin moved to Zionism; 4 sub-type b: proximate backdating); within the 45 conflict-core topic pairs 11/45",
+    "comparison_count": "3 of 20 comparison pairs (all sub-type b: Tigray war, Kashmir conflict, Turkish invasion of Cyprus); sub-type a: 0/20",
+    "direction": "Moves the inciting event of the conflict from the mid-20th century (1947-48, partition/war) or from a shared 'two nationalisms' start to the late-19th-century Zionist settlement project; moves the start of Gaza-related events from a Hamas/Palestinian action to a prior Israeli action. Initiating agency shifts from both parties, or from Arab actors, to the Zionist movement/Israel.",
+    "kpis": [
+      {
+        "name": "origin_anchor_year",
+        "unit": "per article pair",
+        "procedure": "Find any sentence stating the origin/start of the conflict or event (cues: origins, began, dates back, rooted in, marking the start, date to). Record the earliest year or period given in A and B. KPI = year(B) - year(A); also report share of pairs where the anchor moves earlier.",
+        "automatable": "partly: regex finds cue sentences and years; a human/LLM confirms the year refers to the conflict's origin"
+      },
+      {
+        "name": "originating_agent",
+        "unit": "per article pair",
+        "procedure": "For the origin sentence in A and in B, code the actor presented as initiating: Zionist/Jewish/Israeli; Arab/Palestinian; British/imperial; both/shared; none. Record transitions (e.g. shared->Zionist).",
+        "automatable": "no: LLM judgement"
+      },
+      {
+        "name": "prior_cause_inserted",
+        "unit": "per article pair",
+        "procedure": "Binary: B adds, before an event that A presented as the start, an earlier action by the opposing party (e.g. 'blockaded', 'occupation', 'existing restrictions'). Code which party's action is inserted.",
+        "automatable": "partly: diff detects new pre-modifiers; LLM codes party"
+      }
+    ]
+  },
+  {
+    "move": "M2 Colonial genus in the definition",
+    "definition": "Colonisation vocabulary (colonization, colonies, colonial, settler colonialism) enters the definitional or origin sentence of a Zionist/Israeli subject in Wikipedia's own voice, rather than appearing only as a critics' view later in the lead.",
+    "include": "New colon*/settler-colonial tokens in the first sentence or in the conflict-origin sentence, stated in wikivoice, applied to Zionism, Israel, settlements or the conflict.",
+    "exclude": "Colonial vocabulary attributed to named critics or 'opponents' (code under M6 voice instead); 'colonial' used for unrelated subjects (e.g. 'Colonial Sephardic architecture', British control of the Pirate Coast).",
+    "examples": [
+      {
+        "title": "Zionism",
+        "before": "Zionism ( Tsiyyonut  after Zion) is both an ideology and nationalist movement among the Jewish people that espouses the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel (roughly corresponding to Canaan, the Holy Land, or the region of Palestine).",
+        "after": "Zionism is an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine, which roughly corresponds to the Land of Israel in Judaism—itself central to Jewish history."
+      },
+      {
+        "title": "Israeli settlement",
+        "before": "Israeli settlements are civilian communities inhabited by Israeli citizens, almost exclusively of Jewish ethnicity, built in violation of international law on lands occupied by Israel in the 1967 Six-Day War.",
+        "after": "Israeli settlements, also called Israeli colonies, are the civilian communities built by Israel throughout the Israeli-occupied territories."
+      },
+      {
+        "title": "Turkish invasion of Cyprus",
+        "before": "(absent)",
+        "after": "a process that some scholars characterize as a form of settler colonialism, albeit in a hybrid and non-classical form.",
+        "note": "COMPARISON: colonial vocabulary also gained in comparison articles, but attributed and hedged"
+      }
+    ],
+    "topic_count": "8 of 71 topic pairs gained colon* tokens (3 of them in the first sentence: Zionism, Israeli settlement, Zionism as settler colonialism)",
+    "comparison_count": "4 of 20 comparison pairs gained colon* tokens (Aboriginal Australians, Native Americans in the United States, Turkish invasion of Cyprus, Arab nationalism); 0 in a first sentence",
+    "direction": "Re-classifies Zionism and settlement from a national-return/self-determination category toward a colonisation category in the narrator's voice. The rate of colonial vocabulary gain is NOT distinctive (comparison articles on indigenous/settler topics gained it too); what is distinctive is its placement in the definition sentence of the protagonist.",
+    "kpis": [
+      {
+        "name": "colonial_genus_first_sentence",
+        "unit": "per first sentence",
+        "procedure": "Binary for A and B: does the first sentence contain coloni[sz]/colonies/colonial/settler colonial applied to the subject, outside an attribution frame? KPI = share of pairs switching 0->1 minus 1->0.",
+        "automatable": "yes: regex plus a simple attribution-cue check (described as, according to, critics, opponents within 8 tokens)"
+      },
+      {
+        "name": "colonial_token_delta",
+        "unit": "per article pair (per 1,000 words)",
+        "procedure": "Count colon*/settler-colonial tokens in A and B, normalise by length, take difference.",
+        "automatable": "yes"
+      }
+    ]
+  },
+  {
+    "move": "M3 Perpetrator specification",
+    "definition": "A harm to a population that lead0 described agentlessly, in passive voice, or with a narrow perpetrator is rewritten with a named agent, a broader collective agent (\"Zionists\", \"Zionist paramilitaries\", \"Israel\"), or an added accomplice.",
+    "include": "New by-phrases or active subjects naming who did the harm; widening from a faction to a collective (Irgun and Lehi -> Zionist paramilitaries supported by the Haganah); adding a leader's responsibility to a biography.",
+    "exclude": "Agent already named identically in A; agents added for non-violent acts; removal of an agent (code the reverse direction separately, see counter-examples in the note).",
+    "examples": [
+      {
+        "title": "Nakba",
+        "before": "The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian people.",
+        "after": "The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations."
+      },
+      {
+        "title": "Deir Yassin massacre",
+        "before": "when around 130 fighters from the Far-right wing Zionist paramilitary groups Irgun and Lehi killed at least 107 Palestinian Arabs",
+        "after": "The attack was conducted primarily by the Irgun and Lehi, who were supported by the Haganah and Palmach."
+      },
+      {
+        "title": "David Ben-Gurion",
+        "before": "Ben-Gurion led Israel during the 1948 Arab–Israeli War, and united the various Jewish militias into the Israel Defense Forces (IDF).",
+        "after": "Under Ben-Gurion's leadership, the 1948 Arab–Israeli War saw the uniting of the various Jewish militias into the Israel Defense Forces (IDF), the victory of Israel over the Arab League, and the expulsion and flight of a majority of the Palestinian Arab population."
+      },
+      {
+        "title": "Armenian genocide",
+        "before": "The Armenian Genocide was the systematic mass murder and expulsion of ethnic Armenians carried out in Turkey and adjoining regions by the Ottoman government during World War I.",
+        "after": "Spearheaded by the ruling Committee of Union and Progress (CUP), it was implemented primarily through the mass murder of around one million Armenians during death marches to the Syrian desert and the forced Islamization of others, primarily women and children.",
+        "note": "COMPARISON: perpetrator sharpening also occurs in comparison genocide articles"
+      }
+    ],
+    "topic_count": "11 of 71 topic pairs (Nakba, 1948 Palestinian expulsion and flight, Deir Yassin massacre, 1948 Arab–Israeli War, David Ben-Gurion, Gaza genocide, Israel, Irgun, Zionism, Purity of arms, Sabra and Shatila massacre); 'Zionist(s)' as grammatical agent gained in 11 topic leads overall (regex). Reverse (agent/violence label removed) in 3: PLO, Hamas, Lehi first sentences.",
+    "comparison_count": "4 of 20 comparison pairs (Armenian genocide, Persecution of Uyghurs in China, Tigray war, Native Americans in the United States)",
+    "direction": "Moves responsibility for Palestinian displacement and death from impersonal process ('displacement', 'exodus', 'fled or were expelled') to a named Zionist/Israeli agent, and widens it from dissident factions to the mainstream (Haganah, IDF, the founding leader).",
+    "kpis": [
+      {
+        "name": "agented_harm_ratio",
+        "unit": "per harm clause",
+        "procedure": "Identify each clause describing killing, expulsion, displacement, destruction or dispossession. Code agent status: named specific actor / collective actor / passive with no agent / nominalisation with no agent. KPI = share of harm clauses with a named agent, by victim group, A vs B.",
+        "automatable": "partly: dependency parse detects passive and by-agents and nominalisations; LLM codes actor identity and victim group"
+      },
+      {
+        "name": "perpetrator_scope",
+        "unit": "per event article",
+        "procedure": "For the article's core violent event, code the widest perpetrator named in the lead (individual/faction, mainstream organisation, state/collective movement). Record change.",
+        "automatable": "no: LLM judgement"
+      }
+    ]
+  },
+  {
+    "move": "M4 Jewish continuity: removed in modern leads, strengthened in ancient leads",
+    "definition": "Claims of an unbroken Jewish tie to the land ('re-establishment', 'return', 'ancestral homeland', 'birthplace of the Jewish people', 'Jewish presence persisted', 'long Jewish connection') are deleted or moved into a third-party voice in leads about modern politics (Zionism, Israel, conflicts), while leads about antiquity, religion and sacred sites add or harden such claims.",
+    "include": "Deletion of a continuity claim; re-attribution from 'the Jewish people' or wikivoice to 'Zionists'/'advocates'; or, in ancient/religious leads, a new or de-hedged statement of Jewish antiquity, historicity or attachment.",
+    "exclude": "Neutral restatements with the same voice; continuity claims about Jewish diaspora communities outside the Land of Israel/Palestine (e.g. Bahrain, Dominican Republic) unless they concern return.",
+    "examples": [
+      {
+        "title": "History of Israel",
+        "before": "The Land of Israel, also known as the Holy Land or Palestine, is the birthplace of the Jewish people, the place where the final form of the Hebrew Bible is thought to have been compiled, and the birthplace of Judaism and Christianity.",
+        "after": "The history of Israel spans the Southern Levant, from prehistoric African migrations and the Natufian culture (c. 10,000 BCE) to the emergence of Canaanite civilization."
+      },
+      {
+        "title": "Arab–Israeli conflict",
+        "before": "which was regarded by the Jewish people as their ancestral homeland",
+        "after": "Zionists viewed the region of Palestine as the Jewish ancestral homeland",
+        "note": "re-attribution: 'the Jewish people' -> 'Zionists'"
+      },
+      {
+        "title": "Israel",
+        "before": "Jewish presence in the region has persisted to a certain extent over the centuries.",
+        "after": "(absent)"
+      },
+      {
+        "title": "Homeland for the Jewish people",
+        "before": "A homeland for the Jewish people is an idea rooted in Jewish culture and religion. In the early 19th century, the Napoleonic Wars led to the idea of Jewish emancipation.",
+        "after": "The Jewish aspiration to return to Zion, generally associated with divine redemption, has suffused Jewish religious thought since the destruction of the First Temple and the Babylonian exile.",
+        "note": "opposite direction in a religious-idea article: anchor moved from 19th century to the First Temple"
+      },
+      {
+        "title": "Bar Kokhba Revolt",
+        "before": "The common view that the name change was intended to \"sever the connection of the Jews to their historical homeland\" is disputed.",
+        "after": "the renaming of the province from Judaea to Syria Palaestina, an act intended to sever the region's historical association with the Jewish people",
+        "note": "opposite direction: hedge removed, Roman intent stated as fact"
+      }
+    ],
+    "topic_count": "Removal/re-attribution in 6 of 71 topic pairs (Zionism, History of Israel, Israel, Arab–Israeli conflict, Mizrahi Jews, Aliyah); strengthening in 7 of 71 (Homeland for the Jewish people, Kingdom of Israel (united monarchy), Bar Kokhba Revolt, Western Wall, Place names of Palestine, Second Aliyah, Christian Zionism)",
+    "comparison_count": "Comparison analogue (continuity/homeland claims for the group whose land it is) added in 3 of 20 (Aboriginal Australians, Armenian genocide, Quebec sovereignty movement); removed in 0 of 20",
+    "direction": "Splits the Jewish story by period: the deep past (temples, kingdoms, revolts, exile) is stated more firmly as Jewish history, while the link from that past to modern Zionism ('re-establishment', 'return') is cut or moved into the advocates' voice. Modern Jewish belonging becomes a claim made by Zionists, not a narrator premise.",
+    "kpis": [
+      {
+        "name": "jewish_continuity_claims",
+        "unit": "per article pair",
+        "procedure": "Count clauses asserting a Jewish tie to the land (re-establish, return, restore, ancestral, birthplace, homeland of their ancestors, persisted, long connection, indigenous). Code each as wikivoice or attributed. KPI = change in wikivoice count and in attributed count, reported separately for modern-political and ancient/religious articles.",
+        "automatable": "partly: regex candidates; LLM codes voice and whether the tie is to the land"
+      },
+      {
+        "name": "return_link_present",
+        "unit": "per first sentence",
+        "procedure": "Binary: does the first sentence frame the subject as re-establishment/return (prefix re-, return, restoration) rather than establishment/immigration?",
+        "automatable": "yes: regex on re-establish|return|restor|repatriat"
+      }
+    ]
+  },
+  {
+    "move": "M5 Arab demographic-majority anchor",
+    "definition": "A sentence about the pre-1948 land newly states, in wikivoice, the Arab/Muslim/Palestinian demographic majority or the Jewish minority share, placing Palestinian belonging as a numeric fact at the moment Zionism or British rule enters the story.",
+    "include": "New phrases such as 'overwhelming Arab majority', 'predominantly Arab population', population percentages at the start of the Mandate, 'Muslim majority ... since at least the 12th century', land-share vs population-share comparisons for partition.",
+    "exclude": "Present-day demographic statistics of Israel or Palestine; numbers that were already in A with the same framing.",
+    "examples": [
+      {
+        "title": "Balfour Declaration",
+        "before": "then an Ottoman region with a small minority Jewish population.",
+        "after": "then an Ottoman region with a small Jewish minority among an overwhelming Arab majority, mostly Muslim but also including Christians."
+      },
+      {
+        "title": "Israel",
+        "before": "(absent)",
+        "after": "19th-century Jewish nationalism, alongside European antisemitism, fuelled the Zionist movement for a Jewish homeland in Palestine, then an Ottoman region with an overwhelming Arab majority."
+      },
+      {
+        "title": "Mandatory Palestine",
+        "before": "(absent)",
+        "after": "At the formal beginning of the Mandate, the population was approximately 11% Jewish, 9% Christian Arab, and 78% Muslim Arab."
+      }
+    ],
+    "topic_count": "9 of 71 topic pairs (Israel, Balfour Declaration, Nakba, 1948 Palestinian expulsion and flight, Mandatory Palestine, Demographic history of Palestine (region), 1948 Arab–Israeli War, Temple Mount, Beit She'arim)",
+    "comparison_count": "2 of 20 comparison pairs with an analogous 'who was there first/majority' anchor (Armenian genocide, Aboriginal Australians)",
+    "direction": "Asserts Palestinian Arab belonging through demography and prior majority rather than through the word 'indigenous' (which is rarely applied to Palestinians in wikivoice); sets up Zionist arrival as entry into an Arab-majority land.",
+    "kpis": [
+      {
+        "name": "pre1948_majority_mentions",
+        "unit": "per article pair",
+        "procedure": "Count statements of population composition for the period before 1948 (majority/minority wording or percentages). Code which group is named as majority. KPI = change in count.",
+        "automatable": "yes: regex for majority|minority|predominantly|% near Arab|Jewish|Muslim|Christian and a pre-1948 date or Ottoman/Mandate cue; light LLM check"
+      },
+      {
+        "name": "indigeneity_term_by_group",
+        "unit": "per occurrence",
+        "procedure": "For every 'indigenous/native' token, code which group it is applied to (Jews, Palestinians, generic) and whether in wikivoice or attributed.",
+        "automatable": "partly: regex finds tokens; LLM codes group and voice"
+      }
+    ]
+  },
+  {
+    "move": "M6 Voice hardening of contested labels",
+    "definition": "A contested label (genocide, ethnic cleansing, apartheid, terrorism, illegal occupation, historicity) moves between voices: attributed/hedged ('allegations', 'some historians', 'has been described') -> narrator assertion or 'scholarly consensus' framing, or the reverse.",
+    "include": "Change in the attribution frame around the same label in A and B; first sentences that change from 'X has been accused of' to 'X is'; hedge removal or hedge insertion.",
+    "exclude": "New labels with no counterpart in A (code under M3 or M9); attribution changes that only swap one named source for another of the same type.",
+    "examples": [
+      {
+        "title": "Gaza genocide",
+        "before": "Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians.",
+        "after": "The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war."
+      },
+      {
+        "title": "1948 Palestinian expulsion and flight",
+        "before": "The expulsion of the Palestinians has since been described by some historians as ethnic cleansing, while others dispute this charge.",
+        "after": "Scholars widely describe the event as ethnic cleansing, although some disagree."
+      },
+      {
+        "title": "Kingdom of Israel (united monarchy)",
+        "before": "In contemporary scholarship the united monarchy is generally held to be a literary construction and not a historical reality, pointing to the lack of archaeological evidence.",
+        "after": "Whether the United Monarchy existed—and, if so, to what extent—is a matter of ongoing academic debate.",
+        "note": "reverse direction: a skeptical consensus becomes an open debate"
+      },
+      {
+        "title": "Armenian genocide",
+        "before": "In contrast to the vast majority of genocide scholars and historians, Turkey denies that the word genocide is an accurate term for these crimes.",
+        "after": "36 countries have recognized the genocide, concurring with the academic consensus.",
+        "note": "COMPARISON"
+      }
+    ],
+    "topic_count": "Hardening in 10 of 71 topic pairs (Gaza genocide, Gaza war, Israel, Israeli–Palestinian conflict, Palestine, October 7 attacks, Nakba, 1948 Palestinian expulsion and flight, Deir Yassin massacre, Purity of arms); softening in 4 (Israeli settlement, Kingdom of Israel (united monarchy), Lehi (militant group), Zionism as settler colonialism oscillating); pro-Jewish-antiquity hardening in 1 (Bar Kokhba Revolt)",
+    "comparison_count": "Hardening in 4 of 20 (Armenian genocide, Turkish invasion of Cyprus, Persecution of Uyghurs in China, Native Americans in the United States); softening in 2 (Population exchange between Greece and Turkey, Tibet)",
+    "direction": "Makes claims of Israeli/Zionist wrongdoing (ethnic cleansing, genocide, apartheid) the narrator's baseline rather than one side's charge. The mechanism itself is common Wikipedia practice for mass-atrocity articles; the topic-specific feature is its frequency and that it attaches to the state that is the protagonist of the national story.",
+    "kpis": [
+      {
+        "name": "label_voice_score",
+        "unit": "per contested-label occurrence",
+        "procedure": "For each occurrence of genocide/ethnic cleansing/apartheid/terror*/illegal/historicity terms, code voice: 2 = narrator assertion, 1 = consensus attribution ('scholars widely', 'growing consensus'), 0 = attributed to a party or 'some', -1 = explicitly disputed/alleged. KPI = mean score B minus mean score A, by target (Israel/Zionists vs Palestinians/Hamas vs other).",
+        "automatable": "partly: regex finds label and attribution cues within a window; LLM resolves target and edge cases"
+      },
+      {
+        "name": "first_sentence_assertion_flip",
+        "unit": "per first sentence",
+        "procedure": "Binary: first sentence moves from accusation/allegation framing to definitional 'is' framing (or reverse).",
+        "automatable": "yes: regex for accus|alleg|described|according to vs copular definition"
+      }
+    ]
+  },
+  {
+    "move": "M7 Rejection recontextualised",
+    "definition": "The 'Arab rejection' plot point (rejection of the 1947 partition plan, of Quartet conditions, Arab invasion as initiating 1948 war, Arab evacuation orders as cause of flight) is deleted, given a motive, or placed after a prior Zionist/British cause, rather than standing as the inciting act.",
+    "include": "Deletion of a rejection/evacuation-order/invasion-as-initiation clause; addition of a reason for the rejection; reordering so that rejection follows a Zionist or British cause in the same paragraph. Also code the reverse: rejection newly added as an inciting act.",
+    "exclude": "Rejection statements unchanged in content and position; rejection by Israel (code separately as an Israeli-rejection variable).",
+    "examples": [
+      {
+        "title": "Israel",
+        "before": "The plan was accepted by the Jewish Agency, and rejected by Arab leaders.",
+        "after": "The Jewish leadership accepted the plan while the Palestinian Arab leadership rejected it, arguing it violated the principle of self-determination and constituted Western colonial interference."
+      },
+      {
+        "title": "Mandatory Palestine",
+        "before": "After the failure of the Arab population to accept the United Nations Partition Plan for Palestine, the 1947–1949 Palestine war ended with the territory of Mandatory Palestine divided among the State of Israel",
+        "after": "The United Nations Partition Plan for Palestine, adopted by the UN General Assembly in November 1947, recommended dividing the territory into two states, one Arab and one Jewish."
+      },
+      {
+        "title": "1948 Palestinian expulsion and flight",
+        "before": "the voluntary self-removal of the wealthier classes, collapse in Palestinian leadership and Arab evacuation orders, and an unwillingness to live under Jewish control.",
+        "after": "and the collapse of Palestinian leadership including the demoralizing impact of wealthier classes fleeing."
+      },
+      {
+        "title": "Israeli–Palestinian conflict",
+        "before": "(absent)",
+        "after": "The plan was rejected by the Arab Higher Committee and the Arab League, triggering the 1947–1948 civil war in Mandatory Palestine.",
+        "note": "reverse case: rejection ADDED as trigger, but now preceded by a paragraph opening with Zionism as origin"
+      }
+    ],
+    "topic_count": "9 of 71 topic pairs (Israel, Mandatory Palestine, Palestine, Israeli–Palestinian conflict, 1948 Arab–Israeli War, Arab–Israeli conflict, Hamas, 1948 Palestinian expulsion and flight, Two-state solution); outright deletion in 4 (Mandatory Palestine, Hamas, Arab evacuation orders in 1948 expulsion, 'Taking the side of the Palestinian Arabs' in Arab–Israeli conflict), motive added in 1, kept but preceded by Zionist cause in 3, newly added/strengthened in 2 (Israeli–Palestinian conflict; 1948 Arab–Israeli War adds 'attacks by Palestinian militias and mobs on Jewish areas')",
+    "comparison_count": "0 of 20 (no analogous plot point found)",
+    "direction": "Arab/Palestinian refusal stops functioning as the first cause of 1947-49 war and refugeehood. It is mostly retained, not erased, but becomes a response with stated reasons inside a story already begun by Zionist settlement. Arab-evacuation-order explanations of the refugee flight are removed.",
+    "kpis": [
+      {
+        "name": "rejection_position",
+        "unit": "per article pair mentioning 1947-48",
+        "procedure": "Code for A and B: rejection absent / present as first cause in its paragraph / present after a prior cause / present with motive. KPI = transition matrix.",
+        "automatable": "partly: regex finds 'rejected|refused|failure ... to accept|evacuation orders|invaded'; LLM codes position and motive"
+      },
+      {
+        "name": "flight_cause_list",
+        "unit": "per article pair",
+        "procedure": "Where the lead lists causes of the 1948 Palestinian exodus, list each cause and classify it as Israeli/Zionist action, Arab/Palestinian action or decision, or circumstance. KPI = share of Arab-agency causes A vs B.",
+        "automatable": "no: LLM"
+      }
+    ]
+  },
+  {
+    "move": "M8 Suffering slotting and pairing",
+    "definition": "Where the suffering of each group is placed in the story grammar: Jewish suffering (pogroms, Holocaust, antisemitism) newly added as the MOTIVE that drives migration/Zionism, Palestinian suffering newly added as the CONSEQUENCE of Zionist/Israeli action; and whether the two are paired in one sentence.",
+    "include": "Added clauses naming harm to Jews or Palestinians (killing, expulsion, persecution, famine), coded by narrative slot (cause/motive, consequence, standalone) and by whether the other group's harm is in the same sentence. Removal of a paired sentence counts.",
+    "exclude": "Updated casualty figures with no change in slot or pairing; suffering of third parties.",
+    "examples": [
+      {
+        "title": "Haganah",
+        "before": "including bombing bridges, rail lines, and ships used to deport illegal Jewish immigrants, as well as assisting in bringing Jews to Palestine in defiance of British policy.",
+        "after": "the campaign included the paramilitaries' bombing of bridges, railways, and ships used to deport illegal Jewish immigrants fleeing The Holocaust",
+        "note": "Jewish suffering inserted as motive"
+      },
+      {
+        "title": "Western Wall",
+        "before": "a particularly deadly riot in 1929 in which 133 Jews were killed and 339 injured.",
+        "after": "a particularly deadly riot in 1929 in which 133 Jews and 116 Arabs were killed, with many more people injured.",
+        "note": "pairing added"
+      },
+      {
+        "title": "History of Israel",
+        "before": "Israeli independence in 1948 was accompanied by an exodus of Arabs from Israel, the Arab–Israeli conflict and a subsequent Jewish exodus from Arab and Muslim countries to Israel.",
+        "after": "Israel's 1948 independence sparked the 1948 Arab–Israeli War, repelling neighboring armies but resulting in significant regional displacement.",
+        "note": "pairing removed: both displacements merged into an agentless 'regional displacement'"
+      },
+      {
+        "title": "First Aliyah",
+        "before": "Jews who migrated in this wave came mostly from Eastern Europe and from Yemen.",
+        "after": "Jews who migrated in this wave came mostly from Eastern Europe, stimulated by pogroms and violence against the Jewish communities there."
+      }
+    ],
+    "topic_count": "Palestinian harm added in consequence slot: 11 of 71; Jewish harm added in motive slot: 7 of 71 (First Aliyah, Aliyah, Haganah, Law of Return, Israel, Anti-Zionism, History of the Jews in the Dominican Republic); pairing added 3 (Western Wall, Gaza war, October 7 attacks), pairing removed 1 (History of Israel), pairing retained 3 (1948 Arab–Israeli War, Israel, Mizrahi Jews)",
+    "comparison_count": "Victim-detail expansion in 5 of 20 (Tigray war, Persecution of Uyghurs in China, Armenian genocide, Native Americans in the United States, History of Australia), always in consequence slot; no motive-slot analogue",
+    "direction": "The modern story becomes: persecuted Jews (motive) -> colonising movement (action) -> Palestinian dispossession (consequence). Both groups' suffering is more present than in 2021; what changes is its grammatical role. Jewish suffering explains why Zionists came; Palestinian suffering is what their coming caused.",
+    "kpis": [
+      {
+        "name": "suffering_slot_counts",
+        "unit": "per harm mention",
+        "procedure": "For each mention of harm to Jews or to Palestinians, code slot: motive/cause of a later action, consequence of another actor's action, standalone/commemorative. KPI = counts by group x slot, A vs B.",
+        "automatable": "no: LLM"
+      },
+      {
+        "name": "paired_suffering_sentence",
+        "unit": "per sentence",
+        "procedure": "Binary per sentence: names harm to both Jews/Israelis and Palestinians/Arabs. KPI = number of such sentences per lead, A vs B.",
+        "automatable": "partly: regex co-occurrence of both group terms and a harm lexicon; LLM verifies"
+      }
+    ]
+  },
+  {
+    "move": "M9 Toponymic and temporal anachronism management",
+    "definition": "Edits that change which modern name or concept is used for an earlier period or actor: Israel/IDF vs Zionists/Yishuv/paramilitaries before 14 May 1948; Land of Israel/Eretz Israel vs Palestine/Ottoman Syria/southern Syria for Ottoman and Mandate periods; modern state names or 'Mandatory Palestine' projected onto antiquity or the Middle Ages.",
+    "include": "Any replacement of a period- or polity-name for a pre-1948 setting; any actor relabelled according to whether a state existed; new projections of a later name onto an earlier period (code as 'projection created').",
+    "exclude": "Present-day geographic labels (Southern Levant vs West Asia for the modern state); transliteration-only edits.",
+    "examples": [
+      {
+        "title": "Nakba",
+        "before": "The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Israel through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.",
+        "after": "The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.",
+        "source": "first_sentence_edits[11] (2026-07-06T05:20:12Z)",
+        "note": "edit summary: 'more precise: [[Plan Dalet]], for example, was executed before the declaration of May 14'"
+      },
+      {
+        "title": "Jewish history",
+        "before": "During the 1870s and 1880s the Jewish population in Europe began to more actively discuss emigration back to Israel and the re-establishment of the Jewish Nation in its national homeland.",
+        "after": "During the 1870s and 1880s, the Jewish population in Europe began to more actively discuss emigration to Ottoman Syria with the aim of re-establishing a Jewish polity in Palestine."
+      },
+      {
+        "title": "Old Yishuv",
+        "before": "The Old Yishuv (haYishuv haYashan) were the Jewish communities of the southern Syrian provinces in the Ottoman period",
+        "after": "were the Jewish communities of the region of Palestine during the Ottoman period"
+      },
+      {
+        "title": "Demographic history of Palestine (region)",
+        "before": "(absent)",
+        "after": "a Muslim majority, which is thought to have existed in Mandatory Palestine (1920-1948) since at least the 12th century AD",
+        "note": "projection created: a 1920-48 polity name applied to the 12th century"
+      },
+      {
+        "title": "Second Aliyah",
+        "before": "(Jewish emigration to Palestine)",
+        "after": "(Jewish immigration to the Land of Israel)",
+        "note": "opposite direction"
+      }
+    ],
+    "topic_count": "12 of 71 topic pairs (Nakba, 1948 Palestinian expulsion and flight, Jewish history, Old Yishuv, Palestine, Zionism, Aliyah, Second Aliyah, History of Israel, Demographic history of Palestine (region), Mizrahi Jews, Israel); corrections that remove a projection 7, projections created 2, label swaps toward 'Land of Israel' 2, toward 'Palestine' 5",
+    "comparison_count": "2 of 20 (Tibet adds a note that 'Tibet' traditionally meant only central Tibet; Greek diaspora adds 'in today's Turkey')",
+    "direction": "Pre-1948 actors are increasingly labelled by movement (Zionists, Zionist paramilitaries) rather than by the later state, and the Ottoman/Mandate land is increasingly named 'Palestine' rather than 'Eretz Israel'/'southern Syria'. Precision gains and new projections both occur; the net drift is toward 'Palestine' as the default name of the land before 1948.",
+    "kpis": [
+      {
+        "name": "pre1948_actor_label",
+        "unit": "per actor mention dated before 14 May 1948",
+        "procedure": "Code label used for the Jewish actor: Israel/Israeli/IDF (state label), Zionist(s)/Yishuv/Jewish forces (pre-state label). KPI = share of state labels A vs B.",
+        "automatable": "partly: regex for labels plus date expressions in the same sentence; LLM checks the date reference"
+      },
+      {
+        "name": "pre1948_land_label",
+        "unit": "per place-name mention for pre-1948 settings",
+        "procedure": "Code: Palestine/Mandatory Palestine; Land of Israel/Eretz Israel; Ottoman Syria/southern Syria/Levant; Israel. KPI = distribution A vs B.",
+        "automatable": "partly"
+      },
+      {
+        "name": "projection_created",
+        "unit": "per article pair",
+        "procedure": "Binary: B applies a polity or state name to a period before that polity existed (e.g. 'Mandatory Palestine' for the 12th century; 'history of Israel' for prehistory without qualification) where A did not.",
+        "automatable": "no: LLM"
+      }
+    ]
+  },
+  {
+    "move": "M10 Genus re-classification and displacement of the old story",
+    "definition": "The category noun of the first sentence changes (movement -> 'ethnic nationalist movement ... through colonization'; destruction -> 'ethnic cleansing'; 'militant ... organization' -> 'political organisation'), and old propositions are deleted rather than kept alongside the new ones.",
+    "include": "Change in the head noun phrase or its evaluative modifiers in the first sentence; a lead0 proposition with no counterpart in lead1 (count displaced propositions).",
+    "exclude": "Cosmetic rewording of the genus (organization -> organisation); propositions merely moved further down the lead.",
+    "examples": [
+      {
+        "title": "Hamas",
+        "before": "is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization.",
+        "after": "is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades."
+      },
+      {
+        "title": "Palestine Liberation Organization",
+        "before": "is an organization founded in 1964 with the purpose of the \"liberation of Palestine\" through armed struggle, with much of its violence aimed at Israeli civilians.",
+        "after": "is a Palestinian nationalist coalition that is internationally recognized as the official representative of the Palestinian people in the occupied Palestinian territories."
+      },
+      {
+        "title": "Lehi (militant group)",
+        "before": "was a Zionist paramilitary organization founded by Avraham (\"Yair\") Stern in Mandatory Palestine that used terrorist means in its actions.",
+        "after": "was a Zionist paramilitary militant organization founded by Avraham (\"Yair\") Stern in Mandatory Palestine in 1940.",
+        "note": "violence label removed from first sentence for armed groups on both sides"
+      },
+      {
+        "title": "Israel",
+        "before": "It has the highest standard of living in the Middle East, and ranks among the world's top countries by percentage of citizens with military training, percentage of citizens holding a tertiary education degree, research and development spending by GDP percentage, women's safety, life expectancy, innovativeness, and happiness.",
+        "after": "Israel's illegal occupation of the Palestinian territories has drawn international criticism, with most Middle East experts arguing that Israel's treatment of Palestinians in the West Bank in relation to Israeli settlers constitutes a system of apartheid.",
+        "note": "displacement: achievement list cut, occupation/apartheid paragraph added at similar lead length"
+      },
+      {
+        "title": "Turkish nationalism",
+        "before": "Turkish nationalism is a political ideology that promotes and glorifies the Turkish people, as either a national, ethnic, or linguistic group.",
+        "after": "Turkish nationalism (Türk milliyetçiliği) is nationalism among the people of Turkey and individuals whose national identity is Turkish.",
+        "note": "COMPARISON: genus change is common Wikipedia practice"
+      }
+    ],
+    "topic_count": "Genus change in 15 of 71 topic first sentences; substantial displacement (several lead0 claims with no counterpart) in roughly 20 of 71",
+    "comparison_count": "Genus change in 5 of 20 comparison first sentences; substantial displacement in roughly 6 of 20 (Quebec sovereignty movement, Tigray war, Turkish nationalism, History of Australia, Greek diaspora, Armenian genocide)",
+    "direction": "NOT distinctive in rate: rewriting the genus and replacing rather than appending is general Wikipedia style. Topic-specific is the content of the swap: Zionist/Israeli subjects gain colonial or crime genera; Palestinian armed groups (and Lehi) lose violence genera in the first sentence; Israeli achievement and peace-process/poll material is displaced by occupation, apartheid and genocide material.",
+    "kpis": [
+      {
+        "name": "first_sentence_genus_class",
+        "unit": "per first sentence",
+        "procedure": "Extract the head noun phrase of the definitional clause; classify as neutral-descriptive, political/national, religious, colonial, crime/atrocity, violent/militant. KPI = transition matrix A->B, split by subject side (Israeli/Zionist, Palestinian, other).",
+        "automatable": "partly: parser extracts head NP; LLM classifies"
+      },
+      {
+        "name": "proposition_retention",
+        "unit": "per article pair",
+        "procedure": "Split A into atomic propositions; mark each retained (same claim present in B), modified, or dropped. KPI = share dropped; also share of B propositions that are new. Displacement index = dropped/(dropped+retained).",
+        "automatable": "partly: sentence-embedding alignment gives a first pass; LLM verifies claim-level retention"
+      }
+    ]
+  }
+]
