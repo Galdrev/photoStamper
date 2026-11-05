@@ -1,8 +1,3 @@
-[hb pilot] pilot 0/168 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
-[hb pilot] pilot 0/168 el=1.0m eta=Nonem req=75 429=8 5xx=0 retries=8 fail=0
-[hb pilot] pilot 0/168 el=2.0m eta=Nonem req=145 429=12 5xx=0 retries=12 fail=0
-[hb pilot] pilot 0/168 el=3.0m eta=Nonem req=216 429=16 5xx=0 retries=16 fail=0
-[hb pilot] pilot 0/168 el=4.0m eta=Nonem req=284 429=20 5xx=0 retries=20 fail=0
 [hb pilot] pilot 0/168 el=5.0m eta=Nonem req=349 429=24 5xx=0 retries=24 fail=0
 [hb pilot] pilot 1/168 el=6.0m eta=1002.2m req=420 429=28 5xx=0 retries=28 fail=0
 [hb pilot] pilot 2/168 el=6.6m eta=545.8m req=485 429=28 5xx=0 retries=28 fail=0
@@ -38,3 +33,8 @@
 [hb pilot] pilot 30/168 el=29.0m eta=133.4m req=2106 429=120 5xx=0 retries=120 fail=0
 [hb pilot] pilot 31/168 el=29.5m eta=130.5m req=2161 429=120 5xx=0 retries=120 fail=0
 [hb pilot] pilot 31/168 el=30.0m eta=132.6m req=2176 429=124 5xx=0 retries=124 fail=0
+[hb pilot] pilot 33/168 el=30.6m eta=125.1m req=2243 429=124 5xx=0 retries=124 fail=0
+[hb pilot] pilot 33/168 el=31.0m eta=126.8m req=2248 429=128 5xx=0 retries=128 fail=0
+[hb pilot] pilot 35/168 el=31.5m eta=119.8m req=2308 429=128 5xx=0 retries=128 fail=0
+[hb pilot] pilot 36/168 el=32.0m eta=117.3m req=2323 429=132 5xx=0 retries=132 fail=0
+[hb pilot] pilot 37/168 el=33.0m eta=116.8m req=2394 429=136 5xx=0 retries=136 fail=0
