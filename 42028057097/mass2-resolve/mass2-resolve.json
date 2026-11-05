@@ -1,0 +1,20 @@
+{
+ "job": "mass2-resolve",
+ "stage": "resolve",
+ "done": 9000,
+ "total": 10454,
+ "elapsed_min": 2.5,
+ "eta_min": 0.4,
+ "rps_limit": 2.0,
+ "req_per_s": 1.58,
+ "avg_latency_s": 0.52,
+ "requests": 238,
+ "ok": 238,
+ "http_429": 0,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 0,
+ "failures": 0,
+ "bytes": 9982979,
+ "updated": "2026-11-05T12:35:43Z"
+}
