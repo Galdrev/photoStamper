@@ -157,3 +157,21 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
   About 182k requests, 16 shards, about 12 h.
 - **Privacy decision:** the engineer's fallback put a shared salt in a run artifact. In a public repo anyone could download it during the run and reverse the published editor hashes. Replaced with per-shard random salts that are never stored. Cost: editor hashes are only linkable within a shard. A repo secret `WT_SALT_SEED` would restore cross-shard linking safely, if the owner sets one.
 - **Adopt at work?** Yes: put a privacy review before scale. The convenient design was the leaky one.
+
+## #48 The one study-2 "finding" failed its own precision gate (2026-11-05)
+- **Result:** N5 (1948 departure described as forced rather than fled) was the only study-2 measure whose CI excluded zero (+0.08). The pre-set 60% precision gate on 30 hand-checked sentences:
+
+  | Measure | Precision | Gate |
+  |---|---|---|
+  | N1 | 40% | drop |
+  | N2 | 60% | pass, marginal |
+  | N5 | 53% | drop |
+  | N6 | 53% | drop |
+
+  So N5 is dropped, and with it the only positive study-2 result.
+- **Why the measures were noisy:**
+  - Sentence-level "nearest group term" attribution mislabels whose indigeneity or whose violence a sentence is about. The label often points at the victim.
+  - Mixed phrasings like "fled or were expelled" were counted as forced.
+  - Generic matches got in ("native silk").
+- **Lesson:** regex attribution of *who* a frame is about is much harder than counting *whether* a frame is present. Study 1's presence lexicons ran at 0.90–1.00 precision; study 2's attribution runs at 40–60%. If we revisit this, use an LLM classifier per sentence with a validated prompt.
+- **Adopt at work?** Yes: put a precision gate before interpretation. It just stopped us from presenting a measurement artefact as a finding.
