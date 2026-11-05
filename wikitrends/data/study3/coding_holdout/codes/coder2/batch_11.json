@@ -1,0 +1,817 @@
+[
+ {
+  "id": "Pc8d939e7",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: In English, its doctrines and practices are sometimes called Sunnism, while adherents are known as Sunni Muslims, Sunnis, Sunnites and Ahlus Sunnah.",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_promotes",
+     "in_first_sentence": false
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is the largest denomination of Islam, followed by 87–90% of the world's Muslims."
+  }
+ },
+ {
+  "id": "Pe9b2a7bf",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "B_recontextualises",
+   "evidence": "A: Turkish forces refused to depart after the legitimate government was restored.",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_recontextualises",
+     "how": "deleted"
+    }
+   ]
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P8ece12d9",
+  "usable": true,
+  "K01": {
+   "code": "B_less_narrator",
+   "evidence": "B: The Iranian government is widely considered to be authoritarian",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_less_narrator",
+     "category": "authoritarian regime",
+     "level_A": 5,
+     "level_B": 4
+    }
+   ]
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: beginning with the formation of the Elamite kingdoms in the fourth millennium BC",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": -700,
+     "onset_year_B": -3500
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "both",
+   "evidence": "B: Arab Muslims conquered the empire in the seventh century AD, which led to the Islamization of Iran",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_more_explicit",
+     "level_A": 2,
+     "level_B": 4
+    },
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_less_explicit",
+     "level_A": 4,
+     "level_B": 3
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pa089a0da",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_later",
+   "evidence": "A: Judaism has its roots as an organized religion in the Middle East during the Bronze Age.",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_removes_prior_cause",
+     "onset_year_A": null,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: with the term Jews replacing the title \"Children of Israel\".",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_demotes",
+     "in_first_sentence": false
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: Judaism has its roots as an organized religion in the Middle East during the Bronze Age.",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Peb5cd0ec",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pcd26293e",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pc7e45bb6",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: Orthodox Judaism is a collective term for the traditionalist branches of contemporary Judaism."
+  }
+ },
+ {
+  "id": "Pb19319f5",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pa002d51c",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P1207bc83",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P2fe15999",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_later",
+   "evidence": "A: prompted by the White Paper of 1939 and the ongoing Holocaust",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_removes_prior_cause",
+     "onset_year_A": 1939,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "B_removes_motive",
+   "evidence": "A: prompted by the White Paper of 1939 and the ongoing Holocaust",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_removes_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pc3d3179a",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: Rabbinic Judaism (יהדות רבנית), also called Rabbinism, Rabbinicism, or Rabbanite Judaism, is rooted in the many forms of Judaism that coexisted"
+  }
+ },
+ {
+  "id": "Pc98b9bbc",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: Maud S. Mandel (born June 14, 1967) is an American historian and academic administrator."
+  }
+ },
+ {
+  "id": "Pa9f5a80c",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "B_earlier",
+   "evidence": "B: It emerged in the context of the Lebanese civil war, the collapse of central authority, Iran's strategic interests in Lebanon, and the Israeli invasion of Lebanon.",
+   "parties": [
+    {
+     "party": "UNCLEAR",
+     "dir": "B_adds_prior_cause",
+     "onset_year_A": 1982,
+     "onset_year_B": null
+    }
+   ]
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: Hezbollah (DIN, literally \"Party of Allah\" or \"Party of God\", also transliterated",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "B_removes",
+   "evidence": "A: Hezbollah maintains that it is a legitimate resistance movement fighting for the liberation of Lebanese territory.",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_removes"
+    }
+   ]
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "B_removes_motive",
+   "evidence": "A: to resist the Israeli occupation and improve the standing and status of the long marginalised and underrepresented Shia community in that country",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_removes_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: Hezbollah is a Lebanese Shia Islamist political party with an active paramilitary wing"
+  }
+ },
+ {
+  "id": "P3000c54a",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P39413e0a",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: The Armenian diaspora are the communities of Armenians outside the Armenian highlands.",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "both",
+   "evidence": "B: with a majority of their people living outside their ancestral homeland.",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_strengthens",
+     "type": "continuity"
+    },
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_weakens",
+     "type": "indigeneity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pc1699db2",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: Hasidism (wikt:חסידות) or Hasidic Judaism is a religious movement within [[Judaism"
+  }
+ },
+ {
+  "id": "Pb2bd3a6a",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ }
+]

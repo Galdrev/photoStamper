@@ -1,0 +1,880 @@
+[
+ {
+  "id": "Pec40aee7",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: Holocaust inversion is a phrase which is used to describe the portrayal of Jews as Nazis"
+  }
+ },
+ {
+  "id": "Pecd4bef8",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pc3e7193c",
+  "usable": true,
+  "K01": {
+   "code": "B_less_narrator",
+   "evidence": "B: the United Nations, international human rights organisations, and the majority of governments and legal commentators consider the territory to be still occupied by Israel",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_less_narrator",
+     "category": "illegal occupation",
+     "level_A": 5,
+     "level_B": 4
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_less_explicit",
+   "evidence": "B: the Israeli sea and air blockade",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_less_explicit",
+     "level_A": 4,
+     "level_B": 2
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pd5d5035d",
+  "usable": true,
+  "K01": {
+   "code": "B_less_narrator",
+   "evidence": "B: widely criticised referendum",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_less_narrator",
+     "category": "illegitimate referendum",
+     "level_A": 5,
+     "level_B": 4
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "B_removes",
+   "evidence": "A: Russian officials repeatedly denied plans to attack Ukraine",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_removes"
+    }
+   ]
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "B_removes_motive",
+   "evidence": "A: because of Russia's attacks, it revived plans to join NATO",
+   "parties": [
+    {
+     "party": "OTHER_STATE",
+     "dir": "B_removes_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P53666ee1",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "A: Indigenous Canadians (also known as Aboriginal Canadians, Native Canadians or First Peoples)",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: In Canada, Indigenous peoples (also known as Aboriginal Canadians) represent roughly 5% of the overall population."
+  }
+ },
+ {
+  "id": "P74f8a24c",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "other_change",
+   "evidence": "B: an ongoing conflict between the Sahrawi Arab Democratic Republic (SADR) and the Kingdom of Morocco",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "other_change",
+     "from_cat": "O",
+     "to_cat": "S"
+    }
+   ]
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pf658b2a0",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "B_weakens",
+   "evidence": "A: advocates for the restoration of Scotland's status as a sovereign state independent from the United Kingdom",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_weakens",
+     "type": "continuity"
+    }
+   ]
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pd1376136",
+  "usable": true,
+  "K01": {
+   "code": "B_more_narrator",
+   "evidence": "B: with excessive violence in response from Israeli security forces",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_more_narrator",
+     "category": "excessive force",
+     "level_A": 2,
+     "level_B": 5
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: The First Intifada (الانتفاضة الأولى), also known as the First Palestinian Intifada",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "B_removes",
+   "evidence": "A: Israel argued that violence from Palestinians necessitated a forceful response.",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_removes"
+    }
+   ]
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "B_adds_motive",
+   "evidence": "B: It was motivated by collective Palestinian frustration over Israel's military occupation of the West Bank and the Gaza Strip",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_adds_motive"
+    }
+   ]
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: was a sustained uprising involving violent and non-violent protests"
+  }
+ },
+ {
+  "id": "P08563bd7",
+  "usable": true,
+  "K01": {
+   "code": "B_more_narrator",
+   "evidence": "B: United States Representative Anthony Weiner subsequently called for Massad to be fired for \"anti-Semitic rantings.\"",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_more_narrator",
+     "category": "antisemitism",
+     "level_A": 1,
+     "level_B": 2
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "B_removes",
+   "evidence": "A: Massad said the episodes concerning him did not take place",
+   "parties": [
+    {
+     "party": "UNCLEAR",
+     "dir": "B_removes"
+    }
+   ]
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: The Columbia Unbecoming controversy was a controversy involving three professors at Columbia University in New York"
+  }
+ },
+ {
+  "id": "Pf46796ff",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P9a559cae",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: Mossad (ALA-LC,; lit. The Institute), short for HaMossad",
+   "parties": [
+    {
+     "party": "JEWISH_ISRAELI",
+     "dir": "B_promotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "Pd4391ed5",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P627016c9",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: was a German agitator and publicist"
+  }
+ },
+ {
+  "id": "P17e7f283",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "B_gains",
+   "evidence": "B: is a diverse spectrum of negative feelings, dislikes, fears, aversion, racism, derision and/or prejudice towards Armenians",
+   "parties": [
+    {
+     "party": "UNCLEAR",
+     "dir": "B_gains",
+     "class": "apartheid_racism"
+    }
+   ]
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P231b4363",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: The Islamic State in West Africa or the Islamic State's West Africa Province (abbreviated ISWA or ISWAP)",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "B_more_explicit",
+   "evidence": "B: Boko Haram has killed tens of thousands and displaced 2.3 million from their homes",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_more_explicit",
+     "level_A": 1,
+     "level_B": 4
+    }
+   ]
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: is a jihadist terrorist organization based in northeastern Nigeria"
+  }
+ },
+ {
+  "id": "Pda6b191b",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P652c79b9",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "changed",
+   "evidence": "B: Ottoman Syria (later Mandatory Palestine, subsequently Israel and the Palestinian territories)",
+   "parties": [
+    {
+     "party": "PALESTINIAN_ARAB",
+     "dir": "B_demotes",
+     "in_first_sentence": true
+    }
+   ]
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P706b41e3",
+  "usable": true,
+  "K01": {
+   "code": "none"
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "none"
+  }
+ },
+ {
+  "id": "P480fa3bc",
+  "usable": true,
+  "K01": {
+   "code": "B_more_narrator",
+   "evidence": "B: These incidents have spanned various periods and have involved stereotypes, conspiracy theories, and offensive language.",
+   "parties": [
+    {
+     "party": "OTHER_GROUP",
+     "dir": "B_more_narrator",
+     "category": "antisemitism",
+     "level_A": 1,
+     "level_B": 5
+    }
+   ]
+  },
+  "K02": {
+   "code": "none"
+  },
+  "K03": {
+   "code": "none"
+  },
+  "K04": {
+   "code": "none"
+  },
+  "K05": {
+   "code": "none"
+  },
+  "K07": {
+   "code": "none"
+  },
+  "K08": {
+   "code": "none"
+  },
+  "K10": {
+   "code": "none"
+  },
+  "K11": {
+   "code": "none"
+  },
+  "K12": {
+   "code": "none"
+  },
+  "SC1": {
+   "code": "changed",
+   "evidence": "B: Allegations and incidents of antisemitism within the British Labour Party have involved members and affiliates of the party."
+  }
+ }
+]
