@@ -249,3 +249,4 @@
 @media (prefers-reduced-motion:reduce){.lx *{transition:none!important;animation:none!important}}
 .lx-pre{margin:8px 0 0;padding:6px 10px;border:1px dashed var(--rule);border-radius:3px;font:13px/1.45 var(--body);color:var(--ink-2)}
 .lx-say .lx-pre b{font-weight:600}
+.lx-fs .lx-nost{color:var(--muted);font-style:italic}

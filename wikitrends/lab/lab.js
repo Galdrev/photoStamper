@@ -338,7 +338,9 @@ const RT=D&&D.ratchet&&D.ratchet.articles||null, EXPO=D&&D.exposure||null;
 const S4={title:null,step:0};
 function fbData(t){const a=RT&&RT[t];if(!a)return null;if(a._lx)return a._lx;
   const vs=new Map((a.fs_variants||[]).map(v=>[v.id,v]));const steps=[];
-  for(const e of a.fs_timeline||[]){const [d,vid,rv]=e;if(!vs.has(vid))continue;if(steps.length&&steps[steps.length-1].vid===vid){if(rv)steps[steps.length-1].rv=1;continue}steps.push({d,vid,rv:rv?1:0,t:TM(d)})}
+  /* same logic as the report: every timeline entry is a change, including wordings whose text was not stored (fs_variants keeps only the longest-lived) */
+  for(const e of a.fs_timeline||[]){const [d,vid,rv]=e;const t=TM(d);if(!isFinite(t))continue;steps.push({d,vid,rv:rv?1:0,t,s:vs.has(vid)?vs.get(vid).s:null})}
+  steps.sort((p,q)=>p.t-q.t);
   const ex=EXPO&&EXPO[t];const views=new Map();if(ex&&ex.variants)ex.variants.forEach(e=>{for(const v of vs.values()){if(v.s.slice(0,300)===e.s||v.s.slice(0,300)===String(e.s).slice(0,300)){views.set(v.id,(views.get(v.id)||0)+e.views);break}}});
   const order=[];const seen=new Set();steps.forEach(s=>{if(!seen.has(s.vid)){seen.add(s.vid);order.push(s.vid)}});
   for(const v of vs.values())if(!seen.has(v.id)){order.push(v.id)}
@@ -346,10 +348,10 @@ function fbData(t){const a=RT&&RT[t];if(!a)return null;if(a._lx)return a._lx;
   const live=new Map();let sumLive=0;for(const v of vs.values())sumLive+=v.live_days||0;
   if(sumLive>0)for(const v of vs.values())live.set(v.id,v.live_days||0);
   else{const tl=a.fs_timeline||[],end=Math.max(Date.now(),tl.length?TM(tl[tl.length-1][0]):0);for(let i=0;i<tl.length;i++){const t=TM(tl[i][0]),n=i+1<tl.length?TM(tl[i+1][0]):end;if(vs.has(tl[i][1]))live.set(tl[i][1],(live.get(tl[i][1])||0)+Math.max(0,(n-t)/864e5))}}
-  return a._lx={a,vs,steps,views,live,hasViews:!!(ex&&ex.variants&&views.size),order,rvBy,total:a.fs_n_variants||vs.size};
+  return a._lx={a,vs,steps,views,live,hasViews:!!(ex&&ex.variants&&views.size),order,rvBy,total:a.fs_n_variants||new Set(steps.map(x=>x.vid)).size,changes:Math.max(0,steps.length-1),unstored:new Set(steps.filter(x=>x.s==null).map(x=>x.vid)).size};
 }
 const toks=s=>((s||"").match(/\S+/g)||[]).join(" ");
-function fbDefault(d){for(let i=d.steps.length-1;i>0;i--){if(toks(d.vs.get(d.steps[i].vid).s)!==toks(d.vs.get(d.steps[i-1].vid).s))return i}return d.steps.length-1}
+function fbDefault(d){for(let i=d.steps.length-1;i>0;i--){const a=d.steps[i].s,b=d.steps[i-1].s;if(a!=null&&b!=null&&toks(a)!==toks(b))return i}return d.steps.length-1}
 function wdiff(a,b){const A_=(a||"").match(/\S+/g)||[],B_=(b||"").match(/\S+/g)||[];const n=Math.min(A_.length,160),m=Math.min(B_.length,160);
   const dp=new Uint16Array((n+1)*(m+1)),I=(i,j)=>i*(m+1)+j;
   for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)dp[I(i,j)]=A_[i]===B_[j]?dp[I(i+1,j+1)]+1:Math.max(dp[I(i+1,j)],dp[I(i,j+1)]);
@@ -366,7 +368,7 @@ function s4Init(){
   if(!titles.length){q("#lxFBox").innerHTML=note("No first-sentence versions were recorded.");return}
   S4.title=titles.includes("Zionism")?"Zionism":titles[0];
   cards.innerHTML=titles.map(t=>{const d=fbData(t),t0=d.steps[0].t,t1=d.steps[d.steps.length-1].t||t0+1;const bk=new Map();d.steps.forEach(s=>{const k=Math.round((s.t-t0)/((t1-t0)||1)*60);bk.set(k,(bk.get(k)||0)|(s.rv?2:1))});
-    return `<button class="lx-card" type="button" role="option" data-t="${E(t)}" aria-selected="${t===S4.title}"><b>${E(t)}</b><small>${N(d.total)} wordings · ${N(d.steps.length)} changes</small><svg viewBox="0 0 61 10" preserveAspectRatio="none" aria-hidden="true">${[...bk].map(([k,f])=>`<rect x="${k}" y="${f&2?0:3}" width=".8" height="${f&2?10:7}" style="fill:var(${f&2?"--del-bd":"--muted"})"/>`).join("")}</svg></button>`}).join("");
+    return `<button class="lx-card" type="button" role="option" data-t="${E(t)}" aria-selected="${t===S4.title}"><b>${E(t)}</b><small>${N(d.total)} wordings · ${N(d.changes)} changes</small><svg viewBox="0 0 61 10" preserveAspectRatio="none" aria-hidden="true">${[...bk].map(([k,f])=>`<rect x="${k}" y="${f&2?0:3}" width=".8" height="${f&2?10:7}" style="fill:var(${f&2?"--del-bd":"--muted"})"/>`).join("")}</svg></button>`}).join("");
   cards.onclick=e=>{const b=e.target.closest("[data-t]");if(!b)return;S4.title=b.dataset.t;S4.step=fbDefault(fbData(S4.title));qa("[data-t]",cards).forEach(x=>x.setAttribute("aria-selected",String(x===b)));s4Draw(0);view("f:"+S4.title)};
   S4.step=fbDefault(fbData(S4.title));
   const sel=q('[aria-selected="true"]',cards);if(sel)cards.scrollLeft=sel.offsetLeft-cards.offsetLeft-4;
@@ -390,13 +392,12 @@ function s4Go(d,dir){const dd=fbData(S4.title);const n=clamp(S4.step+d,0,dd.step
   const out=dir!=null?dir:(d>0?-1:1);fs.style.transform=`translateX(${out*40}px)`;fs.style.opacity="0";
   setTimeout(()=>{s4Draw(0);fs.classList.add("drag");fs.style.transform=`translateX(${-out*40}px)`;void fs.offsetWidth;fs.classList.remove("drag");fs.style.transform="";fs.style.opacity=""},170)}
 function s4Draw(){
-  const d=fbData(S4.title);if(!d)return;const st=d.steps[S4.step],prev=d.steps[S4.step-1],v=d.vs.get(st.vid);
-  const vi=d.order.indexOf(st.vid)+1,views=d.views.get(st.vid);
-  q("#lxFMeta").innerHTML=`<span><b>${DLL(st.d)}</b> · change ${N(S4.step+1)} of ${N(d.steps.length)}</span><span>wording ${vi} of ${N(d.total)} · live ${N(d.live.get(st.vid)||0)} days in all${views?` · about ${N(views)} reader views`:""}${st.rv?` · <span class="lx-rev">this edit was reverted</span>`:""}</span>`;
-  const ps=prev&&d.vs.get(prev.vid).s,same=prev&&toks(ps)===toks(v.s);
-  q("#lxFS").innerHTML=prev&&!same?wdiff(ps,v.s):E(v.s);
+  const d=fbData(S4.title);if(!d)return;const st=d.steps[S4.step],prev=d.steps[S4.step-1],views=d.views.get(st.vid),stored=st.s!=null;
+  q("#lxFMeta").innerHTML=`<span><b>${DLL(st.d)}</b> · ${S4.step?`change ${N(S4.step)} of ${N(d.changes)}`:`starting wording · ${N(d.changes)} changes follow`}</span><span>wording ${N(st.vid+1)} of ${N(d.total)}${stored?` · live ${N(d.live.get(st.vid)||0)} days in all`:""}${views?` · about ${N(views)} reader views`:""}${st.rv?` · <span class="lx-rev">this edit was reverted</span>`:""}</span>`;
+  const ps=prev&&prev.s,same=stored&&ps!=null&&toks(ps)===toks(st.s);
+  q("#lxFS").innerHTML=!stored?`<span class="lx-nost">wording not stored (short-lived)</span>`:ps!=null&&!same?wdiff(ps,st.s):E(st.s);
   if(same)q("#lxFMeta").insertAdjacentHTML("beforeend",`<span>only spacing or formatting changed</span>`);
-  else if(!prev)q("#lxFMeta").insertAdjacentHTML("beforeend",`<span>the earliest version recorded</span>`);
+  else if(stored&&prev&&ps==null)q("#lxFMeta").insertAdjacentHTML("beforeend",`<span>the wording before was not stored, so no highlighting</span>`);
   q("#lxFPrev").disabled=S4.step===0;q("#lxFNext").disabled=S4.step===d.steps.length-1;
   const sc=q("#lxFScrub"),w=Math.max(120,sc.clientWidth),h=44,t0=d.steps[0].t,t1=d.steps[d.steps.length-1].t,x=t=>6+(t-t0)/((t1-t0)||1)*(w-12);
   let s=`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}"><line class="axis" x1="6" x2="${w-6}" y1="22" y2="22"/>`;
@@ -417,7 +418,7 @@ function s4Mari(d,cur){
     s+=`<rect class="blk${isC?" cur":""}" data-v="${v.id}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${hh.toFixed(1)}" style="fill:${isC?"var(--topic)":d.hasViews&&!vw?"url(#lxH4)":"var(--comp)"};opacity:${isC?1:.35+.4*(k%2)}"><title>${E(v.s.slice(0,140))} · ${N(LV(v))} days${vw?" · "+N(vw)+" views":""}</title></rect>`;
     const nr=d.rvBy.get(v.id)||0;if(nr){const nn=Math.min(nr,Math.max(1,Math.floor(bw/4)));for(let j=0;j<nn;j++)s+=`<rect class="notch" x="${(x+(j+.5)*bw/nn-1).toFixed(1)}" y="${(y-7).toFixed(1)}" width="2" height="6"/>`}
     x+=bw});
-  s+=`<text x="0" y="10">↑ ${d.hasViews?"readers who saw it":"(reader counts not available)"}</text><text x="${w}" y="${H+top+16}" text-anchor="end">days live →</text><text x="0" y="${H+top+16}">${N(vs.length)} wordings · ${N(tot)} days</text></svg>`;
+  s+=`<text x="0" y="10">↑ ${d.hasViews?"readers who saw it":"(reader counts not available)"}</text><text x="${w}" y="${H+top+16}" text-anchor="end">days live →</text><text x="0" y="${H+top+16}">${N(vs.length)} stored wordings${d.unstored?` (+${N(d.unstored)} short-lived, not stored)`:""} · ${N(tot)} days</text></svg>`;
   el.innerHTML=s+`<p class="n" style="margin:0">One block per wording, oldest first. Wider: live longer${d.hasViews?". Taller: more reader views":""}. <span style="color:var(--del-ink)">Amber notch</span>: a reverted edit. Tap a block to jump.</p>`;
 }
 

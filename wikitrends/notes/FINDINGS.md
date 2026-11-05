@@ -65,6 +65,12 @@ Source: data/mass_results.json (run 41918142246).
   - deep panel editor-overlap ratio: topic 1.11 → 1.61, comparison 1.17 → 1.08.
   - **Topic articles show 2–3× more recurring co-editing per edit, and overlap rose after the war.** The null model produced no baseline pairs. Shared watchlists and breaking news produce the same pattern.
 
+- **One article up close: Zionism's definition sentence** (data/ratchet.json `articles.Zionism.fs_timeline`):
+  - "colonial / colonization" first entered on 2024-06-05 ("…as a colonial project…"), in an edit later undone;
+  - it then entered and left **44 separate times** across 293 recorded versions (180 contain it);
+  - it has been continuously present only since 2026-08-27;
+  - this is a single-article illustration of the push/undo pattern, not evidence for the group.
+
 ## 4. Exploratory: content and epistemics
 - **Hedging:**
   - mass tier: topic share of loaded-term mentions with attribution 0.22 → 0.25; comparison flat at 0.17;
