@@ -1,0 +1,19 @@
+articles with 3 leads: 9290 {'topic': 4073, 'comparison': 5217}
+== ALL
+  pre-war 2021→2023-07   unfiltered           topic +0.21 comp +0.09 DiD +0.12 [-0.48,+0.66] n=4073,5217
+  pre-war 2021→2023-07   narrative residual   topic +0.22 comp +0.07 DiD +0.14 [-0.45,+0.75] n=4073,5217
+  pre-war 2021→2023-07   event sentences      topic -0.01 comp +0.02 DiD -0.02 [-0.06,-0.00] n=4073,5217
+  post-war 2023-07→now   unfiltered           topic +2.65 comp +0.31 DiD +2.34 [+1.42,+3.25] n=4073,5217
+  post-war 2023-07→now   narrative residual   topic +2.31 comp +0.25 DiD +2.06 [+1.18,+2.98] n=4073,5217
+  post-war 2023-07→now   event sentences      topic +0.34 comp +0.06 DiD +0.28 [+0.08,+0.55] n=4073,5217
+  event-sentence share of leads (topic): 0.007 → 0.011 → 0.022
+  event-sentence share of leads (comparison): 0.007 → 0.014 → 0.025
+== RELEVANT
+  pre-war 2021→2023-07   unfiltered           topic +0.21 comp -0.19 DiD +0.41 [-1.20,+1.98] n=1364,1226
+  pre-war 2021→2023-07   narrative residual   topic +0.23 comp -0.21 DiD +0.45 [-1.10,+1.98] n=1364,1226
+  pre-war 2021→2023-07   event sentences      topic -0.02 comp +0.02 DiD -0.04 [-0.10,+0.00] n=1364,1226
+  post-war 2023-07→now   unfiltered           topic +5.49 comp +0.59 DiD +4.90 [+2.64,+7.22] n=1364,1226
+  post-war 2023-07→now   narrative residual   topic +5.03 comp +0.44 DiD +4.60 [+2.42,+6.79] n=1364,1226
+  post-war 2023-07→now   event sentences      topic +0.46 comp +0.15 DiD +0.30 [+0.02,+0.63] n=1364,1226
+  event-sentence share of leads (topic): 0.009 → 0.011 → 0.024
+  event-sentence share of leads (comparison): 0.010 → 0.016 → 0.024

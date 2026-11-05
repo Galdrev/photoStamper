@@ -1,0 +1,9 @@
+mass_narr merged: 9732 articles with both leads; 9732 lead texts stored
+[hb wikidata] wikidata 50/10850 el=0.0m eta=1.4m req=1 429=0 5xx=0 retries=0 fail=0
+[hb wikidata] wikidata 2800/10850 el=0.5m eta=1.5m req=56 429=0 5xx=0 retries=0 fail=0
+[hb wikidata] wikidata 5350/10850 el=1.0m eta=1.0m req=107 429=0 5xx=0 retries=0 fail=0
+[hb wikidata] wikidata 8100/10850 el=1.5m eta=0.5m req=162 429=0 5xx=0 retries=0 fail=0
+[hb wikidata] wikidata 10650/10850 el=2.0m eta=0.0m req=213 429=0 5xx=0 retries=0 fail=0
+wikidata: 10722/10850 titles typed; keep 8112, drop 2610
+mass unfiltered 4288 5444 PC1 0.2 OLS {'coef': 2.9496651412609327, 'lo': 0.08568675001711235, 'hi': 5.813643532504753, 'p': 0.04352842376031833, 'n': 9321, 'clusters': 27, 'formula': 'crit_lead ~ group_topic + log_words + log_edits'}
+mass filtered 1391 1238 PC1 0.24 OLS {'coef': 6.962794158150615, 'lo': 3.9200180604908508, 'hi': 10.00557025581038, 'p': 7.291674610219219e-06, 'n': 2596, 'clusters': 27, 'formula': 'crit_lead ~ group_topic + log_words + log_edits'}
