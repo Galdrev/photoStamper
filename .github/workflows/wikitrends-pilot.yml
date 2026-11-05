@@ -1,5 +1,6 @@
 name: wikitrends-pilot
 # Pilot collector for new signals (wikitrends/pilot.py): ~168 articles, results committed to results/pilot-<run_id>
+# launch 2026-11-05
 on:
   workflow_dispatch:
   push:
