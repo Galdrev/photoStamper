@@ -1,0 +1,20 @@
+{
+ "job": "wikidata",
+ "stage": "wikidata",
+ "done": 5500,
+ "total": 10879,
+ "elapsed_min": 1.5,
+ "eta_min": 1.5,
+ "rps_limit": 5.0,
+ "req_per_s": 1.21,
+ "avg_latency_s": 0.81,
+ "requests": 110,
+ "ok": 110,
+ "http_429": 0,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 0,
+ "failures": 0,
+ "bytes": 135676720,
+ "updated": "2026-11-05T13:18:36Z"
+}
