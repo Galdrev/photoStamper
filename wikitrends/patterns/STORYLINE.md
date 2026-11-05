@@ -2,7 +2,7 @@
 
 Working title: **"The average didn't move. The front page did."**
 
-Twelve beats, about a minute each; the twist (beat 7) gets a minute and a half. Each beat has one sentence to say, the visual, and the number to land. Chart files are relative to `wikitrends/patterns/`; patterns refer to SYNTHESIS.md.
+Twelve beats, about a minute each; the twist (beat 7) gets a minute and a half. Each beat has one sentence to say, the visual, and the number to land. Chart files are relative to `wikitrends/patterns/`; patterns refer to SYNTHESIS.md. Every number below matches the November 2026 update of SYNTHESIS.md (mass2, full scale). Study 2's withdrawn "1948 forced vs fled" result is not used anywhere in the talk.
 
 ---
 
@@ -13,8 +13,8 @@ Twelve beats, about a minute each; the twist (beat 7) gets a minute and a half. 
 
 ### Beat 2. The question and the rule (1:00 to 2:00)
 - **Say:** "We asked a measurable question, not 'is Wikipedia biased': did the wording on Israel, Palestine, Zionism and Judaism move between 2021 and 2026, more than on other countries and conflicts, and how?"
-- **Visual:** One slide: 10,433 articles, 3 snapshots; a deep panel of 513 articles, every quarter; every lead revision for 40 key articles; 11 languages; a comparison group of other conflicts and countries.
-- **Number:** 10,433 articles, half of them sealed until the end.
+- **Visual:** One slide: 10,320 articles at full scale (4,642 topic, 5,678 comparison), 3 snapshots plus every lead edit; a deep panel of 513 articles, every quarter; every lead revision for 40 key articles; 11 languages; 87 real-world events fixed before looking.
+- **Number:** 10,320 articles; the main test was replicated on a half of the data kept sealed until the end.
 
 ### Beat 3. The first answer was "no" (2:00 to 3:00)
 - **Say:** "We wrote the test down before looking, and by our own rule the answer was 'not supported': on average, these articles did not gain critical vocabulary faster than the comparison articles."
@@ -27,9 +27,9 @@ Twelve beats, about a minute each; the twist (beat 7) gets a minute and a half. 
 - **Number:** +3.6 percentage points more articles gained, on sealed data. Judaism: −0.1.
 
 ### Beat 5. When: one wave, then a plateau (4:00 to 5:00)
-- **Say:** "The change was not a slow drift: it came as one wave in the first half of 2024, months after the news peak, and it has been flat since early 2025."
-- **Visual:** Quarterly bars, topic vs comparison, with 7 Oct 2023 and the ICJ order marked; faint pageview line spiking and falling in Oct 2023 (Pattern P1; `when_where_what/chart_data/01_timeline_quarterly.json`, `how_who/chart_data/views_vs_edits_index.json`).
-- **Number:** 46 terms per 100 articles in 2024-Q2, against about 7 before the war and about 4 now.
+- **Say:** "The change was not a slow drift: it came as one wave through 2024 and is back to the pre-war rate in 2026, and the editors came with the battles, not with the court rulings."
+- **Visual:** Half-year bars of critical-term insertions per 1,000 topic edits, with 7 Oct 2023 and the ICJ order of 26 Jan 2024 marked; small inset heatmap of event type by outcome (Patterns P1, P10; `data/event_timing_mass2.json` → `half_years`, `events/chart_data/mass2_02_type_by_outcome.json`).
+- **Number:** About 7 insertions per 1,000 edits before the war, 16 in 2024, 5 to 6 in 2026. After military escalations, topic edits rose 17%; after legal events they did not (0.94x).
 
 ### Beat 6. Where: a few hundred pages (5:00 to 6:00)
 - **Say:** "Most pages never changed; the rise came from a few hundred of them."
@@ -37,19 +37,20 @@ Twelve beats, about a minute each; the twist (beat 7) gets a minute and a half. 
 - **Number:** 85% of topic articles unchanged; 40 articles supplied 38% of the new terms.
 
 ### Beat 7. The twist: the average didn't move, and yet... (6:00 to 7:30)
-- **Say:** "Here is why the average test missed it: the pages that changed are the ones people read, and the part that changed is the lead, the paragraph that search engines and AI assistants quote."
-- **Visual:** Two bars per group: share of articles vs share of pageviews whose lead gained critical terms; then lead vs body growth (Pattern P3; `story_sources_langs/chart_data/exposure_concentration.json`, `when_where_what/chart_data/09_lead_vs_body.json`).
-- **Number:** 15% of topic articles, 46% of topic readers. Leads +35%, bodies +13.5%.
+- **Say:** "Here is why the average test missed it: the few pages that changed are read far more than the average page, and the part that changed is the lead, the paragraph that search engines and AI assistants quote."
+- **Visual:** Two bars per group: share of articles vs share of pageviews whose lead gained critical terms; then lead vs body growth (Pattern P3; `mass2/chart_data/10_pageviews_exposure.json`, `when_where_what/chart_data/09_lead_vs_body.json`).
+- **Number:** 4% of topic articles, 15% of topic reading, three times the comparison share (1.5% of articles, 5% of reading). Leads +35%, bodies +13.5%.
+- **Careful:** do not say "most readers". 83% of topic views still land on leads that did not change. Do not use the older deep-panel "15% of articles, 46% of readers"; it came from a hand-picked set of prominent pages.
 
 ### Beat 8. What: the story moved back to 1948 (7:30 to 8:30)
 - **Say:** "The war did not mostly add war coverage; it sent editors back to retell 1897 to 1948 and to rename the land, from Zionism's definition to Palestinian village pages."
-- **Visual:** Then/now cards for Zionism ('re-establishment ... of a Jewish state' to 'a Jewish homeland through colonization'), West Bank and Nakba; small inset of article types gaining per year (Pattern P4; `when_where_what/chart_data/05_geography_type_importance.json`).
-- **Number:** 8.4 of the 9.3-point lead rise is in sentences about older history. Zionism's 'colonial' went in and out 44 times.
+- **Visual:** Then/now cards for Zionism ('re-establishment ... of a Jewish state' to 'a Jewish homeland through colonization'), West Bank and Nakba; small inset of the most-added framing categories (1948 Palestinian expulsion and flight, Zionist political violence, Israeli massacres of Palestinians, Israeli apartheid) (Patterns P4, P12; `mass2/chart_data/12_narrative_residual.json`, `mass2/chart_data/06_categories_infobox_seealso.json`).
+- **Number:** 89% of the post-war lead change is in sentences that are not about recent events. Framing categories were added to 7.2% of topic articles, against 2.2% of comparison articles. Zionism's 'colonial' went in and out 44 times.
 
 ### Beat 9. How and who: quiet pages, regulars, the same sources (8:30 to 9:45)
-- **Say:** "This was not a flood of new accounts or partisan sources: experienced regulars wrote it, mostly on pages where nobody reverted it, citing much the same sources as before, while the famous edit wars were confined to four pages."
-- **Visual:** Grouped bars by revert tercile (low-revert topic pages stand out), with a small line of newcomer share falling after the war (Patterns P7, P8, P9; `how_who/chart_data/revert_tercile_gain.json`, `how_who/chart_data/who_edits_by_quarter.json`).
-- **Number:** Low-revert topic pages gained 28.5% of the time, against 13% for contested ones. Newcomer edits fell from about 25% to 12 to 17%. Four pages held 68% of all lead flips.
+- **Say:** "This was not a flood of new accounts, blocked accounts or partisan sources: established editors wrote it, mostly on pages where nobody reverted it, citing much the same sources as before, and the formal process (protection, RfCs) grew on a few core pages."
+- **Visual:** Grouped bars by revert tercile (low-revert topic pages stand out), next to bars of low-edit-count accounts, topic vs comparison, and a Pareto of RfCs by page (Patterns P7, P8, P11; `how_who/chart_data/revert_tercile_gain.json`, `mass2/chart_data/01_who_edits.json`, `mass2/chart_data/03_rfc_rm.json`).
+- **Number:** Low-revert topic pages gained 28.5% of the time, against 13% for contested ones. Accounts with under 500 edits made 9% of topic edits, against 17% on comparison pages. Now-blocked accounts made 13.7% of insertions, against a 12.3% base. RfCs per article-year nearly tripled; 5 pages hold half of them.
 
 ### Beat 10. Is this just what wars do to Wikipedia? (9:45 to 10:45)
 - **Say:** "Partly: other wars get their own vocabulary waves, but theirs stayed inside the war articles, the same amount of editing changed these pages more often, and most other language editions did not follow."
@@ -58,8 +59,8 @@ Twelve beats, about a minute each; the twist (beat 7) gets a minute and a half. 
 
 ### Beat 11. Honesty slide: lopsided, not one-sided, and what we cannot say (10:45 to 11:15)
 - **Say:** "Changes went both ways and most new labels arrived attributed, but where a few flagship leads dropped the attribution, it went one way; and nothing here tells us whether the new wording is true, what editors intended, or whether anyone coordinated off-wiki."
-- **Visual:** Gaza genocide's first sentence as a staircase from 'Allegations have been made' to 'The Gaza genocide is', beside the Uyghur genocide lead that still says 'often been characterized as'; a short "cannot conclude" list underneath (Pattern P9; `story_sources_langs/chart_data/exposure_timing.json`).
-- **Number:** 8 one-way steps in 21 months. In comparison: "terrorism" fell 24% in topic leads, and 'by Zionist militias' was cut from the 1948 expulsion first sentence.
+- **Visual:** Gaza genocide's first sentence as a staircase from 'Allegations have been made' to 'The Gaza genocide is', beside the Uyghur lead that still says 'often been characterized as' and a strip of the atrocity set (most now stated); a short "cannot conclude" list underneath (Pattern P9; `story_sources_langs/chart_data/exposure_timing.json`, `mass2/chart_data/11_atrocity_voice.json`).
+- **Number:** 8 one-way steps in 21 months. 9 of 11 other atrocity leads also state 'genocide' in Wikipedia's voice. In the other direction: "terrorism" fell 24% in topic leads, and 'by Zionist militias' was cut from the 1948 expulsion first sentence.
 
 ### Beat 12. What to do (11:15 to 12:00)
 - **Say:** "If you read Wikipedia, check the history and the attribution; if you build on it, carry the attribution through and watch the first sentence; and if you study it, weight by readers and always bring a comparison group, which is why we will keep watching the 50 pages that carry most of what people see."

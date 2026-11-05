@@ -1592,7 +1592,7 @@ def card_views(C):
             f"{pct(ft['topic']['exposure_share_current_title_only'])} (current title only) to {pct(ft['topic']['exposure_share_all_titles'])}.")
     exs = [{"article": a.t, "note": f"{int(a.v12):,} views in the last 12 months; lead critical terms {int(crit(a, '2023-07-01') or 0)} -> {int(crit(a, 'now') or 0)}"} for a in top[:5]]
     hi = (st.get("all:topic:view_share_gained") or {}).get("est")
-    so = ("Count articles and the change is small; count readers and it is large: most topic reading now lands on leads that changed."
+    so = ("Count articles and the change is small; count readers and it is about four times larger: the few changed topic leads carry roughly 15% of topic reading, against 5% in comparison articles."
           if hi is not None and hi > (gr("all", "topic", "share_articles_gained") or 1) * 1.5 else
           "Reader exposure to changed leads is roughly proportional to the number of changed articles.")
     return card("pageviews_exposure", "Pageviews exposure: the share of reader views that now meet changed leads, former titles included", what,
