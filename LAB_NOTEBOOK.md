@@ -129,3 +129,9 @@ Each exploratory branch goes on the page only if it passes its sanity gate. Othe
 - **Caught by:** reading the heartbeat's error counter, not the green tick.
 - **Fixes:** empty parts now return None; edge-case tests added (empty text, no events, all events); and `mass._run` now exits non-zero when more than 5% of a shard's articles fail, so a mostly-failed shard can never show green again.
 - **Adopt at work?** Yes. Make the error rate a pass/fail condition, not just a log line. Test the empty case first.
+
+## #45 Scope change: from hypothesis testing to sense-making (2026-11-05)
+- **Owner's call:** stop running this as an academic study. Look at the data from many angles, find the patterns and trends, and decide what we can conclude or do.
+- **Setup:** three analyst agents, each owning a set of angles: when/where/what-words; how/who; story/sources/languages. They share one brief. Every pattern comes back as a card with: what we see, chart data, confidence (STRONG / SUGGESTIVE / ANECDOTE), "so what" and a caveat. A synthesis pass follows, then the page.
+- **Kept from the academic phase:** the comparison group and the confidence label. Dropped: pre-registration ceremony, BH corrections and holdout splits for new angles.
+- **Adopt at work?** Yes. A card format with a forced confidence label lets you explore freely without the deck overclaiming.
