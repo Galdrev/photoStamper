@@ -1,0 +1,66 @@
+MASS full critical: DiD +0.50 [+0.28,+0.74] p=0.0003 n=4078/5111
+MASS full connection: DiD -0.03 [-0.27,+0.22] p=0.8031 n=4078/5111
+MASS lead critical: DiD +2.38 [+1.43,+3.41] p=0.0003 n=3957/5118
+MASS lead connection: DiD -1.00 [-1.74,-0.29] p=0.0087 n=3957/5118
+LANG de lead: DiD +0.092 [-0.159,+0.331] p=0.5175 n=295/250
+LANG de full: DiD -0.023 [-0.085,+0.037] p=0.4775 n=295/250
+LANG fr lead: DiD +0.140 [-0.149,+0.421] p=0.3889 n=303/287
+LANG fr full: DiD +0.088 [-0.013,+0.190] p=0.1063 n=303/287
+LANG es lead: DiD +0.183 [-0.085,+0.488] p=0.2742 n=289/251
+LANG es full: DiD +0.090 [-0.069,+0.289] p=0.3735 n=289/251
+LANG it lead: DiD +0.025 [-0.190,+0.237] p=0.8261 n=272/237
+LANG it full: DiD -0.056 [-0.146,+0.027] p=0.2722 n=272/237
+LANG nl lead: DiD -0.272 [-0.573,+0.010] p=0.0786 n=204/191
+LANG nl full: DiD +0.022 [-0.108,+0.120] p=0.7211 n=204/191
+LANG ru lead: DiD -0.062 [-0.267,+0.159] p=0.5888 n=290/287
+LANG ru full: DiD +0.011 [-0.066,+0.082] p=0.7864 n=290/287
+LANG he lead: DiD +0.105 [-0.322,+0.660] p=0.6521 n=338/186
+LANG he full: DiD +0.141 [-0.049,+0.398] p=0.1373 n=338/186
+LANG ar lead: DiD +0.118 [-0.184,+0.443] p=0.5048 n=291/242
+LANG ar full: DiD +0.016 [-0.088,+0.127] p=0.7781 n=291/242
+LANG pl lead: DiD +0.017 [-0.235,+0.270] p=0.9077 n=244/219
+LANG pl full: DiD +0.014 [-0.050,+0.092] p=0.7058 n=244/219
+LANG pt lead: DiD +0.270 [+0.100,+0.478] p=0.0043 n=270/225
+LANG pt full: DiD +0.065 [-0.033,+0.170] p=0.2479 n=270/225
+coordination {
+"topic:pre_war": {
+"articles": 4705,
+"edits": 183972,
+"recurring_pairs": 29,
+"null_pairs": 0,
+"ratio": null,
+"pairs_per_10k_edits": 1.5763268323440525,
+"sweeps_per_1000_editors": 102.35914515681377,
+"active_editors": 18015
+},
+"topic:post_war": {
+"articles": 4705,
+"edits": 276277,
+"recurring_pairs": 20,
+"null_pairs": 0,
+"ratio": null,
+"pairs_per_10k_edits": 0.7239111471457993,
+"sweeps_per_1000_editors": 120.437431051849,
+"active_editors": 20849
+},
+"comparison:pre_war": {
+"articles": 5728,
+"edits": 553974,
+"recurring_pairs": 31,
+"null_pairs": 0,
+"ratio": null,
+"pairs_per_10k_edits": 0.5595930494932975,
+"sweeps_per_1000_editors": 73.16818229329988,
+"active_editors": 47835
+},
+"comparison:post_war": {
+"articles": 5728,
+"edits": 540779,
+"recurring_pairs": 19,
+"null_pairs": 0,
+"ratio": null,
+"pairs_per_10k_edits": 0.3513450041514186,
+"sweeps_per_1000_editors": 69.78039635779325,
+"active_editors": 46675
+}
+}
