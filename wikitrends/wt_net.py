@@ -67,6 +67,33 @@ def get_json(url, params, tries=8, ok404=False):
     return None
 
 
+def post_json(url, body, tries=4):
+    """POST a JSON body (LiftWing inference). Same rate limit and counters as get_json; None after retries."""
+    for i in range(tries):
+        _wait_slot()
+        t0 = time.time()
+        try:
+            r = _S.post(url, json=body, timeout=60)
+            C["requests"] += 1; C["latency_sum"] += time.time() - t0; C["bytes"] += len(r.content)
+            if r.status_code == 200:
+                C["ok"] += 1
+                return r.json()
+            if r.status_code == 429:
+                C["http_429"] += 1; C["retries"] += 1
+                time.sleep(int(r.headers.get("retry-after", 20) or 20)); continue
+            if r.status_code >= 500:
+                C["http_5xx"] += 1
+            elif r.status_code in (400, 401, 403, 404):
+                C["api_errors"] += 1
+                return None                      # not retryable (bad revision, auth required, model gone)
+            C["retries"] += 1
+        except (requests.RequestException, ValueError):
+            C["retries"] += 1
+        time.sleep(min(60, 2 ** i))
+    C["failures"] += 1
+    return None
+
+
 _ticker = [None]
 
 
