@@ -55,6 +55,19 @@ TREATMENT_SEED = {
         "Genetic studies of Jews", "Khazar hypothesis of Ashkenazi ancestry",
         "Jewish population by country", "Jewish peoplehood",
     ],
+    "narrative": [
+        "Palestinians", "History of Palestine", "Palestinian nationalism", "Palestinian identity", "Palestine (region)",
+        "State of Palestine", "Palestinian refugees", "Palestinian refugee camps", "UNRWA", "Palestinian right of return",
+        "1948 Arab–Israeli War", "Deir Yassin massacre", "Lydda and Ramle expulsions", "Plan Dalet", "Tantura massacre",
+        "Jewish exodus from the Muslim world", "Jewish exodus from Arab and Muslim countries", "Farhud", "Mizrahi Jews",
+        "Canaan", "Canaanites", "Philistines", "Ancient Israel and Judah", "Kingdom of Israel (Samaria)", "Kingdom of Judah",
+        "Judea", "Samaria", "Judea and Samaria Area", "Hasmonean dynasty", "Herodian kingdom", "Judaea (Roman province)",
+        "Syria Palaestina", "Jewish–Roman wars", "Bar Kokhba revolt", "Jewish diaspora", "Old Yishuv", "Palestinian Jews",
+        "Temple Mount", "Al-Aqsa", "Al-Aqsa Mosque", "Dome of the Rock", "Western Wall", "Cave of the Patriarchs",
+        "Hebron", "Rachel's Tomb", "City of David", "Shiloh (biblical city)", "Jericho", "Nablus", "Joseph's Tomb",
+        "Bethlehem", "East Jerusalem", "Old City of Jerusalem", "Silwan", "Sheikh Jarrah", "Masada",
+        "Genetic studies of Jews", "Genetic history of the Middle East", "Origin of the Palestinians", "Israeli Arabs",
+    ],
     "antisemitism": [
         "Antisemitism", "History of antisemitism", "New antisemitism",
         "Antisemitism in the 21st century", "Holocaust", "The Holocaust",
@@ -110,6 +123,13 @@ CONTROL_SEED = {
         "Provisional Irish Republican Army", "Kurdistan Workers' Party", "Islamic State", "Al-Qaeda",
         "Taliban", "ETA (separatist group)", "Liberation Tigers of Tamil Eelam", "Boko Haram", "Al-Shabaab (militant group)",
         "Revolutionary Armed Forces of Colombia", "Ulster Volunteer Force", "Wagner Group",
+    ],
+    "two_narrative_disputes": [
+        "Kosovo", "History of Kosovo", "Kosovo War", "Kosovo Serbs", "Albanians in Kosovo", "Serbian Orthodox Church in Kosovo",
+        "Nagorno-Karabakh", "Republic of Artsakh", "First Nagorno-Karabakh War", "2023 Azerbaijani offensive in Nagorno-Karabakh", "Shusha",
+        "History of Cyprus", "Turkish invasion of Cyprus", "Northern Cyprus", "Greek Cypriots", "Turkish Cypriots",
+        "History of Kashmir", "Kashmiri Pandits", "Exodus of Kashmiri Hindus", "Kashmiri Muslims", "Insurgency in Jammu and Kashmir",
+        "Partition of Ireland", "Bloody Sunday (1972)", "Ulster loyalism", "Irish republicanism", "Plantation of Ulster",
     ],
     "religion": [
         "Christianity", "Catholic Church", "Islam", "Hinduism", "Sikhism",
@@ -185,3 +205,21 @@ KEY_ARTICLES = ["Zionism", "Israel", "Hamas", "October 7 attacks", "Gaza genocid
 KEY_ARTICLES_CONTROL = ["Kurdish nationalism", "Hindu nationalism", "Armenian genocide", "Russo-Ukrainian War", "Islamic State",
                         "Catholic Church", "India", "Taiwan", "Kashmir conflict", "Uyghur genocide", "Irish nationalism",
                         "Islam", "Turkey", "Ukraine", "Tibet"]
+
+# Study 2 (SPEC_NARRATIVE.md): comparison disputes with two rival narratives over one land; group A vs group B terms.
+NARRATIVE_DISPUTES = {
+    "Kosovo": {"A": r"\b(?:serbs?|serbian)\b", "B": r"\b(?:albanians?|kosovars?|kosovo albanians?)\b", "A_label": "Serbs", "B_label": "Albanians",
+               "articles": ["Kosovo", "History of Kosovo", "Kosovo War", "Kosovo Serbs", "Albanians in Kosovo", "Serbian Orthodox Church in Kosovo"]},
+    "Karabakh": {"A": r"\b(?:armenians?)\b", "B": r"\b(?:azerbaijanis?|azeris?)\b", "A_label": "Armenians", "B_label": "Azerbaijanis",
+                 "articles": ["Nagorno-Karabakh", "Republic of Artsakh", "First Nagorno-Karabakh War", "2023 Azerbaijani offensive in Nagorno-Karabakh",
+                              "Shusha", "Nagorno-Karabakh conflict"]},
+    "Cyprus": {"A": r"\b(?:greek cypriots?|greeks?)\b", "B": r"\b(?:turkish cypriots?|turks?|turkish)\b", "A_label": "Greek Cypriots", "B_label": "Turkish Cypriots",
+               "articles": ["History of Cyprus", "Turkish invasion of Cyprus", "Northern Cyprus", "Greek Cypriots", "Turkish Cypriots", "Cyprus problem"]},
+    "Kashmir": {"A": r"\b(?:kashmiri (?:hindus|pandits)|pandits?|hindus?)\b", "B": r"\b(?:kashmiri muslims|muslims?)\b", "A_label": "Kashmiri Hindus", "B_label": "Kashmiri Muslims",
+                "articles": ["History of Kashmir", "Kashmiri Pandits", "Exodus of Kashmiri Hindus", "Kashmiri Muslims", "Insurgency in Jammu and Kashmir", "Kashmir conflict"]},
+    "Northern Ireland": {"A": r"\b(?:unionists?|loyalists?|protestants?)\b", "B": r"\b(?:nationalists?|republicans?|catholics?)\b", "A_label": "Unionists", "B_label": "Nationalists",
+                         "articles": ["Partition of Ireland", "Bloody Sunday (1972)", "Ulster loyalism", "Irish republicanism", "Plantation of Ulster",
+                                      "Northern Ireland", "The Troubles"]},
+}
+SHARED_SITES = ["Jerusalem", "Hebron", "Temple Mount", "Cave of the Patriarchs", "Western Wall", "Rachel's Tomb", "City of David",
+                "Shiloh (biblical city)", "Jericho", "Nablus", "Joseph's Tomb", "Bethlehem", "Old City of Jerusalem", "Al-Aqsa", "Dome of the Rock"]

@@ -71,6 +71,9 @@ jobs:
       - name: Organic vs organised editing signals
         working-directory: wikitrends
         run: python coordination.py 2>&1 | tee logs/coordination.log || echo "::warning::coordination failed"
+      - name: Study 2 - competing narratives
+        working-directory: wikitrends
+        run: python narrative.py 2>&1 | tee logs/narrative.log || echo "::warning::narrative failed"
       - name: Step health summary
         if: always()
         working-directory: wikitrends
@@ -84,7 +87,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           mkdir -p wikitrends/data/runlogs && cp wikitrends/logs/*.log wikitrends/data/runlogs/ 2>/dev/null || true
           git checkout -q -b results/${{ github.run_id }}
-          for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
+          for f in results.json leads.json kwic.json qa.json bisect.json crosslang.json narrative.json manifest.json fetch_errors.log; do [ -f wikitrends/data/$f ] && git add -f wikitrends/data/$f; done
           git add -f wikitrends/data/runlogs/*.log 2>/dev/null || true
           git commit -qm "Results of run ${{ github.run_id }} [skip ci]" || exit 0
           for i in 1 2 3; do git push -q origin results/${{ github.run_id }} && break; sleep 10; done
