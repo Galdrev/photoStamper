@@ -1,0 +1,22 @@
+{
+ "job": "crosslang",
+ "stage": "crosslang",
+ "done": 4,
+ "total": 20,
+ "elapsed_min": 6.2,
+ "eta_min": 24.8,
+ "rps_limit": 5.0,
+ "req_per_s": 3.46,
+ "avg_latency_s": 0.22,
+ "requests": 1285,
+ "ok": 1261,
+ "http_429": 24,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 24,
+ "failures": 0,
+ "bytes": 176069605,
+ "retry_after_max": 20,
+ "retry_after_sum": 477,
+ "updated": "2026-11-05T06:44:36Z"
+}
