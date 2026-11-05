@@ -597,12 +597,28 @@ def user_facts(names):
                 got[u.get("name")] = None; continue
             got[u["name"]] = {"reg": u.get("registration"), "ec": u.get("editcount"),
                               "ext": bool({"extendedconfirmed", "sysop"} & set(u.get("groups") or [])),
-                              "blocked": "blockid" in u, "indef": "blockid" in u and str(u.get("blockexpiry")) in ("infinite", "infinity")}
+                              "blocked": "blockid" in u, "indef": "blockid" in u and str(u.get("blockexpiry")) in ("infinite", "infinity"),
+                              "partial": bool(u.get("blockpartial")),             # page/namespace block, not sitewide
+                              "breason": block_reason(u.get("blockreason")) if "blockid" in u else None}   # class only
         with _ulock:
             for n in chunk:
                 _ucache[n] = got.get(n)
     with _ulock:
         return {n: _ucache.get(n) for n in names}
+
+
+BLOCK_REASON = [("sock", re.compile(r"sock|checkuser|block evasion|evad|\bLTA\b|long-term abuse|multiple accounts|\{\{\s*(?:checkuserblock|sockpuppet)", re.I)),
+                ("arb_enforcement", re.compile(r"arbitration|\bAE\b|\bWP:AE|ARBPIA|ARBECR|contentious|discretionary sanction|topic ban|\bTBAN", re.I)),
+                ("vandalism", re.compile(r"vandal", re.I)),
+                ("spam", re.compile(r"spam|promotion|advertis|\{\{\s*uw-spamublock", re.I)),
+                ("username", re.compile(r"username|\{\{\s*uw-(?:u|soft)block", re.I))]
+
+
+def block_reason(text):
+    """Reduce a block reason to a class label (the free text, which can name accounts, is never kept)."""
+    if not text:
+        return "none"
+    return next((k for k, rx in BLOCK_REASON if rx.search(text)), "other")
 
 
 def user_aggregates(revs):
@@ -621,8 +637,10 @@ def user_aggregates(revs):
             c["age_lt30"] += age < 30; c["age_lt365"] += age < 365
             c["ec_now"] += f["ext"]; c["editcount_lt500"] += (f["ec"] or 0) < 500; c["editcount_lt100"] += (f["ec"] or 0) < 100
             c["blocked_now"] += f["blocked"]; c["indef_now"] += f["indef"]
+            c["indef_sitewide_now"] += f["indef"] and not f.get("partial"); c["indef_sock_now"] += f["indef"] and f.get("breason") == "sock"
         out[w] = {"n_edits": n, **{f"share_{k}": (c[k] / n if n else None) for k in
-                                  ("age_lt30", "age_lt365", "ec_now", "editcount_lt500", "editcount_lt100", "blocked_now", "indef_now")},
+                                  ("age_lt30", "age_lt365", "ec_now", "editcount_lt500", "editcount_lt100", "blocked_now", "indef_now",
+                                   "indef_sitewide_now", "indef_sock_now")},
                   "median_age_days": statistics.median(ages) if ages else None,
                   "distinct": len({r.get("user") for r in revs if r.get("user") in facts and facts.get(r["user"]) and in_win(r["timestamp"], w)})}
     return out

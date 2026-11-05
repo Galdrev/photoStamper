@@ -111,7 +111,7 @@ CONTROL_SEED = {
         "Western Sahara conflict", "Tibet", "Annexation of Tibet by the People's Republic of China",
         "Turkish invasion of Cyprus", "Population exchange between Greece and Turkey",
         "Armenian genocide", "Bangladesh Liberation War", "Rwandan genocide",
-        "Bosnian genocide", "Uyghur genocide", "Darfur genocide",
+        "Bosnian genocide", "Uyghur genocide", "Darfur genocide (2003–2005)",
         "Rohingya genocide", "Sudanese civil war (2023–present)", "Tigray war",
     ],
     "settler_colonial_framings": [
@@ -167,7 +167,7 @@ CONTROL_CONTAMINATED = {
 # subgroup: they test H0 ("framing just follows real-world events").
 CONTROL_SHOCKED = {
     "Russo-Ukrainian War", "Ukraine", "Ukrainian nationalism", "Nagorno-Karabakh conflict",
-    "Darfur genocide", "Sudanese civil war (2023–present)", "Tigray war", "Uyghur genocide",
+    "Darfur genocide (2003–2005)", "Sudanese civil war (2023–present)", "Tigray war", "Uyghur genocide",
     "Rohingya genocide", "Armenia",
 }
 
@@ -223,3 +223,21 @@ NARRATIVE_DISPUTES = {
 }
 SHARED_SITES = ["Jerusalem", "Hebron", "Temple Mount", "Cave of the Patriarchs", "Western Wall", "Rachel's Tomb", "City of David",
                 "Shiloh (biblical city)", "Jericho", "Nablus", "Joseph's Tomb", "Bethlehem", "Old City of Jerusalem", "Al-Aqsa", "Dome of the Rock"]
+
+
+# Atrocity comparison stratum (mass2.py). Candidate titles per case: the API resolves redirects at collection time,
+# missing titles and disambiguation pages are dropped, and the survivors are deduplicated by resolved title, so listing
+# several plausible names is safe. "Darfur genocide" became a disambiguation page on 2025-12-02 (article moved to
+# "Darfur genocide (2003–2005)"); the pilot's two Sudan-2023 titles did not exist, so more candidates are listed here.
+ATROCITY_CASES = {
+    "uyghur": ["Persecution of Uyghurs in China", "Uyghur genocide"],
+    "rohingya": ["Rohingya genocide"],
+    "tigray": ["War crimes in the Tigray war", "Tigray genocide"],
+    "darfur_2003": ["Darfur genocide (2003–2005)", "Darfur genocide (2003-2005)"],
+    "yazidi": ["Yazidi genocide", "Genocide of Yazidis by the Islamic State"],
+    "bosnian": ["Bosnian genocide"],
+    "sudan_2023": ["Masalit genocide", "Masalit massacres", "Masalit massacre", "El Geneina massacre", "El Geneina massacres",
+                   "2023 Masalit massacres", "2023 El Geneina massacre", "Massacres of Masalit", "Darfur genocide (2023–present)",
+                   "Darfur genocide (2023-present)", "Second Darfur genocide", "West Darfur massacres", "El Fasher massacre",
+                   "War crimes in the Sudanese civil war (2023–present)"],
+}

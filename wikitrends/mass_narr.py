@@ -26,30 +26,39 @@ def lead_at(title, date):
     return None if re.match(r"\s*#\w+\s*\[\[", wt) else wt
 
 
-def features(row):
+def groups_for(row):
     from corpus import NARRATIVE_DISPUTES
     if row["group"] == "topic":
-        groups, ms = N.TOPIC_GROUPS, N.MEASURES
-    elif row["project"] in PROJECT_GROUPS:
+        return N.TOPIC_GROUPS, N.MEASURES
+    if row.get("project") in PROJECT_GROUPS:
         sp = NARRATIVE_DISPUTES[PROJECT_GROUPS[row["project"]]]
-        groups, ms = {"A": N.R(sp["A"]), "B": N.R(sp["B"])}, N.CONTROL_MEASURES
-    else:
-        groups, ms = N.TOPIC_GROUPS, {}
+        return {"A": N.R(sp["A"]), "B": N.R(sp["B"])}, N.CONTROL_MEASURES
+    return N.TOPIC_GROUPS, {}
+
+
+def snap_features(row, wt, d):
+    """Narrative features of one lead (section-0 wikitext `wt`) at date `d`; None if no lead. Shared with mass2.py,
+    which passes the lead cut from its own full-text snapshot (one fetch per snapshot serves everything)."""
+    if not wt:
+        return None
+    groups, ms = groups_for(row)
+    c, _ = N.snapshot_measures(wt, groups, row["group"] == "topic")
+    lp = A.prose(wt); m = A.measure(lp, 20)
+    ev = EF.residual_measures(lp, A.measure)
+    return {"date": d[:10], "c": dict(c), "vals": {k: f(c) for k, f in ms.items()},
+            "crit": None if m is None else m["rate"]["critical_rate"], "words": c["_words"],
+            "counts": None if m is None else m["counts"], "lead_prose": lp,
+            "ev": {lv: {"event_share": v["event_share"], "event_sentences": v["event_sentences"],
+                        "res_words": (v["residual"] or {}).get("words", 0), "res_counts": (v["residual"] or {}).get("counts"),
+                        "ev_words": (v["event"] or {}).get("words", 0), "ev_counts": (v["event"] or {}).get("counts")}
+                   for lv, v in ev.items()}}
+
+
+def features(row, fetch=None):
+    fetch = fetch or lead_at
     out = {**row, "snaps": []}
     for d in DATES:   # 2021-01, pre-war 2023-07, latest (amendment D needs the pre-war lead too)
-        wt = lead_at(row["title"], d)
-        if not wt:
-            out["snaps"].append(None); continue
-        c, _ = N.snapshot_measures(wt, groups, row["group"] == "topic")
-        lp = A.prose(wt); m = A.measure(lp, 20)
-        ev = EF.residual_measures(lp, A.measure)
-        out["snaps"].append({"date": d[:10], "c": dict(c), "vals": {k: f(c) for k, f in ms.items()},
-                             "crit": None if m is None else m["rate"]["critical_rate"], "words": c["_words"],
-                             "counts": None if m is None else m["counts"], "lead_prose": lp,
-                             "ev": {lv: {"event_share": v["event_share"], "event_sentences": v["event_sentences"],
-                                         "res_words": (v["residual"] or {}).get("words", 0), "res_counts": (v["residual"] or {}).get("counts"),
-                                         "ev_words": (v["event"] or {}).get("words", 0), "ev_counts": (v["event"] or {}).get("counts")}
-                                    for lv, v in ev.items()}})
+        out["snaps"].append(snap_features(row, fetch(row["title"], d), d))
     return out
 
 
