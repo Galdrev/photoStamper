@@ -1,9 +1,3 @@
-[hb random-1] rand-1 23/875 el=1.7m eta=64.4m req=116 429=12 5xx=0 retries=12 fail=0
-[hb random-1] rand-1 30/875 el=2.0m eta=56.3m req=147 429=12 5xx=0 retries=12 fail=0
-[hb random-1] rand-1 35/875 el=2.7m eta=65.3m req=170 429=18 5xx=0 retries=18 fail=0
-[hb random-1] rand-1 41/875 el=3.0m eta=61.0m req=203 429=18 5xx=0 retries=18 fail=0
-[hb random-1] rand-1 46/875 el=3.7m eta=66.8m req=224 429=24 5xx=0 retries=24 fail=0
-[hb random-1] rand-1 54/875 el=4.0m eta=60.8m req=259 429=24 5xx=0 retries=24 fail=0
 [hb random-1] rand-1 59/875 el=4.7m eta=65.6m req=285 429=30 5xx=0 retries=30 fail=0
 [hb random-1] rand-1 67/875 el=5.0m eta=60.3m req=316 429=30 5xx=0 retries=30 fail=0
 [hb random-1] rand-1 71/875 el=5.8m eta=65.1m req=342 429=36 5xx=0 retries=36 fail=0
@@ -38,3 +32,9 @@
 [hb random-1] rand-1 235/875 el=20.0m eta=54.5m req=1109 429=123 5xx=0 retries=123 fail=0
 [hb random-1] rand-1 236/875 el=20.8m eta=56.3m req=1122 429=126 5xx=0 retries=126 fail=0
 [hb random-1] rand-1 241/875 el=21.0m eta=55.2m req=1149 429=130 5xx=0 retries=130 fail=0
+[hb random-1] rand-1 242/875 el=21.7m eta=56.9m req=1157 429=132 5xx=0 retries=132 fail=0
+[hb random-1] rand-1 251/875 el=22.0m eta=54.7m req=1188 429=136 5xx=0 retries=136 fail=0
+[hb random-1] rand-1 252/875 el=22.7m eta=56.2m req=1195 429=138 5xx=0 retries=138 fail=0
+[hb random-1] rand-1 259/875 el=23.0m eta=54.7m req=1226 429=141 5xx=0 retries=141 fail=0
+[hb random-1] rand-1 260/875 el=23.8m eta=56.3m req=1242 429=144 5xx=0 retries=144 fail=0
+[hb random-1] rand-1 265/875 el=24.0m eta=55.2m req=1265 429=147 5xx=0 retries=147 fail=0
