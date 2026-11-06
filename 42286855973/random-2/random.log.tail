@@ -1,0 +1,7 @@
+rand shard 2: 0 already done, 875 to do
+[hb random-2] rand-2 0/875 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
+[hb random-2] rand-2 13/875 el=0.9m eta=56.6m req=74 429=6 5xx=0 retries=6 fail=0
+[hb random-2] rand-2 18/875 el=1.0m eta=47.6m req=91 429=6 5xx=0 retries=6 fail=0
+[hb random-2] rand-2 24/875 el=1.8m eta=62.7m req=120 429=12 5xx=0 retries=12 fail=0
+[hb random-2] rand-2 30/875 el=2.0m eta=56.3m req=147 429=12 5xx=0 retries=12 fail=0
+[hb random-2] rand-2 36/875 el=2.7m eta=64.0m req=173 429=18 5xx=0 retries=18 fail=0
