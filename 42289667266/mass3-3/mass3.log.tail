@@ -1,0 +1,6 @@
+m3 shard 3: 0 already done, 1293 to do
+[hb mass3-3] m3-3 0/1293 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
+[hb mass3-3] m3-3 13/1293 el=0.9m eta=92.1m req=75 429=6 5xx=0 retries=6 fail=0
+[hb mass3-3] m3-3 16/1293 el=1.0m eta=79.9m req=82 429=6 5xx=0 retries=6 fail=0
+[hb mass3-3] m3-3 31/1293 el=2.0m eta=81.2m req=155 429=12 5xx=0 retries=12 fail=0
+[hb mass3-3] m3-3 31/1293 el=2.0m eta=81.4m req=155 429=12 5xx=0 retries=12 fail=0
