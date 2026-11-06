@@ -1,0 +1,143 @@
+name: wikitrends-mass3
+# Mass v3 (wikitrends/mass3.py): stratified random sample with known inclusion probabilities (patterns/sampling/AUDIT.md).
+# population + sample (1 job: PageAssessments projectpages for every topic/comparison project, redirects resolved,
+# ~N/500 + N/50 requests, about 3-4k for ~150k assessed pages, ~0.5-1 h) -> 4 shards (max 4 at once, WT_RPS 2)
+# -> merge + analyze -> orphan branch wikitrends-data/mass3/<run_id> + artifacts.
+# Estimate: ~6,000 sampled rows, minus those reused from mass2 (measured there, never re-fetched), x 4.15 requests
+# (3 leads + 1 pageviews + creation check) x 1.15 calibration = ~4.8 requests/row: <= ~29k requests, <= ~7.2k per shard,
+# <= ~2 h per shard at ~1.0 effective req/s; one wave. `mass3.py estimate --check` fails the sample job if any shard
+# would need more than 90% of 4 h. A shard that hits its time budget keeps its checkpoint; "Re-run failed jobs" resumes.
+on:
+  push:
+    branches: [wikitrends-mass3]
+permissions:
+  contents: write
+concurrency: wikitrends-mass3
+defaults:
+  run:
+    shell: bash           # bash -eo pipefail: a failure anywhere in a pipe fails the step
+env:
+  WT_RPS: '2'             # per job; 4 jobs at once (Wikipedia throttles the aggregate: ~1.0 effective req/s per job)
+  GH_TOKEN: ${{ github.token }}
+  N_SHARDS: '4'
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Offline self-test (mocked API)
+        working-directory: wikitrends
+        run: WT_JOB=mass3-test python test_mass3.py 2>&1 | grep -v '^\[hb' | tail -40
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh mass3-sample 180 > /tmp/status.log 2>&1 &
+      - name: Population (PageAssessments, exact project names, redirects resolved, deduped, assigned)
+        working-directory: wikitrends
+        run: WT_JOB=mass3-population timeout 160m python mass3.py population 2>&1 | tee logs/population.log
+      - name: Stratified sample (seeded; mass2 rows marked for reuse; mass2.json.gz is in the repo)
+        working-directory: wikitrends
+        run: WT_JOB=mass3-sample python mass3.py sample 2>&1 | tee logs/sample.log
+      - name: Request / runtime estimate (fails if a shard would exceed the 4 h budget at 1 req/s)
+        working-directory: wikitrends
+        run: python mass3.py estimate --of $N_SHARDS --check 2>&1 | tee -a logs/sample.log
+      - uses: actions/upload-artifact@v4
+        with: {name: mass3-frame, path: 'wikitrends/data/mass3/frame.json', retention-days: 7}
+      - uses: actions/upload-artifact@v4
+        with: {name: mass3-population, path: 'wikitrends/data/mass3/population.json', retention-days: 14}
+
+  shard:
+    needs: sample
+    runs-on: ubuntu-latest
+    timeout-minutes: 250
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: {shard: [0, 1, 2, 3]}
+    env:
+      WT_JOB: mass3-${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Offline self-test (mocked API; fails fast before any network work)
+        working-directory: wikitrends
+        run: WT_JOB=mass3-test python test_mass3.py 2>&1 | grep -v '^\[hb' | tail -40
+      - uses: actions/download-artifact@v4
+        with: {name: mass3-frame, path: wikitrends/data/mass3/}
+      - name: Resume from an earlier attempt of this run, if any
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with: {name: 'mass3-${{ matrix.shard }}', path: wikitrends/data/mass3/}
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh mass3-${{ matrix.shard }} 180 > /tmp/status.log 2>&1 &
+      - name: Collect leads at 2021-01, 2023-07, now + pageviews (checkpointed; exits non-zero if >5% of rows error)
+        working-directory: wikitrends
+        run: |
+          set +e
+          timeout 235m python mass3.py shard --shard ${{ matrix.shard }} --of $N_SHARDS 2>&1 | tee logs/mass3.log
+          rc=${PIPESTATUS[0]}
+          if [ "$rc" = "124" ]; then echo "::error::time budget hit; checkpoint kept - re-run this job to resume"; fi
+          exit $rc
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: 'mass3-${{ matrix.shard }}', path: 'wikitrends/data/mass3/m3_${{ matrix.shard }}.json.gz', retention-days: 7, overwrite: true}
+
+  merge:
+    needs: [sample, shard]
+    if: always() && needs.sample.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Offline self-test (mocked API)
+        working-directory: wikitrends
+        run: WT_JOB=mass3-test python test_mass3.py 2>&1 | grep -v '^\[hb' | tail -40
+      - uses: actions/download-artifact@v4
+        with: {name: mass3-frame, path: wikitrends/data/mass3/}
+      - uses: actions/download-artifact@v4
+        with: {name: mass3-population, path: wikitrends/data/mass3/}
+      - uses: actions/download-artifact@v4
+        with: {path: wikitrends/data/mass3/, pattern: 'mass3-[0-9]*', merge-multiple: true}
+      - name: Latest random baseline from the data branch, if any (optional comparison)
+        continue-on-error: true
+        run: |
+          git fetch -q --depth 1 origin wikitrends-data
+          f=$(git ls-tree -r --name-only FETCH_HEAD | grep -E '^random/[0-9]+/data/random_baseline.json$' | sort -t/ -k2,2n | tail -1)
+          [ -n "$f" ] && git show "FETCH_HEAD:$f" > wikitrends/data/random_baseline.json && echo "random baseline: $f" || echo "no random baseline yet"
+      - name: Merge fetched + reused records with design weights (fails if <95% of fetch rows arrived; results pushed either way)
+        working-directory: wikitrends
+        run: python mass3.py merge 2>&1 | tee mass3_merge.log
+      - name: Design-based analysis (Horvitz-Thompson / weighted means, stratified bootstrap CIs)
+        if: always()
+        working-directory: wikitrends
+        run: |
+          python mass3.py analyze 2>&1 | tee -a mass3_merge.log
+          gzip -kf data/mass3/population.json
+      - name: Upload results as artifact (backup copy)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass3-results
+          retention-days: 14
+          path: |
+            wikitrends/data/mass3.json
+            wikitrends/data/mass3_leads.json.gz
+            wikitrends/data/mass3/frame.json
+            wikitrends/data/mass3/population.json.gz
+            wikitrends/patterns/sampling/mass3_results.md
+            wikitrends/patterns/sampling/chart_data/07_mass3_population.json
+            wikitrends/patterns/sampling/chart_data/08_mass3_estimates.json
+            wikitrends/mass3_merge.log
+      - name: Push to the data-only branch (wikitrends-data/mass3/<run_id>)
+        if: always()
+        run: |
+          .github/scripts/push_data.sh mass3 data/mass3.json data/mass3_leads.json.gz data/mass3/frame.json data/mass3/population.json.gz \
+            patterns/sampling/mass3_results.md patterns/sampling/chart_data/07_mass3_population.json \
+            patterns/sampling/chart_data/08_mass3_estimates.json mass3_merge.log

@@ -229,6 +229,8 @@ def _classify(pid, title, ctx):
     """Resolved target of one assessed page id."""
     redir, by_title, by_id = ctx["redir"], ctx["by_title"], ctx["by_id"]
     p = by_id.get(pid)
+    if p is None and title not in redir:
+        p = by_title.get(title)                     # e.g. a missing page reported by title only
     src = None
     if p is None or p.get("redirect"):              # a redirect's id comes back as its target, listed under redirects
         if title in redir:
@@ -402,7 +404,7 @@ def sample(pop_path=None, path=None, mass2_path=None):
                             "projects": sorted(r["assess"]), "also_comparison": r["also_comparison"],
                             "reused": bool(m2), "mass2_title": m2})
             prop = Ns[h] * TARGET[side] / sum(Ns.values())
-            alloc.append({"stratum": h, "side": side, "N": Ns[h], "n": n[h], "pi": round(pi, 6), "reused": k_re,
+            alloc.append({"stratum": h, "side": side, "N": Ns[h], "n": n[h], "pi": pi, "reused": k_re,
                           "rule": "census" if n[h] == Ns[h] else "floor" if prop < FLOOR else "proportional"})
     fr = {"generated": _now(), "now": pop["now"], "population_generated": pop["generated"], "seed": SEED, "targets": TARGET,
           "floor": FLOOR, "mass2_now": m2now, "dates": [M.DATES[0], M.DATES[1]],
@@ -644,6 +646,18 @@ def _r(x, k=4):
     return None if x is None or not np.isfinite(x) else round(float(x), k)
 
 
+def _round_tree(x):
+    if isinstance(x, dict):
+        return {k: _round_tree(v) for k, v in x.items()}
+    if isinstance(x, (list, tuple)):
+        return [_round_tree(v) for v in x]
+    if isinstance(x, (float, np.floating)):
+        return _r(float(x), 5)
+    if isinstance(x, np.integer):
+        return int(x)
+    return x
+
+
 def _fmt(est, ci, k=2, pct=False):
     if est is None or not np.isfinite(est):
         return "n/a"
@@ -663,7 +677,6 @@ def analyze(data_dir=None, out_md=None, chart_dir=None):
     if not arts:
         sys.exit("analyze: mass3.json has no articles")
     alloc = m3["allocation"]
-    Nh = {a["stratum"]: a["N"] for a in alloc}
     census = {a["stratum"]: a["n"] == a["N"] for a in alloc}
     wts = design_weights(alloc, arts)
     D = arrays(arts, wts)
@@ -733,8 +746,13 @@ def analyze(data_dir=None, out_md=None, chart_dir=None):
             ("(e) Israel+Palestine minus Judaism, gain share", "e", 1, True),
             ("    Israel+Palestine gain share", "e_ip", 1, True), ("    Judaism gain share", "e_ju", 1, True),
             ("(e'') Judaism minus comparison", "e_ju_vs_c", 1, True)]
+    lvl = {"a_unf_t", "a_unf_c", "b_t", "b_c", "d_t", "d_c", "e_ip", "e_ju", "c_share"}
     for lab, key, kk, pct in rows:
-        L.append(f"| {lab} | {_fmt(est[key], ci.get(key), kk, pct)} | {_fmt(unw[key], None, kk, pct)} |")
+        if key in lvl and pct:
+            c_ = ci.get(key)
+            L.append(f"| {lab} | {_p(est[key], kk)}" + (f" [{_p(c_[0], kk)}, {_p(c_[1], kk)}]" if c_ else "") + f" | {_p(unw[key], kk)} |")
+        else:
+            L.append(f"| {lab} | {_fmt(est[key], ci.get(key), kk, pct)} | {_fmt(unw[key], None, kk, pct)} |")
     L.append(f"\nEstimated number of topic articles whose lead gained critical terms post-war (HT total): "
              f"{est['gainers_t_total']:,.0f} [{(ci.get('gainers_t_total') or [np.nan])[0]:,.0f}, "
              f"{(ci.get('gainers_t_total') or [np.nan, np.nan])[1]:,.0f}] of {side_N['topic']:,}.\n")
@@ -768,16 +786,15 @@ def analyze(data_dir=None, out_md=None, chart_dir=None):
              "collected in mass3.\n- Pre-specify these estimands before treating them as confirmatory (AUDIT section 6).\n")
     os.makedirs(os.path.dirname(out_md), exist_ok=True)
     open(out_md, "w", encoding="utf-8").write("\n".join(L))
-    clean = lambda d: {kk: (_r(v) if isinstance(v, float) else v) for kk, v in d.items()}
     os.makedirs(chart_dir, exist_ok=True)
     json.dump({"side_totals": side_N, "by_importance": {s: {l: {"N": v[0], "n": v[1]} for l, v in imp_tab[s].items() if v[0]} for s in SIDES},
                "strata": [{"stratum": a["stratum"], "N": a["N"], "n": a["n"], "pi": a["pi"], "reused": a["reused"], "rule": a.get("rule")} for a in alloc]},
               open(os.path.join(chart_dir, "07_mass3_population.json"), "w"), indent=1)
-    out = {"overall": {"weighted": clean(est), "ci": ci, "unweighted": clean(unw)},
-           "by_importance": {l: {"weighted": clean(v["est"]), "ci": v["ci"]} for l, v in by_imp.items()},
-           "random": None if not rnd else {"random": clean(rnd["random"]), "diff": clean(rnd["est"]), "ci": rnd["ci"]},
-           "kish": {s: {"deff": _r(k[s][0], 3), "n_eff": _r(k[s][1], 1)} for s in SIDES}}
-    json.dump(out, open(os.path.join(chart_dir, "08_mass3_estimates.json"), "w"), indent=1)
+    out = {"overall": {"weighted": est, "ci": ci, "unweighted": unw},
+           "by_importance": {l: {"weighted": v["est"], "ci": v["ci"]} for l, v in by_imp.items()},
+           "random": None if not rnd else {"random": rnd["random"], "diff": rnd["est"], "ci": rnd["ci"]},
+           "kish": {s: {"deff": k[s][0], "n_eff": k[s][1]} for s in SIDES}}
+    json.dump(_round_tree(out), open(os.path.join(chart_dir, "08_mass3_estimates.json"), "w"), indent=1)
     print("analyze: wrote", out_md, flush=True)
     return out
 
