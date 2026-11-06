@@ -4,3 +4,14 @@ population: projects [('topic', 'Israel'), ('topic', 'Palestine'), ('topic', 'Ju
 [hb mass3-population] projectpages Israel 32500/0 el=2.1m eta=Nonem req=69 429=3 5xx=0 retries=3 fail=0
 [hb mass3-population] projectpages Israel 33000/0 el=2.1m eta=Nonem req=70 429=3 5xx=0 retries=3 fail=0
   Israel: 36890 assessed pages (74 requests)
+[hb mass3-population] projectpages Palestine 12500/0 el=3.1m eta=Nonem req=104 429=4 5xx=0 retries=4 fail=0
+[hb mass3-population] projectpages Palestine 13000/0 el=3.1m eta=Nonem req=105 429=4 5xx=0 retries=4 fail=0
+  Palestine: 14522 assessed pages (30 requests)
+[hb mass3-population] projectpages Judaism 14500/0 el=4.1m eta=Nonem req=139 429=5 5xx=0 retries=5 fail=0
+[hb mass3-population] projectpages Judaism 15000/0 el=4.1m eta=Nonem req=140 429=5 5xx=0 retries=5 fail=0
+  Judaism: 26309 assessed pages (53 requests)
+[hb mass3-population] projectpages Jewish history 5000/0 el=5.1m eta=Nonem req=174 429=6 5xx=0 retries=6 fail=0
+[hb mass3-population] projectpages Jewish history 5500/0 el=5.1m eta=Nonem req=175 429=6 5xx=0 retries=6 fail=0
+  Jewish history: 13469 assessed pages (27 requests)
+  Israel Palestine Collaboration: 880 assessed pages (2 requests)
+  Kurdistan: 6825 assessed pages (14 requests)
