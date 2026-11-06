@@ -196,7 +196,7 @@ def rev_meta(revids):
     for i in range(0, len(revids), 50):
         chunk = revids[i:i + 50]
         j = wt_net.get_json(EN, {"action": "query", "prop": "revisions", "revids": "|".join(map(str, chunk)),
-                                 "rvprop": RVPROP, "rvslots": "main", "format": "json", "formatversion": 2})
+                                 "rvprop": RVPROP, "format": "json", "formatversion": 2})
         if j is None:
             raise RuntimeError(f"revision metadata failed after retries ({len(chunk)} revids)")
         if j.get("error"):

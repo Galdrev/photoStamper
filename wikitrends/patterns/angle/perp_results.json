@@ -1,0 +1,2637 @@
+{
+ "definitions": {
+  "harm_sentence": "lead sentence kept by the coder as describing violence, harm, displacement, legal charges or rights (keyword prefilter for recall, then manual relevance decision)",
+  "israel_side_perp": "any clause in the sentence has perpetrator Israel/IDF/government (I) or Jews/Zionists/Yishuv (J)",
+  "pal_side_perp": "any clause has perpetrator Hamas/PIJ/Palestinian armed groups (H) or Palestinians/Arabs (P)",
+  "own_voice": "the headline (first-listed) charge of that side's clause is stated in Wikipedia's own voice; any_charge_own_voice uses any charge in the clause",
+  "article_weighted": "share computed within each article, then averaged with each article counted once (articles with no qualifying sentence at that date are excluded)",
+  "pageview_weighted": "same per-article shares, averaged with weights = article monthly views summed Jan 2021 - Oct 2026 (same weight at all three dates)",
+  "pooled": "all sentences pooled (long leads count more)",
+  "conflict_subset": "topic articles where any coded sentence at any date has perpetrator in {I,J,H,P} or victim in {I,H,P}"
+ },
+ "n_articles": {
+  "topic": 150,
+  "comparison": 50
+ },
+ "conflict_subset_titles": [
+  "1948 Arab–Israeli War",
+  "1948 Palestine war",
+  "Adolf Eichmann",
+  "Antisemitism",
+  "Ariel Sharon",
+  "Balfour Declaration",
+  "Baruch Spinoza",
+  "Benjamin Netanyahu",
+  "Canaan",
+  "Eli Cohen",
+  "Entebbe raid",
+  "Fatah",
+  "Gaza City",
+  "Gaza Strip",
+  "Gaza–Israel conflict",
+  "Golan Heights",
+  "Hamas",
+  "Hebrew language",
+  "History of Israel",
+  "History of Palestine",
+  "History of the Israeli–Palestinian conflict",
+  "Ismail Haniyeh",
+  "Israel",
+  "Israel Defense Forces",
+  "Israeli Air Force",
+  "Israeli-occupied territories",
+  "Israelites",
+  "Israeli–Palestinian conflict",
+  "Itamar Ben-Gvir",
+  "Jericho",
+  "Jewish diaspora",
+  "Kristallnacht",
+  "Mahmoud Abbas",
+  "Mandatory Palestine",
+  "Mizrahi Jews",
+  "Mossad",
+  "Munich massacre",
+  "Norman Finkelstein",
+  "Oslo Accords",
+  "Palestine",
+  "Palestine (region)",
+  "Palestine Liberation Organization",
+  "Palestinian Authority",
+  "Palestinians",
+  "Six-Day War",
+  "Suez Crisis",
+  "Twelve Tribes of Israel",
+  "United Nations Partition Plan for Palestine",
+  "West Bank",
+  "Yahya Sinwar",
+  "Yasser Arafat",
+  "Yitzhak Rabin",
+  "Yom Kippur War",
+  "Zionism"
+ ],
+ "topic_all": {
+  "2021-01-01": {
+   "n_sentences": 390,
+   "n_articles_with_harm": 81,
+   "israel_jews": {
+    "share_article": 0.2365,
+    "share_pageview": 0.229,
+    "share_pooled": 0.2769,
+    "n_sentences": 108,
+    "n_articles": 35,
+    "ci95_article": [
+     0.1666,
+     0.3149
+    ],
+    "own_voice": {
+     "share_article": 0.758,
+     "share_pageview": 0.7167,
+     "share_pooled": 0.7222,
+     "n_own": 78,
+     "n_articles_base": 35,
+     "ci95_article": [
+      0.637,
+      0.8797
+     ],
+     "any_charge_own_voice_pooled": 0.7222
+    },
+    "charges": {
+     "ethnic cleansing/expulsion": {
+      "n": 4,
+      "own_voice": 3
+     },
+     "occupation": {
+      "n": 35,
+      "own_voice": 16
+     },
+     "massacre/killing": {
+      "n": 9,
+      "own_voice": 6
+     },
+     "war crimes": {
+      "n": 1,
+      "own_voice": 0
+     },
+     "other": {
+      "n": 61,
+      "own_voice": 54
+     }
+    }
+   },
+   "hamas_palestinians": {
+    "share_article": 0.0703,
+    "share_pageview": 0.0654,
+    "share_pooled": 0.0821,
+    "n_sentences": 32,
+    "n_articles": 13,
+    "ci95_article": [
+     0.0322,
+     0.1209
+    ],
+    "own_voice": {
+     "share_article": 0.834,
+     "share_pageview": 0.7827,
+     "share_pooled": 0.75,
+     "n_own": 24,
+     "n_articles_base": 13,
+     "ci95_article": [
+      0.6699,
+      0.9744
+     ],
+     "any_charge_own_voice_pooled": 0.75
+    },
+    "charges": {
+     "ethnic cleansing/expulsion": {
+      "n": 1,
+      "own_voice": 1
+     },
+     "terrorism": {
+      "n": 9,
+      "own_voice": 2
+     },
+     "massacre/killing": {
+      "n": 8,
+      "own_voice": 8
+     },
+     "war crimes": {
+      "n": 1,
+      "own_voice": 0
+     },
+     "other": {
+      "n": 15,
+      "own_voice": 15
+     }
+    }
+   },
+   "israel_state_only": {
+    "share_article": 0.1729,
+    "share_pageview": 0.1929,
+    "share_pooled": 0.2359,
+    "n_sentences": 92,
+    "n_articles": 26
+   },
+   "jews_zionists_only": {
+    "share_article": 0.0636,
+    "share_pageview": 0.0361,
+    "share_pooled": 0.041,
+    "n_sentences": 16,
+    "n_articles": 13
+   },
+   "hamas_armed_only": {
+    "share_article": 0.0578,
+    "share_pageview": 0.0549,
+    "share_pooled": 0.0692,
+    "n_sentences": 27,
+    "n_articles": 9
+   },
+   "palestinians_general_only": {
+    "share_article": 0.0126,
+    "share_pageview": 0.0105,
+    "share_pooled": 0.0128,
+    "n_sentences": 5,
+    "n_articles": 4
+   },
+   "other_state": {
+    "share_article": 0.4654,
+    "share_pageview": 0.4197,
+    "share_pooled": 0.4333,
+    "n_sentences": 169,
+    "n_articles": 56
+   },
+   "unclear_none": {
+    "share_article": 0.2844,
+    "share_pageview": 0.343,
+    "share_pooled": 0.2744,
+    "n_sentences": 107,
+    "n_articles": 44
+   }
+  },
+  "2023-07-01": {
+   "n_sentences": 391,
+   "n_articles_with_harm": 82,
+   "israel_jews": {
+    "share_article": 0.2413,
+    "share_pageview": 0.2267,
+    "share_pooled": 0.2788,
+    "n_sentences": 109,
+    "n_articles": 37,
+    "ci95_article": [
+     0.1719,
+     0.3161
+    ],
+    "own_voice": {
+     "share_article": 0.7887,
+     "share_pageview": 0.7056,
+     "share_pooled": 0.7248,
+     "n_own": 79,
+     "n_articles_base": 37,
+     "ci95_article": [
+      0.685,
+      0.8851
+     ],
+     "any_charge_own_voice_pooled": 0.7248
+    },
+    "charges": {
+     "ethnic cleansing/expulsion": {
+      "n": 4,
+      "own_voice": 2
+     },
+     "apartheid": {
+      "n": 1,
+      "own_voice": 0
+     },
+     "occupation": {
+      "n": 35,
+      "own_voice": 18
+     },
+     "terrorism": {
+      "n": 2,
+      "own_voice": 2
+     },
+     "massacre/killing": {
+      "n": 10,
+      "own_voice": 8
+     },
+     "war crimes": {
+      "n": 1,
+      "own_voice": 0
+     },
+     "other": {
+      "n": 61,
+      "own_voice": 53
+     }
+    }
+   },
+   "hamas_palestinians": {
+    "share_article": 0.0777,
+    "share_pageview": 0.0816,
+    "share_pooled": 0.0793,
+    "n_sentences": 31,
+    "n_articles": 16,
+    "ci95_article": [
+     0.037,
+     0.125
+    ],
+    "own_voice": {
+     "share_article": 0.7375,
+     "share_pageview": 0.6618,
+     "share_pooled": 0.7419,
+     "n_own": 23,
+     "n_articles_base": 16,
+     "ci95_article": [
+      0.5,
+      0.925
+     ],
+     "any_charge_own_voice_pooled": 0.7419
+    },
+    "charges": {
+     "terrorism": {
+      "n": 10,
+      "own_voice": 3
+     },
+     "massacre/killing": {
+      "n": 8,
+      "own_voice": 7
+     },
+     "other": {
+      "n": 16,
+      "own_voice": 15
+     }
+    }
+   },
+   "israel_state_only": {
+    "share_article": 0.1774,
+    "share_pageview": 0.1898,
+    "share_pooled": 0.2302,
+    "n_sentences": 90,
+    "n_articles": 28
+   },
+   "jews_zionists_only": {
+    "share_article": 0.0639,
+    "share_pageview": 0.0369,
+    "share_pooled": 0.0486,
+    "n_sentences": 19,
+    "n_articles": 13
+   },
+   "hamas_armed_only": {
+    "share_article": 0.0646,
+    "share_pageview": 0.0711,
+    "share_pooled": 0.0639,
+    "n_sentences": 25,
+    "n_articles": 12
+   },
+   "palestinians_general_only": {
+    "share_article": 0.0131,
+    "share_pageview": 0.0105,
+    "share_pooled": 0.0153,
+    "n_sentences": 6,
+    "n_articles": 5
+   },
+   "other_state": {
+    "share_article": 0.4568,
+    "share_pageview": 0.4184,
+    "share_pooled": 0.4246,
+    "n_sentences": 166,
+    "n_articles": 56
+   },
+   "unclear_none": {
+    "share_article": 0.2585,
+    "share_pageview": 0.3052,
+    "share_pooled": 0.2634,
+    "n_sentences": 103,
+    "n_articles": 44
+   }
+  },
+  "now": {
+   "n_sentences": 508,
+   "n_articles_with_harm": 90,
+   "israel_jews": {
+    "share_article": 0.2642,
+    "share_pageview": 0.2586,
+    "share_pooled": 0.3228,
+    "n_sentences": 164,
+    "n_articles": 44,
+    "ci95_article": [
+     0.1969,
+     0.3346
+    ],
+    "own_voice": {
+     "share_article": 0.8134,
+     "share_pageview": 0.7852,
+     "share_pooled": 0.8049,
+     "n_own": 132,
+     "n_articles_base": 44,
+     "ci95_article": [
+      0.7257,
+      0.8869
+     ],
+     "any_charge_own_voice_pooled": 0.8171
+    },
+    "charges": {
+     "genocide": {
+      "n": 8,
+      "own_voice": 2
+     },
+     "ethnic cleansing/expulsion": {
+      "n": 6,
+      "own_voice": 5
+     },
+     "apartheid": {
+      "n": 4,
+      "own_voice": 1
+     },
+     "occupation": {
+      "n": 55,
+      "own_voice": 44
+     },
+     "terrorism": {
+      "n": 4,
+      "own_voice": 3
+     },
+     "massacre/killing": {
+      "n": 27,
+      "own_voice": 25
+     },
+     "war crimes": {
+      "n": 2,
+      "own_voice": 0
+     },
+     "other": {
+      "n": 74,
+      "own_voice": 66
+     }
+    }
+   },
+   "hamas_palestinians": {
+    "share_article": 0.0885,
+    "share_pageview": 0.0754,
+    "share_pooled": 0.1024,
+    "n_sentences": 52,
+    "n_articles": 23,
+    "ci95_article": [
+     0.0484,
+     0.1264
+    ],
+    "own_voice": {
+     "share_article": 0.8179,
+     "share_pageview": 0.8569,
+     "share_pooled": 0.7692,
+     "n_own": 40,
+     "n_articles_base": 23,
+     "ci95_article": [
+      0.6667,
+      0.9442
+     ],
+     "any_charge_own_voice_pooled": 0.7692
+    },
+    "charges": {
+     "terrorism": {
+      "n": 9,
+      "own_voice": 4
+     },
+     "massacre/killing": {
+      "n": 24,
+      "own_voice": 23
+     },
+     "war crimes": {
+      "n": 3,
+      "own_voice": 1
+     },
+     "antisemitism": {
+      "n": 3,
+      "own_voice": 1
+     },
+     "other": {
+      "n": 18,
+      "own_voice": 16
+     }
+    }
+   },
+   "israel_state_only": {
+    "share_article": 0.202,
+    "share_pageview": 0.2177,
+    "share_pooled": 0.2697,
+    "n_sentences": 137,
+    "n_articles": 36
+   },
+   "jews_zionists_only": {
+    "share_article": 0.0634,
+    "share_pageview": 0.0449,
+    "share_pooled": 0.0551,
+    "n_sentences": 28,
+    "n_articles": 17
+   },
+   "hamas_armed_only": {
+    "share_article": 0.0668,
+    "share_pageview": 0.0602,
+    "share_pooled": 0.0846,
+    "n_sentences": 43,
+    "n_articles": 18
+   },
+   "palestinians_general_only": {
+    "share_article": 0.0217,
+    "share_pageview": 0.0152,
+    "share_pooled": 0.0177,
+    "n_sentences": 9,
+    "n_articles": 7
+   },
+   "other_state": {
+    "share_article": 0.4382,
+    "share_pageview": 0.4182,
+    "share_pooled": 0.3622,
+    "n_sentences": 184,
+    "n_articles": 63
+   },
+   "unclear_none": {
+    "share_article": 0.2644,
+    "share_pageview": 0.2902,
+    "share_pooled": 0.2795,
+    "n_sentences": 142,
+    "n_articles": 54
+   }
+  }
+ },
+ "topic_all_changes": {
+  "2021-01->2023-07": {
+   "israel_jews": {
+    "diff_share_article": 0.0048,
+    "ci95": [
+     -0.0352,
+     0.046
+    ],
+    "diff_share_pageview": -0.0023,
+    "diff_own_voice_article": 0.0307,
+    "own_voice_ci95": [
+     -0.0561,
+     0.1282
+    ]
+   },
+   "hamas_palestinians": {
+    "diff_share_article": 0.0074,
+    "ci95": [
+     -0.0089,
+     0.025
+    ],
+    "diff_share_pageview": 0.0162,
+    "diff_own_voice_article": -0.0965,
+    "own_voice_ci95": [
+     -0.2818,
+     0.0492
+    ]
+   }
+  },
+  "2023-07->now": {
+   "israel_jews": {
+    "diff_share_article": 0.0229,
+    "ci95": [
+     -0.0148,
+     0.0644
+    ],
+    "diff_share_pageview": 0.0319,
+    "diff_own_voice_article": 0.0247,
+    "own_voice_ci95": [
+     -0.0788,
+     0.1197
+    ]
+   },
+   "hamas_palestinians": {
+    "diff_share_article": 0.0108,
+    "ci95": [
+     -0.0227,
+     0.0496
+    ],
+    "diff_share_pageview": -0.0062,
+    "diff_own_voice_article": 0.0804,
+    "own_voice_ci95": [
+     -0.0896,
+     0.255
+    ]
+   }
+  },
+  "2021-01->now": {
+   "israel_jews": {
+    "diff_share_article": 0.0277,
+    "ci95": [
+     -0.0193,
+     0.0834
+    ],
+    "diff_share_pageview": 0.0296,
+    "diff_own_voice_article": 0.0554,
+    "own_voice_ci95": [
+     -0.0784,
+     0.1884
+    ]
+   },
+   "hamas_palestinians": {
+    "diff_share_article": 0.0182,
+    "ci95": [
+     -0.0138,
+     0.0574
+    ],
+    "diff_share_pageview": 0.01,
+    "diff_own_voice_article": -0.0161,
+    "own_voice_ci95": [
+     -0.1688,
+     0.122
+    ]
+   }
+  }
+ },
+ "topic_conflict_subset": {
+  "2021-01-01": {
+   "n_sentences": 272,
+   "n_articles_with_harm": 45,
+   "israel_jews": {
+    "share_article": 0.4257,
+    "share_pageview": 0.4292,
+    "share_pooled": 0.3971,
+    "n_sentences": 108,
+    "n_articles": 35,
+    "ci95_article": [
+     0.3226,
+     0.5293
+    ],
+    "own_voice": {
+     "share_article": 0.758,
+     "share_pageview": 0.7167,
+     "share_pooled": 0.7222,
+     "n_own": 78,
+     "n_articles_base": 35,
+     "ci95_article": [
+      0.637,
+      0.8797
+     ],
+     "any_charge_own_voice_pooled": 0.7222
+    },
+    "charges": {
+     "ethnic cleansing/expulsion": {
+      "n": 4,
+      "own_voice": 3
+     },
+     "occupation": {
+      "n": 35,
+      "own_voice": 16
+     },
+     "massacre/killing": {
+      "n": 9,
+      "own_voice": 6
+     },
+     "war crimes": {
+      "n": 1,
+      "own_voice": 0
+     },
+     "other": {
+      "n": 61,
+      "own_voice": 54
+     }
+    }
+   },
+   "hamas_palestinians": {
+    "share_article": 0.1266,
+    "share_pageview": 0.1226,
+    "share_pooled": 0.1176,
+    "n_sentences": 32,
+    "n_articles": 13,
+    "ci95_article": [
+     0.0559,
+     0.2173
+    ],
+    "own_voice": {
+     "share_article": 0.834,
+     "share_pageview": 0.7827,
+     "share_pooled": 0.75,
+     "n_own": 24,
+     "n_articles_base": 13,
+     "ci95_article": [
+      0.6699,
+      0.9744
+     ],
+     "any_charge_own_voice_pooled": 0.75
+    },
+    "charges": {
+     "ethnic cleansing/expulsion": {
+      "n": 1,
+      "own_voice": 1
+     },
+     "terrorism": {
+      "n": 9,
+      "own_voice": 2
+     },
+     "massacre/killing": {
+      "n": 8,
+      "own_voice": 8
+     },
+     "war crimes": {
+      "n": 1,
+      "own_voice": 0
+     },
+     "other": {
+      "n": 15,
+      "own_voice": 15
+     }
+    }
+   },
+   "israel_state_only": {
+    "share_article": 0.3113,
+    "share_pageview": 0.3616,
+    "share_pooled": 0.3382,
+    "n_sentences": 92,
+    "n_articles": 26
+   },
+   "jews_zionists_only": {
+    "share_article": 0.1144,
+    "share_pageview": 0.0676,
+    "share_pooled": 0.0588,
+    "n_sentences": 16,
+    "n_articles": 13
+   },
+   "hamas_armed_only": {
+    "share_article": 0.104,
+    "share_pageview": 0.1029,
+    "share_pooled": 0.0993,
+    "n_sentences": 27,
+    "n_articles": 9
+   },
+   "palestinians_general_only": {
+    "share_article": 0.0226,
+    "share_pageview": 0.0197,
+    "share_pooled": 0.0184,
+    "n_sentences": 5,
+    "n_articles": 4
+   },
+   "other_state": {
+    "share_article": 0.2473,
+    "share_pageview": 0.2573,
+    "share_pooled": 0.2831,
+    "n_sentences": 77,
+    "n_articles": 26
+   },
+   "unclear_none": {
+    "share_article": 0.3024,
+    "share_pageview": 0.2979,
+    "share_pooled": 0.2978,
+    "n_sentences": 81,
+    "n_articles": 29
+   }
+  },
+  "2023-07-01": {
+   "n_sentences": 267,
+   "n_articles_with_harm": 46,
+   "israel_jews": {
+    "share_article": 0.4302,
+    "share_pageview": 0.4263,
+    "share_pooled": 0.4082,
+    "n_sentences": 109,
+    "n_articles": 37,
+    "ci95_article": [
+     0.3332,
+     0.5369
+    ],
+    "own_voice": {
+     "share_article": 0.7887,
+     "share_pageview": 0.7056,
+     "share_pooled": 0.7248,
+     "n_own": 79,
+     "n_articles_base": 37,
+     "ci95_article": [
+      0.685,
+      0.8851
+     ],
+     "any_charge_own_voice_pooled": 0.7248
+    },
+    "charges": {
+     "ethnic cleansing/expulsion": {
+      "n": 4,
+      "own_voice": 2
+     },
+     "apartheid": {
+      "n": 1,
+      "own_voice": 0
+     },
+     "occupation": {
+      "n": 35,
+      "own_voice": 18
+     },
+     "terrorism": {
+      "n": 2,
+      "own_voice": 2
+     },
+     "massacre/killing": {
+      "n": 10,
+      "own_voice": 8
+     },
+     "war crimes": {
+      "n": 1,
+      "own_voice": 0
+     },
+     "other": {
+      "n": 61,
+      "own_voice": 53
+     }
+    }
+   },
+   "hamas_palestinians": {
+    "share_article": 0.1385,
+    "share_pageview": 0.1535,
+    "share_pooled": 0.1161,
+    "n_sentences": 31,
+    "n_articles": 16,
+    "ci95_article": [
+     0.0691,
+     0.2193
+    ],
+    "own_voice": {
+     "share_article": 0.7375,
+     "share_pageview": 0.6618,
+     "share_pooled": 0.7419,
+     "n_own": 23,
+     "n_articles_base": 16,
+     "ci95_article": [
+      0.5,
+      0.925
+     ],
+     "any_charge_own_voice_pooled": 0.7419
+    },
+    "charges": {
+     "terrorism": {
+      "n": 10,
+      "own_voice": 3
+     },
+     "massacre/killing": {
+      "n": 8,
+      "own_voice": 7
+     },
+     "other": {
+      "n": 16,
+      "own_voice": 15
+     }
+    }
+   },
+   "israel_state_only": {
+    "share_article": 0.3163,
+    "share_pageview": 0.3569,
+    "share_pooled": 0.3371,
+    "n_sentences": 90,
+    "n_articles": 28
+   },
+   "jews_zionists_only": {
+    "share_article": 0.114,
+    "share_pageview": 0.0694,
+    "share_pooled": 0.0712,
+    "n_sentences": 19,
+    "n_articles": 13
+   },
+   "hamas_armed_only": {
+    "share_article": 0.1151,
+    "share_pageview": 0.1337,
+    "share_pooled": 0.0936,
+    "n_sentences": 25,
+    "n_articles": 12
+   },
+   "palestinians_general_only": {
+    "share_article": 0.0234,
+    "share_pageview": 0.0198,
+    "share_pooled": 0.0225,
+    "n_sentences": 6,
+    "n_articles": 5
+   },
+   "other_state": {
+    "share_article": 0.2068,
+    "share_pageview": 0.2145,
+    "share_pooled": 0.2509,
+    "n_sentences": 67,
+    "n_articles": 25
+   },
+   "unclear_none": {
+    "share_article": 0.2857,
+    "share_pageview": 0.2658,
+    "share_pooled": 0.2921,
+    "n_sentences": 78,
+    "n_articles": 30
+   }
+  },
+  "now": {
+   "n_sentences": 368,
+   "n_articles_with_harm": 53,
+   "israel_jews": {
+    "share_article": 0.4487,
+    "share_pageview": 0.488,
+    "share_pooled": 0.4457,
+    "n_sentences": 164,
+    "n_articles": 44,
+    "ci95_article": [
+     0.357,
+     0.5391
+    ],
+    "own_voice": {
+     "share_article": 0.8134,
+     "share_pageview": 0.7852,
+     "share_pooled": 0.8049,
+     "n_own": 132,
+     "n_articles_base": 44,
+     "ci95_article": [
+      0.7257,
+      0.8869
+     ],
+     "any_charge_own_voice_pooled": 0.8171
+    },
+    "charges": {
+     "genocide": {
+      "n": 8,
+      "own_voice": 2
+     },
+     "ethnic cleansing/expulsion": {
+      "n": 6,
+      "own_voice": 5
+     },
+     "apartheid": {
+      "n": 4,
+      "own_voice": 1
+     },
+     "occupation": {
+      "n": 55,
+      "own_voice": 44
+     },
+     "terrorism": {
+      "n": 4,
+      "own_voice": 3
+     },
+     "massacre/killing": {
+      "n": 27,
+      "own_voice": 25
+     },
+     "war crimes": {
+      "n": 2,
+      "own_voice": 0
+     },
+     "other": {
+      "n": 74,
+      "own_voice": 66
+     }
+    }
+   },
+   "hamas_palestinians": {
+    "share_article": 0.1503,
+    "share_pageview": 0.1423,
+    "share_pooled": 0.1413,
+    "n_sentences": 52,
+    "n_articles": 23,
+    "ci95_article": [
+     0.0894,
+     0.2162
+    ],
+    "own_voice": {
+     "share_article": 0.8179,
+     "share_pageview": 0.8569,
+     "share_pooled": 0.7692,
+     "n_own": 40,
+     "n_articles_base": 23,
+     "ci95_article": [
+      0.6667,
+      0.9442
+     ],
+     "any_charge_own_voice_pooled": 0.7692
+    },
+    "charges": {
+     "terrorism": {
+      "n": 9,
+      "own_voice": 4
+     },
+     "massacre/killing": {
+      "n": 24,
+      "own_voice": 23
+     },
+     "war crimes": {
+      "n": 3,
+      "own_voice": 1
+     },
+     "antisemitism": {
+      "n": 3,
+      "own_voice": 1
+     },
+     "other": {
+      "n": 18,
+      "own_voice": 16
+     }
+    }
+   },
+   "israel_state_only": {
+    "share_article": 0.343,
+    "share_pageview": 0.4108,
+    "share_pooled": 0.3723,
+    "n_sentences": 137,
+    "n_articles": 36
+   },
+   "jews_zionists_only": {
+    "share_article": 0.1076,
+    "share_pageview": 0.0847,
+    "share_pooled": 0.0761,
+    "n_sentences": 28,
+    "n_articles": 17
+   },
+   "hamas_armed_only": {
+    "share_article": 0.1135,
+    "share_pageview": 0.1137,
+    "share_pooled": 0.1168,
+    "n_sentences": 43,
+    "n_articles": 18
+   },
+   "palestinians_general_only": {
+    "share_article": 0.0368,
+    "share_pageview": 0.0286,
+    "share_pooled": 0.0245,
+    "n_sentences": 9,
+    "n_articles": 7
+   },
+   "other_state": {
+    "share_article": 0.206,
+    "share_pageview": 0.2019,
+    "share_pooled": 0.2174,
+    "n_sentences": 80,
+    "n_articles": 30
+   },
+   "unclear_none": {
+    "share_article": 0.289,
+    "share_pageview": 0.2479,
+    "share_pooled": 0.288,
+    "n_sentences": 106,
+    "n_articles": 38
+   }
+  }
+ },
+ "topic_conflict_subset_changes": {
+  "2021-01->2023-07": {
+   "israel_jews": {
+    "diff_share_article": 0.0045,
+    "ci95": [
+     -0.0604,
+     0.0694
+    ],
+    "diff_share_pageview": -0.0029,
+    "diff_own_voice_article": 0.0307,
+    "own_voice_ci95": [
+     -0.0561,
+     0.1282
+    ]
+   },
+   "hamas_palestinians": {
+    "diff_share_article": 0.0119,
+    "ci95": [
+     -0.0193,
+     0.0427
+    ],
+    "diff_share_pageview": 0.0309,
+    "diff_own_voice_article": -0.0965,
+    "own_voice_ci95": [
+     -0.2818,
+     0.0492
+    ]
+   }
+  },
+  "2023-07->now": {
+   "israel_jews": {
+    "diff_share_article": 0.0185,
+    "ci95": [
+     -0.0408,
+     0.0771
+    ],
+    "diff_share_pageview": 0.0617,
+    "diff_own_voice_article": 0.0247,
+    "own_voice_ci95": [
+     -0.0788,
+     0.1197
+    ]
+   },
+   "hamas_palestinians": {
+    "diff_share_article": 0.0118,
+    "ci95": [
+     -0.0444,
+     0.0699
+    ],
+    "diff_share_pageview": -0.0112,
+    "diff_own_voice_article": 0.0804,
+    "own_voice_ci95": [
+     -0.0896,
+     0.255
+    ]
+   }
+  },
+  "2021-01->now": {
+   "israel_jews": {
+    "diff_share_article": 0.023,
+    "ci95": [
+     -0.056,
+     0.105
+    ],
+    "diff_share_pageview": 0.0588,
+    "diff_own_voice_article": 0.0554,
+    "own_voice_ci95": [
+     -0.0784,
+     0.1884
+    ]
+   },
+   "hamas_palestinians": {
+    "diff_share_article": 0.0237,
+    "ci95": [
+     -0.033,
+     0.0872
+    ],
+    "diff_share_pageview": 0.0197,
+    "diff_own_voice_article": -0.0161,
+    "own_voice_ci95": [
+     -0.1688,
+     0.122
+    ]
+   }
+  }
+ },
+ "topic_charge_sentences": {
+  "2021-01-01": {
+   "israel_jews": {
+    "genocide": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "ethnic cleansing/expulsion": {
+     "sentences": 4,
+     "articles": 4,
+     "own_voice_sentences": 3,
+     "own_voice_articles": [
+      "1948 Palestine war",
+      "Itamar Ben-Gvir",
+      "Munich massacre"
+     ]
+    },
+    "apartheid": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "war crimes": {
+     "sentences": 1,
+     "articles": 1,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "terrorism": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "massacre/killing": {
+     "sentences": 9,
+     "articles": 7,
+     "own_voice_sentences": 6,
+     "own_voice_articles": [
+      "Gaza–Israel conflict",
+      "Kristallnacht",
+      "Munich massacre",
+      "Six-Day War",
+      "Yitzhak Rabin"
+     ]
+    },
+    "occupation": {
+     "sentences": 35,
+     "articles": 13,
+     "own_voice_sentences": 16,
+     "own_voice_articles": [
+      "1948 Palestine war",
+      "Golan Heights",
+      "History of Palestine",
+      "Israel",
+      "Israeli-occupied territories",
+      "Israeli–Palestinian conflict",
+      "Jericho",
+      "Palestine",
+      "West Bank",
+      "Yom Kippur War"
+     ]
+    }
+   },
+   "hamas_palestinians": {
+    "genocide": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "ethnic cleansing/expulsion": {
+     "sentences": 1,
+     "articles": 1,
+     "own_voice_sentences": 1,
+     "own_voice_articles": [
+      "Antisemitism"
+     ]
+    },
+    "apartheid": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "war crimes": {
+     "sentences": 1,
+     "articles": 1,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "terrorism": {
+     "sentences": 9,
+     "articles": 6,
+     "own_voice_sentences": 2,
+     "own_voice_articles": [
+      "Israeli Air Force",
+      "Munich massacre"
+     ]
+    },
+    "massacre/killing": {
+     "sentences": 8,
+     "articles": 6,
+     "own_voice_sentences": 8,
+     "own_voice_articles": [
+      "Gaza–Israel conflict",
+      "Hamas",
+      "Israeli Air Force",
+      "Munich massacre",
+      "Palestine Liberation Organization",
+      "Yasser Arafat"
+     ]
+    },
+    "occupation": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    }
+   }
+  },
+  "2023-07-01": {
+   "israel_jews": {
+    "genocide": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "ethnic cleansing/expulsion": {
+     "sentences": 4,
+     "articles": 3,
+     "own_voice_sentences": 2,
+     "own_voice_articles": [
+      "Itamar Ben-Gvir",
+      "Munich massacre"
+     ]
+    },
+    "apartheid": {
+     "sentences": 1,
+     "articles": 1,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "war crimes": {
+     "sentences": 1,
+     "articles": 1,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "terrorism": {
+     "sentences": 2,
+     "articles": 1,
+     "own_voice_sentences": 2,
+     "own_voice_articles": [
+      "Itamar Ben-Gvir"
+     ]
+    },
+    "massacre/killing": {
+     "sentences": 10,
+     "articles": 8,
+     "own_voice_sentences": 8,
+     "own_voice_articles": [
+      "1948 Arab–Israeli War",
+      "Gaza–Israel conflict",
+      "Itamar Ben-Gvir",
+      "Kristallnacht",
+      "Munich massacre",
+      "Six-Day War",
+      "Yitzhak Rabin"
+     ]
+    },
+    "occupation": {
+     "sentences": 35,
+     "articles": 13,
+     "own_voice_sentences": 18,
+     "own_voice_articles": [
+      "Gaza Strip",
+      "Golan Heights",
+      "Israel",
+      "Israeli-occupied territories",
+      "Israeli–Palestinian conflict",
+      "Jericho",
+      "Palestine",
+      "Palestine Liberation Organization",
+      "Six-Day War",
+      "West Bank",
+      "Yom Kippur War"
+     ]
+    }
+   },
+   "hamas_palestinians": {
+    "genocide": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "ethnic cleansing/expulsion": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "apartheid": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "war crimes": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "terrorism": {
+     "sentences": 10,
+     "articles": 7,
+     "own_voice_sentences": 3,
+     "own_voice_articles": [
+      "History of the Israeli–Palestinian conflict",
+      "Israeli Air Force",
+      "Munich massacre"
+     ]
+    },
+    "massacre/killing": {
+     "sentences": 8,
+     "articles": 7,
+     "own_voice_sentences": 7,
+     "own_voice_articles": [
+      "1948 Arab–Israeli War",
+      "Gaza–Israel conflict",
+      "Israeli Air Force",
+      "Munich massacre",
+      "Palestine Liberation Organization",
+      "Yasser Arafat"
+     ]
+    },
+    "occupation": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    }
+   }
+  },
+  "now": {
+   "israel_jews": {
+    "genocide": {
+     "sentences": 8,
+     "articles": 7,
+     "own_voice_sentences": 2,
+     "own_voice_articles": [
+      "Benjamin Netanyahu",
+      "Israel"
+     ]
+    },
+    "ethnic cleansing/expulsion": {
+     "sentences": 6,
+     "articles": 6,
+     "own_voice_sentences": 5,
+     "own_voice_articles": [
+      "1948 Arab–Israeli War",
+      "1948 Palestine war",
+      "Gaza Strip",
+      "Israeli–Palestinian conflict",
+      "Munich massacre"
+     ]
+    },
+    "apartheid": {
+     "sentences": 4,
+     "articles": 4,
+     "own_voice_sentences": 1,
+     "own_voice_articles": [
+      "Israeli–Palestinian conflict"
+     ]
+    },
+    "war crimes": {
+     "sentences": 2,
+     "articles": 2,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "terrorism": {
+     "sentences": 4,
+     "articles": 2,
+     "own_voice_sentences": 3,
+     "own_voice_articles": [
+      "1948 Palestine war",
+      "Itamar Ben-Gvir"
+     ]
+    },
+    "massacre/killing": {
+     "sentences": 26,
+     "articles": 16,
+     "own_voice_sentences": 24,
+     "own_voice_articles": [
+      "1948 Palestine war",
+      "Ariel Sharon",
+      "Entebbe raid",
+      "Gaza City",
+      "Gaza Strip",
+      "Gaza–Israel conflict",
+      "Ismail Haniyeh",
+      "Itamar Ben-Gvir",
+      "Kristallnacht",
+      "Mossad",
+      "Munich massacre",
+      "Oslo Accords",
+      "Palestine",
+      "Six-Day War",
+      "Yahya Sinwar",
+      "Yitzhak Rabin"
+     ]
+    },
+    "occupation": {
+     "sentences": 55,
+     "articles": 22,
+     "own_voice_sentences": 44,
+     "own_voice_articles": [
+      "Ariel Sharon",
+      "Gaza City",
+      "Gaza Strip",
+      "Gaza–Israel conflict",
+      "Golan Heights",
+      "Hamas",
+      "History of Palestine",
+      "Ismail Haniyeh",
+      "Israel",
+      "Israeli-occupied territories",
+      "Israeli–Palestinian conflict",
+      "Jericho",
+      "Palestine",
+      "Palestine (region)",
+      "Palestine Liberation Organization",
+      "Palestinian Authority",
+      "Palestinians",
+      "Six-Day War",
+      "Suez Crisis",
+      "West Bank",
+      "Yom Kippur War"
+     ]
+    }
+   },
+   "hamas_palestinians": {
+    "genocide": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "ethnic cleansing/expulsion": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "apartheid": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    },
+    "war crimes": {
+     "sentences": 3,
+     "articles": 3,
+     "own_voice_sentences": 1,
+     "own_voice_articles": [
+      "Gaza–Israel conflict"
+     ]
+    },
+    "terrorism": {
+     "sentences": 9,
+     "articles": 8,
+     "own_voice_sentences": 4,
+     "own_voice_articles": [
+      "1948 Palestine war",
+      "Entebbe raid",
+      "Israeli Air Force",
+      "Munich massacre"
+     ]
+    },
+    "massacre/killing": {
+     "sentences": 23,
+     "articles": 16,
+     "own_voice_sentences": 22,
+     "own_voice_articles": [
+      "1948 Arab–Israeli War",
+      "1948 Palestine war",
+      "Benjamin Netanyahu",
+      "Fatah",
+      "Gaza–Israel conflict",
+      "Hamas",
+      "Ismail Haniyeh",
+      "Israeli Air Force",
+      "Israeli-occupied territories",
+      "Israeli–Palestinian conflict",
+      "Munich massacre",
+      "Oslo Accords",
+      "Palestine",
+      "Palestine Liberation Organization",
+      "Yahya Sinwar",
+      "Yasser Arafat"
+     ]
+    },
+    "occupation": {
+     "sentences": 0,
+     "articles": 0,
+     "own_voice_sentences": 0,
+     "own_voice_articles": []
+    }
+   }
+  }
+ },
+ "topic_victim_framing": {
+  "2021-01-01": {
+   "sentences_palestinian_victim": 71,
+   "of_which_perp_unnamed": 44,
+   "of_which_perp_israel_jews": 50,
+   "sentences_israeli_or_jewish_victim": 171,
+   "of_which_perp_hamas_pal": 20,
+   "of_which_perp_other_state": 104
+  },
+  "2023-07-01": {
+   "sentences_palestinian_victim": 78,
+   "of_which_perp_unnamed": 40,
+   "of_which_perp_israel_jews": 53,
+   "sentences_israeli_or_jewish_victim": 165,
+   "of_which_perp_hamas_pal": 19,
+   "of_which_perp_other_state": 104
+  },
+  "now": {
+   "sentences_palestinian_victim": 141,
+   "of_which_perp_unnamed": 54,
+   "of_which_perp_israel_jews": 100,
+   "sentences_israeli_or_jewish_victim": 211,
+   "of_which_perp_hamas_pal": 41,
+   "of_which_perp_other_state": 112
+  }
+ },
+ "comparison": {
+  "ALL": {
+   "2021-01-01": {
+    "n_sentences": 217,
+    "n_articles": 39,
+    "side_A": {
+     "share_article": 0.3294,
+     "share_pageview": 0.5013,
+     "share_pooled": 0.3871,
+     "n": 84,
+     "own_voice_article": 0.6464,
+     "own_voice_pageview": 0.5804,
+     "own_voice_pooled": 0.5833,
+     "charges": {
+      "genocide": {
+       "n": 4,
+       "own_voice": 2
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 8,
+       "own_voice": 7
+      },
+      "occupation": {
+       "n": 8,
+       "own_voice": 2
+      },
+      "massacre/killing": {
+       "n": 15,
+       "own_voice": 7
+      },
+      "other": {
+       "n": 52,
+       "own_voice": 34
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.1881,
+     "share_pageview": 0.0585,
+     "share_pooled": 0.1613,
+     "n": 35,
+     "own_voice_article": 0.8694,
+     "own_voice_pageview": 0.8752,
+     "own_voice_pooled": 0.8286,
+     "charges": {
+      "genocide": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "occupation": {
+       "n": 3,
+       "own_voice": 3
+      },
+      "terrorism": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "massacre/killing": {
+       "n": 11,
+       "own_voice": 8
+      },
+      "other": {
+       "n": 20,
+       "own_voice": 19
+      }
+     }
+    }
+   },
+   "2023-07-01": {
+    "n_sentences": 241,
+    "n_articles": 41,
+    "side_A": {
+     "share_article": 0.4353,
+     "share_pageview": 0.4677,
+     "share_pooled": 0.4523,
+     "n": 109,
+     "own_voice_article": 0.7879,
+     "own_voice_pageview": 0.7862,
+     "own_voice_pooled": 0.7706,
+     "charges": {
+      "genocide": {
+       "n": 5,
+       "own_voice": 2
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 13,
+       "own_voice": 12
+      },
+      "occupation": {
+       "n": 10,
+       "own_voice": 7
+      },
+      "massacre/killing": {
+       "n": 21,
+       "own_voice": 12
+      },
+      "war crimes": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 63,
+       "own_voice": 53
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.2157,
+     "share_pageview": 0.0939,
+     "share_pooled": 0.1909,
+     "n": 46,
+     "own_voice_article": 0.9232,
+     "own_voice_pageview": 0.9662,
+     "own_voice_pooled": 0.8913,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 2,
+       "own_voice": 2
+      },
+      "occupation": {
+       "n": 3,
+       "own_voice": 3
+      },
+      "terrorism": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "massacre/killing": {
+       "n": 15,
+       "own_voice": 11
+      },
+      "war crimes": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 27,
+       "own_voice": 26
+      }
+     }
+    }
+   },
+   "now": {
+    "n_sentences": 265,
+    "n_articles": 42,
+    "side_A": {
+     "share_article": 0.4317,
+     "share_pageview": 0.4434,
+     "share_pooled": 0.4792,
+     "n": 127,
+     "own_voice_article": 0.7953,
+     "own_voice_pageview": 0.7425,
+     "own_voice_pooled": 0.7402,
+     "charges": {
+      "genocide": {
+       "n": 5,
+       "own_voice": 2
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 16,
+       "own_voice": 14
+      },
+      "occupation": {
+       "n": 19,
+       "own_voice": 14
+      },
+      "massacre/killing": {
+       "n": 20,
+       "own_voice": 12
+      },
+      "war crimes": {
+       "n": 2,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 74,
+       "own_voice": 58
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.216,
+     "share_pageview": 0.1132,
+     "share_pooled": 0.1736,
+     "n": 46,
+     "own_voice_article": 0.936,
+     "own_voice_pageview": 0.9707,
+     "own_voice_pooled": 0.8913,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 2,
+       "own_voice": 2
+      },
+      "occupation": {
+       "n": 5,
+       "own_voice": 5
+      },
+      "terrorism": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "massacre/killing": {
+       "n": 13,
+       "own_voice": 9
+      },
+      "war crimes": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 27,
+       "own_voice": 26
+      }
+     }
+    }
+   }
+  },
+  "UA": {
+   "2021-01-01": {
+    "n_sentences": 81,
+    "n_articles": 13,
+    "side_A": {
+     "share_article": 0.4788,
+     "share_pageview": 0.6725,
+     "share_pooled": 0.5185,
+     "n": 42,
+     "own_voice_article": 0.6957,
+     "own_voice_pageview": 0.6982,
+     "own_voice_pooled": 0.619,
+     "charges": {
+      "genocide": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 3,
+       "own_voice": 2
+      },
+      "occupation": {
+       "n": 2,
+       "own_voice": 0
+      },
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "other": {
+       "n": 35,
+       "own_voice": 24
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.1449,
+     "share_pageview": 0.0283,
+     "share_pooled": 0.0741,
+     "n": 6,
+     "own_voice_article": 0.8,
+     "own_voice_pageview": 0.8019,
+     "own_voice_pooled": 0.8333,
+     "charges": {
+      "other": {
+       "n": 7,
+       "own_voice": 6
+      }
+     }
+    }
+   },
+   "2023-07-01": {
+    "n_sentences": 88,
+    "n_articles": 12,
+    "side_A": {
+     "share_article": 0.6066,
+     "share_pageview": 0.5847,
+     "share_pooled": 0.6023,
+     "n": 53,
+     "own_voice_article": 0.8563,
+     "own_voice_pageview": 0.8906,
+     "own_voice_pooled": 0.8302,
+     "charges": {
+      "genocide": {
+       "n": 2,
+       "own_voice": 0
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 5,
+       "own_voice": 4
+      },
+      "occupation": {
+       "n": 5,
+       "own_voice": 4
+      },
+      "massacre/killing": {
+       "n": 2,
+       "own_voice": 0
+      },
+      "other": {
+       "n": 40,
+       "own_voice": 36
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.1441,
+     "share_pageview": 0.0455,
+     "share_pooled": 0.0909,
+     "n": 8,
+     "own_voice_article": 0.9,
+     "own_voice_pageview": 0.9653,
+     "own_voice_pooled": 0.875,
+     "charges": {
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 8,
+       "own_voice": 7
+      }
+     }
+    }
+   },
+   "now": {
+    "n_sentences": 98,
+    "n_articles": 12,
+    "side_A": {
+     "share_article": 0.6084,
+     "share_pageview": 0.5974,
+     "share_pooled": 0.6327,
+     "n": 62,
+     "own_voice_article": 0.8315,
+     "own_voice_pageview": 0.7947,
+     "own_voice_pooled": 0.7419,
+     "charges": {
+      "genocide": {
+       "n": 2,
+       "own_voice": 0
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 6,
+       "own_voice": 5
+      },
+      "occupation": {
+       "n": 13,
+       "own_voice": 11
+      },
+      "massacre/killing": {
+       "n": 4,
+       "own_voice": 1
+      },
+      "war crimes": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "other": {
+       "n": 39,
+       "own_voice": 30
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.1371,
+     "share_pageview": 0.0365,
+     "share_pooled": 0.0714,
+     "n": 7,
+     "own_voice_article": 0.9,
+     "own_voice_pageview": 0.9653,
+     "own_voice_pooled": 0.8571,
+     "charges": {
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 7,
+       "own_voice": 6
+      }
+     }
+    }
+   }
+  },
+  "AM": {
+   "2021-01-01": {
+    "n_sentences": 64,
+    "n_articles": 13,
+    "side_A": {
+     "share_article": 0.1867,
+     "share_pageview": 0.3986,
+     "share_pooled": 0.2031,
+     "n": 13,
+     "own_voice_article": 0.5119,
+     "own_voice_pageview": 0.2696,
+     "own_voice_pooled": 0.6154,
+     "charges": {
+      "genocide": {
+       "n": 3,
+       "own_voice": 2
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 2,
+       "own_voice": 2
+      },
+      "massacre/killing": {
+       "n": 4,
+       "own_voice": 3
+      },
+      "other": {
+       "n": 5,
+       "own_voice": 2
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.1405,
+     "share_pageview": 0.0263,
+     "share_pooled": 0.1719,
+     "n": 11,
+     "own_voice_article": 0.725,
+     "own_voice_pageview": 0.6349,
+     "own_voice_pooled": 0.6364,
+     "charges": {
+      "genocide": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "occupation": {
+       "n": 3,
+       "own_voice": 3
+      },
+      "massacre/killing": {
+       "n": 5,
+       "own_voice": 2
+      },
+      "other": {
+       "n": 2,
+       "own_voice": 2
+      }
+     }
+    }
+   },
+   "2023-07-01": {
+    "n_sentences": 71,
+    "n_articles": 15,
+    "side_A": {
+     "share_article": 0.3441,
+     "share_pageview": 0.4486,
+     "share_pooled": 0.3239,
+     "n": 23,
+     "own_voice_article": 0.6958,
+     "own_voice_pageview": 0.4333,
+     "own_voice_pooled": 0.7826,
+     "charges": {
+      "genocide": {
+       "n": 3,
+       "own_voice": 2
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 4,
+       "own_voice": 4
+      },
+      "massacre/killing": {
+       "n": 6,
+       "own_voice": 6
+      },
+      "other": {
+       "n": 12,
+       "own_voice": 8
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.1685,
+     "share_pageview": 0.0518,
+     "share_pooled": 0.2113,
+     "n": 15,
+     "own_voice_article": 0.9429,
+     "own_voice_pageview": 0.9779,
+     "own_voice_pooled": 0.8667,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 2,
+       "own_voice": 2
+      },
+      "occupation": {
+       "n": 3,
+       "own_voice": 3
+      },
+      "massacre/killing": {
+       "n": 6,
+       "own_voice": 3
+      },
+      "other": {
+       "n": 6,
+       "own_voice": 6
+      }
+     }
+    }
+   },
+   "now": {
+    "n_sentences": 90,
+    "n_articles": 15,
+    "side_A": {
+     "share_article": 0.3873,
+     "share_pageview": 0.3952,
+     "share_pooled": 0.4,
+     "n": 36,
+     "own_voice_article": 0.8389,
+     "own_voice_pageview": 0.7862,
+     "own_voice_pooled": 0.8333,
+     "charges": {
+      "genocide": {
+       "n": 3,
+       "own_voice": 2
+      },
+      "ethnic cleansing/expulsion": {
+       "n": 7,
+       "own_voice": 6
+      },
+      "massacre/killing": {
+       "n": 6,
+       "own_voice": 6
+      },
+      "other": {
+       "n": 23,
+       "own_voice": 19
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.1568,
+     "share_pageview": 0.0487,
+     "share_pooled": 0.1889,
+     "n": 17,
+     "own_voice_article": 0.9592,
+     "own_voice_pageview": 0.9909,
+     "own_voice_pooled": 0.8824,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 2,
+       "own_voice": 2
+      },
+      "occupation": {
+       "n": 5,
+       "own_voice": 5
+      },
+      "massacre/killing": {
+       "n": 6,
+       "own_voice": 3
+      },
+      "other": {
+       "n": 6,
+       "own_voice": 6
+      }
+     }
+    }
+   }
+  },
+  "CY": {
+   "2021-01-01": {
+    "n_sentences": 17,
+    "n_articles": 3,
+    "side_A": {
+     "share_article": 0.7778,
+     "share_pageview": 0.5972,
+     "share_pooled": 0.7059,
+     "n": 12,
+     "own_voice_article": 0.4389,
+     "own_voice_pageview": 0.3232,
+     "own_voice_pooled": 0.4167,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 2,
+       "own_voice": 2
+      },
+      "occupation": {
+       "n": 6,
+       "own_voice": 2
+      },
+      "other": {
+       "n": 5,
+       "own_voice": 2
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.2083,
+     "share_pageview": 0.1596,
+     "share_pooled": 0.1765,
+     "n": 3,
+     "own_voice_article": 1.0,
+     "own_voice_pageview": 1.0,
+     "own_voice_pooled": 1.0,
+     "charges": {
+      "other": {
+       "n": 3,
+       "own_voice": 3
+      }
+     }
+    }
+   },
+   "2023-07-01": {
+    "n_sentences": 13,
+    "n_articles": 3,
+    "side_A": {
+     "share_article": 0.6944,
+     "share_pageview": 0.4612,
+     "share_pooled": 0.6154,
+     "n": 8,
+     "own_voice_article": 0.7778,
+     "own_voice_pageview": 0.9285,
+     "own_voice_pooled": 0.75,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 2,
+       "own_voice": 2
+      },
+      "occupation": {
+       "n": 5,
+       "own_voice": 3
+      },
+      "other": {
+       "n": 1,
+       "own_voice": 1
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.1667,
+     "share_pageview": 0.1821,
+     "share_pooled": 0.1538,
+     "n": 2,
+     "own_voice_article": 1.0,
+     "own_voice_pageview": 1.0,
+     "own_voice_pooled": 1.0,
+     "charges": {
+      "other": {
+       "n": 2,
+       "own_voice": 2
+      }
+     }
+    }
+   },
+   "now": {
+    "n_sentences": 17,
+    "n_articles": 3,
+    "side_A": {
+     "share_article": 0.5444,
+     "share_pageview": 0.4152,
+     "share_pooled": 0.5294,
+     "n": 9,
+     "own_voice_article": 0.5556,
+     "own_voice_pageview": 0.5102,
+     "own_voice_pooled": 0.5556,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 2,
+       "own_voice": 2
+      },
+      "occupation": {
+       "n": 6,
+       "own_voice": 3
+      },
+      "other": {
+       "n": 3,
+       "own_voice": 2
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.2333,
+     "share_pageview": 0.1819,
+     "share_pooled": 0.2353,
+     "n": 4,
+     "own_voice_article": 1.0,
+     "own_voice_pageview": 1.0,
+     "own_voice_pooled": 1.0,
+     "charges": {
+      "other": {
+       "n": 4,
+       "own_voice": 4
+      }
+     }
+    }
+   }
+  },
+  "KS": {
+   "2021-01-01": {
+    "n_sentences": 7,
+    "n_articles": 2,
+    "side_A": {
+     "share_article": 0.25,
+     "share_pageview": 0.0199,
+     "share_pooled": 0.2857,
+     "n": 2,
+     "own_voice_article": 0.5,
+     "own_voice_pageview": 0.5,
+     "own_voice_pooled": 0.5,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 1,
+       "own_voice": 0
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.125,
+     "share_pageview": 0.0099,
+     "share_pooled": 0.1429,
+     "n": 1,
+     "own_voice_article": 1.0,
+     "own_voice_pageview": 1.0,
+     "own_voice_pooled": 1.0,
+     "charges": {
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 1
+      }
+     }
+    }
+   },
+   "2023-07-01": {
+    "n_sentences": 11,
+    "n_articles": 2,
+    "side_A": {
+     "share_article": 0.25,
+     "share_pageview": 0.0199,
+     "share_pooled": 0.2727,
+     "n": 3,
+     "own_voice_article": 0.6667,
+     "own_voice_pageview": 0.6667,
+     "own_voice_pooled": 0.6667,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "war crimes": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 1,
+       "own_voice": 0
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.2667,
+     "share_pageview": 0.2053,
+     "share_pooled": 0.2727,
+     "n": 3,
+     "own_voice_article": 0.75,
+     "own_voice_pageview": 0.9801,
+     "own_voice_pooled": 0.6667,
+     "charges": {
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "war crimes": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 1,
+       "own_voice": 1
+      }
+     }
+    }
+   },
+   "now": {
+    "n_sentences": 10,
+    "n_articles": 2,
+    "side_A": {
+     "share_article": 0.25,
+     "share_pageview": 0.0199,
+     "share_pooled": 0.3,
+     "n": 3,
+     "own_voice_article": 0.6667,
+     "own_voice_pageview": 0.6667,
+     "own_voice_pooled": 0.6667,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "war crimes": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 1,
+       "own_voice": 0
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.2917,
+     "share_pageview": 0.2533,
+     "share_pooled": 0.3,
+     "n": 3,
+     "own_voice_article": 0.75,
+     "own_voice_pageview": 0.9801,
+     "own_voice_pooled": 0.6667,
+     "charges": {
+      "massacre/killing": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "war crimes": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "other": {
+       "n": 1,
+       "own_voice": 1
+      }
+     }
+    }
+   }
+  },
+  "NI": {
+   "2021-01-01": {
+    "n_sentences": 44,
+    "n_articles": 6,
+    "side_A": {
+     "share_article": 0.2269,
+     "share_pageview": 0.2133,
+     "share_pooled": 0.3409,
+     "n": 15,
+     "own_voice_article": 0.85,
+     "own_voice_pageview": 0.7638,
+     "own_voice_pooled": 0.6,
+     "charges": {
+      "massacre/killing": {
+       "n": 9,
+       "own_voice": 3
+      },
+      "other": {
+       "n": 6,
+       "own_voice": 6
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.4028,
+     "share_pageview": 0.2282,
+     "share_pooled": 0.2955,
+     "n": 13,
+     "own_voice_article": 0.9375,
+     "own_voice_pageview": 0.82,
+     "own_voice_pooled": 0.9231,
+     "charges": {
+      "terrorism": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "massacre/killing": {
+       "n": 5,
+       "own_voice": 5
+      },
+      "other": {
+       "n": 7,
+       "own_voice": 7
+      }
+     }
+    }
+   },
+   "2023-07-01": {
+    "n_sentences": 56,
+    "n_articles": 7,
+    "side_A": {
+     "share_article": 0.4031,
+     "share_pageview": 0.3562,
+     "share_pooled": 0.3929,
+     "n": 22,
+     "own_voice_article": 0.8106,
+     "own_voice_pageview": 0.6336,
+     "own_voice_pooled": 0.6364,
+     "charges": {
+      "ethnic cleansing/expulsion": {
+       "n": 1,
+       "own_voice": 1
+      },
+      "massacre/killing": {
+       "n": 12,
+       "own_voice": 5
+      },
+      "other": {
+       "n": 9,
+       "own_voice": 8
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.365,
+     "share_pageview": 0.2691,
+     "share_pooled": 0.3036,
+     "n": 17,
+     "own_voice_article": 0.95,
+     "own_voice_pageview": 0.8858,
+     "own_voice_pooled": 0.9412,
+     "charges": {
+      "terrorism": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "massacre/killing": {
+       "n": 7,
+       "own_voice": 7
+      },
+      "other": {
+       "n": 9,
+       "own_voice": 9
+      }
+     }
+    }
+   },
+   "now": {
+    "n_sentences": 43,
+    "n_articles": 7,
+    "side_A": {
+     "share_article": 0.4129,
+     "share_pageview": 0.3447,
+     "share_pooled": 0.3953,
+     "n": 17,
+     "own_voice_article": 0.7976,
+     "own_voice_pageview": 0.6179,
+     "own_voice_pooled": 0.6471,
+     "charges": {
+      "massacre/killing": {
+       "n": 9,
+       "own_voice": 4
+      },
+      "other": {
+       "n": 8,
+       "own_voice": 7
+      }
+     }
+    },
+    "side_B": {
+     "share_article": 0.3273,
+     "share_pageview": 0.2636,
+     "share_pooled": 0.2791,
+     "n": 12,
+     "own_voice_article": 0.95,
+     "own_voice_pageview": 0.8858,
+     "own_voice_pooled": 0.9167,
+     "charges": {
+      "terrorism": {
+       "n": 1,
+       "own_voice": 0
+      },
+      "massacre/killing": {
+       "n": 5,
+       "own_voice": 5
+      },
+      "other": {
+       "n": 6,
+       "own_voice": 6
+      }
+     }
+    }
+   }
+  },
+  "KM": {
+   "2021-01-01": {
+    "n_sentences": 4,
+    "n_articles": 2,
+    "side_A": {
+     "share_article": 0.0,
+     "share_pageview": 0.0,
+     "share_pooled": 0.0,
+     "n": 0,
+     "own_voice_article": null,
+     "own_voice_pageview": null,
+     "own_voice_pooled": null,
+     "charges": {}
+    },
+    "side_B": {
+     "share_article": 0.1667,
+     "share_pageview": 0.0444,
+     "share_pooled": 0.25,
+     "n": 1,
+     "own_voice_article": 1.0,
+     "own_voice_pageview": 1.0,
+     "own_voice_pooled": 1.0,
+     "charges": {
+      "other": {
+       "n": 1,
+       "own_voice": 1
+      }
+     }
+    }
+   },
+   "2023-07-01": {
+    "n_sentences": 2,
+    "n_articles": 2,
+    "side_A": {
+     "share_article": 0.0,
+     "share_pageview": 0.0,
+     "share_pooled": 0.0,
+     "n": 0,
+     "own_voice_article": null,
+     "own_voice_pageview": null,
+     "own_voice_pooled": null,
+     "charges": {}
+    },
+    "side_B": {
+     "share_article": 0.5,
+     "share_pageview": 0.1333,
+     "share_pooled": 0.5,
+     "n": 1,
+     "own_voice_article": 1.0,
+     "own_voice_pageview": 1.0,
+     "own_voice_pooled": 1.0,
+     "charges": {
+      "other": {
+       "n": 1,
+       "own_voice": 1
+      }
+     }
+    }
+   },
+   "now": {
+    "n_sentences": 7,
+    "n_articles": 3,
+    "side_A": {
+     "share_article": 0.0,
+     "share_pageview": 0.0,
+     "share_pooled": 0.0,
+     "n": 0,
+     "own_voice_article": null,
+     "own_voice_pageview": null,
+     "own_voice_pooled": null,
+     "charges": {}
+    },
+    "side_B": {
+     "share_article": 0.5,
+     "share_pageview": 0.5159,
+     "share_pooled": 0.4286,
+     "n": 3,
+     "own_voice_article": 1.0,
+     "own_voice_pageview": 1.0,
+     "own_voice_pooled": 1.0,
+     "charges": {
+      "other": {
+       "n": 3,
+       "own_voice": 3
+      }
+     }
+    }
+   }
+  }
+ },
+ "comparison_sides": {
+  "UA": [
+   "Russia/USSR/pro-Russian forces",
+   "Ukraine/Ukrainians"
+  ],
+  "AM": [
+   "Azerbaijan/Ottoman Empire/Turkey",
+   "Armenia/Armenians"
+  ],
+  "CY": [
+   "Turkey/Turkish Cypriots",
+   "Greece/Greek Cypriots"
+  ],
+  "KS": [
+   "Serbia/Yugoslavia",
+   "Kosovo Albanians/KLA"
+  ],
+  "NI": [
+   "British state/unionists/loyalists",
+   "Irish republicans/nationalists"
+  ],
+  "KM": [
+   "India",
+   "Pakistan/Pakistan-backed militants"
+  ]
+ },
+ "comparison_articles_by_dispute": {
+  "UA": 13,
+  "CY": 3,
+  "AM": 18,
+  "KS": 5,
+  "NI": 8,
+  "KM": 3
+ }
+}
