@@ -1,0 +1,230 @@
+[
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Scroll to build the chart one layer at a time. Each line shows how often critical vocabulary (genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion) appears, checked every three months. Higher means the words appear more often in the same amount of text.",
+  "new": "Scroll to build the chart one layer at a time. Each line shows how often critical vocabulary appears, checked every three months. The words are genocide, apartheid, ethnic cleansing, occupation, colonial, and Nakba/expulsion. Higher means the words appear more often in the same amount of text.",
+  "note": "#key deck: word list moved out of the parenthesis into its own sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "{k:\"The topic articles\",h:`In ${dlab(f)}, the ${D.nT} ${T} used words like “colonial”, “apartheid” and “genocide” <b>${fmt(D.topic[0][1],1)}</b> times per 10,000 words of their ${where}. By ${dlab(l)}: <b>${fmt(D.topic.at(-1)[1],1)}</b>. The scale starts at zero, so the height of the line is the real level.`}",
+  "new": "{k:\"The topic articles\",h:`The teal line is the ${D.nT} ${T}. In ${dlab(f)} they used words like “colonial”, “apartheid” and “genocide” <b>${fmt(D.topic[0][1],1)}</b> times per 10,000 words of their ${where}. By ${dlab(l)} the rate was <b>${fmt(D.topic.at(-1)[1],1)}</b>. The scale starts at zero, so the height of the line is the real level.`}",
+  "note": "#key scrolly step 1: one number per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "{k:\"Every comparison article\",h:`Each thin grey line is one of the ${D.threads.length} ${Cg} articles, about other countries, conflicts and religions. ${nn?`${up} of ${nn} use these words more now than in ${dlab(f)}.`:\"\"} Some move a lot, which is why we compare averages. Select a line to open its article.`}",
+  "new": "{k:\"Every comparison article\",h:`Each thin grey line is one of the ${D.threads.length} ${Cg} articles. They cover other countries, conflicts and religions. ${nn?`${up} of ${nn} use these words more now than in ${dlab(f)}.`:\"\"} Some move a lot. That is why we compare averages. Select a line to open its article.`}",
+  "note": "#key scrolly step 2: shorter sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "The real question is not whether the teal line rose, but whether it rose <i>more</i> than this one. The red line marks 7 October 2023.",
+  "new": "The question is not whether the teal line rose. It is whether the teal line rose <i>more</i> than this grey one. The red line marks 7 October 2023.",
+  "note": "#key scrolly step 3: split the contrast into two sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "h:`Now each article becomes a dot: how much it changed from ${dlab(f)} to ${dlab(l)}. On average the topic articles changed by <b>${sgn(P.treat,1)}</b> and the comparison articles by <b>${sgn(P.control,1)}</b>. The difference, <b>${sgn(P.did,1)}</b> per 10,000 words, is the extra change (pre-registered test ${P.id}). The soft band is the range we’re fairly sure about, ${sgn(P.lo,1)} to ${sgn(P.hi,1)}. ${P.lo<=0&&P.hi>=0?\"It includes zero, so this could be chance.\":\"It stays clear of zero.\"}`",
+  "new": "h:`Now each article becomes a dot. The dot shows how much that article changed from ${dlab(f)} to ${dlab(l)}. On average the topic articles changed by <b>${sgn(P.treat,1)}</b> and the comparison articles by <b>${sgn(P.control,1)}</b>. The difference is the extra change: <b>${sgn(P.did,1)}</b> per 10,000 words. This is the test we fixed in advance, ${P.id}. The soft band is the range we’re fairly sure about: ${sgn(P.lo,1)} to ${sgn(P.hi,1)}. ${P.lo<=0&&P.hi>=0?\"It includes zero, so this could be chance.\":\"It stays clear of zero.\"}`",
+  "note": "#key scrolly step 4: no parenthesis, 'pre-registered' said as 'fixed in advance'"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "h:`When did it happen? Here the extra change is measured at every copy, each time against ${dlab(f)}. Before the war, by ${pre?dlab(pre.date):\"mid-2023\"}, it was <b>${pre?sgn(pre.did,1):\"–\"}</b>. By ${dlab(er.date)} it was <b>${sgn(er.did,1)}</b>, with a range of ${sgn(er.lo,1)} to ${sgn(er.hi,1)}. ${er.lo<=0&&er.hi>=0?\"The shaded range still crosses zero.\":\"The shaded range stays clear of zero.\"}`",
+  "new": "h:`When did it happen? Here we measure the extra change at every saved copy of the articles. Each copy is compared with ${dlab(f)}. Before the war, by ${pre?dlab(pre.date):\"mid-2023\"}, the extra change was <b>${pre?sgn(pre.did,1):\"–\"}</b>. By ${dlab(er.date)} it was <b>${sgn(er.did,1)}</b>. The range we’re fairly sure about is ${sgn(er.lo,1)} to ${sgn(er.hi,1)}. ${er.lo<=0&&er.hi>=0?\"The shaded range still crosses zero.\":\"The shaded range stays clear of zero.\"}`",
+  "note": "#key scrolly step 5: one idea per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "The extra change is ${sgn(P.did,1)}, from ${P.n_t} topic and ${P.n_c} comparison articles. ${P.lo<=0&&P.hi>=0?\"Its range crosses zero, so we can’t tell it apart from chance.\":\"Its range stays clear of zero.\"}`:\"\";",
+  "new": "The extra change is ${sgn(P.did,1)}. It comes from ${P.n_t} topic articles and ${P.n_c} comparison articles. ${P.lo<=0&&P.hi>=0?\"Its range crosses zero, so we can’t tell it apart from chance.\":\"Its range stays clear of zero.\"}`:\"\";",
+  "note": "#key 'What this means': estimate and sample sizes in separate sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "`Loaded words per 10,000 words of ${K.part===\"lead\"?\"the opening paragraph\":\"article text\"}`;",
+  "new": "`Critical vocabulary per 10,000 words of ${K.part===\"lead\"?\"the opening paragraph\":\"the full text\"}`;",
+  "note": "#key chart title: same term as the section heading and the same wording as the other title"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "${sig.length===1?\"stands\":\"stand\"} out (fewer than 5 in 100 shuffles). The scoreboard below corrects for running three tests.`}`;",
+  "new": "${sig.length===1?\"stands\":\"stand\"} out. A result that large came up in fewer than 5 of every 100 shuffles. The scoreboard below corrects for running three tests.`}`;",
+  "note": "#chance summary: parenthesis made a sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Before seeing any data, we wrote down six other ways to run each main test, and a rule for what would count as support. Each tile is one way of running it: the dot is the estimate and the line is its range. Select a tile for the details.",
+  "new": "Before seeing any data, we wrote down six other ways to run each main test. We also wrote down a rule for what would count as support. Each tile is one of those ways. The dot is the estimate and the line is its range. Select a tile for the details.",
+  "note": "#board deck: shorter sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "The main hypothesis counts as <b>supported</b> if at least <b>2 of the 3</b> main tests are significant after correcting for running several tests (q &lt; 0.05), go in the predicted direction, and pass at least <b>4 of the 6</b> planned checks.",
+  "new": "The main hypothesis counts as <b>supported</b> if at least <b>2 of the 3</b> main tests meet three conditions. Each test must be significant after correcting for running several tests (q &lt; 0.05). It must go in the predicted direction. And it must pass at least <b>4 of the 6</b> planned checks.",
+  "note": "#board rule: three conditions listed one per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Faint teal line: the main estimate, for checks on the same scale. Dashed tiles were added after the plan and do not count toward the rule. A check holds when it keeps the main result’s sign and is clearly different from zero (p &lt; 0.05, or a range that excludes zero). The median check (R5) has no p, so it only needs the same sign.",
+  "new": "Faint teal line: the main estimate, shown for checks on the same scale. Dashed tiles were added after the plan and do not count toward the rule. A check holds when two things are true. It keeps the direction of the main result, and it is clearly different from zero (p &lt; 0.05, or a range that excludes zero). The median check (R5) has no p, so it only needs the same direction.",
+  "note": "#board caption: 'sign' said as 'direction', the two conditions separated"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "The average article barely moved, and the test we fixed in advance found no clear rise. So we collected every article in the topic, 4,642 topic articles and 5,678 comparison articles, and asked a different question: not how much the average page changed, but which pages changed, when, and how. The finding that more topic articles than comparison articles gained critical vocabulary held up on the sealed half of the data: half the articles we had set aside and only checked at the end.",
+  "new": "The average article barely moved. The test we fixed in advance found no clear rise. So we collected every article in the topic: 4,642 topic articles and 5,678 comparison articles. Then we asked a different question. Not how much the average page changed, but which pages changed, when, and how. More topic articles than comparison articles gained critical vocabulary. That finding held up on the sealed half of the data, the half we had set aside and only checked at the end.",
+  "note": "#andyet band deck (sits between #board and #reach): one idea per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<h2 id=\"reachH\">Count articles and it is 4%. Count readers and it is 15%.</h2>",
+  "new": "<h2 id=\"reachH\">The changed articles are 4% of topic articles but 15% of topic reading.</h2>",
+  "note": "#reach heading: says what the two numbers are"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Each bar is all of one group: first its articles, then its last 12 months of reading. The dark part is the articles whose opening paragraph gained critical vocabulary between July 2023 and now.",
+  "new": "Each pair of bars is one group. The first bar is all its articles. The second bar is all its reading over the last 12 months. The dark part is the articles whose opening paragraph gained critical vocabulary between July 2023 and now.",
+  "note": "#reach deck: how to read the bars, one step per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "dark part: lead gained critical terms since Jul 2023</span>",
+  "new": "dark part: opening paragraph gained critical vocabulary since Jul 2023</span>",
+  "note": "#reach legend: 'lead' said as 'opening paragraph'"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "The most-read topic pages whose lead gained terms</div>",
+  "new": "The most-read topic pages whose opening paragraph gained critical vocabulary</div>",
+  "note": "#reach list title: 'lead' said as 'opening paragraph'"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Views in the last 12 months; critical terms in the lead, July 2023 → now.",
+  "new": "Views are for the last 12 months. Term counts are critical vocabulary in the opening paragraph, July 2023 → now.",
+  "note": "#reach list caption: semicolon chain split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<b>What this means:</b> the topic level (15% of 279 million views) is three times the comparison level (5%). It is not most topic reading: 83% of topic views land on opening paragraphs that did not change. Changed pages being read pages is partly how Wikipedia works everywhere. When we repeat the test treating each Wikipedia subject group as one unit, the extra tilt toward read pages is no longer clear, so treat that part as suggestive. An earlier hand-picked sample showed a much larger share because it held nearly all the giant pages and left out the many very short articles, villages and biographies that make up most topic articles.",
+  "new": "<b>What this means:</b> topic articles had 279 million views in the last 12 months. The changed pages took 15% of them, against 5% in comparison articles. That is three times the comparison level. It is still not most topic reading: 83% of topic views land on opening paragraphs that did not change. Pages that change tend to be pages that are read. That is partly how Wikipedia works everywhere. We repeated the test treating each Wikipedia subject group as one unit. Then the extra tilt toward read pages is no longer clear, so treat that part as suggestive. An earlier hand-picked sample showed a much larger share. It held nearly all the giant pages and left out the many very short articles, villages and biographies that make up most topic articles.",
+  "note": "#reach 'What this means': at most two numbers per sentence, nested clauses cut"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<h2 id=\"whenH\">One wave that followed the battles and, as of late 2026, has passed</h2>",
+  "new": "<h2 id=\"whenH\">The rise came after the battles and had passed by late 2026</h2>",
+  "note": "#when heading: plain statement, no nested clause"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Every week from 2021 to 2026. The top panel is editing; the bottom panel is new critical vocabulary going into topic opening paragraphs. Each dot in the middle is a real-world event, on its own row by type. Tap a dot to see what happened.",
+  "new": "Every week from 2021 to 2026. The top panel is editing. The bottom panel is new critical vocabulary going into topic opening paragraphs. Each dot in the middle is a real-world event, placed on a row by its type. Tap a dot to see what happened.",
+  "note": "#when deck: semicolon split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "all 4,642 topic opening paragraphs; new terms for every 1,000 edits</span>",
+  "new": "all 4,642 topic opening paragraphs, counted as new terms for every 1,000 edits</span>",
+  "note": "#when strip caption: semicolon removed"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<b>Battles drove editing, and court rulings and reports did not.</b> In the three weeks after the 24 military escalations, topic edits rose 17% against the six weeks before, far more than on 2,000 random dates. After the 25 legal and institutional events (ICJ orders, ICC, UN votes, rights reports, recognitions) editing was slightly below usual, and new critical vocabulary showed no rise at all.",
+  "new": "<b>Battles drove editing. Court rulings and reports did not.</b> We looked at the three weeks after each of the 24 military escalations. Topic edits rose 17% compared with the six weeks before. That is far more than the rise after 2,000 random dates. We did the same for the 25 legal and institutional events: ICJ orders, ICC, UN votes, rights reports, recognitions. After those, editing was slightly below usual. New critical vocabulary showed no rise at all.",
+  "note": "#when 'What this means': one number per sentence, parenthesis made a list sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "new critical terms in topic leads</span><span>Edits: the 332 topic and 84 comparison articles followed every week. New terms: all 4,642 topic leads.</span>`;",
+  "new": "new critical terms in topic opening paragraphs</span><span>Edits: the 332 topic and 84 comparison articles followed every week. New terms: all 4,642 topic opening paragraphs.</span>`;",
+  "note": "#when legend: 'leads' said as 'opening paragraphs'"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<span>new terms in topic leads</span>",
+  "new": "<span>new terms in topic opening paragraphs</span>",
+  "note": "#when event tooltip: 'leads' said as 'opening paragraphs'"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<div class=\"eyebrow\"><span class=\"layer\">CONTENT</span>The event filter</div>\n    <h2 id=\"newsH\">News or narrative?</h2>",
+  "new": "<div class=\"eyebrow\"><span class=\"layer\">CONTENT</span>Setting aside sentences about recent events</div>\n    <h2 id=\"newsH\">Most of the extra change is about older history, not recent events</h2>",
+  "note": "#news eyebrow and heading: say what the section shows instead of a question"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "A war produces new sentences about the war. So we set aside every sentence in the opening paragraph that names a year from 2022 on, a recent event or words that mark recent time, and measured the extra change again. Most of it was still there.",
+  "new": "A war produces new sentences about the war. So we set aside every opening-paragraph sentence about recent events. That means any sentence naming a year from 2022 on, a recent event, or words that mark recent time. Then we measured the extra change again. Most of it was still there.",
+  "note": "#news deck: the filter definition gets its own sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Older history · Nakba · what the encyclopedia states as its baseline, then and now (the 2021 version also took a position)</span>",
+  "new": "Older history · Nakba · how the article defines it, then and now. The 2021 version also took a position.</span>",
+  "note": "#news quote label: plain words, no parenthesis; quotes untouched"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "one of the few opening paragraphs that states the label in Wikipedia's own voice; the next sentence gives the denial</span>",
+  "new": "one of the few opening paragraphs that states the label in Wikipedia's own voice. The next sentence gives the denial.</span>",
+  "note": "#news quote label: semicolon split; quote untouched"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "It sent editors back to retell 1897 to 1948 and to rename the land, and they did it by adding sentences, not by deleting others. One caution: when we treat each Wikipedia subject group as one unit, the result on all articles is no longer clear; on the articles most relevant to the topic it holds either way.",
+  "new": "It sent editors back to retell 1897 to 1948 and to rename the land. They did this by adding sentences, not by deleting others. One caution: when we treat each Wikipedia subject group as one unit, the result on all articles is no longer clear. On the articles most relevant to the topic it holds either way.",
+  "note": "#news 'What this means': long sentences split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Six ways the change shows up beyond the words, each comparing topic articles with comparison articles at full scale. Teal is topic, grey-violet is comparison.",
+  "new": "Six ways the change shows up beyond the words. Each panel compares all topic articles with all comparison articles. Teal is topic, grey-violet is comparison.",
+  "note": "#spread deck: 'at full scale' said plainly"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<b>What this means:</b> long-standing accounts made the edits, not a wave of new accounts, and accounts later blocked did no more than usual. That rules out a newcomer flood; it says nothing about intent or off-wiki coordination. Established editors added text, often after formal discussion, and the framing reached categories and links that drive navigation and reuse. These all fit the pattern; we have not separated them as causes, and protection is shown only to mark the core pages.",
+  "new": "<b>What this means:</b> long-standing accounts made the edits, not a wave of new accounts. Accounts later blocked did no more than usual. That rules out a flood of newcomers. It says nothing about intent or coordination outside Wikipedia. Established editors added text, often after formal discussion. The framing also reached categories and links, which drive navigation and reuse. These all fit the pattern. We have not separated them as causes. Protection is shown only to mark the core pages.",
+  "note": "#spread 'What this means': semicolon chains split, 'off-wiki' said plainly"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "p:\"Share of articles under extended-confirmed protection. It marks the core pages; it is not shown to cause change.\"",
+  "new": "p:\"Share of articles under extended-confirmed protection. Protection marks the core pages. It is not shown to cause change.\"",
+  "note": "#spread protection panel: semicolon split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "p:\"Post-war topic RfCs sit on 51 of 4,642 pages, and the top 5 hold 48%: Gaza genocide 21, October 7 attacks 13, Zionism 13, Hamas 8.\"",
+  "new": "p:\"Since the war, topic RfCs sit on 51 of the 4,642 pages. The top 5 pages hold 48% of them: Gaza genocide 21, October 7 attacks 13, Zionism 13, Hamas 8.\"",
+  "note": "#spread RfC panel: counts and share in separate sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "p:\"Most added on topic pages:\"",
+  "new": "p:\"Most often added to topic pages:\"",
+  "note": "#spread categories panel: clearer lead-in to the list"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "p2:\"Additions run both ways (terrorist-designation and massacres-of-Jews categories count too), but the most-added list leans one way. “Expulsion and flight” names both.\"",
+  "new": "p2:\"Additions run both ways. Terrorist-designation and massacres-of-Jews categories count too. But the most-added list leans one way. “Expulsion and flight” names both.\"",
+  "note": "#spread categories caption: parenthesis made a sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "p:\"Topic articles that already linked to a core concept (Nakba, Gaza genocide, Israeli apartheid…) later picked up its term in the lead in 7.9% of 784 cases, against 0.5% of 25,672 without the link. Pages linking to Nakba/1948: 114 → 223.\"",
+  "new": "p:\"Some topic articles already linked to a core concept such as Nakba, Gaza genocide or Israeli apartheid. Of those 784 cases, 7.9% later picked up the term in the opening paragraph. Of the 25,672 cases without the link, 0.5% did. Pages linking to Nakba/1948: 114 → 223.\"",
+  "note": "#spread links panel: four numbers spread over three sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "sm:\"of gaining leads grew\",ch:hbarsHTML([[\"Leads that gained\",78.2,T,\"%\"],[\"Other topic leads\",55.8,\"--muted\",\"%\"]],{max:100}),p:\"Topic leads that gained critical terms got longer (median +33.5 words). The share of bytes removed did not change (0.627 → 0.626). New war-window lead events: 665 insertions, 392 removals.\"",
+  "new": "sm:\"of opening paragraphs that gained terms got longer\",ch:hbarsHTML([[\"Paragraphs that gained\",78.2,T,\"%\"],[\"Other topic paragraphs\",55.8,\"--muted\",\"%\"]],{max:100}),p:\"Topic opening paragraphs that gained critical terms got longer, by a median of 33.5 words. The share of bytes removed did not change: 0.627 before, 0.626 after. New events in opening paragraphs during the war window: 665 insertions, 392 removals.\"",
+  "note": "#spread added-text panel: 'leads' said as 'opening paragraphs', parentheses made sentences"
+ }
+]

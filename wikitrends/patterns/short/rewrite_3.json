@@ -1,0 +1,218 @@
+[
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Here you can look at each group on its own, and at words about Jewish history, like “homeland”, “indigenous” and “antisemitism”.",
+  "new": "Here you can look at each group on its own. You can also look at words about Jewish history, like “homeland”, “indigenous” and “antisemitism”.",
+  "note": "vocab deck: split two ideas"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "per 10,000 words in the topic articles and ${b>=0?\"rose\":\"fell\"} by ${fmt(Math.abs(b),1)} in the other articles.",
+  "new": "per 10,000 words in the topic articles. In the other articles it ${b>=0?\"rose\":\"fell\"} by ${fmt(Math.abs(b),1)}.",
+  "note": "vocab JS summary: one number per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "The box shows the range we’re fairly sure about, and the dot is our best estimate.",
+  "new": "The box shows the range we’re fairly sure about. The dot is our best estimate.",
+  "note": "test deck: one idea per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "A check holds when its estimate keeps the main result’s sign and is clearly different from zero: p &lt; 0.05 (R1, R2, R7), or a range that excludes zero (R4). The median check (R5) has no p and no range, so it only asks whether the sign stays the same.",
+  "new": "A check holds when its estimate keeps the sign of the main result and is clearly different from zero. For R1, R2 and R7, that means p &lt; 0.05. For R4, it means a range that excludes zero. The median check (R5) has no p and no range. It only asks whether the sign stays the same.",
+  "note": "test stats caption: unpack colon and parentheticals"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<th class=\"r\">DiD</th><th class=\"r\">95% CI</th>",
+  "new": "<th class=\"r\">Extra change</th><th class=\"r\">95% range</th>",
+  "note": "stats table headers: reader's words instead of DiD / CI"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "p from 5,000 permutations; q after Benjamini–Hochberg correction within the primary or secondary family.",
+  "new": "p comes from 5,000 permutations. q is p after Benjamini–Hochberg correction within the primary or secondary family.",
+  "note": "stats table note: drop semicolon chain"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "\"That is rare, so the real extra change is unlikely to be chance alone.\"",
+  "new": "\"That is rare. So the real extra change is unlikely to be chance alone.\"",
+  "note": "shuffle caption: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Each editor gets a letter, so you can see whether one person or many made the changes.",
+  "new": "Each editor gets a letter. That shows whether one person or many made the changes.",
+  "note": "exact deck: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "These are the key battleground articles only: across all 4,642 topic articles, added terms lasted 30 days 47.3% of the time, against 42.9% in comparison articles, so the ratchet does not describe the topic as a whole.",
+  "new": "This section covers the key battleground articles only. The whole topic has 4,642 articles. Across those, 47.3% of added terms were still in place after 30 days. In comparison articles the figure was 42.9%. So the ratchet does not describe the topic as a whole.",
+  "note": "ratchet deck: one number per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "were still there, and ${pct(r30(tc))} of removals still held.",
+  "new": "were still there. Of removals, ${pct(r30(tc))} still held.",
+  "note": "ratchet JS summary: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "\"The difference between additions and removals is about the same in both groups, so there is no sign of a one-way ratchet here.\"",
+  "new": "\"The gap between additions and removals is about the same in both groups. So there is no sign of a one-way ratchet here.\"",
+  "note": "ratchet JS summary: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "\"Additions outlast removals more in the topic articles. That is what a ratchet would look like, though these are a few dozen articles.\"",
+  "new": "\"Additions outlast removals more in the topic articles. That is what a ratchet would look like. But these are a few dozen articles.\"",
+  "note": "ratchet JS summary: split caveat"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "How this article was chosen: of the ${cand.length} topic key articles, we sorted by the number of times a loaded word was added to or removed from the opening paragraph, and took the middle one. ${esc(t)} has ${ev(t)} such events (the range is ${ev(cand[0])} to ${ev(cand.at(-1))}).",
+  "new": "How this article was chosen: we took the ${cand.length} topic key articles. We sorted them by how often a loaded word was added to or removed from the opening paragraph. Then we took the middle one. ${esc(t)} has ${ev(t)} such events. The range is ${ev(cand[0])} to ${ev(cand.at(-1))}.",
+  "note": "heartbeat rule line: short sentences, no parenthetical"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "The single-article trace needs per-term counts, which are not in this build yet.",
+  "new": "The single-article trace needs per-term counts. They are not in this build yet.",
+  "note": "ratchet note: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "topic articles got ${fmt(rT,1)} times their usual pre-war editing, compared with ${fmt(rC,1)} times for other articles.",
+  "new": "topic articles got ${fmt(rT,1)} times their usual pre-war editing. Other articles got ${fmt(rC,1)} times.",
+  "note": "editing JS summary: one number per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "We compare each pattern with <b>what you’d expect by chance</b>: the same editors and articles, with the timing shuffled.",
+  "new": "We compare each pattern with <b>what you’d expect by chance</b>. Chance here means the same editors and articles, with the timing shuffled.",
+  "note": "organic deck: unpack colon"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "\"The chance baseline (each editor’s timeline shifted at random) produced 0 recurring pairs in every cell, so no ratio to chance can be computed. Compare the groups with each other instead.\"",
+  "new": "\"The chance baseline shifts each editor’s timeline at random. It produced 0 recurring pairs in every cell. So no ratio to chance can be computed. Compare the groups with each other instead.\"",
+  "note": "organic null note: no parenthetical, short sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "${fmt(t.pairs_per_10k_edits,2)} times per 10,000 edits on topic articles and ${fmt(c.pairs_per_10k_edits,2)} times on comparison articles. That is a signal worth checking, not proof that anyone worked together.",
+  "new": "${fmt(t.pairs_per_10k_edits,2)} times per 10,000 edits on topic articles. On comparison articles, the figure was ${fmt(c.pairs_per_10k_edits,2)} times. That is a signal worth checking. It is not proof that anyone worked together.",
+  "note": "organic JS summary (large sample): split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "close-together editing by recurring pairs was ${fmt(tO,1)} times what chance would give on topic articles, and ${fmt(cO,1)} times on comparison articles.",
+  "new": "close-together editing by recurring pairs on topic articles was ${fmt(tO,1)} times what chance would give. On comparison articles it was ${fmt(cO,1)} times.",
+  "note": "organic JS summary (ratio): split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Counts first-sentence changes that were not undone, so they are lower than the totals in the exact-edits section.",
+  "new": "Only first-sentence changes that were not undone are counted. So these totals are lower than those in the exact-edits section.",
+  "note": "lead-authors caption: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Overlap: mean Jaccard similarity of the article sets of the 150 most active editors, against a null that keeps article popularity. Pairs: editor pairs where one edits within 30 minutes of the other on 5 or more articles; the null shifts each editor’s timeline by a random offset.",
+  "new": "Overlap: the mean Jaccard similarity of the article sets of the 150 most active editors. The chance baseline keeps each article’s popularity. Pairs: two editors where one edits within 30 minutes of the other, on 5 or more articles. Here the chance baseline shifts each editor’s timeline by a random offset.",
+  "note": "organic stats caption: short sentences, 'chance baseline' for 'null'"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "${pct(a0.hedged_share)} of loaded words were attributed to someone in ${dlab(a0.date)}, and ${pct(a1.hedged_share)} in ${dlab(a1.date)}.",
+  "new": "${pct(a0.hedged_share)} of loaded words were attributed to someone in ${dlab(a0.date)}. By ${dlab(a1.date)} the share was ${pct(a1.hedged_share)}.",
+  "note": "hedging JS summary: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "In June 2024 a Wikipedia <button class=\"gl\" type=\"button\" data-g=\"rfc\">RfC</button> judged the Anti-Defamation League generally unreliable on Israel and Palestine, but not on antisemitism in general.",
+  "new": "In June 2024 a Wikipedia <button class=\"gl\" type=\"button\" data-g=\"rfc\">RfC</button> judged the Anti-Defamation League generally unreliable on Israel and Palestine. The ruling did not extend to antisemitism in general.",
+  "note": "ADL caption: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "ADL citations per article went from ${fmt(a0.adl_per_article,2)} to ${fmt(a1.adl_per_article,2)} in conflict articles, and from ${fmt(b0.adl_per_article,2)} to ${fmt(b1.adl_per_article,2)} in antisemitism and Judaism articles.",
+  "new": "ADL citations per article in conflict articles went from ${fmt(a0.adl_per_article,2)} to ${fmt(a1.adl_per_article,2)}. In antisemitism and Judaism articles they went from ${fmt(b0.adl_per_article,2)} to ${fmt(b1.adl_per_article,2)}.",
+  "note": "ADL JS summary: one comparison per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<h2>Same rules, different people</h2>",
+  "new": "<h2>Did other languages move the same way?</h2>",
+  "note": "crosslang heading: say what the section shows"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "German, French, Hebrew, Arabic and other Wikipedias follow the same rules and cover the same events, but different communities write them.",
+  "new": "German, French, Hebrew, Arabic and other Wikipedias follow the same rules and cover the same events. But different communities write them.",
+  "note": "crosslang deck: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Each stripe is one language: its first copy on the left, its latest on the right.",
+  "new": "Each stripe is one language. Its first copy is on the left, its latest on the right.",
+  "note": "crosslang deck: unpack colon"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "across all ${tt.length} topic articles, ${pct(en)} of the English opening paragraphs gained loaded words.",
+  "new": "this covers all ${tt.length} topic articles. In English, ${pct(en)} of the opening paragraphs gained loaded words.",
+  "note": "crosslang JS summary: one number per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "A second check had AI readers judge a sample of changes with the article’s names masked.",
+  "new": "A second check used AI readers. They judged a sample of changes with the article’s names masked.",
+  "note": "checks deck: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "added after seeing the data; ${ph===1?\"it is\":\"they are\"} listed but not counted.",
+  "new": "added after seeing the data, so ${ph===1?\"it is\":\"they are\"} listed but not counted.",
+  "note": "validation JS summary: drop semicolon, placeholder kept exactly"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "AI readers could still recognise most articles: a separate AI named the exact article for ${riK} of ${riN} masked paragraphs, so treat this as masked, not blind.",
+  "new": "AI readers could still recognise most articles. A separate AI named the exact article for ${riK} of ${riN} masked paragraphs. So treat this as masked, not blind.",
+  "note": "masked-reading caveat: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Every revision since 1 January 2021 from the Wikipedia API, a full-text snapshot of each article on the first day of every quarter, talk-page activity and monthly pageviews.",
+  "new": "Every revision since 1 January 2021, from the Wikipedia API. A full-text snapshot of each article on the first day of every quarter. Talk-page activity and monthly pageviews.",
+  "note": "method data: list as short sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "References, templates, files and back matter are stripped before counting, so citation titles do not add to the counts. The lead (opening paragraph) is everything before the first section heading. Snapshots under 300 words (40 for the lead) are not measured.",
+  "new": "References, templates, files and back matter are stripped before counting. So citation titles do not add to the counts. The opening paragraph (the lead) is everything before the first section heading. Snapshots under 300 words are not measured. For the opening paragraph the cut-off is 40 words.",
+  "note": "method text: split, one number per sentence"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Difference-in-differences on the balanced panel of articles that existed in January 2021: each article’s change in rate, averaged by group, topic minus comparison. A permutation test gives p (5,000 shuffles), with Benjamini–Hochberg correction within the primary and the secondary family.",
+  "new": "Difference-in-differences on the balanced panel of articles that existed in January 2021. We take each article’s change in rate and average it by group. The estimate is topic minus comparison. A permutation test with 5,000 shuffles gives p. p is corrected with Benjamini–Hochberg within the primary and the secondary family.",
+  "note": "method test: short sentences"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Editors are reported only in aggregate, and no claim is made about any editor’s intent.",
+  "new": "Editors are reported only in aggregate. No claim is made about any editor’s intent.",
+  "note": "method limits: split"
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": " In this build: ${R.n_treatment} topic and ${R.n_control} comparison articles in the test panel (${R.n_treatment_hand??\"–\"} hand-picked topic, ${R.n_control_shocked??\"–\"} comparison articles with their own war), ${R.n_new_topic_articles??\"–\"} topic articles created during the window, and ${nc} excluded comparison articles.",
+  "new": " In this build, the test panel has ${R.n_treatment} topic and ${R.n_control} comparison articles. Of the topic articles, ${R.n_treatment_hand??\"–\"} are hand-picked. Of the comparison articles, ${R.n_control_shocked??\"–\"} have a war of their own. A further ${R.n_new_topic_articles??\"–\"} topic articles were created during the window. ${nc} comparison articles are excluded.",
+  "note": "method groups JS: six numbers split across sentences"
+ }
+]
