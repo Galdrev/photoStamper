@@ -1,0 +1,56 @@
+[
+ {
+  "file": "page_template.html",
+  "old": "Most topic articles did not change on our measure. Judaism articles changed no more than comparison articles. The change we did find sits in the opening paragraphs of a few hundred Israel and Palestine articles. Several of those are heavily read.",
+  "new": "Most topic articles did not change. Judaism articles did not change. The change is in the opening paragraphs of a few hundred Israel and Palestine articles, and it is larger than in comparison articles. Several of those articles are heavily read.",
+  "note": "Drop 'on our measure' and 'the change we did find'. State the Judaism null and the topic-vs-comparison gap plainly (both STRONG)."
+ },
+ {
+  "file": "page_template.html",
+  "old": "Judaism articles differed from comparison articles by −0.1 percentage points. The range we're fairly sure about is −2.3 to +2.3, which is statistically equivalent to zero.",
+  "new": "Judaism articles changed exactly as much as comparison articles. The difference is −0.1 percentage points, with a range of −2.3 to +2.3. That is no change.",
+  "note": "Formal equivalence test passed (A5b, STRONG). Say 'no change' instead of 'statistically equivalent to zero'; drop 'fairly sure about'."
+ },
+ {
+  "file": "page_template.html",
+  "old": "Those articles get 15% of topic views. The range we're fairly sure about is 9.5% to 21.3%. In comparison articles the two figures are 1.5% and 5%. Whether the tilt toward well-read pages is larger than in comparison articles is only suggestive. 83% of topic reading lands on unchanged opening paragraphs.",
+  "new": "Those articles get 15% of topic views (range 9.5% to 21.3%). In comparison articles the two figures are 1.5% and 5%, so the topic level is three times the comparison level. 83% of topic reading lands on unchanged opening paragraphs. Whether topic pages also tilt more steeply toward well-read pages than comparison pages do is suggestive, not established.",
+  "note": "The 15% vs 5% level is STRONG on both intervals; say so. Keep one short hedge for the extra tilt (project CI crosses zero), moved to the end."
+ },
+ {
+  "file": "page_template.html",
+  "old": "Remove the sentences about events since 2022, and 89% of the extra change remains. This result held on the half of the data we kept back. On the full set, one of the two intervals includes zero.",
+  "new": "Remove the sentences about events since 2022, and 89% of the extra change remains. The result replicated on the half of the data we kept back, and again at full scale. The one weak spot is the coarse range on the full set, which crosses zero.",
+  "note": "STRONG per SYNTHESIS P4 (two tiers plus holdout). 'Held' becomes 'replicated'; the project-CI caveat stays, in its own sentence, named as the one weak spot."
+ },
+ {
+  "file": "page_template.html",
+  "old": "Accounts that were later blocked made 13.7% of the insertions. Their baseline share is 12.3%, so the gap is within the margin of error.",
+  "new": "Accounts that were later blocked made 13.7% of the insertions, against a baseline share of 12.3%. That is no excess.",
+  "note": "STRONG null (both CIs agree). 'Within the margin of error' sounds like a near miss; state the null."
+ },
+ {
+  "file": "page_template.html",
+  "old": "More topic articles than comparison articles gained critical vocabulary. That finding held up on the sealed half of the data, the half we had set aside and only checked at the end.",
+  "new": "More topic articles than comparison articles gained critical vocabulary. That finding replicated on the sealed half of the data, the half we had set aside and only checked at the end.",
+  "note": "'Held up' sounds provisional; the holdout A1 result is a replication (+3.6 pp, q=0.002)."
+ },
+ {
+  "file": "page_template.html",
+  "old": "We repeated the test treating each Wikipedia subject group as one unit. Then the extra tilt toward read pages is no longer clear, so treat that part as suggestive.",
+  "new": "The three-to-one gap holds on both of our ranges. Whether topic pages also tilt more steeply toward read pages than comparison pages do is suggestive: that difference does not survive treating each Wikipedia subject group as one unit.",
+  "note": "State the STRONG part (level gap, both CIs) first; keep the hedge only on the extra tilt (SUGGESTIVE), in its own sentence."
+ },
+ {
+  "file": "page_template.html",
+  "old": "One caution: when we treat each Wikipedia subject group as one unit, the result on all articles is no longer clear. On the articles most relevant to the topic it holds either way.",
+  "new": "This replicated on the sealed half of the data and at full scale. On the articles most relevant to the topic it holds on both of our ranges. On the full set, the coarser range crosses zero.",
+  "note": "P4 is STRONG. Lead with the replication; the project-CI caveat stays as one short sentence at the end instead of 'one caution ... no longer clear'."
+ },
+ {
+  "file": "page_template.html",
+  "old": "These all fit the pattern. We have not separated them as causes. Protection is shown only to mark the core pages.",
+  "new": "Each of these is established on its own. What we have not done is separate them as causes. Protection marks the core pages; it is not shown to cause change.",
+  "note": "The rise in protection, RfCs, categories and link-then-term are each STRONG. 'These all fit the pattern' read as tentative; the causal caveat stays, in its own sentence."
+ }
+]
