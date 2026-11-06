@@ -18,7 +18,6 @@ os.environ["WT_SALT"] = SALT
 os.environ["WT_JOB"] = "coord-test"
 import wt_net            # noqa: E402
 import coord as CO       # noqa: E402
-import mass as M         # noqa: E402
 import analyze as A      # noqa: E402
 
 FAILS = []

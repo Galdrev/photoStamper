@@ -430,7 +430,8 @@ def confidence(set_p, calib_share, sync_p=None):
     Six scope x direction tests run, so the thresholds are strict:
     high: <=0.5% of null worlds (whole pipeline re-run) give a community this large and dense, the fixed-set null is beaten at
     p<=0.002 and the members are also synchronous (p<0.01). medium: <=1% of null worlds, fixed-set p<=0.01 (structure only:
-    on six noise-only synthetic datasets x 6 tests, one 3-account group reached medium, i.e. roughly 1 per 36 tests)."""
+    on six noise-only synthetic datasets, 1 of 36 bloc tests and 1 of 12 network tests gave a medium 3-account group; none
+    gave high once timing is required)."""
     if calib_share is None:
         return "low"
     if set_p <= 0.002 and calib_share <= 0.005 and (sync_p is None or sync_p < 0.01):
