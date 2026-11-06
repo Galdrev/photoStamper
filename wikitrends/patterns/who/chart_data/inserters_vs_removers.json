@@ -1,0 +1,88 @@
+{
+ "title": "Inserters vs removers of critical lead terms: largely separate accounts",
+ "note": "Critical terms = settler_colonial, apartheid, genocide, ethnic_cleansing, occupation, nakba_expulsion, war_crimes. Lead-level flips 2021-2026 (mass2_events.json.gz); hashes linked only within one article. Pooled rows exclude restore edits and count accounts per article (an account active on two articles counts twice). Same split is mechanically expected when one account adds and another reverts.",
+ "x": "accounts (stacked: only inserted / did both / only removed)",
+ "key_articles": [
+  {
+   "article": "Zionism",
+   "only_insert": 3,
+   "both": 1,
+   "only_remove": 3,
+   "events_with_hash": 9,
+   "insert_median_age_days": 1841,
+   "remove_median_age_days": 2188.5
+  },
+  {
+   "article": "Israel",
+   "only_insert": 21,
+   "both": 7,
+   "only_remove": 20,
+   "events_with_hash": 90,
+   "insert_median_age_days": 3500,
+   "remove_median_age_days": 2063
+  },
+  {
+   "article": "Nakba",
+   "only_insert": 1,
+   "both": 2,
+   "only_remove": 1,
+   "events_with_hash": 6,
+   "insert_median_age_days": 4016,
+   "remove_median_age_days": 3427
+  },
+  {
+   "article": "Gaza genocide",
+   "only_insert": 4,
+   "both": 0,
+   "only_remove": 2,
+   "events_with_hash": 6,
+   "insert_median_age_days": 5146.0,
+   "remove_median_age_days": 1133.5
+  },
+  {
+   "article": "Hamas",
+   "only_insert": 7,
+   "both": 2,
+   "only_remove": 7,
+   "events_with_hash": 25,
+   "insert_median_age_days": 3072.0,
+   "remove_median_age_days": 1602
+  },
+  {
+   "article": "1948 Palestinian expulsion and flight",
+   "only_insert": 1,
+   "both": 0,
+   "only_remove": 0,
+   "events_with_hash": 1,
+   "insert_median_age_days": 4792,
+   "remove_median_age_days": null
+  },
+  {
+   "article": "Zionism as settler colonialism",
+   "only_insert": 4,
+   "both": 2,
+   "only_remove": 3,
+   "events_with_hash": 17,
+   "insert_median_age_days": 3010,
+   "remove_median_age_days": 3260.5
+  }
+ ],
+ "pooled": [
+  {
+   "group": "topic",
+   "only_insert": 318,
+   "both": 59,
+   "only_remove": 296,
+   "share_both": 0.088,
+   "articles": 196
+  },
+  {
+   "group": "comparison",
+   "only_insert": 335,
+   "both": 84,
+   "only_remove": 363,
+   "share_both": 0.107,
+   "articles": 205
+  }
+ ]
+}

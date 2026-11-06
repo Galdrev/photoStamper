@@ -718,18 +718,56 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 #ziChart{outline-offset:4px;touch-action:pan-y;cursor:pointer}
 #ziChart svg text.ln{font:600 11px var(--mono);fill:var(--ink-2);paint-order:stroke;stroke:var(--sheet);stroke-width:3px}
 #ziChart svg text.bd{font:600 10.5px var(--mono);fill:var(--paper)}
-.zi-nav{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
-.zi-nav .btns{display:inline-flex;gap:6px}
-.zi-nav .btns button{font:500 12.5px/1 var(--body);border:1px solid var(--rule);background:var(--sheet);border-radius:3px;padding:8px 11px;cursor:pointer;color:var(--ink-2)}
-.zi-nav .btns button:disabled{opacity:.4;cursor:default}
-.zi-moments{display:grid;gap:4px;margin:0;padding:0;list-style:none}
-.zi-moments button{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:baseline;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--faint);padding:7px 0;cursor:pointer;font:14px/1.45 var(--body);color:var(--ink-2)}
-.zi-moments button b{font-weight:600;color:var(--ink)}
-.zi-moments button[aria-pressed="true"]{color:var(--ink)}
-.zi-moments .bd{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--paper);font:600 10.5px var(--mono)}
-.zi-card{border-top:1px solid var(--rule);padding-top:12px;display:grid;gap:10px;min-width:0}
-.zi-card .hd{font:12.5px/1.5 var(--mono);color:var(--muted)}
-.zi-card .hd b{color:var(--ink);font-weight:600}
+#ziChart svg text.pl{font:600 11px var(--mono);fill:var(--ink-2)}
+#ziChart svg text.pl.on{fill:var(--paper)}
+#ziChart svg text.qv{font:600 10.5px var(--mono);fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:3px}
+#ziChart svg text.ax2{font:10px var(--mono);fill:var(--muted)}
+#ziChart svg text.phd{font:600 11px var(--mono);fill:var(--paper)}
+.zi-ph{transition:transform .35s ease}
+.zi-how{margin:0;max-width:78ch;font:14px/1.5 var(--body);color:var(--ink-2)}
+.zi-how b{color:var(--ink);font-weight:600}
+.zi-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.zi-phases button{width:100%;height:100%;display:grid;gap:3px;align-content:start;text-align:left;background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:9px 11px;cursor:pointer;font:13px/1.4 var(--body);color:var(--ink-2)}
+.zi-phases .nm{display:flex;gap:7px;align-items:center;font:600 14px/1.3 var(--body);color:var(--ink)}
+.zi-phases .n{display:inline-grid;place-items:center;flex:none;width:18px;height:18px;border-radius:3px;background:var(--faint);color:var(--ink);font:600 10.5px var(--mono)}
+.zi-phases .rg{font:500 11px/1.3 var(--mono);color:var(--muted)}
+.zi-phases button[aria-current="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.zi-phases button[aria-current="true"] .n{background:var(--ink);color:var(--paper)}
+.zi-jumps{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;min-width:0}
+.zi-jumps .lab,.zi-opts .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.zi-jumps ul{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none;min-width:0}
+.zi-jumps button{display:inline-flex;gap:7px;align-items:center;min-height:38px;border:1px solid var(--rule);background:var(--paper);border-radius:19px;padding:4px 12px 4px 6px;cursor:pointer;font:13px/1.2 var(--body);color:var(--ink-2);white-space:nowrap}
+.zi-jumps button small{font:500 11px var(--mono);color:var(--muted)}
+.zi-jumps button[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.zi-jumps .bd{display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--paper);font:600 10.5px var(--mono)}
+.zi-opts{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
+.zi-opts .o{display:flex;gap:8px;align-items:center}
+.zi-opts .cap{flex:1 1 260px;margin:0}
+.zi-ctl{position:sticky;top:calc(48px + env(safe-area-inset-top,0px));bottom:max(8px,env(safe-area-inset-bottom,0px));z-index:6;background:var(--sheet);border:1px solid var(--ink-2);border-radius:4px;padding:8px 10px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;align-items:center}
+.zi-ctl .bt{display:flex;gap:6px;grid-row:span 2}
+.zi-ctl button{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:40px;min-width:44px;padding:0 13px;border:1px solid var(--rule);background:var(--paper);border-radius:3px;cursor:pointer;font:600 13.5px/1 var(--body);color:var(--ink)}
+.zi-ctl button span[aria-hidden]{font-size:18px;line-height:1}
+.zi-ctl button:disabled{opacity:.4;cursor:default}
+#ziPlay{min-width:92px;background:var(--ink);border-color:var(--ink);color:var(--paper)}
+#ziPlay .ic{font-size:11px}
+.zi-ctr{margin:0;font:12.5px/1.35 var(--mono);color:var(--muted);min-width:0}
+.zi-ctr b{color:var(--ink);font-weight:600}
+.zi-trk{position:relative;height:22px;cursor:pointer;touch-action:none;min-width:0}
+.zi-trk i{position:absolute;display:block;top:8px;height:6px}
+.zi-trk .rail{left:0;right:0;background:var(--faint);border-radius:3px}
+.zi-trk .on{background:var(--add-bd)}
+.zi-trk .pd{top:3px;height:16px;width:1px;background:var(--muted)}
+.zi-trk .ph{top:1px;height:20px;width:3px;margin-left:-1.5px;border-radius:2px;background:var(--ink);transition:left .35s ease}
+.zi-card{display:grid;gap:10px;min-width:0}
+.zi-card .hd{display:grid;gap:8px}
+.zi-hd1{font:12.5px/1.5 var(--mono);color:var(--muted)}
+.zi-hd1 b{color:var(--ink);font-weight:600;font-size:14px}
+.zi-facts{display:grid;grid-template-columns:repeat(3,minmax(0,auto));justify-content:start;gap:6px 22px;margin:0}
+.zi-facts div{display:grid;gap:1px;min-width:0}
+.zi-facts dt{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.zi-facts dd{margin:0;font:14px/1.4 var(--body);color:var(--ink)}
+.zi-facts dd del,.zi-facts dd ins{font:400 15px var(--display)}
+.zi-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;margin:-1px;padding:0;border:0}
 .zi-ba{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
 .zi-ba blockquote{margin:0;background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:12px 14px;display:grid;gap:6px;align-content:start;min-width:0}
 .zi-ba .w{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -742,6 +780,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .zi-ba{grid-template-columns:minmax(0,1fr)}
   .zi-chips li{font-size:13px}
   .zi-chips li del,.zi-chips li ins{font-size:15px}
+  .zi-phases{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .zi-phases button{padding:7px 9px;font-size:12.5px}
+  .zi-phases .nm{font-size:13.5px}
+  .zi-jumps ul{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding:2px 16px 6px;scrollbar-width:thin;max-width:calc(100% + 32px)}
+  .zi-jumps button{min-height:44px}
+  .zi-opts .o{flex-wrap:wrap}
+  .zi-opts .seg button{min-height:40px}
+  .zi-ctl{grid-template-columns:minmax(0,1fr);margin-inline:-8px;padding:8px}
+  .zi-ctl .bt{grid-row:auto}
+  .zi-ctl .bt button{flex:1;min-height:46px}
+  .zi-facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .zi-facts div:first-child{grid-column:1/-1}
 }
 /*LABCSS*/
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -825,16 +875,28 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="wow-grid" id="ziPair"></div>
   <div class="wow-key"><span><del>amber, struck through</del> = words in 2021 that are gone now</span><span><ins>blue</ins> = words that are new since 2021</span></div>
   <details class="stats zi-rest" id="ziRest"><summary>The rest of the opening section <span id="ziRestN"></span></summary><div class="in"></div></details>
-  <figure class="fig" style="margin:0">
-    <div class="fig-h"><span class="fig-t">Every change to the first sentence, with all edits to the article behind it</span><span class="cap">Tap or hover a mark. Arrow keys step through the changes.</span></div>
-    <div class="chart" id="ziChart" tabindex="0" role="group" aria-label="Timeline of first-sentence changes to the Zionism article. Use the left and right arrow keys to step through changes."></div>
+  <figure class="fig zi-fig" id="ziFig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">Every change to the first sentence, 2021 to now</span><span class="cap">Step, play, or tap the chart. Arrow keys work too.</span></div>
+    <p class="zi-how"><b>How to read this:</b> time runs left to right. The blue bar shows when “colonial” or “colonization” was in the first sentence, and every gap is a removal. The black line is the change shown in the panel below.</p>
+    <ol class="zi-phases" id="ziPhases" aria-label="Phases, computed from the changes"></ol>
+    <div class="chart" id="ziChart" tabindex="0" role="group" aria-label="Timeline of first-sentence changes to the Zionism article. Left and right arrow keys step through changes; space plays or pauses."></div>
     <div class="legend" id="ziKey"></div>
-    <ol class="zi-moments" id="ziMoments"></ol>
+    <div class="zi-jumps"><span class="lab" id="ziJumpL">Jump to</span><ul id="ziMoments" aria-labelledby="ziJumpL"></ul></div>
+    <div class="zi-opts">
+      <div class="o"><span class="lab" id="ziModeL">Step through</span><div class="seg" id="ziMode" role="group" aria-labelledby="ziModeL"><button type="button" data-v="key" aria-pressed="true">Key moves</button><button type="button" data-v="all" aria-pressed="false">Every change</button></div></div>
+      <div class="o"><span class="lab" id="ziSpeedL">Play speed</span><div class="seg" id="ziSpeed" role="group" aria-labelledby="ziSpeedL"><button type="button" data-v="norm" aria-pressed="true">Normal</button><button type="button" data-v="slow" aria-pressed="false">Slow</button></div></div>
+      <p class="cap" id="ziModeHelp"></p>
+    </div>
+    <div class="zi-ctl" id="ziCtl" role="group" aria-label="Step through the changes">
+      <div class="bt"><button type="button" id="ziPrev" aria-label="Previous change"><span aria-hidden="true">‹</span> Prev</button><button type="button" id="ziPlay" aria-label="Play" aria-pressed="false"><span class="ic" aria-hidden="true">▶</span> <span class="tx">Play</span></button><button type="button" id="ziNext" aria-label="Next change">Next <span aria-hidden="true">›</span></button></div>
+      <p class="zi-ctr" id="ziCtr"></p>
+      <div class="zi-trk" id="ziTrk" aria-hidden="true"></div>
+    </div>
     <div class="zi-card" id="ziCard">
-      <div class="zi-nav"><div class="seg" id="ziMode" role="group" aria-label="Which changes to step through"><button data-v="key" aria-pressed="true">Key moves</button><button data-v="all" aria-pressed="false">Every change</button></div><span class="btns"><button type="button" id="ziPrev">← Earlier</button><button type="button" id="ziNext">Later →</button></span></div>
-      <p class="hd" id="ziHd" aria-live="polite"></p>
+      <div class="hd" id="ziHd"></div>
       <div class="zi-ba" id="ziBA"></div>
     </div>
+    <p class="zi-sr" id="ziLive" aria-live="polite" aria-atomic="true"></p>
   </figure>
   <p class="means" id="ziMeans"></p>
   <p class="cap" id="ziNote"></p>
@@ -2420,12 +2482,20 @@ function drawSpread(){
 }
 
 /* ---------- Zionism up close: opening paragraph then and now, and every first-sentence change ---------- */
-const ZI={sel:null,mode:"key",geom:null,list:null};
+const ZI={sel:null,mode:"key",speed:"norm",playing:false,timer:null,geom:null};
 const ZI_T={settler_colonial:"“colonial” or “colonization”",re_establish:"“re-establishment”",nakba_expulsion:"Nakba / expulsion",genocide:"genocide",apartheid:"apartheid",ethnic_cleansing:"ethnic cleansing",occupation:"occupation",war_crimes:"war crimes"};
+const ZI_S={settler_colonial:"colonial",re_establish:"re-establishment"};
+const ZI_DAY=864e5,ZI_GAP=45,ZI_MS={norm:1200,slow:2600};
 const ziD=s=>{const d=new Date(s.slice(0,10)+"T00:00:00Z");return `${d.getUTCDate()} ${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
+const ziMY=t=>{const d=new Date(t);return `${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
 const ziW=n=>n===1?"1 word":`${n} words`;
+const ziN=(n,w)=>`${n} ${w}${n===1?"":"s"}`;
 const ZI_MON=["January","February","March","April","May","June","July","August","September","October","November","December"];
 const ziOld=r=>`https://en.wikipedia.org/w/index.php?oldid=${r}`;
+function ziDur(days){if(days<1)return "less than a day";if(days<60)return ziN(days,"day");const mo=Math.round(days/30.44);return mo<24?ziN(mo,"month"):`${(days/365.25).toFixed(1)} years`}
+/* when a term was in the first sentence, as [from,to] time spans */
+function ziSpans(ch,term,start,t0,t1){let on=start,from=t0;const o=[];ch.forEach(c=>{if(c.mv.includes(term+"+")&&!on){on=true;from=c.t}else if(c.mv.includes(term+"-")&&on){on=false;o.push([from,c.t])}});if(on)o.push([from,t1]);return o}
+const ziCover=(sp,a,b)=>b>a?sp.reduce((s,[x,y])=>s+Math.max(0,Math.min(b,y)-Math.max(a,x)),0)/(b-a):0;
 function ziData(){
   const Z=R.zionism,RA=R.ratchet&&R.ratchet.articles&&R.ratchet.articles[Z&&Z.title];if(!Z||!RA)return null;
   if(ZI.d)return ZI.d;
@@ -2434,10 +2504,40 @@ function ziData(){
   // nearest kept wording at or before each change (for diffs across wordings whose text was not kept)
   let lastKept=txt.get(RA.fs_timeline[0][1])||null,lastKeptD=RA.fs_timeline[0][0];
   ch.forEach(c=>{const a=txt.get(c.from);c.before=a||lastKept;c.beforeExact=!!a;c.beforeD=a?null:lastKeptD;const b=txt.get(c.to);c.after=b==null||b===""?null:b;c.blank=b==="";if(c.after){lastKept=c.after;lastKeptD=c.d}});
-  const settle=ch.filter(c=>c.mv.includes("settler_colonial+")).at(-1),first=ch.find(c=>c.mv.includes("settler_colonial+")),reOut=ch.filter(c=>c.mv.includes("re_establish-")).at(-1);
-  const moments=[[first,`<b>${ziD(first.d)}</b> · “colonial” goes into the first sentence for the first time`],[reOut,`<b>${ziD(reOut.d)}</b> · “re-establishment” leaves the first sentence for the last time`],[settle,`<b>${ziD(settle.d)}</b> · “colonization” goes back in and stays`]].filter(m=>m[0]);
+  const t0=Date.UTC(2021,0,1),t1=Date.parse(Z.now.asof+"T00:00:00Z");
+  ch.forEach((c,i)=>{const n=ch[i+1];c.last=!n;c.days=Math.round(((n?n.t:t1)-c.t)/ZI_DAY)});
+  const has=(c,m)=>c.mv.includes(m);
+  const settle=ch.filter(c=>has(c,"settler_colonial+")).at(-1),first=ch.find(c=>has(c,"settler_colonial+")),reOut=ch.filter(c=>has(c,"re_establish-")).at(-1);
+  const swap=ch.find(c=>has(c,"settler_colonial+")&&has(c,"re_establish-"));
+  // busiest 7 days: the most first-sentence changes in any window that starts on a change
+  let busy=null,bn=0;ch.forEach((c,i)=>{let j=i;while(j+1<ch.length&&ch[j+1].t-c.t<7*ZI_DAY)j++;if(j-i+1>bn){bn=j-i+1;busy={c,n:bn,end:ch[j]}}});
+  const col=ziSpans(ch,"settler_colonial",Z.col.start,t0,t1),re=ziSpans(ch,"re_establish",Z.re.start,t0,t1);
+  // phases from the data: the tug of war is the first run of "colonial" flips with no gap over ZI_GAP days
+  const cf=ch.filter(c=>c.mv.some(m=>m.startsWith("settler_colonial"))),phases=[];
+  if(first&&settle){
+    let j=cf.indexOf(first);while(j+1<cf.length&&cf[j+1].t-cf[j].t<=ZI_GAP*ZI_DAY)j++;const tug=cf.slice(cf.indexOf(first),j+1),tugEnd=tug.at(-1);
+    const cnt=(L,m)=>L.filter(c=>has(c,m)).length,inP=(a,b)=>ch.filter(c=>c.t>=a&&c.t<b),pct=(a,b)=>Math.round(ziCover(col,a,b)*100);
+    const A=inP(t0,first.t),B=inP(first.t,tugEnd.t+1),C=inP(tugEnd.t+1,settle.t),D=inP(settle.t,t1+1);
+    const reB=reOut&&reOut.t>=first.t&&reOut.t<=tugEnd.t;
+    phases.push({a:t0,b:first.t,nm:"Stable",lab:`Stable: “colonial” never in the first sentence`,rg:`${ziMY(t0)} to ${ziMY(first.t)}`,txt:`${ziN(A.length,"change")} in ${((first.t-t0)/365.25/ZI_DAY).toFixed(1)} years. “Colonial” in 0% of days.`,k:ch[0].k});
+    phases.push({a:first.t,b:tugEnd.t,nm:"Tug of war",lab:`Tug of war: “colonial” goes in ${cnt(tug,"settler_colonial+")} times and out ${cnt(tug,"settler_colonial-")} times`,rg:`${ziD(first.d)} to ${ziD(tugEnd.d)}`,txt:`${ziN(B.length,"change")} in ${Math.round((tugEnd.t-first.t)/ZI_DAY/30.44)} months. “Colonial” in ${pct(first.t,tugEnd.t)}% of days${reB?`; “re-establishment” leaves for good on ${ziD(reOut.d)}`:""}.`,k:first.k});
+    const Cout=cnt(C,"settler_colonial-");
+    phases.push({a:tugEnd.t,b:settle.t,nm:"Mostly in",lab:`Mostly in: “colonial” taken out and put back ${Cout} times`,rg:`${ziMY(tugEnd.t)} to ${ziMY(settle.t)}`,txt:`${ziN(C.length,"change")} in ${Math.round((settle.t-tugEnd.t)/ZI_DAY/30.44)} months. “Colonial” in ${pct(tugEnd.t,settle.t)}% of days.`,k:(C[0]||settle).k});
+    const dd=Math.round((t1-settle.t)/ZI_DAY),Dn=D.length-1;
+    phases.push({a:settle.t,b:t1,nm:"Settled",lab:`Settled with “colonization”`,rg:`${ziD(settle.d)} to now`,txt:Dn?`${ziN(Dn,"change")} since, none to the key words.`:`No change to the first sentence in ${dd} days.`,k:settle.k});
+  }
+  // quarterly share of days each word was in the first sentence
+  const qs=[];for(let y=2021;;y++){let stop=false;for(let q=0;q<4;q++){const a=Date.UTC(y,q*3,1);if(a>=t1){stop=true;break}const b=Math.min(Date.UTC(y,q*3+3,1),t1);qs.push({a,b,lab:`Q${q+1} ${y}`,col:ziCover(col,a,b),re:ziCover(re,a,b)})}if(stop)break}
+  const moments=[];
+  const mo=(c,short,long)=>{if(c&&!moments.some(m=>m.c===c))moments.push({c,short,long})};
+  mo(first,"First “colonial”",`“colonial” goes into the first sentence for the first time`);
+  if(busy&&busy.n>2)mo(busy.c,`Busiest week: ${busy.n} changes`,`the busiest week: ${busy.n} changes to the first sentence between ${ziD(busy.c.d)} and ${ziD(busy.end.d)}`);
+  mo(swap,"One edit swaps the words",`one edit takes “re-establishment” out and puts “colonial” in`);
+  mo(reOut,"“Re-establishment” out for good",`“re-establishment” leaves the first sentence for the last time`);
+  mo(settle,"Settles on “colonization”",`“colonization” goes back in and stays`);
+  moments.sort((a,b)=>a.c.k-b.c.k);
   const a=R.articles.find(x=>x.title===Z.title),wk=parseWeeks(a&&a.w_edits,R.n_weeks)||[];
-  return ZI.d={Z,ch,moments,settle,wk,w0:Date.parse((R.week0||"2021-01-01")+"T00:00:00Z")};
+  return ZI.d={Z,ch,moments,settle,busy,phases,qs,col,re,t0,t1,nKey:ch.filter(c=>c.mv.length).length,wk,w0:Date.parse((R.week0||"2021-01-01")+"T00:00:00Z")};
 }
 function ziSummary(){
   const D=ziData();if(!D)return;const {Z}=D;
@@ -2456,84 +2556,140 @@ function ziSummary(){
 function ziList(){const D=ziData();return ZI.mode==="key"?D.ch.filter(c=>c.mv.length):D.ch}
 function ziLabel(c){if(!c.mv.length)return c.blank?"the opening was blanked":"a wording change";
   return c.mv.map(m=>`${ZI_T[m.slice(0,-1)]||m.slice(0,-1)} ${m.endsWith("+")?"goes in":"comes out"}`).join(", ")}
+function ziMoved(c){if(!c.mv.length)return c.blank?"None (the opening was blanked)":"None, a rewording";
+  return c.mv.map(m=>{const w=esc(ZI_S[m.slice(0,-1)]||ZI_T[m.slice(0,-1)]||m.slice(0,-1));return m.endsWith("+")?`<ins>${w}</ins> in`:`<del>${w}</del> out`}).join(", ")}
+const ziPhaseOf=t=>{const P=ziData().phases;return P.findIndex((p,i)=>t>=p.a&&(t<p.b||i===P.length-1))};
 function drawZi(){
   const el=$("#ziChart"),D=ziData();if(!el)return;
   if(!D){$("#zionism").hidden=true;return}
   if(!ZI.summaryDone){ziSummary();ZI.summaryDone=true}
-  const {Z,ch,wk,w0}=D,ph=isPhone(),W=Math.max(300,el.clientWidth);
-  const t0=Date.UTC(2021,0,1),t1=Date.parse(Z.now.asof+"T00:00:00Z");
+  const {Z,ch,wk,w0,t0,t1,phases,qs}=D,ph=isPhone(),W=Math.max(300,el.clientWidth);
   const m={l:ph?30:40,r:ph?6:10};
   const x=t=>m.l+(W-m.l-m.r)*(t-t0)/(t1-t0);
-  const bT=48,bH=ph?100:140,bB=bT+bH,lane=ph?34:36,L0=bB+26;
-  const lanes=ph?[["col","“colonial” / “colonization”"],["re","“re-establishment”"],["all","every first-sentence change"],["lead","critical terms, rest of opening"]]:[["col",`“colonial” or “colonization” in the first sentence`],["re",`“re-establishment” in the first sentence`],["all",`every change to the first sentence`],["lead",`critical terms elsewhere in the opening section`]];
-  const ly=i=>L0+i*lane,H=ly(lanes.length)+4;
+  const pY=0,pH=20,mY=38,bT=60,bH=ph?84:120,bB=bT+bH,L0=bB+26;
+  const lanes=[{k:"col",lab:ph?"“colonial” / “colonization”":"“colonial” or “colonization” in the first sentence",h:64},{k:"re",lab:ph?"“re-establishment”":"“re-establishment” in the first sentence",h:64},{k:"all",lab:ph?"every first-sentence change":"every change to the first sentence",h:36},{k:"lead",lab:ph?"critical words, rest of opening":"critical words elsewhere in the opening section",h:34}];
+  let yy0=L0;lanes.forEach(l=>{l.y=yy0;yy0+=l.h});const ly=k=>lanes.find(l=>l.k===k).y,H=yy0+26;
+  const bandY=k=>ly(k)+16,bandH=10,qB=k=>ly(k)+52,qH=20;
   const mx=niceMax(Math.max(1,...wk)),y=lin(0,mx,bB,bT);
-  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`Weekly edits to the Zionism article, 2021 to November 2026, in grey. Below: when “colonial” or “colonization” was in the first sentence (in ${Z.col.in} times, out ${Z.col.out} times, in since ${ziD(D.settle.d)}); when “re-establishment” was (gone since ${ziD(Z.re.last[0])}); and ticks for all ${ch.length} first-sentence changes.`)}">`;
-  for(let yr=2021;yr<=new Date(t1).getUTCFullYear();yr++){const xx=x(Date.UTC(yr,0,1));s+=`<line x1="${xx}" x2="${xx}" y1="${bT}" y2="${H-4}" style="stroke:var(--faint)"/><text x="${xx+3}" y="${bB+14}">${ph?"’"+String(yr).slice(2):yr}</text>`}
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`Weekly edits to the Zionism article, 2021 to November 2026, in grey. ${phases.map((p,i)=>`Phase ${i+1}, ${p.lab}, ${p.rg}.`).join(" ")} Below: when “colonial” or “colonization” was in the first sentence (in ${Z.col.in} times, out ${Z.col.out} times, in since ${ziD(D.settle.d)}), with the share of days per quarter; when “re-establishment” was (gone since ${ziD(Z.re.last[0])}); and ticks for all ${ch.length} first-sentence changes.`)}">`;
+  // phase shading behind the plot, and the phase band on top
+  phases.forEach((p,i)=>{const xa=x(p.a),xb=x(p.b);if(i%2)s+=`<rect x="${xa.toFixed(1)}" y="${bT-6}" width="${(xb-xa).toFixed(1)}" height="${H-bT-20}" style="fill:var(--faint);opacity:.7"/>`});
+  const plab=(p,i,w)=>{const full=`${i+1} ${p.nm}`;return full.length*6.8+8<w?full:String(i+1)};
+  phases.forEach((p,i)=>{const xa=x(p.a)+(i?1:0),xb=x(p.b)-(i<phases.length-1?1:0),w=Math.max(2,xb-xa);s+=`<rect x="${xa.toFixed(1)}" y="${pY}" width="${w.toFixed(1)}" height="${pH}" rx="2" style="fill:var(--faint);stroke:var(--rule)"/><text class="pl" x="${(xa+w/2).toFixed(1)}" y="${pY+14}" text-anchor="middle">${esc(plab(p,i,w))}</text>`});
+  for(let yr=2021;yr<=new Date(t1).getUTCFullYear();yr++){const xx=x(Date.UTC(yr,0,1));s+=`<line x1="${xx}" x2="${xx}" y1="${bT}" y2="${H-24}" style="stroke:var(--faint)"/><text x="${xx+3}" y="${bB+14}">${ph?"’"+String(yr).slice(2):yr}</text>`}
   ticks(0,mx,ph?2:3).forEach(v=>{const yy=y(v);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-5}" y="${yy+3.5}" text-anchor="end">${v}</text>`});
-  const bw=Math.max(.7,(x(t0+7*864e5)-x(t0))-.35);
-  wk.forEach((v,i)=>{if(!v)return;const xx=x(w0+i*7*864e5),yy=y(v);if(xx>W-m.r)return;s+=`<rect x="${xx.toFixed(1)}" y="${yy.toFixed(1)}" width="${bw.toFixed(2)}" height="${(bB-yy).toFixed(1)}" style="fill:var(--mid)"/>`});
+  const bw=Math.max(.7,(x(t0+7*ZI_DAY)-x(t0))-.35);
+  wk.forEach((v,i)=>{if(!v)return;const xx=x(w0+i*7*ZI_DAY),yy=y(v);if(xx>W-m.r)return;s+=`<rect x="${xx.toFixed(1)}" y="${yy.toFixed(1)}" width="${bw.toFixed(2)}" height="${(bB-yy).toFixed(1)}" style="fill:var(--mid)"/>`});
   s+=`<text x="${m.l+6}" y="${bT+10}" style="fill:var(--muted);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">edits / week</text>`;
-  const wx=x(WAR);s+=`<line x1="${wx}" x2="${wx}" y1="${bT-4}" y2="${H-4}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/><text x="${wx-4}" y="${bT+10}" text-anchor="end" style="fill:var(--war);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${ph?"7 Oct":"7 Oct 2023"}</text>`;
+  const wx=x(WAR);s+=`<line x1="${wx}" x2="${wx}" y1="${bT-4}" y2="${H-24}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/><text x="${wx-4}" y="${bT+10}" text-anchor="end" style="fill:var(--war);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${ph?"7 Oct":"7 Oct 2023"}</text>`;
   // lanes
-  const bandY=i=>ly(i)+16,bandH=10;
-  lanes.forEach(([k,lab],i)=>{s+=`<text class="ln" x="${m.l}" y="${ly(i)+11}">${esc(lab)}</text>`;if(k!=="all"&&k!=="lead")s+=`<rect x="${m.l}" y="${bandY(i)}" width="${W-m.l-m.r}" height="${bandH}" rx="2" style="fill:var(--faint)"/>`;else s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${bandY(i)+bandH/2}" y2="${bandY(i)+bandH/2}" style="stroke:var(--rule)"/>`});
-  const band=(term,i,col)=>{let on=Z[term==="settler_colonial"?"col":"re"].start,from=t0,out="";
-    const seg=(a,b)=>{const xa=x(a),xb=Math.max(xa+1.4,x(b));out+=`<rect x="${xa.toFixed(1)}" y="${bandY(i)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(${col})"/>`};
+  lanes.forEach(l=>{s+=`<text class="ln" x="${m.l}" y="${l.y+11}">${esc(l.lab)}</text>`;if(l.k==="col"||l.k==="re")s+=`<rect x="${m.l}" y="${bandY(l.k)}" width="${W-m.l-m.r}" height="${bandH}" rx="2" style="fill:var(--faint)"/>`;else s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${bandY(l.k)+bandH/2}" y2="${bandY(l.k)+bandH/2}" style="stroke:var(--rule)"/>`});
+  const band=(term,k,cvar)=>{let on=Z[term==="settler_colonial"?"col":"re"].start,from=t0,out="";
+    const seg=(a,b)=>{const xa=x(a),xb=Math.max(xa+1.4,x(b));out+=`<rect x="${xa.toFixed(1)}" y="${bandY(k)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(${cvar})"/>`};
     const gaps=[];let g0=null;
     ch.forEach(c=>{if(c.mv.includes(term+"+")&&!on){on=true;from=c.t;if(g0!=null)gaps.push([g0,c.t])}else if(c.mv.includes(term+"-")&&on){on=false;seg(from,c.t);g0=c.t}});
     if(on)seg(from,t1);
     /* every removal leaves a visible notch, even when the word came back the same day */
-    gaps.forEach(([a,b])=>{const xa=x(a),xb=Math.max(xa+1.5,x(b));out+=`<rect x="${(xa-.2).toFixed(1)}" y="${bandY(i)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(--sheet)"/>`});return out};
-  s+=band("settler_colonial",0,"--add-bd")+band("re_establish",1,"--del-bd");
-  ch.forEach(c=>{const xx=x(c.t).toFixed(1),yy=bandY(2);s+=`<line x1="${xx}" x2="${xx}" y1="${yy+(c.rv?3:0)}" y2="${yy+bandH-(c.rv?3:0)}" style="stroke:var(${c.rv?"--muted":"--ink-2"});stroke-width:1;opacity:${c.rv?.6:.8}"/>`});
+    gaps.forEach(([a,b])=>{const xa=x(a),xb=Math.max(xa+1.5,x(b));out+=`<rect x="${(xa-.2).toFixed(1)}" y="${bandY(k)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(--sheet)"/>`});return out};
+  s+=band("settler_colonial","col","--add-bd")+band("re_establish","re","--del-bd");
+  // share of days per quarter, under each band
+  [["col","--add-bd"],["re","--del-bd"]].forEach(([k,cv])=>{const b=qB(k);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${b+.5}" y2="${b+.5}" style="stroke:var(--rule)"/><text class="ax2" x="${m.l-4}" y="${b-qH+7}" text-anchor="end">100%</text><text class="ax2" x="${m.l-4}" y="${b}" text-anchor="end">0</text>`;
+    qs.forEach(q=>{const v=q[k];if(v<=0)return;const xa=x(q.a)+1,xb=x(q.b)-1,h=Math.max(1.5,v*qH);s+=`<rect x="${xa.toFixed(1)}" y="${(b-h).toFixed(1)}" width="${Math.max(1,xb-xa).toFixed(1)}" height="${h.toFixed(1)}" rx="1.5" style="fill:var(${cv});opacity:.85"/>`})});
+  ch.forEach(c=>{const xx=x(c.t).toFixed(1),yy=bandY("all");s+=`<line x1="${xx}" x2="${xx}" y1="${yy+(c.rv?3:0)}" y2="${yy+bandH-(c.rv?3:0)}" style="stroke:var(${c.rv?"--muted":"--ink-2"});stroke-width:1;opacity:${c.rv?.6:.8}"/>`});
   const LT=(Z.lead_terms||[]).map(e=>({t:Date.parse(e[0]),ts:e[0],term:e[1],kind:e[2]}));
-  LT.forEach(e=>{const xx=x(e.t).toFixed(1),yy=bandY(3)+bandH/2;s+=`<circle cx="${xx}" cy="${yy}" r="3.2" style="fill:var(${e.kind==="insert"?"--ink-2":"--sheet"});stroke:var(--ink-2);stroke-width:1.2"/>`});
-  // numbered key moments
-  let prevX=-99,row=0;
-  D.moments.forEach(([c],i)=>{const xx=x(c.t);row=xx-prevX<22?row+1:0;prevX=xx;const cyy=11+row*19;
-    s+=`<line x1="${xx}" x2="${xx}" y1="${cyy+9}" y2="${bandY(1)+bandH}" style="stroke:var(--ink);stroke-width:1;opacity:.5"/><circle cx="${xx}" cy="${cyy}" r="9" style="fill:var(--ink)"/><text class="bd" x="${xx}" y="${cyy+3.6}" text-anchor="middle">${i+1}</text>`});
-  // selection
-  const sel=ch[ZI.sel];
-  if(sel){const xx=x(sel.t);s+=`<line x1="${xx}" x2="${xx}" y1="${bT}" y2="${H-4}" style="stroke:var(--ink);stroke-width:1.5;stroke-dasharray:2 2"/><circle cx="${xx}" cy="${bandY(2)+bandH/2}" r="6" style="fill:none;stroke:var(--ink);stroke-width:1.5"/>`}
+  LT.forEach(e=>{const xx=x(e.t).toFixed(1),yy=bandY("lead")+bandH/2;s+=`<circle cx="${xx}" cy="${yy}" r="3.2" style="fill:var(${e.kind==="insert"?"--ink-2":"--sheet"});stroke:var(--ink-2);stroke-width:1.2"/>`});
+  // numbered key moments: one row, pushed apart, with leader lines to the real date
+  const bx=D.moments.map(mm=>x(mm.c.t)),gap=21;
+  for(let i=1;i<bx.length;i++)bx[i]=Math.max(bx[i],bx[i-1]+gap);
+  if(bx.length){bx[bx.length-1]=Math.min(bx.at(-1),W-m.r-9);for(let i=bx.length-2;i>=0;i--)bx[i]=Math.min(bx[i],bx[i+1]-gap)}
+  D.moments.forEach((mm,i)=>{const xx=x(mm.c.t),cx=Math.max(m.l+9,bx[i]);bx[i]=cx;
+    s+=`<path d="M${cx.toFixed(1)} ${mY+9} L${xx.toFixed(1)} ${bT-2} L${xx.toFixed(1)} ${bandY("re")+bandH}" style="fill:none;stroke:var(--ink);stroke-width:1;opacity:.45"/><circle cx="${cx.toFixed(1)}" cy="${mY}" r="9" style="fill:var(--ink)"/><text class="bd" x="${cx.toFixed(1)}" y="${mY+3.6}" text-anchor="middle">${i+1}</text>`});
+  // live layers: overlay (phase/quarter highlight, selection ring) and the playhead
+  s+=`<g id="ziOv"></g><g id="ziPH" class="zi-ph"><line x1="0" x2="0" y1="${pY+pH+2}" y2="${H-22}" style="stroke:var(--ink);stroke-width:2"/><rect id="ziPHr" x="-44" y="${H-20}" width="88" height="18" rx="3" style="fill:var(--ink)"/><text id="ziPHt" class="phd" x="0" y="${H-7}" text-anchor="middle"></text></g>`;
   s+=`</svg>`;el.innerHTML=s;
-  ZI.geom={x,ch,LT,bT,bandY,bandH,ly,H,m,W};
-  $("#ziKey").innerHTML=`<span class="key"><i style="background:var(--mid)"></i>all edits to the article, per week (${wk.reduce((a,b)=>a+b,0).toLocaleString("en-US")} in total)</span><span class="key"><i style="background:var(--add-bd)"></i>“colonial” or “colonization” is in the first sentence</span><span class="key"><i style="background:var(--del-bd)"></i>“re-establishment” is in the first sentence</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>one change to the first sentence</span><span class="key"><i style="width:2px;height:8px;background:var(--muted)"></i>a change later undone</span><span class="key"><i style="border-radius:50%;background:var(--ink-2)"></i><i style="border-radius:50%;border:1.2px solid var(--ink-2);background:none;margin-left:-2px"></i>critical term enters or leaves the rest of the opening section</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`;
-  $("#ziMoments").innerHTML=D.moments.map(([c,h],i)=>`<li><button type="button" data-k="${c.k}" aria-pressed="${ZI.sel===c.k}"><span class="bd">${i+1}</span><span>${h}</span></button></li>`).join("");
-  ziCard();
+  ZI.geom={x,ch,LT,lanes,ly,bandY,bandH,qB,qH,H,m,W,bx,mY,pY,pH,plab,ph};
+  const tot=wk.reduce((a,b)=>a+b,0).toLocaleString("en-US");
+  $("#ziKey").innerHTML=`<span class="key"><i style="width:2px;height:14px;background:var(--ink)"></i>black line: the change shown below</span><span class="key"><i style="background:var(--add-bd)"></i>blue: “colonial” or “colonization” is in the first sentence</span><span class="key"><i style="background:var(--del-bd)"></i>amber: “re-establishment” is in it</span><span class="key"><i style="background:linear-gradient(to top,var(--ink-2) 60%,transparent 60%);border:1px solid var(--rule)"></i>short columns: share of days it was in, per quarter</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: one change to the first sentence (short tick: later undone)</span><span class="key"><i style="border-radius:50%;background:var(--ink-2)"></i><i style="border-radius:50%;border:1.2px solid var(--ink-2);background:none;margin-left:-2px"></i>a critical word added or removed lower down</span><span class="key"><i style="background:var(--mid)"></i>grey: all edits to the article, per week (${tot})</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`;
+  $("#ziMoments").innerHTML=D.moments.map((mm,i)=>`<li><button type="button" data-k="${mm.c.k}" aria-pressed="false" aria-label="${esc(`Jump to ${ziD(mm.c.d)}: ${mm.long}`)}"><span class="bd" aria-hidden="true">${i+1}</span><span>${esc(mm.short)}</span><small>${ziD(mm.c.d)}</small></button></li>`).join("");
+  $("#ziPhases").innerHTML=phases.map((p,i)=>`<li><button type="button" data-k="${p.k}" aria-current="false" aria-label="${esc(`Phase ${i+1}: ${p.lab}, ${p.rg}. ${p.txt} Go to its first change.`)}"><span class="nm"><span class="n" aria-hidden="true">${i+1}</span>${esc(p.lab)}</span><span class="rg">${esc(p.rg)}</span><span>${esc(p.txt)}</span></button></li>`).join("");
+  ziTrack();
+  ziSync(false);
 }
-function ziCard(){
-  const D=ziData(),c=D.ch[ZI.sel];if(!c)return;const L=ziList();
+function ziTrack(){const D=ziData(),T=$("#ziTrk");if(!T)return;const f=t=>(100*(t-D.t0)/(D.t1-D.t0)).toFixed(3);
+  T.innerHTML=`<i class="rail"></i>${D.col.map(([a,b])=>`<i class="on" style="left:${f(a)}%;width:max(1px,${(f(b)-f(a)).toFixed(3)}%)"></i>`).join("")}${D.phases.slice(1).map(p=>`<i class="pd" style="left:${f(p.a)}%"></i>`).join("")}<i class="ph" id="ziTrkPh"></i>`}
+/* move the playhead and refresh everything that follows the current change */
+function ziSync(announce){
+  const D=ziData(),G=ZI.geom,c=D&&D.ch[ZI.sel];if(!c||!G)return;const L=ziList(),pi=ziPhaseOf(c.t);
+  const xx=G.x(c.t),phEl=$("#ziPH");
+  if(phEl){phEl.style.transform=`translateX(${xx.toFixed(1)}px)`;const lab=ziD(c.d),w=lab.length*6.7+12,lft=xx-w/2,rgt=xx+w/2,off=lft<2?2-lft:rgt>G.W-2?G.W-2-rgt:0;
+    const r=$("#ziPHr"),t=$("#ziPHt");r.setAttribute("x",(-w/2+off).toFixed(1));r.setAttribute("width",w.toFixed(1));t.setAttribute("x",off.toFixed(1));t.textContent=lab}
+  let o="";const P=D.phases[pi];
+  if(P){const i=pi,xa=G.x(P.a)+(i?1:0),xb=G.x(P.b)-(i<D.phases.length-1?1:0),w=Math.max(2,xb-xa);o+=`<rect x="${xa.toFixed(1)}" y="${G.pY}" width="${w.toFixed(1)}" height="${G.pH}" rx="2" style="fill:var(--ink)"/><text class="pl on" x="${(xa+w/2).toFixed(1)}" y="${G.pY+14}" text-anchor="middle">${esc(G.plab(P,i,w))}</text>`}
+  const q=D.qs.find(q=>c.t>=q.a&&c.t<q.b)||D.qs.at(-1);
+  if(q)[["col","--add-bd"],["re","--del-bd"]].forEach(([k,cv])=>{const xa=G.x(q.a),xb=G.x(q.b),b=G.qB(k),v=q[k];o+=`<rect x="${xa.toFixed(1)}" y="${b-G.qH-1}" width="${(xb-xa).toFixed(1)}" height="${G.qH+2}" rx="2" style="fill:none;stroke:var(--ink);stroke-width:1"/>`;
+    const lx=Math.min(Math.max(xa+(xb-xa)/2,G.m.l+16),G.W-G.m.r-16);o+=`<text class="qv" x="${lx.toFixed(1)}" y="${b-G.qH-4}" text-anchor="middle">${Math.round(v*100)}%</text>`});
+  o+=`<circle cx="${xx.toFixed(1)}" cy="${G.bandY("all")+G.bandH/2}" r="6" style="fill:none;stroke:var(--ink);stroke-width:1.5"/>`;
+  const ov=$("#ziOv");if(ov)ov.innerHTML=o;
+  const tp=$("#ziTrkPh");if(tp)tp.style.left=(100*(c.t-D.t0)/(D.t1-D.t0)).toFixed(3)+"%";
+  // counter
+  const ki=c.mv.length?D.ch.filter(x=>x.mv.length).indexOf(c)+1:0;
+  $("#ziCtr").innerHTML=`<b>Change ${c.k+1}</b> of ${D.ch.length} · <b>${ziD(c.d)}</b><br>${ki?`key move ${ki} of ${D.nKey}`:"not a key move"}${P?` · phase ${pi+1}, ${esc(P.nm.toLowerCase())}`:""}`;
+  // panel header: date, how long it lasted, undone or not, which word moved
   const ops=c.before&&c.after?wdiff(c.before,c.after):null;
-  $("#ziHd").innerHTML=`<b>${ziD(c.d)}</b> · change ${c.k+1} of ${D.ch.length} · ${esc(ziLabel(c))}${c.rv?" · this wording was later undone":""}${ops?` · ${ziW(wc(ops,"-"))} out, ${ziW(wc(ops,"+"))} in`:""}`;
-  const q=(w,html,na)=>`<blockquote><span class="w">${w}</span><span class="s${na?" na":""}">${html}</span></blockquote>`;
-  $("#ziBA").innerHTML=q(c.beforeExact?"Before":`Before · last kept wording, ${ziD(c.beforeD)}`,c.before?(ops?renderW(ops,"-"):esc(c.before)):"The text of this wording was not kept.",!c.before)+
-    q("After",c.after?(ops?renderW(ops,"+"):esc(c.after)):c.blank?"The opening section was blank in this revision. It was restored the same day.":"The text of this wording was not kept.",!c.after);
-  $("#ziPrev").disabled=!L.some(x=>x.k<c.k);$("#ziNext").disabled=!L.some(x=>x.k>c.k);
+  $("#ziHd").innerHTML=`<p class="zi-hd1"><b>${ziD(c.d)}</b> · change ${c.k+1} of ${D.ch.length}${P?` · phase ${pi+1}: ${esc(P.nm)}`:""}${ops?` · ${ziW(wc(ops,"-"))} out, ${ziW(wc(ops,"+"))} in`:""}</p><dl class="zi-facts"><div><dt>Key word moved</dt><dd>${ziMoved(c)}</dd></div><div><dt>This wording lasted</dt><dd>${c.last?`still current (${ziDur(c.days)} so far)`:ziDur(c.days)}</dd></div><div><dt>Later undone?</dt><dd>${c.rv?"Yes, a later edit reverted it":"No"}</dd></div></dl>`;
+  const qd=(w,html,na)=>`<blockquote><span class="w">${w}</span><span class="s${na?" na":""}">${html}</span></blockquote>`;
+  $("#ziBA").innerHTML=qd(c.beforeExact?"Before":`Before · last kept wording, ${ziD(c.beforeD)}`,c.before?(ops?renderW(ops,"-"):esc(c.before)):"The text of this wording was not kept.",!c.before)+
+    qd("After",c.after?(ops?renderW(ops,"+"):esc(c.after)):c.blank?"The opening section was blank in this revision. It was restored the same day.":"The text of this wording was not kept.",!c.after);
+  $("#ziPrev").disabled=!L.some(x=>x.k<c.k);$("#ziNext").disabled=!L.some(x=>x.k>c.k)&&!ZI.playing;
   $$("#ziMoments button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.k===c.k)));
+  $$("#ziPhases button").forEach((b,i)=>b.setAttribute("aria-current",String(i===pi)));
+  if(announce)$("#ziLive").textContent=`Change ${c.k+1} of ${D.ch.length}, ${ziD(c.d)}: ${ziLabel(c)}${c.rv?", later undone":""}. Lasted ${c.last?`${ziDur(c.days)} so far`:ziDur(c.days)}.`;
 }
-function ziStep(dir){const L=ziList(),cur=ZI.sel;let n=dir>0?L.find(c=>c.k>cur):L.filter(c=>c.k<cur).at(-1);if(dir===2)n=L.at(-1);if(dir===-2)n=L[0];if(!n)return;ZI.sel=n.k;drawZi()}
-function ziPick(px,py){const G=ZI.geom;if(!G)return null;
-  if(py>=G.ly(3)&&G.LT.length){let b=null,bd=1e9;G.LT.forEach(e=>{const d=Math.abs(G.x(e.t)-px);if(d<bd){bd=d;b=e}});return bd<14?{lead:b}:null}
-  const L=py>=G.ly(2)&&py<G.ly(3)||ZI.mode==="all"?G.ch:G.ch.filter(c=>c.mv.length);let b=null,bd=1e9;L.forEach(c=>{const d=Math.abs(G.x(c.t)-px);if(d<bd){bd=d;b=c}});return bd<16?{c:b}:null}
+function ziGo(k,announce=true){ZI.sel=k;ziSync(announce&&!ZI.playing)}
+function ziStep(dir){const L=ziList(),cur=ZI.sel;let n=dir>0?L.find(c=>c.k>cur):L.filter(c=>c.k<cur).at(-1);if(dir===2)n=L.at(-1);if(dir===-2)n=L[0];if(!n)return;ziGo(n.k)}
+function ziPlayBtn(){const b=$("#ziPlay");if(!b)return;b.setAttribute("aria-pressed",String(ZI.playing));b.setAttribute("aria-label",ZI.playing?"Pause":`Play through ${ZI.mode==="key"?"key moves":"every change"}`);$(".ic",b).textContent=ZI.playing?"❚❚":"▶";$(".tx",b).textContent=ZI.playing?"Pause":"Play"}
+function ziTick(){clearTimeout(ZI.timer);ZI.timer=setTimeout(()=>{if(!ZI.playing)return;const n=ziList().find(c=>c.k>ZI.sel);if(!n){ziPlay(false);return}ziGo(n.k);if(!ziList().some(c=>c.k>ZI.sel)){ziPlay(false);return}ziTick()},ZI_MS[ZI.speed])}
+function ziPlay(on){if(on===ZI.playing)return;ZI.playing=on;clearTimeout(ZI.timer);
+  if(on){const L=ziList();if(!L.some(c=>c.k>ZI.sel))ZI.sel=L[0].k;ziSync(false);$("#ziLive").textContent=`Playing ${ZI.mode==="key"?"key moves":"every change"} from change ${ZI.sel+1}.`;ziTick()}
+  else{const D=ziData();ziSync(false);$("#ziLive").textContent=`Paused at change ${ZI.sel+1} of ${D.ch.length}, ${ziD(D.ch[ZI.sel].d)}.`}
+  ziPlayBtn()}
+function ziModeHelp(){const D=ziData();$("#ziModeHelp").innerHTML=ZI.mode==="key"?`<b>Key moves</b>: only the ${D.nKey} changes where “colonial” or “re-establishment” went in or out. Switch to every change to see all ${D.ch.length}, including rewordings.`:`<b>Every change</b>: all ${D.ch.length} edits to the first sentence, including rewordings that moved no key word. Key moves shows only the ${D.nKey} that did.`}
+function ziPick(px,py){const G=ZI.geom;if(!G)return null;const near=(L,f,lim)=>{let b=null,bd=1e9;L.forEach(e=>{const d=Math.abs(f(e)-px);if(d<bd){bd=d;b=e}});return bd<lim?b:null};
+  if(py<G.mY+12&&py>G.pY+G.pH){const i=G.bx.findIndex(bx=>Math.abs(bx-px)<12);if(i>=0)return {c:ziData().moments[i].c}}
+  if(py>=G.ly("lead")&&G.LT.length){const b=near(G.LT,e=>G.x(e.t),14);return b?{lead:b}:null}
+  for(const k of ["col","re"]){const b=G.qB(k);if(py>=b-G.qH-2&&py<=b+3){const q=ziData().qs.find(q=>px>=G.x(q.a)&&px<G.x(q.b));if(q)return {q,k}}}
+  const L=py>=G.ly("all")&&py<G.ly("lead")||ZI.mode==="all"?G.ch:G.ch.filter(c=>c.mv.length);const b=near(L,c=>G.x(c.t),16);return b?{c:b}:null}
 function ziTip(h,cx,cy){
+  if(h.q){showTip(`<b>${h.q.lab}</b><div>${h.k==="col"?"“colonial” or “colonization”":"“re-establishment”"} was in the first sentence on ${Math.round(h.q[h.k]*100)}% of days.</div>`,cx,cy);return}
   if(h.lead){const e=h.lead;showTip(`<b>${esc(ZI_T[e.term]||e.term)} ${e.kind==="insert"?"enters":"leaves"} the opening section</b><div class="r"><span>${ziD(e.ts)}</span><span>${e.ts.slice(11,16)} UTC</span></div><div style="opacity:.8">Outside the first sentence.</div>`,cx,cy);return}
   const c=h.c,ops=c.before&&c.after?wdiff(c.before,c.after):null;
   showTip(`<b>${ziD(c.d)} · ${esc(ziLabel(c))}</b>${c.rv?`<div style="opacity:.8">later undone</div>`:""}<span class="zi-d">${ops?renderW(ops):esc(c.after||"Text not kept.")}</span>`,cx,cy)}
 function ziInit(){
   const el=$("#ziChart"),D=ziData();if(!el)return;if(!D){$("#zionism").hidden=true;return}
-  ZI.sel=D.settle?D.settle.k:D.ch.length-1;
+  // start where the story starts: the first time "colonial" goes in; Next and Play carry on from there
+  ZI.sel=D.moments.length?D.moments[0].c.k:0;
+  if(RM.matches){ZI.speed="slow";setSeg($("#ziSpeed"),"slow")}
   const at=ev=>{const r=el.getBoundingClientRect();return [ev.clientX-r.left,ev.clientY-r.top]};
+  const user=k=>{ziPlay(false);ziGo(k)};
   el.addEventListener("pointermove",ev=>{if(ev.pointerType!=="mouse")return;const h=ziPick(...at(ev));if(h)ziTip(h,ev.clientX,ev.clientY);else hideTip()});
   el.addEventListener("pointerleave",hideTip);
-  el.addEventListener("click",ev=>{const h=ziPick(...at(ev));if(!h)return;if(h.c){ZI.sel=h.c.k;drawZi()}if(ev.pointerType==="mouse"||h.lead)ziTip(h,ev.clientX,ev.clientY)});
-  el.addEventListener("keydown",ev=>{const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];if(!k)return;ev.preventDefault();ziStep(k)});
-  seg($("#ziMode"),v=>{ZI.mode=v;ziCard()});
-  $("#ziPrev").onclick=()=>ziStep(-1);$("#ziNext").onclick=()=>ziStep(1);
-  $("#ziMoments").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(!b)return;ZI.sel=+b.dataset.k;drawZi()});
-  const Z=D.Z,days=Math.round((Date.parse(Z.now.asof)-Date.parse(D.settle.d))/864e5);
+  el.addEventListener("click",ev=>{const h=ziPick(...at(ev));if(!h)return;if(h.c)user(h.c.k);if(ev.pointerType==="mouse"||h.lead||h.q)ziTip(h,ev.clientX,ev.clientY)});
+  const keys=ev=>{if(ev.target.closest("input,select,textarea"))return;const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];
+    if(k){ev.preventDefault();ziPlay(false);ziStep(k);return}
+    if(ev.key===" "&&ev.currentTarget===el){ev.preventDefault();ziPlay(!ZI.playing)}};
+  el.addEventListener("keydown",keys);$("#ziCtl").addEventListener("keydown",keys);
+  seg($("#ziMode"),v=>{ZI.mode=v;ziModeHelp();ziPlayBtn();ziSync(false)});
+  seg($("#ziSpeed"),v=>{ZI.speed=v;if(ZI.playing)ziTick()});
+  $("#ziPrev").onclick=()=>{ziPlay(false);ziStep(-1)};$("#ziNext").onclick=()=>{ziPlay(false);ziStep(1)};$("#ziPlay").onclick=()=>ziPlay(!ZI.playing);
+  $("#ziMoments").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)user(+b.dataset.k)});
+  $("#ziPhases").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)user(+b.dataset.k)});
+  const trk=$("#ziTrk");trk.addEventListener("pointerdown",ev=>{const r=trk.getBoundingClientRect(),t=D.t0+(D.t1-D.t0)*Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width));let b=null,bd=1e18;ziList().forEach(c=>{const d=Math.abs(c.t-t);if(d<bd){bd=d;b=c}});if(b)user(b.k)});
+  // stop playing once the figure leaves the screen
+  if("IntersectionObserver" in window)new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&ZI.playing)ziPlay(false)})).observe($("#ziFig"));
+  ziModeHelp();ziPlayBtn();
+  const Z=D.Z,days=Math.round((Date.parse(Z.now.asof)-Date.parse(D.settle.d))/ZI_DAY);
   $("#ziMeans").innerHTML=`<b>The first sentence changed ${D.ch.length} times</b> between January 2021 and November 2026. It had ${Z.n_wordings} different wordings. “Colonial” or “colonization” went in ${Z.col.in} times and came out ${Z.col.out} times, all since ${ZI_MON[+Z.col.first_in.slice(5,7)-1]} ${Z.col.first_in.slice(0,4)}. It went back in on ${ziD(D.settle.d)}, and the sentence has not changed in the ${days} days since.`;
-  $("#ziNote").textContent=`${Z.n_undone} of the ${D.ch.length} changes were later undone. Terms are counted on the ${Z.n_kept} wordings whose text was kept, out of ${Z.n_wordings}. Where a wording was not kept, a move is dated to the next kept wording. ${Z.blank.length?`A brief blanking of the opening section on ${Z.blank.map(ziD).join(", ")} is not counted as a removal. `:""}Dates are UTC days. Edits per week are all edits to the article. Our stored copy drops the Hebrew script, which is why the 2021 brackets look sparse.`;
+  $("#ziNote").textContent=`${Z.n_undone} of the ${D.ch.length} changes were later undone. Terms are counted on the ${Z.n_kept} wordings whose text was kept, out of ${Z.n_wordings}. Where a wording was not kept, a move is dated to the next kept wording. ${Z.blank.length?`A brief blanking of the opening section on ${Z.blank.map(ziD).join(", ")} is not counted as a removal. `:""}Phases: the tug of war is the first run of “colonial” moves with no gap longer than ${ZI_GAP} days; it settles at the last time the word goes back in. Dates are UTC days. Edits per week are all edits to the article. Our stored copy drops the Hebrew script, which is why the 2021 brackets look sparse.`;
   drawZi();
 }
 

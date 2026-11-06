@@ -1,0 +1,123 @@
+{
+ "title": "Zionism first sentence: who changed it, and how often 'colonization' went in and out",
+ "note": "Accounts are anonymous salted hashes; ranks only. Panel A: traced first-sentence changes (bisect.json, one change per quarter where the sentence differed). Panel B: every first-sentence transition 2021-2026 from ratchet.json; no account attribution exists for these.",
+ "panel_a_changes_by_account_rank": {
+  "source": "data/bisect.json",
+  "x": "account rank (1 = most changes)",
+  "y": "traced first-sentence changes",
+  "rows": [
+   {
+    "rank": 1,
+    "changes": 2
+   },
+   {
+    "rank": 2,
+    "changes": 2
+   },
+   {
+    "rank": 3,
+    "changes": 1
+   },
+   {
+    "rank": 4,
+    "changes": 1
+   },
+   {
+    "rank": 5,
+    "changes": 1
+   },
+   {
+    "rank": 6,
+    "changes": 1
+   },
+   {
+    "rank": 7,
+    "changes": 1
+   },
+   {
+    "rank": 8,
+    "changes": 1
+   },
+   {
+    "rank": 9,
+    "changes": 1
+   },
+   {
+    "rank": 10,
+    "changes": 1
+   },
+   {
+    "rank": 11,
+    "changes": 1
+   },
+   {
+    "rank": 12,
+    "changes": 1
+   },
+   {
+    "rank": 13,
+    "changes": 1
+   },
+   {
+    "rank": 14,
+    "changes": 1
+   }
+  ],
+  "summary": {
+   "changes": 16,
+   "distinct_accounts": 14,
+   "top1_share": 0.125,
+   "top3_share": 0.3125,
+   "top10_share": 0.75
+  }
+ },
+ "panel_b_colonization_transitions": {
+  "source": "data/ratchet.json fs_timeline + fs_variants",
+  "x": "year",
+  "series": [
+   "inserted",
+   "removed"
+  ],
+  "rows": [
+   {
+    "year": "2021",
+    "inserted": 0,
+    "removed": 0
+   },
+   {
+    "year": "2022",
+    "inserted": 0,
+    "removed": 0
+   },
+   {
+    "year": "2023",
+    "inserted": 0,
+    "removed": 0
+   },
+   {
+    "year": "2024",
+    "inserted": 33,
+    "removed": 30
+   },
+   {
+    "year": "2025",
+    "inserted": 6,
+    "removed": 6
+   },
+   {
+    "year": "2026",
+    "inserted": 5,
+    "removed": 5
+   }
+  ],
+  "totals": {
+   "first_sentence_transitions": 292,
+   "distinct_versions": 169,
+   "transitions_with_unknown_text": 35,
+   "colonization_inserted": 44,
+   "inserted_of_which_reverted": 20,
+   "colonization_removed": 41,
+   "removed_of_which_reverted": 37
+  }
+ }
+}
