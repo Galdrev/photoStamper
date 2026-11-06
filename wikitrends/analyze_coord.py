@@ -392,10 +392,10 @@ class Engine:
         return out
 
     def calib_share(self, rule, size, density, strength):
-        """Share of null worlds whose pipeline produced a community at least this large, this dense (share of member pairs
-        joined by a significant edge) and this strong (mean -log10 p of its edges)."""
-        k = [any(c["size"] >= size and c["density"] >= density - 1e-9 and c["strength"] >= strength - 1e-9 for c in w[rule])
-             for w in self.calib]
+        """Share of null worlds whose pipeline produced a community at least this large and at least this dense, where
+        density = (share of member pairs joined by a significant edge) x (mean capped -log10 p of those edges)."""
+        sc = density * strength
+        k = [any(c["size"] >= size and c["density"] * c["strength"] >= sc - 1e-9 for c in w[rule]) for w in self.calib]
         return round(sum(k) / len(k), 4) if k else None
 
     def calib_counts(self, rule):
@@ -409,13 +409,14 @@ class Engine:
 
 # ------------------------------------------------------------------ communities / blocs (observed)
 def confidence(set_p, calib_share, sync_p=None):
-    """high: null worlds (whole pipeline re-run) almost never give such a community (<=2%), the fixed-set null is beaten at
-    p<=0.002 and, for blocs, the members are also synchronous (p<0.01). medium: <=5% of null worlds and fixed-set p<=0.01."""
+    """The calibration share is the selection-aware test (the fixed-set p ignores that the set was picked from the data).
+    high: <=1% of null worlds (whole pipeline re-run) give a community this large and dense, the fixed-set null is beaten at
+    p<=0.002 and, for blocs, the members are also synchronous (p<0.01). medium: <=2.5% of null worlds, fixed-set p<=0.01."""
     if calib_share is None:
         return "low"
-    if set_p <= 0.002 and calib_share <= 0.02 and (sync_p is None or sync_p < 0.01):
+    if set_p <= 0.002 and calib_share <= 0.01 and (sync_p is None or sync_p < 0.01):
         return "high"
-    if set_p <= 0.01 and calib_share <= 0.05:
+    if set_p <= 0.01 and calib_share <= 0.025:
         return "medium"
     return "low"
 
@@ -696,7 +697,7 @@ def sweeps(D, rng, n=1000):
 
 
 # ------------------------------------------------------------------ main analysis
-def analyze_data(D, n_null=1000, n_calib=50, seed=7, log=print, directions=("any", "insert", "remove")):
+def analyze_data(D, n_null=1000, n_calib=200, seed=7, log=print, directions=("any", "insert", "remove")):
     ev, excl = build_events(D)
     rng = np.random.default_rng(seed)
     R = {"meta": {"generated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "null_draws": n_null,
@@ -912,7 +913,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default=DATA)
     ap.add_argument("--null", type=int, default=int(os.environ.get("COORD_NULL", "1000")))
-    ap.add_argument("--calib", type=int, default=int(os.environ.get("COORD_CALIB", "50")))
+    ap.add_argument("--calib", type=int, default=int(os.environ.get("COORD_CALIB", "200")))
     ap.add_argument("--out", default=OUT)
     a = ap.parse_args()
     D = json.load(gzip.open(a.data, "rt"))

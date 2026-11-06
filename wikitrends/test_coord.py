@@ -283,7 +283,7 @@ def synthetic(seed=3, n_noise=400, n_topic=200, n_comp=150, planted=True):
 def test_planted():
     import analyze_coord as AC
     D, pu, pa = synthetic()
-    R = AC.analyze_data(D, n_null=1000, n_calib=50, directions=("any", "insert"))
+    R = AC.analyze_data(D, n_null=1000, n_calib=200, directions=("any", "insert"))
     pset = set(pu)
     def members(rec, m):
         return {rec["_accs"][i] for i in m}
@@ -347,7 +347,7 @@ def test_planted():
         shutil.rmtree(tmp, ignore_errors=True)
     # null-only data: nothing flagged
     D0, _, _ = synthetic(seed=5, planted=False)
-    R0 = AC.analyze_data(D0, n_null=1000, n_calib=50, directions=("any",))
+    R0 = AC.analyze_data(D0, n_null=1000, n_calib=200, directions=("any",))
     fl = [(k, b["size"], b["confidence"]) for k, rec in R0["engines"].items() for b in rec["blocs"]["blocs"] if b["confidence"] != "low"]
     fc = [(k, c["size"], c["confidence"]) for k, rec in R0["engines"].items() for c in rec["network"]["communities"]
           if c["confidence"] in ("high", "medium")]
