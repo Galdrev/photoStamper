@@ -5,3 +5,9 @@ rand shard 1: 0 already done, 875 to do
 [hb random-1] rand-1 23/875 el=1.7m eta=64.4m req=116 429=12 5xx=0 retries=12 fail=0
 [hb random-1] rand-1 30/875 el=2.0m eta=56.3m req=147 429=12 5xx=0 retries=12 fail=0
 [hb random-1] rand-1 35/875 el=2.7m eta=65.3m req=170 429=18 5xx=0 retries=18 fail=0
+[hb random-1] rand-1 41/875 el=3.0m eta=61.0m req=203 429=18 5xx=0 retries=18 fail=0
+[hb random-1] rand-1 46/875 el=3.7m eta=66.8m req=224 429=24 5xx=0 retries=24 fail=0
+[hb random-1] rand-1 54/875 el=4.0m eta=60.8m req=259 429=24 5xx=0 retries=24 fail=0
+[hb random-1] rand-1 59/875 el=4.7m eta=65.6m req=285 429=30 5xx=0 retries=30 fail=0
+[hb random-1] rand-1 67/875 el=5.0m eta=60.3m req=316 429=30 5xx=0 retries=30 fail=0
+[hb random-1] rand-1 71/875 el=5.8m eta=65.1m req=342 429=36 5xx=0 retries=36 fail=0
