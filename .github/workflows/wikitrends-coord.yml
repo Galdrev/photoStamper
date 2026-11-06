@@ -1,4 +1,5 @@
 name: wikitrends-coord
+# launch 2026-11-06
 # Coordination collector (wikitrends/coord.py) + analysis (wikitrends/analyze_coord.py), in ONE job.
 # Estimate (python coord.py estimate --of 1): 959 articles, 4,121 event revisions -> 967 metadata + 4,121 compare + <=1,004
 # users = ~6.1k requests (~7.0k with the x1.15 retry calibration). One job at WT_RPS 2 with 3 worker threads: ~1.0-1.9
