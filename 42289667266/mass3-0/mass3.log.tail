@@ -1,6 +1,3 @@
-m3 shard 0: 0 already done, 1294 to do
-[hb mass3-0] m3-0 0/1294 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
-[hb mass3-0] m3-0 13/1294 el=1.0m eta=93.9m req=77 429=6 5xx=0 retries=6 fail=0
 [hb mass3-0] m3-0 17/1294 el=1.0m eta=75.2m req=82 429=6 5xx=0 retries=6 fail=0
 [hb mass3-0] m3-0 31/1294 el=2.0m eta=79.6m req=150 429=12 5xx=0 retries=12 fail=0
 [hb mass3-0] m3-0 31/1294 el=2.0m eta=81.5m req=155 429=12 5xx=0 retries=12 fail=0
@@ -36,3 +33,8 @@ m3 shard 0: 0 already done, 1294 to do
 [hb mass3-0] m3-0 273/1294 el=17.0m eta=63.6m req=1250 429=102 5xx=0 retries=102 fail=0
 [hb mass3-0] m3-0 288/1294 el=18.0m eta=62.7m req=1318 429=108 5xx=0 retries=108 fail=0
 [hb mass3-0] m3-0 290/1294 el=18.0m eta=62.3m req=1323 429=108 5xx=0 retries=108 fail=0
+[hb mass3-0] m3-0 305/1294 el=19.0m eta=61.6m req=1396 429=114 5xx=0 retries=114 fail=0
+[hb mass3-0] m3-0 318/1294 el=20.0m eta=61.3m req=1465 429=120 5xx=0 retries=120 fail=0
+[hb mass3-0] m3-0 319/1294 el=20.0m eta=61.1m req=1469 429=120 5xx=0 retries=120 fail=0
+[hb mass3-0] m3-0 333/1294 el=20.9m eta=60.4m req=1534 429=126 5xx=0 retries=126 fail=0
+[hb mass3-0] m3-0 335/1294 el=21.0m eta=60.1m req=1542 429=126 5xx=0 retries=126 fail=0
