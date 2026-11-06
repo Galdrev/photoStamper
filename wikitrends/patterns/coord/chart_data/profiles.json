@@ -1,0 +1,142 @@
+{
+ "profiles": [
+  {
+   "bloc": "Bloc A (4 accounts)",
+   "scope": "topic/any",
+   "profile": {
+    "median_age_days": {
+     "bloc": 1071.0,
+     "base_rate": 1298.5,
+     "null_p95": 5221.3,
+     "null_p05": 361.25,
+     "percentile_vs_random_sets": 0.187
+    },
+    "share_age_lt30d": {
+     "bloc": 0.0,
+     "base_rate": 0.109,
+     "null_p95": 0.25,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.849
+    },
+    "share_age_lt1y": {
+     "bloc": 0.0,
+     "base_rate": 0.313,
+     "null_p95": 0.5,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.37
+    },
+    "median_editcount": {
+     "bloc": 8300.0,
+     "base_rate": 4900.0,
+     "null_p95": 72525.0,
+     "null_p05": 1649.5,
+     "percentile_vs_random_sets": 0.344
+    },
+    "share_editcount_lt500": {
+     "bloc": 0.0,
+     "base_rate": 0.222,
+     "null_p95": 0.25,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.774
+    },
+    "share_extended_confirmed": {
+     "bloc": 1.0,
+     "base_rate": 0.766,
+     "null_p95": 1.0,
+     "null_p05": 0.75,
+     "percentile_vs_random_sets": 1.0
+    },
+    "share_blocked_now": {
+     "bloc": 0.25,
+     "base_rate": 0.151,
+     "null_p95": 0.5,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.868
+    },
+    "share_indef_now": {
+     "bloc": 0.25,
+     "base_rate": 0.148,
+     "null_p95": 0.5,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.873
+    },
+    "share_sock_block": {
+     "bloc": 0.25,
+     "base_rate": 0.083,
+     "null_p95": 0.5,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.938
+    }
+   }
+  },
+  {
+   "bloc": "Bloc B (4 accounts)",
+   "scope": "topic/insert",
+   "profile": {
+    "median_age_days": {
+     "bloc": 2204.0,
+     "base_rate": 1322.0,
+     "null_p95": 5046.975,
+     "null_p05": 467.85,
+     "percentile_vs_random_sets": 0.44
+    },
+    "share_age_lt30d": {
+     "bloc": 0.0,
+     "base_rate": 0.117,
+     "null_p95": 0.25,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.815
+    },
+    "share_age_lt1y": {
+     "bloc": 0.0,
+     "base_rate": 0.312,
+     "null_p95": 0.5,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.409
+    },
+    "median_editcount": {
+     "bloc": 21150.0,
+     "base_rate": 4900.0,
+     "null_p95": 60500.0,
+     "null_p05": 2550.0,
+     "percentile_vs_random_sets": 0.615
+    },
+    "share_editcount_lt500": {
+     "bloc": 0.0,
+     "base_rate": 0.217,
+     "null_p95": 0.25,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.724
+    },
+    "share_extended_confirmed": {
+     "bloc": 1.0,
+     "base_rate": 0.77,
+     "null_p95": 1.0,
+     "null_p05": 0.75,
+     "percentile_vs_random_sets": 1.0
+    },
+    "share_blocked_now": {
+     "bloc": 0.25,
+     "base_rate": 0.163,
+     "null_p95": 0.5,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.828
+    },
+    "share_indef_now": {
+     "bloc": 0.25,
+     "base_rate": 0.157,
+     "null_p95": 0.5,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.847
+    },
+    "share_sock_block": {
+     "bloc": 0.25,
+     "base_rate": 0.087,
+     "null_p95": 0.5,
+     "null_p05": 0.0,
+     "percentile_vs_random_sets": 0.933
+    }
+   }
+  }
+ ]
+}
