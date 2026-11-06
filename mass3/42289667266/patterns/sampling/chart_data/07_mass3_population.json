@@ -1,0 +1,710 @@
+{
+ "side_totals": {
+  "topic": 48974,
+  "comparison": 141356
+ },
+ "by_importance": {
+  "topic": {
+   "Top": {
+    "N": 333,
+    "n": 121
+   },
+   "High": {
+    "N": 1699,
+    "n": 163
+   },
+   "Mid": {
+    "N": 7519,
+    "n": 431
+   },
+   "Low": {
+    "N": 25885,
+    "n": 1416
+   },
+   "NA": {
+    "N": 188,
+    "n": 108
+   },
+   "Unknown": {
+    "N": 13319,
+    "n": 730
+   },
+   "Unrated": {
+    "N": 31,
+    "n": 31
+   }
+  },
+  "comparison": {
+   "Top": {
+    "N": 482,
+    "n": 313
+   },
+   "High": {
+    "N": 2475,
+    "n": 360
+   },
+   "Mid": {
+    "N": 9662,
+    "n": 362
+   },
+   "Low": {
+    "N": 79770,
+    "n": 1013
+   },
+   "NA": {
+    "N": 1038,
+    "n": 266
+   },
+   "Unknown": {
+    "N": 47927,
+    "n": 684
+   },
+   "Unrated": {
+    "N": 2,
+    "n": 2
+   }
+  }
+ },
+ "strata": [
+  {
+   "stratum": "topic|Israel Palestine Collaboration|Unrated",
+   "N": 31,
+   "n": 31,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "topic|Israel|High",
+   "N": 778,
+   "n": 43,
+   "pi": 0.055269922879177376,
+   "reused": 42,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Israel|Low",
+   "N": 12706,
+   "n": 695,
+   "pi": 0.0546985676058555,
+   "reused": 16,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Israel|Mid",
+   "N": 3539,
+   "n": 193,
+   "pi": 0.05453517942921729,
+   "reused": 27,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Israel|NA",
+   "N": 75,
+   "n": 40,
+   "pi": 0.5333333333333333,
+   "reused": 7,
+   "rule": "floor"
+  },
+  {
+   "stratum": "topic|Israel|Top",
+   "N": 120,
+   "n": 40,
+   "pi": 0.3333333333333333,
+   "reused": 33,
+   "rule": "floor"
+  },
+  {
+   "stratum": "topic|Israel|Unknown",
+   "N": 7086,
+   "n": 387,
+   "pi": 0.054614733276883994,
+   "reused": 3,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Jewish history|High",
+   "N": 114,
+   "n": 40,
+   "pi": 0.3508771929824561,
+   "reused": 28,
+   "rule": "floor"
+  },
+  {
+   "stratum": "topic|Jewish history|Low",
+   "N": 2845,
+   "n": 156,
+   "pi": 0.05483304042179262,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Jewish history|Mid",
+   "N": 349,
+   "n": 40,
+   "pi": 0.11461318051575932,
+   "reused": 33,
+   "rule": "floor"
+  },
+  {
+   "stratum": "topic|Jewish history|NA",
+   "N": 14,
+   "n": 14,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "topic|Jewish history|Top",
+   "N": 12,
+   "n": 12,
+   "pi": 1.0,
+   "reused": 11,
+   "rule": "census"
+  },
+  {
+   "stratum": "topic|Jewish history|Unknown",
+   "N": 1658,
+   "n": 91,
+   "pi": 0.0548854041013269,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Judaism|High",
+   "N": 606,
+   "n": 40,
+   "pi": 0.066006600660066,
+   "reused": 37,
+   "rule": "floor"
+  },
+  {
+   "stratum": "topic|Judaism|Low",
+   "N": 7422,
+   "n": 406,
+   "pi": 0.05470223659391,
+   "reused": 6,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Judaism|Mid",
+   "N": 2016,
+   "n": 110,
+   "pi": 0.054563492063492064,
+   "reused": 21,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Judaism|NA",
+   "N": 85,
+   "n": 40,
+   "pi": 0.47058823529411764,
+   "reused": 2,
+   "rule": "floor"
+  },
+  {
+   "stratum": "topic|Judaism|Top",
+   "N": 172,
+   "n": 40,
+   "pi": 0.23255813953488372,
+   "reused": 30,
+   "rule": "floor"
+  },
+  {
+   "stratum": "topic|Judaism|Unknown",
+   "N": 3878,
+   "n": 212,
+   "pi": 0.05466735430634347,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Palestine|High",
+   "N": 201,
+   "n": 40,
+   "pi": 0.19900497512437812,
+   "reused": 40,
+   "rule": "floor"
+  },
+  {
+   "stratum": "topic|Palestine|Low",
+   "N": 2912,
+   "n": 159,
+   "pi": 0.05460164835164835,
+   "reused": 1,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Palestine|Mid",
+   "N": 1615,
+   "n": 88,
+   "pi": 0.05448916408668731,
+   "reused": 50,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "topic|Palestine|NA",
+   "N": 14,
+   "n": 14,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "topic|Palestine|Top",
+   "N": 29,
+   "n": 29,
+   "pi": 1.0,
+   "reused": 28,
+   "rule": "census"
+  },
+  {
+   "stratum": "topic|Palestine|Unknown",
+   "N": 697,
+   "n": 40,
+   "pi": 0.05738880918220947,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Armenia|High",
+   "N": 227,
+   "n": 40,
+   "pi": 0.1762114537444934,
+   "reused": 27,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Armenia|Low",
+   "N": 6929,
+   "n": 83,
+   "pi": 0.011978640496464136,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Armenia|Mid",
+   "N": 780,
+   "n": 40,
+   "pi": 0.05128205128205128,
+   "reused": 1,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Armenia|NA",
+   "N": 114,
+   "n": 40,
+   "pi": 0.3508771929824561,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Armenia|Top",
+   "N": 43,
+   "n": 40,
+   "pi": 0.9302325581395349,
+   "reused": 40,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Armenia|Unknown",
+   "N": 37,
+   "n": 37,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Azerbaijan|High",
+   "N": 163,
+   "n": 40,
+   "pi": 0.24539877300613497,
+   "reused": 40,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Azerbaijan|Low",
+   "N": 7185,
+   "n": 87,
+   "pi": 0.012108559498956159,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Azerbaijan|Mid",
+   "N": 417,
+   "n": 40,
+   "pi": 0.09592326139088729,
+   "reused": 2,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Azerbaijan|NA",
+   "N": 16,
+   "n": 16,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Azerbaijan|Top",
+   "N": 40,
+   "n": 40,
+   "pi": 1.0,
+   "reused": 40,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Azerbaijan|Unknown",
+   "N": 2853,
+   "n": 40,
+   "pi": 0.014020329477742727,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Cyprus|High",
+   "N": 68,
+   "n": 40,
+   "pi": 0.5882352941176471,
+   "reused": 1,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Cyprus|Low",
+   "N": 1129,
+   "n": 40,
+   "pi": 0.0354295837023915,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Cyprus|Mid",
+   "N": 197,
+   "n": 40,
+   "pi": 0.20304568527918782,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Cyprus|NA",
+   "N": 27,
+   "n": 27,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Cyprus|Top",
+   "N": 19,
+   "n": 19,
+   "pi": 1.0,
+   "reused": 1,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Cyprus|Unknown",
+   "N": 2197,
+   "n": 40,
+   "pi": 0.018206645425580335,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Indian roads/Jammu and Kashmir|Unrated",
+   "N": 2,
+   "n": 2,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Kosovo|High",
+   "N": 83,
+   "n": 40,
+   "pi": 0.4819277108433735,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Kosovo|Low",
+   "N": 1236,
+   "n": 40,
+   "pi": 0.032362459546925564,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Kosovo|Mid",
+   "N": 202,
+   "n": 40,
+   "pi": 0.19801980198019803,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Kosovo|NA",
+   "N": 9,
+   "n": 9,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Kosovo|Top",
+   "N": 21,
+   "n": 21,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Kosovo|Unknown",
+   "N": 950,
+   "n": 40,
+   "pi": 0.042105263157894736,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Kurdistan|High",
+   "N": 146,
+   "n": 40,
+   "pi": 0.273972602739726,
+   "reused": 36,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Kurdistan|Low",
+   "N": 3798,
+   "n": 46,
+   "pi": 0.012111637704054766,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Kurdistan|Mid",
+   "N": 382,
+   "n": 40,
+   "pi": 0.10471204188481675,
+   "reused": 15,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Kurdistan|NA",
+   "N": 14,
+   "n": 14,
+   "pi": 1.0,
+   "reused": 0,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Kurdistan|Top",
+   "N": 33,
+   "n": 33,
+   "pi": 1.0,
+   "reused": 33,
+   "rule": "census"
+  },
+  {
+   "stratum": "comparison|Kurdistan|Unknown",
+   "N": 1453,
+   "n": 40,
+   "pi": 0.02752924982794219,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Northern Ireland|High",
+   "N": 168,
+   "n": 40,
+   "pi": 0.23809523809523808,
+   "reused": 2,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Northern Ireland|Low",
+   "N": 7979,
+   "n": 96,
+   "pi": 0.012031582905125956,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Northern Ireland|Mid",
+   "N": 642,
+   "n": 40,
+   "pi": 0.06230529595015576,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Northern Ireland|NA",
+   "N": 84,
+   "n": 40,
+   "pi": 0.47619047619047616,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Northern Ireland|Top",
+   "N": 43,
+   "n": 40,
+   "pi": 0.9302325581395349,
+   "reused": 13,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Northern Ireland|Unknown",
+   "N": 7004,
+   "n": 84,
+   "pi": 0.011993146773272416,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Serbia|High",
+   "N": 603,
+   "n": 40,
+   "pi": 0.06633499170812604,
+   "reused": 14,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Serbia|Low",
+   "N": 10693,
+   "n": 129,
+   "pi": 0.012063967081268119,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Serbia|Mid",
+   "N": 1702,
+   "n": 40,
+   "pi": 0.023501762632197415,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Serbia|NA",
+   "N": 82,
+   "n": 40,
+   "pi": 0.4878048780487805,
+   "reused": 1,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Serbia|Top",
+   "N": 108,
+   "n": 40,
+   "pi": 0.37037037037037035,
+   "reused": 40,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Serbia|Unknown",
+   "N": 8612,
+   "n": 104,
+   "pi": 0.012076172782164421,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Turkey|High",
+   "N": 297,
+   "n": 40,
+   "pi": 0.13468013468013468,
+   "reused": 18,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Turkey|Low",
+   "N": 25502,
+   "n": 307,
+   "pi": 0.01203827150811701,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Turkey|Mid",
+   "N": 3448,
+   "n": 42,
+   "pi": 0.012180974477958236,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Turkey|NA",
+   "N": 161,
+   "n": 40,
+   "pi": 0.2484472049689441,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Turkey|Top",
+   "N": 63,
+   "n": 40,
+   "pi": 0.6349206349206349,
+   "reused": 40,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Turkey|Unknown",
+   "N": 13891,
+   "n": 167,
+   "pi": 0.012022172629760276,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Ukraine|High",
+   "N": 720,
+   "n": 40,
+   "pi": 0.05555555555555555,
+   "reused": 7,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Ukraine|Low",
+   "N": 15319,
+   "n": 185,
+   "pi": 0.0120765062993668,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Ukraine|Mid",
+   "N": 1892,
+   "n": 40,
+   "pi": 0.021141649048625793,
+   "reused": 0,
+   "rule": "proportional"
+  },
+  {
+   "stratum": "comparison|Ukraine|NA",
+   "N": 531,
+   "n": 40,
+   "pi": 0.07532956685499058,
+   "reused": 0,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Ukraine|Top",
+   "N": 112,
+   "n": 40,
+   "pi": 0.35714285714285715,
+   "reused": 40,
+   "rule": "floor"
+  },
+  {
+   "stratum": "comparison|Ukraine|Unknown",
+   "N": 10930,
+   "n": 132,
+   "pi": 0.012076852698993596,
+   "reused": 0,
+   "rule": "proportional"
+  }
+ ]
+}
