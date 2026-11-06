@@ -1,0 +1,1114 @@
+{
+ "topic/any": {
+  "edges": 14,
+  "blocs": [
+   {
+    "size": 5,
+    "density": 0.4,
+    "strength": 2.548,
+    "n_articles": 46,
+    "articles": [
+     {
+      "title": "Israel",
+      "events": 27
+     },
+     {
+      "title": "Palestinian genocide allegations",
+      "events": 6
+     },
+     {
+      "title": "Israeli apartheid",
+      "events": 5
+     },
+     {
+      "title": "South Africa's genocide case against Israel",
+      "events": 5
+     },
+     {
+      "title": "Israeli–Palestinian conflict",
+      "events": 4
+     },
+     {
+      "title": "One-state solution",
+      "events": 4
+     },
+     {
+      "title": "Nakba",
+      "events": 3
+     },
+     {
+      "title": "Weaponization of antisemitism",
+      "events": 3
+     },
+     {
+      "title": "Zionism as settler colonialism",
+      "events": 3
+     },
+     {
+      "title": "Ancient Israel and Judah",
+      "events": 3
+     }
+    ],
+    "direction": {
+     "insert": 71,
+     "remove": 39,
+     "insert_share": 0.645
+    },
+    "active": {
+     "first": "2021-04-05",
+     "last": "2025-04-25",
+     "busiest_month": "2022-05",
+     "events": 110
+    },
+    "inserted_phrases": [
+     {
+      "shingle": "“1948 palestinian expulsion and flight”",
+      "articles": 8
+     },
+     {
+      "shingle": "“the 1948 palestinian expulsion and”",
+      "articles": 7
+     },
+     {
+      "shingle": "“the 1967 six day war”",
+      "articles": 3
+     },
+     {
+      "shingle": "“west bank and gaza strip”",
+      "articles": 2
+     },
+     {
+      "shingle": "“the west bank and gaza”",
+      "articles": 2
+     }
+    ],
+    "null": {
+     "articles_3plus": {
+      "observed": 3,
+      "null_mean": 0.866,
+      "null_p95": 2.0,
+      "p": 0.027
+     },
+     "sync_t30": {
+      "observed": 0,
+      "null_mean": 0.15,
+      "null_p95": 1.0,
+      "p": 1.0,
+      "article_shuffle_null_mean": 1.667,
+      "p_article_shuffle": 1.0
+     },
+     "sync_t60": {
+      "observed": 0,
+      "null_mean": 0.307,
+      "null_p95": 1.0,
+      "p": 1.0,
+      "article_shuffle_null_mean": 2.14,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "null_worlds_with_bloc_this_large_dense_and_strong": 0.0,
+    "significant_triads": 0,
+    "synchrony": {
+     "median_same_article_gap_h": 53.6,
+     "share_events_with_member_within_10min": 0.0,
+     "share_events_with_member_within_24h": 0.336
+    },
+    "confidence": "low",
+    "profile": {
+     "median_age_days": {
+      "bloc": 2970.0,
+      "base_rate": 1298.5,
+      "null_p95": 5228.0,
+      "null_p05": 240.6,
+      "percentile_vs_random_sets": 0.694
+     },
+     "share_age_lt30d": {
+      "bloc": 0.0,
+      "base_rate": 0.109,
+      "null_p95": 0.2,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.779
+     },
+     "share_age_lt1y": {
+      "bloc": 0.4,
+      "base_rate": 0.313,
+      "null_p95": 0.6,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.914
+     },
+     "median_editcount": {
+      "bloc": 42000.0,
+      "base_rate": 4900.0,
+      "null_p95": 62000.0,
+      "null_p05": 1400.0,
+      "percentile_vs_random_sets": 0.86
+     },
+     "share_editcount_lt500": {
+      "bloc": 0.0,
+      "base_rate": 0.222,
+      "null_p95": 0.2,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.695
+     },
+     "share_extended_confirmed": {
+      "bloc": 1.0,
+      "base_rate": 0.766,
+      "null_p95": 1.0,
+      "null_p05": 0.79,
+      "percentile_vs_random_sets": 1.0
+     },
+     "share_blocked_now": {
+      "bloc": 0.4,
+      "base_rate": 0.151,
+      "null_p95": 0.4,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.952
+     },
+     "share_indef_now": {
+      "bloc": 0.4,
+      "base_rate": 0.148,
+      "null_p95": 0.4,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.957
+     },
+     "share_sock_block": {
+      "bloc": 0.2,
+      "base_rate": 0.083,
+      "null_p95": 0.4,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.884
+     }
+    },
+    "time_alignment": {
+     "windows": {
+      "email_canvassing": {
+       "window": [
+        "2023-10-01",
+        "2024-01-21"
+       ],
+       "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+       "window_share": 0.173,
+       "window_share_ci95": [
+        0.056,
+        0.377
+       ],
+       "expected_window_share": 0.212,
+       "expected_ci95": [
+        0.018,
+        0.391
+       ],
+       "p_high": 0.6164,
+       "p_low": 0.3846,
+       "expected_from_own_active_span": 0.095,
+       "other_accounts_share": 0.179
+      },
+      "tfp_discord": {
+       "window": [
+        "2024-01-01",
+        "2024-10-01"
+       ],
+       "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+       "window_share": 0.145,
+       "window_share_ci95": [
+        0.054,
+        0.225
+       ],
+       "expected_window_share": 0.269,
+       "expected_ci95": [
+        0.061,
+        0.466
+       ],
+       "p_high": 0.8442,
+       "p_low": 0.1568,
+       "expected_from_own_active_span": 0.197,
+       "other_accounts_share": 0.258
+      }
+     },
+     "post_sanction": {
+      "2024-12-09": {
+       "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+       "set_events_before": 20,
+       "set_events_after": 2,
+       "others_before": 539,
+       "others_after": 338,
+       "post_sanction_drop": 0.194,
+       "ci95": [
+        0.048,
+        0.419
+       ],
+       "matched_null_mean": 1.057,
+       "matched_null_ci95": [
+        0.088,
+        3.845
+       ],
+       "p_drop": 0.0809,
+       "testable": true
+      },
+      "2025-04-25": {
+       "note": "ArbCom site bans on further off-wiki coordination evidence",
+       "set_events_before": 13,
+       "set_events_after": 1,
+       "others_before": 509,
+       "others_after": 207,
+       "post_sanction_drop": 0.273,
+       "ci95": [
+        0.063,
+        0.818
+       ],
+       "matched_null_mean": 0.722,
+       "matched_null_ci95": [
+        0.026,
+        2.583
+       ],
+       "p_drop": 0.2667,
+       "testable": true
+      }
+     }
+    }
+   },
+   {
+    "size": 4,
+    "density": 1.0,
+    "strength": 2.65,
+    "n_articles": 23,
+    "articles": [
+     {
+      "title": "Israel",
+      "events": 19
+     },
+     {
+      "title": "Gaza war",
+      "events": 14
+     },
+     {
+      "title": "Hamas",
+      "events": 11
+     },
+     {
+      "title": "Israeli bombing of the Gaza Strip",
+      "events": 2
+     },
+     {
+      "title": "Israeli apartheid",
+      "events": 2
+     },
+     {
+      "title": "Tourism in Israel",
+      "events": 2
+     },
+     {
+      "title": "Yesha Council",
+      "events": 2
+     },
+     {
+      "title": "Antisemitism",
+      "events": 1
+     },
+     {
+      "title": "Israel–United States relations",
+      "events": 1
+     },
+     {
+      "title": "Nakba",
+      "events": 1
+     }
+    ],
+    "direction": {
+     "insert": 45,
+     "remove": 23,
+     "insert_share": 0.662
+    },
+    "active": {
+     "first": "2021-04-16",
+     "last": "2025-11-15",
+     "busiest_month": "2023-10",
+     "events": 68
+    },
+    "inserted_phrases": [
+     {
+      "shingle": "“the israeli occupied west bank”",
+      "articles": 4
+     },
+     {
+      "shingle": "“occupation of the palestinian territories”",
+      "articles": 3
+     },
+     {
+      "shingle": "“israeli occupied west bank and”",
+      "articles": 3
+     },
+     {
+      "shingle": "“in the israeli occupied west”",
+      "articles": 3
+     },
+     {
+      "shingle": "“war crimes and crimes against”",
+      "articles": 2
+     }
+    ],
+    "null": {
+     "articles_3plus": {
+      "observed": 3,
+      "null_mean": 0.236,
+      "null_p95": 1.0,
+      "p": 0.001
+     },
+     "sync_t30": {
+      "observed": 0,
+      "null_mean": 0.065,
+      "null_p95": 1.0,
+      "p": 1.0,
+      "article_shuffle_null_mean": 0.308,
+      "p_article_shuffle": 1.0
+     },
+     "sync_t60": {
+      "observed": 0,
+      "null_mean": 0.12,
+      "null_p95": 1.0,
+      "p": 1.0,
+      "article_shuffle_null_mean": 0.731,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "null_worlds_with_bloc_this_large_dense_and_strong": 0.0,
+    "significant_triads": 4,
+    "synchrony": {
+     "median_same_article_gap_h": 333.87,
+     "share_events_with_member_within_10min": 0.0,
+     "share_events_with_member_within_24h": 0.265
+    },
+    "confidence": "medium",
+    "profile": {
+     "median_age_days": {
+      "bloc": 1071.0,
+      "base_rate": 1298.5,
+      "null_p95": 5221.3,
+      "null_p05": 361.25,
+      "percentile_vs_random_sets": 0.187
+     },
+     "share_age_lt30d": {
+      "bloc": 0.0,
+      "base_rate": 0.109,
+      "null_p95": 0.25,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.849
+     },
+     "share_age_lt1y": {
+      "bloc": 0.0,
+      "base_rate": 0.313,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.37
+     },
+     "median_editcount": {
+      "bloc": 8300.0,
+      "base_rate": 4900.0,
+      "null_p95": 72525.0,
+      "null_p05": 1649.5,
+      "percentile_vs_random_sets": 0.344
+     },
+     "share_editcount_lt500": {
+      "bloc": 0.0,
+      "base_rate": 0.222,
+      "null_p95": 0.25,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.774
+     },
+     "share_extended_confirmed": {
+      "bloc": 1.0,
+      "base_rate": 0.766,
+      "null_p95": 1.0,
+      "null_p05": 0.75,
+      "percentile_vs_random_sets": 1.0
+     },
+     "share_blocked_now": {
+      "bloc": 0.25,
+      "base_rate": 0.151,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.868
+     },
+     "share_indef_now": {
+      "bloc": 0.25,
+      "base_rate": 0.148,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.873
+     },
+     "share_sock_block": {
+      "bloc": 0.25,
+      "base_rate": 0.083,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.938
+     }
+    },
+    "time_alignment": {
+     "windows": {
+      "email_canvassing": {
+       "window": [
+        "2023-10-01",
+        "2024-01-21"
+       ],
+       "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+       "window_share": 0.412,
+       "window_share_ci95": [
+        0.171,
+        0.739
+       ],
+       "expected_window_share": 0.185,
+       "expected_ci95": [
+        0.0,
+        0.435
+       ],
+       "p_high": 0.042,
+       "p_low": 0.959,
+       "expected_from_own_active_span": 0.149,
+       "other_accounts_share": 0.169
+      },
+      "tfp_discord": {
+       "window": [
+        "2024-01-01",
+        "2024-10-01"
+       ],
+       "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+       "window_share": 0.206,
+       "window_share_ci95": [
+        0.119,
+        0.438
+       ],
+       "expected_window_share": 0.231,
+       "expected_ci95": [
+        0.037,
+        0.489
+       ],
+       "p_high": 0.5385,
+       "p_low": 0.4655,
+       "expected_from_own_active_span": 0.226,
+       "other_accounts_share": 0.253
+      }
+     },
+     "post_sanction": {
+      "2024-12-09": {
+       "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+       "set_events_before": 22,
+       "set_events_after": 5,
+       "others_before": 537,
+       "others_after": 335,
+       "post_sanction_drop": 0.392,
+       "ci95": [
+        0.028,
+        1.104
+       ],
+       "matched_null_mean": 1.917,
+       "matched_null_ci95": [
+        0.083,
+        7.141
+       ],
+       "p_drop": 0.1968,
+       "testable": true
+      },
+      "2025-04-25": {
+       "note": "ArbCom site bans on further off-wiki coordination evidence",
+       "set_events_before": 14,
+       "set_events_after": 3,
+       "others_before": 508,
+       "others_after": 205,
+       "post_sanction_drop": 0.597,
+       "ci95": [
+        0.118,
+        0.887
+       ],
+       "matched_null_mean": 0.835,
+       "matched_null_ci95": [
+        0.028,
+        3.655
+       ],
+       "p_drop": 0.5435,
+       "testable": true
+      }
+     }
+    },
+    "name": "Bloc A (4 accounts)"
+   }
+  ],
+  "expected_by_chance": {
+   "null_worlds": 200,
+   "edges_mean": 1.93,
+   "edges_p95": 5.0,
+   "communities_mean": 0.3,
+   "communities_p95": 1.0,
+   "communities_max": 2
+  }
+ },
+ "topic/insert": {
+  "edges": 5,
+  "blocs": [
+   {
+    "size": 4,
+    "density": 0.5,
+    "strength": 2.417,
+    "n_articles": 53,
+    "articles": [
+     {
+      "title": "Israel",
+      "events": 18
+     },
+     {
+      "title": "Gaza war",
+      "events": 12
+     },
+     {
+      "title": "Ariel Sharon",
+      "events": 8
+     },
+     {
+      "title": "Hamas",
+      "events": 7
+     },
+     {
+      "title": "Israeli–Palestinian conflict",
+      "events": 4
+     },
+     {
+      "title": "Gaza Strip",
+      "events": 3
+     },
+     {
+      "title": "Dead Sea",
+      "events": 3
+     },
+     {
+      "title": "Israeli apartheid",
+      "events": 3
+     },
+     {
+      "title": "Second Intifada",
+      "events": 3
+     },
+     {
+      "title": "Nakba",
+      "events": 2
+     }
+    ],
+    "direction": {
+     "insert": 114,
+     "remove": 0,
+     "insert_share": 1.0
+    },
+    "active": {
+     "first": "2021-04-16",
+     "last": "2025-08-10",
+     "busiest_month": "2023-10",
+     "events": 114
+    },
+    "inserted_phrases": [
+     {
+      "shingle": "“the israeli occupied west bank”",
+      "articles": 6
+     },
+     {
+      "shingle": "“during the 1948 palestine war”",
+      "articles": 6
+     },
+     {
+      "shingle": "“the 1967 six day war”",
+      "articles": 5
+     },
+     {
+      "shingle": "“israeli occupied west bank and”",
+      "articles": 5
+     },
+     {
+      "shingle": "“in the israeli occupied west”",
+      "articles": 5
+     }
+    ],
+    "null": {
+     "articles_3plus": {
+      "observed": 3,
+      "null_mean": 0.56,
+      "null_p95": 2.0,
+      "p": 0.006
+     },
+     "sync_t30": {
+      "observed": 0,
+      "null_mean": 0.167,
+      "null_p95": 1.0,
+      "p": 1.0,
+      "article_shuffle_null_mean": 1.249,
+      "p_article_shuffle": 1.0
+     },
+     "sync_t60": {
+      "observed": 0,
+      "null_mean": 0.309,
+      "null_p95": 2.0,
+      "p": 1.0,
+      "article_shuffle_null_mean": 1.984,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "null_worlds_with_bloc_this_large_dense_and_strong": 0.005,
+    "significant_triads": 0,
+    "synchrony": {
+     "median_same_article_gap_h": 1574.42,
+     "share_events_with_member_within_10min": 0.0,
+     "share_events_with_member_within_24h": 0.158
+    },
+    "confidence": "medium",
+    "profile": {
+     "median_age_days": {
+      "bloc": 2204.0,
+      "base_rate": 1322.0,
+      "null_p95": 5046.975,
+      "null_p05": 467.85,
+      "percentile_vs_random_sets": 0.44
+     },
+     "share_age_lt30d": {
+      "bloc": 0.0,
+      "base_rate": 0.117,
+      "null_p95": 0.25,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.815
+     },
+     "share_age_lt1y": {
+      "bloc": 0.0,
+      "base_rate": 0.312,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.409
+     },
+     "median_editcount": {
+      "bloc": 21150.0,
+      "base_rate": 4900.0,
+      "null_p95": 60500.0,
+      "null_p05": 2550.0,
+      "percentile_vs_random_sets": 0.615
+     },
+     "share_editcount_lt500": {
+      "bloc": 0.0,
+      "base_rate": 0.217,
+      "null_p95": 0.25,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.724
+     },
+     "share_extended_confirmed": {
+      "bloc": 1.0,
+      "base_rate": 0.77,
+      "null_p95": 1.0,
+      "null_p05": 0.75,
+      "percentile_vs_random_sets": 1.0
+     },
+     "share_blocked_now": {
+      "bloc": 0.25,
+      "base_rate": 0.163,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.828
+     },
+     "share_indef_now": {
+      "bloc": 0.25,
+      "base_rate": 0.157,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.847
+     },
+     "share_sock_block": {
+      "bloc": 0.25,
+      "base_rate": 0.087,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.933
+     }
+    },
+    "time_alignment": {
+     "windows": {
+      "email_canvassing": {
+       "window": [
+        "2023-10-01",
+        "2024-01-21"
+       ],
+       "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+       "window_share": 0.342,
+       "window_share_ci95": [
+        0.235,
+        0.422
+       ],
+       "expected_window_share": 0.154,
+       "expected_ci95": [
+        0.0,
+        0.385
+       ],
+       "p_high": 0.0509,
+       "p_low": 0.951,
+       "expected_from_own_active_span": 0.115,
+       "other_accounts_share": 0.154
+      },
+      "tfp_discord": {
+       "window": [
+        "2024-01-01",
+        "2024-10-01"
+       ],
+       "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+       "window_share": 0.289,
+       "window_share_ci95": [
+        0.118,
+        0.368
+       ],
+       "expected_window_share": 0.239,
+       "expected_ci95": [
+        0.033,
+        0.444
+       ],
+       "p_high": 0.3157,
+       "p_low": 0.6873,
+       "expected_from_own_active_span": 0.231,
+       "other_accounts_share": 0.246
+      }
+     },
+     "post_sanction": {
+      "2024-12-09": {
+       "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+       "set_events_before": 41,
+       "set_events_after": 6,
+       "others_before": 251,
+       "others_after": 175,
+       "post_sanction_drop": 0.224,
+       "ci95": [
+        0.032,
+        1.8
+       ],
+       "matched_null_mean": 2.052,
+       "matched_null_ci95": [
+        0.123,
+        8.395
+       ],
+       "p_drop": 0.0539,
+       "testable": true
+      },
+      "2025-04-25": {
+       "note": "ArbCom site bans on further off-wiki coordination evidence",
+       "set_events_before": 28,
+       "set_events_after": 2,
+       "others_before": 257,
+       "others_after": 103,
+       "post_sanction_drop": 0.218,
+       "ci95": [
+        0.02,
+        1.072
+       ],
+       "matched_null_mean": 0.703,
+       "matched_null_ci95": [
+        0.053,
+        3.243
+       ],
+       "p_drop": 0.3636,
+       "testable": true
+      }
+     }
+    },
+    "name": "Bloc B (4 accounts)"
+   }
+  ],
+  "expected_by_chance": {
+   "null_worlds": 200,
+   "edges_mean": 0.85,
+   "edges_p95": 3.0,
+   "communities_mean": 0.12,
+   "communities_p95": 1.0,
+   "communities_max": 1
+  }
+ },
+ "topic/remove": {
+  "edges": 2,
+  "blocs": [
+   {
+    "size": 3,
+    "density": 0.667,
+    "strength": 2.222,
+    "n_articles": 24,
+    "articles": [
+     {
+      "title": "Israeli apartheid",
+      "events": 5
+     },
+     {
+      "title": "Israeli–Palestinian conflict",
+      "events": 5
+     },
+     {
+      "title": "South Africa's genocide case against Israel",
+      "events": 3
+     },
+     {
+      "title": "Gaza war",
+      "events": 3
+     },
+     {
+      "title": "Hamas",
+      "events": 3
+     },
+     {
+      "title": "Hezbollah",
+      "events": 3
+     },
+     {
+      "title": "Israel",
+      "events": 2
+     },
+     {
+      "title": "Nakba",
+      "events": 2
+     },
+     {
+      "title": "Second Intifada",
+      "events": 2
+     },
+     {
+      "title": "Bar Kokhba Revolt",
+      "events": 1
+     }
+    ],
+    "direction": {
+     "insert": 0,
+     "remove": 43,
+     "insert_share": 0.0
+    },
+    "active": {
+     "first": "2022-01-17",
+     "last": "2024-12-08",
+     "busiest_month": "2024-01",
+     "events": 43
+    },
+    "inserted_phrases": [],
+    "null": {
+     "articles_3plus": {
+      "observed": 1,
+      "null_mean": 0.072,
+      "null_p95": 1.0,
+      "p": 0.0719
+     },
+     "sync_t30": {
+      "observed": 0,
+      "null_mean": 0.016,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "article_shuffle_null_mean": 0.011,
+      "p_article_shuffle": 1.0
+     },
+     "sync_t60": {
+      "observed": 0,
+      "null_mean": 0.035,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "article_shuffle_null_mean": 0.031,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "null_worlds_with_bloc_this_large_dense_and_strong": 0.02,
+    "significant_triads": 0,
+    "synchrony": {
+     "median_same_article_gap_h": 8078.62,
+     "share_events_with_member_within_10min": 0.0,
+     "share_events_with_member_within_24h": 0.047
+    },
+    "confidence": "low",
+    "profile": {
+     "median_age_days": {
+      "bloc": 4683.0,
+      "base_rate": 1493.0,
+      "null_p95": 5978.8,
+      "null_p05": 174.0,
+      "percentile_vs_random_sets": 0.867
+     },
+     "share_age_lt30d": {
+      "bloc": 0.0,
+      "base_rate": 0.089,
+      "null_p95": 0.333,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.919
+     },
+     "share_age_lt1y": {
+      "bloc": 0.0,
+      "base_rate": 0.285,
+      "null_p95": 0.667,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.511
+     },
+     "median_editcount": {
+      "bloc": 42000.0,
+      "base_rate": 6900.0,
+      "null_p95": 92000.0,
+      "null_p05": 1290.0,
+      "percentile_vs_random_sets": 0.763
+     },
+     "share_editcount_lt500": {
+      "bloc": 0.0,
+      "base_rate": 0.189,
+      "null_p95": 0.333,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.863
+     },
+     "share_extended_confirmed": {
+      "bloc": 1.0,
+      "base_rate": 0.802,
+      "null_p95": 1.0,
+      "null_p05": 0.667,
+      "percentile_vs_random_sets": 1.0
+     },
+     "share_blocked_now": {
+      "bloc": 0.0,
+      "base_rate": 0.144,
+      "null_p95": 0.667,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.606
+     },
+     "share_indef_now": {
+      "bloc": 0.0,
+      "base_rate": 0.142,
+      "null_p95": 0.667,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.606
+     },
+     "share_sock_block": {
+      "bloc": 0.0,
+      "base_rate": 0.087,
+      "null_p95": 0.333,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.656
+     }
+    },
+    "time_alignment": {
+     "windows": {
+      "email_canvassing": {
+       "window": [
+        "2023-10-01",
+        "2024-01-21"
+       ],
+       "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+       "window_share": 0.395,
+       "window_share_ci95": [
+        0.2,
+        0.6
+       ],
+       "expected_window_share": 0.195,
+       "expected_ci95": [
+        0.0,
+        0.563
+       ],
+       "p_high": 0.1429,
+       "p_low": 0.8581,
+       "expected_from_own_active_span": 0.218,
+       "other_accounts_share": 0.166
+      },
+      "tfp_discord": {
+       "window": [
+        "2024-01-01",
+        "2024-10-01"
+       ],
+       "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+       "window_share": 0.442,
+       "window_share_ci95": [
+        0.0,
+        0.545
+       ],
+       "expected_window_share": 0.235,
+       "expected_ci95": [
+        0.0,
+        0.696
+       ],
+       "p_high": 0.1588,
+       "p_low": 0.8422,
+       "expected_from_own_active_span": 0.494,
+       "other_accounts_share": 0.238
+      }
+     },
+     "post_sanction": {
+      "2024-12-09": {
+       "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+       "set_events_before": 30,
+       "set_events_after": 0,
+       "others_before": 237,
+       "others_after": 159,
+       "post_sanction_drop": 0.024,
+       "ci95": [
+        0.009,
+        0.213
+       ],
+       "matched_null_mean": 1.596,
+       "matched_null_ci95": [
+        0.078,
+        11.466
+       ],
+       "p_drop": 0.001,
+       "testable": true
+      },
+      "2025-04-25": {
+       "note": "ArbCom site bans on further off-wiki coordination evidence",
+       "set_events_before": 17,
+       "set_events_after": 0,
+       "others_before": 220,
+       "others_after": 103,
+       "post_sanction_drop": 0.061,
+       "ci95": [
+        0.021,
+        2.13
+       ],
+       "matched_null_mean": 2.475,
+       "matched_null_ci95": [
+        0.101,
+        19.174
+       ],
+       "p_drop": 0.001,
+       "testable": true
+      }
+     }
+    }
+   }
+  ],
+  "expected_by_chance": {
+   "null_worlds": 200,
+   "edges_mean": 0.19,
+   "edges_p95": 1.0,
+   "communities_mean": 0.02,
+   "communities_p95": 0.0,
+   "communities_max": 1
+  }
+ },
+ "comparison/any": {
+  "edges": 3,
+  "blocs": [],
+  "expected_by_chance": {
+   "null_worlds": 200,
+   "edges_mean": 0.27,
+   "edges_p95": 1.0,
+   "communities_mean": 0.03,
+   "communities_p95": 0.0,
+   "communities_max": 1
+  }
+ },
+ "comparison/insert": {
+  "edges": 2,
+  "blocs": [],
+  "expected_by_chance": {
+   "null_worlds": 200,
+   "edges_mean": 0.0,
+   "edges_p95": 0.0,
+   "communities_mean": 0.0,
+   "communities_p95": 0.0,
+   "communities_max": 0
+  }
+ },
+ "comparison/remove": {
+  "edges": 1,
+  "blocs": [],
+  "expected_by_chance": {
+   "null_worlds": 200,
+   "edges_mean": 0.04,
+   "edges_p95": 0.0,
+   "communities_mean": 0.0,
+   "communities_p95": 0.0,
+   "communities_max": 0
+  }
+ }
+}

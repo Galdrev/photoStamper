@@ -1,0 +1,1850 @@
+{
+ "meta": {
+  "generated": "2026-11-06T22:26:26Z",
+  "null_draws": 1000,
+  "calibration_worlds": 200,
+  "events": 3206,
+  "excluded_revisions": {
+   "anon": 902,
+   "bot": 51
+  },
+  "collection": {
+   "generated": "2026-11-06T22:26:26Z",
+   "n_articles_expected": 959,
+   "n_articles": 959,
+   "n_revisions": 4121,
+   "revision_error_share": 0.0,
+   "diff_status": {
+    "ok": 4121
+   },
+   "rev_state": {
+    "ok": 4121
+   },
+   "user_hidden": 0,
+   "anon": 902,
+   "accounts": 1448,
+   "accounts_missing": 0,
+   "inserted_sentences": 2835,
+   "removed_sentences": 2458,
+   "by_group": {
+    "topic": 531,
+    "comparison": 428
+   }
+  }
+ },
+ "cards": [
+  {
+   "id": "coord_data",
+   "title": "What the coordination tier covers",
+   "what_we_see": "4121 critical-term event revisions in 959 articles (diff status {'ok': 4121}); 3206 account events used after excluding {'anon': 902, 'bot': 51} (anonymous, hidden-user, bot, deleted). One run-wide pseudonymous ID per account.",
+   "confidence": "descriptive",
+   "null_model": {
+    "draws": 1000,
+    "calibration_worlds": 200
+   },
+   "so_what": "All tests below share these events; topic and comparison articles are tested separately.",
+   "caveat": "Lead events come from mass2's grid (exact events only) and the ratchet key articles; edits outside those events are invisible here. IP and temporary accounts are excluded from account-level tests.",
+   "numbers": {
+    "collection": {
+     "generated": "2026-11-06T22:26:26Z",
+     "n_articles_expected": 959,
+     "n_articles": 959,
+     "n_revisions": 4121,
+     "revision_error_share": 0.0,
+     "diff_status": {
+      "ok": 4121
+     },
+     "rev_state": {
+      "ok": 4121
+     },
+     "user_hidden": 0,
+     "anon": 902,
+     "accounts": 1448,
+     "accounts_missing": 0,
+     "inserted_sentences": 2835,
+     "removed_sentences": 2458,
+     "by_group": {
+      "topic": 531,
+      "comparison": 428
+     }
+    },
+    "excluded": {
+     "anon": 902,
+     "bot": 51
+    }
+   },
+   "chart": null
+  },
+  {
+   "id": "blocs_topic_any",
+   "title": "(a) Bloc detection: topic articles, any events",
+   "what_we_see": "topic articles, any events: 14 account pairs share articles above the rewiring null (p<0.01, >=3 shared); null worlds give 1.93 such pairs on average (95th 5.0). 2 candidate groups of 3+ (null worlds: 0.3 on average, 95th 1.0); 1 pass the bloc test. Bloc A (4 accounts) [medium]: 23 articles (top: Israel, Gaza war, Hamas, Israeli bombing of the Gaza Strip); 45 insertions / 23 removals; articles touched by 3+ members 3 vs null 0.236 (95th 1.0, p=0.001); 60-min cross-article co-activity 0 vs 0.12 (p=1.000, article-shuffle p=1.000); median same-article gap 333.87 h, events with another member within 10 min 0.0; 4 significant triads; null worlds with a bloc this large and dense: 0.0; active 2021-04-16 to 2025-11-15",
+   "confidence": "medium",
+   "null_model": {
+    "pairs": "degree-preserving rewiring, 1000 draws",
+    "bloc": "articles with 3+ members vs rewiring; selection-aware share of null worlds; synchrony vs account day-shift (1-7 d) and time shuffle within article",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 1.93,
+     "edges_p95": 5.0,
+     "communities_mean": 0.3,
+     "communities_p95": 1.0,
+     "communities_max": 2
+    }
+   },
+   "so_what": "A bloc is a set of accounts whose overlap in critical-term articles is not explained by how active each account is and how popular each article is.",
+   "caveat": "Shared interest (WikiProject members, watchlists, talk-page RfCs) also produces overlap beyond a degree-preserving null; synchrony and direction help separate it but do not prove coordination.",
+   "numbers": {
+    "blocs": [
+     {
+      "size": 5,
+      "density": 0.4,
+      "strength": 2.548,
+      "n_articles": 46,
+      "articles": [
+       {
+        "title": "Israel",
+        "events": 27
+       },
+       {
+        "title": "Palestinian genocide allegations",
+        "events": 6
+       },
+       {
+        "title": "Israeli apartheid",
+        "events": 5
+       },
+       {
+        "title": "South Africa's genocide case against Israel",
+        "events": 5
+       },
+       {
+        "title": "Israeli–Palestinian conflict",
+        "events": 4
+       },
+       {
+        "title": "One-state solution",
+        "events": 4
+       },
+       {
+        "title": "Nakba",
+        "events": 3
+       },
+       {
+        "title": "Weaponization of antisemitism",
+        "events": 3
+       },
+       {
+        "title": "Zionism as settler colonialism",
+        "events": 3
+       },
+       {
+        "title": "Ancient Israel and Judah",
+        "events": 3
+       }
+      ],
+      "direction": {
+       "insert": 71,
+       "remove": 39,
+       "insert_share": 0.645
+      },
+      "active": {
+       "first": "2021-04-05",
+       "last": "2025-04-25",
+       "busiest_month": "2022-05",
+       "events": 110
+      },
+      "inserted_phrases": [
+       {
+        "shingle": "“1948 palestinian expulsion and flight”",
+        "articles": 8
+       },
+       {
+        "shingle": "“the 1948 palestinian expulsion and”",
+        "articles": 7
+       },
+       {
+        "shingle": "“the 1967 six day war”",
+        "articles": 3
+       },
+       {
+        "shingle": "“west bank and gaza strip”",
+        "articles": 2
+       },
+       {
+        "shingle": "“the west bank and gaza”",
+        "articles": 2
+       }
+      ],
+      "null": {
+       "articles_3plus": {
+        "observed": 3,
+        "null_mean": 0.866,
+        "null_p95": 2.0,
+        "p": 0.027
+       },
+       "sync_t30": {
+        "observed": 0,
+        "null_mean": 0.15,
+        "null_p95": 1.0,
+        "p": 1.0,
+        "article_shuffle_null_mean": 1.667,
+        "p_article_shuffle": 1.0
+       },
+       "sync_t60": {
+        "observed": 0,
+        "null_mean": 0.307,
+        "null_p95": 1.0,
+        "p": 1.0,
+        "article_shuffle_null_mean": 2.14,
+        "p_article_shuffle": 1.0
+       }
+      },
+      "null_worlds_with_bloc_this_large_dense_and_strong": 0.0,
+      "significant_triads": 0,
+      "synchrony": {
+       "median_same_article_gap_h": 53.6,
+       "share_events_with_member_within_10min": 0.0,
+       "share_events_with_member_within_24h": 0.336
+      },
+      "confidence": "low",
+      "profile": {
+       "median_age_days": {
+        "bloc": 2970.0,
+        "base_rate": 1298.5,
+        "null_p95": 5228.0,
+        "null_p05": 240.6,
+        "percentile_vs_random_sets": 0.694
+       },
+       "share_age_lt30d": {
+        "bloc": 0.0,
+        "base_rate": 0.109,
+        "null_p95": 0.2,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.779
+       },
+       "share_age_lt1y": {
+        "bloc": 0.4,
+        "base_rate": 0.313,
+        "null_p95": 0.6,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.914
+       },
+       "median_editcount": {
+        "bloc": 42000.0,
+        "base_rate": 4900.0,
+        "null_p95": 62000.0,
+        "null_p05": 1400.0,
+        "percentile_vs_random_sets": 0.86
+       },
+       "share_editcount_lt500": {
+        "bloc": 0.0,
+        "base_rate": 0.222,
+        "null_p95": 0.2,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.695
+       },
+       "share_extended_confirmed": {
+        "bloc": 1.0,
+        "base_rate": 0.766,
+        "null_p95": 1.0,
+        "null_p05": 0.79,
+        "percentile_vs_random_sets": 1.0
+       },
+       "share_blocked_now": {
+        "bloc": 0.4,
+        "base_rate": 0.151,
+        "null_p95": 0.4,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.952
+       },
+       "share_indef_now": {
+        "bloc": 0.4,
+        "base_rate": 0.148,
+        "null_p95": 0.4,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.957
+       },
+       "share_sock_block": {
+        "bloc": 0.2,
+        "base_rate": 0.083,
+        "null_p95": 0.4,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.884
+       }
+      },
+      "time_alignment": {
+       "windows": {
+        "email_canvassing": {
+         "window": [
+          "2023-10-01",
+          "2024-01-21"
+         ],
+         "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+         "window_share": 0.173,
+         "window_share_ci95": [
+          0.056,
+          0.377
+         ],
+         "expected_window_share": 0.212,
+         "expected_ci95": [
+          0.018,
+          0.391
+         ],
+         "p_high": 0.6164,
+         "p_low": 0.3846,
+         "expected_from_own_active_span": 0.095,
+         "other_accounts_share": 0.179
+        },
+        "tfp_discord": {
+         "window": [
+          "2024-01-01",
+          "2024-10-01"
+         ],
+         "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+         "window_share": 0.145,
+         "window_share_ci95": [
+          0.054,
+          0.225
+         ],
+         "expected_window_share": 0.269,
+         "expected_ci95": [
+          0.061,
+          0.466
+         ],
+         "p_high": 0.8442,
+         "p_low": 0.1568,
+         "expected_from_own_active_span": 0.197,
+         "other_accounts_share": 0.258
+        }
+       },
+       "post_sanction": {
+        "2024-12-09": {
+         "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+         "set_events_before": 20,
+         "set_events_after": 2,
+         "others_before": 539,
+         "others_after": 338,
+         "post_sanction_drop": 0.194,
+         "ci95": [
+          0.048,
+          0.419
+         ],
+         "matched_null_mean": 1.057,
+         "matched_null_ci95": [
+          0.088,
+          3.845
+         ],
+         "p_drop": 0.0809,
+         "testable": true
+        },
+        "2025-04-25": {
+         "note": "ArbCom site bans on further off-wiki coordination evidence",
+         "set_events_before": 13,
+         "set_events_after": 1,
+         "others_before": 509,
+         "others_after": 207,
+         "post_sanction_drop": 0.273,
+         "ci95": [
+          0.063,
+          0.818
+         ],
+         "matched_null_mean": 0.722,
+         "matched_null_ci95": [
+          0.026,
+          2.583
+         ],
+         "p_drop": 0.2667,
+         "testable": true
+        }
+       }
+      }
+     },
+     {
+      "size": 4,
+      "density": 1.0,
+      "strength": 2.65,
+      "n_articles": 23,
+      "articles": [
+       {
+        "title": "Israel",
+        "events": 19
+       },
+       {
+        "title": "Gaza war",
+        "events": 14
+       },
+       {
+        "title": "Hamas",
+        "events": 11
+       },
+       {
+        "title": "Israeli bombing of the Gaza Strip",
+        "events": 2
+       },
+       {
+        "title": "Israeli apartheid",
+        "events": 2
+       },
+       {
+        "title": "Tourism in Israel",
+        "events": 2
+       },
+       {
+        "title": "Yesha Council",
+        "events": 2
+       },
+       {
+        "title": "Antisemitism",
+        "events": 1
+       },
+       {
+        "title": "Israel–United States relations",
+        "events": 1
+       },
+       {
+        "title": "Nakba",
+        "events": 1
+       }
+      ],
+      "direction": {
+       "insert": 45,
+       "remove": 23,
+       "insert_share": 0.662
+      },
+      "active": {
+       "first": "2021-04-16",
+       "last": "2025-11-15",
+       "busiest_month": "2023-10",
+       "events": 68
+      },
+      "inserted_phrases": [
+       {
+        "shingle": "“the israeli occupied west bank”",
+        "articles": 4
+       },
+       {
+        "shingle": "“occupation of the palestinian territories”",
+        "articles": 3
+       },
+       {
+        "shingle": "“israeli occupied west bank and”",
+        "articles": 3
+       },
+       {
+        "shingle": "“in the israeli occupied west”",
+        "articles": 3
+       },
+       {
+        "shingle": "“war crimes and crimes against”",
+        "articles": 2
+       }
+      ],
+      "null": {
+       "articles_3plus": {
+        "observed": 3,
+        "null_mean": 0.236,
+        "null_p95": 1.0,
+        "p": 0.001
+       },
+       "sync_t30": {
+        "observed": 0,
+        "null_mean": 0.065,
+        "null_p95": 1.0,
+        "p": 1.0,
+        "article_shuffle_null_mean": 0.308,
+        "p_article_shuffle": 1.0
+       },
+       "sync_t60": {
+        "observed": 0,
+        "null_mean": 0.12,
+        "null_p95": 1.0,
+        "p": 1.0,
+        "article_shuffle_null_mean": 0.731,
+        "p_article_shuffle": 1.0
+       }
+      },
+      "null_worlds_with_bloc_this_large_dense_and_strong": 0.0,
+      "significant_triads": 4,
+      "synchrony": {
+       "median_same_article_gap_h": 333.87,
+       "share_events_with_member_within_10min": 0.0,
+       "share_events_with_member_within_24h": 0.265
+      },
+      "confidence": "medium",
+      "profile": {
+       "median_age_days": {
+        "bloc": 1071.0,
+        "base_rate": 1298.5,
+        "null_p95": 5221.3,
+        "null_p05": 361.25,
+        "percentile_vs_random_sets": 0.187
+       },
+       "share_age_lt30d": {
+        "bloc": 0.0,
+        "base_rate": 0.109,
+        "null_p95": 0.25,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.849
+       },
+       "share_age_lt1y": {
+        "bloc": 0.0,
+        "base_rate": 0.313,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.37
+       },
+       "median_editcount": {
+        "bloc": 8300.0,
+        "base_rate": 4900.0,
+        "null_p95": 72525.0,
+        "null_p05": 1649.5,
+        "percentile_vs_random_sets": 0.344
+       },
+       "share_editcount_lt500": {
+        "bloc": 0.0,
+        "base_rate": 0.222,
+        "null_p95": 0.25,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.774
+       },
+       "share_extended_confirmed": {
+        "bloc": 1.0,
+        "base_rate": 0.766,
+        "null_p95": 1.0,
+        "null_p05": 0.75,
+        "percentile_vs_random_sets": 1.0
+       },
+       "share_blocked_now": {
+        "bloc": 0.25,
+        "base_rate": 0.151,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.868
+       },
+       "share_indef_now": {
+        "bloc": 0.25,
+        "base_rate": 0.148,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.873
+       },
+       "share_sock_block": {
+        "bloc": 0.25,
+        "base_rate": 0.083,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.938
+       }
+      },
+      "time_alignment": {
+       "windows": {
+        "email_canvassing": {
+         "window": [
+          "2023-10-01",
+          "2024-01-21"
+         ],
+         "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+         "window_share": 0.412,
+         "window_share_ci95": [
+          0.171,
+          0.739
+         ],
+         "expected_window_share": 0.185,
+         "expected_ci95": [
+          0.0,
+          0.435
+         ],
+         "p_high": 0.042,
+         "p_low": 0.959,
+         "expected_from_own_active_span": 0.149,
+         "other_accounts_share": 0.169
+        },
+        "tfp_discord": {
+         "window": [
+          "2024-01-01",
+          "2024-10-01"
+         ],
+         "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+         "window_share": 0.206,
+         "window_share_ci95": [
+          0.119,
+          0.438
+         ],
+         "expected_window_share": 0.231,
+         "expected_ci95": [
+          0.037,
+          0.489
+         ],
+         "p_high": 0.5385,
+         "p_low": 0.4655,
+         "expected_from_own_active_span": 0.226,
+         "other_accounts_share": 0.253
+        }
+       },
+       "post_sanction": {
+        "2024-12-09": {
+         "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+         "set_events_before": 22,
+         "set_events_after": 5,
+         "others_before": 537,
+         "others_after": 335,
+         "post_sanction_drop": 0.392,
+         "ci95": [
+          0.028,
+          1.104
+         ],
+         "matched_null_mean": 1.917,
+         "matched_null_ci95": [
+          0.083,
+          7.141
+         ],
+         "p_drop": 0.1968,
+         "testable": true
+        },
+        "2025-04-25": {
+         "note": "ArbCom site bans on further off-wiki coordination evidence",
+         "set_events_before": 14,
+         "set_events_after": 3,
+         "others_before": 508,
+         "others_after": 205,
+         "post_sanction_drop": 0.597,
+         "ci95": [
+          0.118,
+          0.887
+         ],
+         "matched_null_mean": 0.835,
+         "matched_null_ci95": [
+          0.028,
+          3.655
+         ],
+         "p_drop": 0.5435,
+         "testable": true
+        }
+       }
+      },
+      "name": "Bloc A (4 accounts)"
+     }
+    ]
+   },
+   "chart": "chart_data/blocs.json"
+  },
+  {
+   "id": "sync_topic",
+   "title": "(b) Synchrony: topic account pairs acting on different articles within 10 minutes",
+   "what_we_see": "0 pairs (0 accounts) acted on 3+ distinct article pairs within 10 min of each other more often than the account day-shift null (p<0.01); 0 also beat the within-article time-shuffle null. Null worlds give 0.05 pairs on average (95th 0.0).",
+   "confidence": "not detected (consistent with chance)",
+   "null_model": {
+    "null": "each account's timeline shifted by a random 1-7 days (either sign), 1000 draws; secondary: timestamps permuted within article",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 0.05,
+     "edges_p95": 0.0
+    }
+   },
+   "so_what": "Pairs that repeatedly move together across different articles within minutes are the classic canvassing / sockpuppet signature, if they are more than the null expects.",
+   "caveat": "Both accounts may react to the same external trigger (news, an RfC closing, a noticeboard thread).",
+   "numbers": {
+    "pairs": []
+   },
+   "chart": "chart_data/sync.json"
+  },
+  {
+   "id": "network_topic",
+   "title": "Co-activity network: topic articles (time + direction)",
+   "what_we_see": "14 significant edges among 11 accounts (of 697 tested); expected by chance 2.15 (95th 5.0). 2 communities of 3+ (chance 0.34, 95th 1.0), 1 significant.",
+   "confidence": "medium",
+   "null_model": {
+    "edge": "p<0.01 and observed>=3 on 30-min cross-article co-activity (account day-shift) or shared articles (rewiring)",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 2.15,
+     "edges_p95": 5.0,
+     "communities_mean": 0.34,
+     "communities_p95": 1.0,
+     "communities_max": 2
+    }
+   },
+   "so_what": "The page's network graph; edges carry direction agreement, so insert-blocs and remove-blocs are visible.",
+   "caveat": "Edges are tested one by one at p<0.01; compare the edge count with the chance expectation, not with zero.",
+   "numbers": {},
+   "chart": "chart_data/network.json"
+  },
+  {
+   "id": "blocs_topic_insert",
+   "title": "(a) Bloc detection: topic articles, insert events",
+   "what_we_see": "topic articles, insert events: 5 account pairs share articles above the rewiring null (p<0.01, >=3 shared); null worlds give 0.85 such pairs on average (95th 3.0). 1 candidate groups of 3+ (null worlds: 0.12 on average, 95th 1.0); 1 pass the bloc test. Bloc B (4 accounts) [medium]: 53 articles (top: Israel, Gaza war, Ariel Sharon, Hamas); 114 insertions / 0 removals; articles touched by 3+ members 3 vs null 0.56 (95th 2.0, p=0.006); 60-min cross-article co-activity 0 vs 0.309 (p=1.000, article-shuffle p=1.000); median same-article gap 1574.42 h, events with another member within 10 min 0.0; 0 significant triads; null worlds with a bloc this large and dense: 0.005; active 2021-04-16 to 2025-08-10",
+   "confidence": "medium",
+   "null_model": {
+    "pairs": "degree-preserving rewiring, 1000 draws",
+    "bloc": "articles with 3+ members vs rewiring; selection-aware share of null worlds; synchrony vs account day-shift (1-7 d) and time shuffle within article",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 0.85,
+     "edges_p95": 3.0,
+     "communities_mean": 0.12,
+     "communities_p95": 1.0,
+     "communities_max": 1
+    }
+   },
+   "so_what": "A bloc is a set of accounts whose overlap in critical-term articles is not explained by how active each account is and how popular each article is.",
+   "caveat": "Shared interest (WikiProject members, watchlists, talk-page RfCs) also produces overlap beyond a degree-preserving null; synchrony and direction help separate it but do not prove coordination.",
+   "numbers": {
+    "blocs": [
+     {
+      "size": 4,
+      "density": 0.5,
+      "strength": 2.417,
+      "n_articles": 53,
+      "articles": [
+       {
+        "title": "Israel",
+        "events": 18
+       },
+       {
+        "title": "Gaza war",
+        "events": 12
+       },
+       {
+        "title": "Ariel Sharon",
+        "events": 8
+       },
+       {
+        "title": "Hamas",
+        "events": 7
+       },
+       {
+        "title": "Israeli–Palestinian conflict",
+        "events": 4
+       },
+       {
+        "title": "Gaza Strip",
+        "events": 3
+       },
+       {
+        "title": "Dead Sea",
+        "events": 3
+       },
+       {
+        "title": "Israeli apartheid",
+        "events": 3
+       },
+       {
+        "title": "Second Intifada",
+        "events": 3
+       },
+       {
+        "title": "Nakba",
+        "events": 2
+       }
+      ],
+      "direction": {
+       "insert": 114,
+       "remove": 0,
+       "insert_share": 1.0
+      },
+      "active": {
+       "first": "2021-04-16",
+       "last": "2025-08-10",
+       "busiest_month": "2023-10",
+       "events": 114
+      },
+      "inserted_phrases": [
+       {
+        "shingle": "“the israeli occupied west bank”",
+        "articles": 6
+       },
+       {
+        "shingle": "“during the 1948 palestine war”",
+        "articles": 6
+       },
+       {
+        "shingle": "“the 1967 six day war”",
+        "articles": 5
+       },
+       {
+        "shingle": "“israeli occupied west bank and”",
+        "articles": 5
+       },
+       {
+        "shingle": "“in the israeli occupied west”",
+        "articles": 5
+       }
+      ],
+      "null": {
+       "articles_3plus": {
+        "observed": 3,
+        "null_mean": 0.56,
+        "null_p95": 2.0,
+        "p": 0.006
+       },
+       "sync_t30": {
+        "observed": 0,
+        "null_mean": 0.167,
+        "null_p95": 1.0,
+        "p": 1.0,
+        "article_shuffle_null_mean": 1.249,
+        "p_article_shuffle": 1.0
+       },
+       "sync_t60": {
+        "observed": 0,
+        "null_mean": 0.309,
+        "null_p95": 2.0,
+        "p": 1.0,
+        "article_shuffle_null_mean": 1.984,
+        "p_article_shuffle": 1.0
+       }
+      },
+      "null_worlds_with_bloc_this_large_dense_and_strong": 0.005,
+      "significant_triads": 0,
+      "synchrony": {
+       "median_same_article_gap_h": 1574.42,
+       "share_events_with_member_within_10min": 0.0,
+       "share_events_with_member_within_24h": 0.158
+      },
+      "confidence": "medium",
+      "profile": {
+       "median_age_days": {
+        "bloc": 2204.0,
+        "base_rate": 1322.0,
+        "null_p95": 5046.975,
+        "null_p05": 467.85,
+        "percentile_vs_random_sets": 0.44
+       },
+       "share_age_lt30d": {
+        "bloc": 0.0,
+        "base_rate": 0.117,
+        "null_p95": 0.25,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.815
+       },
+       "share_age_lt1y": {
+        "bloc": 0.0,
+        "base_rate": 0.312,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.409
+       },
+       "median_editcount": {
+        "bloc": 21150.0,
+        "base_rate": 4900.0,
+        "null_p95": 60500.0,
+        "null_p05": 2550.0,
+        "percentile_vs_random_sets": 0.615
+       },
+       "share_editcount_lt500": {
+        "bloc": 0.0,
+        "base_rate": 0.217,
+        "null_p95": 0.25,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.724
+       },
+       "share_extended_confirmed": {
+        "bloc": 1.0,
+        "base_rate": 0.77,
+        "null_p95": 1.0,
+        "null_p05": 0.75,
+        "percentile_vs_random_sets": 1.0
+       },
+       "share_blocked_now": {
+        "bloc": 0.25,
+        "base_rate": 0.163,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.828
+       },
+       "share_indef_now": {
+        "bloc": 0.25,
+        "base_rate": 0.157,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.847
+       },
+       "share_sock_block": {
+        "bloc": 0.25,
+        "base_rate": 0.087,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.933
+       }
+      },
+      "time_alignment": {
+       "windows": {
+        "email_canvassing": {
+         "window": [
+          "2023-10-01",
+          "2024-01-21"
+         ],
+         "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+         "window_share": 0.342,
+         "window_share_ci95": [
+          0.235,
+          0.422
+         ],
+         "expected_window_share": 0.154,
+         "expected_ci95": [
+          0.0,
+          0.385
+         ],
+         "p_high": 0.0509,
+         "p_low": 0.951,
+         "expected_from_own_active_span": 0.115,
+         "other_accounts_share": 0.154
+        },
+        "tfp_discord": {
+         "window": [
+          "2024-01-01",
+          "2024-10-01"
+         ],
+         "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+         "window_share": 0.289,
+         "window_share_ci95": [
+          0.118,
+          0.368
+         ],
+         "expected_window_share": 0.239,
+         "expected_ci95": [
+          0.033,
+          0.444
+         ],
+         "p_high": 0.3157,
+         "p_low": 0.6873,
+         "expected_from_own_active_span": 0.231,
+         "other_accounts_share": 0.246
+        }
+       },
+       "post_sanction": {
+        "2024-12-09": {
+         "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+         "set_events_before": 41,
+         "set_events_after": 6,
+         "others_before": 251,
+         "others_after": 175,
+         "post_sanction_drop": 0.224,
+         "ci95": [
+          0.032,
+          1.8
+         ],
+         "matched_null_mean": 2.052,
+         "matched_null_ci95": [
+          0.123,
+          8.395
+         ],
+         "p_drop": 0.0539,
+         "testable": true
+        },
+        "2025-04-25": {
+         "note": "ArbCom site bans on further off-wiki coordination evidence",
+         "set_events_before": 28,
+         "set_events_after": 2,
+         "others_before": 257,
+         "others_after": 103,
+         "post_sanction_drop": 0.218,
+         "ci95": [
+          0.02,
+          1.072
+         ],
+         "matched_null_mean": 0.703,
+         "matched_null_ci95": [
+          0.053,
+          3.243
+         ],
+         "p_drop": 0.3636,
+         "testable": true
+        }
+       }
+      },
+      "name": "Bloc B (4 accounts)"
+     }
+    ]
+   },
+   "chart": "chart_data/blocs.json"
+  },
+  {
+   "id": "blocs_topic_remove",
+   "title": "(a) Bloc detection: topic articles, remove events",
+   "what_we_see": "topic articles, remove events: 2 account pairs share articles above the rewiring null (p<0.01, >=3 shared); null worlds give 0.19 such pairs on average (95th 1.0). 1 candidate groups of 3+ (null worlds: 0.02 on average, 95th 0.0); 0 pass the bloc test. No bloc detected.",
+   "confidence": "not detected",
+   "null_model": {
+    "pairs": "degree-preserving rewiring, 1000 draws",
+    "bloc": "articles with 3+ members vs rewiring; selection-aware share of null worlds; synchrony vs account day-shift (1-7 d) and time shuffle within article",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 0.19,
+     "edges_p95": 1.0,
+     "communities_mean": 0.02,
+     "communities_p95": 0.0,
+     "communities_max": 1
+    }
+   },
+   "so_what": "Account overlap is what the rewiring null predicts from activity and article popularity alone.",
+   "caveat": "Shared interest (WikiProject members, watchlists, talk-page RfCs) also produces overlap beyond a degree-preserving null; synchrony and direction help separate it but do not prove coordination.",
+   "numbers": {
+    "blocs": [
+     {
+      "size": 3,
+      "density": 0.667,
+      "strength": 2.222,
+      "n_articles": 24,
+      "articles": [
+       {
+        "title": "Israeli apartheid",
+        "events": 5
+       },
+       {
+        "title": "Israeli–Palestinian conflict",
+        "events": 5
+       },
+       {
+        "title": "South Africa's genocide case against Israel",
+        "events": 3
+       },
+       {
+        "title": "Gaza war",
+        "events": 3
+       },
+       {
+        "title": "Hamas",
+        "events": 3
+       },
+       {
+        "title": "Hezbollah",
+        "events": 3
+       },
+       {
+        "title": "Israel",
+        "events": 2
+       },
+       {
+        "title": "Nakba",
+        "events": 2
+       },
+       {
+        "title": "Second Intifada",
+        "events": 2
+       },
+       {
+        "title": "Bar Kokhba Revolt",
+        "events": 1
+       }
+      ],
+      "direction": {
+       "insert": 0,
+       "remove": 43,
+       "insert_share": 0.0
+      },
+      "active": {
+       "first": "2022-01-17",
+       "last": "2024-12-08",
+       "busiest_month": "2024-01",
+       "events": 43
+      },
+      "inserted_phrases": [],
+      "null": {
+       "articles_3plus": {
+        "observed": 1,
+        "null_mean": 0.072,
+        "null_p95": 1.0,
+        "p": 0.0719
+       },
+       "sync_t30": {
+        "observed": 0,
+        "null_mean": 0.016,
+        "null_p95": 0.0,
+        "p": 1.0,
+        "article_shuffle_null_mean": 0.011,
+        "p_article_shuffle": 1.0
+       },
+       "sync_t60": {
+        "observed": 0,
+        "null_mean": 0.035,
+        "null_p95": 0.0,
+        "p": 1.0,
+        "article_shuffle_null_mean": 0.031,
+        "p_article_shuffle": 1.0
+       }
+      },
+      "null_worlds_with_bloc_this_large_dense_and_strong": 0.02,
+      "significant_triads": 0,
+      "synchrony": {
+       "median_same_article_gap_h": 8078.62,
+       "share_events_with_member_within_10min": 0.0,
+       "share_events_with_member_within_24h": 0.047
+      },
+      "confidence": "low",
+      "profile": {
+       "median_age_days": {
+        "bloc": 4683.0,
+        "base_rate": 1493.0,
+        "null_p95": 5978.8,
+        "null_p05": 174.0,
+        "percentile_vs_random_sets": 0.867
+       },
+       "share_age_lt30d": {
+        "bloc": 0.0,
+        "base_rate": 0.089,
+        "null_p95": 0.333,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.919
+       },
+       "share_age_lt1y": {
+        "bloc": 0.0,
+        "base_rate": 0.285,
+        "null_p95": 0.667,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.511
+       },
+       "median_editcount": {
+        "bloc": 42000.0,
+        "base_rate": 6900.0,
+        "null_p95": 92000.0,
+        "null_p05": 1290.0,
+        "percentile_vs_random_sets": 0.763
+       },
+       "share_editcount_lt500": {
+        "bloc": 0.0,
+        "base_rate": 0.189,
+        "null_p95": 0.333,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.863
+       },
+       "share_extended_confirmed": {
+        "bloc": 1.0,
+        "base_rate": 0.802,
+        "null_p95": 1.0,
+        "null_p05": 0.667,
+        "percentile_vs_random_sets": 1.0
+       },
+       "share_blocked_now": {
+        "bloc": 0.0,
+        "base_rate": 0.144,
+        "null_p95": 0.667,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.606
+       },
+       "share_indef_now": {
+        "bloc": 0.0,
+        "base_rate": 0.142,
+        "null_p95": 0.667,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.606
+       },
+       "share_sock_block": {
+        "bloc": 0.0,
+        "base_rate": 0.087,
+        "null_p95": 0.333,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.656
+       }
+      },
+      "time_alignment": {
+       "windows": {
+        "email_canvassing": {
+         "window": [
+          "2023-10-01",
+          "2024-01-21"
+         ],
+         "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+         "window_share": 0.395,
+         "window_share_ci95": [
+          0.2,
+          0.6
+         ],
+         "expected_window_share": 0.195,
+         "expected_ci95": [
+          0.0,
+          0.563
+         ],
+         "p_high": 0.1429,
+         "p_low": 0.8581,
+         "expected_from_own_active_span": 0.218,
+         "other_accounts_share": 0.166
+        },
+        "tfp_discord": {
+         "window": [
+          "2024-01-01",
+          "2024-10-01"
+         ],
+         "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+         "window_share": 0.442,
+         "window_share_ci95": [
+          0.0,
+          0.545
+         ],
+         "expected_window_share": 0.235,
+         "expected_ci95": [
+          0.0,
+          0.696
+         ],
+         "p_high": 0.1588,
+         "p_low": 0.8422,
+         "expected_from_own_active_span": 0.494,
+         "other_accounts_share": 0.238
+        }
+       },
+       "post_sanction": {
+        "2024-12-09": {
+         "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+         "set_events_before": 30,
+         "set_events_after": 0,
+         "others_before": 237,
+         "others_after": 159,
+         "post_sanction_drop": 0.024,
+         "ci95": [
+          0.009,
+          0.213
+         ],
+         "matched_null_mean": 1.596,
+         "matched_null_ci95": [
+          0.078,
+          11.466
+         ],
+         "p_drop": 0.001,
+         "testable": true
+        },
+        "2025-04-25": {
+         "note": "ArbCom site bans on further off-wiki coordination evidence",
+         "set_events_before": 17,
+         "set_events_after": 0,
+         "others_before": 220,
+         "others_after": 103,
+         "post_sanction_drop": 0.061,
+         "ci95": [
+          0.021,
+          2.13
+         ],
+         "matched_null_mean": 2.475,
+         "matched_null_ci95": [
+          0.101,
+          19.174
+         ],
+         "p_drop": 0.001,
+         "testable": true
+        }
+       }
+      }
+     }
+    ]
+   },
+   "chart": "chart_data/blocs.json"
+  },
+  {
+   "id": "blocs_comparison_any",
+   "title": "(a) Bloc detection: comparison articles, any events",
+   "what_we_see": "comparison articles, any events: 3 account pairs share articles above the rewiring null (p<0.01, >=3 shared); null worlds give 0.27 such pairs on average (95th 1.0). 0 candidate groups of 3+ (null worlds: 0.03 on average, 95th 0.0); 0 pass the bloc test. No bloc detected.",
+   "confidence": "not detected",
+   "null_model": {
+    "pairs": "degree-preserving rewiring, 1000 draws",
+    "bloc": "articles with 3+ members vs rewiring; selection-aware share of null worlds; synchrony vs account day-shift (1-7 d) and time shuffle within article",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 0.27,
+     "edges_p95": 1.0,
+     "communities_mean": 0.03,
+     "communities_p95": 0.0,
+     "communities_max": 1
+    }
+   },
+   "so_what": "Account overlap is what the rewiring null predicts from activity and article popularity alone.",
+   "caveat": "Shared interest (WikiProject members, watchlists, talk-page RfCs) also produces overlap beyond a degree-preserving null; synchrony and direction help separate it but do not prove coordination.",
+   "numbers": {
+    "blocs": []
+   },
+   "chart": "chart_data/blocs.json"
+  },
+  {
+   "id": "sync_comparison",
+   "title": "(b) Synchrony: comparison account pairs acting on different articles within 10 minutes",
+   "what_we_see": "0 pairs (0 accounts) acted on 3+ distinct article pairs within 10 min of each other more often than the account day-shift null (p<0.01); 0 also beat the within-article time-shuffle null. Null worlds give 0.0 pairs on average (95th 0.0).",
+   "confidence": "not detected (consistent with chance)",
+   "null_model": {
+    "null": "each account's timeline shifted by a random 1-7 days (either sign), 1000 draws; secondary: timestamps permuted within article",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 0.0,
+     "edges_p95": 0.0
+    }
+   },
+   "so_what": "Pairs that repeatedly move together across different articles within minutes are the classic canvassing / sockpuppet signature, if they are more than the null expects.",
+   "caveat": "Both accounts may react to the same external trigger (news, an RfC closing, a noticeboard thread).",
+   "numbers": {
+    "pairs": []
+   },
+   "chart": "chart_data/sync.json"
+  },
+  {
+   "id": "network_comparison",
+   "title": "Co-activity network: comparison articles (time + direction)",
+   "what_we_see": "3 significant edges among 6 accounts (of 847 tested); expected by chance 0.28 (95th 1.0). 0 communities of 3+ (chance 0.03, 95th 0.0), 0 significant.",
+   "confidence": "not detected (consistent with chance)",
+   "null_model": {
+    "edge": "p<0.01 and observed>=3 on 30-min cross-article co-activity (account day-shift) or shared articles (rewiring)",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 0.28,
+     "edges_p95": 1.0,
+     "communities_mean": 0.03,
+     "communities_p95": 0.0,
+     "communities_max": 1
+    }
+   },
+   "so_what": "The page's network graph; edges carry direction agreement, so insert-blocs and remove-blocs are visible.",
+   "caveat": "Edges are tested one by one at p<0.01; compare the edge count with the chance expectation, not with zero.",
+   "numbers": {},
+   "chart": "chart_data/network.json"
+  },
+  {
+   "id": "blocs_comparison_insert",
+   "title": "(a) Bloc detection: comparison articles, insert events",
+   "what_we_see": "comparison articles, insert events: 2 account pairs share articles above the rewiring null (p<0.01, >=3 shared); null worlds give 0.0 such pairs on average (95th 0.0). 0 candidate groups of 3+ (null worlds: 0.0 on average, 95th 0.0); 0 pass the bloc test. No bloc detected.",
+   "confidence": "not detected",
+   "null_model": {
+    "pairs": "degree-preserving rewiring, 1000 draws",
+    "bloc": "articles with 3+ members vs rewiring; selection-aware share of null worlds; synchrony vs account day-shift (1-7 d) and time shuffle within article",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 0.0,
+     "edges_p95": 0.0,
+     "communities_mean": 0.0,
+     "communities_p95": 0.0,
+     "communities_max": 0
+    }
+   },
+   "so_what": "Account overlap is what the rewiring null predicts from activity and article popularity alone.",
+   "caveat": "Shared interest (WikiProject members, watchlists, talk-page RfCs) also produces overlap beyond a degree-preserving null; synchrony and direction help separate it but do not prove coordination.",
+   "numbers": {
+    "blocs": []
+   },
+   "chart": "chart_data/blocs.json"
+  },
+  {
+   "id": "blocs_comparison_remove",
+   "title": "(a) Bloc detection: comparison articles, remove events",
+   "what_we_see": "comparison articles, remove events: 1 account pairs share articles above the rewiring null (p<0.01, >=3 shared); null worlds give 0.04 such pairs on average (95th 0.0). 0 candidate groups of 3+ (null worlds: 0.0 on average, 95th 0.0); 0 pass the bloc test. No bloc detected.",
+   "confidence": "not detected",
+   "null_model": {
+    "pairs": "degree-preserving rewiring, 1000 draws",
+    "bloc": "articles with 3+ members vs rewiring; selection-aware share of null worlds; synchrony vs account day-shift (1-7 d) and time shuffle within article",
+    "expected_by_chance": {
+     "null_worlds": 200,
+     "edges_mean": 0.04,
+     "edges_p95": 0.0,
+     "communities_mean": 0.0,
+     "communities_p95": 0.0,
+     "communities_max": 0
+    }
+   },
+   "so_what": "Account overlap is what the rewiring null predicts from activity and article popularity alone.",
+   "caveat": "Shared interest (WikiProject members, watchlists, talk-page RfCs) also produces overlap beyond a degree-preserving null; synchrony and direction help separate it but do not prove coordination.",
+   "numbers": {
+    "blocs": []
+   },
+   "chart": "chart_data/blocs.json"
+  },
+  {
+   "id": "sweeps_topic",
+   "title": "(c) Copy-paste sweeps: topic articles",
+   "what_we_see": "0 near-identical inserted sentences (5-word shingle Jaccard >= 0.7) appear in 5+ articles. ",
+   "confidence": "n/a (none found)",
+   "null_model": {
+    "null": "same number of insertion times drawn from all term insertions in the group, 1000 draws; statistic: shortest span covering 5 distinct articles"
+   },
+   "so_what": "A sweep is the same wording placed into many articles; a short span and few accounts point to a campaign, a long span and many accounts to a shared standard phrase.",
+   "caveat": "Standard wording (WikiProject templates, a source's stock phrase) also repeats; the temporal null separates bursts from slow diffusion, not intent.",
+   "numbers": {
+    "clusters": []
+   },
+   "chart": "chart_data/sweeps.json"
+  },
+  {
+   "id": "sweeps_comparison",
+   "title": "(c) Copy-paste sweeps: comparison articles",
+   "what_we_see": "0 near-identical inserted sentences (5-word shingle Jaccard >= 0.7) appear in 5+ articles. ",
+   "confidence": "n/a (none found)",
+   "null_model": {
+    "null": "same number of insertion times drawn from all term insertions in the group, 1000 draws; statistic: shortest span covering 5 distinct articles"
+   },
+   "so_what": "A sweep is the same wording placed into many articles; a short span and few accounts point to a campaign, a long span and many accounts to a shared standard phrase.",
+   "caveat": "Standard wording (WikiProject templates, a source's stock phrase) also repeats; the temporal null separates bursts from slow diffusion, not intent.",
+   "numbers": {
+    "clusters": []
+   },
+   "chart": "chart_data/sweeps.json"
+  },
+  {
+   "id": "sweeps_nakba_villages",
+   "title": "(c) Nakba wording on Palestinian village pages",
+   "what_we_see": "25 inserted Nakba / expulsion sentences on 17 village pages by 15 registered accounts. Sweeps (5+ village articles, same wording): 0. ",
+   "confidence": "n/a (no sweep)",
+   "null_model": {
+    "null": "as for (c)"
+   },
+   "so_what": "Flags whether the village-page Nakba wording arrived as one sweep or piecemeal.",
+   "caveat": "Village articles share a WikiProject structure (Khalidi / Morris sourcing), so similar wording is expected; only a short-span, few-account cluster suggests a sweep.",
+   "numbers": {
+    "clusters": []
+   },
+   "chart": null
+  },
+  {
+   "id": "windows",
+   "title": "(e) Do detected blocs line up with the documented canvassing windows and sanctions?",
+   "what_we_see": "Sets tested: 3 (insert-direction blocs 1, remove-direction 0, any-direction blocs and communities 2). 0 show window concentration or a post-sanction drop beyond matched random sets (p<0.01). Bloc A (4 accounts) [topic/any]: email_canvassing: 41% of events in window [CI 17%-74%] vs matched sets 18% [0%-44%], own-span 0.149, others 0.169, p_high 0.042; tfp_discord: 21% of events in window [CI 12%-44%] vs matched sets 23% [4%-49%], own-span 0.226, others 0.253, p_high 0.5385. after 2024-12-09: drop ratio 0.392 [CI 0.028-1.104] vs matched 1.917, p_drop 0.1968; after 2025-04-25: drop ratio 0.597 [CI 0.118-0.887] vs matched 0.835, p_drop 0.5435 | topic network community 1 (4 accounts) [topic/any]: email_canvassing: 41% of events in window [CI 17%-74%] vs matched sets 18% [0%-40%], own-span 0.149, others 0.169, p_high 0.02; tfp_discord: 21% of events in window [CI 12%-44%] vs matched sets 23% [2%-47%], own-span 0.226, others 0.253, p_high 0.5325. after 2024-12-09: drop ratio 0.392 [CI 0.028-1.104] vs matched 2.238, p_drop 0.1818; after 2025-04-25: drop ratio 0.597 [CI 0.118-0.887] vs matched 0.877, p_drop 0.5335 | Bloc B (4 accounts) [topic/insert]: email_canvassing: 34% of events in window [CI 24%-42%] vs matched sets 15% [0%-38%], own-span 0.115, others 0.154, p_high 0.0509; tfp_discord: 29% of events in window [CI 12%-37%] vs matched sets 24% [3%-44%], own-span 0.231, others 0.246, p_high 0.3157. after 2024-12-09: drop ratio 0.224 [CI 0.032-1.8] vs matched 2.052, p_drop 0.0539; after 2025-04-25: drop ratio 0.218 [CI 0.02-1.072] vs matched 0.703, p_drop 0.3636",
+   "confidence": "low",
+   "null_model": {
+    "window_share": "matched random account sets (member-by-member on event count), 1,000 draws; CI = bootstrap over members",
+    "post_sanction_drop": "365 d after vs before each date, relative to all other accounts; same matched-set null",
+    "windows": {
+     "email_canvassing": [
+      "2023-10-01",
+      "2024-01-21",
+      "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023"
+     ],
+     "tfp_discord": [
+      "2024-01-01",
+      "2024-10-01",
+      "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)"
+     ]
+    },
+    "sanctions": {
+     "2024-12-09": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+     "2025-04-25": "ArbCom site bans on further off-wiki coordination evidence"
+    }
+   },
+   "so_what": "Alignment in time is not attribution: a set active during the Discord months is not shown to be the Discord group. It is a test of whether the documented windows left a footprint in who edited these terms.",
+   "caveat": "Dates come from ORGS.md snippets (marked there as needing verification); only critical-term lead events are counted; a drop after a sanction can also reflect the war-news cycle, which the comparison with all other accounts only partly removes.",
+   "numbers": {
+    "sets": [
+     {
+      "set": "Bloc A (4 accounts)",
+      "scope": "topic/any",
+      "direction": "any",
+      "time_alignment": {
+       "windows": {
+        "email_canvassing": {
+         "window": [
+          "2023-10-01",
+          "2024-01-21"
+         ],
+         "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+         "window_share": 0.412,
+         "window_share_ci95": [
+          0.171,
+          0.739
+         ],
+         "expected_window_share": 0.185,
+         "expected_ci95": [
+          0.0,
+          0.435
+         ],
+         "p_high": 0.042,
+         "p_low": 0.959,
+         "expected_from_own_active_span": 0.149,
+         "other_accounts_share": 0.169
+        },
+        "tfp_discord": {
+         "window": [
+          "2024-01-01",
+          "2024-10-01"
+         ],
+         "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+         "window_share": 0.206,
+         "window_share_ci95": [
+          0.119,
+          0.438
+         ],
+         "expected_window_share": 0.231,
+         "expected_ci95": [
+          0.037,
+          0.489
+         ],
+         "p_high": 0.5385,
+         "p_low": 0.4655,
+         "expected_from_own_active_span": 0.226,
+         "other_accounts_share": 0.253
+        }
+       },
+       "post_sanction": {
+        "2024-12-09": {
+         "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+         "set_events_before": 22,
+         "set_events_after": 5,
+         "others_before": 537,
+         "others_after": 335,
+         "post_sanction_drop": 0.392,
+         "ci95": [
+          0.028,
+          1.104
+         ],
+         "matched_null_mean": 1.917,
+         "matched_null_ci95": [
+          0.083,
+          7.141
+         ],
+         "p_drop": 0.1968,
+         "testable": true
+        },
+        "2025-04-25": {
+         "note": "ArbCom site bans on further off-wiki coordination evidence",
+         "set_events_before": 14,
+         "set_events_after": 3,
+         "others_before": 508,
+         "others_after": 205,
+         "post_sanction_drop": 0.597,
+         "ci95": [
+          0.118,
+          0.887
+         ],
+         "matched_null_mean": 0.835,
+         "matched_null_ci95": [
+          0.028,
+          3.655
+         ],
+         "p_drop": 0.5435,
+         "testable": true
+        }
+       }
+      }
+     },
+     {
+      "set": "topic network community 1 (4 accounts)",
+      "scope": "topic/any",
+      "direction": "any",
+      "time_alignment": {
+       "windows": {
+        "email_canvassing": {
+         "window": [
+          "2023-10-01",
+          "2024-01-21"
+         ],
+         "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+         "window_share": 0.412,
+         "window_share_ci95": [
+          0.171,
+          0.739
+         ],
+         "expected_window_share": 0.179,
+         "expected_ci95": [
+          0.0,
+          0.4
+         ],
+         "p_high": 0.02,
+         "p_low": 0.981,
+         "expected_from_own_active_span": 0.149,
+         "other_accounts_share": 0.169
+        },
+        "tfp_discord": {
+         "window": [
+          "2024-01-01",
+          "2024-10-01"
+         ],
+         "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+         "window_share": 0.206,
+         "window_share_ci95": [
+          0.119,
+          0.438
+         ],
+         "expected_window_share": 0.228,
+         "expected_ci95": [
+          0.019,
+          0.471
+         ],
+         "p_high": 0.5325,
+         "p_low": 0.4695,
+         "expected_from_own_active_span": 0.226,
+         "other_accounts_share": 0.253
+        }
+       },
+       "post_sanction": {
+        "2024-12-09": {
+         "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+         "set_events_before": 22,
+         "set_events_after": 5,
+         "others_before": 537,
+         "others_after": 335,
+         "post_sanction_drop": 0.392,
+         "ci95": [
+          0.028,
+          1.104
+         ],
+         "matched_null_mean": 2.238,
+         "matched_null_ci95": [
+          0.098,
+          9.078
+         ],
+         "p_drop": 0.1818,
+         "testable": true
+        },
+        "2025-04-25": {
+         "note": "ArbCom site bans on further off-wiki coordination evidence",
+         "set_events_before": 14,
+         "set_events_after": 3,
+         "others_before": 508,
+         "others_after": 205,
+         "post_sanction_drop": 0.597,
+         "ci95": [
+          0.118,
+          0.887
+         ],
+         "matched_null_mean": 0.877,
+         "matched_null_ci95": [
+          0.031,
+          3.639
+         ],
+         "p_drop": 0.5335,
+         "testable": true
+        }
+       }
+      }
+     },
+     {
+      "set": "Bloc B (4 accounts)",
+      "scope": "topic/insert",
+      "direction": "insert",
+      "time_alignment": {
+       "windows": {
+        "email_canvassing": {
+         "window": [
+          "2023-10-01",
+          "2024-01-21"
+         ],
+         "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+         "window_share": 0.342,
+         "window_share_ci95": [
+          0.235,
+          0.422
+         ],
+         "expected_window_share": 0.154,
+         "expected_ci95": [
+          0.0,
+          0.385
+         ],
+         "p_high": 0.0509,
+         "p_low": 0.951,
+         "expected_from_own_active_span": 0.115,
+         "other_accounts_share": 0.154
+        },
+        "tfp_discord": {
+         "window": [
+          "2024-01-01",
+          "2024-10-01"
+         ],
+         "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+         "window_share": 0.289,
+         "window_share_ci95": [
+          0.118,
+          0.368
+         ],
+         "expected_window_share": 0.239,
+         "expected_ci95": [
+          0.033,
+          0.444
+         ],
+         "p_high": 0.3157,
+         "p_low": 0.6873,
+         "expected_from_own_active_span": 0.231,
+         "other_accounts_share": 0.246
+        }
+       },
+       "post_sanction": {
+        "2024-12-09": {
+         "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+         "set_events_before": 41,
+         "set_events_after": 6,
+         "others_before": 251,
+         "others_after": 175,
+         "post_sanction_drop": 0.224,
+         "ci95": [
+          0.032,
+          1.8
+         ],
+         "matched_null_mean": 2.052,
+         "matched_null_ci95": [
+          0.123,
+          8.395
+         ],
+         "p_drop": 0.0539,
+         "testable": true
+        },
+        "2025-04-25": {
+         "note": "ArbCom site bans on further off-wiki coordination evidence",
+         "set_events_before": 28,
+         "set_events_after": 2,
+         "others_before": 257,
+         "others_after": 103,
+         "post_sanction_drop": 0.218,
+         "ci95": [
+          0.02,
+          1.072
+         ],
+         "matched_null_mean": 0.703,
+         "matched_null_ci95": [
+          0.053,
+          3.243
+         ],
+         "p_drop": 0.3636,
+         "testable": true
+        }
+       }
+      }
+     }
+    ]
+   },
+   "chart": "chart_data/windows.json"
+  },
+  {
+   "id": "profiles",
+   "title": "(d) Account profiles of the blocs (aggregate)",
+   "what_we_see": "Bloc A (4 accounts) topic/any: median age 1071.0 d (base 1298.5), editcount<500 0.0 (base 0.222), blocked now 0.25 (base 0.151, random-set 95th 0.5) | Bloc B (4 accounts) topic/insert: median age 2204.0 d (base 1322.0), editcount<500 0.0 (base 0.217), blocked now 0.25 (base 0.163, random-set 95th 0.5)",
+   "confidence": "medium",
+   "null_model": {
+    "null": "1,000 random account sets of the same size from accounts with 2+ articles in the same scope; base rate = all accounts in scope"
+   },
+   "so_what": "Young, low-editcount or since-blocked blocs are the sockpuppet profile; veteran blocs look like WikiProject regulars.",
+   "caveat": "Block status is as of collection, not as of the edit.",
+   "numbers": {
+    "profiles": [
+     {
+      "bloc": "Bloc A (4 accounts)",
+      "scope": "topic/any",
+      "profile": {
+       "median_age_days": {
+        "bloc": 1071.0,
+        "base_rate": 1298.5,
+        "null_p95": 5221.3,
+        "null_p05": 361.25,
+        "percentile_vs_random_sets": 0.187
+       },
+       "share_age_lt30d": {
+        "bloc": 0.0,
+        "base_rate": 0.109,
+        "null_p95": 0.25,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.849
+       },
+       "share_age_lt1y": {
+        "bloc": 0.0,
+        "base_rate": 0.313,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.37
+       },
+       "median_editcount": {
+        "bloc": 8300.0,
+        "base_rate": 4900.0,
+        "null_p95": 72525.0,
+        "null_p05": 1649.5,
+        "percentile_vs_random_sets": 0.344
+       },
+       "share_editcount_lt500": {
+        "bloc": 0.0,
+        "base_rate": 0.222,
+        "null_p95": 0.25,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.774
+       },
+       "share_extended_confirmed": {
+        "bloc": 1.0,
+        "base_rate": 0.766,
+        "null_p95": 1.0,
+        "null_p05": 0.75,
+        "percentile_vs_random_sets": 1.0
+       },
+       "share_blocked_now": {
+        "bloc": 0.25,
+        "base_rate": 0.151,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.868
+       },
+       "share_indef_now": {
+        "bloc": 0.25,
+        "base_rate": 0.148,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.873
+       },
+       "share_sock_block": {
+        "bloc": 0.25,
+        "base_rate": 0.083,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.938
+       }
+      }
+     },
+     {
+      "bloc": "Bloc B (4 accounts)",
+      "scope": "topic/insert",
+      "profile": {
+       "median_age_days": {
+        "bloc": 2204.0,
+        "base_rate": 1322.0,
+        "null_p95": 5046.975,
+        "null_p05": 467.85,
+        "percentile_vs_random_sets": 0.44
+       },
+       "share_age_lt30d": {
+        "bloc": 0.0,
+        "base_rate": 0.117,
+        "null_p95": 0.25,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.815
+       },
+       "share_age_lt1y": {
+        "bloc": 0.0,
+        "base_rate": 0.312,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.409
+       },
+       "median_editcount": {
+        "bloc": 21150.0,
+        "base_rate": 4900.0,
+        "null_p95": 60500.0,
+        "null_p05": 2550.0,
+        "percentile_vs_random_sets": 0.615
+       },
+       "share_editcount_lt500": {
+        "bloc": 0.0,
+        "base_rate": 0.217,
+        "null_p95": 0.25,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.724
+       },
+       "share_extended_confirmed": {
+        "bloc": 1.0,
+        "base_rate": 0.77,
+        "null_p95": 1.0,
+        "null_p05": 0.75,
+        "percentile_vs_random_sets": 1.0
+       },
+       "share_blocked_now": {
+        "bloc": 0.25,
+        "base_rate": 0.163,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.828
+       },
+       "share_indef_now": {
+        "bloc": 0.25,
+        "base_rate": 0.157,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.847
+       },
+       "share_sock_block": {
+        "bloc": 0.25,
+        "base_rate": 0.087,
+        "null_p95": 0.5,
+        "null_p05": 0.0,
+        "percentile_vs_random_sets": 0.933
+       }
+      }
+     }
+    ]
+   },
+   "chart": null
+  }
+ ]
+}

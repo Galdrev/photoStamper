@@ -1,0 +1,2009 @@
+{
+ "generated": "2026-11-06T22:26:26Z",
+ "method": {
+  "edge": "empirical p<0.01 and observed>=3; co-activity = events on different articles within 10 / 30 (default) / 60 min, null = each account's timeline shifted by a random 1-7 days (within-article time shuffle reported as p_article_shuffle); plus shared article sets, null = degree-preserving rewiring; 1,000 draws",
+  "communities": "Louvain (networkx, seed 11), weight = log2((obs+1)/(null mean+1))",
+  "labels": "A1, A2... per network; no hashes or usernames"
+ },
+ "topic": {
+  "nodes": [
+   {
+    "id": "A1",
+    "insert_share": 0.833,
+    "events": 30,
+    "articles": 20,
+    "community": 0,
+    "age_bucket": ">5y"
+   },
+   {
+    "id": "A2",
+    "insert_share": 0.615,
+    "events": 26,
+    "articles": 15,
+    "community": 0,
+    "age_bucket": ">5y"
+   },
+   {
+    "id": "A3",
+    "insert_share": 0.28,
+    "events": 25,
+    "articles": 12,
+    "community": 0,
+    "age_bucket": "30d-1y"
+   },
+   {
+    "id": "A4",
+    "insert_share": 0.773,
+    "events": 22,
+    "articles": 15,
+    "community": 0,
+    "age_bucket": ">5y"
+   },
+   {
+    "id": "A5",
+    "insert_share": 0.857,
+    "events": 7,
+    "articles": 3,
+    "community": 0,
+    "age_bucket": "30d-1y"
+   },
+   {
+    "id": "A6",
+    "insert_share": 0.853,
+    "events": 34,
+    "articles": 13,
+    "community": 1,
+    "age_bucket": ">5y"
+   },
+   {
+    "id": "A7",
+    "insert_share": 0.733,
+    "events": 15,
+    "articles": 6,
+    "community": 1,
+    "age_bucket": "1-5y"
+   },
+   {
+    "id": "A8",
+    "insert_share": 0.455,
+    "events": 11,
+    "articles": 7,
+    "community": 1,
+    "age_bucket": "1-5y"
+   },
+   {
+    "id": "A9",
+    "insert_share": 0.0,
+    "events": 8,
+    "articles": 6,
+    "community": 1,
+    "age_bucket": "1-5y"
+   },
+   {
+    "id": "A10",
+    "insert_share": 0.824,
+    "events": 17,
+    "articles": 16,
+    "community": 2,
+    "age_bucket": "1-5y"
+   },
+   {
+    "id": "A11",
+    "insert_share": 0.154,
+    "events": 13,
+    "articles": 6,
+    "community": 2,
+    "age_bucket": "1-5y"
+   }
+  ],
+  "edges": [
+   {
+    "source": "A11",
+    "target": "A7",
+    "weight": 1.698,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.233,
+    "null_p95": 1.0,
+    "p": 0.002,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.001,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.003,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.007,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.233,
+     "null_p95": 1.0,
+     "p": 0.002
+    },
+    "same_direction_share": 0.333,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Hamas",
+     "Israel",
+     "Israel–United States relations"
+    ],
+    "time_span": [
+     "2023-03-06",
+     "2024-05-09"
+    ]
+   },
+   {
+    "source": "A11",
+    "target": "A2",
+    "weight": 1.458,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.456,
+    "null_p95": 2.0,
+    "p": 0.01,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.001,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.003,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.007,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.456,
+     "null_p95": 2.0,
+     "p": 0.01
+    },
+    "same_direction_share": 0.333,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Aliyah",
+     "Hamas",
+     "Israel"
+    ],
+    "time_span": [
+     "2022-04-30",
+     "2023-12-17"
+    ]
+   },
+   {
+    "source": "A11",
+    "target": "A10",
+    "weight": 1.434,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.48,
+    "null_p95": 2.0,
+    "p": 0.005,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.48,
+     "null_p95": 2.0,
+     "p": 0.005
+    },
+    "same_direction_share": 0.333,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Aliyah",
+     "Israel",
+     "Israel–United States relations"
+    ],
+    "time_span": [
+     "2021-05-25",
+     "2023-11-19"
+    ]
+   },
+   {
+    "source": "A7",
+    "target": "A8",
+    "weight": 1.625,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.297,
+    "null_p95": 1.0,
+    "p": 0.002,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.297,
+     "null_p95": 1.0,
+     "p": 0.002
+    },
+    "same_direction_share": 1.0,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Gaza war",
+     "Hamas",
+     "Israel"
+    ],
+    "time_span": [
+     "2023-10-09",
+     "2025-11-15"
+    ]
+   },
+   {
+    "source": "A7",
+    "target": "A9",
+    "weight": 1.711,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.222,
+    "null_p95": 1.0,
+    "p": 0.001,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.005,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.017,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.035,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.222,
+     "null_p95": 1.0,
+     "p": 0.001
+    },
+    "same_direction_share": 0.333,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Gaza war",
+     "Hamas",
+     "Israel"
+    ],
+    "time_span": [
+     "2023-10-09",
+     "2024-05-22"
+    ]
+   },
+   {
+    "source": "A7",
+    "target": "A6",
+    "weight": 1.504,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.41,
+    "null_p95": 2.0,
+    "p": 0.003,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.014,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.03,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.056,
+      "null_p95": 1.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.41,
+     "null_p95": 2.0,
+     "p": 0.003
+    },
+    "same_direction_share": 0.667,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Gaza war",
+     "Hamas",
+     "Israel"
+    ],
+    "time_span": [
+     "2021-09-22",
+     "2024-05-22"
+    ]
+   },
+   {
+    "source": "A5",
+    "target": "A2",
+    "weight": 1.687,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.242,
+    "null_p95": 1.0,
+    "p": 0.002,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.008,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.026,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.047,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.242,
+     "null_p95": 1.0,
+     "p": 0.002
+    },
+    "same_direction_share": 0.667,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Israel",
+     "Israeli–Palestinian conflict",
+     "Palestinian genocide allegations"
+    ],
+    "time_span": [
+     "2022-04-30",
+     "2024-05-09"
+    ]
+   },
+   {
+    "source": "A4",
+    "target": "A3",
+    "weight": 1.433,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 4,
+    "null_mean": 0.852,
+    "null_p95": 2.0,
+    "p": 0.008,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.005,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.015,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.035,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 4,
+     "null_mean": 0.852,
+     "null_p95": 2.0,
+     "p": 0.008
+    },
+    "same_direction_share": 0.0,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Bar Kokhba Revolt",
+     "Israel",
+     "Israeli apartheid",
+     "Zionism as settler colonialism"
+    ],
+    "time_span": [
+     "2022-04-27",
+     "2023-06-25"
+    ]
+   },
+   {
+    "source": "A4",
+    "target": "A1",
+    "weight": 1.405,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 5,
+    "null_mean": 1.265,
+    "null_p95": 3.0,
+    "p": 0.001,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.004,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.011,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.019,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 5,
+     "null_mean": 1.265,
+     "null_p95": 3.0,
+     "p": 0.001
+    },
+    "same_direction_share": 0.8,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Israel",
+     "Nakba",
+     "Palestinian refugees",
+     "South Africa's genocide case against Israel",
+     "Weaponization of antisemitism"
+    ],
+    "time_span": [
+     "2021-04-05",
+     "2024-10-18"
+    ]
+   },
+   {
+    "source": "A8",
+    "target": "A2",
+    "weight": 1.403,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.513,
+    "null_p95": 2.0,
+    "p": 0.008,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.004,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.013,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.024,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.513,
+     "null_p95": 2.0,
+     "p": 0.008
+    },
+    "same_direction_share": 0.333,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Hamas",
+     "Israel",
+     "Palestinian genocide allegations"
+    ],
+    "time_span": [
+     "2022-04-30",
+     "2025-10-30"
+    ]
+   },
+   {
+    "source": "A8",
+    "target": "A9",
+    "weight": 1.642,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.282,
+    "null_p95": 1.0,
+    "p": 0.001,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.282,
+     "null_p95": 1.0,
+     "p": 0.001
+    },
+    "same_direction_share": 0.333,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Gaza war",
+     "Hamas",
+     "Israel"
+    ],
+    "time_span": [
+     "2023-10-19",
+     "2025-11-15"
+    ]
+   },
+   {
+    "source": "A8",
+    "target": "A6",
+    "weight": 1.403,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.513,
+    "null_p95": 2.0,
+    "p": 0.007,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.513,
+     "null_p95": 2.0,
+     "p": 0.007
+    },
+    "same_direction_share": 0.667,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Gaza war",
+     "Hamas",
+     "Israel"
+    ],
+    "time_span": [
+     "2021-09-22",
+     "2025-11-15"
+    ]
+   },
+   {
+    "source": "A2",
+    "target": "A3",
+    "weight": 1.463,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 4,
+    "null_mean": 0.814,
+    "null_p95": 2.0,
+    "p": 0.004,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.007,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.015,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.027,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 4,
+     "null_mean": 0.814,
+     "null_p95": 2.0,
+     "p": 0.004
+    },
+    "same_direction_share": 0.25,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Ancient Israel and Judah",
+     "Israel",
+     "Israeli–Palestinian conflict",
+     "Zionism as settler colonialism"
+    ],
+    "time_span": [
+     "2022-04-27",
+     "2023-11-19"
+    ]
+   },
+   {
+    "source": "A9",
+    "target": "A6",
+    "weight": 1.514,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.401,
+    "null_p95": 1.0,
+    "p": 0.003,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.006,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.018,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.029,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.401,
+     "null_p95": 1.0,
+     "p": 0.003
+    },
+    "same_direction_share": 0.0,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Gaza war",
+     "Hamas",
+     "Israel"
+    ],
+    "time_span": [
+     "2021-09-22",
+     "2024-03-15"
+    ]
+   }
+  ],
+  "communities": [
+   {
+    "size": 5,
+    "density": 0.4,
+    "strength": 2.548,
+    "n_articles": 46,
+    "articles": [
+     {
+      "title": "Israel",
+      "events": 27
+     },
+     {
+      "title": "Palestinian genocide allegations",
+      "events": 6
+     },
+     {
+      "title": "Israeli apartheid",
+      "events": 5
+     },
+     {
+      "title": "South Africa's genocide case against Israel",
+      "events": 5
+     },
+     {
+      "title": "Israeli–Palestinian conflict",
+      "events": 4
+     },
+     {
+      "title": "One-state solution",
+      "events": 4
+     },
+     {
+      "title": "Nakba",
+      "events": 3
+     },
+     {
+      "title": "Weaponization of antisemitism",
+      "events": 3
+     },
+     {
+      "title": "Zionism as settler colonialism",
+      "events": 3
+     },
+     {
+      "title": "Ancient Israel and Judah",
+      "events": 3
+     }
+    ],
+    "direction": {
+     "insert": 71,
+     "remove": 39,
+     "insert_share": 0.645
+    },
+    "active": {
+     "first": "2021-04-05",
+     "last": "2025-04-25",
+     "busiest_month": "2022-05",
+     "events": 110
+    },
+    "inserted_phrases": [
+     {
+      "shingle": "“1948 palestinian expulsion and flight”",
+      "articles": 8
+     },
+     {
+      "shingle": "“the 1948 palestinian expulsion and”",
+      "articles": 7
+     },
+     {
+      "shingle": "“the 1967 six day war”",
+      "articles": 3
+     },
+     {
+      "shingle": "“west bank and gaza strip”",
+      "articles": 2
+     },
+     {
+      "shingle": "“the west bank and gaza”",
+      "articles": 2
+     }
+    ],
+    "significance": {
+     "fixed_set_null": {
+      "articles_3plus": {
+       "observed": 3,
+       "null_mean": 0.866,
+       "null_p95": 2.0,
+       "p": 0.027
+      },
+      "sync_t30": {
+       "observed": 0,
+       "null_mean": 0.15,
+       "null_p95": 1.0,
+       "p": 1.0,
+       "article_shuffle_null_mean": 1.667,
+       "p_article_shuffle": 1.0
+      },
+      "sync_t60": {
+       "observed": 0,
+       "null_mean": 0.307,
+       "null_p95": 1.0,
+       "p": 1.0,
+       "article_shuffle_null_mean": 2.14,
+       "p_article_shuffle": 1.0
+      }
+     },
+     "null_worlds_with_community_this_large_dense_and_strong": 0.0,
+     "null_worlds": 200
+    },
+    "confidence": "low",
+    "id": 0,
+    "members": [
+     "A1",
+     "A2",
+     "A3",
+     "A4",
+     "A5"
+    ],
+    "profile": {
+     "median_age_days": {
+      "bloc": 2970.0,
+      "base_rate": 1298.5,
+      "null_p95": 5251.0,
+      "null_p05": 258.0,
+      "percentile_vs_random_sets": 0.692
+     },
+     "share_age_lt30d": {
+      "bloc": 0.0,
+      "base_rate": 0.109,
+      "null_p95": 0.2,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.76
+     },
+     "share_age_lt1y": {
+      "bloc": 0.4,
+      "base_rate": 0.313,
+      "null_p95": 0.6,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.922
+     },
+     "median_editcount": {
+      "bloc": 42000.0,
+      "base_rate": 4900.0,
+      "null_p95": 62000.0,
+      "null_p05": 1500.0,
+      "percentile_vs_random_sets": 0.882
+     },
+     "share_editcount_lt500": {
+      "bloc": 0.0,
+      "base_rate": 0.222,
+      "null_p95": 0.2,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.72
+     },
+     "share_extended_confirmed": {
+      "bloc": 1.0,
+      "base_rate": 0.766,
+      "null_p95": 1.0,
+      "null_p05": 0.8,
+      "percentile_vs_random_sets": 1.0
+     },
+     "share_blocked_now": {
+      "bloc": 0.4,
+      "base_rate": 0.151,
+      "null_p95": 0.4,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.971
+     },
+     "share_indef_now": {
+      "bloc": 0.4,
+      "base_rate": 0.148,
+      "null_p95": 0.4,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.974
+     },
+     "share_sock_block": {
+      "bloc": 0.2,
+      "base_rate": 0.083,
+      "null_p95": 0.4,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.893
+     }
+    },
+    "time_alignment": {
+     "windows": {
+      "email_canvassing": {
+       "window": [
+        "2023-10-01",
+        "2024-01-21"
+       ],
+       "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+       "window_share": 0.173,
+       "window_share_ci95": [
+        0.056,
+        0.346
+       ],
+       "expected_window_share": 0.217,
+       "expected_ci95": [
+        0.015,
+        0.411
+       ],
+       "p_high": 0.6553,
+       "p_low": 0.3457,
+       "expected_from_own_active_span": 0.095,
+       "other_accounts_share": 0.179
+      },
+      "tfp_discord": {
+       "window": [
+        "2024-01-01",
+        "2024-10-01"
+       ],
+       "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+       "window_share": 0.145,
+       "window_share_ci95": [
+        0.056,
+        0.225
+       ],
+       "expected_window_share": 0.27,
+       "expected_ci95": [
+        0.08,
+        0.474
+       ],
+       "p_high": 0.8711,
+       "p_low": 0.1299,
+       "expected_from_own_active_span": 0.197,
+       "other_accounts_share": 0.258
+      }
+     },
+     "post_sanction": {
+      "2024-12-09": {
+       "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+       "set_events_before": 20,
+       "set_events_after": 2,
+       "others_before": 539,
+       "others_after": 338,
+       "post_sanction_drop": 0.194,
+       "ci95": [
+        0.051,
+        0.419
+       ],
+       "matched_null_mean": 0.998,
+       "matched_null_ci95": [
+        0.09,
+        3.294
+       ],
+       "p_drop": 0.0899,
+       "testable": true
+      },
+      "2025-04-25": {
+       "note": "ArbCom site bans on further off-wiki coordination evidence",
+       "set_events_before": 13,
+       "set_events_after": 1,
+       "others_before": 509,
+       "others_after": 207,
+       "post_sanction_drop": 0.273,
+       "ci95": [
+        0.063,
+        0.818
+       ],
+       "matched_null_mean": 0.728,
+       "matched_null_ci95": [
+        0.026,
+        2.553
+       ],
+       "p_drop": 0.2567,
+       "testable": true
+      }
+     }
+    },
+    "window_share": {
+     "email_canvassing": 0.173,
+     "tfp_discord": 0.145
+    },
+    "expected_window_share": {
+     "email_canvassing": {
+      "mean": 0.217,
+      "ci95": [
+       0.015,
+       0.411
+      ],
+      "p_high": 0.6553,
+      "p_low": 0.3457
+     },
+     "tfp_discord": {
+      "mean": 0.27,
+      "ci95": [
+       0.08,
+       0.474
+      ],
+      "p_high": 0.8711,
+      "p_low": 0.1299
+     }
+    },
+    "post_sanction_drop": {
+     "2024-12-09": {
+      "ratio": 0.194,
+      "ci95": [
+       0.051,
+       0.419
+      ],
+      "p_drop": 0.0899,
+      "testable": true
+     },
+     "2025-04-25": {
+      "ratio": 0.273,
+      "ci95": [
+       0.063,
+       0.818
+      ],
+      "p_drop": 0.2567,
+      "testable": true
+     }
+    }
+   },
+   {
+    "size": 4,
+    "density": 1.0,
+    "strength": 2.65,
+    "n_articles": 23,
+    "articles": [
+     {
+      "title": "Israel",
+      "events": 19
+     },
+     {
+      "title": "Gaza war",
+      "events": 14
+     },
+     {
+      "title": "Hamas",
+      "events": 11
+     },
+     {
+      "title": "Israeli bombing of the Gaza Strip",
+      "events": 2
+     },
+     {
+      "title": "Israeli apartheid",
+      "events": 2
+     },
+     {
+      "title": "Tourism in Israel",
+      "events": 2
+     },
+     {
+      "title": "Yesha Council",
+      "events": 2
+     },
+     {
+      "title": "Antisemitism",
+      "events": 1
+     },
+     {
+      "title": "Israel–United States relations",
+      "events": 1
+     },
+     {
+      "title": "Nakba",
+      "events": 1
+     }
+    ],
+    "direction": {
+     "insert": 45,
+     "remove": 23,
+     "insert_share": 0.662
+    },
+    "active": {
+     "first": "2021-04-16",
+     "last": "2025-11-15",
+     "busiest_month": "2023-10",
+     "events": 68
+    },
+    "inserted_phrases": [
+     {
+      "shingle": "“the israeli occupied west bank”",
+      "articles": 4
+     },
+     {
+      "shingle": "“occupation of the palestinian territories”",
+      "articles": 3
+     },
+     {
+      "shingle": "“israeli occupied west bank and”",
+      "articles": 3
+     },
+     {
+      "shingle": "“in the israeli occupied west”",
+      "articles": 3
+     },
+     {
+      "shingle": "“war crimes and crimes against”",
+      "articles": 2
+     }
+    ],
+    "significance": {
+     "fixed_set_null": {
+      "articles_3plus": {
+       "observed": 3,
+       "null_mean": 0.236,
+       "null_p95": 1.0,
+       "p": 0.001
+      },
+      "sync_t30": {
+       "observed": 0,
+       "null_mean": 0.065,
+       "null_p95": 1.0,
+       "p": 1.0,
+       "article_shuffle_null_mean": 0.308,
+       "p_article_shuffle": 1.0
+      },
+      "sync_t60": {
+       "observed": 0,
+       "null_mean": 0.12,
+       "null_p95": 1.0,
+       "p": 1.0,
+       "article_shuffle_null_mean": 0.731,
+       "p_article_shuffle": 1.0
+      }
+     },
+     "null_worlds_with_community_this_large_dense_and_strong": 0.0,
+     "null_worlds": 200
+    },
+    "confidence": "medium",
+    "id": 1,
+    "members": [
+     "A6",
+     "A7",
+     "A8",
+     "A9"
+    ],
+    "profile": {
+     "median_age_days": {
+      "bloc": 1071.0,
+      "base_rate": 1298.5,
+      "null_p95": 5177.05,
+      "null_p05": 328.675,
+      "percentile_vs_random_sets": 0.219
+     },
+     "share_age_lt30d": {
+      "bloc": 0.0,
+      "base_rate": 0.109,
+      "null_p95": 0.25,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.813
+     },
+     "share_age_lt1y": {
+      "bloc": 0.0,
+      "base_rate": 0.313,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.346
+     },
+     "median_editcount": {
+      "bloc": 8300.0,
+      "base_rate": 4900.0,
+      "null_p95": 64500.0,
+      "null_p05": 1699.0,
+      "percentile_vs_random_sets": 0.358
+     },
+     "share_editcount_lt500": {
+      "bloc": 0.0,
+      "base_rate": 0.222,
+      "null_p95": 0.25,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.75
+     },
+     "share_extended_confirmed": {
+      "bloc": 1.0,
+      "base_rate": 0.766,
+      "null_p95": 1.0,
+      "null_p05": 0.75,
+      "percentile_vs_random_sets": 1.0
+     },
+     "share_blocked_now": {
+      "bloc": 0.25,
+      "base_rate": 0.151,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.873
+     },
+     "share_indef_now": {
+      "bloc": 0.25,
+      "base_rate": 0.148,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.877
+     },
+     "share_sock_block": {
+      "bloc": 0.25,
+      "base_rate": 0.083,
+      "null_p95": 0.5,
+      "null_p05": 0.0,
+      "percentile_vs_random_sets": 0.932
+     }
+    },
+    "time_alignment": {
+     "windows": {
+      "email_canvassing": {
+       "window": [
+        "2023-10-01",
+        "2024-01-21"
+       ],
+       "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+       "window_share": 0.412,
+       "window_share_ci95": [
+        0.171,
+        0.739
+       ],
+       "expected_window_share": 0.179,
+       "expected_ci95": [
+        0.0,
+        0.4
+       ],
+       "p_high": 0.02,
+       "p_low": 0.981,
+       "expected_from_own_active_span": 0.149,
+       "other_accounts_share": 0.169
+      },
+      "tfp_discord": {
+       "window": [
+        "2024-01-01",
+        "2024-10-01"
+       ],
+       "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+       "window_share": 0.206,
+       "window_share_ci95": [
+        0.119,
+        0.438
+       ],
+       "expected_window_share": 0.228,
+       "expected_ci95": [
+        0.019,
+        0.471
+       ],
+       "p_high": 0.5325,
+       "p_low": 0.4695,
+       "expected_from_own_active_span": 0.226,
+       "other_accounts_share": 0.253
+      }
+     },
+     "post_sanction": {
+      "2024-12-09": {
+       "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+       "set_events_before": 22,
+       "set_events_after": 5,
+       "others_before": 537,
+       "others_after": 335,
+       "post_sanction_drop": 0.392,
+       "ci95": [
+        0.028,
+        1.104
+       ],
+       "matched_null_mean": 2.238,
+       "matched_null_ci95": [
+        0.098,
+        9.078
+       ],
+       "p_drop": 0.1818,
+       "testable": true
+      },
+      "2025-04-25": {
+       "note": "ArbCom site bans on further off-wiki coordination evidence",
+       "set_events_before": 14,
+       "set_events_after": 3,
+       "others_before": 508,
+       "others_after": 205,
+       "post_sanction_drop": 0.597,
+       "ci95": [
+        0.118,
+        0.887
+       ],
+       "matched_null_mean": 0.877,
+       "matched_null_ci95": [
+        0.031,
+        3.639
+       ],
+       "p_drop": 0.5335,
+       "testable": true
+      }
+     }
+    },
+    "window_share": {
+     "email_canvassing": 0.412,
+     "tfp_discord": 0.206
+    },
+    "expected_window_share": {
+     "email_canvassing": {
+      "mean": 0.179,
+      "ci95": [
+       0.0,
+       0.4
+      ],
+      "p_high": 0.02,
+      "p_low": 0.981
+     },
+     "tfp_discord": {
+      "mean": 0.228,
+      "ci95": [
+       0.019,
+       0.471
+      ],
+      "p_high": 0.5325,
+      "p_low": 0.4695
+     }
+    },
+    "post_sanction_drop": {
+     "2024-12-09": {
+      "ratio": 0.392,
+      "ci95": [
+       0.028,
+       1.104
+      ],
+      "p_drop": 0.1818,
+      "testable": true
+     },
+     "2025-04-25": {
+      "ratio": 0.597,
+      "ci95": [
+       0.118,
+       0.887
+      ],
+      "p_drop": 0.5335,
+      "testable": true
+     }
+    }
+   },
+   {
+    "size": 2,
+    "density": 1.0,
+    "strength": 2.301,
+    "n_articles": 19,
+    "articles": [
+     {
+      "title": "Israel",
+      "events": 6
+     },
+     {
+      "title": "Ariel Sharon",
+      "events": 4
+     },
+     {
+      "title": "Aliyah",
+      "events": 2
+     },
+     {
+      "title": "Israel–United States relations",
+      "events": 2
+     },
+     {
+      "title": "Ancient Israel and Judah",
+      "events": 2
+     },
+     {
+      "title": "Dead Sea",
+      "events": 1
+     },
+     {
+      "title": "Hamas",
+      "events": 1
+     },
+     {
+      "title": "Arab citizens of Israel",
+      "events": 1
+     },
+     {
+      "title": "Borders of Israel",
+      "events": 1
+     },
+     {
+      "title": "Expulsion of Palestinians from Kuwait (1990–91)",
+      "events": 1
+     }
+    ],
+    "direction": {
+     "insert": 16,
+     "remove": 14,
+     "insert_share": 0.533
+    },
+    "active": {
+     "first": "2021-04-23",
+     "last": "2023-12-17",
+     "busiest_month": "2023-08",
+     "events": 30
+    },
+    "inserted_phrases": [
+     {
+      "shingle": "“the israeli occupied golan heights”",
+      "articles": 2
+     },
+     {
+      "shingle": "“the egyptian occupied gaza strip”",
+      "articles": 2
+     }
+    ],
+    "significance": null,
+    "confidence": "n/a (pair)",
+    "id": 2,
+    "members": [
+     "A10",
+     "A11"
+    ]
+   }
+  ],
+  "counts": {
+   "accounts_tested": 697,
+   "articles": 493,
+   "events": 1620,
+   "edges": 14,
+   "communities_3plus": 2,
+   "communities_significant": 1,
+   "expected_by_chance": {
+    "null_worlds": 200,
+    "edges_mean": 2.15,
+    "edges_p95": 5.0,
+    "communities_mean": 0.34,
+    "communities_p95": 1.0,
+    "communities_max": 2
+   }
+  }
+ },
+ "comparison": {
+  "nodes": [
+   {
+    "id": "A1",
+    "insert_share": 0.27,
+    "events": 37,
+    "articles": 20,
+    "community": 0,
+    "age_bucket": "1-5y"
+   },
+   {
+    "id": "A2",
+    "insert_share": 0.095,
+    "events": 21,
+    "articles": 6,
+    "community": 0,
+    "age_bucket": "1-5y"
+   },
+   {
+    "id": "A3",
+    "insert_share": 0.784,
+    "events": 37,
+    "articles": 11,
+    "community": 1,
+    "age_bucket": ">5y"
+   },
+   {
+    "id": "A4",
+    "insert_share": 0.75,
+    "events": 12,
+    "articles": 6,
+    "community": 1,
+    "age_bucket": "1-5y"
+   },
+   {
+    "id": "A5",
+    "insert_share": 1.0,
+    "events": 11,
+    "articles": 6,
+    "community": 2,
+    "age_bucket": ">5y"
+   },
+   {
+    "id": "A6",
+    "insert_share": 1.0,
+    "events": 3,
+    "articles": 3,
+    "community": 2,
+    "age_bucket": "1-5y"
+   }
+  ],
+  "edges": [
+   {
+    "source": "A2",
+    "target": "A1",
+    "weight": 1.425,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.49,
+    "null_p95": 2.0,
+    "p": 0.008,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.018,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.03,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.049,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.49,
+     "null_p95": 2.0,
+     "p": 0.008
+    },
+    "same_direction_share": 1.0,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Greek War of Independence",
+     "Hellenic Army",
+     "Joseph Stalin"
+    ],
+    "time_span": [
+     "2023-02-25",
+     "2025-08-29"
+    ]
+   },
+   {
+    "source": "A4",
+    "target": "A3",
+    "weight": 1.648,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.276,
+    "null_p95": 1.0,
+    "p": 0.003,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.002,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.003,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.006,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.276,
+     "null_p95": 1.0,
+     "p": 0.003
+    },
+    "same_direction_share": 1.0,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Mustafa Kemal Atatürk",
+     "Treaty of Lausanne",
+     "Turkish War of Independence"
+    ],
+    "time_span": [
+     "2021-01-24",
+     "2026-06-27"
+    ]
+   },
+   {
+    "source": "A5",
+    "target": "A6",
+    "weight": 1.862,
+    "basis": "shared",
+    "significant_on": [
+     "shared"
+    ],
+    "observed": 3,
+    "null_mean": 0.1,
+    "null_p95": 1.0,
+    "p": 0.001,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t60": {
+      "observed": 0,
+      "null_mean": 0.0,
+      "null_p95": 0.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 0.1,
+     "null_p95": 1.0,
+     "p": 0.001
+    },
+    "same_direction_share": 1.0,
+    "example_article_pairs": [],
+    "shared_article_examples": [
+     "Russo-Ukrainian War",
+     "Russo-Ukrainian war",
+     "Russo-Ukrainian war (2022–present)"
+    ],
+    "time_span": [
+     "2022-03-10",
+     "2024-11-12"
+    ]
+   }
+  ],
+  "communities": [
+   {
+    "size": 2,
+    "density": 1.0,
+    "strength": 2.097,
+    "n_articles": 23,
+    "articles": [
+     {
+      "title": "Hellenic Army",
+      "events": 17
+     },
+     {
+      "title": "Greek War of Independence",
+      "events": 6
+     },
+     {
+      "title": "Joseph Stalin",
+      "events": 6
+     },
+     {
+      "title": "Mongol invasion of Kievan Rus'",
+      "events": 5
+     },
+     {
+      "title": "Sea of Azov",
+      "events": 3
+     },
+     {
+      "title": "Theodoros Kolokotronis",
+      "events": 2
+     },
+     {
+      "title": "Commonwealth of Independent States",
+      "events": 2
+     },
+     {
+      "title": "Mariupol",
+      "events": 2
+     },
+     {
+      "title": "Christianity and Islam",
+      "events": 1
+     },
+     {
+      "title": "Greco-Turkish War (1919–1922)",
+      "events": 1
+     }
+    ],
+    "direction": {
+     "insert": 12,
+     "remove": 46,
+     "insert_share": 0.207
+    },
+    "active": {
+     "first": "2022-02-24",
+     "last": "2026-07-15",
+     "busiest_month": "2023-06",
+     "events": 58
+    },
+    "inserted_phrases": [],
+    "significance": null,
+    "confidence": "n/a (pair)",
+    "id": 0,
+    "members": [
+     "A1",
+     "A2"
+    ]
+   },
+   {
+    "size": 2,
+    "density": 1.0,
+    "strength": 2.523,
+    "n_articles": 14,
+    "articles": [
+     {
+      "title": "Treaty of Lausanne",
+      "events": 11
+     },
+     {
+      "title": "Turkish War of Independence",
+      "events": 11
+     },
+     {
+      "title": "Armenian genocide",
+      "events": 7
+     },
+     {
+      "title": "Mustafa Kemal Atatürk",
+      "events": 5
+     },
+     {
+      "title": "Foreign relations of Turkey",
+      "events": 3
+     },
+     {
+      "title": "Muhacir",
+      "events": 2
+     },
+     {
+      "title": "Armenian national movement",
+      "events": 2
+     },
+     {
+      "title": "Hamidian massacres",
+      "events": 2
+     },
+     {
+      "title": "Abdul Hamid II",
+      "events": 1
+     },
+     {
+      "title": "Armenian millet",
+      "events": 1
+     }
+    ],
+    "direction": {
+     "insert": 38,
+     "remove": 11,
+     "insert_share": 0.776
+    },
+    "active": {
+     "first": "2021-01-07",
+     "last": "2026-06-27",
+     "busiest_month": "2021-01",
+     "events": 49
+    },
+    "inserted_phrases": [
+     {
+      "shingle": "“of the armenian genocide and”",
+      "articles": 2
+     }
+    ],
+    "significance": null,
+    "confidence": "n/a (pair)",
+    "id": 1,
+    "members": [
+     "A3",
+     "A4"
+    ]
+   },
+   {
+    "size": 2,
+    "density": 1.0,
+    "strength": 3.0,
+    "n_articles": 6,
+    "articles": [
+     {
+      "title": "Russo-Ukrainian War",
+      "events": 4
+     },
+     {
+      "title": "Russo-Ukrainian war",
+      "events": 3
+     },
+     {
+      "title": "Russo-Ukrainian war (2022–present)",
+      "events": 3
+     },
+     {
+      "title": "2014 Russian annexation of Crimea",
+      "events": 2
+     },
+     {
+      "title": "Gaels",
+      "events": 1
+     },
+     {
+      "title": "War in Donbas",
+      "events": 1
+     }
+    ],
+    "direction": {
+     "insert": 14,
+     "remove": 0,
+     "insert_share": 1.0
+    },
+    "active": {
+     "first": "2021-03-28",
+     "last": "2026-01-21",
+     "busiest_month": "2024-02",
+     "events": 14
+    },
+    "inserted_phrases": [
+     {
+      "shingle": "“while unmarked russian troops occupied”",
+      "articles": 2
+     },
+     {
+      "shingle": "“warrants for putin and several”",
+      "articles": 2
+     },
+     {
+      "shingle": "“war crimes and issued arrest”",
+      "articles": 2
+     },
+     {
+      "shingle": "“up to 18 percent of”",
+      "articles": 2
+     },
+     {
+      "shingle": "“unrest erupted in eastern and”",
+      "articles": 2
+     }
+    ],
+    "significance": null,
+    "confidence": "n/a (pair)",
+    "id": 2,
+    "members": [
+     "A5",
+     "A6"
+    ]
+   }
+  ],
+  "counts": {
+   "accounts_tested": 847,
+   "articles": 406,
+   "events": 1586,
+   "edges": 3,
+   "communities_3plus": 0,
+   "communities_significant": 0,
+   "expected_by_chance": {
+    "null_worlds": 200,
+    "edges_mean": 0.28,
+    "edges_p95": 1.0,
+    "communities_mean": 0.03,
+    "communities_p95": 0.0,
+    "communities_max": 1
+   }
+  }
+ }
+}

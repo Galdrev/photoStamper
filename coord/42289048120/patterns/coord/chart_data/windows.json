@@ -1,0 +1,277 @@
+{
+ "sets": [
+  {
+   "set": "Bloc A (4 accounts)",
+   "scope": "topic/any",
+   "direction": "any",
+   "time_alignment": {
+    "windows": {
+     "email_canvassing": {
+      "window": [
+       "2023-10-01",
+       "2024-01-21"
+      ],
+      "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+      "window_share": 0.412,
+      "window_share_ci95": [
+       0.171,
+       0.739
+      ],
+      "expected_window_share": 0.185,
+      "expected_ci95": [
+       0.0,
+       0.435
+      ],
+      "p_high": 0.042,
+      "p_low": 0.959,
+      "expected_from_own_active_span": 0.149,
+      "other_accounts_share": 0.169
+     },
+     "tfp_discord": {
+      "window": [
+       "2024-01-01",
+       "2024-10-01"
+      ],
+      "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+      "window_share": 0.206,
+      "window_share_ci95": [
+       0.119,
+       0.438
+      ],
+      "expected_window_share": 0.231,
+      "expected_ci95": [
+       0.037,
+       0.489
+      ],
+      "p_high": 0.5385,
+      "p_low": 0.4655,
+      "expected_from_own_active_span": 0.226,
+      "other_accounts_share": 0.253
+     }
+    },
+    "post_sanction": {
+     "2024-12-09": {
+      "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+      "set_events_before": 22,
+      "set_events_after": 5,
+      "others_before": 537,
+      "others_after": 335,
+      "post_sanction_drop": 0.392,
+      "ci95": [
+       0.028,
+       1.104
+      ],
+      "matched_null_mean": 1.917,
+      "matched_null_ci95": [
+       0.083,
+       7.141
+      ],
+      "p_drop": 0.1968,
+      "testable": true
+     },
+     "2025-04-25": {
+      "note": "ArbCom site bans on further off-wiki coordination evidence",
+      "set_events_before": 14,
+      "set_events_after": 3,
+      "others_before": 508,
+      "others_after": 205,
+      "post_sanction_drop": 0.597,
+      "ci95": [
+       0.118,
+       0.887
+      ],
+      "matched_null_mean": 0.835,
+      "matched_null_ci95": [
+       0.028,
+       3.655
+      ],
+      "p_drop": 0.5435,
+      "testable": true
+     }
+    }
+   }
+  },
+  {
+   "set": "topic network community 1 (4 accounts)",
+   "scope": "topic/any",
+   "direction": "any",
+   "time_alignment": {
+    "windows": {
+     "email_canvassing": {
+      "window": [
+       "2023-10-01",
+       "2024-01-21"
+      ],
+      "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+      "window_share": 0.412,
+      "window_share_ci95": [
+       0.171,
+       0.739
+      ],
+      "expected_window_share": 0.179,
+      "expected_ci95": [
+       0.0,
+       0.4
+      ],
+      "p_high": 0.02,
+      "p_low": 0.981,
+      "expected_from_own_active_span": 0.149,
+      "other_accounts_share": 0.169
+     },
+     "tfp_discord": {
+      "window": [
+       "2024-01-01",
+       "2024-10-01"
+      ],
+      "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+      "window_share": 0.206,
+      "window_share_ci95": [
+       0.119,
+       0.438
+      ],
+      "expected_window_share": 0.228,
+      "expected_ci95": [
+       0.019,
+       0.471
+      ],
+      "p_high": 0.5325,
+      "p_low": 0.4695,
+      "expected_from_own_active_span": 0.226,
+      "other_accounts_share": 0.253
+     }
+    },
+    "post_sanction": {
+     "2024-12-09": {
+      "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+      "set_events_before": 22,
+      "set_events_after": 5,
+      "others_before": 537,
+      "others_after": 335,
+      "post_sanction_drop": 0.392,
+      "ci95": [
+       0.028,
+       1.104
+      ],
+      "matched_null_mean": 2.238,
+      "matched_null_ci95": [
+       0.098,
+       9.078
+      ],
+      "p_drop": 0.1818,
+      "testable": true
+     },
+     "2025-04-25": {
+      "note": "ArbCom site bans on further off-wiki coordination evidence",
+      "set_events_before": 14,
+      "set_events_after": 3,
+      "others_before": 508,
+      "others_after": 205,
+      "post_sanction_drop": 0.597,
+      "ci95": [
+       0.118,
+       0.887
+      ],
+      "matched_null_mean": 0.877,
+      "matched_null_ci95": [
+       0.031,
+       3.639
+      ],
+      "p_drop": 0.5335,
+      "testable": true
+     }
+    }
+   }
+  },
+  {
+   "set": "Bloc B (4 accounts)",
+   "scope": "topic/insert",
+   "direction": "insert",
+   "time_alignment": {
+    "windows": {
+     "email_canvassing": {
+      "window": [
+       "2023-10-01",
+       "2024-01-21"
+      ],
+      "note": "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying for a banned editor (pro-Israel), dated from about Oct 2023",
+      "window_share": 0.342,
+      "window_share_ci95": [
+       0.235,
+       0.422
+      ],
+      "expected_window_share": 0.154,
+      "expected_ci95": [
+       0.0,
+       0.385
+      ],
+      "p_high": 0.0509,
+      "p_low": 0.951,
+      "expected_from_own_active_span": 0.115,
+      "other_accounts_share": 0.154
+     },
+     "tfp_discord": {
+      "window": [
+       "2024-01-01",
+       "2024-10-01"
+      ],
+      "note": "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)",
+      "window_share": 0.289,
+      "window_share_ci95": [
+       0.118,
+       0.368
+      ],
+      "expected_window_share": 0.239,
+      "expected_ci95": [
+       0.033,
+       0.444
+      ],
+      "p_high": 0.3157,
+      "p_low": 0.6873,
+      "expected_from_own_active_span": 0.231,
+      "other_accounts_share": 0.246
+     }
+    },
+    "post_sanction": {
+     "2024-12-09": {
+      "note": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+      "set_events_before": 41,
+      "set_events_after": 6,
+      "others_before": 251,
+      "others_after": 175,
+      "post_sanction_drop": 0.224,
+      "ci95": [
+       0.032,
+       1.8
+      ],
+      "matched_null_mean": 2.052,
+      "matched_null_ci95": [
+       0.123,
+       8.395
+      ],
+      "p_drop": 0.0539,
+      "testable": true
+     },
+     "2025-04-25": {
+      "note": "ArbCom site bans on further off-wiki coordination evidence",
+      "set_events_before": 28,
+      "set_events_after": 2,
+      "others_before": 257,
+      "others_after": 103,
+      "post_sanction_drop": 0.218,
+      "ci95": [
+       0.02,
+       1.072
+      ],
+      "matched_null_mean": 0.703,
+      "matched_null_ci95": [
+       0.053,
+       3.243
+      ],
+      "p_drop": 0.3636,
+      "testable": true
+     }
+    }
+   }
+  }
+ ]
+}
