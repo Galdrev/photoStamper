@@ -800,6 +800,171 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .zi-facts div:first-child{grid-column:1/-1}
 }
 /*LABCSS*/
+/* ---------- design council round 2: shared grammar for #charge, #oct7, #organised (reuses .zi-*, .seg, .legend, .fig) ---------- */
+.m3{white-space:nowrap;border-bottom:1px dotted var(--muted)}
+.fig-h .m3,.legend .m3{white-space:normal}
+.m3 i{font:500 9px/1 var(--mono);font-style:normal;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule);background:var(--faint);border-radius:2px;padding:2px 4px 1px;margin-left:4px;vertical-align:2px}
+.cards-note{max-width:80ch}
+.card .body{font:14px/1.5 var(--body);color:var(--ink-2)}
+.card .body q{font-family:var(--display);font-size:15px;quotes:"“" "”"}
+.sec.sub{margin-top:40px}
+/* step timeline instances other than Zionism (same look; class-based instead of id-based) */
+.st-chart{outline-offset:4px;touch-action:pan-y;cursor:pointer}
+.st-chart svg{display:block}
+.st-chart svg text{font:10.5px var(--mono);fill:var(--muted)}
+.st-chart svg text.ln{font:600 11px var(--mono);fill:var(--ink-2);paint-order:stroke;stroke:var(--sheet);stroke-width:3px}
+.st-chart svg text.bd{font:600 10.5px var(--mono);fill:var(--paper)}
+.st-chart svg text.pl{font:600 11px var(--mono);fill:var(--ink-2)}
+.st-chart svg text.pl.on{fill:var(--paper)}
+.st-chart svg text.phd{font:600 11px var(--mono);fill:var(--paper)}
+.st-chart svg text.em{font:italic 11.5px var(--body);fill:var(--muted)}
+.st-chart svg text.tt{font:500 10.5px var(--body);fill:var(--ink-2)}
+.zi-ctl .play{min-width:92px;background:var(--ink)!important;border-color:var(--ink)!important;color:var(--paper)!important}
+.zi-ctl .play .ic{font-size:11px}
+.st-tabs button{min-height:36px;font-size:13.5px;padding:8px 14px}
+.o7-side{align-items:start}
+.pos-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:4px 10px;align-items:center;font:11.5px var(--mono);color:var(--muted)}
+.pos-bar{position:relative;height:22px}
+.pos-bar::before{content:"";position:absolute;left:0;right:0;top:10px;height:2px;background:var(--faint);border-radius:1px}
+.pos-bar .d{position:absolute;top:4px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--ink)}
+.pos-bar .s{position:absolute;top:5px;width:12px;height:12px;margin-left:-6px;background:var(--add-bd);border-radius:2px}
+.pos-q{grid-column:2;font:13.5px/1.4 var(--display);color:var(--ink-2);margin-bottom:6px}
+.grp-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px;align-items:center;font:12px var(--body);color:var(--ink-2)}
+.grp-row .tr{position:relative;height:20px}
+.grp-row .tr::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--faint)}
+.grp-row .ln{position:absolute;top:8px;height:3px;background:var(--ink-2);opacity:.4}
+.grp-row .a{position:absolute;top:3px;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;border:2px solid var(--ink-2);background:var(--sheet)}
+.grp-row .b{position:absolute;top:3px;width:13px;height:13px;margin-left:-6.5px;border-radius:50%;background:var(--ink)}
+.grp-row .b.nm{background:var(--muted)}
+.grp-row small{font:10.5px var(--mono);color:var(--muted)}
+/* perpetrator x charge small multiple */
+.pp-top{display:grid;gap:6px}
+.pp-top .r{display:grid;grid-template-columns:minmax(0,220px) repeat(3,64px) minmax(0,1fr);gap:4px 10px;align-items:baseline;font:12.5px var(--mono);color:var(--muted)}
+.pp-top .r b{font:600 15px var(--mono);color:var(--ink)}
+.pp-top .r.h{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+.pp-top .r span:first-child{font-family:var(--body);color:var(--ink-2)}
+.pp-opts{display:none}
+.pp-grid{display:grid;grid-template-columns:minmax(120px,170px) repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
+.pp-grid .ch{font:600 13px/1.25 var(--body);color:var(--ink);padding:10px 8px 10px 0;border-bottom:1px solid var(--faint);display:grid;align-content:center;gap:2px}
+.pp-grid .ch small{font:500 10.5px var(--mono);color:var(--muted)}
+.pp-grid .sh{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 6px;border-bottom:1px solid var(--rule)}
+.pp-cell{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;align-items:end;padding:8px 10px;border-bottom:1px solid var(--faint);border-left:1px solid var(--faint);min-height:78px}
+.pp-bar{display:grid;grid-template-rows:auto 1fr auto;justify-items:center;gap:2px;height:100%;min-height:62px;background:none;border:1px solid transparent;border-radius:3px;padding:2px 0;cursor:pointer;font:inherit;color:inherit}
+.pp-bar:disabled{cursor:default}
+.pp-bar .n{font:600 12px var(--mono);color:var(--ink)}
+.pp-bar .n.z{color:var(--muted);font-weight:400}
+.pp-bar .stk{display:flex;flex-direction:column-reverse;justify-content:flex-start;width:min(26px,100%);height:44px;align-self:end}
+.pp-bar .own{background:var(--ink-2)}
+.pp-bar .att{background:repeating-linear-gradient(135deg,var(--mid) 0 3px,var(--sheet) 3px 5px);box-shadow:inset 0 0 0 1px var(--mid)}
+.pp-bar .y{font:10px var(--mono);color:var(--muted)}
+.pp-bar.now .stk{outline:1.5px solid var(--ink);outline-offset:1px}
+.pp-bar[aria-pressed="true"]{border-color:var(--ink);background:var(--paper)}
+.pp-bar:not(:disabled):hover{background:var(--paper)}
+.pp-card .rc{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.pp-card .rc li{background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:10px 12px;display:grid;gap:4px}
+.pp-card .rc .w{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pp-card .rc .s{font:400 16px/1.45 var(--display);color:var(--ink)}
+.vchip{font:600 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:2px;padding:3px 5px}
+.vchip.own{background:var(--ink-2);color:var(--paper)}
+.vchip.att,.vchip.den{background:repeating-linear-gradient(135deg,var(--faint) 0 3px,var(--sheet) 3px 5px);color:var(--ink-2);border:1px solid var(--mid)}
+/* organised or organic */
+.o-h{font:600 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);border-top:1px solid var(--ink);padding-top:10px;margin-top:18px}
+.org-rec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.org-col{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:14px 16px;display:grid;gap:10px;align-content:start}
+.org-lab{font:600 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.org-col ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.org-col li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+.org-col li b{color:var(--ink)}
+.org-col .tag{font:600 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:2px;padding:4px 6px;justify-self:start;align-self:start;margin-top:2px;white-space:nowrap}
+.org-col .tag.x{border:1px dotted var(--ink-2);color:var(--ink-2)}
+.org-col .tag.u{border:1px solid var(--rule);color:var(--muted)}
+.tag.d{color:var(--ink);border:1.5px solid var(--ink)}
+.tag.a{color:var(--ink-2);border:1.5px dashed var(--ink-2)}
+.org-null p{font-size:14.5px;line-height:1.5}
+.per-row{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) 46px;gap:8px;align-items:center;font:12px/1.3 var(--body);color:var(--ink-2)}
+.per-row .tr{position:relative;height:22px;background:var(--faint);border-radius:2px}
+.per-row .tr i{position:absolute;top:0;bottom:0;left:0;border-radius:2px;background:var(--topic)}
+.per-row .tr .one{position:absolute;top:-3px;bottom:-3px;width:0;border-left:1.5px dashed var(--muted)}
+.per-row .v{font:600 13px var(--mono);color:var(--ink);text-align:right}
+.per-row.doc .tr{background:repeating-linear-gradient(135deg,var(--faint) 0 4px,var(--sheet) 4px 7px)}
+.net-hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.net-side{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:12px 14px;display:grid;gap:8px;min-width:0}
+.net-side h4{margin:0;font:600 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.chance{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr) auto;gap:4px 10px;align-items:center;font:12px var(--mono);color:var(--muted)}
+.chance .tr{position:relative;height:16px}
+.chance .f{position:absolute;left:0;top:0;height:7px;background:var(--ink-2);border-radius:1px}
+.chance .g{position:absolute;left:0;top:9px;height:7px;border:1.5px dotted var(--muted);border-radius:1px;box-sizing:border-box}
+.chance .w{position:absolute;top:9px;height:7px;border-right:1.5px solid var(--muted)}
+.chance b{color:var(--ink);font-weight:600}
+.net-ctl{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
+.net-ctl .o{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.net-ctl .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tchips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tchips button{min-height:36px;border:1px solid var(--rule);background:var(--paper);border-radius:18px;padding:4px 12px;cursor:pointer;font:13px/1.2 var(--body);color:var(--ink-2);white-space:nowrap}
+.tchips button[aria-pressed="true"]{border-color:var(--ink);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.gcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:12px}
+#net{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;min-width:0}
+.net-ctl .o[hidden]{display:none}
+.gcard{background:var(--sheet);border:1.5px solid var(--ink-2);border-radius:4px;padding:14px;display:grid;gap:9px;align-content:start;min-width:0;transition:opacity .2s}
+.gcard.medium{border-style:dashed}.gcard.low{border-style:dotted;border-color:var(--muted)}
+.gcard.dim{opacity:.28}
+.gcard.sel{box-shadow:0 0 0 2px var(--ink)}
+.gcard h4{margin:0;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font:600 14px var(--body)}
+.conf{font:600 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink-2);border-radius:2px;padding:3px 5px;color:var(--ink-2)}
+.conf.medium{border-style:dashed}.conf.low{border-style:dotted;color:var(--muted);border-color:var(--muted)}
+.gcard .meta{font:12.5px/1.4 var(--mono);color:var(--muted)}
+.gcard .meta b{color:var(--ink)}
+.cells7{display:inline-flex;gap:2px;vertical-align:-1px;margin-left:6px}
+.cells7 i{width:8px;height:10px;border-radius:1px;background:var(--faint)}
+.cells7 i.a{background:var(--add-bd)}.cells7 i.r{background:var(--del-bd)}
+.astrip svg{display:block;width:100%}
+.astrip svg text{font:10px var(--mono);fill:var(--muted)}
+.gcard .arts{display:flex;flex-wrap:wrap;gap:4px}
+.gcard .arts span{font:12px var(--body);border:1px solid var(--rule);border-radius:999px;padding:2px 8px;color:var(--ink-2)}
+.wtest{display:grid;gap:4px}
+.net-graphs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.net-g{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:10px;min-width:0;display:grid;gap:6px;align-content:start}
+.net-g h4{margin:0;font:600 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.net-g svg{display:block;width:100%;height:auto;touch-action:pan-y}
+.net-g svg text{font:10px var(--mono);fill:var(--muted)}
+.net-g svg .hull{fill:none;stroke:var(--ink-2);stroke-width:1.2}
+.net-g svg .hull.medium{stroke-dasharray:5 3}.net-g svg .hull.low{stroke-dasharray:1.5 3;stroke:var(--muted)}
+.net-g svg .nd{stroke:var(--sheet);stroke-width:2;cursor:pointer}
+.net-g svg .ed{stroke:var(--ink-2);cursor:pointer}
+.net-g svg .on{stroke:var(--ink)!important;stroke-width:2.5}
+.net-det{background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:10px 12px;font:13.5px/1.5 var(--body);color:var(--ink-2)}
+.net-det b{color:var(--ink)}
+.net-ph{border:1.5px dashed var(--ink-2);border-radius:4px;padding:18px 20px;display:grid;gap:10px;background:var(--sheet)}
+.net-ph .chip{justify-self:start;font-weight:600;color:var(--ink);border-color:var(--ink)}
+.net-ph p{font-size:15px;line-height:1.55;color:var(--ink-2);max-width:78ch}
+.net-ph ul{margin:0;padding-left:1.1em;display:grid;gap:4px;font-size:14.5px;color:var(--ink-2)}
+.chose{border:1.5px solid var(--ink);border-radius:4px;background:var(--sheet);padding:18px 20px;display:grid;gap:10px;max-width:80ch}
+.chose h3{font-size:22px}
+.chose p,.chose li{font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+.chose ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+.wvu-row{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:4px 14px;align-items:center;padding:6px 0;border-bottom:1px solid var(--faint)}
+.wvu-row .l{font:13px/1.35 var(--body);color:var(--ink-2)}
+.wvu-row .l small{display:block;font:11px var(--mono);color:var(--muted)}
+.wvu-row svg{display:block;width:100%;height:44px}
+.wvu-row svg text{font:10px var(--mono);fill:var(--muted)}
+@media (max-width:900px){.org-rec,.net-hd,.net-graphs{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  .pp-opts{display:flex}
+  .pp-grid{grid-template-columns:minmax(96px,120px) minmax(0,1fr)}
+  .pp-grid .sh.hid,.pp-grid .pp-cell.hid{display:none}
+  .pp-top .r{grid-template-columns:minmax(0,1fr) repeat(3,44px)}
+  .pp-top .r span:last-child{grid-column:1/-1}
+  .org-col li{grid-template-columns:minmax(0,1fr)}
+  .chance{grid-template-columns:minmax(0,1fr) auto}
+  .chance .tr{grid-column:1/-1;grid-row:2}
+  .wvu-row{grid-template-columns:minmax(0,1fr)}
+  .per-row{grid-template-columns:minmax(0,1fr) 46px}
+  .per-row .tr{grid-column:1/-1;grid-row:2}
+  .grp-row{grid-template-columns:minmax(0,1fr)}
+  .tchips{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding:2px 16px 6px;max-width:calc(100% + 32px)}
+  .tchips button{min-height:44px}
+  .chose{padding:14px 16px}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -811,15 +976,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 2021–2026</span></div>
 
 <header class="hero">
-  <h1>What changed in English Wikipedia’s articles on Israel, Palestine, Zionism and Judaism, 2021 to 2026</h1>
-  <p class="deck" id="deck">We followed every edit to 10,320 articles for almost six years: 4,642 about Israel, Palestine, Zionism and Judaism, and 5,678 about other countries, conflicts and religions, measured the same way. This is what moved, where, when, and by whose hand, starting with one sentence.</p>
+  <h1>How the world’s reference now tells Israel’s story: English Wikipedia, 2021 to 2026</h1>
+  <p class="deck" id="deck">English Wikipedia is the text millions of people, and the AI assistants they ask, read first. For almost six years we tracked <!--MASS3:hero_n_topic--><span class="m3" data-mass3="hero_n_topic" title="Pending: the final weighted figure from the mass3 probability sample replaces this">4,642<i>pending</i></span> of the articles that its own Israel, Palestine, Judaism and Jewish history projects rate as central to the subject, and <!--MASS3:hero_n_comp--><span class="m3" data-mass3="hero_n_comp" title="Pending: the final weighted figure from the mass3 probability sample replaces this">5,670<i>pending</i></span> articles on other countries, conflicts and religions, measured the same way. This is what the encyclopedia now says, when it changed, how, and how organised it was. We start with one sentence.</p>
 </header>
 
 <section class="sec zi" id="zionism" aria-labelledby="ziH">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span>One sentence, every edit</div>
     <h2 id="ziH">A Jewish state became “a Jewish homeland through colonization”. It took 292 edits.</h2>
-    <p class="deck">In January 2021 English Wikipedia defined Zionism as a movement for “the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel”. Today it is “an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine”. Between those two sentences lie 292 changes to the first sentence, 108 of them later undone. “Colonial” or “colonization” first went in on 5 June 2024. It went in and out dozens of times over two years before it stayed, on 27 August 2026.</p>
+    <p class="deck">In January 2021 English Wikipedia defined Zionism as a movement for “the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel”. Today it is “an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine”. The word “re-establishment” left the first sentence for the last time on 9 July 2024. Counting the changes where both versions of the sentence were kept, “colonization” was written in 44 times and taken out 41 times, and 37 of those 41 removals were undone. It has stood since 27 August 2026 (as of 5 November 2026). Between the two definitions lie 292 changes to one sentence, 108 of them later undone. The opening section was edited by 455 different accounts. This is what the fight over the encyclopedia’s one-line answer to “what is Zionism?” looks like. It is not the only sentence that changed.</p>
     <p class="deck">The chips below are the article’s own words, removed or added. Read them with the two paragraphs. Then step through the timeline. Each tick is an edit to the first sentence. The grey bars behind it are all edits to the article, week by week. Watch what happens after October 2023. The sentence did not settle until almost three years later.</p>
   </header>
   <div class="zi-sum" id="ziSum"></div>
@@ -867,53 +1032,106 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="sixty" id="sixty" aria-labelledby="sixtyH">
   <div class="eyebrow">Key findings</div>
-  <h2 id="sixtyH">Five things the data show, and one it does not</h2>
+  <h2 id="sixtyH">What the encyclopedia now says: six findings</h2>
   <div class="cards" id="cards"></div>
   <p class="cap cards-hint">Swipe for more →</p>
+  <p class="cap col cards-note">The numbers in cards 5 and 6 are counts across thousands of articles; weighting and sampling can move them (see <a href="#board">How far to trust this</a>). The sentences in cards 1 to 4 are the encyclopedia’s exact text on the dates given; no weighting changes them. Leads change daily: every quote is dated.</p>
 </section>
 
 <div class="band" id="andyet">
-  <div class="eyebrow">The pattern <span class="xchip">Full crawl · 10,320 articles</span></div>
+  <div class="eyebrow">The pattern <span class="xchip">Sampled crawl · 4,642 + 5,670 articles</span></div>
   <h2>Zionism is not alone: a few hundred pages, and the ones people read</h2>
-  <p class="deck">Most articles did not change. The opening paragraphs of a few hundred widely read Israel and Palestine articles did. We collected every English Wikipedia article in the topic, 4,642 of them, and 5,678 comparison articles on other countries, conflicts and religions. 85.1% of topic articles ended the period with exactly the same count of critical vocabulary as they started. Articles on Judaism moved no more than comparison articles (the difference is −0.1 percentage points, a range of −2.3 to +2.3). The change sits in the Israel and Palestine articles, which are 61% of the topic and supplied 84% of the added terms. Inside them it is steep: the top 40 articles, 1% of the topic, supplied 38% of all new terms. More topic articles than comparison articles gained critical vocabulary after October 2023, by 3.6 percentage points. That held on the half of the data we had sealed until the end.</p>
+  <p class="deck">Most articles did not change. The opening paragraphs of a few hundred widely read Israel and Palestine articles did. Wikipedia’s own WikiProjects Israel, Palestine, Judaism and Jewish history rate about 9,200 articles Top, High or Mid importance; we analysed 4,642 of them, and 5,670 comparison articles on other countries, conflicts and religions. Articles on Judaism moved no more than comparison articles (−0.1 percentage points, a range of −2.3 to +2.3; weighted to the population, <!--MASS3:judaism_holdout--><span class="m3" data-mass3="judaism_holdout" title="Pending: the final weighted figure from the mass3 probability sample replaces this">−0.3<i>pending</i></span>). The change sits in the Israel and Palestine articles: 67% of the four projects’ articles (60% of our sample), and in the sample they supplied <!--MASS3:ip_share_added--><span class="m3" data-mass3="ip_share_added" title="Pending: the final weighted figure from the mass3 probability sample replaces this">84%<i>pending</i></span> of the added terms. More topic articles than comparison articles gained critical vocabulary after October 2023, by 3.6 percentage points on the half of the data we had sealed until the end; weighted to the population, <!--MASS3:a1_holdout--><span class="m3" data-mass3="a1_holdout" title="Pending: the final weighted figure from the mass3 probability sample replaces this">+2.6 points [0.5, 4.9]<i>pending</i></span>. The one test we wrote down before collecting data, an average over articles, found no rise; it is in <a href="#key">the trust section</a>.</p>
   <p class="cap short-def"><i>Critical vocabulary:</i> words from the legal and historical charges made against Israel, such as genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion. We counted Jewish-history vocabulary (homeland, indigenous, antisemitism) the same way.</p>
 </div>
 
 <section class="sec" id="reach" aria-labelledby="reachH" style="margin-top:56px">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span>Few pages, many readers</div>
-    <h2 id="reachH">The changed pages are 3.9% of topic articles and 15% of topic reading</h2>
-    <p class="deck">The opening paragraph is what readers, search snippets and AI assistants see first. Each pair of bars is one group: first all its articles, then all its reading over the last 12 months. The dark part is the pages whose opening paragraph gained critical vocabulary since July 2023. Topic: 3.9% of articles, 15% of reading. Comparison: 1.5% and 5%. The five most-read gainers are Benjamin Netanyahu (7.0M views), Israel (4.6M), Palestine (2.4M), Zionism (1.8M) and Hamas (1.3M).</p>
+    <h2 id="reachH">Few pages, much of the reading, as in other live wars</h2>
+    <p class="deck">The opening paragraph is what readers, search snippets and AI assistants see first. The dark part of each bar is the pages whose opening paragraph gained critical vocabulary since July 2023. In the 4,642 sampled topic articles that is 3.9% of articles and 15% of the last 12 months’ reading. Weighted back to the real size of the four projects it is about <!--MASS3:reach_articles_w--><span class="m3" data-mass3="reach_articles_w" title="Pending: the final weighted figure from the mass3 probability sample replaces this">2.5% [2.0, 3.0]<i>pending</i></span> of articles and <!--MASS3:reach_views_w--><span class="m3" data-mass3="reach_views_w" title="Pending: the final weighted figure from the mass3 probability sample replaces this">about 14% [8, 20]<i>pending</i></span> of reading. Comparison articles: 1.5% and 5% in the sample, <!--MASS3:reach_comp_w--><span class="m3" data-mass3="reach_comp_w" title="Pending: the final weighted figure from the mass3 probability sample replaces this">1.3% and 3.4%<i>pending</i></span> weighted. Against the live wars alone (Ukraine, Russia, Armenia, Azerbaijan) the reading share is 14.1%. The five most-read gainers are Benjamin Netanyahu (7.0M views), Israel (4.6M), Palestine (2.4M), Zionism (1.8M) and Hamas (1.3M).</p>
+    <p class="deck">Other live wars show the same tilt toward their most-read pages. What is specific to this subject is not the share of reading. It is what the opening paragraphs now say.</p>
   </header>
   <figure class="fig" style="margin:0"><div id="reachFig"></div></figure>
   <p class="means" id="mReach"></p>
 </section>
 
-<section class="sec" id="key" aria-labelledby="keyH">
+
+<section class="sec" id="charge" aria-labelledby="chargeH">
   <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>Q1</div>
-    <h2 id="keyH">Is the whole topic drifting, or a few pages?</h2>
-    <p class="deck">A few pages. The average article did not move, and the test we wrote down before collecting data says so.</p>
-    <p class="deck">Across 332 topic and 90 comparison articles followed every quarter, the extra change in critical vocabulary in the full text was −0.30 per 10,000 words, with a range of −2.7 to +1.7. That is why this report counts readers and pages, not averages. A change in a few hundred opening paragraphs is invisible in an average over many articles.</p>
-    <p class="deck">Scroll to build the chart one layer at a time. Each line shows how often critical vocabulary appears, checked every three months. The words are genocide, apartheid, ethnic cleansing, occupation, colonial, and Nakba/expulsion. Higher means the words appear more often in the same amount of text.</p>
+    <div class="eyebrow"><span class="layer">CONTENT</span>The charge <span class="xchip">150 most-read articles · exact sentences</span></div>
+    <h2 id="chargeH">What is Israel charged with now, and in whose voice?</h2>
+    <p class="deck">The encyclopedia did not start blaming Israel more often. It changed what it charges Israel with, and in two of its most-read articles it dropped the attribution.</p>
+    <p class="deck">We read every sentence about violence, harm, displacement, legal charges or rights in the opening sections of the 150 most-read articles on the subject, at three dates: January 2021, July 2023 and now (5 November 2026). These are simply the most-read pages, so Hitler, the Holocaust and Anne Frank sit next to Israel, Hamas and Gaza. The share of those sentences that name Israel, Israelis, Jews or Zionists as the one doing the harm was 23.6%, 24.1% and 26.4%. That change, +2.8 points (range −1.9 to +8.3), is inside the margin of error.</p>
+    <p class="deck">The charge changed. Genocide: 0 sentences in 2021, 0 in July 2023, 8 now, in 7 articles. Two are in Wikipedia’s own voice, in the articles on Israel and on Benjamin Netanyahu. In the Israel article the very next sentence is “Israel has denied that its actions constitute genocide.” Five attribute the charge to scholars, international lawyers or rights groups; the eighth is that denial. Apartheid: 0, 1, 4 sentences, one in Wikipedia’s own voice. No sentence charges Hamas or Palestinians with genocide or apartheid at any date.</p>
+    <p class="deck">Occupation moved from attributed to stated as fact: 46%, 51% and 80% of the occupation charges against Israel are in Wikipedia’s own voice. Since the July 2024 ICJ advisory opinion, editors have a court to cite. The same move happened on other disputes: occupation charged to Russia in Crimea and eastern Ukraine, and to Turkey in northern Cyprus, went 25%, 70%, 74%. The 50 most-read articles on other disputes (Ukraine, Karabakh, Northern Ireland, Kosovo, Cyprus, Kashmir) gained no new genocide charge against any state; their 5 genocide sentences are historical. This is context, not a matched control: none has a war on the Gaza scale with an ICJ genocide case.</p>
+    <p class="deck">Most new critical terms across the topic arrived attributed: the share with a source named rose from 21% to 25% in topic articles, while comparison articles stayed at 17%. A few flagship opening sentences later dropped the attribution, as Gaza genocide did (next section).</p>
   </header>
-  <div class="scrolly" id="scK">
-    <div class="steps" id="stepsK"></div>
-    <figure class="sticky fig kfig" style="margin:0">
-      <div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="seg" id="kPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
-      <div class="chart" id="kChart" style="height:clamp(270px,48vh,420px)"></div>
-      <div class="legend" id="kKey"></div>
-    </figure>
+  <figure class="fig pp" id="ppFig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">Who is charged with what, and in whose voice: sentences in the opening sections, 2021 · July 2023 · now</span><span class="cap">Tap a bar to read the sentences behind it.</span></div>
+    <p class="zi-how"><b>How to read this:</b> each row is a charge, each column a side. In every cell the three bars are January 2021, July 2023 and now. Solid is a sentence in Wikipedia’s own voice; pale and striped is a sentence that attributes the charge to someone, or reports a denial. Rows share one scale across the sides.</p>
+    <div class="pp-top" id="ppTop"></div>
+    <div class="zi-opts pp-opts"><div class="o"><span class="lab" id="ppSideL">Side</span><div class="seg" id="ppSide" role="group" aria-labelledby="ppSideL"><button type="button" data-v="isr" aria-pressed="true">Israel / Jews</button><button type="button" data-v="pal" aria-pressed="false">Hamas / Palestinians</button><button type="button" data-v="cmp" aria-pressed="false">Other disputes</button></div></div><p class="cap">On a phone, one side at a time. On a wide screen all three sit side by side.</p></div>
+    <div class="pp-grid" id="ppGrid" role="group" aria-label="Charge by side and date. Each bar is a button that lists its sentences."></div>
+    <div class="legend" id="ppKey"></div>
+    <div class="zi-card pp-card" id="ppCard" aria-live="polite"></div>
+  </figure>
+  <p class="cap col">Counts are exact sentences in 150 opening sections (topic) and 50 (other disputes, side A: the state named first, mostly Russia, Azerbaijan or Turkey). The coding was done and checked by the same coder, an AI model reading every sentence, on 100 re-checked rows: 98% precision on who is named, 99% on voice. That is a self-check, not an independent second coder. Leads change daily; “now” is the last revision before 5 November 2026.</p>
+  <div class="news-q">
+    <blockquote><span class="w"><i style="background:var(--ink-2)"></i>Counter-example · Gaza–Israel conflict, now · Wikipedia’s own voice</span><span class="s">“On 7 October 2023, Palestinian militants attacked Israel, killing 1,195 people (mostly civilians), committing war crimes, taking hostages, and beginning the Gaza war.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--ink-2)"></i>Counter-example · 1948 Palestine war, now</span><span class="s">“During the war, massacres and acts of terror were conducted by both sides.”</span></blockquote>
   </div>
-  <p class="means" id="mKey"></p>
+  <p class="means"><b>What this means:</b> the volume of blame did not move. The charge did. The one place Israel clearly stands apart from the other disputes is the gravest charge, genocide, stated as fact in two of the most-read opening sections, each followed by Israel’s denial. Occupation as fact happened to Russia too. “Own voice” is a coding judgement on exact sentences; it says what the encyclopedia states, not who is right.</p>
+</section>
+
+<section class="sec" id="oct7" aria-labelledby="o7H">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>October 7, Hamas and the hostages</div>
+    <h2 id="o7H">October 7, Hamas and the hostages: what the first sentence says now</h2>
+    <p class="deck">The encyclopedia’s one-line answer to “what was October 7?” is “a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups” (since 8 October 2026). Across 107 versions, that first sentence has never kept “massacre” (about an hour in total), “terror” (0.2 days), the death toll (1.2 days) or the hostages (never).</p>
+    <p class="deck">The killing is described plainly in the second paragraph (“massacring civilians in 21 communities”), and the opening section gives the toll (at least 1,195 killed), the hostages (251) and that the governments of 44 countries described the attack as terrorism. It now also says the IDF used the Hannibal Directive that day, which “may have led to at least 13 Israeli civilian deaths”. In October 2026 a clause calling Israel’s response genocide was removed from sentence 2. The Gaza war’s first sentence has named Hamas for less than two days since 26 May 2025, the day the October 7 article lost “Hamas-led” from its title.</p>
+    <p class="deck">Hamas. “Militant” left the definition on 12 October 2023 at 19:12 UTC, in the month the article was read 8,236,474 times, the most of any month since 2021. Today Hamas is “a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades”. “Militant” came back three times (1 to 2 August 2024; 19 to 31 August 2024, as “militant wing”; 12 to 18 February 2025) and has been absent from the whole opening section since 11 December 2025. “Terrorist” was written into the definition five times; the longest lasted about 2.4 hours, under six hours in three years together. The sentence naming the countries that designate Hamas a terrorist organisation moved from sentence 5 of 20 (2021) to sentence 22 of 23 (October 2026). Since 31 October 2026 it names no country: “Several countries have designated Hamas as a terrorist organisation.” That edit is days old and may be reverted. Neither the Hamas nor the Israel opening section mentions the hostages at any of our snapshot dates.</p>
+    <p class="deck">Gaza genocide. The first sentence went from “Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians” (1 January 2024), through “accused” and “according to”, to Wikipedia’s own voice. Short-lived own-voice wordings came and went from July 2024; the current sentence has stood since 26 September 2025: “The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.” Since then, 10 edits tried to bring back attribution (“has been described by most scholars as”, “the alleged ongoing”); each was gone within 45 minutes. The genocide charge against Hamas for October 7 stays attributed: “Some have alleged that the attack was an act of genocide or a genocidal massacre against Israelis.”</p>
+  </header>
+  <figure class="fig zi-fig st" id="o7Fig" style="margin:0">
+    <div class="fig-h"><span class="fig-t" id="o7T">Every change to the first sentence</span><span class="cap">Step, play, or tap the chart. Arrow keys work too.</span></div>
+    <div class="zi-opts"><div class="o"><span class="lab" id="o7ArtL">Article</span><div class="seg st-tabs" id="o7Art" role="group" aria-labelledby="o7ArtL"><button type="button" data-v="0" aria-pressed="true">Hamas</button><button type="button" data-v="1" aria-pressed="false">October 7</button><button type="button" data-v="2" aria-pressed="false">Gaza genocide</button></div></div><p class="cap" id="o7ArtHelp"></p></div>
+    <p class="zi-how" id="o7How"></p>
+    <ol class="zi-phases" id="o7Phases" aria-label="Phases, computed from the changes"></ol>
+    <div class="chart st-chart" id="o7Chart" tabindex="0" role="group" aria-label="Timeline of first-sentence changes. Left and right arrow keys step through changes; space plays or pauses."></div>
+    <div class="legend" id="o7Key"></div>
+    <div class="zi-jumps"><span class="lab" id="o7JumpL">Jump to</span><ul id="o7Moments" aria-labelledby="o7JumpL"></ul></div>
+    <div class="zi-opts">
+      <div class="o"><span class="lab" id="o7ModeL">Step through</span><div class="seg" id="o7Mode" role="group" aria-labelledby="o7ModeL"><button type="button" data-v="key" aria-pressed="true">Key moves</button><button type="button" data-v="all" aria-pressed="false">Every change</button></div></div>
+      <div class="o"><span class="lab" id="o7SpeedL">Play speed</span><div class="seg" id="o7Speed" role="group" aria-labelledby="o7SpeedL"><button type="button" data-v="norm" aria-pressed="true">Normal</button><button type="button" data-v="slow" aria-pressed="false">Slow</button></div></div>
+      <p class="cap" id="o7ModeHelp"></p>
+    </div>
+    <div class="zi-ctl" id="o7Ctl" role="group" aria-label="Step through the changes">
+      <div class="bt"><button type="button" id="o7Prev" aria-label="Previous change"><span aria-hidden="true">‹</span> Prev</button><button type="button" class="play" id="o7Play" aria-label="Play" aria-pressed="false"><span class="ic" aria-hidden="true">▶</span> <span class="tx">Play</span></button><button type="button" id="o7Next" aria-label="Next change">Next <span aria-hidden="true">›</span></button></div>
+      <p class="zi-ctr" id="o7Ctr"></p>
+      <div class="zi-trk" id="o7Trk" aria-hidden="true"></div>
+    </div>
+    <div class="zi-card" id="o7Card">
+      <div class="hd" id="o7Hd"></div>
+      <div class="zi-ba" id="o7BA"></div>
+    </div>
+    <p class="zi-sr" id="o7Live" aria-live="polite" aria-atomic="true"></p>
+  </figure>
+  <p class="cap" id="o7Note"></p>
+  <div class="grid2 o7-side">
+    <figure class="fig" style="margin:0"><div class="fig-h"><span class="fig-t">Where the terror designation sits in the Hamas opening section</span><span class="cap">0 = first word, 1 = last word</span></div><div id="o7Pos"></div></figure>
+    <figure class="fig" style="margin:0"><div class="fig-h"><span class="fig-t">Nine armed groups: first “terror” mention, 2021 and now</span><span class="cap">Share of the way into the opening section</span></div><div id="o7Grp"></div></figure>
+  </div>
+  <p class="deck col">“Terrorist” also left the first sentences of Islamic State, al-Shabaab and Boko Haram, so that word follows Wikipedia-wide style on contentious labels. What sets Hamas, Hezbollah and Palestinian Islamic Jihad apart is “militant”. They are now introduced as political or paramilitary bodies, while Islamic State and al-Qaeda are still introduced as militant organisations, and their designations sit in the last fifth of the opening section. Nine groups, chosen by hand, not a sample; and Hamas and Hezbollah do also run political parties.</p>
+  <p class="means"><b>What this means:</b> the facts about October 7 are in the opening sections, often in fuller form than in 2024. What moved is their place and their grammar. The first sentence, the one readers see first, says “armed incursions” and leaves out the hostages; Hamas is a political organisation first; the designation is near the end; and the genocide charge against Israel is stated as fact while the one against Hamas is “alleged”.</p>
 </section>
 
 <section class="sec" id="news" aria-labelledby="newsH">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span>Q2</div>
     <h2 id="newsH">Is it just the war?</h2>
-    <p class="deck">No. Set aside every opening-paragraph sentence about events since 2022, and 89% of the extra change is still there.</p>
-    <p class="deck">After July 2023 the extra change in critical vocabulary in opening paragraphs, topic minus comparison, was +2.22 per 10,000 words. Without the sentences about recent events it was +1.98. Before the war the same comparison showed no difference. Other wars get their own vocabulary waves, but theirs stayed inside the war articles. Tigray’s critical hits went 0, 1, 8, 12, 19, 21 over six quarters and then stayed flat, and did not spread to Ethiopian history or place pages. Here the change left the war articles for history, places and people: place articles gaining critical terms went from 1.6% a year before the war to 4.6% after.</p>
+    <p class="deck">No. Set aside every opening-paragraph sentence about events since 2022, and most of the extra change is still there: about 80 to 90% of it, depending on how the comparison pages are weighted.</p>
+    <p class="deck">After July 2023 the extra change in critical vocabulary in opening paragraphs, topic minus comparison, was +2.22 per 10,000 words in the sample; weighted to the population about <!--MASS3:news_did_w--><span class="m3" data-mass3="news_did_w" title="Pending: the final weighted figure from the mass3 probability sample replaces this">+1.1 to +1.3<i>pending</i></span>, and about <!--MASS3:news_did_wm--><span class="m3" data-mass3="news_did_wm" title="Pending: the final weighted figure from the mass3 probability sample replaces this">+1.8<i>pending</i></span> weighted and matched on prominence. Without the sentences about recent events it was +1.98 in the sample. Before the war the same comparison showed no difference. Other wars get their own vocabulary waves, but theirs stayed inside the war articles. Tigray’s critical hits went 0, 1, 8, 12, 19, 21 over six quarters and then stayed flat, and did not spread to Ethiopian history or place pages. Here the change left the war articles for history, places and people: place articles gaining critical terms went from 1.6% a year before the war to 4.6% after.</p>
   </header>
   <figure class="fig" style="margin:0"><div id="newsFig"></div></figure>
   <div class="news-q" id="newsQ"></div>
@@ -926,6 +1144,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <h2 id="whenH">When did it happen, and what set it off?</h2>
     <p class="deck">One wave. New critical terms per 1,000 topic edits ran at about 7 before the war, 13.5 in late 2023, and 16.0 and 15.9 through 2024. Then the rate fell to 10.8 and 8.2 in 2025, and to 5.1 and 5.9 in 2026, at or below the pre-war rate.</p>
     <p class="deck">Military escalations brought the editors. In the three weeks after each of 24 escalations, topic edits rose 17% against the six weeks before, far more than after 2,000 random dates. After the 25 legal and institutional events (ICJ orders, ICC, UN votes, rights reports, recognitions), editing was 0.94 times usual and new critical vocabulary showed no rise at all. After the ICJ provisional measures order of 26 January 2024, topic edits went from 482 to 466 a week. The fight cooled, with a few last decisions: Zionism’s first sentence settled on 27 August 2026 and Israel’s on 4 September 2026.</p>
+    <p class="deck">The surge came before the documented campaigns. Topic insertions ran at 3.4 times the comparison rate in the 16 weeks after 7 October 2023, before the pro-Palestinian Discord channel is reported to have begun, and at 2.0 times while it was active (see <a href="#organised">Organised or organic?</a>).</p>
     <p class="deck">Every week from 2021 to 2026. The top panel is editing. The bottom panel is new critical vocabulary going into topic opening paragraphs. Each dot in the middle is a real-world event, placed on a row by its type. Tap a dot to see what happened.</p>
   </header>
   <figure class="stream" style="margin:0" aria-label="Every edit to every article in the study, by week">
@@ -945,83 +1164,99 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="legend" id="whenKey"></div>
   </figure>
   <div class="fig" style="margin-top:4px">
-    <div class="fig-h"><span class="fig-t">How often an edit added critical vocabulary, by half-year</span><span class="cap">all 4,642 topic opening paragraphs, counted as new terms for every 1,000 edits</span></div>
+    <div class="fig-h"><span class="fig-t">How often an edit added critical vocabulary, by half-year</span><span class="cap">the 4,642 sampled topic opening paragraphs, counted as new terms for every 1,000 edits</span></div>
     <div id="waveStrip"></div>
   </div>
   <p class="means" id="mWhen"><b>Battles drove editing. Court rulings and reports did not.</b> We looked at the three weeks after each of the 24 military escalations. Topic edits rose 17% compared with the six weeks before. That is far more than the rise after 2,000 random dates. We did the same for the 25 legal and institutional events: ICJ orders, ICC, UN votes, rights reports, recognitions. After those, editing was slightly below usual. New critical vocabulary showed no rise at all.</p>
 </section>
 
-<section class="sec" id="spread" aria-labelledby="spreadH">
-  <header>
-    <div class="eyebrow"><span class="layer process">PROCESS</span>Q4</div>
-    <h2 id="spreadH">Who wrote it?</h2>
-    <p class="deck">Long-standing accounts. Since the war began, 9.1% of topic edits came from accounts with under 500 edits, against 17.2% on comparison pages. Accounts later blocked made 13.7% of the critical-term insertions, against a 12.3% share of all editing on the same pages. That is no excess.</p>
-    <p class="deck">The same pages gained formal process and structure. Extended-confirmed protection went from 10.9% of topic pages in 2021 to 31.1% now (comparison: 0.7% to 5.0%). Formal discussions rose from 0.29 to 0.79 per 100 articles a year. They sit on 51 pages, and Gaza genocide (21), October 7 attacks (13), Zionism (13) and Hamas (8) hold nearly half of them. Framing categories were added to 7.2% of topic articles, against 2.2% of comparison articles. Pages already linking to a core concept such as the Nakba picked up its vocabulary 5.6 points more often at the same editing volume. Most of the uncontested change landed on quiet pages: among busy topic articles, those with few reverts gained critical terms 28.5% of the time, against 13% for contested ones. We found no pair of editors who repeatedly edited within 30 minutes of each other on five or more articles.</p>
-    <p class="deck">Six ways the change shows up beyond the words. Each panel compares all topic articles with all comparison articles. Teal is topic, grey-violet is comparison. Every bar starts at zero.</p>
-  </header>
-  <div class="spread" id="spreadGrid"></div>
-  <p class="means" id="mSpread"><b>What this means:</b> each of these is established on its own; we have not separated them as causes. Protection marks the core pages; it is not shown to cause change. None of this can see intent or coordination off Wikipedia.</p>
-  <div class="fig-h" style="margin-top:20px"><span class="fig-t">The accounts behind the key changes</span><span class="cap">Accounts are anonymous in our data. No account is named or linked here.</span></div>
-  <ul class="short-row">
-    <li><b>Many hands, no single author.</b> In the Zionism first sentence, 14 different accounts made the 16 traced changes that carried each quarter’s new wording. No account made more than two.</li>
-    <li><b>Veterans, new to the page.</b> War-time editors of the key articles had a median account age of about 9 years. Only 7% to 13% of them had edited the same page before the war.</li>
-    <li><b>Regulars, not tag teams.</b> 9 accounts changed the first sentence of 3 or more key articles. No pair of accounts repeatedly edited within 30 minutes of each other across five or more articles.</li>
-  </ul>
-  <div class="spread" id="whoGrid"></div>
-  <p class="means"><b>What this means:</b> the key changes were made by many experienced accounts, not by a few. On a few key pages, a small number of very active accounts did much of the editing. That is common on Wikipedia, where a few regulars often look after a page. It also fits a topic where only experienced accounts may edit. Our data cannot tell who any account belongs to, what anyone intended, or whether anyone coordinated off Wikipedia.</p>
-  <div class="short-more">
-    <details class="stats"><summary>What others have reported <span>public-record context, with sources</span></summary><div class="in"><ul>
-      <li>Only accounts at least 30 days old with at least 500 edits may edit the topic, under Wikipedia’s extended-confirmed restriction, as reported by Wikipedia’s own <a href="https://wiki.riteme.site/wiki/Wikipedia:PIA" target="_blank" rel="noopener">arbitration index for the topic</a> (a mirror copy).</li>
-      <li>In 2024 and 2025 Wikipedia’s Arbitration Committee heard a case on Palestine-Israel articles and banned several editors from the topic, as reported by <a href="https://signpost.news/2025-02-07/Arbitration_report" target="_blank" rel="noopener">The Signpost</a> and <a href="https://forward.com/news/691180/edit-wars-over-israel-spur-rare-ban-of-8-wikipedia-editors-from-both-sides" target="_blank" rel="noopener">the Forward</a>.</li>
-      <li>In March 2025 the ADL published <a href="https://www.adl.org/resources/editing-hate-how-anti-israel-and-anti-jewish-bias-undermines-wikipedias-neutrality" target="_blank" rel="noopener">a report</a> alleging coordinated editing. The Wikimedia Foundation disputed its conclusions, as reported by <a href="https://www.algemeiner.com/2025/03/18/malicious-wikipedia-editors-manipulated-sites-coverage-israel-adl-report-alleges/" target="_blank" rel="noopener">the Algemeiner</a>.</li>
-      <li>In June 2024 Wikipedia editors rated the ADL generally unreliable on the Israeli–Palestinian conflict, as reported by <a href="https://www.thewikipedian.net/p/anti-defamation-league-reliable-sources" target="_blank" rel="noopener">The Wikipedian</a> and <a href="https://www.timesofisrael.com/wikipedia-rebuffs-jewish-groups-call-to-override-editors-move-against-adl/" target="_blank" rel="noopener">the Times of Israel</a>.</li>
-      <li>Older pro-Israel editing drives are documented, among them CAMERA’s in 2008, as reported by <a href="https://www.jta.org/2008/05/14/ny/latest-front-in-mideast-wars-wikipedia" target="_blank" rel="noopener">JTA</a> and <a href="https://signpost.news/2008-05-19/Wikilobbying" target="_blank" rel="noopener">The Signpost</a>.</li>
-    </ul><p>None of these reports maps onto the specific edits we measured.</p></div></details>
-  </div>
-</section>
 
 <section class="sec" id="palestine" aria-labelledby="palH">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Q5</div>
     <h2 id="palH">Did the Palestinian-history articles change too, and how?</h2>
     <p class="deck">Yes, and this is where the biggest change in the story is. 1948 is now told as ethnic cleansing in Wikipedia’s own voice, the land is named Palestine, and the change reached articles on places. But it did not run through every Palestinian article, and some of it was pulled back.</p>
+    <p class="deck">1948 got an agent. In the 150 most-read opening sections, sentences about Palestinian victims that name no perpetrator fell from 62% (2021) to 51% (July 2023) to 38% (now). The 1948 Palestine war now says “Zionist forces conquered about 78% of the former territory of the mandate, causing the expulsion and flight of over 700,000 Palestinians.” The same article still writes the Jewish side of 1948 with no agent: “Hundreds of thousands of Jews fled or were expelled from Arab states”. The Israel article went the other way, and is agentless: “Most Palestinian Arabs fled or were expelled during the Nakba.”</p>
     <p class="deck">The Nakba article changed most; both versions of its first sentence are quoted below. The 2021 version also took a position. “Ethnic cleansing” entered Wikipedia’s voice on 24 April 2024. The perpetrator was named in December 2025 (“by Israel”), then changed to “by Zionists” in July 2026, and “was” became “is”. The article also gained an infobox whose type field begins “Genocide, ethnic cleansing, forced displacement, dispossession, mass killing, settler colonialism”.</p>
     <p class="deck">The re-telling spread along links and categories. Topic articles linking to Nakba/1948 went from 114 to 127 to 223 across the three snapshots. The categories most often added to topic pages since July 2023 were “1948 Palestinian expulsion and flight” (16), “Zionist political violence” (11) and “Israeli massacres of Palestinians” (10). Of the 60 place articles that gained critical vocabulary, 35 gained Nakba/expulsion wording. The Gaza Strip’s opening paragraph now says that, under Egyptian control after 1948, the territory “became a refuge for Palestinians who fled or were expelled by Zionist forces in the Nakba”. The West Bank is now “the larger of the two Palestinian territories (the other being the Gaza Strip) that make up Palestine”.</p>
-    <p class="deck">It was not a sweep. The opening paragraphs of Palestinians, History of Palestine and Palestinian refugees moved by a counted term or two each. The 1948 expulsion article went the other way. In 2023 its first sentence said Palestinian Arabs “were expelled or fled from their homes by Zionist militias”. Since May 2025 it says they “were expelled or fled from their homes”, and names the paramilitaries in the next sentence.</p>
+    <p class="deck">It was not a sweep. The 1948 expulsion article went the other way. In 2023 its first sentence said Palestinian Arabs “were expelled or fled from their homes by Zionist militias”. Since May 2025 it says they “were expelled or fled from their homes”, and names the paramilitaries in the next sentence.</p>
     <p class="deck">For key articles we found the single <button class="gl" type="button" data-g="revision">revision</button> where the first sentence changed. Names are hidden. Each editor gets a letter. That shows whether one person or many made the changes. Letters restart for each article.</p>
   </header>
   <div class="news-q">
     <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba, 2021 and 2026 · The 2021 version also took a position.</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>1948 Arab–Israeli War, 2021 and now · the agent is named</span><span class="cap"><b>2021</b> “Around 700,000 Palestinian Arabs fled or were expelled from their homes in the area that became Israel...”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “In April 1948, Zionist forces launched an offensive codenamed Plan Dalet, during which they conquered and depopulated cities, villages, and territories in Mandatory Palestine in preparation for the establishment of a Jewish state.”</span></blockquote>
     <blockquote><span class="w"><i style="background:var(--muted)"></i>1948 Palestinian expulsion and flight, 2023 and 2025</span><span class="cap"><b>2023</b> “In 1948 more than 700,000 Palestinian Arabs ... were expelled or fled from their homes by Zionist militias, during the 1948 Palestine war.”</span><span class="s"><b style="font:600 11px var(--mono)">2025</b> “During the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.”</span></blockquote>
   </div>
-  <p class="cap">Both articles describe the same year. One moved toward a stated charge; the other removed the agent from its first sentence.</p>
+  <p class="cap">All three describe the same year. Two moved toward a named agent; the third removed the agent from its first sentence.</p>
   <div class="picks" id="trPicks"></div>
   <div class="fig" id="trace"></div>
   <p class="means" id="mTrace"></p>
   <p class="cap">How 1948 departures are described, forced or fled, is not measured here; that measure failed its precision check and was withdrawn.</p>
 </section>
 
+<section class="sec" id="organised" aria-labelledby="orgH">
+  <header>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>Organised or organic? <span class="xchip">Exploratory · not pre-registered</span></div>
+    <h2 id="orgH">Organised or organic?</h2>
+    <p class="deck">The edits were made by long-standing accounts, in small groups per page, with insertions and removals done by different hands, and a pool of regulars moving across the hot pages: 9 accounts changed the first sentence of 3 or more key articles, against none on the comparison key articles. Wikipedia’s arbitration committee has documented off-wiki canvassing on both sides of this subject.<!--VERIFY: ArbCom findings read from search snippets only (ORGS.md section 5); check the primary pages before publication--> Our data cannot see off-wiki channels. What it can see is timing and footprint, and there the record is clear in one direction only: the wave of critical wording began in the 16 weeks after 7 October 2023, before the documented pro-Palestinian channel existed, and no campaign, exposure or sanction date leaves a mark we can tell from chance.</p>
+    <p class="deck">That last test has low power. A one-sided 5% test on four-week windows could only have seen the topic-to-comparison ratio fall to 0.20 times or rise to 4.2 times. “Not detected” here means the test could not see it, not that it did not happen. This topic also only lets accounts with 500 edits and 30 days edit, so newcomers are barred by rule.</p>
+  </header>
+
+  <h3 class="o-h">1 · What Wikipedia’s own bodies found, on both sides</h3>
+  <div class="org-rec" id="orgRec">
+    <div class="org-col"><div class="org-lab">Documented by Wikipedia’s arbitration committee (ArbCom)</div><ul>
+      <li><span class="tag d">Documented</span><span><b>January 2024, pro-Israel.</b> ArbCom’s “PIA canvassing” motions found email canvassing in the topic area aimed at promoting a pro-Israel viewpoint, and proxy editing for a banned editor, dating from about October 2023. Two editors were found most likely to have taken part, on CheckUser and private evidence.<!--VERIFY: snippet-only; motion text and count (2 or 3) unverified (ORGS.md #7, section 5.3)--></span></li>
+      <li><span class="tag d">Documented</span><span><b>December 2024, pro-Palestinian.</b> In a private case ArbCom sanctioned editors for editing after off-wiki canvassing requests on the Tech for Palestine Discord channel, and for “encouraging other users to game the extended confirmed restriction”. One was site-banned and one topic-banned.<!--VERIFY: snippet-only; exact dates and counts (ORGS.md #8, section 5.4)--></span></li>
+      <li><span class="tag d">Documented</span><span><b>25 April 2025.</b> Two more site bans on “additional evidence of off-wiki coordination independent of the Tech4Palestine Discord server”.<!--VERIFY: snippet-only (ORGS.md section 3)--></span></li>
+      <li><span class="tag d">Documented</span><span><b>23 January 2025, both camps.</b> The Palestine-Israel articles 5 case ended with about eight indefinite topic bans, reported as 6 “pro-Palestinian” and 2 “pro-Israel”, on conduct grounds (battleground editing). It was not a coordination finding.<!--VERIFY: snippet-only; PIA5 remedies and counts (ORGS.md section 5.1)--></span></li>
+      <li><span class="tag d">Documented</span><span><b>Earlier, pro-Israel.</b> CAMERA’s “Isra-pedia” mailing list in 2008 (leaked; admins sanctioned five accounts) and the Yesha Council and My Israel “Zionist editing” course in 2010 (about 50 attendees).<!--VERIFY: snippet-only (ORGS.md #1, #2)--></span></li>
+    </ul></div>
+    <div class="org-col"><div class="org-lab">Alleged, disputed, or not shown</div><ul>
+      <li><span class="tag a">Alleged</span><span>That about 40 editors (Pirate Wires) or about 30 (ADL) acted as one group and reshaped coverage. ArbCom sanctioned individuals; it did not adopt either figure. The Wikimedia Foundation called the ADL’s conclusions “troubling and flawed”.<!--VERIFY: snippet-only (ORGS.md sections 2 and 4)--></span></li>
+      <li><span class="tag a">Alleged</span><span>The ADL’s October 2026 claim that coordinated editing fell about 95% after scrutiny. Our data show topic insertions halving from 2024 to 2025, which fits that claim and equally fits saturation and the war’s tempo; we cannot attribute it.<!--VERIFY: snippet-only (ORGS.md section 2)--></span></li>
+      <li><span class="tag x">Likely error</span><span>“8,000 articles” appears to be the Discord server’s roughly 8,000 members.<!--VERIFY: Pirate Wires text unchecked (ORGS.md section 5.5)--></span></li>
+      <li><span class="tag u">Not shown</span><span>Israeli government Wikipedia editing in 2021 to 2026: no reputable report found. The 2025 contracts concern web and AI content, not Wikipedia.<!--VERIFY: snippet-only (ORGS.md #19)--></span></li>
+      <li><span class="tag u">Not shown</span><span>A plan is not an operation: the Heritage Foundation’s leaked “Project Esther” deck (January 2025) planned to “identify and target” editors; its execution is not shown.<!--VERIFY: snippet-only (ORGS.md #17)--></span></li>
+    </ul></div>
+  </div>
+  <p class="cap col">Wikipedia’s own rulings and organisations are named; no editor is. ArbCom did not publish the size of either group. Public training drives on both sides are documented too (Euro-Med’s WikiRights rounds, arts edit-a-thons on Palestine, a 2010 settler-council course); none maps onto the specific edits we measured.<!--VERIFY: all ORGS.md items were read as search snippets; nothing here is full text--></p>
+
+  <h3 class="o-h">2 · Timing and footprint: what our own tests can see</h3>
+  <div class="grid2 org-tests">
+    <figure class="fig" style="margin:0"><div class="fig-h"><span class="fig-t">Topic insertions of critical terms per week, against comparison, by period</span><span class="cap">ratio above 1: topic ran faster</span></div><div id="orgPeriods"></div></figure>
+    <div class="fig org-null"><div class="fig-t">The footprint test, in one line</div>
+      <p>For each exposure and sanction date we compared topic and comparison insertions in the four weeks before and after, against 2,000 random dates. No single date passes a 5% test. Averaged over the five exposure and sanction dates, the ratio is <b>1.01</b> (p = 0.53): no common footprint.</p>
+      <p class="cap"><b>Detection limit.</b> Only a ratio below 0.20 or above 4.2 would have shown. The data cannot see talk-page and RfC votes, where canvassing is usually alleged, accounts that were never caught, or text outside the opening section. Three results point the predicted way (the January 2024 motions, PIA5, the April 2025 bans) and none survives correction for 13 tests.</p></div>
+  </div>
+
+  <h3 class="o-h">3 · Accounts that move together, measured against chance</h3>
+  <div id="net"><!--NETWORK: build_page.py inlines patterns/coord/chart_data/network.json as R.network when present; otherwise this renders the "analysis running" placeholder--></div>
+
+  <h3 class="o-h">4 · Who the accounts are, in aggregate</h3>
+  <ul class="short-row">
+    <li><b>Many hands, no single author.</b> In the Zionism first sentence, 14 different accounts made the 16 traced changes that carried each quarter’s new wording. No account made more than two.</li>
+    <li><b>Veterans, new to the page.</b> War-time editors of the key articles had a median account age of about 9 years. Only 7% to 13% of them had edited the same page before the war. The war drew experienced Wikipedians new to these pages.</li>
+    <li><b>Regulars, not tag teams.</b> 9 accounts changed the first sentence of 3 or more key articles, making 48 of 216 traced changes; the comparison key articles had none. No pair of accounts repeatedly edited within 30 minutes of each other across five or more articles, before or after the war, in either group.</li>
+  </ul>
+  <div class="spread" id="whoGrid"></div>
+  <p class="means"><b>What this means:</b> adding and removing contested words is done by largely separate sets of accounts, on topic and comparison pages alike: of 673 article-accounts on topic pages, 318 only inserted, 296 only removed and 59 did both. A single revert pair produces that split, so it says nothing about viewpoint. On pages with 10 or more critical-term flips, the most active account made a median 32% of them on topic pages, against 20% on comparison pages (16 and 24 pages). A pool of regulars and shared watchlists produce the same pattern as organised editing would; our data cannot tell them apart, and cannot see who any account belongs to.</p>
+  <div id="coEdit"></div>
+
+  <h3 class="o-h">5 · The same pages gained formal process and structure</h3>
+  <p class="deck col">Extended-confirmed protection went from 10.9% of topic pages in 2021 to 31.1% now (comparison: 0.7% to 5.0%). Formal discussions rose from 0.29 to 0.79 per 100 articles a year, on 51 pages. Framing categories were added to 7.2% of topic articles, against 2.2%. Pages already linking to a core concept such as the Nakba picked up its vocabulary more often at the same editing volume. Each panel compares the sampled topic articles with the comparison articles; every bar starts at zero.</p>
+  <div class="spread" id="spreadGrid"></div>
+  <p class="means"><b>Not detected is not “did not happen”.</b> Each of these patterns is established on its own; we have not separated them as causes. The tests above could only see very large or very tight effects, they cannot see off-wiki channels or votes, and they cannot see accounts that were never caught. What they do show firmly is the order of events: the surge in critical wording came first, in the weeks after 7 October 2023, before the campaign that drew the headlines.</p>
+</section>
+
 <section class="sec" id="crosslang">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Q6 <span class="xchip">Exploratory · not pre-registered</span></div>
     <h2>Did other languages follow?</h2>
-    <p class="deck">Mostly not. In opening paragraphs, English moved by +0.24 critical terms per 1,000 words against its comparison articles, and Portuguese by +0.27. The other nine languages averaged +0.06.</p>
-    <p class="deck">What crossed languages was the label for the current war. “Genocide” entered the Gaza war opening paragraph in most of the Wikipedias we checked. Spanish states it as fact; English, French and Dutch attribute it; Russian frames it as accusations. The re-telling of 1897 to 1948 mostly did not cross. Colonial framing was added in English, French, Italian, Dutch and Arabic, and not at all in German, Russian, Hebrew, Spanish or Polish. For Zionism itself, the English opening paragraph gained critical vocabulary, while German, French, Spanish, Russian, Hebrew and Polish stayed at zero and Arabic fell. This is a story about the English-language community as much as about events.</p>
-    <p class="deck">Each stripe is one language. Its first copy is on the left, its latest on the right.</p>
+    <p class="deck">Mostly not: in opening paragraphs English moved by +0.24 critical terms per 1,000 words against its comparison articles and Portuguese by +0.27, while the other nine languages averaged +0.06. What crossed languages was the label for the current war, “genocide” in the Gaza war opening paragraph; the re-telling of 1897 to 1948 mostly did not cross, and for Zionism itself German, French, Spanish, Russian, Hebrew and Polish stayed at zero. Each stripe below is one language, its first copy on the left and its latest on the right.</p>
   </header>
   <div id="xlWrap"></div>
 </section>
 
-<section class="sec" id="sourcing">
-  <header>
-    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>Q7</div>
-    <h2>Did new sources drive it?</h2>
-    <p class="deck">No. The words changed far more than the sources did.</p>
-    <p class="deck">In opening-paragraph citations, scholarly sources went from 43.3% to 48.0% in topic articles and from 49.5% to 55.2% in comparison articles, a Wikipedia-wide trend. Arab and Palestinian press went from 0.7% to 1.1%, pro-Israel advocacy from 1.0% to 0.8%, and Israeli press from 6.4% to 5.8%. Most new critical terms arrived attributed. The share with a source named rose from 21% to 25% in topic articles, while comparison articles stayed flat at 17%. The exception is a few flagship pages where the attribution was later removed. The Gaza genocide first sentence went from “Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians” to “The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war”, in eight one-way steps over 21 months. That is not unique to Gaza: 9 of 11 atrocity articles we checked now state “genocide” in Wikipedia’s voice, up from 4 in 2023.</p>
-    <p class="deck">A critical term can be stated in Wikipedia's own voice (“the genocide”) or attributed to someone (“accused of genocide”). Wikipedia also judges which sources are reliable, sometimes in a formal <button class="gl" type="button" data-g="rfc">RfC</button>. Here we look at both.</p>
-  </header>
-  <div id="exploreWrap"></div>
-</section>
 
 <section class="sec" id="against" aria-labelledby="agH">
   <header>
@@ -1032,7 +1267,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <ul class="short-row">
     <li>Antisemitism is mentioned in 54 topic opening paragraphs, up from 37, including the Israel article.</li>
     <li>61 critical terms left topic opening paragraphs, against 223 that entered (comparison: 73 out, 125 in).</li>
-    <li>The share of critical terms attributed to a source rose from 21% to 25% in topic articles; comparison stayed at 17%.</li>
+    <li>The Israeli settlement article now adds Israel’s position to the illegality sentence (below).</li>
   </ul>
   <div class="news-q">
     <blockquote><span class="w"><i style="background:var(--muted)"></i>Israeli settlement · 2021</span><span class="s">“... built in violation of international law on lands occupied by Israel ...”</span></blockquote>
@@ -1040,7 +1275,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </div>
   <ul class="short-row">
     <li><i>Zionism as settler colonialism</i> was pulled back from “its founders and early leaders, as well as several scholars” to “some scholars”, with the edit summary “more NPOV”.</li>
-    <li>Terrorism vocabulary fell in topic opening paragraphs by 24%. Hamas lost “militant” and “fundamentalist” from its first sentence; the terrorist designations stay in the opening paragraph, lower down.</li>
   </ul>
 </section>
 
@@ -1048,18 +1282,44 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <header>
     <div class="eyebrow"><span class="layer epistemics">SOURCES</span>How far to trust this</div>
     <h2 id="boardH">The rule we wrote down first, the half we sealed, and what we dropped</h2>
-    <p class="deck">Before seeing the data we wrote down three main tests, six other ways to run each, and a rule for what would count as support. By that rule the hypothesis is not supported. None of the three average tests stands out from chance: for the full-text test, an extra change at least as large as the real one turned up in 4,228 of 5,000 label shuffles. Everything above this line comes from a second stage, on the full crawl, which was not pre-registered. Its one main result, that more topic articles than comparison articles gained critical vocabulary after October 2023, replicated on the half of the articles we had set aside and only checked at the end (+3.6 percentage points, range 1.7 to 5.6). Where our two kinds of range disagree, we have called the result suggestive. Below are the scoreboard, the checks against edits reported in the news, the earlier results we withdrew, and what this study cannot tell you.</p>
+    <p class="deck">Before seeing the data we wrote down three main tests, six other ways to run each, and a rule for what would count as support. By that rule the hypothesis is not supported. None of the three average tests stands out from chance: for the full-text test, an extra change at least as large as the real one turned up in 4,228 of 5,000 label shuffles. Everything above this line comes from a second stage, on the full crawl, which was not pre-registered. Its one main result, that more topic articles than comparison articles gained critical vocabulary after October 2023, replicated on the half of the articles we had set aside and only checked at the end (+3.6 percentage points, range 1.7 to 5.6). Where our two kinds of range disagree, we have called the result suggestive. Below are the pre-registered test itself, the scoreboard, how weighting changes the sizes, the checks against edits reported in the news, the earlier results we withdrew, and what this study cannot tell you.</p>
     <p class="deck">Each tile is one of those ways. The dot is the estimate and the line is its range. Select a tile for the details.</p>
   </header>
+<section class="sec sub" id="key" aria-labelledby="keyH" style="margin-top:40px">
+  <header>
+    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>The rule we wrote down first</div>
+    <h2 id="keyH">Is the whole topic drifting, or a few pages?</h2>
+    <p class="deck">A few pages. The average article did not move, and the test we wrote down before collecting data says so.</p>
+    <p class="deck">Across 332 topic and 90 comparison articles followed every quarter, the extra change in critical vocabulary in the full text was −0.30 per 10,000 words, with a range of −2.7 to +1.7. That is why this report counts readers and pages, not averages. A change in a few hundred opening paragraphs is invisible in an average over many articles.</p>
+    <p class="deck">Scroll to build the chart one layer at a time. Each line shows how often critical vocabulary appears, checked every three months. The words are genocide, apartheid, ethnic cleansing, occupation, colonial, and Nakba/expulsion. Higher means the words appear more often in the same amount of text.</p>
+  </header>
+  <div class="scrolly" id="scK">
+    <div class="steps" id="stepsK"></div>
+    <figure class="sticky fig kfig" style="margin:0">
+      <div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="seg" id="kPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
+      <div class="chart" id="kChart" style="height:clamp(270px,48vh,420px)"></div>
+      <div class="legend" id="kKey"></div>
+    </figure>
+  </div>
+  <p class="means" id="mKey"></p>
+</section>
   <div id="boardWrap"></div>
+  <figure class="fig" id="wvu" style="margin:0">
+    <div class="fig-h"><span class="fig-t">Same data, three honest ways to count</span><span class="cap"><!--MASS3:audit_fig--><span class="m3" data-mass3="audit_fig" title="Pending: the final weighted figure from the mass3 probability sample replaces this">mass3 will replace the three dots with one final figure<i>pending</i></span></span></div>
+    <p class="zi-how"><b>How to read this:</b> each row is one headline quantity from the sampled crawl, on its own scale. The short bar is the sample as drawn. The dark dot is the same data weighted back to the real size of each subject group and importance level. The square is the sample matched to comparison articles of similar length, age, traffic and importance. Lines are 95% ranges.</p>
+    <div id="wvuChart"></div>
+    <div class="legend" id="wvuKey"></div>
+    <p class="cap">Weighting to the real size of the subject groups shrinks the article-level sizes by about half. Matching articles of similar prominence grows them. The direction never changes. Reader exposure and the Judaism result do not move. Population-weighted and matched together, the best single estimates are +1.8 per 10,000 words and +1.9 points. The share of the change not about recent events is not drawn weighted: that ratio is unstable once one heavily weighted comparison village is in it; without it, the weighted variants give 81% to 84%. All weighted figures are exploratory, computed after the fact.</p>
+  </figure>
   <aside class="dropped" id="dropped" aria-labelledby="dropH">
     <h3 id="dropH">What we checked and dropped</h3>
     <p class="cap">Some earlier results did not survive the full crawl or a precision check. We list them so you can weigh the rest.</p>
     <ul>
       <li><span class="tag x">Withdrawn</span><span>Study 2’s “1948: forced out or fled” measure. It scored 53% on a hand-coded precision check, under our 60% gate. The indigeneity and “terror or massacre by perpetrator” measures failed too. None is used here.</span></li>
       <li><span class="tag x">Withdrawn</span><span>“Blocked accounts made more of the critical-term edits.” At full scale, now-blocked accounts made 13.7% of war-window insertions, against 12.3% of all edits on the same pages: no excess.</span></li>
-      <li><span class="tag w">Weakened</span><span>“Once in, the words stick.” True only on the opening paragraphs of the key battleground articles. Across all topic articles, insertions lasted 30 days 47.3% of the time, against 42.9% in comparison articles.</span></li>
-      <li><span class="tag w">Weakened</span><span>“Four pages hold 68% of the fighting.” True inside the 25 key articles. Across all 4,642 topic articles the top 4 hold 9%.</span></li>
+      <li><span class="tag w">Weakened</span><span>“Three times the comparison’s reading share.” True against the pooled comparison, which includes religions and quiet countries. Against other live wars the share is about the same (15% against 14.1%).</span></li>
+      <li><span class="tag w">Weakened</span><span>“Once in, the words stick.” True only on the opening paragraphs of the key battleground articles. Across the sampled topic articles, insertions lasted 30 days 47.3% of the time, against 42.9% in comparison articles.</span></li>
+      <li><span class="tag w">Weakened</span><span>“Four pages hold 68% of the fighting.” True inside the 25 key articles. Across the 4,642 sampled topic articles the top 4 hold 9%.</span></li>
       <li><span class="tag w">Weakened</span><span>“Fewer newcomers than before the war.” The drop is small (2.2 points) and disappears when we treat each Wikipedia subject group as one unit.</span></li>
       <li><span class="tag u">Overturned</span><span>The pilot said categories showed no reframing and that protection did not predict change. At scale, framing categories did rise; protection marks the core pages but is not shown to cause change.</span></li>
     </ul>
@@ -1090,9 +1350,21 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li>It can’t tell who is right about the conflict.</li>
       <li>Patterns in who edits, and when, are not proof that people worked together.</li></ul></div>
   </section>
+  <aside class="chose" id="chose" aria-labelledby="choseH">
+    <h3 id="choseH">How we chose the articles</h3>
+    <p>Wikipedia’s volunteer editors sort articles into subject groups called WikiProjects. Each group grades how central an article is to its subject: Top, High, Mid or Low importance.</p>
+    <p>We took the four groups that cover this story: <b>Israel, Palestine, Judaism and Jewish history</b>. Together they grade about 9,200 articles as Top, High or Mid. We analysed 4,642 of them: every Top and High article, and a random draw of the Mid ones. Because we drew more from some groups than others (most Palestine pages, one in eight Israel Mid pages), every percentage is weighted back to each group’s true size.</p>
+    <p><b>Not included:</b> pages graded Low importance or not graded at all, mostly short pages on villages, minor figures and stubs. Our numbers describe the articles Wikipedia’s own editors consider central to the subject, not every page that mentions Israel.</p>
+    <p><b>The yardstick.</b> To tell whether this is special to Israel, we ran the same tests on 5,670 articles from 23 other groups: conflicts (Ukraine, Russia, Armenia, Azerbaijan, the Kurds, Bosnia, Serbia, Taiwan, Tibet, Sri Lanka), countries (India, Pakistan, Turkey, Iran, Ireland, Greece, Poland, Bangladesh) and religions (Islam, Hinduism, Catholicism, Buddhism, Sikhism). These are mostly their most important articles. We also matched articles of similar length, age, traffic and importance; the gap stayed.</p>
+    <p><b>Two limits.</b></p>
+    <ul><li>Against other active conflicts, such as Ukraine or Armenia–Azerbaijan, the gap is smaller. The share of reading that lands on changed opening paragraphs is about the same as there.</li>
+    <li>The 25 to 40 famous articles we trace edit by edit, such as Zionism, Israel and Gaza genocide, were chosen by us because they are contested. They show <i>how</i> change happened. They are not a sample of Wikipedia.</li></ul>
+    <p class="cap">Until the stratified probability sample (mass3) lands, the page shows sample and weighted figures side by side, and marks the weighted ones like this: <span class="m3">2.5%<i>pending</i></span>. Weighted figures are exploratory, computed after the fact.</p>
+  </aside>
+  <p class="means"><b>“Not detected” is not “did not happen”.</b> Several tests on this page found nothing: no footprint of any campaign, no tight pairs of editors, no average rise. Each could only see large effects, and none can see what happens off Wikipedia, in talk-page votes, or through accounts that were never caught. Where a test had low power we say so next to the result.</p>
   <div class="short-more">
     <details class="stats"><summary>Methods in one paragraph</summary><div class="in">
-      <p>We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,320 articles, across their revision histories. Each result is the change in topic articles minus the change in comparison articles. That subtraction removes ordinary editing trends. We computed two ranges for each result: one by resampling articles, one by resampling WikiProjects. Where the two disagree, we call the result suggestive. Half the articles were held back until the end. The main result replicated there: +3.6 percentage points, with a range of 1.7 to 5.6. Measures that failed precision checks, including one on 1948 departures, were withdrawn.</p>
+      <p>We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,312 sampled articles (4,642 topic and 5,670 comparison), across their revision histories. Each result is the change in topic articles minus the change in comparison articles. That subtraction removes ordinary editing trends. We computed two ranges for each result: one by resampling articles, one by resampling WikiProjects. Where the two disagree, we call the result suggestive. Half the articles were held back until the end. The main result replicated there: +3.6 percentage points, with a range of 1.7 to 5.6. Measures that failed precision checks, including one on 1948 departures, were withdrawn.</p>
     </div></details>
     <details class="stats"><summary>Limitations and what this cannot tell us</summary><div class="in"><ul>
       <li><b>Accuracy.</b> Word counts measure emphasis, not correctness.</li>
@@ -1165,6 +1437,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </div></details>
 </section>
 
+<section class="sec" id="sourcing">
+  <header>
+    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>Sources and attribution</div>
+    <h2>Did new sources drive it?</h2>
+    <p class="deck">No. The words changed far more than the sources did.</p>
+    <p class="deck">In opening-paragraph citations, scholarly sources went from 43.3% to 48.0% in topic articles and from 49.5% to 55.2% in comparison articles, a Wikipedia-wide trend. Arab and Palestinian press went from 0.7% to 1.1%, pro-Israel advocacy from 1.0% to 0.8%, and Israeli press from 6.4% to 5.8%. Most new critical terms arrived attributed. The share with a source named rose from 21% to 25% in topic articles, while comparison articles stayed flat at 17%. The exception is a few flagship pages where the attribution was later removed. The Gaza genocide first sentence went from “Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians” to “The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war”, in eight one-way steps over 21 months. That is not unique to Gaza: 9 of 11 atrocity articles we checked now state “genocide” in Wikipedia’s voice, up from 4 in 2023.</p>
+    <p class="deck">A critical term can be stated in Wikipedia's own voice (“the genocide”) or attributed to someone (“accused of genocide”). Wikipedia also judges which sources are reliable, sometimes in a formal <button class="gl" type="button" data-g="rfc">RfC</button>. Here we look at both.</p>
+  </header>
+  <div id="exploreWrap"></div>
+</section>
+
 <section class="sec" id="vocab">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span>The words</div>
@@ -1185,60 +1468,23 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="minis" id="minis"></div>
 </section>
 
-<section class="sec" id="heatmap">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>Every article, every quarter</div>
-    <h2 id="hmH">Every article as a strip of quarters</h2>
-    <p class="deck">Each row is one article. Each column is one three-month snapshot. Darker means more words like “colonial”, “apartheid” and “genocide”. This shows whether a few articles drive the averages, or many.</p>
-  </header>
-  <div class="controls">
-    <span class="seg" id="hmMode" role="group" aria-label="Colour"><button data-v="rate" aria-pressed="true">How often</button><button data-v="change" aria-pressed="false">Change since first copy</button></span>
-    <span class="seg" id="hmPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
-    <label class="ctl" for="hmSort">Sort <select id="hmSort"><option value="change">Biggest increase first</option><option value="last">Latest level</option><option value="first">First level</option><option value="edits">Most edited</option><option value="title">A–Z</option></select></label>
-  </div>
-  <div class="fig">
-    <div class="heat" id="heat"></div>
-    <div class="ramp" id="ramp"></div>
-  </div>
-  <p class="means" id="mHeat"></p>
-  <button class="inlab" type="button" data-intent='{"lab":"shadow"}'>Explore this →</button>
-  <p class="cap col"><span id="hmExcl"></span>Both panels are the same height, so each row for the comparison articles is drawn taller. Select a row to open that article.</p>
-</section>
 
 <section class="sec" id="ratchet" aria-labelledby="ratH">
   <header>
     <div class="eyebrow"><span class="layer process">PROCESS</span>The ratchet <span class="xchip">Exploratory · not pre-registered</span></div>
     <h2 id="ratH">Do added words stay? The battleground pages only</h2>
-    <p class="deck">We followed every saved version of the opening paragraph of key articles. When someone <ins class="hl-ins">adds</ins> a critical term, how long does it last? When someone <del class="hl-del">removes</del> one, how long does the removal last? If additions stick and removals are undone, the wording moves one way, like a ratchet. This section covers the key battleground articles only. The whole topic has 4,642 articles. Across those, 47.3% of added terms were still in place after 30 days. In comparison articles the figure was 42.9%. So the ratchet does not describe the topic as a whole.</p>
+    <p class="deck">We followed every saved version of the opening paragraph of key articles. When someone <ins class="hl-ins">adds</ins> a critical term, how long does it last? When someone <del class="hl-del">removes</del> one, how long does the removal last? If additions stick and removals are undone, the wording moves one way, like a ratchet. This section covers the key battleground articles only. The sampled crawl has 4,642 topic articles. Across those, 47.3% of added terms were still in place after 30 days. In comparison articles the figure was 42.9%. So the ratchet does not describe the topic as a whole.</p>
   </header>
   <div id="ratWrap"></div>
 </section>
 
-<section class="sec" id="editing">
-  <header>
-    <div class="eyebrow"><span class="layer process">PROCESS</span>The talk page and the edit war</div>
-    <h2>Edits, talk pages, reverts and logged-out users</h2>
-    <p class="deck">Edits, <button class="gl" type="button" data-g="talk">talk page</button> posts, <button class="gl" type="button" data-g="revert">reverts</button> and edits by logged-out users, as an average per article every three months. Bots are left out.</p>
-  </header>
-  <div class="grid2">
-    <div class="fig"><div class="fig-t">Edits per article</div><div class="chart" id="dEdits" style="height:210px"></div></div>
-    <div class="fig"><div class="fig-t">Talk-page posts per article</div><div class="chart" id="dTalk" style="height:210px"></div></div>
-    <div class="fig"><div class="fig-t">Share of edits later undone</div><div class="chart" id="dRev" style="height:210px"></div></div>
-    <div class="fig"><div class="fig-t">Share of edits by logged-out users</div><div class="chart" id="dAnon" style="height:210px"></div></div>
-  </div>
-  <div class="legend" id="dynKey"></div>
-  <p class="means" id="mDyn"></p>
-  <div class="fig" style="margin-top:10px">
-    <div class="fig-h"><span class="fig-t">Who edits across many articles</span><span class="cap" id="concNote"></span></div>
-    <div class="bars" id="conc"></div>
-  </div>
-</section>
+
 
 <section class="sec" id="organic">
   <header>
     <div class="eyebrow"><span class="layer process">PROCESS</span>Organic or organised? <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2>Signals of coordination, measured against chance</h2>
-    <p class="deck">Organic change looks like many people making small edits over time. Organised change looks like a few people editing many articles quickly, often close together. We compare each pattern with <b>what you’d expect by chance</b>. Chance here means the same editors and articles, with the timing shuffled.</p>
+    <h2>Signals of coordination: the rest of the record</h2>
+    <p class="deck">The co-editing bars and the 30-minute test are in <a href="#organised">Organised or organic?</a>. Here are the deep-panel signals. Organic change looks like many people making small edits over time. Organised change looks like a few people editing many articles quickly, often close together. We compare each pattern with <b>what you’d expect by chance</b>. Chance here means the same editors and articles, with the timing shuffled.</p>
   </header>
   <div class="caveat" role="note"><h3>Read this first</h3><ul>
     <li>The same patterns appear when many editors watch the same pages, or when big news breaks.</li>
@@ -1524,7 +1770,7 @@ function drawCards(){
   if(!T.length){$("#sixty").hidden=true;return}$("#sixty").hidden=false;
   $("#cards").innerHTML=T.slice(0,6).map(c=>{
     const quote=c.quote_before||c.quote_after?(()=>{const o=wdiff(c.quote_before||"",c.quote_after||"");return `<div class="q"><div><span>Before</span>${renderW(o,"-")}</div><div><span>After</span>${renderW(o,"+")}</div></div>`})():"";
-    return `<article class="card">${c.number!=null&&c.number!==""?`<div><div class="big"${String(c.number).length>7?' style="font-size:clamp(34px,7.5vw,44px)"':""}>${esc(c.number)}</div>${c.unit?`<div class="unit">${esc(c.unit)}</div>`:""}</div>`:""}<p class="hl">${esc(c.headline||"")}</p>${miniBars(c)}${quote}${c.link_anchor?`<a class="more" href="#${esc(c.link_anchor)}">Read more ↓</a>`:""}</article>`}).join("");
+    return `<article class="card">${c.number!=null&&c.number!==""?`<div><div class="big"${String(c.number).length>7?' style="font-size:clamp(34px,7.5vw,44px)"':""}>${rich(c.number)}</div>${c.unit?`<div class="unit">${rich(c.unit)}</div>`:""}</div>`:""}<p class="hl">${rich(c.headline||"")}</p>${c.body?`<p class="body">${rich(c.body)}</p>`:""}${miniBars(c)}${quote}${c.link_anchor?`<a class="more" href="#${esc(c.link_anchor)}">Read more ↓</a>`:""}</article>`}).join("");
 }
 function drawLede(){
   const A=R.articles,tot=A.reduce((s,a)=>s+(a.views||0),0),last=R.last||R.dates.at(-1),first=R.first||R.dates[0];
@@ -1581,6 +1827,7 @@ function scrolly(host,steps,apply){
 function seriesOf(a,part){const s=part==="lead"?a.lcrit_series:a.crit_series;if(!s)return null;const ds=a.crit_series_dates||R.dates.slice(R.dates.indexOf(a.d0),R.dates.indexOf(a.d0)+s.length);const m=new Map();ds.forEach((d,i)=>m.set(d,s[i]));return R.dates.map(d=>m.has(d)?m.get(d):null)}
 let HM=null;
 function drawHeat(){
+  if(!$("#heat"))return;
   const host=$("#heat"),ph=isPhone(),part=S.hmPart,mode=S.hmMode;
   setSeg($("#hmMode"),mode);setSeg($("#hmPart"),part);
   const groups=[["treatment","Topic articles"],["control","Other articles"]];
@@ -1687,7 +1934,7 @@ function traceDraw(t,all){
 
 /* ---------- dynamics ---------- */
 function drawDyn(){
-  const D=R.dynamics,ph=isPhone();if(!D||!D.treatment)return;
+  const D=R.dynamics,ph=isPhone();if(!D||!D.treatment||!$("#dEdits"))return;
   const ser=k=>[["treatment",T_L,"--topic",{area:true,width:2.2}],["control",C_L,"--comp",{width:2}],["treatment_new","New topic articles","--new",{dash:"2 3",width:1.5}]].filter(([g])=>D[g]&&D[g].length).map(([g,l,c,o])=>({key:g,label:l,color:c,pts:D[g].map(r=>[qMid(r.q),r[k]]),...o}));
   const qx=D.treatment.map(r=>qMid(r.q)),dom=[qx[0],qx.at(-1)];
   const ql=t=>{const d=new Date(t);return `${d.getUTCFullYear()} Q${Math.floor(d.getUTCMonth()/3)+1}`};
@@ -1736,10 +1983,11 @@ function drawCoord(){
     const cells=[["topic:pre_war","Topic, before 7 Oct 2023"],["topic:post_war","Topic, after"],["comparison:pre_war","Comparison, before"],["comparison:post_war","Comparison, after"]].filter(([k])=>mg(k));
     const bars=(f,lab,fm)=>{const mx=Math.max(...cells.map(([k])=>mg(k)[f]||0),1e-9);return `<div class="bar-row"><span>${lab}</span><div class="tr">${cells.map(([k,l])=>{const v=mg(k)[f];return `<div style="display:flex;align-items:center;gap:8px"><div class="b" style="width:${Math.max(.5,(v||0)/mx*72)}%;background:var(${k.startsWith("topic")?"--topic":"--comp"});opacity:${k.endsWith("pre_war")?.5:1}"></div><span class="v num">${v==null?"–":fm(v)} · ${l}</span></div>`}).join("")}</div></div>`};
     const nullAll=cells.every(([k])=>!mg(k).null_pairs);
-    h+=`<div class="fig"><div class="fig-h"><span class="fig-t">Co-editing in the large sample (${nA.toLocaleString("en-US")} articles)</span><span class="cap">The deep panel above is small, so recurring pairs there are near zero. Faded bars: before 7 Oct 2023.</span></div><div class="bars">${bars("pairs_per_10k_edits","Recurring editor pairs per 10,000 edits",v=>fmt(v,2))}${bars("sweeps_per_1000_editors","Editors touching 5+ articles in one day, per 1,000 editors",v=>fmt(v,0))}</div>
+    let co=`<div class="fig"><div class="fig-h"><span class="fig-t">Co-editing in the large sample (${nA.toLocaleString("en-US")} articles)</span><span class="cap">The deep panel above is small, so recurring pairs there are near zero. Faded bars: before 7 Oct 2023.</span></div><div class="bars">${bars("pairs_per_10k_edits","Recurring editor pairs per 10,000 edits",v=>fmt(v,2))}${bars("sweeps_per_1000_editors","Editors touching 5+ articles in one day, per 1,000 editors",v=>fmt(v,0))}</div>
      <p class="cap col">${nullAll?"The chance baseline shifts each editor’s timeline at random. It produced 0 recurring pairs in every cell. So no ratio to chance can be computed. Compare the groups with each other instead.":""}</p></div>`;
     const t=mg("topic:post_war"),c=mg("comparison:post_war");
-    h+=`<p class="means"><b>What this means:</b> in the large sample after the war began, the same pairs of editors edited one after the other ${fmt(t.pairs_per_10k_edits,2)} times per 10,000 edits on topic articles. On comparison articles, the figure was ${fmt(c.pairs_per_10k_edits,2)} times. That is a signal worth checking. It is not proof that anyone worked together.</p>`}
+    co+=`<p class="means"><b>What this means:</b> in the large sample after the war began, the same pairs of editors edited one after the other ${fmt(t.pairs_per_10k_edits,2)} times per 10,000 edits on topic articles. On comparison articles, the figure was ${fmt(c.pairs_per_10k_edits,2)} times. That is a signal worth checking. It is not proof that anyone worked together.</p>`;
+    const ce=$("#coEdit");if(ce)ce.innerHTML=co;else h+=co}
   else h+=`<p class="means">${tO!=null&&cO!=null?`<b>What this means:</b> after the war began, close-together editing by recurring pairs on topic articles was ${fmt(tO,1)} times what chance would give. On comparison articles it was ${fmt(cO,1)} times. A ratio near 1 is what chance alone produces.`:""}</p>`;
   // lines
   h+=`<div class="grid2"><div class="fig"><div class="fig-t">Share of edits made by the busiest 1% of editors</div><div class="chart" id="cConc" style="height:210px"></div></div><div class="fig"><div class="fig-t">Share of edits by brand-new accounts</div><div class="chart" id="cNew" style="height:210px"></div></div></div>`;
@@ -1821,7 +2069,7 @@ function drawTerr(){
 }
 
 /* ---------- phone: fold the deep exploratory sections behind one tap ---------- */
-const FOLD_REDRAW={ratchet:()=>drawRatchet(),crosslang:()=>drawXL(),vocab:()=>{drawTrend();drawMinis()},heatmap:()=>{HM=null;drawHeat()},palestine:()=>S.trace&&traceDraw(S.trace),editing:drawDyn,organic:drawCoord,sourcing:drawExplore};
+const FOLD_REDRAW={ratchet:()=>drawRatchet(),crosslang:()=>drawXL(),vocab:()=>{drawTrend();drawMinis()},palestine:()=>S.trace&&traceDraw(S.trace),organic:drawCoord,sourcing:drawExplore};
 function foldPhone(){if(!isPhone())return;
   const fb=$("#findingsBody"),fm=$("#findingsMore");if(fb&&fm&&fb.scrollHeight>520){fb.classList.add("capped");fm.hidden=false;fm.onclick=()=>{fb.classList.remove("capped");fm.hidden=true}}Object.keys(FOLD_REDRAW).forEach(id=>{const sec=document.getElementById(id);if(!sec||sec.querySelector(".unfold"))return;
   sec.classList.add("folded");const b=document.createElement("button");b.type="button";b.className="btn sm unfold";b.textContent="Show this section ↓";b.setAttribute("aria-expanded","false");
@@ -2386,12 +2634,15 @@ function hbarsHTML(rows,o){/* HTML version so text never stretches */
   return `<div class="rch" style="gap:6px" role="img" aria-label="${esc(rows.map(r=>`${r[0]}: ${r[1]}${r[3]||""}`).join("; "))}">${rows.map(([l,v,c,suf])=>`<div class="rch-row" style="grid-template-columns:minmax(0,118px) minmax(0,1fr) 50px;font-size:11.5px"><span>${esc(l)}</span><span class="rch-bar" style="height:20px"><i style="width:${Math.max(.6,v/mx*100)}%;background:var(${c})"></i></span><span class="v" style="font-size:13px">${esc(String(v))}${suf||""}</span></div>`).join("")}</div>`}
 function drawReach(){
   const host=$("#reachFig");if(!host)return;
-  const G=[["Topic articles","--topic",3.9,15.0],["Comparison articles","--comp",1.5,5.0]];
-  const row=(lab,v,c)=>`<div class="rch-row"><span>${lab}</span><span class="rch-bar" role="img" aria-label="${lab}: ${v}%"><i style="width:${v}%;background:var(${c})"></i></span><span class="v">${v}%</span></div>`;
-  host.innerHTML=`<div class="rch">${G.map(([n,c,a,v])=>`<div class="rch-g"><div class="fig-t"><span class="sw" style="background:var(${c})"></span>${n}</div>${row("articles",a,c)}${row("reading",v,c)}</div>`).join("")}
-   <div class="legend"><span class="key"><i style="background:var(--topic)"></i>dark part: opening paragraph gained critical vocabulary since Jul 2023</span><span class="key"><i style="background:var(--faint);border:1px solid var(--rule)"></i>the rest of the group</span><span>Bars run from 0 to 100%.</span></div>
+  /* sample (mass2, unweighted) next to the population-weighted figures of sampling/AUDIT.md; mass3 replaces the weighted ones */
+  const G=[["Topic articles","--topic",[["articles · sample",3.9],["articles · weighted",2.5,"reach_articles_w"],["reading · sample",15.0],["reading · weighted",13.7,"reach_views_w"]]],
+           ["Comparison articles","--comp",[["articles · sample",1.5],["articles · weighted",1.3,"reach_comp_w"],["reading · sample",5.0],["reading · weighted",3.4,"reach_comp_w"]]],
+           ["Live wars only: Ukraine, Russia, Armenia, Azerbaijan","--comp",[["reading · sample",14.1]]]];
+  const row=(lab,v,c,k)=>`<div class="rch-row"><span>${lab}</span><span class="rch-bar" role="img" aria-label="${lab}: ${v}%"><i style="width:${v}%;background:var(${c});${k?"opacity:.6":""}"></i></span><span class="v">${v}%${k?`<!--MASS3:${k}-->`:""}</span></div>`;
+  host.innerHTML=`<div class="rch">${G.map(([n,c,rows])=>`<div class="rch-g"><div class="fig-t"><span class="sw" style="background:var(${c})"></span>${n}</div>${rows.map(r=>row(r[0],r[1],c,r[2])).join("")}</div>`).join("")}
+   <div class="legend"><span class="key"><i style="background:var(--topic)"></i>dark part: opening paragraph gained critical vocabulary since Jul 2023</span><span class="key"><i style="background:var(--topic);opacity:.6"></i>lighter: weighted to the real size of each subject group, ${M3("reach_fig","pending")}</span><span class="key"><i style="background:var(--faint);border:1px solid var(--rule)"></i>the rest of the group</span><span>Bars run from 0 to 100%.</span></div>
    <div><div class="fig-t" style="margin-bottom:4px">The most-read topic pages whose opening paragraph gained critical vocabulary</div><ul class="rch-top">${[["Benjamin Netanyahu","7.0M","1 → 4"],["Israel","4.6M","5 → 8"],["Palestine","2.4M","2 → 5"],["Zionism","1.8M","1 → 5"],["Hamas","1.3M","0 → 3"]].map(r=>`<li><span>${r[0]}</span><span>${r[1]} views</span><span>terms ${r[2]}</span></li>`).join("")}</ul><p class="cap" style="margin-top:4px">Views are for the last 12 months. Term counts are critical vocabulary in the opening paragraph, July 2023 → now.</p></div></div>`;
-  $("#mReach").innerHTML=`<b>What this means:</b> the topic share is three times the comparison level, on both of our ranges. It is not most topic reading: 83% of topic views land on opening paragraphs that did not change. Whether topic pages tilt more steeply toward well-read pages than comparison pages do is suggestive, not established.`;
+  $("#mReach").innerHTML=`<b>What this means:</b> the changed pages are a small share of the articles and a large share of what people read. Against the pooled comparison, which includes religions and quiet countries, that reading share is about four times higher. Against other live wars it is about the same (15% against 14.1%). Most topic reading, 83% in the sample, lands on opening paragraphs that did not change.`;
   revealOnView(host.querySelector(".rch"));
 }
 const WH={sel:null,geom:null};
@@ -2466,11 +2717,11 @@ function drawWave(){
 function drawNews(){
   const host=$("#newsFig");if(!host)return;
   host.innerHTML=`<div class="fig-h" style="margin-bottom:10px"><span class="fig-t">Where the extra change in opening paragraphs sits, compared with similar articles, after July 2023</span><span class="cap">9,177 opening paragraphs seen at all three dates</span></div>
-   <div class="news-bar" role="img" aria-label="89% of the extra lead change is in sentences about older history; 11% is in sentences about recent events"><div style="flex:89;background:var(--topic)">89%</div><div style="flex:11;background:var(--s1)"></div></div>
-   <div class="news-lab" style="margin-top:6px"><div><b>Older history and the land</b><br>89% of the extra change</div><div><b>Recent events</b><br>11% of the extra change</div></div>
-   <p class="cap" style="margin-top:8px">Before the war, the same comparison showed no difference.</p>`;
+   <div class="news-bar" role="img" aria-label="About 80 to 90% of the extra lead change is in sentences about older history; the rest is in sentences about recent events"><div style="flex:81;background:var(--topic)">about 80 to 90%</div><div style="flex:8;background:var(--topic);opacity:.45"></div><div style="flex:11;background:var(--s1)"></div></div>
+   <div class="news-lab" style="margin-top:6px"><div><b>Older history and the land</b><br>about 80 to 90% of the extra change</div><div><b>Recent events</b><br>the rest</div></div>
+   <p class="cap" style="margin-top:8px">The sample gives 89%; weighting the comparison pages in ways that do not lean on one village gives 81% to 84%, so the lighter band marks the range. Before the war, the same comparison showed no difference.</p>`;
   $("#newsQ").innerHTML=`<blockquote><span class="w"><i style="background:var(--topic)"></i>Older history and the land · West Bank, 2021 and 2026</span><span class="cap"><b>2021</b> “The West Bank (... HaGadah HaMa'aravit or Yehuda VeShomron) is a landlocked territory near the Mediterranean coast of Western Asia, bordered by Jordan ... and by Israel to the south, west and north.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “... is the larger of the two Palestinian territories (the other being the Gaza Strip) that make up Palestine.”</span></blockquote>
-   <blockquote><span class="w"><i style="background:var(--s1)"></i>Recent events · Israel, 2026 · one of the few opening paragraphs that states the label in Wikipedia's own voice. The next sentence gives the denial.</span><span class="s">“After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza. Israel and its allies, including the United States, deny that Israel’s actions constitute genocide.”</span></blockquote>`;
+   <blockquote><span class="w"><i style="background:var(--s1)"></i>Recent events · Israel, as of 4 Nov 2026 · one of two opening sections that state the charge in Wikipedia’s own voice. The next sentence gives the denial.</span><span class="s">“After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza. Israel has denied that its actions constitute genocide.”</span></blockquote>`;
   $("#mNews").innerHTML=`<b>What this means:</b> the war did not mainly produce war coverage. It sent editors back to retell 1897 to 1948 and to rename the land, by adding sentences rather than deleting others. On the articles most relevant to the topic this holds on both of our ranges; on the full set the coarser range crosses zero.`;
 }
 function drawSpread(){
@@ -2715,16 +2966,361 @@ function ziInit(){
   drawZi();
 }
 
+/* ---------- design council round 2: pending markers for the final weighted numbers (mass3) ---------- */
+const M3=(k,t)=>`<!--MASS3:${k}--><span class="m3" data-mass3="${k}" title="Pending: the final weighted figure from the mass3 probability sample replaces this">${t}<i>pending</i></span>`;
+/* text from takeaways.json: escaped, then [[MASS3:key|shown]] becomes a pending marker and [[q|...]] a quote */
+const rich=s=>esc(s).replace(/\[\[MASS3:([a-z0-9_]+)\|([^\]]*)\]\]/g,(m,k,t)=>M3(k,t)).replace(/\[\[q\|([^\]]*)\]\]/g,"<q>$1</q>").replace(/\[\[verify\|([^\]]*)\]\]/g,(m,t)=>`<!--VERIFY: ${t.replace(/--/g,"")}-->`);
+const dUTC=s=>{const d=new Date(s.length<=10?s+"T00:00:00Z":s);return `${d.getUTCDate()} ${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
+
+/* ---------- #oct7: the Zionism step-through as article tabs (Hamas / October 7 / Gaza genocide) ----------
+   Same grammar as #zionism: phase cards, numbered jump chips, Key moves / Every change, Prev · Play · Next, a pinned control
+   card, and a before/after word diff. Colours: blue = wording that is in the sentence now, amber = wording that left,
+   ink = the playhead, grey = context volume (monthly views), red dashed = 7 Oct 2023 only. */
+/* the title before the first recorded move: "Operation Al-Aqsa Flood" from 12 Oct 2023 (OCT7.md card 4; a reverted move that day starts from it) */
+const O7_TITLE0="2023-10-12T00:00:00Z";
+const O7={tab:0,sel:0,mode:"key",speed:"norm",playing:false,timer:null,geom:null,d:{}};
+const O7CFG=[
+ {title:"Hamas",name:"Hamas",collapse:"2023-10-01",
+  lanes:[{k:"militant",lab:"“militant” in the definition",short:"“militant”",tone:"del"},{k:"polmil",lab:"“political organisation with a (military) wing” form",short:"“…with a military wing”",tone:"add"},{k:"political",lab:"“political” in the definition",short:"“political”",tone:"add"},{k:"terrorist",kind:"blips",lab:"“terrorist” added: each dot is one day it went in",short:"“terrorist” added"},{k:"hostage",kind:"empty",lab:"hostages",short:"hostages"},{k:"all",kind:"ticks"}],
+  key:["militant","polmil","political","terrorist"],
+  how:"<b>How to read this:</b> time runs left to right; 2021 to September 2023 is folded into the stub on the left. Amber shows when “militant” was in the first sentence, and every gap is a removal. Blue shows when it said “political”, and when it used the “political organisation with a military wing” form. Amber dots are the days “terrorist” went in; none lasted a day. The grey bars are monthly views of the article.",
+  moments:[{t:"political",s:"+",after:"2023-10-07",short:"“Political” in",long:"“fundamentalist” goes out and “political” comes in"},{t:"terrorist",s:"+",after:"2023-10-07",short:"First “terrorist”",long:"“terrorist” goes into the definition for the first time; it lasted hours"},{t:"militant",s:"-",on:"2023-10-12",last:true,short:"“Militant” → “military”",long:"“militant” becomes “military”"},{t:"polmil",s:"+",first:true,short:"“…with a militant wing”",long:"the definition becomes a political organisation with a militant wing"},{t:"militant",s:"-",last:true,short:"Last “militant” spell ends",long:"the last spell of “militant” in the first sentence ends"},{lastChange:true,short:"Last change",long:"the last change to the first sentence"}],
+  phases:[{nm:"Before the war",to:{after:"2023-10-07"},sub:"“fundamentalist, militant” organisation"},{nm:"Rewrite week",to:{m:2},sub:"“political” in, “militant” out"},{nm:"Tug of war",to:{t:"militant",last:true},sub:"“militant” goes in and out"},{nm:"Settled",sub:"political organisation with a military wing"}],
+  note:"Phases: before 7 October 2023; the rewrite week, to the edit that turned “militant” into “military” on 12 October 2023; the tug of war, to the last time “militant” went in or out of the first sentence; settled since. Dates are UTC days; where our record has the time a wording was first seen, the panel shows it. “Terrorist” is matched as any word starting “terror”."},
+ {title:"October 7 attacks",name:"October 7",
+  lanes:[{k:"title",kind:"title",lab:"article title (amber: names Hamas)",short:"title"},{k:"incursions",lab:"“armed incursions” in the first sentence",short:"“armed incursions”",tone:"add"},{k:"hamas",lab:"Hamas named in the first sentence",short:"Hamas named",tone:"add"},{k:"blockaded",lab:"“blockaded” Gaza Strip",short:"“blockaded”",tone:"add"},{k:"massacre",kind:"blips",lab:"“massacre” added: each dot is one day it went in",short:"“massacre” added"},{k:"hostage",kind:"empty",lab:"hostages",short:"hostages"},{k:"all",kind:"ticks"}],
+  key:["incursions","hamas","blockaded","massacre"],
+  how:"<b>How to read this:</b> time runs left to right from the first version, on 7 October 2023. The top lane is the article’s title; amber where the title named Hamas. Blue shows when the first sentence said “armed incursions”, named Hamas, and called the Gaza Strip “blockaded”. Amber dots are the days “massacre” went in. The hostages lane is empty: they have never been in the first sentence.",
+  moments:[{t:"incursions",s:"+",first:true,short:"“Armed incursions”",long:"“coordinated incursions” becomes “armed incursions”"},{t:"massacre",s:"+",first:true,short:"“Massacre”, briefly",long:"“massacre” goes into the first sentence, for minutes"},{t:"blockaded",s:"+",first:true,short:"First “blockaded”",long:"“blockaded” is tried for the first time"},{t:"massacre",s:"+",last:true,short:"“Massacre” again",long:"“massacre” goes in a second time, for minutes"},{t:"blockaded",s:"+",last:true,short:"“Blockaded” stays",long:"“blockaded” goes back in and stays"},{lastChange:true,short:"Holiday clause out",long:"the Jewish-holiday clause is moved out of the first sentence"}],
+  phases:[{nm:"First weeks",to:{t:"incursions",s:"+",first:true},sub:"“attacks”, wording changing by the hour"},{nm:"Armed incursions",to:{t:"blockaded",s:"+",last:true},sub:"short-lived additions, all undone"},{nm:"Blockaded",sub:"“from the blockaded Gaza Strip”"}],
+  note:"Phases: from the first version to “armed incursions”; to the last time “blockaded” went back in; since then. Title history from the article’s page moves, without moves that were undone. “Hostages” is matched as hostage, captive, abduct… or kidnap…, the same pattern as in the opening-section counts."},
+ {title:"Gaza genocide",name:"Gaza genocide",
+  lanes:[{k:"own",lab:"Wikipedia’s own voice (“The Gaza genocide is…”)",short:"own voice",tone:"add"},{k:"attrib",lab:"attributed: alleged, accused, according to",short:"attributed",tone:"del"},{k:"attempts",kind:"attempts",lab:"attempts to restore attribution since 26 Sep 2025",short:"attribution attempts"},{k:"hostage",kind:"blips",lab:"hostages in the first sentence",short:"hostages"},{k:"all",kind:"ticks"}],
+  key:["own","attrib"],
+  how:"<b>How to read this:</b> time runs left to right from the first version, in late December 2023. Amber shows when the first sentence attributed the charge (alleged, accused, according to). Blue shows when it stated it in Wikipedia’s own voice. The dark ticks are the edits since 26 September 2025 that tried to bring attribution back; each was gone within 45 minutes.",
+  moments:[{t:"own",s:"+",first:true,short:"First own voice, for minutes",long:"the first wording in Wikipedia’s own voice; it was undone the same day"},{t:"own",s:"+",on:"2025-09-21",short:"Own voice, 21 Sep 2025",long:"Wikipedia’s own voice goes in"},{to:143,first:true,short:"Today’s sentence",long:"the current sentence appears"},{t:"attrib",s:"+",after:"2025-09-27",short:"First attempt reverted",long:"an edit tries to bring back attribution; it is undone"},{t:"attrib",s:"+",last:true,short:"Latest attempt",long:"the latest attempt to bring back attribution; it is undone"}],
+  phases:[{nm:"Attributed",to:{t:"own",s:"+",on:"2025-09-21"},sub:"alleged, accused, according to"},{nm:"Own voice",sub:"attempts to attribute it undone"}],
+  note:"Voice levels are the analyst’s coding of every first-sentence version (alleged / accused / according to / Wikipedia’s own voice). Phases: attributed until Wikipedia’s own voice went in on 21 September 2025; own voice since. Versions coded as neither, such as a blanked or off-topic opening, carry no voice."}];
+function o7Find(ch,q){
+  if(q.lastChange)return ch.at(-1);
+  if(q.to!=null){const L=ch.filter(c=>c.to===q.to);return q.first?L[0]:L.at(-1)}
+  let L=ch.filter(c=>q.s?c.mv.includes(q.t+q.s):c.mv.some(m=>m.slice(0,-1)===q.t));
+  if(q.after)L=L.filter(c=>c.d>=q.after);if(q.on)L=L.filter(c=>c.d===q.on);
+  return q.last?L.at(-1):L[0]}
+function o7Data(){
+  const i=O7.tab;if(O7.d[i])return O7.d[i];
+  const C=O7CFG[i],T=R.oct7&&R.oct7.tabs.find(t=>t.title===C.title),RA=R.ratchet&&R.ratchet.articles[C.title];if(!T||!RA)return null;
+  const txt=new Map((RA.fs_variants||[]).map(v=>[v.id,v.s])),live=T.live||{};
+  const ch=T.changes.map((c,k)=>({k,d:c[0],t:Date.parse(c[0]+"T12:00:00Z"),from:c[1],to:c[2],rv:c[3],mv:c[4].filter(m=>C.key.includes(m.slice(0,-1)))}));
+  ch.forEach(c=>{const b=txt.get(c.to),a=txt.get(c.from);c.before=a||null;c.after=b||null;c.blank=b==="";const L=live[c.to];c.liveD=L?L[0]:null;c.seen=L&&L[1]&&L[1].slice(0,10)===c.d?L[1].slice(11,16):null});
+  const tl=RA.fs_timeline,t0=Date.parse(tl[0][0]+"T00:00:00Z"),t1=Date.parse(((R.zionism&&R.zionism.now.asof)||"2026-11-05")+"T00:00:00Z");
+  ch.forEach((c,j)=>{const n=ch[j+1];c.last=!n;c.days=((n?n.t:t1)-c.t)/ZI_DAY});
+  const moments=[];C.moments.forEach(q=>{const c=o7Find(ch,q);if(c&&!moments.some(m=>m.c===c))moments.push({c,short:q.short,long:q.long})});moments.sort((a,b)=>a.c.k-b.c.k);
+  // phases from the data (rules in the note)
+  const ph=[];let ka=0,a=t0;
+  C.phases.forEach((p,j)=>{let end=null;if(p.to){if(p.to.m!=null){const m=C.moments[p.to.m],c=o7Find(ch,m);end=c}else if(p.to.after){end=ch.find(c=>c.d>=p.to.after)}else end=o7Find(ch,p.to)}
+    const kb=end?(p.to&&p.to.after?end.k-1:end.k):ch.length-1,b=end?(p.to&&p.to.after?end.t:end.t):t1;
+    if(kb<ka-1)return;const L=ch.filter(c=>c.k>=ka&&c.k<=kb),nK=L.filter(c=>c.mv.length).length;
+    ph.push({ka,kb,a,b,nm:p.nm,sub:p.sub,rg:`${ziMY(a)} to ${end?ziMY(b):"now"}`,txt:`${ziN(L.length,"change")}, ${nK} moving a key word.`,k:L.length?L[0].k:ka});ka=kb+1;a=b});
+  const stub=C.collapse?Date.parse(C.collapse+"T00:00:00Z"):null;
+  const A=R.articles.find(x=>x.title===C.title),pv=(A&&A.pv_monthly)||{};
+  return O7.d[i]={C,T,ch,moments,phases:ph,t0,t1,stub,nStub:stub?ch.filter(c=>c.t<stub).length:0,pv,nKey:ch.filter(c=>c.mv.length).length,txt};
+}
+function o7Spans(D,term){const T=D.T;let on=T.start[term],from=D.t0;const o=[];D.ch.forEach(c=>{if(c.mv.includes(term+"+")&&!on){on=true;from=c.t}else if(c.mv.includes(term+"-")&&on){on=false;o.push([from,c.t])}});
+  // flips of terms outside the "key" list still need tracking for lanes: use the full change list from the build
+  return on?[...o,[from,D.t1]]:o}
+function o7SpansAll(D,term){const T=D.T;let on=T.start[term],from=D.t0;const o=[];T.changes.forEach(c=>{const t=Date.parse(c[0]+"T12:00:00Z");if(c[4].includes(term+"+")&&!on){on=true;from=t}else if(c[4].includes(term+"-")&&on){on=false;o.push([from,t])}});return on?[...o,[from,D.t1]]:o}
+function drawO7(){
+  const el=$("#o7Chart"),D=o7Data();if(!el)return;if(!D){$("#o7Fig").hidden=true;return}
+  const {C,ch,t0,t1,stub,phases,pv}=D,ph=isPhone(),W=Math.max(300,el.clientWidth),m={l:ph?30:40,r:ph?6:10};
+  const sw=stub?Math.round((W-m.l-m.r)*.08):0,xs=m.l+sw;
+  const x=t=>stub?(t<stub?m.l+sw*(t-t0)/(stub-t0):xs+(W-m.r-xs)*(t-stub)/(t1-stub)):m.l+(W-m.l-m.r)*(t-t0)/(t1-t0);
+  const pY=0,pH=20,mY=38,bT=60,bH=ph?60:84,bB=bT+bH,L0=bB+26;
+  const lanes=C.lanes.map(l=>({...l,h:l.kind==="ticks"?36:l.kind==="title"?46:40}));
+  let yy0=L0;lanes.forEach(l=>{l.y=yy0;yy0+=l.h});const H=yy0+26,bandY=l=>l.y+16,bandH=10;
+  // context: monthly views
+  const months=Object.keys(pv).sort(),vals=months.map(k=>pv[k]),mx=niceMax(Math.max(1,...vals)),y=lin(0,mx,bB,bT);
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`${C.name}: every change to the first sentence, ${ziD(D.T.first_ts)} to November 2026. ${phases.map((p,i)=>`Phase ${i+1}, ${p.nm}, ${p.rg}.`).join(" ")} Lanes: ${C.lanes.filter(l=>l.kind!=="ticks").map(l=>l.short).join(", ")}. Grey bars: monthly views.`)}">`;
+  phases.forEach((p,i)=>{const xa=x(p.a),xb=x(p.b);if(i%2)s+=`<rect x="${xa.toFixed(1)}" y="${bT-6}" width="${Math.max(0,xb-xa).toFixed(1)}" height="${H-bT-20}" style="fill:var(--faint);opacity:.7"/>`});
+  const plab=(p,i,w)=>{const full=`${i+1} ${p.nm}`;return full.length*6.8+8<w?full:String(i+1)};
+  phases.forEach((p,i)=>{const xa=x(p.a)+(i?1:0),xb=x(p.b)-(i<phases.length-1?1:0),w=Math.max(2,xb-xa);s+=`<rect x="${xa.toFixed(1)}" y="${pY}" width="${w.toFixed(1)}" height="${pH}" rx="2" style="fill:var(--faint);stroke:var(--rule)"/><text class="pl" x="${(xa+w/2).toFixed(1)}" y="${pY+14}" text-anchor="middle">${esc(plab(p,i,w))}</text>`});
+  if(stub){s+=`<rect x="${m.l}" y="${bT-6}" width="${sw-2}" height="${H-bT-20}" style="fill:var(--faint)"/><text x="${m.l+3}" y="${bB+14}">2021</text><text class="em" x="${m.l+3}" y="${bT+24}" transform="rotate(0)">${ph?"":"to Sep ’23"}</text><text class="em" x="${m.l+3}" y="${bT+38}">${ph?"":ziN(D.nStub,"change")}</text>`}
+  const y0=new Date(stub||t0).getUTCFullYear();
+  for(let yr=y0;yr<=new Date(t1).getUTCFullYear();yr++){const tt=Date.UTC(yr,0,1);if(tt<=(stub||t0))continue;const xx=x(tt);s+=`<line x1="${xx}" x2="${xx}" y1="${bT}" y2="${H-24}" style="stroke:var(--faint)"/><text x="${xx+3}" y="${bB+14}">${ph?"’"+String(yr).slice(2):yr}</text>`}
+  if(!stub)s+=`<text x="${m.l+2}" y="${bB+14}">${esc(ph?"":ziMY(t0))}</text>`;
+  ticks(0,mx,2).forEach(v=>{const yy=y(v);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-5}" y="${yy+3.5}" text-anchor="end">${big(v)}</text>`});
+  months.forEach((k,i)=>{const a=Date.UTC(+k.slice(0,4),+k.slice(4,6)-1,1),b=Date.UTC(+k.slice(0,4),+k.slice(4,6),1);if(b<=t0||a>=t1)return;const xa=x(Math.max(a,t0)),xb=x(Math.min(b,t1)),v=vals[i],yy=y(v);if(!v)return;s+=`<rect x="${(xa+.4).toFixed(1)}" y="${yy.toFixed(1)}" width="${Math.max(.6,xb-xa-.8).toFixed(1)}" height="${(bB-yy).toFixed(1)}" style="fill:var(--mid)"/>`});
+  s+=`<text x="${xs+6}" y="${bT+10}" style="fill:var(--muted);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">views / month</text>`;
+  if(WAR>t0){const wx=x(WAR);s+=`<line x1="${wx}" x2="${wx}" y1="${bT-4}" y2="${H-24}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/><text x="${wx+4}" y="${bT+24}" style="fill:var(--war);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${ph?"7 Oct":"7 Oct 2023"}</text>`}
+  lanes.forEach(l=>{const lab=l.kind==="ticks"?(ph?"every first-sentence change":"every change to the first sentence"):ph?l.short:l.lab;s+=`<text class="ln" x="${m.l}" y="${l.y+11}">${esc(lab)}</text>`;
+    if(l.kind==="ticks"||l.kind==="blips"||l.kind==="attempts"||l.kind==="empty")s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${bandY(l)+bandH/2}" y2="${bandY(l)+bandH/2}" style="stroke:var(--rule)${l.kind==="empty"?";stroke-dasharray:2 3":""}"/>`;
+    else s+=`<rect x="${m.l}" y="${bandY(l)}" width="${W-m.l-m.r}" height="${l.kind==="title"?16:bandH}" rx="2" style="fill:var(--faint)"/>`;
+    if(!l.kind){const cv=l.tone==="add"?"--add-bd":"--del-bd",sp=o7SpansAll(D,l.k);sp.forEach(([a,b])=>{const xa=x(a),xb=Math.max(xa+1.4,x(b));s+=`<rect x="${xa.toFixed(1)}" y="${bandY(l)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(${cv})"/>`});
+      for(let j=1;j<sp.length;j++){const xa=x(sp[j-1][1]),xb=Math.max(xa+1.5,x(sp[j][0]));s+=`<rect x="${(xa-.2).toFixed(1)}" y="${bandY(l)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(--sheet)"/>`}}
+    if(l.kind==="blips"){const days=[...new Set(D.T.changes.filter(c=>c[4].includes(l.k+"+")).map(c=>c[0]))];days.forEach(d=>{const xx=x(Date.parse(d+"T12:00:00Z"));s+=`<circle cx="${xx.toFixed(1)}" cy="${bandY(l)+bandH/2}" r="4.5" style="fill:var(--del-bd);stroke:var(--sheet);stroke-width:1.5"/>`});
+      if(!days.length)s+=`<text class="em" x="${(m.l+(W-m.r))/2}" y="${bandY(l)+bandH/2+4}" text-anchor="middle" style="paint-order:stroke;stroke:var(--sheet);stroke-width:4px">never in the first sentence</text>`}
+    if(l.kind==="empty")s+=`<text class="em" x="${(xs+(W-m.r))/2}" y="${bandY(l)+bandH/2+4}" text-anchor="middle" style="paint-order:stroke;stroke:var(--sheet);stroke-width:4px">never in the first sentence, in ${ziN(D.T.n_wordings,"wording")}</text>`;
+    if(l.kind==="attempts")(D.T.attempts||[]).forEach(([d])=>{const xx=x(Date.parse(d+"T12:00:00Z")).toFixed(1);s+=`<line x1="${xx}" x2="${xx}" y1="${bandY(l)-2}" y2="${bandY(l)+bandH+2}" style="stroke:var(--ink);stroke-width:2"/>`});
+    if(l.kind==="title"){const T=D.T.titles||[];if(T.length){const segs=[[O7_TITLE0,T[0][1]],...T.map(mv=>[mv[0],mv[2]])];
+      segs.forEach(([ts,ttl],j)=>{const a=Date.parse(ts),b=j+1<segs.length?Date.parse(segs[j+1][0]):t1,xa=x(a),xb=x(b),hm=/hamas/i.test(ttl);
+        s+=`<rect x="${xa.toFixed(1)}" y="${bandY(l)}" width="${Math.max(1.5,xb-xa-1).toFixed(1)}" height="16" style="fill:var(${hm?"--del-bg":"--faint"});stroke:var(${hm?"--del-bd":"--rule"})"/>`;
+        if(xb-xa>ttl.length*5.6+8)s+=`<text class="tt" x="${(xa+4).toFixed(1)}" y="${bandY(l)+12}">${esc(ttl)}</text>`})}}
+  });
+  const tk=lanes.find(l=>l.kind==="ticks");ch.forEach(c=>{const xx=x(c.t).toFixed(1),yy=bandY(tk);s+=`<line x1="${xx}" x2="${xx}" y1="${yy+(c.rv?3:0)}" y2="${yy+bandH-(c.rv?3:0)}" style="stroke:var(${c.rv?"--muted":"--ink-2"});stroke-width:1;opacity:${c.rv?.6:.8}"/>`});
+  const bx=D.moments.map(mm=>x(mm.c.t)),gap=21;
+  for(let i=1;i<bx.length;i++)bx[i]=Math.max(bx[i],bx[i-1]+gap);
+  if(bx.length){bx[bx.length-1]=Math.min(bx.at(-1),W-m.r-9);for(let i=bx.length-2;i>=0;i--)bx[i]=Math.min(bx[i],bx[i+1]-gap)}
+  const l1=lanes.find(l=>!l.kind)||lanes[0];
+  D.moments.forEach((mm,i)=>{const xx=x(mm.c.t),cx=Math.max(m.l+9,bx[i]);bx[i]=cx;s+=`<path d="M${cx.toFixed(1)} ${mY+9} L${xx.toFixed(1)} ${bT-2} L${xx.toFixed(1)} ${bandY(l1)+bandH}" style="fill:none;stroke:var(--ink);stroke-width:1;opacity:.45"/><circle cx="${cx.toFixed(1)}" cy="${mY}" r="9" style="fill:var(--ink)"/><text class="bd" x="${cx.toFixed(1)}" y="${mY+3.6}" text-anchor="middle">${i+1}</text>`});
+  s+=`<g class="o7ov"></g><g class="o7ph zi-ph"><line x1="0" x2="0" y1="${mY+11}" y2="${H-22}" style="stroke:var(--ink);stroke-width:2"/><rect class="r" x="-44" y="${H-20}" width="88" height="18" rx="3" style="fill:var(--ink)"/><text class="phd" x="0" y="${H-7}" text-anchor="middle"></text></g></svg>`;
+  el.innerHTML=s;O7.geom={x,ch,lanes,bandY,bandH,H,m,W,bx,mY,pY,pH,plab,tk};
+  const vt=Object.values(pv).reduce((a,b)=>a+b,0);
+  $("#o7Key").innerHTML=`<span class="key"><i style="width:2px;height:14px;background:var(--ink)"></i>black line: the change shown below</span><span class="key"><i style="background:var(--add-bd)"></i>blue: wording that is in the sentence now</span><span class="key"><i style="background:var(--del-bd)"></i>amber: wording that left, or a word added and removed</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: one change to the first sentence (short tick: later undone)</span><span class="key"><i style="background:var(--mid)"></i>grey: monthly views of the article (${big(vt)} in all)</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`;
+  $("#o7How").innerHTML=C.how;$("#o7T").textContent=`${C.name}: every change to the first sentence, ${ziMY(t0)} to now`;
+  $("#o7Moments").innerHTML=D.moments.map((mm,i)=>`<li><button type="button" data-k="${mm.c.k}" aria-pressed="false" aria-label="${esc(`Jump to ${ziD(mm.c.d)}: ${mm.long}`)}"><span class="bd" aria-hidden="true">${i+1}</span><span>${esc(mm.short)}</span><small>${ziD(mm.c.d)}</small></button></li>`).join("");
+  $("#o7Phases").innerHTML=phases.map((p,i)=>`<li><button type="button" data-k="${p.k}" aria-current="false" aria-label="${esc(`Phase ${i+1}: ${p.nm}, ${p.rg}. ${p.txt} Go to its first change.`)}"><span class="nm"><span class="n" aria-hidden="true">${i+1}</span>${esc(p.nm)}<span class="rg">${esc(p.rg)}</span></span><span class="sb">${esc(p.sub)}</span><span>${esc(p.txt)}</span></button></li>`).join("");
+  $("#o7Note").textContent=`${D.T.n_undone} of the ${ch.length} changes were later undone. ${C.note}`;
+  $("#o7ArtHelp").textContent=`${D.ch.length} changes to the first sentence, ${D.T.n_wordings} different wordings.`;
+  o7Track();o7Sync(false);
+}
+function o7List(){const D=o7Data();return O7.mode==="key"?D.ch.filter(c=>c.mv.length):D.ch}
+const o7T=(D,m)=>{const l=D.C.lanes.find(l=>l.k===m.slice(0,-1));return l?l.short:m.slice(0,-1)};
+function o7Moved(D,c){if(!c.mv.length)return c.blank?"None (the opening was blanked)":"None, a rewording";return c.mv.map(m=>{const w=esc(o7T(D,m));return m.endsWith("+")?`<ins>${w}</ins> in`:`<del>${w}</del> out`}).join(", ")}
+function o7Dur(c){if(c.last)return `still current (${ziDur(Math.round(c.days))} so far)`;if(c.days>=1)return ziDur(Math.round(c.days));const h=c.liveD!=null?c.liveD*24:null;return h!=null?`less than a day (this wording was live ${h<1?"under an hour":`about ${h<10?h.toFixed(1):Math.round(h)} hours`} in all)`:"less than a day"}
+function o7Track(){const D=o7Data(),T=$("#o7Trk");if(!T)return;const n=D.ch.length,f=k=>(100*k/n).toFixed(3),l=D.C.lanes.find(l=>!l.kind);
+  const sp=o7SpansAll(D,l.k),runs=sp.map(([a,b])=>{const ka=D.ch.findIndex(c=>c.t>=a),kb=D.ch.findIndex(c=>c.t>=b);return [ka<0?n:ka,kb<0?n:kb]});
+  T.innerHTML=`<i class="rail"></i>${runs.map(([a,b])=>`<i class="on" style="left:${f(a)}%;width:max(1px,${(f(b)-f(a))}%);background:var(${l.tone==="add"?"--add-bd":"--del-bd"})"></i>`).join("")}${D.phases.slice(1).map(p=>`<i class="pd" style="left:${f(p.ka)}%"></i>`).join("")}<i class="ph o7tph"></i><span class="e">change 1</span><span class="e r">${n}</span>`}
+function o7Sync(announce){
+  const D=o7Data(),G=O7.geom,c=D&&D.ch[O7.sel];if(!c||!G)return;const L=o7List(),pi=D.phases.findIndex(p=>c.k>=p.ka&&c.k<=p.kb),P=D.phases[pi],root=$("#o7Fig");
+  const xx=G.x(c.t),phEl=$(".o7ph",root);
+  if(phEl){phEl.style.transform=`translateX(${xx.toFixed(1)}px)`;const lab=ziD(c.d),w=lab.length*6.7+12,lft=xx-w/2,rgt=xx+w/2,off=lft<2?2-lft:rgt>G.W-2?G.W-2-rgt:0;const r=$("rect.r",phEl),t=$("text",phEl);r.setAttribute("x",(-w/2+off).toFixed(1));r.setAttribute("width",w.toFixed(1));t.setAttribute("x",off.toFixed(1));t.textContent=lab}
+  let o="";if(P){const xa=G.x(P.a)+(pi?1:0),xb=G.x(P.b)-(pi<D.phases.length-1?1:0),w=Math.max(2,xb-xa);o+=`<rect x="${xa.toFixed(1)}" y="${G.pY}" width="${w.toFixed(1)}" height="${G.pH}" rx="2" style="fill:var(--ink)"/><text class="pl on" x="${(xa+w/2).toFixed(1)}" y="${G.pY+14}" text-anchor="middle">${esc(G.plab(P,pi,w))}</text>`}
+  o+=`<circle cx="${xx.toFixed(1)}" cy="${G.bandY(G.tk)+G.bandH/2}" r="6" style="fill:none;stroke:var(--ink);stroke-width:1.5"/>`;$(".o7ov",root).innerHTML=o;
+  const tp=$(".o7tph",root);if(tp)tp.style.left=(100*(c.k+.5)/D.ch.length).toFixed(3)+"%";
+  const ki=c.mv.length?D.ch.filter(x=>x.mv.length).indexOf(c)+1:0;
+  $("#o7Ctr").innerHTML=`<b>Change ${c.k+1}</b> of ${D.ch.length} · <b>${ziD(c.d)}</b><br>${ki?`key move ${ki} of ${D.nKey}`:"not a key move"}${P?` · phase ${pi+1}, ${esc(P.nm.toLowerCase())}`:""}`;
+  const ops=c.before&&c.after?wdiff(c.before,c.after):null;
+  $("#o7Hd").innerHTML=`<p class="zi-hd1"><b>${ziD(c.d)}${c.seen?`, ${c.seen} UTC`:""}</b> · ${esc(D.C.name)} · English Wikipedia · change ${c.k+1} of ${D.ch.length}${P?` · phase ${pi+1}: ${esc(P.nm)}`:""}${ops?` · ${ziW(wc(ops,"-"))} out, ${ziW(wc(ops,"+"))} in`:""}</p><dl class="zi-facts"><div><dt>Key word moved</dt><dd>${o7Moved(D,c)}</dd></div><div><dt>This wording lasted</dt><dd>${o7Dur(c)}</dd></div><div><dt>Later undone?</dt><dd>${c.rv?"Yes, a later edit reverted it":"No"}</dd></div></dl>`;
+  const qd=(w,html,na)=>`<blockquote><span class="w">${w}</span><span class="s${na?" na":""}">${html}</span></blockquote>`;
+  $("#o7BA").innerHTML=qd("Before",c.before?(ops?renderW(ops,"-"):esc(c.before)):"The text of this wording was not kept.",!c.before)+qd("After",c.after?(ops?renderW(ops,"+"):esc(c.after)):c.blank?"The opening section was blank in this revision.":"The text of this wording was not kept.",!c.after);
+  $("#o7Prev").disabled=!L.some(x=>x.k<c.k);$("#o7Next").disabled=!L.some(x=>x.k>c.k)&&!O7.playing;
+  $$("#o7Moments button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.k===c.k)));
+  $$("#o7Phases button").forEach((b,i)=>b.setAttribute("aria-current",String(i===pi)));
+  if(announce)$("#o7Live").textContent=`${D.C.name}, change ${c.k+1} of ${D.ch.length}, ${ziD(c.d)}. Key word moved: ${c.mv.length?c.mv.map(m=>o7T(D,m)+(m.endsWith("+")?" in":" out")).join(", "):"none"}${c.rv?", later undone":""}.`;
+}
+function o7Go(k,announce=true){O7.sel=k;o7Sync(announce&&!O7.playing)}
+function o7Step(dir){const L=o7List(),cur=O7.sel;let n=dir>0?L.find(c=>c.k>cur):L.filter(c=>c.k<cur).at(-1);if(dir===2)n=L.at(-1);if(dir===-2)n=L[0];if(n)o7Go(n.k)}
+function o7PlayBtn(){const b=$("#o7Play");if(!b)return;b.setAttribute("aria-pressed",String(O7.playing));b.setAttribute("aria-label",O7.playing?"Pause":`Play through ${O7.mode==="key"?"key moves":"every change"}`);$(".ic",b).textContent=O7.playing?"❚❚":"▶";$(".tx",b).textContent=O7.playing?"Pause":"Play"}
+function o7Tick(){clearTimeout(O7.timer);O7.timer=setTimeout(()=>{if(!O7.playing)return;const n=o7List().find(c=>c.k>O7.sel);if(!n){o7Play(false);return}o7Go(n.k);if(!o7List().some(c=>c.k>O7.sel)){o7Play(false);return}o7Tick()},ZI_MS[O7.speed])}
+function o7Play(on){if(on===O7.playing)return;O7.playing=on;clearTimeout(O7.timer);
+  if(on){const L=o7List();if(!L.some(c=>c.k>O7.sel))O7.sel=L[0].k;o7Sync(false);$("#o7Live").textContent=`Playing from change ${O7.sel+1}.`;o7Tick()}else{o7Sync(false);$("#o7Live").textContent=`Paused at change ${O7.sel+1}.`}o7PlayBtn()}
+function o7ModeHelp(){const D=o7Data();$("#o7ModeHelp").innerHTML=O7.mode==="key"?`<b>Key moves</b>: only the ${D.nKey} changes where a key word went in or out. Switch to every change to see all ${D.ch.length}, including rewordings.`:`<b>Every change</b>: all ${D.ch.length} edits to the first sentence. Key moves shows only the ${D.nKey} that moved a key word.`}
+function o7Tab(i){o7Play(false);O7.tab=i;setSeg($("#o7Art"),String(i));const D=o7Data();if(!D)return;O7.sel=D.moments.length?D.moments[0].c.k:0;o7ModeHelp();drawO7()}
+function o7Pick(px,py){const G=O7.geom;if(!G)return null;if(py<G.mY+12&&py>G.pY+G.pH){const i=G.bx.findIndex(b=>Math.abs(b-px)<12);if(i>=0)return o7Data().moments[i].c}
+  const L=O7.mode==="all"||py>=G.bandY(G.tk)-12?G.ch:G.ch.filter(c=>c.mv.length);let b=null,bd=1e9;L.forEach(c=>{const d=Math.abs(G.x(c.t)-px);if(d<bd){bd=d;b=c}});return bd<16?b:null}
+function o7Init(){
+  const el=$("#o7Chart");if(!el)return;if(!R.oct7||!R.oct7.tabs||!R.oct7.tabs.length){$("#o7Fig").hidden=true;return}
+  if(RM.matches){O7.speed="slow";setSeg($("#o7Speed"),"slow")}
+  const at=ev=>{const r=el.getBoundingClientRect();return [ev.clientX-r.left,ev.clientY-r.top]};
+  const user=k=>{o7Play(false);o7Go(k)};
+  el.addEventListener("pointermove",ev=>{if(ev.pointerType!=="mouse")return;const c=o7Pick(...at(ev));if(c){const ops=c.before&&c.after?wdiff(c.before,c.after):null;showTip(`<b>${ziD(c.d)}</b>${c.rv?`<div style="opacity:.8">later undone</div>`:""}<span class="zi-d">${ops?renderW(ops):esc(c.after||"Text not kept.")}</span>`,ev.clientX,ev.clientY)}else hideTip()});
+  el.addEventListener("pointerleave",hideTip);
+  el.addEventListener("click",ev=>{const c=o7Pick(...at(ev));if(c)user(c.k)});
+  const keys=ev=>{if(ev.target.closest("input,select,textarea"))return;const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];if(k){ev.preventDefault();o7Play(false);o7Step(k);return}if(ev.key===" "&&ev.currentTarget===el){ev.preventDefault();o7Play(!O7.playing)}};
+  el.addEventListener("keydown",keys);$("#o7Ctl").addEventListener("keydown",keys);
+  seg($("#o7Art"),v=>o7Tab(+v));
+  seg($("#o7Mode"),v=>{O7.mode=v;o7ModeHelp();o7PlayBtn();o7Sync(false)});
+  seg($("#o7Speed"),v=>{O7.speed=v;if(O7.playing)o7Tick()});
+  $("#o7Prev").onclick=()=>{o7Play(false);o7Step(-1)};$("#o7Next").onclick=()=>{o7Play(false);o7Step(1)};$("#o7Play").onclick=()=>o7Play(!O7.playing);
+  $("#o7Moments").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)user(+b.dataset.k)});
+  $("#o7Phases").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)user(+b.dataset.k)});
+  const trk=$("#o7Trk");trk.addEventListener("pointerdown",ev=>{const D=o7Data(),r=trk.getBoundingClientRect(),k=D.ch.length*Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width))-.5;let b=null,bd=1e9;o7List().forEach(c=>{const d=Math.abs(c.k-k);if(d<bd){bd=d;b=c}});if(b)user(b.k)});
+  if("IntersectionObserver" in window)new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&O7.playing)o7Play(false)})).observe($("#o7Fig"));
+  o7PlayBtn();o7Tab(0);drawO7Side();
+}
+function drawO7Side(){
+  const P=R.oct7&&R.oct7.designation,host=$("#o7Pos");
+  if(host&&P){host.innerHTML=`<div style="display:grid;gap:4px">${P.map(p=>{const now=p.date==="2026-10-31";return `<div class="pos-row"><span>${esc(dUTC(p.date))}<br><small>sentence ${esc(p.sentence)}</small></span><div class="pos-bar" role="img" aria-label="${esc(`${dUTC(p.date)}: designation sentence ${p.sentence}, ${Math.round(p.word_offset_share*100)}% of the way into the opening section`)}"><span class="d" style="left:${(p.word_offset_share*100).toFixed(1)}%"></span>${now?`<span class="s" style="left:22%"></span>`:""}</div><p class="pos-q">“${esc(p.quote)}”</p></div>`}).join("")}</div>
+    <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>dark dot: the first “terror” mention, the designation sentence</span><span class="key"><i style="background:var(--add-bd)"></i>blue square: “Initially, Hamas was discreetly supported by Israel…”, new since 2023, 22% of the way in</span></div><p class="cap">The opening section grew from 154 words (July 2023) to 525 now, which pushes any one sentence later; the designation is now the second-to-last sentence. The “Several countries” wording is from 31 October 2026 and may be reverted.</p>`}
+  const G=R.oct7&&R.oct7.groups,gh=$("#o7Grp");
+  if(gh&&G&&G.length){gh.innerHTML=`<div style="display:grid;gap:6px">${G.map(g=>{const a=g.t0,b=g.t1,X=v=>(v*100).toFixed(1);return `<div class="grp-row"><span>${esc(g.a)}<br><small>${g.m1?"“militant” in first sentence now":"no “militant” in first sentence now"}</small></span><div class="tr" role="img" aria-label="${esc(`${g.a}: ${a==null?"no terror mention":Math.round(a*100)+"%"} in 2021, ${b==null?"no terror mention in the opening section":Math.round(b*100)+"%"} now`)}">${a!=null&&b!=null?`<span class="ln" style="left:${X(Math.min(a,b))}%;width:${Math.abs(b-a)*100}%"></span>`:""}${a!=null?`<span class="a" style="left:${X(a)}%"></span>`:""}${b!=null?`<span class="b${g.m1?"":" nm"}" style="left:${X(b)}%"></span>`:""}</div></div>`}).join("")}</div>
+    <div class="legend"><span class="key"><i style="border-radius:50%;border:2px solid var(--ink-2);background:none"></i>open dot: 2021</span><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>dark dot: now, “militant” still in the first sentence</span><span class="key"><i style="border-radius:50%;background:var(--muted)"></i>grey dot: now, no “militant” in the first sentence</span></div><p class="cap">Nine groups, chosen by hand. A missing dot means no “terror” mention in that opening section. Sentence positions come from a heuristic splitter and can be off by one.</p>`}
+}
+
+/* ---------- #charge: who is charged with what, in whose voice (perp_codes.jsonl) ---------- */
+const PP={sel:"isr|G|now",side:"isr"};
+const PP_SIDE={isr:"Israel / Jews",pal:"Hamas / Palestinians",cmp:"Other disputes, side A"};
+const PP_DL={"2021-01-01":"Jan 2021","2023-07-01":"Jul 2023",now:"now"};
+const PP_DS={"2021-01-01":"’21","2023-07-01":"’23",now:"now"};
+function drawCharge(){
+  const P=R.perp,host=$("#ppGrid");if(!host)return;if(!P){$("#charge").hidden=true;return}
+  const ph=isPhone();
+  // denominators first: the share of harm sentences naming the side (PERP card 1 and card 6, article-weighted)
+  $("#ppTop").innerHTML=`<div class="r h"><span>Share of harm sentences naming the side as the one doing harm</span><span>2021</span><span>Jul 2023</span><span>now</span><span></span></div>
+   <div class="r"><span>Israel / Jews (150 topic articles)</span><b>23.6%</b><b>24.1%</b><b>26.4%</b><span>+2.8 points, range −1.9 to +8.3: not clear</span></div>
+   <div class="r"><span>Hamas / Palestinians (same articles)</span><b>7.0%</b><b>7.8%</b><b>8.8%</b><span>+1.8 points, range −1.4 to +5.7: not clear</span></div>
+   <div class="r"><span>Other disputes, side A (50 articles)</span><b>32.9%</b><b>43.5%</b><b>43.2%</b><span>Russia, Azerbaijan, Turkey and others</span></div>`;
+  const sides=ph?[PP.side]:["isr","pal","cmp"];
+  let h=`<div class="sh" aria-hidden="true"></div>${["isr","pal","cmp"].map(sd=>`<div class="sh${sides.includes(sd)?"":" hid"}">${esc(PP_SIDE[sd])}</div>`).join("")}`;
+  P.charges.forEach(([code,name])=>{
+    const mx=Math.max(1,...["isr","pal","cmp"].flatMap(sd=>P.dates.map(d=>(P.cells[`${sd}|${code}|${d}`]||[0])[0])));
+    h+=`<div class="ch">${esc(name)}<small>max ${mx}</small></div>`;
+    ["isr","pal","cmp"].forEach(sd=>{h+=`<div class="pp-cell${sides.includes(sd)?"":" hid"}">${P.dates.map(d=>{const key=`${sd}|${code}|${d}`,[n,own]=P.cells[key]||[0,0],H=44,ho=n?own/mx*H:0,ha=n?(n-own)/mx*H:0;
+      return `<button type="button" class="pp-bar${d==="now"&&n?" now":""}" data-k="${key}" aria-pressed="${key===PP.sel}"${n?"":" disabled"} aria-label="${esc(`${PP_SIDE[sd]}, ${name}, ${PP_DL[d]}: ${n} sentences, ${own} in Wikipedia’s own voice.${n?" Show the sentences.":""}`)}"><span class="n${n?"":" z"}">${n}</span><span class="stk">${own?`<i class="own" style="height:${Math.max(2,ho).toFixed(1)}px"></i>`:""}${n-own?`<i class="att" style="height:${Math.max(2,ha).toFixed(1)}px"></i>`:""}</span><span class="y">${PP_DS[d]}</span></button>`}).join("")}</div>`})});
+  host.style.gridTemplateColumns=ph?"minmax(96px,120px) minmax(0,1fr)":"";
+  host.innerHTML=h;
+  $("#ppKey").innerHTML=`<span class="key"><i style="background:var(--ink-2)"></i>solid: a sentence in Wikipedia’s own voice</span><span class="key"><i style="background:repeating-linear-gradient(135deg,var(--mid) 0 3px,var(--sheet) 3px 5px);border:1px solid var(--mid)"></i>pale, striped: attributed to someone, or a denial</span><span class="key"><i style="background:none;outline:1.5px solid var(--ink);outline-offset:1px"></i>outlined: now (5 Nov 2026)</span><span>The number over each bar is its count of sentences.</span>`;
+  ppCard();
+}
+function ppCard(){
+  const P=R.perp,[sd,code,d]=PP.sel.split("|"),name=(P.charges.find(c=>c[0]===code)||[,""])[1],[n,own]=P.cells[PP.sel]||[0,0],L=P.receipts[PP.sel]||[];
+  const arts=new Set(L.map(x=>x[0])).size,VL={own:"own voice",att:"attributed",den:"denial or dispute"};
+  $("#ppCard").innerHTML=`<div class="hd"><p class="zi-hd1"><b>${esc(PP_SIDE[sd])} · ${esc(name)} · ${d==="now"?"now (last revision before 5 Nov 2026)":esc(PP_DL[d])}</b> · English Wikipedia, opening sections</p><dl class="zi-facts"><div><dt>Sentences</dt><dd>${n} in ${ziN(arts,"article")}</dd></div><div><dt>Wikipedia’s own voice</dt><dd>${own}</dd></div><div><dt>Attributed or denied</dt><dd>${n-own}</dd></div></dl></div>
+   ${L.length?`<ul class="rc">${L.map(([t,s,v])=>`<li><span class="w"><span>${esc(t)}</span><span class="vchip ${v}">${VL[v]}</span></span><span class="s">“${esc(s)}”</span></li>`).join("")}</ul>`:`<p class="cap">No sentence at this date.</p>`}`;
+  $$("#ppGrid .pp-bar").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===PP.sel)));
+}
+function chargeInit(){
+  const g=$("#ppGrid");if(!g)return;
+  g.addEventListener("click",e=>{const b=e.target.closest(".pp-bar");if(!b||b.disabled)return;PP.sel=b.dataset.k;ppCard();if(isPhone())$("#ppCard").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"nearest"})});
+  seg($("#ppSide"),v=>{PP.side=v;const [,c,d]=PP.sel.split("|"),k=`${v}|${c}|${d}`;if((R.perp.cells[k]||[0])[0])PP.sel=k;drawCharge()});
+  drawCharge();
+}
+
+/* ---------- #organised: periods (orgs/tests.md F1d) ---------- */
+function drawPeriods(){
+  const host=$("#orgPeriods");if(!host)return;
+  const rows=[["2023, before 7 Oct","",0.51],["7 Oct 2023 to 1 Feb 2024","before the channel",3.44],["Feb to Sep 2024","channel reported active",2.01,1],["Oct 2024 to May 2025","exposure, sanctions, PIA5",1.84],["Jun 2025 to Nov 2026","",0.82]],mx=4;
+  host.innerHTML=`<div style="display:grid;gap:8px" role="img" aria-label="${esc(rows.map(r=>`${r[0]}: ${r[2]} times`).join("; "))}">${rows.map(([l,s,v,doc])=>`<div class="per-row${doc?" doc":""}"><span>${esc(l)}${s?`<br><small style="font:10.5px var(--mono);color:var(--muted)">${esc(s)}</small>`:""}</span><span class="tr"><i style="width:${(v/mx*100).toFixed(1)}%"></i><span class="one" style="left:${(1/mx*100).toFixed(1)}%"></span></span><span class="v">${v.toFixed(2)}×</span></div>`).join("")}</div>
+   <div class="legend"><span class="key"><i style="background:var(--topic)"></i>teal: topic insertions per week ÷ comparison insertions per week</span><span class="key"><i class="dash" style="color:var(--muted)"></i>dashed line: equal rates (1×)</span><span class="key"><i style="background:repeating-linear-gradient(135deg,var(--faint) 0 4px,var(--sheet) 4px 7px);border:1px solid var(--rule)"></i>hatched track: the documented Discord window</span></div>
+   <p class="cap">Descriptive, and confounded by the war’s tempo. The step from 2.0 to 1.8 is small next to the fall from the war-onset peak. The pro-Israel email canvassing ArbCom found dates from about October 2023 to January 2024, inside the 3.44 row.</p>`}
+
+/* ---------- #organised: the coordination network (analyze_coord.py network.json), groups first ---------- */
+const NET={view:"groups",side:"topic",preset:"all",sel:null};
+const NET_WIN={email_canvassing:["2023-10-01","2024-01-21","Email canvassing (pro-Israel), ArbCom Jan 2024"],tfp_discord:["2024-01-01","2024-10-01","Discord channel (pro-Palestinian), sanctioned Dec 2024"]};
+const NET_SANC=[["2024-12-09","Dec 2024 sanctions"],["2025-04-25","Apr 2025 site bans"]];
+const NET_PRE=[["all","All 2021–26",null,null],["pre","Before 7 Oct 2023","2021-01-01","2023-10-07"],["email","Email canvassing (Oct 2023–Jan 2024)","2023-10-01","2024-01-21"],["discord","Discord window (Jan–Sep 2024)","2024-01-01","2024-10-01"],["after","After sanctions (Dec 2024 on)","2024-12-09","2026-11-05"]];
+const netOrder=G=>(G.communities||[]).filter(c=>c.size>=3).sort((a,b)=>({high:0,medium:1,low:2}[a.confidence]??3)-({high:0,medium:1,low:2}[b.confidence]??3)||b.size-a.size||a.id-b.id);
+const netDir=s=>s==null?"--mid":s>0.6?"--add-bd":s<0.4?"--del-bd":"--mid";
+const netDirW=s=>s==null?"mixed":s>0.6?"mostly adds critical terms":s<0.4?"mostly removes them":"mixed";
+function netOverlap(a,b){const P=NET_PRE.find(p=>p[0]===NET.preset);if(!P||!P[2])return true;return !(b<P[2]||a>P[3])}
+function netPlaceholder(host){
+  host.innerHTML=`<div class="net-ph" role="note"><span class="chip">Analysis running</span>
+   <p><b>The coordination network is not in this build yet.</b> The analysis that builds it is still running. When it finishes, this space shows accounts whose critical-term edits cluster in time across different articles, measured against chance, side by side with the comparison articles and with both documented windows marked: the pro-Israel email canvassing (October 2023 to January 2024) and the pro-Palestinian Discord channel (January to September 2024).</p>
+   <ul><li>Chance will be shown next to every count: the same accounts with their whole timelines shifted by 1 to 7 days, 1,000 times.</li><li>Accounts appear only as A1, A2…, reset for each network. No account is named, sized or labelled.</li><li>A group of accounts that edit together is not an organisation, a side or a channel. Shared watchlists and breaking news produce the same pattern.</li></ul>
+   <p class="cap">What we already know: no pair of accounts edited within 30 minutes of each other on five or more articles, before or after the war, in either group; 9 accounts changed the first sentence of 3 or more key articles, against none on comparison key articles.</p></div>`}
+function netStrip(N){
+  const sides=[["topic","Israel / Jewish-topic articles"],["comparison","Comparison articles"]].filter(([g])=>N[g]);
+  const mxG=Math.max(1,...sides.map(([g])=>{const c=N[g].counts,e=c.expected_by_chance||{};return Math.max(c.communities_3plus||0,e.communities_p95||0,e.communities_max||0)})),
+        mxE=Math.max(1,...sides.map(([g])=>{const c=N[g].counts,e=c.expected_by_chance||{};return Math.max(c.edges||0,e.edges_p95||0)}));
+  const row=(lab,f,g,p95,mx,fmtv)=>`<div class="chance"><span>${lab}</span><span class="tr" aria-hidden="true"><i class="f" style="width:${(f/mx*100).toFixed(1)}%"></i><i class="g" style="width:${(g/mx*100).toFixed(1)}%"></i>${p95!=null?`<i class="w" style="width:${(p95/mx*100).toFixed(1)}%"></i>`:""}</span><span><b>${fmtv(f)}</b> found · ${fmtv(g)} by chance${p95!=null?` (95% ≤ ${fmtv(p95)})`:""}</span></div>`;
+  return `<div class="net-hd">${sides.map(([g,l])=>{const c=N[g].counts,e=c.expected_by_chance||{};return `<div class="net-side"><h4>${l}</h4>
+    ${row("Groups of 3+ accounts",c.communities_3plus||0,e.communities_mean||0,e.communities_p95,mxG,v=>fmt(v,v%1?1:0))}
+    ${row("Linked pairs",c.edges||0,e.edges_mean||0,e.edges_p95,mxE,v=>fmt(v,v%1?1:0))}
+    <p class="cap">${c.communities_significant||0} group${c.communities_significant===1?"":"s"} pass the strict test (medium or high confidence). ${(c.accounts_tested||0).toLocaleString("en-US")} accounts, ${(c.events||0).toLocaleString("en-US")} critical-term edits on ${(c.articles||0).toLocaleString("en-US")} articles. Chance: ${e.null_worlds||"–"} shuffled worlds.</p></div>`}).join("")}</div>
+   <div class="legend"><span class="key"><i style="background:var(--ink-2)"></i>solid bar: what we found</span><span class="key"><i style="background:none;border:1.5px dotted var(--muted)"></i>dotted bar: what chance gives on average; thin mark: 95% of shuffled worlds stay below it</span><span>Both sides share each scale. The test covers 2021 to 2026; the time chips below only highlight activity.</span></div>`}
+function netAxis(W){const t0=Date.UTC(2021,0,1),t1=Date.UTC(2026,10,5);return t=>6+(W-12)*(Date.parse(t)-t0)/(t1-t0)}
+function netActivity(c,W){
+  const H=46,x=netAxis(W);let s=`<svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="${esc(`Active from ${dUTC(c.active.first)} to ${dUTC(c.active.last)}, busiest month ${c.active.busiest_month||"unknown"}`)}"><defs><pattern id="nh${c.id}${NET.side[0]}" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="5" style="fill:var(--rule)"/></pattern></defs>`;
+  Object.entries(NET_WIN).forEach(([k,[a,b]],i)=>{s+=`<rect x="${x(a)}" y="${i?4:2}" width="${x(b)-x(a)}" height="${H-20}" style="fill:url(#nh${c.id}${NET.side[0]});opacity:${i?.9:.7}"/>`});
+  const wx=x("2023-10-07");s+=`<line x1="${wx}" x2="${wx}" y1="0" y2="${H-14}" style="stroke:var(--war);stroke-dasharray:2 2"/>`;
+  if(Array.isArray(c.weekly)&&c.weekly.length){const mx=Math.max(1,...c.weekly),bw=(W-12)/c.weekly.length;c.weekly.forEach((v,i)=>{if(v)s+=`<rect x="${6+i*bw}" y="${H-16-(v/mx)*(H-22)}" width="${Math.max(.8,bw-.2)}" height="${(v/mx)*(H-22)}" style="fill:var(--ink-2)"/>`})}
+  else{const a=x(c.active.first),b=x(c.active.last);s+=`<rect x="${a}" y="${H-24}" width="${Math.max(2,b-a)}" height="6" rx="1" style="fill:var(--ink-2)"/>`;if(c.active.busiest_month){const bm=x(c.active.busiest_month+"-15");s+=`<line x1="${bm}" x2="${bm}" y1="${H-30}" y2="${H-16}" style="stroke:var(--ink);stroke-width:2"/>`}}
+  NET_SANC.forEach(([d])=>{const xx=x(d);s+=`<line x1="${xx}" x2="${xx}" y1="2" y2="${H-14}" style="stroke:var(--ink-2)"/>`});
+  for(let y=2021;y<=2026;y++){const xx=x(`${y}-01-01`);s+=`<text x="${xx+2}" y="${H-3}">${isPhone()?"’"+String(y).slice(2):y}</text>`}
+  return s+`</svg>`}
+function netDumb(lab,obs,exp){if(obs==null||!exp)return "";const X=v=>Math.min(100,Math.max(0,v*100)).toFixed(1),[lo,hi]=exp.ci95||[exp.mean,exp.mean];
+  return `<div class="drow"><div class="lab"><span>${esc(lab)}</span><b>${pct(obs)} found · ${pct(exp.mean)} by chance${exp.p_high!=null?` · p ${pv(exp.p_high)}`:""}</b></div><div class="dtrack"><span class="ln" style="left:${X(lo)}%;width:${(Math.max(0,hi-lo)*100).toFixed(1)}%"></span><span class="nul" style="left:${X(exp.mean)}%"></span><span class="obs" style="left:${X(obs)}%"></span></div></div>`}
+function netCard(c,i,W){
+  const conf=c.confidence||"low",ins=c.direction&&c.direction.insert_share,cells=ins==null?"":`<span class="cells7" aria-hidden="true">${Array.from({length:7},(_,j)=>`<i class="${j<Math.round(ins*7)?"a":"r"}"></i>`).join("")}</span>`;
+  const sig=c.significance,ws=c.window_share||{},es=c.expected_window_share||{},dim=!netOverlap(c.active.first,c.active.last);
+  const ps=c.post_sanction_drop||{},sanc=Object.entries(ps).map(([d,v])=>v.testable?`after ${dUTC(d)}: activity ratio ${fmt(v.ratio,2)} against everyone else (p ${pv(v.p_drop)})`:`after ${dUTC(d)}: not testable (fewer than 5 events before)`).join("; ");
+  const arts=(c.articles||[]).slice(0,3).map(a=>`<span>${esc(a.title)} ×${a.events}</span>`).join("")+((c.n_articles||0)>3?`<span>+${c.n_articles-3}</span>`:"");
+  return `<article class="gcard ${conf}${dim?" dim":""}" data-g="${c.id}"><h4>Group ${i+1} <span class="conf ${conf}">${conf} confidence</span></h4>
+   <div class="meta"><b>${c.size}</b> accounts · <b>${c.n_articles}</b> articles · <b>${ins==null?"–":pct(ins)}</b> of their edits add critical terms${cells}</div>
+   <div class="astrip">${netActivity(c,W)}</div>
+   <div class="wtest">${netDumb("Share of activity in the email-canvassing window",ws.email_canvassing,es.email_canvassing)}${netDumb("Share of activity in the Discord window",ws.tfp_discord,es.tfp_discord)}</div>
+   <div class="arts">${arts}</div>
+   ${(c.inserted_phrases||[]).length?`<p class="cap">Phrases added in 2+ articles: ${c.inserted_phrases.slice(0,2).map(p=>`${esc(p.shingle)} (${p.articles})`).join(", ")}</p>`:""}
+   <p class="cap"><b>How sure:</b> ${sig&&sig.share!=null?`${pct(sig.share,1)} of ${sig.worlds} shuffled worlds made a group this large and tight.`:"not tested as a group."}${sanc?` ${esc(sanc)}.`:""}</p>
+   <p class="cap">Not shown: who these accounts are, or why they edited together.</p></article>`}
+function netLayout(G,W){
+  // fixed, deterministic layout: one grid cell per community (size order), members on a circle; pairs share the last cell
+  const comms=netOrder(G),pairs=(G.communities||[]).filter(c=>c.size<3),cols=W<420?2:3,cell=Math.floor((W-8)/cols),pos={},hulls=[];
+  const place=(ids,cx,cy,R)=>ids.forEach((id,j)=>{const a=-Math.PI/2+2*Math.PI*j/ids.length;pos[id]=[cx+(ids.length>1?R*Math.cos(a):0),cy+(ids.length>1?R*Math.sin(a):0)]});
+  comms.forEach((c,i)=>{const cx=4+(i%cols+.5)*cell,cy=(Math.floor(i/cols)+.5)*cell,R=cell*.32;place(c.members||[],cx,cy,R);hulls.push({c,cx,cy,r:R+16,i})});
+  const pk=comms.length,rows0=Math.ceil(pk/cols);if(pairs.length){const per=Math.max(1,Math.floor((W-8)/56));pairs.forEach((p,j)=>{const cx=4+28+(j%per)*56,cy=rows0*cell+24+Math.floor(j/per)*44;(p.members||[]).forEach((id,q)=>{pos[id]=[cx+(q?10:-10),cy]})})}
+  const H=rows0*cell+(pairs.length?Math.ceil(pairs.length/Math.max(1,Math.floor((W-8)/56)))*44+30:8);
+  return {pos,hulls,H:Math.max(H,cell)}}
+function netGraph(g,G,W){
+  const L=netLayout(G,W),node=new Map((G.nodes||[]).map(n=>[n.id,n])),mxw=Math.max(1,...(G.edges||[]).map(e=>e.weight||0));
+  let s=`<svg viewBox="0 0 ${W} ${L.H}" role="img" aria-label="${esc(`${g==="topic"?"Topic":"Comparison"} network: ${(G.nodes||[]).length} accounts, ${(G.edges||[]).length} links beyond chance, ${(G.communities||[]).filter(c=>c.size>=3).length} groups of three or more.`)}">`;
+  L.hulls.forEach(h=>{s+=`<circle class="hull ${h.c.confidence||"low"}" cx="${h.cx.toFixed(1)}" cy="${h.cy.toFixed(1)}" r="${h.r.toFixed(1)}"/><text x="${(h.cx-h.r+2).toFixed(1)}" y="${(h.cy-h.r+8).toFixed(1)}">G${h.i+1}</text>`});
+  (G.edges||[]).forEach((e,j)=>{const a=L.pos[e.source],b=L.pos[e.target];if(!a||!b)return;const ts=e.time_span||[],on=ts.length?netOverlap(ts[0],ts[1]):true,op=on?(.25+.65*Math.min(1,(e.weight||0)/mxw)):.08;
+    s+=`<line class="ed" data-e="${j}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" style="stroke-width:${e.basis==="t30"?1.6:1};opacity:${op.toFixed(2)}"/>`});
+  const R=n=>Math.max(4,Math.min(14,2+Math.sqrt(n.events||1)*1.6));
+  Object.entries(L.pos).forEach(([id,[x,y]])=>{const n=node.get(id)||{};s+=`<circle class="nd" data-n="${esc(id)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${R(n).toFixed(1)}" style="fill:var(${netDir(n.insert_share)})"/>`});
+  return s+`</svg>`}
+function netTable(G){
+  const C=netOrder(G),ws=(c,k)=>{const o=(c.window_share||{})[k],e=(c.expected_window_share||{})[k];return o==null?"–":`${pct(o)} vs ${pct(e&&e.mean)}${e&&e.ci95?` (${pct(e.ci95[0])}–${pct(e.ci95[1])})`:""}`};
+  return `<div class="tbx"><table><thead><tr><th>Group</th><th class="r">Accounts</th><th class="r">Articles</th><th class="r">Add critical terms</th><th>Confidence</th><th class="r">Shuffled worlds this tight</th><th>Email window: found vs chance</th><th>Discord window: found vs chance</th></tr></thead><tbody>${C.map((c,i)=>`<tr><td>Group ${i+1}</td><td class="r">${c.size}</td><td class="r">${c.n_articles}</td><td class="r">${pct(c.direction&&c.direction.insert_share)}</td><td>${esc(c.confidence)}</td><td class="r">${c.significance&&c.significance.share!=null?pct(c.significance.share,1):"–"}</td><td>${ws(c,"email_canvassing")}</td><td>${ws(c,"tfp_discord")}</td></tr>`).join("")||`<tr><td colspan="8">No group of three or more.</td></tr>`}</tbody></table></div>`}
+function drawNet(){
+  const host=$("#net");if(!host)return;const N=R.network;
+  if(!N||(!N.topic&&!N.comparison)){netPlaceholder(host);return}
+  const ph=isPhone(),G=N[NET.side]||N.topic||N.comparison;
+  let h=`<p class="zi-how"><b>How to read this:</b> each group is a set of accounts that edited different articles within 30 minutes of each other, or shared articles, more often than chance allows. Chance is the same accounts with their whole timelines shifted by 1 to 7 days, ${(((N.topic||N.comparison).counts.expected_by_chance)||{}).null_worlds||"many"} times. Accounts are A1, A2…, and the labels restart in each network: A3 in one is not A3 in the other.</p>`;
+  h+=netStrip(N);
+  h+=`<div class="net-ctl"><div class="o"><span class="lab" id="netViewL">View</span><div class="seg" id="netView" role="group" aria-labelledby="netViewL">${[["groups","Groups"],["network","Network"],["table","Table"]].map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.view===v}">${l}</button>`).join("")}</div></div>
+    <div class="o"${NET.view==="network"&&!ph?' hidden':""}><span class="lab" id="netSideL">Articles</span><div class="seg" id="netSide" role="group" aria-labelledby="netSideL">${[["topic","Topic"],["comparison","Comparison"]].filter(([v])=>N[v]).map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.side===v}">${l}</button>`).join("")}</div></div></div>
+   <div class="net-ctl"><span class="lab" id="netPreL">Time</span><ul class="tchips" id="netPre" aria-labelledby="netPreL">${NET_PRE.map(([v,l])=>`<li><button type="button" data-v="${v}" aria-pressed="${NET.preset===v}">${esc(l)}</button></li>`).join("")}</ul></div>
+   <p class="cap">Time chips dim, never hide: a group whose active span falls outside the range fades, and so does a link whose first and last co-activity fall outside it. Both documented windows are hatched in every activity strip: the pro-Israel email canvassing ArbCom found (October 2023 to January 2024) and the pro-Palestinian Discord channel it sanctioned editing from (January to September 2024).</p>`;
+  if(NET.view==="groups"){const C=netOrder(G),
+      strong=C.filter(c=>c.confidence!=="low"),low=C.filter(c=>c.confidence==="low"),pairs=(G.communities||[]).filter(c=>c.size<3).length,W=ph?320:340;
+    h+=strong.length?`<div class="gcards">${strong.map((c,i)=>netCard(c,i,W)).join("")}</div>`:`<p class="means"><b>No group of three or more passes the strict test here.</b> Chance alone produces groups like the ones below.</p>`;
+    if(low.length)h+=`<details class="stats"${strong.length?"":" open"}><summary>Groups chance also produces <span>${low.length} low-confidence group${low.length===1?"":"s"}, listed so nothing is hidden</span></summary><div class="in"><div class="gcards">${low.map((c,i)=>netCard(c,strong.length+i,W)).join("")}</div></div></details>`;
+    if(pairs)h+=`<p class="cap">Plus ${pairs} linked pair${pairs===1?"":"s"}, too small to test as a group.</p>`;
+    h+=`<div class="legend"><span class="key"><i style="border:1.5px solid var(--ink-2);background:none"></i><i style="border:1.5px dashed var(--ink-2);background:none"></i><i style="border:1.5px dotted var(--muted);background:none"></i>solid, dashed, dotted border: high, medium, low confidence</span><span class="key"><i style="background:var(--add-bd)"></i><i style="background:var(--del-bd)"></i>blue / amber cells: share of the group’s edits that add / remove critical terms</span><span class="key"><i style="background:repeating-linear-gradient(45deg,var(--rule) 0 2px,transparent 2px 5px)"></i>hatched: the two documented windows</span><span class="key"><i style="border-radius:50%;border:2px solid var(--muted);background:none"></i><i style="border-radius:50%;background:var(--ink);margin-left:-2px"></i>ring: chance, with its 95% range; dot: what the group did</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: sanction dates</span></div>`}
+  else if(NET.view==="network"){const W=ph?Math.max(280,host.clientWidth-24):Math.max(300,Math.floor((host.clientWidth-36)/2));
+    h+=`<div class="net-graphs">${["topic","comparison"].filter(g=>N[g]).map(g=>`<div class="net-g" data-g="${g}"><h4>${g==="topic"?"Topic articles":"Comparison articles"}</h4>${netGraph(g,N[g],W)}</div>`).join("")}</div>
+     <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: an account that mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid)"></i>grey: mixed</span><span>Size: number of edits. Line: linked beyond chance (darker = further beyond chance; thicker = timing, thinner = shared articles). Ring: a group, drawn solid, dashed or dotted by confidence. Same scale on both sides.</span></div>
+     <div class="net-det" id="netDet" aria-live="polite">Tap an account or a line for its numbers, each next to what chance gives.</div>`}
+  else h+=netTable(G);
+  h+=`<p class="cap col"><b>Why lines here, when the 30-minute test found no recurring pairs?</b> That test asked for the same pair editing within 30 minutes of each other on five or more articles. A line here needs only three co-timed or shared-article events beyond what shifted timelines give: a looser, statistical link.</p>
+   <div class="caveat" role="note"><h3>What this can and cannot show</h3><ul><li>Shared watchlists, subject expertise and breaking news produce the same pattern as organised editing.</li><li>Beyond chance is not proof of coordination, and a group is not an organisation, a side or the Discord channel.</li><li>We do not identify accounts. Nothing here links a group to any sentence quoted on this page.</li></ul></div>`;
+  host.innerHTML=h;
+  seg($("#netView"),v=>{NET.view=v;drawNet()});seg($("#netSide"),v=>{NET.side=v;drawNet()});
+  $("#netPre").addEventListener("click",e=>{const b=e.target.closest("button[data-v]");if(!b)return;NET.preset=b.dataset.v;drawNet()});
+  if(NET.view==="network")$$("#net .net-g").forEach(box=>box.addEventListener("click",e=>{const g=box.dataset.g,Gx=N[g],t=e.target,det=$("#netDet");$$("#net .on").forEach(x=>x.classList.remove("on"));
+    if(t.dataset.n){t.classList.add("on");const n=(Gx.nodes||[]).find(x=>x.id===t.dataset.n)||{},ci=netOrder(Gx).findIndex(c=>c.id===n.community);
+      det.innerHTML=`<b>${esc(n.id)}</b> (${g}) · ${n.events} critical-term edits on ${n.articles} articles · ${pct(n.insert_share)} add critical terms (${netDirW(n.insert_share)}) · account age when first seen: ${esc({"<30d":"under 30 days","30d-1y":"30 days to 1 year","1-5y":"1 to 5 years",">5y":"over 5 years"}[n.age_bucket]||"unknown")}${ci>=0?` · in group ${ci+1}`:""}. Labels restart in each network.`}
+    else if(t.dataset.e!=null){t.classList.add("on");const ed=(Gx.edges||[])[+t.dataset.e],ex=(ed.example_article_pairs||[])[0];
+      det.innerHTML=ed.basis==="t30"?`<b>${esc(ed.source)} – ${esc(ed.target)}</b>: edited different articles within 30 minutes <b>${ed.observed} times; chance gives ${fmt(ed.null_mean,1)}</b> (95% of shuffles ≤ ${fmt(ed.null_p95,0)}); p ${pv(ed.p)}; same direction ${pct(ed.same_direction_share)}${ex?`; e.g. ${esc(ex[0])} ↔ ${esc(ex[1])}`:""}.`:`<b>${esc(ed.source)} – ${esc(ed.target)}</b>: shared <b>${ed.observed} articles; chance gives ${fmt(ed.null_mean,1)}</b> (95% of rewired worlds ≤ ${fmt(ed.null_p95,0)}); p ${pv(ed.p)}; same direction ${pct(ed.same_direction_share)}.`}}));
+}
+
+/* ---------- #board: same data, three honest ways to count (sampling/AUDIT.md) ---------- */
+function drawAudit(){
+  const host=$("#wvuChart"),A=R.audit;if(!host)return;if(!A){$("#wvu").hidden=true;return}
+  const want=[["a_unf","Extra critical terms in opening paragraphs","per 10,000 words, topic minus comparison",v=>sgn(v,2),{est:1.84,lo:1.11,hi:2.99}],["a_res","The same, without sentences about recent events","per 10,000 words",v=>sgn(v,2)],["b","Share of articles gaining critical terms","topic minus comparison, points",v=>sgn(v*100,1),{est:.019,lo:.017,hi:.026}],["d_t","Topic reading on pages that gained","share of views",v=>pct(v,1)],["e","Israel and Palestine minus Judaism","share gaining, points",v=>sgn(v*100,1)],["e_ju_vs_c","Judaism minus comparison","share gaining, points",v=>sgn(v*100,1)]];
+  const W=Math.max(200,(isPhone()?host.clientWidth:host.clientWidth-244));
+  host.innerHTML=want.map(([k,l,u,f,comb])=>{const r=A.rows.find(x=>x.statistic===k);if(!r)return "";const pts=[["unweighted",r.unweighted],["design_weighted",r.design_weighted],["cem",r.cem]].filter(p=>p[1]);
+    const all=pts.flatMap(p=>[p[1].lo,p[1].hi]).concat(comb?[comb.lo,comb.hi]:[]).concat([0]),lo=Math.min(...all),hi=Math.max(...all),pad=(hi-lo)*.08||1,x=lin(lo-pad,hi+pad,8,W-8);
+    let s=`<svg viewBox="0 0 ${W} 44" role="img" aria-label="${esc(`${l}: ${pts.map(([n,v])=>`${n==="unweighted"?"sample":n==="design_weighted"?"weighted":"matched"} ${f(v.est)} (${f(v.lo)} to ${f(v.hi)})`).join("; ")}`)}"><line x1="${x(0)}" x2="${x(0)}" y1="2" y2="34" style="stroke:var(--muted);stroke-dasharray:2 2"/><text x="${x(0)+3}" y="42">0</text>`;
+    pts.forEach(([n,v],i)=>{const yy=8+i*10;s+=`<line x1="${x(v.lo)}" x2="${x(v.hi)}" y1="${yy}" y2="${yy}" style="stroke:var(--ink-2);stroke-width:1.5"/>`;
+      s+=n==="unweighted"?`<rect x="${x(v.est)-1.5}" y="${yy-6}" width="3" height="12" style="fill:var(--ink-2)"/>`:n==="design_weighted"?`<circle cx="${x(v.est)}" cy="${yy}" r="4.5" style="fill:var(--ink)"/>`:`<rect x="${x(v.est)-4}" y="${yy-4}" width="8" height="8" style="fill:var(--ink-2)"/>`;
+      s+=`<text x="${Math.min(W-30,x(v.hi)+6)}" y="${yy+3.5}">${esc(f(v.est))}</text>`});
+    if(comb){const yy=38;s+=`<line x1="${x(comb.lo)}" x2="${x(comb.hi)}" y1="${yy}" y2="${yy}" style="stroke:var(--add-bd);stroke-width:1.5"/><path d="M${x(comb.est)} ${yy-5} l5 5 l-5 5 l-5 -5z" style="fill:var(--add-bd)"/>`}
+    return `<div class="wvu-row"><div class="l">${esc(l)}<small>${esc(u)}</small></div>${s}</svg></div>`}).join("");
+  $("#wvuKey").innerHTML=`<span class="key"><i style="width:3px;height:12px;background:var(--ink-2)"></i>bar: the sample as drawn</span><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>dark dot: weighted to the population</span><span class="key"><i style="background:var(--ink-2)"></i>square: matched on prominence</span><span class="key"><i style="background:var(--add-bd);transform:rotate(45deg)"></i>blue diamond: weighted and matched together, the best single estimate</span>`}
+
 /* ---------- init ---------- */
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
-function redrawAll(){safe(drawReach);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawZi)}
+function redrawAll(){safe(drawReach);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawZi);safe(drawO7);safe(drawCharge);safe(drawNet);safe(drawAudit)}
 function init(){
   if(!R){$("#deck").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
-  safe(drawLede);safe(drawBreathe);safe(drawCards);safe(ziInit);
+  safe(drawLede);safe(drawBreathe);safe(drawCards);safe(ziInit);safe(o7Init);safe(chargeInit);safe(drawPeriods);safe(drawNet);safe(drawAudit);
   const fs=$("#frameSel");["critical_rate","connection_rate",...(R.frames||[])].forEach(k=>fs.append(new Option(LABEL[k]||k,k)));
   fs.onchange=()=>{S.frame=fs.value;drawTrend()};
   seg($("#partA"),v=>{S.part=v;drawTrend()});seg($("#setA"),v=>{S.set=v;drawTrend()});
-  seg($("#hmMode"),v=>{S.hmMode=v;drawHeat()});seg($("#hmPart"),v=>{S.hmPart=v;drawHeat()});$("#hmSort").onchange=e=>{S.hmSort=e.target.value;drawHeat()};
+  seg($("#hmMode"),v=>{S.hmMode=v;drawHeat()});seg($("#hmPart"),v=>{S.hmPart=v;drawHeat()});if($("#hmSort"))$("#hmSort").onchange=e=>{S.hmSort=e.target.value;drawHeat()};
   const wins=[...new Set((R.did||[]).map(d=>d.window))];S.win=wins[0];
   const wl={"whole window":"Whole period","pre-war":"Before the war","post-war":"Since the war"};
   $("#winSeg").innerHTML=wins.map(w=>`<button data-v="${esc(w)}" aria-pressed="false">${esc(wl[w]||w)}</button>`).join("");

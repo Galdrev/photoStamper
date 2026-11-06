@@ -121,6 +121,42 @@ def v3_data():
 
 res["v3"] = v3_data()
 
+# Generic first-sentence tracker (ratchet.json fs_variants / fs_timeline): every change, and when each key term went in or out.
+# terms: {key: regex string or callable(text) -> bool}. A wording whose text was not kept (or is blank) carries no state, so a
+# move is dated to the next kept wording. Used by zionism_data() and by the October 7 / Hamas / Gaza genocide tabs.
+def fs_track(ra, terms):
+    import re
+    V = {v["id"]: v.get("s") for v in ra["fs_variants"]}
+    tl = ra["fs_timeline"]
+    test = {k: (f if callable(f) else (lambda s, p=f: bool(re.search(p, s, re.I)))) for k, f in terms.items()}
+    def tags(s):
+        if not s:
+            return None
+        return [k for k in terms if test[k](s)]
+    state = [tags(V.get(i)) for _, i, _ in tl]
+    changes, last, flips = [], None, {}
+    for k, ((d, i, rv), st) in enumerate(zip(tl, state)):
+        mv = []
+        if st is not None:
+            if last is not None:
+                for term in set(last) | set(st):
+                    if (term in st) != (term in last):
+                        mv.append(term + ("+" if term in st else "-"))
+                        flips.setdefault(term, []).append([d, "+" if term in st else "-"])
+            last = st
+        if k:
+            changes.append([d, tl[k - 1][1], i, int(rv), sorted(mv)])
+    def stat(term):
+        f = flips.get(term, [])
+        return {"in": sum(x[1] == "+" for x in f), "out": sum(x[1] == "-" for x in f),
+                "first_in": next((x[0] for x in f if x[1] == "+"), None), "last": f[-1] if f else None,
+                "start": term in (state[0] or []), "end": term in (last or [])}
+    return {"changes": changes, "flips": flips, "end_state": last, "stats": {t: stat(t) for t in terms},
+            "start": {t: t in (state[0] or []) for t in terms}, "blank": [d for d, i, _ in tl if V.get(i) == ""],
+            "n_wordings": ra.get("fs_n_variants") or len(set(i for _, i, _ in tl)),
+            "n_kept": sum(1 for s in V.values() if s), "n_undone": sum(int(x[2]) for x in tl), "first_ts": tl[0][0]}
+
+
 # "Zionism up close": the opening paragraph in Jan 2021 and now, plus every first-sentence change (ratchet.json)
 def zionism_data(title="Zionism"):
     import gzip, re, datetime as _dt
@@ -163,36 +199,14 @@ def zionism_data(title="Zionism"):
     def has(k, s):
         inc, exc = F[k]
         return sum(len(re.findall(p, s, re.I)) for p in inc) - sum(len(re.findall(p, s, re.I)) for p in exc) > 0
-    def tags(s):
-        if not s:
-            return None
-        t = [k for k in crit if has(k, s)]
-        if re.search(r"\bre-?establish", s, re.I):
-            t.append("re_establish")
-        return t
-    V = {v["id"]: v.get("s") for v in ra["fs_variants"]}
+    terms = {k: (lambda s, k=k: has(k, s)) for k in crit}
+    terms["re_establish"] = lambda s: bool(re.search(r"\bre-?establish", s, re.I))
+    T = fs_track(ra, terms)
+    changes, flips, last = T["changes"], T["flips"], T["end_state"]
     tl = ra["fs_timeline"]
-    state = [tags(V.get(i)) for _, i, _ in tl]
-    blank = [d for d, i, _ in tl if V.get(i) == ""]
-    # key moves: a term appears/disappears between consecutive kept wordings
-    changes, last, last_k = [], None, None
-    flips = {}
-    for k, ((d, i, rv), st) in enumerate(zip(tl, state)):
-        mv = []
-        if st is not None:
-            if last is not None:
-                for term in set(last) | set(st):
-                    if (term in st) != (term in last):
-                        mv.append(term + ("+" if term in st else "-"))
-                        flips.setdefault(term, []).append([d, "+" if term in st else "-"])
-            last, last_k = st, k
-        if k:
-            changes.append([d, tl[k - 1][1], i, int(rv), sorted(mv)])
+    blank = T["blank"]
     def stat(term):
-        f = flips.get(term, [])
-        return {"in": sum(x[1] == "+" for x in f), "out": sum(x[1] == "-" for x in f),
-                "first_in": next((x[0] for x in f if x[1] == "+"), None), "last": f[-1] if f else None,
-                "start": term in (state[0] or []), "end": term in (last or [])}
+        return T["stats"][term]
     # critical terms in the rest of the opening section: exact timestamps (ratchet events; mass2_events agree)
     lead_terms = []
     for term, evs in (RA.get("events") or {}).get(title, {}).items():
@@ -216,13 +230,138 @@ def zionism_data(title="Zionism"):
         if ok:
             chips.append({"k": kind, "a": a, "b": b, "where": where})
     return {"title": title, "then": then, "now": now, "chips": chips, "changes": changes, "lead_terms": lead_terms,
-            "n_wordings": ra.get("fs_n_variants") or len(set(i for _, i, _ in tl)),
-            "n_kept": sum(1 for s in V.values() if s), "n_undone": sum(int(x[2]) for x in tl), "blank": blank,
+            "n_wordings": T["n_wordings"], "n_kept": T["n_kept"], "n_undone": T["n_undone"], "blank": blank,
             "first_ts": tl[0][0], "col": stat("settler_colonial"), "re": stat("re_establish"),
             "other_terms": sorted(t for t in flips if t not in ("settler_colonial", "re_establish"))}
 
 
 res["zionism"] = zionism_data()
+
+
+# --- Design council round 2 -------------------------------------------------------------------------------------------
+PAT = os.path.join(HERE, "patterns")
+def _j(*parts):
+    p = os.path.join(PAT, *parts)
+    return json.load(open(p)) if os.path.exists(p) else None
+
+
+# October 7, Hamas and Gaza genocide: the Zionism step-through, one tab per article (fs_track on ratchet.json)
+def oct7_data():
+    rp = os.path.join(HERE, "data", "ratchet.json")
+    if not os.path.exists(rp):
+        return None
+    RA = json.load(open(rp))["articles"]
+    gv = _j("angle", "chart_data", "oct7_05_genocide_voice.json") or {}
+    lvl = {}
+    for x in gv.get("gaza_genocide_first_sentence", []):
+        lvl.setdefault(x["variant"], x["voice_level"])
+    HOST = r"\bhostages?\b|\bcaptives?\b|\babduct\w*|\bkidnap\w*"          # oct7_04 regex
+    cfg = {
+        "Hamas": {"militant": r"\bmilitan", "polmil": r"\bwith an? (?:\w+ )?(?:military|militant|paramilitary|armed) wing",
+                  "political": r"\bpolitical\b", "terrorist": r"\bterror", "hostage": HOST},
+        "October 7 attacks": {"incursions": r"\bincursions?\b", "hamas": r"\bHamas\b", "massacre": r"massacr",
+                              "blockaded": r"\bblockaded\b", "hostage": HOST},
+        "Gaza genocide": {"own": lambda s, v=None: False, "attrib": lambda s, v=None: False, "hostage": HOST},
+    }
+    out = []
+    for title, terms in cfg.items():
+        ra = RA.get(title)
+        if not ra:
+            continue
+        if title == "Gaza genocide":
+            # voice from the analyst's ladder (oct7_05): 4 = Wikipedia's own voice; 0-2 = alleged / accused / according to.
+            byText = {v.get("s"): lvl.get(v["id"]) for v in ra["fs_variants"]}
+            terms = {"own": lambda s: byText.get(s) == 4, "attrib": lambda s: byText.get(s) in (0, 1, 2), "hostage": HOST}
+        T = fs_track(ra, terms)
+        T.pop("flips"); T.pop("end_state")
+        T["title"] = title
+        T["live"] = {v["id"]: [round(v.get("live_days") or 0, 4), (v.get("first_seen") or "")[:16]] for v in ra["fs_variants"]}
+        if title == "Gaza genocide":
+            T["attempts"] = [[a["date"], a["variant"]] for a in gv.get("attribution_attempts_after_2025-09-26", [])]
+        if title == "October 7 attacks":
+            tm = _j("angle", "chart_data", "oct7_03_oct7_first_sentence_and_title.json") or {}
+            T["titles"] = [[m["ts"], m["from"], m["to"]] for m in tm.get("title_moves", []) if not m.get("reverted") and not m.get("revert_of_move")]
+        out.append(T)
+    pos = _j("angle", "chart_data", "oct7_08_hamas_designation_position.json") or {}
+    grp = _j("angle", "chart_data", "oct7_02_designated_groups.json") or {}
+    groups = [{"a": g["article"], "t0": g["then"].get("terror_word_offset_share"), "t1": g["now"].get("terror_word_offset_share"),
+               "m1": g["now"].get("fs_has_militant"), "fs0": g["then"].get("first_sentence", "")[:400], "fs1": g["now"].get("first_sentence", "")[:400],
+               "d0": g["then"].get("date"), "d1": (g["now"].get("date") or "")[:10]} for g in grp.get("groups", [])]
+    return {"tabs": out, "designation": pos.get("position_of_first_terror_mention"), "groups": groups}
+
+
+res["oct7"] = oct7_data()
+
+
+# Who is charged with what, in whose voice: patterns/angle/perp_codes.jsonl (counts reproduce perp_results.json exactly)
+def perp_data():
+    pc = os.path.join(PAT, "angle", "perp_codes.jsonl")
+    if not os.path.exists(pc):
+        return None
+    rows = [json.loads(l) for l in open(pc)]
+    sides = {"isr": ("topic", {"I", "J"}), "pal": ("topic", {"H", "P", "H+O"}), "cmp": ("comparison", {"A"})}
+    charges = [("G", "Genocide"), ("AP", "Apartheid"), ("EC", "Ethnic cleansing / expulsion"), ("OC", "Occupation"),
+               ("M", "Massacre / killing"), ("WC", "War crimes"), ("T", "Terrorism")]
+    dates = ["2021-01-01", "2023-07-01", "now"]
+    cells, receipts = {}, {}
+    for sd, (grp, codes) in sides.items():
+        for code, _ in charges:
+            for d in dates:
+                key = f"{sd}|{code}|{d}"
+                rec = []
+                for r in rows:
+                    if r["group"] != grp or r["date"] != d:
+                        continue
+                    hit = next((ch["voice"] for c in r["clauses"] if c["perp_code"] in codes for ch in c["charges"] if ch["code"] == code), None)
+                    if hit is not None:
+                        rec.append([r["title"], r["text"], {"wikipedia_voice": "own", "attributed": "att", "denied_or_disputed": "den"}[hit], r.get("views") or 0])
+                rec.sort(key=lambda x: (x[2] != "own", -x[3]))
+                cells[key] = [len(rec), sum(x[2] == "own" for x in rec)]
+                if rec:
+                    receipts[key] = [x[:3] for x in rec]
+    PR = json.load(open(os.path.join(PAT, "angle", "perp_results.json")))
+    return {"charges": charges, "dates": dates, "cells": cells, "receipts": receipts,
+            "n": PR["n_articles"], "snapshot": "2026-11-05"}
+
+
+res["perp"] = perp_data()
+
+
+# Coordination network (analyze_coord.py -> patterns/coord/chart_data/network.json). Inlined when present; WT_NETWORK overrides
+# the path (used to test the component on a synthetic file). Slimmed: no per-community profiles or raw alignment tables.
+def network_data():
+    p = os.environ.get("WT_NETWORK") or os.path.join(PAT, "coord", "chart_data", "network.json")
+    if not os.path.exists(p):
+        return None
+    N = json.load(open(p))
+    keep_c = ("id", "size", "density", "strength", "n_articles", "articles", "direction", "active", "inserted_phrases", "confidence",
+              "significance", "window_share", "expected_window_share", "post_sanction_drop", "members", "weekly")
+    keep_e = ("source", "target", "weight", "basis", "observed", "null_mean", "null_p95", "p", "same_direction_share",
+              "example_article_pairs", "time_span", "shared_articles")
+    out = {"generated": N.get("generated"), "method": N.get("method")}
+    for g in ("topic", "comparison"):
+        G = N.get(g)
+        if not G:
+            out[g] = None
+            continue
+        cs = []
+        for c in G.get("communities", []):
+            c = {k: c[k] for k in keep_c if k in c}
+            if c.get("significance"):
+                c["significance"] = {"share": c["significance"].get("null_worlds_with_community_this_large_dense_and_strong"),
+                                     "worlds": c["significance"].get("null_worlds")}
+            cs.append(c)
+        out[g] = {"nodes": G.get("nodes", []), "edges": [{k: e[k] for k in keep_e if k in e} for e in G.get("edges", [])],
+                  "communities": cs, "counts": G.get("counts", {})}
+    return out
+
+
+res["network"] = network_data()
+
+# Sampling audit: unweighted vs design-weighted vs matched (patterns/sampling/chart_data/03_weighted_vs_unweighted.json)
+_a = _j("sampling", "chart_data", "03_weighted_vs_unweighted.json")
+res["audit"] = {"rows": [{k: r.get(k) for k in ("subset", "statistic", "label", "unweighted", "design_weighted", "cem", "ps_nn",
+                                                 "topic_weighted_only")} for r in _a["rows"] if r.get("subset") == "all"]} if _a else None
 
 tk_p = os.path.join(HERE, "notes", "takeaways.json")
 if os.path.exists(tk_p):
