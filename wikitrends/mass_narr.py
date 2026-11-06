@@ -15,10 +15,14 @@ PROJECT_GROUPS = {"Armenia": "Karabakh", "Azerbaijan": "Karabakh", "Serbia": "Ko
                   "India": "Kashmir", "Pakistan": "Kashmir"}
 
 
-def lead_at(title, date):
+def lead_at(title, date, strict=False):
+    """Section-0 wikitext of `title` as of `date` (None: no revision then, or a redirect then). strict=True raises on a
+    failed request instead of returning None, so a network failure is never read as "no lead" (random_baseline.py)."""
     j = wt_net.get_json("https://en.wikipedia.org/w/api.php", {"action": "query", "prop": "revisions", "titles": title, "rvlimit": 1,
                         "rvdir": "older", "rvstart": date, "rvprop": "ids|content", "rvslots": "main", "rvsection": 0,
                         "redirects": 1, "format": "json", "formatversion": 2})
+    if strict and (not isinstance(j, dict) or "error" in j or "query" not in j):
+        raise RuntimeError(f"lead fetch failed: {title} @ {date[:10]}")
     p = (j or {}).get("query", {}).get("pages", [{}])[0]
     if not p.get("revisions"):
         return None
@@ -30,6 +34,8 @@ def groups_for(row):
     from corpus import NARRATIVE_DISPUTES
     if row["group"] == "topic":
         return N.TOPIC_GROUPS, N.MEASURES
+    if row["group"] == "random":          # random baseline: generic critical counts + event filter only, no narrative groups
+        return {}, {}
     if row.get("project") in PROJECT_GROUPS:
         sp = NARRATIVE_DISPUTES[PROJECT_GROUPS[row["project"]]]
         return {"A": N.R(sp["A"]), "B": N.R(sp["B"])}, N.CONTROL_MEASURES

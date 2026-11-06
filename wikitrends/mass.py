@@ -180,9 +180,9 @@ def shard(rows, i, n):
     return [r for k, r in enumerate(rows) if k % n == i]
 
 
-def _run(kind, fn, rows, i):
-    """Checkpointed shard runner: resumes from a partial file, writes every 100 articles."""
-    out_p = os.path.join(OUT, f"{kind}_{i}.json.gz")
+def _run(kind, fn, rows, i, out_dir=None):
+    """Checkpointed shard runner: resumes from a partial file, writes every 100 articles (into out_dir, default OUT)."""
+    out_p = os.path.join(out_dir or OUT, f"{kind}_{i}.json.gz")
     done = []
     if os.path.exists(out_p):
         try:
