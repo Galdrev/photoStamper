@@ -8,8 +8,8 @@ Unit: one event = (revision, direction) of a critical-term insertion or removal 
 Two nulls, 1,000 draws each, per scope (topic / comparison) and direction (any / insert / remove):
   shared   account x article bipartite graph (binary), degree-preserving rewiring (curveball trades; every account keeps its
            number of articles, every article its number of accounts). Statistic: articles shared by a pair.
-  time     every account's whole timeline shifted by a random non-zero whole number of days in [-7, 7] (keeps who edits which
-           article, each account's rhythm, sprees, time-of-day habit and news week; breaks minute-level alignment between
+  time     every account's whole timeline shifted by one random offset of 1-7 days, either sign (keeps who edits which
+           article, each account's rhythm, sprees and rough news week; breaks minute-level alignment between
            accounts). Statistic: distinct article pairs (a != b) on which the two accounts acted within W minutes,
            W = 10 / 30 (default) / 60. A second time null permutes timestamps among the events of the same article (each
            article keeps its activity curve) and is reported as p_article_shuffle. It has little power when a bloc makes up
@@ -204,9 +204,10 @@ class Engine:
         return time_pairs(t, self.acc, self.art, NA=self.NA, NM=self.NM)
 
     def dayshift_t(self):
-        """Primary time null: each account's whole timeline shifted by a random non-zero whole number of days in [-7, 7]
-        (keeps the account's own rhythm, time-of-day habit and news week; breaks minute-level alignment between accounts)."""
-        k = self.rng.integers(1, 8, size=self.NA) * self.rng.choice([-1, 1], size=self.NA)
+        """Primary time null: each account's whole timeline shifted by one random offset of 1-7 days (either sign, continuous).
+        Keeps who edits which article and each account's own rhythm and sprees; breaks minute-level alignment between
+        accounts (two accounts keep their alignment only if their offsets agree within the window: ~W / 12 days)."""
+        k = self.rng.uniform(1, 7, size=self.NA) * self.rng.choice([-1, 1], size=self.NA)
         return self.t + 86400.0 * k[self.acc]
 
     def shuffle_t(self):
@@ -791,7 +792,7 @@ def build_cards(R):
                           f"(95th {ex.get('edges_p95')}).",
                           "high" if S["n_also_beat_article_shuffle"] > (ex.get("edges_p95") or 0) else
                           "medium" if S["n_pairs"] > (ex.get("edges_p95") or 0) else "low (consistent with chance)",
-                          {"null": "each account's timeline shifted by a random +-1..7 whole days, 1,000 draws; secondary: timestamps "
+                          {"null": "each account's timeline shifted by a random 1-7 days (either sign), 1,000 draws; secondary: timestamps "
                                    "permuted within article",
                            "expected_by_chance": ex},
                           "Pairs that repeatedly move together across different articles within minutes are the classic "
@@ -878,7 +879,7 @@ def write_outputs(R, out_dir=OUT):
     cards = build_cards(R)
     net = {"generated": R["meta"]["generated"],
            "method": {"edge": f"empirical p<{P_EDGE} and observed>={MIN_OBS}; co-activity = events on different articles within "
-                              "10 / 30 (default) / 60 min, null = each account's timeline shifted by +-1..7 whole days (within-article time shuffle "
+                              "10 / 30 (default) / 60 min, null = each account's timeline shifted by a random 1-7 days (within-article time shuffle "
                               "reported as p_article_shuffle); plus shared article sets, null = "
                               "degree-preserving rewiring; 1,000 draws", "communities": "Louvain (networkx, seed 11), weight = "
                               "log2((obs+1)/(null mean+1))", "labels": "A1, A2... per network; no hashes or usernames"}}

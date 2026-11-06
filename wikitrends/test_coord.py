@@ -247,13 +247,21 @@ def synthetic(seed=3, n_noise=400, n_topic=200, n_comp=150, planted=True):
         if sent and kind == "insert":
             r["added"] = [{"s": sent, "terms": ["genocide"]}]
         revs.append(r)
+    import analyze_coord as AC
     for g, n_art, pre in (("topic", n_topic, "T"), ("comparison", n_comp, "C")):
+        # noise: heavy-tailed account activity and article popularity, then randomised by long curveball mixing so the noise is
+        # an exact draw from the degree-preserving null (weighted sampling alone leaves hub-sharing structure behind)
         w = 1 / np.arange(1, n_art + 1) ** 0.8; w /= w.sum()
+        names, rows = [], []
         for k in range(n_noise if g == "topic" else n_noise // 2):
             u = f"{g[0]}noise{k:04d}".ljust(16, "x")
-            accounts[u] = {"reg": "2018-01", "ec": int(rng.integers(50, 50000)), "blocked": rng.random() < 0.05, "indef": False}
+            accounts[u] = {"reg": "2018-01", "ec": int(rng.integers(50, 50000)), "blocked": bool(rng.random() < 0.05), "indef": False}
             deg = min(n_art, 1 + int(rng.geometric(0.3)))
-            for a in rng.choice(n_art, size=deg, replace=False, p=w):
+            names.append(u); rows.append(set(int(a) for a in rng.choice(n_art, size=deg, replace=False, p=w)))
+        flat = next(AC.curveball(rows, 1, rng, thin=60 * len(rows), burn=0))
+        off = np.concatenate([[0], np.cumsum([len(r) for r in rows])])
+        for k, u in enumerate(names):
+            for a in flat[off[k]:off[k + 1]]:
                 for _ in range(1 + int(rng.random() < 0.3)):
                     s = f"Noise sentence {rng.integers(10 ** 9)} about genocide in place {a} with words {rng.integers(10 ** 6)}."
                     ev(u, f"{pre}{a}", rng.uniform(t0, t1), "insert" if rng.random() < 0.5 else "remove", s)
