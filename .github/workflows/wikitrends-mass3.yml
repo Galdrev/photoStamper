@@ -1,4 +1,5 @@
 name: wikitrends-mass3
+# launch 2026-11-06
 # Mass v3 (wikitrends/mass3.py): stratified random sample with known inclusion probabilities (patterns/sampling/AUDIT.md).
 # population + sample (1 job: PageAssessments projectpages for every topic/comparison project, redirects resolved,
 # ~N/500 + N/50 requests, about 3-4k for ~150k assessed pages, ~0.5-1 h) -> 4 shards (max 4 at once, WT_RPS 2)
