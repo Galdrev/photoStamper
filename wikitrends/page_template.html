@@ -700,6 +700,49 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .slots .sl{width:52px}
 }
+/* Zionism up close (#zionism): reuses .sec, .eyebrow/.layer, .deck, .wow-grid/.wow-col, .fig, .seg, .legend/.key, .means, details.stats, #tip */
+.zi-jump{font:500 12px var(--mono);justify-self:start}
+.zi{margin-top:72px}
+.zi del,#tip .zi-d del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
+.zi ins,#tip .zi-d ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
+.zi-sum{display:grid;gap:8px}
+.zi-sum h3{font:600 11.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.zi-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.zi-chips li{background:var(--sheet);border:1px solid var(--rule);border-radius:3px;padding:6px 9px;font:14px/1.4 var(--body);color:var(--muted);min-width:0;max-width:100%}
+.zi-chips li del,.zi-chips li ins{font:400 15.5px/1.35 var(--display)}
+.zi-chips .w{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-left:4px}
+.zi-p{font:400 clamp(17px,1.7vw,19px)/1.55 var(--display);color:var(--ink);max-width:62ch}
+.zi-p+.zi-p{margin-top:12px}
+.zi-rest .wow-grid{border-top:0}
+.zi-rest .zi-p{font-size:16.5px;color:var(--ink-2)}
+#ziChart{outline-offset:4px;touch-action:pan-y;cursor:pointer}
+#ziChart svg text.ln{font:600 11px var(--mono);fill:var(--ink-2);paint-order:stroke;stroke:var(--sheet);stroke-width:3px}
+#ziChart svg text.bd{font:600 10.5px var(--mono);fill:var(--paper)}
+.zi-nav{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.zi-nav .btns{display:inline-flex;gap:6px}
+.zi-nav .btns button{font:500 12.5px/1 var(--body);border:1px solid var(--rule);background:var(--sheet);border-radius:3px;padding:8px 11px;cursor:pointer;color:var(--ink-2)}
+.zi-nav .btns button:disabled{opacity:.4;cursor:default}
+.zi-moments{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.zi-moments button{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:baseline;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--faint);padding:7px 0;cursor:pointer;font:14px/1.45 var(--body);color:var(--ink-2)}
+.zi-moments button b{font-weight:600;color:var(--ink)}
+.zi-moments button[aria-pressed="true"]{color:var(--ink)}
+.zi-moments .bd{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--paper);font:600 10.5px var(--mono)}
+.zi-card{border-top:1px solid var(--rule);padding-top:12px;display:grid;gap:10px;min-width:0}
+.zi-card .hd{font:12.5px/1.5 var(--mono);color:var(--muted)}
+.zi-card .hd b{color:var(--ink);font-weight:600}
+.zi-ba{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.zi-ba blockquote{margin:0;background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:12px 14px;display:grid;gap:6px;align-content:start;min-width:0}
+.zi-ba .w{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.zi-ba .s{font:400 16.5px/1.5 var(--display);color:var(--ink);overflow-wrap:anywhere}
+.zi-ba .s.na{font:italic 14px/1.5 var(--body);color:var(--muted)}
+#tip .zi-d{display:block;margin-top:6px;font:13px/1.45 var(--display);white-space:normal}
+#tip .zi-d del,#tip .zi-d ins{padding:0 .1em}
+@media (max-width:640px){
+  .zi{margin-top:48px}
+  .zi-ba{grid-template-columns:minmax(0,1fr)}
+  .zi-chips li{font-size:13px}
+  .zi-chips li del,.zi-chips li ins{font-size:15px}
+}
 /*LABCSS*/
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -714,19 +757,20 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="short" id="short" aria-labelledby="shortH">
   <div class="eyebrow">Summary</div>
   <h2 id="shortH" class="short-h">Most articles did not change. The opening paragraphs of a few hundred widely read Israel and Palestine articles did.</h2>
-  <p class="short-a">We compared 4,642 English Wikipedia articles on Israel, Palestine, Zionism and Judaism with about 5,700 comparison articles. The period is 2021 to 2026. Most topic articles did not change on our measure. Judaism articles changed no more than comparison articles. The change we did find sits in the opening paragraphs of a few hundred Israel and Palestine articles. Several of those are heavily read. The new wording is mostly about 1948 and the land, not the current war. Most of it arrived in 2024. By 2026 the rate was back at its pre-war level. The change did not run in only one direction.</p>
+  <p class="short-a">We compared 4,642 English Wikipedia articles on Israel, Palestine, Zionism and Judaism with about 5,700 comparison articles. The period is 2021 to 2026. Most topic articles did not change. Judaism articles changed no more than comparison articles. The change is in the opening paragraphs of a few hundred Israel and Palestine articles, and it is larger than in comparison articles. Several of those articles are heavily read. The new wording is mostly about 1948 and the land, not the current war. Most of it arrived in 2024. By 2026 the rate was back at its pre-war level. The change did not run in only one direction.</p>
   <p class="cap short-def"><i>Critical vocabulary:</i> words from the legal and historical charges made against Israel, such as genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion.</p>
 
   <div class="short-b">
     <h3>Key findings</h3>
     <div class="cards short-cards">
-      <article class="card"><div class="unit">1</div><p class="hl">Most articles did not change. Judaism articles did not move.</p><p class="cap">85% of topic articles ended with the same count of critical vocabulary. Judaism articles differed from comparison articles by −0.1 percentage points. The range we're fairly sure about is −2.3 to +2.3, which is statistically equivalent to zero.</p><a class="more" href="#key" aria-label="See the chart: scrolly vocabulary chart">See the chart ↓</a></article>
-      <article class="card"><div class="unit">2</div><p class="hl">The changed articles get more reading than their number suggests.</p><p class="cap">3.9% of topic articles gained critical vocabulary in their opening paragraph. Those articles get 15% of topic views. The range we're fairly sure about is 9.5% to 21.3%. In comparison articles the two figures are 1.5% and 5%. Whether the tilt toward well-read pages is larger than in comparison articles is only suggestive. 83% of topic reading lands on unchanged opening paragraphs.</p><a class="more" href="#reach" aria-label="See the chart: Reach">See the chart ↓</a></article>
-      <article class="card"><div class="unit">3</div><p class="hl">Most added text is about older history, not the war.</p><p class="cap">Remove the sentences about events since 2022, and 89% of the extra change remains. This result held on the half of the data we kept back. On the full set, one of the two intervals includes zero.</p><a class="more" href="#news" aria-label="See the chart: News or narrative?">See the chart ↓</a></article>
+      <article class="card"><div class="unit">1</div><p class="hl">Most articles did not change. Judaism articles did not move.</p><p class="cap">85% of topic articles ended with the same count of critical vocabulary. Judaism articles changed exactly as much as comparison articles. The difference is −0.1 percentage points, with a range of −2.3 to +2.3. That is no change.</p><a class="more" href="#key" aria-label="See the chart: scrolly vocabulary chart">See the chart ↓</a></article>
+      <article class="card"><div class="unit">2</div><p class="hl">The changed articles get more reading than their number suggests.</p><p class="cap">3.9% of topic articles gained critical vocabulary in their opening paragraph. Those articles get 15% of topic views (range 9.5% to 21.3%). In comparison articles the two figures are 1.5% and 5%, so the topic level is three times the comparison level. 83% of topic reading lands on unchanged opening paragraphs. Whether topic pages also tilt more steeply toward well-read pages than comparison pages do is suggestive, not established.</p><a class="more" href="#reach" aria-label="See the chart: Reach">See the chart ↓</a></article>
+      <article class="card"><div class="unit">3</div><p class="hl">Most added text is about older history, not the war.</p><p class="cap">Remove the sentences about events since 2022, and 89% of the extra change remains. The result replicated on the half of the data we kept back, and again at full scale. The one weak spot is the coarse range on the full set, which crosses zero.</p><a class="more" href="#news" aria-label="See the chart: News or narrative?">See the chart ↓</a></article>
       <article class="card"><div class="unit">4</div><p class="hl">The change was concentrated in 2024.</p><p class="cap">Before October 2023, editors added about 7 critical terms per 1,000 edits. Through 2024 the rate was about 16. In 2026 it was 5 to 6. This describes data to late 2026, not a forecast.</p><a class="more" href="#when" aria-label="See the chart: When it happened">See the chart ↓</a></article>
-      <article class="card"><div class="unit">5</div><p class="hl">Established editors made most changes.</p><p class="cap">Accounts with under 500 edits made 9.1% of topic edits during the war, against 17.2% in comparison articles. Accounts that were later blocked made 13.7% of the insertions. Their baseline share is 12.3%, so the gap is within the margin of error.</p><a class="more" href="#spread" aria-label="See the chart: How it spread, Established editors panel">See the chart ↓</a></article>
+      <article class="card"><div class="unit">5</div><p class="hl">Established editors made most changes.</p><p class="cap">Accounts with under 500 edits made 9.1% of topic edits during the war, against 17.2% in comparison articles. Accounts that were later blocked made 13.7% of the insertions, against a baseline share of 12.3%. That is no excess.</p><a class="more" href="#spread" aria-label="See the chart: How it spread, Established editors panel">See the chart ↓</a></article>
     </div>
     <p class="cap cards-hint">Swipe for more →</p>
+    <a class="zi-jump" href="#zionism">One article up close: Zionism ↓</a>
   </div>
 
   <div class="short-b">
@@ -769,6 +813,31 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li><b>Own voice vs attributed:</b> "it is genocide" versus "X states it is genocide".</li>
     </ul></div></details>
   </div>
+</section>
+
+<section class="sec zi" id="zionism" aria-labelledby="ziH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>One article up close</div>
+    <h2 id="ziH">Zionism: the opening paragraph, 2021 and now</h2>
+    <p class="deck">Zionism is one of the most-read topic pages. Below is its opening paragraph in January 2021 and today. Then comes every change to its first sentence in between.</p>
+  </header>
+  <div class="zi-sum" id="ziSum"></div>
+  <div class="wow-grid" id="ziPair"></div>
+  <div class="wow-key"><span><del>amber, struck through</del> = words in 2021 that are gone now</span><span><ins>blue</ins> = words that are new since 2021</span></div>
+  <details class="stats zi-rest" id="ziRest"><summary>The rest of the opening section <span id="ziRestN"></span></summary><div class="in"></div></details>
+  <figure class="fig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">Every change to the first sentence, with all edits to the article behind it</span><span class="cap">Tap or hover a mark. Arrow keys step through the changes.</span></div>
+    <div class="chart" id="ziChart" tabindex="0" role="group" aria-label="Timeline of first-sentence changes to the Zionism article. Use the left and right arrow keys to step through changes."></div>
+    <div class="legend" id="ziKey"></div>
+    <ol class="zi-moments" id="ziMoments"></ol>
+    <div class="zi-card" id="ziCard">
+      <div class="zi-nav"><div class="seg" id="ziMode" role="group" aria-label="Which changes to step through"><button data-v="key" aria-pressed="true">Key moves</button><button data-v="all" aria-pressed="false">Every change</button></div><span class="btns"><button type="button" id="ziPrev">← Earlier</button><button type="button" id="ziNext">Later →</button></span></div>
+      <p class="hd" id="ziHd" aria-live="polite"></p>
+      <div class="zi-ba" id="ziBA"></div>
+    </div>
+  </figure>
+  <p class="means" id="ziMeans"></p>
+  <p class="cap" id="ziNote"></p>
 </section>
 
 <header class="hero">
@@ -868,7 +937,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <div class="band" id="andyet">
   <div class="eyebrow">The twist <span class="xchip">Full crawl · 10,320 articles</span></div>
   <h2>And yet: a small set of heavily read pages changed</h2>
-  <p class="deck">The average article barely moved. The test we fixed in advance found no clear rise. So we collected every article in the topic: 4,642 topic articles and 5,678 comparison articles. Then we asked a different question. Not how much the average page changed, but which pages changed, when, and how. More topic articles than comparison articles gained critical vocabulary. That finding held up on the sealed half of the data, the half we had set aside and only checked at the end.</p>
+  <p class="deck">The average article barely moved. The test we fixed in advance found no clear rise. So we collected every article in the topic: 4,642 topic articles and 5,678 comparison articles. Then we asked a different question. Not how much the average page changed, but which pages changed, when, and how. More topic articles than comparison articles gained critical vocabulary. That finding replicated on the sealed half of the data, the half we had set aside and only checked at the end.</p>
 </div>
 
 <section class="sec" id="reach" aria-labelledby="reachH" style="margin-top:56px">
@@ -917,7 +986,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="deck">Six ways the change shows up beyond the words. Each panel compares all topic articles with all comparison articles. Teal is topic, grey-violet is comparison. Every bar starts at zero.</p>
   </header>
   <div class="spread" id="spreadGrid"></div>
-  <p class="means" id="mSpread"><b>What this means:</b> long-standing accounts made the edits, not a wave of new accounts. Accounts later blocked did no more than usual. That rules out a flood of newcomers. It says nothing about intent or coordination outside Wikipedia. Established editors added text, often after formal discussion. The framing also reached categories and links, which drive navigation and reuse. These all fit the pattern. We have not separated them as causes. Protection is shown only to mark the core pages.</p>
+  <p class="means" id="mSpread"><b>What this means:</b> long-standing accounts made the edits, not a wave of new accounts. Accounts later blocked did no more than usual. That rules out a flood of newcomers. It says nothing about intent or coordination outside Wikipedia. Established editors added text, often after formal discussion. The framing also reached categories and links, which drive navigation and reuse. Each of these is established on its own. What we have not done is separate them as causes. Protection marks the core pages; it is not shown to cause change.</p>
 </section>
 
 <aside class="dropped" id="dropped" aria-labelledby="dropH">
@@ -2249,7 +2318,7 @@ function drawReach(){
   host.innerHTML=`<div class="rch">${G.map(([n,c,a,v])=>`<div class="rch-g"><div class="fig-t"><span class="sw" style="background:var(${c})"></span>${n}</div>${row("articles",a,c)}${row("reading",v,c)}</div>`).join("")}
    <div class="legend"><span class="key"><i style="background:var(--topic)"></i>dark part: opening paragraph gained critical vocabulary since Jul 2023</span><span class="key"><i style="background:var(--faint);border:1px solid var(--rule)"></i>the rest of the group</span><span>Bars run from 0 to 100%.</span></div>
    <div><div class="fig-t" style="margin-bottom:4px">The most-read topic pages whose opening paragraph gained critical vocabulary</div><ul class="rch-top">${[["Benjamin Netanyahu","7.0M","1 → 4"],["Israel","4.6M","5 → 8"],["Palestine","2.4M","2 → 5"],["Zionism","1.8M","1 → 5"],["Hamas","1.3M","0 → 3"]].map(r=>`<li><span>${r[0]}</span><span>${r[1]} views</span><span>terms ${r[2]}</span></li>`).join("")}</ul><p class="cap" style="margin-top:4px">Views are for the last 12 months. Term counts are critical vocabulary in the opening paragraph, July 2023 → now.</p></div></div>`;
-  $("#mReach").innerHTML=`<b>What this means:</b> topic articles had 279 million views in the last 12 months. The changed pages took 15% of them, against 5% in comparison articles. That is three times the comparison level. It is still not most topic reading: 83% of topic views land on opening paragraphs that did not change. Pages that change tend to be pages that are read. That is partly how Wikipedia works everywhere. We repeated the test treating each Wikipedia subject group as one unit. Then the extra tilt toward read pages is no longer clear, so treat that part as suggestive. An earlier hand-picked sample showed a much larger share. It held nearly all the giant pages and left out the many very short articles, villages and biographies that make up most topic articles.`;
+  $("#mReach").innerHTML=`<b>What this means:</b> topic articles had 279 million views in the last 12 months. The changed pages took 15% of them, against 5% in comparison articles. That is three times the comparison level. It is still not most topic reading: 83% of topic views land on opening paragraphs that did not change. Pages that change tend to be pages that are read. That is partly how Wikipedia works everywhere. The three-to-one gap holds on both of our ranges. Whether topic pages also tilt more steeply toward read pages than comparison pages do is suggestive: that difference does not survive treating each Wikipedia subject group as one unit. An earlier hand-picked sample showed a much larger share. It held nearly all the giant pages and left out the many very short articles, villages and biographies that make up most topic articles.`;
   revealOnView(host.querySelector(".rch"));
 }
 const WH={sel:null,geom:null};
@@ -2329,7 +2398,7 @@ function drawNews(){
    <p class="cap" style="margin-top:8px">Before the war, the same comparison showed no difference.</p>`;
   $("#newsQ").innerHTML=`<blockquote><span class="w"><i style="background:var(--topic)"></i>Older history · Nakba · how the article defines it, then and now. The 2021 version also took a position.</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba … is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings …”</span></blockquote>
    <blockquote><span class="w"><i style="background:var(--s1)"></i>Recent events · Israel, 2026 · one of the few opening paragraphs that states the label in Wikipedia's own voice. The next sentence gives the denial.</span><span class="s">“After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza. Israel and its allies, including the United States, deny that Israel’s actions constitute genocide.”</span></blockquote>`;
-  $("#mNews").innerHTML=`<b>What this means:</b> the war did not mainly produce war coverage. It sent editors back to retell 1897 to 1948 and to rename the land. They did this by adding sentences, not by deleting others. One caution: when we treat each Wikipedia subject group as one unit, the result on all articles is no longer clear. On the articles most relevant to the topic it holds either way.`;
+  $("#mNews").innerHTML=`<b>What this means:</b> the war did not mainly produce war coverage. It sent editors back to retell 1897 to 1948 and to rename the land. They did this by adding sentences, not by deleting others. This replicated on the sealed half of the data and at full scale. On the articles most relevant to the topic it holds on both of our ranges. On the full set, the coarser range crosses zero.`;
 }
 function drawSpread(){
   const host=$("#spreadGrid");if(!host)return;const T="--topic",C="--comp";
@@ -2350,12 +2419,130 @@ function drawSpread(){
   host.innerHTML=tiles.map(t=>`<article class="sp"><h3>${esc(t.h)}</h3><div class="big">${esc(t.big)}<small>${esc(t.sm)}</small></div><div class="chart">${t.ch}</div><p>${esc(t.p)}</p>${t.list?`<ol>${t.list.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>`:""}${t.p2?`<p class="cap">${esc(t.p2)}</p>`:""}</article>`).join("");
 }
 
+/* ---------- Zionism up close: opening paragraph then and now, and every first-sentence change ---------- */
+const ZI={sel:null,mode:"key",geom:null,list:null};
+const ZI_T={settler_colonial:"“colonial” or “colonization”",re_establish:"“re-establishment”",nakba_expulsion:"Nakba / expulsion",genocide:"genocide",apartheid:"apartheid",ethnic_cleansing:"ethnic cleansing",occupation:"occupation",war_crimes:"war crimes"};
+const ziD=s=>{const d=new Date(s.slice(0,10)+"T00:00:00Z");return `${d.getUTCDate()} ${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
+const ziW=n=>n===1?"1 word":`${n} words`;
+const ZI_MON=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const ziOld=r=>`https://en.wikipedia.org/w/index.php?oldid=${r}`;
+function ziData(){
+  const Z=R.zionism,RA=R.ratchet&&R.ratchet.articles&&R.ratchet.articles[Z&&Z.title];if(!Z||!RA)return null;
+  if(ZI.d)return ZI.d;
+  const txt=new Map((RA.fs_variants||[]).map(v=>[v.id,v.s]));
+  const ch=Z.changes.map((c,k)=>({k,d:c[0],t:Date.parse(c[0]+"T12:00:00Z"),from:c[1],to:c[2],rv:c[3],mv:c[4]}));
+  // nearest kept wording at or before each change (for diffs across wordings whose text was not kept)
+  let lastKept=txt.get(RA.fs_timeline[0][1])||null,lastKeptD=RA.fs_timeline[0][0];
+  ch.forEach(c=>{const a=txt.get(c.from);c.before=a||lastKept;c.beforeExact=!!a;c.beforeD=a?null:lastKeptD;const b=txt.get(c.to);c.after=b==null||b===""?null:b;c.blank=b==="";if(c.after){lastKept=c.after;lastKeptD=c.d}});
+  const settle=ch.filter(c=>c.mv.includes("settler_colonial+")).at(-1),first=ch.find(c=>c.mv.includes("settler_colonial+")),reOut=ch.filter(c=>c.mv.includes("re_establish-")).at(-1);
+  const moments=[[first,`<b>${ziD(first.d)}</b> · “colonial” goes into the first sentence for the first time`],[reOut,`<b>${ziD(reOut.d)}</b> · “re-establishment” leaves the first sentence for the last time`],[settle,`<b>${ziD(settle.d)}</b> · “colonization” goes back in and stays`]].filter(m=>m[0]);
+  const a=R.articles.find(x=>x.title===Z.title),wk=parseWeeks(a&&a.w_edits,R.n_weeks)||[];
+  return ZI.d={Z,ch,moments,settle,wk,w0:Date.parse((R.week0||"2021-01-01")+"T00:00:00Z")};
+}
+function ziSummary(){
+  const D=ziData();if(!D)return;const {Z}=D;
+  const chip=c=>c.k==="-"?`<li><del>${esc(c.a)}</del><span class="w">removed</span></li>`:c.k==="+"?`<li><ins>${esc(c.a)}</ins><span class="w">added</span></li>`:`<li><del>${esc(c.a)}</del> → <ins>${esc(c.b)}</ins></li>`;
+  const p1=Z.chips.filter(c=>c.where==="p1"),rest=Z.chips.filter(c=>c.where!=="p1");
+  $("#ziSum").innerHTML=`<h3>The key changes, in the article’s own words</h3><ul class="zi-chips" aria-label="In the opening paragraph">${p1.map(chip).join("")}</ul>${rest.length?`<h3 style="margin-top:4px">Further down the opening section</h3><ul class="zi-chips">${rest.map(chip).join("")}</ul>`:""}`;
+  const t=Z.then,n=Z.now,ops=wdiff(t.paras[0],n.paras[0]);
+  const when=(lab,o)=>`<div class="when"><span>${lab}</span><a href="${ziOld(o.rev)}" rel="noopener" target="_blank">revision ${o.rev}${o.saved?`, saved ${ziD(o.saved)}`:""}</a></div>`;
+  $("#ziPair").innerHTML=`<div class="wow-col">${when(`Before · as of ${ziD(t.asof)}`,t)}<p class="zi-p">${renderW(ops,"-")}</p></div><div class="wow-col">${when(`Now · as of ${ziD(n.asof)}`,n)}<p class="zi-p">${renderW(ops,"+")}</p></div>`;
+  // rest of the section: plain text, with only the summary-row phrases marked
+  const mark=(s,list,tag)=>{let h=esc(s);list.forEach(x=>{const e=esc(x);h=h.split(e).join(`<${tag}>${e}</${tag}>`)});return h};
+  const rd=rest.filter(c=>c.k!=="+").map(c=>c.a),ra=rest.filter(c=>c.k!=="-").map(c=>c.k==="~"?c.b:c.a);
+  $("#ziRestN").textContent=`${t.paras.length-1} more paragraphs in 2021, ${n.paras.length-1} now`;
+  $("#ziRest .in").innerHTML=`<p class="cap">Only the phrases in the summary row are marked here.</p><div class="wow-grid"><div class="wow-col"><div class="when"><span>Before · ${ziD(t.asof)}</span></div>${t.paras.slice(1).map(p=>`<p class="zi-p">${mark(p,rd,"del")}</p>`).join("")}</div><div class="wow-col"><div class="when"><span>Now · ${ziD(n.asof)}</span></div>${n.paras.slice(1).map(p=>`<p class="zi-p">${mark(p,ra,"ins")}</p>`).join("")}</div></div>`;
+}
+function ziList(){const D=ziData();return ZI.mode==="key"?D.ch.filter(c=>c.mv.length):D.ch}
+function ziLabel(c){if(!c.mv.length)return c.blank?"the opening was blanked":"a wording change";
+  return c.mv.map(m=>`${ZI_T[m.slice(0,-1)]||m.slice(0,-1)} ${m.endsWith("+")?"goes in":"comes out"}`).join(", ")}
+function drawZi(){
+  const el=$("#ziChart"),D=ziData();if(!el)return;
+  if(!D){$("#zionism").hidden=true;return}
+  if(!ZI.summaryDone){ziSummary();ZI.summaryDone=true}
+  const {Z,ch,wk,w0}=D,ph=isPhone(),W=Math.max(300,el.clientWidth);
+  const t0=Date.UTC(2021,0,1),t1=Date.parse(Z.now.asof+"T00:00:00Z");
+  const m={l:ph?30:40,r:ph?6:10};
+  const x=t=>m.l+(W-m.l-m.r)*(t-t0)/(t1-t0);
+  const bT=48,bH=ph?100:140,bB=bT+bH,lane=ph?34:36,L0=bB+26;
+  const lanes=ph?[["col","“colonial” / “colonization”"],["re","“re-establishment”"],["all","every first-sentence change"],["lead","critical terms, rest of opening"]]:[["col",`“colonial” or “colonization” in the first sentence`],["re",`“re-establishment” in the first sentence`],["all",`every change to the first sentence`],["lead",`critical terms elsewhere in the opening section`]];
+  const ly=i=>L0+i*lane,H=ly(lanes.length)+4;
+  const mx=niceMax(Math.max(1,...wk)),y=lin(0,mx,bB,bT);
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`Weekly edits to the Zionism article, 2021 to November 2026, in grey. Below: when “colonial” or “colonization” was in the first sentence (in ${Z.col.in} times, out ${Z.col.out} times, in since ${ziD(D.settle.d)}); when “re-establishment” was (gone since ${ziD(Z.re.last[0])}); and ticks for all ${ch.length} first-sentence changes.`)}">`;
+  for(let yr=2021;yr<=new Date(t1).getUTCFullYear();yr++){const xx=x(Date.UTC(yr,0,1));s+=`<line x1="${xx}" x2="${xx}" y1="${bT}" y2="${H-4}" style="stroke:var(--faint)"/><text x="${xx+3}" y="${bB+14}">${ph?"’"+String(yr).slice(2):yr}</text>`}
+  ticks(0,mx,ph?2:3).forEach(v=>{const yy=y(v);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-5}" y="${yy+3.5}" text-anchor="end">${v}</text>`});
+  const bw=Math.max(.7,(x(t0+7*864e5)-x(t0))-.35);
+  wk.forEach((v,i)=>{if(!v)return;const xx=x(w0+i*7*864e5),yy=y(v);if(xx>W-m.r)return;s+=`<rect x="${xx.toFixed(1)}" y="${yy.toFixed(1)}" width="${bw.toFixed(2)}" height="${(bB-yy).toFixed(1)}" style="fill:var(--mid)"/>`});
+  s+=`<text x="${m.l+6}" y="${bT+10}" style="fill:var(--muted);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">edits / week</text>`;
+  const wx=x(WAR);s+=`<line x1="${wx}" x2="${wx}" y1="${bT-4}" y2="${H-4}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/><text x="${wx-4}" y="${bT+10}" text-anchor="end" style="fill:var(--war);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${ph?"7 Oct":"7 Oct 2023"}</text>`;
+  // lanes
+  const bandY=i=>ly(i)+16,bandH=10;
+  lanes.forEach(([k,lab],i)=>{s+=`<text class="ln" x="${m.l}" y="${ly(i)+11}">${esc(lab)}</text>`;if(k!=="all"&&k!=="lead")s+=`<rect x="${m.l}" y="${bandY(i)}" width="${W-m.l-m.r}" height="${bandH}" rx="2" style="fill:var(--faint)"/>`;else s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${bandY(i)+bandH/2}" y2="${bandY(i)+bandH/2}" style="stroke:var(--rule)"/>`});
+  const band=(term,i,col)=>{let on=Z[term==="settler_colonial"?"col":"re"].start,from=t0,out="";
+    const seg=(a,b)=>{const xa=x(a),xb=Math.max(xa+1.4,x(b));out+=`<rect x="${xa.toFixed(1)}" y="${bandY(i)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(${col})"/>`};
+    const gaps=[];let g0=null;
+    ch.forEach(c=>{if(c.mv.includes(term+"+")&&!on){on=true;from=c.t;if(g0!=null)gaps.push([g0,c.t])}else if(c.mv.includes(term+"-")&&on){on=false;seg(from,c.t);g0=c.t}});
+    if(on)seg(from,t1);
+    /* every removal leaves a visible notch, even when the word came back the same day */
+    gaps.forEach(([a,b])=>{const xa=x(a),xb=Math.max(xa+1.5,x(b));out+=`<rect x="${(xa-.2).toFixed(1)}" y="${bandY(i)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(--sheet)"/>`});return out};
+  s+=band("settler_colonial",0,"--add-bd")+band("re_establish",1,"--del-bd");
+  ch.forEach(c=>{const xx=x(c.t).toFixed(1),yy=bandY(2);s+=`<line x1="${xx}" x2="${xx}" y1="${yy+(c.rv?3:0)}" y2="${yy+bandH-(c.rv?3:0)}" style="stroke:var(${c.rv?"--muted":"--ink-2"});stroke-width:1;opacity:${c.rv?.6:.8}"/>`});
+  const LT=(Z.lead_terms||[]).map(e=>({t:Date.parse(e[0]),ts:e[0],term:e[1],kind:e[2]}));
+  LT.forEach(e=>{const xx=x(e.t).toFixed(1),yy=bandY(3)+bandH/2;s+=`<circle cx="${xx}" cy="${yy}" r="3.2" style="fill:var(${e.kind==="insert"?"--ink-2":"--sheet"});stroke:var(--ink-2);stroke-width:1.2"/>`});
+  // numbered key moments
+  let prevX=-99,row=0;
+  D.moments.forEach(([c],i)=>{const xx=x(c.t);row=xx-prevX<22?row+1:0;prevX=xx;const cyy=11+row*19;
+    s+=`<line x1="${xx}" x2="${xx}" y1="${cyy+9}" y2="${bandY(1)+bandH}" style="stroke:var(--ink);stroke-width:1;opacity:.5"/><circle cx="${xx}" cy="${cyy}" r="9" style="fill:var(--ink)"/><text class="bd" x="${xx}" y="${cyy+3.6}" text-anchor="middle">${i+1}</text>`});
+  // selection
+  const sel=ch[ZI.sel];
+  if(sel){const xx=x(sel.t);s+=`<line x1="${xx}" x2="${xx}" y1="${bT}" y2="${H-4}" style="stroke:var(--ink);stroke-width:1.5;stroke-dasharray:2 2"/><circle cx="${xx}" cy="${bandY(2)+bandH/2}" r="6" style="fill:none;stroke:var(--ink);stroke-width:1.5"/>`}
+  s+=`</svg>`;el.innerHTML=s;
+  ZI.geom={x,ch,LT,bT,bandY,bandH,ly,H,m,W};
+  $("#ziKey").innerHTML=`<span class="key"><i style="background:var(--mid)"></i>all edits to the article, per week (${wk.reduce((a,b)=>a+b,0).toLocaleString("en-US")} in total)</span><span class="key"><i style="background:var(--add-bd)"></i>“colonial” or “colonization” is in the first sentence</span><span class="key"><i style="background:var(--del-bd)"></i>“re-establishment” is in the first sentence</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>one change to the first sentence</span><span class="key"><i style="width:2px;height:8px;background:var(--muted)"></i>a change later undone</span><span class="key"><i style="border-radius:50%;background:var(--ink-2)"></i><i style="border-radius:50%;border:1.2px solid var(--ink-2);background:none;margin-left:-2px"></i>critical term enters or leaves the rest of the opening section</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`;
+  $("#ziMoments").innerHTML=D.moments.map(([c,h],i)=>`<li><button type="button" data-k="${c.k}" aria-pressed="${ZI.sel===c.k}"><span class="bd">${i+1}</span><span>${h}</span></button></li>`).join("");
+  ziCard();
+}
+function ziCard(){
+  const D=ziData(),c=D.ch[ZI.sel];if(!c)return;const L=ziList();
+  const ops=c.before&&c.after?wdiff(c.before,c.after):null;
+  $("#ziHd").innerHTML=`<b>${ziD(c.d)}</b> · change ${c.k+1} of ${D.ch.length} · ${esc(ziLabel(c))}${c.rv?" · this wording was later undone":""}${ops?` · ${ziW(wc(ops,"-"))} out, ${ziW(wc(ops,"+"))} in`:""}`;
+  const q=(w,html,na)=>`<blockquote><span class="w">${w}</span><span class="s${na?" na":""}">${html}</span></blockquote>`;
+  $("#ziBA").innerHTML=q(c.beforeExact?"Before":`Before · last kept wording, ${ziD(c.beforeD)}`,c.before?(ops?renderW(ops,"-"):esc(c.before)):"The text of this wording was not kept.",!c.before)+
+    q("After",c.after?(ops?renderW(ops,"+"):esc(c.after)):c.blank?"The opening section was blank in this revision. It was restored the same day.":"The text of this wording was not kept.",!c.after);
+  $("#ziPrev").disabled=!L.some(x=>x.k<c.k);$("#ziNext").disabled=!L.some(x=>x.k>c.k);
+  $$("#ziMoments button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.k===c.k)));
+}
+function ziStep(dir){const L=ziList(),cur=ZI.sel;let n=dir>0?L.find(c=>c.k>cur):L.filter(c=>c.k<cur).at(-1);if(dir===2)n=L.at(-1);if(dir===-2)n=L[0];if(!n)return;ZI.sel=n.k;drawZi()}
+function ziPick(px,py){const G=ZI.geom;if(!G)return null;
+  if(py>=G.ly(3)&&G.LT.length){let b=null,bd=1e9;G.LT.forEach(e=>{const d=Math.abs(G.x(e.t)-px);if(d<bd){bd=d;b=e}});return bd<14?{lead:b}:null}
+  const L=py>=G.ly(2)&&py<G.ly(3)||ZI.mode==="all"?G.ch:G.ch.filter(c=>c.mv.length);let b=null,bd=1e9;L.forEach(c=>{const d=Math.abs(G.x(c.t)-px);if(d<bd){bd=d;b=c}});return bd<16?{c:b}:null}
+function ziTip(h,cx,cy){
+  if(h.lead){const e=h.lead;showTip(`<b>${esc(ZI_T[e.term]||e.term)} ${e.kind==="insert"?"enters":"leaves"} the opening section</b><div class="r"><span>${ziD(e.ts)}</span><span>${e.ts.slice(11,16)} UTC</span></div><div style="opacity:.8">Outside the first sentence.</div>`,cx,cy);return}
+  const c=h.c,ops=c.before&&c.after?wdiff(c.before,c.after):null;
+  showTip(`<b>${ziD(c.d)} · ${esc(ziLabel(c))}</b>${c.rv?`<div style="opacity:.8">later undone</div>`:""}<span class="zi-d">${ops?renderW(ops):esc(c.after||"Text not kept.")}</span>`,cx,cy)}
+function ziInit(){
+  const el=$("#ziChart"),D=ziData();if(!el)return;if(!D){$("#zionism").hidden=true;return}
+  ZI.sel=D.settle?D.settle.k:D.ch.length-1;
+  const at=ev=>{const r=el.getBoundingClientRect();return [ev.clientX-r.left,ev.clientY-r.top]};
+  el.addEventListener("pointermove",ev=>{if(ev.pointerType!=="mouse")return;const h=ziPick(...at(ev));if(h)ziTip(h,ev.clientX,ev.clientY);else hideTip()});
+  el.addEventListener("pointerleave",hideTip);
+  el.addEventListener("click",ev=>{const h=ziPick(...at(ev));if(!h)return;if(h.c){ZI.sel=h.c.k;drawZi()}if(ev.pointerType==="mouse"||h.lead)ziTip(h,ev.clientX,ev.clientY)});
+  el.addEventListener("keydown",ev=>{const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];if(!k)return;ev.preventDefault();ziStep(k)});
+  seg($("#ziMode"),v=>{ZI.mode=v;ziCard()});
+  $("#ziPrev").onclick=()=>ziStep(-1);$("#ziNext").onclick=()=>ziStep(1);
+  $("#ziMoments").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(!b)return;ZI.sel=+b.dataset.k;drawZi()});
+  const Z=D.Z,days=Math.round((Date.parse(Z.now.asof)-Date.parse(D.settle.d))/864e5);
+  $("#ziMeans").innerHTML=`<b>The first sentence changed ${D.ch.length} times</b> between January 2021 and November 2026. It had ${Z.n_wordings} different wordings. “Colonial” or “colonization” went in ${Z.col.in} times and came out ${Z.col.out} times, all since ${ZI_MON[+Z.col.first_in.slice(5,7)-1]} ${Z.col.first_in.slice(0,4)}. It went back in on ${ziD(D.settle.d)}, and the sentence has not changed in the ${days} days since.`;
+  $("#ziNote").textContent=`${Z.n_undone} of the ${D.ch.length} changes were later undone. Terms are counted on the ${Z.n_kept} wordings whose text was kept, out of ${Z.n_wordings}. Where a wording was not kept, a move is dated to the next kept wording. ${Z.blank.length?`A brief blanking of the opening section on ${Z.blank.map(ziD).join(", ")} is not counted as a removal. `:""}Dates are UTC days. Edits per week are all edits to the article. Our stored copy drops the Hebrew script, which is why the 2021 brackets look sparse.`;
+  drawZi();
+}
+
 /* ---------- init ---------- */
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
-function redrawAll(){safe(drawReach);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL)}
+function redrawAll(){safe(drawReach);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawZi)}
 function init(){
   if(!R){$("#lede").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
-  safe(drawLede);safe(drawBreathe);safe(drawCards);
+  safe(drawLede);safe(drawBreathe);safe(drawCards);safe(ziInit);
   const fs=$("#frameSel");["critical_rate","connection_rate",...(R.frames||[])].forEach(k=>fs.append(new Option(LABEL[k]||k,k)));
   fs.onchange=()=>{S.frame=fs.value;drawTrend()};
   seg($("#partA"),v=>{S.part=v;drawTrend()});seg($("#setA"),v=>{S.set=v;drawTrend()});

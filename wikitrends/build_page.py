@@ -121,6 +121,109 @@ def v3_data():
 
 res["v3"] = v3_data()
 
+# "Zionism up close": the opening paragraph in Jan 2021 and now, plus every first-sentence change (ratchet.json)
+def zionism_data(title="Zionism"):
+    import gzip, re, datetime as _dt
+    lp, mp2 = os.path.join(HERE, "data", "leads.json"), os.path.join(HERE, "data", "mass2_leads.json.gz")
+    rp = os.path.join(HERE, "data", "ratchet.json")
+    if not (os.path.exists(lp) and os.path.exists(rp)):
+        return None
+    L = next((x for x in json.load(open(lp)) if x["title"] == title), None)
+    RA = json.load(open(rp))
+    ra = RA["articles"].get(title)
+    if not L or not ra:
+        return None
+    paras = lambda s: [re.sub(r"[ \t]+", " ", p).strip() for p in re.split(r"\n\s*\n", s.strip()) if p.strip()]
+    then = {"text": L["lead0"], "rev": L["rev0"], "asof": L["d0"] + "-01", "saved": None}
+    now = {"text": L["lead1"], "rev": L["rev1"], "asof": L["d1"] + "-01", "saved": None}
+    # mass2 has a newer "now" (and the exact revisions); use it when present
+    if os.path.exists(mp2):
+        m2 = json.load(gzip.open(mp2))
+        ml = m2["leads"].get(title)
+        if ml:
+            then["text"] = ml[0] or then["text"]
+            if ml[-1]:
+                now["text"] = ml[-1]
+                m2p = os.path.join(HERE, "data", "mass2.json.gz")
+                if os.path.exists(m2p):
+                    M = json.load(gzip.open(m2p))
+                    arts = M["articles"]
+                    a = arts.get(title) if isinstance(arts, dict) else next((x for x in arts if x.get("title") == title), None)
+                    if a:
+                        r0, r1 = a["at"]["2021-01-01"]["rev"], a["at"]["now"]["rev"]
+                        then.update(rev=r0["revid"], saved=r0["ts"][:10])
+                        now.update(rev=r1["revid"], saved=r1["ts"][:10], asof=M["now"][:10])
+    then["paras"], now["paras"] = paras(then.pop("text")), paras(now.pop("text"))
+    # term lexicon from analyze.py (no heavy imports)
+    src = open(os.path.join(HERE, "analyze.py")).read()
+    ns = {}
+    exec("import re\n" + src[src.index("F = {"):src.index("CRITICAL =")], ns)
+    F = ns["F"]
+    crit = ["settler_colonial", "apartheid", "genocide", "ethnic_cleansing", "occupation", "nakba_expulsion", "war_crimes"]
+    def has(k, s):
+        inc, exc = F[k]
+        return sum(len(re.findall(p, s, re.I)) for p in inc) - sum(len(re.findall(p, s, re.I)) for p in exc) > 0
+    def tags(s):
+        if not s:
+            return None
+        t = [k for k in crit if has(k, s)]
+        if re.search(r"\bre-?establish", s, re.I):
+            t.append("re_establish")
+        return t
+    V = {v["id"]: v.get("s") for v in ra["fs_variants"]}
+    tl = ra["fs_timeline"]
+    state = [tags(V.get(i)) for _, i, _ in tl]
+    blank = [d for d, i, _ in tl if V.get(i) == ""]
+    # key moves: a term appears/disappears between consecutive kept wordings
+    changes, last, last_k = [], None, None
+    flips = {}
+    for k, ((d, i, rv), st) in enumerate(zip(tl, state)):
+        mv = []
+        if st is not None:
+            if last is not None:
+                for term in set(last) | set(st):
+                    if (term in st) != (term in last):
+                        mv.append(term + ("+" if term in st else "-"))
+                        flips.setdefault(term, []).append([d, "+" if term in st else "-"])
+            last, last_k = st, k
+        if k:
+            changes.append([d, tl[k - 1][1], i, int(rv), sorted(mv)])
+    def stat(term):
+        f = flips.get(term, [])
+        return {"in": sum(x[1] == "+" for x in f), "out": sum(x[1] == "-" for x in f),
+                "first_in": next((x[0] for x in f if x[1] == "+"), None), "last": f[-1] if f else None,
+                "start": term in (state[0] or []), "end": term in (last or [])}
+    # critical terms in the rest of the opening section: exact timestamps (ratchet events; mass2_events agree)
+    lead_terms = []
+    for term, evs in (RA.get("events") or {}).get(title, {}).items():
+        if term in crit:
+            lead_terms += [[_dt.datetime.fromtimestamp(e["t"], _dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), term, e["kind"]] for e in evs]
+    lead_terms.sort()
+    # summary chips: exact words from the paragraph-1 diff, kept only if each quote checks out against the stored text
+    t1, n1 = then["paras"][0], now["paras"][0]
+    tall, nall = " ".join(then["paras"]), " ".join(now["paras"])
+    want = [("-", "re-establishment", None, "p1"), ("+", "colonization", None, "p1"), ("+", "ethnic", "an ethnic nationalist movement", "p1"),
+            ("-", "among the Jewish people", None, "p1"), ("~", "a Jewish state in the territory", "a Jewish homeland through colonization", "p1"),
+            ("+", "as few Palestinian Arabs as possible", None, "p1"), ("-", "Canaan, the Holy Land", None, "p1"),
+            ("~", "a persecuted people", "an indigenous people", "rest"), ("+", "a settler colonialist movement", None, "rest"),
+            ("-", "exceptionalist", None, "rest")]
+    low = str.lower
+    chips = []
+    for kind, a, b, where in want:
+        A, B = (t1, n1) if where == "p1" else (tall, nall)
+        ok = (kind == "-" and a in A and low(a) not in low(nall)) or (kind == "+" and a in B and low(a) not in low(tall)) or \
+             (kind == "~" and a in A and b in B and low(a) not in low(nall) and low(b) not in low(tall))
+        if ok:
+            chips.append({"k": kind, "a": a, "b": b, "where": where})
+    return {"title": title, "then": then, "now": now, "chips": chips, "changes": changes, "lead_terms": lead_terms,
+            "n_wordings": ra.get("fs_n_variants") or len(set(i for _, i, _ in tl)),
+            "n_kept": sum(1 for s in V.values() if s), "n_undone": sum(int(x[2]) for x in tl), "blank": blank,
+            "first_ts": tl[0][0], "col": stat("settler_colonial"), "re": stat("re_establish"),
+            "other_terms": sorted(t for t in flips if t not in ("settler_colonial", "re_establish"))}
+
+
+res["zionism"] = zionism_data()
+
 tk_p = os.path.join(HERE, "notes", "takeaways.json")
 if os.path.exists(tk_p):
     res["takeaways"] = json.load(open(tk_p))
