@@ -567,19 +567,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .dropped .tag.u{border:1px solid var(--ink-2);color:var(--ink-2)}
 /* short answer (top): reuses .eyebrow, .cap, .news-q, .cards/.card and details.stats */
 .short{padding-top:40px;padding-bottom:36px;border-bottom:3px double var(--ink);display:grid;gap:18px;min-width:0}
-.short-h{font-size:clamp(34px,5.6vw,68px);line-height:1;letter-spacing:-.025em}
-.short-h em{font-style:italic;font-weight:400;color:var(--topic)}
-.short-a{font:400 clamp(18px,2vw,22px)/1.5 var(--body);color:var(--ink);max-width:62ch}
-.short-a b{font-weight:700}
+.short-h{font-size:clamp(26px,3.4vw,38px);line-height:1.12;letter-spacing:-.012em;max-width:30ch}
+.short-a{font:400 clamp(17px,1.8vw,19px)/1.55 var(--body);color:var(--ink-2);max-width:66ch}
 .short-def{max-width:70ch}
-.short-def i{font-style:normal;font-weight:600;color:var(--ink-2)}
+.short-def i{font-style:italic;font-weight:400;color:var(--ink-2)}
 .short-b{display:grid;gap:10px;min-width:0;margin-top:8px}
 .short-b>h3{font-size:19px}
 .short-b>p:not(.cap){font-size:16px;line-height:1.55;max-width:66ch;color:var(--ink)}
 .short .news-q .s{font-size:16.5px}
 .short-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
 .short-row li{border-top:1px solid var(--ink);padding-top:10px;font-size:15px;line-height:1.5;color:var(--ink-2);min-width:0}
-.short-coda{font:600 15px/1.4 var(--body);color:var(--ink)}
 .short-cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
 .short-cards .card{gap:8px;grid-template-rows:auto auto 1fr auto}
 .short-cards .hl{font-size:16px;line-height:1.35}
@@ -589,7 +586,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .short-more details.stats+details.stats{border-top:0}
 .short-more ul{margin:0;padding-left:1.2em;display:grid;gap:6px;font-size:15.5px;line-height:1.5;max-width:70ch}
 .short-more .in>p{font-size:15.5px;line-height:1.5;max-width:70ch}
-.short-q{font:italic 400 clamp(19px,2.2vw,23px)/1.4 var(--display);color:var(--ink-2);border-left:2px solid var(--rule);padding:4px 0 4px 14px;margin:14px 0;max-width:60ch}
+.short-more li b{font-weight:500;color:var(--ink)}
 @media (max-width:900px){.short-row{grid-template-columns:minmax(0,1fr);gap:8px}}
 @media (max-width:640px){
   .short{padding-top:28px;gap:14px}
@@ -715,68 +712,60 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 2021–2026</span></div>
 
 <section class="short" id="short" aria-labelledby="shortH">
-  <div class="eyebrow">Start here</div>
-  <h2 id="shortH" class="short-h">The average didn't move.<br><em>The window display did.</em></h2>
-  <p class="short-a"><b>The short answer.</b> Partly: most articles, Judaism's included, did not change, but a few hundred heavily read Israel and Palestine pages now open with a different baseline story, centred on 1948, the land and more critical vocabulary.</p>
+  <div class="eyebrow">Summary</div>
+  <h2 id="shortH" class="short-h">Most articles did not change; the opening paragraphs of a few hundred widely read Israel and Palestine articles did</h2>
+  <p class="short-a">We compared 4,642 English Wikipedia articles on Israel, Palestine, Zionism and Judaism with about 5,700 comparison articles, 2021 to 2026. Most topic articles did not change on our measure, and Judaism articles changed no more than comparison articles. The change we found is concentrated in the opening paragraphs of a few hundred Israel and Palestine articles, several heavily read, and mostly concerns 1948 and the land, not the current war. It came mainly in 2024, had returned to the pre-war rate by 2026, and did not run in only one direction.</p>
   <p class="cap short-def"><i>Critical vocabulary:</i> words from the legal and historical charges made against Israel, such as genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion.</p>
 
   <div class="short-b">
-    <h3>The image</h3>
-    <p>In a big shop the aisles are almost unchanged. But the window display by the front door is different now. The opening paragraph is that window: what readers, search engines and AI assistants see first.</p>
-    <p class="cap">What the encyclopedia states as its baseline for the Nakba.</p>
-    <div class="news-q">
-      <blockquote><span class="w"><i style="background:var(--comp)"></i>2021</span><span class="s">"The Nakba ... was the destruction of Palestinian society and homeland in 1948 ..."</span></blockquote>
-      <blockquote><span class="w"><i style="background:var(--topic)"></i>2026</span><span class="s">"The Nakba ... is the ethnic cleansing of Palestinian Arabs by Zionists ..."</span></blockquote>
-    </div>
-    <p class="cap">The 2021 version also took a position; neither is "neutral".</p>
-  </div>
-
-  <div class="short-b">
-    <h3>What changed the other way</h3>
-    <ul class="short-row">
-      <li>Antisemitism is mentioned in 54 topic opening paragraphs, up from 37.</li>
-      <li>61 critical terms left topic opening paragraphs (223 went in); the 1948 expulsion article dropped "by Zionist militias".</li>
-      <li>More of these terms now name a source ("according to"): 21% to 25%. Few opening paragraphs use Wikipedia's own voice.</li>
-    </ul>
-    <p class="short-coda">Lopsided, not one-sided.</p>
-  </div>
-
-  <div class="short-b">
-    <h3>What matters</h3>
+    <h3>Key findings</h3>
     <div class="cards short-cards">
-      <article class="card"><div class="unit">1</div><p class="hl">Most articles did not change, and articles on Judaism did not move.</p><p class="cap">85% of topic articles ended with the same count of critical vocabulary; Judaism moved no more than comparison articles.</p><a class="more" href="#key" aria-label="See the chart: the scrolly vocabulary chart">See the chart ↓</a></article>
-      <article class="card"><div class="unit">2</div><p class="hl">The pages that changed are among the most read.</p><p class="cap">Pages whose opening paragraph gained critical vocabulary get 15% of topic reading.</p><a class="more" href="#reach" aria-label="See the chart: Reach">See the chart ↓</a></article>
-      <article class="card"><div class="unit">3</div><p class="hl">The story moved back to 1948 and the land, not to the war.</p><p class="cap">Without sentences about recent events, 89% of the extra change remains.</p><a class="more" href="#news" aria-label="See the chart: News or narrative?">See the chart ↓</a></article>
-      <article class="card"><div class="unit">4</div><p class="hl">It came as one wave, and as of late 2026 the wave has passed.</p><p class="cap">In 2024 critical vocabulary went in over twice as often as before the war; by 2026 it was back to the pre-war pace.</p><a class="more" href="#when" aria-label="See the chart: When it happened">See the chart ↓</a></article>
-      <article class="card"><div class="unit">5</div><p class="hl">Long-standing editors made the changes, not a wave of new accounts.</p><p class="cap">Low-experience accounts made about half the share of edits they make on comparison pages.</p><a class="more" href="#spread" aria-label="See the chart: How it spread, Established editors panel">See the chart ↓</a></article>
+      <article class="card"><div class="unit">1</div><p class="hl">Most articles did not change, and Judaism articles did not move.</p><p class="cap">85% of topic articles ended with the same count of critical vocabulary. Judaism versus comparison: −0.1 percentage points (interval −2.3 to +2.3), statistically equivalent to zero.</p><a class="more" href="#key" aria-label="See the chart: scrolly vocabulary chart">See the chart ↓</a></article>
+      <article class="card"><div class="unit">2</div><p class="hl">The changed articles get more reading than their number suggests.</p><p class="cap">3.9% of topic articles gained critical vocabulary in their opening paragraph; they get 15% of topic views (interval 9.5% to 21.3%). Comparison articles: 1.5% and 5%. An extra tilt toward read pages, beyond the comparison group's, is only suggestive. 83% of topic reading meets unchanged opening paragraphs.</p><a class="more" href="#reach" aria-label="See the chart: Reach">See the chart ↓</a></article>
+      <article class="card"><div class="unit">3</div><p class="hl">Most added text is about older history, not the war.</p><p class="cap">Removing sentences about events since 2022 leaves 89% of the extra change. It replicated on held-back data; on the full set one of two intervals includes zero.</p><a class="more" href="#news" aria-label="See the chart: News or narrative?">See the chart ↓</a></article>
+      <article class="card"><div class="unit">4</div><p class="hl">The change was concentrated in 2024.</p><p class="cap">Critical terms went in at about 7 per 1,000 edits before October 2023, about 16 through 2024, and 5 to 6 in 2026. This describes data to late 2026, not a forecast.</p><a class="more" href="#when" aria-label="See the chart: When it happened">See the chart ↓</a></article>
+      <article class="card"><div class="unit">5</div><p class="hl">Established editors made most changes.</p><p class="cap">Accounts with under 500 edits made 9.1% of war-period topic edits (comparison: 17.2%). Later-blocked accounts made 13.7% of insertions against a 12.3% baseline, within the margin of error.</p><a class="more" href="#spread" aria-label="See the chart: How it spread, Established editors panel">See the chart ↓</a></article>
     </div>
     <p class="cap cards-hint">Swipe for more →</p>
   </div>
 
+  <div class="short-b">
+    <h3>Changes in both directions</h3>
+    <p class="cap">The Nakba article.</p>
+    <div class="news-q">
+      <blockquote><span class="w"><i style="background:var(--muted)"></i>2021</span><span class="s">"The Nakba ... was the destruction of Palestinian society and homeland in 1948 ..."</span></blockquote>
+      <blockquote><span class="w"><i style="background:var(--ink-2)"></i>2026</span><span class="s">"The Nakba ... is the ethnic cleansing of Palestinian Arabs by Zionists ..."</span></blockquote>
+    </div>
+    <p class="cap">The 2021 version also took a position; neither is "neutral".</p>
+    <p class="cap">In the other direction:</p>
+    <ul class="short-row">
+      <li>Antisemitism appears in 54 topic opening paragraphs, up from 37.</li>
+      <li>61 critical terms left topic opening paragraphs (against 223 that entered); the 1948 expulsion article dropped "by Zionist militias".</li>
+      <li>Terms attributed to a source ("according to") rose from 21% to 25% (comparison: 17%, flat). A few prominent opening paragraphs later dropped the attribution.</li>
+    </ul>
+  </div>
+
   <div class="short-more">
-    <details class="stats"><summary>Why you can trust this</summary><div class="in"><ul>
-      <li>Every result is compared with about 5,700 articles on other countries, conflicts and religions, measured the same way, so ordinary Wikipedia churn cancels out.</li>
-      <li>The average across all articles barely moved. The change concentrated in a minority of heavily read pages, which held up on the sealed half of the data: half the articles we set aside and only checked at the end.</li>
-      <li>Filtering out sentences about recent events left most change: not just war news.</li>
-      <li>We dropped our own failed results, such as one on 1948 departures.</li>
-    </ul></div></details>
-    <details class="stats"><summary>What this does not mean</summary><div class="in"><ul>
-      <li>Not truth. Counting words measures emphasis, not accuracy.</li>
-      <li>Not bias or intent. We see what changed, not why.</li>
-      <li>Not coordination. Off-wiki planning is invisible to us.</li>
-    </ul></div></details>
-    <p class="short-q">We can't say who is right. We can say the front door changed.</p>
-    <details class="stats"><summary>Questions people ask</summary><div class="in">
-      <p><b>So is Wikipedia biased?</b> We cannot say. We show which story is now the baseline, not whether it is right.</p>
-      <p><b>Who did it?</b> Long-standing accounts; later-blocked accounts made no more of these edits than usual. That rules out a newcomer flood, but says nothing about intent or off-wiki coordination.</p>
-      <p><b>Is it just the war?</b> Battles brought editors; court rulings did not. Then editors mostly rewrote older history.</p>
-      <p><b>Only in English?</b> English and Portuguese moved; nine other languages showed no clear change.</p>
-      <p><b>Does anyone read it?</b> Yes, the changed pages are read ones, though 83% of topic reading meets unchanged opening paragraphs.</p>
+    <details class="stats"><summary>Methods in one paragraph</summary><div class="in">
+      <p>We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,320 articles over their revision histories. Each result is the change in topic articles minus the change in comparison articles, which removes ordinary editing trends. Intervals resample articles and, separately, WikiProjects; where they disagree we call a result suggestive. Half the articles were held back until the end; the main result replicated there (+3.6 percentage points, interval 1.7 to 5.6). Measures failing precision checks, including one on 1948 departures, were withdrawn.</p>
     </div></details>
+    <details class="stats"><summary>Limitations and what this cannot tell us</summary><div class="in"><ul>
+      <li><b>Accuracy.</b> Word counts measure emphasis, not correctness.</li>
+      <li><b>Intent and coordination.</b> We see what changed, not why, and cannot see off-wiki coordination.</li>
+      <li><b>The average.</b> A pre-specified average test on a smaller panel found no clear rise; it was too weak to detect concentrated change.</li>
+      <li><b>Readers.</b> We know what text was live, not what readers took from it.</li>
+      <li><b>Languages.</b> English and Portuguese moved; nine other languages showed no clear change.</li>
+    </ul></div></details>
+    <details class="stats"><summary>What would change these conclusions</summary><div class="in"><ul>
+      <li>A renewed rise in the quarterly insertion rate.</li>
+      <li>A similar rise across a random sample of Wikipedia (not yet run), which would make this site-wide drift.</li>
+      <li>Frequent false matches, such as "expulsion" in Jewish-history articles.</li>
+      <li>A much lower reading share once the few largest pages are removed.</li>
+    </ul></div></details>
     <details class="stats"><summary>Glossary</summary><div class="in"><ul>
       <li><b>Opening paragraph:</b> the summary at the top of an article.</li>
-      <li><b>Comparison articles:</b> other countries and conflicts, measured the same way.</li>
-      <li><b>Jewish-history vocabulary:</b> homeland, indigenous, antisemitism, Land of Israel; counted too, so change either way shows.</li>
+      <li><b>Comparison articles:</b> other countries, conflicts and religions, measured the same way.</li>
+      <li><b>Jewish-history vocabulary:</b> homeland, indigenous, antisemitism, Land of Israel; also counted.</li>
       <li><b>Own voice vs attributed:</b> "it is genocide" versus "X states it is genocide".</li>
     </ul></div></details>
   </div>
