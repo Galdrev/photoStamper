@@ -59,6 +59,11 @@ def shingles(s, k=5):
     return {" ".join(w[i:i + k]) for i in range(len(w) - k + 1)}
 
 
+def nlp(p, n):
+    """-log10 p capped at the resolution of n null draws (observed and calibration worlds then share one scale)."""
+    return min(-math.log10(p), math.log10(n))
+
+
 def bloc_name(i):
     s, i = "", i + 1
     while i:
@@ -295,7 +300,7 @@ class Engine:
             p = (d["exc"] + 1) / (n_eff + 1)
             m = (p < P_EDGE) & (d["obs"] >= MIN_OBS)
             for pid, o, pp in zip(d["pid"][m], d["obs"][m], p[m]):
-                out[int(pid)] = max(out.get(int(pid), 0), -math.log10(pp))
+                out[int(pid)] = max(out.get(int(pid), 0), nlp(pp, self.n))
         return out
 
     def _communities_of(self, edges):
@@ -460,7 +465,7 @@ def network(E, D, ev_by_acc, log=print):
         m = ps[main]
         w = math.log2((m["observed"] + 1) / (m["null_mean"] + 1))
         ew[pid] = w
-        lp[pid] = max(-math.log10(ps[s]["p"]) for s in sig)
+        lp[pid] = max(nlp(ps[s]["p"], E.n) for s in sig)
         recs.append((pid, sig, ps, main, w))
     G = nx.Graph()
     for pid, sig, ps, main, w in recs:
@@ -516,7 +521,7 @@ def blocs(E, D, ev_by_acc):
     G = nx.Graph()
     for i, pid, sig in edges:
         ps = E.pair_stats(i)["shared"]
-        ew[pid] = math.log2((ps["observed"] + 1) / (ps["null_mean"] + 1)); lp[pid] = -math.log10(ps["p"])
+        ew[pid] = math.log2((ps["observed"] + 1) / (ps["null_mean"] + 1)); lp[pid] = nlp(ps["p"], E.n)
         G.add_edge(pid // E.NA, pid % E.NA, weight=lp[pid])
     comms = [c for c in (nx.community.louvain_communities(G, weight="weight", seed=11) if len(G) else []) if len(c) >= MIN_BLOC]
     res = []
