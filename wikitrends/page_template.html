@@ -290,7 +290,7 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
 .tcard .body{display:grid;gap:8px;min-width:0}
 .tcard .s{font:400 17px/1.5 var(--display)}
 .tcard .meta{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font:12px var(--mono);color:var(--muted)}
-.tcard .cmt{font-style:italic}
+.tcard .cmt{font-style:italic;overflow-wrap:anywhere}
 .chip{display:inline-block;font:500 10.5px/1.5 var(--mono);padding:0 6px;border-radius:2px;border:1px solid var(--rule);color:var(--muted);white-space:nowrap}
 .chip.rv{color:var(--del-ink);border-color:var(--del-bd);background:var(--del-bg)}
 .chip.treatment{color:var(--topic);border-color:var(--topic)}
@@ -810,72 +810,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <div id="view-report">
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 2021–2026</span></div>
 
-<section class="short" id="short" aria-labelledby="shortH">
-  <div class="eyebrow">Summary</div>
-  <h2 id="shortH" class="short-h">Most articles did not change. The opening paragraphs of a few hundred widely read Israel and Palestine articles did.</h2>
-  <p class="short-a">We compared 4,642 English Wikipedia articles on Israel, Palestine, Zionism and Judaism with about 5,700 comparison articles. The period is 2021 to 2026. Most topic articles did not change. Judaism articles changed no more than comparison articles. The change is in the opening paragraphs of a few hundred Israel and Palestine articles, and it is larger than in comparison articles. Several of those articles are heavily read. The new wording is mostly about 1948 and the land, not the current war. Most of it arrived in 2024. By 2026 the rate was back at its pre-war level. The change did not run in only one direction.</p>
-  <p class="cap short-def"><i>Critical vocabulary:</i> words from the legal and historical charges made against Israel, such as genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion.</p>
-
-  <div class="short-b">
-    <h3>Key findings</h3>
-    <div class="cards short-cards">
-      <article class="card"><div class="unit">1</div><p class="hl">Most articles did not change. Judaism articles did not move.</p><p class="cap">85% of topic articles ended with the same count of critical vocabulary. Judaism articles changed exactly as much as comparison articles. The difference is −0.1 percentage points, with a range of −2.3 to +2.3. That is no change.</p><a class="more" href="#key" aria-label="See the chart: scrolly vocabulary chart">See the chart ↓</a></article>
-      <article class="card"><div class="unit">2</div><p class="hl">The changed articles get more reading than their number suggests.</p><p class="cap">3.9% of topic articles gained critical vocabulary in their opening paragraph. Those articles get 15% of topic views (range 9.5% to 21.3%). In comparison articles the two figures are 1.5% and 5%, so the topic level is three times the comparison level. 83% of topic reading lands on unchanged opening paragraphs. Whether topic pages also tilt more steeply toward well-read pages than comparison pages do is suggestive, not established.</p><a class="more" href="#reach" aria-label="See the chart: Reach">See the chart ↓</a></article>
-      <article class="card"><div class="unit">3</div><p class="hl">Most added text is about older history, not the war.</p><p class="cap">Remove the sentences about events since 2022, and 89% of the extra change remains. The result replicated on the half of the data we kept back, and again at full scale. The one weak spot is the coarse range on the full set, which crosses zero.</p><a class="more" href="#news" aria-label="See the chart: News or narrative?">See the chart ↓</a></article>
-      <article class="card"><div class="unit">4</div><p class="hl">The change was concentrated in 2024.</p><p class="cap">Before October 2023, editors added about 7 critical terms per 1,000 edits. Through 2024 the rate was about 16. In 2026 it was 5 to 6. This describes data to late 2026, not a forecast.</p><a class="more" href="#when" aria-label="See the chart: When it happened">See the chart ↓</a></article>
-      <article class="card"><div class="unit">5</div><p class="hl">Established editors made most changes.</p><p class="cap">Accounts with under 500 edits made 9.1% of topic edits during the war, against 17.2% in comparison articles. Accounts that were later blocked made 13.7% of the insertions, against a baseline share of 12.3%. That is no excess.</p><a class="more" href="#spread" aria-label="See the chart: How it spread, Established editors panel">See the chart ↓</a></article>
-    </div>
-    <p class="cap cards-hint">Swipe for more →</p>
-    <a class="zi-jump" href="#zionism">One article up close: Zionism ↓</a>
-  </div>
-
-  <div class="short-b">
-    <h3>Changes in both directions</h3>
-    <p class="cap">The Nakba article.</p>
-    <div class="news-q">
-      <blockquote><span class="w"><i style="background:var(--muted)"></i>2021</span><span class="s">"The Nakba ... was the destruction of Palestinian society and homeland in 1948 ..."</span></blockquote>
-      <blockquote><span class="w"><i style="background:var(--ink-2)"></i>2026</span><span class="s">"The Nakba ... is the ethnic cleansing of Palestinian Arabs by Zionists ..."</span></blockquote>
-    </div>
-    <p class="cap">The 2021 version also took a position. Neither is "neutral".</p>
-    <p class="cap">In the other direction:</p>
-    <ul class="short-row">
-      <li>Antisemitism appears in 54 topic opening paragraphs, up from 37.</li>
-      <li>61 critical terms left topic opening paragraphs, against 223 that entered. The 1948 expulsion article dropped "by Zionist militias".</li>
-      <li>The share of terms attributed to a source ("according to") rose from 21% to 25%. In comparison articles it stayed flat at 17%. A few prominent opening paragraphs later dropped the attribution.</li>
-    </ul>
-  </div>
-
-  <div class="short-more">
-    <details class="stats"><summary>Methods in one paragraph</summary><div class="in">
-      <p>We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,320 articles, across their revision histories. Each result is the change in topic articles minus the change in comparison articles. That subtraction removes ordinary editing trends. We computed two ranges for each result: one by resampling articles, one by resampling WikiProjects. Where the two disagree, we call the result suggestive. Half the articles were held back until the end. The main result replicated there: +3.6 percentage points, with a range of 1.7 to 5.6. Measures that failed precision checks, including one on 1948 departures, were withdrawn.</p>
-    </div></details>
-    <details class="stats"><summary>Limitations and what this cannot tell us</summary><div class="in"><ul>
-      <li><b>Accuracy.</b> Word counts measure emphasis, not correctness.</li>
-      <li><b>Intent and coordination.</b> We see what changed, not why. We cannot see coordination that happened off Wikipedia.</li>
-      <li><b>The average.</b> A test fixed in advance, run on a smaller panel, found no clear average rise. It was too weak to detect concentrated change.</li>
-      <li><b>Readers.</b> We know what text was live, not what readers took from it.</li>
-      <li><b>Languages.</b> English and Portuguese moved. Nine other languages showed no clear change.</li>
-    </ul></div></details>
-    <details class="stats"><summary>What would change these conclusions</summary><div class="in"><ul>
-      <li>A renewed rise in the quarterly insertion rate.</li>
-      <li>A similar rise in a random sample of all Wikipedia articles, a check we have not yet run. That would make this site-wide drift.</li>
-      <li>Frequent false matches, such as "expulsion" in Jewish-history articles.</li>
-      <li>A much lower reading share once the few largest pages are removed.</li>
-    </ul></div></details>
-    <details class="stats"><summary>Glossary</summary><div class="in"><ul>
-      <li><b>Opening paragraph:</b> the summary at the top of an article.</li>
-      <li><b>Comparison articles:</b> other countries, conflicts and religions, measured the same way.</li>
-      <li><b>Jewish-history vocabulary:</b> homeland, indigenous, antisemitism, Land of Israel. We counted these too.</li>
-      <li><b>Own voice vs attributed:</b> "it is genocide" versus "X states it is genocide".</li>
-    </ul></div></details>
-  </div>
-</section>
+<header class="hero">
+  <h1>What changed in English Wikipedia’s articles on Israel, Palestine, Zionism and Judaism, 2021 to 2026</h1>
+  <p class="deck" id="deck">We followed every edit to 10,320 articles for almost six years: 4,642 about Israel, Palestine, Zionism and Judaism, and 5,678 about other countries, conflicts and religions, measured the same way. This is what moved, where, when, and by whose hand, starting with one sentence.</p>
+</header>
 
 <section class="sec zi" id="zionism" aria-labelledby="ziH">
   <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>One article up close</div>
-    <h2 id="ziH">Zionism: the opening paragraph, 2021 and now</h2>
-    <p class="deck">Zionism is one of the most-read topic pages. Below is its opening paragraph in January 2021 and today. Then comes every change to its first sentence in between.</p>
+    <div class="eyebrow"><span class="layer">CONTENT</span>One sentence, every edit</div>
+    <h2 id="ziH">A Jewish state became “a Jewish homeland through colonization”. It took 292 edits.</h2>
+    <p class="deck">In January 2021 English Wikipedia defined Zionism as a movement for “the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel”. Today it is “an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine”. Between those two sentences lie 292 changes to the first sentence, 108 of them later undone. “Colonial” or “colonization” first went in on 5 June 2024. It went in and out dozens of times over two years before it stayed, on 27 August 2026.</p>
+    <p class="deck">The chips below are the article’s own words, removed or added. Read them with the two paragraphs. Then step through the timeline. Each tick is an edit to the first sentence. The grey bars behind it are all edits to the article, week by week. Watch what happens after October 2023. The sentence did not settle until almost three years later.</p>
   </header>
   <div class="zi-sum" id="ziSum"></div>
   <div class="wow-grid" id="ziPair"></div>
@@ -908,72 +853,48 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="cap" id="ziNote"></p>
 </section>
 
-<header class="hero">
-  <h1>Did Wikipedia’s articles on Jews, Israel and Zionism drift toward an <em>anti-colonial framing</em>?</h1>
-  <p class="deck" id="deck">We read every change made to hundreds of English Wikipedia articles over almost six years. We compared articles about Israel, Jews and Zionism with articles about other countries, conflicts and religions.</p>
-  <figure class="stream" style="margin:0" aria-label="Every edit to every article in the study, by week">
-    <canvas id="hero" role="img" aria-label="Each row is an article; each mark is an edit, placed in its week. A red line marks 7 October 2023."></canvas>
-    <div id="heroLabs"></div>
-    <figcaption class="stream-key">
-      <span class="key"><i style="background:var(--topic)"></i>teal: an edit to an Israel or Jewish-topic article</span>
-      <span class="key"><i style="background:var(--comp)"></i>grey-violet: an edit to another article</span>
-      <span class="key"><i style="background:var(--del-bd)"></i>amber: an edit that was later undone</span>
-      <span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>red line: 7 October 2023</span>
-      <span id="heroNote"></span>
-    </figcaption>
-  </figure>
-</header>
-
 <section class="breathe" id="breathe" aria-labelledby="brH">
   <div class="eyebrow"><span class="layer">CONTENT</span>One sentence, every version</div>
-  <h2 id="brH" class="br-h">How Wikipedia defines <span id="brTitle">Zionism</span></h2>
+  <h2 id="brH" class="br-h">The same sentence, any day you choose</h2>
   <blockquote class="br-s" id="brS" aria-live="polite"></blockquote>
   <p class="br-meta" id="brMeta"></p>
   <div class="br-strip"><div id="brSvg"></div><input type="range" id="brRange" aria-label="Move through time: the first sentence as it read on that day"><span class="br-head" id="brHead"></span></div>
-  <p class="cap br-hint">Drag along the strip to see the sentence as it stood on any day. Each tick is one change.</p>
+  <p class="cap br-hint">Drag along the strip to read the first sentence as it stood on that day. Amber, struck through, is what 2021 had and today does not; blue is what is new.</p>
   <div class="br-key" id="brKey"></div>
   <div class="br-cmp" id="brCmp" hidden></div>
   <button class="inlab" type="button" id="brLab" data-intent='{"lab":"flip","title":"Zionism"}'>Explore every version in the data lab →</button>
 </section>
 
 <section class="sixty" id="sixty" aria-labelledby="sixtyH">
-  <div class="eyebrow">The 60-second version</div>
-  <h2 id="sixtyH">What we found, in short</h2>
+  <div class="eyebrow">Key findings</div>
+  <h2 id="sixtyH">Five things the data show, and one it does not</h2>
   <div class="cards" id="cards"></div>
   <p class="cap cards-hint">Swipe for more →</p>
 </section>
 
-<section class="canbox" aria-label="What this study can and can't tell you">
-  <div class="yes"><h3>What this study can tell you</h3><ul>
-    <li>Whether critical vocabulary (genocide, apartheid, colonial…) became more common in these articles, and whether Jewish-history vocabulary (homeland, indigenous, antisemitism…) did too.</li>
-    <li>Whether that change was bigger than in articles about other countries and conflicts.</li>
-    <li>When the wording changed, and in which sentences.</li></ul></div>
-  <div class="no"><h3>What it can’t tell you</h3><ul>
-    <li>It measures how wording changed. It does not check whether the wording is true.</li>
-    <li>It can’t tell who is right about the conflict.</li>
-    <li>Patterns in who edits, and when, are not proof that people worked together.</li></ul></div>
-</section>
-<div class="layers" aria-label="Three ways to read the record">
-  <div><span class="layer">CONTENT</span><p><b>What the record says.</b> Which words the articles use, and how the opening definitions changed.</p></div>
-  <div><span class="layer process">PROCESS</span><p><b>How the change happened.</b> Was it gradual and made by many hands, or fast and made by a few?</p></div>
-  <div><span class="layer epistemics">SOURCES</span><p><b>How claims are backed up.</b> Which sources are cited, and whether critical vocabulary is stated in Wikipedia's own voice or attributed to someone.</p></div>
+<div class="band" id="andyet">
+  <div class="eyebrow">The pattern <span class="xchip">Full crawl · 10,320 articles</span></div>
+  <h2>Zionism is not alone: a few hundred pages, and the ones people read</h2>
+  <p class="deck">Most articles did not change. The opening paragraphs of a few hundred widely read Israel and Palestine articles did. We collected every English Wikipedia article in the topic, 4,642 of them, and 5,678 comparison articles on other countries, conflicts and religions. 85.1% of topic articles ended the period with exactly the same count of critical vocabulary as they started. Articles on Judaism moved no more than comparison articles (the difference is −0.1 percentage points, a range of −2.3 to +2.3). The change sits in the Israel and Palestine articles, which are 61% of the topic and supplied 84% of the added terms. Inside them it is steep: the top 40 articles, 1% of the topic, supplied 38% of all new terms. More topic articles than comparison articles gained critical vocabulary after October 2023, by 3.6 percentage points. That held on the half of the data we had sealed until the end.</p>
+  <p class="cap short-def"><i>Critical vocabulary:</i> words from the legal and historical charges made against Israel, such as genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion. We counted Jewish-history vocabulary (homeland, indigenous, antisemitism) the same way.</p>
 </div>
 
-<div class="ledeband">
-  <p class="lede" id="lede">The page is waiting for data.</p>
-  <div class="facts" id="facts"></div>
-</div>
-
-<section class="sec" id="findings-sec">
-  <header><div class="eyebrow">Findings</div></header>
-  <div class="findings col" id="findingsBody"><!--FINDINGS--></div>
-  <button class="btn sm" type="button" id="findingsMore" hidden style="justify-self:start">Read all the findings ↓</button>
+<section class="sec" id="reach" aria-labelledby="reachH" style="margin-top:56px">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>Few pages, many readers</div>
+    <h2 id="reachH">The changed pages are 3.9% of topic articles and 15% of topic reading</h2>
+    <p class="deck">The opening paragraph is what readers, search snippets and AI assistants see first. Each pair of bars is one group: first all its articles, then all its reading over the last 12 months. The dark part is the pages whose opening paragraph gained critical vocabulary since July 2023. Topic: 3.9% of articles, 15% of reading. Comparison: 1.5% and 5%. The five most-read gainers are Benjamin Netanyahu (7.0M views), Israel (4.6M), Palestine (2.4M), Zionism (1.8M) and Hamas (1.3M).</p>
+  </header>
+  <figure class="fig" style="margin:0"><div id="reachFig"></div></figure>
+  <p class="means" id="mReach"></p>
 </section>
 
 <section class="sec" id="key" aria-labelledby="keyH">
   <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>The most important chart</div>
-    <h2 id="keyH">On average, did critical vocabulary rise faster than in comparison articles?</h2>
+    <div class="eyebrow"><span class="layer">CONTENT</span>Q1</div>
+    <h2 id="keyH">Is the whole topic drifting, or a few pages?</h2>
+    <p class="deck">A few pages. The average article did not move, and the test we wrote down before collecting data says so.</p>
+    <p class="deck">Across 332 topic and 90 comparison articles followed every quarter, the extra change in critical vocabulary in the full text was −0.30 per 10,000 words, with a range of −2.7 to +1.7. That is why this report counts readers and pages, not averages. A change in a few hundred opening paragraphs is invisible in an average over many articles.</p>
     <p class="deck">Scroll to build the chart one layer at a time. Each line shows how often critical vocabulary appears, checked every three months. The words are genocide, apartheid, ethnic cleansing, occupation, colonial, and Nakba/expulsion. Higher means the words appear more often in the same amount of text.</p>
   </header>
   <div class="scrolly" id="scK">
@@ -987,43 +908,37 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="means" id="mKey"></p>
 </section>
 
-<section class="sec chance-s" id="chance" aria-label="Could it be chance?">
-  <div class="eyebrow"><span class="layer epistemics">SOURCES</span>Could it be chance?</div>
-  <p class="chsum" id="chSum"></p>
-  <button class="inlab" type="button" data-intent='{"lab":"shuffle","test":"P2"}'>Shuffle it yourself →</button>
-</section>
-
-<section class="sec" id="board" aria-labelledby="boardH">
+<section class="sec" id="news" aria-labelledby="newsH">
   <header>
-    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>Robustness scoreboard</div>
-    <h2 id="boardH">Does the result survive other reasonable choices?</h2>
-    <p class="deck">Before seeing any data, we wrote down six other ways to run each main test. We also wrote down a rule for what would count as support. Each tile is one of those ways. The dot is the estimate and the line is its range. Select a tile for the details.</p>
+    <div class="eyebrow"><span class="layer">CONTENT</span>Q2</div>
+    <h2 id="newsH">Is it just the war?</h2>
+    <p class="deck">No. Set aside every opening-paragraph sentence about events since 2022, and 89% of the extra change is still there.</p>
+    <p class="deck">After July 2023 the extra change in critical vocabulary in opening paragraphs, topic minus comparison, was +2.22 per 10,000 words. Without the sentences about recent events it was +1.98. Before the war the same comparison showed no difference. Other wars get their own vocabulary waves, but theirs stayed inside the war articles. Tigray’s critical hits went 0, 1, 8, 12, 19, 21 over six quarters and then stayed flat, and did not spread to Ethiopian history or place pages. Here the change left the war articles for history, places and people: place articles gaining critical terms went from 1.6% a year before the war to 4.6% after.</p>
   </header>
-  <div id="boardWrap"></div>
-</section>
-
-<div class="band" id="andyet">
-  <div class="eyebrow">The twist <span class="xchip">Full crawl · 10,320 articles</span></div>
-  <h2>And yet: a small set of heavily read pages changed</h2>
-  <p class="deck">The average article barely moved. The test we fixed in advance found no clear rise. So we collected every article in the topic: 4,642 topic articles and 5,678 comparison articles. Then we asked a different question. Not how much the average page changed, but which pages changed, when, and how. More topic articles than comparison articles gained critical vocabulary. That finding replicated on the sealed half of the data, the half we had set aside and only checked at the end.</p>
-</div>
-
-<section class="sec" id="reach" aria-labelledby="reachH" style="margin-top:56px">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>Few pages, many readers</div>
-    <h2 id="reachH">The changed articles are 4% of topic articles but 15% of topic reading.</h2>
-    <p class="deck">The opening paragraph is what readers, search engines and AI assistants see first. Each pair of bars is one group. The first bar is all its articles. The second bar is all its reading over the last 12 months. The dark part is the articles whose opening paragraph gained critical vocabulary between July 2023 and now.</p>
-  </header>
-  <figure class="fig" style="margin:0"><div id="reachFig"></div></figure>
-  <p class="means" id="mReach"></p>
+  <figure class="fig" style="margin:0"><div id="newsFig"></div></figure>
+  <div class="news-q" id="newsQ"></div>
+  <p class="means" id="mNews"></p>
 </section>
 
 <section class="sec" id="when" aria-labelledby="whenH">
   <header>
-    <div class="eyebrow"><span class="layer process">PROCESS</span>When it happened</div>
-    <h2 id="whenH">The rise came after the battles and had passed by late 2026</h2>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>Q3</div>
+    <h2 id="whenH">When did it happen, and what set it off?</h2>
+    <p class="deck">One wave. New critical terms per 1,000 topic edits ran at about 7 before the war, 13.5 in late 2023, and 16.0 and 15.9 through 2024. Then the rate fell to 10.8 and 8.2 in 2025, and to 5.1 and 5.9 in 2026, at or below the pre-war rate.</p>
+    <p class="deck">Military escalations brought the editors. In the three weeks after each of 24 escalations, topic edits rose 17% against the six weeks before, far more than after 2,000 random dates. After the 25 legal and institutional events (ICJ orders, ICC, UN votes, rights reports, recognitions), editing was 0.94 times usual and new critical vocabulary showed no rise at all. After the ICJ provisional measures order of 26 January 2024, topic edits went from 482 to 466 a week. The fight cooled, with a few last decisions: Zionism’s first sentence settled on 27 August 2026 and Israel’s on 4 September 2026.</p>
     <p class="deck">Every week from 2021 to 2026. The top panel is editing. The bottom panel is new critical vocabulary going into topic opening paragraphs. Each dot in the middle is a real-world event, placed on a row by its type. Tap a dot to see what happened.</p>
   </header>
+  <figure class="stream" style="margin:0" aria-label="Every edit to every article in the study, by week">
+    <canvas id="hero" role="img" aria-label="Each row is an article; each mark is an edit, placed in its week. A red line marks 7 October 2023."></canvas>
+    <div id="heroLabs"></div>
+    <figcaption class="stream-key">
+      <span class="key"><i style="background:var(--topic)"></i>teal: an edit to an Israel or Jewish-topic article</span>
+      <span class="key"><i style="background:var(--comp)"></i>grey-violet: an edit to another article</span>
+      <span class="key"><i style="background:var(--del-bd)"></i>amber: an edit that was later undone</span>
+      <span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>red line: 7 October 2023</span>
+      <span id="heroNote"></span>
+    </figcaption>
+  </figure>
   <figure class="fig" style="margin:0">
     <div class="fig-h"><span class="fig-t">Edits, events and new critical terms, week by week</span><span class="cap" id="whenSel" aria-live="polite">Tap or hover an event dot</span></div>
     <div class="chart" id="whenChart" tabindex="0" aria-label="Weekly timeline with events. Use the left and right arrow keys to step through events."></div>
@@ -1036,44 +951,224 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="means" id="mWhen"><b>Battles drove editing. Court rulings and reports did not.</b> We looked at the three weeks after each of the 24 military escalations. Topic edits rose 17% compared with the six weeks before. That is far more than the rise after 2,000 random dates. We did the same for the 25 legal and institutional events: ICJ orders, ICC, UN votes, rights reports, recognitions. After those, editing was slightly below usual. New critical vocabulary showed no rise at all.</p>
 </section>
 
-<section class="sec" id="news" aria-labelledby="newsH">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>Setting aside sentences about recent events</div>
-    <h2 id="newsH">Most of the extra change is about older history, not recent events</h2>
-    <p class="deck">A war produces new sentences about the war. So we set aside every opening-paragraph sentence about recent events. That means any sentence naming a year from 2022 on, a recent event, or words that mark recent time. Then we measured the extra change again. Most of it was still there.</p>
-  </header>
-  <figure class="fig" style="margin:0"><div id="newsFig"></div></figure>
-  <div class="news-q" id="newsQ"></div>
-  <p class="means" id="mNews"></p>
-</section>
-
 <section class="sec" id="spread" aria-labelledby="spreadH">
   <header>
-    <div class="eyebrow"><span class="layer process">PROCESS</span>How it spread</div>
-    <h2 id="spreadH">Long-standing editors, more formal discussion, and new categories and links</h2>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>Q4</div>
+    <h2 id="spreadH">Who wrote it?</h2>
+    <p class="deck">Long-standing accounts. Since the war began, 9.1% of topic edits came from accounts with under 500 edits, against 17.2% on comparison pages. Accounts later blocked made 13.7% of the critical-term insertions, against a 12.3% share of all editing on the same pages. That is no excess.</p>
+    <p class="deck">The same pages gained formal process and structure. Extended-confirmed protection went from 10.9% of topic pages in 2021 to 31.1% now (comparison: 0.7% to 5.0%). Formal discussions rose from 0.29 to 0.79 per 100 articles a year. They sit on 51 pages, and Gaza genocide (21), October 7 attacks (13), Zionism (13) and Hamas (8) hold nearly half of them. Framing categories were added to 7.2% of topic articles, against 2.2% of comparison articles. Pages already linking to a core concept such as the Nakba picked up its vocabulary 5.6 points more often at the same editing volume. Most of the uncontested change landed on quiet pages: among busy topic articles, those with few reverts gained critical terms 28.5% of the time, against 13% for contested ones. We found no pair of editors who repeatedly edited within 30 minutes of each other on five or more articles.</p>
     <p class="deck">Six ways the change shows up beyond the words. Each panel compares all topic articles with all comparison articles. Teal is topic, grey-violet is comparison. Every bar starts at zero.</p>
   </header>
   <div class="spread" id="spreadGrid"></div>
-  <p class="means" id="mSpread"><b>What this means:</b> long-standing accounts made the edits, not a wave of new accounts. Accounts later blocked did no more than usual. That rules out a flood of newcomers. It says nothing about intent or coordination outside Wikipedia. Established editors added text, often after formal discussion. The framing also reached categories and links, which drive navigation and reuse. Each of these is established on its own. What we have not done is separate them as causes. Protection marks the core pages; it is not shown to cause change.</p>
+  <p class="means" id="mSpread"><b>What this means:</b> each of these is established on its own; we have not separated them as causes. Protection marks the core pages; it is not shown to cause change. None of this can see intent or coordination off Wikipedia.</p>
+  <div class="fig-h" style="margin-top:20px"><span class="fig-t">The accounts behind the key changes</span><span class="cap">Accounts are anonymous in our data. No account is named or linked here.</span></div>
+  <ul class="short-row">
+    <li><b>Many hands, no single author.</b> In the Zionism first sentence, 14 different accounts made the 16 traced changes that carried each quarter’s new wording. No account made more than two.</li>
+    <li><b>Veterans, new to the page.</b> War-time editors of the key articles had a median account age of about 9 years. Only 7% to 13% of them had edited the same page before the war.</li>
+    <li><b>Regulars, not tag teams.</b> 9 accounts changed the first sentence of 3 or more key articles. No pair of accounts repeatedly edited within 30 minutes of each other across five or more articles.</li>
+  </ul>
+  <div class="spread" id="whoGrid"></div>
+  <p class="means"><b>What this means:</b> the key changes were made by many experienced accounts, not by a few. On a few key pages, a small number of very active accounts did much of the editing. That is common on Wikipedia, where a few regulars often look after a page. It also fits a topic where only experienced accounts may edit. Our data cannot tell who any account belongs to, what anyone intended, or whether anyone coordinated off Wikipedia.</p>
+  <div class="short-more">
+    <details class="stats"><summary>What others have reported <span>public-record context, with sources</span></summary><div class="in"><ul>
+      <li>Only accounts at least 30 days old with at least 500 edits may edit the topic, under Wikipedia’s extended-confirmed restriction, as reported by Wikipedia’s own <a href="https://wiki.riteme.site/wiki/Wikipedia:PIA" target="_blank" rel="noopener">arbitration index for the topic</a> (a mirror copy).</li>
+      <li>In 2024 and 2025 Wikipedia’s Arbitration Committee heard a case on Palestine-Israel articles and banned several editors from the topic, as reported by <a href="https://signpost.news/2025-02-07/Arbitration_report" target="_blank" rel="noopener">The Signpost</a> and <a href="https://forward.com/news/691180/edit-wars-over-israel-spur-rare-ban-of-8-wikipedia-editors-from-both-sides" target="_blank" rel="noopener">the Forward</a>.</li>
+      <li>In March 2025 the ADL published <a href="https://www.adl.org/resources/editing-hate-how-anti-israel-and-anti-jewish-bias-undermines-wikipedias-neutrality" target="_blank" rel="noopener">a report</a> alleging coordinated editing. The Wikimedia Foundation disputed its conclusions, as reported by <a href="https://www.algemeiner.com/2025/03/18/malicious-wikipedia-editors-manipulated-sites-coverage-israel-adl-report-alleges/" target="_blank" rel="noopener">the Algemeiner</a>.</li>
+      <li>In June 2024 Wikipedia editors rated the ADL generally unreliable on the Israeli–Palestinian conflict, as reported by <a href="https://www.thewikipedian.net/p/anti-defamation-league-reliable-sources" target="_blank" rel="noopener">The Wikipedian</a> and <a href="https://www.timesofisrael.com/wikipedia-rebuffs-jewish-groups-call-to-override-editors-move-against-adl/" target="_blank" rel="noopener">the Times of Israel</a>.</li>
+      <li>Older pro-Israel editing drives are documented, among them CAMERA’s in 2008, as reported by <a href="https://www.jta.org/2008/05/14/ny/latest-front-in-mideast-wars-wikipedia" target="_blank" rel="noopener">JTA</a> and <a href="https://signpost.news/2008-05-19/Wikilobbying" target="_blank" rel="noopener">The Signpost</a>.</li>
+    </ul><p>None of these reports maps onto the specific edits we measured.</p></div></details>
+  </div>
 </section>
 
-<aside class="dropped" id="dropped" aria-labelledby="dropH">
-  <h3 id="dropH">What we checked and dropped</h3>
-  <p class="cap">Some earlier results did not survive the full crawl or a precision check. We list them so you can weigh the rest.</p>
-  <ul>
-    <li><span class="tag x">Withdrawn</span><span>Study 2’s “1948: forced out or fled” measure. It scored 53% on a hand-coded precision check, under our 60% gate. The indigeneity and “terror or massacre by perpetrator” measures failed too. None is used here.</span></li>
-    <li><span class="tag x">Withdrawn</span><span>“Blocked accounts made more of the critical-term edits.” At full scale, now-blocked accounts made 13.7% of war-window insertions, against 12.3% of all edits on the same pages: no excess.</span></li>
-    <li><span class="tag w">Weakened</span><span>“Once in, the words stick.” True only on the key battleground leads. Across all topic articles, insertions lasted 30 days 47.3% of the time, against 42.9% in comparison articles.</span></li>
-    <li><span class="tag w">Weakened</span><span>“Four pages hold 68% of the fighting.” True inside the 25 key articles. Across all 4,642 topic articles the top 4 hold 9%.</span></li>
-    <li><span class="tag w">Weakened</span><span>“Fewer newcomers than before the war.” The drop is small (2.2 points) and disappears when we treat each Wikipedia subject group as one unit.</span></li>
-    <li><span class="tag u">Overturned</span><span>The pilot said categories showed no reframing and that protection did not predict change. At scale, framing categories did rise; protection marks the core pages but is not shown to cause change.</span></li>
+<section class="sec" id="palestine" aria-labelledby="palH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Q5</div>
+    <h2 id="palH">Did the Palestinian-history articles change too, and how?</h2>
+    <p class="deck">Yes, and this is where the biggest change in the story is. 1948 is now told as ethnic cleansing in Wikipedia’s own voice, the land is named Palestine, and the change reached articles on places. But it did not run through every Palestinian article, and some of it was pulled back.</p>
+    <p class="deck">The Nakba article changed most; both versions of its first sentence are quoted below. The 2021 version also took a position. “Ethnic cleansing” entered Wikipedia’s voice on 24 April 2024. The perpetrator was named in December 2025 (“by Israel”), then changed to “by Zionists” in July 2026, and “was” became “is”. The article also gained an infobox whose type field begins “Genocide, ethnic cleansing, forced displacement, dispossession, mass killing, settler colonialism”.</p>
+    <p class="deck">The re-telling spread along links and categories. Topic articles linking to Nakba/1948 went from 114 to 127 to 223 across the three snapshots. The categories most often added to topic pages since July 2023 were “1948 Palestinian expulsion and flight” (16), “Zionist political violence” (11) and “Israeli massacres of Palestinians” (10). Of the 60 place articles that gained critical vocabulary, 35 gained Nakba/expulsion wording. The Gaza Strip’s opening paragraph now says that, under Egyptian control after 1948, the territory “became a refuge for Palestinians who fled or were expelled by Zionist forces in the Nakba”. The West Bank is now “the larger of the two Palestinian territories (the other being the Gaza Strip) that make up Palestine”.</p>
+    <p class="deck">It was not a sweep. The opening paragraphs of Palestinians, History of Palestine and Palestinian refugees moved by a counted term or two each. The 1948 expulsion article went the other way. In 2023 its first sentence said Palestinian Arabs “were expelled or fled from their homes by Zionist militias”. Since May 2025 it says they “were expelled or fled from their homes”, and names the paramilitaries in the next sentence.</p>
+    <p class="deck">For key articles we found the single <button class="gl" type="button" data-g="revision">revision</button> where the first sentence changed. Names are hidden. Each editor gets a letter. That shows whether one person or many made the changes. Letters restart for each article.</p>
+  </header>
+  <div class="news-q">
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba, 2021 and 2026 · The 2021 version also took a position.</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--muted)"></i>1948 Palestinian expulsion and flight, 2023 and 2025</span><span class="cap"><b>2023</b> “In 1948 more than 700,000 Palestinian Arabs ... were expelled or fled from their homes by Zionist militias, during the 1948 Palestine war.”</span><span class="s"><b style="font:600 11px var(--mono)">2025</b> “During the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.”</span></blockquote>
+  </div>
+  <p class="cap">Both articles describe the same year. One moved toward a stated charge; the other removed the agent from its first sentence.</p>
+  <div class="picks" id="trPicks"></div>
+  <div class="fig" id="trace"></div>
+  <p class="means" id="mTrace"></p>
+  <p class="cap">How 1948 departures are described, forced or fled, is not measured here; that measure failed its precision check and was withdrawn.</p>
+</section>
+
+<section class="sec" id="crosslang">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Q6 <span class="xchip">Exploratory · not pre-registered</span></div>
+    <h2>Did other languages follow?</h2>
+    <p class="deck">Mostly not. In opening paragraphs, English moved by +0.24 critical terms per 1,000 words against its comparison articles, and Portuguese by +0.27. The other nine languages averaged +0.06.</p>
+    <p class="deck">What crossed languages was the label for the current war. “Genocide” entered the Gaza war opening paragraph in most of the Wikipedias we checked. Spanish states it as fact; English, French and Dutch attribute it; Russian frames it as accusations. The re-telling of 1897 to 1948 mostly did not cross. Colonial framing was added in English, French, Italian, Dutch and Arabic, and not at all in German, Russian, Hebrew, Spanish or Polish. For Zionism itself, the English opening paragraph gained critical vocabulary, while German, French, Spanish, Russian, Hebrew and Polish stayed at zero and Arabic fell. This is a story about the English-language community as much as about events.</p>
+    <p class="deck">Each stripe is one language. Its first copy is on the left, its latest on the right.</p>
+  </header>
+  <div id="xlWrap"></div>
+</section>
+
+<section class="sec" id="sourcing">
+  <header>
+    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>Q7</div>
+    <h2>Did new sources drive it?</h2>
+    <p class="deck">No. The words changed far more than the sources did.</p>
+    <p class="deck">In opening-paragraph citations, scholarly sources went from 43.3% to 48.0% in topic articles and from 49.5% to 55.2% in comparison articles, a Wikipedia-wide trend. Arab and Palestinian press went from 0.7% to 1.1%, pro-Israel advocacy from 1.0% to 0.8%, and Israeli press from 6.4% to 5.8%. Most new critical terms arrived attributed. The share with a source named rose from 21% to 25% in topic articles, while comparison articles stayed flat at 17%. The exception is a few flagship pages where the attribution was later removed. The Gaza genocide first sentence went from “Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians” to “The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war”, in eight one-way steps over 21 months. That is not unique to Gaza: 9 of 11 atrocity articles we checked now state “genocide” in Wikipedia’s voice, up from 4 in 2023.</p>
+    <p class="deck">A critical term can be stated in Wikipedia's own voice (“the genocide”) or attributed to someone (“accused of genocide”). Wikipedia also judges which sources are reliable, sometimes in a formal <button class="gl" type="button" data-g="rfc">RfC</button>. Here we look at both.</p>
+  </header>
+  <div id="exploreWrap"></div>
+</section>
+
+<section class="sec" id="against" aria-labelledby="agH">
+  <header>
+    <div class="eyebrow">Against the trend</div>
+    <h2 id="agH">Not every edit went the same way</h2>
+    <p class="deck">Lopsided, not one-sided. These are the moves that ran against the main trend, counted on the same pages.</p>
+  </header>
+  <ul class="short-row">
+    <li>Antisemitism is mentioned in 54 topic opening paragraphs, up from 37, including the Israel article.</li>
+    <li>61 critical terms left topic opening paragraphs, against 223 that entered (comparison: 73 out, 125 in).</li>
+    <li>The share of critical terms attributed to a source rose from 21% to 25% in topic articles; comparison stayed at 17%.</li>
   </ul>
-</aside>
+  <div class="news-q">
+    <blockquote><span class="w"><i style="background:var(--muted)"></i>Israeli settlement · 2021</span><span class="s">“... built in violation of international law on lands occupied by Israel ...”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--ink-2)"></i>Israeli settlement · 2026</span><span class="s">“... The international community considers Israeli settlements to be illegal under international law, but Israel disputes this.”</span></blockquote>
+  </div>
+  <ul class="short-row">
+    <li><i>Zionism as settler colonialism</i> was pulled back from “its founders and early leaders, as well as several scholars” to “some scholars”, with the edit summary “more NPOV”.</li>
+    <li>Terrorism vocabulary fell in topic opening paragraphs by 24%. Hamas lost “militant” and “fundamentalist” from its first sentence; the terrorist designations stay in the opening paragraph, lower down.</li>
+  </ul>
+</section>
+
+<section class="sec" id="board" aria-labelledby="boardH">
+  <header>
+    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>How far to trust this</div>
+    <h2 id="boardH">The rule we wrote down first, the half we sealed, and what we dropped</h2>
+    <p class="deck">Before seeing the data we wrote down three main tests, six other ways to run each, and a rule for what would count as support. By that rule the hypothesis is not supported. None of the three average tests stands out from chance: for the full-text test, an extra change at least as large as the real one turned up in 4,228 of 5,000 label shuffles. Everything above this line comes from a second stage, on the full crawl, which was not pre-registered. Its one main result, that more topic articles than comparison articles gained critical vocabulary after October 2023, replicated on the half of the articles we had set aside and only checked at the end (+3.6 percentage points, range 1.7 to 5.6). Where our two kinds of range disagree, we have called the result suggestive. Below are the scoreboard, the checks against edits reported in the news, the earlier results we withdrew, and what this study cannot tell you.</p>
+    <p class="deck">Each tile is one of those ways. The dot is the estimate and the line is its range. Select a tile for the details.</p>
+  </header>
+  <div id="boardWrap"></div>
+  <aside class="dropped" id="dropped" aria-labelledby="dropH">
+    <h3 id="dropH">What we checked and dropped</h3>
+    <p class="cap">Some earlier results did not survive the full crawl or a precision check. We list them so you can weigh the rest.</p>
+    <ul>
+      <li><span class="tag x">Withdrawn</span><span>Study 2’s “1948: forced out or fled” measure. It scored 53% on a hand-coded precision check, under our 60% gate. The indigeneity and “terror or massacre by perpetrator” measures failed too. None is used here.</span></li>
+      <li><span class="tag x">Withdrawn</span><span>“Blocked accounts made more of the critical-term edits.” At full scale, now-blocked accounts made 13.7% of war-window insertions, against 12.3% of all edits on the same pages: no excess.</span></li>
+      <li><span class="tag w">Weakened</span><span>“Once in, the words stick.” True only on the opening paragraphs of the key battleground articles. Across all topic articles, insertions lasted 30 days 47.3% of the time, against 42.9% in comparison articles.</span></li>
+      <li><span class="tag w">Weakened</span><span>“Four pages hold 68% of the fighting.” True inside the 25 key articles. Across all 4,642 topic articles the top 4 hold 9%.</span></li>
+      <li><span class="tag w">Weakened</span><span>“Fewer newcomers than before the war.” The drop is small (2.2 points) and disappears when we treat each Wikipedia subject group as one unit.</span></li>
+      <li><span class="tag u">Overturned</span><span>The pilot said categories showed no reframing and that protection did not predict change. At scale, framing categories did rise; protection marks the core pages but is not shown to cause change.</span></li>
+    </ul>
+  </aside>
+  <button class="inlab" type="button" data-intent='{"lab":"shuffle","test":"P2"}'>Shuffle it yourself →</button>
+</section>
+
+<section class="sec" id="checks">
+  <header>
+    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>Checking the counter</div>
+    <h2>Does the counter see edits we know happened?</h2>
+    <p class="deck">News reports described some specific, dated edits. If our counter works, it should find the wording missing before the date and present after it. A second check used AI readers. They judged a sample of changes with the article’s names masked.</p>
+  </header>
+  <p class="means" id="mValid"></p>
+  <div id="blind"></div>
+  <details class="stats"><summary>Show the statistics <span>the dated validation targets</span></summary><div class="in"><div class="tbx cards-t" id="valid" style="--cols:2"></div></div></details>
+</section>
+
+<section class="sec" id="limits" aria-label="What this can and cannot tell you">
+  <header><div class="eyebrow">What this can and cannot tell you</div></header>
+  <section class="canbox" aria-label="What this study can and can't tell you">
+    <div class="yes"><h3>What this study can tell you</h3><ul>
+      <li>Whether critical vocabulary (genocide, apartheid, colonial…) became more common in these articles, and whether Jewish-history vocabulary (homeland, indigenous, antisemitism…) did too.</li>
+      <li>Whether that change was bigger than in articles about other countries and conflicts.</li>
+      <li>When the wording changed, and in which sentences.</li></ul></div>
+    <div class="no"><h3>What it can’t tell you</h3><ul>
+      <li>It measures how wording changed. It does not check whether the wording is true.</li>
+      <li>It can’t tell who is right about the conflict.</li>
+      <li>Patterns in who edits, and when, are not proof that people worked together.</li></ul></div>
+  </section>
+  <div class="short-more">
+    <details class="stats"><summary>Methods in one paragraph</summary><div class="in">
+      <p>We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,320 articles, across their revision histories. Each result is the change in topic articles minus the change in comparison articles. That subtraction removes ordinary editing trends. We computed two ranges for each result: one by resampling articles, one by resampling WikiProjects. Where the two disagree, we call the result suggestive. Half the articles were held back until the end. The main result replicated there: +3.6 percentage points, with a range of 1.7 to 5.6. Measures that failed precision checks, including one on 1948 departures, were withdrawn.</p>
+    </div></details>
+    <details class="stats"><summary>Limitations and what this cannot tell us</summary><div class="in"><ul>
+      <li><b>Accuracy.</b> Word counts measure emphasis, not correctness.</li>
+      <li><b>Intent and coordination.</b> We see what changed, not why. We cannot see coordination that happened off Wikipedia.</li>
+      <li><b>The average.</b> A test fixed in advance, run on a smaller panel, found no clear average rise. It was too weak to detect concentrated change.</li>
+      <li><b>Readers.</b> We know what text was live, not what readers took from it.</li>
+      <li><b>Languages.</b> English and Portuguese moved. Nine other languages showed no clear change.</li>
+    </ul></div></details>
+    <details class="stats"><summary>What would change these conclusions</summary><div class="in"><ul>
+      <li>A renewed rise in the quarterly insertion rate.</li>
+      <li>A similar rise in a random sample of all Wikipedia articles, a check we have not yet run. That would make this site-wide drift.</li>
+      <li>Frequent false matches, such as "expulsion" in Jewish-history articles.</li>
+      <li>A much lower reading share once the few largest pages are removed.</li>
+    </ul></div></details>
+    <details class="stats"><summary>Glossary</summary><div class="in"><ul>
+      <li><b>Opening paragraph:</b> the summary at the top of an article.</li>
+      <li><b>Comparison articles:</b> other countries, conflicts and religions, measured the same way.</li>
+      <li><b>Jewish-history vocabulary:</b> homeland, indigenous, antisemitism, Land of Israel. We counted these too.</li>
+      <li><b>Own voice vs attributed:</b> "it is genocide" versus "X states it is genocide".</li>
+    </ul></div></details>
+  </div>
+  <div class="short-more"><!--FINDINGS--></div>
+</section>
+
+<section class="sec" id="method">
+  <header><div class="eyebrow">For researchers</div><h2>How this was measured</h2>
+  <p class="deck">The full method, the word lists and the limits. Open the sections you need.</p></header>
+  <details class="stats"><summary>Show the method <span>data, groups, text cleaning, the test, limits</span></summary><div class="in method">
+    <dl>
+      <dt>Data</dt><dd>Every revision since 1 January 2021, from the Wikipedia API. A full-text snapshot of each article on the first day of every quarter. Talk-page activity and monthly pageviews. Collection ran on GitHub Actions.</dd>
+      <dt>Groups</dt><dd id="mGroups">Topic articles are hand-picked plus a random sample from Zionism, antisemitism, conflict and Jewish-history categories. Comparison articles cover other nationalisms, states, conflicts, genocides and religions. Comparison articles closely tied to the conflict are reported but excluded from the tests.</dd>
+      <dt>Text</dt><dd>References, templates, files and back matter are stripped before counting. So citation titles do not add to the counts. The opening paragraph (the lead) is everything before the first section heading. Snapshots under 300 words are not measured. For the opening paragraph the cut-off is 40 words.</dd>
+      <dt>Test</dt><dd>Difference-in-differences on the balanced panel of articles that existed in January 2021. We take each article’s change in rate and average it by group. The estimate is topic minus comparison. A permutation test with 5,000 shuffles gives p. p is corrected with Benjamini–Hochberg within the primary and the secondary family. 2,000 bootstrap resamples give the 95% interval.</dd>
+      <dt>Limits</dt><dd>Counting words measures emphasis, not accuracy. “Genocide” can grow because a court case exists, not because of bias. Word lists miss paraphrase and sentence-level stance. Category-sampled articles vary in quality. Editors are reported only in aggregate. No claim is made about any editor’s intent.</dd>
+    </dl>
+  </div></details>
+  <details class="stats"><summary>Show the word lists <span>every pattern counted, with exclusions</span></summary><div class="in">
+    <p class="cap">Patterns are case-insensitive regular expressions. Exclusions (in amber) are subtracted.</p>
+    <div class="lex" id="lex"></div>
+  </div></details>
+</section>
+
+<div class="band" id="appendix">
+  <div class="eyebrow">Appendix</div>
+  <h2>The rest of the evidence: every word, every article, every check</h2>
+  <p class="deck">These sections hold the parts of the record that did not change, or that changed the same way in comparison articles. They are here so the main line can be checked.</p>
+</div>
+
+<section class="sec" id="test">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>The main test</div>
+    <h2>Every word group, compared with similar articles</h2>
+    <p class="deck">Each row is one group of words. The box shows the range we’re fairly sure about. The dot is our best estimate. A dot to the right means the topic articles gained these words faster than articles about other countries and conflicts. The three rows marked P1, P2 and P3 were chosen before we saw the data.</p>
+  </header>
+  <div class="controls">
+    <span class="seg" id="winSeg" role="group" aria-label="Time window"></span>
+    <span class="seg" id="partF" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
+  </div>
+  <div class="fig">
+    <div class="forest" id="forest"></div>
+    <div class="dir"><span>← other articles changed more</span><span>topic articles changed more →</span></div>
+    <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--inc)"></i>solid orange dot: topic articles changed more, and the range stays clear of zero</span><span class="key"><i style="border-radius:50%;background:var(--dec)"></i>solid purple dot: other articles changed more, clear of zero</span><span class="key"><i style="border-radius:50%;border:2px solid var(--ink-2)"></i>hollow dot: can’t tell from chance</span></div>
+  </div>
+  <p class="means" id="mTest"></p>
+  <details class="stats" id="testStats"><summary>Show the statistics <span>p-values, corrections, shuffles, group changes</span></summary><div class="in">
+    <div class="tbx" id="forestStats"></div>
+    <div class="fig-t">Where the real result lands among 5,000 shuffles of the labels</div>
+    <div id="chFig"></div>
+    <p class="cap col">The robustness checks are in the <a href="#board">scoreboard above</a>. A check holds when its estimate keeps the sign of the main result and is clearly different from zero. For R1, R2 and R7, that means p &lt; 0.05. For R4, it means a range that excludes zero. The median check (R5) has no p and no range. It only asks whether the sign stays the same. R3 holds when the post-war yearly extra change is bigger than every pre-war year. The <button class="gl" type="button" data-g="placebo">placebo</button> check (R6) is the reverse: it holds when ordinary geography and climate words show no difference.</p>
+  </div></details>
+</section>
 
 <section class="sec" id="vocab">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span>The words</div>
-    <h2>Each group of words, one at a time</h2>
+    <h2>Each group of words on its own</h2>
     <p class="deck">The scroll chart in the main test adds up seven groups of critical vocabulary. Here you can look at each group on its own. You can also look at words about Jewish history, like “homeland”, “indigenous” and “antisemitism”. The lines show the average for articles that already existed in January 2021.</p>
   </header>
   <figure class="fig" id="vocabFig" style="margin:0">
@@ -1110,52 +1205,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="cap col"><span id="hmExcl"></span>Both panels are the same height, so each row for the comparison articles is drawn taller. Select a row to open that article.</p>
 </section>
 
-<section class="sec" id="test">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>The main test</div>
-    <h2>Extra change compared with similar articles, word by word</h2>
-    <p class="deck">Each row is one group of words. The box shows the range we’re fairly sure about. The dot is our best estimate. A dot to the right means the topic articles gained these words faster than articles about other countries and conflicts. The three rows marked P1, P2 and P3 were chosen before we saw the data.</p>
-  </header>
-  <div class="controls">
-    <span class="seg" id="winSeg" role="group" aria-label="Time window"></span>
-    <span class="seg" id="partF" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span>
-  </div>
-  <div class="fig">
-    <div class="forest" id="forest"></div>
-    <div class="dir"><span>← other articles changed more</span><span>topic articles changed more →</span></div>
-    <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--inc)"></i>solid orange dot: topic articles changed more, and the range stays clear of zero</span><span class="key"><i style="border-radius:50%;background:var(--dec)"></i>solid purple dot: other articles changed more, clear of zero</span><span class="key"><i style="border-radius:50%;border:2px solid var(--ink-2)"></i>hollow dot: can’t tell from chance</span></div>
-  </div>
-  <p class="means" id="mTest"></p>
-  <details class="stats" id="testStats"><summary>Show the statistics <span>p-values, corrections, shuffles, group changes</span></summary><div class="in">
-    <div class="tbx" id="forestStats"></div>
-    <div class="fig-t">Where the real result lands among 5,000 shuffles of the labels</div>
-    <div id="chFig"></div>
-    <p class="cap col">The robustness checks are in the <a href="#board">scoreboard above</a>. A check holds when its estimate keeps the sign of the main result and is clearly different from zero. For R1, R2 and R7, that means p &lt; 0.05. For R4, it means a range that excludes zero. The median check (R5) has no p and no range. It only asks whether the sign stays the same. R3 holds when the post-war yearly extra change is bigger than every pre-war year. The <button class="gl" type="button" data-g="placebo">placebo</button> check (R6) is the reverse: it holds when ordinary geography and climate words show no difference.</p>
-  </div></details>
-</section>
-
-<div class="band" id="beyond">
-  <div class="eyebrow">Beyond the main test <span class="xchip">Exploratory · not pre-registered</span></div>
-  <h2>How the changes happened, and how they are sourced</h2>
-  <p class="deck">The sections below were not planned before the data came in. They describe patterns. They are not formal tests, so read them as leads to check, not conclusions.</p>
-</div>
-
-<section class="sec" id="exact" style="margin-top:64px">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Exact edits <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2>The exact edits that rewrote each definition</h2>
-    <p class="deck">For key articles we found the single <button class="gl" type="button" data-g="revision">revision</button> where the first sentence changed. Names are hidden. Each editor gets a letter. That shows whether one person or many made the changes. Letters restart for each article.</p>
-  </header>
-  <div class="picks" id="trPicks"></div>
-  <div class="fig" id="trace"></div>
-  <p class="means" id="mTrace"></p>
-</section>
-
 <section class="sec" id="ratchet" aria-labelledby="ratH">
   <header>
     <div class="eyebrow"><span class="layer process">PROCESS</span>The ratchet <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2 id="ratH">Once critical vocabulary goes in, does it stay?</h2>
-    <p class="deck">We followed every saved version of the opening paragraph of key articles. When someone <ins class="hl-ins">adds</ins> a loaded word, how long does it last? When someone <del class="hl-del">removes</del> one, how long does the removal last? If additions stick and removals are undone, the wording moves one way, like a ratchet. This section covers the key battleground articles only. The whole topic has 4,642 articles. Across those, 47.3% of added terms were still in place after 30 days. In comparison articles the figure was 42.9%. So the ratchet does not describe the topic as a whole.</p>
+    <h2 id="ratH">Do added words stay? The battleground pages only</h2>
+    <p class="deck">We followed every saved version of the opening paragraph of key articles. When someone <ins class="hl-ins">adds</ins> a critical term, how long does it last? When someone <del class="hl-del">removes</del> one, how long does the removal last? If additions stick and removals are undone, the wording moves one way, like a ratchet. This section covers the key battleground articles only. The whole topic has 4,642 articles. Across those, 47.3% of added terms were still in place after 30 days. In comparison articles the figure was 42.9%. So the ratchet does not describe the topic as a whole.</p>
   </header>
   <div id="ratWrap"></div>
 </section>
@@ -1163,7 +1217,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="sec" id="editing">
   <header>
     <div class="eyebrow"><span class="layer process">PROCESS</span>The talk page and the edit war</div>
-    <h2>How much these pages were fought over</h2>
+    <h2>Edits, talk pages, reverts and logged-out users</h2>
     <p class="deck">Edits, <button class="gl" type="button" data-g="talk">talk page</button> posts, <button class="gl" type="button" data-g="revert">reverts</button> and edits by logged-out users, as an average per article every three months. Bots are left out.</p>
   </header>
   <div class="grid2">
@@ -1183,7 +1237,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="sec" id="organic">
   <header>
     <div class="eyebrow"><span class="layer process">PROCESS</span>Organic or organised? <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2>Was the editing many-handed and gradual, or concentrated and fast?</h2>
+    <h2>Signals of coordination, measured against chance</h2>
     <p class="deck">Organic change looks like many people making small edits over time. Organised change looks like a few people editing many articles quickly, often close together. We compare each pattern with <b>what you’d expect by chance</b>. Chance here means the same editors and articles, with the timing shuffled.</p>
   </header>
   <div class="caveat" role="note"><h3>Read this first</h3><ul>
@@ -1193,36 +1247,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div id="coordWrap"></div>
 </section>
 
-<section class="sec" id="sourcing">
-  <header>
-    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>Sources and hedging <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2>How the record is sourced and hedged</h2>
-    <p class="deck">A critical term can be stated in Wikipedia's own voice (“the genocide”) or attributed to someone (“accused of genocide”). Wikipedia also judges which sources are reliable, sometimes in a formal <button class="gl" type="button" data-g="rfc">RfC</button>. Here we look at both.</p>
-  </header>
-  <div id="exploreWrap"></div>
-</section>
-
-<section class="sec" id="crosslang">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Other languages <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2>Did other languages move the same way?</h2>
-    <p class="deck">German, French, Hebrew, Arabic and other Wikipedias follow the same rules and cover the same events. But different communities write them. If every language moved the same way, events probably drove the change. If English moved on its own, the community may matter more. Each stripe is one language. Its first copy is on the left, its latest on the right.</p>
-  </header>
-  <div id="xlWrap"></div>
-</section>
-
-<details class="stats howc" id="howchecked"><summary>How we checked <span>the counter against known edits, the masked reading, and every article in the sample</span></summary><div class="in">
-<section class="sec" id="checks">
-  <header>
-    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>Checking the counter</div>
-    <h2>Does the counter see changes we know happened?</h2>
-    <p class="deck">News reports described some specific, dated edits. If our counter works, it should find the wording missing before the date and present after it. A second check used AI readers. They judged a sample of changes with the article’s names masked.</p>
-  </header>
-  <p class="means" id="mValid"></p>
-  <div id="blind"></div>
-  <details class="stats"><summary>Show the statistics <span>the dated validation targets</span></summary><div class="in"><div class="tbx cards-t" id="valid" style="--cols:2"></div></div></details>
-</section>
-
+<details class="stats howc" id="howchecked"><summary>The ledger <span>every article in the sample</span></summary><div class="in">
 <section class="sec" id="ledger">
   <header>
     <div class="eyebrow">The ledger</div>
@@ -1245,23 +1270,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </section>
 </div></details>
 
-<section class="sec" id="method">
-  <header><div class="eyebrow">For researchers</div><h2>How this was measured</h2>
-  <p class="deck">The full method, the word lists and the limits. Open the sections you need.</p></header>
-  <details class="stats"><summary>Show the method <span>data, groups, text cleaning, the test, limits</span></summary><div class="in method">
-    <dl>
-      <dt>Data</dt><dd>Every revision since 1 January 2021, from the Wikipedia API. A full-text snapshot of each article on the first day of every quarter. Talk-page activity and monthly pageviews. Collection ran on GitHub Actions.</dd>
-      <dt>Groups</dt><dd id="mGroups">Topic articles are hand-picked plus a random sample from Zionism, antisemitism, conflict and Jewish-history categories. Comparison articles cover other nationalisms, states, conflicts, genocides and religions. Comparison articles closely tied to the conflict are reported but excluded from the tests.</dd>
-      <dt>Text</dt><dd>References, templates, files and back matter are stripped before counting. So citation titles do not add to the counts. The opening paragraph (the lead) is everything before the first section heading. Snapshots under 300 words are not measured. For the opening paragraph the cut-off is 40 words.</dd>
-      <dt>Test</dt><dd>Difference-in-differences on the balanced panel of articles that existed in January 2021. We take each article’s change in rate and average it by group. The estimate is topic minus comparison. A permutation test with 5,000 shuffles gives p. p is corrected with Benjamini–Hochberg within the primary and the secondary family. 2,000 bootstrap resamples give the 95% interval.</dd>
-      <dt>Limits</dt><dd>Counting words measures emphasis, not accuracy. “Genocide” can grow because a court case exists, not because of bias. Word lists miss paraphrase and sentence-level stance. Category-sampled articles vary in quality. Editors are reported only in aggregate. No claim is made about any editor’s intent.</dd>
-    </dl>
-  </div></details>
-  <details class="stats"><summary>Show the word lists <span>every pattern counted, with exclusions</span></summary><div class="in">
-    <p class="cap">Patterns are case-insensitive regular expressions. Exclusions (in amber) are subtracted.</p>
-    <div class="lex" id="lex"></div>
-  </div></details>
-</section>
 </div>
 <div id="view-lab" hidden><!--LAB--></div>
 <div class="foot"><span>Wikipedia Framing Drift</span><span>Word counts are a proxy. They are not a verdict on accuracy or bias.</span></div>
@@ -1521,10 +1529,6 @@ function drawCards(){
 function drawLede(){
   const A=R.articles,tot=A.reduce((s,a)=>s+(a.views||0),0),last=R.last||R.dates.at(-1),first=R.first||R.dates[0];
   $("#mastRange").textContent=`English Wikipedia · ${dlab(first)} – ${dlab(last)}`;
-  $("#deck").innerHTML=`We read every change made to ${R.n_articles_total||A.length} English Wikipedia articles from ${dlab(first)} to ${dlab(last)}. We compared articles about Israel, Jews, Zionism, antisemitism and the Israeli–Palestinian conflict with articles about other countries, conflicts and religions.`;
-  $("#lede").innerHTML=`The question is simple. Did the words in the topic articles change <i>more</i> than the words in similar articles? Many articles about war and nationhood changed after 2021, so a change only counts if it is bigger in the topic articles. The main test uses <b>${R.n_treatment}</b> topic articles and <b>${R.n_control}</b> other articles that all existed in January 2021.`;
-  const facts=[[(R.total_revisions||0).toLocaleString("en-US"),"edits read, one by one"],[R.dates.length,"copies of each article, one every three months"],[`${R.n_treatment} / ${R.n_control}`,"topic / other articles in the main test"],[big(tot),"page views in the period"]];
-  $("#facts").innerHTML=facts.map(([b,s])=>`<div><b>${b}</b><span>${s}</span></div>`).join("");
   const ex=A.filter(a=>a.group==="control_contaminated").length,nw=R.n_new_topic_articles??A.filter(a=>a.created_in_window&&a.group==="treatment").length;
   $("#heroNote").textContent=`${A.length} rows · ${nw} topic articles created during the period · ${ex} other articles closely related to the topic, sampled with the other group`;
 }
@@ -1655,11 +1659,12 @@ function traceInit(){
   const T=R.trace,host=$("#trace");
   if(!T||!Object.keys(T).length){$("#trPicks").innerHTML="";host.innerHTML=`<div class="note">Exact-edit tracing is not in this build yet. When it is, each change to a key article’s first sentence appears here with its date, the words changed and a link to the edit.</div>`;return}
   const grp=t=>{const a=R.articles.find(x=>x.title===t);return a?a.group:null};
-  const ts=Object.keys(T).filter(t=>T[t]&&T[t].length),top=ts.filter(t=>grp(t)==="treatment"),oth=ts.filter(t=>grp(t)!=="treatment");
+  const FIRST=["Nakba","1948 Palestinian expulsion and flight","West Bank","Mandatory Palestine","Gaza Strip"];
+  const ts=Object.keys(T).filter(t=>T[t]&&T[t].length),lead=FIRST.filter(t=>ts.includes(t)),top=[...lead,...ts.filter(t=>grp(t)==="treatment"&&!lead.includes(t))],oth=ts.filter(t=>grp(t)!=="treatment"&&!lead.includes(t));
   $("#trPicks").innerHTML=(top.length?`<span class="grp">Topic</span>`+top.map(t=>`<button class="pick" type="button" data-t="${esc(t)}" aria-pressed="false">${esc(t)} <span class="mono" style="opacity:.6">${T[t].length}</span></button>`).join(""):"")+(oth.length?`<span class="grp" style="margin-left:8px">Other</span>`+oth.map(t=>`<button class="pick" type="button" data-t="${esc(t)}" aria-pressed="false">${esc(t)} <span class="mono" style="opacity:.6">${T[t].length}</span></button>`).join(""):"");
   $("#trPicks").onclick=e=>{const b=e.target.closest(".pick");if(b)traceDraw(b.dataset.t)};
   if(!ts.length){host.innerHTML=`<div class="note">No first-sentence changes were traced.</div>`;return}
-  traceDraw(ts.includes("Zionism")?"Zionism":ts[0]);
+  traceDraw(ts.includes("Nakba")?"Nakba":ts.includes("Zionism")?"Zionism":ts[0]);
 }
 function traceDraw(t,all){
   S.trace=t;$$("#trPicks .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.t===t)));
@@ -1816,7 +1821,7 @@ function drawTerr(){
 }
 
 /* ---------- phone: fold the deep exploratory sections behind one tap ---------- */
-const FOLD_REDRAW={ratchet:()=>drawRatchet(),crosslang:()=>drawXL(),vocab:()=>{drawTrend();drawMinis()},heatmap:()=>{HM=null;drawHeat()},exact:()=>S.trace&&traceDraw(S.trace),editing:drawDyn,organic:drawCoord,sourcing:drawExplore};
+const FOLD_REDRAW={ratchet:()=>drawRatchet(),crosslang:()=>drawXL(),vocab:()=>{drawTrend();drawMinis()},heatmap:()=>{HM=null;drawHeat()},palestine:()=>S.trace&&traceDraw(S.trace),editing:drawDyn,organic:drawCoord,sourcing:drawExplore};
 function foldPhone(){if(!isPhone())return;
   const fb=$("#findingsBody"),fm=$("#findingsMore");if(fb&&fm&&fb.scrollHeight>520){fb.classList.add("capped");fm.hidden=false;fm.onclick=()=>{fb.classList.remove("capped");fm.hidden=true}}Object.keys(FOLD_REDRAW).forEach(id=>{const sec=document.getElementById(id);if(!sec||sec.querySelector(".unfold"))return;
   sec.classList.add("folded");const b=document.createElement("button");b.type="button";b.className="btn sm unfold";b.textContent="Show this section ↓";b.setAttribute("aria-expanded","false");
@@ -1851,7 +1856,7 @@ function drawBreathe(){
   if(!pick){host.innerHTML=`<div class="eyebrow">One sentence, every version</div><div class="note">No first-sentence history in this build.</div>`;return}
   const D=brEvents(pick);Object.assign(BR,{title:pick,ev:D.ev,mode:D.mode,n:D.n,a:D.a});
   BR.base=(D.ev.find(e=>e.s)||{}).s||"";
-  $("#brTitle").textContent=pick;
+  const bt=$("#brTitle");if(bt)bt.textContent=pick;
   $("#brLab").dataset.intent=JSON.stringify({lab:"flip",title:pick});
   const t0=Date.UTC(2021,0,1),t1=Math.max(ym(R.dates.at(-1))+dayMs*60,D.ev.at(-1).t);BR.t0=t0;BR.t1=t1;
   const rg=$("#brRange");rg.min=0;rg.max=Math.round((t1-t0)/dayMs);rg.step=1;
@@ -2386,7 +2391,7 @@ function drawReach(){
   host.innerHTML=`<div class="rch">${G.map(([n,c,a,v])=>`<div class="rch-g"><div class="fig-t"><span class="sw" style="background:var(${c})"></span>${n}</div>${row("articles",a,c)}${row("reading",v,c)}</div>`).join("")}
    <div class="legend"><span class="key"><i style="background:var(--topic)"></i>dark part: opening paragraph gained critical vocabulary since Jul 2023</span><span class="key"><i style="background:var(--faint);border:1px solid var(--rule)"></i>the rest of the group</span><span>Bars run from 0 to 100%.</span></div>
    <div><div class="fig-t" style="margin-bottom:4px">The most-read topic pages whose opening paragraph gained critical vocabulary</div><ul class="rch-top">${[["Benjamin Netanyahu","7.0M","1 → 4"],["Israel","4.6M","5 → 8"],["Palestine","2.4M","2 → 5"],["Zionism","1.8M","1 → 5"],["Hamas","1.3M","0 → 3"]].map(r=>`<li><span>${r[0]}</span><span>${r[1]} views</span><span>terms ${r[2]}</span></li>`).join("")}</ul><p class="cap" style="margin-top:4px">Views are for the last 12 months. Term counts are critical vocabulary in the opening paragraph, July 2023 → now.</p></div></div>`;
-  $("#mReach").innerHTML=`<b>What this means:</b> topic articles had 279 million views in the last 12 months. The changed pages took 15% of them, against 5% in comparison articles. That is three times the comparison level. It is still not most topic reading: 83% of topic views land on opening paragraphs that did not change. Pages that change tend to be pages that are read. That is partly how Wikipedia works everywhere. The three-to-one gap holds on both of our ranges. Whether topic pages also tilt more steeply toward read pages than comparison pages do is suggestive: that difference does not survive treating each Wikipedia subject group as one unit. An earlier hand-picked sample showed a much larger share. It held nearly all the giant pages and left out the many very short articles, villages and biographies that make up most topic articles.`;
+  $("#mReach").innerHTML=`<b>What this means:</b> the topic share is three times the comparison level, on both of our ranges. It is not most topic reading: 83% of topic views land on opening paragraphs that did not change. Whether topic pages tilt more steeply toward well-read pages than comparison pages do is suggestive, not established.`;
   revealOnView(host.querySelector(".rch"));
 }
 const WH={sel:null,geom:null};
@@ -2464,9 +2469,9 @@ function drawNews(){
    <div class="news-bar" role="img" aria-label="89% of the extra lead change is in sentences about older history; 11% is in sentences about recent events"><div style="flex:89;background:var(--topic)">89%</div><div style="flex:11;background:var(--s1)"></div></div>
    <div class="news-lab" style="margin-top:6px"><div><b>Older history and the land</b><br>89% of the extra change</div><div><b>Recent events</b><br>11% of the extra change</div></div>
    <p class="cap" style="margin-top:8px">Before the war, the same comparison showed no difference.</p>`;
-  $("#newsQ").innerHTML=`<blockquote><span class="w"><i style="background:var(--topic)"></i>Older history · Nakba · how the article defines it, then and now. The 2021 version also took a position.</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba … is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings …”</span></blockquote>
+  $("#newsQ").innerHTML=`<blockquote><span class="w"><i style="background:var(--topic)"></i>Older history and the land · West Bank, 2021 and 2026</span><span class="cap"><b>2021</b> “The West Bank (... HaGadah HaMa'aravit or Yehuda VeShomron) is a landlocked territory near the Mediterranean coast of Western Asia, bordered by Jordan ... and by Israel to the south, west and north.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “... is the larger of the two Palestinian territories (the other being the Gaza Strip) that make up Palestine.”</span></blockquote>
    <blockquote><span class="w"><i style="background:var(--s1)"></i>Recent events · Israel, 2026 · one of the few opening paragraphs that states the label in Wikipedia's own voice. The next sentence gives the denial.</span><span class="s">“After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza. Israel and its allies, including the United States, deny that Israel’s actions constitute genocide.”</span></blockquote>`;
-  $("#mNews").innerHTML=`<b>What this means:</b> the war did not mainly produce war coverage. It sent editors back to retell 1897 to 1948 and to rename the land. They did this by adding sentences, not by deleting others. This replicated on the sealed half of the data and at full scale. On the articles most relevant to the topic it holds on both of our ranges. On the full set, the coarser range crosses zero.`;
+  $("#mNews").innerHTML=`<b>What this means:</b> the war did not mainly produce war coverage. It sent editors back to retell 1897 to 1948 and to rename the land, by adding sentences rather than deleting others. On the articles most relevant to the topic this holds on both of our ranges; on the full set the coarser range crosses zero.`;
 }
 function drawSpread(){
   const host=$("#spreadGrid");if(!host)return;const T="--topic",C="--comp";
@@ -2485,6 +2490,15 @@ function drawSpread(){
     {h:"Links come before words",big:"+5.6 points",sm:"with the same amount of editing",ch:hbarsHTML([["Already linked",7.9,T,"%"],["Not linked",0.5,"--muted","%"]],{max:9}),p:"Some topic articles already linked to a core concept such as Nakba, Gaza genocide or Israeli apartheid. Of those 784 cases, 7.9% later picked up the term in the opening paragraph. Of the 25,672 cases without the link, 0.5% did. Pages linking to Nakba/1948: 114 → 223."},
     {h:"Change arrived as added text",big:"78.2%",sm:"of opening paragraphs that gained terms got longer",ch:hbarsHTML([["Paragraphs that gained",78.2,T,"%"],["Other topic paragraphs",55.8,"--muted","%"]],{max:100}),p:"Topic opening paragraphs that gained critical terms got longer, by a median of 33.5 words. The share of bytes removed did not change: 0.627 before, 0.626 after. New events in opening paragraphs during the war window: 665 insertions, 392 removals."}];
   host.innerHTML=tiles.map(t=>`<article class="sp"><h3>${esc(t.h)}</h3><div class="big">${esc(t.big)}<small>${esc(t.sm)}</small></div><div class="chart">${t.ch}</div><p>${esc(t.p)}</p>${t.list?`<ol>${t.list.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>`:""}${t.p2?`<p class="cap">${esc(t.p2)}</p>`:""}</article>`).join("");
+}
+
+function drawWho(){
+  const host=$("#whoGrid");if(!host)return;const A="--add-bd",D="--del-bd";
+  const tiles=[
+    {h:"Adding and removing on Israel",big:"28 / 27",sm:"accounts added / removed",ch:hbarsHTML([["Added a term",28,A,""],["Removed one",27,D,""],["Did both",7,"--muted",""]],{max:30}),p:"Accounts that added or removed a critical term in the Israel opening paragraph, 2021 to 2026. The median account age at the time of the edit was 9.6 years for additions and 5.6 years for removals."},
+    {h:"Two camps, as on other pages",big:"8.8%",sm:"vs 10.7% in comparison",ch:hbarsHTML([["Topic",8.8,"--topic","%"],["Comparison",10.7,"--comp","%"]],{max:12}),p:"Share of accounts that both added and removed critical terms on the same article. Most accounts did one or the other, in topic and comparison articles alike. A single revert produces this split, so it says nothing about viewpoint."},
+    {h:"“Colonization” in the Zionism first sentence",big:"44 / 41",sm:"times added / removed",ch:hbarsHTML([["Additions undone",45,A,"%"],["Removals undone",90,D,"%"]],{max:100}),p:"Removals almost never held. Counted only on changes where both versions of the sentence were kept, so the totals differ slightly from the timeline at the top of the page."}];
+  host.innerHTML=tiles.map(t=>`<article class="sp"><h3>${esc(t.h)}</h3><div class="big">${esc(t.big)}<small>${esc(t.sm)}</small></div><div class="chart">${t.ch}</div><p>${esc(t.p)}</p></article>`).join("");
 }
 
 /* ---------- Zionism up close: opening paragraph then and now, and every first-sentence change ---------- */
@@ -2705,7 +2719,7 @@ function ziInit(){
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
 function redrawAll(){safe(drawReach);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawZi)}
 function init(){
-  if(!R){$("#lede").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
+  if(!R){$("#deck").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
   safe(drawLede);safe(drawBreathe);safe(drawCards);safe(ziInit);
   const fs=$("#frameSel");["critical_rate","connection_rate",...(R.frames||[])].forEach(k=>fs.append(new Option(LABEL[k]||k,k)));
   fs.onchange=()=>{S.frame=fs.value;drawTrend()};
@@ -2721,7 +2735,7 @@ function init(){
   $("#rows").addEventListener("click",pick);$("#rows").addEventListener("keydown",e=>{if(e.key==="Enter")pick(e)});
   const cv=$("#hero");cv.addEventListener("pointermove",heroHover);cv.addEventListener("pointerdown",heroHover);cv.addEventListener("pointerleave",hideTip);
   safe(drawHero,true);
-  safe(keyInit);safe(drawChance);safe(drawBoard);safe(drawReach);safe(whenInit);safe(drawWhen);safe(drawWave);safe(drawNews);safe(drawSpread);
+  safe(keyInit);safe(drawChance);safe(drawBoard);safe(drawReach);safe(whenInit);safe(drawWhen);safe(drawWave);safe(drawNews);safe(drawSpread);safe(drawWho);
   safe(drawTrend);safe(minis);safe(drawHeat);safe(drawForest);safe(traceInit);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
   document.addEventListener("click",e=>{const b=e.target.closest("[data-intent]");if(!b)return;e.preventDefault();let it=null;try{it=JSON.parse(b.dataset.intent)}catch(x){}openInLab(it)});
