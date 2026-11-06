@@ -1,0 +1,3744 @@
+{
+ "source": "data/ratchet.json first sentence of every revision; days are day-resolution spells until the next first-sentence change (to 2026-11-04)",
+ "key_dates": {
+  "Gaza war first sentence stops naming Hamas": "2025-05-26T16:37Z (variant 189: \"The Gaza war is an armed conflict in the Gaza Strip and Israel since 7 October 2023.\")",
+  "Gaza war first sentence drops the 7 October date": "2025-09-24 (variant 203)",
+  "October 7 article retitled without Hamas": "2025-05-26T13:08Z/13:13Z: \"October 7 Hamas-led attack on Israel\" -> \"October 7 Attacks\" -> \"October 7 attacks\""
+ },
+ "first_sentences": {
+  "Gaza war": [
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023,Hamas fired a massive number of rockets on Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas launched a major rocket barrage and incursion into Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas launched a major rocket barrage and incursion into Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 6:30 in the morning 7 October 2023, Hamas launched a major attack in the form of rocket barrage and incursion into Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 6:30 in the morning 7 October 2023, Hamas launched a major attack in the form of rocket barrage and incursion into Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas invaded Israel by launching a major surprise attack in the form of rocket barrage and incursion into Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups Hamas and Palestinian Islamic Jihad launched a major surprise attack on Israel from the Gaza Strip in the form of a rocket barrage and various incursions across the border into Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups, mainly Hamas and Palestinian Islamic Jihad, with other groups such as the socialist Popular Front for the Liberation of Palestine, launched a major attack on Israel from the Gaza Strip in the form of a rocket bar"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups, mainly Hamas and Palestinian Islamic Jihad, with other groups such as the socialist Popular Front for the Liberation of Palestine, launched a major attack on Israel from the Gaza Strip with a rocket barrage, and "
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups, mainly Hamas and Palestinian Islamic Jihad, with other groups such as the socialist Popular Front for the Liberation of Palestine, launched a surprise attack on Israel from the Gaza Strip with a rocket barrage, a"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, multiple Palestinian militant groups, primarily Hamas and the Palestinian Islamic Jihad, along with other groups such as the Popular Front for the Liberation of Palestine, launched a surprise attack on Israel from the Gaza Strip with a rocke"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, a large escalation of the Gaza–Israel conflict began with a coordinated offensive by multiple Palestinian militant groups against the State of Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, a large escalation of the Gaza–Israel conflict began with a coordinated offensive by multiple Palestinian militant groups against nearby Israeli cities, Gaza border crossings and adjacent military installations and civilian settlements."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, a significant escalation of the Gaza–Israel conflict began with a coordinated offensive by multiple Palestinian militant groups against nearby Israeli cities, Gaza border crossings, adjacent military installations, and civilian settlements."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, a significant escalation of the Gaza–Israel conflict began with a coordinated surprise offensive by multiple Palestinian militant groups against nearby Israeli cities, Gaza border crossings, adjacent military installations, and civilian sett"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 1,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, a significant escalation of the Gaza–Israel conflict began with a coordinated surprise offensive by multiple Palestinian militant groups against nearby Israeli cities, Gaza border crossings, adjacent military installations, and civilian sett"
+   },
+   {
+    "date": "2023-10-08",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, an invasion of Israel began with a coordinated surprise offensive by multiple Palestinian militant groups against nearby Israeli cities, Gaza border crossings, adjacent military installations, and civilian settlements."
+   },
+   {
+    "date": "2023-10-08",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups from the Gaza Strip launched a large-scale armed offensive against Israel, breaking through the Gaza–Israel barrier and forcing entry into Gaza border crossings, nearby Israeli cities, adjacent military installati"
+   },
+   {
+    "date": "2023-10-08",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups from the Gaza Strip launched a large-scale armed offensive against Israel, breaking through the Gaza–Israel barrier and forcing entry into Gaza border crossings, nearby Israeli cities, adjacent military installati"
+   },
+   {
+    "date": "2023-10-08",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups from the Gaza Strip launched a large-scale offensive against Israel, breaking through the Gaza–Israel barrier and forcing entry into Gaza border crossings, nearby Israeli cities, adjacent military installations, a"
+   },
+   {
+    "date": "2023-10-08",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas launched a large-scale offensive against Israel from the Gaza Strip, breaking through the Gaza–Israel barrier and forcing entry into Gaza border crossings, nearby Israeli cities, adjacent military installations, and civilian settlement"
+   },
+   {
+    "date": "2023-10-08",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale offensive against Israel from the Gaza Strip, breaking through the Gaza–Israel barrier and forcing entry into Gaza border crossings, nearby Israeli cities, adjacent military ins"
+   },
+   {
+    "date": "2023-10-08",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion and offensive against Israel from the Gaza Strip, breaking through the Gaza–Israel barrier and forcing entry into Gaza border crossings, nearby Israeli cities, adjacent"
+   },
+   {
+    "date": "2023-10-09",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion and offensive against Israel from the Gaza Strip, breaking through the Gaza–Israel barrier and forcing entry via the Gaza border crossings, into nearby Israeli settleme"
+   },
+   {
+    "date": "2023-10-09",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion and offensive against Israel from the Gaza Strip, breaking through the Gaza–Israel barrier and forcing entry via the Gaza border crossings, into nearby Israeli settleme"
+   },
+   {
+    "date": "2023-10-09",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion and offensive against Israel from the Gaza Strip, breaking through the Gaza–Israel barrier and forcing entry via the Gaza border crossings, into nearby settlements in I"
+   },
+   {
+    "date": "2023-10-09",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion and offensive against Israel from the Gaza Strip, breaking through the Gaza–Israel barrier and forcing entry via the Gaza border crossings, into nearby settlements in I"
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion and offensive against Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion and offensive against Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion against Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-11",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion against Israel (called Operation al-Aqsa Flood) from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-11",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The 2023 Israel–Hamas war is an ongoing conflict between Israel and Palestinian militant groups led by Hamas."
+   },
+   {
+    "date": "2023-10-11",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The 2023 Israel–Hamas war is an ongoing conflict between Israel and Palestinian militant groups led by Hamas."
+   },
+   {
+    "date": "2023-10-11",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale invasion against Israel."
+   },
+   {
+    "date": "2023-10-11",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale campaign against Israel."
+   },
+   {
+    "date": "2023-10-11",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian armed groups led by Hamas launched a large-scale campaign against Israel."
+   },
+   {
+    "date": "2023-10-11",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale campaign against Israel."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Palestinian militant groups led by Hamas launched a large-scale campaign against Israel."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hostilities were initiated in the early morning with a rocket barrage of at least 3,000 missiles against Israel and vehicle-transported incursions into its territory."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Before the attack, Israeli-Palestinians clashes at Al-Aqsa mosque, Gaza and Jenin had killed 247 Palestinians and 36 Israelis."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Before the attack, Israeli-Palestinian clashes at Al-Aqsa mosque, Gaza and Jenin had killed 247 Palestinians and 36 Israelis."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Before the attack, Israeli-Palestinian clashes at Al-Aqsa mosque, Gaza and Jenin had killed 247 Palestinians and 36 Israelis."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hostilities were initiated in the early morning with a rocket barrage of at least 3,000 missiles against Israel and vehicle-transported incursions into its territory."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Israel formally declared war on Hamas a day later."
+   },
+   {
+    "date": "2023-10-13",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Israel formally declared war on Hamas a day later."
+   },
+   {
+    "date": "2023-10-14",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "and Israel formally declared war on Hamas a day later."
+   },
+   {
+    "date": "2023-10-16",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Israel began clearing Hamas forces from affected areas and conducting airstrikes in the Gaza Strip, which have killed 2,750 Palestinians as of 15 October."
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas stated that their attack was in response to the Egyptian-Israel blockade on Gaza, continued settlements, Israeli settler violence, and restrictions on movement between Israel and Gaza."
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The operation was named the \"Al-Aqsa Storm\" by Hamas."
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The operation was named the \"Al-Aqsa Storm\" by Hamas."
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas stated that their attacks were in response to the Egyptian-Israel blockade on Gaza, continued settlements, Israeli settler violence, the desecration of the Al-Aqsa Mosque in Jerusalem (possibly in April 2023), Israel's attacks on women, and restrictions "
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas stated that their attack was in response to \"desecration of the Al Aqsa Mosque as well as Israeli atrocities against Palestinians over the decades\"."
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas stated that their attack was in response to Israeli settler violence, the Blockade of the Gaza Strip and the desecration of the Al Aqsa Mosque as well as Israeli atrocities against Palestinians over the decades."
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas stated that they have received support from Iran for the attack on Israel, and that they attacked in response to Israeli settler violence, the Blockade of the Gaza Strip and the desecration of the Al Aqsa Mosque as well as Israeli atrocities against Pale"
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas stated that they have received support from Iran for the attack on Israel, and that they attacked in response to Israeli settler violence, the blockade of the Gaza Strip, the desecration of the Al-Aqsa Mosque in Jerusalem as well as Israeli atrocities ag"
+   },
+   {
+    "date": "2023-10-18",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza–Israel conflict has been ongoing since 2006."
+   },
+   {
+    "date": "2023-10-18",
+    "days_until_next_change": 1,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The massacre at the \"Supernova Sukkot Gathering\" dance music fest outside the Re'im kibbutz became the deadliest concert attack in history."
+   },
+   {
+    "date": "2023-10-19",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The massacre at the \"Supernova Sukkot Gathering\" dance music fest outside the Re'im kibbutz became the deadliest concert attack in history."
+   },
+   {
+    "date": "2023-10-19",
+    "days_until_next_change": 1,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The massacre at the \"Supernova Sukkot Gathering\" dance music fest outside the Re'im kibbutz was the deadliest concert attack in history."
+   },
+   {
+    "date": "2023-10-20",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas launched its attacks during the end of the Sukkot Jewish holiday and 50 years after the Yom Kippur War in 1973."
+   },
+   {
+    "date": "2023-10-21",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas launched its attacks during the end of the Sukkot Jewish holiday and 50 years after the Yom Kippur War in 1973."
+   },
+   {
+    "date": "2023-10-21",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas launched its attacks during the end of the Sukkot Jewish holiday and exactly 50 years after the begining of the Yom Kippur War in 1973."
+   },
+   {
+    "date": "2023-10-21",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas launched its attacks during the end of the Sukkot Jewish holiday and exactly 50 years after the beginning of the Yom Kippur War in 1973."
+   },
+   {
+    "date": "2023-10-22",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas launched its attacks during the end of the Sukkot Jewish holiday, exactly 50 years after the beginning of the Yom Kippur War in 1973."
+   },
+   {
+    "date": "2023-10-24",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas launched its attacks during the end of the Sukkot Jewish holiday, exactly 50 years after the beginning of the Yom Kippur War in 1973."
+   },
+   {
+    "date": "2023-10-25",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "This 2023 outburst of Palestinian and Israeli violence, the fiercest since the Yom Kippur War, is part of the Israeli–Palestinian conflict which started in May 1948 and which since 2005 saw most of its military exertions taking place in or emanating from the G"
+   },
+   {
+    "date": "2023-10-25",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The ongoing armed conflict between Hamas-led Palestinian militant groups and Israel began on 7 October 2023, during the end of the Sukkot Jewish holiday, exactly 50 years after the start of the 1973 Yom Kippur War."
+   },
+   {
+    "date": "2023-10-25",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The ongoing armed conflict between Hamas-led Palestinian militant groups and Israel began on 7 October 2023, during the end of the Sukkot Jewish holiday, exactly 50 years after the start of the 1973 Yom Kippur War."
+   },
+   {
+    "date": "2023-10-25",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The ongoing armed conflict between Hamas-led Palestinian militant groups and Israel began on 7 October 2023, on the morning of the Shemini Atzeret Jewish holiday, exactly 50 years after the start of the 1973 Yom Kippur War."
+   },
+   {
+    "date": "2023-10-26",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The ongoing armed conflict between Hamas-led Palestinian militant groups and Israel began on 7 October 2023, on the morning of the Shemini Atzeret Jewish holiday, exactly 50 years after the start of the 1973 Yom Kippur War."
+   },
+   {
+    "date": "2023-10-27",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The ongoing armed conflict between Hamas-led Palestinian militant groups and Israel military forces began on 7 October 2023, on the morning of the Shemini Atzeret Jewish holiday, 50 years after the start of the 1973 Yom Kippur War."
+   },
+   {
+    "date": "2023-10-28",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The ongoing armed conflict between Hamas-led Palestinian militant groups and Israel military forces began on 7 October 2023, 50 years after the start of the 1973 Yom Kippur War."
+   },
+   {
+    "date": "2023-10-29",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israel military forces began on 7 October 2023, 50 years after the start of the 1973 Yom Kippur War."
+   },
+   {
+    "date": "2023-10-31",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas offensive, codenamed \"Al-Aqsa Flood\"."
+   },
+   {
+    "date": "2023-10-31",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas offensive against southern Israel, codenamed \"Al-Aqsa Flood\"."
+   },
+   {
+    "date": "2023-11-01",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas attack against southern Israel, codenamed \"Al-Aqsa Flood\"."
+   },
+   {
+    "date": "2023-11-01",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas attack against southern Israel, codenamed \"Al-Aqsa Flood\", that killed 1,400 Israelis."
+   },
+   {
+    "date": "2023-11-01",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas attack against southern Israel that killed 1,400 Israelis."
+   },
+   {
+    "date": "2023-11-01",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas attack on southern Israel that killed 1,400 Israelis."
+   },
+   {
+    "date": "2023-11-01",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas attack on southern Israel that killed 1,400 Israelis and took 200 others hostage in a single day."
+   },
+   {
+    "date": "2023-11-02",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas attack on southern Israel."
+   },
+   {
+    "date": "2023-11-02",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against Palestine's Gaza Strip a"
+   },
+   {
+    "date": "2023-11-02",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against Palestine's Gaza Strip a"
+   },
+   {
+    "date": "2023-11-03",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against Palestine's Gaza Strip a"
+   },
+   {
+    "date": "2023-11-03",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against militant, mostly Hamas a"
+   },
+   {
+    "date": "2023-11-03",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against targets in Palestine's G"
+   },
+   {
+    "date": "2023-11-04",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against targets in Palestine's G"
+   },
+   {
+    "date": "2023-11-04",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against civilians in Palestine's"
+   },
+   {
+    "date": "2023-11-04",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against targets in Palestine's G"
+   },
+   {
+    "date": "2023-11-04",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes against civilians in Palestine's"
+   },
+   {
+    "date": "2023-11-04",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes on the Gaza Strip and a subseque"
+   },
+   {
+    "date": "2023-11-04",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes on the Gaza Strip and a subseque"
+   },
+   {
+    "date": "2023-11-04",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces broke out on 7 October 2023, with a Hamas attack on southern Israel, to which Israeli military forces retaliated with extensive strikes on the Gaza Strip and a subseque"
+   },
+   {
+    "date": "2023-11-05",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, an armed conflict broke out between Israel and Hamas-led Palestinian militants from the Gaza Strip after the latter launched a multipronged invasion of southern Israel."
+   },
+   {
+    "date": "2023-11-06",
+    "days_until_next_change": 4,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, an armed conflict broke out between Israel and Hamas-led Palestinian militants from the Gaza Strip after the latter launched a multi-pronged invasion of southern Israel."
+   },
+   {
+    "date": "2023-11-10",
+    "days_until_next_change": 7,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, an armed conflict broke out between Israel and Hamas-led Palestinian militants from the Gaza Strip after the latter launched a multi-pronged invasion of southern Israel."
+   },
+   {
+    "date": "2023-11-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The 2023 Israel–Hamas war is an ongoing war between Israel and Hamas in the Gaza Strip."
+   },
+   {
+    "date": "2023-11-17",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The 2023 Israel-Hamas war, an ongoing conflict between Israel and Hamas in the Gaza Strip, is the fifth war in the Gaza-Israel conflict and a part of the broader Israeli-Palestinian conflict."
+   },
+   {
+    "date": "2023-11-18",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The 2023 Israel–Hamas war, an ongoing conflict between Israel and Hamas in the Gaza Strip, is the fifth war in the Gaza-Israel conflict and a part of the broader Israeli-Palestinian conflict."
+   },
+   {
+    "date": "2023-11-18",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, an armed conflict broke out between Israel and Hamas-led Palestinian militants who launched a multi-pronged invasion of southern Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-11-19",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The 2023 Israel–Hamas war is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups taking place chiefly in and around the Gaza Strip, with clashes also taking place in the West Bank and Israel-Lebanon border."
+   },
+   {
+    "date": "2023-11-19",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The 2023 Israel–Hamas war is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups taking place chiefly in and around the Gaza Strip, with clashes also taking place in the West Bank and Israel-Lebanon border."
+   },
+   {
+    "date": "2023-11-19",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "There is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups taking place chiefly in and around the Gaza Strip, with clashes also taking place in the West Bank and Israel-Lebanon border."
+   },
+   {
+    "date": "2023-11-20",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "There is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups taking place chiefly in and around the Gaza Strip, with clashes also taking place in the West Bank and Israel-Lebanon border, and attempts from the Ansar Allah (also kn"
+   },
+   {
+    "date": "2023-11-20",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel-Lebanon border, and attempts from the"
+   },
+   {
+    "date": "2023-11-20",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel-Lebanon border."
+   },
+   {
+    "date": "2023-11-20",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip, with clashes also taking place in the West Bank and Israel-Lebanon border."
+   },
+   {
+    "date": "2023-11-21",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip, with clashes also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2023-11-21",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel-Lebanon border."
+   },
+   {
+    "date": "2023-11-21",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing battle between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel-Lebanon border."
+   },
+   {
+    "date": "2023-11-22",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel-Lebanon border."
+   },
+   {
+    "date": "2023-11-22",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2023-11-27",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian terrorist groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2023-11-27",
+    "days_until_next_change": 12,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2023-12-09",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing war between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2023-12-09",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An ongoing armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2023-12-11",
+    "days_until_next_change": 10,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2023-12-21",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with ches also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2023-12-22",
+    "days_until_next_change": 13,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and Israel–Lebanon border."
+   },
+   {
+    "date": "2024-01-04",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the West Bank and on the Israel–Lebanon border."
+   },
+   {
+    "date": "2024-01-05",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the Israeli-occupied West Bank and on the Israel–Lebanon border."
+   },
+   {
+    "date": "2024-01-06",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Israel–Hamas war is an armed conflict between Israel and Hamas-led Palestinian militant groups that has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the Israeli-occupied West Bank and on the"
+   },
+   {
+    "date": "2024-01-06",
+    "days_until_next_change": 4,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the Israeli-occupied West Bank and on the Israel–Lebanon border."
+   },
+   {
+    "date": "2024-01-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Known also as the Israel–Gaza war, an armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the Israeli-occupied West Bank and "
+   },
+   {
+    "date": "2024-01-10",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The 2023 Israel–Hamas war, known also as the Israel–Gaza war, is an armed conflict between Israel and Hamas-led Palestinian militant groups that has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in "
+   },
+   {
+    "date": "2024-01-11",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the Israeli-occupied West Bank and on the Israel–Lebanon border."
+   },
+   {
+    "date": "2024-01-13",
+    "days_until_next_change": 6,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, with clashes also taking place in the Israeli-occupied West Bank and on the Israel–Lebanon border."
+   },
+   {
+    "date": "2024-01-19",
+    "days_until_next_change": 11,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-01-30",
+    "days_until_next_change": 32,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-03-02",
+    "days_until_next_change": 20,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023, when Hamas launched a surprise attack on southern Israel from the Gaza Strip."
+   },
+   {
+    "date": "2024-03-22",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups, known as The Battle of Al-Aqsa Flood by Palestinian militants and the War of Iron Swords by Israel has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-03-23",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and the Hamas-led Palestinian Joint Operations Room, known as The Battle of Al-Aqsa Flood by Palestinian militants and the War of Iron Swords by Israel has been taking place chiefly in and around the Gaza Strip since 7 October "
+   },
+   {
+    "date": "2024-03-23",
+    "days_until_next_change": 4,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-03-27",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian terrorists groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-03-27",
+    "days_until_next_change": 11,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-04-07",
+    "days_until_next_change": 4,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-04-11",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Israel–Hamas war is an armed conflict between Israel and Hamas-led Palestinian militant groups that has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-04-11",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Israel–Hamas war is an armed conflict between Israel and Hamas-led Palestinian militant groups that has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-04-11",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Israel–Hamas war is an armed conflict between Israel and Hamas-led Palestinian militant groups that has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-04-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Israel–Hamas war also known as the Israel-Gaza war, is an armed conflict between Israel and Hamas-led Palestinian militant groups that has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-04-12",
+    "days_until_next_change": 9,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-04-21",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups is taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-04-21",
+    "days_until_next_change": 19,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in and around the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-05-10",
+    "days_until_next_change": 19,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-05-29",
+    "days_until_next_change": 27,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-06-25",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Israel–Hamas war is an armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-06-25",
+    "days_until_next_change": 18,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-07-13",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Israel-Hamas War, also known as the Israel-Gaza War, Gaza War and Israel's War on Gaza is an armed conflict between Israel and Hamas-led Palestinian militant groups that has been taking place chiefly in the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-07-13",
+    "days_until_next_change": 11,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-07-24",
+    "days_until_next_change": 9,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip and southern Israel since 7 October 2023."
+   },
+   {
+    "date": "2024-08-02",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place chiefly in the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-08-02",
+    "days_until_next_change": 3,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2024-08-05",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been chiefly taking place in the Gaza Strip since 7 October 2023."
+   },
+   {
+    "date": "2024-08-05",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2024-08-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups and their allies has been taking place chiefly in the Gaza Strip with other confrontations in the Gaza Envelope and southern Israel, at the Israel-Lebanon border and in the West Bank si"
+   },
+   {
+    "date": "2024-08-07",
+    "days_until_next_change": 97,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2024-11-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups including Palestinian Islamic Jihad, the Popular Front for the Liberation of Palestine, and the Democratic Front for the Liberation of Palestine has been taking place in the Gaza Strip "
+   },
+   {
+    "date": "2024-11-12",
+    "days_until_next_change": 6,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2024-11-18",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict (מלחמת חרבות ברזל) between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2024-11-18",
+    "days_until_next_change": 29,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2024-12-17",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The Israel–Hamas war, also known as the Gaza War, is a ongoing armed conflict between Israel and Hamas-led Palestinian militant groups."
+   },
+   {
+    "date": "2024-12-19",
+    "days_until_next_change": 16,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The Israel–Hamas war, also known as the Gaza War, is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups."
+   },
+   {
+    "date": "2025-01-04",
+    "days_until_next_change": 14,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-18",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since the Saturday, October 7th, 2023, Hamas-led attack on Israel."
+   },
+   {
+    "date": "2025-01-18",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since the 7 October 2023 Hamas-led attack on Israel."
+   },
+   {
+    "date": "2025-01-19",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups was fought in the Gaza Strip and Israel between 7 October 2023 and 19 January 2025."
+   },
+   {
+    "date": "2025-01-19",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since the 7 October 2023 Hamas-led attack on Israel."
+   },
+   {
+    "date": "2025-01-19",
+    "days_until_next_change": 8,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "An armed conflict between Israel and Hamas-led Palestinian militant groups has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-27",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Gaza war is an armed conflict between Israel and Hamas-led Palestinian militant groups which has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-27",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict between Israel and Hamas-led Palestinian militant groups which has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-28",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war, also known as the Israel–Hamas war, is an armed conflict between Israel and Hamas-led Palestinian militant groups which has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-28",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict between Israel and Hamas-led Palestinian militant groups which has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-28",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war, also known as the Israel–Hamas war, is an armed conflict between Israel and Hamas-led Palestinian militant groups which has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-28",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict between Israel and Hamas-led Palestinian militant groups which has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-28",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war, also called the Israel–Hamas war or Israel–Gaza war, is an armed conflict between Israel and Hamas-led Palestinian militant groups which has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-28",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war, also known as the Israel–Hamas war or the Israel–Gaza war, is an armed conflict between Israel and Hamas-led Palestinian militant groups which has been taking place in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-28",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war, also known as the Israel–Hamas war or the Israel–Gaza war, has been fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-01-30",
+    "days_until_next_change": 88,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war has been fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-04-28",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war has been fought between the Israeli military and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-04-28",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war has been fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-04-28",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is the part of the conflict fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel that has occured since 7 October 2023."
+   },
+   {
+    "date": "2025-04-29",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is the part of the conflict fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel that has occurred since 7 October 2023."
+   },
+   {
+    "date": "2025-04-30",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is a conflict fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-04-30",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is the part of the conflict fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel that has occurred since 7 October 2023."
+   },
+   {
+    "date": "2025-04-30",
+    "days_until_next_change": 4,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is the part of the conflict fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-04",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war has been fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-05",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is the part of the conflict fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-06",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war has been fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-06",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is a war between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-07",
+    "days_until_next_change": 17,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war has been fought between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-24",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and southern Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-24",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war which began on October 7, 2023, is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and southern Israel."
+   },
+   {
+    "date": "2025-05-26",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war, which began on October 7, 2023, is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and southern Israel."
+   },
+   {
+    "date": "2025-05-26",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The Gaza war which began on October 7, 2023, is an ongoing armed conflict between Israel and Hamas-led Palestinian militant groups in the Gaza Strip and southern Israel."
+   },
+   {
+    "date": "2025-05-26",
+    "days_until_next_change": 1,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-27",
+    "days_until_next_change": 1,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, ongoing since 7 October 2023."
+   },
+   {
+    "date": "2025-05-28",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an ongoing armed conflict in the Gaza Strip and Israel, ongoing since 7 October 2023."
+   },
+   {
+    "date": "2025-05-28",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an ongoing armed conflict in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-28",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-28",
+    "days_until_next_change": 2,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and southern Israel since 7 October 2023."
+   },
+   {
+    "date": "2025-05-30",
+    "days_until_next_change": 4,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and southern Israel that has been fought since 7 October 2023."
+   },
+   {
+    "date": "2025-06-03",
+    "days_until_next_change": 11,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and southern Israel fought since 7 October 2023."
+   },
+   {
+    "date": "2025-06-14",
+    "days_until_next_change": 18,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and southern Israel fought since 7&nbsp;October 2023."
+   },
+   {
+    "date": "2025-07-02",
+    "days_until_next_change": 5,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel fought since 7&nbsp;October 2023."
+   },
+   {
+    "date": "2025-07-07",
+    "days_until_next_change": 17,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel fought since 7&nbsp;October 2023, as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century."
+   },
+   {
+    "date": "2025-07-24",
+    "days_until_next_change": 21,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel that has been fought since 7&nbsp;October 2023, as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century."
+   },
+   {
+    "date": "2025-08-14",
+    "days_until_next_change": 1,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought since 7&nbsp;October 2023, as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century."
+   },
+   {
+    "date": "2025-08-15",
+    "days_until_next_change": 1,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought since 7&nbsp;October 2023, as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century, with the ultimate goal of full Israeli reoccupation of th"
+   },
+   {
+    "date": "2025-08-16",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought since 7&nbsp;October 2023, as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century."
+   },
+   {
+    "date": "2025-08-16",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel since 7&nbsp;October 2023, and part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century."
+   },
+   {
+    "date": "2025-08-16",
+    "days_until_next_change": 39,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought since 7&nbsp;October 2023, as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century."
+   },
+   {
+    "date": "2025-09-24",
+    "days_until_next_change": 22,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts dating back to the 20th century."
+   },
+   {
+    "date": "2025-10-16",
+    "days_until_next_change": 38,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2025-11-23",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought between the State of Israel and Hamas as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2025-11-25",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought between the State of Israel and the Palestinian militant group Hamas, as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2025-11-25",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2025-11-25",
+    "days_until_next_change": 19,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2025-12-14",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war was an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2025-12-14",
+    "days_until_next_change": 39,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2026-01-22",
+    "days_until_next_change": 17,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2026-02-08",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel in which Israel has committed a genocide of the Palestinians in Gaza."
+   },
+   {
+    "date": "2026-02-08",
+    "days_until_next_change": 108,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   },
+   {
+    "date": "2026-05-27",
+    "days_until_next_change": 161,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Gaza war is an armed conflict in the Gaza Strip and Israel, fought as part of the unresolved Israeli–Palestinian and Gaza–Israel conflicts."
+   }
+  ],
+  "October 7 attacks": [
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "peration Al-Aqsa Flood As the Palestinian resistance calls it, it is an extended military operation launched by the Palestinian resistance in the early morning hours of Saturday, October 7, 2023."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood As the Palestinian resistance calls it, it is an extended military operation launched by the Palestinian resistance in the early morning hours of Saturday, October 7, 2023."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Operation Al-Aqsa Flood is an ongoing military operation being conducted by Hamas against Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "2023 Israel-Palestine conflict began with the infiltration of Hamas militants into the kibbutzim surrounding the Gaza Strip, with rocket salvoes amounting to about 5,000 rockets on ranges in Israel."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The 2023 Israel-Palestine conflict, also known as Operation Al-Aqsa Flood, which was announced by the senior Hamas leader Muhammad Al-Saif during a speech announcing, began with the infiltration of Hamas militants into the kibbutzim surrounding the Gaza Strip,"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The October 2023 Israel-Palestine conflict, also known in Gaza as Operation Al-Aqsa Flood, which was announced by the senior Hamas leader Muhammad Al-Saif during a speech announcing, began with the infiltration of Hamas militants into the kibbutzim surrounding"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The October 2023 Israel-Palestine conflict, also known in Gaza as Operation Al-Aqsa Flood, which was announced by the senior Hamas leader Mohammed Deif during a speech announcing, began with the infiltration of Hamas militants into the kibbutzim surrounding th"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, rocket salvoes amounting to about 5,000 rockets were fired on Israel from the Gaza Strip by Palestinian Militants, accompanied by militant infiltrations into kibbutzim surrounding Gaza and the Israeli city of Sderot."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The October 2023 Israel-Palestine conflict, also known in Gaza as Operation Al-Aqsa Flood, began with rocket salvoes amounting to about 5,000 rockets were fired on Israel from the Gaza Strip by Palestinian Militants, accompanied by militant infiltrations into "
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Operation Al-Aqsa Flood, part of the October 2023 Israel-Palestine conflict, began with rocket salvoes amounting to about 5,000 rockets were fired on Israel from the Gaza Strip by Palestinian Militants, accompanied by militant infiltrations into kibbutzim surr"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Operation Al-Aqsa Flood, part of the Israel-Palestine conflict, began with rocket salvoes amounting to about 5,000 rockets were fired on Israel from the Gaza Strip by Palestinian Militants, accompanied by militant infiltrations into kibbutzim surrounding Gaza "
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Operation Al-Aqsa Flood, part of the Israel-Palestine conflict, is an ongoing military operation, which began with rocket salvoes amounting to about 5,000 rockets were fired on Israel from the Gaza Strip by Palestinian Militants, accompanied by militant infilt"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, part of the Israel-Palestine conflict, is an ongoing military operation that began on 7 October 2023 when 5,000 rockets were fired by Palestinian Militants on Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, part of the Israel-Palestine conflict, is an ongoing military operation that began on 7 October 2023 when 5,000 rockets were fired by Palestinian Militants at Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, part of the Israel-Palestine conflict, is an ongoing military operation that began on 7 October 2023 when rockets were fired by Palestinian Militants at Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, part of the Israel-Palestine conflict, is an ongoing military operation that began on 7 October 2023 when rockets were fired by Palestinian terrorists at Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, or Operation Iron Swords is a part of the Israel-Palestine conflict, is an ongoing military operation that began on 7 October 2023 when rockets were fired by Palestinian terrorists at Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, or Operation Iron Swords is a part of the Israel-Palestine conflict, is an ongoing military operation that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel from the Gaza Strip."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, and Operation Iron Swords are parts of the Israel-Palestine conflict, both are ongoing military operations that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel from the Gaza Strip, with the latter bei"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, is part of the Israel-Palestine conflictMilitary operations began on 7 October 2023 when rockets were fired by Palestinian resistance fighters at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, is part of the Israel-Palestine conflict Military operations began on 7 October 2023 when rockets were fired by Palestinian resistance fighters at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Iron Swords, are a part of the Israel-Palestine conflict Military operations began on 7 October 2023 when rockets were fired by Palestinian resistance fighters at Israel from the Gaza Strip, with the latter being the Israe"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Iron Swords, are military operations that began on 7 October 2023 when rockets were fired by Palestinian resistance fighters at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Iron Swords, are military operations that began on 7 October 2023 when rockets were fired by Hamas militants at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Iron Swords, are military operations that began on 7 October 2023 when rockets were fired by Palestinian resistance fighters at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Iron Swords, are military operations that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "casualties3 = Palestine: At least 2 civilians killed, 5 injuredIsrael: At least 7 civilians killed, 3 injured notes = campaignbox = }} Operation Al-Aqsa Flood and Operation Iron Swords, are military operations that began on 7 October 2023 when rockets were fir"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "casualties3 = Palestine: At least 2 civilians killed, 5 injuredIsrael: At least 7 civilians killed, 3 injured notes = campaignbox = }} Operation Al-Aqsa Flood and Operation Iron Swords, are military operations that began on 7 October 2023 when rockets were fir"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Iron Swords, are military operations that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel from the Gaza Strip in response to Israels: \"desecration of Al-Aqsa\", with the latter being the I"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Iron Swords, are military operations that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Swords of Iron, are military operations that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "casualties3 = Palestine: At least 2 civilians killed, 5 injuredIsrael: At least 20 civilians killed, 260 injured notes = campaignbox = }} Operation Al-Aqsa Flood and Operation Swords of Iron, are military operations that began on 7 October 2023 when rockets we"
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Swords of Iron, are military operations that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Swords of Iron, with rockets and infiltration |url=https://abcnews.go.com/International/wireStory/palestinian-militants-launch-dozens-rockets-israel-sirens-heard-103802009 |website=ABC News |publisher=AP News |access-date="
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Swords of Iron, are military operations that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-07",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood and Operation Swords of Iron, are military operations that began on 7 October 2023 when rockets were fired by Palestinian militants at Israel and Jerusalem from the Gaza Strip, with the latter being the Israeli counter operation."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The 2023 Hamas attacks on Israel, labelled by Hamas as Operation Al-Aqsa Flood, were coordinated attacks by Islamist militant group Hamas based in the Gaza Strip on bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood, also known as the 2023 Hamas attacks on Israel, were coordinated attacks by Islamist militant group Hamas based in the Gaza Strip on bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is the name used by Islamist militant group Hamas for its coordinated attacks from the Gaza Strip onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-13",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Deluge is the name used by Islamist militant group Hamas for its coordinated attacks from the Gaza Strip onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-13",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Deluge is the name used by Palestinian Islamist militant group Hamas for its coordinated attacks from the Gaza Strip onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-13",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is the name used by Palestinian Islamist militant group Hamas for its coordinated attacks from the Gaza Strip onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-13",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is the name of the Palestinian Islamist militant group Hamas coordinated attacks from the Gaza Strip onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-14",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is the name of the Palestinian Islamist militant group Hamas coordinated attacks from the Gaza Strip onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-14",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is the name of the Palestinian Islamist terrorist group Hamas coordinated attacks from the Gaza Strip onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-14",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is the name of the Palestinian Islamist militant group Hamas coordinated attacks from the Gaza Strip onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-14",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is the name of the coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-15",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel on October 7, 2023."
+   },
+   {
+    "date": "2023-10-15",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel on 7 October 2023."
+   },
+   {
+    "date": "2023-10-15",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel on Saturday 7 October 2023 that coincided with the Jewish Shabbat and the Jewish holiday"
+   },
+   {
+    "date": "2023-10-16",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel commencing on Saturday 7 October 2023 that coincided with the Jewish Shabbat and the Jew"
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel commencing on Saturday 7 October 2023 that coincided with the Jewish Shabbat and the Jew"
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood (or Deluge), is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel commencing on Saturday 7 October 2023 that coincided with the Jewish Shabba"
+   },
+   {
+    "date": "2023-10-17",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood (or Deluge) is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel commencing on Saturday 7 October 2023 that coincided with the Jewish Shabbat"
+   },
+   {
+    "date": "2023-10-18",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood (or Deluge) is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel commencing on Saturday 7 October 2023, a Jewish Sabbath day and date of seve"
+   },
+   {
+    "date": "2023-10-19",
+    "days_until_next_change": 3,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "Operation Al-Aqsa Flood (or Deluge) is a series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel commencing on Saturday 7 October 2023, a Sabbath day and date of several Jew"
+   },
+   {
+    "date": "2023-10-22",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel commenced on Saturday 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-10-23",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip onto bordering areas in Israel, commenced on Saturday 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-10-23",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip, onto bordering areas in Israel commenced on Saturday 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-10-23",
+    "days_until_next_change": 21,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip onto bordering areas in Israel, commenced on Saturday 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-11-13",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip onto bordering areas in Israel, commenced on Saturday, 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-11-18",
+    "days_until_next_change": 3,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip into bordering areas in Israel, commenced on Saturday, 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-11-21",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip into bordering areas in Israel, commenced on 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-11-22",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated attacks, led by the Palestinian Islamist militant group Hamas, from the Gaza Strip into bordering areas in Israel, commenced on 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-11-27",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The 2023 Hamas attack on Israel was a series of coordinated incurions, led by the Palestinian Islamist militant group Hamas, from the Gaza Strip into the Gaza envelope of neighbouring Israeli territory, commenced on 7 October 2023, a Sabbath day and date of se"
+   },
+   {
+    "date": "2023-11-27",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The 2023 Hamas attack on Israel was a series of coordinated incursions, led by the Palestinian Islamist militant group Hamas, from the Gaza Strip into the Gaza envelope of neighbouring Israeli territory, commenced on 7 October 2023, a Sabbath day and date of s"
+   },
+   {
+    "date": "2023-11-28",
+    "days_until_next_change": 6,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The 2023 Hamas-led attack on Israel was a series of coordinated incursions, led by the Palestinian Islamist militant group Hamas, from the Gaza Strip into the Gaza envelope of neighbouring Israeli territory, commenced on 7 October 2023, a Sabbath day and date "
+   },
+   {
+    "date": "2023-12-04",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated incursions, led by the Palestinian Islamist militant group Hamas, from the Gaza Strip into the Gaza envelope of neighbouring Israeli territory, commenced on 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-12-09",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated armed incursions, led by the Palestinian Islamist militant group Hamas, from the Gaza Strip into the Gaza envelope of neighbouring Israeli territory, commenced on 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-12-14",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "A series of coordinated armed incursions, led by the Palestinian Islamist militant group Hamas, from the Gaza Strip into the Gaza envelope of neighboring Israeli territory, commenced on 7 October 2023, a Sabbath day and date of several Jewish holidays."
+   },
+   {
+    "date": "2023-12-16",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On October 7th, 2023, the paramilitary wings of of Hamas, the Islamic Jihad Movement in Palestine, the PFLP, and the DFLP launched coordinated armed incursions, led by the Palestinian into the Gaza envelope of neighboring Israel territory, the first invasion o"
+   },
+   {
+    "date": "2023-12-16",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On October 7th, 2023, the paramilitary wings of of Hamas, the Islamic Jihad Movement in Palestine, the PFLP, and the DFLP launched a series of coordinated armed incursions, into the Gaza envelope of neighboring Israel territory, the first invasion of Israel si"
+   },
+   {
+    "date": "2023-12-16",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On October 7th, 2023, the paramilitary wings of Hamas, the Islamic Jihad Movement in Palestine, the PFLP, and the DFLP launched a series of coordinated armed incursions, into the Gaza envelope of neighboring Israel territory, the first invasion of Israel since"
+   },
+   {
+    "date": "2023-12-16",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Islamic Jihad Movement in Palestine, the PFLP, and the DFLP launched a series of coordinated armed incursions, into the Gaza envelope of neighboring Israel territory, the first invasion of Israel since th"
+   },
+   {
+    "date": "2023-12-16",
+    "days_until_next_change": 3,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Islamic Jihad Movement in Palestine, the PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israel territory, the first invasion of Israel since the"
+   },
+   {
+    "date": "2023-12-19",
+    "days_until_next_change": 8,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Islamic Jihad Movement in Palestine, the PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since th"
+   },
+   {
+    "date": "2023-12-27",
+    "days_until_next_change": 9,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since the 1948 Ara"
+   },
+   {
+    "date": "2024-01-05",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since the 1948 Ara"
+   },
+   {
+    "date": "2024-01-05",
+    "days_until_next_change": 16,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since the 1948 Ara"
+   },
+   {
+    "date": "2024-01-21",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the PRC, PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since the 194"
+   },
+   {
+    "date": "2024-01-23",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the PRC, PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, attacking military outposts and committing"
+   },
+   {
+    "date": "2024-01-23",
+    "days_until_next_change": 10,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the PRC, PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since the 194"
+   },
+   {
+    "date": "2024-02-02",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, the Palestinian Islamic Jihad, the Al-Qassam Brigades, PRC, PFLP, and the DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of "
+   },
+   {
+    "date": "2024-02-07",
+    "days_until_next_change": 6,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, Palestinian Islamic Jihad, PRC, PFLP and DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory, the first invasion of Israel since the 1948 Arab–Israel"
+   },
+   {
+    "date": "2024-02-13",
+    "days_until_next_change": 15,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, Palestinian Islamic Jihad, PRC, PFLP and DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israeli territory."
+   },
+   {
+    "date": "2024-02-28",
+    "days_until_next_change": 14,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, Palestinian Islamic Jihad, PRC, PFLP and DFLP launched a series of coordinated armed incursions into the Gaza envelope of neighboring Israel, the first invasion of Israeli home territory since the Arab-Israel"
+   },
+   {
+    "date": "2024-03-13",
+    "days_until_next_change": 6,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, Palestinian Islamic Jihad, PRC, PFLP, and DFLP launched coordinated armed incursions into the Gaza envelope of neighboring Israel, the first invasion of Israeli home territory since the Arab-Israeli War of 19"
+   },
+   {
+    "date": "2024-03-19",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, the paramilitary wings of Hamas, Palestinian Islamic Jihad, PRC, PFLP, and DFLP launched coordinated armed incursions from the Gaza Strip into southern Israel, the first invasion of Israeli territory since the Arab-Israeli War of 1948."
+   },
+   {
+    "date": "2024-03-19",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas, Palestinian Islamic Jihad, PRC, PFLP, and DFLP launched coordinated armed incursions from the Gaza Strip into the Gaz envelope of southern Israel, the first invasion of Israeli territory since the Arab-Israeli War of 1948."
+   },
+   {
+    "date": "2024-03-19",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas, Palestinian Islamic Jihad, PRC, PFLP, and DFLP launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the Arab-Israeli War of 1948."
+   },
+   {
+    "date": "2024-03-19",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas, assisted by several other Palestinian militant groups, launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the Arab-Israeli War of 1948."
+   },
+   {
+    "date": "2024-03-21",
+    "days_until_next_change": 28,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the Arab-Israeli War of 1948."
+   },
+   {
+    "date": "2024-04-18",
+    "days_until_next_change": 69,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2024-06-26",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2024-06-28",
+    "days_until_next_change": 36,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2024-08-03",
+    "days_until_next_change": 27,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2024-08-30",
+    "days_until_next_change": 100,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas and several other Palestinian nationalist militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2024-12-08",
+    "days_until_next_change": 24,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2025-01-01",
+    "days_until_next_change": 17,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2025-01-18",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On Saturday, October 7th, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2025-01-19",
+    "days_until_next_change": 67,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza Envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2025-03-27",
+    "days_until_next_change": 68,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2025-06-03",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2025-06-04",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, Hamas and several other Palestinian militant groups broke out from the blockade of the Gaza Strip and launched coordinated armed incursions into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Ar"
+   },
+   {
+    "date": "2025-06-04",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, Hamas and several other Palestinian militant groups broke out from the blockade of the Gaza Strip and launched coordinated armed incursions into the Gaza envelope of southern Israel."
+   },
+   {
+    "date": "2025-06-04",
+    "days_until_next_change": 37,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2025-07-11",
+    "days_until_next_change": 35,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, Hamas and several other Palestinian militant groups launched coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, the first large-scale invasion of Israeli territory since the 1948 Arab–Israeli War."
+   },
+   {
+    "date": "2025-08-15",
+    "days_until_next_change": 102,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups on October 7, 2023, during the Jewish holiday of Simchat Torah"
+   },
+   {
+    "date": "2025-11-25",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 massacres were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups on October 7, 2023, during the Jewish holiday of Simchat Tor"
+   },
+   {
+    "date": "2025-11-25",
+    "days_until_next_change": 6,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups on October 7, 2023, during the Jewish holiday of Simchat Torah"
+   },
+   {
+    "date": "2025-12-01",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups IN 2023, during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2025-12-01",
+    "days_until_next_change": 7,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups in 2023, during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2025-12-08",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas, Palestinian civilians and several other Palestinian militant groups in 2023, during the Jewish holiday of S"
+   },
+   {
+    "date": "2025-12-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions carried out by Hamas, Palestinian civilians and several other Palestinian militant groups against southern Israel in 2023."
+   },
+   {
+    "date": "2025-12-10",
+    "days_until_next_change": 72,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups in 2023, during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2026-02-20",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups in 2023, during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2026-02-20",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups in 2023, during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2026-02-22",
+    "days_until_next_change": 177,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "The October 7 attacks were a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel, carried out by Hamas and several other Palestinian militant groups in 2023, during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2026-08-18",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On 7 October 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2026-08-18",
+    "days_until_next_change": 43,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2026-09-30",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups killing at least 1,195 people during the Jewish holiday"
+   },
+   {
+    "date": "2026-10-01",
+    "days_until_next_change": 7,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups during the Jewish holiday of Simchat Torah."
+   },
+   {
+    "date": "2026-10-08",
+    "days_until_next_change": 27,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": true,
+    "text": "On October 7, 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups."
+   }
+  ],
+  "Hamas": [
+   {
+    "date": "2021-01-01",
+    "days_until_next_change": 133,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (Arabic: حماس Ḥamās, an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah [Islamic Resistance Movement]) is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization."
+   },
+   {
+    "date": "2021-05-14",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas ( Ḥamās, an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah [Islamic Resistance Movement]) is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization."
+   },
+   {
+    "date": "2021-05-16",
+    "days_until_next_change": 15,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, \"Islamic Resistance Movement\") is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization."
+   },
+   {
+    "date": "2021-05-31",
+    "days_until_next_change": 84,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, \"Islamic Resistance Movement\") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+   },
+   {
+    "date": "2021-08-23",
+    "days_until_next_change": 317,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, \"Islamic Resistance Movement\") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+   },
+   {
+    "date": "2022-07-06",
+    "days_until_next_change": 194,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, \"Islamic Resistance Movement\") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+   },
+   {
+    "date": "2023-01-16",
+    "days_until_next_change": 266,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+   },
+   {
+    "date": "2023-10-09",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "}} Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+   },
+   {
+    "date": "2023-10-09",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+   },
+   {
+    "date": "2023-10-09",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Sunni-Islamic fundamentalist, militant, and nationalist organization in Palestine."
+   },
+   {
+    "date": "2023-10-09",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories (the other being the West Bank)."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and terrorist organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and terrorist organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is an Islamic political and military organization based in Palestine that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is an Islamic political and military organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, formally the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is an Islamist political and military organization currently governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Sunni-Islamic fundamentalist, militant, and nationalist organization in Palestine."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Sunni-Islamic fundamentalist and militant organization in Palestine."
+   },
+   {
+    "date": "2023-10-10",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, formally the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is an Islamist political and military organization currently governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-11",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas, formally the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and militant organization currently governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and militant organization currently governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and terrorist organization currently governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and militant organization currently governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-12",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization currently governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-14",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization that is the de facto government of Palestine in the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-14",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a radical Sunni Islamist political and military organization that is the de facto government of Palestine in the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-14",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization that is the de facto government of Palestine in the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-16",
+    "days_until_next_change": 8,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-10-24",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "* Non-state allies: * * Houthis * Islamic Jihad * PFLP * DFLP * Lions' Den * Popular Mobilization Forces (alleged) * Al-Qaeda in the Islamic Maghreb (alleged) * al-Aqsa Martyrs' Brigades opponents = State opponents: * * * * * Non-state opponents: * Fatah (reco"
+   },
+   {
+    "date": "2023-10-24",
+    "days_until_next_change": 9,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories."
+   },
+   {
+    "date": "2023-11-02",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2023-11-03",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2023-11-08",
+    "days_until_next_change": 11,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2023-11-19",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization, designated as a terrorist group by many countries (including the US, UK, EU, etc.), governi"
+   },
+   {
+    "date": "2023-11-19",
+    "days_until_next_change": 25,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2023-12-14",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist and Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territorie"
+   },
+   {
+    "date": "2023-12-14",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, anti-colonialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Pal"
+   },
+   {
+    "date": "2023-12-14",
+    "days_until_next_change": 3,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, anti-colonialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territor"
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, anti-colonialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territor"
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are ill"
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occ"
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian fundamentalist, nationalist, anti-imperialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestini"
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occ"
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occu"
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occu"
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under "
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under "
+   },
+   {
+    "date": "2023-12-17",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2023-12-18",
+    "days_until_next_change": 11,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under "
+   },
+   {
+    "date": "2023-12-29",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under i"
+   },
+   {
+    "date": "2023-12-29",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under "
+   },
+   {
+    "date": "2023-12-29",
+    "days_until_next_change": 13,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+   },
+   {
+    "date": "2024-01-11",
+    "days_until_next_change": 19,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2024-01-30",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2024-01-31",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military movement governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2024-02-05",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya (Islamic Resistance Movement), is a Palestinian Sunni Islamist political and military movement governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+   },
+   {
+    "date": "2024-02-05",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya (Islamic Resistance Movement), is a Palestinian Sunni Islamist political and military movement governing the Gaza Strip."
+   },
+   {
+    "date": "2024-02-05",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya (Islamic Resistance Movement), is a Palestinian Sunni Islamist political and military movement governing the occupied Gaza Strip."
+   },
+   {
+    "date": "2024-02-07",
+    "days_until_next_change": 21,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya (Islamic Resistance Movement), is a Palestinian Sunni Islamist political and military movement governing parts of the occupied Gaza Strip."
+   },
+   {
+    "date": "2024-02-28",
+    "days_until_next_change": 13,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the occupied Gaza Strip."
+   },
+   {
+    "date": "2024-03-12",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist terrorist group governing parts of the occupied Gaza Strip."
+   },
+   {
+    "date": "2024-03-12",
+    "days_until_next_change": 24,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the occupied Gaza Strip."
+   },
+   {
+    "date": "2024-04-05",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip."
+   },
+   {
+    "date": "2024-04-06",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Gaza Strip."
+   },
+   {
+    "date": "2024-04-06",
+    "days_until_next_change": 16,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip."
+   },
+   {
+    "date": "2024-04-22",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist terrorist organization governing parts of the Israeli-occupied Gaza Strip."
+   },
+   {
+    "date": "2024-04-22",
+    "days_until_next_change": 14,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip."
+   },
+   {
+    "date": "2024-05-06",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Gaza Strip."
+   },
+   {
+    "date": "2024-05-06",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip."
+   },
+   {
+    "date": "2024-05-06",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movementgoverning the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-05-06",
+    "days_until_next_change": 33,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-06-08",
+    "days_until_next_change": 47,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-07-25",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organization governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-07-25",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political movement and military organization governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-07-25",
+    "days_until_next_change": 7,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-01",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist resistance movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-01",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist militant resistance movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-01",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-01",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist militant resistance movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-02",
+    "days_until_next_change": 5,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing parts of the Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing the Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-07",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing the Israeli-occupiedGaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-07",
+    "days_until_next_change": 8,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-15",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement (Hamas), an Arabic acronym from, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-15",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from, commonly ), is a Palestinian Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-15",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-16",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political and military organisation governing parts of the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-18",
+    "days_until_next_change": 1,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+   },
+   {
+    "date": "2024-08-19",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a militant wing called the Ezzedeen Al-Qassam Brigades."
+   },
+   {
+    "date": "2024-08-21",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a militant wing called the Ezzedeen Al-Qassam Brigades.It has governed the Israeli-occupied Gaza Strip since 2"
+   },
+   {
+    "date": "2024-08-21",
+    "days_until_next_change": 10,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a militant wing called the Ezzedeen Al-Qassam Brigades."
+   },
+   {
+    "date": "2024-08-31",
+    "days_until_next_change": 30,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Ezzedeen Al-Qassam Brigades."
+   },
+   {
+    "date": "2024-09-30",
+    "days_until_next_change": 0,
+    "names_hamas": false,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes "
+   },
+   {
+    "date": "2024-09-30",
+    "days_until_next_change": 22,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Ezzedeen Al-Qassam Brigades."
+   },
+   {
+    "date": "2024-10-22",
+    "days_until_next_change": 2,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Ezzedeen Al-Qassam Brigades."
+   },
+   {
+    "date": "2024-10-24",
+    "days_until_next_change": 32,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Izz al-Din al-Qassam Brigades."
+   },
+   {
+    "date": "2024-11-25",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Izz al-Din al-Qassam Brigades."
+   },
+   {
+    "date": "2024-11-25",
+    "days_until_next_change": 57,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Izz al-Din al-Qassam Brigades."
+   },
+   {
+    "date": "2025-01-21",
+    "days_until_next_change": 22,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing known as the Al-Qassam Brigades."
+   },
+   {
+    "date": "2025-02-12",
+    "days_until_next_change": 6,
+    "names_hamas": true,
+    "names_militants": true,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist militant and political organisation."
+   },
+   {
+    "date": "2025-02-18",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Al-Qassam Brigades."
+   },
+   {
+    "date": "2025-02-18",
+    "days_until_next_change": 12,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Qassam Brigades."
+   },
+   {
+    "date": "2025-03-02",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "religion = Sunni Islam flag = Hamas Emblem Flag White Variant with Colored Emblem.svgborder website = split = headquarters = Gaza City, Gaza Strip affiliation1_title = Political alliance affiliation1 = Alliance of Palestinian Forces international = Axis of Res"
+   },
+   {
+    "date": "2025-03-02",
+    "days_until_next_change": 123,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Qassam Brigades."
+   },
+   {
+    "date": "2025-07-03",
+    "days_until_next_change": 69,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Qassam Brigades."
+   },
+   {
+    "date": "2025-09-10",
+    "days_until_next_change": 25,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing, the Qassam Brigades."
+   },
+   {
+    "date": "2025-10-05",
+    "days_until_next_change": 30,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing, the al-Qassam Brigades."
+   },
+   {
+    "date": "2025-11-04",
+    "days_until_next_change": 22,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with an armed military wing known as the al-Qassam Brigades."
+   },
+   {
+    "date": "2025-11-26",
+    "days_until_next_change": 3,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with an military wing known as the al-Qassam Brigades."
+   },
+   {
+    "date": "2025-11-29",
+    "days_until_next_change": 3,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades."
+   },
+   {
+    "date": "2025-12-02",
+    "days_until_next_change": 0,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Palestinian Sunni Islamist political organisation with a military wing, al-Qassam Brigades."
+   },
+   {
+    "date": "2025-12-02",
+    "days_until_next_change": 337,
+    "names_hamas": true,
+    "names_militants": false,
+    "names_oct7_date": false,
+    "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades."
+   }
+  ]
+ }
+}

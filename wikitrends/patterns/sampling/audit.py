@@ -120,7 +120,17 @@ print("== group totals", json.dumps(grp_tab, indent=1))
 
 # design weights
 wkey = {(x.group, x.project, x.importance): (x.N_pool_est / x.n_mass2 if x.n_mass2 else np.nan) for _, x in st_ok.iterrows()}
-df["w"] = [wkey.get((g, p, i), np.nan) for g, p, i in zip(df.grp, df.project, df.importance)]
+# strata with fewer than 30 sampled articles are collapsed into one cell per group x importance (pooled N / pooled n):
+# otherwise one Bosnia-and-Herzegovina Mid article would stand for 514 pages (weight 514).
+small = st_ok[(st_ok.n_mass2 > 0) & (st_ok.n_mass2 < 30)]
+wcol = dict(wkey)
+for (g, l), t in small.groupby(["group", "importance"]):
+    for _, x in t.iterrows():
+        wcol[(x.group, x.project, x.importance)] = t.N_pool_est.sum() / t.n_mass2.sum()
+print("collapsed small strata:", [(x.group, x.project, x.importance, int(x.n_mass2)) for _, x in small.iterrows()],
+      {k: round(v, 1) for k, v in wcol.items() if k in set(zip(small.group, small.project, small.importance))})
+df["w_raw"] = [wkey.get((g, p, i), np.nan) for g, p, i in zip(df.grp, df.project, df.importance)]
+df["w"] = [wcol.get((g, p, i), np.nan) for g, p, i in zip(df.grp, df.project, df.importance)]
 assert df.w.notna().all(), df[df.w.isna()][["title", "grp", "project", "importance"]]
 df["stratum"] = df.grp + "|" + df.project + "|" + df.importance
 for g in ("topic", "comparison"):
@@ -225,7 +235,8 @@ def bootstrap(d, wcol=None, mode="stratum", ctrl=None, Bn=B):
 def fmt(x, scale=1, k=2, unit=""):
     if x["est"] is None:
         return "n/a"
-    return f"{x['est'] * scale:+.{k}f}{unit} [{(x['lo'] or np.nan) * scale:+.{k}f}, {(x['hi'] or np.nan) * scale:+.{k}f}]"
+    lo = np.nan if x["lo"] is None else x["lo"]; hi = np.nan if x["hi"] is None else x["hi"]
+    return f"{x['est'] * scale:+.{k}f}{unit} [{lo * scale:+.{k}f}, {hi * scale:+.{k}f}]"
 
 
 KEYS = [("a_unf", 1, 2, ""), ("a_res", 1, 2, ""), ("c_share", 100, 0, "%"), ("b_t", 100, 1, "%"), ("b_c", 100, 1, "%"), ("b", 100, 1, " pp"),
@@ -247,6 +258,8 @@ for sub in ("all", "relevant"):
     d = df if sub == "all" else df[df.rel].reset_index(drop=True)
     main[sub] = {"unweighted": bootstrap(d, None), "design_weighted": bootstrap(d, "w"),
                  "unweighted_projectCI": bootstrap(d, None, mode="cluster", Bn=400), "design_weighted_projectCI": bootstrap(d, "w", mode="cluster", Bn=400)}
+    main[sub]["raw_design_weights_uncollapsed"] = bootstrap(d, "w_raw", Bn=300)
+    main[sub]["topic_weighted_only"] = bootstrap(d.assign(w_t=np.where(d.is_t, d.w, 1.0)), "w_t")
     for k, v in main[sub].items():
         show(f"{sub} / {k}", v)
 
@@ -432,7 +445,7 @@ ref = {"ct_notice": ip_ref.ct_notice.mean(), "relevant": ip_ref.rel.mean(), "bas
 feat = list(ref)
 C = PJ[PJ.group == "comparison"].copy()
 sd_ = C[feat].std()
-C["distance_to_IsraelPalestine"] = np.sqrt((((C[feat] - pd.Series(ref)) / sd_) ** 2).sum(1))
+C["distance_to_IsraelPalestine"] = np.sqrt((((C[feat] - pd.Series(ref)) / sd_) ** 2).sum(axis=1))
 C["a_priori"] = C.project.map(lambda p: "conflict" if p in CONFLICT else "religion" if p in RELIGION else "country")
 C = C.sort_values("distance_to_IsraelPalestine")
 print("== comparison projects ranked by similarity to Israel+Palestine (pre-treatment features)")

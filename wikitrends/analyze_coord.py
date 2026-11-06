@@ -427,13 +427,14 @@ class Engine:
 # ------------------------------------------------------------------ communities / blocs (observed)
 def confidence(set_p, calib_share, sync_p=None):
     """The calibration share is the selection-aware test (the fixed-set p ignores that the set was picked from the data).
-    high: <=1% of null worlds (whole pipeline re-run) give a community this large and dense, the fixed-set null is beaten at
-    p<=0.002 and, for blocs, the members are also synchronous (p<0.01). medium: <=2.5% of null worlds, fixed-set p<=0.01."""
+    Six scope x direction tests run, so the thresholds are strict:
+    high: <=0.5% of null worlds (whole pipeline re-run) give a community this large and dense, the fixed-set null is beaten at
+    p<=0.002 and, for blocs, the members are also synchronous (p<0.01). medium: <=1% of null worlds, fixed-set p<=0.01."""
     if calib_share is None:
         return "low"
-    if set_p <= 0.002 and calib_share <= 0.01 and (sync_p is None or sync_p < 0.01):
+    if set_p <= 0.002 and calib_share <= 0.005 and (sync_p is None or sync_p < 0.01):
         return "high"
-    if set_p <= 0.01 and calib_share <= 0.025:
+    if set_p <= 0.01 and calib_share <= 0.01:
         return "medium"
     return "low"
 
