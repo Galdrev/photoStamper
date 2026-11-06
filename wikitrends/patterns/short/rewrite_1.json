@@ -1,0 +1,278 @@
+[
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Most articles did not change; the opening paragraphs of a few hundred widely read Israel and Palestine articles did</h2>",
+  "new": "Most articles did not change. The opening paragraphs of a few hundred widely read Israel and Palestine articles did.</h2>",
+  "note": "Split semicolon heading into two sentences."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "We compared 4,642 English Wikipedia articles on Israel, Palestine, Zionism and Judaism with about 5,700 comparison articles, 2021 to 2026. Most topic articles did not change on our measure, and Judaism articles changed no more than comparison articles. The change we found is concentrated in the opening paragraphs of a few hundred Israel and Palestine articles, several heavily read, and mostly concerns 1948 and the land, not the current war. It came mainly in 2024, had returned to the pre-war rate by 2026, and did not run in only one direction.",
+  "new": "We compared 4,642 English Wikipedia articles on Israel, Palestine, Zionism and Judaism with about 5,700 comparison articles. The period is 2021 to 2026. Most topic articles did not change on our measure. Judaism articles changed no more than comparison articles. The change we did find sits in the opening paragraphs of a few hundred Israel and Palestine articles. Several of those are heavily read. The new wording is mostly about 1948 and the land, not the current war. Most of it arrived in 2024. By 2026 the rate was back at its pre-war level. The change did not run in only one direction.",
+  "note": "Summary paragraph: one idea per sentence."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Most articles did not change, and Judaism articles did not move.",
+  "new": "Most articles did not change. Judaism articles did not move.",
+  "note": "Card 1 headline split."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "85% of topic articles ended with the same count of critical vocabulary. Judaism versus comparison: −0.1 percentage points (interval −2.3 to +2.3), statistically equivalent to zero.",
+  "new": "85% of topic articles ended with the same count of critical vocabulary. Judaism articles differed from comparison articles by −0.1 percentage points. The range we're fairly sure about is −2.3 to +2.3, which is statistically equivalent to zero.",
+  "note": "Card 1: unpack the colon and parenthetical."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "3.9% of topic articles gained critical vocabulary in their opening paragraph; they get 15% of topic views (interval 9.5% to 21.3%). Comparison articles: 1.5% and 5%. An extra tilt toward read pages, beyond the comparison group's, is only suggestive. 83% of topic reading meets unchanged opening paragraphs.",
+  "new": "3.9% of topic articles gained critical vocabulary in their opening paragraph. Those articles get 15% of topic views. The range we're fairly sure about is 9.5% to 21.3%. In comparison articles the two figures are 1.5% and 5%. Whether the tilt toward well-read pages is larger than in comparison articles is only suggestive. 83% of topic reading lands on unchanged opening paragraphs.",
+  "note": "Card 2: one number per sentence; plain words for interval."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Removing sentences about events since 2022 leaves 89% of the extra change. It replicated on held-back data; on the full set one of two intervals includes zero.",
+  "new": "Remove the sentences about events since 2022, and 89% of the extra change remains. This result held on the half of the data we kept back. On the full set, one of the two intervals includes zero.",
+  "note": "Card 3: split semicolon; say 'held-back' plainly."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Critical terms went in at about 7 per 1,000 edits before October 2023, about 16 through 2024, and 5 to 6 in 2026. This describes data to late 2026, not a forecast.",
+  "new": "Before October 2023, editors added about 7 critical terms per 1,000 edits. Through 2024 the rate was about 16. In 2026 it was 5 to 6. This describes data to late 2026, not a forecast.",
+  "note": "Card 4: three numbers split into three sentences."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Accounts with under 500 edits made 9.1% of war-period topic edits (comparison: 17.2%). Later-blocked accounts made 13.7% of insertions against a 12.3% baseline, within the margin of error.",
+  "new": "Accounts with under 500 edits made 9.1% of topic edits during the war, against 17.2% in comparison articles. Accounts that were later blocked made 13.7% of the insertions. Their baseline share is 12.3%, so the gap is within the margin of error.",
+  "note": "Card 5: remove parenthetical; split."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "The 2021 version also took a position; neither is \"neutral\".",
+  "new": "The 2021 version also took a position. Neither is \"neutral\".",
+  "note": "Split semicolon."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "61 critical terms left topic opening paragraphs (against 223 that entered); the 1948 expulsion article dropped \"by Zionist militias\".",
+  "new": "61 critical terms left topic opening paragraphs, against 223 that entered. The 1948 expulsion article dropped \"by Zionist militias\".",
+  "note": "Remove parenthetical and semicolon."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Terms attributed to a source (\"according to\") rose from 21% to 25% (comparison: 17%, flat). A few prominent opening paragraphs later dropped the attribution.",
+  "new": "The share of terms attributed to a source (\"according to\") rose from 21% to 25%. In comparison articles it stayed flat at 17%. A few prominent opening paragraphs later dropped the attribution.",
+  "note": "Split the comparison out of the parenthetical."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,320 articles over their revision histories. Each result is the change in topic articles minus the change in comparison articles, which removes ordinary editing trends. Intervals resample articles and, separately, WikiProjects; where they disagree we call a result suggestive. Half the articles were held back until the end; the main result replicated there (+3.6 percentage points, interval 1.7 to 5.6). Measures failing precision checks, including one on 1948 departures, were withdrawn.",
+  "new": "We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,320 articles, across their revision histories. Each result is the change in topic articles minus the change in comparison articles. That subtraction removes ordinary editing trends. We computed two ranges for each result: one by resampling articles, one by resampling WikiProjects. Where the two disagree, we call the result suggestive. Half the articles were held back until the end. The main result replicated there: +3.6 percentage points, with a range of 1.7 to 5.6. Measures that failed precision checks, including one on 1948 departures, were withdrawn.",
+  "note": "Methods paragraph: short sentences, no semicolons."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "We see what changed, not why, and cannot see off-wiki coordination.",
+  "new": "We see what changed, not why. We cannot see coordination that happened off Wikipedia.",
+  "note": "Split; plain words."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "A pre-specified average test on a smaller panel found no clear rise; it was too weak to detect concentrated change.",
+  "new": "A test fixed in advance, run on a smaller panel, found no clear average rise. It was too weak to detect concentrated change.",
+  "note": "Split semicolon; plain words."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "English and Portuguese moved; nine other languages showed no clear change.",
+  "new": "English and Portuguese moved. Nine other languages showed no clear change.",
+  "note": "Split semicolon."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "A similar rise across a random sample of Wikipedia (not yet run), which would make this site-wide drift.",
+  "new": "A similar rise in a random sample of all Wikipedia articles, a check we have not yet run. That would make this site-wide drift.",
+  "note": "Remove parenthetical; split."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "<b>Jewish-history vocabulary:</b> homeland, indigenous, antisemitism, Land of Israel; also counted.",
+  "new": "<b>Jewish-history vocabulary:</b> homeland, indigenous, antisemitism, Land of Israel. We counted these too.",
+  "note": "Glossary: remove semicolon fragment."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "${ex} closely related other articles drawn with the other group`;",
+  "new": "${ex} other articles closely related to the topic, sampled with the other group`;",
+  "note": "Hero note (JS): clearer phrasing, placeholders unchanged."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "Drag along the strip to rewrite the sentence as it stood on any day. Each tick is a change.",
+  "new": "Drag along the strip to see the sentence as it stood on any day. Each tick is one change.",
+  "note": "Breathe hint: 'see' instead of 'rewrite'."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "`each change: ${D.ev.length-1} changes, ${D.n} different wordings`",
+  "new": "`one tick per change: ${D.ev.length-1} changes, ${D.n} different wordings`",
+  "note": "Breathe key (JS): say what the tick is."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": " · this wording was short-lived; its text is not kept, so the last kept wording is shown",
+  "new": " · this wording was short-lived and its text was not kept, so the last kept wording is shown",
+  "note": "Breathe meta (JS): remove semicolon."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/page_template.html",
+  "old": "For comparison: the comparison key article with the median number of wordings, ${esc(c)}.",
+  "new": "For comparison: ${esc(c)}, the comparison key article with the median number of wordings.",
+  "note": "Breathe compare (JS): lead with the article name."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "We then collected every article in the topic: 10,320 articles, 4,642 on the topic and 5,678 for comparison.",
+  "new": "We then collected every article in the topic: 10,320 articles in all. 4,642 are on the topic and 5,678 are for comparison.",
+  "note": "Split the three counts."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "Those pages carry <strong>15%</strong> of topic reading, against 1.5% and 5% in comparison articles.",
+  "new": "Those pages carry <strong>15%</strong> of topic reading. In comparison articles the two figures are 1.5% and 5%.",
+  "note": "Separate the comparison figures."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "took on more of the vocabulary of legal accusation and of 1948 (genocide, ethnic cleansing, expulsion, occupation). Judaism articles did not move, and comparison articles on other countries and conflicts moved much less.",
+  "new": "took on more of the vocabulary of legal accusation and of 1948: genocide, ethnic cleansing, expulsion, occupation. Judaism articles did not move. Comparison articles on other countries and conflicts moved much less.",
+  "note": "List item 1: remove parenthetical; split."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "One wave: new critical terms per 1,000 topic edits went from about 7 before the war to about 16 through 2024, and back to 5 or 6 in 2026.",
+  "new": "One rise, then a fall. New critical terms per 1,000 topic edits went from about 7 before the war to about 16 through 2024. By 2026 the rate was back to 5 or 6.",
+  "note": "List item 2: split; no metaphor."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "It is concentrated: the 3.9% of topic articles whose opening paragraph changed carry 15% of topic reading.",
+  "new": "The change is concentrated. The 3.9% of topic articles whose opening paragraph changed carry 15% of topic reading.",
+  "note": "List item 3: split."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "It came as added text, 89% of it not about recent events, written by established editors on pages that also gained protection, formal discussions (RfCs), framing categories and links to core concepts such as the Nakba. A few high-traffic opening paragraphs (Gaza genocide, Israel, Israeli apartheid, Nakba, Zionism) now state contested labels in Wikipedia’s own voice.",
+  "new": "The change came as added text, and 89% of it is not about recent events. Established editors wrote it. The same pages also gained protection, formal discussions (RfCs), framing categories and links to core concepts such as the Nakba. A few high-traffic opening paragraphs now state contested labels in Wikipedia’s own voice: Gaza genocide, Israel, Israeli apartheid, Nakba, Zionism.",
+  "note": "List item 4: unpack the nested sentence."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "Jewish-history vocabulary was kept, sources in opening paragraphs shifted only slightly, other language editions mostly did not follow, and we found no sign of synchronized tag-teaming or of blocked accounts doing more than their share.",
+  "new": "Jewish-history vocabulary was kept. Sources cited in opening paragraphs shifted only slightly. Other language editions mostly did not follow. We found no sign of synchronized tag-teaming, and no sign that blocked accounts did more than their share.",
+  "note": "List item 5: four findings, four sentences."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "Counting words measures emphasis, not truth: “genocide” can appear more because a court case exists. The data cannot tell us whether the new wording is accurate, what editors intended, or whether anyone coordinated off-wiki.",
+  "new": "Counting words measures emphasis, not truth. The word “genocide” can appear more often simply because a court case exists. The data cannot tell us whether the new wording is accurate. It cannot tell us what editors intended, or whether anyone coordinated off Wikipedia.",
+  "note": "Limits paragraph: split."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "Views-share minus article-share, difference +7.5 pp [+1.6, +14.3], project interval {−2.9, +16.8}, so the extra tilt toward read pages is suggestive, not established.",
+  "new": "Views share minus article share, difference between the groups: +7.5 pp [+1.6, +14.3]. The project-level interval, {−2.9, +16.8}, crosses zero, so the extra tilt toward read pages is suggestive, not established.",
+  "note": "Stats: split and say why it is suggestive."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "Narrative residual: post-war difference in lead critical hits per 10k words +2.22 [+1.37, +3.12]; after removing sentences about 2022+ events +1.98 [+1.10, +2.82]; event sentences +0.24.",
+  "new": "Narrative residual. Post-war difference in opening-paragraph critical hits per 10k words: +2.22 [+1.37, +3.12]. After removing sentences about 2022+ events: +1.98 [+1.10, +2.82]. Event sentences alone: +0.24.",
+  "note": "Stats: semicolon chain to sentences; 'lead' to 'opening paragraph'."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/findings.html",
+  "old": "Curly brackets resample whole WikiProjects; the topic side has only 4 projects, so those intervals are wide.",
+  "new": "Curly brackets resample whole WikiProjects. The topic side has only 4 projects, so those intervals are wide.",
+  "note": "Split semicolon."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/notes/takeaways.json",
+  "old": "\"headline\": \"One wave, now passed. Battles brought editors in; court rulings did not.\"",
+  "new": "\"headline\": \"One rise, now over. Battles brought editors in. Court rulings did not.\"",
+  "note": "Card headline: no semicolon, no metaphor."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.html",
+  "old": "Six hands-on views of the data behind the report. Drag, tap and shuffle the data itself; the pre-registered result stays on screen as a dashed outline.",
+  "new": "Six hands-on views of the data behind the report. Drag, tap and shuffle the data itself. The pre-registered result stays on screen as a dashed outline.",
+  "note": "Deck: split semicolon. Leading 'Six hands-on views' kept for the JS regex."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.html",
+  "old": "Bar: how much loaded words (colonial, apartheid, genocide…) rose in each kind of topic article, per 10,000 words. Grey shadow: how much the comparison articles rose. The coloured part sticking out is the extra change.",
+  "new": "Each bar shows how much loaded words (colonial, apartheid, genocide…) rose in one kind of topic article, per 10,000 words. The grey shadow shows how much the comparison articles rose. The coloured part that sticks out is the extra change.",
+  "note": "Shadow bars: full sentences instead of label fragments."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.html",
+  "old": "If the topic label meant nothing, random labels would give an extra change as big as the real one. Shuffle and see how often chance does as well.",
+  "new": "Suppose the topic label meant nothing. Then random labels would give an extra change as big as the real one. Shuffle and see how often chance does as well.",
+  "note": "Shuffle: split the conditional."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.html",
+  "old": "The same articles in other Wikipedias. Each cell: change in loaded words in the opening paragraph, per 10,000 words. Tap a language to sort. Drag EN onto another language to subtract.",
+  "new": "The same articles in other language Wikipedias. Each cell shows the change in loaded words in the opening paragraph, per 10,000 words. Tap a language to sort. Drag EN onto another language to subtract.",
+  "note": "Prism: full sentence for the cell definition."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.html",
+  "old": "Every dot is one article, about ten thousand in all, grouped by WikiProject. Across: change in loaded words since the first snapshot, per 10,000 words. Pick a date to watch them move; tap a row to compare.",
+  "new": "Every dot is one article, about ten thousand in all, grouped by WikiProject. Left to right: the change in loaded words since the first snapshot, per 10,000 words. Pick a date to watch them move. Tap a row to compare.",
+  "note": "Galaxy: plain axis words; split semicolon."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.js",
+  "old": "A shuffle “beats” the real extra change when its own is at least as big, either way (per 10,000 words).",
+  "new": "A shuffle “beats” the real extra change when its own extra change is at least as big, in either direction (per 10,000 words).",
+  "note": "Shuffle caption: say what 'its own' refers to."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.js",
+  "old": "the extra change is <b>${SG(gp,2)}</b> per 10,000 words (range ${SG(band[0],1)} to ${SG(band[1],1)}, from 300 resamples), against the pre-registered <b>${SG(pr.did,2)}</b>.`",
+  "new": "the extra change is <b>${SG(gp,2)}</b> per 10,000 words. Its range, from 300 resamples, is ${SG(band[0],1)} to ${SG(band[1],1)}. The pre-registered value was <b>${SG(pr.did,2)}</b>.`",
+  "note": "Trim caption: three numbers, three sentences; placeholders unchanged."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.js",
+  "old": "`Nothing removed: this is the full pre-registered comparison, extra change <b>${SG(gp,2)}</b> per 10,000 words.`",
+  "new": "`Nothing removed. This is the full pre-registered comparison: extra change <b>${SG(gp,2)}</b> per 10,000 words.`",
+  "note": "Trim caption, nothing-removed case."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.js",
+  "old": "the wording before was not stored, so no highlighting",
+  "new": "the previous wording was not stored, so changes are not highlighted",
+  "note": "Flipbook meta: full sentence."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.js",
+  "old": "Projects differ in what they contain; the pre-registered test is in the report",
+  "new": "Projects differ in what they contain. The pre-registered test is in the report",
+  "note": "Galaxy caveat: split semicolon."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.js",
+  "old": "(grey strip): the real value is ${out?\"<b>outside what project-level chance produces</b>. Exploratory; see the report’s caveats.\"",
+  "new": "(grey strip). The real value is ${out?\"<b>outside what project-level chance produces</b>. This is exploratory. See the report’s caveats.\"",
+  "note": "Galaxy band sentence: split colon and semicolon; logic unchanged."
+ },
+ {
+  "file": "/home/user/photoStamper/wikitrends/lab/lab.js",
+  "old": "topic <b>${SG(mean(T),1)}</b> (${N(T.length)}), comparison <b>${SG(mc,1)}</b> (${N(C.length)}) per 10,000 words; extra change <b>${SG(ex,1)}</b>.",
+  "new": "topic <b>${SG(mean(T),1)}</b> (${N(T.length)} articles), comparison <b>${SG(mc,1)}</b> (${N(C.length)} articles) per 10,000 words. Extra change: <b>${SG(ex,1)}</b>.",
+  "note": "Galaxy summary: label the counts; split semicolon."
+ }
+]

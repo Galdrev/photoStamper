@@ -44,8 +44,8 @@
  {
   "file": "/home/user/photoStamper/wikitrends/page_template.html",
   "old": "`Loaded words per 10,000 words of ${K.part===\"lead\"?\"the opening paragraph\":\"article text\"}`;",
-  "new": "`Critical vocabulary per 10,000 words of ${K.part===\"lead\"?\"the opening paragraph\":\"the full text\"}`;",
-  "note": "#key chart title: same term as the section heading and the same wording as the other title"
+  "new": "`Critical vocabulary per 10,000 words of ${K.part===\"lead\"?\"the opening paragraph\":\"article text\"}`;",
+  "note": "#key chart title: same term as the section heading and deck"
  },
  {
   "file": "/home/user/photoStamper/wikitrends/page_template.html",
