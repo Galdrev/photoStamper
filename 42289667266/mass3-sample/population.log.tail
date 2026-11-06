@@ -1,0 +1,6 @@
+population: projects [('topic', 'Israel'), ('topic', 'Palestine'), ('topic', 'Judaism'), ('topic', 'Jewish history'), ('topic', 'Israel Palestine Collaboration'), ('comparison', 'Kurdistan'), ('comparison', 'Ukraine'), ('comparison', 'Russian invasion of Ukraine'), ('comparison', 'Turkey'), ('comparison', 'Serbia'), ('comparison', 'Kosovo'), ('comparison', 'Armenia'), ('comparison', 'Azerbaijan'), ('comparison', 'Cyprus'), ('comparison', 'Indian roads/Jammu and Kashmir'), ('comparison', 'Northern Ireland')] skipped ['Arab-Israeli conflict', 'Zionism', 'The Troubles']
+[hb mass3-population] projectpages Israel 500/0 el=0.1m eta=Nonem req=3 429=1 5xx=0 retries=1 fail=0
+[hb mass3-population] projectpages Israel 16000/0 el=1.1m eta=Nonem req=35 429=2 5xx=0 retries=2 fail=0
+[hb mass3-population] projectpages Israel 32500/0 el=2.1m eta=Nonem req=69 429=3 5xx=0 retries=3 fail=0
+[hb mass3-population] projectpages Israel 33000/0 el=2.1m eta=Nonem req=70 429=3 5xx=0 retries=3 fail=0
+  Israel: 36890 assessed pages (74 requests)

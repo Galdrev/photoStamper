@@ -1,0 +1,22 @@
+{
+ "job": "mass3-population",
+ "stage": "projectpages Israel",
+ "done": 33000,
+ "total": 0,
+ "elapsed_min": 2.1,
+ "eta_min": null,
+ "rps_limit": 2.0,
+ "req_per_s": 0.56,
+ "avg_latency_s": 0.13,
+ "requests": 70,
+ "ok": 67,
+ "http_429": 3,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 3,
+ "failures": 0,
+ "bytes": 3840270,
+ "retry_after_max": 44,
+ "retry_after_sum": 91,
+ "updated": "2026-11-06T20:38:01Z"
+}
