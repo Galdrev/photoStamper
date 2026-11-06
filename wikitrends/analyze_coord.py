@@ -419,8 +419,8 @@ class Engine:
         e = [w[f"n_edges_{rule}"] for w in self.calib]
         c = [len(w[rule]) for w in self.calib] if rule != "sync" else None
         return {"null_worlds": len(self.calib), "edges_mean": round(float(np.mean(e)), 2) if e else None,
-                "edges_p95": float(np.percentile(e, 95)) if e else None,
-                **({"communities_mean": round(float(np.mean(c)), 2), "communities_p95": float(np.percentile(c, 95)),
+                "edges_p95": round(float(np.percentile(e, 95)), 1) if e else None,
+                **({"communities_mean": round(float(np.mean(c)), 2), "communities_p95": round(float(np.percentile(c, 95)), 1),
                     "communities_max": int(max(c))} if c else {})}
 
 
@@ -429,7 +429,8 @@ def confidence(set_p, calib_share, sync_p=None):
     """The calibration share is the selection-aware test (the fixed-set p ignores that the set was picked from the data).
     Six scope x direction tests run, so the thresholds are strict:
     high: <=0.5% of null worlds (whole pipeline re-run) give a community this large and dense, the fixed-set null is beaten at
-    p<=0.002 and, for blocs, the members are also synchronous (p<0.01). medium: <=1% of null worlds, fixed-set p<=0.01."""
+    p<=0.002 and the members are also synchronous (p<0.01). medium: <=1% of null worlds, fixed-set p<=0.01 (structure only:
+    on six noise-only synthetic datasets x 6 tests, one 3-account group reached medium, i.e. roughly 1 per 36 tests)."""
     if calib_share is None:
         return "low"
     if set_p <= 0.002 and calib_share <= 0.005 and (sync_p is None or sync_p < 0.01):
@@ -519,7 +520,7 @@ def network(E, D, ev_by_acc, log=print):
             setp = min(st["articles_3plus"]["p"], st["sync_t30"]["p"])
             s["significance"] = {"fixed_set_null": st, "null_worlds_with_community_this_large_dense_and_strong": share,
                                  "null_worlds": len(E.calib)}
-            s["confidence"] = confidence(setp, share)
+            s["confidence"] = confidence(setp, share, st["sync_t30"]["p"])   # high needs timing too
         else:
             s["significance"], s["confidence"] = None, "n/a (pair)"
         s["id"] = k; s["members"] = [lab[a] for a in sorted(c, key=lambda a: lab[a])]
@@ -857,27 +858,31 @@ def build_cards(R):
         g, d = key.split("/")
         B = rec["blocs"]; ex = B["expected_by_chance"]
         lines = []
-        for b in B["blocs"]:
-            b["name"] = f"Bloc {bloc_name(letter[0])} ({b['size']} accounts)"; letter[0] += 1
-            n3 = b["null"]["articles_3plus"]; s60 = b["null"]["sync_t60"]
+        sig = [b for b in B["blocs"] if b["confidence"] in ("high", "medium")]
+        for b in B["blocs"]:                       # only groups that pass the bloc test get a name
+            if b in sig:
+                b["name"] = f"Bloc {bloc_name(letter[0])} ({b['size']} accounts)"; letter[0] += 1
+        for b in sig:
+            n3 = b["null"]["articles_3plus"]; s60 = b["null"]["sync_t60"]; sy = b["synchrony"]
             lines.append(f"{b['name']} [{b['confidence']}]: {b['n_articles']} articles (top: "
                          f"{', '.join(a['title'] for a in b['articles'][:4])}); {b['direction']['insert']} insertions / "
                          f"{b['direction']['remove']} removals; articles touched by 3+ members {n3['observed']} vs null "
                          f"{n3['null_mean']} (95th {n3['null_p95']}, {fmt_p(n3['p'])}); 60-min cross-article co-activity "
                          f"{s60['observed']} vs {s60['null_mean']} ({fmt_p(s60['p'])}, article-shuffle {fmt_p(s60['p_article_shuffle'])}); "
-                         f"{b['significant_triads']} significant triads; null worlds with a bloc this large and dense: "
-                         f"{b['null_worlds_with_bloc_this_large_dense_and_strong']}; active {b['active']['first']} to {b['active']['last']}")
-        sig = [b for b in B["blocs"] if b["confidence"] in ("high", "medium")]
-        conf = "high" if any(b["confidence"] == "high" for b in sig) else "medium" if sig else \
-            ("medium" if (ex.get("communities_mean") is not None and len(B["blocs"]) <= ex.get("communities_p95", 0)) else "low")
-        what = (f"{g} articles, {d} events: {B['edges']} account pairs share articles far above the rewiring null "
+                         f"median same-article gap {sy['median_same_article_gap_h']} h, events with another member within "
+                         f"10 min {sy['share_events_with_member_within_10min']}; {b['significant_triads']} significant triads; "
+                         f"null worlds with a bloc this large and dense: {b['null_worlds_with_bloc_this_large_dense_and_strong']}; "
+                         f"active {b['active']['first']} to {b['active']['last']}")
+        conf = "high" if any(b["confidence"] == "high" for b in sig) else "medium" if sig else "not detected"
+        what = (f"{g} articles, {d} events: {B['edges']} account pairs share articles above the rewiring null "
                 f"(p<{P_EDGE}, >={MIN_OBS} shared); null worlds give {ex.get('edges_mean')} such pairs on average "
-                f"(95th {ex.get('edges_p95')}). {len(B['blocs'])} groups of 3+ (expected by chance {ex.get('communities_mean')}, "
-                f"95th {ex.get('communities_p95')}); {len(sig)} pass the bloc test. " + (" | ".join(lines) if lines else "No bloc."))
-        cards.append(card(f"blocs_{g}_{d}", f"(a) Bloc detection: {g} articles, {d} events", what,
-                          conf if sig else f"{conf} (null result)",
-                          {"pairs": "degree-preserving rewiring, 1,000 draws", "bloc": "articles with 3+ members vs rewiring; "
-                           "synchrony vs account day-shift (+-1..7 d) and time-shuffle within article", "expected_by_chance": ex},
+                f"(95th {ex.get('edges_p95')}). {len(B['blocs'])} candidate groups of 3+ (null worlds: {ex.get('communities_mean')} "
+                f"on average, 95th {ex.get('communities_p95')}); {len(sig)} pass the bloc test. " +
+                (" | ".join(lines) if lines else "No bloc detected."))
+        cards.append(card(f"blocs_{g}_{d}", f"(a) Bloc detection: {g} articles, {d} events", what, conf,
+                          {"pairs": f"degree-preserving rewiring, {m['null_draws']} draws", "bloc": "articles with 3+ members vs "
+                           "rewiring; selection-aware share of null worlds; synchrony vs account day-shift (1-7 d) and time "
+                           "shuffle within article", "expected_by_chance": ex},
                           "A bloc is a set of accounts whose overlap in critical-term articles is not explained by how active "
                           "each account is and how popular each article is." if sig else
                           "Account overlap is what the rewiring null predicts from activity and article popularity alone.",
@@ -894,8 +899,8 @@ def build_cards(R):
                           f"beat the within-article time-shuffle null. Null worlds give {ex.get('edges_mean')} pairs on average "
                           f"(95th {ex.get('edges_p95')}).",
                           "high" if S["n_also_beat_article_shuffle"] > (ex.get("edges_p95") or 0) else
-                          "medium" if S["n_pairs"] > (ex.get("edges_p95") or 0) else "low (consistent with chance)",
-                          {"null": "each account's timeline shifted by a random 1-7 days (either sign), 1,000 draws; secondary: timestamps "
+                          "medium" if S["n_pairs"] > (ex.get("edges_p95") or 0) else "not detected (consistent with chance)",
+                          {"null": f"each account's timeline shifted by a random 1-7 days (either sign), {m['null_draws']} draws; secondary: timestamps "
                                    "permuted within article",
                            "expected_by_chance": ex},
                           "Pairs that repeatedly move together across different articles within minutes are the classic "
@@ -909,7 +914,7 @@ def build_cards(R):
                           f"communities of 3+ (chance {ex.get('communities_mean')}, 95th {ex.get('communities_p95')}), "
                           f"{c['communities_significant']} significant.",
                           "high" if any(x["confidence"] == "high" for x in N["communities"]) else
-                          "medium" if c["communities_significant"] else "low (consistent with chance)",
+                          "medium" if c["communities_significant"] else "not detected (consistent with chance)",
                           {"edge": f"p<{P_EDGE} and observed>={MIN_OBS} on 30-min cross-article co-activity (account day-shift) or "
                                    "shared articles (rewiring)", "expected_by_chance": ex},
                           "The page's network graph; edges carry direction agreement, so insert-blocs and remove-blocs are visible.",
@@ -927,7 +932,7 @@ def build_cards(R):
                               f"[{x['confidence']}; 5-article span {x['null']['observed_days']} d vs null median "
                               f"{x['null']['null_median_days']} d, {fmt_p(x['null']['p'])}]" for x in cl[:8]),
                           max((x["confidence"] for x in cl), key=["low", "medium", "high"].index) if cl else "n/a (none found)",
-                          {"null": "same number of insertion times drawn from all term insertions in the group, 1,000 draws; "
+                          {"null": f"same number of insertion times drawn from all term insertions in the group, {m['null_draws']} draws; "
                                    "statistic: shortest span covering 5 distinct articles"},
                           "A sweep is the same wording placed into many articles; a short span and few accounts point to a "
                           "campaign, a long span and many accounts to a shared standard phrase.",

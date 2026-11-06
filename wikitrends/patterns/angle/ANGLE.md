@@ -8,7 +8,7 @@
 - the Zionism definition now says "through colonization", and the Jewish "re-establishment" link was removed;
 - Wikipedia's own voice now says Israel "began committing genocide";
 - 1948 is retold as ethnic cleansing "by Zionists";
-- "terrorist" moved out of Hamas's definition;
+- Hamas's definition went from "militant" to "a political organisation with a military wing", and the terror-designation sentence moved from sentence 5 to the end of the lead ("terrorist" itself never held in the definition for more than a few hours);
 - documented off-wiki canvassing (the Discord channel, confirmed by Wikipedia's own arbitration body).
 Name these plainly, in Israeli newsroom language (e.g. "the encyclopedia now states as fact...").
 

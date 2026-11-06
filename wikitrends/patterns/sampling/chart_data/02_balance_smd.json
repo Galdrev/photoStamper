@@ -53,18 +53,18 @@
    "design_weighted": {
     "lead words 2021 (log)": {
      "mean_topic": 4.01,
-     "mean_comp": 4.479,
-     "smd": -0.324
+     "mean_comp": 4.513,
+     "smd": -0.347
     },
     "no 2021 lead": {
      "mean_topic": 0.073,
-     "mean_comp": 0.049,
-     "smd": 0.096
+     "mean_comp": 0.05,
+     "smd": 0.091
     },
     "page id (log; age proxy, higher = newer)": {
      "mean_topic": 15.816,
-     "mean_comp": 15.051,
-     "smd": 0.327
+     "mean_comp": 14.978,
+     "smd": 0.358
     },
     "created after 2021-01-01": {
      "mean_topic": 0.068,
@@ -73,13 +73,13 @@
     },
     "edits 2021-01..2023-07 (log)": {
      "mean_topic": 2.864,
-     "mean_comp": 3.582,
-     "smd": -0.506
+     "mean_comp": 3.664,
+     "smd": -0.564
     },
     "views/month 2021-01..2023-07 (log)": {
      "mean_topic": 6.108,
-     "mean_comp": 7.335,
-     "smd": -0.52
+     "mean_comp": 7.441,
+     "smd": -0.566
     },
     "importance (Top=3, High=2, Mid=1)": {
      "mean_topic": 1.277,
@@ -223,43 +223,43 @@
    "design_weighted": {
     "lead words 2021 (log)": {
      "mean_topic": 4.47,
-     "mean_comp": 4.896,
-     "smd": -0.289
+     "mean_comp": 4.892,
+     "smd": -0.286
     },
     "no 2021 lead": {
      "mean_topic": 0.073,
-     "mean_comp": 0.062,
-     "smd": 0.045
+     "mean_comp": 0.061,
+     "smd": 0.051
     },
     "page id (log; age proxy, higher = newer)": {
      "mean_topic": 15.797,
-     "mean_comp": 14.754,
-     "smd": 0.431
+     "mean_comp": 14.785,
+     "smd": 0.418
     },
     "created after 2021-01-01": {
      "mean_topic": 0.072,
-     "mean_comp": 0.057,
-     "smd": 0.061
+     "mean_comp": 0.056,
+     "smd": 0.067
     },
     "edits 2021-01..2023-07 (log)": {
      "mean_topic": 2.941,
-     "mean_comp": 4.191,
-     "smd": -0.849
+     "mean_comp": 4.162,
+     "smd": -0.829
     },
     "views/month 2021-01..2023-07 (log)": {
      "mean_topic": 6.305,
-     "mean_comp": 8.248,
-     "smd": -0.789
+     "mean_comp": 8.193,
+     "smd": -0.767
     },
     "importance (Top=3, High=2, Mid=1)": {
      "mean_topic": 1.391,
-     "mean_comp": 2.285,
-     "smd": -1.516
+     "mean_comp": 2.255,
+     "smd": -1.465
     },
     "lead had a critical term in Jul 2023": {
      "mean_topic": 0.137,
-     "mean_comp": 0.104,
-     "smd": 0.097
+     "mean_comp": 0.102,
+     "smd": 0.104
     }
    },
    "cem": {

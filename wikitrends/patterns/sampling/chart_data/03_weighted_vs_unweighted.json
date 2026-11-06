@@ -11,43 +11,53 @@
    "label": "(a) post-war lead critical DiD, hits/10k words",
    "unweighted": {
     "est": 2.2164,
-    "lo": 1.3357,
-    "hi": 2.8206
+    "lo": 1.2983,
+    "hi": 3.1689
    },
    "design_weighted": {
-    "est": 1.0406,
-    "lo": 0.1707,
-    "hi": 1.6649
+    "est": 0.8693,
+    "lo": -0.3789,
+    "hi": 1.8008
    },
    "unweighted_projectCI": {
     "est": 2.2164,
-    "lo": -0.3759,
-    "hi": 4.9002
+    "lo": -0.438,
+    "hi": 4.7855
    },
    "design_weighted_projectCI": {
+    "est": 0.8693,
+    "lo": -0.9689,
+    "hi": 4.3184
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 1.0406,
-    "lo": -0.7458,
-    "hi": 4.385
+    "lo": 0.2674,
+    "hi": 1.8928
+   },
+   "topic_weighted_only": {
+    "est": 1.1425,
+    "lo": 0.4552,
+    "hi": 1.773
    },
    "importance_standardised": {
-    "est": -0.1476,
-    "lo": -4.2834,
-    "hi": 2.0335
+    "est": -1.1954,
+    "lo": -7.0885,
+    "hi": 2.0209
    },
    "top_high_only_weighted": {
     "est": 2.888,
-    "lo": 1.5423,
-    "hi": 3.8538
+    "lo": 1.6406,
+    "hi": 4.2085
    },
    "cem": {
     "est": 2.7585,
-    "lo": 2.0293,
-    "hi": 4.0154
+    "lo": 1.6775,
+    "hi": 3.9384
    },
    "ps_nn": {
     "est": 2.745,
-    "lo": 1.9065,
-    "hi": 3.3881
+    "lo": 1.2327,
+    "hi": 3.5553
    }
   },
   {
@@ -56,43 +66,53 @@
    "label": "(b) share of leads gaining critical terms, topic minus comparison",
    "unweighted": {
     "est": 0.0244,
-    "lo": 0.0197,
-    "hi": 0.0305
+    "lo": 0.0177,
+    "hi": 0.0307
    },
    "design_weighted": {
-    "est": 0.0125,
-    "lo": 0.0069,
-    "hi": 0.0202
+    "est": 0.0114,
+    "lo": 0.0032,
+    "hi": 0.019
    },
    "unweighted_projectCI": {
     "est": 0.0244,
-    "lo": 0.0004,
-    "hi": 0.0482
+    "lo": -0.0037,
+    "hi": 0.0484
    },
    "design_weighted_projectCI": {
+    "est": 0.0114,
+    "lo": -0.0058,
+    "hi": 0.0465
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.0125,
-    "lo": -0.0029,
-    "hi": 0.0474
+    "lo": 0.0063,
+    "hi": 0.0187
+   },
+   "topic_weighted_only": {
+    "est": 0.0103,
+    "lo": 0.0047,
+    "hi": 0.0167
    },
    "importance_standardised": {
-    "est": 0.0112,
-    "lo": -0.0155,
-    "hi": 0.0238
+    "est": 0.0044,
+    "lo": -0.0335,
+    "hi": 0.0257
    },
    "top_high_only_weighted": {
     "est": 0.0408,
-    "lo": 0.0296,
-    "hi": 0.052
+    "lo": 0.0309,
+    "hi": 0.0509
    },
    "cem": {
     "est": 0.0319,
-    "lo": 0.0313,
-    "hi": 0.0395
+    "lo": 0.0255,
+    "hi": 0.0387
    },
    "ps_nn": {
     "est": 0.0349,
-    "lo": 0.0262,
-    "hi": 0.0361
+    "lo": 0.0235,
+    "hi": 0.0385
    }
   },
   {
@@ -101,13 +121,13 @@
    "label": "(b) topic share gaining",
    "unweighted": {
     "est": 0.0389,
-    "lo": 0.0346,
+    "lo": 0.0335,
     "hi": 0.0442
    },
    "design_weighted": {
     "est": 0.0249,
-    "lo": 0.0193,
-    "hi": 0.0308
+    "lo": 0.0204,
+    "hi": 0.0305
    },
    "unweighted_projectCI": {
     "est": 0.0389,
@@ -117,27 +137,37 @@
    "design_weighted_projectCI": {
     "est": 0.0249,
     "lo": 0.0094,
-    "hi": 0.0617
+    "hi": 0.0571
+   },
+   "raw_design_weights_uncollapsed": {
+    "est": 0.0249,
+    "lo": 0.021,
+    "hi": 0.03
+   },
+   "topic_weighted_only": {
+    "est": 0.0249,
+    "lo": 0.0204,
+    "hi": 0.0301
    },
    "importance_standardised": {
     "est": 0.0249,
-    "lo": 0.0193,
-    "hi": 0.0273
+    "lo": 0.0204,
+    "hi": 0.0299
    },
    "top_high_only_weighted": {
     "est": 0.0529,
-    "lo": 0.0428,
-    "hi": 0.0626
+    "lo": 0.0441,
+    "hi": 0.062
    },
    "cem": {
     "est": 0.038,
-    "lo": 0.0381,
-    "hi": 0.0455
+    "lo": 0.0323,
+    "hi": 0.0448
    },
    "ps_nn": {
     "est": 0.0389,
-    "lo": 0.0374,
-    "hi": 0.0414
+    "lo": 0.0339,
+    "hi": 0.0444
    }
   },
   {
@@ -146,43 +176,53 @@
    "label": "(b) comparison share gaining",
    "unweighted": {
     "est": 0.0145,
-    "lo": 0.0122,
-    "hi": 0.0169
+    "lo": 0.0115,
+    "hi": 0.0176
    },
    "design_weighted": {
-    "est": 0.0123,
-    "lo": 0.0072,
-    "hi": 0.0178
+    "est": 0.0134,
+    "lo": 0.0084,
+    "hi": 0.0208
    },
    "unweighted_projectCI": {
     "est": 0.0145,
-    "lo": 0.009,
-    "hi": 0.0195
+    "lo": 0.0095,
+    "hi": 0.0203
    },
    "design_weighted_projectCI": {
+    "est": 0.0134,
+    "lo": 0.0071,
+    "hi": 0.0213
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.0123,
-    "lo": 0.0072,
-    "hi": 0.0192
+    "lo": 0.0086,
+    "hi": 0.0169
+   },
+   "topic_weighted_only": {
+    "est": 0.0145,
+    "lo": 0.0114,
+    "hi": 0.0178
    },
    "importance_standardised": {
-    "est": 0.0136,
-    "lo": 0.0023,
-    "hi": 0.0375
+    "est": 0.0204,
+    "lo": 0.0021,
+    "hi": 0.0567
    },
    "top_high_only_weighted": {
     "est": 0.0121,
-    "lo": 0.0087,
-    "hi": 0.0144
+    "lo": 0.0088,
+    "hi": 0.0158
    },
    "cem": {
     "est": 0.0061,
-    "lo": 0.006,
-    "hi": 0.0071
+    "lo": 0.0047,
+    "hi": 0.0085
    },
    "ps_nn": {
     "est": 0.0041,
-    "lo": 0.0038,
-    "hi": 0.0127
+    "lo": 0.0035,
+    "hi": 0.0139
    }
   },
   {
@@ -191,43 +231,53 @@
    "label": "(b') full-text gain share, post-pre DiD (A1 analogue)",
    "unweighted": {
     "est": 0.0505,
-    "lo": 0.0424,
-    "hi": 0.0638
+    "lo": 0.0366,
+    "hi": 0.0643
    },
    "design_weighted": {
-    "est": 0.034,
-    "lo": 0.0231,
-    "hi": 0.0463
+    "est": 0.0317,
+    "lo": 0.0162,
+    "hi": 0.0461
    },
    "unweighted_projectCI": {
     "est": 0.0505,
-    "lo": 0.0101,
-    "hi": 0.0799
+    "lo": 0.0113,
+    "hi": 0.079
    },
    "design_weighted_projectCI": {
+    "est": 0.0317,
+    "lo": 0.0016,
+    "hi": 0.0734
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.034,
-    "lo": 0.0047,
-    "hi": 0.0725
+    "lo": 0.0203,
+    "hi": 0.0489
+   },
+   "topic_weighted_only": {
+    "est": 0.0359,
+    "lo": 0.022,
+    "hi": 0.0492
    },
    "importance_standardised": {
-    "est": 0.0186,
-    "lo": -0.0154,
-    "hi": 0.0463
+    "est": 0.0047,
+    "lo": -0.0489,
+    "hi": 0.0454
    },
    "top_high_only_weighted": {
     "est": 0.062,
-    "lo": 0.0437,
-    "hi": 0.0765
+    "lo": 0.0417,
+    "hi": 0.0822
    },
    "cem": {
     "est": 0.0404,
-    "lo": 0.0267,
-    "hi": 0.0406
+    "lo": 0.0196,
+    "hi": 0.0638
    },
    "ps_nn": {
     "est": 0.038,
-    "lo": 0.0298,
-    "hi": 0.0551
+    "lo": 0.0227,
+    "hi": 0.0613
    }
   },
   {
@@ -236,33 +286,43 @@
    "label": "(c) narrative-residual share of (a)",
    "unweighted": {
     "est": 0.8931,
-    "lo": 0.6844,
-    "hi": 0.9812
+    "lo": 0.7601,
+    "hi": 0.9787
    },
    "design_weighted": {
-    "est": 1.0302,
-    "lo": 0.7235,
-    "hi": 6.0001
+    "est": 1.2331,
+    "lo": -4.7037,
+    "hi": 7.8677
    },
    "unweighted_projectCI": {
     "est": 0.8931,
-    "lo": 0.7056,
-    "hi": 0.9855
+    "lo": 0.7551,
+    "hi": 0.9903
    },
    "design_weighted_projectCI": {
+    "est": 1.2331,
+    "lo": -1.5543,
+    "hi": 7.376
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 1.0302,
-    "lo": -0.7903,
-    "hi": 3.3619
+    "lo": 0.672,
+    "hi": 2.6747
+   },
+   "topic_weighted_only": {
+    "est": 0.8371,
+    "lo": 0.5703,
+    "hi": 0.9906
    },
    "importance_standardised": {
-    "est": -8.7395,
-    "lo": -72.3513,
-    "hi": 8.2113
+    "est": -1.0794,
+    "lo": -2.3713,
+    "hi": 0.9153
    },
    "top_high_only_weighted": {
     "est": 0.8889,
-    "lo": 0.672,
-    "hi": 0.9521
+    "lo": 0.7648,
+    "hi": 0.9558
    }
   },
   {
@@ -271,43 +331,53 @@
    "label": "(c) narrative-residual DiD",
    "unweighted": {
     "est": 1.9795,
-    "lo": 1.1687,
-    "hi": 2.6946
+    "lo": 1.0515,
+    "hi": 2.8831
    },
    "design_weighted": {
-    "est": 1.0721,
-    "lo": 0.6266,
-    "hi": 1.5419
+    "est": 1.0719,
+    "lo": 0.4371,
+    "hi": 1.657
    },
    "unweighted_projectCI": {
     "est": 1.9795,
-    "lo": -0.3379,
-    "hi": 4.4392
+    "lo": -0.4224,
+    "hi": 4.2913
    },
    "design_weighted_projectCI": {
+    "est": 1.0719,
+    "lo": -0.3426,
+    "hi": 3.9208
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 1.0721,
-    "lo": -0.3635,
-    "hi": 4.4134
+    "lo": 0.5422,
+    "hi": 1.761
+   },
+   "topic_weighted_only": {
+    "est": 0.9564,
+    "lo": 0.3006,
+    "hi": 1.5836
    },
    "importance_standardised": {
-    "est": 1.2897,
-    "lo": 0.5902,
-    "hi": 1.8196
+    "est": 1.2903,
+    "lo": 0.703,
+    "hi": 1.9042
    },
    "top_high_only_weighted": {
     "est": 2.5671,
-    "lo": 1.1574,
-    "hi": 3.394
+    "lo": 1.311,
+    "hi": 3.8862
    },
    "cem": {
     "est": 2.5317,
-    "lo": 1.8907,
-    "hi": 3.7707
+    "lo": 1.4935,
+    "hi": 3.588
    },
    "ps_nn": {
     "est": 2.5214,
-    "lo": 1.6916,
-    "hi": 3.1986
+    "lo": 1.5095,
+    "hi": 3.3849
    }
   },
   {
@@ -316,33 +386,43 @@
    "label": "(d) topic view share on gaining leads",
    "unweighted": {
     "est": 0.1497,
-    "lo": 0.088,
-    "hi": 0.2324
+    "lo": 0.0947,
+    "hi": 0.217
    },
    "design_weighted": {
     "est": 0.1368,
-    "lo": 0.0852,
-    "hi": 0.2108
+    "lo": 0.0828,
+    "hi": 0.1986
    },
    "unweighted_projectCI": {
     "est": 0.1497,
     "lo": 0.0272,
-    "hi": 0.2833
+    "hi": 0.2524
    },
    "design_weighted_projectCI": {
     "est": 0.1368,
     "lo": 0.0267,
-    "hi": 0.2541
+    "hi": 0.2459
+   },
+   "raw_design_weights_uncollapsed": {
+    "est": 0.1368,
+    "lo": 0.0826,
+    "hi": 0.1934
+   },
+   "topic_weighted_only": {
+    "est": 0.1368,
+    "lo": 0.0799,
+    "hi": 0.2046
    },
    "importance_standardised": {
     "est": 0.1368,
-    "lo": 0.0768,
-    "hi": 0.1867
+    "lo": 0.0825,
+    "hi": 0.2
    },
    "top_high_only_weighted": {
     "est": 0.1734,
-    "lo": 0.0922,
-    "hi": 0.2522
+    "lo": 0.1033,
+    "hi": 0.2528
    }
   },
   {
@@ -351,33 +431,43 @@
    "label": "(d) comparison view share on gaining leads",
    "unweighted": {
     "est": 0.0499,
-    "lo": 0.0345,
-    "hi": 0.0794
+    "lo": 0.0292,
+    "hi": 0.0771
    },
    "design_weighted": {
-    "est": 0.0338,
-    "lo": 0.0219,
-    "hi": 0.0528
+    "est": 0.0335,
+    "lo": 0.0209,
+    "hi": 0.0492
    },
    "unweighted_projectCI": {
     "est": 0.0499,
-    "lo": 0.0251,
-    "hi": 0.0842
+    "lo": 0.0243,
+    "hi": 0.0863
    },
    "design_weighted_projectCI": {
+    "est": 0.0335,
+    "lo": 0.0147,
+    "hi": 0.0644
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.0338,
-    "lo": 0.0145,
-    "hi": 0.0639
+    "lo": 0.0217,
+    "hi": 0.0476
+   },
+   "topic_weighted_only": {
+    "est": 0.0499,
+    "lo": 0.028,
+    "hi": 0.0757
    },
    "importance_standardised": {
-    "est": 0.0237,
-    "lo": 0.016,
-    "hi": 0.0331
+    "est": 0.0212,
+    "lo": 0.0121,
+    "hi": 0.0324
    },
    "top_high_only_weighted": {
     "est": 0.0341,
-    "lo": 0.0243,
-    "hi": 0.0473
+    "lo": 0.0208,
+    "hi": 0.0492
    }
   },
   {
@@ -386,33 +476,43 @@
    "label": "(d) views-share minus article-share DiD",
    "unweighted": {
     "est": 0.0754,
-    "lo": 0.0192,
+    "lo": 0.019,
     "hi": 0.1463
    },
    "design_weighted": {
-    "est": 0.0905,
-    "lo": 0.0377,
-    "hi": 0.1702
+    "est": 0.0918,
+    "lo": 0.0364,
+    "hi": 0.1555
    },
    "unweighted_projectCI": {
     "est": 0.0754,
-    "lo": -0.0212,
-    "hi": 0.1773
+    "lo": -0.0205,
+    "hi": 0.1701
    },
    "design_weighted_projectCI": {
+    "est": 0.0918,
+    "lo": -0.0036,
+    "hi": 0.1919
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.0905,
-    "lo": -0.0064,
-    "hi": 0.1731
+    "lo": 0.0331,
+    "hi": 0.1483
+   },
+   "topic_weighted_only": {
+    "est": 0.0766,
+    "lo": 0.018,
+    "hi": 0.1482
    },
    "importance_standardised": {
-    "est": 0.1019,
-    "lo": 0.0341,
-    "hi": 0.1589
+    "est": 0.1111,
+    "lo": 0.0522,
+    "hi": 0.1815
    },
    "top_high_only_weighted": {
     "est": 0.0984,
-    "lo": 0.0349,
-    "hi": 0.1818
+    "lo": 0.031,
+    "hi": 0.1745
    }
   },
   {
@@ -421,13 +521,13 @@
    "label": "(e) Israel+Palestine minus Judaism, lead gain share",
    "unweighted": {
     "est": 0.0523,
-    "lo": 0.0458,
-    "hi": 0.0603
+    "lo": 0.0426,
+    "hi": 0.0616
    },
    "design_weighted": {
     "est": 0.0274,
-    "lo": 0.0186,
-    "hi": 0.0341
+    "lo": 0.0198,
+    "hi": 0.0364
    },
    "unweighted_projectCI": {
     "est": 0.0523,
@@ -439,15 +539,25 @@
     "lo": 0.0165,
     "hi": 0.0596
    },
-   "importance_standardised": {
+   "raw_design_weights_uncollapsed": {
     "est": 0.0274,
     "lo": 0.0201,
-    "hi": 0.0338
+    "hi": 0.0363
+   },
+   "topic_weighted_only": {
+    "est": 0.0274,
+    "lo": 0.0189,
+    "hi": 0.036
+   },
+   "importance_standardised": {
+    "est": 0.0274,
+    "lo": 0.0196,
+    "hi": 0.036
    },
    "top_high_only_weighted": {
     "est": 0.0778,
-    "lo": 0.065,
-    "hi": 0.0943
+    "lo": 0.0615,
+    "hi": 0.0939
    }
   },
   {
@@ -456,13 +566,13 @@
    "label": "(e') Israel+Palestine minus Judaism, full-text post-pre (A5 analogue)",
    "unweighted": {
     "est": 0.0723,
-    "lo": 0.0566,
-    "hi": 0.0886
+    "lo": 0.0535,
+    "hi": 0.0908
    },
    "design_weighted": {
     "est": 0.0507,
-    "lo": 0.0289,
-    "hi": 0.0628
+    "lo": 0.0309,
+    "hi": 0.0696
    },
    "unweighted_projectCI": {
     "est": 0.0723,
@@ -474,15 +584,25 @@
     "lo": 0.0392,
     "hi": 0.0843
    },
+   "raw_design_weights_uncollapsed": {
+    "est": 0.0507,
+    "lo": 0.0326,
+    "hi": 0.0705
+   },
+   "topic_weighted_only": {
+    "est": 0.0507,
+    "lo": 0.0309,
+    "hi": 0.0706
+   },
    "importance_standardised": {
     "est": 0.0507,
-    "lo": 0.033,
-    "hi": 0.0744
+    "lo": 0.0313,
+    "hi": 0.0698
    },
    "top_high_only_weighted": {
     "est": 0.0824,
-    "lo": 0.048,
-    "hi": 0.11
+    "lo": 0.0496,
+    "hi": 0.1133
    }
   },
   {
@@ -491,33 +611,43 @@
    "label": "(e'') Judaism minus comparison, lead gain share",
    "unweighted": {
     "est": -0.0094,
-    "lo": -0.0124,
-    "hi": -0.0059
+    "lo": -0.0139,
+    "hi": -0.0042
    },
    "design_weighted": {
-    "est": -0.0072,
-    "lo": -0.0136,
-    "hi": -0.0018
+    "est": -0.0083,
+    "lo": -0.0164,
+    "hi": -0.0008
    },
    "unweighted_projectCI": {
     "est": -0.0094,
-    "lo": -0.0145,
-    "hi": -0.0038
+    "lo": -0.015,
+    "hi": -0.0042
    },
    "design_weighted_projectCI": {
+    "est": -0.0083,
+    "lo": -0.016,
+    "hi": -0.0016
+   },
+   "raw_design_weights_uncollapsed": {
     "est": -0.0072,
-    "lo": -0.0142,
-    "hi": -0.0017
+    "lo": -0.0133,
+    "hi": -0.0014
+   },
+   "topic_weighted_only": {
+    "est": -0.0093,
+    "lo": -0.0141,
+    "hi": -0.0032
    },
    "importance_standardised": {
-    "est": -0.0085,
-    "lo": -0.0342,
-    "hi": 0.0057
+    "est": -0.0152,
+    "lo": -0.0532,
+    "hi": 0.006
    },
    "top_high_only_weighted": {
     "est": -0.007,
-    "lo": -0.0126,
-    "hi": 0.0007
+    "lo": -0.0129,
+    "hi": -0.0005
    }
   },
   {
@@ -526,38 +656,48 @@
    "label": "(a) post-war lead critical DiD, hits/10k words",
    "unweighted": {
     "est": 4.5272,
-    "lo": 2.2105,
-    "hi": 6.3085
+    "lo": 2.4378,
+    "hi": 6.8043
    },
    "design_weighted": {
-    "est": 3.9922,
-    "lo": 2.3459,
-    "hi": 5.8685
+    "est": 3.995,
+    "lo": 2.2414,
+    "hi": 5.859
    },
    "unweighted_projectCI": {
     "est": 4.5272,
-    "lo": 0.2373,
-    "hi": 6.1258
+    "lo": 0.0139,
+    "hi": 6.3128
    },
    "design_weighted_projectCI": {
+    "est": 3.995,
+    "lo": 0.183,
+    "hi": 6.169
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 3.9922,
-    "lo": 0.3828,
-    "hi": 6.1571
+    "lo": 2.3856,
+    "hi": 5.8042
+   },
+   "topic_weighted_only": {
+    "est": 3.4774,
+    "lo": 1.3174,
+    "hi": 5.5341
    },
    "importance_standardised": {
-    "est": 4.9267,
-    "lo": 2.8979,
-    "hi": 6.5666
+    "est": 4.7732,
+    "lo": 2.8096,
+    "hi": 6.9155
    },
    "cem": {
     "est": 3.7189,
-    "lo": 2.0798,
-    "hi": 5.5784
+    "lo": 0.5347,
+    "hi": 6.8902
    },
    "ps_nn": {
     "est": 5.2883,
-    "lo": 3.1355,
-    "hi": 8.0014
+    "lo": 2.2648,
+    "hi": 9.6286
    }
   },
   {
@@ -566,38 +706,48 @@
    "label": "(b) share of leads gaining critical terms, topic minus comparison",
    "unweighted": {
     "est": 0.0452,
-    "lo": 0.027,
-    "hi": 0.0591
+    "lo": 0.0285,
+    "hi": 0.0635
    },
    "design_weighted": {
-    "est": 0.0357,
-    "lo": 0.0245,
-    "hi": 0.0509
+    "est": 0.0364,
+    "lo": 0.0201,
+    "hi": 0.0525
    },
    "unweighted_projectCI": {
     "est": 0.0452,
-    "lo": -0.0049,
-    "hi": 0.0682
+    "lo": -0.0066,
+    "hi": 0.0672
    },
    "design_weighted_projectCI": {
+    "est": 0.0364,
+    "lo": -0.0025,
+    "hi": 0.0567
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.0357,
-    "lo": 0.0008,
-    "hi": 0.0569
+    "lo": 0.0197,
+    "hi": 0.0516
+   },
+   "topic_weighted_only": {
+    "est": 0.0262,
+    "lo": 0.0091,
+    "hi": 0.0433
    },
    "importance_standardised": {
-    "est": 0.0534,
-    "lo": 0.0431,
-    "hi": 0.0628
+    "est": 0.0553,
+    "lo": 0.042,
+    "hi": 0.0702
    },
    "cem": {
     "est": 0.0802,
-    "lo": 0.0612,
-    "hi": 0.0853
+    "lo": 0.0587,
+    "hi": 0.1111
    },
    "ps_nn": {
     "est": 0.0701,
-    "lo": 0.0584,
-    "hi": 0.079
+    "lo": 0.0526,
+    "hi": 0.0868
    }
   },
   {
@@ -606,13 +756,13 @@
    "label": "(b) topic share gaining",
    "unweighted": {
     "est": 0.0828,
-    "lo": 0.0669,
-    "hi": 0.0971
+    "lo": 0.0691,
+    "hi": 0.0978
    },
    "design_weighted": {
     "est": 0.0638,
-    "lo": 0.0522,
-    "hi": 0.0741
+    "lo": 0.0521,
+    "hi": 0.078
    },
    "unweighted_projectCI": {
     "est": 0.0828,
@@ -621,23 +771,33 @@
    },
    "design_weighted_projectCI": {
     "est": 0.0638,
-    "lo": 0.0308,
-    "hi": 0.079
+    "lo": 0.0306,
+    "hi": 0.0831
+   },
+   "raw_design_weights_uncollapsed": {
+    "est": 0.0638,
+    "lo": 0.0504,
+    "hi": 0.0777
+   },
+   "topic_weighted_only": {
+    "est": 0.0638,
+    "lo": 0.0513,
+    "hi": 0.0781
    },
    "importance_standardised": {
     "est": 0.0638,
-    "lo": 0.0529,
-    "hi": 0.0726
+    "lo": 0.051,
+    "hi": 0.0781
    },
    "cem": {
     "est": 0.104,
-    "lo": 0.1003,
-    "hi": 0.118
+    "lo": 0.0894,
+    "hi": 0.1335
    },
    "ps_nn": {
     "est": 0.0828,
-    "lo": 0.0709,
-    "hi": 0.0852
+    "lo": 0.0688,
+    "hi": 0.0968
    }
   },
   {
@@ -646,38 +806,48 @@
    "label": "(b) comparison share gaining",
    "unweighted": {
     "est": 0.0376,
-    "lo": 0.0307,
-    "hi": 0.0453
+    "lo": 0.0273,
+    "hi": 0.0478
    },
    "design_weighted": {
-    "est": 0.028,
-    "lo": 0.0168,
-    "hi": 0.0362
+    "est": 0.0273,
+    "lo": 0.0177,
+    "hi": 0.0381
    },
    "unweighted_projectCI": {
     "est": 0.0376,
-    "lo": 0.0218,
-    "hi": 0.0548
+    "lo": 0.0244,
+    "hi": 0.0538
    },
    "design_weighted_projectCI": {
+    "est": 0.0273,
+    "lo": 0.0138,
+    "hi": 0.0427
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.028,
-    "lo": 0.0142,
-    "hi": 0.0432
+    "lo": 0.0185,
+    "hi": 0.0401
+   },
+   "topic_weighted_only": {
+    "est": 0.0376,
+    "lo": 0.0281,
+    "hi": 0.0485
    },
    "importance_standardised": {
-    "est": 0.0103,
-    "lo": 0.0067,
-    "hi": 0.0136
+    "est": 0.0085,
+    "lo": 0.0048,
+    "hi": 0.0124
    },
    "cem": {
     "est": 0.0238,
-    "lo": 0.0219,
-    "hi": 0.0393
+    "lo": 0.0139,
+    "hi": 0.0446
    },
    "ps_nn": {
     "est": 0.0127,
-    "lo": 0.0038,
-    "hi": 0.0127
+    "lo": 0.0044,
+    "hi": 0.0234
    }
   },
   {
@@ -686,38 +856,48 @@
    "label": "(b') full-text gain share, post-pre DiD (A1 analogue)",
    "unweighted": {
     "est": 0.0999,
-    "lo": 0.0732,
-    "hi": 0.1222
+    "lo": 0.0668,
+    "hi": 0.1362
    },
    "design_weighted": {
-    "est": 0.0837,
-    "lo": 0.0312,
-    "hi": 0.1486
+    "est": 0.0788,
+    "lo": 0.0372,
+    "hi": 0.1216
    },
    "unweighted_projectCI": {
     "est": 0.0999,
-    "lo": 0.0518,
-    "hi": 0.1323
+    "lo": 0.0508,
+    "hi": 0.1325
    },
    "design_weighted_projectCI": {
+    "est": 0.0788,
+    "lo": 0.0306,
+    "hi": 0.1105
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.0837,
-    "lo": 0.0399,
-    "hi": 0.1128
+    "lo": 0.0447,
+    "hi": 0.1219
+   },
+   "topic_weighted_only": {
+    "est": 0.087,
+    "lo": 0.0508,
+    "hi": 0.1242
    },
    "importance_standardised": {
-    "est": 0.0269,
-    "lo": -0.1399,
-    "hi": 0.1112
+    "est": 0.0014,
+    "lo": -0.1956,
+    "hi": 0.1247
    },
    "cem": {
     "est": 0.1381,
-    "lo": 0.0835,
-    "hi": 0.154
+    "lo": 0.0827,
+    "hi": 0.1774
    },
    "ps_nn": {
     "est": 0.0631,
-    "lo": 0.0401,
-    "hi": 0.132
+    "lo": -0.0058,
+    "hi": 0.1359
    }
   },
   {
@@ -726,28 +906,38 @@
    "label": "(c) narrative-residual share of (a)",
    "unweighted": {
     "est": 0.9618,
-    "lo": 0.8757,
-    "hi": 1.0248
+    "lo": 0.8857,
+    "hi": 1.0191
    },
    "design_weighted": {
-    "est": 0.9639,
-    "lo": 0.8468,
-    "hi": 0.9947
+    "est": 0.9634,
+    "lo": 0.9008,
+    "hi": 1.0106
    },
    "unweighted_projectCI": {
     "est": 0.9618,
-    "lo": 0.9062,
-    "hi": 1.3284
+    "lo": 0.8392,
+    "hi": 1.2064
    },
    "design_weighted_projectCI": {
+    "est": 0.9634,
+    "lo": 0.9292,
+    "hi": 1.1664
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.9639,
-    "lo": 0.9322,
-    "hi": 1.089
+    "lo": 0.8952,
+    "hi": 1.0062
+   },
+   "topic_weighted_only": {
+    "est": 0.9772,
+    "lo": 0.8992,
+    "hi": 1.0593
    },
    "importance_standardised": {
-    "est": 0.96,
-    "lo": 0.93,
-    "hi": 0.9917
+    "est": 0.9571,
+    "lo": 0.9016,
+    "hi": 0.9891
    }
   },
   {
@@ -756,38 +946,48 @@
    "label": "(c) narrative-residual DiD",
    "unweighted": {
     "est": 4.3542,
-    "lo": 2.1154,
-    "hi": 6.2473
+    "lo": 2.2981,
+    "hi": 6.5497
    },
    "design_weighted": {
-    "est": 3.8482,
-    "lo": 2.0115,
-    "hi": 5.7165
+    "est": 3.8487,
+    "lo": 2.1107,
+    "hi": 5.7002
    },
    "unweighted_projectCI": {
     "est": 4.3542,
-    "lo": 0.3562,
-    "hi": 5.8769
+    "lo": 0.2247,
+    "hi": 6.0709
    },
    "design_weighted_projectCI": {
+    "est": 3.8487,
+    "lo": 0.3108,
+    "hi": 5.9065
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 3.8482,
-    "lo": 0.5388,
-    "hi": 5.9219
+    "lo": 2.2631,
+    "hi": 5.6975
+   },
+   "topic_weighted_only": {
+    "est": 3.3983,
+    "lo": 1.331,
+    "hi": 5.4403
    },
    "importance_standardised": {
-    "est": 4.7294,
-    "lo": 2.7391,
-    "hi": 6.3908
+    "est": 4.5685,
+    "lo": 2.6342,
+    "hi": 6.7066
    },
    "cem": {
     "est": 3.3603,
-    "lo": 2.0059,
-    "hi": 5.3217
+    "lo": 0.3001,
+    "hi": 6.51
    },
    "ps_nn": {
     "est": 5.0408,
-    "lo": 2.6344,
-    "hi": 7.6438
+    "lo": 2.2127,
+    "hi": 9.5113
    }
   },
   {
@@ -796,28 +996,38 @@
    "label": "(d) topic view share on gaining leads",
    "unweighted": {
     "est": 0.276,
-    "lo": 0.1605,
-    "hi": 0.3664
+    "lo": 0.1836,
+    "hi": 0.3729
    },
    "design_weighted": {
     "est": 0.2287,
-    "lo": 0.1615,
-    "hi": 0.3434
+    "lo": 0.1477,
+    "hi": 0.3193
    },
    "unweighted_projectCI": {
     "est": 0.276,
     "lo": 0.0758,
-    "hi": 0.4355
+    "hi": 0.4224
    },
    "design_weighted_projectCI": {
     "est": 0.2287,
-    "lo": 0.068,
-    "hi": 0.3349
+    "lo": 0.0674,
+    "hi": 0.4187
+   },
+   "raw_design_weights_uncollapsed": {
+    "est": 0.2287,
+    "lo": 0.1443,
+    "hi": 0.3208
+   },
+   "topic_weighted_only": {
+    "est": 0.2287,
+    "lo": 0.1529,
+    "hi": 0.3287
    },
    "importance_standardised": {
     "est": 0.2287,
-    "lo": 0.153,
-    "hi": 0.2885
+    "lo": 0.1508,
+    "hi": 0.3202
    }
   },
   {
@@ -827,27 +1037,37 @@
    "unweighted": {
     "est": 0.0861,
     "lo": 0.0428,
-    "hi": 0.1318
+    "hi": 0.1388
    },
    "design_weighted": {
     "est": 0.0636,
-    "lo": 0.0325,
-    "hi": 0.0922
+    "lo": 0.0327,
+    "hi": 0.0979
    },
    "unweighted_projectCI": {
     "est": 0.0861,
-    "lo": 0.0282,
-    "hi": 0.1766
+    "lo": 0.0269,
+    "hi": 0.1621
    },
    "design_weighted_projectCI": {
     "est": 0.0636,
-    "lo": 0.0215,
-    "hi": 0.1217
+    "lo": 0.0212,
+    "hi": 0.1272
+   },
+   "raw_design_weights_uncollapsed": {
+    "est": 0.0636,
+    "lo": 0.0336,
+    "hi": 0.102
+   },
+   "topic_weighted_only": {
+    "est": 0.0861,
+    "lo": 0.042,
+    "hi": 0.138
    },
    "importance_standardised": {
-    "est": 0.0379,
-    "lo": 0.0271,
-    "hi": 0.0509
+    "est": 0.037,
+    "lo": 0.0181,
+    "hi": 0.0634
    }
   },
   {
@@ -856,28 +1076,38 @@
    "label": "(d) views-share minus article-share DiD",
    "unweighted": {
     "est": 0.1448,
-    "lo": 0.0255,
-    "hi": 0.244
+    "lo": 0.0474,
+    "hi": 0.2484
    },
    "design_weighted": {
-    "est": 0.1293,
-    "lo": 0.0623,
-    "hi": 0.2428
+    "est": 0.1287,
+    "lo": 0.0433,
+    "hi": 0.2218
    },
    "unweighted_projectCI": {
     "est": 0.1448,
-    "lo": -0.0165,
-    "hi": 0.3024
+    "lo": -0.0181,
+    "hi": 0.2936
    },
    "design_weighted_projectCI": {
+    "est": 0.1287,
+    "lo": -0.0201,
+    "hi": 0.2909
+   },
+   "raw_design_weights_uncollapsed": {
     "est": 0.1293,
-    "lo": -0.0064,
-    "hi": 0.2458
+    "lo": 0.0442,
+    "hi": 0.2158
+   },
+   "topic_weighted_only": {
+    "est": 0.1165,
+    "lo": 0.0271,
+    "hi": 0.2155
    },
    "importance_standardised": {
-    "est": 0.1374,
-    "lo": 0.0659,
-    "hi": 0.1945
+    "est": 0.1364,
+    "lo": 0.0598,
+    "hi": 0.2272
    }
   },
   {
@@ -886,13 +1116,13 @@
    "label": "(e) Israel+Palestine minus Judaism, lead gain share",
    "unweighted": {
     "est": 0.0791,
-    "lo": 0.0531,
-    "hi": 0.0986
+    "lo": 0.0524,
+    "hi": 0.1047
    },
    "design_weighted": {
     "est": 0.0537,
-    "lo": 0.0236,
-    "hi": 0.0838
+    "lo": 0.0188,
+    "hi": 0.0809
    },
    "unweighted_projectCI": {
     "est": 0.0791,
@@ -904,10 +1134,20 @@
     "lo": 0.0423,
     "hi": 0.0679
    },
+   "raw_design_weights_uncollapsed": {
+    "est": 0.0537,
+    "lo": 0.0164,
+    "hi": 0.0783
+   },
+   "topic_weighted_only": {
+    "est": 0.0537,
+    "lo": 0.0166,
+    "hi": 0.0812
+   },
    "importance_standardised": {
     "est": 0.0537,
-    "lo": 0.025,
-    "hi": 0.078
+    "lo": 0.0201,
+    "hi": 0.0795
    }
   },
   {
@@ -916,13 +1156,13 @@
    "label": "(e') Israel+Palestine minus Judaism, full-text post-pre (A5 analogue)",
    "unweighted": {
     "est": 0.0538,
-    "lo": -0.0341,
-    "hi": 0.1185
+    "lo": -0.0167,
+    "hi": 0.1256
    },
    "design_weighted": {
     "est": 0.0476,
-    "lo": -0.0019,
-    "hi": 0.1218
+    "lo": -0.0265,
+    "hi": 0.1155
    },
    "unweighted_projectCI": {
     "est": 0.0538,
@@ -934,10 +1174,20 @@
     "lo": 0.0468,
     "hi": 0.0482
    },
+   "raw_design_weights_uncollapsed": {
+    "est": 0.0476,
+    "lo": -0.0225,
+    "hi": 0.1237
+   },
+   "topic_weighted_only": {
+    "est": 0.0476,
+    "lo": -0.026,
+    "hi": 0.118
+   },
    "importance_standardised": {
     "est": 0.0476,
-    "lo": -0.046,
-    "hi": 0.0992
+    "lo": -0.0221,
+    "hi": 0.1174
    }
   },
   {
@@ -946,28 +1196,38 @@
    "label": "(e'') Judaism minus comparison, lead gain share",
    "unweighted": {
     "est": -0.0215,
-    "lo": -0.0345,
-    "hi": 0.0005
+    "lo": -0.0415,
+    "hi": 0.0051
    },
    "design_weighted": {
-    "est": -0.0103,
-    "lo": -0.0304,
-    "hi": 0.0136
+    "est": -0.0097,
+    "lo": -0.0323,
+    "hi": 0.025
    },
    "unweighted_projectCI": {
     "est": -0.0215,
-    "lo": -0.0393,
-    "hi": -0.0068
+    "lo": -0.0365,
+    "hi": -0.0083
    },
    "design_weighted_projectCI": {
+    "est": -0.0097,
+    "lo": -0.025,
+    "hi": 0.0015
+   },
+   "raw_design_weights_uncollapsed": {
     "est": -0.0103,
-    "lo": -0.026,
-    "hi": 0.0038
+    "lo": -0.0312,
+    "hi": 0.0181
+   },
+   "topic_weighted_only": {
+    "est": -0.0199,
+    "lo": -0.0433,
+    "hi": 0.0139
    },
    "importance_standardised": {
-    "est": 0.0073,
+    "est": 0.0092,
     "lo": -0.0107,
-    "hi": 0.0352
+    "hi": 0.039
    }
   }
  ],
@@ -978,135 +1238,135 @@
    "unweighted": {
     "a_unf": {
      "est": 2.1361,
-     "lo": 0.4854,
-     "hi": 3.8665
+     "lo": 0.3271,
+     "hi": 3.9928
     },
     "b": {
      "est": 0.0753,
-     "lo": 0.0472,
-     "hi": 0.1064
+     "lo": 0.0442,
+     "hi": 0.1056
     },
     "b_t": {
      "est": 0.0938,
-     "lo": 0.0665,
-     "hi": 0.125
+     "lo": 0.0624,
+     "hi": 0.1228
     },
     "b_c": {
      "est": 0.0186,
-     "lo": 0.0138,
-     "hi": 0.0239
+     "lo": 0.0134,
+     "hi": 0.0243
     },
     "b_full_did": {
      "est": 0.0676,
-     "lo": 0.0192,
-     "hi": 0.1128
+     "lo": 0.0186,
+     "hi": 0.1143
     },
     "c_share": {
      "est": 0.7065,
-     "lo": -0.1787,
-     "hi": 0.9252
+     "lo": -0.0878,
+     "hi": 0.9362
     },
     "a_res": {
      "est": 1.5091,
-     "lo": -0.163,
-     "hi": 3.2616
+     "lo": -0.2722,
+     "hi": 3.1224
     },
     "d_t": {
      "est": 0.2915,
-     "lo": 0.142,
-     "hi": 0.4225
+     "lo": 0.1435,
+     "hi": 0.4338
     },
     "d_c": {
      "est": 0.0576,
-     "lo": 0.0318,
-     "hi": 0.0925
+     "lo": 0.0273,
+     "hi": 0.0916
     },
     "d_did": {
      "est": 0.1587,
-     "lo": 0.0194,
-     "hi": 0.2753
+     "lo": 0.0155,
+     "hi": 0.2868
     },
     "e": {
      "est": 0.1607,
-     "lo": 0.1115,
-     "hi": 0.2133
+     "lo": 0.1008,
+     "hi": 0.2195
     },
     "e_full": {
      "est": 0.0731,
-     "lo": -0.0141,
-     "hi": 0.152
+     "lo": -0.0128,
+     "hi": 0.1524
     },
     "e_ju_vs_c": {
      "est": -0.0117,
      "lo": -0.0228,
-     "hi": 0.0073
+     "hi": 0.0051
     }
    },
    "design_weighted": {
     "a_unf": {
      "est": 2.422,
-     "lo": 0.71,
-     "hi": 4.2931
+     "lo": 0.4941,
+     "hi": 4.3733
     },
     "b": {
      "est": 0.0825,
-     "lo": 0.0576,
-     "hi": 0.1109
+     "lo": 0.0555,
+     "hi": 0.1137
     },
     "b_t": {
      "est": 0.0954,
-     "lo": 0.0712,
-     "hi": 0.1244
+     "lo": 0.0694,
+     "hi": 0.1264
     },
     "b_c": {
      "est": 0.0128,
-     "lo": 0.0082,
-     "hi": 0.0176
+     "lo": 0.009,
+     "hi": 0.0171
     },
     "b_full_did": {
      "est": 0.0711,
-     "lo": 0.0262,
-     "hi": 0.1179
+     "lo": 0.0259,
+     "hi": 0.1214
     },
     "c_share": {
      "est": 0.7099,
-     "lo": 0.0512,
-     "hi": 0.907
+     "lo": 0.0785,
+     "hi": 0.9044
     },
     "a_res": {
      "est": 1.7195,
-     "lo": 0.0294,
-     "hi": 3.6341
+     "lo": -0.0194,
+     "hi": 3.5769
     },
     "d_t": {
      "est": 0.2943,
-     "lo": 0.1612,
-     "hi": 0.4384
+     "lo": 0.146,
+     "hi": 0.4356
     },
     "d_c": {
      "est": 0.0407,
-     "lo": 0.0189,
-     "hi": 0.0649
+     "lo": 0.0195,
+     "hi": 0.0665
     },
     "d_did": {
      "est": 0.1711,
-     "lo": 0.0395,
-     "hi": 0.2977
+     "lo": 0.0368,
+     "hi": 0.3058
     },
     "e": {
      "est": 0.1614,
-     "lo": 0.1103,
-     "hi": 0.2133
+     "lo": 0.1119,
+     "hi": 0.2167
     },
     "e_full": {
      "est": 0.0738,
-     "lo": -0.0004,
-     "hi": 0.1614
+     "lo": -0.0063,
+     "hi": 0.1649
     },
     "e_ju_vs_c": {
      "est": -0.0059,
-     "lo": -0.0168,
-     "hi": 0.0103
+     "lo": -0.0163,
+     "hi": 0.0083
     }
    }
   },
@@ -1116,135 +1376,135 @@
    "unweighted": {
     "a_unf": {
      "est": 2.8103,
-     "lo": 1.3318,
-     "hi": 4.4518
+     "lo": 1.3717,
+     "hi": 4.4221
     },
     "b": {
      "est": 0.0324,
-     "lo": 0.0228,
-     "hi": 0.0435
+     "lo": 0.022,
+     "hi": 0.0423
     },
     "b_t": {
      "est": 0.0443,
-     "lo": 0.0351,
-     "hi": 0.0544
+     "lo": 0.0354,
+     "hi": 0.0537
     },
     "b_c": {
      "est": 0.012,
-     "lo": 0.0083,
-     "hi": 0.0154
+     "lo": 0.0081,
+     "hi": 0.016
     },
     "b_full_did": {
      "est": 0.062,
-     "lo": 0.0417,
-     "hi": 0.0836
+     "lo": 0.0408,
+     "hi": 0.0816
     },
     "c_share": {
      "est": 0.9287,
-     "lo": 0.8165,
-     "hi": 0.992
+     "lo": 0.7966,
+     "hi": 0.9967
     },
     "a_res": {
      "est": 2.6099,
-     "lo": 1.1617,
-     "hi": 4.1934
+     "lo": 1.1614,
+     "hi": 4.283
     },
     "d_t": {
      "est": 0.0803,
-     "lo": 0.0446,
-     "hi": 0.1332
+     "lo": 0.0432,
+     "hi": 0.1338
     },
     "d_c": {
      "est": 0.0321,
-     "lo": 0.0127,
-     "hi": 0.0577
+     "lo": 0.0135,
+     "hi": 0.0613
     },
     "d_did": {
      "est": 0.0158,
-     "lo": -0.024,
-     "hi": 0.0727
+     "lo": -0.029,
+     "hi": 0.0689
     },
     "e": {
      "est": 0.0621,
-     "lo": 0.0467,
-     "hi": 0.08
+     "lo": 0.0481,
+     "hi": 0.0792
     },
     "e_full": {
      "est": 0.0867,
-     "lo": 0.0589,
-     "hi": 0.1226
+     "lo": 0.0543,
+     "hi": 0.1204
     },
     "e_ju_vs_c": {
      "est": -0.0072,
-     "lo": -0.0128,
-     "hi": -0.0003
+     "lo": -0.0135,
+     "hi": -0.0008
     }
    },
    "design_weighted": {
     "a_unf": {
      "est": 2.9189,
-     "lo": 1.5808,
-     "hi": 4.5575
+     "lo": 1.4476,
+     "hi": 4.5787
     },
     "b": {
      "est": 0.0328,
-     "lo": 0.0224,
-     "hi": 0.0434
+     "lo": 0.0214,
+     "hi": 0.0435
     },
     "b_t": {
      "est": 0.0445,
-     "lo": 0.0352,
-     "hi": 0.0534
+     "lo": 0.0342,
+     "hi": 0.0547
     },
     "b_c": {
      "est": 0.0117,
-     "lo": 0.007,
-     "hi": 0.0174
+     "lo": 0.0075,
+     "hi": 0.0169
     },
     "b_full_did": {
      "est": 0.061,
-     "lo": 0.0392,
-     "hi": 0.0816
+     "lo": 0.0388,
+     "hi": 0.0836
     },
     "c_share": {
      "est": 0.925,
-     "lo": 0.8174,
-     "hi": 0.985
+     "lo": 0.8031,
+     "hi": 0.9888
     },
     "a_res": {
      "est": 2.6999,
-     "lo": 1.3927,
-     "hi": 4.3419
+     "lo": 1.2855,
+     "hi": 4.412
     },
     "d_t": {
      "est": 0.0808,
-     "lo": 0.0427,
-     "hi": 0.1308
+     "lo": 0.0435,
+     "hi": 0.1428
     },
     "d_c": {
      "est": 0.0251,
-     "lo": 0.0123,
-     "hi": 0.0421
+     "lo": 0.0113,
+     "hi": 0.042
     },
     "d_did": {
      "est": 0.0228,
-     "lo": -0.0164,
-     "hi": 0.0723
+     "lo": -0.0145,
+     "hi": 0.0821
     },
     "e": {
      "est": 0.0624,
-     "lo": 0.0476,
-     "hi": 0.0775
+     "lo": 0.0467,
+     "hi": 0.0796
     },
     "e_full": {
      "est": 0.0867,
-     "lo": 0.0565,
-     "hi": 0.1198
+     "lo": 0.0555,
+     "hi": 0.119
     },
     "e_ju_vs_c": {
      "est": -0.0069,
-     "lo": -0.0142,
-     "hi": 0.0003
+     "lo": -0.0137,
+     "hi": 0.0008
     }
    }
   },
@@ -1254,18 +1514,18 @@
    "unweighted": {
     "a_unf": {
      "est": 1.7504,
-     "lo": -0.3646,
-     "hi": 3.4695
+     "lo": -0.57,
+     "hi": 3.7953
     },
     "b": {
      "est": 0.0218,
-     "lo": 0.0086,
-     "hi": 0.032
+     "lo": 0.0072,
+     "hi": 0.0312
     },
     "b_t": {
      "est": 0.0272,
      "lo": 0.0212,
-     "hi": 0.0332
+     "hi": 0.0342
     },
     "b_c": {
      "est": 0.0054,
@@ -1274,115 +1534,115 @@
     },
     "b_full_did": {
      "est": 0.0328,
-     "lo": -0.0034,
-     "hi": 0.0615
+     "lo": 0.0014,
+     "hi": 0.0644
     },
     "c_share": {
      "est": 1.3414,
-     "lo": -5.2752,
-     "hi": 8.2639
+     "lo": -7.1689,
+     "hi": 8.1533
     },
     "a_res": {
      "est": 2.348,
-     "lo": 1.1186,
-     "hi": 3.5437
+     "lo": 1.2019,
+     "hi": 3.7521
     },
     "d_t": {
      "est": 0.0784,
-     "lo": 0.0407,
-     "hi": 0.1321
+     "lo": 0.0384,
+     "hi": 0.1271
     },
     "d_c": {
      "est": 0.0009,
      "lo": 0.0,
-     "hi": 0.0038
+     "hi": 0.0035
     },
     "d_did": {
      "est": 0.0557,
-     "lo": 0.0203,
-     "hi": 0.1071
+     "lo": 0.0155,
+     "hi": 0.1003
     },
     "e": {
      "est": 0.0315,
-     "lo": 0.0207,
-     "hi": 0.042
+     "lo": 0.0208,
+     "hi": 0.0418
     },
     "e_full": {
      "est": 0.066,
-     "lo": 0.043,
+     "lo": 0.0425,
      "hi": 0.0884
     },
     "e_ju_vs_c": {
      "est": -0.0002,
-     "lo": -0.0143,
-     "hi": 0.0104
+     "lo": -0.0142,
+     "hi": 0.0087
     }
    },
    "design_weighted": {
     "a_unf": {
-     "est": -1.0654,
-     "lo": -6.0981,
-     "hi": 1.6459
+     "est": -2.435,
+     "lo": -9.7352,
+     "hi": 1.6971
     },
     "b": {
-     "est": 0.0019,
-     "lo": -0.0317,
-     "hi": 0.0207
+     "est": -0.007,
+     "lo": -0.0547,
+     "hi": 0.021
     },
     "b_t": {
      "est": 0.0161,
-     "lo": 0.0109,
-     "hi": 0.0218
+     "lo": 0.011,
+     "hi": 0.0223
     },
     "b_c": {
-     "est": 0.0142,
+     "est": 0.0231,
      "lo": 0.0,
-     "hi": 0.0437
+     "hi": 0.0708
     },
     "b_full_did": {
-     "est": 0.0053,
-     "lo": -0.0444,
-     "hi": 0.0428
+     "est": -0.0131,
+     "lo": -0.0828,
+     "hi": 0.043
     },
     "c_share": {
-     "est": -0.8424,
-     "lo": -2.8976,
-     "hi": 0.9624
+     "est": -0.3693,
+     "lo": -0.8419,
+     "hi": 0.927
     },
     "a_res": {
-     "est": 0.8975,
-     "lo": 0.2096,
-     "hi": 1.5463
+     "est": 0.8991,
+     "lo": 0.2227,
+     "hi": 1.646
     },
     "d_t": {
      "est": 0.0893,
-     "lo": 0.026,
-     "hi": 0.2092
+     "lo": 0.0231,
+     "hi": 0.1911
     },
     "d_c": {
      "est": 0.005,
      "lo": 0.0,
-     "hi": 0.0194
+     "hi": 0.0213
     },
     "d_did": {
-     "est": 0.0824,
-     "lo": 0.0145,
-     "hi": 0.2024
+     "est": 0.0912,
+     "lo": 0.013,
+     "hi": 0.1921
     },
     "e": {
      "est": 0.0142,
-     "lo": 0.0046,
-     "hi": 0.024
+     "lo": 0.0051,
+     "hi": 0.0242
     },
     "e_full": {
      "est": 0.0436,
-     "lo": 0.0213,
-     "hi": 0.0667
+     "lo": 0.0215,
+     "hi": 0.0664
     },
     "e_ju_vs_c": {
-     "est": -0.009,
-     "lo": -0.0426,
-     "hi": 0.0088
+     "est": -0.0179,
+     "lo": -0.067,
+     "hi": 0.0104
     }
    }
   }
@@ -1391,69 +1651,69 @@
   "holdout:unweighted": {
    "A1": {
     "est": 0.0357,
-    "lo": 0.0151,
-    "hi": 0.0533
+    "lo": 0.0162,
+    "hi": 0.0546
    },
    "A5": {
     "est": 0.0563,
-    "lo": 0.0357,
-    "hi": 0.0799
+    "lo": 0.0267,
+    "hi": 0.084
    },
    "A5b": {
     "est": -0.0007,
-    "lo": -0.0188,
-    "hi": 0.0188
+    "lo": -0.0243,
+    "hi": 0.0211
    }
   },
   "holdout:design_weighted": {
    "A1": {
     "est": 0.0257,
-    "lo": 0.0042,
-    "hi": 0.0404
+    "lo": 0.0055,
+    "hi": 0.0488
    },
    "A5": {
     "est": 0.0416,
-    "lo": 0.0122,
-    "hi": 0.0626
+    "lo": 0.0137,
+    "hi": 0.0712
    },
    "A5b": {
     "est": -0.0034,
-    "lo": -0.0243,
-    "hi": 0.0138
+    "lo": -0.0283,
+    "hi": 0.0215
    }
   },
   "all:unweighted": {
    "A1": {
     "est": 0.0539,
-    "lo": 0.0441,
-    "hi": 0.0695
+    "lo": 0.0411,
+    "hi": 0.068
    },
    "A5": {
     "est": 0.0772,
-    "lo": 0.0617,
-    "hi": 0.0957
+    "lo": 0.0581,
+    "hi": 0.0979
    },
    "A5b": {
     "est": 0.0033,
-    "lo": -0.0111,
-    "hi": 0.0181
+    "lo": -0.012,
+    "hi": 0.0184
    }
   },
   "all:design_weighted": {
    "A1": {
     "est": 0.0343,
-    "lo": 0.0176,
-    "hi": 0.0451
+    "lo": 0.0189,
+    "hi": 0.0493
    },
    "A5": {
     "est": 0.0527,
-    "lo": 0.0261,
-    "hi": 0.0684
+    "lo": 0.0342,
+    "hi": 0.0735
    },
    "A5b": {
     "est": -0.0029,
-    "lo": -0.0175,
-    "hi": 0.0152
+    "lo": -0.0198,
+    "hi": 0.012
    }
   }
  }

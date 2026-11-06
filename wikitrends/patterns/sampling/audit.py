@@ -528,7 +528,7 @@ lab = {"a_unf": "(a) post-war lead critical DiD, hits/10k words", "b": "(b) shar
 for sub in ("all", "relevant"):
     for k, nm in lab.items():
         row = {"subset": sub, "statistic": k, "label": nm}
-        for v in ("unweighted", "design_weighted", "unweighted_projectCI", "design_weighted_projectCI"):
+        for v in ("unweighted", "design_weighted", "unweighted_projectCI", "design_weighted_projectCI", "raw_design_weights_uncollapsed", "topic_weighted_only"):
             row[v] = main[sub][v][k]
         row["importance_standardised"] = std[sub][k]
         if sub == "all":
