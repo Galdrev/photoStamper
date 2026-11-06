@@ -1,4 +1,5 @@
 name: wikitrends-random
+# launch 2026-11-06
 # Random-Wikipedia baseline (wikitrends/random_baseline.py): is the topic's lead change site-wide drift?
 # sample (1 job, ~85 requests, ~2 min) -> 4 shards (max 4 at once, WT_RPS 2) -> merge + analyze
 # -> orphan branch wikitrends-data/random/<run_id> + artifact.
