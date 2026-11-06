@@ -1,7 +1,8 @@
 """Coordination collector: one run-wide pseudonymous ID per account for the edits that matter (critical-term lead events).
 
   python coord.py plan                       -> data/coord/plan.json  (offline: event revisions from mass2_events + ratchet)
-  python coord.py shard --shard I --of N     -> data/coord/coord_I.json.gz (checkpointed via mass._run; fails loudly >5% errors)
+  python coord.py shard --shard I --of N     -> data/coord/coord_I.json.gz (checkpointed; fails loudly >5% errors). The workflow
+                                                runs one job: --shard 0 --of 1, COORD_THREADS=3 under WT_RPS=2
   python coord.py merge                      -> data/coord.json.gz, data/coord_summary.json
   python coord.py estimate                   -> request count / wall time (offline, from plan.json)
   COORD_LIMIT=20 ...                         -> test mode (first 20 articles of the shard)
@@ -15,8 +16,10 @@ Per event revision:
             (prose-cleaned, <=600 chars each, <=8 per side) + normalised 5-word shingles of each inserted sentence
   accounts  list=users (pilot.user_facts, 50 per call): registration month, rounded edit count, groups (allow-list), block
             status, block reason class; kept per salted hash
-Privacy: usernames live only in memory. Hash = HMAC-SHA256(WT_SALT, username)[:16]; WT_SALT is one run-wide value passed to the
-shards as a masked job output and never written to disk. Raw edit summaries are reduced to class labels (they can name
+Privacy: usernames live only in memory. Hash = HMAC-SHA256(WT_SALT, username)[:16]; WT_SALT is one run-wide random value made
+inside the single workflow job, masked, kept in env only and never written to disk. The raw outputs of this script (shard
+files, data/coord.json.gz: revids + per-account hashes, re-identifiable together) stay on the runner and are discarded; only
+analyze_coord.py's aggregate cards / chart data are published, after analyze_coord.privacy_scan passes. Raw edit summaries are reduced to class labels (they can name
 accounts). Note: revids are public, so a hash can be re-linked to an account by anyone with API access; the hash keeps names
 out of files and cards, it is not anonymisation. Cards (analyze_coord.py) are aggregate only.
 """
@@ -28,7 +31,7 @@ sys.path.insert(0, HERE)
 import wt_net                   # noqa: E402
 import analyze as A             # noqa: E402
 import pilot as P               # noqa: E402
-import mass as M                # noqa: E402
+import mass as M                # noqa: E402  (shard split)
 
 KIND = "coord"
 OUT = os.path.join(HERE, "data", "coord")
@@ -323,6 +326,44 @@ def rev_error_share(recs):
     return (sum(1 for r in revs if r.get("error")) / len(revs)) if revs else 0.0, len(revs)
 
 
+THREADS = int(os.environ.get("COORD_THREADS", "3"))
+
+
+def _run(kind, fn, rows, i, threads=None):
+    """mass._run with a configurable worker count (the single-job workflow uses 3 threads under one WT_RPS limit):
+    resumes from a partial file on the runner, checkpoints every 100 articles, fails loudly above 5% article errors."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    out_p = os.path.join(OUT, f"{kind}_{i}.json.gz")
+    done = []
+    if os.path.exists(out_p):
+        try:
+            done = json.load(gzip.open(out_p, "rt"))
+        except Exception:
+            done = []
+    have = {r["title"] for r in done}
+    todo = [r for r in rows if r["title"] not in have]
+    print(f"{kind} shard {i}: {len(have)} already done, {len(todo)} to do", flush=True)
+    out, fails = list(done), 0
+    wt_net.heartbeat(f"{kind}-{i}", len(out), len(rows), force=True)
+    def save():
+        tmp = out_p + ".tmp"
+        json.dump(out, gzip.open(tmp, "wt")); os.replace(tmp, out_p)
+    with ThreadPoolExecutor(threads or THREADS) as ex:
+        futs = [ex.submit(fn, r) for r in todo]
+        for k, f in enumerate(as_completed(futs), 1):
+            try:
+                out.append(f.result())
+            except Exception as e:
+                fails += 1; print("ERR", type(e).__name__, str(e)[:200], file=sys.stderr, flush=True)
+            wt_net.heartbeat(f"{kind}-{i}", len(out), len(rows), article_errors=fails)
+            if k % 100 == 0:
+                save()
+    save()
+    wt_net.heartbeat(f"{kind}-{i}-done", len(out), len(rows), force=True, article_errors=fails)
+    if todo and fails > 0.05 * len(todo):
+        sys.exit(f"{kind} shard {i}: {fails}/{len(todo)} articles failed (>5%) - see ERR lines")
+
+
 def run_shard(i, n):
     salt()
     pl = load_plan()
@@ -330,9 +371,8 @@ def run_shard(i, n):
     lim = int(os.environ.get("COORD_LIMIT", "0"))
     rows = rows[:lim] if lim else rows
     print(f"coord shard {i}/{n}: {len(rows)} articles, {sum(len(r['revs']) for r in rows)} revisions", flush=True)
-    M.OUT = OUT
     os.makedirs(OUT, exist_ok=True)
-    M._run(KIND, collect, rows, i)          # exits non-zero if >5% of articles raised
+    _run(KIND, collect, rows, i)            # exits non-zero if >5% of articles raised
     recs = json.load(gzip.open(os.path.join(OUT, f"{KIND}_{i}.json.gz"), "rt"))
     share, nrev = rev_error_share(recs)
     print(f"coord shard {i}: {nrev} revisions, revision-level error share {share:.3%}", flush=True)

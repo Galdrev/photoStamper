@@ -1056,18 +1056,65 @@ def write_outputs(R, out_dir=OUT):
     return cards
 
 
+# ------------------------------------------------------------------ publication gate
+BAD_KEYS = {"revid", "revids", "parentid", "oldid", "diff", "diff_url", "url", "sha1", "u", "user", "username", "hash",
+            "account", "account_hash", "pid", "_pid", "_m", "_accs", "salt"}
+RX_REVID = re.compile(r"(?<![\w.])\d{7,}(?![\w.])")        # revision / page ids (7+ digit integers)
+RX_HASH = re.compile(r"(?<![\w.])(?=[0-9]*[a-f])[0-9a-f]{10,}(?![\w.])", re.I)   # account / shingle hashes (all-digit ones: RX_REVID)
+RX_URL = re.compile(r"oldid=|diff=|index\.php|/wiki/Special:|curid=|action=compare", re.I)
+
+
+def privacy_scan(path, extra=()):
+    """Every file that may be published must pass: no revid-like numbers, no hash-like hex strings, no diff / page URLs, no
+    id-like keys, and none of the given extra strings (salt, usernames). Returns a list of problems (empty = pass)."""
+    bad = []
+    files = [path] if os.path.isfile(path) else [os.path.join(d, f) for d, _, fs in os.walk(path) for f in fs]
+    for f in files:
+        txt = open(f, encoding="utf-8", errors="replace").read()
+        for rx, what in ((RX_REVID, "revid-like number"), (RX_HASH, "hash-like hex"), (RX_URL, "diff/page URL")):
+            m = rx.search(txt)
+            if m:
+                bad.append(f"{f}: {what} at offset {m.start()}")      # never echo the value (logs are pushed)
+        for x in extra:
+            if x and x in txt:
+                bad.append(f"{f}: forbidden string")
+        if f.endswith(".json"):
+            def walk(o):
+                if isinstance(o, dict):
+                    for k, v in o.items():
+                        if str(k).lower() in BAD_KEYS:
+                            bad.append(f"{f}: id-like key {str(k)[:12]!r}")
+                        walk(v)
+                elif isinstance(o, list):
+                    for v in o:
+                        walk(v)
+            walk(json.load(open(f)))
+    return bad
+
+
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--scan", help="only run the publication privacy gate on this file or directory")
     ap.add_argument("--data", default=DATA)
     ap.add_argument("--null", type=int, default=int(os.environ.get("COORD_NULL", "1000")))
     ap.add_argument("--calib", type=int, default=int(os.environ.get("COORD_CALIB", "200")))
     ap.add_argument("--out", default=OUT)
     a = ap.parse_args()
+    if a.scan:
+        bad = privacy_scan(a.scan, [os.environ.get("WT_SALT", "")])
+        for b in bad[:50]:
+            print("PRIVACY:", b)
+        sys.exit(f"privacy gate: {len(bad)} problem(s) - nothing may be published" if bad else 0)
     D = json.load(gzip.open(a.data, "rt"))
     R = analyze_data(D, a.null, a.calib)
     cards = write_outputs(R, a.out)
     for c in cards:
         print(f"[{c['confidence']}] {c['title']}")
+    bad = privacy_scan(a.out, [os.environ.get("WT_SALT", "")])
+    if bad:
+        for b in bad[:50]:
+            print("PRIVACY:", b)
+        sys.exit(f"privacy gate: {len(bad)} problem(s) in {a.out}")
 
 
 if __name__ == "__main__":

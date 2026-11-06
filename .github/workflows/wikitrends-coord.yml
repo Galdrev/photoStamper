@@ -1,15 +1,14 @@
 name: wikitrends-coord
-# Coordination collector (wikitrends/coord.py) + analysis (wikitrends/analyze_coord.py).
-# salt+plan (1 job, ~2 min) -> 4 collect shards (max 4 at once, WT_RPS 2) -> merge + analyze -> orphan branch
-# wikitrends-data/coord/<run_id> + artifact.
-# Estimate (python coord.py estimate): 959 articles, 4,121 event revisions -> 967 metadata + 4,121 compare + <=1,004 users
-# = ~6.1k requests (~7.0k with the x1.15 retry calibration), ~1.75k per shard = ~0.5 h per shard at ~1.0 effective req/s;
-# all 4 shards run at once -> ~35-45 min wall time for collection, plus ~15-25 min for the 1,000-draw nulls in merge.
-# One run-wide salt: random, generated once in the salt job, masked with ::add-mask:: in every job, never written to a file or
-# artifact. GitHub Actions drops any job output that contains a masked value ("Skip output since it may contain secret"), so
-# the output carries the salt ENCRYPTED (AES-256, key = repository secret WT_SALT_SEED); each shard decrypts and masks it.
-# Without WT_SALT_SEED the salt job fails loudly instead of falling back to per-shard salts (which would break linkage).
-# "Re-run failed jobs" reuses the original salt job's output, so resumed shards hash with the same salt.
+# Coordination collector (wikitrends/coord.py) + analysis (wikitrends/analyze_coord.py), in ONE job.
+# Estimate (python coord.py estimate --of 1): 959 articles, 4,121 event revisions -> 967 metadata + 4,121 compare + <=1,004
+# users = ~6.1k requests (~7.0k with the x1.15 retry calibration). One job at WT_RPS 2 with 3 worker threads: ~1.0-1.9
+# effective req/s -> ~1.0-2.0 h collection, + ~15-25 min for the 1,000-draw nulls and 200 calibration worlds. Budget 5 h.
+# Salt: one random value made in this job (openssl rand), masked, kept in env only: never a file, output or artifact.
+# Privacy: the raw data (shard files, data/coord.json.gz: revids + per-account hashes, re-identifiable together) stays on
+# the runner and is discarded with it. Only the aggregate outputs (patterns/coord/cards.md, cards.json, chart_data/*,
+# incl. network.json with A1.. labels) are published, and only after the privacy gate (analyze_coord.py --scan) passes:
+# no revid-like numbers, hash-like strings, diff URLs or id-like keys. A failed run cannot resume (no checkpoint artifact is
+# kept, by design); a re-run starts over with a new salt.
 on:
   push:
     branches: [wikitrends-coord]
@@ -20,123 +19,56 @@ defaults:
   run:
     shell: bash
 env:
-  WT_RPS: '2'             # per job; 4 jobs at once
+  WT_RPS: '2'
+  COORD_THREADS: '3'
+  WT_JOB: coord
   GH_TOKEN: ${{ github.token }}
-  N_SHARDS: '4'
 jobs:
-  salt:
+  coord:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    outputs:
-      salt: ${{ steps.salt.outputs.salt }}
+    timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.12'}
       - run: pip install requests numpy networkx
-      - name: Offline self-test (mocked API)
+      - name: Offline self-test (mocked API, planted bloc, publication gate; fails before any network work)
         working-directory: wikitrends
-        run: WT_JOB=coord-test python test_coord.py collector 2>&1 | grep -v '^\[hb' | tail -60
-      - name: One run-wide salt (masked; leaves the job only encrypted, as a job output; never a file or artifact)
-        id: salt
-        env: {SEED: '${{ secrets.WT_SALT_SEED }}'}
+        run: WT_JOB=coord-test python test_coord.py 2>&1 | grep -v '^\[hb' | tail -80
+      - name: One run-wide salt (masked, env only)
         run: |
-          [ -n "$SEED" ] || { echo "::error::repository secret WT_SALT_SEED is required to pass one salt to all shards"; exit 1; }
           SALT=$(openssl rand -hex 24)
           echo "::add-mask::$SALT"
-          ENC=$(printf '%s' "$SALT" | openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -pass env:SEED -a -A)
-          echo "salt=$ENC" >> "$GITHUB_OUTPUT"
-      - name: Plan (event revisions from mass2_events + ratchet; offline)
+          echo "WT_SALT=$SALT" >> "$GITHUB_ENV"
+      - name: Plan (event revisions from mass2_events + ratchet; offline) and estimate
         working-directory: wikitrends
-        run: python coord.py plan && python coord.py estimate --of $N_SHARDS
-      - uses: actions/upload-artifact@v4
-        with: {name: coord-plan, path: wikitrends/data/coord/plan.json, retention-days: 7}
-
-  collect:
-    needs: salt
-    runs-on: ubuntu-latest
-    timeout-minutes: 150
-    strategy:
-      fail-fast: false
-      max-parallel: 4
-      matrix: {shard: [0, 1, 2, 3]}
-    env:
-      WT_JOB: coord-${{ matrix.shard }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
-      - run: pip install requests numpy networkx
-      - name: Offline self-test (mocked API; fails fast before any network work)
-        working-directory: wikitrends
-        run: WT_JOB=coord-test python test_coord.py collector 2>&1 | grep -v '^\[hb' | tail -60
-      - uses: actions/download-artifact@v4
-        with: {name: coord-plan, path: wikitrends/data/coord/}
-      - name: Resume from an earlier attempt of this run, if any
-        continue-on-error: true
-        uses: actions/download-artifact@v4
-        with: {name: 'coord-${{ matrix.shard }}', path: wikitrends/data/coord/}
+        run: python coord.py plan && python coord.py estimate --of 1
       - name: Start live status reporter
-        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh coord-${{ matrix.shard }} 180 > /tmp/status.log 2>&1 &
-      - name: Collect (checkpointed every 100 articles; exits non-zero if >5% of articles or revisions error)
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh coord 180 > /tmp/status.log 2>&1 &
+      - name: Collect (checkpointed on the runner; exits non-zero if >5% of articles or revisions error)
         working-directory: wikitrends
-        env:
-          ENC: ${{ needs.salt.outputs.salt }}
-          SEED: ${{ secrets.WT_SALT_SEED }}
         run: |
-          [ -n "$ENC" ] || { echo "::error::no run-wide salt from the salt job"; exit 1; }
-          WT_SALT=$(printf '%s' "$ENC" | openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SEED -a -A)
-          echo "::add-mask::$WT_SALT"
-          [ -n "$WT_SALT" ] || { echo "::error::could not decrypt the run-wide salt"; exit 1; }
-          export WT_SALT; unset SEED ENC
           set +e
-          timeout 140m python coord.py shard --shard ${{ matrix.shard }} --of $N_SHARDS 2>&1 | tee logs/coord.log
+          timeout 270m python coord.py shard --shard 0 --of 1 2>&1 | tee logs/coord.log
           rc=${PIPESTATUS[0]}
-          if [ "$rc" = "124" ]; then echo "::error::time budget hit; checkpoint kept - re-run this job to resume"; fi
+          if [ "$rc" = "124" ]; then echo "::error::time budget hit"; fi
           exit $rc
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with: {name: 'coord-${{ matrix.shard }}', path: 'wikitrends/data/coord/coord_${{ matrix.shard }}.json.gz', retention-days: 7, overwrite: true}
-
-  merge:
-    needs: [salt, collect]
-    if: always() && needs.salt.result == 'success'
-    runs-on: ubuntu-latest
-    timeout-minutes: 120
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: '3.12'}
-      - run: pip install requests numpy networkx
-      - uses: actions/download-artifact@v4
-        with: {name: coord-plan, path: wikitrends/data/coord/}
-      - uses: actions/download-artifact@v4
-        with: {path: wikitrends/data/coord/, pattern: 'coord-[0-9]*', merge-multiple: true}
-      - name: Merge (fails if <95% of articles arrived or >5% of revisions errored; results are pushed either way)
+      - name: Merge (fails if <95% of articles or >5% revision errors)
         working-directory: wikitrends
-        run: python coord.py merge 2>&1 | tee coord_merge.log
-      - name: Analyze (blocs, synchrony, sweeps, profiles, documented windows, network.json; 1,000-draw nulls)
+        run: python coord.py merge 2>&1 | tail -40 | tee logs/coord_merge.log
+      - name: Analyze (blocs, synchrony, sweeps, profiles, documented windows, network.json) + privacy gate
+        working-directory: wikitrends
+        run: python analyze_coord.py 2>&1 | tee logs/coord_analyze.log
+      - name: Privacy gate on everything that will be published
+        working-directory: wikitrends
+        run: python analyze_coord.py --scan patterns/coord
+      - name: Discard raw data before publishing
         if: always()
         working-directory: wikitrends
-        run: |
-          [ -f data/coord.json.gz ] || { echo "::error::no merged data"; exit 1; }
-          python analyze_coord.py 2>&1 | tee coord_analyze.log
-      - name: Upload results as artifact (backup copy)
-        if: always()
+        run: rm -rf data/coord data/coord.json.gz data/coord_summary.json
+      - name: Upload aggregate outputs as artifact
         uses: actions/upload-artifact@v4
-        with:
-          name: coord-results
-          retention-days: 14
-          path: |
-            wikitrends/data/coord.json.gz
-            wikitrends/data/coord_summary.json
-            wikitrends/data/coord/plan.json
-            wikitrends/patterns/coord/
-            wikitrends/coord_merge.log
-            wikitrends/coord_analyze.log
-      - name: Push to the data-only branch (wikitrends-data/coord/<run_id>)
-        if: always()
+        with: {name: coord-cards, path: wikitrends/patterns/coord/, retention-days: 14}
+      - name: Push aggregate outputs to the data-only branch (wikitrends-data/coord/<run_id>)
         working-directory: wikitrends
-        run: |
-          ../.github/scripts/push_data.sh coord data/coord.json.gz data/coord_summary.json data/coord/plan.json \
-            patterns/coord coord_merge.log coord_analyze.log
+        run: ../.github/scripts/push_data.sh coord patterns/coord

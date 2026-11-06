@@ -223,8 +223,29 @@ def test_collector():
         check(not leaks, f"no usernames, IPs or salt in any output file ({leaks[:3]})")
         hx = [(f, k) for f, txt in all_text(os.path.join(tmp, "patterns")) for k in hashes if k in txt]
         check(not hx, f"no account hashes in cards / chart data ({hx[:3]})")
+        bad = AC.privacy_scan(os.path.join(tmp, "patterns"), [SALT] + list(USERS))
+        check(not bad, f"publication gate passes on the collected-data outputs ({bad[:3]})")
+        test_gate(tmp)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
+
+
+def test_gate(tmp):
+    """The publication gate must catch revids, hashes, diff URLs and id-like keys in any pushed file."""
+    import analyze_coord as AC
+    d = os.path.join(tmp, "gate"); os.makedirs(d, exist_ok=True)
+    cases = {"revid.json": {"x": [{"note": "edit 1379707224"}]}, "hash.json": {"a": "node 1cf246e8c39e7a01"},
+             "url.json": {"a": "see index.php?oldid=12"}, "key.json": {"edges": [{"revid": 5}]}, "key2.json": {"n": [{"u": "x"}]},
+             "ok.json": {"title": "1948 Palestinian expulsion and flight", "date": "2024-03-10", "p": 0.0012345678, "n": 4121}}
+    for f, obj in cases.items():
+        p = os.path.join(d, f); json.dump(obj, open(p, "w"))
+        bad = AC.privacy_scan(p)
+        check(bool(bad) == (f != "ok.json"), f"publication gate {'passes' if f == 'ok.json' else 'catches'} {f} ({bad[:1]})")
+    open(os.path.join(d, "cards.md"), "w").write("Bloc A touched revision 1237944351")
+    check(AC.privacy_scan(os.path.join(d, "cards.md")), "publication gate catches a revid in markdown")
+    check(AC.privacy_scan(os.path.join(d, "ok.json"), ["secret-salt"]) == [] and
+          AC.privacy_scan(os.path.join(d, "cards.md"), ["Bloc A"]), "publication gate checks extra forbidden strings")
+    shutil.rmtree(d)
 
 
 # ------------------------------------------------------------------ planted bloc
@@ -342,7 +363,11 @@ def test_planted():
         ps = [c for c in sw["clusters"] if c["n_articles"] >= 8 and "genocide by several scholars" in c["phrase"]]
         check(ps and ps[0]["confidence"] == "high" and ps[0]["distinct_accounts"] == 5, f"planted copy-paste sweep found ({ps[:1]})")
         check(len([c for c in sw["clusters"] if "Noise sentence" in c["phrase"]]) == 0, "noise sentences form no sweep")
+        bad = AC.privacy_scan(tmp)
+        check(not bad, f"publication gate: planted-run outputs (cards.md, cards.json, chart_data/*) carry no revid, hash, "
+                       f"URL or id key ({bad[:3]})")
         txt = "".join(t for _, t in all_text(tmp))
+        check(not any(str(r["revid"]) in txt for r in D["revisions"]), "no revid of the input appears in any output")
         leaks = [u for u in D["accounts"] if u in txt]
         check(not leaks, f"no account ids in analysis outputs ({leaks[:3]})")
         cards = json.load(open(os.path.join(tmp, "cards.json")))["cards"]
