@@ -730,7 +730,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .zi-phases button{width:100%;height:100%;display:grid;gap:3px;align-content:start;text-align:left;background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:9px 11px;cursor:pointer;font:13px/1.4 var(--body);color:var(--ink-2)}
 .zi-phases .nm{display:flex;gap:7px;align-items:center;font:600 14px/1.3 var(--body);color:var(--ink)}
 .zi-phases .n{display:inline-grid;place-items:center;flex:none;width:18px;height:18px;border-radius:3px;background:var(--faint);color:var(--ink);font:600 10.5px var(--mono)}
-.zi-phases .rg{font:500 11px/1.3 var(--mono);color:var(--muted)}
+.zi-phases .nm{flex-wrap:wrap}
+.zi-phases .rg{flex-basis:100%;font:500 11px/1.3 var(--mono);color:var(--muted)}
+.zi-phases .sb{font-weight:600;color:var(--ink)}
 .zi-phases button[aria-current="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .zi-phases button[aria-current="true"] .n{background:var(--ink);color:var(--paper)}
 .zi-jumps{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;min-width:0}
@@ -752,12 +754,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 #ziPlay .ic{font-size:11px}
 .zi-ctr{margin:0;font:12.5px/1.35 var(--mono);color:var(--muted);min-width:0}
 .zi-ctr b{color:var(--ink);font-weight:600}
-.zi-trk{position:relative;height:22px;cursor:pointer;touch-action:none;min-width:0}
+.zi-trk{position:relative;height:34px;cursor:pointer;touch-action:none;min-width:0}
 .zi-trk i{position:absolute;display:block;top:8px;height:6px}
 .zi-trk .rail{left:0;right:0;background:var(--faint);border-radius:3px}
 .zi-trk .on{background:var(--add-bd)}
 .zi-trk .pd{top:3px;height:16px;width:1px;background:var(--muted)}
-.zi-trk .ph{top:1px;height:20px;width:3px;margin-left:-1.5px;border-radius:2px;background:var(--ink);transition:left .35s ease}
+.zi-trk .ph{top:1px;height:20px;z-index:1;width:3px;margin-left:-1.5px;border-radius:2px;background:var(--ink);transition:left .35s ease}
+.zi-trk .e{position:absolute;top:21px;left:0;font:10.5px/1 var(--mono);color:var(--muted)}
+.zi-trk .e.r{left:auto;right:0}
 .zi-card{display:grid;gap:10px;min-width:0}
 .zi-card .hd{display:grid;gap:8px}
 .zi-hd1{font:12.5px/1.5 var(--mono);color:var(--muted)}
@@ -780,7 +784,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .zi-ba{grid-template-columns:minmax(0,1fr)}
   .zi-chips li{font-size:13px}
   .zi-chips li del,.zi-chips li ins{font-size:15px}
-  .zi-phases{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .zi-phases{grid-template-columns:minmax(0,1fr);gap:6px}
+  .zi-phases .nm{flex-wrap:nowrap}
+  .zi-phases .rg{flex-basis:auto;margin-left:auto;text-align:right}
   .zi-phases button{padding:7px 9px;font-size:12.5px}
   .zi-phases .nm{font-size:13.5px}
   .zi-jumps ul{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding:2px 16px 6px;scrollbar-width:thin;max-width:calc(100% + 32px)}
@@ -2516,16 +2522,17 @@ function ziData(){
   const cf=ch.filter(c=>c.mv.some(m=>m.startsWith("settler_colonial"))),phases=[];
   if(first&&settle){
     let j=cf.indexOf(first);while(j+1<cf.length&&cf[j+1].t-cf[j].t<=ZI_GAP*ZI_DAY)j++;const tug=cf.slice(cf.indexOf(first),j+1),tugEnd=tug.at(-1);
-    const cnt=(L,m)=>L.filter(c=>has(c,m)).length,inP=(a,b)=>ch.filter(c=>c.t>=a&&c.t<b),pct=(a,b)=>Math.round(ziCover(col,a,b)*100);
-    const A=inP(t0,first.t),B=inP(first.t,tugEnd.t+1),C=inP(tugEnd.t+1,settle.t),D=inP(settle.t,t1+1);
+    const cnt=(L,m)=>L.filter(c=>has(c,m)).length,pct=(a,b)=>Math.round(ziCover(col,a,b)*100);
+    const inK=(a,b)=>ch.filter(c=>c.k>=a&&c.k<b),A=inK(0,first.k),B=inK(first.k,tugEnd.k+1),C=inK(tugEnd.k+1,settle.k),D=inK(settle.k,ch.length);
     const reB=reOut&&reOut.t>=first.t&&reOut.t<=tugEnd.t;
-    phases.push({a:t0,b:first.t,nm:"Stable",lab:`Stable: “colonial” never in the first sentence`,rg:`${ziMY(t0)} to ${ziMY(first.t)}`,txt:`${ziN(A.length,"change")} in ${((first.t-t0)/365.25/ZI_DAY).toFixed(1)} years. “Colonial” in 0% of days.`,k:ch[0].k});
-    phases.push({a:first.t,b:tugEnd.t,nm:"Tug of war",lab:`Tug of war: “colonial” goes in ${cnt(tug,"settler_colonial+")} times and out ${cnt(tug,"settler_colonial-")} times`,rg:`${ziD(first.d)} to ${ziD(tugEnd.d)}`,txt:`${ziN(B.length,"change")} in ${Math.round((tugEnd.t-first.t)/ZI_DAY/30.44)} months. “Colonial” in ${pct(first.t,tugEnd.t)}% of days${reB?`; “re-establishment” leaves for good on ${ziD(reOut.d)}`:""}.`,k:first.k});
-    const Cout=cnt(C,"settler_colonial-");
-    phases.push({a:tugEnd.t,b:settle.t,nm:"Mostly in",lab:`Mostly in: “colonial” taken out and put back ${Cout} times`,rg:`${ziMY(tugEnd.t)} to ${ziMY(settle.t)}`,txt:`${ziN(C.length,"change")} in ${Math.round((settle.t-tugEnd.t)/ZI_DAY/30.44)} months. “Colonial” in ${pct(tugEnd.t,settle.t)}% of days.`,k:(C[0]||settle).k});
+    phases.push({ka:0,kb:first.k-1,a:t0,b:first.t,nm:"Stable",lab:`Stable: “colonial” never in the first sentence`,rg:`${ziMY(t0)} to ${ziMY(first.t)}`,txt:`${ziN(A.length,"change")} in ${((first.t-t0)/365.25/ZI_DAY).toFixed(1)} years. “Colonial” in 0% of days.`,k:ch[0].k});
+    phases.push({ka:first.k,kb:tugEnd.k,a:first.t,b:tugEnd.t,nm:"Tug of war",lab:`Tug of war: “colonial” goes in ${cnt(tug,"settler_colonial+")} times and out ${cnt(tug,"settler_colonial-")} times`,rg:`${ziD(first.d)} to ${ziD(tugEnd.d)}`,txt:`${ziN(B.length,"change")} in ${Math.round((tugEnd.t-first.t)/ZI_DAY/30.44)} months. “Colonial” in ${pct(first.t,tugEnd.t)}% of days${reB?`; “re-establishment” leaves for good on ${ziD(reOut.d)}`:""}.`,k:first.k});
+    const Cout=cnt(C,"settler_colonial-"),Cback=Math.max(0,...C.filter(c=>has(c,"settler_colonial-")).map(c=>{const n=ch.find(x=>x.k>c.k&&has(x,"settler_colonial+"));return n?Math.round((n.t-c.t)/ZI_DAY):0}));
+    phases.push({ka:tugEnd.k+1,kb:settle.k-1,a:tugEnd.t,b:settle.t,nm:"Mostly in",lab:`Mostly in: “colonial” taken out and put back ${Cout} times`,rg:`${ziMY(tugEnd.t)} to ${ziMY(settle.t)}`,txt:`${ziN(C.length,"change")} in ${Math.round((settle.t-tugEnd.t)/ZI_DAY/30.44)} months. Each removal was undone within ${Cback<1?"a day":ziN(Cback,"day")}, so “colonial” was in ${pct(tugEnd.t,settle.t)}% of days.`,k:(C[0]||settle).k});
     const dd=Math.round((t1-settle.t)/ZI_DAY),Dn=D.length-1;
-    phases.push({a:settle.t,b:t1,nm:"Settled",lab:`Settled with “colonization”`,rg:`${ziD(settle.d)} to now`,txt:Dn?`${ziN(Dn,"change")} since, none to the key words.`:`No change to the first sentence in ${dd} days.`,k:settle.k});
+    phases.push({ka:settle.k,kb:ch.length-1,a:settle.t,b:t1,nm:"Settled",lab:`Settled with “colonization”`,rg:`${ziD(settle.d)} to now`,txt:Dn?`${ziN(Dn,"change")} since, none to the key words.`:`No change to the first sentence in ${dd} days.`,k:settle.k});
   }
+  phases.forEach(p=>p.sub=p.lab.includes(": ")?p.lab.split(": ")[1]:"");if(phases[3])phases[3].sub="“colonization” goes back in and stays";
   // quarterly share of days each word was in the first sentence
   const qs=[];for(let y=2021;;y++){let stop=false;for(let q=0;q<4;q++){const a=Date.UTC(y,q*3,1);if(a>=t1){stop=true;break}const b=Math.min(Date.UTC(y,q*3+3,1),t1);qs.push({a,b,lab:`Q${q+1} ${y}`,col:ziCover(col,a,b),re:ziCover(re,a,b)})}if(stop)break}
   const moments=[];
@@ -2558,7 +2565,7 @@ function ziLabel(c){if(!c.mv.length)return c.blank?"the opening was blanked":"a 
   return c.mv.map(m=>`${ZI_T[m.slice(0,-1)]||m.slice(0,-1)} ${m.endsWith("+")?"goes in":"comes out"}`).join(", ")}
 function ziMoved(c){if(!c.mv.length)return c.blank?"None (the opening was blanked)":"None, a rewording";
   return c.mv.map(m=>{const w=esc(ZI_S[m.slice(0,-1)]||ZI_T[m.slice(0,-1)]||m.slice(0,-1));return m.endsWith("+")?`<ins>${w}</ins> in`:`<del>${w}</del> out`}).join(", ")}
-const ziPhaseOf=t=>{const P=ziData().phases;return P.findIndex((p,i)=>t>=p.a&&(t<p.b||i===P.length-1))};
+const ziPhaseOf=c=>ziData().phases.findIndex(p=>c.k>=p.ka&&c.k<=p.kb);
 function drawZi(){
   const el=$("#ziChart"),D=ziData();if(!el)return;
   if(!D){$("#zionism").hidden=true;return}
@@ -2593,8 +2600,8 @@ function drawZi(){
     gaps.forEach(([a,b])=>{const xa=x(a),xb=Math.max(xa+1.5,x(b));out+=`<rect x="${(xa-.2).toFixed(1)}" y="${bandY(k)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(--sheet)"/>`});return out};
   s+=band("settler_colonial","col","--add-bd")+band("re_establish","re","--del-bd");
   // share of days per quarter, under each band
-  [["col","--add-bd"],["re","--del-bd"]].forEach(([k,cv])=>{const b=qB(k);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${b+.5}" y2="${b+.5}" style="stroke:var(--rule)"/><text class="ax2" x="${m.l-4}" y="${b-qH+7}" text-anchor="end">100%</text><text class="ax2" x="${m.l-4}" y="${b}" text-anchor="end">0</text>`;
-    qs.forEach(q=>{const v=q[k];if(v<=0)return;const xa=x(q.a)+1,xb=x(q.b)-1,h=Math.max(1.5,v*qH);s+=`<rect x="${xa.toFixed(1)}" y="${(b-h).toFixed(1)}" width="${Math.max(1,xb-xa).toFixed(1)}" height="${h.toFixed(1)}" rx="1.5" style="fill:var(${cv});opacity:.85"/>`})});
+  [["col","--add-bd","--add-bg"],["re","--del-bd","--del-bg"]].forEach(([k,cv,cs])=>{const b=qB(k);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${b+.5}" y2="${b+.5}" style="stroke:var(--rule)"/><text class="ax2" x="${m.l-4}" y="${b-qH+7}" text-anchor="end">100%</text><text class="ax2" x="${m.l-4}" y="${b}" text-anchor="end">0</text>`;
+    qs.forEach(q=>{const v=q[k];if(v<=0)return;const xa=x(q.a)+1,xb=x(q.b)-1,h=Math.max(1.5,v*qH);s+=`<rect x="${xa.toFixed(1)}" y="${(b-h).toFixed(1)}" width="${Math.max(1,xb-xa).toFixed(1)}" height="${h.toFixed(1)}" style="fill:var(${cs})"/><rect x="${xa.toFixed(1)}" y="${(b-h).toFixed(1)}" width="${Math.max(1,xb-xa).toFixed(1)}" height="2" style="fill:var(${cv})"/>`})});
   ch.forEach(c=>{const xx=x(c.t).toFixed(1),yy=bandY("all");s+=`<line x1="${xx}" x2="${xx}" y1="${yy+(c.rv?3:0)}" y2="${yy+bandH-(c.rv?3:0)}" style="stroke:var(${c.rv?"--muted":"--ink-2"});stroke-width:1;opacity:${c.rv?.6:.8}"/>`});
   const LT=(Z.lead_terms||[]).map(e=>({t:Date.parse(e[0]),ts:e[0],term:e[1],kind:e[2]}));
   LT.forEach(e=>{const xx=x(e.t).toFixed(1),yy=bandY("lead")+bandH/2;s+=`<circle cx="${xx}" cy="${yy}" r="3.2" style="fill:var(${e.kind==="insert"?"--ink-2":"--sheet"});stroke:var(--ink-2);stroke-width:1.2"/>`});
@@ -2605,21 +2612,22 @@ function drawZi(){
   D.moments.forEach((mm,i)=>{const xx=x(mm.c.t),cx=Math.max(m.l+9,bx[i]);bx[i]=cx;
     s+=`<path d="M${cx.toFixed(1)} ${mY+9} L${xx.toFixed(1)} ${bT-2} L${xx.toFixed(1)} ${bandY("re")+bandH}" style="fill:none;stroke:var(--ink);stroke-width:1;opacity:.45"/><circle cx="${cx.toFixed(1)}" cy="${mY}" r="9" style="fill:var(--ink)"/><text class="bd" x="${cx.toFixed(1)}" y="${mY+3.6}" text-anchor="middle">${i+1}</text>`});
   // live layers: overlay (phase/quarter highlight, selection ring) and the playhead
-  s+=`<g id="ziOv"></g><g id="ziPH" class="zi-ph"><line x1="0" x2="0" y1="${pY+pH+2}" y2="${H-22}" style="stroke:var(--ink);stroke-width:2"/><rect id="ziPHr" x="-44" y="${H-20}" width="88" height="18" rx="3" style="fill:var(--ink)"/><text id="ziPHt" class="phd" x="0" y="${H-7}" text-anchor="middle"></text></g>`;
+  s+=`<g id="ziOv"></g><g id="ziPH" class="zi-ph"><line x1="0" x2="0" y1="${mY+11}" y2="${H-22}" style="stroke:var(--ink);stroke-width:2"/><rect id="ziPHr" x="-44" y="${H-20}" width="88" height="18" rx="3" style="fill:var(--ink)"/><text id="ziPHt" class="phd" x="0" y="${H-7}" text-anchor="middle"></text></g>`;
   s+=`</svg>`;el.innerHTML=s;
   ZI.geom={x,ch,LT,lanes,ly,bandY,bandH,qB,qH,H,m,W,bx,mY,pY,pH,plab,ph};
   const tot=wk.reduce((a,b)=>a+b,0).toLocaleString("en-US");
-  $("#ziKey").innerHTML=`<span class="key"><i style="width:2px;height:14px;background:var(--ink)"></i>black line: the change shown below</span><span class="key"><i style="background:var(--add-bd)"></i>blue: “colonial” or “colonization” is in the first sentence</span><span class="key"><i style="background:var(--del-bd)"></i>amber: “re-establishment” is in it</span><span class="key"><i style="background:linear-gradient(to top,var(--ink-2) 60%,transparent 60%);border:1px solid var(--rule)"></i>short columns: share of days it was in, per quarter</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: one change to the first sentence (short tick: later undone)</span><span class="key"><i style="border-radius:50%;background:var(--ink-2)"></i><i style="border-radius:50%;border:1.2px solid var(--ink-2);background:none;margin-left:-2px"></i>a critical word added or removed lower down</span><span class="key"><i style="background:var(--mid)"></i>grey: all edits to the article, per week (${tot})</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`;
+  $("#ziKey").innerHTML=`<span class="key"><i style="width:2px;height:14px;background:var(--ink)"></i>black line: the change shown below</span><span class="key"><i style="background:var(--add-bd)"></i>blue: “colonial” or “colonization” is in the first sentence</span><span class="key"><i style="background:var(--del-bd)"></i>amber: “re-establishment” is in it</span><span class="key"><i style="background:var(--add-bg);border-top:2px solid var(--add-bd)"></i>pale columns: share of days it was in, per quarter</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: one change to the first sentence (short tick: later undone)</span><span class="key"><i style="border-radius:50%;background:var(--ink-2)"></i><i style="border-radius:50%;border:1.2px solid var(--ink-2);background:none;margin-left:-2px"></i>a critical word added or removed lower down</span><span class="key"><i style="background:var(--mid)"></i>grey: all edits to the article, per week (${tot})</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i style="width:16px;height:4px;background:linear-gradient(90deg,var(--faint) 50%,var(--add-bd) 50%)"></i>strip under the buttons: all ${ch.length} changes in order, blue where “colonial” is in</span>`;
   $("#ziMoments").innerHTML=D.moments.map((mm,i)=>`<li><button type="button" data-k="${mm.c.k}" aria-pressed="false" aria-label="${esc(`Jump to ${ziD(mm.c.d)}: ${mm.long}`)}"><span class="bd" aria-hidden="true">${i+1}</span><span>${esc(mm.short)}</span><small>${ziD(mm.c.d)}</small></button></li>`).join("");
-  $("#ziPhases").innerHTML=phases.map((p,i)=>`<li><button type="button" data-k="${p.k}" aria-current="false" aria-label="${esc(`Phase ${i+1}: ${p.lab}, ${p.rg}. ${p.txt} Go to its first change.`)}"><span class="nm"><span class="n" aria-hidden="true">${i+1}</span>${esc(p.lab)}</span><span class="rg">${esc(p.rg)}</span><span>${esc(p.txt)}</span></button></li>`).join("");
+  $("#ziPhases").innerHTML=phases.map((p,i)=>`<li><button type="button" data-k="${p.k}" aria-current="false" aria-label="${esc(`Phase ${i+1}: ${p.lab}, ${p.rg}. ${p.txt} Go to its first change.`)}"><span class="nm"><span class="n" aria-hidden="true">${i+1}</span>${esc(p.nm)}<span class="rg">${esc(p.rg)}</span></span><span class="sb">${esc(p.sub)}</span><span>${esc(p.txt)}</span></button></li>`).join("");
   ziTrack();
   ziSync(false);
 }
-function ziTrack(){const D=ziData(),T=$("#ziTrk");if(!T)return;const f=t=>(100*(t-D.t0)/(D.t1-D.t0)).toFixed(3);
-  T.innerHTML=`<i class="rail"></i>${D.col.map(([a,b])=>`<i class="on" style="left:${f(a)}%;width:max(1px,${(f(b)-f(a)).toFixed(3)}%)"></i>`).join("")}${D.phases.slice(1).map(p=>`<i class="pd" style="left:${f(p.a)}%"></i>`).join("")}<i class="ph" id="ziTrkPh"></i>`}
+function ziTrack(){const D=ziData(),T=$("#ziTrk");if(!T)return;const n=D.ch.length,f=k=>(100*k/n).toFixed(3);
+  let on=D.Z.col.start,runs=[],r0=null;D.ch.forEach(c=>{if(c.mv.includes("settler_colonial+"))on=true;if(c.mv.includes("settler_colonial-"))on=false;if(on&&r0==null)r0=c.k;if(!on&&r0!=null){runs.push([r0,c.k]);r0=null}});if(r0!=null)runs.push([r0,n]);
+  T.innerHTML=`<i class="rail"></i>${runs.map(([a,b])=>`<i class="on" style="left:${f(a)}%;width:max(1px,${(f(b)-f(a)).toFixed(3)}%)"></i>`).join("")}${D.phases.slice(1).map(p=>`<i class="pd" style="left:${f(p.ka)}%"></i>`).join("")}<i class="ph" id="ziTrkPh"></i><span class="e">change 1</span><span class="e r">${n}</span>`}
 /* move the playhead and refresh everything that follows the current change */
 function ziSync(announce){
-  const D=ziData(),G=ZI.geom,c=D&&D.ch[ZI.sel];if(!c||!G)return;const L=ziList(),pi=ziPhaseOf(c.t);
+  const D=ziData(),G=ZI.geom,c=D&&D.ch[ZI.sel];if(!c||!G)return;const L=ziList(),pi=ziPhaseOf(c);
   const xx=G.x(c.t),phEl=$("#ziPH");
   if(phEl){phEl.style.transform=`translateX(${xx.toFixed(1)}px)`;const lab=ziD(c.d),w=lab.length*6.7+12,lft=xx-w/2,rgt=xx+w/2,off=lft<2?2-lft:rgt>G.W-2?G.W-2-rgt:0;
     const r=$("#ziPHr"),t=$("#ziPHt");r.setAttribute("x",(-w/2+off).toFixed(1));r.setAttribute("width",w.toFixed(1));t.setAttribute("x",off.toFixed(1));t.textContent=lab}
@@ -2630,7 +2638,7 @@ function ziSync(announce){
     const lx=Math.min(Math.max(xa+(xb-xa)/2,G.m.l+16),G.W-G.m.r-16);o+=`<text class="qv" x="${lx.toFixed(1)}" y="${b-G.qH-4}" text-anchor="middle">${Math.round(v*100)}%</text>`});
   o+=`<circle cx="${xx.toFixed(1)}" cy="${G.bandY("all")+G.bandH/2}" r="6" style="fill:none;stroke:var(--ink);stroke-width:1.5"/>`;
   const ov=$("#ziOv");if(ov)ov.innerHTML=o;
-  const tp=$("#ziTrkPh");if(tp)tp.style.left=(100*(c.t-D.t0)/(D.t1-D.t0)).toFixed(3)+"%";
+  const tp=$("#ziTrkPh");if(tp)tp.style.left=(100*(c.k+.5)/D.ch.length).toFixed(3)+"%";
   // counter
   const ki=c.mv.length?D.ch.filter(x=>x.mv.length).indexOf(c)+1:0;
   $("#ziCtr").innerHTML=`<b>Change ${c.k+1}</b> of ${D.ch.length} · <b>${ziD(c.d)}</b><br>${ki?`key move ${ki} of ${D.nKey}`:"not a key move"}${P?` · phase ${pi+1}, ${esc(P.nm.toLowerCase())}`:""}`;
@@ -2683,7 +2691,7 @@ function ziInit(){
   $("#ziPrev").onclick=()=>{ziPlay(false);ziStep(-1)};$("#ziNext").onclick=()=>{ziPlay(false);ziStep(1)};$("#ziPlay").onclick=()=>ziPlay(!ZI.playing);
   $("#ziMoments").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)user(+b.dataset.k)});
   $("#ziPhases").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)user(+b.dataset.k)});
-  const trk=$("#ziTrk");trk.addEventListener("pointerdown",ev=>{const r=trk.getBoundingClientRect(),t=D.t0+(D.t1-D.t0)*Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width));let b=null,bd=1e18;ziList().forEach(c=>{const d=Math.abs(c.t-t);if(d<bd){bd=d;b=c}});if(b)user(b.k)});
+  const trk=$("#ziTrk");trk.addEventListener("pointerdown",ev=>{const r=trk.getBoundingClientRect(),k=D.ch.length*Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width))-.5;let b=null,bd=1e9;ziList().forEach(c=>{const d=Math.abs(c.k-k);if(d<bd){bd=d;b=c}});if(b)user(b.k)});
   // stop playing once the figure leaves the screen
   if("IntersectionObserver" in window)new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&ZI.playing)ziPlay(false)})).observe($("#ziFig"));
   ziModeHelp();ziPlayBtn();
