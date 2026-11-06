@@ -1,0 +1,205 @@
+{
+ "note": "Testable footprints of publicly documented or alleged organised Wikipedia-editing initiatives on Israel/Palestine/Zionism/Judaism. Written BEFORE running any test (2026-11-06). Each footprint states the prediction that would follow IF the initiative changed English Wikipedia leads at a scale our data can see. A null result does not show an initiative did not exist or did nothing; our lead-event data are blind to who an account is, to talk-page and RfC canvassing, and to edits outside opening paragraphs. Organisation-level only: no account is linked to any person or group. Status: documented = established by a primary record (ArbCom decision, the organisation's own announcement) or by multiple independent reports with the organisation's confirmation; alleged = reported, disputed or unconfirmed. All sources were read as search snippets (page fetches blocked in this session) and must be verified before publication.",
+ "data": {
+  "lead_events": "data/mass2_events.json.gz -> articles[title].lead_events[] {ts, term, kind insert|remove, reverted, u (salted hash, linkable only within one article), acct{age_d, lt500, ext, indef}}; groups from data/mass2.json (topic n=4642, comparison n=5678). Critical terms: settler_colonial, apartheid, genocide, ethnic_cleansing, occupation, nakba_expulsion, war_crimes.",
+  "weekly_edits": "data/results.json articles[].w_edits (deep panel, week0 2021-01-01; treatment n=411, clean control n=85)",
+  "first_sentence": "data/ratchet.json articles.Zionism.fs_timeline [date, variant id, reverted] + fs_variants (150 of 169 variants stored)"
+ },
+ "method_default": {
+  "statistic": "DiD of log rates: log((T_post+1)/(T_pre+1)) - log((C_post+1)/(C_pre+1)), T = topic-lead critical-term events, C = comparison-lead events, pre = 4 weeks before the date, post = the date's week and 3 weeks after",
+  "placebo": "2,000 random dates 2021-07-01..2026-09-01 (global) and dates within +-26 weeks of the event (local); one-sided p in the predicted direction = share of placebo statistics at least as extreme",
+  "sensitivity": "8-week windows; non-reverted events only"
+ },
+ "footprints": [
+  {
+   "id": "F1a",
+   "initiative": "Tech for Palestine Discord 'tfp-wikipedia-collaboration' channel",
+   "side": "pro-Palestinian",
+   "status": "alleged by Pirate Wires/Jewish Journal; off-wiki canvassing partly confirmed by ArbCom sanctions (Dec 2024, Apr 2025)",
+   "event": "channel created",
+   "date": "2024-01-15",
+   "date_quality": "month only ('January 2024'); 2024-01-01 and 2024-02-01 run as sensitivity",
+   "targets": "Israel-Palestine topic area generally; '100+' or '8,000' articles claimed; no published target list in sources seen",
+   "wording": "none published in sources seen",
+   "prediction": "topic insertions rise relative to comparison after the date",
+   "comparison_set": "mass2 comparison leads; placebo dates",
+   "test": "did_events(kind=insert, direction=+)",
+   "result": "ratio 0.76 (p 0.64); sensitivities 0.71-0.72; no rise. See tests.md"
+  },
+  {
+   "id": "F1b",
+   "initiative": "Tech for Palestine Discord channel",
+   "side": "pro-Palestinian",
+   "status": "alleged",
+   "event": "Pirate Wires exposé published",
+   "date": "2024-10-24",
+   "prediction": "topic insertions fall relative to comparison after exposure (chilling / channel goes private)",
+   "comparison_set": "mass2 comparison leads; placebo dates",
+   "test": "did_events(kind=insert, direction=-)",
+   "result": "ratio 0.63, p 0.24 global; non-reverted 0.96; null"
+  },
+  {
+   "id": "F1c",
+   "initiative": "Tech for Palestine Discord channel",
+   "side": "pro-Palestinian",
+   "status": "documented (ArbCom private-case sanctions for off-wiki canvassing; reported date)",
+   "event": "first ArbCom sanctions tied to the channel",
+   "date": "2024-12-09",
+   "date_quality": "as reported by Jewish Journal; verify on the ArbCom noticeboard",
+   "prediction": "topic insertions fall relative to comparison",
+   "test": "did_events(kind=insert, direction=-)",
+   "result": "ratio 2.52 (wrong direction); null"
+  },
+  {
+   "id": "F1d",
+   "initiative": "Tech for Palestine Discord channel",
+   "side": "pro-Palestinian",
+   "status": "alleged (active period from the dossier: Feb-Sep 2024)",
+   "event": "period comparison",
+   "date": "2024-02-01..2024-09-30 vs 2024-10-01..2025-05-31",
+   "prediction": "topic/comparison insertion ratio higher in the active period than after",
+   "test": "period_ratio (descriptive; confounded with war tempo)",
+   "result": "topic/comparison ratio 3.44 before channel (Oct 2023-Jan 2024), 2.01 channel active, 1.84 after exposure; surge predates channel"
+  },
+  {
+   "id": "F2",
+   "initiative": "Email canvassing / proxy editing for a banned editor (pro-Israel), ArbCom 'PIA canvassing' motions",
+   "side": "pro-Israel",
+   "status": "documented (ArbCom motions 4-20 Jan 2024; canvassing dated from Oct 2023 per snippet)",
+   "event": "motions enacted",
+   "date": "2024-01-20",
+   "targets": "discussions in the PIA topic area (not published)",
+   "prediction": "topic removals fall relative to comparison after the motions (assumes the ring's lead edits were mainly removals - an assumption, not a documented fact)",
+   "test": "did_events(kind=remove, direction=-)",
+   "result": "removals ratio 0.50, p 0.16 global / 0.065 local; 8w local p 0.026; suggestive only"
+  },
+  {
+   "id": "F3a",
+   "initiative": "ArbCom Palestine-Israel articles 5 (PIA5) remedies",
+   "side": "both (reported 6 pro-Palestinian, 2 pro-Israel topic bans)",
+   "status": "documented",
+   "event": "case closed; topic bans and balanced editing restriction in force",
+   "date": "2025-01-23",
+   "prediction": "topic insertions AND removals fall relative to comparison; deep-panel topic edits fall relative to comparison edits",
+   "test": "did_events(kind=insert|remove|all, direction=-); did_weekly_edits(direction=-)",
+   "result": "insertions 0.37 (p 0.105 / 0.065 local); removals 0.72; deep edits 0.83 (p 0.26); predicted direction, not significant"
+  },
+  {
+   "id": "F3b",
+   "initiative": "PIA5 remedies",
+   "side": "both",
+   "status": "documented",
+   "event": "concentration before vs after",
+   "date": "2025-01-23",
+   "prediction": "within-article concentration of lead flips (top-1 account share) and carry-over of accounts falls on topic articles after PIA5 more than (i) on comparison articles and (ii) at a placebo date one year earlier",
+   "test": "concentration(12 months each side; articles with >=5 hashed flips in both windows)",
+   "result": "carry-over of prior-year accounts 3% (5 topic articles) vs 19% placebo year and 19% comparison; top-1 share unchanged; LOW n"
+  },
+  {
+   "id": "F4a",
+   "initiative": "ADL 'Editing for Hate' report (alleges ~30 coordinated editors)",
+   "side": "external pressure by a pro-Israel advocacy NGO; allegation against pro-Palestinian editors",
+   "status": "the report is documented; its coordination claim is disputed by the WMF",
+   "event": "report published",
+   "date": "2025-03-18",
+   "prediction": "topic insertions fall relative to comparison",
+   "test": "did_events(kind=insert, direction=-)",
+   "result": "ratio 2.51 (wrong direction); null"
+  },
+  {
+   "id": "F4b",
+   "initiative": "ArbCom private case 'Off-wiki misconduct in PIA' site bans",
+   "side": "pro-Palestinian (per reporting)",
+   "status": "documented",
+   "date": "2025-04-25",
+   "prediction": "topic insertions fall relative to comparison",
+   "test": "did_events(kind=insert, direction=-)",
+   "result": "4w 0.71 (p 0.33); 8w 0.32 (p 0.051 / 0.026); sensitivity-only"
+  },
+  {
+   "id": "F4c",
+   "initiative": "ADL 'Damage Done' follow-up claim: coordinated activity fell ~95% after scrutiny",
+   "side": "pro-Israel advocacy NGO claim",
+   "status": "alleged",
+   "event": "year comparison",
+   "date": "2024 vs 2025 (calendar years)",
+   "prediction": "if the alleged group drove a large share of topic insertions, the topic/comparison insertion ratio falls sharply from 2024 to 2025. Hashes do not link across articles, so 'the same group' cannot be followed; the closest measurable proxy is the share of topic insertions made by accounts with 3 or more flips on the same article",
+   "test": "year_ratio (descriptive)",
+   "result": "ratio 2.10 (2024) -> 1.32 (2025); consistent with but not attributable to ADL claim"
+  },
+  {
+   "id": "F5a",
+   "initiative": "Euro-Med Human Rights Monitor 'WikiRights' round 3 (12 trainees, Gaza, Arabic and English Wikipedia, 'genocide' documentation)",
+   "side": "pro-Palestinian NGO",
+   "status": "documented (Euro-Med's own announcements); critics allege Hamas links (disputed)",
+   "date": "2026-02-16",
+   "date_quality": "reported 18 Feb 2026; registration earlier",
+   "targets": "documentation-based articles on Gaza victims (new articles), 'genocide in Gaza'",
+   "wording": "'genocide' framing (Euro-Med's own wording)",
+   "prediction": "genocide insertions into topic leads rise after the date, and some come from non-extended-confirmed accounts (ECR should block that on topic pages)",
+   "test": "did_events(term=genocide, kind=insert, direction=+); count non-EC insertions",
+   "result": "genocide insertions 1->1 (4w); non-EC share unchanged (2/18 vs 2/23); null, underpowered"
+  },
+  {
+   "id": "F5b",
+   "initiative": "Euro-Med WikiRights round 2 (West Bank and Gaza)",
+   "side": "pro-Palestinian NGO",
+   "status": "documented (Euro-Med announcement, Nov 2021)",
+   "date": "2021-11-01",
+   "prediction": "topic insertions rise relative to comparison",
+   "test": "did_events(kind=insert, direction=+)",
+   "result": "ratio 0.73; null"
+  },
+  {
+   "id": "F6",
+   "initiative": "Change.org petition 'Demand Wikipedia to Address Bias and Ensure Neutrality on Zionism' (>10,000 signatures by 27 Oct 2024), alongside Sept 2024 press campaign",
+   "side": "pro-Israel (individual organiser; public call)",
+   "status": "documented (petition page)",
+   "date": "2024-09-14",
+   "date_quality": "petition start date unknown; date used is the first large Zionism lead edit war in Sept 2024 (ratchet big_rewrites) which coincides with the press coverage - the two cannot be separated",
+   "targets": "Zionism (first sentence: 'colonialism/colonization')",
+   "wording": "remove colonialism framing; add varieties of Zionism",
+   "prediction": "more removals of 'coloni-' from the Zionism first sentence in the 6 weeks after than at random 6-week windows on the same article",
+   "comparison_set": "same article, placebo windows",
+   "test": "zionism_first_sentence",
+   "result": "7 removals in 42 days vs 2024 mean 3.8 (p 0.23); peak month June 2024 precedes petition; null"
+  },
+  {
+   "id": "U1",
+   "initiative": "Artists Against Artwashing / Stop Art Washing 'Free Palestine Wiki Edit-a-Thon' (Toronto; April 2025 workshop, 22 Oct 2025 event)",
+   "side": "pro-Palestinian activist collective",
+   "status": "documented (event announcement); edit footprint alleged by JPost",
+   "targets": "Azrieli Group, David Azrieli, Palestinian artists",
+   "testable_now": false,
+   "why_not": "target pages are not in our 10,320-article set; needs page histories (en.wikipedia.org unreachable here)",
+   "footprint": "edits to Azrieli Group / David Azrieli in the 7 days after each event vs the 52 prior weeks; new accounts with few edits; wording about 'genocide' or 'settlements'"
+  },
+  {
+   "id": "U2",
+   "initiative": "Art+Feminism x Iniva edit-a-thon on Palestine (London, 20 May 2024); Centre A (Vancouver, 29 Mar 2024); AUB 'WikiWednesday: Palestine Solidarity Week'",
+   "side": "pro-Palestinian arts / academic",
+   "status": "documented (organisers' own pages)",
+   "targets": "Palestinian artists and cultural institutions (article creation)",
+   "testable_now": false,
+   "why_not": "artist biographies are not in our set; footprint is new-article creation, which our data do not track outside the set",
+   "footprint": "page creations in categories of Palestinian artists in the 7 days after each event vs other weeks of 2024"
+  },
+  {
+   "id": "U3",
+   "initiative": "CAMERA 'Isra-pedia' (2008), Yesha Council / My Israel courses (2010), NGO Monitor staffer (2013)",
+   "side": "pro-Israel",
+   "status": "documented",
+   "testable_now": false,
+   "why_not": "before our 2021 data start"
+  },
+  {
+   "id": "U4",
+   "initiative": "The Israel Group 'Wiki-Israel' (announced 2019-2020); Heritage Foundation 'Project Esther' Wikipedia plan (reported 7 Jan 2025)",
+   "side": "pro-Israel (Heritage: US conservative think tank)",
+   "status": "documented as plans; no documented editing",
+   "testable_now": false,
+   "why_not": "no target articles or editing dates published; Heritage date (2025-01-07) falls inside the PIA5 window and cannot be separated"
+  }
+ ],
+ "power_note": "4-week insertion DiD placebo SD 0.86: detectable (one-sided 5%) only if ratio <= 0.20 or >= 4.2"
+}
