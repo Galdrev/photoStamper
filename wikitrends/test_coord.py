@@ -315,6 +315,12 @@ def test_planted():
     net = ta["network"]
     comm = [c for c in net["communities"] if len(members(ta, c["_m"]) & pset) >= 4]
     check(comm and comm[0]["confidence"] == "high", f"network: planted bloc is a high-confidence community ({[(c['size'], c['confidence']) for c in comm]})")
+    if comm:
+        tw = comm[0]["time_alignment"]["windows"]["tfp_discord"]
+        check(tw["window_share"] > 0.7 and tw["p_high"] < 0.01 and tw["expected_ci95"][1] < tw["window_share"],
+              f"time alignment: planted bloc (Mar 2024) concentrated in the documented Jan-Sep 2024 window ({tw['window_share']} vs "
+              f"{tw['expected_window_share']} {tw['expected_ci95']}, p {tw['p_high']})")
+        check("post_sanction_drop" in comm[0] and "2025-04-25" in comm[0]["post_sanction_drop"], "network community: post_sanction_drop fields")
     nz = [c for c in net["communities"] if c["confidence"] in ("high", "medium") and not (members(ta, c["_m"]) & pset)]
     check(not nz, f"network: no noise-only community significant ({[(c['size'], c['confidence']) for c in nz]})")
     tmp = tempfile.mkdtemp(prefix="coordplant_")
@@ -343,6 +349,11 @@ def test_planted():
         cards = json.load(open(os.path.join(tmp, "cards.json")))["cards"]
         check(all(c.get("confidence") and c.get("null_model") for c in cards), "every card has a confidence and a null model")
         check(any("Bloc A (" in c["what_we_see"] for c in cards), "blocs named 'Bloc A (n accounts)'")
+        tc = next(c for c in cards if c["id"] == "windows")
+        check(tc["numbers"]["sets"] and any(x["direction"] == "insert" for x in tc["numbers"]["sets"]),
+              "windows card: insert-direction bloc tested against the documented windows")
+        check(all(k in tn["communities"][0] for k in ("window_share", "expected_window_share", "post_sanction_drop")),
+              "network.json communities carry window_share / expected_window_share / post_sanction_drop")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     # null-only data: nothing flagged

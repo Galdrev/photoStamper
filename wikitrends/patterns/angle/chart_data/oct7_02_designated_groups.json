@@ -1,0 +1,284 @@
+{
+ "source": "data/mass2_leads.json.gz (2021-01-01 and 2026-11-05 snapshot) where present, else data/leads.json (2021-01 and 2026-10); regex terroris[mt], militan*; sentence split heuristic",
+ "groups": [
+  {
+   "article": "Hamas",
+   "then": {
+    "date": "2021-01-01",
+    "source": "mass2_leads",
+    "first_sentence": "Hamas (Arabic: حماس Ḥamās, an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah [Islamic Resistance Movement]) is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": 5,
+    "n_sentences": 20,
+    "terror_word_offset_share": 0.164,
+    "terror_mentions": 4,
+    "militant_mentions": 1,
+    "lead_words": 568
+   },
+   "now": {
+    "date": "2026-10-31T22:20:23Z",
+    "source": "mass2_leads rev 1383083378",
+    "first_sentence": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades",
+    "fs_has_terror": false,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": 22,
+    "n_sentences": 23,
+    "terror_word_offset_share": 0.954,
+    "terror_mentions": 2,
+    "militant_mentions": 0,
+    "lead_words": 525
+   },
+   "short_desc_2021": "Palestinian Islamic militant nationalist organization",
+   "short_desc_now": "Islamist Palestinian political and paramilitary organization"
+  },
+  {
+   "article": "Hezbollah",
+   "then": {
+    "date": "2021-01",
+    "source": "leads.json rev 997206346",
+    "first_sentence": "Hezbollah (DIN, literally \"Party of Allah\" or \"Party of God\", also transliterated Hizbullah or Hizballah, among others) is a Shia Islamist political party and militant group based in Lebanon",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": 4,
+    "n_sentences": 25,
+    "terror_word_offset_share": 0.11,
+    "terror_mentions": 1,
+    "militant_mentions": 1,
+    "lead_words": 753
+   },
+   "now": {
+    "date": "2026-10",
+    "source": "leads.json rev 1376524324",
+    "first_sentence": "Hezbollah is a Lebanese Shia Islamist political party with an active paramilitary wing whose military and security activities have been prohibited by the Lebanese government since March 2026, amid the 2026 Lebanon war",
+    "fs_has_terror": false,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": 25,
+    "n_sentences": 33,
+    "terror_word_offset_share": 0.773,
+    "terror_mentions": 1,
+    "militant_mentions": 0,
+    "lead_words": 731
+   },
+   "short_desc_2021": null,
+   "short_desc_now": null
+  },
+  {
+   "article": "Palestinian Islamic Jihad",
+   "then": {
+    "date": "2021-01-01",
+    "source": "mass2_leads",
+    "first_sentence": "The Islamic Jihad Movement in Palestine (Harakat al-Jihād al-Islāmi fi Filastīn), known in the West as simply Palestinian Islamic Jihad (PIJ), is a Damascus-based Palestinian Islamist organization formed in 1981",
+    "fs_has_terror": false,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": 4,
+    "n_sentences": 14,
+    "terror_word_offset_share": 0.26,
+    "terror_mentions": 1,
+    "militant_mentions": 0,
+    "lead_words": 338
+   },
+   "now": {
+    "date": "2026-10-29T23:01:15Z",
+    "source": "mass2_leads rev 1382717263",
+    "first_sentence": "The Islamic Jihad Movement in Palestine (حركة الجهاد الإسلامي في فلسطين, Ḥarakat al-Jihād al-Islāmi fi Filastīn), commonly known simply as Palestinian Islamic Jihad (PIJ), is an Islamist Palestinian paramilitary organization formed in 1981",
+    "fs_has_terror": false,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": 10,
+    "n_sentences": 12,
+    "terror_word_offset_share": 0.808,
+    "terror_mentions": 1,
+    "militant_mentions": 2,
+    "lead_words": 260
+   },
+   "short_desc_2021": "Palestinian Islamist terror organization",
+   "short_desc_now": "Palestinian political party paramilitary force"
+  },
+  {
+   "article": "Islamic Revolutionary Guard Corps",
+   "then": {
+    "date": "2021-01-01",
+    "source": "mass2_leads",
+    "first_sentence": "The Islamic Revolutionary Guard Corps ([IRGC] or Sepâh for short) is a branch of the Iranian Armed Forces, founded after the Iranian Revolution on 22 April 1979 by order of Ayatollah Ruhollah Khomeini",
+    "fs_has_terror": false,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": 11,
+    "n_sentences": 11,
+    "terror_word_offset_share": 0.952,
+    "terror_mentions": 1,
+    "militant_mentions": 0,
+    "lead_words": 273
+   },
+   "now": {
+    "date": "2026-11-03T13:24:24Z",
+    "source": "mass2_leads rev 1383579124",
+    "first_sentence": "The Islamic Revolutionary Guard Corps (IRGC), also known as Sepah, Pasdaran, and Iranian Revolutionary Guards, is a multi-service military force of Iran and one of Iran's two military forces, the other being the Islamic Republic of Iran Army",
+    "fs_has_terror": false,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": 13,
+    "n_sentences": 18,
+    "terror_word_offset_share": 0.675,
+    "terror_mentions": 1,
+    "militant_mentions": 0,
+    "lead_words": 449
+   },
+   "short_desc_2021": "Branch of the Iranian Armed Forces",
+   "short_desc_now": "Military organization in Iran"
+  },
+  {
+   "article": "Islamic State",
+   "then": {
+    "date": "2021-01-01",
+    "source": "mass2_leads",
+    "first_sentence": "The Islamic State of Iraq and the Levant (ISIL; ), also known as the Islamic State of Iraq and Syria (ISIS; ), officially known as the Islamic State (IS) and also known by its Arabic acronym Daesh (داعش, Dāʿish, ), is a militant Islamist group and a former unrecognised proto-state that follows a fundamentalist, Salafi jihadist doctrine of Sunni Islam",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": 3,
+    "n_sentences": 22,
+    "terror_word_offset_share": 0.176,
+    "terror_mentions": 1,
+    "militant_mentions": 1,
+    "lead_words": 663
+   },
+   "now": {
+    "date": "2026-11-03T04:05:00Z",
+    "source": "mass2_leads rev 1383524923",
+    "first_sentence": "The Islamic State (IS), also known as the Islamic State of Iraq and the Levant (ISIL), the Islamic State of Iraq and Syria (ISIS), and by its Arabic acronym Da'esh, is a transnational Salafi jihadist militant organisation and internationally unrecognised quasi-state",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": 4,
+    "n_sentences": 15,
+    "terror_word_offset_share": 0.219,
+    "terror_mentions": 3,
+    "militant_mentions": 1,
+    "lead_words": 465
+   },
+   "short_desc_2021": "Salafi jihadist terrorist and militant group",
+   "short_desc_now": "Salafi jihadist militant organisation"
+  },
+  {
+   "article": "Al-Qaeda",
+   "then": {
+    "date": "2021-01",
+    "source": "leads.json rev 996980404",
+    "first_sentence": "Al-Qaeda (DIN,, translation: \"The Base\", \"The Foundation\", alternatively spelled al-Qaida and al-Qa'ida) is a militant Sunni Islamist multi-national organization founded in 1988 by Osama bin Laden, Abdullah Azzam, and several other Arab volunteers during the Soviet–Afghan War",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": 3,
+    "n_sentences": 16,
+    "terror_word_offset_share": 0.161,
+    "terror_mentions": 1,
+    "militant_mentions": 1,
+    "lead_words": 341
+   },
+   "now": {
+    "date": "2026-10",
+    "source": "leads.json rev 1376990855",
+    "first_sentence": "Al-Qaeda is a pan-Islamist militant organization led by Sunni Islamist jihadists who self-identify as a vanguard spearheading a global Islamist revolution to unite the Muslim world under a supra-national Islamic caliphate",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": 4,
+    "n_sentences": 27,
+    "terror_word_offset_share": 0.136,
+    "terror_mentions": 1,
+    "militant_mentions": 2,
+    "lead_words": 596
+   },
+   "short_desc_2021": null,
+   "short_desc_now": null
+  },
+  {
+   "article": "Al-Shabaab (militant group)",
+   "then": {
+    "date": "2021-01",
+    "source": "leads.json rev 995806933",
+    "first_sentence": "Harakat al-Shabaab al-Mujahideen, more commonly known as al-Shabaab, is a terrorist, jihadist fundamentalist group based in East Africa",
+    "fs_has_terror": true,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": 1,
+    "n_sentences": 22,
+    "terror_word_offset_share": 0.02,
+    "terror_mentions": 3,
+    "militant_mentions": 5,
+    "lead_words": 498
+   },
+   "now": {
+    "date": "2026-10",
+    "source": "leads.json rev 1376824579",
+    "first_sentence": "Harakat al-Shabaab al-Mujahideen simply known as al-Shabaab is a transnational Wahhabi-Salafi Jihadist militant organization",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": 4,
+    "n_sentences": 17,
+    "terror_word_offset_share": 0.163,
+    "terror_mentions": 2,
+    "militant_mentions": 3,
+    "lead_words": 447
+   },
+   "short_desc_2021": null,
+   "short_desc_now": null
+  },
+  {
+   "article": "Boko Haram",
+   "then": {
+    "date": "2021-01",
+    "source": "leads.json rev 997228224",
+    "first_sentence": "The Islamic State in West Africa or the Islamic State's West Africa Province (abbreviated ISWA or ISWAP), formerly known as Jamā'at Ahl as-Sunnah lid-Da'wah wa'l-Jihād (\"Group of the People of Sunnah for Preaching and Jihad\") and commonly known as Boko Haram, is a jihadist terrorist organization based in northeastern Nigeria, also active in Chad, Niger and northern Cameroon",
+    "fs_has_terror": true,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": 1,
+    "n_sentences": 20,
+    "terror_word_offset_share": 0.095,
+    "terror_mentions": 2,
+    "militant_mentions": 2,
+    "lead_words": 465
+   },
+   "now": {
+    "date": "2026-10",
+    "source": "leads.json rev 1376930258",
+    "first_sentence": "Boko Haram, officially known as Jama'at Ahl al-Sunna li al-Da'wa wa al-Jihad (JAS) and sometimes referred to as its state name Daular Musulunci, is a jihadist militant organisation based in northeastern Nigeria and also active in Chad, Niger, northern Cameroon, and Mali",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": null,
+    "n_sentences": 21,
+    "terror_word_offset_share": null,
+    "terror_mentions": 0,
+    "militant_mentions": 4,
+    "lead_words": 536
+   },
+   "short_desc_2021": null,
+   "short_desc_now": null
+  },
+  {
+   "article": "Taliban",
+   "then": {
+    "date": "2021-01-01",
+    "source": "mass2_leads",
+    "first_sentence": "The Taliban or Taleban, who refer to themselves as the Islamic Emirate of Afghanistan (IEA), are a Sunni Islamic fundamentalist political movement and military organisation in Afghanistan currently waging war (an insurgency, or jihad) within that country",
+    "fs_has_terror": false,
+    "fs_has_militant": false,
+    "terror_first_sentence_no": null,
+    "n_sentences": 18,
+    "terror_word_offset_share": null,
+    "terror_mentions": 0,
+    "militant_mentions": 1,
+    "lead_words": 508
+   },
+   "now": {
+    "date": "2026-10-29T23:42:48Z",
+    "source": "mass2_leads rev 1382725239",
+    "first_sentence": "The Taliban is a Sunni Islamist political and militant organization which has governed Afghanistan since 2021",
+    "fs_has_terror": false,
+    "fs_has_militant": true,
+    "terror_first_sentence_no": 16,
+    "n_sentences": 16,
+    "terror_word_offset_share": 0.934,
+    "terror_mentions": 1,
+    "militant_mentions": 1,
+    "lead_words": 393
+   },
+   "short_desc_2021": "Islamic fundamentalist political movement in Afghanistan",
+   "short_desc_now": "Afghan Islamist militant organization"
+  }
+ ]
+}

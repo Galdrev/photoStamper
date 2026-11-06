@@ -1,0 +1,71 @@
+{
+ "source": "data/leads.json (October 7 attacks 2024-01-01 rev 1192818891; 2026-10-01 rev 1377629133), data/mass2_leads.json.gz (2026-11-02 rev 1383458606)",
+ "rows": [
+  {
+   "item": "Dead (total)",
+   "2024-01-01": "1,139",
+   "2026-10-01": "at least 1,195 (also in sentence 1)",
+   "2026-11-02": "at least 1,195"
+  },
+  {
+   "item": "Civilians killed",
+   "2024-01-01": "695 Israeli civilians, among them 36 children ... 71 foreigners",
+   "2026-10-01": "at least 828 civilians (including 36 children and 71 foreign nationals)",
+   "2026-11-02": "same as 2026-10-01"
+  },
+  {
+   "item": "Hostages",
+   "2024-01-01": "Approximately 250 ... including 30 children, with the stated goal to force Israel to release Palestinian prisoners (sentence 7 of 11)",
+   "2026-10-01": "251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip (sentence 9 of 16)",
+   "2026-11-02": "same (sentence 9 of 16)"
+  },
+  {
+   "item": "Sexual violence",
+   "2024-01-01": "Israel and international media have reported rape and sexual assault by Hamas fighters with documentary footage and photographs, which Hamas has denied.",
+   "2026-10-01": "Numerous sources have reported dozens of cases of rape and sexual assault, but Hamas officials denied the involvement of their fighters.",
+   "2026-11-02": "Numerous sources have reported dozens of cases of rape and sexual assault."
+  },
+  {
+   "item": "Massacre",
+   "2024-01-01": "in Israel they are referred to as Black Saturday or the Simchat Torah Massacre",
+   "2026-10-01": "attacking military bases and massacring civilians in 21 communities (sentence 4)",
+   "2026-11-02": "same (sentence 4)"
+  },
+  {
+   "item": "Terrorism",
+   "2024-01-01": "At least 44 nations denounced the attack as terrorism (sentence 9 of 11)",
+   "2026-10-01": "The governments of 44 countries denounced the attack and described it as terrorism (last sentence)",
+   "2026-11-02": "same (last sentence, 16 of 16)"
+  },
+  {
+   "item": "Hannibal Directive",
+   "2024-01-01": "absent",
+   "2026-10-01": "At least 14 Israeli civilians were killed by the IDF's use of the Hannibal Directive.",
+   "2026-11-02": "The IDF used the Hannibal Directive on that day, which may have led to at least 13 Israeli civilian deaths."
+  },
+  {
+   "item": "Genocide (Israel)",
+   "2024-01-01": "absent",
+   "2026-10-01": "In response, Israel intensified its blockade and launched a major military operation in Gaza, actions scholars have concluded constitute genocide. (sentence 2)",
+   "2026-11-02": "In response, Israel launched a major military operation in Gaza."
+  },
+  {
+   "item": "Genocide (October 7)",
+   "2024-01-01": "absent",
+   "2026-10-01": "Some have alleged that the attack was an act of genocide or a genocidal massacre against Israelis.",
+   "2026-11-02": "same"
+  },
+  {
+   "item": "Attackers count",
+   "2024-01-01": "absent",
+   "2026-10-01": "6,000 Gazans breached the border ... total number of participants on Hamas's side to 7,000 (IDF report)",
+   "2026-11-02": "same"
+  },
+  {
+   "item": "Lead words",
+   "2024-01-01": 329,
+   "2026-10-01": 425,
+   "2026-11-02": 406
+  }
+ ]
+}

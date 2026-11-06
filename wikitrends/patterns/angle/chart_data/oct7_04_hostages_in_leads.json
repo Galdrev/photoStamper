@@ -1,0 +1,275 @@
+{
+ "source": "lead text snapshots: data/mass2_leads.json.gz (2021-01-01, 2023-07-01, ~2026-11-02..04), data/leads.json (2024-01-01 / 2021-01-01 and 2026-10-01); first sentences of every revision: data/ratchet.json",
+ "regex": "\\bhostages?\\b|\\bcaptives?\\b|\\babduct\\w*|\\bkidnap\\w*",
+ "note": "sentence split is heuristic; snapshot dates only (no full-lead text between snapshots)",
+ "snapshots": [
+  {
+   "article": "Hamas",
+   "date": "2021-01-01",
+   "source": "mass2_leads",
+   "lead_exists": true,
+   "n_sentences": 20,
+   "n_paragraphs": 4,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "Hamas",
+   "date": "2023-07-01",
+   "source": "mass2_leads",
+   "lead_exists": true,
+   "n_sentences": 9,
+   "n_paragraphs": 2,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "Hamas",
+   "date": "2026-10-01",
+   "source": "leads.json rev 1377618218",
+   "lead_exists": true,
+   "n_sentences": 23,
+   "n_paragraphs": 4,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "Hamas",
+   "date": "2026-10-31",
+   "source": "mass2_leads rev 1383083378",
+   "lead_exists": true,
+   "n_sentences": 23,
+   "n_paragraphs": 5,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "Israel",
+   "date": "2021-01-01",
+   "source": "mass2_leads",
+   "lead_exists": true,
+   "n_sentences": 27,
+   "n_paragraphs": 4,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "Israel",
+   "date": "2023-07-01",
+   "source": "mass2_leads",
+   "lead_exists": true,
+   "n_sentences": 26,
+   "n_paragraphs": 4,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "Israel",
+   "date": "2026-10-01",
+   "source": "leads.json rev 1377247667",
+   "lead_exists": true,
+   "n_sentences": 28,
+   "n_paragraphs": 4,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "Israel",
+   "date": "2026-11-04",
+   "source": "mass2_leads rev 1383765294",
+   "lead_exists": true,
+   "n_sentences": 26,
+   "n_paragraphs": 4,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "October 7 attacks",
+   "date": "2024-01-01",
+   "source": "leads.json rev 1192818891",
+   "lead_exists": true,
+   "n_sentences": 11,
+   "n_paragraphs": 4,
+   "hostage_mentions": 1,
+   "sentences_with_hostages": [
+    7
+   ],
+   "first_paragraph_with_hostages": 2,
+   "quotes": [
+    "Approximately 250 Israeli civilians and soldiers were taken as hostages to the Gaza Strip, including 30 children, with the stated goal to force Israel to release Palestinian prisoners"
+   ]
+  },
+  {
+   "article": "October 7 attacks",
+   "date": "2026-10-01",
+   "source": "leads.json rev 1377629133",
+   "lead_exists": true,
+   "n_sentences": 16,
+   "n_paragraphs": 4,
+   "hostage_mentions": 1,
+   "sentences_with_hostages": [
+    9
+   ],
+   "first_paragraph_with_hostages": 3,
+   "quotes": [
+    "251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip"
+   ]
+  },
+  {
+   "article": "October 7 attacks",
+   "date": "2026-11-02",
+   "source": "mass2_leads rev 1383458606",
+   "lead_exists": true,
+   "n_sentences": 16,
+   "n_paragraphs": 4,
+   "hostage_mentions": 1,
+   "sentences_with_hostages": [
+    9
+   ],
+   "first_paragraph_with_hostages": 3,
+   "quotes": [
+    "251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip"
+   ]
+  },
+  {
+   "article": "Gaza genocide",
+   "date": "2024-01-01",
+   "source": "leads.json rev 1192878829",
+   "lead_exists": true,
+   "n_sentences": 2,
+   "n_paragraphs": 1,
+   "hostage_mentions": 0,
+   "sentences_with_hostages": [],
+   "first_paragraph_with_hostages": null,
+   "quotes": []
+  },
+  {
+   "article": "Gaza genocide",
+   "date": "2026-10-01",
+   "source": "leads.json rev 1377598621",
+   "lead_exists": true,
+   "n_sentences": 27,
+   "n_paragraphs": 5,
+   "hostage_mentions": 1,
+   "sentences_with_hostages": [
+    26
+   ],
+   "first_paragraph_with_hostages": 5,
+   "quotes": [
+    "Israel and its supporters maintain that its actions do not constitute genocide, that they are a response to the October 7 attacks, and that Israel's aim has been to destroy Hamas and free Israeli hostages"
+   ]
+  },
+  {
+   "article": "Gaza genocide",
+   "date": "2026-11-04",
+   "source": "mass2_leads rev 1383747847",
+   "lead_exists": true,
+   "n_sentences": 29,
+   "n_paragraphs": 5,
+   "hostage_mentions": 1,
+   "sentences_with_hostages": [
+    28
+   ],
+   "first_paragraph_with_hostages": 5,
+   "quotes": [
+    "Israel and its supporters maintain that its actions do not constitute genocide, that they are a response to the October 7 attacks, and that Israel's aim has been to destroy Hamas and free Israeli hostages"
+   ]
+  },
+  {
+   "article": "Gaza war",
+   "date": "2024-01-01",
+   "source": "leads.json rev 1192899834",
+   "lead_exists": true,
+   "n_sentences": 24,
+   "n_paragraphs": 5,
+   "hostage_mentions": 4,
+   "sentences_with_hostages": [
+    9,
+    14,
+    23
+   ],
+   "first_paragraph_with_hostages": 2,
+   "quotes": [
+    "An estimated 240 Israeli soldiers, civilians and foreigners were taken to the Gaza Strip as captives or hostages, with the stated goal of forcing Israel to release Palestinian prisoners",
+    "Freeing hostages held by Palestinian militants was another stated goal, although it rescued only one; dozens more were reportedly killed during the bombing of Gaza and by friendly fire. , more than 20,000 Palestinians, including over 8,000 children, 6,200 women and 61 journalists have been killed",
+    "During a seven-day truce, 105 Israeli hostages were exchanged for 240 Palestinian prisoners"
+   ]
+  },
+  {
+   "article": "Gaza war",
+   "date": "2026-10-01",
+   "source": "leads.json rev 1377643734",
+   "lead_exists": true,
+   "n_sentences": 29,
+   "n_paragraphs": 5,
+   "hostage_mentions": 1,
+   "sentences_with_hostages": [
+    2
+   ],
+   "first_paragraph_with_hostages": 1,
+   "quotes": [
+    "The war began on 7 October 2023, when Palestinian militant group Hamas led an attack on Israel, in which 1,195 Israelis and foreign nationals were killed and 251 were taken hostage"
+   ]
+  }
+ ],
+ "first_sentence_all_revisions": {
+  "Hamas": {
+   "first_sentence_variants": 86,
+   "variants_mentioning_hostages": 0,
+   "total_live_days": 0,
+   "examples": []
+  },
+  "Israel": {
+   "first_sentence_variants": 42,
+   "variants_mentioning_hostages": 0,
+   "total_live_days": 0,
+   "examples": []
+  },
+  "October 7 attacks": {
+   "first_sentence_variants": 107,
+   "variants_mentioning_hostages": 0,
+   "total_live_days": 0,
+   "examples": []
+  },
+  "Gaza war": {
+   "first_sentence_variants": 214,
+   "variants_mentioning_hostages": 1,
+   "total_live_days": 0.24,
+   "examples": [
+    {
+     "first_seen": "2023-11-01T18:34:34Z",
+     "live_days": 0.24,
+     "text": "An armed conflict between Hamas-led Palestinian militant groups and Israeli military forces began on 7 October 2023, with a Hamas attack on southern Israel that killed 1,400 Israelis and took 200 others hostage in a single day."
+    }
+   ]
+  },
+  "Gaza genocide": {
+   "first_sentence_variants": 166,
+   "variants_mentioning_hostages": 1,
+   "total_live_days": 0.34,
+   "examples": [
+    {
+     "first_seen": "2024-02-18T06:19:41Z",
+     "live_days": 0.34,
+     "text": "On October 7, 2023, Hamas operatives crossed into Israel and murdered more than one thousand people in their homes and at the Nova music festival, raping women and taking more than 200 hostages, including children, into Gaza."
+    }
+   ]
+  }
+ }
+}

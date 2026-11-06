@@ -1,0 +1,95 @@
+{
+ "topic": {
+  "importance_mix_sample": {
+   "Mid": 0.538,
+   "High": 0.387,
+   "Top": 0.075
+  },
+  "importance_mix_population": {
+   "High": 0.198,
+   "Mid": 0.762,
+   "Top": 0.039
+  },
+  "created_after_2021_share": 0.081,
+  "created_after_2021_share_weighted": 0.068,
+  "stub_or_start_share": 0.402,
+  "stub_or_start_share_weighted": 0.456,
+  "ga_fa_share": 0.02,
+  "median_bytes_now": 17061.0,
+  "median_lead_words_2023": 94.0,
+  "median_edits_prewar": 18.0,
+  "median_views_per_month_prewar": 613.0,
+  "relevant_share": 0.32,
+  "ct_notice_share": 0.336,
+  "multi_title_rows(redirect dupes merged)": 55,
+  "n": 4642
+ },
+ "comparison": {
+  "importance_mix_sample": {
+   "High": 0.549,
+   "Top": 0.418,
+   "Mid": 0.034
+  },
+  "importance_mix_population": {
+   "High": 0.562,
+   "Mid": 0.125,
+   "Top": 0.313
+  },
+  "created_after_2021_share": 0.043,
+  "created_after_2021_share_weighted": 0.041,
+  "stub_or_start_share": 0.384,
+  "stub_or_start_share_weighted": 0.435,
+  "ga_fa_share": 0.034,
+  "median_bytes_now": 27936.0,
+  "median_lead_words_2023": 134.0,
+  "median_edits_prewar": 45.0,
+  "median_views_per_month_prewar": 2704.0,
+  "relevant_share": 0.227,
+  "ct_notice_share": 0.079,
+  "multi_title_rows(redirect dupes merged)": 55,
+  "n": 5670
+ },
+ "cross_tagged": {
+  "comparison_articles_with_a_topic_project_tag_now": 28,
+  "examples": [
+   "Joseph Stalin",
+   "Assassination of Ali Khamenei",
+   "Swastika",
+   "Leonid Brezhnev",
+   "Seljuk Empire",
+   "Allah",
+   "Hellenistic period",
+   "Mandaeism",
+   "Strained yogurt",
+   "Heaven",
+   "Baptism",
+   "Excommunication"
+  ],
+  "topic_articles_with_a_comparison_project_tag_now": 227,
+  "examples_topic": [
+   "Benjamin Netanyahu",
+   "October 7 attacks",
+   "Hamas",
+   "Itamar Ben-Gvir",
+   "Middle Eastern crisis (2023\u2013present)",
+   "Isaac Herzog",
+   "Purim",
+   "Ludwig Wittgenstein",
+   "Jacob",
+   "Gabriel",
+   "Aramaic",
+   "Dead Sea"
+  ],
+  "excluded_both_in_frame": 572
+ },
+ "indiana_rows_in_India_sample": [
+  "Marion County, Indiana",
+  "Indiana Supreme Court",
+  "Indianapolis City-County Council",
+  "List of mayors of Evansville, Indiana",
+  "Flag of Indiana",
+  "Seal of Indiana",
+  "Government of Indianapolis",
+  "History of Indianapolis"
+ ]
+}

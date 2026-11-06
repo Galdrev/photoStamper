@@ -1,0 +1,351 @@
+{
+ "note": "standardised mean differences topic minus comparison (pooled raw-sample SD in the denominator); |SMD| < 0.1 is the usual balance bar. Columns: unweighted sample, design-weighted, after CEM, after 1:1 propensity matching",
+ "chart": {
+  "type": "dot plot (Love plot)",
+  "x": "SMD",
+  "y": "covariate",
+  "series": "adjustment"
+ },
+ "balance": {
+  "all": {
+   "unweighted": {
+    "lead words 2021 (log)": {
+     "mean_topic": 4.126,
+     "mean_comp": 4.577,
+     "smd": -0.311
+    },
+    "no 2021 lead": {
+     "mean_topic": 0.09,
+     "mean_comp": 0.049,
+     "smd": 0.159
+    },
+    "page id (log; age proxy, higher = newer)": {
+     "mean_topic": 15.54,
+     "mean_comp": 14.855,
+     "smd": 0.292
+    },
+    "created after 2021-01-01": {
+     "mean_topic": 0.081,
+     "mean_comp": 0.043,
+     "smd": 0.162
+    },
+    "edits 2021-01..2023-07 (log)": {
+     "mean_topic": 2.979,
+     "mean_comp": 3.77,
+     "smd": -0.557
+    },
+    "views/month 2021-01..2023-07 (log)": {
+     "mean_topic": 6.36,
+     "mean_comp": 7.589,
+     "smd": -0.521
+    },
+    "importance (Top=3, High=2, Mid=1)": {
+     "mean_topic": 1.538,
+     "mean_comp": 2.384,
+     "smd": -1.427
+    },
+    "lead had a critical term in Jul 2023": {
+     "mean_topic": 0.064,
+     "mean_comp": 0.042,
+     "smd": 0.098
+    }
+   },
+   "design_weighted": {
+    "lead words 2021 (log)": {
+     "mean_topic": 4.01,
+     "mean_comp": 4.479,
+     "smd": -0.324
+    },
+    "no 2021 lead": {
+     "mean_topic": 0.073,
+     "mean_comp": 0.049,
+     "smd": 0.096
+    },
+    "page id (log; age proxy, higher = newer)": {
+     "mean_topic": 15.816,
+     "mean_comp": 15.051,
+     "smd": 0.327
+    },
+    "created after 2021-01-01": {
+     "mean_topic": 0.068,
+     "mean_comp": 0.041,
+     "smd": 0.112
+    },
+    "edits 2021-01..2023-07 (log)": {
+     "mean_topic": 2.864,
+     "mean_comp": 3.582,
+     "smd": -0.506
+    },
+    "views/month 2021-01..2023-07 (log)": {
+     "mean_topic": 6.108,
+     "mean_comp": 7.335,
+     "smd": -0.52
+    },
+    "importance (Top=3, High=2, Mid=1)": {
+     "mean_topic": 1.277,
+     "mean_comp": 2.189,
+     "smd": -1.538
+    },
+    "lead had a critical term in Jul 2023": {
+     "mean_topic": 0.047,
+     "mean_comp": 0.035,
+     "smd": 0.053
+    }
+   },
+   "cem": {
+    "lead words 2021 (log)": {
+     "mean_topic": 4.074,
+     "mean_comp": 4.079,
+     "smd": -0.004
+    },
+    "no 2021 lead": {
+     "mean_topic": 0.1,
+     "mean_comp": 0.1,
+     "smd": 0.0
+    },
+    "page id (log; age proxy, higher = newer)": {
+     "mean_topic": 15.595,
+     "mean_comp": 15.636,
+     "smd": -0.018
+    },
+    "created after 2021-01-01": {
+     "mean_topic": 0.093,
+     "mean_comp": 0.093,
+     "smd": 0.0
+    },
+    "edits 2021-01..2023-07 (log)": {
+     "mean_topic": 2.94,
+     "mean_comp": 2.953,
+     "smd": -0.01
+    },
+    "views/month 2021-01..2023-07 (log)": {
+     "mean_topic": 6.269,
+     "mean_comp": 6.198,
+     "smd": 0.029
+    },
+    "importance (Top=3, High=2, Mid=1)": {
+     "mean_topic": 1.618,
+     "mean_comp": 1.618,
+     "smd": -0.0
+    },
+    "lead had a critical term in Jul 2023": {
+     "mean_topic": 0.064,
+     "mean_comp": 0.031,
+     "smd": 0.147
+    }
+   },
+   "ps_matched": {
+    "lead words 2021 (log)": {
+     "mean_topic": 4.128,
+     "mean_comp": 4.127,
+     "smd": 0.0
+    },
+    "no 2021 lead": {
+     "mean_topic": 0.089,
+     "mean_comp": 0.095,
+     "smd": -0.02
+    },
+    "page id (log; age proxy, higher = newer)": {
+     "mean_topic": 15.539,
+     "mean_comp": 15.532,
+     "smd": 0.003
+    },
+    "created after 2021-01-01": {
+     "mean_topic": 0.081,
+     "mean_comp": 0.084,
+     "smd": -0.011
+    },
+    "edits 2021-01..2023-07 (log)": {
+     "mean_topic": 2.98,
+     "mean_comp": 3.05,
+     "smd": -0.05
+    },
+    "views/month 2021-01..2023-07 (log)": {
+     "mean_topic": 6.361,
+     "mean_comp": 6.466,
+     "smd": -0.045
+    },
+    "importance (Top=3, High=2, Mid=1)": {
+     "mean_topic": 1.538,
+     "mean_comp": 1.539,
+     "smd": -0.001
+    },
+    "lead had a critical term in Jul 2023": {
+     "mean_topic": 0.064,
+     "mean_comp": 0.036,
+     "smd": 0.129
+    }
+   }
+  },
+  "relevant": {
+   "unweighted": {
+    "lead words 2021 (log)": {
+     "mean_topic": 4.477,
+     "mean_comp": 5.0,
+     "smd": -0.354
+    },
+    "no 2021 lead": {
+     "mean_topic": 0.084,
+     "mean_comp": 0.054,
+     "smd": 0.119
+    },
+    "page id (log; age proxy, higher = newer)": {
+     "mean_topic": 15.669,
+     "mean_comp": 14.605,
+     "smd": 0.44
+    },
+    "created after 2021-01-01": {
+     "mean_topic": 0.08,
+     "mean_comp": 0.047,
+     "smd": 0.132
+    },
+    "edits 2021-01..2023-07 (log)": {
+     "mean_topic": 2.935,
+     "mean_comp": 4.293,
+     "smd": -0.922
+    },
+    "views/month 2021-01..2023-07 (log)": {
+     "mean_topic": 6.309,
+     "mean_comp": 8.341,
+     "smd": -0.825
+    },
+    "importance (Top=3, High=2, Mid=1)": {
+     "mean_topic": 1.565,
+     "mean_comp": 2.455,
+     "smd": -1.507
+    },
+    "lead had a critical term in Jul 2023": {
+     "mean_topic": 0.142,
+     "mean_comp": 0.12,
+     "smd": 0.063
+    }
+   },
+   "design_weighted": {
+    "lead words 2021 (log)": {
+     "mean_topic": 4.47,
+     "mean_comp": 4.896,
+     "smd": -0.289
+    },
+    "no 2021 lead": {
+     "mean_topic": 0.073,
+     "mean_comp": 0.062,
+     "smd": 0.045
+    },
+    "page id (log; age proxy, higher = newer)": {
+     "mean_topic": 15.797,
+     "mean_comp": 14.754,
+     "smd": 0.431
+    },
+    "created after 2021-01-01": {
+     "mean_topic": 0.072,
+     "mean_comp": 0.057,
+     "smd": 0.061
+    },
+    "edits 2021-01..2023-07 (log)": {
+     "mean_topic": 2.941,
+     "mean_comp": 4.191,
+     "smd": -0.849
+    },
+    "views/month 2021-01..2023-07 (log)": {
+     "mean_topic": 6.305,
+     "mean_comp": 8.248,
+     "smd": -0.789
+    },
+    "importance (Top=3, High=2, Mid=1)": {
+     "mean_topic": 1.391,
+     "mean_comp": 2.285,
+     "smd": -1.516
+    },
+    "lead had a critical term in Jul 2023": {
+     "mean_topic": 0.137,
+     "mean_comp": 0.104,
+     "smd": 0.097
+    }
+   },
+   "cem": {
+    "lead words 2021 (log)": {
+     "mean_topic": 4.49,
+     "mean_comp": 4.487,
+     "smd": 0.002
+    },
+    "no 2021 lead": {
+     "mean_topic": 0.115,
+     "mean_comp": 0.115,
+     "smd": 0.0
+    },
+    "page id (log; age proxy, higher = newer)": {
+     "mean_topic": 15.56,
+     "mean_comp": 15.55,
+     "smd": 0.004
+    },
+    "created after 2021-01-01": {
+     "mean_topic": 0.115,
+     "mean_comp": 0.115,
+     "smd": 0.0
+    },
+    "edits 2021-01..2023-07 (log)": {
+     "mean_topic": 3.146,
+     "mean_comp": 3.3,
+     "smd": -0.1
+    },
+    "views/month 2021-01..2023-07 (log)": {
+     "mean_topic": 6.632,
+     "mean_comp": 6.822,
+     "smd": -0.072
+    },
+    "importance (Top=3, High=2, Mid=1)": {
+     "mean_topic": 1.86,
+     "mean_comp": 1.86,
+     "smd": 0.0
+    },
+    "lead had a critical term in Jul 2023": {
+     "mean_topic": 0.169,
+     "mean_comp": 0.088,
+     "smd": 0.228
+    }
+   },
+   "ps_matched": {
+    "lead words 2021 (log)": {
+     "mean_topic": 4.483,
+     "mean_comp": 4.76,
+     "smd": -0.181
+    },
+    "no 2021 lead": {
+     "mean_topic": 0.082,
+     "mean_comp": 0.055,
+     "smd": 0.101
+    },
+    "page id (log; age proxy, higher = newer)": {
+     "mean_topic": 15.667,
+     "mean_comp": 15.716,
+     "smd": -0.021
+    },
+    "created after 2021-01-01": {
+     "mean_topic": 0.079,
+     "mean_comp": 0.051,
+     "smd": 0.107
+    },
+    "edits 2021-01..2023-07 (log)": {
+     "mean_topic": 2.939,
+     "mean_comp": 3.055,
+     "smd": -0.081
+    },
+    "views/month 2021-01..2023-07 (log)": {
+     "mean_topic": 6.309,
+     "mean_comp": 6.679,
+     "smd": -0.149
+    },
+    "importance (Top=3, High=2, Mid=1)": {
+     "mean_topic": 1.566,
+     "mean_comp": 1.568,
+     "smd": -0.004
+    },
+    "lead had a critical term in Jul 2023": {
+     "mean_topic": 0.142,
+     "mean_comp": 0.088,
+     "smd": 0.167
+    }
+   }
+  }
+ }
+}

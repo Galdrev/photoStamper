@@ -1,0 +1,1460 @@
+{
+ "note": "headline mass2 statistics, unweighted vs design-weighted (inverse inclusion probability within project x importance), with stratified-bootstrap 95% CIs (and project-cluster CIs), importance-standardised and matched versions",
+ "chart": {
+  "type": "paired dot-and-whisker per statistic",
+  "series": "unweighted vs design-weighted"
+ },
+ "rows": [
+  {
+   "subset": "all",
+   "statistic": "a_unf",
+   "label": "(a) post-war lead critical DiD, hits/10k words",
+   "unweighted": {
+    "est": 2.2164,
+    "lo": 1.3357,
+    "hi": 2.8206
+   },
+   "design_weighted": {
+    "est": 1.0406,
+    "lo": 0.1707,
+    "hi": 1.6649
+   },
+   "unweighted_projectCI": {
+    "est": 2.2164,
+    "lo": -0.3759,
+    "hi": 4.9002
+   },
+   "design_weighted_projectCI": {
+    "est": 1.0406,
+    "lo": -0.7458,
+    "hi": 4.385
+   },
+   "importance_standardised": {
+    "est": -0.1476,
+    "lo": -4.2834,
+    "hi": 2.0335
+   },
+   "top_high_only_weighted": {
+    "est": 2.888,
+    "lo": 1.5423,
+    "hi": 3.8538
+   },
+   "cem": {
+    "est": 2.7585,
+    "lo": 2.0293,
+    "hi": 4.0154
+   },
+   "ps_nn": {
+    "est": 2.745,
+    "lo": 1.9065,
+    "hi": 3.3881
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "b",
+   "label": "(b) share of leads gaining critical terms, topic minus comparison",
+   "unweighted": {
+    "est": 0.0244,
+    "lo": 0.0197,
+    "hi": 0.0305
+   },
+   "design_weighted": {
+    "est": 0.0125,
+    "lo": 0.0069,
+    "hi": 0.0202
+   },
+   "unweighted_projectCI": {
+    "est": 0.0244,
+    "lo": 0.0004,
+    "hi": 0.0482
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0125,
+    "lo": -0.0029,
+    "hi": 0.0474
+   },
+   "importance_standardised": {
+    "est": 0.0112,
+    "lo": -0.0155,
+    "hi": 0.0238
+   },
+   "top_high_only_weighted": {
+    "est": 0.0408,
+    "lo": 0.0296,
+    "hi": 0.052
+   },
+   "cem": {
+    "est": 0.0319,
+    "lo": 0.0313,
+    "hi": 0.0395
+   },
+   "ps_nn": {
+    "est": 0.0349,
+    "lo": 0.0262,
+    "hi": 0.0361
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "b_t",
+   "label": "(b) topic share gaining",
+   "unweighted": {
+    "est": 0.0389,
+    "lo": 0.0346,
+    "hi": 0.0442
+   },
+   "design_weighted": {
+    "est": 0.0249,
+    "lo": 0.0193,
+    "hi": 0.0308
+   },
+   "unweighted_projectCI": {
+    "est": 0.0389,
+    "lo": 0.0121,
+    "hi": 0.062
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0249,
+    "lo": 0.0094,
+    "hi": 0.0617
+   },
+   "importance_standardised": {
+    "est": 0.0249,
+    "lo": 0.0193,
+    "hi": 0.0273
+   },
+   "top_high_only_weighted": {
+    "est": 0.0529,
+    "lo": 0.0428,
+    "hi": 0.0626
+   },
+   "cem": {
+    "est": 0.038,
+    "lo": 0.0381,
+    "hi": 0.0455
+   },
+   "ps_nn": {
+    "est": 0.0389,
+    "lo": 0.0374,
+    "hi": 0.0414
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "b_c",
+   "label": "(b) comparison share gaining",
+   "unweighted": {
+    "est": 0.0145,
+    "lo": 0.0122,
+    "hi": 0.0169
+   },
+   "design_weighted": {
+    "est": 0.0123,
+    "lo": 0.0072,
+    "hi": 0.0178
+   },
+   "unweighted_projectCI": {
+    "est": 0.0145,
+    "lo": 0.009,
+    "hi": 0.0195
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0123,
+    "lo": 0.0072,
+    "hi": 0.0192
+   },
+   "importance_standardised": {
+    "est": 0.0136,
+    "lo": 0.0023,
+    "hi": 0.0375
+   },
+   "top_high_only_weighted": {
+    "est": 0.0121,
+    "lo": 0.0087,
+    "hi": 0.0144
+   },
+   "cem": {
+    "est": 0.0061,
+    "lo": 0.006,
+    "hi": 0.0071
+   },
+   "ps_nn": {
+    "est": 0.0041,
+    "lo": 0.0038,
+    "hi": 0.0127
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "b_full_did",
+   "label": "(b') full-text gain share, post-pre DiD (A1 analogue)",
+   "unweighted": {
+    "est": 0.0505,
+    "lo": 0.0424,
+    "hi": 0.0638
+   },
+   "design_weighted": {
+    "est": 0.034,
+    "lo": 0.0231,
+    "hi": 0.0463
+   },
+   "unweighted_projectCI": {
+    "est": 0.0505,
+    "lo": 0.0101,
+    "hi": 0.0799
+   },
+   "design_weighted_projectCI": {
+    "est": 0.034,
+    "lo": 0.0047,
+    "hi": 0.0725
+   },
+   "importance_standardised": {
+    "est": 0.0186,
+    "lo": -0.0154,
+    "hi": 0.0463
+   },
+   "top_high_only_weighted": {
+    "est": 0.062,
+    "lo": 0.0437,
+    "hi": 0.0765
+   },
+   "cem": {
+    "est": 0.0404,
+    "lo": 0.0267,
+    "hi": 0.0406
+   },
+   "ps_nn": {
+    "est": 0.038,
+    "lo": 0.0298,
+    "hi": 0.0551
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "c_share",
+   "label": "(c) narrative-residual share of (a)",
+   "unweighted": {
+    "est": 0.8931,
+    "lo": 0.6844,
+    "hi": 0.9812
+   },
+   "design_weighted": {
+    "est": 1.0302,
+    "lo": 0.7235,
+    "hi": 6.0001
+   },
+   "unweighted_projectCI": {
+    "est": 0.8931,
+    "lo": 0.7056,
+    "hi": 0.9855
+   },
+   "design_weighted_projectCI": {
+    "est": 1.0302,
+    "lo": -0.7903,
+    "hi": 3.3619
+   },
+   "importance_standardised": {
+    "est": -8.7395,
+    "lo": -72.3513,
+    "hi": 8.2113
+   },
+   "top_high_only_weighted": {
+    "est": 0.8889,
+    "lo": 0.672,
+    "hi": 0.9521
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "a_res",
+   "label": "(c) narrative-residual DiD",
+   "unweighted": {
+    "est": 1.9795,
+    "lo": 1.1687,
+    "hi": 2.6946
+   },
+   "design_weighted": {
+    "est": 1.0721,
+    "lo": 0.6266,
+    "hi": 1.5419
+   },
+   "unweighted_projectCI": {
+    "est": 1.9795,
+    "lo": -0.3379,
+    "hi": 4.4392
+   },
+   "design_weighted_projectCI": {
+    "est": 1.0721,
+    "lo": -0.3635,
+    "hi": 4.4134
+   },
+   "importance_standardised": {
+    "est": 1.2897,
+    "lo": 0.5902,
+    "hi": 1.8196
+   },
+   "top_high_only_weighted": {
+    "est": 2.5671,
+    "lo": 1.1574,
+    "hi": 3.394
+   },
+   "cem": {
+    "est": 2.5317,
+    "lo": 1.8907,
+    "hi": 3.7707
+   },
+   "ps_nn": {
+    "est": 2.5214,
+    "lo": 1.6916,
+    "hi": 3.1986
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "d_t",
+   "label": "(d) topic view share on gaining leads",
+   "unweighted": {
+    "est": 0.1497,
+    "lo": 0.088,
+    "hi": 0.2324
+   },
+   "design_weighted": {
+    "est": 0.1368,
+    "lo": 0.0852,
+    "hi": 0.2108
+   },
+   "unweighted_projectCI": {
+    "est": 0.1497,
+    "lo": 0.0272,
+    "hi": 0.2833
+   },
+   "design_weighted_projectCI": {
+    "est": 0.1368,
+    "lo": 0.0267,
+    "hi": 0.2541
+   },
+   "importance_standardised": {
+    "est": 0.1368,
+    "lo": 0.0768,
+    "hi": 0.1867
+   },
+   "top_high_only_weighted": {
+    "est": 0.1734,
+    "lo": 0.0922,
+    "hi": 0.2522
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "d_c",
+   "label": "(d) comparison view share on gaining leads",
+   "unweighted": {
+    "est": 0.0499,
+    "lo": 0.0345,
+    "hi": 0.0794
+   },
+   "design_weighted": {
+    "est": 0.0338,
+    "lo": 0.0219,
+    "hi": 0.0528
+   },
+   "unweighted_projectCI": {
+    "est": 0.0499,
+    "lo": 0.0251,
+    "hi": 0.0842
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0338,
+    "lo": 0.0145,
+    "hi": 0.0639
+   },
+   "importance_standardised": {
+    "est": 0.0237,
+    "lo": 0.016,
+    "hi": 0.0331
+   },
+   "top_high_only_weighted": {
+    "est": 0.0341,
+    "lo": 0.0243,
+    "hi": 0.0473
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "d_did",
+   "label": "(d) views-share minus article-share DiD",
+   "unweighted": {
+    "est": 0.0754,
+    "lo": 0.0192,
+    "hi": 0.1463
+   },
+   "design_weighted": {
+    "est": 0.0905,
+    "lo": 0.0377,
+    "hi": 0.1702
+   },
+   "unweighted_projectCI": {
+    "est": 0.0754,
+    "lo": -0.0212,
+    "hi": 0.1773
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0905,
+    "lo": -0.0064,
+    "hi": 0.1731
+   },
+   "importance_standardised": {
+    "est": 0.1019,
+    "lo": 0.0341,
+    "hi": 0.1589
+   },
+   "top_high_only_weighted": {
+    "est": 0.0984,
+    "lo": 0.0349,
+    "hi": 0.1818
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "e",
+   "label": "(e) Israel+Palestine minus Judaism, lead gain share",
+   "unweighted": {
+    "est": 0.0523,
+    "lo": 0.0458,
+    "hi": 0.0603
+   },
+   "design_weighted": {
+    "est": 0.0274,
+    "lo": 0.0186,
+    "hi": 0.0341
+   },
+   "unweighted_projectCI": {
+    "est": 0.0523,
+    "lo": 0.0435,
+    "hi": 0.0614
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0274,
+    "lo": 0.0165,
+    "hi": 0.0596
+   },
+   "importance_standardised": {
+    "est": 0.0274,
+    "lo": 0.0201,
+    "hi": 0.0338
+   },
+   "top_high_only_weighted": {
+    "est": 0.0778,
+    "lo": 0.065,
+    "hi": 0.0943
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "e_full",
+   "label": "(e') Israel+Palestine minus Judaism, full-text post-pre (A5 analogue)",
+   "unweighted": {
+    "est": 0.0723,
+    "lo": 0.0566,
+    "hi": 0.0886
+   },
+   "design_weighted": {
+    "est": 0.0507,
+    "lo": 0.0289,
+    "hi": 0.0628
+   },
+   "unweighted_projectCI": {
+    "est": 0.0723,
+    "lo": 0.0628,
+    "hi": 0.0819
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0507,
+    "lo": 0.0392,
+    "hi": 0.0843
+   },
+   "importance_standardised": {
+    "est": 0.0507,
+    "lo": 0.033,
+    "hi": 0.0744
+   },
+   "top_high_only_weighted": {
+    "est": 0.0824,
+    "lo": 0.048,
+    "hi": 0.11
+   }
+  },
+  {
+   "subset": "all",
+   "statistic": "e_ju_vs_c",
+   "label": "(e'') Judaism minus comparison, lead gain share",
+   "unweighted": {
+    "est": -0.0094,
+    "lo": -0.0124,
+    "hi": -0.0059
+   },
+   "design_weighted": {
+    "est": -0.0072,
+    "lo": -0.0136,
+    "hi": -0.0018
+   },
+   "unweighted_projectCI": {
+    "est": -0.0094,
+    "lo": -0.0145,
+    "hi": -0.0038
+   },
+   "design_weighted_projectCI": {
+    "est": -0.0072,
+    "lo": -0.0142,
+    "hi": -0.0017
+   },
+   "importance_standardised": {
+    "est": -0.0085,
+    "lo": -0.0342,
+    "hi": 0.0057
+   },
+   "top_high_only_weighted": {
+    "est": -0.007,
+    "lo": -0.0126,
+    "hi": 0.0007
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "a_unf",
+   "label": "(a) post-war lead critical DiD, hits/10k words",
+   "unweighted": {
+    "est": 4.5272,
+    "lo": 2.2105,
+    "hi": 6.3085
+   },
+   "design_weighted": {
+    "est": 3.9922,
+    "lo": 2.3459,
+    "hi": 5.8685
+   },
+   "unweighted_projectCI": {
+    "est": 4.5272,
+    "lo": 0.2373,
+    "hi": 6.1258
+   },
+   "design_weighted_projectCI": {
+    "est": 3.9922,
+    "lo": 0.3828,
+    "hi": 6.1571
+   },
+   "importance_standardised": {
+    "est": 4.9267,
+    "lo": 2.8979,
+    "hi": 6.5666
+   },
+   "cem": {
+    "est": 3.7189,
+    "lo": 2.0798,
+    "hi": 5.5784
+   },
+   "ps_nn": {
+    "est": 5.2883,
+    "lo": 3.1355,
+    "hi": 8.0014
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "b",
+   "label": "(b) share of leads gaining critical terms, topic minus comparison",
+   "unweighted": {
+    "est": 0.0452,
+    "lo": 0.027,
+    "hi": 0.0591
+   },
+   "design_weighted": {
+    "est": 0.0357,
+    "lo": 0.0245,
+    "hi": 0.0509
+   },
+   "unweighted_projectCI": {
+    "est": 0.0452,
+    "lo": -0.0049,
+    "hi": 0.0682
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0357,
+    "lo": 0.0008,
+    "hi": 0.0569
+   },
+   "importance_standardised": {
+    "est": 0.0534,
+    "lo": 0.0431,
+    "hi": 0.0628
+   },
+   "cem": {
+    "est": 0.0802,
+    "lo": 0.0612,
+    "hi": 0.0853
+   },
+   "ps_nn": {
+    "est": 0.0701,
+    "lo": 0.0584,
+    "hi": 0.079
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "b_t",
+   "label": "(b) topic share gaining",
+   "unweighted": {
+    "est": 0.0828,
+    "lo": 0.0669,
+    "hi": 0.0971
+   },
+   "design_weighted": {
+    "est": 0.0638,
+    "lo": 0.0522,
+    "hi": 0.0741
+   },
+   "unweighted_projectCI": {
+    "est": 0.0828,
+    "lo": 0.0347,
+    "hi": 0.1002
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0638,
+    "lo": 0.0308,
+    "hi": 0.079
+   },
+   "importance_standardised": {
+    "est": 0.0638,
+    "lo": 0.0529,
+    "hi": 0.0726
+   },
+   "cem": {
+    "est": 0.104,
+    "lo": 0.1003,
+    "hi": 0.118
+   },
+   "ps_nn": {
+    "est": 0.0828,
+    "lo": 0.0709,
+    "hi": 0.0852
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "b_c",
+   "label": "(b) comparison share gaining",
+   "unweighted": {
+    "est": 0.0376,
+    "lo": 0.0307,
+    "hi": 0.0453
+   },
+   "design_weighted": {
+    "est": 0.028,
+    "lo": 0.0168,
+    "hi": 0.0362
+   },
+   "unweighted_projectCI": {
+    "est": 0.0376,
+    "lo": 0.0218,
+    "hi": 0.0548
+   },
+   "design_weighted_projectCI": {
+    "est": 0.028,
+    "lo": 0.0142,
+    "hi": 0.0432
+   },
+   "importance_standardised": {
+    "est": 0.0103,
+    "lo": 0.0067,
+    "hi": 0.0136
+   },
+   "cem": {
+    "est": 0.0238,
+    "lo": 0.0219,
+    "hi": 0.0393
+   },
+   "ps_nn": {
+    "est": 0.0127,
+    "lo": 0.0038,
+    "hi": 0.0127
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "b_full_did",
+   "label": "(b') full-text gain share, post-pre DiD (A1 analogue)",
+   "unweighted": {
+    "est": 0.0999,
+    "lo": 0.0732,
+    "hi": 0.1222
+   },
+   "design_weighted": {
+    "est": 0.0837,
+    "lo": 0.0312,
+    "hi": 0.1486
+   },
+   "unweighted_projectCI": {
+    "est": 0.0999,
+    "lo": 0.0518,
+    "hi": 0.1323
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0837,
+    "lo": 0.0399,
+    "hi": 0.1128
+   },
+   "importance_standardised": {
+    "est": 0.0269,
+    "lo": -0.1399,
+    "hi": 0.1112
+   },
+   "cem": {
+    "est": 0.1381,
+    "lo": 0.0835,
+    "hi": 0.154
+   },
+   "ps_nn": {
+    "est": 0.0631,
+    "lo": 0.0401,
+    "hi": 0.132
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "c_share",
+   "label": "(c) narrative-residual share of (a)",
+   "unweighted": {
+    "est": 0.9618,
+    "lo": 0.8757,
+    "hi": 1.0248
+   },
+   "design_weighted": {
+    "est": 0.9639,
+    "lo": 0.8468,
+    "hi": 0.9947
+   },
+   "unweighted_projectCI": {
+    "est": 0.9618,
+    "lo": 0.9062,
+    "hi": 1.3284
+   },
+   "design_weighted_projectCI": {
+    "est": 0.9639,
+    "lo": 0.9322,
+    "hi": 1.089
+   },
+   "importance_standardised": {
+    "est": 0.96,
+    "lo": 0.93,
+    "hi": 0.9917
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "a_res",
+   "label": "(c) narrative-residual DiD",
+   "unweighted": {
+    "est": 4.3542,
+    "lo": 2.1154,
+    "hi": 6.2473
+   },
+   "design_weighted": {
+    "est": 3.8482,
+    "lo": 2.0115,
+    "hi": 5.7165
+   },
+   "unweighted_projectCI": {
+    "est": 4.3542,
+    "lo": 0.3562,
+    "hi": 5.8769
+   },
+   "design_weighted_projectCI": {
+    "est": 3.8482,
+    "lo": 0.5388,
+    "hi": 5.9219
+   },
+   "importance_standardised": {
+    "est": 4.7294,
+    "lo": 2.7391,
+    "hi": 6.3908
+   },
+   "cem": {
+    "est": 3.3603,
+    "lo": 2.0059,
+    "hi": 5.3217
+   },
+   "ps_nn": {
+    "est": 5.0408,
+    "lo": 2.6344,
+    "hi": 7.6438
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "d_t",
+   "label": "(d) topic view share on gaining leads",
+   "unweighted": {
+    "est": 0.276,
+    "lo": 0.1605,
+    "hi": 0.3664
+   },
+   "design_weighted": {
+    "est": 0.2287,
+    "lo": 0.1615,
+    "hi": 0.3434
+   },
+   "unweighted_projectCI": {
+    "est": 0.276,
+    "lo": 0.0758,
+    "hi": 0.4355
+   },
+   "design_weighted_projectCI": {
+    "est": 0.2287,
+    "lo": 0.068,
+    "hi": 0.3349
+   },
+   "importance_standardised": {
+    "est": 0.2287,
+    "lo": 0.153,
+    "hi": 0.2885
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "d_c",
+   "label": "(d) comparison view share on gaining leads",
+   "unweighted": {
+    "est": 0.0861,
+    "lo": 0.0428,
+    "hi": 0.1318
+   },
+   "design_weighted": {
+    "est": 0.0636,
+    "lo": 0.0325,
+    "hi": 0.0922
+   },
+   "unweighted_projectCI": {
+    "est": 0.0861,
+    "lo": 0.0282,
+    "hi": 0.1766
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0636,
+    "lo": 0.0215,
+    "hi": 0.1217
+   },
+   "importance_standardised": {
+    "est": 0.0379,
+    "lo": 0.0271,
+    "hi": 0.0509
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "d_did",
+   "label": "(d) views-share minus article-share DiD",
+   "unweighted": {
+    "est": 0.1448,
+    "lo": 0.0255,
+    "hi": 0.244
+   },
+   "design_weighted": {
+    "est": 0.1293,
+    "lo": 0.0623,
+    "hi": 0.2428
+   },
+   "unweighted_projectCI": {
+    "est": 0.1448,
+    "lo": -0.0165,
+    "hi": 0.3024
+   },
+   "design_weighted_projectCI": {
+    "est": 0.1293,
+    "lo": -0.0064,
+    "hi": 0.2458
+   },
+   "importance_standardised": {
+    "est": 0.1374,
+    "lo": 0.0659,
+    "hi": 0.1945
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "e",
+   "label": "(e) Israel+Palestine minus Judaism, lead gain share",
+   "unweighted": {
+    "est": 0.0791,
+    "lo": 0.0531,
+    "hi": 0.0986
+   },
+   "design_weighted": {
+    "est": 0.0537,
+    "lo": 0.0236,
+    "hi": 0.0838
+   },
+   "unweighted_projectCI": {
+    "est": 0.0791,
+    "lo": 0.0715,
+    "hi": 0.0903
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0537,
+    "lo": 0.0423,
+    "hi": 0.0679
+   },
+   "importance_standardised": {
+    "est": 0.0537,
+    "lo": 0.025,
+    "hi": 0.078
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "e_full",
+   "label": "(e') Israel+Palestine minus Judaism, full-text post-pre (A5 analogue)",
+   "unweighted": {
+    "est": 0.0538,
+    "lo": -0.0341,
+    "hi": 0.1185
+   },
+   "design_weighted": {
+    "est": 0.0476,
+    "lo": -0.0019,
+    "hi": 0.1218
+   },
+   "unweighted_projectCI": {
+    "est": 0.0538,
+    "lo": 0.0387,
+    "hi": 0.076
+   },
+   "design_weighted_projectCI": {
+    "est": 0.0476,
+    "lo": 0.0468,
+    "hi": 0.0482
+   },
+   "importance_standardised": {
+    "est": 0.0476,
+    "lo": -0.046,
+    "hi": 0.0992
+   }
+  },
+  {
+   "subset": "relevant",
+   "statistic": "e_ju_vs_c",
+   "label": "(e'') Judaism minus comparison, lead gain share",
+   "unweighted": {
+    "est": -0.0215,
+    "lo": -0.0345,
+    "hi": 0.0005
+   },
+   "design_weighted": {
+    "est": -0.0103,
+    "lo": -0.0304,
+    "hi": 0.0136
+   },
+   "unweighted_projectCI": {
+    "est": -0.0215,
+    "lo": -0.0393,
+    "hi": -0.0068
+   },
+   "design_weighted_projectCI": {
+    "est": -0.0103,
+    "lo": -0.026,
+    "hi": 0.0038
+   },
+   "importance_standardised": {
+    "est": 0.0073,
+    "lo": -0.0107,
+    "hi": 0.0352
+   }
+  }
+ ],
+ "by_importance": {
+  "Top": {
+   "n_t": 350,
+   "n_c": 2368,
+   "unweighted": {
+    "a_unf": {
+     "est": 2.1361,
+     "lo": 0.4854,
+     "hi": 3.8665
+    },
+    "b": {
+     "est": 0.0753,
+     "lo": 0.0472,
+     "hi": 0.1064
+    },
+    "b_t": {
+     "est": 0.0938,
+     "lo": 0.0665,
+     "hi": 0.125
+    },
+    "b_c": {
+     "est": 0.0186,
+     "lo": 0.0138,
+     "hi": 0.0239
+    },
+    "b_full_did": {
+     "est": 0.0676,
+     "lo": 0.0192,
+     "hi": 0.1128
+    },
+    "c_share": {
+     "est": 0.7065,
+     "lo": -0.1787,
+     "hi": 0.9252
+    },
+    "a_res": {
+     "est": 1.5091,
+     "lo": -0.163,
+     "hi": 3.2616
+    },
+    "d_t": {
+     "est": 0.2915,
+     "lo": 0.142,
+     "hi": 0.4225
+    },
+    "d_c": {
+     "est": 0.0576,
+     "lo": 0.0318,
+     "hi": 0.0925
+    },
+    "d_did": {
+     "est": 0.1587,
+     "lo": 0.0194,
+     "hi": 0.2753
+    },
+    "e": {
+     "est": 0.1607,
+     "lo": 0.1115,
+     "hi": 0.2133
+    },
+    "e_full": {
+     "est": 0.0731,
+     "lo": -0.0141,
+     "hi": 0.152
+    },
+    "e_ju_vs_c": {
+     "est": -0.0117,
+     "lo": -0.0228,
+     "hi": 0.0073
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 2.422,
+     "lo": 0.71,
+     "hi": 4.2931
+    },
+    "b": {
+     "est": 0.0825,
+     "lo": 0.0576,
+     "hi": 0.1109
+    },
+    "b_t": {
+     "est": 0.0954,
+     "lo": 0.0712,
+     "hi": 0.1244
+    },
+    "b_c": {
+     "est": 0.0128,
+     "lo": 0.0082,
+     "hi": 0.0176
+    },
+    "b_full_did": {
+     "est": 0.0711,
+     "lo": 0.0262,
+     "hi": 0.1179
+    },
+    "c_share": {
+     "est": 0.7099,
+     "lo": 0.0512,
+     "hi": 0.907
+    },
+    "a_res": {
+     "est": 1.7195,
+     "lo": 0.0294,
+     "hi": 3.6341
+    },
+    "d_t": {
+     "est": 0.2943,
+     "lo": 0.1612,
+     "hi": 0.4384
+    },
+    "d_c": {
+     "est": 0.0407,
+     "lo": 0.0189,
+     "hi": 0.0649
+    },
+    "d_did": {
+     "est": 0.1711,
+     "lo": 0.0395,
+     "hi": 0.2977
+    },
+    "e": {
+     "est": 0.1614,
+     "lo": 0.1103,
+     "hi": 0.2133
+    },
+    "e_full": {
+     "est": 0.0738,
+     "lo": -0.0004,
+     "hi": 0.1614
+    },
+    "e_ju_vs_c": {
+     "est": -0.0059,
+     "lo": -0.0168,
+     "hi": 0.0103
+    }
+   }
+  },
+  "High": {
+   "n_t": 1796,
+   "n_c": 3111,
+   "unweighted": {
+    "a_unf": {
+     "est": 2.8103,
+     "lo": 1.3318,
+     "hi": 4.4518
+    },
+    "b": {
+     "est": 0.0324,
+     "lo": 0.0228,
+     "hi": 0.0435
+    },
+    "b_t": {
+     "est": 0.0443,
+     "lo": 0.0351,
+     "hi": 0.0544
+    },
+    "b_c": {
+     "est": 0.012,
+     "lo": 0.0083,
+     "hi": 0.0154
+    },
+    "b_full_did": {
+     "est": 0.062,
+     "lo": 0.0417,
+     "hi": 0.0836
+    },
+    "c_share": {
+     "est": 0.9287,
+     "lo": 0.8165,
+     "hi": 0.992
+    },
+    "a_res": {
+     "est": 2.6099,
+     "lo": 1.1617,
+     "hi": 4.1934
+    },
+    "d_t": {
+     "est": 0.0803,
+     "lo": 0.0446,
+     "hi": 0.1332
+    },
+    "d_c": {
+     "est": 0.0321,
+     "lo": 0.0127,
+     "hi": 0.0577
+    },
+    "d_did": {
+     "est": 0.0158,
+     "lo": -0.024,
+     "hi": 0.0727
+    },
+    "e": {
+     "est": 0.0621,
+     "lo": 0.0467,
+     "hi": 0.08
+    },
+    "e_full": {
+     "est": 0.0867,
+     "lo": 0.0589,
+     "hi": 0.1226
+    },
+    "e_ju_vs_c": {
+     "est": -0.0072,
+     "lo": -0.0128,
+     "hi": -0.0003
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 2.9189,
+     "lo": 1.5808,
+     "hi": 4.5575
+    },
+    "b": {
+     "est": 0.0328,
+     "lo": 0.0224,
+     "hi": 0.0434
+    },
+    "b_t": {
+     "est": 0.0445,
+     "lo": 0.0352,
+     "hi": 0.0534
+    },
+    "b_c": {
+     "est": 0.0117,
+     "lo": 0.007,
+     "hi": 0.0174
+    },
+    "b_full_did": {
+     "est": 0.061,
+     "lo": 0.0392,
+     "hi": 0.0816
+    },
+    "c_share": {
+     "est": 0.925,
+     "lo": 0.8174,
+     "hi": 0.985
+    },
+    "a_res": {
+     "est": 2.6999,
+     "lo": 1.3927,
+     "hi": 4.3419
+    },
+    "d_t": {
+     "est": 0.0808,
+     "lo": 0.0427,
+     "hi": 0.1308
+    },
+    "d_c": {
+     "est": 0.0251,
+     "lo": 0.0123,
+     "hi": 0.0421
+    },
+    "d_did": {
+     "est": 0.0228,
+     "lo": -0.0164,
+     "hi": 0.0723
+    },
+    "e": {
+     "est": 0.0624,
+     "lo": 0.0476,
+     "hi": 0.0775
+    },
+    "e_full": {
+     "est": 0.0867,
+     "lo": 0.0565,
+     "hi": 0.1198
+    },
+    "e_ju_vs_c": {
+     "est": -0.0069,
+     "lo": -0.0142,
+     "hi": 0.0003
+    }
+   }
+  },
+  "Mid": {
+   "n_t": 2496,
+   "n_c": 191,
+   "unweighted": {
+    "a_unf": {
+     "est": 1.7504,
+     "lo": -0.3646,
+     "hi": 3.4695
+    },
+    "b": {
+     "est": 0.0218,
+     "lo": 0.0086,
+     "hi": 0.032
+    },
+    "b_t": {
+     "est": 0.0272,
+     "lo": 0.0212,
+     "hi": 0.0332
+    },
+    "b_c": {
+     "est": 0.0054,
+     "lo": 0.0,
+     "hi": 0.0163
+    },
+    "b_full_did": {
+     "est": 0.0328,
+     "lo": -0.0034,
+     "hi": 0.0615
+    },
+    "c_share": {
+     "est": 1.3414,
+     "lo": -5.2752,
+     "hi": 8.2639
+    },
+    "a_res": {
+     "est": 2.348,
+     "lo": 1.1186,
+     "hi": 3.5437
+    },
+    "d_t": {
+     "est": 0.0784,
+     "lo": 0.0407,
+     "hi": 0.1321
+    },
+    "d_c": {
+     "est": 0.0009,
+     "lo": 0.0,
+     "hi": 0.0038
+    },
+    "d_did": {
+     "est": 0.0557,
+     "lo": 0.0203,
+     "hi": 0.1071
+    },
+    "e": {
+     "est": 0.0315,
+     "lo": 0.0207,
+     "hi": 0.042
+    },
+    "e_full": {
+     "est": 0.066,
+     "lo": 0.043,
+     "hi": 0.0884
+    },
+    "e_ju_vs_c": {
+     "est": -0.0002,
+     "lo": -0.0143,
+     "hi": 0.0104
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": -1.0654,
+     "lo": -6.0981,
+     "hi": 1.6459
+    },
+    "b": {
+     "est": 0.0019,
+     "lo": -0.0317,
+     "hi": 0.0207
+    },
+    "b_t": {
+     "est": 0.0161,
+     "lo": 0.0109,
+     "hi": 0.0218
+    },
+    "b_c": {
+     "est": 0.0142,
+     "lo": 0.0,
+     "hi": 0.0437
+    },
+    "b_full_did": {
+     "est": 0.0053,
+     "lo": -0.0444,
+     "hi": 0.0428
+    },
+    "c_share": {
+     "est": -0.8424,
+     "lo": -2.8976,
+     "hi": 0.9624
+    },
+    "a_res": {
+     "est": 0.8975,
+     "lo": 0.2096,
+     "hi": 1.5463
+    },
+    "d_t": {
+     "est": 0.0893,
+     "lo": 0.026,
+     "hi": 0.2092
+    },
+    "d_c": {
+     "est": 0.005,
+     "lo": 0.0,
+     "hi": 0.0194
+    },
+    "d_did": {
+     "est": 0.0824,
+     "lo": 0.0145,
+     "hi": 0.2024
+    },
+    "e": {
+     "est": 0.0142,
+     "lo": 0.0046,
+     "hi": 0.024
+    },
+    "e_full": {
+     "est": 0.0436,
+     "lo": 0.0213,
+     "hi": 0.0667
+    },
+    "e_ju_vs_c": {
+     "est": -0.009,
+     "lo": -0.0426,
+     "hi": 0.0088
+    }
+   }
+  }
+ },
+ "mass_v1_A1_A5": {
+  "holdout:unweighted": {
+   "A1": {
+    "est": 0.0357,
+    "lo": 0.0151,
+    "hi": 0.0533
+   },
+   "A5": {
+    "est": 0.0563,
+    "lo": 0.0357,
+    "hi": 0.0799
+   },
+   "A5b": {
+    "est": -0.0007,
+    "lo": -0.0188,
+    "hi": 0.0188
+   }
+  },
+  "holdout:design_weighted": {
+   "A1": {
+    "est": 0.0257,
+    "lo": 0.0042,
+    "hi": 0.0404
+   },
+   "A5": {
+    "est": 0.0416,
+    "lo": 0.0122,
+    "hi": 0.0626
+   },
+   "A5b": {
+    "est": -0.0034,
+    "lo": -0.0243,
+    "hi": 0.0138
+   }
+  },
+  "all:unweighted": {
+   "A1": {
+    "est": 0.0539,
+    "lo": 0.0441,
+    "hi": 0.0695
+   },
+   "A5": {
+    "est": 0.0772,
+    "lo": 0.0617,
+    "hi": 0.0957
+   },
+   "A5b": {
+    "est": 0.0033,
+    "lo": -0.0111,
+    "hi": 0.0181
+   }
+  },
+  "all:design_weighted": {
+   "A1": {
+    "est": 0.0343,
+    "lo": 0.0176,
+    "hi": 0.0451
+   },
+   "A5": {
+    "est": 0.0527,
+    "lo": 0.0261,
+    "hi": 0.0684
+   },
+   "A5b": {
+    "est": -0.0029,
+    "lo": -0.0175,
+    "hi": 0.0152
+   }
+  }
+ }
+}

@@ -1,0 +1,1223 @@
+{
+ "source": "data/ratchet.json articles.Hamas.fs_timeline + fs_variants (every revision of the lead since 2021-01-01, to ~2026-11-04)",
+ "note": "class is a regex label on the first sentence; live_days is the variant total across all its spells",
+ "counts": {
+  "first_sentence_changes_2021-01_to_2023-10-06": 7,
+  "first_sentence_changes_since_2023-10-07": 114,
+  "militant_flips_since_2023-10-07": 19,
+  "terror_flips_since_2023-10-07": 12,
+  "last_change": "2025-12-02"
+ },
+ "timeline": [
+  {
+   "date": "2021-01-01",
+   "variant": 0,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 132.17,
+   "text": "Hamas (Arabic: حماس Ḥamās, an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah [Islamic Resistance Movement]) is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization."
+  },
+  {
+   "date": "2021-05-14",
+   "variant": 1,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 2.69,
+   "text": "Hamas ( Ḥamās, an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah [Islamic Resistance Movement]) is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization."
+  },
+  {
+   "date": "2021-05-16",
+   "variant": 2,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 14.37,
+   "text": "Hamas (an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, \"Islamic Resistance Movement\") is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization."
+  },
+  {
+   "date": "2021-05-31",
+   "variant": 3,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 84.36,
+   "text": "Hamas (an acronym of حركة المقاومة الاسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, \"Islamic Resistance Movement\") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+  },
+  {
+   "date": "2021-08-23",
+   "variant": 4,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 317.1,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية Ḥarakat al-Muqāwamah al-ʾIslāmiyyah, \"Islamic Resistance Movement\") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+  },
+  {
+   "date": "2022-07-06",
+   "variant": 5,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 194.24,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, \"Islamic Resistance Movement\") is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+  },
+  {
+   "date": "2023-01-16",
+   "variant": 6,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 265.78,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+  },
+  {
+   "date": "2023-10-09",
+   "variant": 7,
+   "reverted_tag": false,
+   "class": "blank/vandalism/infobox fragment",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "}} Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+  },
+  {
+   "date": "2023-10-09",
+   "variant": 6,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 265.78,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian Sunni-Islamic fundamentalist, militant, and nationalist organization."
+  },
+  {
+   "date": "2023-10-09",
+   "variant": 8,
+   "reverted_tag": false,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.36,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Sunni-Islamic fundamentalist, militant, and nationalist organization in Palestine."
+  },
+  {
+   "date": "2023-10-09",
+   "variant": 9,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.14,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 10,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.37,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories (the other being the West Bank)."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 11,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.04,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 12,
+   "reverted_tag": false,
+   "class": "terrorist (in definition)",
+   "has_militant": false,
+   "has_terror": true,
+   "variant_total_live_days": 0.08,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and terrorist organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 11,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.04,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 12,
+   "reverted_tag": false,
+   "class": "terrorist (in definition)",
+   "has_militant": false,
+   "has_terror": true,
+   "variant_total_live_days": 0.08,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and terrorist organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 11,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.04,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Palestinian political and militant organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 13,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.07,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is an Islamic political and military organization based in Palestine that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 14,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.27,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is an Islamic political and military organization that currently governs the Gaza Strip, one of the two Palestinian territories, the other being the West Bank."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 15,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.86,
+   "text": "Hamas, formally the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is an Islamist political and military organization currently governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 8,
+   "reverted_tag": true,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.36,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Sunni-Islamic fundamentalist, militant, and nationalist organization in Palestine."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 16,
+   "reverted_tag": true,
+   "class": "fundamentalist, militant, nationalist organisation",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.02,
+   "text": "Hamas (an acronym of حركة المقاومة الإسلامية, ) is a Sunni-Islamic fundamentalist and militant organization in Palestine."
+  },
+  {
+   "date": "2023-10-10",
+   "variant": 15,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.86,
+   "text": "Hamas, formally the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is an Islamist political and military organization currently governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-11",
+   "variant": 17,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.21,
+   "text": "Hamas, formally the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and militant organization currently governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-12",
+   "variant": 18,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.76,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and militant organization currently governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-12",
+   "variant": 19,
+   "reverted_tag": true,
+   "class": "terrorist (in definition)",
+   "has_militant": false,
+   "has_terror": true,
+   "variant_total_live_days": 0.01,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and terrorist organization currently governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-12",
+   "variant": 18,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.76,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and militant organization currently governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-12",
+   "variant": 20,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 1.61,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization currently governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-14",
+   "variant": 21,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 2.09,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization that is the de facto government of Palestine in the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-14",
+   "variant": 22,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.32,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a radical Sunni Islamist political and military organization that is the de facto government of Palestine in the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-14",
+   "variant": 21,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 2.09,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization that is the de facto government of Palestine in the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-16",
+   "variant": 23,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 16.58,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-10-24",
+   "variant": 24,
+   "reverted_tag": true,
+   "class": "blank/vandalism/infobox fragment",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "* Non-state allies: * * Houthis * Islamic Jihad * PFLP * DFLP * Lions' Den * Popular Mobilization Forces (alleged) * Al-Qaeda in the Islamic Maghreb (alleged) * al-Aqsa Martyrs' Brigades opponents = State opponents: * * * * * Non-state opponents: * Fatah (reconciliation ongoing) * designated_as_terror_group_by = * * * * * * * * battles = }} Hamas, officially the Islamic Resistance Movement (حركة ا"
+  },
+  {
+   "date": "2023-10-24",
+   "variant": 23,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 16.58,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories."
+  },
+  {
+   "date": "2023-11-02",
+   "variant": 25,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.74,
+   "text": "Hamas, officially the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-11-03",
+   "variant": 26,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 5.04,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-11-08",
+   "variant": 27,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 36.91,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-11-19",
+   "variant": 28,
+   "reverted_tag": true,
+   "class": "terrorist (in definition)",
+   "has_militant": false,
+   "has_terror": true,
+   "variant_total_live_days": 0.03,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization, designated as a terrorist group by many countries (including the US, UK, EU, etc.), governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-11-19",
+   "variant": 27,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 36.91,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-12-14",
+   "variant": 29,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist and Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-12-14",
+   "variant": 30,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, anti-colonialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-12-14",
+   "variant": 31,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 2.73,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, anti-colonialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are illegally occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 27,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 36.91,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 31,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 2.73,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, anti-colonialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are illegally occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 32,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.02,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are illegally occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 33,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.09,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 34,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.02,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian fundamentalist, nationalist, anti-imperialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 33,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.09,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist, and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 35,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.1,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 27,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 36.91,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 35,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.1,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian anti-imperialist and Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 36,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 11.22,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 27,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 36.91,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 36,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 11.22,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-17",
+   "variant": 27,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 36.91,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2023-12-18",
+   "variant": 36,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 11.22,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-29",
+   "variant": 37,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "Hamas an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-29",
+   "variant": 36,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 11.22,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement (حركة المقاومة الإسلامية ), is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2023-12-29",
+   "variant": 38,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 13.41,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Palestinian territories, which are occupied by Israel under international law."
+  },
+  {
+   "date": "2024-01-11",
+   "variant": 39,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 19.56,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2024-01-30",
+   "variant": 40,
+   "reverted_tag": false,
+   "class": "blank/vandalism/infobox fragment",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.17,
+   "text": ""
+  },
+  {
+   "date": "2024-01-30",
+   "variant": 39,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 19.56,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military organization governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2024-01-31",
+   "variant": 41,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 4.85,
+   "text": "Hamas, an acronym of its official name, the Islamic Resistance Movement, is a Palestinian Sunni Islamist political and military movement governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2024-02-05",
+   "variant": 42,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.37,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya (Islamic Resistance Movement), is a Palestinian Sunni Islamist political and military movement governing the Gaza Strip of the Israeli-occupied Palestinian territories."
+  },
+  {
+   "date": "2024-02-05",
+   "variant": 43,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.01,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya (Islamic Resistance Movement), is a Palestinian Sunni Islamist political and military movement governing the Gaza Strip."
+  },
+  {
+   "date": "2024-02-05",
+   "variant": 44,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 1.69,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya (Islamic Resistance Movement), is a Palestinian Sunni Islamist political and military movement governing the occupied Gaza Strip."
+  },
+  {
+   "date": "2024-02-07",
+   "variant": 45,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 21.15,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya (Islamic Resistance Movement), is a Palestinian Sunni Islamist political and military movement governing parts of the occupied Gaza Strip."
+  },
+  {
+   "date": "2024-02-28",
+   "variant": 46,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 36.83,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the occupied Gaza Strip."
+  },
+  {
+   "date": "2024-03-12",
+   "variant": 47,
+   "reverted_tag": true,
+   "class": "terrorist (in definition)",
+   "has_militant": false,
+   "has_terror": true,
+   "variant_total_live_days": 0.1,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist terrorist group governing parts of the occupied Gaza Strip."
+  },
+  {
+   "date": "2024-03-12",
+   "variant": 46,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 36.83,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the occupied Gaza Strip."
+  },
+  {
+   "date": "2024-04-05",
+   "variant": 48,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 31.0,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip."
+  },
+  {
+   "date": "2024-04-06",
+   "variant": 49,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.14,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Gaza Strip."
+  },
+  {
+   "date": "2024-04-06",
+   "variant": 48,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 31.0,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip."
+  },
+  {
+   "date": "2024-04-22",
+   "variant": 50,
+   "reverted_tag": true,
+   "class": "terrorist (in definition)",
+   "has_militant": false,
+   "has_terror": true,
+   "variant_total_live_days": 0.0,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist terrorist organization governing parts of the Israeli-occupied Gaza Strip."
+  },
+  {
+   "date": "2024-04-22",
+   "variant": 48,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 31.0,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip."
+  },
+  {
+   "date": "2024-05-06",
+   "variant": 49,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.14,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Gaza Strip."
+  },
+  {
+   "date": "2024-05-06",
+   "variant": 48,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 31.0,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip."
+  },
+  {
+   "date": "2024-05-06",
+   "variant": 51,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.12,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movementgoverning the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-05-06",
+   "variant": 52,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 32.51,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-06-08",
+   "variant": 53,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 53.45,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-07-25",
+   "variant": 54,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.02,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organization governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-07-25",
+   "variant": 55,
+   "reverted_tag": true,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.59,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political movement and military organization governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-07-25",
+   "variant": 53,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 53.45,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-01",
+   "variant": 56,
+   "reverted_tag": false,
+   "class": "resistance movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.17,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist resistance movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-01",
+   "variant": 57,
+   "reverted_tag": false,
+   "class": "resistance movement",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.84,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist militant resistance movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-01",
+   "variant": 53,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 53.45,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-01",
+   "variant": 57,
+   "reverted_tag": false,
+   "class": "resistance movement",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.84,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist militant resistance movement governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-02",
+   "variant": 58,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 5.04,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-07",
+   "variant": 59,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing parts of the Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-07",
+   "variant": 60,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.28,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing the Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-07",
+   "variant": 61,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing the Israeli-occupiedGaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-07",
+   "variant": 62,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 7.85,
+   "text": "Hamas, an acronym of its official name, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-15",
+   "variant": 63,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.01,
+   "text": "The Islamic Resistance Movement (Hamas), an Arabic acronym from, Harakat al-Muqawama al-Islamiya, is a Palestinian Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-15",
+   "variant": 64,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from, commonly ), is a Palestinian Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-15",
+   "variant": 65,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 2.13,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-16",
+   "variant": 66,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 1.99,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political and military organisation governing parts of the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-18",
+   "variant": 65,
+   "reverted_tag": false,
+   "class": "political and military organisation/movement",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 2.13,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political and military organisation governing the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-19",
+   "variant": 67,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 11.74,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a militant wing called the Ezzedeen Al-Qassam Brigades."
+  },
+  {
+   "date": "2024-08-21",
+   "variant": 68,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 0.31,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a militant wing called the Ezzedeen Al-Qassam Brigades.It has governed the Israeli-occupied Gaza Strip since 2007."
+  },
+  {
+   "date": "2024-08-21",
+   "variant": 67,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 11.74,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a militant wing called the Ezzedeen Al-Qassam Brigades."
+  },
+  {
+   "date": "2024-08-31",
+   "variant": 69,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 51.66,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Ezzedeen Al-Qassam Brigades."
+  },
+  {
+   "date": "2024-09-30",
+   "variant": 70,
+   "reverted_tag": true,
+   "class": "blank/vandalism/infobox fragment",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes skibidi dop yes yes Skibidi dop yes yes skibidi dop yes yes "
+  },
+  {
+   "date": "2024-09-30",
+   "variant": 69,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 51.66,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from ), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Ezzedeen Al-Qassam Brigades."
+  },
+  {
+   "date": "2024-10-22",
+   "variant": 71,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 2.36,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Ezzedeen Al-Qassam Brigades."
+  },
+  {
+   "date": "2024-10-24",
+   "variant": 72,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 88.34,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Izz al-Din al-Qassam Brigades."
+  },
+  {
+   "date": "2024-11-25",
+   "variant": 73,
+   "reverted_tag": true,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.01,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Izz al-Din al-Qassam Brigades."
+  },
+  {
+   "date": "2024-11-25",
+   "variant": 72,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 88.34,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing called the Izz al-Din al-Qassam Brigades."
+  },
+  {
+   "date": "2025-01-21",
+   "variant": 74,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 22.42,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing known as the Al-Qassam Brigades."
+  },
+  {
+   "date": "2025-02-12",
+   "variant": 75,
+   "reverted_tag": false,
+   "class": "political and militant / militant",
+   "has_militant": true,
+   "has_terror": false,
+   "variant_total_live_days": 6.14,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist militant and political organisation."
+  },
+  {
+   "date": "2025-02-18",
+   "variant": 76,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.01,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Al-Qassam Brigades."
+  },
+  {
+   "date": "2025-02-18",
+   "variant": 77,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 135.0,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Qassam Brigades."
+  },
+  {
+   "date": "2025-03-02",
+   "variant": 78,
+   "reverted_tag": false,
+   "class": "blank/vandalism/infobox fragment",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.0,
+   "text": "religion = Sunni Islam flag = Hamas Emblem Flag White Variant with Colored Emblem.svgborder website = split = headquarters = Gaza City, Gaza Strip affiliation1_title = Political alliance affiliation1 = Alliance of Palestinian Forces international = Axis of Resistance (informal) colours = Green seats1_title = Palestinian Legislative Council seats1 = }} The Islamic Resistance Movement, abbreviated H"
+  },
+  {
+   "date": "2025-03-02",
+   "variant": 77,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 135.0,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (the Arabic acronym from حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Qassam Brigades."
+  },
+  {
+   "date": "2025-07-03",
+   "variant": 79,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 68.72,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Palestinian nationalist Sunni Islamist political organisation with a military wing, the Qassam Brigades."
+  },
+  {
+   "date": "2025-09-10",
+   "variant": 80,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 24.98,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing, the Qassam Brigades."
+  },
+  {
+   "date": "2025-10-05",
+   "variant": 81,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 30.27,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing, the al-Qassam Brigades."
+  },
+  {
+   "date": "2025-11-04",
+   "variant": 82,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 22.22,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with an armed military wing known as the al-Qassam Brigades."
+  },
+  {
+   "date": "2025-11-26",
+   "variant": 83,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 2.62,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with an military wing known as the al-Qassam Brigades."
+  },
+  {
+   "date": "2025-11-29",
+   "variant": 84,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 340.54,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades."
+  },
+  {
+   "date": "2025-12-02",
+   "variant": 85,
+   "reverted_tag": true,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 0.05,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Palestinian Sunni Islamist political organisation with a military wing, al-Qassam Brigades."
+  },
+  {
+   "date": "2025-12-02",
+   "variant": 84,
+   "reverted_tag": false,
+   "class": "political organisation with a military wing",
+   "has_militant": false,
+   "has_terror": false,
+   "variant_total_live_days": 340.54,
+   "text": "The Islamic Resistance Movement, abbreviated Hamas (an acronym from the حركة المقاومة الإسلامية), is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades."
+  }
+ ]
+}

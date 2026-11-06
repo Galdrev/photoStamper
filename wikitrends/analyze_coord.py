@@ -2,7 +2,7 @@
 
   python analyze_coord.py [--data data/coord.json.gz] [--null 1000] [--calib 50]
   -> patterns/coord/cards.md, cards.json, chart_data/{network.json, blocs.json, sync.json, sweeps.json, profiles.json,
-     calibration.json}
+     windows.json, calibration.json}
 
 Unit: one event = (revision, direction) of a critical-term insertion or removal by a registered, non-bot, visible account.
 Two nulls, 1,000 draws each, per scope (topic / comparison) and direction (any / insert / remove):
@@ -21,6 +21,9 @@ significant-edge graph (Louvain weight = -log10 p, as in the calibration worlds;
 Selection is calibrated: the whole pipeline (edges -> communities) is re-run on CALIB null worlds (each null draw treated
 as if observed, p-values from the other draws), giving the edges / communities expected by chance and, per community, the
 share of null worlds producing a community at least as large and as dense.
+Card (e) tests every significant bloc / community (insert-direction and remove-direction blocs separately) against the
+documented coordination windows (ORGS.md: email canvassing Oct 2023-Jan 2024, TfP Discord Jan-Sep 2024) and the sanction
+dates (~9 Dec 2024, 25 Apr 2025), against matched random account sets.
 Outputs never contain usernames or hashes: accounts are A1, A2... (network) and blocs "Bloc A (n accounts)".
 """
 import argparse, gzip, json, math, os, re, sys, time, zlib
@@ -36,8 +39,21 @@ DATA = os.path.join(HERE, "data", "coord.json.gz")
 WINDOWS = {"t10": 600, "t30": 1800, "t60": 3600}
 DEFAULT_W = "t30"
 P_EDGE, MIN_OBS, MIN_BLOC = 0.01, 3, 3
+GAP = 10            # curveball draws are a thinned Markov chain: calibration worlds skip draws within 10 steps
 SWEEP_MIN_ARTICLES, JACCARD = 5, 0.7
 NAKBA = re.compile(r"\bnakba\b|1948 palestin\w* (?:exodus|expulsion)|depopulat\w*|expel+ed|expulsion", re.I)
+
+
+# Documented coordination windows and sanction dates (patterns/orgs/ORGS.md; snippets, verify before publication).
+DOC_WINDOWS = {
+    "email_canvassing": ("2023-10-01", "2024-01-21", "ArbCom 'PIA canvassing' motions, 4-20 Jan 2024: email canvassing and proxying "
+                         "for a banned editor (pro-Israel), dated from about Oct 2023"),
+    "tfp_discord": ("2024-01-01", "2024-10-01", "Tech for Palestine Discord Wikipedia channel: created Jan 2024, public until about "
+                    "Sep 2024; ArbCom sanctioned editing after off-wiki canvassing requests there (Dec 2024)"),
+}
+SANCTIONS = {"2024-12-09": "ArbCom private-case sanctions for off-wiki canvassing (date approximate, ~9 Dec 2024)",
+             "2025-04-25": "ArbCom site bans on further off-wiki coordination evidence"}
+DROP_WINDOW_D = 365
 
 
 def iso(t):
@@ -100,7 +116,7 @@ def curveball(rows, n, rng, thin=None, burn=None):
     """Degree-preserving bipartite rewiring (Strona et al. 2014). rows: list of sets. Yields flat int arrays (fixed row order)."""
     rows = [set(r) for r in rows]
     live = [i for i, r in enumerate(rows) if r]
-    thin = thin or max(50, len(live))
+    thin = thin or max(150, 3 * len(live))
     burn = burn if burn is not None else 5 * thin
     def trades(k):
         if len(live) < 2:
@@ -267,7 +283,7 @@ class Engine:
             for k in WINDOWS:
                 sv[k] = (lambda kk: (lambda q: lookup(*ts[kk], q)))(k)
             for w, W in enumerate(worlds):
-                if w - 1 == s:
+                if w >= 1 and abs(w - 1 - s) <= GAP:       # a calibration world is not compared with its chain neighbours
                     continue
                 for st in stats:
                     if len(W[st]["pid"]):
@@ -280,11 +296,12 @@ class Engine:
         # calibration: pipeline on each null world
         self.calib = []
         for w in range(1, K + 1):
-            net = self._world_edges(worlds[w], n - 1, rule="network")
-            blc = self._world_edges(worlds[w], n - 1, rule="bloc")
+            ne = n - sum(1 for s in range(n) if abs(w - 1 - s) <= GAP)
+            net = self._world_edges(worlds[w], ne, rule="network")
+            blc = self._world_edges(worlds[w], ne, rule="bloc")
             self.calib.append({"network": self._communities_of(net), "bloc": self._communities_of(blc),
                                "n_edges_network": len(net), "n_edges_bloc": len(blc),
-                               "n_edges_sync": len(self._world_edges(worlds[w], n - 1, rule="sync"))})
+                               "n_edges_sync": len(self._world_edges(worlds[w], ne, rule="sync"))})
         log(f"  [{self.name}] {len(self.accs)} accounts, {len(self.arts)} articles, {len(self.ev)} events, "
             f"{len(o_p)} candidate pairs, {time.time() - t0:.0f}s")
         return self
@@ -570,6 +587,77 @@ def sync_pairs(E):
             "expected_by_chance": E.calib_counts("sync")}
 
 
+# ------------------------------------------------------------------ time alignment with documented windows (e)
+def _d(x):
+    return ep(x + "T00:00:00Z")
+
+
+def window_alignment(E, members, rng, n=1000):
+    """Activity of an account set inside the documented coordination windows, and its change after the sanction dates.
+    window_share: share of the set's events inside the window (95% CI: bootstrap over member accounts).
+    expected_window_share: mean share for n random account sets matched member-by-member on event count (95% interval),
+    p_high / p_low: share of matched sets at or above / at or below the observed share. Also: the share expected from the
+    members' own active spans (events spread evenly between each member's first and last event) and the share of all
+    other accounts' events. post_sanction_drop: (set's events in the 365 d after / before the date) divided by the same
+    ratio for all other accounts; < 1 = the set fell off more than everyone else. p = share of matched sets with a ratio at
+    least as low; CI by bootstrap over members."""
+    S = np.array(sorted(members))
+    acc_ev = [np.where(E.acc == a)[0] for a in range(E.NA)]
+    n_ev = np.array([len(x) for x in acc_ev])
+    others = np.setdiff1d(np.arange(E.NA), S)
+    pool_sorted = others[np.argsort(n_ev[others], kind="stable")]
+    def matched():
+        out = []
+        for a in S:
+            k = np.searchsorted(n_ev[pool_sorted], n_ev[a])
+            lo, hi = max(0, k - 15), min(len(pool_sorted), k + 15)
+            out.append(pool_sorted[rng.integers(lo, hi)] if hi > lo else pool_sorted[rng.integers(0, len(pool_sorted))])
+        return np.array(out)
+    def times(set_):
+        return E.t[np.concatenate([acc_ev[a] for a in set_])] if len(set_) else np.zeros(0)
+    nonm = np.isin(E.acc, S, invert=True)
+    nulls = [matched() for _ in range(n)] if len(pool_sorted) else []
+    boots = [S[rng.integers(0, len(S), len(S))] for _ in range(n)]
+    res = {"windows": {}, "post_sanction": {}}
+    for k, (a, b, note) in DOC_WINDOWS.items():
+        ta, tb = _d(a), _d(b)
+        share = lambda ts: float(((ts >= ta) & (ts < tb)).mean()) if len(ts) else float("nan")
+        obs = share(times(S))
+        nv = np.array([share(times(x)) for x in nulls]) if nulls else np.array([np.nan])
+        bv = np.array([share(times(x)) for x in boots])
+        own = []
+        for m in S:
+            ts = E.t[acc_ev[m]]; f, l = ts.min(), ts.max()
+            frac = (max(0, min(l, tb) - max(f, ta)) / (l - f)) if l > f else float(ta <= f < tb)
+            own += [frac] * len(ts)
+        res["windows"][k] = {"window": [a, b], "note": note, "window_share": round(obs, 3),
+                             "window_share_ci95": [round(float(np.nanpercentile(bv, 2.5)), 3), round(float(np.nanpercentile(bv, 97.5)), 3)],
+                             "expected_window_share": round(float(np.nanmean(nv)), 3),
+                             "expected_ci95": [round(float(np.nanpercentile(nv, 2.5)), 3), round(float(np.nanpercentile(nv, 97.5)), 3)],
+                             "p_high": round((int((nv >= obs).sum()) + 1) / (len(nv) + 1), 4),
+                             "p_low": round((int((nv <= obs).sum()) + 1) / (len(nv) + 1), 4),
+                             "expected_from_own_active_span": round(float(np.mean(own)), 3) if own else None,
+                             "other_accounts_share": round(share(E.t[nonm]), 3) if nonm.any() else None}
+    for d, note in SANCTIONS.items():
+        td, w = _d(d), DROP_WINDOW_D * 86400
+        def ratio(ts):
+            bef = ((ts >= td - w) & (ts < td)).sum(); aft = ((ts >= td) & (ts < td + w)).sum()
+            return (aft + 0.5) / (bef + 0.5), int(bef), int(aft)
+        r_non, nb, na = ratio(E.t[nonm])
+        r_obs, mb, ma = ratio(times(S))
+        nv = np.array([ratio(times(x))[0] / r_non for x in nulls]) if nulls else np.array([np.nan])
+        bv = np.array([ratio(times(x))[0] / r_non for x in boots])
+        obs = r_obs / r_non
+        res["post_sanction"][d] = {"note": note, "set_events_before": mb, "set_events_after": ma,
+                                   "others_before": nb, "others_after": na, "post_sanction_drop": round(obs, 3),
+                                   "ci95": [round(float(np.nanpercentile(bv, 2.5)), 3), round(float(np.nanpercentile(bv, 97.5)), 3)],
+                                   "matched_null_mean": round(float(np.nanmean(nv)), 3),
+                                   "matched_null_ci95": [round(float(np.nanpercentile(nv, 2.5)), 3), round(float(np.nanpercentile(nv, 97.5)), 3)],
+                                   "p_drop": round((int((nv <= obs).sum()) + 1) / (len(nv) + 1), 4),
+                                   "testable": mb >= 5}
+    return res
+
+
 # ------------------------------------------------------------------ profiles (d)
 def profile(D, ev_by_acc, accts, E, rng, n=1000):
     def vals(S):
@@ -713,12 +801,20 @@ def analyze_data(D, n_null=1000, n_calib=200, seed=7, log=print, directions=("an
             rec = {"blocs": blocs(E, D, eba)}
             for b in rec["blocs"]["blocs"]:
                 b["profile"] = profile(D, eba, b["_m"], E, rng)
+                b["time_alignment"] = window_alignment(E, b["_m"], rng)
             if d == "any":
                 rec["network"] = network(E, D, eba, log)
                 rec["sync"] = sync_pairs(E)
                 for c in rec["network"]["communities"]:
                     if c["size"] >= MIN_BLOC:
                         c["profile"] = profile(D, eba, c["_m"], E, rng)
+                        ta = window_alignment(E, c["_m"], rng)
+                        c["time_alignment"] = ta
+                        c["window_share"] = {k: v["window_share"] for k, v in ta["windows"].items()}
+                        c["expected_window_share"] = {k: {"mean": v["expected_window_share"], "ci95": v["expected_ci95"],
+                                                          "p_high": v["p_high"], "p_low": v["p_low"]} for k, v in ta["windows"].items()}
+                        c["post_sanction_drop"] = {d: {"ratio": v["post_sanction_drop"], "ci95": v["ci95"], "p_drop": v["p_drop"],
+                                                       "testable": v["testable"]} for d, v in ta["post_sanction"].items()}
             rec["_accs"] = E.accs
             R["engines"][f"{g}/{d}"] = rec
     R["sweeps"] = sweeps(D, rng, n_null)
@@ -848,6 +944,48 @@ def build_cards(R):
                       "Flags whether the village-page Nakba wording arrived as one sweep or piecemeal.",
                       "Village articles share a WikiProject structure (Khalidi / Morris sourcing), so similar wording is "
                       "expected; only a short-span, few-account cluster suggests a sweep.", numbers={"clusters": vc}))
+    # (e) documented windows, both directions
+    rows = []
+    for key, rec in R["engines"].items():
+        g, d = key.split("/")
+        sets = [(b["name"], b) for b in rec["blocs"]["blocs"] if b["confidence"] in ("high", "medium")]
+        if d == "any" and "network" in rec:
+            sets += [(f"{g} network community {c['id']} ({c['size']} accounts)", c) for c in rec["network"]["communities"]
+                     if c["confidence"] in ("high", "medium") and c.get("time_alignment")]
+        for nm, b in sets:
+            ta = b["time_alignment"]
+            w = "; ".join(f"{k}: {v['window_share']:.0%} of events in window [CI {v['window_share_ci95'][0]:.0%}-"
+                          f"{v['window_share_ci95'][1]:.0%}] vs matched sets {v['expected_window_share']:.0%} "
+                          f"[{v['expected_ci95'][0]:.0%}-{v['expected_ci95'][1]:.0%}], own-span {v['expected_from_own_active_span']}, "
+                          f"others {v['other_accounts_share']}, p_high {v['p_high']}" for k, v in ta["windows"].items())
+            ps = "; ".join(f"after {dd}: drop ratio {v['post_sanction_drop']} [CI {v['ci95'][0]}-{v['ci95'][1]}] vs matched "
+                           f"{v['matched_null_mean']}, p_drop {v['p_drop']}" + ("" if v["testable"] else " (too few events before)")
+                           for dd, v in ta["post_sanction"].items())
+            rows.append({"set": nm, "scope": key, "direction": d, "text": f"{nm} [{key}]: {w}. {ps}",
+                         "time_alignment": ta})
+    by_dir = Counter(r["direction"] for r in rows)
+    sig_any = [r for r in rows if any(v["p_high"] < 0.01 for v in r["time_alignment"]["windows"].values())
+               or any(v["testable"] and v["p_drop"] < 0.01 for v in r["time_alignment"]["post_sanction"].values())]
+    cards.append(card("windows", "(e) Do detected blocs line up with the documented canvassing windows and sanctions?",
+                      (f"Sets tested: {len(rows)} (insert-direction blocs {by_dir.get('insert', 0)}, remove-direction "
+                       f"{by_dir.get('remove', 0)}, any-direction blocs and communities {by_dir.get('any', 0)}). "
+                       f"{len(sig_any)} show window concentration or a post-sanction drop beyond matched random sets (p<0.01). "
+                       + " | ".join(r["text"] for r in rows)) if rows else
+                      "No bloc or community passed the significance tests, so alignment with the documented windows (email "
+                      "canvassing Oct 2023-Jan 2024; TfP Discord Jan-Sep 2024; sanctions ~9 Dec 2024 and 25 Apr 2025) is not "
+                      "detected. Not detected is not the same as did not happen: off-wiki canvassing of talk-page votes, edits "
+                      "outside these critical-term lead events and small groups below the test's power are invisible here.",
+                      "medium" if sig_any else ("low" if rows else "n/a (nothing to align)"),
+                      {"window_share": "matched random account sets (member-by-member on event count), 1,000 draws; CI = "
+                                       "bootstrap over members", "post_sanction_drop": "365 d after vs before each date, relative "
+                                       "to all other accounts; same matched-set null", "windows": DOC_WINDOWS, "sanctions": SANCTIONS},
+                      "Alignment in time is not attribution: a set active during the Discord months is not shown to be the "
+                      "Discord group. It is a test of whether the documented windows left a footprint in who edited these terms.",
+                      "Dates come from ORGS.md snippets (marked there as needing verification); only critical-term lead "
+                      "events are counted; a drop after a sanction can also reflect the war-news cycle, which the "
+                      "comparison with all other accounts only partly removes.",
+                      numbers={"sets": [_strip({k: v for k, v in r.items() if k != "text"}) for r in rows]},
+                      chart="chart_data/windows.json"))
     # (d) profiles
     prof = []
     for key, rec in R["engines"].items():
@@ -902,6 +1040,8 @@ def write_outputs(R, out_dir=OUT):
     json.dump({k: {"network": v["network"]["counts"]["expected_by_chance"] if "network" in v else None,
                    "bloc": v["blocs"]["expected_by_chance"]} for k, v in R["engines"].items()},
               open(os.path.join(out_dir, "chart_data", "calibration.json"), "w"), indent=1)
+    json.dump([c["numbers"] for c in cards if c["id"] == "windows"][0], open(os.path.join(out_dir, "chart_data", "windows.json"), "w"),
+              indent=1, ensure_ascii=False)
     json.dump([c["numbers"] for c in cards if c["id"] == "profiles"][0], open(os.path.join(out_dir, "chart_data", "profiles.json"), "w"),
               indent=1)
     json.dump(_strip({"meta": R["meta"], "cards": cards}), open(os.path.join(out_dir, "cards.json"), "w"), indent=1, ensure_ascii=False)

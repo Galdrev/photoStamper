@@ -1,0 +1,1375 @@
+{
+ "note": "comparison projects ranked by distance to Israel+Palestine on pre-war features; estimates against comparison subsets",
+ "projects": [
+  {
+   "group": "comparison",
+   "project": "Kurdistan",
+   "n": 254,
+   "ct_notice": 0.268,
+   "relevant": 0.252,
+   "base_rate_2023": 6.17,
+   "pre_war_change": -1.03,
+   "post_war_change": -0.9,
+   "gain_share": 0.0083,
+   "log_edits_prewar": 3.4,
+   "share_top": 0.091,
+   "distance_to_IsraelPalestine": 4.835557759711065,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Ukraine",
+   "n": 260,
+   "ct_notice": 0.177,
+   "relevant": 0.346,
+   "base_rate_2023": 1.87,
+   "pre_war_change": 0.55,
+   "post_war_change": 1.29,
+   "gain_share": 0.0435,
+   "log_edits_prewar": 4.5,
+   "share_top": 0.615,
+   "distance_to_IsraelPalestine": 6.318923926476145,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Turkey",
+   "n": 257,
+   "ct_notice": 0.148,
+   "relevant": 0.451,
+   "base_rate_2023": 6.75,
+   "pre_war_change": 0.42,
+   "post_war_change": 0.76,
+   "gain_share": 0.0397,
+   "log_edits_prewar": 4.51,
+   "share_top": 0.397,
+   "distance_to_IsraelPalestine": 6.508005957739836,
+   "a_priori": "country"
+  },
+  {
+   "group": "comparison",
+   "project": "Serbia",
+   "n": 254,
+   "ct_notice": 0.11,
+   "relevant": 0.264,
+   "base_rate_2023": 5.71,
+   "pre_war_change": 0.03,
+   "post_war_change": 0.99,
+   "gain_share": 0.016,
+   "log_edits_prewar": 3.48,
+   "share_top": 0.429,
+   "distance_to_IsraelPalestine": 6.520734007889155,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "India",
+   "n": 257,
+   "ct_notice": 0.175,
+   "relevant": 0.276,
+   "base_rate_2023": 1.29,
+   "pre_war_change": -0.19,
+   "post_war_change": -0.54,
+   "gain_share": 0.0,
+   "log_edits_prewar": 4.6,
+   "share_top": 1.0,
+   "distance_to_IsraelPalestine": 6.589170889614016,
+   "a_priori": "country"
+  },
+  {
+   "group": "comparison",
+   "project": "Armenia",
+   "n": 258,
+   "ct_notice": 0.159,
+   "relevant": 0.353,
+   "base_rate_2023": 17.72,
+   "pre_war_change": 1.92,
+   "post_war_change": -0.23,
+   "gain_share": 0.0456,
+   "log_edits_prewar": 3.57,
+   "share_top": 0.229,
+   "distance_to_IsraelPalestine": 6.810066552429538,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Bangladesh",
+   "n": 259,
+   "ct_notice": 0.1,
+   "relevant": 0.224,
+   "base_rate_2023": 4.38,
+   "pre_war_change": 1.08,
+   "post_war_change": 0.04,
+   "gain_share": 0.0123,
+   "log_edits_prewar": 3.84,
+   "share_top": 0.147,
+   "distance_to_IsraelPalestine": 7.078824656126958,
+   "a_priori": "country"
+  },
+  {
+   "group": "comparison",
+   "project": "Bosnia and Herzegovina",
+   "n": 259,
+   "ct_notice": 0.073,
+   "relevant": 0.282,
+   "base_rate_2023": 11.95,
+   "pre_war_change": -0.43,
+   "post_war_change": 3.3,
+   "gain_share": 0.0278,
+   "log_edits_prewar": 3.36,
+   "share_top": 0.243,
+   "distance_to_IsraelPalestine": 7.0946407384641885,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Azerbaijan",
+   "n": 255,
+   "ct_notice": 0.082,
+   "relevant": 0.224,
+   "base_rate_2023": 0.91,
+   "pre_war_change": -0.63,
+   "post_war_change": 0.86,
+   "gain_share": 0.012,
+   "log_edits_prewar": 3.28,
+   "share_top": 0.204,
+   "distance_to_IsraelPalestine": 7.184016882174483,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Iran",
+   "n": 259,
+   "ct_notice": 0.104,
+   "relevant": 0.158,
+   "base_rate_2023": 0.59,
+   "pre_war_change": 0.59,
+   "post_war_change": -0.18,
+   "gain_share": 0.004,
+   "log_edits_prewar": 3.8,
+   "share_top": 0.436,
+   "distance_to_IsraelPalestine": 7.242760289208912,
+   "a_priori": "country"
+  },
+  {
+   "group": "comparison",
+   "project": "Pakistan",
+   "n": 257,
+   "ct_notice": 0.078,
+   "relevant": 0.28,
+   "base_rate_2023": 1.44,
+   "pre_war_change": 0.47,
+   "post_war_change": -0.61,
+   "gain_share": 0.0081,
+   "log_edits_prewar": 3.97,
+   "share_top": 0.272,
+   "distance_to_IsraelPalestine": 7.259796988836684,
+   "a_priori": "country"
+  },
+  {
+   "group": "comparison",
+   "project": "Poland",
+   "n": 258,
+   "ct_notice": 0.035,
+   "relevant": 0.275,
+   "base_rate_2023": 2.29,
+   "pre_war_change": 0.45,
+   "post_war_change": -0.33,
+   "gain_share": 0.008,
+   "log_edits_prewar": 3.65,
+   "share_top": 0.523,
+   "distance_to_IsraelPalestine": 7.648809630228494,
+   "a_priori": "country"
+  },
+  {
+   "group": "comparison",
+   "project": "Greece",
+   "n": 258,
+   "ct_notice": 0.047,
+   "relevant": 0.298,
+   "base_rate_2023": 1.29,
+   "pre_war_change": -0.14,
+   "post_war_change": -0.26,
+   "gain_share": 0.0078,
+   "log_edits_prewar": 4.11,
+   "share_top": 0.484,
+   "distance_to_IsraelPalestine": 7.718154150430998,
+   "a_priori": "country"
+  },
+  {
+   "group": "comparison",
+   "project": "Ireland",
+   "n": 258,
+   "ct_notice": 0.031,
+   "relevant": 0.295,
+   "base_rate_2023": 0.83,
+   "pre_war_change": 0.27,
+   "post_war_change": 0.42,
+   "gain_share": 0.0078,
+   "log_edits_prewar": 4.15,
+   "share_top": 0.264,
+   "distance_to_IsraelPalestine": 7.958857307311061,
+   "a_priori": "country"
+  },
+  {
+   "group": "comparison",
+   "project": "Taiwan",
+   "n": 259,
+   "ct_notice": 0.012,
+   "relevant": 0.236,
+   "base_rate_2023": 1.41,
+   "pre_war_change": 0.29,
+   "post_war_change": 1.05,
+   "gain_share": 0.0324,
+   "log_edits_prewar": 3.63,
+   "share_top": 0.216,
+   "distance_to_IsraelPalestine": 8.053447003078395,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Hinduism",
+   "n": 257,
+   "ct_notice": 0.062,
+   "relevant": 0.074,
+   "base_rate_2023": 0.0,
+   "pre_war_change": 0.0,
+   "post_war_change": 0.15,
+   "gain_share": 0.0039,
+   "log_edits_prewar": 3.71,
+   "share_top": 0.198,
+   "distance_to_IsraelPalestine": 8.05735934216491,
+   "a_priori": "religion"
+  },
+  {
+   "group": "comparison",
+   "project": "Russia",
+   "n": 260,
+   "ct_notice": 0.023,
+   "relevant": 0.227,
+   "base_rate_2023": 1.14,
+   "pre_war_change": 0.17,
+   "post_war_change": -0.29,
+   "gain_share": 0.0078,
+   "log_edits_prewar": 3.91,
+   "share_top": 1.0,
+   "distance_to_IsraelPalestine": 8.05804435304707,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Sikhism",
+   "n": 8,
+   "ct_notice": 0.0,
+   "relevant": 0.25,
+   "base_rate_2023": 0.0,
+   "pre_war_change": 0.0,
+   "post_war_change": 0.0,
+   "gain_share": 0.0,
+   "log_edits_prewar": 3.59,
+   "share_top": 0.125,
+   "distance_to_IsraelPalestine": 8.228055730474466,
+   "a_priori": "religion"
+  },
+  {
+   "group": "comparison",
+   "project": "Tibet",
+   "n": 259,
+   "ct_notice": 0.0,
+   "relevant": 0.139,
+   "base_rate_2023": 0.54,
+   "pre_war_change": -0.09,
+   "post_war_change": 1.14,
+   "gain_share": 0.0117,
+   "log_edits_prewar": 2.98,
+   "share_top": 0.12,
+   "distance_to_IsraelPalestine": 8.398435880261868,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Sri Lanka",
+   "n": 258,
+   "ct_notice": 0.023,
+   "relevant": 0.085,
+   "base_rate_2023": 0.85,
+   "pre_war_change": -1.01,
+   "post_war_change": 0.22,
+   "gain_share": 0.012,
+   "log_edits_prewar": 2.47,
+   "share_top": 1.0,
+   "distance_to_IsraelPalestine": 8.510866573089459,
+   "a_priori": "conflict"
+  },
+  {
+   "group": "comparison",
+   "project": "Islam",
+   "n": 256,
+   "ct_notice": 0.027,
+   "relevant": 0.121,
+   "base_rate_2023": 0.89,
+   "pre_war_change": -0.03,
+   "post_war_change": 0.21,
+   "gain_share": 0.004,
+   "log_edits_prewar": 4.57,
+   "share_top": 0.734,
+   "distance_to_IsraelPalestine": 8.745680925536982,
+   "a_priori": "religion"
+  },
+  {
+   "group": "comparison",
+   "project": "Buddhism",
+   "n": 254,
+   "ct_notice": 0.0,
+   "relevant": 0.055,
+   "base_rate_2023": 0.24,
+   "pre_war_change": -0.01,
+   "post_war_change": 0.05,
+   "gain_share": 0.004,
+   "log_edits_prewar": 3.39,
+   "share_top": 0.366,
+   "distance_to_IsraelPalestine": 8.787988649377201,
+   "a_priori": "religion"
+  },
+  {
+   "group": "comparison",
+   "project": "Catholicism",
+   "n": 256,
+   "ct_notice": 0.008,
+   "relevant": 0.082,
+   "base_rate_2023": 0.88,
+   "pre_war_change": -0.52,
+   "post_war_change": -0.19,
+   "gain_share": 0.0039,
+   "log_edits_prewar": 4.06,
+   "share_top": 0.219,
+   "distance_to_IsraelPalestine": 8.864834568423774,
+   "a_priori": "religion"
+  }
+ ],
+ "topic_projects": [
+  {
+   "group": "topic",
+   "project": "Israel",
+   "n": 1381,
+   "ct_notice": 0.401,
+   "relevant": 0.353,
+   "base_rate_2023": 5.42,
+   "pre_war_change": 0.33,
+   "post_war_change": 2.45,
+   "gain_share": 0.0487,
+   "log_edits_prewar": 3.32,
+   "share_top": 0.117
+  },
+  {
+   "group": "topic",
+   "project": "Jewish history",
+   "n": 502,
+   "ct_notice": 0.058,
+   "relevant": 0.357,
+   "base_rate_2023": 10.64,
+   "pre_war_change": 0.57,
+   "post_war_change": -0.41,
+   "gain_share": 0.0321,
+   "log_edits_prewar": 3.21,
+   "share_top": 0.022
+  },
+  {
+   "group": "topic",
+   "project": "Judaism",
+   "n": 1378,
+   "ct_notice": 0.012,
+   "relevant": 0.091,
+   "base_rate_2023": 1.44,
+   "pre_war_change": 0.13,
+   "post_war_change": 0.0,
+   "gain_share": 0.0052,
+   "log_edits_prewar": 3.19,
+   "share_top": 0.107
+  },
+  {
+   "group": "topic",
+   "project": "Palestine",
+   "n": 1381,
+   "ct_notice": 0.694,
+   "relevant": 0.501,
+   "base_rate_2023": 8.36,
+   "pre_war_change": 0.02,
+   "post_war_change": 5.99,
+   "gain_share": 0.0665,
+   "log_edits_prewar": 2.34,
+   "share_top": 0.022
+  }
+ ],
+ "reference_IsraelPalestine": {
+  "ct_notice": 0.5477914554670529,
+  "relevant": 0.4268645908761767,
+  "base_rate_2023": 6.895311140210149,
+  "pre_war_change": 0.17647154008156068,
+  "log_edits_prewar": 2.833860523559585
+ },
+ "estimates": {
+  "all comparison | all": {
+   "unweighted": {
+    "a_unf": {
+     "est": 2.2164,
+     "lo": 1.3411,
+     "hi": 3.1494
+    },
+    "b": {
+     "est": 0.0244,
+     "lo": 0.0188,
+     "hi": 0.0307
+    },
+    "b_t": {
+     "est": 0.0389,
+     "lo": 0.0338,
+     "hi": 0.0445
+    },
+    "b_c": {
+     "est": 0.0145,
+     "lo": 0.0118,
+     "hi": 0.0178
+    },
+    "b_full_did": {
+     "est": 0.0505,
+     "lo": 0.0364,
+     "hi": 0.0651
+    },
+    "d_t": {
+     "est": 0.1497,
+     "lo": 0.0943,
+     "hi": 0.2079
+    },
+    "d_c": {
+     "est": 0.0499,
+     "lo": 0.0307,
+     "hi": 0.0759
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 1.0406,
+     "lo": 0.2005,
+     "hi": 1.8038
+    },
+    "b": {
+     "est": 0.0125,
+     "lo": 0.0056,
+     "hi": 0.0188
+    },
+    "b_t": {
+     "est": 0.0249,
+     "lo": 0.0206,
+     "hi": 0.0295
+    },
+    "b_c": {
+     "est": 0.0123,
+     "lo": 0.0081,
+     "hi": 0.0175
+    },
+    "b_full_did": {
+     "est": 0.034,
+     "lo": 0.0205,
+     "hi": 0.0488
+    },
+    "d_t": {
+     "est": 0.1368,
+     "lo": 0.084,
+     "hi": 0.197
+    },
+    "d_c": {
+     "est": 0.0338,
+     "lo": 0.021,
+     "hi": 0.0492
+    }
+   },
+   "n_comparison": 5670
+  },
+  "all comparison | relevant": {
+   "unweighted": {
+    "a_unf": {
+     "est": 4.5272,
+     "lo": 2.3764,
+     "hi": 6.5453
+    },
+    "b": {
+     "est": 0.0452,
+     "lo": 0.0262,
+     "hi": 0.0618
+    },
+    "b_t": {
+     "est": 0.0828,
+     "lo": 0.0675,
+     "hi": 0.0964
+    },
+    "b_c": {
+     "est": 0.0376,
+     "lo": 0.0281,
+     "hi": 0.0482
+    },
+    "b_full_did": {
+     "est": 0.0999,
+     "lo": 0.0643,
+     "hi": 0.1314
+    },
+    "d_t": {
+     "est": 0.276,
+     "lo": 0.181,
+     "hi": 0.3719
+    },
+    "d_c": {
+     "est": 0.0861,
+     "lo": 0.0421,
+     "hi": 0.1381
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 3.9922,
+     "lo": 2.3947,
+     "hi": 5.8699
+    },
+    "b": {
+     "est": 0.0357,
+     "lo": 0.0178,
+     "hi": 0.0536
+    },
+    "b_t": {
+     "est": 0.0638,
+     "lo": 0.0513,
+     "hi": 0.0783
+    },
+    "b_c": {
+     "est": 0.028,
+     "lo": 0.0187,
+     "hi": 0.039
+    },
+    "b_full_did": {
+     "est": 0.0837,
+     "lo": 0.0475,
+     "hi": 0.1194
+    },
+    "d_t": {
+     "est": 0.2287,
+     "lo": 0.1522,
+     "hi": 0.3161
+    },
+    "d_c": {
+     "est": 0.0636,
+     "lo": 0.0338,
+     "hi": 0.1012
+    }
+   },
+   "n_comparison": 1289
+  },
+  "conflict projects (a priori) | all": {
+   "unweighted": {
+    "a_unf": {
+     "est": 1.7878,
+     "lo": 0.8018,
+     "hi": 2.8456
+    },
+    "b": {
+     "est": 0.0173,
+     "lo": 0.0101,
+     "hi": 0.0253
+    },
+    "b_t": {
+     "est": 0.0389,
+     "lo": 0.0342,
+     "hi": 0.0447
+    },
+    "b_c": {
+     "est": 0.0216,
+     "lo": 0.0157,
+     "hi": 0.0269
+    },
+    "b_full_did": {
+     "est": 0.0457,
+     "lo": 0.0293,
+     "hi": 0.0631
+    },
+    "d_t": {
+     "est": 0.1497,
+     "lo": 0.0974,
+     "hi": 0.2157
+    },
+    "d_c": {
+     "est": 0.105,
+     "lo": 0.0492,
+     "hi": 0.1682
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 0.5335,
+     "lo": -1.1038,
+     "hi": 1.6296
+    },
+    "b": {
+     "est": 0.006,
+     "lo": -0.0071,
+     "hi": 0.016
+    },
+    "b_t": {
+     "est": 0.0249,
+     "lo": 0.02,
+     "hi": 0.0304
+    },
+    "b_c": {
+     "est": 0.0188,
+     "lo": 0.0111,
+     "hi": 0.0314
+    },
+    "b_full_did": {
+     "est": 0.0284,
+     "lo": 0.0103,
+     "hi": 0.047
+    },
+    "d_t": {
+     "est": 0.1368,
+     "lo": 0.0848,
+     "hi": 0.2008
+    },
+    "d_c": {
+     "est": 0.0739,
+     "lo": 0.0376,
+     "hi": 0.1151
+    }
+   },
+   "n_comparison": 2576
+  },
+  "conflict projects (a priori) | relevant": {
+   "unweighted": {
+    "a_unf": {
+     "est": 3.2406,
+     "lo": 0.4266,
+     "hi": 5.9414
+    },
+    "b": {
+     "est": 0.0259,
+     "lo": 0.0018,
+     "hi": 0.0477
+    },
+    "b_t": {
+     "est": 0.0828,
+     "lo": 0.0702,
+     "hi": 0.0966
+    },
+    "b_c": {
+     "est": 0.0569,
+     "lo": 0.0398,
+     "hi": 0.0765
+    },
+    "b_full_did": {
+     "est": 0.0954,
+     "lo": 0.0531,
+     "hi": 0.137
+    },
+    "d_t": {
+     "est": 0.276,
+     "lo": 0.1758,
+     "hi": 0.3855
+    },
+    "d_c": {
+     "est": 0.1941,
+     "lo": 0.0863,
+     "hi": 0.3273
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 3.0104,
+     "lo": 0.8873,
+     "hi": 5.0869
+    },
+    "b": {
+     "est": 0.0186,
+     "lo": -0.0068,
+     "hi": 0.0401
+    },
+    "b_t": {
+     "est": 0.0638,
+     "lo": 0.0523,
+     "hi": 0.0778
+    },
+    "b_c": {
+     "est": 0.0452,
+     "lo": 0.0283,
+     "hi": 0.0664
+    },
+    "b_full_did": {
+     "est": 0.071,
+     "lo": 0.0192,
+     "hi": 0.1258
+    },
+    "d_t": {
+     "est": 0.2287,
+     "lo": 0.1388,
+     "hi": 0.3226
+    },
+    "d_c": {
+     "est": 0.1552,
+     "lo": 0.0857,
+     "hi": 0.2424
+    }
+   },
+   "n_comparison": 620
+  },
+  "religion projects | all": {
+   "unweighted": {
+    "a_unf": {
+     "est": 2.477,
+     "lo": 1.5894,
+     "hi": 3.4464
+    },
+    "b": {
+     "est": 0.035,
+     "lo": 0.0287,
+     "hi": 0.0415
+    },
+    "b_t": {
+     "est": 0.0389,
+     "lo": 0.0337,
+     "hi": 0.0451
+    },
+    "b_c": {
+     "est": 0.004,
+     "lo": 0.001,
+     "hi": 0.0079
+    },
+    "b_full_did": {
+     "est": 0.0535,
+     "lo": 0.0359,
+     "hi": 0.0721
+    },
+    "d_t": {
+     "est": 0.1497,
+     "lo": 0.0944,
+     "hi": 0.212
+    },
+    "d_c": {
+     "est": 0.0206,
+     "lo": 0.0002,
+     "hi": 0.0562
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 1.4347,
+     "lo": 0.8852,
+     "hi": 2.145
+    },
+    "b": {
+     "est": 0.0213,
+     "lo": 0.0157,
+     "hi": 0.0283
+    },
+    "b_t": {
+     "est": 0.0249,
+     "lo": 0.0203,
+     "hi": 0.0304
+    },
+    "b_c": {
+     "est": 0.0036,
+     "lo": 0.0006,
+     "hi": 0.0077
+    },
+    "b_full_did": {
+     "est": 0.0382,
+     "lo": 0.0168,
+     "hi": 0.0602
+    },
+    "d_t": {
+     "est": 0.1368,
+     "lo": 0.0821,
+     "hi": 0.197
+    },
+    "d_c": {
+     "est": 0.0165,
+     "lo": 0.0001,
+     "hi": 0.0412
+    }
+   },
+   "n_comparison": 1031
+  },
+  "religion projects | relevant": {
+   "unweighted": {
+    "a_unf": {
+     "est": 4.1743,
+     "lo": 1.8286,
+     "hi": 6.6867
+    },
+    "b": {
+     "est": 0.059,
+     "lo": 0.0164,
+     "hi": 0.0888
+    },
+    "b_t": {
+     "est": 0.0828,
+     "lo": 0.0694,
+     "hi": 0.0968
+    },
+    "b_c": {
+     "est": 0.0238,
+     "lo": 0.0,
+     "hi": 0.0595
+    },
+    "b_full_did": {
+     "est": 0.0542,
+     "lo": -0.0156,
+     "hi": 0.1117
+    },
+    "d_t": {
+     "est": 0.276,
+     "lo": 0.1793,
+     "hi": 0.3766
+    },
+    "d_c": {
+     "est": 0.0094,
+     "lo": 0.0,
+     "hi": 0.0307
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 3.7065,
+     "lo": 1.9144,
+     "hi": 5.5386
+    },
+    "b": {
+     "est": 0.0522,
+     "lo": 0.0322,
+     "hi": 0.0714
+    },
+    "b_t": {
+     "est": 0.0638,
+     "lo": 0.0524,
+     "hi": 0.0752
+    },
+    "b_c": {
+     "est": 0.0116,
+     "lo": 0.0,
+     "hi": 0.0286
+    },
+    "b_full_did": {
+     "est": 0.0226,
+     "lo": -0.0665,
+     "hi": 0.0913
+    },
+    "d_t": {
+     "est": 0.2287,
+     "lo": 0.1377,
+     "hi": 0.3163
+    },
+    "d_c": {
+     "est": 0.0036,
+     "lo": 0.0,
+     "hi": 0.0137
+    }
+   },
+   "n_comparison": 87
+  },
+  "country projects | all": {
+   "unweighted": {
+    "a_unf": {
+     "est": 2.6095,
+     "lo": 1.6526,
+     "hi": 3.5615
+    },
+    "b": {
+     "est": 0.028,
+     "lo": 0.0206,
+     "hi": 0.035
+    },
+    "b_t": {
+     "est": 0.0389,
+     "lo": 0.0335,
+     "hi": 0.045
+    },
+    "b_c": {
+     "est": 0.011,
+     "lo": 0.0065,
+     "hi": 0.0164
+    },
+    "b_full_did": {
+     "est": 0.0549,
+     "lo": 0.0355,
+     "hi": 0.0712
+    },
+    "d_t": {
+     "est": 0.1497,
+     "lo": 0.0902,
+     "hi": 0.209
+    },
+    "d_c": {
+     "est": 0.0289,
+     "lo": 0.0091,
+     "hi": 0.0583
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 1.5444,
+     "lo": 0.8585,
+     "hi": 2.2598
+    },
+    "b": {
+     "est": 0.0177,
+     "lo": 0.0118,
+     "hi": 0.0236
+    },
+    "b_t": {
+     "est": 0.0249,
+     "lo": 0.0207,
+     "hi": 0.0293
+    },
+    "b_c": {
+     "est": 0.0071,
+     "lo": 0.0042,
+     "hi": 0.0109
+    },
+    "b_full_did": {
+     "est": 0.0394,
+     "lo": 0.0228,
+     "hi": 0.0572
+    },
+    "d_t": {
+     "est": 0.1368,
+     "lo": 0.0809,
+     "hi": 0.1926
+    },
+    "d_c": {
+     "est": 0.0169,
+     "lo": 0.0066,
+     "hi": 0.0336
+    }
+   },
+   "n_comparison": 2063
+  },
+  "country projects | relevant": {
+   "unweighted": {
+    "a_unf": {
+     "est": 5.9062,
+     "lo": 3.9005,
+     "hi": 8.1831
+    },
+    "b": {
+     "est": 0.0634,
+     "lo": 0.0449,
+     "hi": 0.0804
+    },
+    "b_t": {
+     "est": 0.0828,
+     "lo": 0.0693,
+     "hi": 0.0969
+    },
+    "b_c": {
+     "est": 0.0194,
+     "lo": 0.0088,
+     "hi": 0.0314
+    },
+    "b_full_did": {
+     "est": 0.1113,
+     "lo": 0.0706,
+     "hi": 0.1527
+    },
+    "d_t": {
+     "est": 0.276,
+     "lo": 0.1813,
+     "hi": 0.3783
+    },
+    "d_c": {
+     "est": 0.0278,
+     "lo": 0.0081,
+     "hi": 0.0537
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 4.9695,
+     "lo": 3.2339,
+     "hi": 7.1522
+    },
+    "b": {
+     "est": 0.0507,
+     "lo": 0.037,
+     "hi": 0.0676
+    },
+    "b_t": {
+     "est": 0.0638,
+     "lo": 0.0521,
+     "hi": 0.0786
+    },
+    "b_c": {
+     "est": 0.0131,
+     "lo": 0.0061,
+     "hi": 0.0222
+    },
+    "b_full_did": {
+     "est": 0.1041,
+     "lo": 0.0668,
+     "hi": 0.1462
+    },
+    "d_t": {
+     "est": 0.2287,
+     "lo": 0.146,
+     "hi": 0.3131
+    },
+    "d_c": {
+     "est": 0.0198,
+     "lo": 0.0075,
+     "hi": 0.0363
+    }
+   },
+   "n_comparison": 582
+  },
+  "8 most similar (data-driven) | all": {
+   "unweighted": {
+    "a_unf": {
+     "est": 1.934,
+     "lo": 0.7642,
+     "hi": 3.1082
+    },
+    "b": {
+     "est": 0.0147,
+     "lo": 0.0061,
+     "hi": 0.0229
+    },
+    "b_t": {
+     "est": 0.0389,
+     "lo": 0.0335,
+     "hi": 0.0444
+    },
+    "b_c": {
+     "est": 0.0243,
+     "lo": 0.0182,
+     "hi": 0.0309
+    },
+    "b_full_did": {
+     "est": 0.0475,
+     "lo": 0.0286,
+     "hi": 0.0684
+    },
+    "d_t": {
+     "est": 0.1497,
+     "lo": 0.095,
+     "hi": 0.2121
+    },
+    "d_c": {
+     "est": 0.0828,
+     "lo": 0.0413,
+     "hi": 0.1302
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 1.1309,
+     "lo": 0.3937,
+     "hi": 1.7976
+    },
+    "b": {
+     "est": 0.0071,
+     "lo": -0.0007,
+     "hi": 0.0152
+    },
+    "b_t": {
+     "est": 0.0249,
+     "lo": 0.0204,
+     "hi": 0.0298
+    },
+    "b_c": {
+     "est": 0.0177,
+     "lo": 0.0115,
+     "hi": 0.0251
+    },
+    "b_full_did": {
+     "est": 0.0403,
+     "lo": 0.0248,
+     "hi": 0.0584
+    },
+    "d_t": {
+     "est": 0.1368,
+     "lo": 0.0777,
+     "hi": 0.1953
+    },
+    "d_c": {
+     "est": 0.0537,
+     "lo": 0.0278,
+     "hi": 0.0879
+    }
+   },
+   "n_comparison": 2058
+  },
+  "8 most similar (data-driven) | relevant": {
+   "unweighted": {
+    "a_unf": {
+     "est": 4.2574,
+     "lo": 1.1039,
+     "hi": 6.7238
+    },
+    "b": {
+     "est": 0.0302,
+     "lo": 0.008,
+     "hi": 0.0508
+    },
+    "b_t": {
+     "est": 0.0828,
+     "lo": 0.0683,
+     "hi": 0.097
+    },
+    "b_c": {
+     "est": 0.0526,
+     "lo": 0.0369,
+     "hi": 0.0713
+    },
+    "b_full_did": {
+     "est": 0.1126,
+     "lo": 0.0677,
+     "hi": 0.1557
+    },
+    "d_t": {
+     "est": 0.276,
+     "lo": 0.1855,
+     "hi": 0.3697
+    },
+    "d_c": {
+     "est": 0.1409,
+     "lo": 0.0658,
+     "hi": 0.233
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 3.7576,
+     "lo": 1.8129,
+     "hi": 5.8221
+    },
+    "b": {
+     "est": 0.0213,
+     "lo": -0.0024,
+     "hi": 0.0446
+    },
+    "b_t": {
+     "est": 0.0638,
+     "lo": 0.0518,
+     "hi": 0.0776
+    },
+    "b_c": {
+     "est": 0.0425,
+     "lo": 0.0259,
+     "hi": 0.0653
+    },
+    "b_full_did": {
+     "est": 0.1227,
+     "lo": 0.0771,
+     "hi": 0.1695
+    },
+    "d_t": {
+     "est": 0.2287,
+     "lo": 0.1473,
+     "hi": 0.3228
+    },
+    "d_c": {
+     "est": 0.0979,
+     "lo": 0.0443,
+     "hi": 0.156
+    }
+   },
+   "n_comparison": 630
+  },
+  "live wars 2022+ (Ukraine, Russia, Armenia, Azerbaijan) | all": {
+   "unweighted": {
+    "a_unf": {
+     "est": 2.1345,
+     "lo": 0.8788,
+     "hi": 3.3098
+    },
+    "b": {
+     "est": 0.0119,
+     "lo": 0.0,
+     "hi": 0.0222
+    },
+    "b_t": {
+     "est": 0.0389,
+     "lo": 0.0334,
+     "hi": 0.0441
+    },
+    "b_c": {
+     "est": 0.027,
+     "lo": 0.0181,
+     "hi": 0.0381
+    },
+    "b_full_did": {
+     "est": 0.0347,
+     "lo": 0.0082,
+     "hi": 0.0582
+    },
+    "d_t": {
+     "est": 0.1497,
+     "lo": 0.0989,
+     "hi": 0.2144
+    },
+    "d_c": {
+     "est": 0.1408,
+     "lo": 0.0554,
+     "hi": 0.2417
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 0.0941,
+     "lo": -2.7337,
+     "hi": 1.8107
+    },
+    "b": {
+     "est": -0.0031,
+     "lo": -0.0232,
+     "hi": 0.0115
+    },
+    "b_t": {
+     "est": 0.0249,
+     "lo": 0.0201,
+     "hi": 0.0294
+    },
+    "b_c": {
+     "est": 0.0279,
+     "lo": 0.0139,
+     "hi": 0.0482
+    },
+    "b_full_did": {
+     "est": 0.0136,
+     "lo": -0.023,
+     "hi": 0.0441
+    },
+    "d_t": {
+     "est": 0.1368,
+     "lo": 0.0832,
+     "hi": 0.2031
+    },
+    "d_c": {
+     "est": 0.0868,
+     "lo": 0.0395,
+     "hi": 0.1496
+    }
+   },
+   "n_comparison": 1033
+  },
+  "live wars 2022+ (Ukraine, Russia, Armenia, Azerbaijan) | relevant": {
+   "unweighted": {
+    "a_unf": {
+     "est": 4.0884,
+     "lo": 1.7408,
+     "hi": 6.7543
+    },
+    "b": {
+     "est": 0.0126,
+     "lo": -0.0198,
+     "hi": 0.0462
+    },
+    "b_t": {
+     "est": 0.0828,
+     "lo": 0.068,
+     "hi": 0.0975
+    },
+    "b_c": {
+     "est": 0.0702,
+     "lo": 0.0418,
+     "hi": 0.0982
+    },
+    "b_full_did": {
+     "est": 0.0763,
+     "lo": 0.0224,
+     "hi": 0.1326
+    },
+    "d_t": {
+     "est": 0.276,
+     "lo": 0.1792,
+     "hi": 0.3771
+    },
+    "d_c": {
+     "est": 0.3239,
+     "lo": 0.1102,
+     "hi": 0.503
+    }
+   },
+   "design_weighted": {
+    "a_unf": {
+     "est": 3.4394,
+     "lo": 1.4399,
+     "hi": 5.5103
+    },
+    "b": {
+     "est": 0.0133,
+     "lo": -0.0224,
+     "hi": 0.043
+    },
+    "b_t": {
+     "est": 0.0638,
+     "lo": 0.0509,
+     "hi": 0.0787
+    },
+    "b_c": {
+     "est": 0.0505,
+     "lo": 0.0233,
+     "hi": 0.0828
+    },
+    "b_full_did": {
+     "est": 0.0432,
+     "lo": -0.0404,
+     "hi": 0.1203
+    },
+    "d_t": {
+     "est": 0.2287,
+     "lo": 0.1439,
+     "hi": 0.3165
+    },
+    "d_c": {
+     "est": 0.2207,
+     "lo": 0.0991,
+     "hi": 0.3558
+    }
+   },
+   "n_comparison": 297
+  }
+ },
+ "conflict_only_cem": {
+  "a_unf": {
+   "est": 2.7675,
+   "lo": 1.186,
+   "hi": 4.3367
+  },
+  "a_res": {
+   "est": 2.6526,
+   "lo": 1.0065,
+   "hi": 3.9979
+  },
+  "b_t": {
+   "est": 0.0409,
+   "lo": 0.0342,
+   "hi": 0.0498
+  },
+  "b_c": {
+   "est": 0.0133,
+   "lo": 0.0092,
+   "hi": 0.0187
+  },
+  "b": {
+   "est": 0.0275,
+   "lo": 0.0206,
+   "hi": 0.038
+  },
+  "b_full_did": {
+   "est": 0.0453,
+   "lo": 0.026,
+   "hi": 0.0707
+  },
+  "_matched": {
+   "topic_kept": 3715,
+   "topic_total": 4642,
+   "comparison_used": 2242,
+   "comparison_total": 2576
+  }
+ }
+}
