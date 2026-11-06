@@ -241,7 +241,7 @@ function s2Init(){
 function s2Count(st){
   const r=st.r,pp=r.p_perm;
   q("#lxShufCount").innerHTML=st.count?`<b>${N(st.beat)}</b> of <b>${N(st.count)}</b> shuffles beat the real extra change <span class="n">(${PC(st.beat/st.count)})</span>`:`No shuffles yet.<span class="n" style="display:block;font-size:13px;line-height:1.45;margin-top:4px">Real extra change: ${SG(st.real,2)} per 10,000 words. Can chance match it?</span>`;
-  q("#lxShufSay").innerHTML=`A shuffle “beats” the real extra change when its own is at least as big, either way (per 10,000 words). ${pp!=null?`In the study’s 5,000 shuffles, <b>${PC(pp)}</b> did (dashed outline).`:""} ${st.count>=200?(st.beat/st.count>.05?"Chance does this often, so the real extra change is not good evidence of a difference.":"Chance rarely does this. That points to a real difference, though only for this one pre-registered measure."):""} <span class="n">${N(st.nt)} topic and ${N(st.n-st.nt)} comparison articles.</span>`;
+  q("#lxShufSay").innerHTML=`A shuffle “beats” the real extra change when its own extra change is at least as big, in either direction (per 10,000 words). ${pp!=null?`In the study’s 5,000 shuffles, <b>${PC(pp)}</b> did (dashed outline).`:""} ${st.count>=200?(st.beat/st.count>.05?"Chance does this often, so the real extra change is not good evidence of a difference.":"Chance rarely does this. That points to a real difference, though only for this one pre-registered measure."):""} <span class="n">${N(st.nt)} topic and ${N(st.n-st.nt)} comparison articles.</span>`;
 }
 function s2Hist(st,drop){
   const el=q("#lxHist");if(!st)return;const w=Math.max(260,el.clientWidth),h=180,m={l:8,r:8,t:30,b:26},iw=w-m.l-m.r,ih=h-m.t-m.b;
@@ -328,7 +328,7 @@ function s3Draw(fresh){
   g+=`</svg>`;
   gap.innerHTML=g+(few?`<p class="n" style="margin:0">${fewTag} fewer than ${FEW} articles left in a group.</p>`:"");
   const crosses=isFinite(band[0])&&band[0]<=0&&band[1]>=0;
-  q("#lxLSay").innerHTML=`${rem.n?`Without the ${N(rem.n)} most extreme ${rem.n===1?"article":"articles"}, the extra change is <b>${SG(gp,2)}</b> per 10,000 words (range ${SG(band[0],1)} to ${SG(band[1],1)}, from 300 resamples), against the pre-registered <b>${SG(pr.did,2)}</b>.`:`Nothing removed: this is the full pre-registered comparison, extra change <b>${SG(gp,2)}</b> per 10,000 words.`} ${crosses?"The range still includes zero.":"The range is clear of zero."} ${Math.abs(gp-pr.did)>Math.max(.5,Math.abs(pr.did)*.5)&&rem.n?"A few articles carry a lot of the result.":"The result barely depends on the extremes."}`;
+  q("#lxLSay").innerHTML=`${rem.n?`Without the ${N(rem.n)} most extreme ${rem.n===1?"article":"articles"}, the extra change is <b>${SG(gp,2)}</b> per 10,000 words. Its range, from 300 resamples, is ${SG(band[0],1)} to ${SG(band[1],1)}. The pre-registered value was <b>${SG(pr.did,2)}</b>.`:`Nothing removed. This is the full pre-registered comparison: extra change <b>${SG(gp,2)}</b> per 10,000 words.`} ${crosses?"The range still includes zero.":"The range is clear of zero."} ${Math.abs(gp-pr.did)>Math.max(.5,Math.abs(pr.did)*.5)&&rem.n?"A few articles carry a lot of the result.":"The result barely depends on the extremes."}`;
 }
 
 /* =====================================================================
@@ -397,7 +397,7 @@ function s4Draw(){
   const ps=prev&&prev.s,same=stored&&ps!=null&&toks(ps)===toks(st.s);
   q("#lxFS").innerHTML=!stored?`<span class="lx-nost">wording not stored (short-lived)</span>`:ps!=null&&!same?wdiff(ps,st.s):E(st.s);
   if(same)q("#lxFMeta").insertAdjacentHTML("beforeend",`<span>only spacing or formatting changed</span>`);
-  else if(stored&&prev&&ps==null)q("#lxFMeta").insertAdjacentHTML("beforeend",`<span>the wording before was not stored, so no highlighting</span>`);
+  else if(stored&&prev&&ps==null)q("#lxFMeta").insertAdjacentHTML("beforeend",`<span>the previous wording was not stored, so changes are not highlighted</span>`);
   q("#lxFPrev").disabled=S4.step===0;q("#lxFNext").disabled=S4.step===d.steps.length-1;
   const sc=q("#lxFScrub"),w=Math.max(120,sc.clientWidth),h=44,t0=d.steps[0].t,t1=d.steps[d.steps.length-1].t,x=t=>6+(t-t0)/((t1-t0)||1)*(w-12);
   let s=`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}"><line class="axis" x1="6" x2="${w-6}" y1="22" y2="22"/>`;
@@ -643,14 +643,14 @@ function gSay(){const G=G8,k=S8.cur,ds=MS.dates||[],el=q("#lxGSay"),L=G.lay;
   const pool=g=>{const v=[];G.lanes.forEach(ln=>{if((ln.g==="t")===(g==="t"))v.push(...gStats(ln,k))});return v};
   const T=pool("t"),C=pool("c"),mc=mean(C),bd=S8.band[k];
   const head=`<span class="n">${N(G.n-G.born)} articles${G.born?` (${N(G.born)} newer ones left out)`:""}. Tick: row mean. Dashed: comparison mean.</span> `;
-  const p2=DID.find(r=>r.id==="P2"),preL=`<p class="lx-pre">Not pre-registered. Projects differ in what they contain; the pre-registered test is in the report${p2?`: P2 extra change <b>${SG(p2.did,2)}</b> per 10,000 words, ${p2.q_bh!=null&&p2.q_bh<.05?"clear of chance":"not clear of chance"}${p2.q_bh!=null?` (q = ${F(p2.q_bh,2)})`:""}`:""}.</p>`;
+  const p2=DID.find(r=>r.id==="P2"),preL=`<p class="lx-pre">Not pre-registered. Projects differ in what they contain. The pre-registered test is in the report${p2?`: P2 extra change <b>${SG(p2.did,2)}</b> per 10,000 words, ${p2.q_bh!=null&&p2.q_bh<.05?"clear of chance":"not clear of chance"}${p2.q_bh!=null?` (q = ${F(p2.q_bh,2)})`:""}`:""}.</p>`;
   if(k===0){el.innerHTML=head+`At ${DL(ds[0])} every article starts at zero. Pick a later snapshot to watch them spread.`+preL;return}
   if(S8.sel!=null){const ln=gLanes()[S8.sel],v=gStats(ln,k),m=mean(v),ci=bootMean(v,300,3),few=v.length<FEW;
     el.innerHTML=head+`<b>${E(ln.pooled?"All comparison projects":ln.p)}</b> (${ln.g==="t"?"topic":"comparison"}, ${N(v.length)} articles${few?", "+fewTag:""}): mean change <b>${SG(m,2)}</b> per 10,000 words (range ${SG(ci[0],2)} to ${SG(ci[1],2)})${ln.g==="t"?`, an extra change of <b>${SG(m-mc,2)}</b> over all ${N(C.length)} comparison articles`:""}. ${few||ln.g!=="t"?"":Math.abs(m-mc)<Math.max(ci[1]-ci[0],.05)?"Hard to tell apart from the comparison.":""}`+preL;return}
   const ex=mean(T)-mc,out=bd&&isFinite(bd.lo)&&(ex<bd.lo||ex>bd.hi);
-  const band=bd&&isFinite(bd.lo)?` Giving the topic label to other whole projects (${bd.exact?`all ${N(bd.n)}`:`${N(bd.n)} random`} picks of ${bd.nTproj} from ${bd.nProj}) gives ${SG(bd.lo,1)} to ${SG(bd.hi,1)} (grey strip): the real value is ${out?"<b>outside what project-level chance produces</b>. Exploratory; see the report’s caveats.":"<b>inside what project-level chance produces</b>."}`:"";
+  const band=bd&&isFinite(bd.lo)?` Giving the topic label to other whole projects (${bd.exact?`all ${N(bd.n)}`:`${N(bd.n)} random`} picks of ${bd.nTproj} from ${bd.nProj}) gives ${SG(bd.lo,1)} to ${SG(bd.hi,1)} (grey strip). The real value is ${out?"<b>outside what project-level chance produces</b>. This is exploratory. See the report’s caveats.":"<b>inside what project-level chance produces</b>."}`:"";
   const pre=preL;
-  el.innerHTML=head+`By ${DL(ds[k])}: topic <b>${SG(mean(T),1)}</b> (${N(T.length)}), comparison <b>${SG(mc,1)}</b> (${N(C.length)}) per 10,000 words; extra change <b>${SG(ex,1)}</b>.${band}${pre}`}
+  el.innerHTML=head+`By ${DL(ds[k])}: topic <b>${SG(mean(T),1)}</b> (${N(T.length)} articles), comparison <b>${SG(mc,1)}</b> (${N(C.length)} articles) per 10,000 words. Extra change: <b>${SG(ex,1)}</b>.${band}${pre}`}
 
 /* ---------- init and redraw ---------- */
 const LABS=[["shadow",s1Init,()=>{s1Strip();s1Draw()}],["shuffle",s2Init,()=>{const st=s2State(S2.id);if(st)s2Hist(st,null)}],["loud",s3Init,()=>s3Draw()],["flip",s4Init,()=>{if(S4.title)s4Draw()}],["chips",s5Init,s5Draw],["prism",s7Init,()=>{}],["galaxy",s8Init,()=>{if(G8)gDraw(S8.cur)}]];

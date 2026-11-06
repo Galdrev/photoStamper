@@ -3,7 +3,7 @@
   <header class="lx-head">
     <div class="lx-eye">Data lab <span class="lx-x">Exploratory</span></div>
     <h1>Play with the evidence</h1>
-    <p class="lx-deck">Six hands-on views of the data behind the report. Drag, tap and shuffle the data itself; the pre-registered result stays on screen as a dashed outline.</p>
+    <p class="lx-deck">Six hands-on views of the data behind the report. Drag, tap and shuffle the data itself. The pre-registered result stays on screen as a dashed outline.</p>
     <nav class="lx-index" aria-label="Labs" id="lxIndex">
       <a href="#lab" data-go="lxShadow"><i>1</i>Shadow bars</a>
       <a href="#lab" data-go="lxShuffle"><i>2</i>Shuffle the labels</a>
@@ -17,7 +17,7 @@
 
   <section class="lx-sec" id="lxShadow" aria-labelledby="lxShadowH">
     <div class="lx-h"><span class="lx-num">1</span><h2 id="lxShadowH">Shadow bars</h2><span class="lx-x">Exploratory</span></div>
-    <p class="lx-q">Bar: how much loaded words (colonial, apartheid, genocide…) rose in each kind of topic article, per 10,000 words. Grey shadow: how much the comparison articles rose. The coloured part sticking out is the extra change.</p>
+    <p class="lx-q">Each bar shows how much loaded words (colonial, apartheid, genocide…) rose in one kind of topic article, per 10,000 words. The grey shadow shows how much the comparison articles rose. The coloured part that sticks out is the extra change.</p>
     <div class="lx-row"><span class="lx-seg" id="lxSPart" role="group" aria-label="Which text"><button type="button" data-v="full" aria-pressed="true">Full text</button><button type="button" data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
     <div class="lx-strip" id="lxSStrip" aria-label="Time window. Drag either handle, or drag the middle to move the window."></div>
     <div class="lx-row" id="lxSChips" role="group" aria-label="Comparison shadow"></div>
@@ -27,7 +27,7 @@
 
   <section class="lx-sec" id="lxShuffle" aria-labelledby="lxShufH">
     <div class="lx-h"><span class="lx-num">2</span><h2 id="lxShufH">Shuffle the labels</h2><span class="lx-x">Exploratory</span></div>
-    <p class="lx-q">If the topic label meant nothing, random labels would give an extra change as big as the real one. Shuffle and see how often chance does as well.</p>
+    <p class="lx-q">Suppose the topic label meant nothing. Then random labels would give an extra change as big as the real one. Shuffle and see how often chance does as well.</p>
     <div class="lx-ctl"><span class="lx-seg" id="lxPSeg" role="group" aria-label="Which pre-registered test"></span><span class="lx-segl" id="lxPSegL"></span></div>
     <div class="lx-shuf">
       <div class="lx-tiles" id="lxTiles" aria-hidden="true"></div>
@@ -68,14 +68,14 @@
 
   <section class="lx-sec" id="lxPrism" aria-labelledby="lxPrismH">
     <div class="lx-h"><span class="lx-num">6</span><h2 id="lxPrismH">Language prism</h2><span class="lx-x">Exploratory</span></div>
-    <p class="lx-q">The same articles in other Wikipedias. Each cell: change in loaded words in the opening paragraph, per 10,000 words. Tap a language to sort. Drag EN onto another language to subtract.</p>
+    <p class="lx-q">The same articles in other language Wikipedias. Each cell shows the change in loaded words in the opening paragraph, per 10,000 words. Tap a language to sort. Drag EN onto another language to subtract.</p>
     <div class="lx-prism" id="lxXGrid"></div>
     <div class="lx-xcell" id="lxXCell"></div>
   </section>
 
   <section class="lx-sec" id="lxGalaxy" aria-labelledby="lxGalH">
     <div class="lx-h"><span class="lx-num">7</span><h2 id="lxGalH">Galaxy</h2><span class="lx-x">Exploratory</span></div>
-    <p class="lx-q">Every dot is one article, about ten thousand in all, grouped by WikiProject. Across: change in loaded words since the first snapshot, per 10,000 words. Pick a date to watch them move; tap a row to compare.</p>
+    <p class="lx-q">Every dot is one article, about ten thousand in all, grouped by WikiProject. Left to right: the change in loaded words since the first snapshot, per 10,000 words. Pick a date to watch them move. Tap a row to compare.</p>
     <div class="lx-row"><span class="lx-seg" id="lxGDates" role="group" aria-label="Snapshot"></span><button type="button" class="lx-pill" id="lxGAll" aria-pressed="false"></button></div>
     <div class="lx-gal" id="lxGBox"><canvas id="lxGCan"></canvas></div>
     <p class="lx-say" id="lxGSay" aria-live="polite"></p>
