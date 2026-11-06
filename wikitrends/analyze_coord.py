@@ -8,18 +8,22 @@ Unit: one event = (revision, direction) of a critical-term insertion or removal 
 Two nulls, 1,000 draws each, per scope (topic / comparison) and direction (any / insert / remove):
   shared   account x article bipartite graph (binary), degree-preserving rewiring (curveball trades; every account keeps its
            number of articles, every article its number of accounts). Statistic: articles shared by a pair.
-  time     timestamps permuted among the events of the same article (who edits which article is kept, each article keeps its
-           own activity curve). Statistic: distinct article pairs (a != b) on which the two accounts acted within W minutes,
-           W = 10 / 30 (default) / 60. A stricter second time null shifts every account's whole timeline by one random
-           offset in +-30 days (keeps each account's own rhythm and sprees) and is reported as p_jitter.
+  time     every account's whole timeline shifted by a random non-zero whole number of days in [-7, 7] (keeps who edits which
+           article, each account's rhythm, sprees, time-of-day habit and news week; breaks minute-level alignment between
+           accounts). Statistic: distinct article pairs (a != b) on which the two accounts acted within W minutes,
+           W = 10 / 30 (default) / 60. A second time null permutes timestamps among the events of the same article (each
+           article keeps its activity curve) and is reported as p_article_shuffle. It has little power when a bloc makes up
+           most of an article's events (the shuffle then swaps the bloc's own timestamps), so it is a robustness check, not
+           the edge rule.
 Edge: empirical p < 0.01 AND observed count >= 3, on the 30-minute window or on shared articles. Communities: Louvain on the
-significant-edge graph (weight = log2 lift). Blocs (card a) use shared-article edges only.
+significant-edge graph (Louvain weight = -log10 p, as in the calibration worlds; the edge
+'weight' field is log2 lift). Blocs (card a) use shared-article edges only.
 Selection is calibrated: the whole pipeline (edges -> communities) is re-run on CALIB null worlds (each null draw treated
 as if observed, p-values from the other draws), giving the edges / communities expected by chance and, per community, the
 share of null worlds producing a community at least as large and as dense.
 Outputs never contain usernames or hashes: accounts are A1, A2... (network) and blocs "Bloc A (n accounts)".
 """
-import argparse, gzip, json, math, os, re, sys, time
+import argparse, gzip, json, math, os, re, sys, time, zlib
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 
@@ -32,7 +36,6 @@ DATA = os.path.join(HERE, "data", "coord.json.gz")
 WINDOWS = {"t10": 600, "t30": 1800, "t60": 3600}
 DEFAULT_W = "t30"
 P_EDGE, MIN_OBS, MIN_BLOC = 0.01, 3, 3
-JITTER_S = 30 * 86400
 SWEEP_MIN_ARTICLES, JACCARD = 5, 0.7
 NAKBA = re.compile(r"\bnakba\b|1948 palestin\w* (?:exodus|expulsion)|depopulat\w*|expel+ed|expulsion", re.I)
 
@@ -200,15 +203,17 @@ class Engine:
     def tstats(self, t):
         return time_pairs(t, self.acc, self.art, NA=self.NA, NM=self.NM)
 
+    def dayshift_t(self):
+        """Primary time null: each account's whole timeline shifted by a random non-zero whole number of days in [-7, 7]
+        (keeps the account's own rhythm, time-of-day habit and news week; breaks minute-level alignment between accounts)."""
+        k = self.rng.integers(1, 8, size=self.NA) * self.rng.choice([-1, 1], size=self.NA)
+        return self.t + 86400.0 * k[self.acc]
+
     def shuffle_t(self):
         base = np.argsort(self.art, kind="stable")
         order = np.lexsort((self.rng.random(len(self.t)), self.art))
         t2 = np.empty_like(self.t); t2[base] = self.t[order]
         return t2
-
-    def jitter_t(self):
-        off = self.rng.uniform(-JITTER_S, JITTER_S, size=self.NA)
-        return self.t + off[self.acc]
 
     def shared_vals(self, C, pids):
         lo, hi = pids // self.NA, pids % self.NA
@@ -224,8 +229,8 @@ class Engine:
         t0 = time.time()
         n, K = self.n, self.K
         flats = list(curveball(self.rows, n, self.rng)) if len(self.accs) > 1 else [self.flat_obs] * n
-        shuf = [self.shuffle_t() for _ in range(n)]
-        jit = [self.jitter_t() for _ in range(n)]
+        shuf = [self.dayshift_t() for _ in range(n)]       # primary time null (edges, calibration)
+        jit = [self.shuffle_t() for _ in range(n)]         # secondary: timestamps permuted within article
         stats = ["shared"] + list(WINDOWS)
         # worlds: 0 = observed, 1..K = null draws 0..K-1 treated as observed (calibration)
         worlds = []
@@ -303,8 +308,9 @@ class Engine:
         for c in nx.community.louvain_communities(G, weight="weight", seed=11):
             if len(c) >= MIN_BLOC:
                 sub = G.subgraph(c)
+                ws = [d["weight"] for _, _, d in sub.edges(data=True)]
                 out.append({"size": len(c), "density": 2 * sub.number_of_edges() / (len(c) * (len(c) - 1)),
-                            "members": sorted(c)})
+                            "strength": float(np.mean(ws)) if ws else 0.0, "members": sorted(c)})
         return out
 
     # ---- observed edges with full fields
@@ -327,7 +333,7 @@ class Engine:
             d[s] = {"observed": int(self.o_obs[s][i]), "null_mean": round(float(nv.mean()), 3),
                     "null_p95": float(np.percentile(nv, 95)), "p": round(self.pval(s, i), 4)}
             if s in WINDOWS:
-                d[s]["p_jitter"] = round(self.pval("j" + s[1:], i), 4)
+                d[s]["p_article_shuffle"] = round(self.pval("j" + s[1:], i), 4)
         return d
 
     def pair_detail(self, a, b, window=WINDOWS[DEFAULT_W]):
@@ -355,7 +361,7 @@ class Engine:
     # ---- fixed-set tests (pass C)
     def set_test(self, members):
         """Null comparison for one account set: articles touched by >=3 members (rewiring), member co-activity sum over
-        article pairs within 30 / 60 min (time shuffle, jitter)."""
+        article pairs within 30 / 60 min (day-shift null, article-shuffle null)."""
         S = sorted(members)
         def t3(rows_of):
             c = Counter(m for a in S for m in rows_of(a))
@@ -375,12 +381,15 @@ class Engine:
             ns = np.array([tsum(x, w) for x in self.shuf]); nj = np.array([tsum(x, w) for x in self.jit])
             out[f"sync_{w}"] = {"observed": o, "null_mean": round(float(ns.mean()), 3), "null_p95": float(np.percentile(ns, 95)),
                                 "p": round((int((ns >= o).sum()) + 1) / (self.n + 1), 4),
-                                "jitter_null_mean": round(float(nj.mean()), 3),
-                                "p_jitter": round((int((nj >= o).sum()) + 1) / (self.n + 1), 4)}
+                                "article_shuffle_null_mean": round(float(nj.mean()), 3),
+                                "p_article_shuffle": round((int((nj >= o).sum()) + 1) / (self.n + 1), 4)}
         return out
 
-    def calib_share(self, rule, size, density):
-        k = [any(c["size"] >= size and c["density"] >= density - 1e-9 for c in w[rule]) for w in self.calib]
+    def calib_share(self, rule, size, density, strength):
+        """Share of null worlds whose pipeline produced a community at least this large, this dense (share of member pairs
+        joined by a significant edge) and this strong (mean -log10 p of its edges)."""
+        k = [any(c["size"] >= size and c["density"] >= density - 1e-9 and c["strength"] >= strength - 1e-9 for c in w[rule])
+             for w in self.calib]
         return round(sum(k) / len(k), 4) if k else None
 
     def calib_counts(self, rule):
@@ -394,14 +403,18 @@ class Engine:
 
 # ------------------------------------------------------------------ communities / blocs (observed)
 def confidence(set_p, calib_share, sync_p=None):
-    if set_p <= 0.002 and calib_share is not None and calib_share <= 0.05 and (sync_p is None or sync_p < 0.01):
+    """high: null worlds (whole pipeline re-run) almost never give such a community (<=2%), the fixed-set null is beaten at
+    p<=0.002 and, for blocs, the members are also synchronous (p<0.01). medium: <=5% of null worlds and fixed-set p<=0.01."""
+    if calib_share is None:
+        return "low"
+    if set_p <= 0.002 and calib_share <= 0.02 and (sync_p is None or sync_p < 0.01):
         return "high"
-    if set_p <= 0.01 and calib_share is not None and calib_share <= 0.10:
+    if set_p <= 0.01 and calib_share <= 0.05:
         return "medium"
     return "low"
 
 
-def community_summary(E, members, edges_w, ev_by_acc, D):
+def community_summary(E, members, edges_w, ev_by_acc, D, lp=None):
     import itertools
     S = sorted(members)
     evs = [e for a in S for e in ev_by_acc[a]]
@@ -411,6 +424,7 @@ def community_summary(E, members, edges_w, ev_by_acc, D):
     months = Counter(iso(t)[:7] for t in ts)
     sub = [edges_w[p] for p in (min(a, b) * E.NA + max(a, b) for a, b in itertools.combinations(S, 2)) if p in edges_w]
     dens = 2 * len(sub) / (len(S) * (len(S) - 1))
+    lps = [lp[p] for p in (min(a, b) * E.NA + max(a, b) for a, b in itertools.combinations(S, 2)) if lp and p in lp]
     # inserted phrases: shingles of members' inserted sentences, counted over distinct articles
     revset = {(e["revid"]) for e in evs if e["kind"] == "insert"}
     sh = defaultdict(set)
@@ -420,7 +434,8 @@ def community_summary(E, members, edges_w, ev_by_acc, D):
                 for z in shingles(x["s"]):
                     sh[z].add(r["title"])
     top = sorted(((len(v), z) for z, v in sh.items() if len(v) >= 2), reverse=True)[:5]
-    return {"size": len(S), "density": round(dens, 3), "n_articles": len(arts),
+    return {"size": len(S), "density": round(dens, 3), "strength": round(float(np.mean(lps)), 3) if lps else 0.0,
+            "n_articles": len(arts),
             "articles": [{"title": a, "events": c} for a, c in arts.most_common(10)],
             "direction": {"insert": ins, "remove": len(evs) - ins, "insert_share": round(ins / len(evs), 3) if evs else None},
             "active": {"first": iso(min(ts)), "last": iso(max(ts)), "busiest_month": months.most_common(1)[0][0] if months else None,
@@ -437,17 +452,18 @@ def age_bucket(d):
 def network(E, D, ev_by_acc, log=print):
     import networkx as nx
     edges = E.edges("network")
-    ew, recs = {}, []
+    ew, lp, recs = {}, {}, []
     for i, pid, sig in edges:
         ps = E.pair_stats(i)
         main = DEFAULT_W if DEFAULT_W in sig else "shared"
         m = ps[main]
         w = math.log2((m["observed"] + 1) / (m["null_mean"] + 1))
         ew[pid] = w
+        lp[pid] = max(-math.log10(ps[s]["p"]) for s in sig)
         recs.append((pid, sig, ps, main, w))
     G = nx.Graph()
     for pid, sig, ps, main, w in recs:
-        G.add_edge(pid // E.NA, pid % E.NA, weight=max(w, 0.01))
+        G.add_edge(pid // E.NA, pid % E.NA, weight=lp[pid])      # same weighting as the calibration worlds
     comms = sorted(nx.community.louvain_communities(G, weight="weight", seed=11), key=lambda c: -len(c)) if len(G) else []
     cid = {a: k for k, c in enumerate(comms) for a in c}
     order = sorted(G.nodes, key=lambda a: (cid[a], -len(ev_by_acc[a])))
@@ -471,12 +487,12 @@ def network(E, D, ev_by_acc, log=print):
                           "shared_article_examples": det["shared_articles_examples"], "time_span": det["time_span"]})
     communities = []
     for k, c in enumerate(comms):
-        s = community_summary(E, c, ew, ev_by_acc, D)
+        s = community_summary(E, c, ew, ev_by_acc, D, lp)
         if len(c) >= MIN_BLOC:
             st = E.set_test(c)
-            share = E.calib_share("network", len(c), s["density"])
+            share = E.calib_share("network", len(c), s["density"], s["strength"])
             setp = min(st["articles_3plus"]["p"], st["sync_t30"]["p"])
-            s["significance"] = {"fixed_set_null": st, "null_worlds_with_community_this_large_and_dense": share,
+            s["significance"] = {"fixed_set_null": st, "null_worlds_with_community_this_large_dense_and_strong": share,
                                  "null_worlds": len(E.calib)}
             s["confidence"] = confidence(setp, share)
         else:
@@ -495,20 +511,20 @@ def network(E, D, ev_by_acc, log=print):
 def blocs(E, D, ev_by_acc):
     import networkx as nx
     edges = E.edges("bloc")
-    ew = {}
+    ew, lp = {}, {}
     G = nx.Graph()
     for i, pid, sig in edges:
         ps = E.pair_stats(i)["shared"]
-        w = math.log2((ps["observed"] + 1) / (ps["null_mean"] + 1)); ew[pid] = w
-        G.add_edge(pid // E.NA, pid % E.NA, weight=max(w, 0.01))
+        ew[pid] = math.log2((ps["observed"] + 1) / (ps["null_mean"] + 1)); lp[pid] = -math.log10(ps["p"])
+        G.add_edge(pid // E.NA, pid % E.NA, weight=lp[pid])
     comms = [c for c in (nx.community.louvain_communities(G, weight="weight", seed=11) if len(G) else []) if len(c) >= MIN_BLOC]
     res = []
     for c in sorted(comms, key=lambda c: -len(c)):
-        s = community_summary(E, c, ew, ev_by_acc, D)
+        s = community_summary(E, c, ew, ev_by_acc, D, lp)
         st = E.set_test(c)
         tri = sum(1 for x in nx.enumerate_all_cliques(G.subgraph(c)) if len(x) == 3)
-        share = E.calib_share("bloc", len(c), s["density"])
-        s.update({"null": st, "null_worlds_with_bloc_this_large_and_dense": share, "significant_triads": tri,
+        share = E.calib_share("bloc", len(c), s["density"], s["strength"])
+        s.update({"null": st, "null_worlds_with_bloc_this_large_dense_and_strong": share, "significant_triads": tri,
                   "synchrony": synchrony_summary(E, c),
                   "confidence": confidence(st["articles_3plus"]["p"], share, st["sync_t60"]["p"]), "_m": sorted(c)})
         res.append(s)
@@ -538,11 +554,11 @@ def sync_pairs(E):
     rows = []
     for i, pid, sig in edges:
         ps = E.pair_stats(i)["t10"]
-        rows.append({"observed": ps["observed"], "null_mean": ps["null_mean"], "p": ps["p"], "p_jitter": ps["p_jitter"],
+        rows.append({"observed": ps["observed"], "null_mean": ps["null_mean"], "p": ps["p"], "p_article_shuffle": ps["p_article_shuffle"],
                      "_pid": pid, **{k: v for k, v in E.pair_detail(pid // E.NA, pid % E.NA, 600).items()
                                      if k in ("same_direction_share", "example_article_pairs", "time_span")}})
-    robust = [r for r in rows if r["p_jitter"] < P_EDGE]
-    return {"pairs": rows, "n_pairs": len(rows), "n_robust_to_jitter": len(robust),
+    robust = [r for r in rows if r["p_article_shuffle"] < P_EDGE]
+    return {"pairs": rows, "n_pairs": len(rows), "n_also_beat_article_shuffle": len(robust),
             "accounts": len({x for r in rows for x in (r["_pid"] // E.NA, r["_pid"] % E.NA)}),
             "expected_by_chance": E.calib_counts("sync")}
 
@@ -608,8 +624,7 @@ def sweeps(D, rng, n=1000):
         if 1 < len(lst) <= 3000:
             for k, i in enumerate(lst):
                 for j in lst[k + 1:]:
-                    if items[i]["title"] != items[j]["title"] or True:
-                        cand[(i, j)] += 1
+                    cand[(i, j)] += 1
     for (i, j), c in cand.items():
         a, b = items[i]["sh"], items[j]["sh"]
         if c / len(a | b) >= JACCARD:
@@ -684,7 +699,7 @@ def analyze_data(D, n_null=1000, n_calib=50, seed=7, log=print, directions=("any
     for g in ("topic", "comparison"):
         for d in directions:
             sub = [e for e in ev if e["group"] == g and (d == "any" or e["kind"] == d)]
-            E = Engine(sub, f"{g}/{d}", n_null, n_calib, seed=seed + hash((g, d)) % 1000).run(log)
+            E = Engine(sub, f"{g}/{d}", n_null, n_calib, seed=seed + zlib.crc32(f"{g}/{d}".encode()) % 1000).run(log)
             eba = defaultdict(list)
             for e in sub:
                 eba[E.ai[e["u"]]].append(e)
@@ -745,9 +760,9 @@ def build_cards(R):
                          f"{', '.join(a['title'] for a in b['articles'][:4])}); {b['direction']['insert']} insertions / "
                          f"{b['direction']['remove']} removals; articles touched by 3+ members {n3['observed']} vs null "
                          f"{n3['null_mean']} (95th {n3['null_p95']}, {fmt_p(n3['p'])}); 60-min cross-article co-activity "
-                         f"{s60['observed']} vs {s60['null_mean']} ({fmt_p(s60['p'])}, jitter {fmt_p(s60['p_jitter'])}); "
+                         f"{s60['observed']} vs {s60['null_mean']} ({fmt_p(s60['p'])}, article-shuffle {fmt_p(s60['p_article_shuffle'])}); "
                          f"{b['significant_triads']} significant triads; null worlds with a bloc this large and dense: "
-                         f"{b['null_worlds_with_bloc_this_large_and_dense']}; active {b['active']['first']} to {b['active']['last']}")
+                         f"{b['null_worlds_with_bloc_this_large_dense_and_strong']}; active {b['active']['first']} to {b['active']['last']}")
         sig = [b for b in B["blocs"] if b["confidence"] in ("high", "medium")]
         conf = "high" if any(b["confidence"] == "high" for b in sig) else "medium" if sig else \
             ("medium" if (ex.get("communities_mean") is not None and len(B["blocs"]) <= ex.get("communities_p95", 0)) else "low")
@@ -758,7 +773,7 @@ def build_cards(R):
         cards.append(card(f"blocs_{g}_{d}", f"(a) Bloc detection: {g} articles, {d} events", what,
                           conf if sig else f"{conf} (null result)",
                           {"pairs": "degree-preserving rewiring, 1,000 draws", "bloc": "articles with 3+ members vs rewiring; "
-                           "synchrony vs time-shuffle within article and +-30 d account jitter", "expected_by_chance": ex},
+                           "synchrony vs account day-shift (+-1..7 d) and time-shuffle within article", "expected_by_chance": ex},
                           "A bloc is a set of accounts whose overlap in critical-term articles is not explained by how active "
                           "each account is and how popular each article is." if sig else
                           "Account overlap is what the rewiring null predicts from activity and article popularity alone.",
@@ -771,12 +786,13 @@ def build_cards(R):
         S = rec["sync"]; ex = S["expected_by_chance"]
         cards.append(card(f"sync_{g}", f"(b) Synchrony: {g} account pairs acting on different articles within 10 minutes",
                           f"{S['n_pairs']} pairs ({S['accounts']} accounts) acted on 3+ distinct article pairs within 10 min of "
-                          f"each other more often than the time-shuffle null (p<{P_EDGE}); {S['n_robust_to_jitter']} also beat "
-                          f"the +-30 d account-jitter null. Null worlds give {ex.get('edges_mean')} pairs on average "
+                          f"each other more often than the account day-shift null (p<{P_EDGE}); {S['n_also_beat_article_shuffle']} also "
+                          f"beat the within-article time-shuffle null. Null worlds give {ex.get('edges_mean')} pairs on average "
                           f"(95th {ex.get('edges_p95')}).",
-                          "high" if S["n_robust_to_jitter"] > (ex.get("edges_p95") or 0) else
+                          "high" if S["n_also_beat_article_shuffle"] > (ex.get("edges_p95") or 0) else
                           "medium" if S["n_pairs"] > (ex.get("edges_p95") or 0) else "low (consistent with chance)",
-                          {"null": "timestamps permuted within article, 1,000 draws; stricter: +-30 d jitter per account",
+                          {"null": "each account's timeline shifted by a random +-1..7 whole days, 1,000 draws; secondary: timestamps "
+                                   "permuted within article",
                            "expected_by_chance": ex},
                           "Pairs that repeatedly move together across different articles within minutes are the classic "
                           "canvassing / sockpuppet signature, if they are more than the null expects.",
@@ -790,14 +806,11 @@ def build_cards(R):
                           f"{c['communities_significant']} significant.",
                           "high" if any(x["confidence"] == "high" for x in N["communities"]) else
                           "medium" if c["communities_significant"] else "low (consistent with chance)",
-                          {"edge": f"p<{P_EDGE} and observed>={MIN_OBS} on 30-min cross-article co-activity (time shuffle) or "
+                          {"edge": f"p<{P_EDGE} and observed>={MIN_OBS} on 30-min cross-article co-activity (account day-shift) or "
                                    "shared articles (rewiring)", "expected_by_chance": ex},
                           "The page's network graph; edges carry direction agreement, so insert-blocs and remove-blocs are visible.",
                           "Edges are tested one by one at p<0.01; compare the edge count with the chance expectation, not with zero.",
                           chart="chart_data/network.json"))
-        for cm in N["communities"]:
-            if cm["size"] >= MIN_BLOC and cm.get("profile"):
-                pass
     # (c) sweeps
     SW = R["sweeps"]
     for g in ("topic", "comparison"):
@@ -865,7 +878,8 @@ def write_outputs(R, out_dir=OUT):
     cards = build_cards(R)
     net = {"generated": R["meta"]["generated"],
            "method": {"edge": f"empirical p<{P_EDGE} and observed>={MIN_OBS}; co-activity = events on different articles within "
-                              "10 / 30 (default) / 60 min, null = time shuffle within article; plus shared article sets, null = "
+                              "10 / 30 (default) / 60 min, null = each account's timeline shifted by +-1..7 whole days (within-article time shuffle "
+                              "reported as p_article_shuffle); plus shared article sets, null = "
                               "degree-preserving rewiring; 1,000 draws", "communities": "Louvain (networkx, seed 11), weight = "
                               "log2((obs+1)/(null mean+1))", "labels": "A1, A2... per network; no hashes or usernames"}}
     for g in ("topic", "comparison"):
