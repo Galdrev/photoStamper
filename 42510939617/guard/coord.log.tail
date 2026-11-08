@@ -1,0 +1,8 @@
+coord shard 0/1: 959 articles, 4121 revisions
+coord shard 0: 0 already done, 959 to do
+[hb coord] coord-0 0/959 el=0.0m eta=Nonem req=0 429=0 5xx=0 retries=0 fail=0
+[hb coord] coord-0 12/959 el=0.5m eta=40.4m req=62 429=0 5xx=0 retries=0 fail=0
+[hb coord] coord-0 27/959 el=1.0m eta=34.6m req=120 429=0 5xx=0 retries=0 fail=0
+[hb coord] coord-0 40/959 el=1.5m eta=35.1m req=184 429=0 5xx=0 retries=0 fail=0
+[hb coord] coord-0 48/959 el=2.0m eta=38.0m req=223 429=3 5xx=0 retries=3 fail=0
+[hb coord] coord-0 63/959 el=2.5m eta=35.6m req=284 429=3 5xx=0 retries=3 fail=0
