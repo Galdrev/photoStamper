@@ -2,7 +2,7 @@
 
 Usage: python build_page.py OUT.html
 """
-import json, os, sys
+import json, os, re, sys
 
 HERE = os.path.dirname(__file__)
 res = json.load(open(os.path.join(HERE, "data", "results.json")))
@@ -467,9 +467,9 @@ def langs_data():
            "pl": ("absent", "disputed", ("Gaza genocide", "k_courts"), "Stresses that only courts can rule on genocide.")}
     NOTE = {("ter", "en"): "Beyond the 1,200 characters we hold. The designation now sits at the end of the opening section, attributed (see the Hamas timeline above).",
             ("ter", "ar"): "No terror word in the text we hold; Hamas is “a Palestinian, resistance, popular, Islamic, national movement”.",
-            ("gen", "he"): "No Gaza-genocide article. The Gaza war article mentions genocide once, as South Africa’s suit at the ICJ.",
-            ("gen", "de"): "No Gaza-genocide article. The Gaza war article has 3 genocide mentions, all beyond the text we hold.",
-            ("gen", "ru"): "No Gaza-genocide article. The Gaza war article mentions genocide only beyond the text we hold.",
+            ("gen", "he"): "No article linked to English Gaza genocide, so this square reads the Gaza war article: the court-case clause is its only genocide mention. The Hebrew October 7 article has one more genocide mention, beyond the text we hold.",
+            ("gen", "de"): "No article linked to English Gaza genocide. The Gaza war article has 3 genocide mentions, all beyond the text we hold.",
+            ("gen", "ru"): "No article linked to English Gaza genocide. The Gaza war article mentions genocide only beyond the text we hold.",
             ("occ", "he"): "“belligerent occupation”, the Israeli legal term, and now “a territory in the Land of Israel”.",
             ("apa", "ar"): "“an accusation directed against” Israeli policy became “a confirmed fact in” it."}
 
@@ -506,7 +506,7 @@ def langs_data():
             cells.setdefault(k, {})[l] = c
 
     MOM = [("Gaza genocide", "ar", "s1", "Arabic: from accusation to definition", "In 2024 the Arabic article said Israel “has been accused of committing crimes of genocide”. Now it opens: “The genocide of Gaza is the systematic, deliberate and ongoing destruction”."),
-           ("Gaza war", "he", "k_genocide", "Hebrew: genocide only as a court case", "Hebrew has no Gaza-genocide article. Its Gaza-war article mentions genocide once, as South Africa’s suit at the ICJ."),
+           ("Gaza war", "he", "k_genocide", "Hebrew: genocide only as a court case", "Hebrew has no article linked to English Gaza genocide. Its Gaza-war article mentions genocide once, as South Africa’s suit at the ICJ."),
            ("Gaza war", "es", "s1", "Spanish: “a genocide in Gaza by Israel”", "The first sentence of the Spanish Gaza-war article now says the war “has unleashed a genocide in Gaza by Israel”, and calls 7 October “a retaliatory attack”."),
            ("Gaza genocide", "es", "s1", "Spanish: the same move in the genocide article", "From “have accused Israel of carrying out a «genocide against the Palestinian people»” to “The Palestinian genocide in Gaza is the systematic and continuing destruction”."),
            ("Gaza genocide", "pt", "s1", "Portuguese: from “accused” to “is”", "From “has been accused of genocide” to “is the intentional and systematic destruction, ongoing”."),
@@ -678,6 +678,24 @@ res["langs"] = langs_data()
 tk_p = os.path.join(HERE, "notes", "takeaways.json")
 if os.path.exists(tk_p):
     res["takeaways"] = json.load(open(tk_p))
+
+# Quotes are shown as exact text: decode HTML entities copied from wikitext (&nbsp;, &ndash;, &#702;) so the
+# page's esc() renders them as characters, not as "&nbsp;". langs is skipped: its character spans index the raw text.
+import html as _html
+def _unent(o):
+    if isinstance(o, str):
+        return _html.unescape(o) if "&" in o else o
+    if isinstance(o, list):
+        return [_unent(x) for x in o]
+    if isinstance(o, dict):
+        return {k: _unent(v) for k, v in o.items()}
+    return o
+for _k in list(res):
+    if _k != "langs":
+        res[_k] = _unent(res[_k])
+_ent = re.compile(r"&[a-z]+;|&#\d+;")
+_left = [k for k in res if k != "langs" and _ent.search(json.dumps(res[k], ensure_ascii=False))]
+assert not _left, f"HTML entities left in quote data: {_left}"
 
 findings_path = os.path.join(HERE, "findings.html")
 findings = open(findings_path).read() if os.path.exists(findings_path) else ""

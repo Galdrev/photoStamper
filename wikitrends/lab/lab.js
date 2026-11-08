@@ -194,7 +194,7 @@ function s1Draw(){
   h+=`<div class="lx-axis"><div></div><div>${tk.map(t=>`<span style="left:${P(t)}">${SG(t,t%1?1:0).replace("±","")}</span>`).join("")}</div></div><p class="n" style="margin:0">Per 10,000 words of ${PART[S1.part]}, ${DL(C.d0)}–${DL(C.d1)}. Bars start at zero.</p>`;
   box.innerHTML=h;
   const all=C.rows[0],ex=isFinite(all.m)&&isFinite(sh)?all.m-sh:NaN;
-  q("#lxSSay").innerHTML=isFinite(ex)?`Topic articles <b>${SG(all.m,1)}</b>, ${E(C.cs[1].toLowerCase())} <b>${SG(sh,1)}</b>${C.nC<FEW?` (only ${C.nC} articles, too few to say)`:""}: an extra change of <b>${SG(ex,1)}</b> per 10,000 words. ${Math.abs(ex)<.1*Math.max(Math.abs(all.m),Math.abs(sh),.5)?"Almost all of it is shadow.":"Read it only if the black range line clears the shadow."}`:"";
+  q("#lxSSay").innerHTML=isFinite(ex)?`Topic articles <b>${SG(all.m,1)}</b>, ${E(C.cs[1].toLowerCase())} <b>${SG(sh,1)}</b>${C.nC<FEW?` (only ${C.nC} articles, too few to say)`:""}: an extra change of <b>${SG(ex,1)}</b> per 10,000 words. ${Math.abs(ex)<.1*Math.max(Math.abs(all.m),Math.abs(sh),.5)?"Almost all of it is shadow.":"Read it only if the thin range line clears the shadow."}`:"";
 }
 
 /* =====================================================================
