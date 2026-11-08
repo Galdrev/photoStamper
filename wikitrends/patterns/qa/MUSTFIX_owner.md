@@ -40,3 +40,12 @@
   (b) the source: the exact sentence quoted (original language + English rendering for non-English, RTL where needed), its date/version.
 - Clicking must not jump or scroll away. On touch, a tap opens an anchored popover with a close button; the existing "open the full sentence" panel stays as a secondary action inside the tooltip.
 - Accessible: role="tooltip"/aria-describedby, Esc closes, works at 390px without overflowing the viewport (flip/clamp position).
+
+## 7. The network graph must say something at a glance (owner, round 5)
+Owner: "this doesn't mean anything with how it looks - also with the same tabs in it". The current #organised graph (Groups/Network/Table tabs, two panels, colour/size/thickness/ring-style legend) does not convey the finding.
+- Redesign around ONE message, readable in 5 seconds: how many linked pairs we found among topic editors vs what chance gives (14 vs ~2), vs comparison articles; where the links cluster (Bloc A, the low-confidence group); and what we did NOT find (no synchrony, no copy-paste sweeps). Headline the answer in the chart title, annotate directly on the graph (labels on the blocs saying what they did in words), no legend-decoding needed.
+- Show chance visibly: e.g. a ghost/"expected by chance" version side by side, or a counter "14 links found / ~2 expected".
+- Encode only what matters (keep at most 2 channels: e.g. colour = adds vs removes critical terms; drop the line darkness/thickness and ring dash/dot encodings or move them to the evidence room).
+- Remove the in-story tabs: one default annotated view in the story; Groups and Table move to the evidence room. Fix the label overlap ("Low-confidence group" label collides with a node).
+- Comparison panel: either make it a direct visual contrast (same scale, labelled "comparison articles: 3 pairs") or fold it into the counter.
+- Keep anonymity (A1…, no accounts identified) and the tooltip rule from must-fix 6 (hover = meaning + numbers vs chance, in place).
