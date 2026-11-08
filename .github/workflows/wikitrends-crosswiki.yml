@@ -1,4 +1,5 @@
 name: wikitrends-crosswiki
+# launch 2026-11-08
 # Cross-wiki collector (wikitrends/crosswiki.py) + analysis (wikitrends/analyze_crosswiki.py), in ONE job.
 # Scope: 10 key topics (11 English titles) x en + he ar es fr de ru it pt nl pl, 2021-01-01 -> now: every revision's metadata,
 # section-0 term state per revision (full read up to 4,000 revisions per page, grid + refinement above), sources at insertions,
