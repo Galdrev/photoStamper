@@ -353,6 +353,41 @@ def network_data():
             cs.append(c)
         out[g] = {"nodes": G.get("nodes", []), "edges": [{k: e[k] for k in keep_e if k in e} for e in G.get("edges", [])],
                   "communities": cs, "counts": G.get("counts", {})}
+    # Bloc names from the bloc test (blocs.json, "Bloc A", "Bloc B"): name the matching network community, and add the
+    # blocs found only in the direction-specific tests (insertions only / removals only) as extra group cards.
+    bp = os.path.join(os.path.dirname(p), "blocs.json")
+    if os.path.exists(bp) and not os.environ.get("WT_NETWORK"):
+        B = json.load(open(bp))
+        sig_key = lambda b: (b.get("size"), b.get("n_articles"), (b.get("active") or {}).get("first"))
+        for g in ("topic", "comparison"):
+            if not out.get(g):
+                continue
+            named = {}
+            for b in (B.get(f"{g}/any") or {}).get("blocs", []):
+                if b.get("name"):
+                    named[sig_key(b)] = b["name"]
+            for c in out[g]["communities"]:
+                if sig_key(c) in named:
+                    c["name"] = named[sig_key(c)]
+            extra = []
+            for d in ("insert", "remove"):
+                for b in (B.get(f"{g}/{d}") or {}).get("blocs", []):
+                    if b.get("confidence") in (None, "low") or sig_key(b) in named:
+                        continue
+                    ta = (b.get("time_alignment") or {})
+                    ws = {k: v.get("window_share") for k, v in (ta.get("windows") or {}).items()}
+                    es = {k: {"mean": v.get("expected_window_share"), "ci95": v.get("expected_ci95"), "p_high": v.get("p_high")}
+                          for k, v in (ta.get("windows") or {}).items()}
+                    psd = {k: {"ratio": v.get("post_sanction_drop"), "ci95": v.get("ci95"), "p_drop": v.get("p_drop"), "testable": v.get("testable")}
+                           for k, v in (ta.get("post_sanction") or {}).items()}
+                    extra.append({"id": f"{d[0]}{len(extra)}", "name": b.get("name"), "test": d, "size": b["size"], "density": b.get("density"),
+                                  "n_articles": b["n_articles"], "articles": b.get("articles", [])[:10], "direction": b.get("direction"),
+                                  "active": b.get("active"), "inserted_phrases": b.get("inserted_phrases", []), "confidence": b.get("confidence"),
+                                  "significance": {"share": b.get("null_worlds_with_bloc_this_large_dense_and_strong"),
+                                                   "worlds": ((B[f"{g}/{d}"].get("expected_by_chance") or {}).get("null_worlds"))},
+                                  "window_share": ws, "expected_window_share": es, "post_sanction_drop": psd,
+                                  "median_gap_h": (b.get("synchrony") or {}).get("median_same_article_gap_h")})
+            out[g]["extra_blocs"] = extra
     return out
 
 
@@ -362,6 +397,25 @@ res["network"] = network_data()
 _a = _j("sampling", "chart_data", "03_weighted_vs_unweighted.json")
 res["audit"] = {"rows": [{k: r.get(k) for k in ("subset", "statistic", "label", "unweighted", "design_weighted", "cem", "ps_nn",
                                                  "topic_weighted_only")} for r in _a["rows"] if r.get("subset") == "all"]} if _a else None
+
+# Mass v3: design-weighted estimates for the full populations (patterns/sampling/chart_data/08_mass3_estimates.json)
+def mass3_data():
+    m = _j("sampling", "chart_data", "08_mass3_estimates.json")
+    if not m:
+        return None
+    keys = ("a_unf", "a_res", "b_t", "b_c", "b", "d_t", "d_c", "d", "e", "e_ip", "e_ju", "e_ju_vs_c", "gainers_t_total")
+    pick = lambda blk: {k: {"est": blk["weighted"][k], "lo": blk["ci"][k][0], "hi": blk["ci"][k][1]} for k in keys if k in blk["weighted"]}
+    tiers = {}
+    for lv, blk in m["by_importance"].items():
+        t = pick(blk)
+        t.update({k: blk["weighted"][k] for k in ("N_t", "N_c", "n_t", "n_c")})
+        tiers[lv] = t
+    o = pick(m["overall"])
+    o.update({k: m["overall"]["weighted"][k] for k in ("N_t", "N_c", "n_t", "n_c")})
+    return {"overall": o, "tiers": tiers, "random": m.get("random")}
+
+
+res["mass3"] = mass3_data()
 
 tk_p = os.path.join(HERE, "notes", "takeaways.json")
 if os.path.exists(tk_p):
