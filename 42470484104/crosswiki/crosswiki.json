@@ -1,0 +1,22 @@
+{
+ "job": "crosswiki",
+ "stage": "crosswiki",
+ "done": 7,
+ "total": 82,
+ "elapsed_min": 39.1,
+ "eta_min": 418.6,
+ "rps_limit": 2.0,
+ "req_per_s": 0.14,
+ "avg_latency_s": 0.4,
+ "requests": 336,
+ "ok": 239,
+ "http_429": 0,
+ "http_5xx": 0,
+ "api_errors": 1,
+ "retries": 96,
+ "failures": 12,
+ "bytes": 34988876,
+ "page_errors": 1,
+ "gui_lookups": 46,
+ "updated": "2026-11-08T10:52:52Z"
+}
