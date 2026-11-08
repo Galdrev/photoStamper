@@ -2139,8 +2139,8 @@ function traceDraw(t,all){
   const t0=Date.UTC(2021,0,1),t1=Date.UTC(2026,11,31),X=v=>Math.max(0,Math.min(100,(v-t0)/(t1-t0)*100));
   let strip=`<div class="tstrip" aria-label="Timeline of changes, labelled by editor letter">`;for(let y=2021;y<=2026;y++)strip+=`<span class="yr" style="left:${X(Date.UTC(y,6,1))}%">${isPhone()?"’"+String(y).slice(2):y}</span>`;
   strip+=`<span class="warl" style="left:${X(WAR)}%" title="7 October 2023"></span>`+ch.map(c=>`<span class="ed ${c.reverted?"rv":""}" style="left:${X(Date.parse(c.timestamp))}%" title="${esc(c.timestamp.slice(0,10))} · editor ${ids[c.editor||"?"]}${c.reverted?" · later undone":""}">${ids[c.editor||"?"]}</span>`).join("")+`</div>`;
-  const n=ch.length,ne=Object.keys(ids).length,topE=Object.entries(cnt).sort((a,b)=>b[1]-a[1])[0],rv=ch.filter(c=>c.reverted).length;
-  const sum=`<div class="fig-h"><span class="fig-t">${esc(t)}: ${n} change${n===1?"":"s"} to the first sentence, by ${ne} editor${ne===1?"":"s"}</span><span class="cap">Filled circle: an edit that stuck. Dashed amber circle: an edit later undone. Letters are per article.</span></div>`;
+  const nb=new Set(ch.filter(c=>/\[\[User:[^\]|]*bot\b/i.test(c.comment||"")).map(c=>c.editor||"?")).size,n=ch.length,ne=Object.keys(ids).length,topE=Object.entries(cnt).sort((a,b)=>b[1]-a[1])[0],rv=ch.filter(c=>c.reverted).length;
+  const sum=`<div class="fig-h"><span class="fig-t">${esc(t)}: ${n} change${n===1?"":"s"} to the first sentence, by ${ne} account${ne===1?"":"s"}</span><span class="cap">Filled circle: an edit that stuck. Dashed amber circle: an edit later undone. Letters are per article.</span></div>`;
   const cap=all?ch.length:Math.min(ch.length,8);
   const cards=ch.slice().reverse().slice(0,cap).map(c=>{const o=wdiff(c.before||"",c.after||""),d=new Date(c.timestamp);const sd=c.size_delta;
     return `<div class="tcard"><div class="when"><b>${d.getUTCDate()} ${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}</b><span><span class="badge" title="anonymised editor">${ids[c.editor||"?"]}</span> editor</span></div>
@@ -2148,7 +2148,7 @@ function traceDraw(t,all){
       <div class="meta">${c.reverted?`<span class="chip rv">later undone</span>`:""}${sd!=null?`<span class="bytes ${sd>0?"p":sd<0?"m":""}">${sd>0?"+":sd<0?"−":"±"}${Math.abs(sd).toLocaleString("en-US")} bytes</span>`:""}${(c.tags||[]).filter(x=>x!=="mw-reverted").map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div></div>`}).join("");
   $("#trace").innerHTML=sum+strip+`<div class="tline">${cards}</div>${!all&&ch.length>cap?`<button class="more-btn" type="button" id="trMore">Show all ${ch.length} changes</button>`:""}`;
   const mb=$("#trMore");if(mb)mb.onclick=()=>traceDraw(t,true);
-  $("#mTrace").innerHTML=n?`<b>Who made the changes:</b> ${ne===1?"one editor made every change to this sentence.":`${ne} different editors made the ${n} changes; none made more than ${topE[1]}.`} ${rv?`${rv} change${rv===1?" was":"s were"} later undone.`:"None were undone."}`:"";
+  $("#mTrace").innerHTML=n?`<b>Who made the changes:</b> ${ne===1?"one account made every change to this sentence.":`${ne} different accounts${nb?` (${nb===1?"one of them a bot":nb+" of them bots"})`:""} made the ${n} changes; none made more than ${topE[1]}.`} ${rv?`${rv} change${rv===1?" was":"s were"} later undone.`:"None were undone."}`:"";
 }
 
 /* ---------- dynamics ---------- */
