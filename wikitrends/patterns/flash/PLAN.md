@@ -9,3 +9,10 @@
 4. Cut round 2: the same 3 editors + the messaging agent review the built flash edition, then a final synthesis and build.
 5. Hard rules carry over: MUSTFIX_owner.md, no unanchored claims, no usernames, the narrative not Wikipedia, no courts framing, no population claims.
 6. Publish as a separate artifact; report both links.
+
+## Owner brief for the editors: harsh in what to show
+- Goal: a true shock for the Israeli public, so the reader gets what is going on in one simple mental jump.
+- Show the hardest-hitting TRUE material first: the starkest then -> now first sentences (Zionism "re-establishment" -> "through colonization"; Israel "began committing genocide" in the encyclopedia's own voice; Nakba "ethnic cleansing ... by Zionists"; Hamas "militant" -> "political organisation"; the hostages never in the first sentence; critical wording lasts, the opposite is undone within a day).
+- The shock comes from juxtaposition and the exact words, never from adjectives, loaded framing or overstatement. Each card has one quote/visual that proves its headline on sight.
+- Cut anything soft, hedged-to-nothing or merely procedural. Keep exactly one honesty line (what this does and does not show).
+- No lies: every number and quote is traceable to the research edition. The messaging/comprehensiveness agent vetoes anything that overstates.
