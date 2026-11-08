@@ -404,7 +404,8 @@ def mass3_data():
     if not m:
         return None
     keys = ("a_unf", "a_res", "b_t", "b_c", "b", "d_t", "d_c", "d", "e", "e_ip", "e_ju", "e_ju_vs_c", "gainers_t_total")
-    pick = lambda blk: {k: {"est": blk["weighted"][k], "lo": blk["ci"][k][0], "hi": blk["ci"][k][1]} for k in keys if k in blk["weighted"]}
+    pick = lambda blk: {k: {"est": blk["weighted"][k], "lo": (blk.get("ci", {}).get(k) or [None, None])[0],
+                            "hi": (blk.get("ci", {}).get(k) or [None, None])[1]} for k in keys if blk["weighted"].get(k) is not None}
     tiers = {}
     for lv, blk in m["by_importance"].items():
         t = pick(blk)

@@ -8,7 +8,38 @@ Editor's synthesis of 38 pattern cards from three analysts (when_where_what = WW
 
 ---
 
-## What changed in this update
+## What changed in this update (probability sample, random baseline, network)
+
+Sources: `sampling/mass3_results.md` (cited as M3; chart data `sampling/chart_data/08_mass3_estimates.json`), `sampling/random_baseline.md` (RB), `coord/cards.md` and `coord/chart_data/network.json`, `blocs.json` (NET). *Mass v3* is a stratified probability sample of the full populations: every article PageAssessments lists for WikiProjects Israel, Palestine, Judaism and Jewish history (48,974 topic articles, all importance grades) and for nine conflict-region projects (Ukraine, Turkey, Serbia, Kosovo, Armenia, Azerbaijan, Kurdistan, Cyprus, Northern Ireland; 141,356 articles). 3,000 + 3,000 drawn within side x project x importance; design weights N_h / arrived_h; 95% stratified bootstrap CIs. Note the M3 comparison group is conflict regions only, unlike mass2's 23 projects (countries, conflicts, religions).
+
+**New headline.** The core, most-read Israel articles shifted; the long tail did not; across the full population of 49,000 articles, the average change was no larger than in other conflicts' articles.
+
+- **Core vs long tail (M3, share of leads gaining critical terms, Jul 2023 to now, topic vs comparison).** Top 10.3% vs 4.4% (+5.9 pp [0.9, 11.2]; N 333 vs 482). High 6.0% vs 3.6% (+2.4 pp [−2.5, +7.6], not significant; N 1,699 vs 2,475). Mid 1.5% vs 0.0% (+1.5 pp [0.5, 2.8]; N 7,519 vs 9,662). Low 0.5% vs 0.4% (+0.1 [−0.4, +0.7]; N 25,885); Unknown 0.3% vs 0.6% (−0.3 [−1.1, +0.5]; N 13,319). Low plus Unknown are about 80% of the topic population. Top-grade view share on gaining leads 30.5% vs 19.1% (difference not significant).
+- **Population level, not significant.** (a) lead critical DiD −0.37 per 10k [−1.55, +0.83]; (b) share gaining 0.9% vs 0.5%, +0.4 pp [−0.0, +0.9]; (c) residual DiD +0.11 [−1.04, +1.23] (residual share undefined in practice: −30% [−964%, 985%]); (d) view share on gaining leads 4.8% vs 4.6%, +0.2 pp [−5.9, +5.2].
+- **Holds at every level.** Israel+Palestine minus Judaism gain share +0.9 pp [0.2, 1.5] (1.2% vs 0.3%). Judaism minus comparison −0.2 pp [−0.7, +0.3]. About 446 [277, 616] topic articles gained critical terms in their lead.
+- **Random baseline (RB, 2,466 random articles).** Site-wide drift is about zero: −0.06 per 10k [−0.18, +0.00], post-war share gaining 0.0%. Topic minus random on the mass2 frame +2.60 per 10k [1.75, 3.51] (residual +2.25 [1.43, 3.13]); share gaining +4.1 pp. On the M3 population: topic minus random share gaining +0.9 pp [0.5, 1.2], comparison minus random +0.5 pp [0.2, 0.8]. Contested subjects moved; Wikipedia at large did not.
+- **Network (NET).** Topic: 14 significant account pairs vs 2.15 expected by chance (95th 5), all on shared articles (no timing edge); 2 communities of 3+ vs 0.34 by chance. Bloc A (4 accounts, medium): 23 articles, 45 insertions / 23 removals, 0 of 200 null worlds as large and dense. Bloc B (4 accounts, medium): found in the insertions-only test, 114 insertions across 53 articles, null-world share 0.005; being an insertions-only test, it cannot see the same accounts' removals, so "insert-only" describes the test, not proof they never removed. No synchrony (no member event within 10 min of another; median same-article gaps 14 and 66 days), no copy-paste sweeps (topic, comparison, Nakba village wording: 25 sentences, 17 pages, 15 accounts, 0 sweeps), no remove-direction bloc. Both blocs: no account under 500 edits; median age about 3 and 6 years. Comparison: 3 pairs vs 0.28, no bloc. Window alignment, LOW confidence: Bloc A 41% of events in the pro-Israel email-canvassing window vs 18% for matched sets (p 0.02 to 0.04); Discord window 21% vs 23%. Bloc B 34% vs 15% (p 0.05) and 29% vs 24%. Nothing passes p<0.01; no post-sanction drop beyond matched sets.
+
+**Strengthened**
+- **Concentration in the core (P2, P3).** Now shown on a probability sample with known inclusion probabilities, by importance grade, against conflict-region comparisons: the Top grade gap (+5.9 pp) excludes zero, and so does Mid (+1.5 pp).
+- **Not site-wide drift.** The random baseline rules drift out on every measure (RB card 5: STRONG).
+- **Judaism did not move** (P2): −0.2 pp [−0.7, +0.3] against the comparison at population level; Israel+Palestine minus Judaism +0.9 pp [0.2, 1.5].
+- **No synchronized tag-teaming, no sweeps** (D7, P8): confirmed by the full coordination tier with calibrated nulls.
+
+**Weakened**
+- **"More topic articles than comparison articles gained" as a topic-wide claim.** The sealed-half replication (+3.6 pp [1.7, 5.6], mass v1) stays valid for its frame: Top, High and Mid articles of the original crawl against the original 23-project comparison. It does not generalise to the full population: across all 48,974 articles the M3 gap is +0.4 pp [−0.0, +0.9]. Say "in the core", never "the topic".
+- **Reader exposure as a topic-wide figure (P3, D9).** 3.9% of articles / 15% of views describes the core crawl. Across the population, 4.8% vs 4.6% of views: no difference. Top grade 30.5% vs 19.1% (not significant).
+- **Narrative residual 89% (P4).** Valid in the core crawl; at population level there is no DiD to decompose.
+- **"Tight community of regulars" vs "campaign" (D7).** Now partly quantified: two small blocs beyond chance. They are consistent with regulars sharing watchlists and with off-wiki coordination alike; the data cannot tell these apart.
+
+**Replaced**
+- **Exploratory weighted figures** (AUDIT: +1.8 per 10k, +1.9 pp, 2.5% of articles, 13.7% of views, Judaism −0.3) are replaced on the page by M3 population estimates. The AUDIT combined estimate stays as the best estimate for the Top/High/Mid population only.
+- **"No sign of synchronized tag-teaming" (picture sentence 5)** is replaced by the fuller network result above.
+- **Picture sentences 1 and 3** should now read: (1) "...Israel and Palestine articles at the core of the subject took on more of the vocabulary of legal accusation and of 1948, while Judaism articles did not move; across all 49,000 articles in the four projects, the average change was no larger than in articles on other conflict regions." (3) "It is concentrated by importance: 10.3% of Top-importance topic articles gained critical terms in their lead against 4.4% for other conflict regions, Mid 1.5% vs 0.0%, while the Low-importance and ungraded long tail (80% of articles) did not differ."
+
+---
+
+## What changed in the previous update (mass2)
 
 **Strengthened**
 - **Established editors.** At full scale, topic pages are edited by more established accounts than comparison pages: 9.1% vs 17.2% of war-window edits came from accounts with under 500 edits (−8.2 pp [−9.4, −7.1] {−11.3, −1.6}). Both CIs agree. P8 moves from SUGGESTIVE to STRONG for this part.
@@ -37,11 +68,11 @@ Editor's synthesis of 38 pattern cards from three analysts (when_where_what = WW
 
 ## The picture in 5 sentences
 
-1. Between 2021 and 2026, English Wikipedia's Israel and Palestine articles took on more of the vocabulary of legal accusation and of 1948 (genocide, ethnic cleansing, expulsion, occupation), while Judaism articles did not move and comparison articles on other countries and conflicts moved much less.
+1. Between 2021 and 2026, the Israel and Palestine articles at the core of English Wikipedia's coverage took on more of the vocabulary of legal accusation and of 1948 (genocide, ethnic cleansing, expulsion, occupation), while Judaism articles did not move; across all 48,974 articles in the four projects, the average change was no larger than in articles on other conflict regions (M3), and Wikipedia as a whole did not drift (RB).
 2. The change came as one wave: critical-term insertions per 1,000 topic edits went from about 7 before the war to about 16 through 2024 and back to 5 or 6 in 2026, and military escalations brought editors in while court rulings and reports did not.
-3. It is concentrated: only 3.9% of topic articles gained critical terms in their lead, but those pages carry 15% of topic reading (comparison: 1.5% and 5%), so an average over articles barely moves while what readers meet did.
+3. It is concentrated by importance: 10.3% of Top-importance topic articles gained critical terms in their lead against 4.4% for other conflict regions (+5.9 pp [0.9, 11.2]), Mid 1.5% vs 0.0%, while the Low-importance and ungraded long tail, 80% of articles, did not differ; in the core crawl the 3.9% of topic articles that gained carry 15% of topic reading (comparison: 1.5% and 5%).
 4. It came as added text about older history and the land, 89% of it not about recent events, written by established editors on pages that also gained protection, RfCs, framing categories and links to core concepts such as the Nakba; a few high-traffic leads (Gaza genocide, Israel, Israeli apartheid, Nakba, Zionism) now state contested labels in Wikipedia's own voice.
-5. Jewish history content was kept, lead sources shifted only slightly, other language editions mostly did not follow, and we found no sign of synchronized tag-teaming or of blocked accounts doing more than their share; the data cannot tell us whether the new wording is accurate, what editors intended, or whether anyone coordinated off-wiki.
+5. Jewish history content was kept, lead sources shifted only slightly, other language editions mostly did not follow, two small blocs of long-standing accounts returned to the same articles more often than chance (14 linked pairs vs about 2 expected), but with no synchrony, no pasted wording and no clear alignment with either documented canvassing window, and blocked accounts did no more than their share; the data cannot tell us whether the new wording is accurate, what editors intended, or whether anyone coordinated off-wiki.
 
 ---
 
