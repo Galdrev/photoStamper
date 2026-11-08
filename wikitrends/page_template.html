@@ -1153,7 +1153,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tchips button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
 .tchips button:disabled{opacity:.45;cursor:default}
 .gcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:12px}
-#net{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;min-width:0}
+#net,#netEv{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;min-width:0}
+#net .net-graphs.one{grid-template-columns:minmax(0,1fr)}
+.net-ct{margin:0}
+.net-count{display:grid;gap:6px;max-width:720px}
+.net-count .cap{margin:2px 0 0}
 .net-ctl .o[hidden]{display:none}
 .gcard{background:var(--sheet);border:1.5px solid var(--ink-2);border-radius:4px;padding:14px;display:grid;gap:9px;align-content:start;min-width:0;transition:opacity .2s}
 .gcard.medium{border-style:dashed}.gcard.low{border-style:dotted;border-color:var(--muted)}
@@ -1245,8 +1249,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <header class="hero">
   <div class="eyebrow">Israel’s story on Wikipedia, 2021–2026</div>
-  <h1>Israel’s story once opened with a return. Now it opens with “colonization” and “genocide.”</h1>
-  <p class="deck" id="deck">English Wikipedia’s Israel article, viewed 4.6 million times in the past 12 months, now says in Wikipedia’s own voice: “After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.” The charge has stood since 4 May 2025; Israel’s denial follows. Zionism, the “re-establishment” of a Jewish state in 2021, has been “a Jewish homeland through colonization” since 27 August 2026. The Nakba is “the ethnic cleansing of Palestinian Arabs by Zionists,” and Hamas is “a political organisation with a military wing.” The hostages have never been in October 7’s first sentence.</p>
+  <h1>In 2021, Wikipedia spoke of “re-establishment.” Now it says “colonization” and “genocide.”</h1>
+  <p class="deck" id="deck">English Wikipedia’s Israel article, viewed 4.6 million times in the past 12 months, now says in its opening section, in Wikipedia’s own voice: “After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.” The charge has stood since 4 May 2025; Israel’s denial follows. Zionism, the “re-establishment” of a Jewish state in 2021, has been “a Jewish homeland through colonization” since 27 August 2026. The Nakba is “the ethnic cleansing of Palestinian Arabs by Zionists,” and Hamas is “a political organisation with a military wing.” The hostages have never been in October 7’s first sentence.</p>
   <p class="scope"><b>What this covers.</b> We follow the core articles that carry the narrative and that people actually read: Zionism, Israel, 1948 and the Nakba, October 7, Hamas, the Gaza war and the charges against Israel. The wording shifted there; the long tail of short pages on villages and minor figures barely changed. Every quote is exact and dated, and the charts are in the <a href="#evidence">evidence room</a>.</p>
   <p class="cap">Published 8 November 2026 · Wikipedia text as of 5 November 2026 · Opening sections change daily, so every quote is dated · AI readers coded some sentences; the <a href="#method">method notes</a> explain how we checked them.</p>
 </header>
@@ -1332,7 +1336,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="eyebrow"><span class="layer">WHAT IT SAYS</span>After the battles</div>
     <h2 id="afH">After some battles, the opening lines moved within weeks. Most first tries were undone; today’s definitions settled in 2025 and 2026.</h2>
     <p class="means bl"><b>Bottom line:</b> The definitions of Hamas, October 7, the Nakba, Zionism and the Gaza war each changed in the weeks after an escalation (dates in the cards below). Today’s wordings came later. Timing does not prove cause.</p>
-    <p class="deck">Pale bars show new critical terms (genocide, apartheid, occupation, colonial, ethnic cleansing, Nakba, expulsion, war crimes) each week in all 4,642 topic opening paragraphs; solid bars, those still there a week later. After the 24 escalations, they ran at 1.34 times the usual rate for three weeks (p = 0.001). Single battles are noisy: an unrelated offensive, Nagorno-Karabakh 2023, scored as high as October 7.</p>
+    <p class="deck">Pale bars show new critical terms (genocide, apartheid, occupation, colonial, ethnic cleansing, Nakba, expulsion, war crimes) each week in all 4,642 topic opening paragraphs; solid bars, those still there a week later.</p>
   </header>
   <div class="scrolly" id="scK">
     <div class="steps" id="stepsK"></div>
@@ -1344,29 +1348,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </figure>
   </div>
   <p class="cap ev-link">See the evidence: <a href="#when">timing in detail, week by week, with every event</a>.</p>
-</section>
-
-<section class="sec" id="crosslang">
-  <header>
-    <div class="eyebrow"><span class="layer">WHAT IT SAYS</span>Other languages <span class="xchip">Exploratory</span></div>
-    <h2>Spanish, Portuguese and Arabic once attributed the genocide charge. Now they state it as fact. Hebrew’s Gaza war article cites only South Africa’s court case.</h2>
-    <p class="means bl"><b>Bottom line:</b> There is no single world story. Spanish, Portuguese and Arabic now state genocide as fact, as English does. Hebrew, in its own voice, calls October 7 terror or a massacre and Hamas terrorist; English does neither.</p>
-    <p class="deck">German, French and Italian also call October 7 terror or a massacre in their own voice, and Dutch now does too. Spanish opens its Gaza war article by calling October 7 “un ataque de represalia” (a retaliatory attack).</p>
-  </header>
-  <figure class="fig xm-keep" id="xmFig" style="margin:0">
-    <div class="fig-h"><span class="fig-t">How each language edition voices eight claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Each square opens its sentence.</span></div>
-    <p class="zi-how" id="xmHow"><b>How to read this:</b> in each cell, the small square is our first copy and the large square is now (October 2026). The full key is below the grid.</p>
-    <p class="xm-ik" id="xmIK" aria-hidden="true"></p>
-    <p class="xm-call" id="xmCall" hidden></p>
-    <div class="xm-opts"><span class="lab" id="xmModeL">Show</span><div class="seg" id="xmMode" role="group" aria-labelledby="xmModeL"><button type="button" data-v="both" aria-pressed="true">Then → now</button><button type="button" data-v="now" aria-pressed="false">Now only</button><button type="button" data-v="then" aria-pressed="false">Then only</button></div><span class="cap">A ring marks a cell that changed: ▲ toward Wikipedia’s own voice, ▼ away from it. A ring alone marks a change other than voice.</span></div>
-    <div class="xm-scroll hscroll" id="xmScroll"></div>
-    <p class="xm-swipe" id="xmSwipe" aria-hidden="true" hidden></p>
-    <details class="stats keyd"><summary>Full key <span>every square and mark</span></summary><div class="in"><div class="legend xm-legend" id="xmKey"></div></div></details>
-    <details class="stats"><summary>Our coding <span>each column</span></summary><div class="in">
-    <p class="cap" id="xmNote"></p>
-</div></details>
-  </figure>
-  <p class="cap ev-link">Each square opens its sentence in the original, with our translation. See the evidence: <a href="#ev-xl">every sentence, language by language</a>.</p>
 </section>
 
 <section class="sec" id="against" aria-labelledby="agH">
@@ -1384,12 +1365,35 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="cap ev-link">See the evidence: <a href="#ev-against">Jewish ties to the land, both directions</a>.</p>
 </section>
 
+<section class="sec" id="crosslang">
+  <header>
+    <div class="eyebrow"><span class="layer">WHAT IT SAYS</span>Other languages <span class="xchip">Exploratory</span></div>
+    <h2>Spanish, Portuguese and Arabic once attributed the genocide charge. Now they state it as fact. Hebrew’s Gaza war article cites only South Africa’s court case.</h2>
+    <p class="means bl"><b>Bottom line:</b> There is no single world story. Spanish, Portuguese and Arabic now state genocide as fact, as English does. Hebrew, in its own voice, calls October 7 terror or a massacre and Hamas terrorist; English does neither.</p>
+    <p class="deck">German, French and Italian also call October 7 terror or a massacre in their own voice, and Dutch now does too. Spanish opens its Gaza war article by calling October 7 “un ataque de represalia” (a retaliatory attack).</p>
+  </header>
+  <figure class="fig xm-keep" id="xmFig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">How each language edition voices seven claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Each square opens its sentence.</span></div>
+    <p class="zi-how" id="xmHow"><b>How to read this:</b> in each cell, the small square is our first copy and the large square is now (October 2026). The full key is below the grid.</p>
+    <p class="xm-ik" id="xmIK" aria-hidden="true"></p>
+    <p class="xm-call" id="xmCall" hidden></p>
+    <div class="xm-opts"><span class="lab" id="xmModeL">Show</span><div class="seg" id="xmMode" role="group" aria-labelledby="xmModeL"><button type="button" data-v="both" aria-pressed="true">Then → now</button><button type="button" data-v="now" aria-pressed="false">Now only</button><button type="button" data-v="then" aria-pressed="false">Then only</button></div><span class="cap">A ring marks a cell that changed: ▲ toward Wikipedia’s own voice, ▼ away from it. A ring alone marks a change other than voice.</span></div>
+    <div class="xm-scroll hscroll" id="xmScroll"></div>
+    <p class="xm-swipe" id="xmSwipe" aria-hidden="true" hidden></p>
+    <details class="stats keyd"><summary>Full key <span>every square and mark</span></summary><div class="in"><div class="legend xm-legend" id="xmKey"></div></div></details>
+    <details class="stats"><summary>Our coding <span>each column</span></summary><div class="in">
+    <p class="cap" id="xmNote"></p>
+</div></details>
+  </figure>
+  <p class="cap ev-link">Each square opens its sentence in the original, with our translation. See the evidence: <a href="#ev-xl">every sentence, language by language</a>.</p>
+</section>
+
 <section class="sec" id="organised" aria-labelledby="orgSH">
   <header>
     <div class="eyebrow"><span class="layer process">HOW IT HAPPENED</span>Organized or organic?</div>
     <h2 id="orgSH">A small pool of long-time editors kept returning to the same pages. Our tests would have caught a large campaign; they found none.</h2>
     <p class="means bl"><b>Bottom line:</b> A handful of accounts, each changing three or more first sentences, made a fifth of the traced changes on the key articles; on comparison articles, none did. We found no synchronized editing or pasted text; a small campaign could still slip through.</p>
-    <p class="deck">Nine such accounts made 48 of the 216 changes. Zionism’s wartime editors had a median account age of 9.4 years. The graph links anonymous accounts that changed critical terms on the same articles more often than chance: 14 pairs, where chance gives about 2. None edited within 10 minutes of another; no sentence was pasted into five or more articles. Regulars with shared watchlists look like this; so would a coordinated group.</p>
+    <p class="deck">Nine such accounts made 48 of the 216 changes. Zionism’s wartime editors had a median account age of 9.4 years. The graph below links anonymous accounts that changed critical terms on the same articles more often than chance. None edited within 10 minutes of another; no sentence was pasted into five or more articles. Regulars with shared watchlists look like this; so would a coordinated group.</p>
   </header>
   <div id="net"><!--NETWORK: build_page.py inlines patterns/coord/chart_data/network.json as R.network when present; otherwise this renders the "analysis running" placeholder--></div>
   <p class="cap">See the evidence: <a href="#orgRec">our timing tests, every caveat, and what Wikipedia’s Arbitration Committee is reported to have found (not verified)</a>.</p>
@@ -1402,17 +1406,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="means bl"><b>Bottom line:</b> The quotes are exact and dated. They show what Wikipedia now says about Israel, not who is right or whether anyone coordinated.</p>
   </header>
   <p class="deck col trust-line"><b>One honest limit.</b> The change sits in the most important articles: since July 2023, 10.3% of Top-importance articles here gained a critical term in their opening, against 4.4% in other conflict regions (+5.9 points; range 0.9 to 11.2). The long tail, 80% of pages, shows no difference, so across all 49,000 articles the average change is no larger than elsewhere.</p>
-  <section class="canbox" aria-label="What this study can and can't tell you">
-    <div class="yes"><h3>What this study can tell you</h3><ul>
-      <li>Whether critical vocabulary (genocide, apartheid, colonial…) became more common in these articles, and whether Jewish-history vocabulary (homeland, indigenous, antisemitism…) did too.</li>
-      <li>Whether that change was bigger than in articles about other countries and conflicts.</li>
-      <li>When the wording changed, and in which sentences.</li></ul></div>
-    <div class="no"><h3>What it can’t tell you</h3><ul>
-      <li>It measures how wording changed. It does not check whether the wording is true.</li>
-      <li>It can’t tell who is right about the conflict.</li>
-      <li>Patterns in who edits, and when, are not proof that people worked together.</li></ul></div>
-  </section>
-  <p class="cap"><a href="#evidence">Open the evidence room</a>: every chart in full, the method, the samples, the checks, and the results we dropped.</p>
+  <p class="cap"><a href="#evidence">Open the evidence room</a>: every chart in full, the method, the samples, the checks, what this study can and can’t tell you, and the results we dropped.</p>
 </section>
 
 </div>
@@ -1596,6 +1590,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="zi-sr" id="xrLive" aria-live="polite" aria-atomic="true"></p>
   </figure>
   <div class="xm-find xm-keep" id="xmFind" aria-label="The three sentences behind the headline"></div>
+  <figure class="fig xm-keep" id="xmIcjFig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">Court rulings overstated, by language</span><span class="cap">A solid square: the edition states, in its own voice, a court finding the court did not make. We coded overstatement only. Each square opens its sentence.</span></div>
+    <div class="xm-scroll hscroll" id="xmIcj"></div>
+  </figure>
   <p class="deck col xm-keep">The genocide article itself began as an allegation. Before their renames, six editions titled it as a charge: “allegations of genocide” in English, Portuguese, Arabic and French (French then “risk of genocide”), “suspicion of genocide” in Dutch, “accusations of genocide” in Polish; English dropped “allegations” from its title on 3 July 2024, Polish only on 26 April 2026.</p>
   <figure class="fig xm-keep xw-gg" style="margin:0">
     <div class="fig-h"><span class="fig-t">When each Wikipedia’s genocide article was created, and when its title dropped “allegations”</span><span class="cap">days after English; German, Hebrew and Russian have none; tick: the title drops “allegations”</span></div>
@@ -1607,7 +1605,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <ul class="short-row xw-facts">
       <li><b>Hamas: where “terror” sits.</b> The first sentence with a terror word, 2021 and now: English moved it from sentence 5 of 20 to 22 of 23 (our English count; the other editions are split by punctuation, so their counts are approximate), and the English opening section also grew, from 9 sentences in July 2023 to 23, which pushes any sentence later; Russian moved it up, from 3 of 5 to 1 of 29; German keeps it first (1 of 15).</li>
       <li><b>How 7 October is named.</b> In the first sentence now, by our word list: English “incursion” only; Hebrew attack, massacre and terror; German, French, Italian and Dutch include terror; Russian incursion and operation.</li>
-      <li><b>Court rulings overstated, still in the lead.</b> Four editions say more than the court did; each sentence is quoted in the grid’s last column. Arabic says the ICJ “found that Israel strove, under a reasonable [or: plausible] intent, to commit acts of genocide”; its January 2024 order made no finding of intent. Italian says the court deemed Israel’s actions «plausibly genocidal», a phrase no ICJ ruling uses. French says “The Court recognises that Israel” is “conducting a policy of apartheid”; the July 2024 advisory opinion found a breach of CERD Article 3, the ban on racial segregation and apartheid, without saying which. Russian says the court “found Israel guilty of violating Article 3”: verdict wording for a non-binding opinion that gives no verdict. A word-pattern flag also caught the intent claim in English from 17 March to 5 May 2024, when it was removed; that one we have not read by hand.</li>
+      <li><b>Court rulings overstated, still in the lead.</b> Four editions say more than the court did; each sentence opens from the court table above. Arabic says the ICJ “found that Israel strove, under a reasonable [or: plausible] intent, to commit acts of genocide”; its January 2024 order made no finding of intent. Italian says the court deemed Israel’s actions «plausibly genocidal», a phrase no ICJ ruling uses. French says “The Court recognises that Israel” is “conducting a policy of apartheid”; the July 2024 advisory opinion found a breach of CERD Article 3, the ban on racial segregation and apartheid, without saying which. Russian says the court “found Israel guilty of violating Article 3”: verdict wording for a non-binding opinion that gives no verdict. A word-pattern flag also caught the intent claim in English from 17 March to 5 May 2024, when it was removed; that one we have not read by hand.</li>
       <li><b>Who moved first. Low confidence.</b> Where English and another edition both added the same term after 2021, English moved first in 69% of 103 pairs, against 58% by chance. A page created after 2021 counts its creation as the entry date, which favors English, the first to open a “Gaza genocide” article.</li>
     </ul>
 </div></details>
@@ -1708,6 +1706,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
   <h3 class="o-h">3 · Accounts that move together, measured against chance</h3>
   <p class="deck col">We tested every pair of the 697 accounts whose critical-term edits we can see in topic opening paragraphs (847 on comparison pages) against chance. On topic pages 14 pairs moved together beyond chance, each on at least three of the same articles, where chance gives about 2 (5 at most in 95% of shuffled worlds); on comparison pages 3 pairs, against 0.28, and no group.</p>
+  <div id="netEv" aria-label="The co-editing network in full: groups, network and table"></div>
   <p class="deck col" id="orgXw"><b>Across languages.</b> None of the 281 accounts that inserted a critical term in the key articles of our 11 editions did so under the same global username in a second edition, nor did any of the 284 that removed one (opening sections only). Few editors work in two languages at all (153 of 8,175 on the same key article), and even by chance no account would have carried a term across, so this is a description, not a test. It rules out one kind of campaign, the same accounts working several editions. It says nothing about canvassing within English Wikipedia, which is what ArbCom’s notices are reported to describe, or about separate accounts in each edition.</p>
   <details class="stats"><summary>More <span>the two blocs; other languages; what made wording stick</span></summary><div class="in">
   <p class="means"><b>What this means:</b> a few small sets of experienced editors kept returning to the same contested pages, more often than chance explains. Subject regulars with shared watchlists look like this, and so would a coordinated group; this test cannot tell them apart. It found none of the tighter signatures of a campaign: edits in step, pasted wording, or a burst inside a documented canvassing window.</p>
@@ -1803,6 +1802,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="sec" id="limits" aria-label="Samples, limits and glossary">
   <header><div class="eyebrow">Samples and limits</div><h2>How we chose the articles, and what would change our conclusions</h2></header>
+  <section class="canbox" aria-label="What this study can and can't tell you">
+    <div class="yes"><h3>What this study can tell you</h3><ul>
+      <li>Whether critical vocabulary (genocide, apartheid, colonial…) became more common in these articles, and whether Jewish-history vocabulary (homeland, indigenous, antisemitism…) did too.</li>
+      <li>Whether that change was bigger than in articles about other countries and conflicts.</li>
+      <li>When the wording changed, and in which sentences.</li></ul></div>
+    <div class="no"><h3>What it can’t tell you</h3><ul>
+      <li>It measures how wording changed. It does not check whether the wording is true.</li>
+      <li>It can’t tell who is right about the conflict.</li>
+      <li>Patterns in who edits, and when, are not proof that people worked together.</li></ul></div>
+  </section>
   <details class="stats"><summary>How we chose the articles <span>three samples, two limits</span></summary><div class="in">
   <aside class="chose" id="chose" aria-labelledby="choseH">
     <h3 id="choseH">How we chose the articles</h3>
@@ -1971,7 +1980,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <header>
     <div class="eyebrow"><span class="layer process">HOW IT HAPPENED</span>Organic or organized? <span class="xchip">Exploratory · not pre-registered</span></div>
     <h2>Signals of coordination: the rest of the record</h2>
-    <p class="deck">The bloc tests are in <a href="#organised">the canvassing section</a>; the co-editing bars, the 30-minute test and who the accounts are follow below. Here are the deep-panel signals. Organic change looks like many people making small edits over time. Organized change looks like a few people editing many articles quickly, often close together. We compare each pattern with <b>what you’d expect by chance</b>. Chance here means the same editors and articles, with the timing shuffled.</p>
+    <p class="deck">The bloc tests are in <a href="#netEv">Organized or organic: the full record</a>; the co-editing bars, the 30-minute test and who the accounts are follow below. Here are the deep-panel signals. Organic change looks like many people making small edits over time. Organized change looks like a few people editing many articles quickly, often close together. We compare each pattern with <b>what you’d expect by chance</b>. Chance here means the same editors and articles, with the timing shuffled.</p>
   </header>
   <div class="caveat" role="note"><h3>Read this first</h3><ul>
     <li>The same patterns appear when many editors watch the same pages, or when big news breaks.</li>
@@ -3021,7 +3030,7 @@ function xmInit(){
   const D=R.langs;if(!D||!$("#xmScroll")){const f=$("#xmFig");if(f)f.hidden=true;["#xrFig","#xmFind"].forEach(s=>{const e=$(s);if(e)e.hidden=true});return}
   /* the phone fold hides the vocabulary stripes only; keep the button next to them */
   const ub=$("#crosslang>.unfold"),sh=$("#xlSubH");if(ub&&sh){sh.before(ub);ub.textContent=ub.getAttribute("aria-expanded")==="true"?"Hide the vocabulary counts ↑":"Show the vocabulary counts ↓";ub.addEventListener("click",()=>{ub.textContent=ub.getAttribute("aria-expanded")==="true"?"Hide the vocabulary counts ↑":"Show the vocabulary counts ↓"})}
-  setSeg($("#xmMode"),XM.mode);xmDraw();xmFind();
+  setSeg($("#xmMode"),XM.mode);xmDraw();xmFind();xmCourt();
   seg($("#xmMode"),v=>{XM.mode=v;$("#xmScroll .xm").className="xm m-"+v;xmHow();$("#xmScroll").dispatchEvent(new Event("scroll"))});xmHow();
   $("#xmScroll").addEventListener("click",e=>{const b=e.target.closest(".xm-c");if(!b)return;const c=D.cells[b.dataset.k][b.dataset.l];
     const A=(D.arts[c.a]||{})[b.dataset.l];if(!A){XR.note=null;return}
@@ -3030,11 +3039,14 @@ function xmInit(){
     const go=()=>xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:b.dataset.k,c},anim:true,scroll:true});if(inEv("xrFig")&&VIEW!=="evidence"){jumpFrom("crosslang",`${xlab(b.dataset.l)} · ${(D.cols.find(c=>c[0]===b.dataset.k)||[])[1]||""}`,"xrHd");location.hash="#xrHd";setTimeout(go,150)}else go()});
   xrInit()}
 function xmHow(){const e=$("#xmHow");if(!e)return;e.innerHTML=`<b>How to read this:</b> ${XM.mode==="now"?"each square is the October 2026 wording; switch to Then → now to see our first copy beside it.":XM.mode==="then"?"each square is the first copy we hold.":"in each cell, the small square is our first copy and the large square is now (October 2026)."} The full key is below the grid.`}
+const XM_STORY_OUT=new Set(["icj"]);/* the court column lives in the evidence room (#xmIcj) */
+const XNUM=["no","one","two","three","four","five","six","seven","eight","nine","ten"];
 function xmDraw(){
-  const D=R.langs,host=$("#xmScroll"),order=D.order,cols=D.cols;
+  const D=R.langs,host=$("#xmScroll"),order=D.order,cols=D.cols.filter(([k])=>!XM_STORY_OUT.has(k));
+  {const t=$("#xmFig .fig-t");if(t)t.textContent=`How each language edition voices ${XNUM[cols.length]||cols.length} claims, then and now`}
   const XSHORT={gen:"Genocide",col:"Colonization",apa:"Apartheid",occ:"Occupation",o7:"Oct 7: terror",ter:"Hamas: terrorist",hos:"Hostages",icj:"Court overstated"};
   const sub={gen:"Gaza genocide article, else Gaza war",col:"Zionism",apa:"Israeli apartheid",occ:"West Bank",o7:"attack article, first sentence",ter:"Hamas",hos:"attack article",icj:"ICJ, any article"};
-  let h=`<table class="xm m-${XM.mode}"><caption class="zi-sr">How each language edition voices eight claims, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${cols.map(([k,lab])=>`<th scope="col" class="c-${({o7:"ter",icj:"gen"})[k]||k}" title="${esc(lab)}"><span class="lf">${esc(lab)}</span><span class="ls">${esc(XSHORT[k]||lab)}</span><small>${esc(sub[k]||"")}</small></th>`).join("")}</tr></thead><tbody>`;
+  let h=`<table class="xm m-${XM.mode}"><caption class="zi-sr">How each language edition voices ${XNUM[cols.length]||cols.length} claims, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${cols.map(([k,lab])=>`<th scope="col" class="c-${({o7:"ter",icj:"gen"})[k]||k}" title="${esc(lab)}"><span class="lf">${esc(lab)}</span><span class="ls">${esc(XSHORT[k]||lab)}</span><small>${esc(sub[k]||"")}</small></th>`).join("")}</tr></thead><tbody>`;
   order.forEach((l,ri)=>{h+=`<tr class="${ri===2||ri===3?"sep":""}"><th scope="row" class="xm-l"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><span>${l==="en"?"":`<span class="xn">${esc(xlab(l))} · </span>`}${l}</span></th>`;
     cols.forEach(([k,lab])=>{const c=D.cells[k][l];if(!c){h+="<td></td>";return}
       const chg=xst(c.f)!==xst(c.n)&&c.f!=="na";
@@ -3056,7 +3068,18 @@ function xmDraw(){
   const sw=$("#xmSwipe"),sc=$("#xmScroll"),cue=()=>{const r=sc.getBoundingClientRect(),hs=$$("thead th:not(.xm-l)",sc).filter(th=>th.getBoundingClientRect().right>r.right+4).length;
     sw.hidden=!hs;sw.textContent=hs?`swipe for ${hs} more claim${hs>1?"s":""} →`:"";sc.classList.toggle("at-end",!hs)};
   if(!XM.cue){XM.cue=1;let pend=0;const th=()=>{if(pend)return;pend=1;requestAnimationFrame(()=>{pend=0;cue()})};sc.addEventListener("scroll",th,{passive:true});addEventListener("resize",th)}requestAnimationFrame(cue);
-  $("#xmNote").innerHTML=`<b>Our coding.</b> Genocide, colonization, apartheid, occupation and the Hamas label use the voice codes in our language file. The October 7, hostages and court columns are our reading of the quoted sentences; each cell explains why when you open it. For “court ruling overstated,” a solid square means the encyclopedia states a court finding the court did not make (four editions); we coded overstatement only, not understatement. Hebrew, German and Russian have no article linked to the English “Gaza genocide” article, so their genocide cell reads the Gaza war article.`}
+  $("#xmNote").innerHTML=`<b>Our coding.</b> Genocide, colonization, apartheid, occupation and the Hamas label use the voice codes in our language file. The October 7 and hostages columns are our reading of the quoted sentences; each cell explains why when you open it. Whether an edition overstates a court ruling is in the evidence room, with its sentences. Hebrew, German and Russian have no article linked to the English “Gaza genocide” article, so their genocide cell reads the Gaza war article.`}
+function xmCourt(){
+  const D=R.langs,host=$("#xmIcj");if(!host)return;const C=(D.cells||{}).icj;const lab=((D.cols||[]).find(c=>c[0]==="icj")||[])[1]||"Court ruling overstated";
+  if(!C){const f=$("#xmIcjFig");if(f)f.hidden=true;return}
+  const ls=D.order.filter(l=>C[l]);
+  host.innerHTML=`<table class="xm m-both"><caption class="zi-sr">${esc(lab)}, by language, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${ls.map(l=>`<th scope="col"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><small>${esc(xlab(l))}</small></th>`).join("")}</tr></thead><tbody><tr><th scope="row" class="xm-l">${esc(lab)}<span>ICJ, any article</span></th>${ls.map(l=>{const c=C[l],chg=xst(c.f)!==xst(c.n)&&c.f!=="na",dv=chg&&c.n==="fact"?1:0;
+    const al=`${xlab(l)}, ${lab}: first copy ${xStateText("icj",c.f)}; now ${xStateText("icj",c.n)}${dv?", moved toward Wikipedia’s own voice":""}.${c.n==="na"?"":" Open the sentence."}`;
+    return `<td><button type="button" class="xm-c${chg?" chg":""}" data-k="icj" data-l="${l}" aria-label="${esc(al)}"${c.n==="na"&&c.f==="na"?" disabled":""}>${xTile(c.f,"th")}<span class="ar" aria-hidden="true">→</span><span class="nwr">${xTile(c.n,"nw big")}${dv?`<span class="dir up" aria-hidden="true">▲</span>`:""}</span></button></td>`}).join("")}</tr></tbody>
+    <tfoot><tr><th class="xm-l">Stated as fact</th><td colspan="${ls.length}" style="text-align:left;padding-left:10px">then ${ls.filter(l=>xst(C[l].f)==="F").length} · now <b>${ls.filter(l=>xst(C[l].n)==="F").length}</b></td></tr></tfoot></table>`;
+  host.addEventListener("click",e=>{const b=e.target.closest(".xm-c");if(!b)return;const c=C[b.dataset.l],A=(D.arts[c.a]||{})[b.dataset.l];if(!A)return;
+    const s=c.s&&A.sl[c.s]?c.s:"s1",mi=D.moments.findIndex(m=>m[0]===c.a&&m[1]===b.dataset.l&&m[2]===s);
+    $$("#xmIcj .xm-c").forEach(x=>x.setAttribute("aria-current",String(x===b)));xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:"icj",c},anim:true,scroll:true})})}
 function xmFind(){
   const D=R.langs,host=$("#xmFind");const F=[["Gaza war","es","s1"],["Gaza genocide","ar","s1"],["Gaza war","he","k_genocide"]];
   host.innerHTML=F.map(([a,l,s],i)=>{const A=D.arts[a][l],S=A.sl[s],v=S.m.n||S.m.f,w=S.m.n?"n":"f",rtl=XRTL.has(l);
@@ -3988,7 +4011,7 @@ function drawPeriods(){
    <p class="cap" style="margin-top:10px">Descriptive, and confounded by the war’s tempo. The step from 2.0 to 1.8 is small next to the fall from the war-onset peak. The pro-Israel email canvassing ArbCom is reported to have found dates from about October 2023 to January 2024, inside the 3.44 row.</p>`}
 
 /* ---------- #organised: the coordination network (analyze_coord.py network.json), groups first ---------- */
-const NET={view:"network",side:"topic",preset:"all",sel:null};
+const NETS={view:"network",side:"topic",preset:"all",sel:null},NETE={view:"groups",side:"topic",preset:"all",sel:null};let NET=NETS;
 const NET_WIN={email_canvassing:["2023-10-01","2024-01-21","War onset; also the pro-Israel email canvassing reported from ArbCom’s Jan 2024 motions"],tfp_discord:["2024-01-01","2024-10-01","Discord channel (pro-Palestinian), sanctions reported Dec 2024"]};
 const NET_SANC=[["2024-12-09","Dec 2024 sanctions"],["2025-04-25","Apr 2025 site bans"]];
 const NET_PRE=[["all","All 2021–26",null,null],["pre","Before 7 Oct 2023","2021-01-01","2023-10-07"],["email",isPhone()?"Email window (Oct 23–Jan 24)":"War onset · pro-Israel email canvassing (Oct 2023–Jan 2024)","2023-10-01","2024-01-21"],["discord",isPhone()?"Discord window (Jan–Sep 24)":"Discord channel · pro-Palestinian canvassing (Jan–Sep 2024)","2024-01-01","2024-10-01"],["after","After sanctions (Dec 2024 on)","2024-12-09","2026-11-05"]];
@@ -4063,18 +4086,34 @@ function netGraph(g,G,W){
 function netTable(G){
   const C=netOrder(G),ws=(c,k)=>{const o=(c.window_share||{})[k],e=(c.expected_window_share||{})[k];return o==null?"–":`${pct(o)} vs ${pct(e&&e.mean)}${e&&e.ci95?` (${pct(e.ci95[0])}–${pct(e.ci95[1])})`:""}`};
   return `<div class="tbx"><table><thead><tr><th>Group</th><th class="r">Accounts</th><th class="r">Articles</th><th class="r">Add critical terms</th><th>Confidence</th><th class="r">Shuffled worlds this tight</th><th>Email window: found vs chance</th><th>Discord window: found vs chance</th></tr></thead><tbody>${C.concat(G.extra_blocs||[]).map((c,i)=>`<tr><td>${esc(netName(c,i))}</td><td class="r">${c.size}</td><td class="r">${c.n_articles}</td><td class="r">${pct(c.direction&&c.direction.insert_share)}</td><td>${esc(c.confidence)}</td><td class="r">${c.significance&&c.significance.share!=null?pct(c.significance.share,1):"–"}</td><td>${ws(c,"email_canvassing")}</td><td>${ws(c,"tfp_discord")}</td></tr>`).join("")||`<tr><td colspan="8">No group of three or more.</td></tr>`}</tbody></table></div>`}
-function drawNet(){
-  const host=$("#net");if(!host)return;const N=R.network;
+/* Two instances: the story (#net) shows one annotated view, found vs chance plus the topic graph; the evidence room (#netEv)
+   keeps the full tool (Groups, Network and Table, both article sets, the time chips). NET is the instance being drawn. */
+function drawNet(){drawNetIn("#net",NETS,true);drawNetIn("#netEv",NETE,false)}
+function netCount(N){
+  const sides=[["topic","Topic articles"],["comparison","Comparison articles"]].filter(([g])=>N[g]&&N[g].counts);
+  const mx=Math.max(1,...sides.map(([g])=>{const c=N[g].counts,e=c.expected_by_chance||{};return Math.max(c.edges||0,e.edges_mean||0)}));
+  const t=N.topic&&N.topic.counts,te=(t&&t.expected_by_chance)||{},c=N.comparison&&N.comparison.counts;
+  return `${t?`<p class="fig-t net-ct">${t.edges} linked pairs found · about ${fmt(te.edges_mean,0)} expected by chance${c?` · comparison articles: ${c.edges}`:""}</p>`:""}
+   <div class="net-count">${sides.map(([g,l])=>{const k=N[g].counts,e=k.expected_by_chance||{};return `<div class="chance"><span>${l}</span><span class="tr" aria-hidden="true"><i class="f" style="width:${((k.edges||0)/mx*100).toFixed(1)}%"></i><i class="g" style="width:${((e.edges_mean||0)/mx*100).toFixed(1)}%"></i></span><span><b>${k.edges||0}</b> found · ${fmt(e.edges_mean,e.edges_mean<1?2:1)} by chance</span></div>`}).join("")}
+   <p class="cap">Solid bar: linked pairs we found. Dotted bar: what chance gives on average. Same scale for both.</p></div>`}
+function drawNetIn(hs,st,story){
+  const host=$(hs);if(!host)return;const N=R.network;NET=st;const sx=story?"":"Ev";
   if(!N||(!N.topic&&!N.comparison)){netPlaceholder(host);return}
+  if(story){const ph=isPhone(),G=N.topic||N.comparison,g=N.topic?"topic":"comparison",cw=host.clientWidth,W=ph?Math.max(280,cw-24):Math.min(620,Math.max(300,cw-24));
+    const xb=((N.topic||{}).extra_blocs||[]).filter(b=>(b.test||b.basis)==="insert").map(b=>netName(b,0));
+    host.innerHTML=`${netCount(N)}<div class="net-graphs one"><div class="net-g" data-g="${g}">${xb.length?`<p class="cap net-xb">${esc(xb.join(", "))} is not drawn: it came from the insertions-only test (see the evidence room).</p>`:""}${netGraph(g,G,W)}</div></div>
+     <div class="net-det" id="netDet" aria-live="polite">Tap or tab to an account or a line to see its numbers next to what chance would give.</div>
+     <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid);box-shadow:inset 0 0 0 1.5px var(--muted)"></i>gray: mixed</span><span>Size: number of edits. A line: two accounts changed critical terms on the same articles more often than chance. A ring: a cluster of linked accounts.</span></div>`;
+    netWire(hs,"#netDet",N);return}
   const ph=isPhone(),G=N[NET.side]||N.topic||N.comparison;
   const ae=document.activeElement,fk=ae&&host.contains(ae)&&ae.dataset&&ae.dataset.v!=null&&ae.closest("[id]")?[ae.closest("[id]").id,ae.dataset.v]:null;
   const allE=["topic","comparison"].flatMap(g=>(N[g]&&N[g].edges)||[]),nT=allE.filter(e=>e.basis==="t30").length,nS=allE.length-nT;
   let h=`<p class="zi-how"><b>How to read this:</b> a line links two accounts that moved together more often than chance allows: they changed critical terms on the same articles (chance: the same edits reshuffled across articles, keeping how active each account is and how popular each article is), or on different articles within 30 minutes of each other (chance: each account’s whole timeline shifted by 1 to 7 days). ${nT?`${nS} of the ${allE.length} lines are shared articles and ${nT} are timing.`:`All ${allE.length} lines here are shared articles; no timing link passed.`} A group is a cluster of such lines. Expected-by-chance counts come from ${(((N.topic||N.comparison).counts.expected_by_chance)||{}).null_worlds||"many"} shuffled worlds. Accounts are A1, A2…, and the labels restart in each network: A3 in one is not A3 in the other.</p>`;
   h+=`<div class="net-strip">${netStrip(N)}</div>`;
-  h+=`<div class="net-ctl"><div class="o"><span class="lab" id="netViewL">View</span><div class="seg" id="netView" role="group" aria-labelledby="netViewL">${[["groups","Groups"],["network","Network"],["table","Table"]].map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.view===v}">${l}</button>`).join("")}</div></div>
-    <div class="o"${NET.view==="network"&&!ph?' hidden':""}><span class="lab" id="netSideL">Articles</span><div class="seg" id="netSide" role="group" aria-labelledby="netSideL">${[["topic","Topic"],["comparison","Comparison"]].filter(([v])=>N[v]).map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.side===v}">${l}</button>`).join("")}</div></div></div>
-   <div class="net-ctl"><span class="lab" id="netPreL">Time</span><ul class="tchips" id="netPre" aria-labelledby="netPreL">${NET_PRE.map(([v,l])=>`<li><button type="button" data-v="${v}" aria-pressed="${NET.preset===v}">${esc(l)}</button></li>`).join("")}</ul></div>
-   <p class="means" id="netWinC" aria-live="polite">${netWinCap(G)}</p>
+  h+=`<div class="net-ctl"><div class="o"><span class="lab" id="netViewL${sx}">View</span><div class="seg" id="netView${sx}" role="group" aria-labelledby="netViewL${sx}">${[["groups","Groups"],["network","Network"],["table","Table"]].map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.view===v}">${l}</button>`).join("")}</div></div>
+    <div class="o"${NET.view==="network"&&!ph?' hidden':""}><span class="lab" id="netSideL${sx}">Articles</span><div class="seg" id="netSide${sx}" role="group" aria-labelledby="netSideL${sx}">${[["topic","Topic"],["comparison","Comparison"]].filter(([v])=>N[v]).map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.side===v}">${l}</button>`).join("")}</div></div></div>
+   <div class="net-ctl"><span class="lab" id="netPreL${sx}">Time</span><ul class="tchips" id="netPre${sx}" aria-labelledby="netPreL${sx}">${NET_PRE.map(([v,l])=>`<li><button type="button" data-v="${v}" aria-pressed="${NET.preset===v}">${esc(l)}</button></li>`).join("")}</ul></div>
+   <p class="means" id="netWinC${sx}" aria-live="polite">${netWinCap(G)}</p>
    <details class="stats"><summary>Notes <span>time chips and the hatched windows</span></summary><div class="in"><p class="cap">A time chip shades its window in every activity strip and, above, sets each group’s share of activity in it against chance; in the network view a link whose co-activity falls wholly outside the window fades. Both windows reported from ArbCom’s notices (not checked against its case pages) are hatched in every activity strip: the pro-Israel email canvassing (October 2023 to January 2024) and the pro-Palestinian Discord channel (January to September 2024).</p></div></details>`;
   if(NET.view==="groups"){const C=netOrder(G),
       strong=C.filter(c=>c.confidence!=="low").concat(G.extra_blocs||[]),low=C.filter(c=>c.confidence==="low"),pairs=(G.communities||[]).filter(c=>c.size<3).length,W=ph?320:340;
@@ -4087,21 +4126,24 @@ function drawNet(){
   else if(NET.view==="network"){const cw=host.clientWidth,wide=cw>=901,Wg=g=>ph?Math.max(280,cw-24):!wide?Math.max(300,cw-24):g==="topic"?Math.min(620,Math.floor((cw-36)*2/3)):Math.max(260,Math.floor((cw-36)/3));
     const xb=((N.topic||{}).extra_blocs||[]).filter(b=>(b.test||b.basis)==="insert").map(b=>netName(b,0));
     h+=`<div class="net-graphs${ph?" one":""}">${["topic","comparison"].filter(g=>N[g]&&(!ph||g===NET.side)).map(g=>`<div class="net-g" data-g="${g}"><h4>${g==="topic"?"Topic articles":"Comparison articles · same scale"}</h4>${g==="topic"&&xb.length?`<p class="cap net-xb">${esc(xb.join(", "))} is not drawn: it was found by the insertions-only test, and this graph shows the all-edits test. See Groups.</p>`:""}${netGraph(g,N[g],Wg(g))}</div>`).join("")}</div>
-     ${ph&&NET.side==="topic"&&N.comparison?`<p class="cap">Switch Articles to Comparison to see the same test on other conflicts’ pages.</p>`:""}<div class="net-det" id="netDet" aria-live="polite">Tap or tab to an account or a line to see its numbers next to what chance would give.</div>
+     ${ph&&NET.side==="topic"&&N.comparison?`<p class="cap">Switch Articles to Comparison to see the same test on other conflicts’ pages.</p>`:""}<div class="net-det" id="netDet${sx}" aria-live="polite">Tap or tab to an account or a line to see its numbers next to what chance would give.</div>
      <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: an account that mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid);box-shadow:inset 0 0 0 1.5px var(--muted)"></i>gray: mixed</span><span>Size: number of edits. Line: linked beyond chance (darker = further beyond chance; thicker = timing, thinner = shared articles). Ring: a group, drawn solid, dashed or dotted by confidence. Same scale on both sides.</span></div>`}
   else h+=netTable(G);
   h+=`<details class="stats"><summary>Why lines here <span>when the 30-minute test found none</span></summary><div class="in"><p class="cap col"><b>Why lines here, when the 30-minute test found no recurring pairs?</b> That test asked for the same pair editing within 30 minutes of each other on five or more articles, and found none. A line here needs only three shared articles beyond what chance gives: a looser, statistical link, and not a sign of editing in step.</p></div></details>
    <div class="caveat" role="note"><h3>What this can and cannot show</h3><ul><li>Shared watchlists, subject expertise and breaking news produce the same pattern as organized editing.</li><li>Beyond chance is not proof of coordination, and a group is not an organization, a side or the Discord channel.</li><li>We do not identify accounts. Nothing here links a group to any sentence quoted on this page.</li></ul></div>`;
   host.innerHTML=h;
   if(fk){const f=$(`#${fk[0]} [data-v="${fk[1]}"]`);if(f)f.focus({preventScroll:true})}
-  seg($("#netView"),v=>{NET.view=v;drawNet()});seg($("#netSide"),v=>{NET.side=v;drawNet()});
-  $("#netPre").addEventListener("click",e=>{const b=e.target.closest("button[data-v]");if(!b)return;NET.preset=b.dataset.v;drawNet()});
-  if(NET.view==="groups"&&NET.noGroups){$$("#netPre button").forEach(b=>{b.setAttribute("aria-disabled","true");b.disabled=true});const wc=$("#netWinC");if(wc)wc.textContent="No groups on comparison pages, so there is no activity to compare with the windows."}
+  seg($("#netView"+sx),v=>{st.view=v;drawNetIn(hs,st,story)});seg($("#netSide"+sx),v=>{st.side=v;drawNetIn(hs,st,story)});
+  $("#netPre"+sx).addEventListener("click",e=>{const b=e.target.closest("button[data-v]");if(!b)return;st.preset=b.dataset.v;drawNetIn(hs,st,story)});
+  if(NET.view==="groups"&&NET.noGroups){$$("#netPre"+sx+" button").forEach(b=>{b.setAttribute("aria-disabled","true");b.disabled=true});const wc=$("#netWinC"+sx);if(wc)wc.textContent="No groups on comparison pages, so there is no activity to compare with the windows."}
   NET.noGroups=false;
-  if(NET.view==="network")$$("#net .net-g").forEach(box=>box.addEventListener("keydown",e=>{const t=e.target;if((e.key==="Enter"||e.key===" ")&&(t.dataset.n||t.dataset.e!=null)){e.preventDefault();t.dispatchEvent(new MouseEvent("click",{bubbles:true}))}}));
-  if(NET.view==="network")$$("#net .net-g").forEach(box=>box.addEventListener("click",e=>{const g=box.dataset.g,Gx=N[g],det=$("#netDet");let t=e.target;
+  if(NET.view==="network")netWire(hs,"#netDet"+sx,N);
+}
+function netWire(hs,dsel,N){
+  $$(hs+" .net-g").forEach(box=>box.addEventListener("keydown",e=>{const t=e.target;if((e.key==="Enter"||e.key===" ")&&(t.dataset.n||t.dataset.e!=null)){e.preventDefault();t.dispatchEvent(new MouseEvent("click",{bubbles:true}))}}));
+  $$(hs+" .net-g").forEach(box=>box.addEventListener("click",e=>{const g=box.dataset.g,Gx=N[g],det=$(dsel);let t=e.target;
     if(t.classList&&t.classList.contains("eh"))t=$(`line.ed[data-e="${t.dataset.e}"]`,box)||t;
-    $$("#net .on,#net .hi").forEach(x=>x.classList.remove("on","hi"));$$("#net svg.sel").forEach(x=>x.classList.remove("sel"));$$("#net text.sl").forEach(x=>x.parentNode.removeChild(x));
+    $$(`${hs} .on,${hs} .hi`).forEach(x=>x.classList.remove("on","hi"));$$(hs+" svg.sel").forEach(x=>x.classList.remove("sel"));$$(hs+" text.sl").forEach(x=>x.parentNode.removeChild(x));
     const svg=box.querySelector("svg"),mark=(ids,eds)=>{if(!svg)return;svg.classList.add("sel");eds.forEach(x=>x.classList.add("hi"));ids.forEach(id=>{const c=$(`circle.nd[data-n="${CSS.escape(id)}"]`,svg);if(!c)return;c.classList.add("hi");const tx=document.createElementNS("http://www.w3.org/2000/svg","text");tx.setAttribute("class","sl");const cx=+c.getAttribute("cx"),rr=+c.getAttribute("r"),rt=cx<+svg.viewBox.baseVal.width-40;tx.setAttribute("x",cx+(rt?rr+4:-rr-4));tx.setAttribute("y",+c.getAttribute("cy")+3.5);tx.setAttribute("text-anchor",rt?"start":"end");tx.textContent=id;svg.appendChild(tx)})};
     if(t.dataset&&t.dataset.n)mark([t.dataset.n],$$(`line.ed`,box).filter(l=>l.dataset.s===t.dataset.n||l.dataset.t===t.dataset.n));
     else if(t.dataset&&t.dataset.e!=null&&t.dataset.s)mark([t.dataset.s,t.dataset.t],[t]);
