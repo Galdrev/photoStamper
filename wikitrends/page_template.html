@@ -73,6 +73,28 @@ button,select,input{font:inherit;color:inherit}
 .gl{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:help;text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:3px;text-decoration-color:var(--muted)}
 #gloss{position:fixed;z-index:60;max-width:min(300px,calc(100vw - 32px));background:var(--sheet);color:var(--ink);border:1px solid var(--ink);border-radius:3px;padding:10px 12px;font:14px/1.45 var(--body);box-shadow:0 6px 24px rgb(0 0 0/.14)}
 #gloss b{display:block;font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+/* #xmTip: a square's sentence, in place; same card as #gloss */
+#xmTip{position:fixed;z-index:70;width:340px;max-width:calc(100vw - 24px);max-height:calc(100vh - 16px);overflow:auto;background:var(--sheet);color:var(--ink);border:1px solid var(--ink);border-radius:3px;padding:10px 12px 4px;font:13.5px/1.45 var(--body);box-shadow:0 6px 24px rgb(0 0 0/.16);overscroll-behavior:contain}
+#xmTip .h{display:block;font:600 10.5px/1.35 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+#xmTip .st{display:block;font:500 11px/1.4 var(--mono);color:var(--ink);margin:3px 0 7px}
+#xmTip.pin .h,#xmTip.pin .st{padding-right:34px}
+#xmTip p{margin:0 0 5px}
+#xmTip .o{font:16px/1.5 var(--display);color:var(--ink)}
+#xmTip .o[dir="rtl"]{font-size:17px;text-align:right}
+#xmTip mark.k{background:var(--add-bg);color:var(--add-ink);border-radius:2px;padding:0 .1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#xmTip mark.k.s{background:none;color:inherit;font-weight:600;padding:0}
+#xmTip mark.k.d{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px}
+#xmTip .gch{display:inline-block;font:11px/1.4 var(--mono);color:var(--ink-2);margin:0 0 5px}
+#xmTip .gch bdi{font:14px/1.3 var(--display);color:var(--ink)}
+#xmTip .tr,#xmTip .then,#xmTip .why{color:var(--ink-2);font-size:13px}
+#xmTip .then{border-top:1px solid var(--faint);padding-top:5px;margin-top:6px}
+#xmTip b{font-weight:600;color:var(--ink)}
+#xmTip .src{display:block;font:10.5px/1.4 var(--mono);color:var(--muted);margin-bottom:2px}
+#xmTip .go{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--rule);margin-top:6px;padding:9px 0 8px;font:600 12.5px var(--body);color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:40px}
+#xmTip .x{display:none;position:absolute;top:0;right:0;width:44px;height:44px;border:0;background:none;font:400 22px/1 var(--body);color:var(--ink-2);cursor:pointer}
+#xmTip.pin .x{display:block}
+#xmTip .go:focus-visible,#xmTip .x:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+@media (max-width:600px){#xmTip{width:calc(100vw - 24px)}}
 
 /* details */
 details.stats{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
@@ -88,6 +110,7 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .mast b{color:var(--ink);font-weight:600}
 .hero{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;padding-top:40px}
 .hero h1{font-size:clamp(32px,5.2vw,64px);line-height:1.02;letter-spacing:-.02em;font-weight:500;max-width:22ch}
+@media (min-width:900px){.hero h1{max-width:min(26ch,100%)}}
 .hero .eyebrow{margin-bottom:-12px}
 .hero h1 em{font-style:italic;font-weight:400;color:var(--topic)}
 .hero .deck{max-width:60ch;font-size:clamp(17px,1.9vw,20px)}
@@ -140,7 +163,7 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .q{font:400 16px/1.4 var(--display);display:grid;gap:6px}
 .q span{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block}
 
-.canbox{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--ink);border-radius:4px;background:var(--sheet);margin-top:56px}
+.canbox{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--rule);border-radius:4px;background:var(--sheet);margin-top:56px}
 .canbox>div{padding:18px 20px;display:grid;gap:10px;align-content:start}
 .canbox>div+div{border-left:1px solid var(--rule)}
 .canbox h3{font-size:22px}
@@ -148,7 +171,7 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .canbox li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:6px}
 .canbox li::before{font:600 14px var(--mono)}
 .canbox .yes li::before{content:"✓";color:var(--topic)}
-.canbox .no li::before{content:"✕";color:var(--war)}
+.canbox .no li::before{content:"✕";color:var(--ink-2)}
 .layers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
 .layers>div{display:grid;gap:8px;align-content:start;border-top:1px solid var(--ink);padding-top:12px;font-size:15px}
 .layers .layer{justify-self:start}
@@ -176,7 +199,7 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .ev-band{margin-top:28px}.ev-part{margin-top:72px}
 .ev-toc{margin:4px 0 0;padding-left:20px;display:grid;gap:8px;font:400 14px/1.55 var(--body);color:var(--ink-2)}
 .kst{font:400 12px/1.45 var(--mono);color:var(--muted);margin:8px 0 0}
-.trust-line{border-left:3px solid var(--ink-2);padding-left:12px}
+.trust-line{border:0;padding-left:0}
 #organised #net>.zi-how,#organised #netWinC,#organised .net-strip,#organised .net-ctl:has(#netPre),#organised #net>details.stats,#organised #net .caveat{display:none}
 .zi-opts .o:has(#ziSpeed){display:none}
 .keyd{margin-top:2px}
@@ -395,8 +418,11 @@ section[id],details[id]{scroll-margin-top:58px}
 .ev-back>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ev-back a{white-space:nowrap}
 .ev-back[hidden]{display:none}
+body.evb #view-evidence{padding-bottom:72px}body.evb #xrPair,body.evb #ppFig{scroll-margin-bottom:76px}
+@media (min-width:900px){.tabs-name{display:none}}
 @media (max-width:600px){#trPicks,#xlPicks,#forestStats,#ledger .tbl{-webkit-mask-image:linear-gradient(to left,transparent,#000 28px);mask-image:linear-gradient(to left,transparent,#000 28px)}
-  .btn.sm,#ppAll,#trMore,#forestAll,#ledMore{min-height:40px}}
+  .btn.sm,#ppAll,#trMore,#forestAll,#ledMore,.xm-q>button{min-height:40px}
+  #view-evidence .gl{padding-block:6px;margin-block:-6px}}
 .ev-back a{font-weight:600;color:var(--add-ink);padding-block:6px}
 .ev-back button{margin-left:auto;border:0;background:none;color:var(--add-ink);font-size:18px;line-height:1;cursor:pointer;padding:4px 6px}
 .ev-link a,#view-report section>.cap>a[href^="#"]{padding-block:12px}
@@ -775,6 +801,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 #ziChart svg text.bd{font:600 10.5px var(--mono);fill:var(--paper)}
 #ziChart svg text.pl{font:600 11px var(--mono);fill:var(--ink-2)}
 #ziChart svg text.pl.on{fill:var(--paper)}
+#ziChart .mkb{cursor:pointer;outline:none}#ziChart .mkb:focus-visible .mkc{stroke:var(--add-bd);stroke-width:3}#ziChart .mkb:hover .mkc{fill:var(--ink-2)}
 #ziChart svg text.qv{font:600 10.5px var(--mono);fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:4px}
 #ziChart svg text.ax2{font:10px var(--mono);fill:var(--muted)}
 #ziChart svg text.phd{font:600 11px var(--mono);fill:var(--paper)}
@@ -788,8 +815,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .zi-phases .nm{flex-wrap:wrap}
 .zi-phases .rg{flex-basis:100%;font:500 11px/1.3 var(--mono);color:var(--muted)}
 .zi-phases .sb{font-weight:600;color:var(--ink)}
-.zi-phases button[aria-current="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.zi-phases button[aria-current="true"] .n{background:var(--ink);color:var(--paper)}
+.zi-phases button[aria-current="step"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.zi-phases button[aria-current="step"] .n{background:var(--ink);color:var(--paper)}
 .zi-jumps{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;min-width:0}
 .zi-jumps .lab,.zi-opts .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .zi-jumps ul{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none;min-width:0}
@@ -869,7 +896,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .zi-ctl.stuck .zi-trk{grid-column:1/-1;height:16px}.zi-ctl.stuck .zi-trk .e{display:none}
   .zi-facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .zi-facts div:first-child{grid-column:1/-1}
+  .zi-ctl.stuck .zi-ctr{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #ziFig details.keyd>summary{flex-wrap:wrap;row-gap:3px;white-space:nowrap}
+  #ziFig details.keyd>summary span{flex-basis:100%;padding-left:28px;white-space:normal}
 }
+#ziHd .zi-facts div:nth-child(4){grid-column:1/-1}
 /* ---------- #crosslang: matrix + "in their own words" reader (reuses .fig, .seg, .pick, .zi-ctl, .zi-chips, .legend/.key, .means, .news-q) ---------- */
 #crosslang{--c-gen:var(--ink-2);--c-col:var(--ink-2);--c-ec:var(--ink-2);--c-apa:var(--ink-2);--c-occ:var(--ink-2);--c-ter:var(--ink-2);--c-hos:var(--ink-2);--c-res:var(--muted);--c-oth:var(--muted);--c-kc:var(--ink-2)}
 #crosslang [lang=he],#crosslang [lang=ar]{font-family:"Newsreader","Noto Serif Hebrew","Frank Ruhl Libre","Noto Naskh Arabic","Amiri","Times New Roman",serif}
@@ -904,6 +935,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tl.t-F{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
 .tl.t-A{background:repeating-linear-gradient(45deg,var(--faint) 0 3px,var(--sheet) 3px 6px);border:1.5px solid var(--ink-2);color:var(--ink)}
 .tl.t-A.dsp{border-style:dashed}
+.tl.t-A.lg{background:var(--sheet);border:1px solid var(--ink-2)}
 .tl.t-N{background:transparent;border:1.5px dotted var(--muted);color:var(--muted)}
 .tl.t-X{background:var(--faint);border:0;color:var(--muted);font-weight:400;font-size:10px}
 .tl.t-A.ow{background:var(--sheet);border:1.5px solid var(--ink-2);color:var(--ink);font-size:13px}
@@ -919,12 +951,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xm-opts .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .xm-legend .key .tl{width:16px;height:16px;font-size:9px}
 .nwr{position:relative;display:inline-grid}
-.xm-c .dir,.xm-legend .dir{position:absolute;right:-10px;font:400 10px/1 var(--mono);color:var(--ink);background:var(--sheet);padding:1px 0;pointer-events:none}
+.xm-c .dir,.xm-legend .dir{position:absolute;right:-12px;top:-6px;font:400 10px/1 var(--mono);color:var(--ink);background:var(--sheet);padding:1px 0;pointer-events:none}
 .dir.up{top:-8px}.dir.dn{bottom:-8px}
 .xm.m-then .dir{display:none}
 .xm-legend .nwr{margin-right:8px}
 .xm-call{margin:0;font:400 10.5px/1.4 var(--mono);color:var(--ink-2)}.xm-call b{font-weight:600;color:var(--ink)}
-.xm td.hl .nwr{outline:1.5px solid var(--ink);outline-offset:5px;border-radius:2px}
+.xm td.hl{background:color-mix(in srgb,var(--add-bg) 60%,transparent);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .xm-ik{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0;font:400 11px/1.4 var(--mono);color:var(--ink-2)}
 .xm-ik span{display:inline-flex;align-items:center;gap:5px}.xm-ik .tl{width:15px;height:15px;font-size:8.5px}
 .xm-swipe{margin:-4px 0 0;font:500 11px/1.3 var(--mono);color:var(--muted);text-align:right}
@@ -1198,9 +1230,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .net-graphs{align-items:start}
 .net-g[data-g=topic] svg{max-width:620px;margin-inline:auto}
 @media (min-width:901px){.net-graphs{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}}
-.net-g svg .nd:focus-visible{outline:none;stroke:var(--ink);stroke-width:3}.net-g svg .ed:focus-visible{outline:none;stroke:var(--ink);stroke-width:4!important;opacity:1!important}
+.net-g svg .nd:focus,.net-g svg .ed:focus,.net-g svg .nd:focus-visible{outline:none}.net-g svg .nd:focus-visible{stroke:var(--ink);stroke-width:3}.net-g svg .ed:focus-visible{outline:none;stroke:var(--ink);stroke-width:4!important;opacity:1!important}
 .net-xb{margin:0 0 4px}
-@media (max-width:600px){#netDet{position:sticky;bottom:8px;z-index:5;max-height:30vh;overflow:auto;background:var(--sheet);border:1px solid var(--ink-2);border-radius:4px;padding:8px 10px}}
+@media (max-width:600px){#netDet.docked{position:sticky;bottom:8px;z-index:5}#netDet{max-height:30vh;overflow:auto;background:var(--sheet);border:1px solid var(--ink-2);border-radius:4px;padding:8px 10px}}
 .net-g svg .on{stroke:var(--ink)!important;stroke-width:2.5}
 .net-det{background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:10px 12px;font:13.5px/1.5 var(--body);color:var(--ink-2)}
 .net-det b{color:var(--ink)}
@@ -1241,6 +1273,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <div id="tip" hidden></div>
 <div id="gloss" role="tooltip" hidden></div>
+<div id="xmTip" role="tooltip" hidden></div>
 <a class="skip" href="#zionism">Skip to the story</a>
 <nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The story</a><a href="#evidence" id="tabEv" aria-current="false">Evidence room</a><a href="#lab" id="tabLab" aria-current="false">Data lab</a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
 <div class="wrap">
@@ -1373,7 +1406,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="deck">German, French, Italian and now Dutch also call October 7 terror or a massacre in their own voice. Spanish’s Gaza war first sentence calls October 7 “un ataque de represalia” (a retaliatory attack).</p>
   </header>
   <figure class="fig xm-keep" id="xmFig" style="margin:0">
-    <div class="fig-h"><span class="fig-t">How each language edition voices seven claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Each square opens its sentence.</span></div>
+    <div class="fig-h"><span class="fig-t">How each language edition voices seven claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Hover or tap a square to read its sentence.</span></div>
     <p class="zi-how" id="xmHow"><b>How to read this:</b> in each cell, the small square is our first copy and the large square is now (October 2026). The full key is below the grid.</p>
     <p class="xm-ik" id="xmIK" aria-hidden="true"></p>
     <p class="xm-call" id="xmCall" hidden></p>
@@ -1385,7 +1418,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="cap" id="xmNote"></p>
 </div></details>
   </figure>
-  <p class="cap ev-link">Each square opens its sentence in the original, with our translation. See the evidence: <a href="#ev-xl">every sentence, language by language</a>.</p>
+  <p class="cap ev-link">Each square shows its sentence in the original, with our translation. See the evidence: <a href="#ev-xl">every sentence, language by language</a>.</p>
 </section>
 
 <section class="sec" id="organised" aria-labelledby="orgSH">
@@ -1592,7 +1625,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </figure>
   <div class="xm-find xm-keep" id="xmFind" aria-label="The three sentences behind the headline"></div>
   <figure class="fig xm-keep" id="xmIcjFig" style="margin:0">
-    <div class="fig-h"><span class="fig-t">Court rulings overstated, by language</span><span class="cap">A solid square: the edition states, in its own voice, a court finding the court did not make. We coded overstatement only. Each square opens its sentence.</span></div>
+    <div class="fig-h"><span class="fig-t">Court rulings overstated, by language</span><span class="cap">A solid square: the edition states, in its own voice, a court finding the court did not make. We coded overstatement only. Hover or tap a square to read its sentence.</span></div>
     <div class="xm-scroll hscroll" id="xmIcj"></div>
   </figure>
   <p class="deck col xm-keep">The genocide article itself began as an allegation. Before their renames, six editions titled it as a charge: “allegations of genocide” in English, Portuguese, Arabic and French (French then “risk of genocide”), “suspicion of genocide” in Dutch, “accusations of genocide” in Polish; English dropped “allegations” from its title on 3 July 2024, Polish only on 26 April 2026.</p>
@@ -2745,9 +2778,9 @@ function drawKey(){
   const ymx=niceMax(Math.max(...ins)),y=v=>y0-(y0-mT)*v/ymx;
   let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(S0?`${S0.k}: weekly new critical terms in topic opening paragraphs, with ${S0.ev.map(e=>e[1]).join(", ")} marked, and the wording changes ${S0.ch.map(c=>c[1]+" on "+v3d(c[0])).join("; ")}`:"Weekly new critical terms in the opening paragraphs of 4,642 topic articles, 2021 to 2026, with 7 October 2023 marked and other battles and ceasefires as ticks on the time axis")}"><defs><clipPath id="kClip"><rect x="${mL}" y="0" width="${W-mL-mR}" height="${H}"/></clipPath></defs>`;
   ticks(0,ymx,ph?2:3).forEach(v=>{const yy=y(v);s+=`<line x1="${mL}" x2="${W-mR}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text class="ax" x="${mL-5}" y="${yy+3.5}" text-anchor="end">${v}</text>`});
-  kTicks(d0,d1,ph).forEach(([t,l])=>{const xx=x(t);if(xx<mL||xx>W-mR)return;s+=`<line x1="${xx}" x2="${xx}" y1="${y0}" y2="${y0+4}" style="stroke:var(--muted)"/><text class="ax" x="${xx+2}" y="${H-6}">${l}</text>`});
+  kTicks(d0,d1,ph).forEach(([t,l])=>{const xx=x(t);if(xx<mL||xx>W-mR)return;const end=xx+2+String(l).length*cw>W-4;s+=`<line x1="${xx}" x2="${xx}" y1="${y0}" y2="${y0+4}" style="stroke:var(--muted)"/><text class="ax" x="${end?xx-2:xx+2}" y="${H-6}"${end?' text-anchor="end"':""}>${l}</text>`});
   s+=`<g clip-path="url(#kClip)">`;
-  if(S0){const t=KD(S0.ev[0][0]);s+=`<rect x="${x(t)}" y="${mT}" width="${Math.max(1,x(t+3*wk)-x(t))}" height="${y0-mT}" style="fill:var(--war);opacity:.08"/>`}
+  if(S0){const t=KD(S0.ev[0][0]),cf0=(V.events||[]).some(e=>e.d===S0.ev[0][0]&&e.t==="ceasefire_deal");s+=`<rect x="${x(t)}" y="${mT}" width="${Math.max(1,x(t+3*wk)-x(t))}" height="${y0-mT}" style="fill:var(${cf0?"--muted":"--war"});opacity:${cf0?.14:.08}"/>`}
   const pxw=x(w0+wk)-x(w0),gap=pxw>5?1:0;
   ins.forEach((v,i)=>{const t=w0+i*wk;if(t<d0-wk||t>d1)return;const bx=x(t),bw=Math.max(.8,pxw-gap);
     if(v)s+=`<rect x="${bx.toFixed(1)}" y="${y(v).toFixed(1)}" width="${bw.toFixed(2)}" height="${(y0-y(v)).toFixed(1)}" style="fill:var(--topic);opacity:.3"/>`;
@@ -2765,7 +2798,7 @@ function drawKey(){
     else s+=`<line x1="${xx}" x2="${xx}" y1="${yy+3}" y2="${mT}" style="stroke:var(${col});opacity:.5"/><text x="${xx+(o.a==="start"?4:-4)}" y="${yy}" text-anchor="${o.a}" style="font:600 ${fs}px var(--mono);fill:var(${col});paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round">${esc(o.l)}</text>`});
   el.innerHTML=s+`</svg>`;
   const kn=$("#kNotes");if(kn){kn.hidden=!badge;kn.innerHTML=badge?labs.map(o=>{const cf=o.c==="--war"&&(V.events||[]).some(e=>e.d===o.d&&e.t==="ceasefire_deal");return `<span><i style="background:var(${cf?"--muted":o.c})">${o.n}</i>${esc(v3d(o.d).replace(/ 20\d\d$/,""))} · ${esc(o.l)}</span>`}).join(""):""}
-  $("#kTitle").textContent=ph?(S0?`${S0.k} · weekly`:"New critical terms a week, 2021–2026"):S0?`${S0.k}: new critical terms, week by week`:"New critical terms in topic opening paragraphs, week by week, 2021–2026";
+  $("#kTitle").textContent=ph?(S0?`${S0.k} · weekly`:"New critical terms a week, 2021–2026"):S0?`${S0.k} · new critical terms a week`:"New critical terms in topic opening paragraphs, week by week, 2021–2026";
   $("#kSub").textContent=S0?"4,642 topic articles · shaded: the three weeks after the first marked event":`4,642 topic articles · before 7 October 2023: ${fmt(kPre(),1)} a week`;
   $("#kKey").innerHTML=`<span class="key"><i style="background:var(--topic);opacity:.3"></i>${ph?"new terms":"written in that week"}</span><span class="key"><i style="background:var(--topic)"></i>${ph?"lasted a week":"still there a week later"}</span>${S0?"":`<span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`}<span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>${ph?"battle":S0?"battle or escalation (others: ticks on the axis)":"other battles: ticks on the axis"}</span><span class="key"><i class="dot"></i>ceasefire</span>${S0?`<span class="key"><i class="wch"></i>${ph?"wording change":"dashed line and diamond: a dated wording change"}</span>`:""}`;
 }
@@ -2995,7 +3028,7 @@ const XM={mode:matchMedia("(max-width:600px)").matches?"now":"both"},XR={a:null,
 const xlab=l=>LANG[l]||l;
 const xslot=s=>XSLOT[s]||"Another key sentence";
 const wpLink=(l,r,txt)=>r?`<a href="https://${l}.wikipedia.org/w/index.php?oldid=${r}" target="_blank" rel="noopener">${txt||"rev "+r} ↗</a>`:"";
-function xTile(code,cls){const [s,g]=XST[code]||XST.none,ow=code==="captive"||code==="label";return `<span class="tl t-${s} ${cls}${code==="disputed"?" dsp":""}${ow?" ow":""}" aria-hidden="true"><i>${s==="X"?(/\bth\b/.test(cls)?"×":"n/a"):ow?"≈":g}</i></span>`}
+function xTile(code,cls){const [s,g]=XST[code]||XST.none,ow=code==="captive"||code==="label";return `<span class="tl t-${s} ${cls}${code==="disputed"?" dsp":""}${ow?" ow":""}${code==="legal"?" lg":""}" aria-hidden="true"><i>${s==="X"?(/\bth\b/.test(cls)?"×":"n/a"):ow?"≈":g}</i></span>`}
 /* the voice ladder: not in the text < later in the section < court case < disputed < attributed < own voice */
 const XVOICE=new Set(["attributed","disputed","denial","self","label","captive","fact"]);
 const XLAD={none:0,absent:0,outside:1,not_held:1,legal:2,disputed:3,attributed:4,denial:4,self:4,label:4,captive:4,fact:5};
@@ -3035,8 +3068,8 @@ function xmInit(){
   const ub=$("#crosslang>.unfold"),sh=$("#xlSubH");if(ub&&sh){sh.before(ub);ub.textContent=ub.getAttribute("aria-expanded")==="true"?"Hide the vocabulary counts ↑":"Show the vocabulary counts ↓";ub.addEventListener("click",()=>{ub.textContent=ub.getAttribute("aria-expanded")==="true"?"Hide the vocabulary counts ↑":"Show the vocabulary counts ↓"})}
   setSeg($("#xmMode"),XM.mode);xmDraw();xmFind();xmCourt();
   seg($("#xmMode"),v=>{XM.mode=v;$("#xmScroll .xm").className="xm m-"+v;xmHow();$("#xmScroll").dispatchEvent(new Event("scroll"))});xmHow();
-  $("#xmScroll").addEventListener("click",e=>{const b=e.target.closest(".xm-c");if(!b)return;const c=D.cells[b.dataset.k][b.dataset.l];
-    const A=(D.arts[c.a]||{})[b.dataset.l];if(!A){XR.note=null;return}
+  /* a square shows its sentence in place (#xmTip); the jump to the evidence-room reader is the tooltip's secondary link */
+  xmTipWire($("#xmScroll"),b=>{const c=D.cells[b.dataset.k][b.dataset.l];const A=(D.arts[c.a]||{})[b.dataset.l];if(!A){XR.note=null;return}
     const s=c.s&&A.sl[c.s]?c.s:"s1";const mi=D.moments.findIndex(m=>m[0]===c.a&&m[1]===b.dataset.l&&m[2]===s);
     $$("#xmScroll .xm-c").forEach(x=>x.setAttribute("aria-current",String(x===b)));
     const go=()=>xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:b.dataset.k,c},anim:true,scroll:true});if(inEv("xrFig")&&VIEW!=="evidence"){jumpFrom("crosslang",`${xlab(b.dataset.l)} · ${(D.cols.find(c=>c[0]===b.dataset.k)||[])[1]||""}`,"xrHd");location.hash="#xrHd";setTimeout(go,150)}else go()});
@@ -3048,25 +3081,25 @@ function xmDraw(){
   const D=R.langs,host=$("#xmScroll"),order=D.order,cols=D.cols.filter(([k])=>!XM_STORY_OUT.has(k));
   {const t=$("#xmFig .fig-t");if(t)t.textContent=`How each language edition voices ${XNUM[cols.length]||cols.length} claims, then and now`}
   const XSHORT={gen:"Genocide",col:"Colonization",apa:"Apartheid",occ:"Occupation",o7:"Oct 7: terror",ter:"Hamas: terrorist",hos:"Hostages",icj:"Court overstated"};
-  const sub={gen:"Gaza genocide article, else Gaza war",col:"Zionism",apa:"Israeli apartheid",occ:"West Bank",o7:"attack article, first sentence",ter:"Hamas",hos:"attack article",icj:"ICJ, any article"};
-  let h=`<table class="xm m-${XM.mode}"><caption class="zi-sr">How each language edition voices ${XNUM[cols.length]||cols.length} claims, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${cols.map(([k,lab])=>`<th scope="col" class="c-${({o7:"ter",icj:"gen"})[k]||k}" title="${esc(lab)}"><span class="lf">${esc(lab)}</span><span class="ls">${esc(XSHORT[k]||lab)}</span><small>${esc(sub[k]||"")}</small></th>`).join("")}</tr></thead><tbody>`;
+  const sub={gen:"Gaza genocide article, else Gaza war",col:"Zionism",apa:"Israeli apartheid",occ:"West Bank",o7:"attack article, first sentence",ter:"Hamas",hos:"attack article · in the text we hold",icj:"ICJ, any article"};
+  let h=`<table class="xm m-${XM.mode}" role="grid"><caption class="zi-sr">How each language edition voices ${XNUM[cols.length]||cols.length} claims, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${cols.map(([k,lab])=>`<th scope="col" class="c-${({o7:"ter",icj:"gen"})[k]||k}" title="${esc(lab)}"><span class="lf">${esc(lab)}</span><span class="ls">${esc(XSHORT[k]||lab)}</span><small>${esc(sub[k]||"")}</small></th>`).join("")}</tr></thead><tbody>`;
   order.forEach((l,ri)=>{h+=`<tr class="${ri===2||ri===3?"sep":""}"><th scope="row" class="xm-l"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><span>${l==="en"?"":`<span class="xn">${esc(xlab(l))} · </span>`}${l}</span></th>`;
     cols.forEach(([k,lab])=>{const c=D.cells[k][l];if(!c){h+="<td></td>";return}
       const chg=xst(c.f)!==xst(c.n)&&c.f!=="na";
       /* arrows only for a change of voice: both ends must be a voiced state; in the court column only a move to "overstated" counts */
       const dv=!chg?0:k==="icj"?(c.n==="fact"?1:0):XVOICE.has(c.f)&&XVOICE.has(c.n)?Math.sign(XLAD[c.n]-XLAD[c.f]):0;
       const nv=c.n==="outside"?"moved later in the opening section":c.n==="legal"?"now reported as a court case":"changed, not a change of voice";
-      const al=`${xlab(l)}, ${lab}: first copy ${xStateText(k,c.f)}; now ${xStateText(k,c.n)}${dv>0?", moved toward Wikipedia’s own voice":dv<0?", moved away from Wikipedia’s own voice":chg?`, ${nv}`:""}.${c.n==="na"?"":" Open the sentence."}`;
+      const al=`${xlab(l)}, ${lab}: first copy ${xStateText(k,c.f)}; now ${xStateText(k,c.n)}${dv>0?", moved toward Wikipedia’s own voice":dv<0?", moved away from Wikipedia’s own voice":chg?`, ${nv}`:""}.${c.n==="na"?"":" Press Enter to show its sentence here."}`;
       const hl=k==="gen"&&((["es","pt","ar"].includes(l)&&c.n==="fact")||(l==="he"&&c.n==="legal"));
       h+=`<td${hl?' class="hl"':""}><button type="button" class="xm-c${chg?" chg":""}" data-k="${k}" data-l="${l}" aria-label="${esc(al)}"${c.n==="na"&&c.f==="na"?" disabled":""}>${xTile(c.f,"th")}<span class="ar" aria-hidden="true">→</span><span class="nwr">${xTile(c.n,"nw big")}${dv?`<span class="dir ${dv>0?"up":"dn"}" aria-hidden="true">${dv>0?"▲":"▼"}</span>`:""}</span></button></td>`});
     h+="</tr>"});
   const cnt=(k,w)=>order.filter(l=>D.cells[k][l]&&xst(D.cells[k][l][w])==="F").length;
-  h+=`</tbody><tfoot><tr><th class="xm-l">Stated as fact</th>${cols.map(([k])=>`<td>then ${cnt(k,"f")}<br>now <b>${cnt(k,"n")}</b>${k==="hos"?"<br><small>in the text we hold</small>":""}</td>`).join("")}</tr></tfoot></table>`;
-  host.innerHTML=h;
+  h+=`</tbody><tfoot><tr><th class="xm-l">Stated as fact</th>${cols.map(([k])=>`<td>then ${cnt(k,"f")}<br>now <b>${cnt(k,"n")}</b></td>`).join("")}</tr></tfoot></table>`;
+  host.innerHTML=h;xmRove(host);
   {const g=D.cells.gen||{},fa=["es","pt","ar"].filter(l=>g[l]&&g[l].n==="fact"),he=g.he&&g.he.n==="legal",cl=$("#xmCall");
     if(cl){cl.hidden=!(fa.length||he);cl.innerHTML=`<b>Genocide column</b>, outlined: ${fa.length?`${fa.join(" · ")} → own voice`:""}${fa.length&&he?"; ":""}${he?"he → court case only":""}`}}
   $("#xmKey").innerHTML=`<span class="key">${xTile("fact","")}solid, dot: stated as fact, in Wikipedia’s own voice</span><span class="key">${xTile("attributed","")}striped, quote mark: attributed to someone</span><span class="key">${xTile("disputed","")}dashed, ?: disputed in the same sentence</span><span class="key">${xTile("legal","")}§: reported only as a court case</span><span class="key">${xTile("absent","")}empty: not in the text we hold</span><span class="key">${xTile("outside","")}…: later in the opening section, beyond the 1,200 characters we hold</span><span class="key">${xTile("captive","")}≈: named in other words (Arabic: “took captive,” not “hostages”; Italian and Polish genocide: presented as a name or term)</span><span class="key">${xTile("na","")}gray, no border: no article in that language</span><span class="key"><span class="nwr">${xTile("fact","")}<span class="dir up">▲</span></span>ring with ▲: moved toward Wikipedia’s own voice; ▼: moved away</span><span class="key">ring alone: changed, not a change of voice (for example, moved later in the section, or now reported as a court case)</span>`;
-  $("#xmIK").innerHTML=[["fact","own voice"],["attributed","attributed"],["disputed","disputed"],["legal","court case only"],["absent","not in our text"],["outside","later in the section"],["na","no article"]].map(([c,t])=>`<span>${xTile(c,"")}${t}</span>`).join("");
+  $("#xmIK").innerHTML=[["fact","own voice"],["attributed","attributed"],["disputed","disputed"],["legal","court case only"],["absent","not in our text"],["outside","later in the section"],["captive","a term in use, or named as captives"],["na","no article"]].map(([c,t])=>`<span>${xTile(c,"")}${t}</span>`).join("");
   /* phone: say how many claims are off to the right, and drop the cue at the end */
   const sw=$("#xmSwipe"),sc=$("#xmScroll"),cue=()=>{const r=sc.getBoundingClientRect(),hs=$$("thead th:not(.xm-l)",sc).filter(th=>th.getBoundingClientRect().right>r.right+4).length;
     sw.hidden=!hs;sw.textContent=hs?`swipe for ${hs} more claim${hs>1?"s":""} →`:"";sc.classList.toggle("at-end",!hs)};
@@ -3076,13 +3109,81 @@ function xmCourt(){
   const D=R.langs,host=$("#xmIcj");if(!host)return;const C=(D.cells||{}).icj;const lab=((D.cols||[]).find(c=>c[0]==="icj")||[])[1]||"Court ruling overstated";
   if(!C){const f=$("#xmIcjFig");if(f)f.hidden=true;return}
   const ls=D.order.filter(l=>C[l]);
-  host.innerHTML=`<table class="xm m-both"><caption class="zi-sr">${esc(lab)}, by language, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${ls.map(l=>`<th scope="col"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><small>${esc(xlab(l))}</small></th>`).join("")}</tr></thead><tbody><tr><th scope="row" class="xm-l">${esc(lab)}<span>ICJ, any article</span></th>${ls.map(l=>{const c=C[l],chg=xst(c.f)!==xst(c.n)&&c.f!=="na",dv=chg&&c.n==="fact"?1:0;
-    const al=`${xlab(l)}, ${lab}: first copy ${xStateText("icj",c.f)}; now ${xStateText("icj",c.n)}${dv?", moved toward Wikipedia’s own voice":""}.${c.n==="na"?"":" Open the sentence."}`;
+  host.innerHTML=`<table class="xm m-both" role="grid"><caption class="zi-sr">${esc(lab)}, by language, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${ls.map(l=>`<th scope="col"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><small>${esc(xlab(l))}</small></th>`).join("")}</tr></thead><tbody><tr><th scope="row" class="xm-l">${esc(lab)}<span>ICJ, any article</span></th>${ls.map(l=>{const c=C[l],chg=xst(c.f)!==xst(c.n)&&c.f!=="na",dv=chg&&c.n==="fact"?1:0;
+    const al=`${xlab(l)}, ${lab}: first copy ${xStateText("icj",c.f)}; now ${xStateText("icj",c.n)}${dv?", moved toward Wikipedia’s own voice":""}.${c.n==="na"?"":" Press Enter to show its sentence here."}`;
     return `<td><button type="button" class="xm-c${chg?" chg":""}" data-k="icj" data-l="${l}" aria-label="${esc(al)}"${c.n==="na"&&c.f==="na"?" disabled":""}>${xTile(c.f,"th")}<span class="ar" aria-hidden="true">→</span><span class="nwr">${xTile(c.n,"nw big")}${dv?`<span class="dir up" aria-hidden="true">▲</span>`:""}</span></button></td>`}).join("")}</tr></tbody>
-    <tfoot><tr><th class="xm-l">Stated as fact</th><td colspan="${ls.length}" style="text-align:left;padding-left:10px">then ${ls.filter(l=>xst(C[l].f)==="F").length} · now <b>${ls.filter(l=>xst(C[l].n)==="F").length}</b></td></tr></tfoot></table>`;
-  host.addEventListener("click",e=>{const b=e.target.closest(".xm-c");if(!b)return;const c=C[b.dataset.l],A=(D.arts[c.a]||{})[b.dataset.l];if(!A)return;
+    <tfoot><tr><th class="xm-l">Stated as fact</th><td colspan="${ls.length}" style="text-align:left;padding-left:10px">then ${ls.filter(l=>xst(C[l].f)==="F").length} · now <b>${ls.filter(l=>xst(C[l].n)==="F").length}</b></td></tr></tfoot></table>`;xmRove(host);
+  xmTipWire(host,b=>{const c=C[b.dataset.l],A=(D.arts[c.a]||{})[b.dataset.l];if(!A)return;
     const s=c.s&&A.sl[c.s]?c.s:"s1",mi=D.moments.findIndex(m=>m[0]===c.a&&m[1]===b.dataset.l&&m[2]===s);
     $$("#xmIcj .xm-c").forEach(x=>x.setAttribute("aria-current",String(x===b)));xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:"icj",c},anim:true,scroll:true})})}
+/* ---------- #xmTip: the sentence behind a square, shown in place (hover, focus or tap); it never scrolls the page ---------- */
+const XMT={b:null,pin:false,ht:0,jump:null};
+const XM_CAT={o7:"ter",icj:"gen"},XM_SHORT={gen:"Genocide",col:"Colonization",apa:"Apartheid",occ:"Occupation",o7:"Oct 7: terror",ter:"Hamas: terrorist",hos:"Hostages",icj:"Court ruling overstated"};
+const xmHover=()=>matchMedia("(hover:hover) and (pointer:fine)").matches;
+/* the text of one version (then f / now n), with a flag per character: 1 = a word that changed between the copies */
+function xmPlain(S,w,tr){let s="",m=[];(tr?S.t:S.o).forEach(t=>{const k=t[0];if(w==="f"&&(k===2||k===5))return;if(w==="n"&&(k===1||k===4))return;const x=k===3?(w==="f"?t[1]:t[2]):t[1],f=k===1||k===2?1:0;s+=x;for(let i=0;i<x.length;i++)m.push(f)});return {s,m}}
+/* about n characters around the key term, cut at word boundaries */
+function xmEx(P,r,n,cls){const s=P.s;if(r&&s.trim().length<=n*1.3)n=s.length;if(!r){const t=s.trim();if(t.length<=n)return esc(t);let c=t.lastIndexOf(" ",n);if(c<n*.6)c=n;return esc(t.slice(0,c))+"…"}
+  let [a,b]=r;a=Math.max(0,a);b=Math.min(s.length,b);let L=Math.max(0,a-Math.floor(Math.max(0,n-(b-a))/2)),E=Math.min(s.length,L+Math.max(n,b-a));L=Math.max(0,Math.min(L,E-n));
+  if(L>0){const sp=s.indexOf(" ",L);if(sp>=0&&sp<a)L=sp+1}if(E<s.length){const sp=s.lastIndexOf(" ",E);if(sp>b)E=sp}
+  const ch=P.m.slice(a,b),c=cls==="k"&&ch.filter(Boolean).length*2>ch.length?"k":cls==="d"&&ch.filter(Boolean).length*2>ch.length?"k d":"k s";
+  return (L>0?"…":"")+esc(s.slice(L,a).replace(/^\s+/,""))+`<mark class="${c}">${esc(s.slice(a,b))}</mark>`+esc(s.slice(b,E).replace(/\s+$/,""))+(E<s.trimEnd().length?"…":"")}
+function xmDv(k,c){const chg=xst(c.f)!==xst(c.n)&&c.f!=="na";return !chg?0:k==="icj"?(c.n==="fact"?1:0):XVOICE.has(c.f)&&XVOICE.has(c.n)?Math.sign(XLAD[c.n]-XLAD[c.f]):0}
+function xmWord(k,code){if(code==="outside")return "later in the opening section";const s=xst(code),o=(XCOLW[k]||{})[s];if(o)return o;if(s==="N")return XSTW.N;if(s==="X")return "no article";return XVB[code]||code}
+function xmTipHTML(b){
+  const D=R.langs,k=b.dataset.k,l=b.dataset.l,c=D.cells[k][l],rtl=XRTL.has(l);
+  const A=c.a&&D.arts[c.a]?D.arts[c.a][l]:null,s=A?(c.s&&A.sl[c.s]?c.s:"s1"):null,S=A&&A.sl[s];
+  const chg=xst(c.f)!==xst(c.n)&&c.f!=="na",dv=xmDv(k,c);
+  const st=chg?`${xmWord(k,c.f)} → ${xmWord(k,c.n)}`:`${xmWord(k,c.n)}, then and now`;
+  const dir=dv>0?"moved toward Wikipedia’s own voice":dv<0?"moved away from Wikipedia’s own voice":chg?(c.n==="outside"?"moved later, not a change of voice":c.n==="legal"?"now reported as a court case":"changed, not a change of voice"):"";
+  let h=`<button type="button" class="x" aria-label="Close">×</button><span class="h">${esc(xlab(l))} · ${esc(XM_SHORT[k]||k)}${c.a?` · ${esc(c.a)}`:""}</span><span class="st">${esc(st)}${dir?` · ${esc(dir)}`:""}</span>`;
+  const quoted=w=>S&&S.m[w]&&!["N","X"].includes(xst(c[w]))&&c[w]!=="outside";
+  if(quoted("n")||(quoted("f")&&!S.m.n)){const w=quoted("n")?"n":"f",cat=XM_CAT[k]||k,x=((S.L||{})[w]||[]).find(y=>y[4]===cat)||null,v=S.m[w];
+    const O=xmPlain(S,w,false),T=xmPlain(S,w,true);
+    h+=`<p class="o" lang="${l}" dir="${rtl?"rtl":"ltr"}">${xmEx(O,x?[x[0],x[1]]:null,150,chg?"k":"s")}</p>`;
+    if(x&&l!=="en")h+=`<span class="gch"><bdi lang="${l}" dir="${rtl?"rtl":"ltr"}">«${esc(O.s.slice(x[0],x[1]).trim())}»</bdi> = “${esc(String(x[3]).replace(/^["“]|["”]$/g,""))}”</span>`;
+    if(l!=="en")h+=`<p class="tr"><b>Our translation:</b> ${xmEx(T,x&&x[2]?x[2]:null,170,chg?"k":"s")}</p>`;
+    h+=`<span class="src">${esc(xlab(l))} Wikipedia · ${esc(c.a)} · ${dlab(v.d)}${v.r?` · rev ${v.r}`:""}</span>`;
+    if(chg&&w==="n"&&quoted("f")&&S.m.f){const xf=((S.L||{}).f||[]).find(y=>y[4]===cat)||null,Tf=xmPlain(S,"f",true),Of=xmPlain(S,"f",false);
+      h+=`<p class="then"><b>Then · ${dlab(S.m.f.d)}:</b> ${l==="en"?xmEx(Of,xf?[xf[0],xf[1]]:null,150,"d"):xmEx(Tf,xf&&xf[2]?xf[2]:null,150,"d")}</p>`}}
+  else if(c.x)h+=`<p class="why">${esc(c.x)}</p>`;
+  else if(!A)h+=`<p class="why">No article in this language is linked to the English article.</p>`;
+  if(A)h+=`<button type="button" class="go">Open the full sentence${S&&S.m.f&&S.m.n?", then and now":""} →</button>`;
+  return h}
+function xmTipPlace(){const b=XMT.b,t=$("#xmTip");if(!b||t.hidden)return;const r=b.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight||!b.isConnected){xmTipHide();return}
+  const w=t.offsetWidth,h=t.offsetHeight;let L=Math.min(innerWidth-w-12,Math.max(12,r.left+r.width/2-w/2)),T=r.bottom+6;
+  if(T+h>innerHeight-8){T=r.top-h-6;if(T<8)T=Math.max(8,innerHeight-h-8)}t.style.left=L+"px";t.style.top=T+"px"}
+function xmTipShow(b,pin,jump){const t=$("#xmTip");clearTimeout(XMT.ht);if(XMT.b&&XMT.b!==b)XMT.b.removeAttribute("aria-describedby");
+  if(XMT.b!==b||t.hidden)t.innerHTML=xmTipHTML(b);XMT.b=b;XMT.pin=!!pin;XMT.jump=jump;t.classList.toggle("pin",!!pin||!xmHover());t.hidden=false;b.setAttribute("aria-describedby","xmTip");xmTipPlace()}
+function xmTipHide(){const t=$("#xmTip");clearTimeout(XMT.ht);if(XMT.b)XMT.b.removeAttribute("aria-describedby");XMT.b=null;XMT.pin=false;if(t)t.hidden=true}
+/* one Tab stop per grid: arrow keys move between squares (roving tabindex) */
+function xmRove(host){const bs=$$(".xm-c:not([disabled])",host);bs.forEach((b,i)=>b.tabIndex=i?-1:0)}
+function xmMove(host,b,e){const rows=$$("tbody tr",host).map(tr=>$$("td",tr)),cell=b.closest("td"),ri=rows.findIndex(r=>r.includes(cell)),ci=ri<0?-1:rows[ri].indexOf(cell);if(ri<0)return null;
+  const at=(r,c)=>{const td=rows[r]&&rows[r][c],x=td&&td.querySelector(".xm-c");return x&&!x.disabled?x:null};
+  const scan=(r,c,dr,dc)=>{for(r+=dr,c+=dc;r>=0&&r<rows.length&&c>=0&&c<(rows[r]||[]).length;r+=dr,c+=dc){const x=at(r,c);if(x)return x}return null};
+  const K=e.key,C=e.ctrlKey||e.metaKey;
+  if(K==="ArrowRight")return scan(ri,ci,0,1);if(K==="ArrowLeft")return scan(ri,ci,0,-1);if(K==="ArrowDown")return scan(ri,ci,1,0);if(K==="ArrowUp")return scan(ri,ci,-1,0);
+  if(K==="Home")return C?scan(-1,0,1,0)||scan(0,-1,0,1):scan(ri,-1,0,1);if(K==="End")return C?scan(rows.length,rows[rows.length-1].length-1,-1,0)||scan(rows.length-1,rows[rows.length-1].length,0,-1):scan(ri,rows[ri].length,0,-1);return undefined}
+function xmTipWire(host,jump){
+  host.addEventListener("click",e=>{const b=e.target.closest(".xm-c");if(!b||b.disabled)return;if(XMT.b===b&&XMT.pin){xmTipHide();return}xmTipShow(b,true,jump)});
+  host.addEventListener("mouseover",e=>{if(!xmHover()||XMT.pin)return;const b=e.target.closest(".xm-c");if(!b||b.disabled)return;xmTipShow(b,false,jump)});
+  host.addEventListener("mouseout",e=>{if(!xmHover()||XMT.pin)return;const b=e.target.closest(".xm-c"),to=e.relatedTarget;if(!b||(to&&to.closest&&(to.closest("#xmTip")||to.closest(".xm-c")===b)))return;clearTimeout(XMT.ht);XMT.ht=setTimeout(()=>{if(!XMT.pin&&document.activeElement!==XMT.b)xmTipHide()},260)});
+  host.addEventListener("focusin",e=>{const b=e.target.closest(".xm-c");if(!b||b.disabled)return;$$(".xm-c",host).forEach(x=>{if(!x.disabled)x.tabIndex=x===b?0:-1});if(!(XMT.b===b&&!$("#xmTip").hidden))xmTipShow(b,false,jump)});
+  host.addEventListener("focusout",e=>{setTimeout(()=>{const a=document.activeElement;if(XMT.pin||!XMT.b)return;if(a&&a.closest&&(a.closest("#xmTip")||(a.closest(".xm-c")&&host.contains(a))))return;if(!(xmHover()&&XMT.b.matches(":hover")))xmTipHide()},0)});
+  host.addEventListener("keydown",e=>{const b=e.target.closest(".xm-c");if(!b)return;
+    if(e.key==="Tab"&&!e.shiftKey&&XMT.b===b&&XMT.pin){const g=$("#xmTip .go");if(g){e.preventDefault();g.focus({preventScroll:true})}return}
+    const n=xmMove(host,b,e);if(n===undefined)return;e.preventDefault();if(n){const p=XMT.pin;n.focus();if(p)xmTipShow(n,true,jump)}})}
+{const t=$("#xmTip");
+  t.addEventListener("click",e=>{if(e.target.closest(".x")){const b=XMT.b;xmTipHide();if(b&&!xmHover())return;if(b)b.focus({preventScroll:true});return}
+    if(e.target.closest(".go")&&XMT.b&&XMT.jump){const b=XMT.b,j=XMT.jump;xmTipHide();j(b)}});
+  t.addEventListener("keydown",e=>{if(e.key==="Tab"&&XMT.b){e.preventDefault();const b=XMT.b;b.focus({preventScroll:true});if(!e.shiftKey)xmTipHide()}});
+  t.addEventListener("mouseleave",e=>{if(XMT.pin||!xmHover())return;const to=e.relatedTarget;if(to&&to.closest&&to.closest(".xm-c")===XMT.b)return;clearTimeout(XMT.ht);XMT.ht=setTimeout(()=>{if(!XMT.pin&&document.activeElement!==XMT.b)xmTipHide()},260)});
+  t.addEventListener("mouseenter",()=>clearTimeout(XMT.ht));
+  document.addEventListener("click",e=>{if(XMT.b&&!e.target.closest("#xmTip")&&!e.target.closest(".xm-c"))xmTipHide()});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&XMT.b){const b=XMT.b,inT=document.activeElement&&document.activeElement.closest&&document.activeElement.closest("#xmTip");xmTipHide();if(inT)b.focus({preventScroll:true})}});
+  addEventListener("scroll",()=>{if(XMT.b)xmTipPlace()},{passive:true});addEventListener("resize",()=>{if(XMT.b)xmTipPlace()});
+  document.addEventListener("scroll",e=>{if(XMT.b&&e.target&&e.target.contains&&e.target.contains(XMT.b))xmTipPlace()},{passive:true,capture:true})}
+
 function xmFind(){
   const D=R.langs,host=$("#xmFind");const F=[["Gaza war","es","s1"],["Gaza genocide","ar","s1"],["Gaza war","he","k_genocide"]];
   host.innerHTML=F.map(([a,l,s],i)=>{const A=D.arts[a][l],S=A.sl[s],v=S.m.n||S.m.f,w=S.m.n?"n":"f",rtl=XRTL.has(l);
@@ -3354,11 +3455,12 @@ function scrollToReport(id){const el=document.getElementById(id);if(!el)return;c
 /* story → evidence jumps: remember where the reader was, say where they came from, and bring them back to the same spot */
 let JUMP=null;
 function jumpFrom(sec,ctx,to){const S=document.getElementById(sec),h=S&&S.querySelector("h2");let t=h?h.textContent.trim():"";if(t.length>56)t=t.slice(0,56).replace(/\s+\S*$/,"")+"…";
-  JUMP={y:scrollY,sec,t,ctx:ctx||"",to:to||""};try{history.replaceState(Object.assign({},history.state||{},{from:"report",y:scrollY,sec}),"")}catch(e){}}
-function evBackShow(){const b=$("#evBack");if(!b)return;if(!JUMP||VIEW!=="evidence"){b.hidden=true;return}
-  b.innerHTML=`<span>${JUMP.ctx?`<b>${esc(JUMP.ctx)}</b> · `:""}from “${esc(JUMP.t)}”</span><a href="#report" id="evBackA">← back to the story</a><button type="button" aria-label="Dismiss">×</button>`;b.hidden=false;
+  const eb=S&&S.querySelector(".eyebrow"),lab=eb?[...eb.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(" ").replace(/\s+/g," ").trim():"";
+  JUMP={y:scrollY,sec,t,lab,ctx:ctx||"",to:to||""};try{history.replaceState(Object.assign({},history.state||{},{from:"report",y:scrollY,sec}),"")}catch(e){}}
+function evBackShow(){const b=$("#evBack");if(!b)return;if(!JUMP||VIEW!=="evidence"){b.hidden=true;document.body.classList.remove("evb");return}
+  b.innerHTML=`<span>From the story: <b>${esc(JUMP.lab||JUMP.t)}</b></span><a href="#report" id="evBackA">← back to the story</a><button type="button" aria-label="Dismiss">×</button>`;b.hidden=false;document.body.classList.add("evb");
   $("#evBackA").onclick=e=>{e.preventDefault();if(JUMP&&location.hash==="#"+JUMP.to)history.back();else location.hash="#report"};
-  $("button",b).onclick=()=>{b.hidden=true}}
+  $("button",b).onclick=()=>{b.hidden=true;document.body.classList.remove("evb")}}
 function evFocus(id){const el=document.getElementById(id);if(!el)return;const h=el.matches("h2,h3,.xr-hd")?el:el.querySelector("h2,h3,.fig-t")||el;if(!h.hasAttribute("tabindex"))h.setAttribute("tabindex","-1");h.focus({preventScroll:true})}
 function jumpBack(){if(!JUMP)return false;const j=JUMP;JUMP=null;evBackShow();
   requestAnimationFrame(()=>requestAnimationFrame(()=>{scrollTo(0,j.y);const S=document.getElementById(j.sec),h=S&&S.querySelector("h2");if(h){if(!h.hasAttribute("tabindex"))h.setAttribute("tabindex","-1");h.focus({preventScroll:true})}}));return true}
@@ -3632,11 +3734,11 @@ function drawZi(){
   const m={l:ph?30:40,r:ph?6:10};
   const x=t=>m.l+(W-m.l-m.r)*(t-t0)/(t1-t0);
   const pY=0,pH=20,mY=38,bT=60,bH=ph?84:120,bB=bT+bH,L0=bB+26;
-  const lanes=[{k:"col",lab:ph?"“colonial” / “colonization”":"“colonial” or “colonization” in the first sentence",h:64},{k:"re",lab:ph?"“re-establishment”":"“re-establishment” in the first sentence",h:64},{k:"all",lab:ph?"every first-sentence change":"every change to the first sentence",h:36},{k:"lead",lab:ph?"critical words, rest of opening":"critical words elsewhere in the opening section",h:34}];
+  const lanes=[{k:"col",lab:ph?"“colonial” / “colonization”":"“colonial” or “colonization” in the first sentence",h:64},{k:"re",lab:ph?"“re-establishment”":"“re-establishment” in the first sentence",h:64},{k:"all",lab:ph?"every change · ↑ more critical · ↓ less":"every change to the first sentence · tick up: more critical · down: less critical · stub: wording only",h:36},{k:"lead",lab:ph?"critical words, rest of opening":"critical words elsewhere in the opening section",h:34}];
   let yy0=L0;lanes.forEach(l=>{l.y=yy0;yy0+=l.h});const ly=k=>lanes.find(l=>l.k===k).y,H=yy0+26;
   const bandY=k=>ly(k)+16,bandH=10,qB=k=>ly(k)+52,qH=20;
   const mx=niceMax(Math.max(1,...wk)),y=lin(0,mx,bB,bT);
-  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`Weekly edits to the Zionism article, 2021 to November 2026, in gray. ${phases.map((p,i)=>`Phase ${i+1}, ${p.lab}, ${p.rg}.`).join(" ")} Below: when “colonial” or “colonization” was in the first sentence (in ${Z.col.in} times, out ${Z.col.out} times, in since ${ziD(D.settle.d)}), with the share of days per quarter; when “re-establishment” was (gone since ${ziD(Z.re.last[0])}); and ticks for all ${ch.length} first-sentence changes.`)}">`;
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="group" aria-label="${esc(`Weekly edits to the Zionism article, 2021 to November 2026, in gray. ${phases.map((p,i)=>`Phase ${i+1}, ${p.lab}, ${p.rg}.`).join(" ")} Below: when “colonial” or “colonization” was in the first sentence (in ${Z.col.in} times, out ${Z.col.out} times, in since ${ziD(D.settle.d)}), with the share of days per quarter; when “re-establishment” was (gone since ${ziD(Z.re.last[0])}); and ticks for all ${ch.length} first-sentence changes.`)}">`;
   // phase shading behind the plot, and the phase band on top
   phases.forEach((p,i)=>{const xa=x(p.a),xb=x(p.b);if(i%2)s+=`<rect x="${xa.toFixed(1)}" y="${bT-6}" width="${(xb-xa).toFixed(1)}" height="${H-bT-20}" style="fill:var(--faint);opacity:.7"/>`});
   const plab=(p,i,w)=>{const full=`${i+1} ${p.nm}`;return !ph&&full.length*6.8+8<w?full:String(i+1)};
@@ -3664,7 +3766,10 @@ function drawZi(){
   // share of days per quarter, under each band
   [["col","--add-bd","--add-bg"],["re","--del-bd","--del-bg"]].forEach(([k,cv,cs])=>{const b=qB(k);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${b+.5}" y2="${b+.5}" style="stroke:var(--rule)"/><text class="ax2" x="${m.l-4}" y="${b-qH+7}" text-anchor="end">100%</text><text class="ax2" x="${m.l-4}" y="${b}" text-anchor="end">0</text>`;
     qs.forEach(q=>{const v=q[k];if(v<=0)return;const xa=x(q.a)+1,xb=x(q.b)-1,h=Math.max(1.5,v*qH);s+=`<rect x="${xa.toFixed(1)}" y="${(b-h).toFixed(1)}" width="${Math.max(1,xb-xa).toFixed(1)}" height="${h.toFixed(1)}" style="fill:var(${cs})"/><rect x="${xa.toFixed(1)}" y="${(b-h).toFixed(1)}" width="${Math.max(1,xb-xa).toFixed(1)}" height="2" style="fill:var(${cv})"/>`})});
-  ch.forEach(c=>{const xx=x(c.t).toFixed(1),yy=bandY("all");s+=`<line x1="${xx}" x2="${xx}" y1="${yy+(c.rv?3:0)}" y2="${yy+bandH-(c.rv?3:0)}" style="stroke:var(${c.rv?"--muted":"--ink-2"});stroke-width:1;opacity:${c.rv?.6:.8}"/>`});
+  /* tick up: more critical; tick down: less critical; full: mixed; short stub: wording only or not coded */
+  {const yy=bandY("all"),mid=yy+bandH/2,CC=(Z.codes&&Z.codes.c)||{};s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${mid}" y2="${mid}" style="stroke:var(--faint)"/>`;
+  ch.forEach(c=>{const xx=x(c.t).toFixed(1),q=CC[c.k],d=q&&q[0];const [a,b]=d==="more_critical"?[mid-8,mid]:d==="less_critical"?[mid,mid+8]:d==="mixed"?[mid-8,mid+8]:[mid-2.5,mid+2.5];
+    s+=`<line x1="${xx}" x2="${xx}" y1="${a}" y2="${b}" style="stroke:var(${c.rv?"--muted":"--ink-2"});stroke-width:1;opacity:${c.rv?.6:.85}"/>`})}
   const LT=(Z.lead_terms||[]).map(e=>({t:Date.parse(e[0]),ts:e[0],term:e[1],kind:e[2]}));
   LT.forEach(e=>{const xx=x(e.t).toFixed(1),yy=bandY("lead")+bandH/2;s+=`<circle cx="${xx}" cy="${yy}" r="3.2" style="fill:var(${e.kind==="insert"?"--ink-2":"--sheet"});stroke:var(--ink-2);stroke-width:1.2"/>`});
   // numbered key moments: one row, pushed apart, with leader lines to the real date
@@ -3672,7 +3777,7 @@ function drawZi(){
   for(let i=1;i<bx.length;i++)bx[i]=Math.max(bx[i],bx[i-1]+gap);
   if(bx.length){bx[bx.length-1]=Math.min(bx.at(-1),W-m.r-9);for(let i=bx.length-2;i>=0;i--)bx[i]=Math.min(bx[i],bx[i+1]-gap)}
   D.moments.forEach((mm,i)=>{const xx=x(mm.c.t),cx=Math.max(m.l+9,bx[i]);bx[i]=cx;
-    s+=`<path d="M${cx.toFixed(1)} ${mY+9} L${xx.toFixed(1)} ${bT-2} L${xx.toFixed(1)} ${bandY("re")+bandH}" style="fill:none;stroke:var(--ink);stroke-width:1;opacity:.45"/><circle cx="${cx.toFixed(1)}" cy="${mY}" r="9" style="fill:var(--ink)"/><text class="bd" x="${cx.toFixed(1)}" y="${mY+3.6}" text-anchor="middle">${i+1}</text>`});
+    s+=`<path d="M${cx.toFixed(1)} ${mY+9} L${xx.toFixed(1)} ${bT-2} L${xx.toFixed(1)} ${bandY("re")+bandH}" style="fill:none;stroke:var(--ink);stroke-width:1;opacity:.45"/><g class="mkb" role="button" tabindex="0" data-k="${mm.c.k}" aria-label="${esc(`Jump to ${ziD(mm.c.d)}: ${mm.long}`)}"><circle cx="${cx.toFixed(1)}" cy="${mY}" r="12" style="fill:transparent"/><circle class="mkc" cx="${cx.toFixed(1)}" cy="${mY}" r="9" style="fill:var(--ink)"/><text class="bd" x="${cx.toFixed(1)}" y="${mY+3.6}" text-anchor="middle">${i+1}</text></g>`});
   // live layers: overlay (phase/quarter highlight, selection ring) and the playhead
   s+=`<g id="ziOv"></g><g id="ziPH" class="zi-ph"><line x1="0" x2="0" y1="${mY+11}" y2="${H-22}" style="stroke:var(--ink);stroke-width:2"/><rect id="ziPHr" x="-44" y="${H-20}" width="88" height="18" rx="3" style="fill:var(--ink)"/><text id="ziPHt" class="phd" x="0" y="${H-7}" text-anchor="middle"></text></g><g class="zi-top" style="pointer-events:none">${top}</g>`;
   s+=`</svg>`;el.innerHTML=s;
@@ -3680,7 +3785,7 @@ function drawZi(){
   const tot=wk.reduce((a,b)=>a+b,0).toLocaleString("en-US");
   $("#ziKey").innerHTML=`<span class="key"><i style="width:2px;height:14px;background:var(--ink)"></i>solid vertical line: the change shown below</span><span class="key"><i style="background:var(--add-bd)"></i>blue: “colonial” or “colonization” is in the first sentence</span><span class="key"><i style="background:var(--del-bd)"></i>amber: “re-establishment” is in it</span><span class="key"><i style="background:var(--add-bg);border-top:2px solid var(--add-bd)"></i>pale columns: share of days it was in, per quarter</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: one change to the first sentence (short tick: later undone)</span><span class="key"><i style="border-radius:50%;background:var(--ink-2)"></i><i style="border-radius:50%;border:1.2px solid var(--ink-2);background:none;margin-left:-2px"></i>filled or open dot: a critical word added or removed lower down</span><span class="key"><i style="background:var(--mid)"></i>gray: all edits to the article per week (${tot} in all)</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i style="width:16px;height:4px;background:linear-gradient(90deg,var(--faint) 50%,var(--add-bd) 50%)"></i>strip under the buttons: all ${ch.length} changes in order, blue where “colonial” is in</span>`;
   $("#ziMoments").innerHTML=D.moments.map((mm,i)=>`<li><button type="button" data-k="${mm.c.k}" aria-pressed="false" aria-label="${esc(`Jump to ${ziD(mm.c.d)}: ${mm.long}`)}"><span class="bd" aria-hidden="true">${i+1}</span><span>${esc(mm.short)}</span><small>${ziD(mm.c.d)}</small></button></li>`).join("");
-  $("#ziPhases").innerHTML=phases.map((p,i)=>`<li><button type="button" data-k="${p.k}" aria-current="false" aria-label="${esc(`Phase ${i+1}: ${p.lab}, ${p.rg}. ${p.txt} Go to its first change.`)}"><span class="nm"><span class="n" aria-hidden="true">${i+1}</span>${esc(p.nm)}<span class="rg">${esc(p.rg)}</span></span><span class="sb">${esc(p.sub)}</span><span>${esc(p.txt)}</span></button></li>`).join("");
+  $("#ziPhases").innerHTML=phases.map((p,i)=>`<li><button type="button" data-k="${p.k}" aria-label="${esc(`Phase ${i+1}: ${p.lab}, ${p.rg}. ${p.txt} Go to its first change.`)}"><span class="nm"><span class="n" aria-hidden="true">${i+1}</span>${esc(p.nm)}<span class="rg">${esc(p.rg)}</span></span><span class="sb">${esc(p.sub)}</span><span>${esc(p.txt)}</span></button></li>`).join("");
   ziTrack();ziCodesLine();
   ziSync(false);
 }
@@ -3698,7 +3803,8 @@ function ziSync(announce){
   const q=D.qs.find(q=>c.t>=q.a&&c.t<q.b)||D.qs.at(-1);
   if(q)[["col","--add-bd"],["re","--del-bd"]].forEach(([k,cv])=>{const xa=G.x(q.a),xb=G.x(q.b),b=G.qB(k),v=q[k];o+=`<rect x="${xa.toFixed(1)}" y="${b-G.qH-1}" width="${(xb-xa).toFixed(1)}" height="${G.qH+2}" rx="2" style="fill:none;stroke:var(--ink);stroke-width:1"/>`;
     /* the readout sits beside the quarter box, clear of the lane band above it */
-    const rt=xb+30<G.W-G.m.r;o+=`<text class="qv" x="${(rt?xb+3:xa-3).toFixed(1)}" y="${(b-G.qH/2+4).toFixed(1)}" text-anchor="${rt?"start":"end"}">${Math.round(v*100)}%</text>`});
+    let tx=`${Math.round(v*100)}% of days, ${q.lab}`,tw=tx.length*6.3;if(xb+3+tw>G.W-G.m.r&&xa-3-tw<4){tx=`${Math.round(v*100)}% of days`;tw=tx.length*6.3}
+    const rt=xb+3+tw<G.W-G.m.r||xa-3-tw<4;o+=`<text class="qv" x="${(rt?xb+3:xa-3).toFixed(1)}" y="${(b-G.qH/2+4).toFixed(1)}" text-anchor="${rt?"start":"end"}">${tx}</text>`});
   o+=`<circle cx="${xx.toFixed(1)}" cy="${G.bandY("all")+G.bandH/2}" r="6" style="fill:none;stroke:var(--ink);stroke-width:1.5"/>`;
   const ov=$("#ziOv");if(ov)ov.innerHTML=o;
   const tp=$("#ziTrkPh");if(tp)tp.style.left=(100*(c.k+.5)/D.ch.length).toFixed(3)+"%";
@@ -3713,14 +3819,17 @@ function ziSync(announce){
     qd("After",c.after?(ops?renderW(ops,"+"):esc(c.after)):c.blank?"The opening section was blank in this revision. It was restored the same day.":"The text of this wording was not kept.",!c.after);
   $("#ziPrev").disabled=!L.some(x=>x.k<c.k);$("#ziNext").disabled=!L.some(x=>x.k>c.k)&&!ZI.playing;
   $$("#ziMoments button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.k===c.k)));
-  $$("#ziPhases button").forEach((b,i)=>b.setAttribute("aria-current",String(i===pi)));
+  $$("#ziPhases button").forEach((b,i)=>{if(i===pi)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current")});
+  /* phone: the phase-card row follows the playhead; only the row scrolls, never the page */
+  {const row=$("#ziPhases"),ab=$$("#ziPhases li")[pi];if(row&&ab&&row.scrollWidth>row.clientWidth+2){const a=ab.offsetLeft-row.offsetLeft,b=a+ab.offsetWidth;if(a<row.scrollLeft+12||b>row.scrollLeft+row.clientWidth-12)row.scrollTo({left:Math.max(0,a-12),behavior:RM.matches?"auto":"smooth"})}}
   if(announce)$("#ziLive").textContent=`Change ${c.k+1} of ${D.ch.length}, ${ziD(c.d)}: ${ziLabel(c)}${c.rv?", later undone":""}. Lasted ${c.last?`${ziDur(c.days)} so far`:ziDur(c.days)}. What this edit did: ${ziDid(c)}.`;
 }
 function ziGo(k,announce=true){ZI.sel=k;ziSync(announce&&!ZI.playing)}
 function ziStep(dir){const L=ziList(),cur=ZI.sel;let n=dir>0?L.find(c=>c.k>cur):L.filter(c=>c.k<cur).at(-1);if(dir===2)n=L.at(-1);if(dir===-2)n=L[0];if(!n)return;ziGo(n.k)}
 /* the step control sticks to the bottom of the screen while its figure is on screen; once stuck it compacts to one row */
-function ctlStick(ctl){const sen=ctl&&ctl.nextElementSibling;if(!sen||!sen.classList.contains("zi-sent")||!("IntersectionObserver" in window))return;
-  new IntersectionObserver(es=>es.forEach(e=>{ctl.classList.toggle("stuck",!e.isIntersecting&&e.boundingClientRect.top>(e.rootBounds?e.rootBounds.bottom:innerHeight))})).observe(sen)}
+function ctlStick(ctl){const sen=ctl&&ctl.nextElementSibling;if(!sen||!sen.classList.contains("zi-sent"))return;
+  let pend=0;const f=()=>{pend=0;const r=sen.getBoundingClientRect(),vis=r.top||r.bottom||r.left;ctl.classList.toggle("stuck",!!vis&&r.top>innerHeight-2)};
+  const q=()=>{if(!pend){pend=1;requestAnimationFrame(f)}};addEventListener("scroll",q,{passive:true});addEventListener("resize",q);addEventListener("hashchange",()=>setTimeout(q,60));f()}
 function ziPlayBtn(){const b=$("#ziPlay");if(!b)return;b.setAttribute("aria-pressed",String(ZI.playing));b.setAttribute("aria-label",ZI.playing?"Pause":`Play through ${ZI.mode==="key"?"key moves":"every change"}`);$(".ic",b).textContent=ZI.playing?"❚❚":"▶";$(".tx",b).textContent=ZI.playing?"Pause":"Play"}
 function ziTick(){clearTimeout(ZI.timer);ZI.timer=setTimeout(()=>{if(!ZI.playing)return;const n=ziList().find(c=>c.k>ZI.sel);if(!n){ziPlay(false);return}ziGo(n.k);if(!ziList().some(c=>c.k>ZI.sel)){ziPlay(false);return}ziTick()},ZI_MS[ZI.speed])}
 function ziPlay(on){if(on===ZI.playing)return;ZI.playing=on;clearTimeout(ZI.timer);
@@ -3747,11 +3856,11 @@ function ziInit(){
   const user=k=>{ziPlay(false);ziGo(k)};
   el.addEventListener("pointermove",ev=>{if(ev.pointerType!=="mouse")return;const h=ziPick(...at(ev));if(h)ziTip(h,ev.clientX,ev.clientY);else hideTip()});
   el.addEventListener("pointerleave",hideTip);
-  el.addEventListener("click",ev=>{const [px,py]=at(ev),h=ziPick(px,py);
+  el.addEventListener("click",ev=>{const mb=ev.target.closest&&ev.target.closest(".mkb");if(mb){user(+mb.dataset.k);return}const [px,py]=at(ev),h=ziPick(px,py);
     /* a tap away from any tick snaps to the nearest change in the current step mode */
     if(!h){const G=ZI.geom;if(!G||px<G.m.l||px>G.W-G.m.r)return;let b=null,bd=1e9;ziList().forEach(c=>{const d=Math.abs(G.x(c.t)-px);if(d<bd){bd=d;b=c}});if(b)user(b.k);return}
     if(h.c)user(h.c.k);if(ev.pointerType==="mouse"||h.lead||h.q)ziTip(h,ev.clientX,ev.clientY)});
-  const keys=ev=>{if(ev.target.closest("input,select,textarea"))return;const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];
+  const keys=ev=>{if(ev.target.closest("input,select,textarea"))return;const mb=ev.target.closest(".mkb");if(mb&&(ev.key==="Enter"||ev.key===" ")){ev.preventDefault();user(+mb.dataset.k);return}const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];
     if(k){ev.preventDefault();ziPlay(false);ziStep(k);return}
     if(ev.key===" "&&ev.currentTarget===el){ev.preventDefault();ziPlay(!ZI.playing)}};
   el.addEventListener("keydown",keys);$("#ziCtl").addEventListener("keydown",keys);
@@ -3887,7 +3996,7 @@ function drawO7(){
   $("#o7Key").innerHTML=`<span class="key"><i style="width:2px;height:14px;background:var(--ink)"></i>solid vertical line: the change shown below</span><span class="key"><i style="background:var(--add-bd)"></i>blue: wording that is in the sentence now</span><span class="key"><i style="background:var(--del-bd)"></i>amber: wording that left, or a word added and removed</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: one change to the first sentence (short tick: later undone)</span><span class="key"><i style="background:var(--mid)"></i>gray: monthly views of the article (${big(vt)} in all${D.renamed?", from June 2025; views before the May 2025 rename were counted under the article’s older titles and are not shown":""})</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`;
   $("#o7How").innerHTML=C.how;$("#o7T").textContent=`${C.name}: every change to the first sentence, ${ziMY(t0)} to now`;
   $("#o7Moments").innerHTML=D.moments.map((mm,i)=>`<li><button type="button" data-k="${mm.c.k}" aria-pressed="false" aria-label="${esc(`Jump to ${ziD(mm.c.d)}: ${mm.long}`)}"><span class="bd" aria-hidden="true">${i+1}</span><span>${esc(mm.short)}</span><small>${ziD(mm.c.d)}</small></button></li>`).join("");
-  $("#o7Phases").innerHTML=phases.map((p,i)=>`<li><button type="button" data-k="${p.k}" aria-current="false" aria-label="${esc(`Phase ${i+1}: ${p.nm}, ${p.rg}. ${p.txt} Go to its first change.`)}"><span class="nm"><span class="n" aria-hidden="true">${i+1}</span>${esc(p.nm)}<span class="rg">${esc(p.rg)}</span></span><span class="sb">${esc(p.sub)}</span><span>${esc(p.txt)}</span></button></li>`).join("");
+  $("#o7Phases").innerHTML=phases.map((p,i)=>`<li><button type="button" data-k="${p.k}" aria-label="${esc(`Phase ${i+1}: ${p.nm}, ${p.rg}. ${p.txt} Go to its first change.`)}"><span class="nm"><span class="n" aria-hidden="true">${i+1}</span>${esc(p.nm)}<span class="rg">${esc(p.rg)}</span></span><span class="sb">${esc(p.sub)}</span><span>${esc(p.txt)}</span></button></li>`).join("");
   $("#o7Note").textContent=`${D.T.n_undone} of the ${ch.length} changes were later undone. ${C.note}`;
   $("#o7ArtHelp").textContent=`${D.ch.length} changes to the first sentence, ${D.T.n_wordings} different wordings.`;
   o7Track();o7Sync(false);
@@ -3917,7 +4026,7 @@ function o7Sync(announce){
   $("#o7BA").innerHTML=qd("Before",c.before?(ops?renderW(ops,"-"):esc(c.before)):"The text of this wording was not kept.",!c.before)+qd("After",c.after?(ops?renderW(ops,"+"):esc(c.after)):c.blank?"The opening section was blank in this revision.":"The text of this wording was not kept.",!c.after);
   $("#o7Prev").disabled=!L.some(x=>x.k<c.k);$("#o7Next").disabled=!L.some(x=>x.k>c.k)&&!O7.playing;
   $$("#o7Moments button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.k===c.k)));
-  $$("#o7Phases button").forEach((b,i)=>b.setAttribute("aria-current",String(i===pi)));
+  $$("#o7Phases button").forEach((b,i)=>{if(i===pi)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current")});
   if(announce)$("#o7Live").textContent=`${D.C.name}, change ${c.k+1} of ${D.ch.length}, ${ziD(c.d)}. Key word moved: ${c.mv.length?c.mv.map(m=>o7T(D,m,c)+(m.endsWith("+")?" in":" out")).join(", "):"none"}${c.rv?", later undone":""}.`;
 }
 function o7Go(k,announce=true){O7.sel=k;o7Sync(announce&&!O7.playing)}
@@ -3940,7 +4049,7 @@ function o7Init(){
   el.addEventListener("pointermove",ev=>{if(ev.pointerType!=="mouse")return;const c=o7Pick(...at(ev));if(c){const ops=c.before&&c.after?wdiff(c.before,c.after):null;showTip(`<b>${ziD(c.d)}</b>${c.rv?`<div style="opacity:.8">later undone</div>`:""}<span class="zi-d">${ops?renderW(ops):esc(c.after||"Text not kept.")}</span>`,ev.clientX,ev.clientY)}else hideTip()});
   el.addEventListener("pointerleave",hideTip);
   el.addEventListener("click",ev=>{const c=o7Pick(...at(ev));if(c)user(c.k)});
-  const keys=ev=>{if(ev.target.closest("input,select,textarea"))return;const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];if(k){ev.preventDefault();o7Play(false);o7Step(k);return}if(ev.key===" "&&ev.currentTarget===el){ev.preventDefault();o7Play(!O7.playing)}};
+  const keys=ev=>{if(ev.target.closest("input,select,textarea"))return;const mb=ev.target.closest(".mkb");if(mb&&(ev.key==="Enter"||ev.key===" ")){ev.preventDefault();user(+mb.dataset.k);return}const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];if(k){ev.preventDefault();o7Play(false);o7Step(k);return}if(ev.key===" "&&ev.currentTarget===el){ev.preventDefault();o7Play(!O7.playing)}};
   el.addEventListener("keydown",keys);$("#o7Ctl").addEventListener("keydown",keys);
   seg($("#o7Art"),v=>o7Tab(+v));
   seg($("#o7Mode"),v=>{O7.mode=v;o7ModeHelp();o7PlayBtn();o7Sync(false)});
@@ -3956,10 +4065,10 @@ function o7Init(){
 function drawO7Side(){
   const P=R.oct7&&R.oct7.designation,host=$("#o7Pos");
   if(host&&P){host.innerHTML=`<div style="display:grid;gap:4px">${P.map(p=>{const sq=p.sup_share;return `<div class="pos-row"><span>${esc(dUTC(p.date))}<br><small>sentence ${esc(p.sentence)}</small></span><div class="pos-bar" role="img" aria-label="${esc(`${dUTC(p.date)}: designation sentence ${p.sentence}, ${Math.round(p.word_offset_share*100)}% of the way into the opening section`)}"><span class="d" style="left:${(p.word_offset_share*100).toFixed(1)}%"></span>${sq!=null?`<span class="s" style="left:${(sq*100).toFixed(1)}%"></span>`:""}</div><p class="pos-q">“${esc(p.quote)}”</p></div>`}).join("")}</div>
-    <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>dark dot: the designation sentence, the first “terror” mention</span><span class="key"><i style="background:var(--add-bd)"></i>blue square: “Initially, Hamas was discreetly supported by Israel…,” in our October 2026 copies, not in 2021 or 2023</span></div><p class="cap">The opening section grew from 154 words (July 2023) to 525 now, which pushes any one sentence later. The “Several countries” wording, in our 31 October 2026 copy, may be reverted.</p>`}
+    <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>dot: the designation sentence (first “terror” mention)</span><span class="key"><i style="background:var(--add-bd)"></i>blue square: “Initially, Hamas was discreetly supported by Israel…,” in our October 2026 copies, not in 2021 or 2023</span></div><p class="cap">The opening section grew from 154 words (July 2023) to 525 now, which pushes any one sentence later. The “Several countries” wording, in our 31 October 2026 copy, may be reverted.</p>`}
   const G=R.oct7&&R.oct7.groups,gh=$("#o7Grp");
   if(gh&&G&&G.length){gh.innerHTML=`<div style="display:grid;gap:6px">${G.map(g=>{const a=g.t0,b=g.t1,X=v=>(v*100).toFixed(1);return `<div class="grp-row"><span>${esc(g.a)}<br><small>${g.m1?"“militant” in first sentence now":"no “militant” in first sentence now"}</small></span><div class="tr" role="img" aria-label="${esc(`${g.a}: ${a==null?"no terror mention":Math.round(a*100)+"%"} in 2021, ${b==null?"no terror mention in the opening section":Math.round(b*100)+"%"} now`)}">${a!=null&&b!=null?`<span class="ln" style="left:${X(Math.min(a,b))}%;width:${Math.abs(b-a)*100}%"></span>`:""}${a!=null?`<span class="a" style="left:${X(a)}%"></span>`:""}${b!=null?`<span class="b${g.m1?"":" nm"}" style="left:${X(b)}%"></span>`:""}</div></div>`}).join("")}</div>
-    <div class="legend"><span class="key"><i style="border-radius:50%;border:2px solid var(--ink-2);background:none"></i>open dot: 2021</span><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>dark dot: now, “militant” still in the first sentence</span><span class="key"><i style="border-radius:50%;background:var(--muted)"></i>gray dot: now, no “militant” in the first sentence</span></div><p class="cap">Nine groups, chosen by hand. A missing dot means no “terror” mention in that opening section. Sentence positions come from a heuristic splitter and can be off by one.</p>`}
+    <div class="legend"><span class="key"><i style="border-radius:50%;border:2px solid var(--ink-2);background:none"></i>open dot: 2021</span><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>filled dot: now, “militant” still in the first sentence</span><span class="key"><i style="border-radius:50%;background:var(--muted)"></i>gray dot: now, no “militant” in the first sentence</span></div><p class="cap">Nine groups, chosen by hand. A missing dot means no “terror” mention in that opening section. Sentence positions come from a heuristic splitter and can be off by one.</p>`}
 }
 
 /* ---------- #charge: who is charged with what, in whose voice (perp_codes.jsonl) ---------- */
@@ -4109,7 +4218,10 @@ function drawNetIn(hs,st,story){
     host.innerHTML=`${netCount(N)}<div class="net-graphs one"><div class="net-g" data-g="${g}">${cl.length?`<p class="cap net-xb">${cl.join(" ")}</p>`:""}${netGraph(g,G,W,true)}</div></div>
      <div class="net-det" id="netDet" aria-live="polite">Tap or tab to an account or a line to see its numbers next to what chance would give.</div>
      <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid);box-shadow:inset 0 0 0 1.5px var(--muted)"></i>gray: mixed</span><span>Size: number of edits.</span></div>`;
-    netWire(hs,"#netDet",N);return}
+    netWire(hs,"#netDet",N);
+    /* phone: the detail sheet docks only while the graph itself is on screen */
+    if(!NETS.dock){NETS.dock=1;let pend=0;const f=()=>{pend=0;const d=$("#netDet"),g=$("#net svg");if(!d||!g)return;const r=g.getBoundingClientRect();d.classList.toggle("docked",r.top<innerHeight*.55&&r.bottom>60)};addEventListener("scroll",()=>{if(!pend){pend=1;requestAnimationFrame(f)}},{passive:true});f()}
+    return}
   const ph=isPhone(),G=N[NET.side]||N.topic||N.comparison;
   const ae=document.activeElement,fk=ae&&host.contains(ae)&&ae.dataset&&ae.dataset.v!=null&&ae.closest("[id]")?[ae.closest("[id]").id,ae.dataset.v]:null;
   const allE=["topic","comparison"].flatMap(g=>(N[g]&&N[g].edges)||[]),nT=allE.filter(e=>e.basis==="t30").length,nS=allE.length-nT;
@@ -4173,7 +4285,7 @@ function drawAudit(){
     if(m3){const yy=48;s+=`<line x1="${x(m3.lo)}" x2="${x(m3.hi)}" y1="${yy}" y2="${yy}" style="stroke:var(--comp);stroke-width:1.5"/><rect x="${x(m3.est)-4}" y="${yy-4}" width="8" height="8" style="fill:var(--sheet);stroke:var(--comp);stroke-width:2"/><text x="${Math.min(W-30,x(m3.hi)+6)}" y="${yy+3.5}">${esc(f(m3.est))}</text>`}
     if(comb){const yy=38;s+=`<line x1="${x(comb.lo)}" x2="${x(comb.hi)}" y1="${yy}" y2="${yy}" style="stroke:var(--ink);stroke-width:1.5"/><path d="M${x(comb.est)} ${yy-6.5} l6.5 6.5 l-6.5 6.5 l-6.5 -6.5z" style="fill:var(--ink)"/>`}
     return `<div class="wvu-row"><div class="l">${esc(l)}<small>${esc(u)}</small></div>${s}</svg></div>`}).join("");
-  $("#wvuKey").innerHTML=`<span class="key"><i style="width:3px;height:12px;background:var(--ink-2)"></i>bar: the sample as drawn</span><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>dark dot: weighted to the population</span><span class="key"><i style="background:var(--ink-2)"></i>square: matched on prominence</span><span class="key"><i style="background:var(--ink);transform:rotate(45deg)"></i>diamond: weighted and matched together, the best single estimate for the core</span><span class="key"><i style="border:2px solid var(--comp);background:none"></i>outlined square: probability sample, all 48,974 topic articles against 141,356 on other conflict regions</span>`}
+  $("#wvuKey").innerHTML=`<span class="key"><i style="width:3px;height:12px;background:var(--ink-2)"></i>bar: the sample as drawn</span><span class="key"><i style="border-radius:50%;background:var(--ink)"></i>filled dot: weighted to the population</span><span class="key"><i style="background:var(--ink-2)"></i>square: matched on prominence</span><span class="key"><i style="background:var(--ink);transform:rotate(45deg)"></i>diamond: weighted and matched together, the best single estimate for the core</span><span class="key"><i style="border:2px solid var(--comp);background:none"></i>outlined square: probability sample, all 48,974 topic articles against 141,356 on other conflict regions</span>`}
 
 /* ---------- init ---------- */
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
