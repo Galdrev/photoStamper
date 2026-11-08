@@ -1,0 +1,161 @@
+{
+ "en": {
+  "paths": {
+   "attributed_then_own_voice": 12,
+   "attributed_only": 5,
+   "own_voice_from_entry": 13
+  },
+  "attributed_to_own_voice_median_days": 430.1,
+  "to_own_voice_transitions": 18,
+  "after_war": 12,
+  "expected_after_war_by_activity": 16.64,
+  "share_revisions_after_war": 0.925,
+  "p_high": 0.9998,
+  "voice_coverage": "event revisions only (ratchet reuse)"
+ },
+ "de": {
+  "paths": {
+   "own_voice_from_entry": 10,
+   "own_voice_then_attributed": 1
+  },
+  "attributed_to_own_voice_median_days": null,
+  "to_own_voice_transitions": 3,
+  "after_war": 3,
+  "expected_after_war_by_activity": 2.87,
+  "share_revisions_after_war": 0.956,
+  "p_high": 0.8734,
+  "voice_coverage": "every read revision"
+ },
+ "fr": {
+  "paths": {
+   "own_voice_from_entry": 25,
+   "own_voice_then_attributed": 1,
+   "attributed_only": 1,
+   "attributed_then_own_voice": 1
+  },
+  "attributed_to_own_voice_median_days": 1242.6,
+  "to_own_voice_transitions": 15,
+  "after_war": 14,
+  "expected_after_war_by_activity": 14.2,
+  "share_revisions_after_war": 0.947,
+  "p_high": 0.8119,
+  "voice_coverage": "every read revision"
+ },
+ "es": {
+  "paths": {
+   "own_voice_from_entry": 14,
+   "attributed_only": 3,
+   "attributed_then_own_voice": 2,
+   "own_voice_then_attributed": 1
+  },
+  "attributed_to_own_voice_median_days": 662.3,
+  "to_own_voice_transitions": 5,
+  "after_war": 3,
+  "expected_after_war_by_activity": 4.65,
+  "share_revisions_after_war": 0.93,
+  "p_high": 0.997,
+  "voice_coverage": "every read revision"
+ },
+ "it": {
+  "paths": {
+   "own_voice_from_entry": 7,
+   "own_voice_then_attributed": 3,
+   "attributed_then_own_voice": 4,
+   "attributed_only": 2
+  },
+  "attributed_to_own_voice_median_days": 273.2,
+  "to_own_voice_transitions": 56,
+  "after_war": 56,
+  "expected_after_war_by_activity": 54.44,
+  "share_revisions_after_war": 0.972,
+  "p_high": 0.205,
+  "voice_coverage": "every read revision"
+ },
+ "nl": {
+  "paths": {
+   "own_voice_from_entry": 20,
+   "attributed_then_own_voice": 3,
+   "attributed_only": 1,
+   "own_voice_then_attributed": 1
+  },
+  "attributed_to_own_voice_median_days": 845.6,
+  "to_own_voice_transitions": 12,
+  "after_war": 7,
+  "expected_after_war_by_activity": 11.04,
+  "share_revisions_after_war": 0.92,
+  "p_high": 0.9998,
+  "voice_coverage": "every read revision"
+ },
+ "ru": {
+  "paths": {
+   "attributed_then_own_voice": 4,
+   "own_voice_from_entry": 5,
+   "attributed_only": 2
+  },
+  "attributed_to_own_voice_median_days": 540.4,
+  "to_own_voice_transitions": 9,
+  "after_war": 9,
+  "expected_after_war_by_activity": 8.52,
+  "share_revisions_after_war": 0.947,
+  "p_high": 0.6118,
+  "voice_coverage": "every read revision"
+ },
+ "he": {
+  "paths": {
+   "own_voice_from_entry": 6,
+   "attributed_then_own_voice": 6,
+   "attributed_only": 1,
+   "own_voice_then_attributed": 1
+  },
+  "attributed_to_own_voice_median_days": 439.7,
+  "to_own_voice_transitions": 5,
+  "after_war": 5,
+  "expected_after_war_by_activity": 4.43,
+  "share_revisions_after_war": 0.885,
+  "p_high": 0.5441,
+  "voice_coverage": "every read revision"
+ },
+ "ar": {
+  "paths": {
+   "attributed_only": 2,
+   "own_voice_from_entry": 13,
+   "attributed_then_own_voice": 3
+  },
+  "attributed_to_own_voice_median_days": 1048.5,
+  "to_own_voice_transitions": 4,
+  "after_war": 3,
+  "expected_after_war_by_activity": 3.47,
+  "share_revisions_after_war": 0.867,
+  "p_high": 0.9121,
+  "voice_coverage": "every read revision"
+ },
+ "pl": {
+  "paths": {
+   "own_voice_from_entry": 9,
+   "own_voice_then_attributed": 1,
+   "attributed_only": 1
+  },
+  "attributed_to_own_voice_median_days": null,
+  "to_own_voice_transitions": 3,
+  "after_war": 3,
+  "expected_after_war_by_activity": 2.55,
+  "share_revisions_after_war": 0.849,
+  "p_high": 0.6119,
+  "voice_coverage": "every read revision"
+ },
+ "pt": {
+  "paths": {
+   "own_voice_from_entry": 8,
+   "attributed_then_own_voice": 5,
+   "attributed_only": 1,
+   "own_voice_then_attributed": 1
+  },
+  "attributed_to_own_voice_median_days": 827.5,
+  "to_own_voice_transitions": 11,
+  "after_war": 10,
+  "expected_after_war_by_activity": 10.04,
+  "share_revisions_after_war": 0.912,
+  "p_high": 0.7496,
+  "voice_coverage": "every read revision"
+ }
+}

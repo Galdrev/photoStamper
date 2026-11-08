@@ -1,0 +1,607 @@
+{
+ "generated": "2026-11-08T12:32:13Z",
+ "method": {
+  "edge": "analyze_coord edges (p<0.01, observed>=3) on units 'article [language]'; edge_type 'terms' = term-event co-activity (shared units or events on different units within 10/30/60 min), 'talk' = talk-page co-activity of accounts active in 2+ languages",
+  "communities": "Louvain on term edges (analyze_coord.network)",
+  "languages": "node: languages the account edited on these pages; edge: languages of the co-activity",
+  "labels": "A1, A2...; no hashes or usernames"
+ },
+ "crosswiki": {
+  "nodes": [
+   {
+    "id": "A1",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "en",
+     "es"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A2",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "en",
+     "fr",
+     "he"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A3",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "en",
+     "ru"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A4",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "ar",
+     "de",
+     "en",
+     "es",
+     "fr",
+     "it",
+     "nl",
+     "pl",
+     "pt",
+     "ru"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A5",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "en",
+     "he"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A6",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "en",
+     "es",
+     "fr",
+     "nl"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A7",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "de",
+     "en"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A8",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "ar",
+     "en"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A9",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "en",
+     "nl"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A10",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "en",
+     "ru"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   },
+   {
+    "id": "A11",
+    "events": 0,
+    "articles": 0,
+    "insert_share": null,
+    "community": null,
+    "age_bucket": "unknown",
+    "languages": [
+     "de",
+     "en"
+    ],
+    "term_languages": [],
+    "talk_only": true
+   }
+  ],
+  "edges": [
+   {
+    "source": "A1",
+    "target": "A2",
+    "edge_type": "talk",
+    "weight": 1.918,
+    "basis": "t30",
+    "significant_on": [
+     "t30"
+    ],
+    "observed": 11,
+    "null_mean": 2.176,
+    "null_p95": 5.0,
+    "p": 0.001,
+    "windows": {
+     "t10": {
+      "observed": 2,
+      "null_mean": 0.818,
+      "null_p95": 3.0,
+      "p": 0.1938,
+      "p_article_shuffle": 0.3097
+     },
+     "t30": {
+      "observed": 11,
+      "null_mean": 2.176,
+      "null_p95": 5.0,
+      "p": 0.001,
+      "p_article_shuffle": 0.001
+     },
+     "t60": {
+      "observed": 12,
+      "null_mean": 3.635,
+      "null_p95": 7.0,
+      "p": 0.006,
+      "p_article_shuffle": 0.002
+     }
+    },
+    "shared_articles": {
+     "observed": 3,
+     "null_mean": 2.719,
+     "null_p95": 3.0,
+     "p": 0.7193
+    },
+    "languages": [
+     "en",
+     "es",
+     "fr",
+     "he"
+    ],
+    "cross_language": true
+   },
+   {
+    "source": "A3",
+    "target": "A4",
+    "edge_type": "talk",
+    "weight": 1.63,
+    "basis": "t30",
+    "significant_on": [
+     "t30"
+    ],
+    "observed": 4,
+    "null_mean": 0.616,
+    "null_p95": 2.0,
+    "p": 0.009,
+    "windows": {
+     "t10": {
+      "observed": 1,
+      "null_mean": 0.224,
+      "null_p95": 1.0,
+      "p": 0.1888,
+      "p_article_shuffle": 0.2587
+     },
+     "t30": {
+      "observed": 4,
+      "null_mean": 0.616,
+      "null_p95": 2.0,
+      "p": 0.009,
+      "p_article_shuffle": 0.016
+     },
+     "t60": {
+      "observed": 4,
+      "null_mean": 1.001,
+      "null_p95": 3.0,
+      "p": 0.035,
+      "p_article_shuffle": 0.043
+     }
+    },
+    "shared_articles": {
+     "observed": 2,
+     "null_mean": 1.385,
+     "null_p95": 2.0,
+     "p": 0.4236
+    },
+    "languages": [
+     "fr",
+     "ru"
+    ],
+    "cross_language": true
+   },
+   {
+    "source": "A5",
+    "target": "A6",
+    "edge_type": "talk",
+    "weight": 1.653,
+    "basis": "t30",
+    "significant_on": [
+     "t30"
+    ],
+    "observed": 4,
+    "null_mean": 0.59,
+    "null_p95": 2.0,
+    "p": 0.007,
+    "windows": {
+     "t10": {
+      "observed": 1,
+      "null_mean": 0.206,
+      "null_p95": 1.0,
+      "p": 0.1838,
+      "p_article_shuffle": 0.0709
+     },
+     "t30": {
+      "observed": 4,
+      "null_mean": 0.59,
+      "null_p95": 2.0,
+      "p": 0.007,
+      "p_article_shuffle": 0.001
+     },
+     "t60": {
+      "observed": 4,
+      "null_mean": 1.057,
+      "null_p95": 3.0,
+      "p": 0.048,
+      "p_article_shuffle": 0.001
+     }
+    },
+    "shared_articles": {
+     "observed": 1,
+     "null_mean": 0.834,
+     "null_p95": 1.0,
+     "p": 0.8342
+    },
+    "languages": [
+     "en",
+     "es",
+     "fr",
+     "he"
+    ],
+    "cross_language": true
+   },
+   {
+    "source": "A7",
+    "target": "A2",
+    "edge_type": "talk",
+    "weight": 1.037,
+    "basis": "t30",
+    "significant_on": [
+     "t30"
+    ],
+    "observed": 7,
+    "null_mean": 2.899,
+    "null_p95": 5.0,
+    "p": 0.01,
+    "windows": {
+     "t10": {
+      "observed": 3,
+      "null_mean": 1.222,
+      "null_p95": 3.0,
+      "p": 0.1189,
+      "p_article_shuffle": 0.048
+     },
+     "t30": {
+      "observed": 7,
+      "null_mean": 2.899,
+      "null_p95": 5.0,
+      "p": 0.01,
+      "p_article_shuffle": 0.021
+     },
+     "t60": {
+      "observed": 8,
+      "null_mean": 4.298,
+      "null_p95": 7.0,
+      "p": 0.041,
+      "p_article_shuffle": 0.0749
+     }
+    },
+    "shared_articles": {
+     "observed": 2,
+     "null_mean": 2.115,
+     "null_p95": 3.0,
+     "p": 0.8312
+    },
+    "languages": [
+     "de",
+     "en",
+     "fr",
+     "he"
+    ],
+    "cross_language": true
+   },
+   {
+    "source": "A7",
+    "target": "A6",
+    "edge_type": "talk",
+    "weight": 1.194,
+    "basis": "t30",
+    "significant_on": [
+     "t30"
+    ],
+    "observed": 13,
+    "null_mean": 5.118,
+    "null_p95": 9.0,
+    "p": 0.001,
+    "windows": {
+     "t10": {
+      "observed": 3,
+      "null_mean": 2.256,
+      "null_p95": 5.0,
+      "p": 0.4006,
+      "p_article_shuffle": 0.3077
+     },
+     "t30": {
+      "observed": 13,
+      "null_mean": 5.118,
+      "null_p95": 9.0,
+      "p": 0.001,
+      "p_article_shuffle": 0.001
+     },
+     "t60": {
+      "observed": 13,
+      "null_mean": 7.62,
+      "null_p95": 12.0,
+      "p": 0.036,
+      "p_article_shuffle": 0.014
+     }
+    },
+    "shared_articles": {
+     "observed": 4,
+     "null_mean": 3.948,
+     "null_p95": 5.0,
+     "p": 0.7702
+    },
+    "languages": [
+     "de",
+     "en",
+     "es"
+    ],
+    "cross_language": true
+   },
+   {
+    "source": "A8",
+    "target": "A9",
+    "edge_type": "talk",
+    "weight": 1.47,
+    "basis": "t30",
+    "significant_on": [
+     "t30"
+    ],
+    "observed": 3,
+    "null_mean": 0.444,
+    "null_p95": 2.0,
+    "p": 0.009,
+    "windows": {
+     "t10": {
+      "observed": 0,
+      "null_mean": 0.195,
+      "null_p95": 1.0,
+      "p": 1.0,
+      "p_article_shuffle": 1.0
+     },
+     "t30": {
+      "observed": 3,
+      "null_mean": 0.444,
+      "null_p95": 2.0,
+      "p": 0.009,
+      "p_article_shuffle": 0.001
+     },
+     "t60": {
+      "observed": 3,
+      "null_mean": 0.644,
+      "null_p95": 2.0,
+      "p": 0.03,
+      "p_article_shuffle": 0.002
+     }
+    },
+    "shared_articles": {
+     "observed": 0,
+     "null_mean": 0.0,
+     "null_p95": 0.0,
+     "p": 1.0
+    },
+    "languages": [
+     "en",
+     "nl"
+    ],
+    "cross_language": true
+   },
+   {
+    "source": "A10",
+    "target": "A6",
+    "edge_type": "talk",
+    "weight": 1.961,
+    "basis": "t30",
+    "significant_on": [
+     "t30"
+    ],
+    "observed": 4,
+    "null_mean": 0.284,
+    "null_p95": 2.0,
+    "p": 0.005,
+    "windows": {
+     "t10": {
+      "observed": 1,
+      "null_mean": 0.098,
+      "null_p95": 1.0,
+      "p": 0.0859,
+      "p_article_shuffle": 0.0559
+     },
+     "t30": {
+      "observed": 4,
+      "null_mean": 0.284,
+      "null_p95": 2.0,
+      "p": 0.005,
+      "p_article_shuffle": 0.001
+     },
+     "t60": {
+      "observed": 5,
+      "null_mean": 0.581,
+      "null_p95": 3.0,
+      "p": 0.013,
+      "p_article_shuffle": 0.001
+     }
+    },
+    "shared_articles": {
+     "observed": 2,
+     "null_mean": 1.634,
+     "null_p95": 2.0,
+     "p": 0.6454
+    },
+    "languages": [
+     "en",
+     "es",
+     "fr",
+     "ru"
+    ],
+    "cross_language": true
+   },
+   {
+    "source": "A11",
+    "target": "A2",
+    "edge_type": "talk",
+    "weight": 1.582,
+    "basis": "t30",
+    "significant_on": [
+     "t30"
+    ],
+    "observed": 4,
+    "null_mean": 0.67,
+    "null_p95": 2.0,
+    "p": 0.003,
+    "windows": {
+     "t10": {
+      "observed": 2,
+      "null_mean": 0.226,
+      "null_p95": 1.0,
+      "p": 0.031,
+      "p_article_shuffle": 0.007
+     },
+     "t30": {
+      "observed": 4,
+      "null_mean": 0.67,
+      "null_p95": 2.0,
+      "p": 0.003,
+      "p_article_shuffle": 0.001
+     },
+     "t60": {
+      "observed": 4,
+      "null_mean": 1.074,
+      "null_p95": 3.0,
+      "p": 0.016,
+      "p_article_shuffle": 0.002
+     }
+    },
+    "shared_articles": {
+     "observed": 1,
+     "null_mean": 0.483,
+     "null_p95": 1.0,
+     "p": 0.4835
+    },
+    "languages": [
+     "de",
+     "en",
+     "he"
+    ],
+    "cross_language": true
+   }
+  ],
+  "communities": [],
+  "counts": {
+   "accounts_tested": 479,
+   "articles": 68,
+   "events": 940,
+   "edges": 0,
+   "communities_3plus": 0,
+   "communities_significant": 0,
+   "expected_by_chance": {
+    "null_worlds": 200,
+    "edges_mean": 0.0,
+    "edges_p95": 0.0,
+    "communities_mean": 0.0,
+    "communities_p95": 0.0,
+    "communities_max": 0
+   },
+   "talk": {
+    "accounts": 214,
+    "events": 5678,
+    "edges": 8,
+    "expected_by_chance": {
+     "null_worlds": 50,
+     "edges_mean": 2.7,
+     "edges_p95": 5.0,
+     "communities_mean": 0.34,
+     "communities_p95": 1.0,
+     "communities_max": 2
+    },
+    "also_term_edge": 0
+   },
+   "cross_language_term_edges": 0,
+   "cross_language_talk_edges": 8
+  }
+ }
+}

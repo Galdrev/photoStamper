@@ -1,0 +1,79 @@
+{
+ "insertions_with_source_data": 622,
+ "share_with_new_source": 0.35,
+ "arriving_classes": {
+  "Other": 1254,
+  "Western wire & papers": 298,
+  "Rights orgs & UN": 221,
+  "Arab & Palestinian press, pro-Palestinian outlets": 101,
+  "Israeli press": 92,
+  "Scholarly (books, journals)": 73,
+  "Pro-Israel advocacy": 8
+ },
+ "classes_already_in_lead": {
+  "Scholarly (books, journals)": 6276,
+  "Other": 5977,
+  "Western wire & papers": 3497,
+  "Israeli press": 1698,
+  "Arab & Palestinian press, pro-Palestinian outlets": 937,
+  "Rights orgs & UN": 902,
+  "Pro-Israel advocacy": 46
+ },
+ "by_language": {
+  "ar": {
+   "insertions": 39,
+   "share_with_new_source": 0.718
+  },
+  "de": {
+   "insertions": 27,
+   "share_with_new_source": 0.037
+  },
+  "en": {
+   "insertions": 139,
+   "share_with_new_source": 0.288
+  },
+  "es": {
+   "insertions": 64,
+   "share_with_new_source": 0.266
+  },
+  "fr": {
+   "insertions": 103,
+   "share_with_new_source": 0.34
+  },
+  "he": {
+   "insertions": 31,
+   "share_with_new_source": 0.387
+  },
+  "it": {
+   "insertions": 77,
+   "share_with_new_source": 0.286
+  },
+  "nl": {
+   "insertions": 65,
+   "share_with_new_source": 0.462
+  },
+  "pl": {
+   "insertions": 16,
+   "share_with_new_source": 0.438
+  },
+  "pt": {
+   "insertions": 29,
+   "share_with_new_source": 0.483
+  },
+  "ru": {
+   "insertions": 32,
+   "share_with_new_source": 0.375
+  }
+ },
+ "stuck_vs_reverted": {
+  "stuck": 204,
+  "reverted": 414,
+  "share_new_source_stuck": 0.495,
+  "share_new_source_reverted": 0.275,
+  "difference": 0.22,
+  "expected_difference_by_chance": 0.001,
+  "null_p95": 0.066,
+  "p": 0.0005,
+  "expected_stuck_with_new_source_by_chance": 71.0
+ }
+}

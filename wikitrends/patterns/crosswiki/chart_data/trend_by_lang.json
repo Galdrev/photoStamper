@@ -1,0 +1,4188 @@
+{
+ "per_language": {
+  "en": {
+   "cells_present_6oct2023": 7,
+   "cells_present_now": 13,
+   "gained": 7,
+   "lost": 1,
+   "gained_cells": [
+    "Gaza genocide: genocide",
+    "Gaza war: genocide",
+    "Gaza war: occupation",
+    "Hamas: occupation",
+    "Israel: genocide",
+    "October 7 attacks: genocide",
+    "October 7 attacks: occupation"
+   ],
+   "lost_cells": [
+    "Nakba: occupation"
+   ],
+   "insertions": 137,
+   "insertions_after_war": {
+    "observed": 115,
+    "expected_by_chance": 110.555,
+    "null_p95": 117.0,
+    "p": 0.1518
+   },
+   "net_gain_vs_english": 0
+  },
+  "de": {
+   "cells_present_6oct2023": 1,
+   "cells_present_now": 3,
+   "gained": 2,
+   "lost": 0,
+   "gained_cells": [
+    "Gaza war: genocide",
+    "Israel: occupation"
+   ],
+   "lost_cells": [],
+   "insertions": 27,
+   "insertions_after_war": {
+    "observed": 26,
+    "expected_by_chance": 23.62,
+    "null_p95": 26.0,
+    "p": 0.1099
+   },
+   "net_gain_vs_english": -4
+  },
+  "fr": {
+   "cells_present_6oct2023": 1,
+   "cells_present_now": 12,
+   "gained": 11,
+   "lost": 0,
+   "gained_cells": [
+    "Gaza genocide: genocide",
+    "Gaza genocide: occupation",
+    "Gaza war: colonial",
+    "Gaza war: genocide",
+    "Gaza war: occupation",
+    "Hamas: occupation",
+    "Israel: apartheid",
+    "Israel: colonial",
+    "Israel: occupation",
+    "Israeli apartheid: occupation",
+    "Nakba: ethnic_cleansing"
+   ],
+   "lost_cells": [],
+   "insertions": 102,
+   "insertions_after_war": {
+    "observed": 96,
+    "expected_by_chance": 84.025,
+    "null_p95": 90.0,
+    "p": 0.001
+   },
+   "net_gain_vs_english": 5
+  },
+  "es": {
+   "cells_present_6oct2023": 3,
+   "cells_present_now": 10,
+   "gained": 7,
+   "lost": 0,
+   "gained_cells": [
+    "Gaza genocide: ethnic_cleansing",
+    "Gaza genocide: genocide",
+    "Gaza genocide: occupation",
+    "Gaza war: genocide",
+    "Nakba: ethnic_cleansing",
+    "Nakba: occupation",
+    "October 7 attacks: genocide"
+   ],
+   "lost_cells": [],
+   "insertions": 66,
+   "insertions_after_war": {
+    "observed": 59,
+    "expected_by_chance": 56.162,
+    "null_p95": 60.0,
+    "p": 0.1548
+   },
+   "net_gain_vs_english": 1
+  },
+  "it": {
+   "cells_present_6oct2023": 2,
+   "cells_present_now": 6,
+   "gained": 6,
+   "lost": 2,
+   "gained_cells": [
+    "Gaza genocide: genocide",
+    "Gaza genocide: occupation",
+    "Gaza war: genocide",
+    "Gaza war: occupation",
+    "Hamas: occupation",
+    "October 7 attacks: genocide"
+   ],
+   "lost_cells": [
+    "Hamas: colonial",
+    "Nakba: ethnic_cleansing"
+   ],
+   "insertions": 75,
+   "insertions_after_war": {
+    "observed": 75,
+    "expected_by_chance": 74.205,
+    "null_p95": 75.0,
+    "p": 0.4286
+   },
+   "net_gain_vs_english": -2
+  },
+  "nl": {
+   "cells_present_6oct2023": 9,
+   "cells_present_now": 12,
+   "gained": 6,
+   "lost": 3,
+   "gained_cells": [
+    "Gaza genocide: genocide",
+    "Gaza war: genocide",
+    "Gaza war: occupation",
+    "Nakba: ethnic_cleansing",
+    "October 7 attacks: colonial",
+    "Zionism: colonial"
+   ],
+   "lost_cells": [
+    "Nakba: apartheid",
+    "Nakba: colonial",
+    "Nakba: occupation"
+   ],
+   "insertions": 60,
+   "insertions_after_war": {
+    "observed": 54,
+    "expected_by_chance": 52.115,
+    "null_p95": 56.0,
+    "p": 0.2927
+   },
+   "net_gain_vs_english": -3
+  },
+  "ru": {
+   "cells_present_6oct2023": 2,
+   "cells_present_now": 5,
+   "gained": 3,
+   "lost": 0,
+   "gained_cells": [
+    "Gaza war: genocide",
+    "October 7 attacks: genocide",
+    "October 7 attacks: occupation"
+   ],
+   "lost_cells": [],
+   "insertions": 33,
+   "insertions_after_war": {
+    "observed": 33,
+    "expected_by_chance": 31.323,
+    "null_p95": 33.0,
+    "p": 0.1469
+   },
+   "net_gain_vs_english": -3
+  },
+  "he": {
+   "cells_present_6oct2023": 4,
+   "cells_present_now": 7,
+   "gained": 3,
+   "lost": 0,
+   "gained_cells": [
+    "Gaza war: genocide",
+    "Nakba: ethnic_cleansing",
+    "October 7 attacks: genocide"
+   ],
+   "lost_cells": [],
+   "insertions": 31,
+   "insertions_after_war": {
+    "observed": 25,
+    "expected_by_chance": 24.101,
+    "null_p95": 27.0,
+    "p": 0.4136
+   },
+   "net_gain_vs_english": -3
+  },
+  "ar": {
+   "cells_present_6oct2023": 8,
+   "cells_present_now": 15,
+   "gained": 7,
+   "lost": 0,
+   "gained_cells": [
+    "Gaza genocide: genocide",
+    "Gaza war: ethnic_cleansing",
+    "Gaza war: genocide",
+    "Gaza war: occupation",
+    "Nakba: colonial",
+    "October 7 attacks: occupation",
+    "Zionism: ethnic_cleansing"
+   ],
+   "lost_cells": [],
+   "insertions": 38,
+   "insertions_after_war": {
+    "observed": 22,
+    "expected_by_chance": 26.801,
+    "null_p95": 31.0,
+    "p": 0.989
+   },
+   "net_gain_vs_english": 1
+  },
+  "pl": {
+   "cells_present_6oct2023": 0,
+   "cells_present_now": 4,
+   "gained": 4,
+   "lost": 0,
+   "gained_cells": [
+    "Gaza genocide: genocide",
+    "Gaza war: genocide",
+    "Israeli apartheid: apartheid",
+    "Israeli apartheid: occupation"
+   ],
+   "lost_cells": [],
+   "insertions": 12,
+   "insertions_after_war": {
+    "observed": 12,
+    "expected_by_chance": 10.133,
+    "null_p95": 12.0,
+    "p": 0.0889
+   },
+   "net_gain_vs_english": -2
+  },
+  "pt": {
+   "cells_present_6oct2023": 6,
+   "cells_present_now": 9,
+   "gained": 3,
+   "lost": 0,
+   "gained_cells": [
+    "Gaza genocide: genocide",
+    "Gaza war: occupation",
+    "Israel: genocide"
+   ],
+   "lost_cells": [],
+   "insertions": 28,
+   "insertions_after_war": {
+    "observed": 24,
+    "expected_by_chance": 23.136,
+    "null_p95": 26.0,
+    "p": 0.4505
+   },
+   "net_gain_vs_english": -3
+  }
+ },
+ "monthly": {
+  "en": [
+   {
+    "month": "2021-01",
+    "cells_present": 6,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 6,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 6,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 7,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 5,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 5,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 5,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 5,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 5,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 6,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 6,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 9,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 11,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 11,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 12,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 11,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 10,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 10,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 10,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 10,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 10,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 12,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 12,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 12,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 11,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 12,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 11,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 13,
+    "cells_own_voice": 12
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 13,
+    "cells_own_voice": 12
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   }
+  ],
+  "de": [
+   {
+    "month": "2021-01",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 2,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 2,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 3,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 3,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   }
+  ],
+  "fr": [
+   {
+    "month": "2021-01",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 1,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 4,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 4,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 4,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 6,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 6,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 6,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 6,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 6,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 8,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 9,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 8,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 7,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 7,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 7,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 8,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 11,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 9,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 9,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 8,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 8,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 7,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 7,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   }
+  ],
+  "es": [
+   {
+    "month": "2021-01",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 6,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 6,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 6,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 6,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 6,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 6,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 6,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 6,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 6,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 10,
+    "cells_own_voice": 7
+   }
+  ],
+  "it": [
+   {
+    "month": "2021-01",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 2,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 6,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 6,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 6,
+    "cells_own_voice": 2
+   }
+  ],
+  "nl": [
+   {
+    "month": "2021-01",
+    "cells_present": 5,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 5,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 5,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 5,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 9,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 11,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 12,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 12,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 12,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 13,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 13,
+    "cells_own_voice": 12
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 12,
+    "cells_own_voice": 12
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 12,
+    "cells_own_voice": 12
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 12,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 12,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 14,
+    "cells_own_voice": 12
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 11,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 10,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 10,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 12,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 12,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 12,
+    "cells_own_voice": 10
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 11,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 11,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 12,
+    "cells_own_voice": 10
+   }
+  ],
+  "ru": [
+   {
+    "month": "2021-01",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 2,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 3,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 4,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 4,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 4,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 4,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 4,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 4,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 4,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   }
+  ],
+  "he": [
+   {
+    "month": "2021-01",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 4,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 5,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 6,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 7,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   }
+  ],
+  "ar": [
+   {
+    "month": "2021-01",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 7,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 6,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 8,
+    "cells_own_voice": 6
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 10,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 10,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 10,
+    "cells_own_voice": 8
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 11,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 11,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 11,
+    "cells_own_voice": 9
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 12,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 13,
+    "cells_own_voice": 11
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 14,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 15,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 15,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 15,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 15,
+    "cells_own_voice": 13
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 15,
+    "cells_own_voice": 13
+   }
+  ],
+  "pl": [
+   {
+    "month": "2021-01",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 1,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 0,
+    "cells_own_voice": 0
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 2,
+    "cells_own_voice": 1
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 3,
+    "cells_own_voice": 2
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 5,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 4,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 4,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 4,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 4,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 4,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 4,
+    "cells_own_voice": 3
+   }
+  ],
+  "pt": [
+   {
+    "month": "2021-01",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-02",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-03",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-04",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-05",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-06",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-07",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-08",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-09",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-10",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-11",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2021-12",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-01",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-02",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-03",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-04",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-05",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-06",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-07",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-08",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-09",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-10",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-11",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2022-12",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-01",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-02",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-03",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-04",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-05",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-06",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-07",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-08",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-09",
+    "cells_present": 6,
+    "cells_own_voice": 3
+   },
+   {
+    "month": "2023-10",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2023-11",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2023-12",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-01",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-02",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-03",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-04",
+    "cells_present": 7,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-05",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-06",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-07",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-08",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-09",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-10",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-11",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2024-12",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2025-01",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2025-02",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2025-03",
+    "cells_present": 8,
+    "cells_own_voice": 4
+   },
+   {
+    "month": "2025-04",
+    "cells_present": 8,
+    "cells_own_voice": 5
+   },
+   {
+    "month": "2025-05",
+    "cells_present": 8,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-06",
+    "cells_present": 8,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-07",
+    "cells_present": 8,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-08",
+    "cells_present": 8,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-09",
+    "cells_present": 8,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-10",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-11",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2025-12",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-01",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-02",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-03",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-04",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-05",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-06",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-07",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-08",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-09",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-10",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   },
+   {
+    "month": "2026-11",
+    "cells_present": 9,
+    "cells_own_voice": 7
+   }
+  ]
+ }
+}
