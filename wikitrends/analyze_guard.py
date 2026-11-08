@@ -780,9 +780,19 @@ def collect_names(texts):
             names.append(_norm_name(m.group(1)))
         for m in NAME_TPL.finditer(t):
             for part in m.group(2).split("|"):
-                if "=" in part or not part.strip():
+                if "=" in part:
+                    k, _, v = part.partition("=")
+                    if re.fullmatch(r"\s*(?:user|\d|1|name)\s*", k, re.I) and v.strip():
+                        names.append(_norm_name(v))
                     continue
-                names.append(_norm_name(part))
+                if part.strip():
+                    names.append(_norm_name(part))
+        for m in re.finditer(r"^=+\s*(?:Evidence|Statement|Comments?|Response|Reply|Analysis)\s+(?:presented\s+)?by\s+"
+                             r"(?:\[\[[^\]|]*\|)?([^=\[\]{}|\n]{2,60}?)(?:\]\])?\s*=+\s*$", t, re.I | re.M):
+            names.append(_norm_name(m.group(1)))
+        for m in re.finditer(r"\[\[\s*:?\s*(?:U|UT|User_talk|Special:Contribs|Special:EmailUser|Special:Log/block)\s*[:/]\s*"
+                             r"([^\]|#/\n]+)", t, re.I):
+            names.append(_norm_name(m.group(1)))
         # party lists: bullet lines in an "involved parties" / "parties" section
         for sec in re.finditer(r"^=+\s*(?:Involved )?parties\s*=+\s*$(.*?)(?=^=+[^=])", t, re.I | re.M | re.S):
             for line in sec.group(1).splitlines():
@@ -827,27 +837,60 @@ def plain(wt):
     return re.sub(r"\s+", " ", t).strip()
 
 
+EXTRA_VOCAB = set("""canvassing canvassed canvass proxying proxy proxied sockpuppet sockpuppets sockpuppetry meatpuppet
+    meatpuppets meatpuppetry unblocked unblock blocked topic-banned banned ban bans arbitrator arbitrators arbcom
+    off-wiki on-wiki wiki wikipedia editor editors editing edits edit admonished desysopped desysop recused
+    subcommittee noticeboard noticeboards enforcement sanctions sanction sanctioned restriction restrictions
+    disruptive disruption battleground tendentious coordination coordinated coordinating coordinate discussion discussions
+    rfc rfcs consensus pia arbpia ecr ctop email emails emailed e-mail mailing list lists server servers channel channels
+    remedy remedies finding findings principle principles misconduct evidence private public""".split())
+_VOCAB = [None]
+
+
+def vocab():
+    """Words used in lower case in encyclopedia prose (the lead corpora in data/*leads.json.gz) plus EXTRA_VOCAB. A
+    username essentially never occurs there; the ArbCom pages themselves are NOT used (names occur in them)."""
+    if _VOCAB[0] is None:
+        c = Counter()
+        for f in ("mass2_leads.json.gz", "random_leads.json.gz", "mass3_leads.json.gz", "mass_leads.json.gz"):
+            p = os.path.join(HERE, "data", f)
+            if not os.path.exists(p):
+                continue
+            def walk(o):
+                if isinstance(o, str):
+                    c.update(re.findall(r"(?<![A-Za-z0-9_.])[a-z][a-z']*(?![A-Za-z0-9_])", o))
+                elif isinstance(o, dict):
+                    for v in o.values():
+                        walk(v)
+                elif isinstance(o, list):
+                    for v in o:
+                        walk(v)
+            walk(json.load(gzip.open(p, "rt")))
+        _VOCAB[0] = {w.strip("'") for w, n in c.items() if n >= 3} | EXTRA_VOCAB
+    return _VOCAB[0]
+
+
 def _tok_ok(tok, ordinary):
-    t = tok.strip(".,;:()[]\"'!?").replace("’", "'")
+    t = tok.strip(".,;:()[]\"'!?").replace("\u2019", "'")
     t = re.sub(r"'s$", "", t)
-    if not t or re.fullmatch(r"\d{1,6}", t) or re.fullmatch(r"Editor|\d+", t):
+    if not t or re.fullmatch(r"\d{1,6}\)?", t) or t == "Editor" or t.lower() in PROPER:
         return True
+    if re.search(r"[._@]", t) or re.search(r"[a-z][A-Z]", t) or re.search(r"[A-Za-z]\d|\d[A-Za-z]", t):
+        return False                                   # dotted / camel-case / alphanumeric tokens look like usernames
     parts = re.split(r"[-/]", t)
     return all((p.lower() in ordinary or p.lower() in PROPER or re.fullmatch(r"\d{1,6}", p) or p == "") for p in parts)
 
 
 def scrub(s, ordinary):
-    """Backstop after exact-name redaction: any token that is not an ordinary lowercase word of these pages or an allowed
-    proper noun (and is capitalised, contains digits, or is camel-case) is replaced by [redacted]."""
+    """Backstop after exact-name redaction: every token (any case) that is not a word of the encyclopedia-prose
+    vocabulary, an allowed proper noun or a number is replaced by [redacted]."""
     out = []
     for tok in s.split(" "):
         if re.fullmatch(r"Editor|\d+[.,;:)]*", tok) or _tok_ok(tok, ordinary):
             out.append(tok)
-        elif tok[:1].isupper() or re.search(r"\d", tok) or re.search(r"[a-z][A-Z]", tok) or "_" in tok:
-            out.append("[redacted]")
         else:
-            out.append(tok)
-    return " ".join(out)
+            out.append("[redacted]")
+    return re.sub(r"(?:\[redacted\] ?){2,}", "[redacted] ", " ".join(out)).strip()
 
 
 def heading_ok(h, ordinary):
@@ -886,9 +929,7 @@ def arbcom_extract(pages):
     names = collect_names(texts)
     red = redactor(names)
     red_pages = {k: red(v) if v else None for k, v in pages.items()}
-    corpus = " ".join(plain(t) for t in red_pages.values() if t)
-    wc = Counter(re.findall(r"(?<![A-Za-z0-9_])[a-z][a-z']*(?![A-Za-z0-9_])", corpus))   # words used in lower case
-    ordinary = {w.strip("'") for w, c in wc.items() if c >= 2}
+    ordinary = vocab()
     items, dropped = [], 0
     page_meta = {}
     for label, t in red_pages.items():
@@ -991,7 +1032,8 @@ def verdicts(R):
     if rc.get("observed", 0) > (rc.get("expected_p95") or 0) and rc.get("observed", 0) >= 3 and ex_t > ex_c:
         v["q2"] = "supports organised guarding: more pairs recur in tag-team sequences across articles than the article-month shuffle produces, and more than on comparison articles"
     elif rc.get("observed", 0) > (rc.get("expected_p95") or 0):
-        v["q2"] = "inconclusive: recurrent pairs above the shuffle null, but few or not above the comparison articles"
+        v["q2"] = ("no evidence of topic-specific tag-teaming: some pairs recur beyond the shuffle null, but the excess is no "
+                   "larger than on the comparison articles")
     else:
         v["q2"] = "no evidence: recurrent tag-team pairs are what the label shuffle produces"
     q3 = R["q3_voting_blocs"].get("topic") or {}
@@ -1000,7 +1042,9 @@ def verdicts(R):
     else:
         b = q3["blocs"]; s = q3["significant_agreement_pairs"]
         if b["count"] > (b["expected_p95"] or 0) and s["observed"] > (s["expected_p95"] or 0):
-            v["q3"] = "supports organised guarding: more high-agreement pairs and voting blocs than the stance permutation produces"
+            v["q3"] = ("supports bloc voting: more high-agreement pairs and voting blocs than the stance permutation produces "
+                       "(consistent co-voting; on its own this is also what two honest camps produce, it is not proof of "
+                       "off-wiki coordination)")
         elif s["observed"] > (s["expected_p95"] or 0):
             v["q3"] = "inconclusive: more high-agreement pairs than chance, but no more blocs than chance"
         else:
@@ -1008,8 +1052,14 @@ def verdicts(R):
     q4 = R["q4_overlap"].get("remove") or {}
     hits = [k for k in ("coord_edge_accounts", "voting_bloc_members", "recurrent_tag_team_accounts")
             if isinstance(q4.get(k), dict) and q4[k].get("p_upper") is not None and q4[k]["p_upper"] < 0.01]
+    qa = R["q4_overlap"].get("add") or {}
+    hits_add = [k for k in hits if isinstance(qa.get(k), dict) and qa[k].get("p_upper") is not None and qa[k]["p_upper"] < 0.01]
     if "note" in q4 or not q4:
         v["q4"] = "inconclusive: too few fast reverters of critical-term removals"
+    elif hits and set(hits_add) == set(hits):
+        v["q4"] = ("inconclusive: fast reverters of critical-term removals overlap " + ", ".join(hits) + " beyond matched "
+                   "random sets, but so do fast reverters of critical-term additions: a shared core of very active "
+                   "topic-area accounts, not removal-specific guarding")
     elif hits:
         v["q4"] = "supports organised guarding: fast reverters of critical-term removals overlap " + ", ".join(hits) + " beyond matched random sets"
     else:
@@ -1104,7 +1154,8 @@ def render_arbcom(ab):
          "Raw wikitext (action=raw) of the Palestine-Israel articles 4 and 5 case pages, the PIA5 proposed decision and "
          "evidence pages, fetched and processed inside the workflow job. Every username found in User: links, user "
          "templates or party lists on any of these pages was replaced by \"Editor N\" before extraction; any remaining "
-         "capitalised token that is not an ordinary word on these pages or an allowed proper noun is shown as "
+         "token that is not a word of ordinary encyclopedia prose (vocabulary taken from the article leads, not these pages), "
+         "an allowed proper noun or a number is shown as "
          "[redacted]; headings that may still contain a name are withheld. Items are those whose text mentions off-wiki "
          "coordination, canvassing, Discord, email, proxying or similar.", ""]
     if not ab:

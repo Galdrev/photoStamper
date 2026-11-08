@@ -111,7 +111,7 @@ A group of editors used a private Discord server and an email list to coordinate
 Alicewriter engaged in proxying for a banned editor through email.
 :Passed 8 to 1 at 21:05, 23 January 2025 (UTC)
 ==== Zorbabuddy's conduct ====
-Zorbabuddy canvassed via email on behalf of pro-Israel editors.
+Zorbabuddy canvassed via email on behalf of pro-Israel editors, after an off-wiki blogger asked (Smallangryplanet evidence; see also starship.paint and quietlurker99 and nameonlylower).
 :Passed 7 to 2 at 21:06, 23 January 2025 (UTC)
 ==== Edit warring ====
 Editors edit warred on many pages.
@@ -130,7 +130,7 @@ The editor engaged in off-wiki canvassing is site banned. See https://en.wikiped
 :# Per evidence. [[User:Arbone|Arbone]] ([[User talk:Arbone|talk]]) 10:00, 10 January 2025 (UTC)
 """,
     "Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_4": None,
-    "Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5/Evidence": "== Evidence presented by Huldra ==\n[[User:Huldra|Huldra]] 10:00, 1 December 2024 (UTC)\n",
+    "Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5/Evidence": "== Evidence presented by Huldra ==\n== Evidence presented by Smallangryplanet ==\n[[User:Huldra|Huldra]] 10:00, 1 December 2024 (UTC)\n",
 }
 
 
@@ -233,7 +233,8 @@ def test_collector(tmp):
     zq = [it["quote"] for it in ab["items"] if "pro-Israel" in it["side"]]
     check(zq and "[redacted]" in zq[0], f"unlinked name scrubbed from quote: {zq[:1]}")
     blob = json.dumps(ab)
-    for n in ("Alicewriter", "Bobguard", "Carolrv", "Dave Q", "Huldra", "Zorbabuddy", "Arbone", "oldid", "1234567890"):
+    for n in ("Alicewriter", "Bobguard", "Carolrv", "Dave Q", "Huldra", "Zorbabuddy", "Arbone", "oldid", "1234567890",
+              "Smallangryplanet", "starship", "quietlurker", "nameonlylower"):
         check(n.lower() not in blob.lower(), f"ArbCom extract free of {n!r}")
     for f, txt in all_text(G.OUT):
         for n in ("Alicewriter", "Bobguard", "Carolrv", "Dave Q", "Huldra", SALT, "Special:Contributions"):
