@@ -221,16 +221,19 @@ def zionism_data(title="Zionism"):
     want = [("-", "re-establishment", None, "p1"), ("+", "colonization", None, "p1"), ("+", "ethnic", "an ethnic nationalist movement", "p1"),
             ("-", "among the Jewish people", None, "p1"), ("~", "a Jewish state in the territory", "a Jewish homeland through colonization", "p1"),
             ("+", "as few Palestinian Arabs as possible", None, "p1"), ("-", "Canaan, the Holy Land", None, "p1"),
-            ("~", "a persecuted people", "an indigenous people", "rest"), ("+", "a settler colonialist movement", None, "rest"),
-            ("-", "exceptionalist", None, "rest")]
+            # rest of the section: both sentences are attributed views, so each chip carries its voice and the full swap
+            ("~", "a persecuted people", "an indigenous people (who were subject to persecution", "rest", "Advocates’ view"),
+            ("~", "a colonialist, racist and exceptionalist ideology",
+             "a supremacist, colonialist, or racist ideology, or as a settler colonialist movement", "rest", "Opponents’ view")]
     low = str.lower
     chips = []
-    for kind, a, b, where in want:
+    for kind, a, b, where, *voice in want:
         A, B = (t1, n1) if where == "p1" else (tall, nall)
         ok = (kind == "-" and a in A and low(a) not in low(nall)) or (kind == "+" and a in B and low(a) not in low(tall)) or \
              (kind == "~" and a in A and b in B and low(a) not in low(nall) and low(b) not in low(tall))
         if ok:
-            chips.append({"k": kind, "a": a, "b": b, "where": where})
+            chips.append({"k": kind, "a": a, "b": b, "where": where, "voice": voice[0] if voice else None})
+    assert sum(c["where"] == "rest" for c in chips) == 2, "a voice-labelled Zionism chip no longer matches the stored text"
     return {"title": title, "then": then, "now": now, "chips": chips, "changes": changes, "lead_terms": lead_terms,
             "n_wordings": T["n_wordings"], "n_kept": T["n_kept"], "n_undone": T["n_undone"], "blank": blank,
             "first_ts": tl[0][0], "col": stat("settler_colonial"), "re": stat("re_establish"),
@@ -238,6 +241,30 @@ def zionism_data(title="Zionism"):
 
 
 res["zionism"] = zionism_data()
+
+# Must-fix 5: what each Zionism first-sentence change did (patterns/zionism/change_codes.json, blind double coding).
+# change_codes k is 1-based over the same 292 changes as fs_track: k = index + 1, same date, same (from, to) wordings.
+def zionism_codes():
+    cp = os.path.join(HERE, "patterns", "zionism", "change_codes.json")
+    Z = res.get("zionism")
+    if not Z or not os.path.exists(cp):
+        return None
+    C = json.load(open(cp))
+    cc = sorted(C["changes"], key=lambda c: c["k"])
+    assert len(cc) == len(Z["changes"]), "change_codes.json and the Zionism timeline disagree on the number of changes"
+    for c, z in zip(cc, Z["changes"]):
+        assert (c["date"], c["from"], c["to"]) == (z[0], z[1], z[2]), f"change code {c['k']} is not aligned with the timeline"
+    D = C["summary"]["by_change"]["direction"]
+    L = C["summary"]["by_days_live"]["direction"]
+    K = C["kappa"]
+    return {"c": [[c["direction"], c["voice"], c["claim_type"]] for c in cc],
+            "more": D["more_critical"]["n"], "less": D["less_critical"]["n"], "uncod": D["uncodable"]["n"],
+            "days_more": L["more_critical"]["n"], "days_less": L["less_critical"]["n"],
+            "kappa": [round(min(v["kappa"] for v in K.values()), 2), round(max(v["kappa"] for v in K.values()), 2)]}
+
+
+if res.get("zionism"):
+    res["zionism"]["codes"] = zionism_codes()
 
 
 # --- Design council round 2 -------------------------------------------------------------------------------------------
@@ -766,6 +793,67 @@ assert not _left, f"HTML entities left in quote data: {_left}"
 findings_path = os.path.join(HERE, "findings.html")
 findings = open(findings_path).read() if os.path.exists(findings_path) else ""
 tpl = open(os.path.join(HERE, "page_template.html")).read()
+# #after scrolly: every dated wording change (K_STEPS ch markers) is checked against the stored first sentences
+# (ratchet.json fs_timeline, reverted wordings included). Each label names how its date is defined:
+#   first   = the first date the phrase appears;   settle = the date from which every later wording has it;
+#   enters  = a wording with the phrase follows one without it that day;   leaves = the reverse;
+#   now1st  = the first date of the current wording's exact text;   nowset = the date from which it never changed again.
+def _kcheck():
+    import re as _re
+    blk = tpl[tpl.index("const K_STEPS=["):]
+    blk = blk[:blk.index("}];")]
+    marks = [m for g in _re.findall(r'ch:\[((?:\["[^"]*","[^"]*"\],?)*)\]', blk) for m in _re.findall(r'\["([^"]*)","([^"]*)"\]', g)]
+    CH = {"Hamas: “political” added": ("Hamas", "political", "first"),
+          "Hamas: “militant” → “military”": ("Hamas", "political and military", "enters"),
+          "Oct 7: “attacks” → “incursions”": ("October 7 attacks", "incursions", "first"),
+          "Oct 7: “armed incursions”": ("October 7 attacks", "armed incursions", "first"),
+          "Nakba: “is the ethnic cleansing”": ("Nakba", "is the ethnic cleansing", "enters"),
+          "Hezbollah: “paramilitary”": ("Hezbollah", "paramilitary", "settle"),
+          "Gaza war: Hamas out of sentence 1": ("Gaza war", "Hamas", "leaves"),
+          "Zionism: “a Jewish homeland”": ("Zionism", "a Jewish homeland", "settle"),
+          "Gaza genocide: today’s sentence": ("Gaza genocide", None, "now1st"),
+          "Hamas: today’s definition": ("Hamas", None, "now1st"),
+          "Nakba: “by Zionists”": ("Nakba", "by Zionists", "first"),
+          "Zionism: today’s sentence": ("Zionism", None, "nowset"),
+          "Oct 7: today’s sentence": ("October 7 attacks", None, "now1st")}
+    # dates quoted in the card text, not drawn as markers
+    EXTRA = [("2024-03-05", "Nakba", "ethnic cleansing", "first"), ("2024-09-28", "Hezbollah", "militant group", "enters"),
+             ("2025-06-21", "Zionism", "a homeland for the Jewish people", "enters")]
+    RA = json.load(open(os.path.join(HERE, "data", "ratchet.json")))["articles"]
+    def date_of(art, ph, mode):
+        a = RA[art]
+        V = {v["id"]: v.get("s") for v in a["fs_variants"]}
+        T = [(d, V.get(i)) for d, i, _ in a["fs_timeline"] if V.get(i)]
+        if ph is None:
+            ph = T[-1][1]
+        has = [ph in s for _, s in T]
+        if mode == "first":
+            return next(d for (d, _), h in zip(T, has) if h)
+        if mode in ("settle", "nowset"):
+            k = len(has)
+            while k and has[k - 1]:
+                k -= 1
+            return T[k][0]
+        if mode == "now1st":
+            return next(d for (d, _), h in zip(T, has) if h)
+        want = mode == "enters"
+        return [T[k][0] for k in range(1, len(T)) if has[k] == want and has[k - 1] != want]
+    bad = []
+    for d, lab in marks:
+        assert lab in CH, f"K_STEPS marker without a source check: {lab}"
+        got = date_of(*CH[lab])
+        if (d not in got) if isinstance(got, list) else (d != got):
+            bad.append((lab, d, got if not isinstance(got, list) else got[:6]))
+    for d, art, ph, mode in EXTRA:
+        got = date_of(art, ph, mode)
+        if (d not in got) if isinstance(got, list) else (d != got):
+            bad.append((art, ph, d, got if not isinstance(got, list) else got[:6]))
+    assert not bad, f"#after wording-change dates do not match the stored first sentences: {bad}"
+    return len(marks)
+
+
+if os.path.exists(os.path.join(HERE, "data", "ratchet.json")):
+    print(f"K_STEPS: {_kcheck()} dated wording changes checked against ratchet.json")
 labdir = os.path.join(HERE, "lab")
 lab_html = open(os.path.join(labdir, "lab.html")).read() if os.path.exists(os.path.join(labdir, "lab.html")) else ""
 lab_css = open(os.path.join(labdir, "lab.css")).read() if os.path.exists(os.path.join(labdir, "lab.css")) else ""
