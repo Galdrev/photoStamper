@@ -142,7 +142,8 @@ Across mass2 articles with 10 or more critical-term flips:
   - 27 accounts changed the first sentence of 2 or more articles;
   - **9 accounts changed 3 or more**, making 48 of the 216 changes (22%);
   - the maximum was one account on 7 articles.
-- The comparison key articles had 0 accounts on 3 or more (`coordination.lead_authors`).
+- The comparison key articles (15 articles, 91 traced changes) had 0 accounts on 3 or more (`coordination.lead_authors`).
+- Counting only lasting changes (`coordination.lead_authors`, reverted excluded): 208 changes from 144 accounts; 8 accounts on 3 or more articles made 45 of them. SYNTHESIS P8 uses this base; the page quotes the 216 base and names both (build assertion in build_page.py).
 - Overlap among the 150 most active topic editors rose from 1.11x to 1.61x a popularity-preserving null. Comparison pages went from 1.17x to 1.08x.
 - **Zero** recurring editor pairs edited within 30 minutes of each other on 5 or more articles, before or after the war, in both groups.
 

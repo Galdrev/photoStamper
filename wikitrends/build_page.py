@@ -463,6 +463,33 @@ if res["network"] and res["network"].get("topic") and not os.environ.get("WT_NET
     assert (len(_pairs), _pairs.count(("add", "rem")), _pairs.count(("add", "add")), _pairs.count(("add", "mix")), _pairs.count(("mix", "rem"))) \
         == (14, 7, 3, 3, 1), f"#organised adder/remover link counts changed: {_pairs}"
 
+# QA r7: the #organised deck and #ev-organised quote the accounts that changed first sentences on 3+ key articles. Recompute
+# them from the traced changes (data/bisect.json, the coordination.py C7 block) and fail the build if the page's figures drift:
+# all traced changes (reverted included): 9 accounts, 48 of 216; lasting changes only: 8 accounts, 45 of 208; comparison
+# key articles: 15 articles, 91 traced changes, no account on 3+.
+def lead_author_counts():
+    bp = os.path.join(HERE, "data", "bisect.json")
+    if not os.path.exists(bp):
+        return None
+    sys.path.insert(0, HERE)
+    from corpus import KEY_ARTICLES, KEY_ARTICLES_CONTROL
+    tr = json.load(open(bp)); out = {}
+    for g, titles in (("topic", KEY_ARTICLES), ("comparison", KEY_ARTICLES_CONTROL)):
+        for lab, keep in (("all", lambda c: True), ("lasting", lambda c: not c.get("reverted"))):
+            ch = [(t, c) for t in titles for c in tr.get(t, []) if keep(c) and c.get("editor")]
+            arts, n = {}, Counter()
+            for t, c in ch:
+                arts.setdefault(c["editor"], set()).add(t); n[c["editor"]] += 1
+            three = [e for e in arts if len(arts[e]) >= 3]
+            out[(g, lab)] = (sum(t in tr for t in titles), len(ch), len(three), sum(n[e] for e in three))
+    return out
+_la = lead_author_counts()
+if _la:
+    assert _la[("topic", "all")] == (25, 216, 9, 48) and _la[("topic", "lasting")] == (25, 208, 8, 45) \
+        and _la[("comparison", "all")] == (15, 91, 0, 0), f"#organised lead-author counts changed: {_la}"
+    for _t in ("made 48 of the 216 traced changes", "15 comparison key articles (91 traced changes)"):
+        assert _t in open(os.path.join(HERE, "page_template.html")).read(), f"#organised deck no longer quotes: {_t}"
+
 # Sampling audit: unweighted vs design-weighted vs matched (patterns/sampling/chart_data/03_weighted_vs_unweighted.json)
 _a = _j("sampling", "chart_data", "03_weighted_vs_unweighted.json")
 res["audit"] = {"rows": [{k: r.get(k) for k in ("subset", "statistic", "label", "unweighted", "design_weighted", "cem", "ps_nn",
@@ -600,11 +627,11 @@ def langs_data():
                     assert not ((X.get(side) or {}).get("term_counts_full_lead") or {}).get(term), f"langs: {k}/{l} {side} coded absent but counted in the full lead"
     print(f"langs: absent -> outside where the full lead counts the term: {fixed}")
 
-    MOM = [("Gaza genocide", "ar", "s1", "Arabic: from accusation to definition", "In 2024 the Arabic article said Israel “has been accused of committing crimes of genocide.” Now it opens: “The genocide of Gaza is the systematic, deliberate and ongoing destruction.”"),
+    MOM = [("Gaza genocide", "ar", "s1", "Arabic: from accusation to definition", "In 2024 the Arabic article said Israel “has been accused of committing crimes of genocide.” Now it opens: “The genocide of Gaza is the systematic, deliberate and ongoing destruction …”"),
            ("Gaza war", "he", "k_genocide", "Hebrew: genocide only as a court case", "Hebrew has no article linked to English Gaza genocide. Its Gaza war article mentions genocide once, as South Africa’s suit at the ICJ."),
            ("Gaza war", "es", "s1", "Spanish: “a genocide in Gaza by Israel”", "The first sentence of the Spanish Gaza war article now says the war “has unleashed a genocide in Gaza by Israel,” and calls October 7 “a retaliatory attack.”"),
-           ("Gaza genocide", "es", "s1", "Spanish: the same move in the genocide article", "From “have accused Israel of carrying out a «genocide against the Palestinian people»” to “The Palestinian genocide in Gaza is the systematic and continuing destruction.”"),
-           ("Gaza genocide", "pt", "s1", "Portuguese: from “accused” to “is”", "From “has been accused of genocide” to “is the intentional and systematic destruction, ongoing.”"),
+           ("Gaza genocide", "es", "s1", "Spanish: the same move in the genocide article", "From “have accused Israel of carrying out a «genocide against the Palestinian people»” to “The Palestinian genocide in Gaza is the systematic and continuing destruction …”"),
+           ("Gaza genocide", "pt", "s1", "Portuguese: from “accused” to “is”", "From “has been accused of genocide” to “is the intentional and systematic destruction, ongoing …”"),
            ("Gaza genocide", "nl", "s1", "Dutch moved the other way", "From “Israel is committing genocide,” attributed to organizations and experts, to a genocide “that Israel may or may not have committed.”"),
            ("Zionism", "ar", "s1", "Arabic: Zionism “by colonizing a land outside Europe”", "Colonialism moved from the critics’ sentence into the definition, with “the war of ethnic cleansing of Palestine” and “a Jewish ethnocracy” in the same sentence."),
            ("Zionism", "he", "s1", "Hebrew: the Balfour wording", "Hebrew kept colonization out and moved the other way: “a Jewish state” became “a national home for the Jewish people.”"),
@@ -638,7 +665,13 @@ def langs_data():
     EN_FULL = " ".join(v[k] for v in json.load(open(os.path.join(HERE, "data", "leads.json"))) for k in ("lead0", "lead1"))
     def check_quotes(text, pools, where):
         for q in re.findall(r"“([^”]+)”", text or ""):
-            for piece in q.rstrip(".,").split(" … "):  # American style: a period or comma may sit inside the quote
+            q0 = q.rstrip(".,")
+            q0 = q0[:-2] if q0.endswith(" …") else q0  # a trailing ellipsis marks a cut sentence
+            # QA r7: a quote of 8+ words that opens with a capital and closes with a period claims a whole sentence (titles are shorter): the pool must end it there
+            if where.startswith("moment") and q[:1].isupper() and q.endswith(".") and len(q.split()) >= 8 and not q0.endswith("…") \
+                    and not any(q0.split(" … ")[-1] + "." in p for p in pools):
+                raise SystemExit(f"langs: a quoted sentence is cut short without an ellipsis ({where}): {q!r}")
+            for piece in q0.split(" … "):  # American style: a period or comma may sit inside the quote
                 if not any(piece in p for p in pools) and not (where.endswith("/en") and ((EXT and f'"{piece}' in EXT) or piece in EN_FULL)):
                     raise SystemExit(f"langs: quote not in our translations ({where}): {piece!r}")
     for k, row in cells.items():

@@ -78,6 +78,11 @@ button,select,input{font:inherit;color:inherit}
 #xmTip .h{display:block;font:600 10.5px/1.35 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 #xmTip .st{display:block;font:500 11px/1.4 var(--mono);color:var(--ink);margin:3px 0 7px}
 #xmTip.pin .h,#xmTip.pin .st{padding-right:34px}
+#xmTip.sheet{width:auto;max-width:none}
+.xm-c.tipon{outline:2px solid var(--ink);outline-offset:-1px}
+#xmTip details.then{margin:0 0 5px}#xmTip details.then summary{cursor:pointer;font-size:12.5px;list-style:none}
+#xmTip details.then summary::after{content:" ▸";color:var(--muted)}#xmTip details.then[open] summary::after{content:" ▾"}
+#xmTip details.then summary::-webkit-details-marker{display:none}
 #xmTip p{margin:0 0 5px}
 #xmTip .o{font:16px/1.5 var(--display);color:var(--ink)}
 #xmTip .o[dir="rtl"]{font-size:17px;text-align:right}
@@ -133,7 +138,7 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .k-notes{margin:0;display:flex;flex-wrap:wrap;gap:2px 12px;font:500 11px/1.4 var(--mono);color:var(--ink-2)}
 .k-notes span{display:inline-flex;gap:5px;align-items:baseline}
 .k-notes i{font-style:normal;display:inline-grid;place-items:center;min-width:14px;height:14px;border-radius:2px;color:var(--sheet);font:600 10px/1 var(--mono);transform:translateY(2px)}
-@media (max-width:600px){#kKey{gap:1px 9px;font-size:10.5px;white-space:nowrap}#kKey .key{gap:4px}.k-notes{font-size:10.5px;line-height:1.3;gap:1px 14px;flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;height:18px;scrollbar-width:none;-webkit-mask-image:linear-gradient(to left,transparent,#000 28px);mask-image:linear-gradient(to left,transparent,#000 28px)}.k-notes[hidden]{display:flex!important;visibility:hidden}.kfig{gap:6px}}
+@media (max-width:600px){#kKey{gap:1px 9px;font-size:10.5px;white-space:nowrap}#kKey .key{gap:4px}.k-notes{font-size:10px;line-height:1.3;gap:0 10px;flex-wrap:wrap;white-space:normal;height:60px;overflow:hidden;align-content:flex-start}.k-notes span{display:inline;white-space:normal}.k-notes i{margin-right:4px}.k-notes[hidden]{display:flex!important;visibility:hidden}.kfig{gap:6px}}
 
 /* wow: then and now */
 .wow{margin-top:64px;display:grid;gap:18px}
@@ -192,6 +197,10 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 /* section rhythm */
 .sec{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:104px}
 .sec>header{display:grid;gap:12px;max-width:66ch}
+/* QA r7: headline measure matches the deck on desktop (3 lines, not 5); a touch smaller on phone */
+@media (min-width:900px){.sec>header{max-width:min(100%,760px)}.sec>header>h2{font-size:40px}.sec>header>.deck{max-width:70ch}}
+@media (max-width:600px){.sec>header>h2{font-size:26px;line-height:1.12}}
+figure[id],.fig[id],#o7T{scroll-margin-top:72px}
 .findings{display:grid;gap:14px;font:400 18px/1.65 var(--body)}
 .findings:empty::before{content:"Findings are added when the analysis has run.";color:var(--muted);font-size:15px}
 .findings h2{font-size:30px}.findings h3{margin-top:10px}
@@ -239,6 +248,8 @@ svg .lbl{fill:var(--ink);font-weight:600}
 .step.on{border-left-color:var(--ink)}
 .step .k{font:600 11px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .step .go{justify-self:start;font:500 12px var(--mono);background:none;border:0;padding:0;color:var(--add-ink);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+/* QA r7: scrolling drives the chart; the step button stays for keyboard users and shows only on focus */
+#stepsK .step .go:not(:focus-visible){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;padding:0;min-height:0}
 .sticky{position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px + 2vh);z-index:2}
 .delta{font:500 .86em var(--mono);padding:0 2px;white-space:nowrap}
 .delta.up{color:var(--inc)} .delta.dn{color:var(--dec)}
@@ -422,7 +433,10 @@ section[id],details[id]{scroll-margin-top:58px}
 .ev-back>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ev-back a{white-space:nowrap}
 .ev-back[hidden]{display:none}
-body.evb #view-evidence{padding-bottom:72px}body.evb #xrPair,body.evb #ppFig{scroll-margin-bottom:76px}
+body.evb #view-evidence{padding-bottom:72px}
+/* QA r7: docked controls sit above the back-to-story banner, never under it */
+body.evb .zi-ctl{bottom:calc(max(8px,env(safe-area-inset-bottom,0px)) + var(--evb-h,56px))}
+body.evb #netDet.docked,body.evb .net-det.docked{bottom:calc(8px + var(--evb-h,56px))}body.evb #xrPair,body.evb #ppFig{scroll-margin-bottom:76px}
 @media (min-width:900px){.tabs-name{display:none}}
 @media (max-width:600px){#trPicks,#xlPicks,#forestStats,#ledger .tbl{-webkit-mask-image:linear-gradient(to left,transparent,#000 28px);mask-image:linear-gradient(to left,transparent,#000 28px)}
   .btn.sm,#ppAll,#trMore,#forestAll,#ledMore,.xm-q>button{min-height:40px}
@@ -693,7 +707,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .step .go{min-height:44px;padding:12px 0}
   #stepsK .step .go{display:none}
   #trend,#es{height:clamp(230px,34vh,320px)!important}
-  #kChart{height:clamp(180px,28vh,230px)!important;height:clamp(180px,28svh,230px)!important}
+  #kChart{height:clamp(180px,27vh,220px)!important;height:clamp(180px,27svh,220px)!important}
   #kSub{display:none}
 
   .scrolly .fig{gap:6px;padding:7px 10px}
@@ -944,6 +958,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tl.t-X{background:var(--faint);border:0;color:var(--muted);font-weight:400;font-size:10px}
 .tl.t-A.ow{background:var(--sheet);border:1.5px solid var(--ink-2);color:var(--ink);font-size:13px}
 .xm.m-now .tl.th,.xm.m-now .ar{display:none}
+/* QA r7: in Now only, a changed cell keeps its first copy as a small corner square, so "then" is still visible */
+.xm-c{position:relative}
+.xm.m-now .xm-c.chg .tl.th{display:inline-grid;position:absolute;left:calc(50% - 27px);top:2px;width:11px;height:11px;font-size:6.5px;border-radius:2px}
 .xm.m-then .tl.nw,.xm.m-then .ar{display:none}
 .xm.m-then .tl.th{width:30px;height:30px;font-size:13px}
 .xm-c.chg .tl.nw{box-shadow:0 0 0 2px var(--sheet),0 0 0 3.5px var(--ink-2)}
@@ -1029,6 +1046,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xr-s .x.hl2{box-shadow:0 0 0 1.5px var(--ink-2)}
 .xr-s .x[data-g]{cursor:pointer}
 .xr-s .sep{display:none}.xr-s.st-b .sep{display:inline}
+.xr-s.st-b .w.k1:not(.k1+.k1)::before,.xr-s.st-b .w.k2:not(.k2+.k2)::before,#brS del:not(del+del)::before,#brS ins:not(ins+ins)::before{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.xr-s.st-b .w.k1:not(.k1+.k1)::before,#brS del:not(del+del)::before{content:"removed: "}
+.xr-s.st-b .w.k2:not(.k2+.k2)::before,#brS ins:not(ins+ins)::before{content:"added: "}
 .xr-s.bulk:is(.st-n,.st-b) .k2>.x:not(.cg){background:none;color:inherit;box-shadow:inset 0 -1px 0 var(--add-ink)}
 .xr-s .gc::after{display:inline-block;direction:ltr;unicode-bidi:isolate;margin-inline:.28em .1em;font:500 max(10px,.56em)/1.45 var(--mono);letter-spacing:0;padding:0 .5em;border-radius:2px;border:1px solid var(--cc);border-inline-start-width:4px;color:var(--ink);background:var(--sheet);vertical-align:.18em;white-space:nowrap;text-decoration:none}
 .xr-s.st-f .gc[data-cf]::after{content:attr(data-cf)}
@@ -1058,7 +1078,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .xm thead th{word-break:normal;overflow-wrap:normal;hyphens:manual}
   .xm thead th:not(.xm-l){min-width:64px}
   .xm thead .lf{display:none}.xm thead .ls{display:block;font:600 10px/1.2 var(--body);text-transform:none;letter-spacing:0;color:var(--ink-2)}
-  .xm tbody th .xn{display:none}
+  .xm tbody th .xi{display:none}
   .xm tbody th{white-space:normal}.xm tbody th span{display:block;line-height:1.25}
   .hscroll:not(.at-end){-webkit-mask-image:linear-gradient(to left,transparent,#000 32px);mask-image:linear-gradient(to left,transparent,#000 32px)}
   .tl{width:17px;height:17px;font-size:9px}
@@ -1228,6 +1248,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .net-g svg text.sl{font:600 10px var(--mono);fill:var(--ink);pointer-events:none}
 .net-g svg .eh{stroke:transparent;stroke-width:16px;pointer-events:stroke;cursor:pointer}
 .net-g svg .nd.mx{stroke:var(--muted);stroke-width:1.5}
+.net-g svg .nd.lo{opacity:.55}
 .net-g svg.sel .nd:not(.hi):not(.on),.net-g svg.sel .ed:not(.hi):not(.on){opacity:.3!important}
 .net-g svg .ed.hi{stroke:var(--ink)!important;stroke-width:2.5px!important;opacity:1!important}
 .net-g svg .nd.hi{stroke:var(--ink);stroke-width:2.5}
@@ -1347,7 +1368,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="sec" id="oct7" aria-labelledby="o7H">
   <header>
     <div class="eyebrow"><span class="layer">WHAT IT SAYS</span>October 7, Hamas and the hostages</div>
-    <h2 id="o7H">Wikipedia’s first line on October 7 now says “coordinated armed incursions.” Its articles on Israel and Hamas do not mention the hostages.</h2>
+    <h2 id="o7H">Wikipedia’s first line on October 7 now says “coordinated armed incursions.” Its articles on Israel and Hamas do not mention the hostages.</h2>
     <p class="means bl"><b>Bottom line:</b> October 7’s opening section describes the massacre and names the hostages, but its first sentence calls it only “armed incursions,” and Hamas’s terror designation now comes second to last in its own article.</p>
     <p class="deck">First sentence, 23 October 2023: “A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas…”; since 8 October 2026: “a series of coordinated armed incursions … carried out by Hamas and several other Palestinian militant groups.” January 2024: “Israel and international media have reported rape and sexual assault by Hamas fighters”; now: “Numerous sources have reported dozens of cases of rape and sexual assault,” naming no perpetrator. Hamas, “militant” in 2021, is now a “political organisation with a military wing.” None of our four copies of the Israel and Hamas openings since 2021 mentions the hostages.</p>
   </header>
@@ -1372,7 +1393,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="sec" id="after" aria-labelledby="afH">
   <header>
     <div class="eyebrow"><span class="layer">WHAT IT SAYS</span>After the battles</div>
-    <h2 id="afH">Five days after October 7, Hamas’s “militant” became “military.” No later battle brought a comparable wave; today’s definitions settled in 2025 and 2026.</h2>
+    <h2 id="afH">Five days after October 7, Hamas’s “militant” became “military.” No later battle brought a comparable wave; today’s definitions settled in 2025 and 2026.</h2>
     <p class="means bl"><b>Bottom line:</b> New critical terms more than tripled in the three weeks after October 7 and rose after the Rafah offensive; the other events in the cards brought no clear rise. The definitions of Hamas, October 7, the Nakba, Zionism and the Gaza war reached today’s wording later.</p>
     <p class="deck">Pale bars: new critical terms (genocide, apartheid, colonial, ethnic cleansing, Nakba and others) each week in 4,642 topic opening paragraphs; solid: still there a week later. Battles and escalations were so frequent that two in every five weeks fell within three weeks of one, so a change that lands after a battle gives a date, not a cause.</p>
   </header>
@@ -1391,14 +1412,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="sec" id="against" aria-labelledby="agH">
   <header>
     <div class="eyebrow">The other direction</div>
-    <h2 id="agH">Some lines softened: October 7 lost a genocide clause, and the 1948 expulsion moved its expellers to the second sentence.</h2>
-    <p class="means bl"><b>Bottom line:</b> For every critical term taken out of topic opening paragraphs, almost four went in; in comparison articles, fewer than two.</p>
+    <h2 id="agH">Some lines moved Israel’s way: October 7 dropped a genocide clause, and the 1948 expulsion no longer names the expellers in its first sentence.</h2>
+    <p class="means bl"><b>Bottom line:</b> These are exceptions: for every critical term taken out of these opening paragraphs, almost four went in; on comparison pages, fewer than two.</p>
   </header>
-  <p class="cap">Critical terms in opening paragraphs, 2021 to now: topic, 223 in, 61 out; comparison (other countries, conflicts and religions), 125 in, 73 out.</p>
+  <p class="cap">Critical terms in opening paragraphs, 2021 to now: topic articles, 223 in, 61 out; comparison articles (other countries, conflicts and religions), 125 in, 73 out.</p>
   <ul class="short-row">
     <li><b>1948 Palestinian expulsion and flight.</b> From July 2023 its first sentence named the expellers (“Zionist militias”); since 30 May 2025 it says only that Palestinians “were expelled or fled from their homes,” and the next sentence names “the Zionist paramilitaries Haganah, Irgun, and Lehi.”</li>
-    <li><b>October 7 attacks.</b> On 1 October 2026 its second sentence called Israel’s response “actions scholars have concluded constitute genocide”; a month later it was gone. That edit may be reverted.</li>
-    <li><b>Israeli settlement.</b> Wikipedia’s own “built in violation of international law” left the first sentence on 14 March 2022; by July 2023 illegality was attributed (“The international community consider Israeli settlements to be illegal … though Israel disputes this”). On 4 November 2026 the first sentence hardened again: “the illegal civilian communities built by Israel”; it may be reverted.</li>
+    <li><b>October 7 attacks.</b> On 1 October 2026 its second sentence called Israel’s response “actions scholars have concluded constitute genocide”; by 2 November the clause was gone. The removal is recent and may be undone.</li>
+    <li><b>Israeli settlement.</b> Wikipedia’s own “built in violation of international law” left the first sentence on 14 March 2022; by July 2023 illegality was attributed (“The international community consider Israeli settlements to be illegal … though Israel disputes this”). <span class="cap">It came back on 4 November 2026: “the illegal civilian communities built by Israel.”</span></li>
   </ul>
   <p class="cap ev-link">See the evidence: <a href="#ev-against">Jewish ties to the land, both directions</a>.</p>
 </section>
@@ -1407,7 +1428,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <header>
     <div class="eyebrow"><span class="layer">WHAT IT SAYS</span>Other languages <span class="xchip">Exploratory</span></div>
     <h2>Spanish, Portuguese and Arabic once attributed the genocide charge. Now they state it as fact, as English does.</h2>
-    <p class="means bl"><b>Bottom line:</b> Hebrew is the exception. Its Gaza war article cites only South Africa’s court case, and in first sentences it calls October 7 a “massacre” and Hamas a “terror organisation” in its own voice; English does neither.</p>
+    <p class="means bl"><b>Bottom line:</b> Hebrew is the exception: its Gaza war article does not state the charge, and in first sentences it calls October 7 a “massacre” and Hamas a “terror organisation” in its own voice; English does neither.</p>
     <p class="deck">In their first sentences, German, French, Italian and now Dutch also call October 7 terror or a massacre in their own voice; Russian, English and Spanish do so only later in the opening section. Spanish’s Gaza war first sentence calls October 7 “un ataque de represalia” (a retaliatory attack).</p>
   </header>
   <figure class="fig xm-keep" id="xmFig" style="margin:0">
@@ -1431,7 +1452,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="eyebrow"><span class="layer process">HOW IT HAPPENED</span>Organized or organic?</div>
     <h2 id="orgSH">Long-time editors kept returning to the same pages, and talk-page votes split into tight camps. No synchronized edits or pasted text turned up.</h2>
     <p class="means bl"><b>Bottom line:</b> Wikipedia’s Arbitration Committee banned one editor on 9 December 2024 “for off-wiki misconduct relating to the PIA topic area” (Palestine–Israel); its decision does not say which side. Our data show a small pool of regulars and camp-like voting, not a campaign footprint, and off-wiki canvassing would not show in them at all.</p>
-    <p class="deck">Nine accounts, each changing three or more first sentences on the key articles, made 48 of the 216 traced changes; on comparison articles, no account did. Zionism’s wartime editors had a median account age of 9.4 years. In 217 formal talk-page discussions, four groups of 3 to 6 accounts voted together 89 to 100% of the time, against about half by chance: camp voting, not proof of off-wiki coordination; we did not code which side each group took. Lines below link unnamed accounts that changed critical terms on the same articles more often than chance. Half (7 of 14) join an account that mostly adds critical terms to one that mostly removes them, the pattern of an edit dispute; 3 join two adders.</p>
+    <p class="deck">Nine accounts, each changing three or more first sentences on the key articles, made 48 of the 216 traced changes; on the 15 comparison key articles (91 traced changes), no account did. Zionism’s wartime editors had a median account age of 9.4 years. In 217 formal talk-page discussions, four groups of 3 to 6 accounts voted together 89 to 100% of the time, against about half by chance: camp voting, not proof of off-wiki coordination; we did not code which side each group took. Of the 14 linked pairs below, 7 join an account that mostly adds critical terms to one that mostly removes them, the pattern of an edit dispute; 3 join two adders.</p>
   </header>
   <div id="net"><!--NETWORK: build_page.py inlines patterns/coord/chart_data/network.json as R.network when present; otherwise this renders the "analysis running" placeholder--></div>
   <p class="cap">See the evidence: <a href="#orgRec">what Wikipedia’s Arbitration Committee decided, the voting camps, our timing tests and every caveat</a>.</p>
@@ -1443,7 +1464,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <h2 id="trustH">This study measures what Wikipedia says, not whether it is true.</h2>
     <p class="means bl"><b>Bottom line:</b> The quotes are exact and dated. The shift sits in the most important articles; across all 49,000 pages it is not measurably larger than in other conflicts.</p>
   </header>
-  <p class="deck col trust-line"><b>One honest limit.</b> The change sits in the most important articles: since July 2023, 10.3% of Top-importance articles here gained a critical term in their opening, against 4.4% in other conflict regions (+5.9 points; range 0.9 to 11.2). The long tail, 80% of pages, shows no difference, so across all 49,000 articles the gap (0.9% against 0.5% of articles gaining a term, +0.4 points) is within the margin of error.</p>
+  <p class="deck col trust-line"><b>One honest limit.</b> The change sits in the most important articles: since July 2023, 10.3% of Top-importance articles here gained a critical term in their opening, against 4.4% in other conflict regions (+5.9 points; 95% interval 0.9 to 11.2). The long tail, 80% of pages, shows no difference, so across all 49,000 articles the gap (0.9% against 0.5% of articles gaining a term, +0.4 points) is within the margin of error.</p>
   <p class="cap"><a href="#evidence">Open the evidence room</a>: every chart in full, the method, the samples, the checks, what this study can and can’t tell you, and the results we dropped.</p>
 </section>
 
@@ -1550,7 +1571,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="sec" id="ev-charge" aria-labelledby="evChH">
   <header><div class="eyebrow">The charge</div><h2 id="evChH">Who is charged with what, and in whose voice</h2>
-    <p class="deck">We coded every sentence about violence, harm, displacement, legal charges or rights in the 150 most-read opening sections that existed in January 2021, at three dates: January 2021, July 2023 and now (5 November 2026). The share that names Israel, Israelis, Jews or Zionists as the one doing the harm was 23.6%, 24.1% and 26.4%: a change of +2.8 points (range −1.9 to +8.3). Genocide: 0 sentences in 2021, 0 in July 2023, 7 now, plus Israel’s denial.</p>
+    <p class="deck">We coded every sentence about violence, harm, displacement, legal charges or rights in the 150 most-read opening sections that existed in January 2021, at three dates: January 2021, July 2023 and now (5 November 2026). The share that names Israel, Israelis, Jews or Zionists as the one doing the harm was 23.6%, 24.1% and 26.4%: a change of +2.8 points (95% interval −1.9 to +8.3). Genocide: 0 sentences in 2021, 0 in July 2023, 7 now, plus Israel’s denial.</p>
     <p class="deck">Sentences describing a killing or massacre rose on both sides, counted the same way: those naming Israel, Israelis, Jews or Zionists as the side that killed went from 9 to 26, those naming Hamas or Palestinians from 8 to 23. The first count is not a list of accusations against the Israeli state: it includes the Book of Joshua, Yigal Amir’s murder of Rabin, Grynszpan’s assassination of vom Rath and plain reports of operations, such as Entebbe (“the commandos rescued 102 hostages and killed all the hijackers”). The base is the 150 most-read topic opening sections, Holocaust and biblical pages included; on it the share of harm sentences naming Israel or Jews moved from 23.6% to 26.4%.<!--QA r5: stays out of the story until perp_codes gains a state-actor / modern / accusation flag and perp_results a recount on it.--></p></header>
   <figure class="fig pp" id="ppFig" style="margin:0">
     <div class="fig-h"><span class="fig-t">Who is charged with what, and in whose voice: sentences in the opening sections, 2021 · July 2023 · now</span><span class="cap">Tap a bar to read the sentences behind it.</span></div>
@@ -1580,8 +1601,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <header>
     <div class="eyebrow"><span class="layer process">HOW IT HAPPENED</span>Timing</div>
     <h2 id="whenH">Timing in detail: one wave with the fighting. The volume fell back; the defining sentences kept changing into late 2026.</h2>
-    <p class="means bl"><b>Bottom line:</b> New critical wording arrived after October 7 in one wave alongside the battles (suggestive); its pace peaked in 2024 and is back near the prewar rate (chart below), but the first sentences people read settled late: the Nakba “by Zionists” from July 2026, Zionism “through colonization” from August.</p>
-    <p class="deck">New critical terms per 1,000 topic edits ran at about 7 before the war, 13.5 in late 2023, and 16.0 and 15.9 through 2024. Then the rate fell to 10.8 and 8.2 in 2025, and to 5.1 and 5.9 in 2026, at or below the prewar rate. Volume fell, but the defining sentences kept moving: the Nakba’s “by Zionists” has stood since 6 July 2026, Zionism’s “through colonization” since 27 August, Israel’s first sentence since 4 September and October 7’s current first sentence since 8 October 2026.</p>
+    <p class="means bl"><b>Bottom line:</b> New critical wording arrived after October 7 in one wave alongside the battles (suggestive); its pace peaked in 2024 and is back near the prewar rate (chart below), but the first sentences people read settled late: the Nakba “by Zionists” from July 2026; Zionism’s last removal of “colonization” was undone in August.</p>
+    <p class="deck">New critical terms per 1,000 topic edits ran at about 7 before the war, 13.5 in late 2023, and 16.0 and 15.9 through 2024. Then the rate fell to 10.8 and 8.2 in 2025, and to 5.1 and 5.9 in 2026, at or below the prewar rate. Volume fell, but the defining sentences kept moving: the Nakba’s “by Zionists” has stood since 6 July 2026; Zionism’s “a Jewish homeland through colonization,” in place since February 2026 apart from brief removals, was last restored on 27 August; Israel’s first sentence has stood since 4 September, and October 7’s current first sentence since 8 October 2026.</p>
     <p class="deck">Below, week by week: editing on top, new critical vocabulary in topic opening paragraphs below, and each real-world event as a dot by type. Tap a dot.</p>
   </header>
   <figure class="stream" style="margin:0" aria-label="Every edit to every article in the study, by week">
@@ -1624,7 +1645,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="xr-row" id="xrSlotRow"><span class="lab" id="xrSlotL">Sentence</span><div class="seg" id="xrSlot" role="group" aria-labelledby="xrSlotL"></div></div>
     <div class="xr-hd" id="xrHd"></div>
     <div class="xr-time"><div class="seg" id="xrTime" role="group" aria-label="Which version"></div><span class="cap" id="xrTimeC"></span></div>
-    <div class="xr-pair" id="xrPair" aria-live="polite"></div>
+    <div class="xr-pair" id="xrPair"></div>
     <ul class="zi-chips xr-chips" id="xrChips" aria-label="Key words and our glosses"></ul>
     <p class="xr-note" id="xrNote"></p>
     <p class="zi-sr" id="xrLive" aria-live="polite" aria-atomic="true"></p>
@@ -1710,7 +1731,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="eyebrow"><span class="layer process">HOW IT HAPPENED</span>Organized or organic?</div>
     <h2 id="orgH">Organized or organic: the full record</h2>
     <p class="means bl"><b>Bottom line:</b> Wikipedia’s Arbitration Committee (ArbCom) banned an editor on 9 December 2024 “for off-wiki misconduct relating to the PIA topic area” (Palestine–Israel articles 5, final decision, finding 16); its decision does not say which side. Press reports of a pro-Palestinian Discord channel and of pro-Israel email canvassing are listed below as reported. Our own data show regulars returning to the same pages and camp-like talk-page voting, not a campaign footprint, and the footprint test could only have seen a very large effect.</p>
-    <p class="deck">The edits were made by long-standing accounts, in small groups per page, with insertions and removals done by different hands, and a pool of regulars moving across the hot pages: 9 accounts made 48 of the 216 traced first-sentence changes on the 25 key articles by changing 3 or more of them; on the comparison key articles no account did. Our data cannot see off-wiki channels; it can see timing and footprint. The wave of critical wording began in the 16 weeks after 7 October 2023, when topic insertions ran at 3.4 times the comparison rate (0.5 times before the war; 2.0 times while the Discord channel was active; chart below), before the pro-Palestinian Discord channel opened in January 2024, as the press reported it. The April 2025 bans for other coordination, as reported, give no start date. The pro-Israel email canvassing reported from ArbCom’s January 2024 motions dates from the same weeks but aimed the other way.<!--QA r7: the PIA4/PIA5 case pages were read (patterns/guard/arbcom.md); the January 2024 motions, the April 2025 bans and the press characterisations of sides remain snippet-only (ORGS.md section 5)--></p>
+    <p class="deck">The edits were made by long-standing accounts, in small groups per page, with insertions and removals done by different hands, and a pool of regulars moving across the hot pages: 9 accounts made 48 of the 216 traced first-sentence changes on the 25 key articles by changing 3 or more of them (counting only changes that lasted: 8 accounts, 45 of 208); on the 15 comparison key articles, with 91 traced changes, no account did. Our data cannot see off-wiki channels; it can see timing and footprint. The wave of critical wording began in the 16 weeks after 7 October 2023, when topic insertions ran at 3.4 times the comparison rate (0.5 times before the war; 2.0 times while the Discord channel was active; chart below), before the Discord channel that the press described as pro-Palestinian opened in January 2024. The April 2025 bans for other coordination, as reported, give no start date. The email canvassing in ArbCom’s January 2024 motions, which summaries of the motions describe as pro-Israel, dates from the same weeks.<!--QA r7: the PIA4/PIA5 case pages were read (patterns/guard/arbcom.md); the January 2024 motions, the April 2025 bans and the press characterisations of sides remain snippet-only (ORGS.md section 5)--></p>
     <p class="deck">No campaign, exposure or sanction date leaves a mark we can tell from chance, but that test has low power: it could only have seen the ratio fall to 0.20 times or rise to 4.2 times. “Not detected” means the test could not see it, not that it did not happen.</p>
   </header>
 
@@ -1721,8 +1742,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li><span class="tag a">Proposed</span><span><b>11 January 2025.</b> A proposed finding (it may not have passed) says an editor engaged in “disruptive behavior in the PIA topic area, including making specific edits after an off-wiki blogger requested those edits be made.” It does not say which side.</span></li>
     </ul></div>
     <div class="org-col"><div class="org-lab">Reported by the press and in ArbCom notices; not in the case pages we read</div><ul>
-      <li><span class="tag a">Reported</span><span><b>January 2024 motions, reported as pro-Israel.</b> Email canvassing for a pro-Israel viewpoint and proxy editing for a banned editor, dating from about October 2023; two editors found most likely to have taken part.<!--VERIFY: snippet-only; motion text and count (2 or 3) unverified (ORGS.md #7, section 5.3)--></span></li>
-      <li><span class="tag a">Reported</span><span><b>December 2024, reported as pro-Palestinian.</b> Editors sanctioned for editing after canvassing requests on the Tech for Palestine Discord channel and for “encouraging other users to game the extended confirmed restriction”; one site-banned, one topic-banned.<!--VERIFY: snippet-only; exact dates and counts (ORGS.md #8, section 5.4)--></span></li>
+      <li><span class="tag a">Reported</span><span><b>January 2024 motions, which summaries of the motions describe as pro-Israel.</b> Email canvassing for one viewpoint, as reported, and proxy editing for a banned editor, dating from about October 2023; two editors found most likely to have taken part.<!--VERIFY: snippet-only; motion text and count (2 or 3) unverified (ORGS.md #7, section 5.3)--></span></li>
+      <li><span class="tag a">Reported</span><span><b>December 2024, which the press described as pro-Palestinian.</b> Editors sanctioned (ArbCom notice, as covered by Pirate Wires and the Jewish Journal) for editing after canvassing requests on the Tech for Palestine Discord channel and for “encouraging other users to game the extended confirmed restriction”; one site-banned, one topic-banned.<!--VERIFY: snippet-only; exact dates and counts (ORGS.md #8, section 5.4)--></span></li>
       <li><span class="tag a">Reported</span><span><b>25 April 2025.</b> Two more site bans on “additional evidence of off-wiki coordination independent of the Tech4Palestine Discord server.”<!--VERIFY: snippet-only (ORGS.md section 3)--></span></li>
       <li><span class="tag a">Reported</span><span><b>23 January 2025.</b> About eight indefinite topic bans (press reports described 6 as “pro-Palestinian” and 2 as “pro-Israel”; those labels are the press’s) on conduct grounds; not a coordination finding.<!--VERIFY: snippet-only; PIA5 remedies and counts (ORGS.md section 5.1)--></span></li>
     </ul></div>
@@ -1739,7 +1760,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li><span class="tag u">Not shown</span> Israeli government Wikipedia editing in 2021 to 2026: no reputable report found. The 2025 contracts concern web and AI content, not Wikipedia.<!--VERIFY: snippet-only (ORGS.md #19)--></li>
       <li><span class="tag u">Not shown</span> A plan is not an operation: the Heritage Foundation’s leaked “Project Esther” deck (January 2025) planned to “identify and target” editors; its execution is not shown.<!--VERIFY: snippet-only (ORGS.md #17)--></li>
     </ul>
-    <p class="cap">ArbCom did not publish the size of either group, and its April 2025 finding of other coordination gives no start date. Only accounts with 500 edits and 30 days may edit these articles. Public training drives on both sides are documented too (Euro-Med’s WikiRights rounds, arts edit-a-thons on Palestine, a 2010 settler-council course); none maps onto the specific edits we measured.<!--VERIFY: all ORGS.md items were read as search snippets; nothing here is full text--></p>
+    <p class="cap">ArbCom did not publish the size of either group, and its April 2025 finding of other coordination gives no start date. Only accounts with 500 edits and 30 days may edit these articles. Public training drives from each viewpoint are documented too (Euro-Med’s WikiRights rounds, arts edit-a-thons on Palestine, a 2010 settler-council course); none maps onto the specific edits we measured.<!--VERIFY: all ORGS.md items were read as search snippets; nothing here is full text--></p>
 </div></details>
 
   <h3 class="o-h">2 · Timing and footprint: what our own tests can see</h3>
@@ -1760,7 +1781,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li><b>Bloc A: four accounts, adding and removing.</b> 23 articles; 45 insertions and 23 removals of critical terms. None of 200 shuffled worlds made a group this large and tight. Medium confidence.</li>
       <li><b>Bloc B: four accounts, found when we test insertions alone.</b> 114 insertions across 53 articles. 1 of 200 shuffled worlds made a group like it. Medium confidence. A test on insertions alone cannot see what the same accounts removed.</li>
       <li><b>What the blocs are not.</b> No member edited within 10 minutes of another; on the same article, members came a median of 14 days (A) and 66 days (B) apart. No sentence was pasted into five or more articles, on topic or comparison pages; the Nakba wording on 17 Palestinian village pages came from 15 accounts, piecemeal. The test on removals alone found no bloc. All eight accounts are long-standing (median account age about 3 years in A and 6 in B), and none has under 500 edits, which the Arab–Israeli restriction requires; ArbCom’s December 2024 case, as reported, concerned gaming that threshold.</li>
-      <li><b>Timing, low confidence.</b> Bloc A made 41% of its edits in the war’s first months (October 2023 to January 2024, also the period of the reported pro-Israel email canvassing), against 18% for matched sets of random accounts (p = 0.02 to 0.04), and 21% in the pro-Palestinian Discord window (January to September 2024), against 23%. Bloc B: 34% against 15% (p = 0.05), and 29% against 24%. No result passes our strict level (p &lt; 0.01), and the email window is also the first months of the war, when all accounts edited more. Being active in a window does not make a group part of what ArbCom is reported to have found.</li>
+      <li><b>Timing, low confidence.</b> Bloc A made 41% of its edits in the war’s first months (October 2023 to January 2024, also the period of the email canvassing that summaries of the January 2024 motions describe as pro-Israel), against 18% for matched sets of random accounts (p = 0.02 to 0.04), and 21% in the Discord window the press described as pro-Palestinian (January to September 2024), against 23%. Bloc B: 34% against 15% (p = 0.05), and 29% against 24%. No result passes our strict level (p &lt; 0.01), and the email window is also the first months of the war, when all accounts edited more. Being active in a window does not make a group part of what ArbCom is reported to have found.</li>
     </ul>
     <ul class="short-row">
       <li><b>Across languages: in step more than chance, by different accounts.</b> Different accounts in different editions made the same change (the same term, added or removed) within a day of each other 135 times, against 104.6 by chance (p = 0.014), and within a week 925 times, against 579 (p = 0.001); high confidence in the counts. A battle, ruling or report that every edition covers produces this; so would coordination among different accounts. Our null shifts each account’s timeline, which removes news timing too, so it cannot tell the two apart, and no cluster passed the stricter check (0 flagged). The same account never did this, in any window. 153 accounts edited the same key article in two or more languages (chance 106); none carried a term across. No cross-language bloc: no two accounts linked by term edits (chance 0); on talk pages 8 cross-language pairs, against 2.7 by chance, and no group of three or more. Low confidence.</li>
@@ -1883,7 +1904,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="means"><b>“Not detected” is not “did not happen.”</b> Several tests on this page found nothing: no footprint of any campaign, no tight pairs of editors, no average rise. Each could only see large effects, and none can see what happens off Wikipedia, in talk-page votes, or through accounts that were never caught. Where a test had low power we say so next to the result.</p>
   <div class="short-more">
     <details class="stats"><summary>Methods in one paragraph</summary><div class="in">
-      <p>We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,312 sampled articles (4,642 topic and 5,670 comparison), across their revision histories. Each result is the change in topic articles minus the change in comparison articles. That subtraction removes ordinary editing trends. We computed two ranges for each result: one by resampling articles, one by resampling WikiProjects. Where the two disagree, we call the result suggestive. Half the articles were held back until the end. The main result replicated there: +3.6 percentage points, with a range of 1.7 to 5.6, for those Top, High and Mid articles. A later probability sample of all 48,974 topic articles and 141,356 articles on other conflict regions, weighted to the true size of each group and grade, shows the gap at Top importance (+5.9 points) and none in the long tail (+0.4 points overall, within the margin of error). A random sample of 2,466 Wikipedia articles showed no site-wide drift. Measures that failed precision checks, including one on 1948 departures, were withdrawn.</p>
+      <p>We counted fixed lists of critical and Jewish-history terms in the opening paragraphs of 10,312 sampled articles (4,642 topic and 5,670 comparison), across their revision histories. Each result is the change in topic articles minus the change in comparison articles. That subtraction removes ordinary editing trends. We computed two ranges for each result: one by resampling articles, one by resampling WikiProjects. Where the two disagree, we call the result suggestive. In our earlier first crawl, half the articles were held back until the end; the main result replicated there (+3.6 percentage points, 95% interval 1.7 to 5.6) for its Top, High and Mid articles. A later probability sample of all 48,974 topic articles and 141,356 articles on other conflict regions, weighted to the true size of each group and grade, shows the gap at Top importance (+5.9 points) and none in the Low-importance and ungraded long tail (0.5% against 0.4%, and 0.3% against 0.6%); across all articles the gap is +0.4 points, within the margin of error. A random sample of 2,466 Wikipedia articles showed no site-wide drift. Measures that failed precision checks, including one on 1948 departures, were withdrawn.</p>
     </div></details>
     <details class="stats"><summary>Limitations and what this cannot tell us</summary><div class="in"><ul>
       <li><b>Accuracy.</b> Word counts measure emphasis, not correctness.</li>
@@ -1944,7 +1965,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="breathe" id="breathe" aria-labelledby="brH">
   <div class="eyebrow"><span class="layer">WHAT IT SAYS</span>Zionism: one sentence, every version</div>
   <h2 id="brH" class="br-h">The same sentence, any day you choose</h2>
-  <blockquote class="br-s" id="brS" aria-live="polite"></blockquote>
+  <blockquote class="br-s" id="brS"></blockquote>
   <p class="br-meta" id="brMeta"></p>
   <div class="br-strip"><div id="brSvg"></div><input type="range" id="brRange" aria-label="Move through time: the first sentence as it read on that day"><span class="br-head" id="brHead"></span></div>
   <p class="cap br-hint">Drag along the strip to read the first sentence as it stood on that day. Amber, struck through, is what 2021 had and today does not; blue is what is new.</p>
@@ -2736,11 +2757,11 @@ const K_STEPS=[
  {k:"7 October 2023",st:"the attack",win:["2023-09-01","2024-01-20"],ev:[["2023-10-07","7 Oct attack"]],ch:[["2023-10-09","Hamas: “political” added"],["2023-10-12","Hamas: “militant” → “military”"]],
   h:"Two days after the attack, Hamas’s definition dropped “fundamentalist” and added “political.” On 12 October, “militant” became “military.” “Terrorist” went in five times by April 2024; none lasted more than about 2.4 hours."},
  {k:"The ground war and the truce",st:"the ground invasion",win:["2023-10-15","2024-02-20"],ev:[["2023-10-27","Ground invasion"],["2023-11-24","Truce"],["2023-12-01","Fighting resumes"]],ch:[["2023-11-27","Oct 7: “attacks” → “incursions”"],["2023-12-09","Oct 7: “armed incursions”"]],
-  h:"During the November truce, October 7’s first sentence went from “coordinated attacks” to “coordinated incursions” (27 November). A week after the fighting resumed, it became “armed incursions” (9 December). Between the October 2023 and January 2024 copies, Hamas’s opening section tripled in length, and its “terror” mentions fell from four to one."},
+  h:"On 27 November, October 7’s first sentence went from “coordinated attacks” to “coordinated incursions,” during the November truce. On 9 December it became “armed incursions,” a week after the fighting resumed. Between the October 2023 and January 2024 copies, Hamas’s opening section tripled in length, and its “terror” mentions fell from four to one."},
  {k:"2024: Rafah and Lebanon",st:"the Rafah offensive",win:["2024-04-01","2024-12-15"],ev:[["2024-05-06","Rafah offensive"],["2024-09-27","Nasrallah killed"],["2024-10-01","Lebanon invasion"]],ch:[["2024-06-06","Nakba: “is the ethnic cleansing”"],["2024-10-16","Hezbollah: “paramilitary”"]],
   h:"On 6 June 2024, a month into the Rafah offensive, the Nakba’s first sentence switched to present tense: “was the ethnic cleansing of Palestinians … during the 1948 Palestine war” became “is the ethnic cleansing of Palestinians.” “Ethnic cleansing” dated from 5 March. From 28 September, Hezbollah’s definition changed again and again until “paramilitary” settled (16 October)."},
  {k:"May–June 2025",st:"the Gaza offensive",win:["2025-04-10","2025-08-01"],ev:[["2025-05-16","Gaza offensive"],["2025-06-13","Iran war"]],ch:[["2025-05-26","Gaza war: Hamas out of sentence 1"],["2025-06-22","Zionism: “a Jewish homeland”"]],
-  h:"On 26 May 2025, ten days into the May offensive, the Gaza war’s first sentence stopped naming Hamas. The same day, the October 7 article’s title dropped “Hamas-led.” On 22 June, during the war with Iran, Zionism’s “a homeland for the Jewish people” became “a Jewish homeland”; “colonization” was already in the sentence."},
+  h:"On 26 May 2025 the Gaza war’s first sentence stopped naming Hamas, ten days into the May offensive. The same day, the October 7 article’s title dropped “Hamas-led.” On 22 June, during the war with Iran, Zionism’s “a homeland for the Jewish people” became “a Jewish homeland”; “colonization” was already in the sentence."},
  {k:"2025–2026: the definitions settle",st:"the ceasefire",win:["2025-08-15",K_END],ev:[["2025-10-10","Ceasefire"],["2026-02-28","Iran war"]],ch:[["2025-09-26","Gaza genocide: today’s sentence"],["2025-11-29","Hamas: today’s definition"],["2026-07-06","Nakba: “by Zionists”"],["2026-08-27","Zionism: today’s sentence"],["2026-10-08","Oct 7: today’s sentence"]],
   h:"New terms slowed to about the prewar pace, but the defining sentences settled only later, between September 2025 and October 2026 (each ◆ on the chart). Timing does not prove cause."}];
 const kW=()=>{const V=R.v3;return {V,w0:KD(V.week0),wk:7*864e5,ins:V.ins,ins7:V.ins7||[]}};
@@ -2754,7 +2775,7 @@ function keyInit(){
   const host=$("#stepsK");if(!host)return;
   if(!R.v3||!R.v3.ins){$("#scK").outerHTML=`<div class="note">The weekly series is not in this build.</div>`;return}
   const N=K_STEPS.length;
-  host.innerHTML=K_STEPS.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${N} · ${esc(s.k)}</span><p>${s.h}</p><p class="kst">${kStat(s.ev[0][0],s.ev[0][1],s.st)}</p><button class="go" type="button">Show in chart</button></div>`).join("");
+  host.innerHTML=K_STEPS.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${N} · ${esc(s.k)}</span><p>${s.h}</p><p class="kst">${kStat(s.ev[0][0],s.ev[0][1],s.st)}</p><button class="go" type="button" aria-label="Show ${esc(s.k)} in the chart">Show in chart</button></div>`).join("");
   scrolly(host,K_STEPS.map((_,i)=>({st:{kStep:i}})),()=>keyGo(S.kStep));
   $$(".step",host).forEach(e=>e.classList.remove("on"));
   drawKey();
@@ -2815,7 +2836,7 @@ function drawKey(){
     if(badge){const by=10+o.r*rh;s+=`<line x1="${xx}" x2="${xx}" y1="${by+14}" y2="${mT}" style="stroke:var(${col});opacity:.5"/><rect x="${xx-7}" y="${by}" width="14" height="14" rx="2" style="fill:var(${col})"/><text x="${xx}" y="${by+10.5}" text-anchor="middle" style="font:600 10px var(--mono);fill:var(--sheet)">${o.n}</text>`}
     else s+=`<line x1="${xx}" x2="${xx}" y1="${yy+3}" y2="${mT}" style="stroke:var(${col});opacity:.5"/><text x="${xx+(o.a==="start"?4:-4)}" y="${yy}" text-anchor="${o.a}" style="font:600 ${fs}px var(--mono);fill:var(${col});paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round">${esc(o.l)}</text>`});
   el.innerHTML=s+`</svg>`;
-  const kn=$("#kNotes");if(kn){kn.hidden=!badge;kn.innerHTML=badge?labs.map(o=>{const cf=o.c==="--war"&&(V.events||[]).some(e=>e.d===o.d&&e.t==="ceasefire_deal");return `<span><i style="background:var(${cf?"--muted":o.c})">${o.n}</i>${esc(v3d(o.d).replace(/ 20\d\d$/,""))} · ${esc(o.l)}</span>`}).join(""):""}
+  const kn=$("#kNotes");if(kn){kn.hidden=!badge;kn.innerHTML=badge?labs.map(o=>{const cf=o.c==="--war"&&(V.events||[]).some(e=>e.d===o.d&&e.t==="ceasefire_deal");return `<span><i style="background:var(${cf?"--muted":o.c})">${o.n}</i>${esc(v3d(o.d).replace(/ 20\d\d$/,""))} · ${esc(ph?o.l.replace(/: today’s (sentence|definition)$/,": now"):o.l)}</span>`}).join(""):""}
   $("#kTitle").textContent=ph?(S0?`${S0.k} · weekly`:"New critical terms a week, 2021–2026"):S0?`${S0.k} · new critical terms a week`:"New critical terms in topic opening paragraphs, week by week, 2021–2026";
   $("#kSub").textContent=S0?"4,642 topic articles · shaded: the three weeks after the first marked event":`4,642 topic articles · before 7 October 2023: ${fmt(kPre(),1)} a week`;
   $("#kKey").innerHTML=`<span class="key"><i style="background:var(--topic);opacity:.3"></i>${ph?"new terms":"written in that week"}</span><span class="key"><i style="background:var(--topic)"></i>${ph?"lasted a week":"still there a week later"}</span>${S0?"":`<span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`}<span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>${ph?"battle":S0?"battle or escalation (others: ticks on the axis)":"other battles: ticks on the axis"}</span><span class="key"><i class="dot"></i>ceasefire</span>${S0?`<span class="key"><i class="wch"></i>${ph?"wording change":"dashed line and diamond: a dated wording change"}</span>`:""}`;
@@ -3092,7 +3113,7 @@ function xmInit(){
     $$("#xmScroll .xm-c").forEach(x=>x.setAttribute("aria-current",String(x===b)));
     const go=()=>xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:b.dataset.k,c},anim:true,scroll:true});if(inEv("xrFig")&&VIEW!=="evidence"){jumpFrom("crosslang",`${xlab(b.dataset.l)} · ${(D.cols.find(c=>c[0]===b.dataset.k)||[])[1]||""}`,"xrHd");location.hash="#xrHd";setTimeout(go,150)}else go()});
   xrInit()}
-function xmHow(){const e=$("#xmHow");if(!e)return;e.innerHTML=`<b>How to read this:</b> ${XM.mode==="now"?"each square is the October 2026 wording; switch to Then → now to see our first copy beside it.":XM.mode==="then"?"each square is the first copy we hold.":"in each cell, the small square is our first copy and the large square is now (October 2026)."} The full key is below the grid.`}
+function xmHow(){const e=$("#xmHow");if(!e)return;e.innerHTML=`<b>How to read this:</b> ${XM.mode==="now"?"each square is the October 2026 wording; a small corner square is our first copy, where it changed.":XM.mode==="then"?"each square is the first copy we hold.":"in each cell, the small square is our first copy and the large square is now (October 2026)."} The full key is below the grid.`}
 const XM_STORY_OUT=new Set(["icj"]);/* the court column lives in the evidence room (#xmIcj) */
 const XNUM=["no","one","two","three","four","five","six","seven","eight","nine","ten"];
 function xmDraw(){
@@ -3101,7 +3122,7 @@ function xmDraw(){
   const XSHORT={gen:"Genocide",col:"Colonization",apa:"Apartheid",occ:"Occupation",o7:"Oct 7: terror",ter:"Hamas: terrorist",hos:"Hostages",icj:"Court overstated"};
   const sub={gen:"Gaza genocide article, else Gaza war",col:"Zionism",apa:"Israeli apartheid",occ:"West Bank",o7:"attack article, first sentence",ter:"Hamas",hos:"attack article · in the text we hold",icj:"ICJ, any article"};
   let h=`<table class="xm m-${XM.mode}" role="grid"><caption class="zi-sr">How each language edition voices ${XNUM[cols.length]||cols.length} claims, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${cols.map(([k,lab])=>`<th scope="col" class="c-${({o7:"ter",icj:"gen"})[k]||k}" title="${esc(lab)}"><span class="lf">${esc(lab)}</span><span class="ls">${esc(XSHORT[k]||lab)}</span><small>${esc(sub[k]||"")}</small></th>`).join("")}</tr></thead><tbody>`;
-  order.forEach((l,ri)=>{h+=`<tr class="${ri===2||ri===3?"sep":""}"><th scope="row" class="xm-l"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><span>${l==="en"?"":`<span class="xn">${esc(xlab(l))} · </span>`}${l}</span></th>`;
+  order.forEach((l,ri)=>{h+=`<tr class="${ri===2||ri===3?"sep":""}"><th scope="row" class="xm-l"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><span>${l==="en"?`<span class="xi">en</span>`:`<span class="xn">${esc(xlab(l))}</span><span class="xi"> · ${l}</span>`}</span></th>`;
     cols.forEach(([k,lab])=>{const c=D.cells[k][l];if(!c){h+="<td></td>";return}
       const chg=xst(c.f)!==xst(c.n)&&c.f!=="na";
       /* arrows only for a change of voice: both ends must be a voiced state; in the court column only a move to "overstated" counts */
@@ -3116,8 +3137,8 @@ function xmDraw(){
   host.innerHTML=h;xmRove(host);
   {const g=D.cells.gen||{},fa=["es","pt","ar"].filter(l=>g[l]&&g[l].n==="fact"),he=g.he&&g.he.n==="legal",cl=$("#xmCall");
     if(cl){cl.hidden=!(fa.length||he);cl.innerHTML=`<b>Genocide column</b>, outlined: ${fa.length?`${fa.join(" · ")} → own voice`:""}${fa.length&&he?"; ":""}${he?"he → court case only":""}`}}
-  $("#xmKey").innerHTML=`<span class="key">${xTile("fact","")}solid, dot: stated as fact, in Wikipedia’s own voice</span><span class="key">${xTile("attributed","")}striped, quote mark: attributed to someone</span><span class="key">${xTile("disputed","")}dashed, ?: disputed in the same sentence</span><span class="key">${xTile("legal","")}§: reported only as a court case</span><span class="key">${xTile("absent","")}empty: not in the text we hold</span><span class="key">${xTile("outside","")}…: later in the opening section, beyond the 1,200 characters we hold</span><span class="key">${xTile("captive","")}≈: named in other words (Arabic: “took captive,” not “hostages”; Italian and Polish genocide: presented as a name or term)</span><span class="key">${xTile("na","")}gray, no border: no article in that language</span><span class="key"><span class="nwr">${xTile("fact","")}<span class="dir up">▲</span></span>ring with ▲: moved toward Wikipedia’s own voice; ▼: moved away</span><span class="key">ring alone: changed, not a change of voice (for example, moved later in the section, or now reported as a court case)</span>`;
-  $("#xmIK").innerHTML=[["fact","own voice"],["attributed","attributed"],["disputed","disputed"],["legal","court case only"],["absent","not in our text"],["outside","later in the section"],["captive","a term in use, or named as captives"],["na","no article"]].map(([c,t])=>`<span>${xTile(c,"")}${t}</span>`).join("");
+  $("#xmKey").innerHTML=`<span class="key">${xTile("fact","")}solid, dot: stated as fact, in Wikipedia’s own voice</span><span class="key">${xTile("attributed","")}striped, quote mark: attributed to someone</span><span class="key">${xTile("disputed","")}dashed, ?: disputed in the same sentence</span><span class="key">${xTile("legal","")}§: reported only as a court case</span><span class="key">${xTile("absent","")}empty: not in the text we hold</span><span class="key">${xTile("outside","")}…: later in the opening section, beyond the 1,200 characters we hold</span><span class="key">${xTile("captive","")}≈: named in other words (Arabic: “took captive,” not “hostages”; Italian and Polish genocide: presented as a name or term)</span><span class="key">${xTile("na","")}gray, no border: no article in that language (drawn × in the small first-copy square)</span><span class="key"><span class="nwr">${xTile("fact","")}<span class="dir up">▲</span></span>ring with ▲: moved toward Wikipedia’s own voice; ▼: moved away</span><span class="key">ring alone: changed, not a change of voice (for example, moved later in the section, or now reported as a court case)</span>`;
+  $("#xmIK").innerHTML=[["fact","own voice"],["attributed","attributed"],["disputed","disputed"],["legal","court case only"],["absent","not in our text"],["outside","later in the section"],["captive","a term in use, or named as captives"],["na","no article (×)"]].map(([c,t])=>`<span>${xTile(c,"")}${t}</span>`).join("");
   /* phone: say how many claims are off to the right, and drop the cue at the end */
   const sw=$("#xmSwipe"),sc=$("#xmScroll"),cue=()=>{const r=sc.getBoundingClientRect(),hs=$$("thead th:not(.xm-l)",sc).filter(th=>th.getBoundingClientRect().right>r.right+4).length;
     sw.hidden=!hs;sw.textContent=hs?`swipe for ${hs} more claim${hs>1?"s":""} →`:"";sc.classList.toggle("at-end",!hs)};
@@ -3163,17 +3184,26 @@ function xmTipHTML(b){
     if(l!=="en")h+=`<p class="tr"><b>Our translation:</b> ${xmEx(T,x&&x[2]?x[2]:null,170,chg?"k":"s")}</p>`;
     h+=`<span class="src">${esc(xlab(l))} Wikipedia · ${esc(c.a)} · ${dlab(v.d)}${v.r?` · rev ${v.r}`:""}</span>`;
     if(chg&&w==="n"&&quoted("f")&&S.m.f){const xf=((S.L||{}).f||[]).find(y=>y[4]===cat)||null,Tf=xmPlain(S,"f",true),Of=xmPlain(S,"f",false);
-      h+=`<p class="then"><b>Then · ${dlab(S.m.f.d)}:</b> ${l==="en"?xmEx(Of,xf?[xf[0],xf[1]]:null,150,"d"):xmEx(Tf,xf&&xf[2]?xf[2]:null,150,"d")}</p>`}}
+      const tx=l==="en"?xmEx(Of,xf?[xf[0],xf[1]]:null,150,"d"):xmEx(Tf,xf&&xf[2]?xf[2]:null,150,"d");
+      h+=isPhone()?`<details class="then"><summary><b>Then · ${dlab(S.m.f.d)}</b></summary><p>${tx}</p></details>`:`<p class="then"><b>Then · ${dlab(S.m.f.d)}:</b> ${tx}</p>`}
+    if(l==="en"&&w==="n")h+=`<span class="src">English opening sections have changed since this copy; the story above quotes the 5 November 2026 text.</span>`}
   else if(c.x)h+=`<p class="why">${esc(c.x)}</p>`;
   else if(!A)h+=`<p class="why">No article in this language is linked to the English article.</p>`;
   if(A)h+=`<button type="button" class="go">Open the full sentence${S&&S.m.f&&S.m.n?", then and now":""} →</button>`;
   return h}
 function xmTipPlace(){const b=XMT.b,t=$("#xmTip");if(!b||t.hidden)return;const r=b.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight||!b.isConnected){xmTipHide();return}
+  const sheet=!xmHover();t.classList.toggle("sheet",sheet);
+  if(sheet){/* QA r7: below the square if it sits in the top half, else under the tab bar; capped so the two never overlap */
+    const tb=$(".tabs"),T0=(tb?Math.max(0,tb.getBoundingClientRect().bottom):0)+8,low=r.top+r.height/2<innerHeight/2,
+      room=low?innerHeight-r.bottom-24:r.top-T0-12;
+    t.style.left="12px";t.style.right="12px";t.style.maxHeight=Math.max(96,Math.min(innerHeight*.48,room))+"px";
+    if(low){t.style.top="auto";t.style.bottom="12px"}else{t.style.bottom="auto";t.style.top=T0+"px"}return}
+  t.style.right=t.style.bottom=t.style.maxHeight="";
   const w=t.offsetWidth,h=t.offsetHeight;let L=Math.min(innerWidth-w-12,Math.max(12,r.left+r.width/2-w/2)),T=r.bottom+6;
   if(T+h>innerHeight-8){T=r.top-h-6;if(T<8)T=Math.max(8,innerHeight-h-8)}t.style.left=L+"px";t.style.top=T+"px"}
 function xmTipShow(b,pin,jump){const t=$("#xmTip");clearTimeout(XMT.ht);if(XMT.b&&XMT.b!==b)XMT.b.removeAttribute("aria-describedby");
-  if(XMT.b!==b||t.hidden)t.innerHTML=xmTipHTML(b);XMT.b=b;XMT.pin=!!pin;XMT.jump=jump;t.classList.toggle("pin",!!pin||!xmHover());t.hidden=false;b.setAttribute("aria-describedby","xmTip");xmTipPlace()}
-function xmTipHide(){const t=$("#xmTip");clearTimeout(XMT.ht);if(XMT.b)XMT.b.removeAttribute("aria-describedby");XMT.b=null;XMT.pin=false;if(t)t.hidden=true}
+  if(XMT.b!==b||t.hidden)t.innerHTML=xmTipHTML(b);XMT.b=b;XMT.pin=!!pin;XMT.jump=jump;t.classList.toggle("pin",!!pin||!xmHover());t.hidden=false;b.setAttribute("aria-describedby","xmTip");$$(".xm-c.tipon").forEach(x=>x.classList.remove("tipon"));b.classList.add("tipon");xmTipPlace()}
+function xmTipHide(){const t=$("#xmTip");clearTimeout(XMT.ht);if(XMT.b){XMT.b.removeAttribute("aria-describedby");XMT.b.classList.remove("tipon")}XMT.b=null;XMT.pin=false;if(t)t.hidden=true}
 /* one Tab stop per grid: arrow keys move between squares (roving tabindex) */
 function xmRove(host){const bs=$$(".xm-c:not([disabled])",host);bs.forEach((b,i)=>b.tabIndex=i?-1:0)}
 function xmMove(host,b,e){const rows=$$("tbody tr",host).map(tr=>$$("td",tr)),cell=b.closest("td"),ri=rows.findIndex(r=>r.includes(cell)),ci=ri<0?-1:rows[ri].indexOf(cell);if(ri<0)return null;
@@ -3186,7 +3216,8 @@ function xmTipWire(host,jump){
   host.addEventListener("click",e=>{const b=e.target.closest(".xm-c");if(!b||b.disabled)return;if(XMT.b===b&&XMT.pin){xmTipHide();return}xmTipShow(b,true,jump)});
   host.addEventListener("mouseover",e=>{if(!xmHover()||XMT.pin)return;const b=e.target.closest(".xm-c");if(!b||b.disabled)return;xmTipShow(b,false,jump)});
   host.addEventListener("mouseout",e=>{if(!xmHover()||XMT.pin)return;const b=e.target.closest(".xm-c"),to=e.relatedTarget;if(!b||(to&&to.closest&&(to.closest("#xmTip")||to.closest(".xm-c")===b)))return;clearTimeout(XMT.ht);XMT.ht=setTimeout(()=>{if(!XMT.pin&&document.activeElement!==XMT.b)xmTipHide()},260)});
-  host.addEventListener("focusin",e=>{const b=e.target.closest(".xm-c");if(!b||b.disabled)return;$$(".xm-c",host).forEach(x=>{if(!x.disabled)x.tabIndex=x===b?0:-1});if(!(XMT.b===b&&!$("#xmTip").hidden))xmTipShow(b,false,jump)});
+  host.addEventListener("pointerdown",e=>{if(e.pointerType==="touch"||e.pointerType==="pen")XMT.tp=Date.now()},{passive:true});
+  host.addEventListener("focusin",e=>{const b=e.target.closest(".xm-c");if(!b||b.disabled)return;$$(".xm-c",host).forEach(x=>{if(!x.disabled)x.tabIndex=x===b?0:-1});if(Date.now()-(XMT.tp||0)<600)return;if(!(XMT.b===b&&!$("#xmTip").hidden))xmTipShow(b,false,jump)});
   host.addEventListener("focusout",e=>{setTimeout(()=>{const a=document.activeElement;if(XMT.pin||!XMT.b)return;if(a&&a.closest&&(a.closest("#xmTip")||(a.closest(".xm-c")&&host.contains(a))))return;if(!(xmHover()&&XMT.b.matches(":hover")))xmTipHide()},0)});
   host.addEventListener("keydown",e=>{const b=e.target.closest(".xm-c");if(!b)return;
     if(e.key==="Tab"&&!e.shiftKey&&XMT.b===b&&XMT.pin){const g=$("#xmTip .go");if(g){e.preventDefault();g.focus({preventScroll:true})}return}
@@ -3285,9 +3316,17 @@ function xrOpen(o){
   clearTimeout(XR.tb);
   xrChips();xrNote();xrCtr();xrTimeBtns(st);xrUnlock();
   if(o.scroll){const f=$("#xrHd")||$("#xrFig");const r=f.getBoundingClientRect();if(r.top<0||r.top>innerHeight*.5)f.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
-  if(!o.quiet)$("#xrLive").textContent=`${xlab(o.l)}, ${o.a}, ${xslot(o.s).toLowerCase()}${two?`, ${dlab(S.m.f.d)} and ${dlab(S.m.n.d)}`:""}.`;
+  if(!o.quiet)xrSay();
   clearTimeout(XR.tm)}
-function xrTimeBtns(t){XR.t=t;$$("#xrTime button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===t)));
+/* QA r7: words hidden by the morph (font-size 0) leave the accessibility tree, so a screen reader hears one exact version */
+const XR_HIDE={n:".k1,.k4",f:".k2,.k5",b:".k4"};
+function xrAria(){$$("#xrPair .xr-s").forEach(p=>{const t=p.classList.contains("st-b")?"b":p.classList.contains("st-f")?"f":"n";
+  $$(".w",p).forEach(w=>{const h=w.matches(XR_HIDE[t]);if(h){w.setAttribute("aria-hidden","true");w.inert=true}else{w.removeAttribute("aria-hidden");w.inert=false}})})}
+function xrClean(p){const c=p.cloneNode(true);$$("[aria-hidden=true],.zi-sr",c).forEach(x=>x.remove());return c.textContent.replace(/\s+/g," ").trim()}
+function xrSay(){const ps=$$("#xrPair .xr-s"),A=R.langs.arts[XR.a][XR.l],S=A.sl[XR.s],v=S.m[XR.t==="b"?"n":XR.t]||S.m.n||S.m.f,lv=$("#xrLive");if(!lv||!ps.length)return;
+  lv.textContent=XR.t==="b"?`${xlab(XR.l)}, ${XR.a}: both versions shown, ${dlab(S.m.f.d)} and ${dlab(S.m.n.d)}; removed and added words are marked.`
+    :`${xlab(XR.l)}, ${XR.a}, ${dlab(v.d)}: ${xrClean(ps[0])}${XR.l!=="en"&&ps[1]?` Our translation: ${xrClean(ps[1])}`:""}`}
+function xrTimeBtns(t){XR.t=t;xrAria();$$("#xrTime button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===t)));
   const S=R.langs.arts[XR.a][XR.l].sl[XR.s],v=S.m[t==="b"?"n":t]||S.m.n||S.m.f;
   const wd=$$("#xrPair .wd");if(wd[0])wd[0].innerHTML=t==="b"?`${dlab(S.m.f.d)} → ${dlab(S.m.n.d)}`:`${dlab(v.d)} · ${wpLink(XR.l,v.r)}`;if(wd[1])wd[1].textContent=t==="b"?`${dlab(S.m.f.d)} → ${dlab(S.m.n.d)}`:dlab(v.d);
   xrChips();const pl=$("#xrPlay");pl.disabled=!(S.m.f&&S.m.n)||!!S.u}
@@ -3299,8 +3338,8 @@ function xrTime(t,anim){
   if(!anim||RM.matches||t==="b"||from==="b"){
     if(anim&&RM.matches){ps.forEach(p=>p.style.opacity=0);setTimeout(()=>{ps.forEach(p=>$$(".w",p).forEach(w=>{w.style.removeProperty("--d");w.style.removeProperty("--d2")}));apply();ps.forEach(p=>p.style.opacity=1)},180)}
     else{ps.forEach(p=>$$(".w",p).forEach(w=>{w.style.setProperty("--d","0s");w.style.setProperty("--d2","0s")}));apply()}
-    xrTimeBtns(t);return}
-  let flipAt=0;
+    xrTimeBtns(t);xrSay();return}
+  let flipAt=0;$("#xrPair").setAttribute("aria-busy","true");
   /* the morph: outgoing words strike, then fade and fold away; incoming words grow in, one by one */
   ps.forEach(p=>{const out=$$(t==="n"?".k1,.k4":".k2,.k5",p),inn=$$(t==="n"?".k2,.k5":".k1,.k4",p);
     $$(".w",p).forEach(w=>{w.style.setProperty("--d","0s");w.style.setProperty("--d2","0s")});
@@ -3310,7 +3349,7 @@ function xrTime(t,anim){
     inn.forEach((w,i)=>{w.style.setProperty("--d2",(base+i*si)+"ms");w.style.setProperty("--d",(base+i*si+60)+"ms")});
     flipAt=Math.max(flipAt,base)});
   /* the date and the pressed button change when the new words start to arrive, not while the old sentence is still on screen */
-  const pr=$("#xrPair");pr.classList.add("fast");clearTimeout(XR.tf);XR.tf=setTimeout(()=>{pr.classList.remove("fast");xrUnlock()},700);
+  const pr=$("#xrPair");pr.classList.add("fast");clearTimeout(XR.tf);XR.tf=setTimeout(()=>{pr.classList.remove("fast");pr.removeAttribute("aria-busy");xrUnlock();xrSay()},700);
   void ps[0].offsetWidth;apply();XR.t=t;XR.tb=setTimeout(()=>xrTimeBtns(t),flipAt)}
 function xrUnlock(){const pair=$("#xrPair"),ch=$("#xrChips");if(pair)pair.style.minHeight="";if(ch)ch.style.minHeight="";XR.chipH=0}
 /* the pair keeps the height of its taller state (then or now) for as long as a moment is open, so replay and the morph never make the page jump */
@@ -3476,7 +3515,7 @@ function jumpFrom(sec,ctx,to){const S=document.getElementById(sec),h=S&&S.queryS
   const eb=S&&S.querySelector(".eyebrow"),lab=eb?[...eb.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(" ").replace(/\s+/g," ").trim():"";
   JUMP={y:scrollY,sec,t,lab,ctx:ctx||"",to:to||""};try{history.replaceState(Object.assign({},history.state||{},{from:"report",y:scrollY,sec}),"")}catch(e){}}
 function evBackShow(){const b=$("#evBack");if(!b)return;if(!JUMP||VIEW!=="evidence"){b.hidden=true;document.body.classList.remove("evb");return}
-  b.innerHTML=`<span>From the story: <b>${esc(JUMP.lab||JUMP.t)}</b></span><a href="#report" id="evBackA">← back to the story</a><button type="button" aria-label="Dismiss">×</button>`;b.hidden=false;document.body.classList.add("evb");
+  b.innerHTML=`<span>From the story: <b>${esc(JUMP.lab||JUMP.t)}</b></span><a href="#report" id="evBackA">← back to the story</a><button type="button" aria-label="Dismiss">×</button>`;b.hidden=false;document.body.classList.add("evb");requestAnimationFrame(()=>document.body.style.setProperty("--evb-h",(b.offsetHeight+20)+"px"));
   $("#evBackA").onclick=e=>{e.preventDefault();if(JUMP&&location.hash==="#"+JUMP.to)history.back();else location.hash="#report"};
   $("button",b).onclick=()=>{b.hidden=true;document.body.classList.remove("evb")}}
 function evFocus(id){const el=document.getElementById(id);if(!el)return;const h=el.matches("h2,h3,.xr-hd")?el:el.querySelector("h2,h3,.fig-t")||el;if(!h.hasAttribute("tabindex"))h.setAttribute("tabindex","-1");h.focus({preventScroll:true})}
@@ -4099,7 +4138,7 @@ function drawCharge(){
   const ph=isPhone();
   // denominators first: the share of harm sentences naming the side (PERP card 1 and card 6, article-weighted)
   $("#ppTop").innerHTML=`<div class="r h"><span>Share of harm sentences naming the side as the one doing harm</span><span>2021</span><span>Jul 2023</span><span>now</span><span></span></div>
-   <div class="r"><span>Israel / Jews (150 topic articles)</span><b>23.6%</b><b>24.1%</b><b>26.4%</b><span>+2.8 points, range −1.9 to +8.3: not clear</span></div>
+   <div class="r"><span>Israel / Jews (150 topic articles)</span><b>23.6%</b><b>24.1%</b><b>26.4%</b><span>+2.8 points, 95% interval −1.9 to +8.3: not clear</span></div>
    <div class="r"><span>Hamas / Palestinians (same articles)</span><b>7.0%</b><b>7.8%</b><b>8.8%</b><span>+1.8 points, range −1.4 to +5.7: not clear</span></div>
    <div class="r"><span>Other disputes, side A (50 articles)</span><b>32.9%</b><b>43.5%</b><b>43.2%</b><span>Russia, Azerbaijan, Turkey and others</span></div>`;
   const sides=ph?[PP.side]:["isr","pal","cmp"];
@@ -4138,17 +4177,24 @@ function drawPeriods(){
   const rows=[["2023, before 7 Oct","",0.51],["7 Oct 2023 to 1 Feb 2024","before the channel",3.44],["Feb to Sep 2024","channel reported active",2.01,1],["Oct 2024 to May 2025","exposure, sanctions, PIA5",1.84],["Jun 2025 to Nov 2026","",0.82]],mx=4;
   host.innerHTML=`<div style="display:grid;gap:8px" role="img" aria-label="${esc(rows.map(r=>`${r[0]}: ${r[2]} times`).join("; "))}">${rows.map(([l,s,v,doc])=>`<div class="per-row${doc?" doc":""}"><span>${esc(l)}${s?`<br><small style="font:10.5px var(--mono);color:var(--muted)">${esc(s)}</small>`:""}</span><span class="tr"><i style="width:${(v/mx*100).toFixed(1)}%"></i><span class="one" style="left:${(1/mx*100).toFixed(1)}%"></span></span><span class="v">${v.toFixed(2)}×</span></div>`).join("")}</div>
    <div class="legend" style="margin-top:12px"><span class="key"><i style="background:var(--topic)"></i>teal: topic insertions per week ÷ comparison insertions per week</span><span class="key"><i class="dash" style="color:var(--muted)"></i>dashed line: equal rates (1×)</span><span class="key"><i style="background:repeating-linear-gradient(135deg,var(--faint) 0 4px,var(--sheet) 4px 7px);border:1px solid var(--rule)"></i>hatched track: the reported Discord window</span></div>
-   <p class="cap" style="margin-top:10px">Descriptive, and confounded by the war’s tempo. The step from 2.0 to 1.8 is small next to the fall from the war-onset peak. The pro-Israel email canvassing ArbCom is reported to have found dates from about October 2023 to January 2024, inside the 3.44 row.</p>`}
+   <p class="cap" style="margin-top:10px">Descriptive, and confounded by the war’s tempo. The step from 2.0 to 1.8 is small next to the fall from the war-onset peak. The email canvassing in ArbCom’s January 2024 motions, which summaries of the motions describe as pro-Israel, dates from about October 2023 to January 2024, inside the 3.44 row.</p>`}
 
 /* ---------- #organised: the coordination network (analyze_coord.py network.json), groups first ---------- */
 const NETS={view:"network",side:"topic",preset:"all",sel:null},NETE={view:"groups",side:"topic",preset:"all",sel:null};let NET=NETS;
-const NET_WIN={email_canvassing:["2023-10-01","2024-01-21","War onset; also the pro-Israel email canvassing reported from ArbCom’s Jan 2024 motions"],tfp_discord:["2024-01-01","2024-10-01","Discord channel (pro-Palestinian), sanctions reported Dec 2024"]};
+const NET_WIN={email_canvassing:["2023-10-01","2024-01-21","War onset; also the email canvassing in ArbCom’s Jan 2024 motions (pro-Israel, as summaries describe it)"],tfp_discord:["2024-01-01","2024-10-01","Discord channel (pro-Palestinian, as the press described it), sanctions reported Dec 2024"]};
 const NET_SANC=[["2024-12-09","Dec 2024 sanctions"],["2025-04-25","Apr 2025 site bans"]];
-const NET_PRE=[["all","All 2021–26",null,null],["pre","Before 7 Oct 2023","2021-01-01","2023-10-07"],["email",isPhone()?"Email window (Oct 23–Jan 24)":"War onset · pro-Israel email canvassing (Oct 2023–Jan 2024)","2023-10-01","2024-01-21"],["discord",isPhone()?"Discord window (Jan–Sep 24)":"Discord channel · pro-Palestinian canvassing (Jan–Sep 2024)","2024-01-01","2024-10-01"],["after","After sanctions (Dec 2024 on)","2024-12-09","2026-11-05"]];
+const NET_PRE=[["all","All 2021–26",null,null],["pre","Before 7 Oct 2023","2021-01-01","2023-10-07"],["email",isPhone()?"Email window (Oct 23–Jan 24)":"War onset · email canvassing, reported (Oct 2023–Jan 2024)","2023-10-01","2024-01-21"],["discord",isPhone()?"Discord window (Jan–Sep 24)":"Discord channel canvassing, reported (Jan–Sep 2024)","2024-01-01","2024-10-01"],["after","After sanctions (Dec 2024 on)","2024-12-09","2026-11-05"]];
 const netOrder=G=>(G.communities||[]).filter(c=>c.size>=3).sort((a,b)=>({high:0,medium:1,low:2}[a.confidence]??3)-({high:0,medium:1,low:2}[b.confidence]??3)||b.size-a.size||a.id-b.id);
 const netName=(c,i)=>c.name?String(c.name).replace(/\s*\(.*\)$/,""):c.confidence==="low"?"Low-confidence group":`Group ${i+1}`;
 const netDir=s=>s==null?"--mid":s>0.6?"--add-bd":s<0.4?"--del-bd":"--mid";
 const netDirW=s=>s==null?"mixed":s>0.6?"mostly adds critical terms":s<0.4?"mostly removes them":"mixed";
+const NET_AGE={"<30d":"under 30 days","30d-1y":"30 days to 1 year","1-5y":"1 to 5 years",">5y":"over 5 years"};
+/* QA r7: plain words for the story (numbers against chance, no p values); the evidence room keeps the full figures */
+function netNodeTxt(n){return `${n.id} · ${n.events} critical-term edits on ${n.articles} articles · ${netDirW(n.insert_share)}${n.insert_share!=null&&n.insert_share>=.4&&n.insert_share<=.6?" (adds and removes)":""} · account ${NET_AGE[n.age_bucket]?NET_AGE[n.age_bucket]+" old":"age unknown"} when first seen`}
+function netEdgeTxt(e){const sd=e.same_direction_share,ex=Math.round(e.null_mean||0),ch=ex?`about ${ex}`:"under 1",
+    dir=sd==null?"":sd===0?" They always pushed opposite ways.":sd===1?" They always pushed the same way.":` They pushed the same way ${pct(sd)} of the time.`;
+  return (e.basis==="t30"?`${e.source} and ${e.target} edited different articles within 30 minutes of each other ${e.observed} times.`
+   :`${e.source} and ${e.target} changed critical terms on ${e.observed} of the same articles.`)+` Chance alone gives ${ch} (rarely more than ${fmt(e.null_p95,0)}).${dir}`}
 function netWinCap(G){const P=NET_PRE.find(p=>p[0]===NET.preset);if(!P||!P[2])return "Pick a window to compare each group’s activity in it with chance.";
   const C=netOrder(G).filter(c=>c.confidence!=="low").concat(G.extra_blocs||[]);if(!C.length)return "No group of three or more to compare here.";
   const k={email:"email_canvassing",discord:"tfp_discord"}[P[0]];
@@ -4206,13 +4252,14 @@ function netLayout(G,W){
 const netStory=nm=>String(nm).replace(/^Bloc\b/,"Cluster");/* the story says cluster: "bloc" implies a faction */
 function netGraph(g,G,W,story){
   const L=netLayout(G,W),node=new Map((G.nodes||[]).map(n=>[n.id,n])),mxw=Math.max(1,...(G.edges||[]).map(e=>e.weight||0));
-  let s=`<svg viewBox="0 0 ${W} ${L.H}" role="img" aria-label="${esc(`${g==="topic"?"Topic":"Comparison"} network: ${(G.nodes||[]).length} accounts, ${(G.edges||[]).length} links beyond chance, ${(G.communities||[]).filter(c=>c.size>=3).length} groups of three or more.`)}">`;
-  L.hulls.forEach(h=>{s+=`<circle class="hull ${h.c.confidence||"low"}" cx="${h.cx.toFixed(1)}" cy="${h.cy.toFixed(1)}" r="${h.r.toFixed(1)}"/><text class="hl${h.c.confidence==="low"?" lo":""}" x="${h.cx.toFixed(1)}" y="${(h.cy-h.r-6).toFixed(1)}" text-anchor="middle">${esc(h.c.name?(story?netStory(netName(h.c,h.i)):netName(h.c,h.i)):h.c.confidence==="low"?"Low-confidence group":"G"+(h.i+1))}</text>`});
+  const lo=new Set(story?L.hulls.filter(h=>(h.c.confidence||"low")==="low").flatMap(h=>h.c.members||[]):[]);
+  let s=`<svg viewBox="0 0 ${W} ${L.H}" role="group" aria-label="${esc(`${g==="topic"?"Topic":"Comparison"} network: ${(G.nodes||[]).length} accounts, ${(G.edges||[]).length} links beyond chance, ${(G.communities||[]).filter(c=>c.size>=3).length} groups of three or more. Arrow keys move between accounts and links; Escape clears.`)}">`;
+  L.hulls.forEach(h=>{if(story&&(h.c.confidence||"low")==="low"){s+=`<text class="hl lo" x="${h.cx.toFixed(1)}" y="${(h.cy-h.r-6).toFixed(1)}" text-anchor="middle">Not beyond chance</text>`;return}s+=`<circle class="hull ${h.c.confidence||"low"}" cx="${h.cx.toFixed(1)}" cy="${h.cy.toFixed(1)}" r="${h.r.toFixed(1)}"/><text class="hl${h.c.confidence==="low"?" lo":""}" x="${h.cx.toFixed(1)}" y="${(h.cy-h.r-6).toFixed(1)}" text-anchor="middle">${esc(h.c.name?(story?netStory(netName(h.c,h.i)):netName(h.c,h.i)):h.c.confidence==="low"?"Low-confidence group":"G"+(h.i+1))}</text>`});
   (G.edges||[]).forEach((e,j)=>{const a=L.pos[e.source],b=L.pos[e.target];if(!a||!b)return;const ts=e.time_span||[],on=ts.length?netOverlap(ts[0],ts[1]):true,op=on?(.25+.65*Math.min(1,(e.weight||0)/mxw)):.08;
     s+=`<line class="eh" data-e="${j}" aria-hidden="true" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"/>`;
-    s+=`<line class="ed" data-e="${j}" data-s="${esc(e.source)}" data-t="${esc(e.target)}" tabindex="0" role="button" aria-label="${esc(`Link ${e.source} – ${e.target}: ${e.basis==="t30"?`edited within 30 minutes ${e.observed} times`:`shared ${e.observed} articles`}; chance gives ${fmt(e.null_mean,1)}. Show its numbers.`)}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" style="stroke-width:${e.basis==="t30"?1.6:1};opacity:${op.toFixed(2)}"/>`});
+    s+=`<line class="ed" data-e="${j}" data-s="${esc(e.source)}" data-t="${esc(e.target)}" tabindex="-1" role="button" aria-label="${esc(`Link ${e.source} – ${e.target}: ${e.basis==="t30"?`edited within 30 minutes ${e.observed} times`:`shared ${e.observed} articles`}; chance gives ${fmt(e.null_mean,1)}. Show its numbers.`)}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" style="stroke-width:${e.basis==="t30"?1.6:1};opacity:${op.toFixed(2)}"><title>${esc(netEdgeTxt(e))}</title></line>`});
   const R=n=>Math.max(4,Math.min(14,2+Math.sqrt(n.events||1)*1.6));
-  Object.entries(L.pos).forEach(([id,[x,y]])=>{const n=node.get(id)||{};s+=`<circle class="nd${netDir(n.insert_share)==="--mid"?" mx":""}" data-n="${esc(id)}" tabindex="0" role="button" aria-label="${esc(`Account ${id}: ${n.events} critical-term edits on ${n.articles} articles. Show its numbers.`)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${R(n).toFixed(1)}" style="fill:var(${netDir(n.insert_share)})"/>`});
+  let fi=0;Object.entries(L.pos).forEach(([id,[x,y]])=>{const n=node.get(id)||{};s+=`<circle class="nd${netDir(n.insert_share)==="--mid"?" mx":""}${lo.has(id)?" lo":""}" data-n="${esc(id)}" tabindex="${fi++?-1:0}" role="button" aria-label="${esc(`Account ${id}: ${n.events} critical-term edits on ${n.articles} articles. Show its numbers.`)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${R(n).toFixed(1)}" style="fill:var(${netDir(n.insert_share)})"><title>${esc(netNodeTxt({...n,id}))}</title></circle>`});
   return s+`</svg>`}
 function netTable(G){
   const C=netOrder(G),ws=(c,k)=>{const o=(c.window_share||{})[k],e=(c.expected_window_share||{})[k];return o==null?"–":`${pct(o)} vs ${pct(e&&e.mean)}${e&&e.ci95?` (${pct(e.ci95[0])}–${pct(e.ci95[1])})`:""}`};
@@ -4224,8 +4271,9 @@ function netCount(N){
   const sides=[["topic","Topic articles"],["comparison","Comparison articles"]].filter(([g])=>N[g]&&N[g].counts);
   const mx=Math.max(1,...sides.map(([g])=>{const c=N[g].counts,e=c.expected_by_chance||{};return Math.max(c.edges||0,e.edges_mean||0)}));
   const t=N.topic&&N.topic.counts,te=(t&&t.expected_by_chance)||{},c=N.comparison&&N.comparison.counts;
-  return `${t?`<p class="fig-t net-ct">${t.edges} linked pairs found · about ${fmt(te.edges_mean,0)} expected by chance${c?` · comparison articles: ${c.edges}`:""}</p>`:""}
-   <div class="net-count">${sides.map(([g,l])=>{const k=N[g].counts,e=k.expected_by_chance||{};return `<div class="chance"><span>${l}</span><span class="tr" aria-hidden="true"><i class="f" style="width:${((k.edges||0)/mx*100).toFixed(1)}%"></i><i class="g" style="width:${((e.edges_mean||0)/mx*100).toFixed(1)}%"></i></span><span><b>${k.edges||0}</b> found · ${fmt(e.edges_mean,e.edges_mean<1?2:1)} by chance</span></div>`}).join("")}
+  const ce=(c&&c.expected_by_chance)||{},same=t&&c&&t.events&&c.events&&Math.abs(c.events/t.events-1)<.1;
+  return `${t?`<p class="fig-t net-ct">Topic articles: ${t.edges} linked pairs, ${fmt(t.edges/te.edges_mean,1)} times chance (${fmt(te.edges_mean,2)}).${c?` Comparison articles${same?", with about as many edits":""}: ${c.edges} (chance ${fmt(ce.edges_mean,2)}). Regulars cluster on every contested page; here there are more.`:""}</p>`:""}
+   <div class="net-count">${sides.map(([g,l])=>{const k=N[g].counts,e=k.expected_by_chance||{};return `<div class="chance"><span>${l}</span><span class="tr" aria-hidden="true"><i class="f" style="width:${((k.edges||0)/mx*100).toFixed(1)}%"></i><i class="g" style="width:${((e.edges_mean||0)/mx*100).toFixed(1)}%"></i></span><span><b>${k.edges||0}</b> found · ${fmt(e.edges_mean,2)} by chance</span></div>`}).join("")}
    <p class="cap">Solid bar: linked pairs we found. Dotted bar: what chance gives on average. Same scale for both.</p></div>`}
 function drawNetIn(hs,st,story){
   const host=$(hs);if(!host)return;const N=R.network;NET=st;const sx=story?"":"Ev";
@@ -4234,7 +4282,7 @@ function drawNetIn(hs,st,story){
     const nd=new Map((G.nodes||[]).map(n=>[n.id,n])),cl=(G.communities||[]).filter(c=>c.name&&c.direction).map(c=>{const z=(c.members||[]).filter(id=>(nd.get(id)||{}).insert_share===0).length;
       return `${esc(netStory(netName(c,0)))}: ${c.size} accounts, ${c.n_articles} articles; ${c.direction.insert} critical terms added, ${c.direction.remove} removed${z?`; ${z===1?"one member only removes":z+" members only remove"}`:""}.`});
     host.innerHTML=`${netCount(N)}<div class="net-graphs one"><div class="net-g" data-g="${g}">${cl.length?`<p class="cap net-xb">${cl.join(" ")}</p>`:""}${netGraph(g,G,W,true)}</div></div>
-     <div class="net-det" id="netDet" aria-live="polite">Tap or tab to an account or a line to see its numbers next to what chance would give.</div>
+     <div class="net-det" id="netDet" aria-live="polite">${NET_PROMPT}</div>
      <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid);box-shadow:inset 0 0 0 1.5px var(--muted)"></i>gray: mixed</span><span>Size: number of edits.</span></div>`;
     netWire(hs,"#netDet",N);
     /* phone: the detail sheet docks only while the graph itself is on screen */
@@ -4249,7 +4297,7 @@ function drawNetIn(hs,st,story){
     <div class="o"${NET.view==="network"&&!ph?' hidden':""}><span class="lab" id="netSideL${sx}">Articles</span><div class="seg" id="netSide${sx}" role="group" aria-labelledby="netSideL${sx}">${[["topic","Topic"],["comparison","Comparison"]].filter(([v])=>N[v]).map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.side===v}">${l}</button>`).join("")}</div></div></div>
    <div class="net-ctl"><span class="lab" id="netPreL${sx}">Time</span><ul class="tchips" id="netPre${sx}" aria-labelledby="netPreL${sx}">${NET_PRE.map(([v,l])=>`<li><button type="button" data-v="${v}" aria-pressed="${NET.preset===v}">${esc(l)}</button></li>`).join("")}</ul></div>
    <p class="means" id="netWinC${sx}" aria-live="polite">${netWinCap(G)}</p>
-   <details class="stats"><summary>Notes <span>time chips and the hatched windows</span></summary><div class="in"><p class="cap">A time chip shades its window in every activity strip and, above, sets each group’s share of activity in it against chance; in the network view a link whose co-activity falls wholly outside the window fades. Both windows come from ArbCom’s notices and press reports, not from the case pages we read, which name neither channel; they are hatched in every activity strip: the pro-Israel email canvassing (October 2023 to January 2024) and the pro-Palestinian Discord channel (January to September 2024).</p></div></details>`;
+   <details class="stats"><summary>Notes <span>time chips and the hatched windows</span></summary><div class="in"><p class="cap">A time chip shades its window in every activity strip and, above, sets each group’s share of activity in it against chance; in the network view a link whose co-activity falls wholly outside the window fades. Both windows come from ArbCom’s notices and press reports, not from the case pages we read, which name neither channel; they are hatched in every activity strip: the email canvassing (October 2023 to January 2024) and the Discord channel (January to September 2024), which summaries of the motions and press reports describe as pro-Israel and pro-Palestinian respectively.</p></div></details>`;
   if(NET.view==="groups"){const C=netOrder(G),
       strong=C.filter(c=>c.confidence!=="low").concat(G.extra_blocs||[]),low=C.filter(c=>c.confidence==="low"),pairs=(G.communities||[]).filter(c=>c.size<3).length,W=ph?320:340;
     const ex=(G.counts||{}).expected_by_chance||{},ne=(G.edges||[]).length,none=!strong.length&&!low.length;
@@ -4261,7 +4309,7 @@ function drawNetIn(hs,st,story){
   else if(NET.view==="network"){const cw=host.clientWidth,wide=cw>=901,Wg=g=>ph?Math.max(280,cw-24):!wide?Math.max(300,cw-24):g==="topic"?Math.min(620,Math.floor((cw-36)*2/3)):Math.max(260,Math.floor((cw-36)/3));
     const xb=((N.topic||{}).extra_blocs||[]).filter(b=>(b.test||b.basis)==="insert").map(b=>netName(b,0));
     h+=`<div class="net-graphs${ph?" one":""}">${["topic","comparison"].filter(g=>N[g]&&(!ph||g===NET.side)).map(g=>`<div class="net-g" data-g="${g}"><h4>${g==="topic"?"Topic articles":"Comparison articles · same scale"}</h4>${g==="topic"&&xb.length?`<p class="cap net-xb">${esc(xb.join(", "))} is not drawn: it was found by the insertions-only test, and this graph shows the all-edits test. See Groups.</p>`:""}${netGraph(g,N[g],Wg(g))}</div>`).join("")}</div>
-     ${ph&&NET.side==="topic"&&N.comparison?`<p class="cap">Switch Articles to Comparison to see the same test on other conflicts’ pages.</p>`:""}<div class="net-det" id="netDet${sx}" aria-live="polite">Tap or tab to an account or a line to see its numbers next to what chance would give.</div>
+     ${ph&&NET.side==="topic"&&N.comparison?`<p class="cap">Switch Articles to Comparison to see the same test on other conflicts’ pages.</p>`:""}<div class="net-det" id="netDet${sx}" aria-live="polite">${NET_PROMPT}</div>
      <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: an account that mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid);box-shadow:inset 0 0 0 1.5px var(--muted)"></i>gray: mixed</span><span>Size: number of edits. Line: linked beyond chance (darker = further beyond chance; thicker = timing, thinner = shared articles). Ring: a group, drawn solid, dashed or dotted by confidence. Same scale on both sides.</span></div>`}
   else h+=netTable(G);
   h+=`<details class="stats"><summary>Why lines here <span>when the 30-minute test found none</span></summary><div class="in"><p class="cap col"><b>Why lines here, when the 30-minute test found no recurring pairs?</b> That test asked for the same pair editing within 30 minutes of each other on five or more articles, and found none. A line here needs only three shared articles beyond what chance gives: a looser, statistical link, and not a sign of editing in step.</p></div></details>
@@ -4274,14 +4322,28 @@ function drawNetIn(hs,st,story){
   NET.noGroups=false;
   if(NET.view==="network")netWire(hs,"#netDet"+sx,N);
 }
+const NET_PROMPT="Tap or tab to an account or a line to see its numbers next to what chance would give.";
+function netClear(hs,dsel){$$(`${hs} .on,${hs} .hi`).forEach(x=>x.classList.remove("on","hi"));$$(hs+" svg.sel").forEach(x=>x.classList.remove("sel"));$$(hs+" text.sl").forEach(x=>x.parentNode.removeChild(x));const d=$(dsel);if(d)d.textContent=NET_PROMPT}
 function netWire(hs,dsel,N){
-  $$(hs+" .net-g").forEach(box=>box.addEventListener("keydown",e=>{const t=e.target;if((e.key==="Enter"||e.key===" ")&&(t.dataset.n||t.dataset.e!=null)){e.preventDefault();t.dispatchEvent(new MouseEvent("click",{bubbles:true}))}}));
+  /* one Tab stop per graph (roving tabindex): arrow keys walk the accounts, then the links; Enter shows numbers; Escape clears */
+  $$(hs+" .net-g").forEach(box=>box.addEventListener("keydown",e=>{const t=e.target;if((e.key==="Enter"||e.key===" ")&&(t.dataset.n||t.dataset.e!=null)){e.preventDefault();t.dispatchEvent(new MouseEvent("click",{bubbles:true}));return}
+    if(e.key==="Escape"){netClear(hs,dsel);return}
+    if(!/^Arrow|^Home$|^End$/.test(e.key)||!(t.dataset.n||t.dataset.e!=null))return;
+    const L=[...box.querySelectorAll("circle.nd"),...box.querySelectorAll("line.ed")],i=L.indexOf(t);if(i<0)return;e.preventDefault();
+    const j=e.key==="Home"?0:e.key==="End"?L.length-1:(i+(e.key==="ArrowRight"||e.key==="ArrowDown"?1:-1)+L.length)%L.length;
+    L.forEach(x=>x.setAttribute("tabindex",x===L[j]?"0":"-1"));L[j].focus();L[j].dispatchEvent(new MouseEvent("click",{bubbles:true}))}));
   $$(hs+" .net-g").forEach(box=>box.addEventListener("click",e=>{const g=box.dataset.g,Gx=N[g],det=$(dsel);let t=e.target;
+    if(t.tagName&&t.tagName.toLowerCase()==="title")t=t.parentNode;
     if(t.classList&&t.classList.contains("eh"))t=$(`line.ed[data-e="${t.dataset.e}"]`,box)||t;
+    if(!(t.dataset&&(t.dataset.n||t.dataset.e!=null))){if(t.closest&&t.closest("svg"))netClear(hs,dsel);return}
+    $$(".nd,.ed",box).forEach(x=>x.setAttribute("tabindex",x===t?"0":"-1"));
     $$(`${hs} .on,${hs} .hi`).forEach(x=>x.classList.remove("on","hi"));$$(hs+" svg.sel").forEach(x=>x.classList.remove("sel"));$$(hs+" text.sl").forEach(x=>x.parentNode.removeChild(x));
     const svg=box.querySelector("svg"),mark=(ids,eds)=>{if(!svg)return;svg.classList.add("sel");eds.forEach(x=>x.classList.add("hi"));ids.forEach(id=>{const c=$(`circle.nd[data-n="${CSS.escape(id)}"]`,svg);if(!c)return;c.classList.add("hi");const tx=document.createElementNS("http://www.w3.org/2000/svg","text");tx.setAttribute("class","sl");const cx=+c.getAttribute("cx"),rr=+c.getAttribute("r"),rt=cx<+svg.viewBox.baseVal.width-40;tx.setAttribute("x",cx+(rt?rr+4:-rr-4));tx.setAttribute("y",+c.getAttribute("cy")+3.5);tx.setAttribute("text-anchor",rt?"start":"end");tx.textContent=id;svg.appendChild(tx)})};
     if(t.dataset&&t.dataset.n)mark([t.dataset.n],$$(`line.ed`,box).filter(l=>l.dataset.s===t.dataset.n||l.dataset.t===t.dataset.n));
     else if(t.dataset&&t.dataset.e!=null&&t.dataset.s)mark([t.dataset.s,t.dataset.t],[t]);
+    const story=hs==="#net";
+    if(story&&t.dataset.n){t.classList.add("on");const n=(Gx.nodes||[]).find(x=>x.id===t.dataset.n)||{};det.textContent=netNodeTxt(n)+".";return}
+    if(story&&t.dataset.e!=null){t.classList.add("on");det.textContent=netEdgeTxt((Gx.edges||[])[+t.dataset.e]);return}
     if(t.dataset.n){t.classList.add("on");const n=(Gx.nodes||[]).find(x=>x.id===t.dataset.n)||{},ci=netOrder(Gx).findIndex(c=>c.id===n.community);
       det.innerHTML=`<b>${esc(n.id)}</b> (${g}) · ${n.events} critical-term edits on ${n.articles} articles · ${pct(n.insert_share)} add critical terms (${netDirW(n.insert_share)}) · account age when first seen: ${esc({"<30d":"under 30 days","30d-1y":"30 days to 1 year","1-5y":"1 to 5 years",">5y":"over 5 years"}[n.age_bucket]||"unknown")}${ci>=0?` · in ${esc((hs==="#net"?netStory:String)(netName(netOrder(Gx)[ci],ci)))}`:""}. Labels restart in each network.`}
     else if(t.dataset.e!=null){t.classList.add("on");const ed=(Gx.edges||[])[+t.dataset.e],ex=(ed.example_article_pairs||[])[0];
