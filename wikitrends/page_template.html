@@ -107,8 +107,8 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .wow-col .when{font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .wow-col .when a{font-weight:400;text-transform:none;letter-spacing:0}
 .wow-s{font:400 clamp(22px,2.9vw,36px)/1.3 var(--display);letter-spacing:-.01em}
-.wow-s del,.sentence del,.diff del,.xl-text del,.q del,.tcard .s del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
-.wow-s ins,.sentence ins,.diff ins,.xl-text ins,.q ins,.tcard .s ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
+.wow-s del,.sentence del,.diff del,.xl-text del,.q del,.tcard .s del,.zi-chips del,.zi-p del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
+.wow-s ins,.sentence ins,.diff ins,.xl-text ins,.q ins,.tcard .s ins,.zi-chips ins,.zi-p ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
 .wow-key{display:flex;flex-wrap:wrap;gap:6px 18px;font:13px/1.4 var(--body);color:var(--muted);align-items:center}
 .wow-key del,.wow-key ins{font:inherit;padding:0 4px;border-radius:2px}
 .wow-key del{background:var(--del-bg);color:var(--del-ink)} .wow-key ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none}
@@ -637,6 +637,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   #stepsK{gap:16vh;gap:16svh;padding-block:4vh 16vh;padding-block:4svh 16svh;position:relative;z-index:3}
   .step{box-shadow:0 6px 24px rgb(0 0 0/.10);background:var(--sheet)}
   .step .go{min-height:44px;padding:12px 0}
+  #stepsK .step .go{display:none}
   #trend,#es{height:clamp(230px,34vh,320px)!important}
   #kChart{height:clamp(160px,28vh,240px)!important;height:clamp(160px,28svh,240px)!important}
   .scrolly .fig{gap:6px;padding:7px 10px}
@@ -814,10 +815,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 #tip .zi-d del,#tip .zi-d ins{padding:0 .1em}
 @media (max-width:640px){
   .zi{margin-top:48px}
+  #mastRange{display:none}
+  .canbox{margin-top:24px}
   .zi-ba{grid-template-columns:minmax(0,1fr)}
   .zi-chips li{font-size:13px}
   .zi-chips li del,.zi-chips li ins{font-size:15px}
-  .zi-phases{grid-template-columns:minmax(0,1fr);gap:6px}
+  .zi-phases{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:6px;margin-inline:-12px;padding:2px 12px 6px;scrollbar-width:thin;-webkit-mask-image:linear-gradient(to left,transparent,#000 24px);mask-image:linear-gradient(to left,transparent,#000 24px)}
+  .zi-phases>li{flex:0 0 78%;scroll-snap-align:start}
   .zi-phases .nm{flex-wrap:nowrap}
   .zi-phases .rg{flex-basis:auto;margin-left:auto;text-align:right}
   .zi-phases button{padding:7px 9px;font-size:12.5px}
@@ -1209,13 +1213,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="zi-how"><b>How to read this:</b> time runs left to right; the blue bar shows when “colonial” or “colonization” was in the first sentence, each gap a removal; the vertical line is the change shown below.</p>
     <ol class="zi-phases" id="ziPhases" aria-label="Phases, computed from the changes"></ol>
     <div class="chart" id="ziChart" tabindex="0" role="group" aria-label="Timeline of first-sentence changes to the Zionism article. Left and right arrow keys step through changes; space plays or pauses."></div>
-    <details class="stats keyd"><summary>Full key <span>every mark in the chart</span></summary><div class="in"><div class="legend" id="ziKey"></div></div></details>
+    <details class="stats keyd"><summary>Key and options <span>every mark, jump to a moment, step mode</span></summary><div class="in"><div class="legend" id="ziKey"></div>
     <div class="zi-jumps"><span class="lab" id="ziJumpL">Jump to</span><ul id="ziMoments" aria-labelledby="ziJumpL"></ul></div>
     <div class="zi-opts">
       <div class="o"><span class="lab" id="ziModeL">Step through</span><div class="seg" id="ziMode" role="group" aria-labelledby="ziModeL"><button type="button" data-v="key" aria-pressed="true">Key moves</button><button type="button" data-v="all" aria-pressed="false">Every change</button></div></div>
       <div class="o"><span class="lab" id="ziSpeedL">Play speed</span><div class="seg" id="ziSpeed" role="group" aria-labelledby="ziSpeedL"><button type="button" data-v="norm" aria-pressed="true">Normal</button><button type="button" data-v="slow" aria-pressed="false">Slow</button></div></div>
       <p class="cap" id="ziModeHelp"></p>
     </div>
+    </div></details>
     <div class="zi-card" id="ziCard">
       <div class="hd" id="ziHd"></div>
       <div class="zi-ba" id="ziBA"></div>
@@ -1228,24 +1233,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <i class="zi-sent" aria-hidden="true"></i>
     <p class="zi-sr" id="ziLive" aria-live="polite" aria-atomic="true"></p>
   </figure>
+  <p class="cap ev-link">See the evidence: <a href="#ev-zionism">both versions word by word, and the rest of the opening section</a>.</p>
   <button class="inlab" type="button" data-intent='{"lab":"flip","title":"Zionism"}'>Drag through every version of this sentence in the data lab →</button>
-</section>
-
-<section class="sec" id="after" aria-labelledby="afH">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>After the battles</div>
-    <h2 id="afH">After the battles, the opening lines moved: Hamas lost “militant” five days after October 7, and October 7 became “armed incursions” within nine weeks</h2>
-    <p class="means bl"><b>Bottom line:</b> In the weeks after the big escalations the definitions of Hamas, October 7, the Nakba, Zionism and the Gaza war changed (dated below); most first tries bounced, and today’s wordings settled in 2025 and 2026. Timing, not proof of cause.</p>
-    <p class="deck">Pale bars: new critical terms (genocide, apartheid, occupation, colonial, ethnic cleansing, Nakba) written each week into the opening paragraphs of 4,642 core Israel, Palestine and Jewish-history articles; solid: the part still there a week later. Red lines: battles. Each card is one battle and what changed after it.</p>
-  </header>
-  <div class="scrolly" id="scK">
-    <div class="steps" id="stepsK"></div>
-    <figure class="sticky fig kfig" style="margin:0">
-      <div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="cap" id="kSub"></span></div>
-      <div class="chart" id="kChart" style="height:clamp(270px,48vh,420px)"></div>
-      <div class="legend" id="kKey"></div>
-    </figure>
-  </div>
 </section>
 
 <section class="sec" id="charge" aria-labelledby="chargeH">
@@ -1253,13 +1242,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="eyebrow"><span class="layer">CONTENT</span>The charge</div>
     <h2 id="chargeH">Israel “began committing genocide”: a charge absent in 2021 is now stated as fact in the encyclopedia’s own voice</h2>
     <p class="means bl"><b>Bottom line:</b> Among the 150 most-read opening sections that existed in 2021, no sentence charged Israel with genocide in January 2021 or July 2023; seven do now, two in Wikipedia’s own voice: Israel and Benjamin Netanyahu (quoted below).</p>
-    <p class="deck">“Genocide” has stood in the Israel article since 4 May 2025; eight earlier insertions from November 2023 did not last, the longest 18.9 days. Killing charges rose on both sides, against Israel from 9 to 26 sentences and against Hamas or Palestinians from 8 to 23, so the share of harm sentences naming Israel moved little (23.6% to 26.4%). What changed is the charge.</p>
+    <p class="deck">“Genocide” has stood in the Israel article since 4 May 2025; eight earlier insertions from November 2023 did not last, the longest 18.9 days. What changed is the charge.</p>
   </header>
   <div class="news-q">
     <blockquote><span class="w"><i style="background:var(--topic)"></i>Israel, opening section, now · Wikipedia’s own voice</span><span class="s">“After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.”</span><span class="cap">The next sentence: “Israel has denied that its actions constitute genocide.”</span></blockquote>
     <blockquote><span class="w"><i style="background:var(--topic)"></i>Benjamin Netanyahu, opening section, now · no denial</span><span class="s">“Netanyahu's government has been orchestrating the Gaza genocide, culminating in the South Africa v. Israel case before the International Court of Justice (ICJ) in December 2023”</span></blockquote>
   </div>
-  <p class="cap">Every charge, side and voice, sentence by sentence: <a href="#ppFig">the charge chart in the evidence room</a>.</p>
+  <p class="cap">Every charge, side and voice, sentence by sentence: <a href="#ppFig">see the evidence: the charge chart</a>.</p>
 </section>
 
 <section class="sec" id="oct7" aria-labelledby="o7H">
@@ -1267,10 +1256,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="eyebrow"><span class="layer">CONTENT</span>October 7, Hamas and the hostages</div>
     <h2 id="o7H">October 7 is “armed incursions” in the first sentence. The hostages have never been in it. Hamas’s terror designation moved to the end.</h2>
     <p class="means bl"><b>Bottom line:</b> The facts of October 7 are in the opening section, but its first sentence calls the attack “a series of coordinated armed incursions”; Hamas’s terror-designation sentence went from sentence 5 to 22 of 23 (chart below).</p>
-    <p class="deck">Across 107 versions of October 7’s first sentence, “massacre” stood for about an hour in total, “terror” for 0.2 days, the hostages never; they are in sentence 9. By 31 October 2026 the designation sentence named no country: “Several countries have designated Hamas as a terrorist organisation.” (The edit is days old and may be reverted.)</p>
+    <p class="deck">Across 107 versions of October 7’s first sentence, “massacre” stood for about an hour in total, “terror” for 0.2 days, the hostages never; they are in sentence 9.</p>
   </header>
     <figure class="fig" style="margin:0"><div class="fig-h"><span class="fig-t">Where the terror designation sits in the Hamas opening section</span><span class="cap">0 = first word, 1 = last word</span></div><div id="o7Pos"></div></figure>
-  <p class="cap">Every change to the Hamas, October 7 and Gaza genocide first sentences, step by step, is in the <a href="#o7Fig">evidence room</a>.</p>
+  <p class="cap">Every change to the Hamas, October 7 and Gaza genocide first sentences, step by step: <a href="#o7Fig">see the evidence</a>.</p>
 </section>
 
 <section class="sec" id="palestine" aria-labelledby="palH">
@@ -1283,6 +1272,25 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="news-q">
     <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba, 2021 and 2026 · The 2021 version also took a position.</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.”</span></blockquote>
   </div>
+  <p class="cap ev-link">See the evidence: <a href="#ev-1948">the other 1948 articles and the revision where each first sentence changed</a>.</p>
+</section>
+
+<section class="sec" id="after" aria-labelledby="afH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>After the battles</div>
+    <h2 id="afH">In the weeks after some battles, the opening lines moved; most first tries bounced, and today’s definitions settled in 2025 and 2026</h2>
+    <p class="means bl"><b>Bottom line:</b> The definitions of Hamas, October 7, the Nakba, Zionism and the Gaza war each changed in the weeks after an escalation, dated in the cards below; the wordings readers see today came later. Timing, not proof of cause.</p>
+    <p class="deck">Pale bars: new critical terms (genocide, apartheid, occupation, colonial, ethnic cleansing, Nakba) written each week into the opening paragraphs of 4,642 core Israel, Palestine and Jewish-history articles; solid: the part still there a week later. Red lines: battles. Each card is one battle and what changed after it.</p>
+  </header>
+  <div class="scrolly" id="scK">
+    <div class="steps" id="stepsK"></div>
+    <figure class="sticky fig kfig" style="margin:0">
+      <div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="cap" id="kSub"></span></div>
+      <div class="chart" id="kChart" style="height:clamp(270px,48vh,420px)"></div>
+      <div class="legend" id="kKey"></div>
+    </figure>
+  </div>
+  <p class="cap ev-link">See the evidence: <a href="#when">timing in detail, week by week, with every event</a>.</p>
 </section>
 
 <section class="sec" id="crosslang">
@@ -1304,7 +1312,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="cap" id="xmNote"></p>
 </div></details>
   </figure>
-  <p class="cap">A square opens its sentence, in the original with our translation, in the evidence room’s reader.</p>
+  <p class="cap ev-link">A square opens its sentence, in the original with our translation. See the evidence: <a href="#ev-xl">every sentence, language by language</a>.</p>
 </section>
 
 <section class="sec" id="against" aria-labelledby="agH">
@@ -1319,6 +1327,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <li><b>Antisemitism.</b> Mentioned in 54 topic opening paragraphs, up from 37, including the Israel article (we did not code what those sentences say).</li>
     <li><b>Zionism as settler colonialism.</b> The attribution was pulled back from “its founders and early leaders, as well as several scholars” to “some scholars”, edit summary “more NPOV”.</li>
   </ul>
+  <p class="cap ev-link">See the evidence: <a href="#ev-against">Jewish ties to the land, both directions</a>.</p>
 </section>
 
 <section class="sec" id="organised" aria-labelledby="orgSH">
@@ -1329,7 +1338,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="deck">The graph links anonymous accounts (A1, A2…) that changed critical terms on the same articles more often than chance: 14 linked pairs on topic pages, where chance gives about 2. None edited within 10 minutes of another; no sentence was pasted into five or more articles. Regulars with shared watchlists look like this; so would a coordinated group. No account is identified.</p>
   </header>
   <div id="net"><!--NETWORK: build_page.py inlines patterns/coord/chart_data/network.json as R.network when present; otherwise this renders the "analysis running" placeholder--></div>
-  <p class="cap">What ArbCom is reported to have found, our timing tests and every caveat: <a href="#orgRec">in the evidence room</a>.</p>
+  <p class="cap">What ArbCom is reported to have found, our timing tests and every caveat: <a href="#orgRec">see the evidence</a>.</p>
 </section>
 
 <section class="sec" id="trust" aria-labelledby="trustH">
@@ -1359,7 +1368,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <h2>The evidence behind the story</h2>
   <p class="deck">Part 1 goes deeper into each section of the story, with every chart in full. Part 2 is how it was measured: samples, method, checks, and what we dropped.</p>
   <ol class="ev-toc">
-    <li><a href="#ev1">Part 1 · Deeper into the story</a>: <a href="#ev-zionism">Zionism</a> · <a href="#ppFig">the charge</a> · <a href="#o7Fig">October 7 and Hamas</a> · <a href="#ev-1948">1948</a> · <a href="#ev-xl">languages</a> · <a href="#ev-against">the other direction</a> · <a href="#reads">seven sentences</a> · <a href="#when">timing</a> · <a href="#news">history, places, people</a> · <a href="#ev-organised">organised or organic</a></li>
+    <li><a href="#ev1">Part 1 · Deeper into the story</a>: <a href="#ev-zionism">Zionism</a> · <a href="#ppFig">the charge</a> · <a href="#o7Fig">October 7 and Hamas</a> · <a href="#ev-1948">1948</a> · <a href="#when">timing</a> · <a href="#ev-xl">languages</a> · <a href="#ev-against">the other direction</a> · <a href="#reads">seven sentences</a> · <a href="#news">history, places, people</a> · <a href="#ev-organised">organised or organic</a></li>
     <li><a href="#ev2">Part 2 · Method and checks</a>: <a href="#board">the full record</a> · <a href="#reach">core and long tail</a> · <a href="#limits">samples and limits</a> · <a href="#method">method</a> · <a href="#checks">checks</a> · <a href="#ledger">every article</a></li>
   </ol>
 </div>
@@ -1370,6 +1379,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <header><div class="eyebrow">Zionism</div><h2 id="evZiH">Both versions word by word, the rest of the opening section, and how changes were counted</h2></header>
   <div class="wow-grid" id="ziPair"></div>
   <div class="wow-key"><span><del>amber, struck through</del> = words in 2021 that are gone now</span><span><ins>blue</ins> = words that are new since 2021</span></div>
+  <div class="zi-sum" id="ziSumRest"></div>
   <details class="stats zi-rest" id="ziRest"><summary>The rest of the opening section <span id="ziRestN"></span></summary><div class="in"></div></details>
   <p class="means" id="ziMeans"></p>
   <details class="stats"><summary>More <span>the fight, and how changes were counted</span></summary><div class="in">
@@ -1380,7 +1390,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="sec" id="ev-charge" aria-labelledby="evChH">
   <header><div class="eyebrow">The charge</div><h2 id="evChH">Who is charged with what, and in whose voice</h2>
-    <p class="deck">We coded every sentence about violence, harm, displacement, legal charges or rights in the 150 most-read opening sections that existed in January 2021, at three dates: January 2021, July 2023 and now (5 November 2026). The share that names Israel, Israelis, Jews or Zionists as the one doing the harm was 23.6%, 24.1% and 26.4%: a change of +2.8 points (range −1.9 to +8.3). Genocide: 0 sentences in 2021, 0 in July 2023, 7 now, plus Israel’s denial.</p></header>
+    <p class="deck">We coded every sentence about violence, harm, displacement, legal charges or rights in the 150 most-read opening sections that existed in January 2021, at three dates: January 2021, July 2023 and now (5 November 2026). The share that names Israel, Israelis, Jews or Zionists as the one doing the harm was 23.6%, 24.1% and 26.4%: a change of +2.8 points (range −1.9 to +8.3). Genocide: 0 sentences in 2021, 0 in July 2023, 7 now, plus Israel’s denial.</p>
+    <p class="deck">Killing charges rose on both sides, against Israel from 9 to 26 sentences and against Hamas or Palestinians from 8 to 23, so the share of harm sentences naming Israel moved little (23.6% to 26.4%).<!--QA r5: numerator under review (data lens: Palestinian side 8→24 on the same basis; critic: Israel-side rows include pre-modern and non-state killings). Recompute before any return to the story.--></p></header>
   <figure class="fig pp" id="ppFig" style="margin:0">
     <div class="fig-h"><span class="fig-t">Who is charged with what, and in whose voice: sentences in the opening sections, 2021 · July 2023 · now</span><span class="cap">Tap a bar to read the sentences behind it.</span></div>
     <p class="zi-how"><b>How to read this:</b> rows are charges, columns sides; the three bars in each cell are January 2021, July 2023 and now. Solid: Wikipedia’s own voice. Pale and striped: attributed, or a denial. Each row has its own scale (its maximum is under the charge name); the bars in a row share it.</p>
@@ -1470,6 +1481,38 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <p class="means" id="mTrace"></p>
 </section>
 
+<section class="sec" id="when" aria-labelledby="whenH">
+  <header>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>Timing</div>
+    <h2 id="whenH">Timing in detail: one wave with the fighting; the volume fell back, the defining sentences kept changing into late 2026</h2>
+    <p class="means bl"><b>Bottom line:</b> New critical wording arrived after October 7 in one wave alongside the battles (suggestive); its pace peaked in 2024 and is back near the pre-war rate (chart below), but the first sentences people read were settled late: the Nakba “by Zionists” from July 2026, Zionism “through colonization” from August.</p>
+    <p class="deck">New critical terms per 1,000 topic edits ran at about 7 before the war, 13.5 in late 2023, and 16.0 and 15.9 through 2024. Then the rate fell to 10.8 and 8.2 in 2025, and to 5.1 and 5.9 in 2026, at or below the pre-war rate. Volume fell, but the defining sentences kept moving: the Nakba’s “by Zionists” has stood since 6 July 2026, Zionism’s “through colonization” since 27 August, Israel’s first sentence since 4 September and October 7’s current first sentence since 8 October 2026.</p>
+    <p class="deck">Below, week by week: editing on top, new critical vocabulary in topic opening paragraphs below, and each real-world event as a dot by type. Tap a dot.</p>
+  </header>
+  <figure class="stream" style="margin:0" aria-label="Every edit to every article in the study, by week">
+    <canvas id="hero" role="img" aria-label="Each row is an article; each mark is an edit, placed in its week. A red line marks 7 October 2023."></canvas>
+    <div id="heroLabs"></div>
+    <figcaption class="stream-key">
+      <span class="key"><i style="background:var(--topic)"></i>teal: an edit to an Israel or Jewish-topic article</span>
+      <span class="key"><i style="background:var(--comp)"></i>grey-violet: an edit to another article</span>
+      <span class="key"><i style="background:var(--del-bd)"></i>amber: an edit that was later undone</span>
+      <span class="key" style="color:var(--war)"><i class="dash"></i>red dashed line: 7 October 2023</span>
+      <span id="heroNote"></span>
+    </figcaption>
+  </figure>
+  <figure class="fig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">Edits, events and new critical terms, week by week</span><span class="cap" id="whenSel" aria-live="polite">Tap or hover an event dot</span></div>
+    <div class="chart" id="whenChart" tabindex="0" aria-label="Weekly timeline with events. Use the left and right arrow keys to step through events."></div>
+    <div class="legend" id="whenKey"></div>
+  </figure>
+  <div class="fig" style="margin-top:4px">
+    <div class="fig-h"><span class="fig-t">How often an edit added critical vocabulary, by half-year</span><span class="cap">the 4,642 sampled topic opening paragraphs, counted as new terms for every 1,000 edits</span></div>
+    <div id="waveStrip"></div>
+  </div>
+  <p class="means" id="mWhen"><b>Edits and new wording rose after battles.</b> In the three weeks after each of the 24 military escalations, topic edits rose 17% against the six weeks before, far more than after 2,000 random dates (event windows overlap, so single events cannot be separated). New critical terms in topic opening paragraphs also rose after escalations, 1.34 times the usual rate in the three weeks after (p = 0.001) and 1.17 times over 13 weeks (p = 0.054), a suggestive result: a placebo, the Nagorno-Karabakh offensive, ranks among the strongest single events.</p>
+  <p class="deck col"><b>How the wording settled.</b> Across the 11 editions we track, wording that lasted more often arrived with a new source (50% of 204 lasting insertions, against 28% of 414 reverted ones), an association rather than proof; in English, 6 of 26 lasting wordings settled within 30 days of a formal discussion closing, against 2.3 by chance (low confidence; details under <a href="#ev-organised">Organised or organic: the full record</a>, More).</p>
+</section>
+
 <section class="sec" id="ev-xl" aria-labelledby="evXlH">
   <header><div class="eyebrow">Other languages</div><h2 id="evXlH">In their own words: every sentence, original and translation; the genocide article’s titles; language by language</h2></header>
   <figure class="fig xr xm-keep" id="xrFig" style="margin:0" aria-labelledby="xrMomT">
@@ -1539,38 +1582,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <blockquote><span class="w"><i style="background:var(--muted)"></i>Moved the other way · 1948 Palestinian expulsion and flight · July 2023 → no agent since May 2025</span><span class="cap"><b>Then</b> “In 1948 more than 700,000 Palestinian Arabs ... were expelled or fled from their homes by Zionist militias, during the 1948 Palestine war.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “During the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.” (This exact wording since 19 March 2026.)</span></blockquote>
   </div>
   <p class="cap">Exact text on the dates given; first sentences checked against the stored revision history. The Israel card quotes the end of paragraph 2: 4 May 2025 is when “genocide” entered for good, not the date of this exact wording. “Now” dates the start of the current run, brief reverted edits excepted; text as of 5 November 2026.</p>
-</section>
-
-<section class="sec" id="when" aria-labelledby="whenH">
-  <header>
-    <div class="eyebrow"><span class="layer process">PROCESS</span>Timing</div>
-    <h2 id="whenH">Timing in detail: one wave with the fighting; the volume fell back, the defining sentences kept changing into late 2026</h2>
-    <p class="means bl"><b>Bottom line:</b> New critical wording arrived after October 7 in one wave alongside the battles (suggestive); its pace peaked in 2024 and is back near the pre-war rate (chart below), but the first sentences people read were settled late: the Nakba “by Zionists” from July 2026, Zionism “through colonization” from August.</p>
-    <p class="deck">New critical terms per 1,000 topic edits ran at about 7 before the war, 13.5 in late 2023, and 16.0 and 15.9 through 2024. Then the rate fell to 10.8 and 8.2 in 2025, and to 5.1 and 5.9 in 2026, at or below the pre-war rate. Volume fell, but the defining sentences kept moving: the Nakba’s “by Zionists” has stood since 6 July 2026, Zionism’s “through colonization” since 27 August, Israel’s first sentence since 4 September and October 7’s current first sentence since 8 October 2026.</p>
-    <p class="deck">Below, week by week: editing on top, new critical vocabulary in topic opening paragraphs below, and each real-world event as a dot by type. Tap a dot.</p>
-  </header>
-  <figure class="stream" style="margin:0" aria-label="Every edit to every article in the study, by week">
-    <canvas id="hero" role="img" aria-label="Each row is an article; each mark is an edit, placed in its week. A red line marks 7 October 2023."></canvas>
-    <div id="heroLabs"></div>
-    <figcaption class="stream-key">
-      <span class="key"><i style="background:var(--topic)"></i>teal: an edit to an Israel or Jewish-topic article</span>
-      <span class="key"><i style="background:var(--comp)"></i>grey-violet: an edit to another article</span>
-      <span class="key"><i style="background:var(--del-bd)"></i>amber: an edit that was later undone</span>
-      <span class="key" style="color:var(--war)"><i class="dash"></i>red dashed line: 7 October 2023</span>
-      <span id="heroNote"></span>
-    </figcaption>
-  </figure>
-  <figure class="fig" style="margin:0">
-    <div class="fig-h"><span class="fig-t">Edits, events and new critical terms, week by week</span><span class="cap" id="whenSel" aria-live="polite">Tap or hover an event dot</span></div>
-    <div class="chart" id="whenChart" tabindex="0" aria-label="Weekly timeline with events. Use the left and right arrow keys to step through events."></div>
-    <div class="legend" id="whenKey"></div>
-  </figure>
-  <div class="fig" style="margin-top:4px">
-    <div class="fig-h"><span class="fig-t">How often an edit added critical vocabulary, by half-year</span><span class="cap">the 4,642 sampled topic opening paragraphs, counted as new terms for every 1,000 edits</span></div>
-    <div id="waveStrip"></div>
-  </div>
-  <p class="means" id="mWhen"><b>Edits and new wording rose after battles.</b> In the three weeks after each of the 24 military escalations, topic edits rose 17% against the six weeks before, far more than after 2,000 random dates (event windows overlap, so single events cannot be separated). New critical terms in topic opening paragraphs also rose after escalations, 1.34 times the usual rate in the three weeks after (p = 0.001) and 1.17 times over 13 weeks (p = 0.054), a suggestive result: a placebo, the Nagorno-Karabakh offensive, ranks among the strongest single events.</p>
-  <p class="deck col"><b>How the wording settled.</b> Across the 11 editions we track, wording that lasted more often arrived with a new source (50% of 204 lasting insertions, against 28% of 414 reverted ones), an association rather than proof; in English, 6 of 26 lasting wordings settled within 30 days of a formal discussion closing, against 2.3 by chance (low confidence; details under <a href="#ev-organised">Organised or organic: the full record</a>, More).</p>
 </section>
 
 <section class="sec" id="news" aria-labelledby="newsH">
@@ -3455,7 +3466,8 @@ function ziSummary(){
   const D=ziData();if(!D)return;const {Z}=D;
   const chip=c=>c.k==="-"?`<li><del>${esc(c.a)}</del><span class="w">removed</span></li>`:c.k==="+"?`<li><ins>${esc(c.a)}</ins><span class="w">added</span></li>`:`<li><del>${esc(c.a)}</del> → <ins>${esc(c.b)}</ins></li>`;
   const p1=Z.chips.filter(c=>c.where==="p1"),rest=Z.chips.filter(c=>c.where!=="p1");
-  $("#ziSum").innerHTML=`<h3>The key changes, in the article’s own words</h3><ul class="zi-chips" aria-label="In the opening paragraph">${p1.map(chip).join("")}</ul>${rest.length?`<h3 style="margin-top:4px">Further down the opening section</h3><ul class="zi-chips">${rest.map(chip).join("")}</ul>`:""}`;
+  $("#ziSum").innerHTML=`<h3>The key changes, in the article’s own words</h3><ul class="zi-chips" aria-label="In the opening paragraph">${p1.map(chip).join("")}</ul>`;
+  const zr=$("#ziSumRest");if(zr)zr.innerHTML=rest.length?`<h3>Further down the opening section</h3><ul class="zi-chips">${rest.map(chip).join("")}</ul>`:"";
   const t=Z.then,n=Z.now,ops=wdiff(t.paras[0],n.paras[0]);
   const when=(lab,o)=>`<div class="when"><span>${lab}</span><a href="${ziOld(o.rev)}" rel="noopener" target="_blank">revision ${o.rev}${o.saved?`, saved ${ziD(o.saved)}`:""}</a></div>`;
   $("#ziPair").innerHTML=`<div class="wow-col">${when(`Before · as of ${ziD(t.asof)}`,t)}<p class="zi-p">${renderW(ops,"-")}</p></div><div class="wow-col">${when(`Now · as of ${ziD(n.asof)}`,n)}<p class="zi-p">${renderW(ops,"+")}</p></div>`;
