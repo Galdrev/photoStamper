@@ -53,7 +53,9 @@ h3{font-size:21px;line-height:1.2;font-weight:500}
 .layer{font:600 10.5px/1 var(--mono);letter-spacing:.1em;color:var(--ink);border:1px solid var(--ink);border-radius:2px;padding:3px 5px}
 .layer.process{border-style:double;border-width:3px;padding:1px 4px}
 .layer.epistemics{border-style:dashed}
-.xchip{font:500 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:none;color:var(--del-ink);background:var(--del-bg);border-radius:2px;padding:4px 6px}
+.xchip{font:500 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:none;color:var(--ink-2);background:none;border:1px solid var(--muted);border-radius:2px;padding:3px 6px}
+/* the layer tags (content / process / sources) explain themselves only in the evidence room; the story eyebrow keeps the reader's kicker */
+#view-report .eyebrow .layer{display:none}
 .deck{font:400 18px/1.55 var(--body);color:var(--ink-2)}
 .cap{font-size:13px;line-height:1.5;color:var(--muted)}
 .cap b{color:var(--ink-2);font-weight:600}
@@ -98,6 +100,13 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .key i{display:inline-block;width:10px;height:10px;border-radius:2px;flex:none}
 .key i.ln{height:2px;width:16px;border-radius:1px}
 .key i.dash{height:0;width:16px;border-top:2px dashed currentColor;background:none!important}
+.key i.dot{height:0;width:18px;border-top:1.5px dotted var(--muted);background:none!important;border-radius:0}
+.key i.wch{width:9px;height:14px;border-radius:0;position:relative;background:repeating-linear-gradient(to bottom,var(--ink) 0 3px,transparent 3px 5px) 50% 0/2px 9px no-repeat}
+.key i.wch::after{content:"";position:absolute;left:1.5px;bottom:0;width:6px;height:6px;background:var(--ink);transform:rotate(45deg)}
+.k-notes{margin:0;display:flex;flex-wrap:wrap;gap:2px 12px;font:500 11px/1.4 var(--mono);color:var(--ink-2)}
+.k-notes span{display:inline-flex;gap:5px;align-items:baseline}
+.k-notes i{font-style:normal;display:inline-grid;place-items:center;min-width:14px;height:14px;border-radius:2px;color:var(--sheet);font:600 10px/1 var(--mono);transform:translateY(2px)}
+@media (max-width:600px){#kKey{gap:1px 9px;font-size:10.5px;white-space:nowrap}#kKey .key{gap:4px}.k-notes{font-size:10.5px;line-height:1.3;gap:1px 14px;flex-wrap:nowrap;white-space:nowrap;overflow-x:auto;height:18px;scrollbar-width:none;-webkit-mask-image:linear-gradient(to left,transparent,#000 28px);mask-image:linear-gradient(to left,transparent,#000 28px)}.k-notes[hidden]{display:flex!important;visibility:hidden}.kfig{gap:6px}}
 
 /* wow: then and now */
 .wow{margin-top:64px;display:grid;gap:18px}
@@ -107,8 +116,8 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .wow-col .when{font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .wow-col .when a{font-weight:400;text-transform:none;letter-spacing:0}
 .wow-s{font:400 clamp(22px,2.9vw,36px)/1.3 var(--display);letter-spacing:-.01em}
-.wow-s del,.sentence del,.diff del,.xl-text del,.q del,.tcard .s del,.zi-chips del,.zi-p del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
-.wow-s ins,.sentence ins,.diff ins,.xl-text ins,.q ins,.tcard .s ins,.zi-chips ins,.zi-p ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
+.wow-s del,.sentence del,.diff del,.xl-text del,.q del,.tcard .s del,.zi-chips del,.zi-p del,.news-q del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .08em}
+.wow-s ins,.sentence ins,.diff ins,.xl-text ins,.q ins,.tcard .s ins,.zi-chips ins,.zi-p ins,.news-q ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em}
 .wow-key{display:flex;flex-wrap:wrap;gap:6px 18px;font:13px/1.4 var(--body);color:var(--muted);align-items:center}
 .wow-key del,.wow-key ins{font:inherit;padding:0 4px;border-radius:2px}
 .wow-key del{background:var(--del-bg);color:var(--del-ink)} .wow-key ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none}
@@ -379,6 +388,18 @@ button.mini:hover,.mini[aria-pressed="true"]{border-color:var(--ink)}
 .foot{margin-top:96px;border-top:1px solid var(--rule);padding-top:14px;font:11.5px/1.6 var(--mono);color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 section[id],details[id]{scroll-margin-top:58px}
+#xrHd{scroll-margin-top:60px}
+.skip{position:absolute;left:8px;top:-60px;z-index:99;background:var(--ink);color:var(--paper);padding:8px 12px;border-radius:3px;font:600 14px var(--body)}
+.skip:focus{top:8px}
+.ev-back{position:fixed;z-index:40;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 12px);width:max-content;max-width:min(720px,calc(100vw - 24px));display:flex;flex-wrap:nowrap;gap:4px 12px;align-items:center;border:1px solid var(--add-bd);background:var(--add-bg);color:var(--add-ink);border-radius:4px;padding:4px 6px 4px 12px;font:13px/1.4 var(--body);box-shadow:0 6px 20px rgb(0 0 0/.16)}
+.ev-back>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ev-back a{white-space:nowrap}
+.ev-back[hidden]{display:none}
+@media (max-width:600px){#trPicks,#xlPicks,#forestStats,#ledger .tbl{-webkit-mask-image:linear-gradient(to left,transparent,#000 28px);mask-image:linear-gradient(to left,transparent,#000 28px)}
+  .btn.sm,#ppAll,#trMore,#forestAll,#ledMore{min-height:40px}}
+.ev-back a{font-weight:600;color:var(--add-ink);padding-block:6px}
+.ev-back button{margin-left:auto;border:0;background:none;color:var(--add-ink);font-size:18px;line-height:1;cursor:pointer;padding:4px 6px}
+.ev-link a,#view-report section>.cap>a[href^="#"]{padding-block:12px}
 #tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--paper);font:12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:min(320px,calc(100vw - 32px));box-shadow:0 4px 18px rgb(0 0 0/.18)}
 #tip b{font-weight:600}
 #tip .r{display:flex;justify-content:space-between;gap:14px}
@@ -571,6 +592,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .news-q{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
 .news-q blockquote{margin:0;background:var(--sheet);border:1px solid var(--rule);border-radius:3px;padding:14px 16px;display:grid;gap:8px;align-content:start}
 .news-q .s{font:400 17px/1.45 var(--display);color:var(--ink)}
+.news-q .s.then{color:var(--ink-2);font-size:15px;line-height:1.4}
+@media (max-width:600px){#palestine .news-q blockquote{gap:6px}}
+.news-q .s .tn{font:600 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:6px}
 .news-q .w{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;align-items:center}
 .news-q .w i{display:inline-block;width:10px;height:10px;border-radius:2px}
 .spread{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
@@ -639,7 +663,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .step .go{min-height:44px;padding:12px 0}
   #stepsK .step .go{display:none}
   #trend,#es{height:clamp(230px,34vh,320px)!important}
-  #kChart{height:clamp(160px,28vh,240px)!important;height:clamp(160px,28svh,240px)!important}
+  #kChart{height:clamp(180px,28vh,230px)!important;height:clamp(180px,28svh,230px)!important}
+  #kSub{display:none}
+
   .scrolly .fig{gap:6px;padding:7px 10px}
   .scrolly .fig-h{gap:4px 12px}
   .scrolly .fig-t{font-size:13.5px}
@@ -755,7 +781,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .zi-ph{transition:transform .35s ease}
 .zi-how{margin:0;max-width:78ch;font:14px/1.5 var(--body);color:var(--ink-2)}
 .zi-how b{color:var(--ink);font-weight:600}
-.zi-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.zi-phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin:10px 0 0;padding:0;list-style:none}
 .zi-phases button{width:100%;height:100%;display:grid;gap:3px;align-content:start;text-align:left;background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:9px 11px;cursor:pointer;font:13px/1.4 var(--body);color:var(--ink-2)}
 .zi-phases .nm{display:flex;gap:7px;align-items:center;font:600 14px/1.3 var(--body);color:var(--ink)}
 .zi-phases .n{display:inline-grid;place-items:center;flex:none;width:18px;height:18px;border-radius:3px;background:var(--faint);color:var(--ink);font:600 10.5px var(--mono)}
@@ -820,7 +846,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .zi-ba{grid-template-columns:minmax(0,1fr)}
   .zi-chips li{font-size:13px}
   .zi-chips li del,.zi-chips li ins{font-size:15px}
-  .zi-phases{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:6px;margin-inline:-12px;padding:2px 12px 6px;scrollbar-width:thin;-webkit-mask-image:linear-gradient(to left,transparent,#000 24px);mask-image:linear-gradient(to left,transparent,#000 24px)}
+  .zi-phases{margin-top:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:6px;margin-inline:-12px;padding:2px 12px 6px;scrollbar-width:thin;-webkit-mask-image:linear-gradient(to left,transparent,#000 24px);mask-image:linear-gradient(to left,transparent,#000 24px)}
   .zi-phases>li{flex:0 0 78%;scroll-snap-align:start}
   .zi-phases .nm{flex-wrap:nowrap}
   .zi-phases .rg{flex-basis:auto;margin-left:auto;text-align:right}
@@ -860,6 +886,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xm{border-collapse:separate;border-spacing:0;width:100%;min-width:720px;font:12.5px/1.3 var(--body)}
 .xm th,.xm td{padding:0;border-bottom:1px solid var(--faint)}
 .xm thead th{font:600 10.5px/1.25 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:center;vertical-align:bottom;padding:0 4px 8px;border-bottom:1px solid var(--ink)}
+.xm thead .ls{display:none}
 .xm thead th small{display:block;font-weight:400;text-transform:none;letter-spacing:0;margin-top:2px}
 .xm .xm-l{position:sticky;left:0;z-index:2;background:var(--sheet);text-align:left;padding:0 10px 0 0;width:124px}
 .xm thead .xm-l{z-index:3;vertical-align:bottom;padding-bottom:8px}
@@ -878,7 +905,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tl.t-A{background:repeating-linear-gradient(45deg,var(--faint) 0 3px,var(--sheet) 3px 6px);border:1.5px solid var(--ink-2);color:var(--ink)}
 .tl.t-A.dsp{border-style:dashed}
 .tl.t-N{background:transparent;border:1.5px dotted var(--muted);color:var(--muted)}
-.tl.t-X{background:repeating-linear-gradient(135deg,var(--faint) 0 3px,transparent 3px 6px);border:1px solid var(--rule);color:var(--muted);font-weight:400;font-size:10px}
+.tl.t-X{background:var(--faint);border:0;color:var(--muted);font-weight:400;font-size:10px}
+.tl.t-A.ow{background:var(--sheet);border:1.5px solid var(--ink-2);color:var(--ink);font-size:13px}
 .xm.m-now .tl.th,.xm.m-now .ar{display:none}
 .xm.m-then .tl.nw,.xm.m-then .ar{display:none}
 .xm.m-then .tl.th{width:30px;height:30px;font-size:13px}
@@ -891,10 +919,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xm-opts .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .xm-legend .key .tl{width:16px;height:16px;font-size:9px}
 .nwr{position:relative;display:inline-grid}
-.xm-c .dir,.xm-legend .dir{position:absolute;right:-8px;font:400 8px/1 var(--mono);color:var(--ink);background:var(--sheet);padding:1px 0;pointer-events:none}
-.dir.up{top:-7px}.dir.dn{bottom:-7px}
+.xm-c .dir,.xm-legend .dir{position:absolute;right:-10px;font:400 10px/1 var(--mono);color:var(--ink);background:var(--sheet);padding:1px 0;pointer-events:none}
+.dir.up{top:-8px}.dir.dn{bottom:-8px}
 .xm.m-then .dir{display:none}
 .xm-legend .nwr{margin-right:8px}
+.xm-call{margin:0;font:400 10.5px/1.4 var(--mono);color:var(--ink-2)}.xm-call b{font-weight:600;color:var(--ink)}
+.xm td.hl .nwr{outline:1.5px solid var(--ink);outline-offset:5px;border-radius:2px}
 .xm-ik{display:flex;flex-wrap:wrap;gap:4px 12px;margin:0;font:400 11px/1.4 var(--mono);color:var(--ink-2)}
 .xm-ik span{display:inline-flex;align-items:center;gap:5px}.xm-ik .tl{width:15px;height:15px;font-size:8.5px}
 .xm-swipe{margin:-4px 0 0;font:500 11px/1.3 var(--mono);color:var(--muted);text-align:right}
@@ -949,6 +979,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xr-s[lang=en]{font:400 16.5px/1.7 var(--body);color:var(--ink-2)}
 .xr-col.xr-t .xr-s{font:400 16.5px/1.7 var(--body);color:var(--ink-2)}
 .xr-s .w{font-size:1em;transition:font-size .42s ease var(--d2,0s),opacity .42s ease var(--d2,0s)}
+.xr-pair.fast .xr-s .w,.xr-pair.fast .xr-s .x{transition-duration:.2s}
 .xr-s .x{border-radius:2px;padding:0 .06em;transition:background-color .3s ease var(--d,0s),color .3s ease var(--d,0s),text-decoration-color .25s ease var(--d,0s),box-shadow .2s ease;text-decoration:line-through;text-decoration-color:transparent;text-decoration-thickness:1.5px;text-decoration-skip-ink:none}
 .xr-s[lang=ar] .x{text-decoration-thickness:1px}
 .xr-s.st-n :is(.k1,.k4),.xr-s.st-f :is(.k2,.k5),.xr-s.st-b .k4{font-size:0;opacity:0}
@@ -987,8 +1018,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .xm{min-width:700px}
   .xm-c{gap:3px;padding:6px 0;overflow:hidden}
   .xm-c .ar{display:none}
-  .xm.m-now,.xm.m-then{min-width:500px}
-  .xm thead th{overflow-wrap:anywhere;hyphens:auto}
+  .xm.m-now,.xm.m-then{min-width:620px}
+  .xm thead th{word-break:normal;overflow-wrap:normal;hyphens:manual}
+  .xm thead th:not(.xm-l){min-width:64px}
+  .xm thead .lf{display:none}.xm thead .ls{display:block;font:600 10px/1.2 var(--body);text-transform:none;letter-spacing:0;color:var(--ink-2)}
+  .xm tbody th .xn{display:none}
   .xm tbody th{white-space:normal}.xm tbody th span{display:block;line-height:1.25}
   .hscroll:not(.at-end){-webkit-mask-image:linear-gradient(to left,transparent,#000 32px);mask-image:linear-gradient(to left,transparent,#000 32px)}
   .tl{width:17px;height:17px;font-size:9px}
@@ -1032,12 +1066,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .zi-ctl .play .ic{font-size:11px}
 .st-tabs button{min-height:36px;font-size:13.5px;padding:8px 14px}
 .o7-side{align-items:start}
-.pos-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:4px 10px;align-items:center;font:11.5px var(--mono);color:var(--muted)}
+.pos-row{display:grid;grid-template-columns:132px minmax(0,1fr);gap:4px 10px;align-items:center;font:11.5px var(--mono);color:var(--muted)}
+.pos-row>span small{white-space:nowrap}
+.pos-bar::after{content:"";position:absolute;left:50%;top:7px;height:8px;width:0;border-left:1px solid var(--rule)}
+#o7Pos .legend{margin-top:10px}
+#o7Pos .cap{margin-top:6px}
 .pos-bar{position:relative;height:22px}
 .pos-bar::before{content:"";position:absolute;left:0;right:0;top:10px;height:2px;background:var(--faint);border-radius:1px}
 .pos-bar .d{position:absolute;top:4px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--ink)}
 .pos-bar .s{position:absolute;top:5px;width:12px;height:12px;margin-left:-6px;background:var(--add-bd);border-radius:2px}
 .pos-q{grid-column:2;font:13.5px/1.4 var(--display);color:var(--ink-2);margin-bottom:6px}
+@media (max-width:600px){.pos-row{grid-template-columns:minmax(0,1fr);gap:2px}.pos-row>span br{display:none}.pos-row>span small{margin-left:8px;font-size:inherit}.pos-q{grid-column:1}}
 .grp-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px;align-items:center;font:12px var(--body);color:var(--ink-2)}
 .grp-row .tr{position:relative;height:20px}
 .grp-row .tr::before{content:"";position:absolute;left:0;right:0;top:9px;height:1px;background:var(--faint)}
@@ -1093,7 +1132,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .per-row{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) 46px;gap:8px;align-items:center;font:12px/1.3 var(--body);color:var(--ink-2)}
 .per-row .tr{position:relative;height:22px;background:var(--faint);border-radius:2px}
 .per-row .tr i{position:absolute;top:0;bottom:0;left:0;border-radius:2px;background:var(--topic)}
-.per-row .tr .one{position:absolute;top:-3px;bottom:-3px;width:0;border-left:1.5px dashed var(--muted)}
+.per-row .tr .one{position:absolute;top:-2px;bottom:-2px;width:0;border-left:1.5px dashed var(--muted)}
 .per-row .v{font:600 13px var(--mono);color:var(--ink);text-align:right}
 .per-row.doc .tr{background:repeating-linear-gradient(135deg,var(--faint) 0 4px,var(--sheet) 4px 7px)}
 .net-hd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
@@ -1144,6 +1183,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .net-g svg .nd{stroke:var(--sheet);stroke-width:2;cursor:pointer}
 .net-g svg .ed{stroke:var(--ink-2);cursor:pointer}
 .net-g svg text.lo{fill:var(--muted)}
+.net-g svg text.hl,.net-g svg text.sl{paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round}
+.net-g svg text.hl{font-size:10.5px}
+.net-g svg text.sl{font:600 10px var(--mono);fill:var(--ink);pointer-events:none}
+.net-g svg .eh{stroke:transparent;stroke-width:16px;pointer-events:stroke;cursor:pointer}
+.net-g svg .nd.mx{stroke:var(--muted);stroke-width:1.5}
+.net-g svg.sel .nd:not(.hi):not(.on),.net-g svg.sel .ed:not(.hi):not(.on){opacity:.3!important}
+.net-g svg .ed.hi{stroke:var(--ink)!important;stroke-width:2.5px!important;opacity:1!important}
+.net-g svg .nd.hi{stroke:var(--ink);stroke-width:2.5}
+.net-graphs{align-items:start}
+.net-g[data-g=topic] svg{max-width:620px;margin-inline:auto}
+@media (min-width:901px){.net-graphs{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}}
 .net-g svg .nd:focus-visible{outline:none;stroke:var(--ink);stroke-width:3}.net-g svg .ed:focus-visible{outline:none;stroke:var(--ink);stroke-width:4!important;opacity:1!important}
 .net-xb{margin:0 0 4px}
 @media (max-width:600px){#netDet{position:sticky;bottom:8px;z-index:5;max-height:30vh;overflow:auto;background:var(--sheet);border:1px solid var(--ink-2);border-radius:4px;padding:8px 10px}}
@@ -1187,9 +1237,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <div id="tip" hidden></div>
 <div id="gloss" role="tooltip" hidden></div>
+<a class="skip" href="#zionism">Skip to the story</a>
 <nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The story</a><a href="#evidence" id="tabEv" aria-current="false">Evidence room</a><a href="#lab" id="tabLab" aria-current="false">Data lab</a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
 <div class="wrap">
-<div id="view-report">
+<div id="view-report" role="main">
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 1 Jan 2021 – 5 Nov 2026</span></div>
 
 <header class="hero">
@@ -1271,7 +1322,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="deck">In 2023 the 1948 Palestine war said “During the war, around 700,000 Palestinian Arabs were displaced.” It now says “During the war, Zionist forces conquered about 78% of the former territory of the mandate, causing the expulsion and flight of over 700,000 Palestinians.” The same article still says “Hundreds of thousands of Jews fled or were expelled from Arab states”, with no agent. The Nakba’s first sentence has said “by Zionists” since 6 July 2026.</p>
   </header>
   <div class="news-q">
-    <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba, 2021 and 2026 · The 2021 version also took a position.</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba, 2021 and 2026 · The 2021 version also took a position.</span><span class="s then"><b class="tn">Then · 2021</b> “The Nakba, also known as the Palestinian Catastrophe, <del>was the destruction of</del> Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b class="tn">Now · 2026</b> “The Nakba (النَّكْبَة) <ins>is the ethnic cleansing of</ins> Palestinian Arabs <ins>by Zionists</ins> through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.”</span></blockquote>
   </div>
   <p class="cap ev-link">See the evidence: <a href="#ev-1948">the other 1948 articles and the revision where each first sentence changed</a>.</p>
 </section>
@@ -1288,6 +1339,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <figure class="sticky fig kfig" style="margin:0">
       <div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="cap" id="kSub"></span></div>
       <div class="chart" id="kChart" style="height:clamp(270px,48vh,420px)"></div>
+      <p class="k-notes" id="kNotes" hidden></p>
       <div class="legend" id="kKey"></div>
     </figure>
   </div>
@@ -1303,8 +1355,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </header>
   <figure class="fig xm-keep" id="xmFig" style="margin:0">
     <div class="fig-h"><span class="fig-t">How each Wikipedia voices eight claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Each square opens its sentence.</span></div>
-    <p class="zi-how"><b>How to read this:</b> in each cell the small square is the first copy and the large square is now (October 2026); the full key is below the grid.</p>
+    <p class="zi-how" id="xmHow"><b>How to read this:</b> in each cell the small square is the first copy and the large square is now (October 2026); the full key is below the grid.</p>
     <p class="xm-ik" id="xmIK" aria-hidden="true"></p>
+    <p class="xm-call" id="xmCall" hidden></p>
     <div class="xm-opts"><span class="lab" id="xmModeL">Show</span><div class="seg" id="xmMode" role="group" aria-labelledby="xmModeL"><button type="button" data-v="both" aria-pressed="true">Then → now</button><button type="button" data-v="now" aria-pressed="false">Now only</button><button type="button" data-v="then" aria-pressed="false">Then only</button></div><span class="cap">A ring marks a cell that changed: ▲ toward Wikipedia’s own voice, ▼ away from it; a ring alone, a change that is not one of voice.</span></div>
     <div class="xm-scroll hscroll" id="xmScroll"></div>
     <p class="xm-swipe" id="xmSwipe" aria-hidden="true" hidden></p>
@@ -1363,7 +1416,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </section>
 
 </div>
-<div id="view-evidence" hidden>
+<div id="view-evidence" role="main" hidden>
+<div class="ev-back" id="evBack" role="note" hidden></div>
 <div class="band ev-band" id="evidence-top">
   <div class="eyebrow">Evidence room</div>
   <h2>The evidence behind the story</h2>
@@ -1963,7 +2017,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </div></details>
 
 </div>
-<div id="view-lab" hidden><!--LAB--></div>
+<div id="view-lab" role="main" hidden><!--LAB--></div>
 <div class="foot"><span>Wikipedia Framing Drift</span><span>Word counts are a proxy. They are not a verdict on accuracy or bias.</span></div>
 </div>
 
@@ -2657,17 +2711,27 @@ function kTicks(d0,d1,ph){const span=(d1-d0)/864e5,out=[];
 function drawKey(){
   const el=$("#kChart");if(!el||!R.v3||!R.v3.ins)return;
   const {V,w0,wk,ins,ins7}=kW(),W=Math.max(260,el.clientWidth),H=el.clientHeight||300,ph=isPhone();
-  const [d0,d1]=K.dom||kWin(K.step),S0=K_STEPS[K.step];
-  const fs=ph?10:11,cw=fs*.56;
-  // labels for the active step: battles (red) and wording changes (ink), packed into rows above the plot
-  const labs=[];if(S0){S0.ev.forEach(([d,l])=>labs.push({t:KD(d),l,c:"--war"}));S0.ch.forEach(([d,l])=>labs.push({t:KD(d),l,c:"--ink"}))}
+  const [d0,d1]=K.dom||kWin(K.step),S0=K_STEPS[K.step],O7="2023-10-07";
+  const fs=ph?10:11,cw=fs*.62;
+  // labels: only the events the card names get a full-height rule and a label (red: battles, ink: wording changes);
+  // every other battle or ceasefire is a short tick on the time axis. In the overview only 7 October gets a rule (red dashed = 7 Oct only).
+  const labs=[];if(S0){S0.ev.forEach(([d,l])=>labs.push({t:KD(d),d,l,c:"--war"}));S0.ch.forEach(([d,l])=>labs.push({t:KD(d),d,l,c:"--ink"}))}
+  else labs.push({t:KD(O7),d:O7,l:"7 Oct 2023",c:"--war"});
   labs.sort((a,b)=>a.t-b.t);
+  const badge=ph?labs.length>1:labs.length>4;labs.forEach((o,i)=>o.n=i+1);
   const mL=ph?26:34,mR=ph?8:14,x=t=>mL+(W-mL-mR)*(t-d0)/(d1-d0);
-  const rows=[];labs.forEach(o=>{const xx=x(o.t),w=o.l.length*cw+6,right=xx<W*.6;o.a=right?"start":"end";o.x0=right?xx:xx-w;o.x1=right?xx+w:xx;
-    let r=rows.findIndex(e=>e<o.x0-4);if(r<0){r=rows.length;rows.push(-1e9)}rows[r]=o.x1;o.r=r});
-  const rh=fs+4,mT=12+Math.max(1,rows.length)*rh,mB=22,y0=H-mB;
+  const rows=[];labs.forEach(o=>{const xx=x(o.t);let w,a;
+    if(badge){w=14;a="middle";o.x0=xx-7;o.x1=xx+7}
+    else{w=o.l.length*cw+8;a=xx+w<=W-mR?"start":xx-w>=mL?"end":"start";o.x0=a==="start"?xx:xx-w;o.x1=a==="start"?xx+w:xx}
+    o.a=a;o.xx=xx;const done=labs.filter(q=>q.r!=null),pad=4;
+    // a row is free when no label in it overlaps, no rule from a higher label crosses this label, and this rule crosses no lower label
+    const free=r=>done.every(q=>q.r!==r||q.x1<o.x0-pad||q.x0>o.x1+pad),top=done.length?Math.max(...done.map(q=>q.r))+1:0;
+    let r=0;for(;r<=top;r++){if(free(r)&&done.every(q=>!(q.r<r&&q.xx>=o.x0-pad&&q.xx<=o.x1+pad))&&done.every(q=>!(q.r>r&&o.xx>=q.x0-pad&&o.xx<=q.x1+pad)))break}
+    if(r>top){r=0;while(!free(r))r++}
+    o.r=r;rows[r]=1});
+  const rh=badge?17:fs+5,mT=12+Math.max(1,rows.length,...labs.map(o=>o.r+1))*rh,mB=22,y0=H-mB;
   const ymx=niceMax(Math.max(...ins)),y=v=>y0-(y0-mT)*v/ymx;
-  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(S0?`${S0.k}: weekly new critical terms in topic opening paragraphs, with ${S0.ev.map(e=>e[1]).join(", ")} marked, and the wording changes ${S0.ch.map(c=>c[1]+" on "+v3d(c[0])).join("; ")}`:"Weekly new critical terms in the opening paragraphs of 4,642 topic articles, 2021 to 2026, with battles and escalations marked")}"><defs><clipPath id="kClip"><rect x="${mL}" y="0" width="${W-mL-mR}" height="${H}"/></clipPath></defs>`;
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(S0?`${S0.k}: weekly new critical terms in topic opening paragraphs, with ${S0.ev.map(e=>e[1]).join(", ")} marked, and the wording changes ${S0.ch.map(c=>c[1]+" on "+v3d(c[0])).join("; ")}`:"Weekly new critical terms in the opening paragraphs of 4,642 topic articles, 2021 to 2026, with 7 October 2023 marked and other battles and ceasefires as ticks on the time axis")}"><defs><clipPath id="kClip"><rect x="${mL}" y="0" width="${W-mL-mR}" height="${H}"/></clipPath></defs>`;
   ticks(0,ymx,ph?2:3).forEach(v=>{const yy=y(v);s+=`<line x1="${mL}" x2="${W-mR}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text class="ax" x="${mL-5}" y="${yy+3.5}" text-anchor="end">${v}</text>`});
   kTicks(d0,d1,ph).forEach(([t,l])=>{const xx=x(t);if(xx<mL||xx>W-mR)return;s+=`<line x1="${xx}" x2="${xx}" y1="${y0}" y2="${y0+4}" style="stroke:var(--muted)"/><text class="ax" x="${xx+2}" y="${H-6}">${l}</text>`});
   s+=`<g clip-path="url(#kClip)">`;
@@ -2676,16 +2740,22 @@ function drawKey(){
   ins.forEach((v,i)=>{const t=w0+i*wk;if(t<d0-wk||t>d1)return;const bx=x(t),bw=Math.max(.8,pxw-gap);
     if(v)s+=`<rect x="${bx.toFixed(1)}" y="${y(v).toFixed(1)}" width="${bw.toFixed(2)}" height="${(y0-y(v)).toFixed(1)}" style="fill:var(--topic);opacity:.3"/>`;
     const d=ins7[i];if(d)s+=`<rect x="${bx.toFixed(1)}" y="${y(d).toFixed(1)}" width="${bw.toFixed(2)}" height="${(y0-y(d)).toFixed(1)}" style="fill:var(--topic)"/>`});
-  const hot=new Set(S0?S0.ev.map(e=>e[0]):[]);
-  (V.events||[]).forEach(e=>{if(e.t!=="military_escalation"&&e.t!=="ceasefire_deal")return;const t=KD(e.d);if(t<d0||t>d1)return;const xx=x(t),on=hot.has(e.d),mil=e.t==="military_escalation";
-    s+=`<line x1="${xx}" x2="${xx}" y1="${mT}" y2="${y0}" style="stroke:var(${mil?"--war":"--muted"});stroke-width:${on?1.6:1};opacity:${on?1:mil?.35:.5};${mil?"":"stroke-dasharray:2 3"}"/>`});
+  const hot=new Set(labs.filter(o=>o.c==="--war").map(o=>o.d));
+  (V.events||[]).forEach(e=>{if(e.t!=="military_escalation"&&e.t!=="ceasefire_deal")return;const t=KD(e.d);if(t<d0||t>d1)return;const xx=x(t),mil=e.t==="military_escalation";
+    if(hot.has(e.d)||(e.d===O7&&!S0))return;
+    s+=`<line x1="${xx}" x2="${xx}" y1="${y0+1}" y2="${y0+7}" style="stroke:var(${mil?"--war":"--muted"});stroke-width:${mil?1.5:1.2};opacity:${mil?.8:.9};${mil?"":"stroke-dasharray:1.5 1.5"}"><title>${esc(`${e.l||(mil?"Battle or escalation":"Ceasefire")}, ${v3d(e.d)}`)}</title></line>`});
+  labs.forEach(o=>{if(o.c!=="--war")return;const xx=x(o.t),cf=(V.events||[]).some(e=>e.d===o.d&&e.t==="ceasefire_deal");
+    s+=`<line x1="${xx}" x2="${xx}" y1="${mT}" y2="${y0}" style="stroke:var(${cf?"--muted":"--war"});stroke-width:${o.d===O7?1.6:cf?1.2:1.6};${o.d===O7?"stroke-dasharray:5 3":cf?"stroke-dasharray:2 3":""}"/>`});
   if(S0)S0.ch.forEach(([d])=>{const xx=x(KD(d));s+=`<line x1="${xx}" x2="${xx}" y1="${mT}" y2="${y0}" style="stroke:var(--ink);stroke-width:1.2;stroke-dasharray:3 2"/><path d="M${xx} ${y0-5} l4 4 l-4 4 l-4 -4z" transform="translate(0 -4)" style="fill:var(--ink)"/>`});
   s+=`</g>`;
-  labs.forEach(o=>{const yy=10+o.r*rh+fs;s+=`<line x1="${x(o.t)}" x2="${x(o.t)}" y1="${yy+2}" y2="${mT}" style="stroke:var(${o.c});opacity:.5"/><text x="${x(o.t)+(o.a==="start"?3:-3)}" y="${yy}" text-anchor="${o.a}" style="font:600 ${fs}px var(--mono);fill:var(${o.c});paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${esc(o.l)}</text>`});
+  labs.forEach(o=>{const xx=x(o.t),yy=10+o.r*rh+fs,cf=o.c==="--war"&&(V.events||[]).some(e=>e.d===o.d&&e.t==="ceasefire_deal"),col=cf?"--muted":o.c;
+    if(badge){const by=10+o.r*rh;s+=`<line x1="${xx}" x2="${xx}" y1="${by+14}" y2="${mT}" style="stroke:var(${col});opacity:.5"/><rect x="${xx-7}" y="${by}" width="14" height="14" rx="2" style="fill:var(${col})"/><text x="${xx}" y="${by+10.5}" text-anchor="middle" style="font:600 10px var(--mono);fill:var(--sheet)">${o.n}</text>`}
+    else s+=`<line x1="${xx}" x2="${xx}" y1="${yy+3}" y2="${mT}" style="stroke:var(${col});opacity:.5"/><text x="${xx+(o.a==="start"?4:-4)}" y="${yy}" text-anchor="${o.a}" style="font:600 ${fs}px var(--mono);fill:var(${col});paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round">${esc(o.l)}</text>`});
   el.innerHTML=s+`</svg>`;
-  $("#kTitle").textContent=S0?`${S0.k}: new critical terms, week by week`:"New critical terms in topic opening paragraphs, week by week, 2021–2026";
+  const kn=$("#kNotes");if(kn){kn.hidden=!badge;kn.innerHTML=badge?labs.map(o=>{const cf=o.c==="--war"&&(V.events||[]).some(e=>e.d===o.d&&e.t==="ceasefire_deal");return `<span><i style="background:var(${cf?"--muted":o.c})">${o.n}</i>${esc(v3d(o.d).replace(/ 20\d\d$/,""))} · ${esc(o.l)}</span>`}).join(""):""}
+  $("#kTitle").textContent=ph?(S0?`${S0.k} · weekly`:"New critical terms a week, 2021–2026"):S0?`${S0.k}: new critical terms, week by week`:"New critical terms in topic opening paragraphs, week by week, 2021–2026";
   $("#kSub").textContent=S0?"4,642 topic articles · shaded: three weeks from the first event marked":`4,642 topic articles · before 7 October 2023: ${fmt(kPre(),1)} a week`;
-  $("#kKey").innerHTML=`<span class="key"><i style="background:var(--topic);opacity:.3"></i>written in that week</span><span class="key"><i style="background:var(--topic)"></i>still there a week later</span><span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>battle or escalation</span><span class="key"><i class="dash"></i>ceasefire</span>${S0?`<span class="key"><i style="background:var(--ink);transform:rotate(45deg);width:7px;height:7px"></i>a wording change, dated</span>`:""}`;
+  $("#kKey").innerHTML=`<span class="key"><i style="background:var(--topic);opacity:.3"></i>${ph?"new terms":"written in that week"}</span><span class="key"><i style="background:var(--topic)"></i>${ph?"lasted a week":"still there a week later"}</span>${S0?"":`<span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span>`}<span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>${ph?"battle":S0?"battle or escalation (others: ticks on the axis)":"other battles: ticks on the axis"}</span><span class="key"><i class="dot"></i>ceasefire</span>${S0?`<span class="key"><i class="wch"></i>${ph?"wording change":"dashed rule + diamond: a wording change, dated"}</span>`:""}`;
 }
 function keyHover(e){const el=$("#kChart");if(!el||!R.v3)return;const {V,w0,wk,ins,ins7}=kW(),r=el.getBoundingClientRect(),W=Math.max(260,el.clientWidth),ph=isPhone(),mL=ph?26:34,mR=ph?8:14;
   const [d0,d1]=K.dom||kWin(K.step),t=d0+(e.clientX-r.left-mL)/(W-mL-mR)*(d1-d0),i=Math.floor((t-w0)/wk);
@@ -2913,7 +2983,7 @@ const XM={mode:matchMedia("(max-width:600px)").matches?"now":"both"},XR={a:null,
 const xlab=l=>LANG[l]||l;
 const xslot=s=>XSLOT[s]||"Another key sentence";
 const wpLink=(l,r,txt)=>r?`<a href="https://${l}.wikipedia.org/w/index.php?oldid=${r}" target="_blank" rel="noopener">${txt||"rev "+r} ↗</a>`:"";
-function xTile(code,cls){const [s,g]=XST[code]||XST.none;return `<span class="tl t-${s} ${cls}${code==="disputed"?" dsp":""}" aria-hidden="true"><i>${s==="X"?(/\bth\b/.test(cls)?"–":"n/a"):g}</i></span>`}
+function xTile(code,cls){const [s,g]=XST[code]||XST.none,ow=code==="captive"||code==="label";return `<span class="tl t-${s} ${cls}${code==="disputed"?" dsp":""}${ow?" ow":""}" aria-hidden="true"><i>${s==="X"?(/\bth\b/.test(cls)?"×":"n/a"):ow?"≈":g}</i></span>`}
 /* the voice ladder: not in the text < later in the section < court case < disputed < attributed < own voice */
 const XVOICE=new Set(["attributed","disputed","denial","self","label","captive","fact"]);
 const XLAD={none:0,absent:0,outside:1,not_held:1,legal:2,disputed:3,attributed:4,denial:4,self:4,label:4,captive:4,fact:5};
@@ -2952,30 +3022,35 @@ function xmInit(){
   /* the phone fold hides the vocabulary stripes only; keep the button next to them */
   const ub=$("#crosslang>.unfold"),sh=$("#xlSubH");if(ub&&sh){sh.before(ub);ub.textContent=ub.getAttribute("aria-expanded")==="true"?"Hide the vocabulary counts ↑":"Show the vocabulary counts ↓";ub.addEventListener("click",()=>{ub.textContent=ub.getAttribute("aria-expanded")==="true"?"Hide the vocabulary counts ↑":"Show the vocabulary counts ↓"})}
   setSeg($("#xmMode"),XM.mode);xmDraw();xmFind();
-  seg($("#xmMode"),v=>{XM.mode=v;$("#xmScroll .xm").className="xm m-"+v;$("#xmScroll").dispatchEvent(new Event("scroll"))});
+  seg($("#xmMode"),v=>{XM.mode=v;$("#xmScroll .xm").className="xm m-"+v;xmHow();$("#xmScroll").dispatchEvent(new Event("scroll"))});xmHow();
   $("#xmScroll").addEventListener("click",e=>{const b=e.target.closest(".xm-c");if(!b)return;const c=D.cells[b.dataset.k][b.dataset.l];
     const A=(D.arts[c.a]||{})[b.dataset.l];if(!A){XR.note=null;return}
     const s=c.s&&A.sl[c.s]?c.s:"s1";const mi=D.moments.findIndex(m=>m[0]===c.a&&m[1]===b.dataset.l&&m[2]===s);
     $$("#xmScroll .xm-c").forEach(x=>x.setAttribute("aria-current",String(x===b)));
-    const go=()=>xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:b.dataset.k,c},anim:true,scroll:true});if(inEv("xrFig")&&VIEW!=="evidence"){location.hash="#xrFig";setTimeout(go,150)}else go()});
+    const go=()=>xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:b.dataset.k,c},anim:true,scroll:true});if(inEv("xrFig")&&VIEW!=="evidence"){jumpFrom("crosslang",`${xlab(b.dataset.l)} · ${(D.cols.find(c=>c[0]===b.dataset.k)||[])[1]||""}`,"xrHd");location.hash="#xrHd";setTimeout(go,150)}else go()});
   xrInit()}
+function xmHow(){const e=$("#xmHow");if(!e)return;e.innerHTML=`<b>How to read this:</b> ${XM.mode==="now"?"each square is the October 2026 wording; switch to Then → now to see the first copy beside it.":XM.mode==="then"?"each square is the first copy we hold.":"in each cell the small square is the first copy and the large square is now (October 2026)."} The full key is below the grid.`}
 function xmDraw(){
   const D=R.langs,host=$("#xmScroll"),order=D.order,cols=D.cols;
+  const XSHORT={gen:"Genocide",col:"Colonization",apa:"Apartheid",occ:"Occupation",o7:"Oct 7: terror",ter:"Hamas: terrorist",hos:"Hostages",icj:"Court overstated"};
   const sub={gen:"Gaza genocide article, else Gaza war",col:"Zionism",apa:"Israeli apartheid",occ:"West Bank",o7:"attack article, first sentence",ter:"Hamas",hos:"attack article",icj:"ICJ, any article"};
-  let h=`<table class="xm m-${XM.mode}"><caption class="zi-sr">Each Wikipedia's voice on eight claims, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${cols.map(([k,lab])=>`<th scope="col" class="c-${({o7:"ter",icj:"gen"})[k]||k}">${esc(lab)}<small>${esc(sub[k]||"")}</small></th>`).join("")}</tr></thead><tbody>`;
-  order.forEach((l,ri)=>{h+=`<tr class="${ri===2||ri===3?"sep":""}"><th scope="row" class="xm-l"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><span>${l==="en"?"":esc(xlab(l))+" · "}${l}</span></th>`;
+  let h=`<table class="xm m-${XM.mode}"><caption class="zi-sr">Each Wikipedia's voice on eight claims, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${cols.map(([k,lab])=>`<th scope="col" class="c-${({o7:"ter",icj:"gen"})[k]||k}" title="${esc(lab)}"><span class="lf">${esc(lab)}</span><span class="ls">${esc(XSHORT[k]||lab)}</span><small>${esc(sub[k]||"")}</small></th>`).join("")}</tr></thead><tbody>`;
+  order.forEach((l,ri)=>{h+=`<tr class="${ri===2||ri===3?"sep":""}"><th scope="row" class="xm-l"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><span>${l==="en"?"":`<span class="xn">${esc(xlab(l))} · </span>`}${l}</span></th>`;
     cols.forEach(([k,lab])=>{const c=D.cells[k][l];if(!c){h+="<td></td>";return}
       const chg=xst(c.f)!==xst(c.n)&&c.f!=="na";
       /* arrows only for a change of voice: both ends must be a voiced state; in the court column only a move to "overstated" counts */
       const dv=!chg?0:k==="icj"?(c.n==="fact"?1:0):XVOICE.has(c.f)&&XVOICE.has(c.n)?Math.sign(XLAD[c.n]-XLAD[c.f]):0;
       const nv=c.n==="outside"?"moved later in the opening section":c.n==="legal"?"now reported as a court case":"changed, not a change of voice";
       const al=`${xlab(l)}, ${lab}: first copy ${xStateText(k,c.f)}; now ${xStateText(k,c.n)}${dv>0?", moved toward Wikipedia’s own voice":dv<0?", moved away from Wikipedia’s own voice":chg?`, ${nv}`:""}.${c.n==="na"?"":" Open the sentence."}`;
-      h+=`<td><button type="button" class="xm-c${chg?" chg":""}" data-k="${k}" data-l="${l}" aria-label="${esc(al)}"${c.n==="na"&&c.f==="na"?" disabled":""}>${xTile(c.f,"th")}<span class="ar" aria-hidden="true">→</span><span class="nwr">${xTile(c.n,"nw big")}${dv?`<span class="dir ${dv>0?"up":"dn"}" aria-hidden="true">${dv>0?"▲":"▼"}</span>`:""}</span></button></td>`});
+      const hl=k==="gen"&&((["es","pt","ar"].includes(l)&&c.n==="fact")||(l==="he"&&c.n==="legal"));
+      h+=`<td${hl?' class="hl"':""}><button type="button" class="xm-c${chg?" chg":""}" data-k="${k}" data-l="${l}" aria-label="${esc(al)}"${c.n==="na"&&c.f==="na"?" disabled":""}>${xTile(c.f,"th")}<span class="ar" aria-hidden="true">→</span><span class="nwr">${xTile(c.n,"nw big")}${dv?`<span class="dir ${dv>0?"up":"dn"}" aria-hidden="true">${dv>0?"▲":"▼"}</span>`:""}</span></button></td>`});
     h+="</tr>"});
   const cnt=(k,w)=>order.filter(l=>D.cells[k][l]&&xst(D.cells[k][l][w])==="F").length;
   h+=`</tbody><tfoot><tr><th class="xm-l">Stated as fact</th>${cols.map(([k])=>`<td>then ${cnt(k,"f")}<br>now <b>${cnt(k,"n")}</b>${k==="hos"?"<br><small>in the text we hold</small>":""}</td>`).join("")}</tr></tfoot></table>`;
   host.innerHTML=h;
-  $("#xmKey").innerHTML=`<span class="key">${xTile("fact","")}solid, dot: stated as fact, in Wikipedia’s own voice</span><span class="key">${xTile("attributed","")}striped, quote mark: attributed to someone</span><span class="key">${xTile("disputed","")}dashed, ?: disputed in the same sentence</span><span class="key">${xTile("legal","")}§: reported only as a court case</span><span class="key">${xTile("absent","")}empty: not in the text we hold</span><span class="key">${xTile("outside","")}…: counted later in the opening section, beyond the 1,200 characters we hold</span><span class="key">${xTile("na","")}no article in that language</span><span class="key"><span class="nwr">${xTile("fact","")}<span class="dir up">▲</span></span>ring with ▲: moved toward Wikipedia’s own voice; ▼: moved away</span><span class="key">ring alone: changed, not a change of voice (for example, moved later in the section, or now reported as a court case)</span>`;
+  {const g=D.cells.gen||{},fa=["es","pt","ar"].filter(l=>g[l]&&g[l].n==="fact"),he=g.he&&g.he.n==="legal",cl=$("#xmCall");
+    if(cl){cl.hidden=!(fa.length||he);cl.innerHTML=`<b>Genocide column</b>, outlined: ${fa.length?`${fa.join(" · ")} → own voice`:""}${fa.length&&he?"; ":""}${he?"he → court case only":""}`}}
+  $("#xmKey").innerHTML=`<span class="key">${xTile("fact","")}solid, dot: stated as fact, in Wikipedia’s own voice</span><span class="key">${xTile("attributed","")}striped, quote mark: attributed to someone</span><span class="key">${xTile("disputed","")}dashed, ?: disputed in the same sentence</span><span class="key">${xTile("legal","")}§: reported only as a court case</span><span class="key">${xTile("absent","")}empty: not in the text we hold</span><span class="key">${xTile("outside","")}…: counted later in the opening section, beyond the 1,200 characters we hold</span><span class="key">${xTile("captive","")}≈ named in other words (Arabic: “took captive”, not “hostages”; Italian and Polish genocide: presented as a name or term)</span><span class="key">${xTile("na","")}grey, no border: no article in that language</span><span class="key"><span class="nwr">${xTile("fact","")}<span class="dir up">▲</span></span>ring with ▲: moved toward Wikipedia’s own voice; ▼: moved away</span><span class="key">ring alone: changed, not a change of voice (for example, moved later in the section, or now reported as a court case)</span>`;
   $("#xmIK").innerHTML=[["fact","own voice"],["attributed","attributed"],["disputed","disputed"],["legal","court case only"],["absent","not in our text"],["outside","later in the section"],["na","no article"]].map(([c,t])=>`<span>${xTile(c,"")}${t}</span>`).join("");
   /* phone: say how many claims are off to the right, and drop the cue at the end */
   const sw=$("#xmSwipe"),sc=$("#xmScroll"),cue=()=>{const r=sc.getBoundingClientRect(),hs=$$("thead th:not(.xm-l)",sc).filter(th=>th.getBoundingClientRect().right>r.right+4).length;
@@ -3055,17 +3130,18 @@ function xrOpen(o){
   $("#xrTime").innerHTML=tb.map(([v,t,ts])=>`<button type="button" data-v="${v}" aria-pressed="false" aria-label="${esc(t)}"><span class="pl">${esc(t)}</span><span class="ps" aria-hidden="true">${esc(ts)}</span></button>`).join("");
   $("#xrTimeC").textContent=!two?`We quote this sentence only from the ${dlab((S.m.n||S.m.f).d)} copy.`:S.u?"Same words in both copies.":"";
   /* the pair */
-  const st=two?(o.anim&&!S.u?"f":"n"):(S.m.n?"n":"f"),vm=S.m[st]||S.m.n||S.m.f;
+  /* open on the settled sentence (now): the then→now morph runs only on Replay, so no half-morphed quote is ever the first thing shown */
+  const st=two?"n":(S.m.n?"n":"f"),vm=S.m[st]||S.m.n||S.m.f;
   const when=w=>{const v=S.m[w];return v?`${dlab(v.d)} · ${wpLink(o.l,v.r)}`:""};
   $("#xrPair").innerHTML=`<div class="xr-col xr-o"><div class="when"><span>Original · <bdi lang="${o.l}" dir="${rtl?"rtl":"ltr"}">${esc(XNAT[o.l])}</bdi></span><span class="wd">${when(st)}</span></div><p class="xr-s st-${st}" lang="${o.l}" dir="${rtl?"rtl":"ltr"}">${xTokens(S.o,S.L,"o",true)}</p></div>
     <div class="xr-col xr-t"><div class="when"><span>Our translation · English</span><span class="wd">${dlab(vm.d)}</span></div><p class="xr-s st-${st}" lang="en" dir="ltr">${xTokens(S.t,S.L,"t",false)}</p></div>`;
   /* when most of the sentence is new, the bulk is underlined and only the glossed words keep the filled blue */
   $$("#xrPair .xr-s").forEach(p=>{const ws=$$(".w",p).filter(w=>!/k[14]/.test(w.className)),nw=ws.filter(w=>/k[25]/.test(w.className)).length;p.classList.toggle("bulk",ws.length>4&&nw/ws.length>.6)});
   clearTimeout(XR.tb);
-  xrChips();xrNote();xrCtr();xrTimeBtns(st);xrLock();
-  if(o.scroll){const f=$("#xrFig");const r=f.getBoundingClientRect();if(r.top<0||r.top>innerHeight*.5)f.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
+  xrChips();xrNote();xrCtr();xrTimeBtns(st);xrUnlock();
+  if(o.scroll){const f=$("#xrHd")||$("#xrFig");const r=f.getBoundingClientRect();if(r.top<0||r.top>innerHeight*.5)f.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
   if(!o.quiet)$("#xrLive").textContent=`${xlab(o.l)}, ${o.a}, ${xslot(o.s).toLowerCase()}${two?`, ${dlab(S.m.f.d)} and ${dlab(S.m.n.d)}`:""}.`;
-  clearTimeout(XR.tm);if(two&&o.anim&&!S.u)XR.tm=setTimeout(()=>xrTime("n",true),o.scroll&&!RM.matches?700:380)}
+  clearTimeout(XR.tm)}
 function xrTimeBtns(t){XR.t=t;$$("#xrTime button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===t)));
   const S=R.langs.arts[XR.a][XR.l].sl[XR.s],v=S.m[t==="b"?"n":t]||S.m.n||S.m.f;
   const wd=$$("#xrPair .wd");if(wd[0])wd[0].innerHTML=t==="b"?`${dlab(S.m.f.d)} → ${dlab(S.m.n.d)}`:`${dlab(v.d)} · ${wpLink(XR.l,v.r)}`;if(wd[1])wd[1].textContent=t==="b"?`${dlab(S.m.f.d)} → ${dlab(S.m.n.d)}`:dlab(v.d);
@@ -3083,13 +3159,15 @@ function xrTime(t,anim){
   /* the morph: outgoing words strike, then fade and fold away; incoming words grow in, one by one */
   ps.forEach(p=>{const out=$$(t==="n"?".k1,.k4":".k2,.k5",p),inn=$$(t==="n"?".k2,.k5":".k1,.k4",p);
     $$(".w",p).forEach(w=>{w.style.setProperty("--d","0s");w.style.setProperty("--d2","0s")});
-    const st=Math.max(28,Math.min(110,1500/Math.max(1,out.length+inn.length)));
-    out.forEach((w,i)=>{w.style.setProperty("--d",(i*st)+"ms");w.style.setProperty("--d2",(i*st+380)+"ms")});
-    const base=out.length?out.length*st+520:0;
-    inn.forEach((w,i)=>{w.style.setProperty("--d2",(base+i*st)+"ms");w.style.setProperty("--d",(base+i*st+200)+"ms")});
+    /* capped at 600ms in all: removed words strike within 150ms and fold; added words start by 400ms; each transition is 200ms */
+    const so=out.length>1?150/(out.length-1):0,base=out.length?200:0,si=inn.length>1?(400-base)/(inn.length-1):0;
+    out.forEach((w,i)=>{w.style.setProperty("--d",(i*so)+"ms");w.style.setProperty("--d2",(i*so+60)+"ms")});
+    inn.forEach((w,i)=>{w.style.setProperty("--d2",(base+i*si)+"ms");w.style.setProperty("--d",(base+i*si+60)+"ms")});
     flipAt=Math.max(flipAt,base)});
   /* the date and the pressed button change when the new words start to arrive, not while the old sentence is still on screen */
+  const pr=$("#xrPair");pr.classList.add("fast");clearTimeout(XR.tf);XR.tf=setTimeout(()=>{pr.classList.remove("fast");xrUnlock()},700);
   void ps[0].offsetWidth;apply();XR.t=t;XR.tb=setTimeout(()=>xrTimeBtns(t),flipAt)}
+function xrUnlock(){const pair=$("#xrPair"),ch=$("#xrChips");if(pair)pair.style.minHeight="";if(ch)ch.style.minHeight="";XR.chipH=0}
 /* the pair keeps the height of its taller state (then or now) for as long as a moment is open, so replay and the morph never make the page jump */
 function xrH(t){const pair=$("#xrPair"),cl=pair.cloneNode(true);cl.removeAttribute("id");cl.removeAttribute("aria-live");cl.style.cssText=`position:absolute;visibility:hidden;pointer-events:none;left:0;top:0;width:${pair.offsetWidth}px;min-height:0`;
   $$(".xr-s",cl).forEach(p=>{p.classList.remove("st-f","st-n","st-b");p.classList.add("st-"+t);$$(".w,.x",p).forEach(w=>w.style.transition="none")});
@@ -3097,8 +3175,10 @@ function xrH(t){const pair=$("#xrPair"),cl=pair.cloneNode(true);cl.removeAttribu
 function xrLock(){const pair=$("#xrPair"),ch=$("#xrChips");if(!pair)return;pair.style.minHeight="";ch.style.minHeight="";XR.chipH=0;const S=XR.a&&R.langs.arts[XR.a][XR.l].sl[XR.s];if(!S||!(S.m.f&&S.m.n))return;pair.style.minHeight=Math.max(xrH("f"),xrH("n"))+"px";
   /* the chip list under the pair changes with the version too: hold it at its taller state */
   const t0=XR.t;let hc=0;["f","n"].forEach(t=>{XR.t=t;xrChips();hc=Math.max(hc,ch.hidden?0:ch.offsetHeight)});XR.t=t0;XR.chipH=hc;if(hc)ch.style.minHeight=hc+"px";xrChips()}
-addEventListener("resize",()=>{clearTimeout(XR.rz);XR.rz=setTimeout(xrLock,200)});
-function xrReplay(){const S=R.langs.arts[XR.a][XR.l].sl[XR.s];if(!(S.m.f&&S.m.n))return;xrTime("f",false);void $("#xrPair").offsetWidth;clearTimeout(XR.tm);XR.tm=setTimeout(()=>xrTime("n",true),RM.matches?60:420)}
+
+function xrReplay(){const S=R.langs.arts[XR.a][XR.l].sl[XR.s];if(!(S.m.f&&S.m.n))return;xrLock();xrTime("f",false);void $("#xrPair").offsetWidth;clearTimeout(XR.tm);
+  /* reduced motion: Replay swaps the text at once */
+  XR.tm=setTimeout(()=>{xrTime("n",!RM.matches);if(RM.matches)xrUnlock()},RM.matches?0:300)}
 function xrChips(){
   const A=R.langs.arts[XR.a][XR.l],S=A.sl[XR.s],t=XR.t,rtl=XRTL.has(XR.l);
   const L=[...(t!=="n"&&S.L.f?S.L.f:[]),...(t!=="f"&&S.L.n?S.L.n:[])];const seen=new Set();let h="";
@@ -3245,6 +3325,18 @@ let REPORT_TARGET=null;
 function scrollToReport(id){const el=document.getElementById(id);if(!el)return;const fold=el.closest&&el.closest("details:not([open])");if(fold)fold.open=true;
   requestAnimationFrame(()=>requestAnimationFrame(()=>{el.scrollIntoView({behavior:"auto",block:"start"});
     setTimeout(()=>{const t=el.getBoundingClientRect().top;if(t<0||t>120)el.scrollIntoView({behavior:"auto",block:"start"})},250)}))}
+/* story → evidence jumps: remember where the reader was, say where they came from, and bring them back to the same spot */
+let JUMP=null;
+function jumpFrom(sec,ctx,to){const S=document.getElementById(sec),h=S&&S.querySelector("h2");let t=h?h.textContent.trim():"";if(t.length>56)t=t.slice(0,56).replace(/\s+\S*$/,"")+"…";
+  JUMP={y:scrollY,sec,t,ctx:ctx||"",to:to||""};try{history.replaceState(Object.assign({},history.state||{},{from:"report",y:scrollY,sec}),"")}catch(e){}}
+function evBackShow(){const b=$("#evBack");if(!b)return;if(!JUMP||VIEW!=="evidence"){b.hidden=true;return}
+  b.innerHTML=`<span>${JUMP.ctx?`<b>${esc(JUMP.ctx)}</b> · `:""}from “${esc(JUMP.t)}”</span><a href="#report" id="evBackA">← back to the story</a><button type="button" aria-label="Dismiss">×</button>`;b.hidden=false;
+  $("#evBackA").onclick=e=>{e.preventDefault();if(JUMP&&location.hash==="#"+JUMP.to)history.back();else location.hash="#report"};
+  $("button",b).onclick=()=>{b.hidden=true}}
+function evFocus(id){const el=document.getElementById(id);if(!el)return;const h=el.matches("h2,h3,.xr-hd")?el:el.querySelector("h2,h3,.fig-t")||el;if(!h.hasAttribute("tabindex"))h.setAttribute("tabindex","-1");h.focus({preventScroll:true})}
+function jumpBack(){if(!JUMP)return false;const j=JUMP;JUMP=null;evBackShow();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{scrollTo(0,j.y);const S=document.getElementById(j.sec),h=S&&S.querySelector("h2");if(h){if(!h.hasAttribute("tabindex"))h.setAttribute("tabindex","-1");h.focus({preventScroll:true})}}));return true}
+document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest('#view-report a[href^="#"]');if(!a)return;const id=a.getAttribute("href").slice(1);if(!id||!inEv(id))return;const sc=a.closest("section[id]");jumpFrom(sc?sc.id:"",a.textContent.trim().slice(0,70),id)},true);
 function openInReport(id){if(inEv(id)){location.hash="#"+id;return}if(VIEW==="report"){scrollToReport(id);return}REPORT_TARGET=id||null;location.hash="#report"}
 
 /* ---------- v3: the twist at full scale (mass2). Numbers are those of patterns/SYNTHESIS.md ---------- */
@@ -3522,7 +3614,10 @@ function drawZi(){
   // phase shading behind the plot, and the phase band on top
   phases.forEach((p,i)=>{const xa=x(p.a),xb=x(p.b);if(i%2)s+=`<rect x="${xa.toFixed(1)}" y="${bT-6}" width="${(xb-xa).toFixed(1)}" height="${H-bT-20}" style="fill:var(--faint);opacity:.7"/>`});
   const plab=(p,i,w)=>{const full=`${i+1} ${p.nm}`;return !ph&&full.length*6.8+8<w?full:String(i+1)};
-  phases.forEach((p,i)=>{const xa=x(p.a)+(i?1:0),xb=x(p.b)-(i<phases.length-1?1:0),w=Math.max(2,xb-xa);s+=`<rect x="${xa.toFixed(1)}" y="${pY}" width="${w.toFixed(1)}" height="${pH}" rx="2" style="fill:var(--faint);stroke:var(--rule)"/><text class="pl" x="${(xa+w/2).toFixed(1)}" y="${pY+14}" text-anchor="middle">${esc(plab(p,i,w))}</text>`});
+  phases.forEach((p,i)=>{let xa=x(p.a)+(i?1:0),xb=x(p.b)-(i<phases.length-1?1:0);
+    /* every phase cell is at least 22px wide, so its number is never clipped; the last cell spills left */
+    if(xb-xa<22){if(i===phases.length-1){xb=Math.min(xb,W-m.r);xa=xb-22}else{const c=(xa+xb)/2;xa=c-11;xb=c+11}}
+    const w=Math.max(2,xb-xa);s+=`<rect x="${xa.toFixed(1)}" y="${pY}" width="${w.toFixed(1)}" height="${pH}" rx="2" style="fill:var(--faint);stroke:var(--rule)"/><text class="pl" x="${(xa+w/2).toFixed(1)}" y="${pY+14}" text-anchor="middle">${esc(plab(p,i,w))}</text>`});
   let top="";/* labels painted after the playhead, each with a sheet-coloured halo, so the cursor never cuts through words */
   for(let yr=2021;yr<=new Date(t1).getUTCFullYear();yr++){const xx=x(Date.UTC(yr,0,1));s+=`<line x1="${xx}" x2="${xx}" y1="${bT}" y2="${H-24}" style="stroke:var(--faint)"/>`;top+=`<text x="${xx+3}" y="${bB+14}">${ph?"’"+String(yr).slice(2):yr}</text>`}
   ticks(0,mx,ph?2:3).forEach(v=>{const yy=y(v);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text x="${m.l-5}" y="${yy+3.5}" text-anchor="end">${v}</text>`});
@@ -3531,7 +3626,7 @@ function drawZi(){
   s+=`<text x="${m.l+6}" y="${bT+10}" style="fill:var(--muted);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">edits / week</text>`;
   const wx=x(WAR);s+=`<line x1="${wx}" x2="${wx}" y1="${bT-4}" y2="${H-24}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/><text x="${wx-4}" y="${bT+10}" text-anchor="end" style="fill:var(--war);paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${ph?"7 Oct":"7 Oct 2023"}</text>`;
   // lanes
-  lanes.forEach(l=>{top+=`<text class="ln" x="${m.l}" y="${l.y+11}">${esc(l.lab)}</text>`;if(l.k==="col"||l.k==="re")s+=`<rect x="${m.l}" y="${bandY(l.k)}" width="${W-m.l-m.r}" height="${bandH}" rx="2" style="fill:var(--faint)"/>`;else s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${bandY(l.k)+bandH/2}" y2="${bandY(l.k)+bandH/2}" style="stroke:var(--rule)"/>`});
+  lanes.forEach(l=>{top+=`<rect x="${m.l-2}" y="${l.y}" width="${(l.lab.length*6.9+6).toFixed(0)}" height="15" rx="2" style="fill:var(--sheet);opacity:.92"/><text class="ln" x="${m.l}" y="${l.y+11}">${esc(l.lab)}</text>`;if(l.k==="col"||l.k==="re")s+=`<rect x="${m.l}" y="${bandY(l.k)}" width="${W-m.l-m.r}" height="${bandH}" rx="2" style="fill:var(--faint)"/>`;else s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${bandY(l.k)+bandH/2}" y2="${bandY(l.k)+bandH/2}" style="stroke:var(--rule)"/>`});
   const band=(term,k,cvar)=>{let on=Z[term==="settler_colonial"?"col":"re"].start,from=t0,out="";
     const seg=(a,b)=>{const xa=x(a),xb=Math.max(xa+1.4,x(b));out+=`<rect x="${xa.toFixed(1)}" y="${bandY(k)}" width="${(xb-xa).toFixed(1)}" height="${bandH}" style="fill:var(${cvar})"/>`};
     const gaps=[];let g0=null;
@@ -3626,7 +3721,10 @@ function ziInit(){
   const user=k=>{ziPlay(false);ziGo(k)};
   el.addEventListener("pointermove",ev=>{if(ev.pointerType!=="mouse")return;const h=ziPick(...at(ev));if(h)ziTip(h,ev.clientX,ev.clientY);else hideTip()});
   el.addEventListener("pointerleave",hideTip);
-  el.addEventListener("click",ev=>{const h=ziPick(...at(ev));if(!h)return;if(h.c)user(h.c.k);if(ev.pointerType==="mouse"||h.lead||h.q)ziTip(h,ev.clientX,ev.clientY)});
+  el.addEventListener("click",ev=>{const [px,py]=at(ev),h=ziPick(px,py);
+    /* a tap away from any tick snaps to the nearest change in the current step mode */
+    if(!h){const G=ZI.geom;if(!G||px<G.m.l||px>G.W-G.m.r)return;let b=null,bd=1e9;ziList().forEach(c=>{const d=Math.abs(G.x(c.t)-px);if(d<bd){bd=d;b=c}});if(b)user(b.k);return}
+    if(h.c)user(h.c.k);if(ev.pointerType==="mouse"||h.lead||h.q)ziTip(h,ev.clientX,ev.clientY)});
   const keys=ev=>{if(ev.target.closest("input,select,textarea"))return;const k={ArrowRight:1,ArrowLeft:-1,End:2,Home:-2}[ev.key];
     if(k){ev.preventDefault();ziPlay(false);ziStep(k);return}
     if(ev.key===" "&&ev.currentTarget===el){ev.preventDefault();ziPlay(!ZI.playing)}};
@@ -3635,7 +3733,9 @@ function ziInit(){
   seg($("#ziSpeed"),v=>{ZI.speed=v;if(ZI.playing)ziTick()});
   $("#ziPrev").onclick=()=>{ziPlay(false);ziStep(-1)};$("#ziNext").onclick=()=>{ziPlay(false);ziStep(1)};$("#ziPlay").onclick=()=>ziPlay(!ZI.playing);
   $("#ziMoments").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)user(+b.dataset.k)});
-  $("#ziPhases").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(b)user(+b.dataset.k)});
+  /* in key-move mode a phase goes to its first key move, so the next step is the next key move */
+  $("#ziPhases").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(!b)return;const k=+b.dataset.k;if(ZI.mode!=="key"){user(k);return}
+    const L=ziList(),nb=b.closest("li").nextElementSibling,kEnd=nb?+nb.querySelector("button").dataset.k:Infinity,f=L.find(c=>c.k>=k&&c.k<kEnd)||L.find(c=>c.k>=k)||L.at(-1);user(f?f.k:k)});
   const trk=$("#ziTrk");trk.addEventListener("pointerdown",ev=>{const r=trk.getBoundingClientRect(),k=D.ch.length*Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width))-.5;let b=null,bd=1e9;ziList().forEach(c=>{const d=Math.abs(c.k-k);if(d<bd){bd=d;b=c}});if(b)user(b.k)});
   // stop playing once the figure leaves the screen
   /* pause once less than a fifth of the screen shows the figure */
@@ -3722,7 +3822,10 @@ function drawO7(){
   let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`${C.name}: every change to the first sentence, ${ziD(D.T.first_ts)} to November 2026. ${phases.map((p,i)=>`Phase ${i+1}, ${p.nm}, ${p.rg}.`).join(" ")} Lanes: ${C.lanes.filter(l=>l.kind!=="ticks").map(l=>l.short).join(", ")}. Grey bars: monthly views.`)}">`;
   phases.forEach((p,i)=>{const xa=x(p.a),xb=x(p.b);if(i%2)s+=`<rect x="${xa.toFixed(1)}" y="${bT-6}" width="${Math.max(0,xb-xa).toFixed(1)}" height="${H-bT-20}" style="fill:var(--faint);opacity:.7"/>`});
   const plab=(p,i,w)=>{const full=`${i+1} ${p.nm}`;return !ph&&full.length*6.8+8<w?full:String(i+1)};
-  phases.forEach((p,i)=>{const xa=x(p.a)+(i?1:0),xb=x(p.b)-(i<phases.length-1?1:0),w=Math.max(2,xb-xa);s+=`<rect x="${xa.toFixed(1)}" y="${pY}" width="${w.toFixed(1)}" height="${pH}" rx="2" style="fill:var(--faint);stroke:var(--rule)"/><text class="pl" x="${(xa+w/2).toFixed(1)}" y="${pY+14}" text-anchor="middle">${esc(plab(p,i,w))}</text>`});
+  phases.forEach((p,i)=>{let xa=x(p.a)+(i?1:0),xb=x(p.b)-(i<phases.length-1?1:0);
+    /* every phase cell is at least 22px wide, so its number is never clipped; the last cell spills left */
+    if(xb-xa<22){if(i===phases.length-1){xb=Math.min(xb,W-m.r);xa=xb-22}else{const c=(xa+xb)/2;xa=c-11;xb=c+11}}
+    const w=Math.max(2,xb-xa);s+=`<rect x="${xa.toFixed(1)}" y="${pY}" width="${w.toFixed(1)}" height="${pH}" rx="2" style="fill:var(--faint);stroke:var(--rule)"/><text class="pl" x="${(xa+w/2).toFixed(1)}" y="${pY+14}" text-anchor="middle">${esc(plab(p,i,w))}</text>`});
   if(stub){s+=`<rect x="${m.l}" y="${bT-6}" width="${sw-2}" height="${H-bT-20}" style="fill:var(--faint)"/><text x="${m.l+3}" y="${bB+14}">2021</text><text class="em" x="${m.l+3}" y="${bT+24}" transform="rotate(0)">${ph?"":"to Sep ’23"}</text><text class="em" x="${m.l+3}" y="${bT+38}">${ph?"":ziN(D.nStub,"change")}</text>`}
   const y0=new Date(stub||t0).getUTCFullYear();
   let top="";
@@ -3864,14 +3967,14 @@ function ppCard(){
   const arts=new Set(L.map(x=>x[0])).size,VL={own:"own voice",att:"attributed",den:"denial or dispute"};
   $("#ppCard").innerHTML=`<div class="hd"><p class="zi-hd1"><b>${esc(PP_SIDE[sd])} · ${esc(name)} · ${d==="now"?"now (last revision before 5 Nov 2026)":esc(PP_DL[d])}</b> · English Wikipedia, opening sections</p><dl class="zi-facts"><div><dt>${/genocide/i.test(name)&&L.some(x=>x[2]==="den")?"Charges":"Sentences"}</dt><dd>${(()=>{const nd=/genocide/i.test(name)?L.filter(x=>x[2]==="den").length:0;return nd?`${n-nd} in ${ziN(arts,"article")} · plus ${nd} denial${nd===1?"":"s"}`:`${n} in ${ziN(arts,"article")}`})()}</dd></div><div><dt>Wikipedia’s own voice</dt><dd>${own}</dd></div>${L.length?`<div><dt>Attributed</dt><dd>${L.filter(x=>x[2]==="att").length}</dd></div><div><dt>Denials</dt><dd>${L.filter(x=>x[2]==="den").length}</dd></div>`:`<div><dt>Attributed or denied</dt><dd>${n-own}</dd></div>`}</dl></div>
    ${L.length?`<ul class="rc" id="ppRc">${L.map(([t,s,v],i)=>`<li${i>=6&&!PP.all?" hidden":""}><span class="w"><span>${esc(t)}</span><span class="vchip ${v}">${VL[v]}</span></span><span class="s">“${esc(s)}”</span></li>`).join("")}</ul>${L.length>6?`<button type="button" class="more-btn" id="ppAll" aria-expanded="${!!PP.all}" aria-controls="ppRc">${PP.all?"Show the first 6":`Show all ${L.length}`}</button>`:""}`:`<p class="cap">No sentence at this date.</p>`}
-   ${isPhone()?`<button type="button" class="pp-back" id="ppBack">↑ Back to the chart</button>`:""}`;
+   <button type="button" class="pp-back" id="ppBack">↑ Back to the chart</button>`;
   const ab=$("#ppAll");if(ab)ab.onclick=()=>{PP.all=!PP.all;ppCard();if(!PP.all)$("#ppCard").scrollIntoView({block:"nearest"})};
   const bb=$("#ppBack");if(bb)bb.onclick=()=>{const t=$(`#ppGrid .pp-bar[data-k="${PP.sel}"]`)||$("#ppGrid");($("#ppFig")||$("#ppGrid")).scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"});if(t.focus)t.focus({preventScroll:true})};
   $$("#ppGrid .pp-bar").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===PP.sel)));
 }
 function chargeInit(){
   const g=$("#ppGrid");if(!g)return;
-  g.addEventListener("click",e=>{const b=e.target.closest(".pp-bar");if(!b||b.disabled)return;PP.sel=b.dataset.k;PP.all=false;ppCard();if(isPhone())$("#ppCard").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"nearest"})});
+  g.addEventListener("click",e=>{const b=e.target.closest(".pp-bar");if(!b||b.disabled)return;PP.sel=b.dataset.k;PP.all=false;ppCard();$("#ppCard").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"nearest"})});
   seg($("#ppSide"),v=>{PP.side=v;const [,c,d]=PP.sel.split("|"),k=`${v}|${c}|${d}`;if((R.perp.cells[k]||[0])[0])PP.sel=k;drawCharge()});
   drawCharge();
 }
@@ -3881,8 +3984,8 @@ function drawPeriods(){
   const host=$("#orgPeriods");if(!host)return;
   const rows=[["2023, before 7 Oct","",0.51],["7 Oct 2023 to 1 Feb 2024","before the channel",3.44],["Feb to Sep 2024","channel reported active",2.01,1],["Oct 2024 to May 2025","exposure, sanctions, PIA5",1.84],["Jun 2025 to Nov 2026","",0.82]],mx=4;
   host.innerHTML=`<div style="display:grid;gap:8px" role="img" aria-label="${esc(rows.map(r=>`${r[0]}: ${r[2]} times`).join("; "))}">${rows.map(([l,s,v,doc])=>`<div class="per-row${doc?" doc":""}"><span>${esc(l)}${s?`<br><small style="font:10.5px var(--mono);color:var(--muted)">${esc(s)}</small>`:""}</span><span class="tr"><i style="width:${(v/mx*100).toFixed(1)}%"></i><span class="one" style="left:${(1/mx*100).toFixed(1)}%"></span></span><span class="v">${v.toFixed(2)}×</span></div>`).join("")}</div>
-   <div class="legend"><span class="key"><i style="background:var(--topic)"></i>teal: topic insertions per week ÷ comparison insertions per week</span><span class="key"><i class="dash" style="color:var(--muted)"></i>dashed line: equal rates (1×)</span><span class="key"><i style="background:repeating-linear-gradient(135deg,var(--faint) 0 4px,var(--sheet) 4px 7px);border:1px solid var(--rule)"></i>hatched track: the documented Discord window</span></div>
-   <p class="cap">Descriptive, and confounded by the war’s tempo. The step from 2.0 to 1.8 is small next to the fall from the war-onset peak. The pro-Israel email canvassing ArbCom is reported to have found dates from about October 2023 to January 2024, inside the 3.44 row.</p>`}
+   <div class="legend" style="margin-top:12px"><span class="key"><i style="background:var(--topic)"></i>teal: topic insertions per week ÷ comparison insertions per week</span><span class="key"><i class="dash" style="color:var(--muted)"></i>dashed line: equal rates (1×)</span><span class="key"><i style="background:repeating-linear-gradient(135deg,var(--faint) 0 4px,var(--sheet) 4px 7px);border:1px solid var(--rule)"></i>hatched track: the reported Discord window</span></div>
+   <p class="cap" style="margin-top:10px">Descriptive, and confounded by the war’s tempo. The step from 2.0 to 1.8 is small next to the fall from the war-onset peak. The pro-Israel email canvassing ArbCom is reported to have found dates from about October 2023 to January 2024, inside the 3.44 row.</p>`}
 
 /* ---------- #organised: the coordination network (analyze_coord.py network.json), groups first ---------- */
 const NET={view:"network",side:"topic",preset:"all",sel:null};
@@ -3943,18 +4046,19 @@ function netLayout(G,W){
   // fixed, deterministic layout: one grid cell per community (size order), members on a circle; pairs share the last cell
   const comms=netOrder(G),pairs=(G.communities||[]).filter(c=>c.size<3),cols=W<420?2:3,cell=Math.floor((W-8)/cols),pos={},hulls=[];
   const place=(ids,cx,cy,R)=>ids.forEach((id,j)=>{const a=-Math.PI/2+2*Math.PI*j/ids.length;pos[id]=[cx+(ids.length>1?R*Math.cos(a):0),cy+(ids.length>1?R*Math.sin(a):0)]});
-  comms.forEach((c,i)=>{const cx=4+(i%cols+.5)*cell,cy=(Math.floor(i/cols)+.5)*cell,R=cell*.32;place(c.members||[],cx,cy,R);hulls.push({c,cx,cy,r:R+16,i})});
-  const pk=comms.length,rows0=Math.ceil(pk/cols);if(pairs.length){const per=Math.max(1,Math.floor((W-8)/64));pairs.forEach((p,j)=>{const cx=4+28+(j%per)*64,cy=rows0*cell+24+Math.floor(j/per)*44;(p.members||[]).forEach((id,q)=>{pos[id]=[cx+(q?17:-17),cy]})})}
-  const H=rows0*cell+(pairs.length?Math.ceil(pairs.length/Math.max(1,Math.floor((W-8)/64)))*44+30:8);
-  return {pos,hulls,H:Math.max(H,cell)}}
+  const TP=18;comms.forEach((c,i)=>{const cx=4+(i%cols+.5)*cell,cy=TP+(Math.floor(i/cols)+.5)*cell,R=cell*.32;place(c.members||[],cx,cy,R);hulls.push({c,cx,cy,r:R+16,i})});
+  const pk=comms.length,rows0=Math.ceil(pk/cols);if(pairs.length){const per=Math.max(1,Math.floor((W-8)/64));pairs.forEach((p,j)=>{const cx=4+28+(j%per)*64,cy=TP+rows0*cell+24+Math.floor(j/per)*44;(p.members||[]).forEach((id,q)=>{pos[id]=[cx+(q?17:-17),cy]})})}
+  const H=TP+rows0*cell+(pairs.length?Math.ceil(pairs.length/Math.max(1,Math.floor((W-8)/64)))*44+30:8);
+  return {pos,hulls,H:Math.max(H,cell+TP)}}
 function netGraph(g,G,W){
   const L=netLayout(G,W),node=new Map((G.nodes||[]).map(n=>[n.id,n])),mxw=Math.max(1,...(G.edges||[]).map(e=>e.weight||0));
   let s=`<svg viewBox="0 0 ${W} ${L.H}" role="img" aria-label="${esc(`${g==="topic"?"Topic":"Comparison"} network: ${(G.nodes||[]).length} accounts, ${(G.edges||[]).length} links beyond chance, ${(G.communities||[]).filter(c=>c.size>=3).length} groups of three or more.`)}">`;
-  L.hulls.forEach(h=>{s+=`<circle class="hull ${h.c.confidence||"low"}" cx="${h.cx.toFixed(1)}" cy="${h.cy.toFixed(1)}" r="${h.r.toFixed(1)}"/><text x="${(h.cx-h.r+2).toFixed(1)}" y="${(h.cy-h.r+8).toFixed(1)}"${h.c.confidence==="low"?' class="lo"':""}>${esc(h.c.name?netName(h.c,h.i):h.c.confidence==="low"?"Low-confidence group":"G"+(h.i+1))}</text>`});
+  L.hulls.forEach(h=>{s+=`<circle class="hull ${h.c.confidence||"low"}" cx="${h.cx.toFixed(1)}" cy="${h.cy.toFixed(1)}" r="${h.r.toFixed(1)}"/><text class="hl${h.c.confidence==="low"?" lo":""}" x="${h.cx.toFixed(1)}" y="${(h.cy-h.r-6).toFixed(1)}" text-anchor="middle">${esc(h.c.name?netName(h.c,h.i):h.c.confidence==="low"?"Low-confidence group":"G"+(h.i+1))}</text>`});
   (G.edges||[]).forEach((e,j)=>{const a=L.pos[e.source],b=L.pos[e.target];if(!a||!b)return;const ts=e.time_span||[],on=ts.length?netOverlap(ts[0],ts[1]):true,op=on?(.25+.65*Math.min(1,(e.weight||0)/mxw)):.08;
-    s+=`<line class="ed" data-e="${j}" tabindex="0" role="button" aria-label="${esc(`Link ${e.source} – ${e.target}: ${e.basis==="t30"?`edited within 30 minutes ${e.observed} times`:`shared ${e.observed} articles`}; chance gives ${fmt(e.null_mean,1)}. Show its numbers.`)}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" style="stroke-width:${e.basis==="t30"?1.6:1};opacity:${op.toFixed(2)}"/>`});
+    s+=`<line class="eh" data-e="${j}" aria-hidden="true" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"/>`;
+    s+=`<line class="ed" data-e="${j}" data-s="${esc(e.source)}" data-t="${esc(e.target)}" tabindex="0" role="button" aria-label="${esc(`Link ${e.source} – ${e.target}: ${e.basis==="t30"?`edited within 30 minutes ${e.observed} times`:`shared ${e.observed} articles`}; chance gives ${fmt(e.null_mean,1)}. Show its numbers.`)}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" style="stroke-width:${e.basis==="t30"?1.6:1};opacity:${op.toFixed(2)}"/>`});
   const R=n=>Math.max(4,Math.min(14,2+Math.sqrt(n.events||1)*1.6));
-  Object.entries(L.pos).forEach(([id,[x,y]])=>{const n=node.get(id)||{};s+=`<circle class="nd" data-n="${esc(id)}" tabindex="0" role="button" aria-label="${esc(`Account ${id}: ${n.events} critical-term edits on ${n.articles} articles. Show its numbers.`)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${R(n).toFixed(1)}" style="fill:var(${netDir(n.insert_share)})"/>`});
+  Object.entries(L.pos).forEach(([id,[x,y]])=>{const n=node.get(id)||{};s+=`<circle class="nd${netDir(n.insert_share)==="--mid"?" mx":""}" data-n="${esc(id)}" tabindex="0" role="button" aria-label="${esc(`Account ${id}: ${n.events} critical-term edits on ${n.articles} articles. Show its numbers.`)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${R(n).toFixed(1)}" style="fill:var(${netDir(n.insert_share)})"/>`});
   return s+`</svg>`}
 function netTable(G){
   const C=netOrder(G),ws=(c,k)=>{const o=(c.window_share||{})[k],e=(c.expected_window_share||{})[k];return o==null?"–":`${pct(o)} vs ${pct(e&&e.mean)}${e&&e.ci95?` (${pct(e.ci95[0])}–${pct(e.ci95[1])})`:""}`};
@@ -3980,11 +4084,11 @@ function drawNet(){
     if(low.length)h+=`<details class="stats"${strong.length?"":" open"}><summary>Groups chance also produces <span>${low.length} low-confidence group${low.length===1?"":"s"}, listed so nothing is hidden</span></summary><div class="in"><div class="gcards">${low.map((c,i)=>netCard(c,strong.length+i,W)).join("")}</div></div></details>`;
     if(pairs&&!(none&&pairs===ne))h+=`<p class="cap">Plus ${pairs} linked pair${pairs===1?"":"s"}, too small to test as a group.</p>`;
     if(!none)h+=`<div class="legend"><span class="key"><i style="border:1.5px solid var(--ink-2);background:none"></i><i style="border:1.5px dashed var(--ink-2);background:none"></i><i style="border:1.5px dotted var(--muted);background:none"></i>solid, dashed, dotted border: high, medium, low confidence</span><span class="key"><i style="background:var(--add-bd)"></i><i style="background:var(--del-bd)"></i>blue / amber cells: share of the group’s edits that add / remove critical terms</span><span class="key"><i style="background:repeating-linear-gradient(45deg,var(--rule) 0 2px,transparent 2px 5px)"></i>hatched: the two reported windows</span><span class="key"><i style="border-radius:50%;border:2px solid var(--muted);background:none"></i><i style="border-radius:50%;background:var(--ink);margin-left:-2px"></i>ring: chance, with its 95% range; dot: what the group did</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: sanction dates</span></div>`}
-  else if(NET.view==="network"){const W=ph?Math.max(280,host.clientWidth-24):Math.max(300,Math.floor((host.clientWidth-36)/2));
+  else if(NET.view==="network"){const cw=host.clientWidth,wide=cw>=901,Wg=g=>ph?Math.max(280,cw-24):!wide?Math.max(300,cw-24):g==="topic"?Math.min(620,Math.floor((cw-36)*2/3)):Math.max(260,Math.floor((cw-36)/3));
     const xb=((N.topic||{}).extra_blocs||[]).filter(b=>(b.test||b.basis)==="insert").map(b=>netName(b,0));
-    h+=`<div class="net-graphs">${["topic","comparison"].filter(g=>N[g]).map(g=>`<div class="net-g" data-g="${g}"><h4>${g==="topic"?"Topic articles":"Comparison articles"}</h4>${g==="topic"&&xb.length?`<p class="cap net-xb">${esc(xb.join(", "))} is not drawn: it was found by the insertions-only test, and this graph shows the all-edits test. See Groups.</p>`:""}${netGraph(g,N[g],W)}</div>`).join("")}</div>
-     <div class="net-det" id="netDet" aria-live="polite">Tap or tab to an account or a line for its numbers, each next to what chance gives.</div>
-     <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: an account that mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid)"></i>grey: mixed</span><span>Size: number of edits. Line: linked beyond chance (darker = further beyond chance; thicker = timing, thinner = shared articles). Ring: a group, drawn solid, dashed or dotted by confidence. Same scale on both sides.</span></div>`}
+    h+=`<div class="net-graphs${ph?" one":""}">${["topic","comparison"].filter(g=>N[g]&&(!ph||g===NET.side)).map(g=>`<div class="net-g" data-g="${g}"><h4>${g==="topic"?"Topic articles":"Comparison articles · same scale"}</h4>${g==="topic"&&xb.length?`<p class="cap net-xb">${esc(xb.join(", "))} is not drawn: it was found by the insertions-only test, and this graph shows the all-edits test. See Groups.</p>`:""}${netGraph(g,N[g],Wg(g))}</div>`).join("")}</div>
+     ${ph&&NET.side==="topic"&&N.comparison?`<p class="cap">Switch Articles to Comparison to see the same test on other conflicts’ pages.</p>`:""}<div class="net-det" id="netDet" aria-live="polite">Tap or tab to an account or a line for its numbers, each next to what chance gives.</div>
+     <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: an account that mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid);box-shadow:inset 0 0 0 1.5px var(--muted)"></i>grey: mixed</span><span>Size: number of edits. Line: linked beyond chance (darker = further beyond chance; thicker = timing, thinner = shared articles). Ring: a group, drawn solid, dashed or dotted by confidence. Same scale on both sides.</span></div>`}
   else h+=netTable(G);
   h+=`<details class="stats"><summary>Why lines here <span>when the 30-minute test found none</span></summary><div class="in"><p class="cap col"><b>Why lines here, when the 30-minute test found no recurring pairs?</b> That test asked for the same pair editing within 30 minutes of each other on five or more articles, and found none. A line here needs only three shared articles beyond what chance gives: a looser, statistical link, and not a sign of editing in step.</p></div></details>
    <div class="caveat" role="note"><h3>What this can and cannot show</h3><ul><li>Shared watchlists, subject expertise and breaking news produce the same pattern as organised editing.</li><li>Beyond chance is not proof of coordination, and a group is not an organisation, a side or the Discord channel.</li><li>We do not identify accounts. Nothing here links a group to any sentence quoted on this page.</li></ul></div>`;
@@ -3995,7 +4099,12 @@ function drawNet(){
   if(NET.view==="groups"&&NET.noGroups){$$("#netPre button").forEach(b=>{b.setAttribute("aria-disabled","true");b.disabled=true});const wc=$("#netWinC");if(wc)wc.textContent="No groups on comparison pages, so there is no activity to compare with the windows."}
   NET.noGroups=false;
   if(NET.view==="network")$$("#net .net-g").forEach(box=>box.addEventListener("keydown",e=>{const t=e.target;if((e.key==="Enter"||e.key===" ")&&(t.dataset.n||t.dataset.e!=null)){e.preventDefault();t.dispatchEvent(new MouseEvent("click",{bubbles:true}))}}));
-  if(NET.view==="network")$$("#net .net-g").forEach(box=>box.addEventListener("click",e=>{const g=box.dataset.g,Gx=N[g],t=e.target,det=$("#netDet");$$("#net .on").forEach(x=>x.classList.remove("on"));
+  if(NET.view==="network")$$("#net .net-g").forEach(box=>box.addEventListener("click",e=>{const g=box.dataset.g,Gx=N[g],det=$("#netDet");let t=e.target;
+    if(t.classList&&t.classList.contains("eh"))t=$(`line.ed[data-e="${t.dataset.e}"]`,box)||t;
+    $$("#net .on,#net .hi").forEach(x=>x.classList.remove("on","hi"));$$("#net svg.sel").forEach(x=>x.classList.remove("sel"));$$("#net text.sl").forEach(x=>x.parentNode.removeChild(x));
+    const svg=box.querySelector("svg"),mark=(ids,eds)=>{if(!svg)return;svg.classList.add("sel");eds.forEach(x=>x.classList.add("hi"));ids.forEach(id=>{const c=$(`circle.nd[data-n="${CSS.escape(id)}"]`,svg);if(!c)return;c.classList.add("hi");const tx=document.createElementNS("http://www.w3.org/2000/svg","text");tx.setAttribute("class","sl");const cx=+c.getAttribute("cx"),rr=+c.getAttribute("r"),rt=cx<+svg.viewBox.baseVal.width-40;tx.setAttribute("x",cx+(rt?rr+4:-rr-4));tx.setAttribute("y",+c.getAttribute("cy")+3.5);tx.setAttribute("text-anchor",rt?"start":"end");tx.textContent=id;svg.appendChild(tx)})};
+    if(t.dataset&&t.dataset.n)mark([t.dataset.n],$$(`line.ed`,box).filter(l=>l.dataset.s===t.dataset.n||l.dataset.t===t.dataset.n));
+    else if(t.dataset&&t.dataset.e!=null&&t.dataset.s)mark([t.dataset.s,t.dataset.t],[t]);
     if(t.dataset.n){t.classList.add("on");const n=(Gx.nodes||[]).find(x=>x.id===t.dataset.n)||{},ci=netOrder(Gx).findIndex(c=>c.id===n.community);
       det.innerHTML=`<b>${esc(n.id)}</b> (${g}) · ${n.events} critical-term edits on ${n.articles} articles · ${pct(n.insert_share)} add critical terms (${netDirW(n.insert_share)}) · account age when first seen: ${esc({"<30d":"under 30 days","30d-1y":"30 days to 1 year","1-5y":"1 to 5 years",">5y":"over 5 years"}[n.age_bucket]||"unknown")}${ci>=0?` · in ${esc(netName(netOrder(Gx)[ci],ci))}`:""}. Labels restart in each network.`}
     else if(t.dataset.e!=null){t.classList.add("on");const ed=(Gx.edges||[])[+t.dataset.e],ex=(ed.example_article_pairs||[])[0];
@@ -4048,7 +4157,11 @@ function init(){
   safe(foldPhone);safe(xmInit);
   const re=()=>{if(isLab()){STALE.report=STALE.ev=true;labCall("redraw")}else{STALE.lab=LAB_INIT;if(VIEW==="report")STALE.ev=true;else STALE.report=true;HM=null;redrawAll()}};
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;re()},150)});
-  addEventListener("hashchange",()=>{const h=location.hash,was=VIEW;route();if(VIEWS.includes(h)||h===""){if(REPORT_TARGET&&VIEW==="report"){const id=REPORT_TARGET;REPORT_TARGET=null;scrollToReport(id)}else if(was!==VIEW)scrollTo(0,0)}else if(document.getElementById(h.slice(1)))scrollToReport(h.slice(1))});
+  addEventListener("hashchange",()=>{const h=location.hash,was=VIEW;route();
+    if(VIEW==="report"&&was==="evidence"&&JUMP&&jumpBack())return;
+    if(VIEW==="evidence"){evBackShow();if(JUMP&&h==="#"+JUMP.to)setTimeout(()=>evFocus(h.slice(1)),400)}
+    else{const b=$("#evBack");if(b)b.hidden=true;if(JUMP&&VIEW!=="evidence")JUMP=null}
+    if(VIEWS.includes(h)||h===""){if(REPORT_TARGET&&VIEW==="report"){const id=REPORT_TARGET;REPORT_TARGET=null;scrollToReport(id)}else if(was!==VIEW)scrollTo(0,0)}else if(document.getElementById(h.slice(1)))scrollToReport(h.slice(1))});
   if(isLab())STALE.report=true;
   route();{const h=location.hash.slice(1);if(h&&!VIEWS.includes("#"+h)&&document.getElementById(h))scrollToReport(h)}
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change",re);
