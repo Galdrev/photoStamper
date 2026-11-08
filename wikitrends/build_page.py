@@ -418,6 +418,263 @@ def mass3_data():
 
 res["mass3"] = mass3_data()
 
+# ---------- cross-language reader + matrix (#crosslang): exact quotes from patterns/langs/langs.json ----------
+def langs_data():
+    import re, difflib
+    lp = os.path.join(HERE, "patterns", "langs", "langs.json")
+    if not os.path.exists(lp):
+        return None
+    L = json.load(open(lp))
+    ARTS = L["articles"]
+    ORDER = L["meta"]["lang_order"]
+
+    def ver(a, l, s, w):
+        X = ARTS.get(a, {}).get(l) or {}
+        S = (X.get("slots") or {}).get(s) or {}
+        return S.get(w)
+
+    # matrix: column -> article / evidence; manual codings carry a note and the slot that shows the evidence
+    COLS = [("gen", "Genocide", ["Gaza genocide", "Gaza war"]), ("col", "Zionism as colonization", ["Zionism"]),
+            ("apa", "Apartheid", ["Israeli apartheid"]), ("occ", "Occupation (West Bank)", ["West Bank"]),
+            ("o7", "7 October called terror or massacre", ["October 7 attacks"]), ("ter", "Hamas called terrorist", ["Hamas"]),
+            ("hos", "The hostages", ["October 7 attacks"]), ("icj", "Court ruling overstated", ["Gaza genocide", "Israeli apartheid", "Gaza war"])]
+    O7 = {"he": ("fact", "fact", "s1", "Title and first sentence: “massacre”, carried out by “the Palestinian terror organisations”."),
+          "ar": ("none", "none", "s1", "“an extended military operation” by “the Palestinian resistance factions”; now aimed “against the Israeli occupation”."),
+          "en": ("none", "none", "s1", "“a series of coordinated armed incursions” by “Palestinian militant groups”. A later sentence says “massacring civilians”."),
+          "de": ("fact", "fact", "s1", "“The Hamas terror attack”; now also “the largest massacre and crime against humanity against Jews since the Holocaust”."),
+          "fr": ("fact", "fact", "s1", "“a series of coordinated terrorist attacks”; now “a series of Palestinian terrorist attacks”."),
+          "es": ("none", "none", "s1", "“the name used by the Palestinian Islamist militant group Hamas”; now “a series of coordinated attacks”. A later sentence says the militiamen “massacred civilians”."),
+          "it": ("fact", "fact", "s1", "“terrorist attacks and massacres of civilians”; now “a series of terrorist attacks by armed groups”."),
+          "pt": ("none", "none", "s1", "“A series of coordinated attacks”; now “coordinated attacks [atentados]”, a sharper noun."),
+          "nl": ("none", "fact", "s1", "“a coordinated surprise attack by the militant movement Hamas”; now “surprise attack or terror attack”."),
+          "ru": ("none", "none", "s1", "“The invasion of Israel”. A later sentence calls it “the largest act of Palestinian terrorism in history”.")}
+    HOS = {"he": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“the abduction of 251 civilians and soldiers – among them elderly people, women, children and babies”."),
+           "ar": ("absent", "captive", ("October 7 attacks", "k_hostages"), "Now: “they captured a number of soldiers and civilians”. A prisoner-of-war word, not the Arabic word for hostages."),
+           "en": ("absent", "absent", ("Gaza war", "k_hostages"), "Not in the 1,200 characters we hold of the attack article. The Gaza war article says “251 were taken hostage”."),
+           "de": ("absent", "absent", ("Gaza war", "k_hostages"), "Not in the text we hold of the attack article. The Gaza war article names “freeing the hostages” as Israel’s aim."),
+           "fr": ("absent", "absent", ("October 7 attacks", "s1"), "Not in the 1,200 characters we hold, at either date, of the attack article or of the Gaza war article."),
+           "es": ("fact", "absent", ("October 7 attacks", "k_hostages"), "2024: “Israeli soldiers and civilians, including women and children, were taken as hostages”. Not in the 2026 text we hold."),
+           "it": ("fact", "fact", ("October 7 attacks", "s1"), "Now in the first sentence: “the kidnapping of about 250 of them”. In 2024 a later sentence in the text we hold (not in our translated set)."),
+           "pt": ("fact", "absent", ("October 7 attacks", "s1"), "2024: hostages named later in the text we hold (that sentence is not in our translated set). Not in the 2026 text we hold."),
+           "nl": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“An estimated 250–255 people were taken prisoner and transferred to Gaza as hostages”. The 2024 copy says the same with 200–250."),
+           "ru": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“another 251 were taken hostage” (2024: 242).")}
+    ICJ = {"ar": ("fact", "fact", ("Gaza genocide", "k_icj"), "The ICJ “found that Israel was acting under a reasonable [or: plausible] intent to commit acts of genocide”. The January 2024 order made no finding on intent."),
+           "it": ("legal", "fact", ("Gaza genocide", "k_icj"), "2025: the court asked Israel to «prevent possible genocidal acts». 2026: the court “deemed Israel's actions in Gaza «plausibly genocidal»”, a phrase the court did not use."),
+           "ru": ("absent", "fact", ("Israeli apartheid", "k_icj"), "The ICJ “found Israel guilty”: verdict wording for a non-binding advisory opinion."),
+           "fr": ("absent", "fact", ("Israeli apartheid", "k_icj"), "“The Court recognises that Israel” is “conducting a policy of apartheid”. The 2024 opinion found a breach of CERD Article 3 without saying whether it was segregation or apartheid."),
+           "es": ("absent", "legal", ("Israeli apartheid", "k_icj"), "Reports the 2024 opinion under article 3. Not one of the four overstatements we found."),
+           "he": ("absent", "legal", ("Gaza war", "k_genocide"), "“South Africa filed a suit against Israel at the International Court of Justice (ICJ) for genocide”: the case, reported as a case."),
+           "pl": ("absent", "disputed", ("Gaza genocide", "k_courts"), "Stresses that only courts can rule on genocide.")}
+    NOTE = {("ter", "en"): "Beyond the 1,200 characters we hold. The designation now sits at the end of the opening section, attributed (see the Hamas timeline above).",
+            ("ter", "ar"): "No terror word in the text we hold; Hamas is “a Palestinian, resistance, popular, Islamic, national movement”.",
+            ("gen", "he"): "No Gaza-genocide article. The Gaza war article mentions genocide once, as South Africa’s suit at the ICJ.",
+            ("gen", "de"): "No Gaza-genocide article. The Gaza war article has 3 genocide mentions, all beyond the text we hold.",
+            ("gen", "ru"): "No Gaza-genocide article. The Gaza war article mentions genocide only beyond the text we hold.",
+            ("occ", "he"): "“belligerent occupation”, the Israeli legal term, and now “a territory in the Land of Israel”.",
+            ("apa", "ar"): "“an accusation directed against” Israeli policy became “a confirmed fact in” it."}
+
+    cells, need = {}, set()
+    for k, lab, arts in COLS:
+        for l in ORDER:
+            c = None
+            if k in ("o7", "hos", "icj"):
+                src = {"o7": O7, "hos": HOS, "icj": ICJ}[k]
+                if k != "icj" and not ARTS["October 7 attacks"].get(l, {}).get("slots"):
+                    c = {"f": "na", "n": "na", "a": "October 7 attacks", "s": None, "x": "No article in this language is linked to the English article on the October 7 attacks."}
+                elif l in src:
+                    f, n, tgt, note = src[l]
+                    a, s = (arts[0], tgt) if isinstance(tgt, str) else tgt
+                    c = {"f": f, "n": n, "a": a, "s": s, "x": note}
+                elif k == "icj":
+                    a = "Gaza genocide" if ARTS["Gaza genocide"].get(l, {}).get("slots") else "Gaza war"
+                    c = {"f": "none", "n": "none", "a": a, "s": "s1", "x": "None of the four overstatements we found (Arabic, Italian, Russian, French)."}
+            else:
+                for a in arts:
+                    X = ARTS[a].get(l) or {}
+                    hc = X.get("headline_claim")
+                    if hc and X.get("slots"):
+                        c = {"f": hc.get("first") or "na", "n": hc.get("latest") or "na", "a": a, "s": hc.get("evidence_slot"), "x": NOTE.get((k, l))}
+                        break
+                if c is None:
+                    X = ARTS[arts[0]].get(l) or {}
+                    c = {"f": "na", "n": "na", "a": arts[0], "s": None,
+                         "x": "No article in this language." if not X.get("slots") else "Not coded: no sentence held for this claim."}
+            if c["s"] and not ((ARTS[c["a"]].get(l) or {}).get("slots") or {}).get(c["s"]):
+                raise SystemExit(f"langs: matrix cell {k}/{l} points at missing slot {c['a']}/{c['s']}")
+            if c["s"]:
+                need.add((c["a"], l, c["s"]))
+            cells.setdefault(k, {})[l] = c
+
+    MOM = [("Gaza genocide", "ar", "s1", "Arabic: from accusation to definition", "In 2024 the Arabic article said Israel “has been accused of committing crimes of genocide”. Now it opens: “The genocide of Gaza is the systematic, deliberate and ongoing destruction”."),
+           ("Gaza war", "he", "k_genocide", "Hebrew: genocide only as a court case", "Hebrew has no Gaza-genocide article. Its Gaza-war article mentions genocide once, as South Africa’s suit at the ICJ."),
+           ("Gaza war", "es", "s1", "Spanish: “a genocide in Gaza by Israel”", "The first sentence of the Spanish Gaza-war article now says the war “has unleashed a genocide in Gaza by Israel”, and calls 7 October “a retaliatory attack”."),
+           ("Gaza genocide", "es", "s1", "Spanish: the same move in the genocide article", "From “have accused Israel of carrying out a «genocide against the Palestinian people»” to “The Palestinian genocide in Gaza is the systematic and continuing destruction”."),
+           ("Gaza genocide", "pt", "s1", "Portuguese: from “accused” to “is”", "From “has been accused of genocide” to “is the intentional and systematic destruction, ongoing”."),
+           ("Gaza genocide", "nl", "s1", "Dutch moved the other way", "From “Israel is committing genocide”, attributed to organisations and experts, to a genocide “that Israel may or may not have committed”."),
+           ("Zionism", "ar", "s1", "Arabic: Zionism “by colonizing a land outside Europe”", "Colonialism moved from the critics’ sentence into the definition, with “the war of ethnic cleansing of Palestine” and “a Jewish ethnocracy” in the same sentence."),
+           ("Zionism", "he", "s1", "Hebrew: the Balfour wording", "Hebrew kept colonization out and moved the other way: “a Jewish state” became “a national home for the Jewish people”."),
+           ("Zionism", "nl", "k_colonial", "Dutch: colonisation in place of Zionism", "Herzl “gave the impetus to organised Zionism” became “gave the impetus to the organised colonisation of Palestine”."),
+           ("Israeli apartheid", "ar", "s1", "Arabic: “an accusation” became “a confirmed fact”", "Apartheid is no longer “an accusation directed against Israeli policy” but “a confirmed fact in Israeli policy”."),
+           ("Israeli apartheid", "he", "k_dispute", "Hebrew: the claims are “in dispute”", "Hebrew keeps apartheid attributed: “The degree of correctness of these claims is in dispute among scholars, jurists and statesmen.”"),
+           ("Israeli apartheid", "pt", "s1", "Portuguese: apartheid “and in Israel”", "Portuguese states apartheid as fact and extends it from “the Palestinian territories occupied by Israel” to Israel itself."),
+           ("October 7 attacks", "he", "s1", "Hebrew: from “surprise attack” to “massacre”", "Hebrew retitled the article: “The surprise attack on Israel” is now “The Seventh of October massacre”."),
+           ("October 7 attacks", "de", "s1", "German: “since the Holocaust”", "German says in its own voice that it was “the largest massacre and crime against humanity against Jews since the Holocaust”."),
+           ("October 7 attacks", "es", "k_genocide", "Spanish: the attack as the start of a genocide", "From “marked the start of the 2023 war between Israel and Hamas” to “marked the start of the Gaza war and of the Palestinian genocide in Gaza”."),
+           ("October 7 attacks", "ar", "s1", "Arabic: aimed “against the Israeli occupation”", "The operation of “the Palestinian resistance factions” is now aimed “against the Israeli occupation”."),
+           ("Hamas", "he", "s1", "Hebrew: “terror organisation”, in its own voice", "Terror stays first: Hamas “is a Palestinian Sunni-Islamist terror organisation that also operates as a political movement”."),
+           ("Hamas", "ar", "s1", "Arabic: “resistance”", "Arabic calls Hamas “a Palestinian, resistance, popular, Islamic, national movement”. The text we hold has no terror word."),
+           ("Hamas", "ru", "s1", "Russian: “terrorist” enters the definition", "The only edition where “terrorist” entered the definition in its own voice: “a Palestinian Islamist Sunni terrorist political and military resistance organisation”."),
+           ("Hamas", "de", "s1", "German: from its own voice to “41 states”", "From “a Sunni-Islamist Palestinian terrorist organisation” to an organisation “classified internationally by 41 states as a terrorist association”."),
+           ("Gaza genocide", "ar", "k_icj", "Arabic: a finding the court did not make", "The Arabic article says the ICJ “found that Israel was acting under a reasonable [or: plausible] intent to commit acts of genocide”. The order found only that some of South Africa’s claimed rights were plausible."),
+           ("Israeli apartheid", "ru", "k_icj", "Russian: “found Israel guilty”", "Verdict wording for a non-binding advisory opinion."),
+           ("West Bank", "fr", "s1", "French: “illegally occupied by Israel since 1967”", "French now puts the illegal occupation in the first sentence, as fact."),
+           ("West Bank", "he", "s1", "Hebrew: “a territory in the Land of Israel”", "Hebrew keeps “belligerent occupation” and now calls the area “a territory in the Land of Israel”. English now places the same land in Palestine."),
+           ("Nakba", "pl", "s1", "Polish: “carried out by Israelis”", "Polish states 1948 as ethnic cleansing and names “Israelis” as the perpetrators: “the ethnic cleansings carried out by Israelis on Palestinian Arabs”."),
+           ("Nakba", "he", "k_ec", "Hebrew: one school’s view", "Hebrew gives ethnic cleansing as the view of “Palestinian historiography and scholars of the critical approach”, and labels the Israeli view “the Zionist-establishment narrative”.")]
+
+    # every “…” inside our notes and captions must be our exact translation of that article × language
+    def tr_pool(a, l):
+        X = ARTS.get(a, {}).get(l) or {}
+        return " ".join(v["tr"] for S in (X.get("slots") or {}).values() for v in (S.get("first"), S.get("latest")) if v)
+    def check_quotes(text, pools, where):
+        for q in re.findall(r"“([^”]+)”", text or ""):
+            for piece in q.rstrip(".").split(" … "):
+                if not any(piece in p for p in pools):
+                    raise SystemExit(f"langs: quote not in our translations ({where}): {piece!r}")
+    for k, row in cells.items():
+        for l, c in row.items():
+            pools = [tr_pool(a, l) for a in ARTS]
+            check_quotes(c.get("x"), pools, f"{k}/{l}")
+    moms = []
+    for a, l, s, h, cap in MOM:
+        if not ((ARTS[a].get(l) or {}).get("slots") or {}).get(s):
+            raise SystemExit(f"langs: moment slot missing {a}/{l}/{s}")
+        check_quotes(h + " " + cap, [tr_pool(a, l)], f"moment {a}/{l}/{s}")
+        need.add((a, l, s)); moms.append([a, l, s, h, cap])
+
+    # key emphasis words: one fixed gloss per word, so a non-reader sees the charge in any sentence (our glosses)
+    KEY = {"he": [("רצח עם", "genocide (lit. people-murder)", "gen"), ("טיהור אתני", "ethnic cleansing", "ec"), ("אפרטהייד", "apartheid", "apa"),
+                  ("תפיסה לוחמתית", "belligerent occupation", "occ"), ("כיבוש", "occupation", "occ"), ("ארגון טרור", "terror organisation", "ter"),
+                  ("ארגוני הטרור", "the terror organisations", "ter"), ("ארגוני טרור", "terror organisations", "ter"), ("טבח", "massacre", "ter"), ("חטיפת", "abduction", "hos")],
+           "ar": [("الإبادة الجماعية", "the genocide", "gen"), ("إبادة جماعية", "genocide", "gen"), ("التطهير العرقي", "ethnic cleansing", "ec"),
+                  ("الفصل العنصري", "apartheid (lit. racial separation)", "apa"), ("استعمار", "colonization", "col"), ("الاحتلال", "the occupation", "occ"),
+                  ("احتلال", "occupation", "occ"), ("المقاومة", "the resistance", "res"), ("مقاومة", "resistance", "res"), ("إرهابية", "terrorist", "ter"),
+                  ("مجزرة", "massacre", "ter"), ("أسروا", "took captive", "hos"), ("أسَرُوا", "took captive", "hos")],
+           "ru": [("геноцид", "genocide", "gen"), ("апартеид", "apartheid", "apa"), ("террористическая", "terrorist", "ter"), ("терроризма", "terrorism", "ter"),
+                  ("заложник", "hostage(s)", "hos"), ("сопротивления", "resistance", "res"), ("оккупац", "occupation", "occ")]}
+    def cat(g):
+        g = g.lower()
+        for c, p in (("gen", r"genocid|exterminat"), ("ec", r"ethnic cleansing"), ("col", r"coloni"), ("apa", r"apartheid|racial separation|segregation"),
+                     ("occ", r"occup"), ("hos", r"hostage|abduct|captiv|took captive|captur|kidnap"), ("ter", r"terror|massacre|slaughter"),
+                     ("res", r"resist")):
+            if re.search(p, g):
+                return c
+        return "oth"
+    def find_tr(tr, gloss):
+        cands = [gloss, re.sub(r"\s*\(.*?\)", "", gloss), gloss.strip("'\"“”")]
+        cands += [re.sub(r"^(the|a|an) ", "", c, flags=re.I) for c in list(cands)]
+        for c in cands:
+            c = c.strip().strip("'\"“”").strip()
+            if len(c) < 3:
+                continue
+            i = tr.lower().find(c.lower())
+            if i >= 0:
+                return [i, i + len(c)]
+        return None
+    def toks(s, spans, flag):
+        cuts = sorted({0, len(s)} | {p for sp in spans for p in (sp["start"], sp["end"])})
+        out = []
+        for x, y in zip(cuts, cuts[1:]):
+            ch = any(sp["start"] <= x and y <= sp["end"] for sp in spans)
+            for m in re.finditer(r"\S+\s*|\s+", s[x:y]):
+                out.append([flag if ch else 0, m.group()])
+        return out
+    def merge(a, b, rem, add):
+        A, B = toks(a, rem, 1), toks(b, add, 2)
+        ka = [i for i, t in enumerate(A) if t[0] == 0]; kb = [j for j, t in enumerate(B) if t[0] == 0]
+        nz = lambda t: re.sub(r"[\W_]+", "", t).lower() or t.strip()
+        sm = difflib.SequenceMatcher(None, [nz(A[i][1]) for i in ka], [nz(B[j][1]) for j in kb], autojunk=False)
+        pairs = [(ka[m.a + q], kb[m.b + q]) for m in sm.get_matching_blocks() for q in range(m.size)]
+        out, ia, ib, odd = [], 0, 0, 0
+        for pa, pb in pairs + [(len(A), len(B))]:
+            # unmarked text that only one version has (spacing, punctuation, a reordered word) swaps without a mark:
+            # kinds 4 / 5, so the page never marks a word the checked diff did not mark
+            for t in A[ia:pa]:
+                odd += t[0] == 0 and bool(nz(t[1]).strip()) and bool(re.search(r"\w", t[1])); out.append([1 if t[0] else 4, t[1]])
+            for t in B[ib:pb]:
+                odd += t[0] == 0 and bool(re.search(r"\w", t[1])); out.append([2 if t[0] else 5, t[1]])
+            if pa < len(A):
+                out.append([0, A[pa][1]] if A[pa][1] == B[pb][1] else [3, A[pa][1], B[pb][1]])
+            ia, ib = pa + 1, pb + 1
+        assert "".join(t[1] for t in out if t[0] in (0, 1, 3, 4)) == a
+        assert "".join((t[2] if t[0] == 3 else t[1]) for t in out if t[0] in (0, 2, 3, 5)) == b
+        return out, odd
+    for X in (v for AA in ARTS.values() for v in AA.values()):
+        for S in (X.get("slots") or {}).values():
+            for v in (S.get("first"), S.get("latest")):
+                if v:
+                    assert all(ord(ch) < 0x10000 for ch in v["orig"] + v["tr"]), "non-BMP character: JS offsets would shift"
+
+    out, odd_total = {}, 0
+    for a, AA in ARTS.items():
+        for l, X in AA.items():
+            if not X.get("slots"):
+                continue
+            hc = X.get("headline_claim") or {}
+            keep = {"s1", hc.get("evidence_slot")} | {s for (aa, ll, s) in need if aa == a and ll == l}
+            kc = (X.get("key_changes") or [])[:3]
+            sl = {}
+            for s, S in X["slots"].items():
+                if s not in keep:
+                    continue
+                f, n, d = S.get("first"), S.get("latest"), S.get("diff") or {}
+                rec = {}
+                for side in ("o", "t"):
+                    key = "orig" if side == "o" else "tr"
+                    if f and n:
+                        dd = d.get(key) or {}
+                        m, odd = merge(f[key], n[key], dd.get("removed", []), dd.get("added", []))
+                        odd_total += odd
+                    else:
+                        m = [[0, t[1]] for t in toks((f or n)[key], [], 0)]
+                    rec[side] = m
+                links = {"f": [], "n": []}
+                lid = 0
+                for w, v in (("f", f), ("n", n)):
+                    if not v:
+                        continue
+                    for t in v.get("terms") or []:
+                        i = v["orig"].find(t["orig"])
+                        if i < 0:
+                            continue
+                        lid += 1
+                        links[w].append([i, i + len(t["orig"]), find_tr(v["tr"], t["gloss"]), t["gloss"], cat(t["gloss"] + " " + (t.get("connotation") or "")[:0]), "t%d" % lid, t.get("connotation") or ""])
+                    for j, c in enumerate(kc):
+                        o_, g_ = (c["from_orig"], c["from_gloss"]) if w == "f" else (c["to_orig"], c["to_gloss"])
+                        i = v["orig"].find(o_) if o_ and "(" not in o_[:1] else -1
+                        if i < 0 or any(x[0] <= i < x[1] for x in links[w]):
+                            continue
+                        lid += 1
+                        links[w].append([i, i + len(o_), find_tr(v["tr"], g_), g_, "kc", "k%d" % lid, c.get("note") or ""])
+                    for o_, g_, c_ in KEY.get(l, []):
+                        for mm in re.finditer(re.escape(o_), v["orig"], flags=re.I):
+                            i, j = mm.start(), mm.end()
+                            if any(x[0] < j and i < x[1] for x in links[w]):
+                                continue
+                            lid += 1
+                            links[w].append([i, j, find_tr(v["tr"], g_), g_, c_, "d%d" % lid, ""])
+                meta = {w: {"d": v["date"], "r": v["revid"], "v": v["voice"], "tr": 1 if v.get("truncated") else 0, "nt": v.get("note")}
+                        for w, v in (("f", f), ("n", n)) if v}
+                sl[s] = {"m": meta, "o": rec["o"], "t": rec["t"], "L": links, "u": 1 if d.get("unchanged") else 0}
+            out.setdefault(a, {})[l] = {"ti": X.get("title"), "d": [(X.get("first") or {}).get("date"), (X.get("latest") or {}).get("date")], "hc": [hc.get("claim"), hc.get("first"), hc.get("latest"), hc.get("evidence_slot")] if hc else None,
+                                        "kc": [[c.get("from_orig"), c.get("from_gloss"), c.get("to_orig"), c.get("to_gloss"), c.get("note")] for c in kc], "sl": sl}
+    if odd_total:
+        print(f"langs: {odd_total} unmarked words differ in position between versions; they swap without a mark")
+    return {"order": ORDER, "voice": L["meta"]["voice_codes"], "missing": L["meta"]["missing_articles"],
+            "cols": [[k, lab] for k, lab, _ in COLS], "cells": cells, "moments": moms, "arts": out}
+
+res["langs"] = langs_data()
+
 tk_p = os.path.join(HERE, "notes", "takeaways.json")
 if os.path.exists(tk_p):
     res["takeaways"] = json.load(open(tk_p))

@@ -1,0 +1,86 @@
+name: wikitrends-crosswiki
+# Cross-wiki collector (wikitrends/crosswiki.py) + analysis (wikitrends/analyze_crosswiki.py), in ONE job.
+# Scope: 10 key topics (11 English titles) x en + he ar es fr de ru it pt nl pl, 2021-01-01 -> now: every revision's metadata,
+# section-0 term state per revision (full read up to 4,000 revisions per page, grid + refinement above), sources at insertions,
+# talk-page metadata, protection + move logs, monthly pageviews, English RfC / RM archives, Wikidata label / description history,
+# one globaluserinfo lookup per term-event account.
+# Estimate (python crosswiki.py estimate; ratchet revision counts x per-language ratios that err high): ~5.3k requests (~6.1k
+# with the x1.15 retry factor; target < 20k; even at twice the assumed edit volume ~10k): lead 2.0k, metadata 0.5k, talk 0.5k,
+# globaluserinfo ~1.2k, logs / views / seed / creation ~0.65k, sources 0.2k, English archives 0.2k, Wikidata 0.1k. At WT_RPS 2
+# with 3 worker threads (~1.4 effective req/s) that is ~1.2 h of collection (hard stop 200 min; CW_MAX_REQUESTS=20000 stops refinement near the cap), + ~5 min analysis
+# (1,000 null draws, 200 calibration worlds). Budget 4 h.
+# Salt: one random value made in this job (openssl rand), masked, kept in env only: never a file, output or artifact. The same
+# salt hashes usernames on every wiki, so a global account is one ID across editions inside this run only.
+# Privacy: the raw data (data/crosswiki/*, data/crosswiki.json.gz: revids + per-account hashes of article AND talk-page editors)
+# stays on the runner and is deleted before upload. Only patterns/crosswiki (aggregate cards, chart data, network_crosswiki.json
+# with A1.. labels) is published, and only after the privacy gate (analyze_coord.privacy_scan) passes. A failed run resumes
+# only inside the same job (checkpoints on the runner); a re-run starts over with a new salt.
+on:
+  push:
+    branches: [wikitrends-crosswiki]
+permissions:
+  contents: write
+concurrency: wikitrends-crosswiki
+defaults:
+  run:
+    shell: bash
+env:
+  WT_RPS: '2'
+  CW_THREADS: '3'
+  CW_MAX_REQUESTS: '20000'
+  WT_JOB: crosswiki
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  crosswiki:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy networkx
+      - name: Offline self-test (mocked wikis, lexicon fixes, linked accounts, planted campaign + bloc, privacy gate)
+        working-directory: wikitrends
+        run: WT_JOB=crosswiki-test python test_crosswiki.py 2>&1 | grep -v '^\[hb' | tail -120; test ${PIPESTATUS[0]} -eq 0
+      - name: One run-wide salt (masked, env only)
+        run: |
+          SALT=$(openssl rand -hex 24)
+          echo "::add-mask::$SALT"
+          echo "WT_SALT=$SALT" >> "$GITHUB_ENV"
+      - name: Request estimate (offline)
+        working-directory: wikitrends
+        run: python crosswiki.py estimate | tail -30
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh crosswiki 180 > /tmp/status.log 2>&1 &
+      - name: Collect (checkpointed on the runner; exits non-zero if >5% of pages or any English page fail; one retry resumes)
+        working-directory: wikitrends
+        run: |
+          set +e
+          timeout 200m python crosswiki.py collect 2>&1 | tee logs/crosswiki.log
+          rc=${PIPESTATUS[0]}
+          if [ "$rc" != "0" ] && [ "$rc" != "124" ]; then
+            echo "::warning::collect failed (rc=$rc); resuming once from the runner checkpoints"
+            timeout 30m python crosswiki.py collect 2>&1 | tee -a logs/crosswiki.log
+            rc=${PIPESTATUS[0]}
+          fi
+          if [ "$rc" = "124" ]; then echo "::error::time budget hit"; fi
+          exit $rc
+      - name: Merge (fails if <95% of resolved pages)
+        working-directory: wikitrends
+        run: python crosswiki.py merge 2>&1 | tail -60 | tee logs/crosswiki_merge.log; test ${PIPESTATUS[0]} -eq 0
+      - name: Analyze (diffusion, voice, trend, accounts, synchrony, blocs, windows, narrative, sources, RfC, logs, views, Wikidata)
+        working-directory: wikitrends
+        run: python analyze_crosswiki.py 2>&1 | tee logs/crosswiki_analyze.log; test ${PIPESTATUS[0]} -eq 0
+      - name: Privacy gate on everything that will be published
+        working-directory: wikitrends
+        run: python analyze_crosswiki.py --scan patterns/crosswiki
+      - name: Discard raw data before publishing
+        if: always()
+        working-directory: wikitrends
+        run: rm -rf data/crosswiki data/crosswiki.json.gz data/crosswiki_summary.json
+      - name: Upload aggregate outputs as artifact
+        uses: actions/upload-artifact@v4
+        with: {name: crosswiki-cards, path: wikitrends/patterns/crosswiki/, retention-days: 14}
+      - name: Push aggregate outputs to the data-only branch (wikitrends-data/crosswiki/<run_id>)
+        working-directory: wikitrends
+        run: ../.github/scripts/push_data.sh crosswiki patterns/crosswiki

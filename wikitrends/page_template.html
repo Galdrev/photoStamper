@@ -802,6 +802,148 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .zi-facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .zi-facts div:first-child{grid-column:1/-1}
 }
+/* ---------- #crosslang: matrix + "in their own words" reader (reuses .fig, .seg, .pick, .zi-ctl, .zi-chips, .legend/.key, .means, .news-q) ---------- */
+#crosslang{--c-gen:var(--s4);--c-col:var(--s5);--c-ec:var(--inc);--c-apa:var(--s6);--c-occ:var(--s3);--c-ter:var(--ink);--c-hos:var(--s1);--c-res:var(--muted);--c-oth:var(--muted);--c-kc:var(--ink-2)}
+#crosslang [lang=he],#crosslang [lang=ar]{font-family:"Newsreader","Noto Serif Hebrew","Frank Ruhl Libre","Noto Naskh Arabic","Amiri","Times New Roman",serif}
+.xm-find{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.xm-q{margin:0;background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--ink);border-radius:3px;padding:12px 14px;display:grid;gap:8px;align-content:start;min-width:0}
+.xm-q .w{font:500 10.5px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.xm-q .xr-s{font-size:17px}
+.xm-q .xr-s[lang=ar]{font-size:18px}
+.xm-q .tr{font:14.5px/1.5 var(--body);color:var(--ink-2);margin:0}
+.xm-q .tr b{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.xm-q button{justify-self:start;font:500 12px var(--mono);background:none;border:0;padding:4px 0;color:var(--add-ink);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+/* matrix */
+.xm-scroll{overflow-x:auto;max-width:100%;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.xm{border-collapse:separate;border-spacing:0;width:100%;min-width:720px;font:12.5px/1.3 var(--body)}
+.xm th,.xm td{padding:0;border-bottom:1px solid var(--faint)}
+.xm thead th{font:600 10.5px/1.25 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:center;vertical-align:bottom;padding:0 4px 8px;border-bottom:1px solid var(--ink)}
+.xm thead th small{display:block;font-weight:400;text-transform:none;letter-spacing:0;margin-top:2px}
+.xm .xm-l{position:sticky;left:0;z-index:2;background:var(--sheet);text-align:left;padding:0 10px 0 0;width:124px}
+.xm thead .xm-l{z-index:3;vertical-align:bottom;padding-bottom:8px}
+.xm tbody th{font-weight:500;color:var(--ink);white-space:nowrap}
+.xm tbody th bdi{font:500 15px/1.2 var(--display);display:block}
+.xm tbody th span{font:500 10.5px var(--mono);color:var(--muted);letter-spacing:.04em}
+.xm tbody tr.sep th,.xm tbody tr.sep td{border-top:1px solid var(--rule)}
+.xm-c{width:100%;min-height:46px;display:flex;align-items:center;justify-content:center;gap:4px;background:none;border:0;border-radius:3px;cursor:pointer;padding:6px 2px;color:var(--ink)}
+.xm-c:hover{background:var(--faint)}
+.xm-c[aria-current="true"]{box-shadow:inset 0 0 0 2px var(--ink)}
+.xm-c .ar{font:11px var(--mono);color:var(--muted)}
+.tl{display:inline-grid;place-items:center;flex:none;width:22px;height:22px;border-radius:3px;font:700 11px/1 var(--mono);transition:background-color .35s ease,border-color .35s ease,opacity .35s ease,width .35s ease,height .35s ease}
+.tl.big{width:30px;height:30px;font-size:13px}
+.tl i{font-style:normal}
+.tl.t-F{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
+.tl.t-A{background:repeating-linear-gradient(45deg,var(--faint) 0 3px,var(--sheet) 3px 6px);border:1.5px solid var(--ink-2);color:var(--ink)}
+.tl.t-A.dsp{border-style:dashed}
+.tl.t-N{background:transparent;border:1.5px dotted var(--muted);color:var(--muted)}
+.tl.t-X{background:repeating-linear-gradient(135deg,var(--faint) 0 3px,transparent 3px 6px);border:1px solid var(--rule);color:var(--muted);font-weight:400;font-size:10px}
+.xm.m-now .tl.th,.xm.m-now .ar{display:none}
+.xm.m-then .tl.nw,.xm.m-then .ar{display:none}
+.xm.m-then .tl.th{width:30px;height:30px;font-size:13px}
+.xm-c.chg .tl.nw{box-shadow:0 0 0 2px var(--sheet),0 0 0 3.5px var(--ink-2)}
+.xm.m-then .xm-c.chg .tl.nw{box-shadow:none}
+.xm tfoot td,.xm tfoot th{font:500 11px/1.3 var(--mono);color:var(--muted);text-align:center;padding:8px 2px 0;border:0}
+.xm tfoot th{text-align:left}
+.xm tfoot b{color:var(--ink);font-weight:600}
+.xm-opts{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.xm-opts .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.xm-legend .key .tl{width:16px;height:16px;font-size:9px}
+/* reader */
+.xr{scroll-margin-top:56px}
+#xrCtl{position:relative;bottom:auto}
+.xm{table-layout:fixed}
+.xm thead th:not(.xm-l){border-top:3px solid var(--cc,transparent)}
+.xm tfoot td{line-height:1.45}
+.xr-mom{display:grid;gap:4px}
+.xr-mom h3{font:500 clamp(20px,2.4vw,26px)/1.2 var(--display)}
+.xr-mom p{font:15.5px/1.5 var(--body);color:var(--ink-2);max-width:78ch}
+.xr-row{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;min-width:0}
+.xr-row .lab{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex:none}
+.xr-langs{flex-wrap:nowrap;max-width:100%}
+.xr-langs button{display:inline-flex;align-items:center;gap:6px;min-height:38px;white-space:nowrap}
+.xr-langs button bdi{font:500 14px/1 var(--display)}
+.xr-langs button .cd{font:500 10.5px var(--mono);opacity:.75}
+.xr-langs button:disabled{cursor:not-allowed;color:var(--muted);background:repeating-linear-gradient(135deg,var(--faint) 0 3px,transparent 3px 6px)}
+.xr-langs .dt{width:8px;height:8px;border-radius:50%;flex:none;border:1.5px solid currentColor}
+.xr-langs .dt.F{background:currentColor}
+.xr-langs .dt.A{background:none;border-style:solid}
+.xr-langs .dt.N{border-style:dotted;opacity:.7}
+.xr-langs .dt.X{display:none}
+.xr-arts .pick{font-size:12.5px;padding:5px 11px}
+.xr-hd{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font:13px/1.4 var(--body);color:var(--ink-2)}
+.xr-hd .ti{font:500 16px/1.3 var(--display);color:var(--ink)}
+.vb{display:inline-block;font:500 10.5px/1.5 var(--mono);border-radius:2px;padding:1px 6px;white-space:nowrap}
+.vb-fact{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
+.vb-attributed,.vb-captive{background:var(--sheet);border:1px solid var(--ink-2);color:var(--ink-2)}
+.vb-disputed{background:var(--sheet);border:1px dashed var(--ink-2);color:var(--ink-2)}
+.vb-denial,.vb-self{border:1px solid var(--muted);color:var(--muted)}
+.vb-legal{border:1px solid var(--muted);color:var(--muted)}
+.vb-label{border:1px solid var(--muted);color:var(--muted);font-style:italic}
+.vb-none,.vb-absent{background:repeating-linear-gradient(135deg,var(--faint) 0 3px,transparent 3px 6px);border:1px solid var(--rule);color:var(--muted)}
+.vb-outside,.vb-not_held{border:1px dotted var(--muted);color:var(--muted)}
+.xr-time{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.xr-time .seg button{min-height:36px}
+.xr-pair{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);border-top:1px solid var(--ink)}
+.xr-col{padding:14px 22px 16px 0;display:grid;gap:8px;align-content:start;min-width:0}
+.xr-col+.xr-col{padding:14px 0 16px 22px;border-left:1px solid var(--rule)}
+.xr-col .when{font:600 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.xr-col .when a{font-weight:400;text-transform:none;letter-spacing:0}
+.xr-col .when bdi{text-transform:none;letter-spacing:0;font:500 13px var(--display);color:var(--ink-2)}
+.xr-s{margin:0;font:400 19px/1.75 var(--display);color:var(--ink);unicode-bidi:isolate;text-align:start;overflow-wrap:anywhere;min-height:3em;transition:opacity .18s linear}
+.xr-s[lang=ar]{font-size:20.5px;line-height:1.95}
+.xr-s[lang=en]{font:400 16.5px/1.7 var(--body);color:var(--ink-2)}
+.xr-col.xr-t .xr-s{font:400 16.5px/1.7 var(--body);color:var(--ink-2)}
+.xr-s .w{font-size:1em;transition:font-size .42s ease var(--d2,0s),opacity .42s ease var(--d2,0s)}
+.xr-s .x{border-radius:2px;padding:0 .06em;transition:background-color .3s ease var(--d,0s),color .3s ease var(--d,0s),text-decoration-color .25s ease var(--d,0s),box-shadow .2s ease;text-decoration:line-through;text-decoration-color:transparent;text-decoration-thickness:1.5px;text-decoration-skip-ink:none}
+.xr-s[lang=ar] .x{text-decoration-thickness:1px}
+.xr-s.st-n :is(.k1,.k4),.xr-s.st-f :is(.k2,.k5),.xr-s.st-b .k4{font-size:0;opacity:0}
+.xr-s.st-n .k3 .f,.xr-s.st-b .k3 .f,.xr-s.st-f .k3 .n{display:none}
+.xr-s.st-f .k1>.x{background:var(--del-bg);color:var(--del-ink)}
+.xr-s:is(.st-n,.st-b) .k1>.x{background:var(--del-bg);color:var(--del-ink);text-decoration-color:currentColor}
+.xr-s:is(.st-n,.st-b) .k2>.x{background:var(--add-bg);color:var(--add-ink)}
+.xr-s.plain .k2>.x{background:none;color:inherit}
+.xr-s .x.cg{box-shadow:inset 0 -3px 0 var(--cc)}
+.xr-s .x.hl,.xr-s .x.hl2{box-shadow:inset 0 -3px 0 var(--cc,var(--ink)),0 0 0 2px var(--ink);background:var(--sheet)}
+.xr-s .x.hl2{box-shadow:0 0 0 1.5px var(--ink-2)}
+.xr-s .x[data-g]{cursor:pointer}
+.xr-s .gc::after{display:inline-block;direction:ltr;unicode-bidi:isolate;margin-inline:.28em .1em;font:500 max(10px,.56em)/1.45 var(--mono);letter-spacing:0;padding:0 .5em;border-radius:2px;border:1px solid var(--cc);border-inline-start-width:4px;color:var(--ink);background:var(--sheet);vertical-align:.18em;white-space:nowrap;text-decoration:none}
+.xr-s.st-f .gc[data-cf]::after{content:attr(data-cf)}
+.xr-s:is(.st-n,.st-b) .gc[data-cn]::after{content:attr(data-cn)}
+.xr-s .k1 .gc::after,.xr-s .k2 .gc::after{font-size:max(10px,.56em)}
+.xr-s.st-n .k1 .gc::after,.xr-s.st-f .k2 .gc::after{font-size:0;padding:0;border:0;margin:0}
+.c-gen{--cc:var(--c-gen)}.c-col{--cc:var(--c-col)}.c-ec{--cc:var(--c-ec)}.c-apa{--cc:var(--c-apa)}.c-occ{--cc:var(--c-occ)}.c-ter{--cc:var(--c-ter)}.c-hos{--cc:var(--c-hos)}.c-res{--cc:var(--c-res)}.c-oth{--cc:var(--c-oth)}.c-kc{--cc:transparent}
+.xr-chips li{display:grid;gap:3px;cursor:default}
+.xr-chips li.hl{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.xr-chips .o{font:400 16px/1.35 var(--display);color:var(--ink)}
+.xr-chips .o bdi{box-shadow:inset 0 -3px 0 var(--cc,transparent);padding:0 .1em}
+.xr-chips .g{font:500 12px/1.35 var(--mono);color:var(--ink)}
+.xr-chips .c{font:12.5px/1.4 var(--body);color:var(--muted);max-width:52ch}
+.xr-chips li.kc .o del,.xr-chips li.kc .o ins{font:400 15.5px/1.35 var(--display)}
+.xr-note{font:13px/1.5 var(--body);color:var(--muted);max-width:90ch}
+.xr-note b{color:var(--ink-2)}
+.xr-note .flag{color:var(--del-ink);font-weight:600}
+.xr-sub{font:500 22px/1.2 var(--display);margin-top:24px}
+#crosslang.folded>.xm-keep{display:grid!important}
+@media (max-width:900px){.xm-find{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  .xm{min-width:610px}
+  .xm .xm-l{width:88px;padding-right:6px;box-shadow:6px 0 6px -6px rgb(0 0 0/.25)}
+  .xm tbody th bdi{font-size:14px}
+  .xm thead th{font-size:9.5px;padding:0 2px 6px}
+  .xm thead th small{display:none}
+  .xr-pair{grid-template-columns:minmax(0,1fr)}
+  .xr-col{padding:12px 0}
+  .xr-col+.xr-col{padding:12px 0 14px;border-left:0;border-top:1px dashed var(--rule)}
+  .xr-s{font-size:18px}
+  .xr-s[lang=ar]{font-size:19.5px}
+  .xr-langs{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;margin-inline:-16px;padding:0 16px 4px;max-width:calc(100% + 32px);border:0;border-radius:0;background:none;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .xr-langs button{scroll-snap-align:start;min-height:42px;border:1px solid var(--rule)!important;background:var(--sheet)}
+  .xr-langs button[aria-pressed="true"]{background:var(--ink)}
+  .xr-arts{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding:0 16px 4px;max-width:calc(100% + 32px)}
+  .xr-arts .pick{flex:none}
+  .xr-row>.lab{flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){.xr-s .w,.xr-s .x,.tl{transition:none!important}}
 /*LABCSS*/
 /* ---------- design council round 2: shared grammar for #charge, #oct7, #organised (reuses .zi-*, .seg, .legend, .fig) ---------- */
 .cards-note{max-width:80ch}
@@ -1273,9 +1415,41 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section class="sec" id="crosslang">
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Other languages <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2>Did other languages follow?</h2>
-    <p class="deck">Mostly not: in opening paragraphs English moved by +0.24 critical terms per 1,000 words against its comparison articles and Portuguese by +0.27, while the other nine languages averaged +0.06. What crossed languages was the label for the current war, “genocide” in the Gaza war opening paragraph; the re-telling of 1897 to 1948 mostly did not cross, and for Zionism itself German, French, Spanish, Russian, Hebrew and Polish stayed at zero. Each stripe below is one language, its first copy on the left and its latest on the right.</p>
+    <h2>Outside English, “genocide” is now stated as fact in Spanish, Portuguese and Arabic. Hebrew mentions it only as South Africa’s court case.</h2>
+    <p class="deck">The other Wikipedias do not tell one story. In their “Gaza genocide” articles, Spanish, Portuguese and Arabic now define the genocide in their own voice, as English does. French calls it a designation “defended by the majority of genocide and international-law experts”, Italian “a definition”; Dutch and Polish moved the other way. Hebrew has no Gaza-genocide article, and its Gaza-war article mentions genocide once, as South Africa’s suit at the ICJ. “Colonization” entered the Zionism definition in English, Arabic, Portuguese, Italian and Dutch; Hebrew, German, French, Spanish, Polish and Russian kept it out. Arabic turned apartheid from “an accusation” into “a confirmed fact”.</p>
+    <p class="deck">The grid shows each claim in each language, then and now. Tap any square to read the sentence behind it, in the original script and in our translation, and watch the words change.</p>
   </header>
+  <div class="xm-find xm-keep" id="xmFind" aria-label="The three sentences behind the headline"></div>
+  <figure class="fig xm-keep" id="xmFig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">How each Wikipedia voices eight claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Each square opens its sentence.</span></div>
+    <p class="zi-how"><b>How to read this:</b> in each cell the small square is the first copy (January 2021, or the article’s first copy for the war articles) and the large square is now (October 2026). A dark square means Wikipedia states the claim in its own voice. A striped square means it is attributed to someone, disputed, or reported as a court case. An empty square means the claim is not in the text we hold.</p>
+    <div class="xm-opts"><span class="lab" id="xmModeL">Show</span><div class="seg" id="xmMode" role="group" aria-labelledby="xmModeL"><button type="button" data-v="both" aria-pressed="true">Then → now</button><button type="button" data-v="now" aria-pressed="false">Now only</button><button type="button" data-v="then" aria-pressed="false">Then only</button></div><span class="cap">A ring marks a cell that changed.</span></div>
+    <div class="xm-scroll" id="xmScroll"></div>
+    <div class="legend xm-legend" id="xmKey"></div>
+    <p class="cap" id="xmNote"></p>
+  </figure>
+  <figure class="fig xr xm-keep" id="xrFig" style="margin:0" aria-labelledby="xrMomT">
+    <div class="fig-h"><span class="fig-t">In their own words: the sentence, then and now</span><span class="cap">Tap or hover a marked word to light up its counterpart in the other column.</span></div>
+    <div class="zi-ctl" id="xrCtl" role="group" aria-label="Step through the key cross-language moments">
+      <div class="bt"><button type="button" id="xrPrev" aria-label="Previous moment"><span aria-hidden="true">‹</span> Prev</button><button type="button" id="xrPlay" class="play" aria-label="Replay the change"><span class="ic" aria-hidden="true">▶</span> <span class="tx">Replay</span></button><button type="button" id="xrNext" aria-label="Next moment">Next <span aria-hidden="true">›</span></button></div>
+      <p class="zi-ctr" id="xrCtr"></p>
+      <div class="zi-trk" id="xrTrk" aria-hidden="true"></div>
+    </div>
+    <div class="xr-mom"><h3 id="xrMomT"></h3><p id="xrMomC"></p></div>
+    <div class="xr-row"><span class="lab" id="xrArtL">Article</span><div class="picks xr-arts" id="xrArts" role="group" aria-labelledby="xrArtL"></div></div>
+    <div class="xr-row"><span class="lab" id="xrLangL">Language</span><div class="seg xr-langs" id="xrLang" role="group" aria-labelledby="xrLangL"></div></div>
+    <div class="xr-row" id="xrSlotRow"><span class="lab" id="xrSlotL">Sentence</span><div class="seg" id="xrSlot" role="group" aria-labelledby="xrSlotL"></div></div>
+    <div class="xr-hd" id="xrHd"></div>
+    <div class="xr-time"><div class="seg" id="xrTime" role="group" aria-label="Which version"></div><span class="cap" id="xrTimeC"></span></div>
+    <div class="xr-pair" id="xrPair" aria-live="polite"></div>
+    <ul class="zi-chips xr-chips" id="xrChips" aria-label="Key words and our glosses"></ul>
+    <p class="xr-note" id="xrNote"></p>
+    <p class="zi-sr" id="xrLive" aria-live="polite" aria-atomic="true"></p>
+  </figure>
+  <p class="means xm-keep" id="xrMeans"><b>Bottom line:</b> English is not alone, and it is not followed everywhere. On genocide, Spanish, Portuguese and Arabic moved from “accused” to a definition in their own voice, as English did; Dutch and Polish moved the other way; Hebrew reports only South Africa’s court case. On Zionism, “colonization” crossed into five editions and stayed out of six, Hebrew among them. Every square above opens the exact sentence it rests on.</p>
+  <p class="cap xm-keep col" style="max-width:90ch"><b>How to read the sentences:</b> they are quoted exactly from each Wikipedia’s opening section, at the first and the latest quarterly copy. We hold the first 1,200 characters; words beyond that are counted but not quoted. Translations are ours, kept close to literal; square brackets mark our additions. Amber, struck through: words removed. Blue: words added, marked in the original and in our translation. The coloured underline and the small English label mark a key word and our gloss of it.</p>
+  <h3 class="xr-sub" id="xlSubH">Did other languages follow? The vocabulary counts</h3>
+  <p class="deck">Mostly not: in opening paragraphs English moved by +0.24 critical terms per 1,000 words against its comparison articles and Portuguese by +0.27, while the other nine languages averaged +0.06. What crossed languages was the label for the current war, “genocide” in the Gaza war opening paragraph; the re-telling of 1897 to 1948 mostly did not cross, and for Zionism itself German, French, Spanish, Russian, Hebrew and Polish stayed at zero. Each stripe below is one language, its first copy on the left and its latest on the right.</p>
   <div id="xlWrap"></div>
 </section>
 
@@ -2534,6 +2708,191 @@ function xlShow(sum){
    <details class="stats"><summary>The counts <span>each of the five word groups</span></summary><div class="in"><div class="tbx"><table style="min-width:0"><thead><tr><th>Words like…</th><th class="r">${dlab(v0.date)}</th><th class="r">${dlab(v1.date)}</th></tr></thead><tbody>${rates.map(r=>`<tr><td>${esc(r.replace(/_/g," "))}</td><td class="r">${fmt(v0.rates[r]*10,1)}</td><td class="r">${fmt(v1.rates[r]*10,1)}</td></tr>`).join("")}<tr><td><b>All five</b></td><td class="r"><b>${fmt(sum(v0),1)}</b></td><td class="r"><b>${fmt(sum(v1),1)}</b></td></tr></tbody></table></div><p class="cap">Per 10,000 words of the opening paragraph (${v0.words??"–"} and ${v1.words??"–"} words). Each language uses its own word list for the same five ideas.</p></div></details>`}
 
 
+/* ---------- #crosslang: claim matrix + "in their own words" reader. Data: R.langs (exact quotes from patterns/langs/langs.json) ---------- */
+const XNAT={he:"עברית",ar:"العربية",en:"English",de:"Deutsch",fr:"Français",es:"Español",it:"Italiano",pt:"Português",nl:"Nederlands",pl:"Polski",ru:"Русский"};
+const XRTL=new Set(["he","ar"]);
+/* three matrix states (F fact / A attributed, disputed or court case / N not in the text) plus X (no article) */
+const XST={fact:["F","●"],attributed:["A","“"],disputed:["A","?"],denial:["A","“"],self:["A","“"],legal:["A","§"],label:["A","“"],captive:["A","“"],none:["N","–"],absent:["N","–"],not_held:["N","…"],outside:["N","…"],na:["X","×"]};
+const XVB={fact:"stated as fact",attributed:"attributed",disputed:"disputed in the same sentence",denial:"denial reported",self:"the group’s own words",legal:"court case only",label:"a term in use",captive:"named as captives",none:"no loaded term",absent:"not in the lead",outside:"later in the lead, not quoted",not_held:"not in our text",na:"no article"};
+const XSTW={F:"stated as fact",A:"attributed, disputed or a court case",N:"not in the text we hold",X:"no article"};
+const XCOLW={icj:{F:"overstated, in Wikipedia’s voice",A:"court case reported",N:"no overstatement found"},hos:{F:"hostages named",A:"named as captives",N:"not in the text we hold"},o7:{F:"terror or massacre in Wikipedia’s voice",N:"neither word in the first sentence"}};
+const XSLOT={s1:"First sentence",k_genocide:"The genocide sentence",k_hostages:"The hostages sentence",k_icj:"The court sentence",k_courts:"The courts sentence",k_colonial:"The colonization sentence",k_terror:"The terror sentence",k_occupation:"The occupation sentence",k_ec:"The ethnic-cleansing sentence",k_massacre:"The massacre sentence",k_holocaust:"The Holocaust sentence",k_dispute:"The dispute sentence",k_denial:"The denial sentence"};
+const xst=c=>(XST[c]||XST.none)[0];
+const XM={mode:"both"},XR={a:null,l:null,s:null,mi:0,t:"n",note:null,pin:null,mt:0,tm:0};
+const xlab=l=>LANG[l]||l;
+const xslot=s=>XSLOT[s]||"Another key sentence";
+const wpLink=(l,r,txt)=>r?`<a href="https://${l}.wikipedia.org/w/index.php?oldid=${r}" target="_blank" rel="noopener">${txt||"rev "+r} ↗</a>`:"";
+function xTile(code,cls){const [s,g]=XST[code]||XST.none;return `<span class="tl t-${s} ${cls}${code==="disputed"?" dsp":""}" aria-hidden="true"><i>${s==="X"?"n/a":g}</i></span>`}
+function xStateText(k,code){const s=xst(code),o=(XCOLW[k]||{})[s];return (o||XSTW[s])+(code==="outside"?" (mentioned later in the lead)":code==="legal"&&k!=="icj"?" (court case only)":code==="disputed"?" (disputed)":"")}
+
+/* tokens: [kind,text(,textNow)] kinds 0 kept, 1 removed, 2 added, 3 kept with other spacing, 4/5 unmarked then-only/now-only */
+function xTokens(m,L,side,isO){
+  let oa=0,ob=0,h="";const lf=(L&&L.f)||[],ln=(L&&L.n)||[];
+  const rng=(x,s,e)=>side==="o"?[x[0],x[1]]:x[2];
+  const hit=(arr,s,e)=>arr.filter(x=>{const r=rng(x);return r&&s<r[1]&&e>r[0]});
+  const ends=(arr,e)=>arr.filter(x=>{const r=rng(x);return r&&e>=r[1]&&e-r[1]<1e9});
+  m.forEach((t,i)=>{const k=t[0],tf=t[1],tn=k===3?t[2]:t[1];
+    const inA=k!==2&&k!==5,inB=k!==1&&k!==4;
+    const run=(k===1||k===2)&&m[i+1]&&m[i+1][0]===k;
+    let core=tf.replace(/\s+$/,""),sp=k===3?"":tf.slice(core.length);if(run){core+=sp;sp=""}
+    const cl=tf.replace(/\s+$/,"").length,sA=oa,eA=oa+cl,sB=ob,eB=ob+(k===3?tn.replace(/\s+$/,"").length:cl);
+    const H=[...(inA?hit(lf,sA,eA).map(x=>[x,"f"]):[]),...(inB?hit(ln,sB,eB).map(x=>[x,"n"]):[])];
+    const ids=[...new Set(H.map(([x])=>x[5]))],c=H.length?H[0][0][4]:null;
+    let gc="";
+    if(isO){const cf=inA&&hit(lf,sA,eA).find(x=>x[4]!=="kc"&&x[1]<=eA+1&&x[1]>=sA),cn=inB&&hit(ln,sB,eB).find(x=>x[4]!=="kc"&&x[1]<=eB+1&&x[1]>=sB);
+      const short=g=>g.length>40?g.replace(/\s*\(.*?\)\s*/g," ").trim():g;
+      if(cf||cn)gc=`<span class="gc c-${(cf||cn)[4]}" aria-hidden="true"${cf?` data-cf="${esc(short(cf[3]))}"`:""}${cn?` data-cn="${esc(short(cn[3]))}"`:""}></span>`}
+    const x=k===3?`<span class="x${c?" cg c-"+c:""}"${ids.length?` data-g="${ids.join(" ")}"`:""}><span class="f">${esc(tf)}</span><span class="n">${esc(tn)}</span></span>`:`<span class="x${c?" cg c-"+c:""}"${ids.length?` data-g="${ids.join(" ")}"`:""}>${esc(core)}</span>${gc}${esc(sp)}`;
+    h+=`<span class="w k${k}">${x}</span>`;
+    if(inA)oa+=tf.length;if(inB)ob+=tn.length});
+  return h}
+function xText(p,t){/* the text a reader sees in state t, read back from the DOM (used by the exact-quote check) */
+  return [...p.querySelectorAll(".w")].map(w=>{const k=+w.className.match(/k(\d)/)[1];if(t==="n"&&(k===1||k===4))return "";if(t==="f"&&(k===2||k===5))return "";const f=w.querySelector(".f"),n=w.querySelector(".n");if(k===3)return (t==="f"?f:n).textContent;return w.querySelector(".x").textContent+[...w.childNodes].filter(c=>c.nodeType===3).map(c=>c.textContent).join("")}).join("")}
+window.xText=xText;
+
+function xmInit(){
+  const D=R.langs;if(!D||!$("#xmScroll")){const f=$("#xmFig");if(f)f.hidden=true;["#xrFig","#xmFind"].forEach(s=>{const e=$(s);if(e)e.hidden=true});return}
+  /* the phone fold hides the vocabulary stripes only; keep the button next to them */
+  const ub=$("#crosslang>.unfold"),sh=$("#xlSubH");if(ub&&sh){sh.before(ub);ub.textContent=ub.getAttribute("aria-expanded")==="true"?"Hide the vocabulary counts ↑":"Show the vocabulary counts ↓";ub.addEventListener("click",()=>{ub.textContent=ub.getAttribute("aria-expanded")==="true"?"Hide the vocabulary counts ↑":"Show the vocabulary counts ↓"})}
+  xmDraw();xmFind();
+  seg($("#xmMode"),v=>{XM.mode=v;$("#xmScroll .xm").className="xm m-"+v});
+  $("#xmScroll").addEventListener("click",e=>{const b=e.target.closest(".xm-c");if(!b)return;const c=D.cells[b.dataset.k][b.dataset.l];
+    const A=(D.arts[c.a]||{})[b.dataset.l];if(!A){XR.note=null;return}
+    const s=c.s&&A.sl[c.s]?c.s:"s1";const mi=D.moments.findIndex(m=>m[0]===c.a&&m[1]===b.dataset.l&&m[2]===s);
+    $$("#xmScroll .xm-c").forEach(x=>x.setAttribute("aria-current",String(x===b)));
+    xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:b.dataset.k,c},anim:true,scroll:true})});
+  xrInit()}
+function xmDraw(){
+  const D=R.langs,host=$("#xmScroll"),order=D.order,cols=D.cols;
+  const sub={gen:"Gaza genocide article, else Gaza war",col:"Zionism",apa:"Israeli apartheid",occ:"West Bank",o7:"attack article, first sentence",ter:"Hamas",hos:"attack article",icj:"ICJ, any article"};
+  let h=`<table class="xm m-${XM.mode}"><caption class="zi-sr">Each Wikipedia's voice on eight claims, first copy and now</caption><thead><tr><th scope="col" class="xm-l">Language</th>${cols.map(([k,lab])=>`<th scope="col" class="c-${({o7:"ter",icj:"gen"})[k]||k}">${esc(lab)}<small>${esc(sub[k]||"")}</small></th>`).join("")}</tr></thead><tbody>`;
+  order.forEach((l,ri)=>{h+=`<tr class="${ri===2||ri===3?"sep":""}"><th scope="row" class="xm-l"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><span>${l==="en"?"":esc(xlab(l))+" · "}${l}</span></th>`;
+    cols.forEach(([k,lab])=>{const c=D.cells[k][l];if(!c){h+="<td></td>";return}
+      const chg=xst(c.f)!==xst(c.n)&&c.f!=="na";
+      const al=`${xlab(l)}, ${lab}: first copy ${xStateText(k,c.f)}; now ${xStateText(k,c.n)}.${c.n==="na"?"":" Open the sentence."}`;
+      h+=`<td><button type="button" class="xm-c${chg?" chg":""}" data-k="${k}" data-l="${l}" aria-label="${esc(al)}"${c.n==="na"&&c.f==="na"?" disabled":""}>${xTile(c.f,"th")}<span class="ar" aria-hidden="true">→</span>${xTile(c.n,"nw big")}</button></td>`});
+    h+="</tr>"});
+  const cnt=(k,w)=>order.filter(l=>D.cells[k][l]&&xst(D.cells[k][l][w])==="F").length;
+  h+=`</tbody><tfoot><tr><th class="xm-l">Dark squares</th>${cols.map(([k])=>`<td>then ${cnt(k,"f")}<br>now <b>${cnt(k,"n")}</b></td>`).join("")}</tr></tfoot></table>`;
+  host.innerHTML=h;
+  $("#xmKey").innerHTML=`<span class="key">${xTile("fact","")}dark, dot: stated as fact, in Wikipedia’s own voice</span><span class="key">${xTile("attributed","")}striped, quote mark: attributed to someone</span><span class="key">${xTile("disputed","")}dashed, ?: disputed in the same sentence</span><span class="key">${xTile("legal","")}§: reported only as a court case</span><span class="key">${xTile("absent","")}empty: not in the text we hold</span><span class="key">${xTile("outside","")}…: counted later in the opening section, beyond the 1,200 characters we hold</span><span class="key">${xTile("na","")}no article in that language</span>`;
+  $("#xmNote").innerHTML=`<b>Our coding.</b> Genocide, colonization, apartheid, occupation and the Hamas label use the voice codes in our language file. The 7 October, hostages and court columns are our reading of the quoted sentences; each cell says why when you open it. For “court ruling overstated”, dark means the encyclopedia states a court finding the court did not make (four editions). Hebrew, German and Russian have no Gaza-genocide article, so their genocide cell reads the Gaza war article.`}
+function xmFind(){
+  const D=R.langs,host=$("#xmFind");const F=[["Gaza war","es","s1"],["Gaza genocide","ar","s1"],["Gaza war","he","k_genocide"]];
+  host.innerHTML=F.map(([a,l,s],i)=>{const A=D.arts[a][l],S=A.sl[s],v=S.m.n||S.m.f,w=S.m.n?"n":"f",rtl=XRTL.has(l);
+    return `<blockquote class="xm-q"><span class="w"><span>${esc(xlab(l))} · ${esc(a)} · ${dlab(v.d)}</span><span class="vb vb-${esc(v.v)}">${esc(XVB[v.v]||v.v)}</span></span>
+      <p class="xr-s plain st-${w}" lang="${l}" dir="${rtl?"rtl":"ltr"}" data-a="${esc(a)}" data-s="${s}">${xTokens(S.o,S.L,"o",true)}</p>
+      <p class="tr"><b>Our translation</b><span class="xr-s plain st-${w}" lang="en" style="font:inherit;min-height:0;display:inline">${xTokens(S.t,S.L,"t",false)}</span></p>
+      <button type="button" data-i="${i}">See how it changed ›</button></blockquote>`}).join("");
+  host.addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(!b)return;const [a,l,s]=F[+b.dataset.i];const mi=D.moments.findIndex(m=>m[0]===a&&m[1]===l&&m[2]===s);xrOpen({a,l,s,mi,anim:true,scroll:true})})}
+
+function xrInit(){
+  const D=R.langs,arts=Object.keys(D.arts);
+  $("#xrArts").innerHTML=arts.map(a=>`<button class="pick" type="button" data-a="${esc(a)}" aria-pressed="false">${esc(a)}</button>`).join("");
+  $("#xrArts").onclick=e=>{const b=e.target.closest(".pick");if(!b)return;const a=b.dataset.a,A=D.arts[a];const l=A[XR.l]?XR.l:["he","ar","en"].find(x=>A[x])||Object.keys(A)[0];xrFree(a,l)};
+  $("#xrLang").onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;xrFree(XR.a,b.dataset.l,XR.s)};
+  $("#xrLang").addEventListener("keydown",e=>{const bs=$$("#xrLang button:not(:disabled)"),i=bs.indexOf(document.activeElement);if(i<0)return;let j=null;if(e.key==="ArrowRight")j=(i+1)%bs.length;else if(e.key==="ArrowLeft")j=(i-1+bs.length)%bs.length;else if(e.key==="Home")j=0;else if(e.key==="End")j=bs.length-1;if(j==null)return;e.preventDefault();bs[j].focus();bs[j].click()});
+  $("#xrSlot").onclick=e=>{const b=e.target.closest("button");if(b)xrFree(XR.a,XR.l,b.dataset.v)};
+  $("#xrTime").onclick=e=>{const b=e.target.closest("button");if(!b)return;xrTime(b.dataset.v,b.dataset.v!=="b")};
+  $("#xrPrev").onclick=()=>xrStep(-1);$("#xrNext").onclick=()=>xrStep(1);
+  $("#xrPlay").onclick=()=>xrReplay();
+  $("#xrCtl").addEventListener("keydown",e=>{if(e.key==="ArrowLeft"){e.preventDefault();xrStep(-1)}else if(e.key==="ArrowRight"){e.preventDefault();xrStep(1)}});
+  $("#xrTrk").addEventListener("click",e=>{const r=$("#xrTrk").getBoundingClientRect(),n=D.moments.length;const i=Math.round(clamp((e.clientX-r.left)/r.width,0,1)*(n-1));xrMoment(i,true)});
+  /* linked highlights: hover, focus or tap a marked word; tapping pins it */
+  const fig=$("#xrFig");
+  const ids=el=>{const x=el&&el.closest&&el.closest("[data-g]");return x?x.dataset.g.split(" "):null};
+  const kindOf=el=>{const w=el&&el.closest&&el.closest(".w");return w&&(w.classList.contains("k1")?1:w.classList.contains("k2")?2:0)};
+  const light=(g,el)=>{$$("#xrFig .hl,#xrFig .hl2").forEach(x=>x.classList.remove("hl","hl2"));if(g){g.forEach(id=>$$(`#xrFig [data-g~="${id}"]`).forEach(x=>x.classList.add("hl")))}else if(el){const k=kindOf(el);if(k){const col=el.closest(".xr-col");$$(`#xrPair .xr-col:not(.${col.classList.contains("xr-o")?"xr-o":"xr-t"}) .k${k}>.x`).forEach(x=>x.classList.add("hl2"));el.closest(".x").classList.add("hl")}}};
+  fig.addEventListener("pointerover",e=>{if(XR.pin||e.pointerType==="touch")return;const g=ids(e.target);if(g)light(g);else if(kindOf(e.target)&&e.target.closest("#xrPair"))light(null,e.target);else light(null)});
+  fig.addEventListener("pointerleave",()=>{if(!XR.pin)light(null)});
+  fig.addEventListener("click",e=>{if(!e.target.closest("#xrPair,#xrChips"))return;const g=ids(e.target);if(g||kindOf(e.target)){const key=(g||[]).join(" ")||"k"+kindOf(e.target);if(XR.pin===key){XR.pin=null;light(null)}else{XR.pin=key;light(g,g?null:e.target)}}else{XR.pin=null;light(null)}});
+  XR.light=light;
+  xrMoment(0,false,true)}
+function xrStep(d){const n=R.langs.moments.length;let i=XR.mi<0?(d>0?0:n-1):XR.mi+d;i=clamp(i,0,n-1);xrMoment(i,true)}
+function xrMoment(i,anim,quiet){const m=R.langs.moments[i];xrOpen({a:m[0],l:m[1],s:m[2],mi:i,anim,quiet})}
+function xrFree(a,l,s){const A=R.langs.arts[a][l];if(!A)return;const hc=A.hc&&A.hc[3];s=s&&A.sl[s]?s:(hc&&A.sl[hc]?hc:"s1");if(!A.sl[s])s=Object.keys(A.sl)[0];
+  const mi=R.langs.moments.findIndex(m=>m[0]===a&&m[1]===l&&m[2]===s);xrOpen({a,l,s,mi,anim:true})}
+function xrOpen(o){
+  const D=R.langs;Object.assign(XR,{a:o.a,l:o.l,s:o.s,mi:o.mi,note:o.note||null,pin:null});
+  const A=D.arts[o.a][o.l],S=A.sl[o.s],two=!!(S.m.f&&S.m.n),rtl=XRTL.has(o.l);
+  /* moment heading */
+  const m=o.mi>=0?D.moments[o.mi]:null;
+  $("#xrMomT").textContent=m?m[3]:`${xlab(o.l)} · ${o.a}`;
+  $("#xrMomC").textContent=m?m[4]:(o.note&&o.note.c.x)||"Pick any article and language. The sentence below is quoted exactly, with our translation.";
+  if(m&&o.note&&o.note.c.x&&o.note.c.x!==m[4])$("#xrMomC").textContent=m[4]+" "+o.note.c.x;
+  /* pickers */
+  $$("#xrArts .pick").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.a===o.a)));
+  const Aa=D.arts[o.a],miss=(D.missing[o.a]||[]).map(x=>x.slice(0,2));
+  $("#xrLang").innerHTML=D.order.map(l=>{const X=Aa[l],hc=X&&X.hc,vs=hc?xst(hc[2]):"X",on=l===o.l;
+    const al=X?`${xlab(l)}${hc?`, ${hc[0]}: ${XVB[hc[2]]||hc[2]}`:""}`:`${xlab(l)}: no ${xlab(l)} article is linked to English “${o.a}”`;
+    return `<button type="button" data-l="${l}" aria-pressed="${on}" tabindex="${on?0:-1}"${X?"":" disabled"} aria-label="${esc(al)}" title="${esc(al)}"><bdi lang="${l}" dir="${XRTL.has(l)?"rtl":"ltr"}">${esc(XNAT[l])}</bdi><span class="cd">${l}</span><i class="dt ${vs}" aria-hidden="true"></i></button>`}).join("");
+  const sk=Object.keys(A.sl).sort((x,y)=>(x==="s1"?-1:y==="s1"?1:0));
+  $("#xrSlotRow").hidden=sk.length<2;
+  $("#xrSlot").innerHTML=sk.map(s=>`<button type="button" data-v="${s}" aria-pressed="${s===o.s}">${esc(xslot(s))}</button>`).join("");
+  /* header: native title, claim, voice then -> now */
+  const vf=S.m.f&&S.m.f.v,vn=S.m.n&&S.m.n.v,claim=A.hc&&A.hc[3]===o.s?A.hc[0]:null;
+  $("#xrHd").innerHTML=`<span class="ti"><bdi lang="${o.l}" dir="${rtl?"rtl":"ltr"}">${esc(A.ti||o.a)}</bdi></span><span>${esc(xlab(o.l))} Wikipedia · ${esc(o.a)}</span><span>${claim?`<b>${esc(claim.replace(/^./,c=>c.toUpperCase()))}</b>, voice in this sentence: `:"Voice in this sentence: "}${vf?`<span class="vb vb-${esc(vf)}" data-vc="${esc(vf)}">${esc(XVB[vf]||vf)}</span>`:""}${vf&&vn?" → ":""}${vn?`<span class="vb vb-${esc(vn)}" data-vc="${esc(vn)}">${esc(XVB[vn]||vn)}</span>`:""}</span>`;
+  $$("#xrHd .vb").forEach(b=>{b.title=D.voice[b.dataset.vc]||""});
+  /* time switch */
+  const tb=[];if(S.m.f)tb.push(["f",`${two?"Then":"Only copy"} · ${dlab(S.m.f.d)}`]);if(S.m.n)tb.push(["n",`${two?"Now":"Only copy"} · ${dlab(S.m.n.d)}`]);if(two&&!S.u)tb.push(["b","Both, marked"]);
+  $("#xrTime").innerHTML=tb.map(([v,t])=>`<button type="button" data-v="${v}" aria-pressed="false">${esc(t)}</button>`).join("");
+  $("#xrTimeC").textContent=!two?`We quote this sentence only from the ${dlab((S.m.n||S.m.f).d)} copy.`:S.u?"Same words in both copies.":"";
+  /* the pair */
+  const st=two?(o.anim&&!S.u?"f":"n"):(S.m.n?"n":"f"),vm=S.m[st]||S.m.n||S.m.f;
+  const when=w=>{const v=S.m[w];return v?`${dlab(v.d)} · ${wpLink(o.l,v.r)}`:""};
+  $("#xrPair").innerHTML=`<div class="xr-col xr-o"><div class="when"><span>Original · <bdi lang="${o.l}" dir="${rtl?"rtl":"ltr"}">${esc(XNAT[o.l])}</bdi></span><span class="wd">${when(st)}</span></div><p class="xr-s st-${st}" lang="${o.l}" dir="${rtl?"rtl":"ltr"}">${xTokens(S.o,S.L,"o",true)}</p></div>
+    <div class="xr-col xr-t"><div class="when"><span>Our translation · English</span><span class="wd">${dlab(vm.d)}</span></div><p class="xr-s st-${st}" lang="en" dir="ltr">${xTokens(S.t,S.L,"t",false)}</p></div>`;
+  xrChips();xrNote();xrCtr();xrTimeBtns(st);
+  if(o.scroll){const f=$("#xrFig");const r=f.getBoundingClientRect();if(r.top<0||r.top>innerHeight*.5)f.scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
+  if(!o.quiet)$("#xrLive").textContent=`${xlab(o.l)}, ${o.a}, ${xslot(o.s).toLowerCase()}${two?`, ${dlab(S.m.f.d)} and ${dlab(S.m.n.d)}`:""}.`;
+  clearTimeout(XR.tm);if(two&&o.anim&&!S.u)XR.tm=setTimeout(()=>xrTime("n",true),o.scroll&&!RM.matches?700:380)}
+function xrTimeBtns(t){XR.t=t;$$("#xrTime button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.v===t)));
+  const S=R.langs.arts[XR.a][XR.l].sl[XR.s],v=S.m[t==="b"?"n":t]||S.m.n||S.m.f;
+  const wd=$$("#xrPair .wd");if(wd[0])wd[0].innerHTML=t==="b"?`${dlab(S.m.f.d)} → ${dlab(S.m.n.d)}`:`${dlab(v.d)} · ${wpLink(XR.l,v.r)}`;if(wd[1])wd[1].textContent=t==="b"?`${dlab(S.m.f.d)} → ${dlab(S.m.n.d)}`:dlab(v.d);
+  xrChips();const pl=$("#xrPlay");pl.disabled=!(S.m.f&&S.m.n)||!!S.u}
+function xrTime(t,anim){
+  const ps=$$("#xrPair .xr-s");if(!ps.length)return;
+  const from=XR.t;if(from===t&&anim)return;
+  const apply=()=>ps.forEach(p=>{p.classList.remove("st-f","st-n","st-b");p.classList.add("st-"+t)});
+  if(!anim||RM.matches||t==="b"||from==="b"){
+    if(anim&&RM.matches){ps.forEach(p=>p.style.opacity=0);setTimeout(()=>{ps.forEach(p=>$$(".w",p).forEach(w=>{w.style.removeProperty("--d");w.style.removeProperty("--d2")}));apply();ps.forEach(p=>p.style.opacity=1)},180)}
+    else{ps.forEach(p=>$$(".w",p).forEach(w=>{w.style.setProperty("--d","0s");w.style.setProperty("--d2","0s")}));apply()}
+    xrTimeBtns(t);return}
+  /* the morph: outgoing words strike, then fade and fold away; incoming words grow in, one by one */
+  ps.forEach(p=>{const out=$$(t==="n"?".k1,.k4":".k2,.k5",p),inn=$$(t==="n"?".k2,.k5":".k1,.k4",p);
+    $$(".w",p).forEach(w=>{w.style.setProperty("--d","0s");w.style.setProperty("--d2","0s")});
+    const st=Math.max(28,Math.min(110,1500/Math.max(1,out.length+inn.length)));
+    out.forEach((w,i)=>{w.style.setProperty("--d",(i*st)+"ms");w.style.setProperty("--d2",(i*st+380)+"ms")});
+    const base=out.length?out.length*st+520:0;
+    inn.forEach((w,i)=>{w.style.setProperty("--d2",(base+i*st)+"ms");w.style.setProperty("--d",(base+i*st+200)+"ms")})});
+  void ps[0].offsetWidth;apply();xrTimeBtns(t)}
+function xrReplay(){const S=R.langs.arts[XR.a][XR.l].sl[XR.s];if(!(S.m.f&&S.m.n))return;xrTime("f",false);void $("#xrPair").offsetWidth;clearTimeout(XR.tm);XR.tm=setTimeout(()=>xrTime("n",true),RM.matches?60:420)}
+function xrChips(){
+  const A=R.langs.arts[XR.a][XR.l],S=A.sl[XR.s],t=XR.t,rtl=XRTL.has(XR.l);
+  const L=[...(t!=="n"&&S.L.f?S.L.f:[]),...(t!=="f"&&S.L.n?S.L.n:[])];const seen=new Set();let h="";
+  const bd=s=>`<bdi lang="${XR.l}" dir="${rtl?"rtl":"ltr"}">«${esc(s)}»</bdi>`;
+  /* key changes first: from -> to, with our gloss */
+  if(XR.s==="s1"||A.hc&&A.hc[3]===XR.s)A.kc.forEach(c=>{const fl=(S.L.f||[]).find(x=>x[4]==="kc"&&x[3]===c[1]),tl=(S.L.n||[]).find(x=>x[4]==="kc"&&x[3]===c[3]);if(!fl||!tl)return;
+    h+=`<li class="kc"${[fl,tl].filter(Boolean).length?` data-g="${[fl,tl].filter(Boolean).map(x=>x[5]).join(" ")}"`:""}><span class="o"><del>${bd(c[0])}</del> → <ins>${bd(c[2])}</ins></span><span class="g">our gloss: ${esc(c[1])} → ${esc(c[3])}</span>${c[4]?`<span class="c">${esc(c[4])}</span>`:""}</li>`});
+  L.filter(x=>x[4]!=="kc").forEach(x=>{const key=x[3];if(seen.has(key))return;seen.add(key);const o=(t==="n"||t==="b"?(S.L.n||[]).concat(S.L.f||[]):(S.L.f||[])).find(y=>y[3]===key);
+    const src=S.m[(S.L.n||[]).includes(x)?"n":"f"];const ids=L.filter(y=>y[3]===key).map(y=>y[5]).join(" ");
+    h+=`<li class="c-${x[4]}" data-g="${ids}"><span class="o">${bd(xOrigOf(S,x,(S.L.n||[]).includes(x)?"n":"f"))} <span class="g">= ${/^["'“]/.test(x[3])?esc(x[3]):"“"+esc(x[3])+"”"}</span></span>${x[6]?`<span class="c">${esc(x[6])}</span>`:""}</li>`});
+  $("#xrChips").innerHTML=h;$("#xrChips").hidden=!h}
+function xOrigOf(S,x,w){/* the term as it stands in that version: rebuilt from the tokens, so it is the exact quoted text */
+  let s="";S.o.forEach(t=>{const k=t[0];if(w==="f"&&(k===2||k===5))return;if(w==="n"&&(k===1||k===4))return;s+=k===3?(w==="f"?t[1]:t[2]):t[1]});return s.slice(x[0],x[1])}
+function xrNote(){
+  const A=R.langs.arts[XR.a][XR.l],S=A.sl[XR.s],bits=[];
+  [["f","Then"],["n","Now"]].forEach(([w,lab])=>{const v=S.m[w];if(!v)return;if(v.nt)bits.push(`<span class="${/misstate|goes beyond|did not use|misquot/i.test(v.nt)?"flag":""}"><b>Note${S.m.f&&S.m.n?" ("+lab.toLowerCase()+")":""}:</b> ${esc(v.nt)}</span>`);if(v.tr)bits.push(`${S.m.f&&S.m.n?lab+": ":""}cut at the 1,200 characters we hold (…).`)});
+  if(XR.note&&XR.note.c.x&&!(XR.mi>=0))bits.unshift(`<b>Why this square:</b> ${esc(XR.note.c.x)}`);
+  else if(XR.note&&XR.note.c.x)bits.unshift(`<b>Why this square:</b> ${esc(XR.note.c.x)}`);
+  bits.push(`Translation: ours, close to literal. Original quoted exactly from the ${esc(xlab(XR.l))} Wikipedia.`);
+  $("#xrNote").innerHTML=bits.join(" ")}
+function xrCtr(){const n=R.langs.moments.length,i=XR.mi;
+  $("#xrCtr").innerHTML=i>=0?`Moment <b>${i+1}</b> of ${n} · ${esc(xlab(XR.l))} · ${esc(XR.a)}`:`Reading freely · ${esc(xlab(XR.l))} · ${esc(XR.a)} · Next goes to moment 1`;
+  $("#xrPrev").disabled=i===0;$("#xrNext").disabled=i===n-1;
+  const f=k=>(k/(n-1)*100).toFixed(2);
+  $("#xrTrk").innerHTML=`<i class="rail"></i>${R.langs.moments.map((m,k)=>`<i class="pd" style="left:${f(k)}%;${XRTL.has(m[1])?"height:16px;background:var(--ink-2)":"height:9px;top:6px"}"></i>`).join("")}${i>=0?`<i class="ph" style="left:${f(i)}%"></i>`:""}<span class="e">moment 1</span><span class="e r">${n}</span>`}
+
 /* ---------- validation + blind ---------- */
 function drawChecks(){
   const V=R.validation||[],host=$("#valid");
@@ -3390,7 +3749,7 @@ function init(){
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
   document.addEventListener("click",e=>{const b=e.target.closest("[data-intent]");if(!b)return;e.preventDefault();let it=null;try{it=JSON.parse(b.dataset.intent)}catch(x){}openInLab(it)});
   const ts=$("#testStats");if(ts)ts.addEventListener("toggle",()=>{if(ts.open)safe(drawChance,true)});
-  safe(foldPhone);
+  safe(foldPhone);safe(xmInit);
   const re=()=>{if(isLab()){STALE.report=true;labCall("redraw")}else{STALE.lab=LAB_INIT;HM=null;redrawAll()}};
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;re()},150)});
   addEventListener("hashchange",()=>{const h=location.hash,was=$("#view-report").hidden;route();if(VIEWS.includes(h)||h===""){if(REPORT_TARGET&&!isLab()){const id=REPORT_TARGET;REPORT_TARGET=null;scrollToReport(id)}else if(was!==isLab())scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
