@@ -28,3 +28,8 @@
 - This is not academia: do not narrate the research process (holdout halves, withdrawn measures, pre-specification, BH, resampling methods) in the story. Keep one honesty line in the trust box and move the rest to the evidence room/method appendix, or cut it if irrelevant. Not lying; cleaning noise.
 - Use these cuts to shorten the page: the story layer must hit <=20 phone screens.
 - KEEP the scrolly vocabulary chart (sticky chart + step cards): the owner loves it. Keep the mechanic and look; it may be re-pointed to the scoped core articles and to event markers (battles/escalations instead of the "ICJ case" line), but do not delete or flatten it.
+
+## 5. Zionism stepper shows what each edit DID (owner, round 5)
+- Each change in the step-through timeline gets a visual encoding of its essence, from patterns/zionism/change_codes.json (blind double-coded): direction (more vs less critical of Israel/Zionism, or wording only), voice (stated as fact vs attributed), claim type (checkable fact vs contested characterisation). The key highlight: contested characterisation stated as fact.
+- Reader-facing labels are NOT fixed by the owner or by me: the newsroom/editorial agent picks them from change_codes.json "label_options". They must be precise, non-loaded and defensible (no "hostile"; no "alleged" when "attributed" is meant).
+- Keep the stepper's mechanic and look; add the encoding (colour/mark per change, a small legend, and the per-step live text naming the category).
