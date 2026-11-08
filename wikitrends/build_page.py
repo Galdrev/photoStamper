@@ -691,6 +691,34 @@ def langs_data():
 
 res["langs"] = langs_data()
 
+
+# Cross-wiki aggregates (analyze_crosswiki.py -> patterns/crosswiki/chart_data). Only dates and counts are inlined:
+# no revision ids, account ids or hashes. The prose numbers in #crosslang and #organised are checked against these.
+def crosswiki_data():
+    D = os.path.join(PAT, "crosswiki", "chart_data")
+    if not os.path.exists(os.path.join(D, "creation.json")):
+        return None
+    J = lambda n: json.load(open(os.path.join(D, n + ".json")))
+    gg = J("creation").get("Gaza genocide") or {}
+    created = sorted(([l, v["created"], v.get("days_after_english") or 0] for l, v in gg.items()), key=lambda r: r[1])
+    E = J("exposure")
+    expo = {l: round(100 * ((v.get("after_war") or {}).get("genocide") or {}).get("own_voice", 0)) for l, v in E.items()}
+    A, S, Y, SR, RF = J("crosswiki_accounts"), J("sync"), J("diffusion"), J("sources"), J("rfc")
+    # the static prose quotes these numbers: fail the build if the data moved under it
+    chk = [(A["insert"]["accounts"], 281), (A["insert"]["same_family_2plus_languages"]["observed"], 0), (A["remove"]["accounts"], 284),
+           (A["remove"]["same_family_2plus_languages"]["observed"], 0), (A["same_article_2plus_languages"]["observed"], 153),
+           (round(A["same_article_2plus_languages"]["expected_by_chance"]), 106),
+           (S["windows"]["1d"]["cross_account_cross_language_pairs"]["observed"], 135), (S["windows"]["1w"]["cross_account_cross_language_pairs"]["observed"], 925),
+           (round(S["windows"]["1w"]["cross_account_cross_language_pairs"]["expected_by_chance"]), 579),
+           (round(100 * SR["stuck_vs_reverted"]["share_new_source_stuck"]), 50), (round(100 * SR["stuck_vs_reverted"]["share_new_source_reverted"]), 28),
+           (RF["sticks"], 26), (RF["settled_within_30d_after_close"]["observed"], 6), (round(100 * Y["english_first_share"]["observed"]), 69),
+           (J("blocs")["edges"], 0), (expo.get("en"), 11), (expo.get("he"), 4)]
+    bad = [(i, a, b) for i, (a, b) in enumerate(chk) if a != b]
+    assert not bad, f"cross-wiki prose numbers out of date: {bad}"
+    return {"gg": created, "expo": expo}
+
+res["xw"] = crosswiki_data()
+
 tk_p = os.path.join(HERE, "notes", "takeaways.json")
 if os.path.exists(tk_p):
     res["takeaways"] = json.load(open(tk_p))

@@ -925,7 +925,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .xr-note b{color:var(--ink-2)}
 .xr-note .flag{color:var(--del-ink);font-weight:600}
 .xr-sub{font:500 22px/1.2 var(--display);margin-top:24px}
-#crosslang.folded>.xm-keep{display:grid!important}
+#crosslang.folded>.xm-keep{display:grid!important}#crosslang.folded>details.xm-keep{display:block!important}
 #palestine.folded>.xm-keep{display:block!important}#palestine.folded>.news-q.xm-keep{display:grid!important}
 @media (max-width:900px){.xm-find{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:640px){
@@ -1297,16 +1297,21 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Other languages <span class="xchip">Exploratory · not pre-registered</span></div>
     <h2>Outside English, “genocide” is now stated as fact in Spanish, Portuguese and Arabic. Hebrew’s Gaza-war article mentions it only as South Africa’s court case.</h2>
     <p class="means bl"><b>Bottom line:</b> On genocide, the other Wikipedias do not tell one story: Spanish, Portuguese and Arabic now state it in their own voice, as English does; Dutch and Polish pulled back (their rows in the grid); Hebrew’s Gaza-war article reports it only as South Africa’s court case (the three sentences are below).</p>
-    <p class="deck">Spanish goes furthest: its Gaza-war article opens by calling October 7 “un ataque de represalia”, a retaliatory attack, and says the war “has unleashed a genocide in Gaza by Israel” (October 2026).</p>
-    <p class="deck">Tap any square in the grid to read the sentence behind it, in the original and in our translation.</p>
   </header>
-  <details class="stats"><summary>More <span>language by language</span></summary><div class="in">
+  <details class="stats xm-keep"><summary>More <span>language by language</span></summary><div class="in">
     <p>In their “Gaza genocide” articles, Spanish, Portuguese and Arabic now define the genocide in their own voice, as English does. French calls it a designation “defended by the majority of genocide and international-law experts”, Italian “a definition”. Dutch moved the other way (“may or may not have committed”); Polish now calls genocide “a term in circulation”, while stating in its own voice that Israel committed “a series of crimes” against Palestinians. Spanish opens its Gaza war article by calling October 7 “un ataque de represalia” (a retaliatory attack). Hebrew has no article linked to the English “Gaza genocide” article, and its Gaza-war article mentions genocide once, as South Africa’s suit at the ICJ; the Hebrew October 7 article’s opening section has one more genocide mention, beyond the text we hold. “Colonization” entered the opening section of the Zionism article, in each Wikipedia’s own voice, in English, Arabic, Portuguese, Italian and Dutch; it is in the definition itself in English, Arabic and Portuguese. Hebrew, German, French, Spanish, Polish and Russian kept it out. Arabic turned apartheid from “an accusation” into “a confirmed fact”, though three sentences later it still calls it “this accusation”.</p>
+    <ul class="short-row xw-facts">
+      <li><b>Hamas: where “terror” sits.</b> The first sentence with a terror word, 2021 and now: English moved it from sentence 5 of 21 to 22 of 23, the furthest move toward the end of any edition; Russian moved it up, from 3 of 5 to 1 of 29; German keeps it first (1 of 15).</li>
+      <li><b>How 7 October is named.</b> In the first sentence now, by our word list: English “incursion” only; Hebrew attack, massacre and terror; German, French, Italian and Dutch include terror; Russian incursion and operation.</li>
+      <li><b>Court rulings overstated, still in the lead.</b> Arabic says the ICJ found plausible intent (its January 2024 order made no finding of intent); Italian calls the ruling plausibly genocidal, a phrase no ICJ ruling uses; French says the court recognised apartheid, Russian that it found Israel guilty (the July 2024 opinion did neither). English carried the intent claim from 17 March to 5 May 2024, then removed it. Flagged by word pattern; each needs a reading by hand.</li>
+      <li><b>How many readers met “genocide” as fact.</b> Of key-article views since 7 October 2023, the share whose opening stated genocide in that Wikipedia’s own voice: English 11%, Spanish 10%, French 9%, Dutch 7%, Italian 5%, Hebrew 4%, Arabic 3%, Polish 2%, Russian 1%, Portuguese 1%, German 0%.</li>
+      <li><b>Who moved first. Low confidence.</b> Where English and another edition both added the same term after 2021, English moved first in 69% of 103 pairs, against 58% by chance.</li>
+    </ul>
 </div></details>
   <div class="xm-find xm-keep" id="xmFind" aria-label="The three sentences behind the headline"></div>
   <figure class="fig xm-keep" id="xmFig" style="margin:0">
     <div class="fig-h"><span class="fig-t">How each Wikipedia voices eight claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Each square opens its sentence.</span></div>
-    <p class="zi-how"><b>How to read this:</b> in each cell the small square is the first copy and the large square is now (October 2026). Solid with a dot: stated in Wikipedia’s own voice. Striped with a quote mark: attributed. Dashed with ?: disputed in the same sentence. §: reported only as a court case. Empty: not in the text we hold; “…”: later in the opening section.</p>
+    <p class="zi-how"><b>How to read this:</b> in each cell the small square is the first copy and the large square is now (October 2026); the key below the grid gives the marks.</p>
     <div class="xm-opts"><span class="lab" id="xmModeL">Show</span><div class="seg" id="xmMode" role="group" aria-labelledby="xmModeL"><button type="button" data-v="both" aria-pressed="true">Then → now</button><button type="button" data-v="now" aria-pressed="false">Now only</button><button type="button" data-v="then" aria-pressed="false">Then only</button></div><span class="cap">A ring marks a cell that changed.</span></div>
     <div class="xm-scroll" id="xmScroll"></div>
     <div class="legend xm-legend" id="xmKey"></div>
@@ -1332,7 +1337,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="xr-note" id="xrNote"></p>
     <p class="zi-sr" id="xrLive" aria-live="polite" aria-atomic="true"></p>
   </figure>
-  <details class="stats"><summary>More <span>reading the sentences</span></summary><div class="in">
+  <figure class="fig xm-keep xw-gg" style="margin:0">
+    <div class="fig-h"><span class="fig-t">When each Wikipedia opened a “Gaza genocide” article</span><span class="cap">days after English; German, Hebrew and Russian have none</span></div>
+    <div id="xwGG"></div>
+  </figure>
+  <details class="stats xm-keep"><summary>More <span>reading the sentences</span></summary><div class="in">
     <p class="means xm-keep" id="xrMeans"><b>What this means:</b> English is not alone, and it is not followed everywhere. On genocide, Spanish, Portuguese and Arabic moved from “accused” to a definition in their own voice, as English did; Dutch moved the other way and Polish now calls genocide “a term in circulation”; Hebrew’s Gaza-war article reports only South Africa’s court case. On Zionism, “colonization” entered the opening section in five editions, in the definition itself in three (English, Arabic, Portuguese), and stayed out of six, Hebrew among them. Every square above opens the exact sentence it rests on.</p>
     <p class="cap xm-keep" style="max-width:90ch"><b>How to read the sentences:</b> they are quoted exactly from each Wikipedia’s opening section, at the first and the latest quarterly copy. We hold the first 1,200 characters; words beyond that are counted but not quoted. Translations are ours, kept close to literal; square brackets mark our additions. Amber, struck through: words removed. Blue: words added, marked in the original and in our translation. The coloured underline and the small English label mark a key word and our gloss of it.</p>
     <p class="cap">The vocabulary counts by language are in the appendix: <a href="#xlcounts">Did other languages follow? The counts</a>.</p>
@@ -1450,9 +1459,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <header>
     <div class="eyebrow"><span class="layer process">PROCESS</span>Organised or organic? <span class="xchip">Exploratory · not pre-registered</span></div>
     <h2 id="orgH">Canvassing is documented on both sides. Our tests found no campaign footprint, and could only have seen a large one.</h2>
-    <p class="means bl"><b>Bottom line:</b> Wikipedia’s arbitration committee documented off-wiki canvassing on both sides of this subject; our data show regulars returning to the same pages, not a campaign footprint, and the footprint test could only have seen a very large effect.</p>
-    <p class="deck">The edits were made by long-standing accounts, in small groups per page, with insertions and removals done by different hands, and a pool of regulars moving across the hot pages: 9 accounts made 48 of the 216 traced first-sentence changes on the 25 key articles by changing 3 or more of them; on the comparison key articles no account did. Our data cannot see off-wiki channels; it can see timing and footprint. The wave of critical wording began in the 16 weeks after 7 October 2023, when topic insertions ran at 3.4 times the comparison rate (0.5 times before the war, 2.0 times while the Discord channel was active), before the documented pro-Palestinian channel opened in January 2024 (ArbCom’s April 2025 finding of other coordination gives no start date); the pro-Israel email canvassing ArbCom found dates from the same weeks but aimed the other way; and no campaign, exposure or sanction date leaves a mark we can tell from chance.<!--VERIFY: ArbCom findings read from search snippets only (ORGS.md section 5); check the primary pages before publication--></p>
-    <p class="deck">That last test has low power: it could only have seen the ratio fall to 0.20 times or rise to 4.2 times. “Not detected” means the test could not see it, not that it did not happen. Only accounts with 500 edits and 30 days may edit these articles.</p>
+    <p class="means bl"><b>Bottom line:</b> Wikipedia’s arbitration committee documented off-wiki canvassing on both sides of this subject; our data show regulars returning to the same pages, not a campaign footprint, and no account carried a term across languages. The footprint test could only have seen a very large effect.</p>
+    <p class="deck">The edits were made by long-standing accounts, in small groups per page, with insertions and removals done by different hands, and a pool of regulars moving across the hot pages: 9 accounts made 48 of the 216 traced first-sentence changes on the 25 key articles by changing 3 or more of them; on the comparison key articles no account did. Our data cannot see off-wiki channels; it can see timing and footprint. The wave of critical wording began in the 16 weeks after 7 October 2023, when topic insertions ran at 3.4 times the comparison rate (chart below), before the documented pro-Palestinian channel opened in January 2024; the pro-Israel email canvassing ArbCom found dates from the same weeks but aimed the other way.<!--VERIFY: ArbCom findings read from search snippets only (ORGS.md section 5); check the primary pages before publication--></p>
+    <p class="deck">No campaign, exposure or sanction date leaves a mark we can tell from chance, but that test has low power: it could only have seen the ratio fall to 0.20 times or rise to 4.2 times. “Not detected” means the test could not see it, not that it did not happen.</p>
   </header>
 
   <h3 class="o-h">1 · What Wikipedia’s own bodies found, on both sides</h3>
@@ -1476,7 +1485,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li><span class="tag u">Not shown</span> Israeli government Wikipedia editing in 2021 to 2026: no reputable report found. The 2025 contracts concern web and AI content, not Wikipedia.<!--VERIFY: snippet-only (ORGS.md #19)--></li>
       <li><span class="tag u">Not shown</span> A plan is not an operation: the Heritage Foundation’s leaked “Project Esther” deck (January 2025) planned to “identify and target” editors; its execution is not shown.<!--VERIFY: snippet-only (ORGS.md #17)--></li>
     </ul>
-    <p class="cap">ArbCom did not publish the size of either group. Public training drives on both sides are documented too (Euro-Med’s WikiRights rounds, arts edit-a-thons on Palestine, a 2010 settler-council course); none maps onto the specific edits we measured.<!--VERIFY: all ORGS.md items were read as search snippets; nothing here is full text--></p>
+    <p class="cap">ArbCom did not publish the size of either group, and its April 2025 finding of other coordination gives no start date. Only accounts with 500 edits and 30 days may edit these articles. Public training drives on both sides are documented too (Euro-Med’s WikiRights rounds, arts edit-a-thons on Palestine, a 2010 settler-council course); none maps onto the specific edits we measured.<!--VERIFY: all ORGS.md items were read as search snippets; nothing here is full text--></p>
 </div></details>
 
   <h3 class="o-h">2 · Timing and footprint: what our own tests can see</h3>
@@ -1489,7 +1498,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
   <h3 class="o-h">3 · Accounts that move together, measured against chance</h3>
   <p class="deck col">We tested every pair of the 697 accounts whose critical-term edits we can see in topic opening paragraphs (847 on comparison pages) against chance. On topic pages 14 pairs moved together beyond chance, each on at least three of the same articles, where chance gives about 2 (5 at most in 95% of shuffled worlds); on comparison pages 3 pairs, against 0.28, and no group.</p>
-  <details class="stats"><summary>More <span>the two blocs, and what they are not</span></summary><div class="in">
+  <p class="deck col" id="orgXw"><b>Across languages, different hands.</b> None of the 281 accounts that inserted a critical term in our 11 editions did so in a second language, nor did any of the 284 that removed one. A campaign by the same accounts across editions would leave exactly that signature. It is not there.</p>
+  <details class="stats"><summary>More <span>the two blocs; other languages; what made wording stick</span></summary><div class="in">
   <p class="means"><b>What this means:</b> a few small sets of experienced editors kept returning to the same contested pages, more often than chance explains. Subject regulars with shared watchlists look like this, and so would a coordinated group; this test cannot tell them apart. It found none of the tighter signatures of a campaign: edits in step, pasted wording, or a burst inside a documented canvassing window.</p>
     <ul class="short-row">
       <li><b>Bloc A: four accounts, adding and removing.</b> 23 articles; 45 insertions and 23 removals of critical terms. None of 200 shuffled worlds made a group this large and tight. Medium confidence.</li>
@@ -1497,11 +1507,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li><b>What the blocs are not.</b> No member edited within 10 minutes of another; on the same article, members came a median of 14 days (A) and 66 days (B) apart. No sentence was pasted into five or more articles, on topic or comparison pages; the Nakba wording on 17 Palestinian village pages came from 15 accounts, piecemeal. The test on removals alone found no bloc. All eight accounts are long-standing (median account age about 3 years in A and 6 in B), and none has under 500 edits, which the Arab–Israeli restriction requires; ArbCom’s December 2024 case concerned gaming that threshold.</li>
       <li><b>Timing, low confidence.</b> Bloc A made 41% of its edits in the war’s first months (October 2023 to January 2024, also the period of the pro-Israel email canvassing ArbCom found), against 18% for matched sets of random accounts (p = 0.02 to 0.04), and 21% in the pro-Palestinian Discord window (January to September 2024), against 23%. Bloc B: 34% against 15% (p = 0.05), and 29% against 24%. No result passes our strict level (p &lt; 0.01), and the email window is also the first months of the war, when all accounts edited more. Being active in a window does not make a group part of what ArbCom found.</li>
     </ul>
+    <ul class="short-row">
+      <li><b>Across languages: same news, not same accounts.</b> Different accounts in different editions made the same change (the same term, added or removed) within a day of each other 135 times, against 104.6 by chance, and within a week 925 times, against 579. The same account never did, in any window. That fits a shared news trigger, a ruling or report every edition covers. 153 accounts edited the same key article in two or more languages (chance 106); none carried a term across. High confidence. No cross-language bloc: no two accounts linked by term edits (chance 0); on talk pages 8 cross-language pairs, against 2.7 by chance, and no group of three or more. Low confidence.</li>
+      <li><b>Sources made wording stick.</b> In the 11 editions, insertions that lasted brought a new source 50% of the time; reverted ones 28% (204 lasted, 414 reverted; p = 0.0005). The new source domains: Western wire services and papers 298, rights groups and the UN 221, Arab and Palestinian press and pro-Palestinian outlets 101, Israeli press 92, scholarly 73, pro-Israel advocacy 8, other 1,254. High confidence; domains only.</li>
+      <li><b>Formal decisions settled some of it.</b> Of 26 English wordings that lasted 90 days or more, 6 settled within 30 days after a formal discussion (an RfC or a move request) closed, against 2.3 by chance (p = 0.02). 9 lasted after earlier failed attempts, with no close nearby. Low confidence.</li>
+    </ul>
   <p class="cap">The data cannot see talk-page and RfC votes, where canvassing is usually alleged, accounts that were never caught, or text outside the opening section. Three results point the predicted way (the January 2024 motions, PIA5, the April 2025 bans) and none survives correction for 13 tests.</p>
 </div></details>
   <div id="net"><!--NETWORK: build_page.py inlines patterns/coord/chart_data/network.json as R.network when present; otherwise this renders the "analysis running" placeholder--></div>
 
-  <p class="deck col">The accounts were veterans new to these pages, and the same pages gained protection and formal discussions (appendix: <a href="#organic">Signals of coordination</a>). The tests cannot see off-wiki channels, talk-page votes, or accounts that were never caught.</p>
+  <p class="deck col">How the story settled: lasting wording came with a new source half the time (reverted wording, 28%), and some was fixed by formal community decisions (More, above; appendix: <a href="#organic">Signals of coordination</a>).</p>
   <p class="handoff">Here is what the world’s reference now reads, sentence by sentence. Then: how far to trust it.</p>
 </section>
 
@@ -3235,6 +3250,11 @@ function drawWave(){
     showTip(`<b>${h.h.replace("-"," ")}${i===N-1?" (so far)":""}</b><div class="r"><span>per 1,000 topic edits</span><span>${r1(h.rate)}</span></div><div class="r" style="opacity:.8"><span>new critical terms</span><span>${h.ins}</span></div><div class="r" style="opacity:.8"><span>topic edits</span><span>${h.edits.toLocaleString("en-US")}</span></div>`,ev.clientX,ev.clientY)};
   svg.addEventListener("pointermove",mv);svg.addEventListener("pointerdown",mv);svg.addEventListener("pointerleave",hideTip);
 }
+function drawXwGG(){/* when each edition opened a "Gaza genocide" article: rows in the reach-bar style, days after English */
+  const host=$("#xwGG"),X=R.xw;if(!host||!X||!X.gg)return;
+  const dd=d=>+d.slice(8,10)+" "+MON[+d.slice(5,7)-1]+" "+d.slice(0,4),mx=Math.max(...X.gg.map(r=>r[2]))||1,ph=isPhone();
+  host.innerHTML=`<div class="rch" style="gap:5px" role="img" aria-label="${esc("Gaza genocide article created: "+X.gg.map(([l,d,n])=>`${LANG[l]||l} ${dd(d)}${n?` (+${n} days)`:""}`).join("; "))}">${X.gg.map(([l,d,n])=>`<div class="rch-row" style="grid-template-columns:${ph?"92px minmax(0,1fr) 56px":"92px minmax(0,1fr) 150px"};font-size:11.5px"><span>${esc(LANG[l]||l)}${ph?`<br><span style="font-size:10.5px">${dd(d)}</span>`:""}</span><span class="rch-bar" style="height:16px"><i style="width:${Math.max(.8,n/mx*100)}%;background:var(${l==="en"?"--ink":"--topic"})"></i></span><span class="v" style="font-size:12px">${ph?(n?`+${n} d`:"first"):dd(d)+(n?` · +${n} d`:" · first")}</span></div>`).join("")}</div>`;
+}
 function drawNews(){
   const host=$("#newsFig");if(!host)return;
   host.innerHTML=`<div class="fig-h" style="margin-bottom:10px"><span class="fig-t">Where the extra change in opening paragraphs sits, compared with similar articles, after July 2023</span><span class="cap">core crawl: 9,177 opening paragraphs seen at all three dates</span></div>
@@ -3845,7 +3865,7 @@ function drawAudit(){
 
 /* ---------- init ---------- */
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
-function redrawAll(){safe(drawReach);safe(drawTier);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawZi);safe(drawO7);safe(drawCharge);safe(drawNet);safe(drawAudit)}
+function redrawAll(){safe(drawReach);safe(drawXwGG);safe(drawTier);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawZi);safe(drawO7);safe(drawCharge);safe(drawNet);safe(drawAudit)}
 function init(){
   if(!R){$("#deck").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
   safe(drawLede);safe(drawBreathe);safe(drawCards);safe(ziInit);safe(o7Init);safe(chargeInit);safe(drawPeriods);safe(drawNet);safe(drawAudit);
@@ -3863,7 +3883,7 @@ function init(){
   $("#rows").addEventListener("click",pick);$("#rows").addEventListener("keydown",e=>{if(e.key==="Enter")pick(e)});
   const cv=$("#hero");cv.addEventListener("pointermove",heroHover);cv.addEventListener("pointerdown",heroHover);cv.addEventListener("pointerleave",hideTip);
   safe(drawHero,true);
-  safe(keyInit);safe(drawChance);safe(drawBoard);safe(drawReach);safe(drawTier);safe(whenInit);safe(drawWhen);safe(drawWave);safe(drawNews);safe(drawSpread);safe(drawWho);
+  safe(keyInit);safe(drawChance);safe(drawBoard);safe(drawReach);safe(drawTier);safe(whenInit);safe(drawWhen);safe(drawWave);safe(drawXwGG);safe(drawNews);safe(drawSpread);safe(drawWho);
   safe(drawTrend);safe(minis);safe(drawHeat);safe(drawForest);safe(traceInit);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawChecks);safe(drawTable);safe(drawMethod);
   safe(showDetail,(R.articles.find(a=>a.title==="Zionism")||R.articles[0]).title);
   document.addEventListener("click",e=>{const b=e.target.closest("[data-intent]");if(!b)return;e.preventDefault();let it=null;try{it=JSON.parse(b.dataset.intent)}catch(x){}openInLab(it)});
