@@ -16,3 +16,6 @@
 - The shock comes from juxtaposition and the exact words, never from adjectives, loaded framing or overstatement. Each card has one quote/visual that proves its headline on sight.
 - Cut anything soft, hedged-to-nothing or merely procedural. Keep exactly one honesty line (what this does and does not show).
 - No lies: every number and quote is traceable to the research edition. The messaging/comprehensiveness agent vetoes anything that overstates.
+
+## Focus catchers (owner, for the cut rounds)
+- Every then/now in the flash edition shows WHAT changed at a glance: a one-line punch («“Allegations have been made” → “intentional, systematic destruction … carried out by Israel”») plus inline highlighted changed words (blue added, amber removed). Full text is secondary. Applies to tooltips, cards and carousel slides. See MUSTFIX_owner.md item 12.
