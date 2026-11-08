@@ -1,0 +1,1433 @@
+{
+ "round": 4,
+ "date": "2026-11-08",
+ "branch": "wiki-framing-research",
+ "commits": {
+  "content_fixes": "0d93a82",
+  "design_fixes": [
+   "ae7018d",
+   "5c19eb6"
+  ],
+  "verifier_repairs": "545bd87"
+ },
+ "scores": {
+  "data": {
+   "overall": 6.5,
+   "subscores": {
+    "number_accuracy": 7,
+    "quote_accuracy": 9,
+    "claim_strength_matches_evidence": 6,
+    "sampling_honesty": 8,
+    "internal_consistency": 5
+   }
+  },
+  "design": {
+   "overall": 6.5,
+   "subscores": {
+    "visual_hierarchy": 7,
+    "typography": 8,
+    "colour_meaning_and_consistency": 5,
+    "chart_clarity_and_annotation": 7,
+    "dark_mode": 8,
+    "overall_polish_vs_top_desks": 6,
+    "language_barrier_visuals": 6.5
+   }
+  },
+  "ui": {
+   "overall": 5.5,
+   "subscores": {
+    "component_consistency": 6,
+    "spacing_and_alignment": 5,
+    "labels_and_affordances": 6,
+    "phone_layout_390": 5,
+    "desktop_layout_1280": 6,
+    "no_overflow_or_overlap": 5
+   }
+  },
+  "ux": {
+   "overall": 6,
+   "subscores": {
+    "discoverability": 7,
+    "clarity_of_what_each_interaction_shows": 6,
+    "control_responsiveness": 7,
+    "mobile_usability": 5,
+    "accessibility": 5,
+    "interaction_adds_understanding": 8
+   }
+  },
+  "newsroom": {
+   "overall": 7,
+   "subscores": {
+    "headline_strength": 8,
+    "first_screen_story_clarity": 6,
+    "newsworthiness_israeli_audience": 9,
+    "quotability": 8,
+    "segment_readiness": 6,
+    "credibility_under_attack": 6,
+    "narrative_led_headlines_and_bottom_lines": 8,
+    "bottom_line_quality": 7
+   }
+  },
+  "critic": {
+   "overall": 6.5,
+   "subscores": {
+    "defensibility": 7,
+    "balance_of_evidence": 7,
+    "caveat_placement": 6,
+    "causal_restraint": 6,
+    "transparency_of_method": 7
+   }
+  },
+  "whole": {
+   "overall": 7,
+   "subscores": {
+    "narrative_arc": 7.5,
+    "flow_between_sections": 6.5,
+    "redundancy": 5.5,
+    "length_and_pacing": 6,
+    "core_finding_lands": 8,
+    "zionism_charge_oct7_organised_connect": 6,
+    "coherence_of_tone": 8,
+    "evidence_anchoring": 7,
+    "narrative_focus": 7.5,
+    "skimmability": 7
+   }
+  }
+ },
+ "mean": 6.43,
+ "mean_round_3": 6.43,
+ "mean_round_2": 6.21,
+ "mean_round_1": 6.5,
+ "scoring_note": "Scores are the reviewers' grades of the build before round-4 fixes (r4_before.html, after the cross-wiki integration 92decce). UI rose to 5.5 and newsroom held at 7; data fell to 6.5 because 92decce added heuristic-based and internally inconsistent cross-wiki claims. Most sev-4/5 items found this round are now fixed and verified; the ArbCom primary-page check remains the publication blocker.",
+ "top_issues": [
+  {
+   "rank": 1,
+   "lenses": [
+    "whole",
+    "data"
+   ],
+   "severity": 5,
+   "issue": "#xwGG presented 'Gaza genocide' creation dates although the pages began under 'allegations' titles; day counts disagreed with printed dates.",
+   "status": "fixed"
+  },
+  {
+   "rank": 2,
+   "lenses": [
+    "data",
+    "critic",
+    "whole"
+   ],
+   "severity": 5,
+   "issue": "#crosslang 'How many readers met genocide as fact' used the marker heuristic and contradicted the hand-coded grid (Hebrew 4%, French 9%, Portuguese 1%, German n/a shown as 0%).",
+   "status": "fixed (bullet removed)"
+  },
+  {
+   "rank": 3,
+   "lenses": [
+    "newsroom"
+   ],
+   "severity": 5,
+   "issue": "ArbCom 'documented on both sides' rests on search snippets; 13 VERIFY comments shipped in the page source.",
+   "status": "partly fixed: comments stripped and asserted out, items marked 'as reported'; primary-page check deferred"
+  },
+  {
+   "rank": 4,
+   "lenses": [
+    "critic",
+    "whole",
+    "data"
+   ],
+   "severity": 4,
+   "issue": "#organised overclaimed the zero-power cross-language account test ('It is not there', bottom-line clause) and read synchrony as 'same news'.",
+   "status": "fixed"
+  },
+  {
+   "rank": 5,
+   "lenses": [
+    "critic"
+   ],
+   "severity": 4,
+   "issue": "#organised deck regression: ratio context and ArbCom no-start-date clause removed by 92decce.",
+   "status": "fixed"
+  },
+  {
+   "rank": 6,
+   "lenses": [
+    "data"
+   ],
+   "severity": 4,
+   "issue": "#xmFig hostages: de/fr/es/pt drawn as absent although narrative.json counts mentions later in the lead.",
+   "status": "fixed"
+  },
+  {
+   "rank": 7,
+   "lenses": [
+    "design"
+   ],
+   "severity": 4,
+   "issue": "#xrHd secondary 'stated as fact' pills invited misreading (Hebrew Oct 7, Arabic Hamas).",
+   "status": "fixed"
+  },
+  {
+   "rank": 8,
+   "lenses": [
+    "design",
+    "ux",
+    "ui"
+   ],
+   "severity": 4,
+   "issue": "#xmFig on phone: key 1,100px below the grid, no fade/cue, clipped headers.",
+   "status": "fixed"
+  },
+  {
+   "rank": 9,
+   "lenses": [
+    "ui",
+    "ux"
+   ],
+   "severity": 4,
+   "issue": "#zionism/#oct7 phone stepper: 140px pinned control, blank placeholder, not sticky while reading the card.",
+   "status": "fixed"
+  },
+  {
+   "rank": 10,
+   "lenses": [
+    "whole",
+    "critic"
+   ],
+   "severity": 4,
+   "issue": "#when implied the retelling was over and lacked the insertion evidence.",
+   "status": "fixed"
+  },
+  {
+   "rank": 11,
+   "lenses": [
+    "newsroom",
+    "critic"
+   ],
+   "severity": 4,
+   "issue": "Hero dek 'took on this vocabulary' overclaimed the 10.3% measure.",
+   "status": "fixed"
+  },
+  {
+   "rank": 12,
+   "lenses": [
+    "design"
+   ],
+   "severity": 4,
+   "issue": "Page-wide colour meanings broken (#when dots, #board diamond/ring, #xrLang hatch, per-claim palette).",
+   "status": "fixed"
+  },
+  {
+   "rank": 13,
+   "lenses": [
+    "ux"
+   ],
+   "severity": 4,
+   "issue": "#net 'low' hull label read as Bloc B.",
+   "status": "fixed"
+  },
+  {
+   "rank": 14,
+   "lenses": [
+    "data",
+    "whole",
+    "critic"
+   ],
+   "severity": 3,
+   "issue": "#news range statement inverted; #limits Languages item contradicted #crosslang.",
+   "status": "fixed"
+  },
+  {
+   "rank": 15,
+   "lenses": [
+    "data"
+   ],
+   "severity": 3,
+   "issue": "#charge numerator includes biblical/ancient and individual rows.",
+   "status": "deferred (needs a source-file flag)"
+  },
+  {
+   "rank": 16,
+   "lenses": [
+    "data",
+    "design"
+   ],
+   "severity": 3,
+   "issue": "Arabic 'captive' and Polish 'label' share the attributed glyph.",
+   "status": "deferred"
+  },
+  {
+   "rank": 17,
+   "lenses": [
+    "newsroom"
+   ],
+   "severity": 3,
+   "issue": "Hero H1 tail, masthead, byline/AI-coding disclosure.",
+   "status": "deferred (owner)"
+  }
+ ],
+ "fixes_applied": [
+  {
+   "location": "#crosslang More, 'How many readers met “genocide” as fact' bullet; build_page.py expo",
+   "lens": "data+critic+whole (sev5/4/3)",
+   "change": "Bullet removed; expo returns None for a missing value instead of 0.",
+   "verified": true,
+   "verification": "Verified. The phrase and the 11 marker-heuristic shares (11%, 10%, 9%, 7%, 5%, 4%, 3%, 2%, 1%, 0%) are gone from the rendered and static text."
+  },
+  {
+   "location": "#organised ArbCom list, deck, #sixty card 5; build output step",
+   "lens": "newsroom (sev5), partly applied",
+   "change": "Build strips <!--VERIFY…--> comments and [[verify|…]] notes and asserts none reach the output; ArbCom list carries an 'As reported…' caption; bottom line and card 5 say 'according to its published notices' / 'as reported'.",
+   "verified": true,
+   "verification": "Verified. 0 'VERIFY' and 0 '[[verify' strings in r4_after.html and r4_final.html. The caption, 'according to its published notices' (bottom line) and 'According to ArbCom’s published notices as reported' (card 5) render. Primary-page verification remains deferred."
+  },
+  {
+   "location": "#crosslang Gaza genocide figure (#xwGG)",
+   "lens": "whole (sev5) + data (sev1)",
+   "change": "Retitled to the allegations-rename framing; line above the figure; rename tick and date per row (en 2024-07-03, ar 2024-06-26, pt 2024-07-14, fr 2024-11-08, nl 2025-12-18, pl 2026-04-26); Italian/Spanish untick'd with caption; day counts from printed dates.",
+   "verified": true,
+   "verification": "Verified. Title, 'How to read this', 6 'renamed' dates and the caption render; all six dates are in crosswiki/cards.md and logs.json. Day counts now +4, +110, +124, +300, +321, +379, +499 and match the printed dates (checked by hand: 29 Dec 2023→2 Jan 2024 = 4; →8 Nov 2024 = 315 on the phone rename label)."
+  },
+  {
+   "location": "#xmFig hostages column; build_page.py HOS",
+   "lens": "data (sev4 + sev3 note)",
+   "change": "de/fr not_held→outside, es/pt fact→outside with narrative.json sentence positions; Arabic note quotes the full sentence (asarū, not rahā’in).",
+   "verified": true,
+   "verification": "Verified from the cell aria-labels: German and French 'first copy not in the text we hold; now later in the opening section, beyond the 1,200 characters we hold'; Spanish and Portuguese 'hostages named → later in the opening section … moved away'. Notes carry 'sentence 9 of 19', '8 of 13', '6 of 11', '8 of 10' (narrative.json). Arabic note in the data: '…and led them to Gaza” (asarū, took captive) … rahā’in, is not used.' The captive glyph itself is unchanged (deferred)."
+  },
+  {
+   "location": "Hero dek (#deck) and #reads H2",
+   "lens": "newsroom (sev4) + critic (sev3)",
+   "change": "Dek names the Nakba quote and the hostages; '10.3% of 121 sampled … about any party, against 4.4%'; AI-tools claim kept out; jump link 'Or see all seven, then and now ↓'; #reads H2 'seven sentences, then and now'.",
+   "verified": true,
+   "verification": "Verified in the rendered hero and #reads H2. 10.3% and 121 match sampling/mass3_results.md."
+  },
+  {
+   "location": "#organised deck paragraph (regression from 92decce)",
+   "lens": "critic (sev4)",
+   "change": "Restored '(0.5 times before the war; 2.0 times while the Discord channel was active; chart below)' and the ArbCom no-start-date clause.",
+   "verified": true,
+   "verification": "Verified; both clauses are in the visible deck."
+  },
+  {
+   "location": "#organised bottom line, #orgXw, More bullets",
+   "lens": "critic+whole+data",
+   "change": "Cut 'no account carried a term across languages'; #orgXw descriptive (281/284, global username, 153 of 8,175, chance 0); cross-language bullet retitled with p = 0.014 / 0.001 and 'cannot tell them apart', 0 flagged; sources bullet as association with 2,047 domain arrivals and asymmetry note; RfC bullet reworded.",
+   "verified": true,
+   "verification": "Verified. 'It is not there' and 'no account carried' are gone; new text renders; 107,141/8,175/153/281/284/135/104.6/925/579/0 flagged/2,047/0.0005/6 of 26/2.3/p=0.02 all match crosswiki/cards.md lines 9, 57, 69, 153, 165."
+  },
+  {
+   "location": "#organised closing deck → end of #when",
+   "lens": "whole (sev3) + critic",
+   "change": "Orphan 'How the story settled' removed from #organised; scoped version added at the end of #when.",
+   "verified": true,
+   "verification": "Verified: 'How the story settled' is gone; 'How the wording settled. Across the 11 editions we track… (low confidence…)' closes #when."
+  },
+  {
+   "location": "#when H2, bottom line, deck, mWhen",
+   "lens": "whole (sev4) + critic (sev3)",
+   "change": "New H2; bottom line 'alongside the battles (suggestive)… settled late'; deck dates (Nakba 6 Jul, Zionism 27 Aug, Israel 4 Sep, October 7 8 Oct 2026); insertion result 1.34x (p=0.001), 1.17x (p=0.054), legal 1.01x.",
+   "verified": true,
+   "verification": "Verified. 1.34/1.17/0.054/1.01 and the Nagorno-Karabakh placebo match SYNTHESIS.md lines 98 and 188."
+  },
+  {
+   "location": "#news H2, bottom line, mNews",
+   "lens": "data (sev3) + whole + newsroom",
+   "change": "Range statement corrected (+4.35; +0.15 to +5.98 on the conflict-related subset; +1.98; −0.40 to +4.29 on all 9,177 → suggestive); H2 'rewrote older history, places and people'; bottom line leads with the West Bank quote.",
+   "verified": true,
+   "verification": "Verified against SYNTHESIS.md line 134 (all five numbers)."
+  },
+  {
+   "location": "#crosslang xw-facts 'Hamas: where “terror” sits', 'Court rulings overstated', 'Who moved first'; ICJ notes",
+   "lens": "newsroom+critic+whole+data",
+   "change": "'5 of 20' with splitter caveat and 9→23 growth; 'furthest move' dropped; court bullet rewritten from hand-coded langs.json quotes (Arabic 'strove', French CERD Art. 3 ban, Russian 'found Israel guilty of violating Article 3' + no verdict); English 2024 flag marked not read by hand; creation-as-entry caveat.",
+   "verified": true,
+   "verification": "Verified in the rendered drawer. '5 of 21' and 'furthest move' are gone."
+  },
+  {
+   "location": "#crosslang bottom line + deck; #oct7 deck",
+   "lens": "data sev2 + newsroom sev3",
+   "change": "'Dutch pulled back (its row in the grid)'; Polish 'a term in circulation'/'a series of crimes'; visible Spanish 'un ataque de represalia' line; #oct7 cross-edition naming sentence.",
+   "verified": true,
+   "verification": "Verified. Naming matches crosswiki/cards.md line 129. The Spanish quote now also repeats inside the drawer (minor redundancy, not a regression)."
+  },
+  {
+   "location": "#limits 'Languages.' item; #method 'Other languages'",
+   "lens": "data (sev3) + critic (sev3)",
+   "change": "Scoped Languages item (French 1→12, Spanish 3→10, Arabic 8→15; exploratory); new method entry (78 editions, 11 Wikipedias, 107,141 revisions, heuristic voice, global username, 1,000 shuffles).",
+   "verified": true,
+   "verification": "Verified against crosswiki/cards.md lines 3, 9, 45."
+  },
+  {
+   "location": "#sixty cards 3, 4, 5; #charge More drawer",
+   "lens": "critic (sev3) + whole (sev2)",
+   "change": "Card 4 drops 'editors have a court to cite'; same in #charge drawer, duplicate Russia/Turkey sentence deleted; card 3 names the three articles and the asymmetry; card 5 'as reported'.",
+   "verified": true,
+   "verification": "Verified. 'editors have a court to cite' count 2→0; the 25%/70%/74% duplicate sentence is gone (2 of 8 → 14 of 19, 25% to 74% kept)."
+  },
+  {
+   "location": "#board, #palestine, #reach bottom lines",
+   "lens": "newsroom+whole",
+   "change": "Plain-words bottom lines; #reach no longer implies the five pages are the 10.3% sample.",
+   "verified": true,
+   "verification": "Verified. −0.3 and its range left the #board bottom line and remain in the deck/figures."
+  },
+  {
+   "location": "Hand-offs #charge → #oct7 → #palestine → #crosslang → #against",
+   "lens": "whole (sev3)",
+   "change": "Four <p class=handoff> lines added.",
+   "verified": true,
+   "verification": "Verified: 4 new handoffs render at the end of #charge, #oct7, #palestine and #crosslang."
+  },
+  {
+   "location": "#organised time chips and group-card labels",
+   "lens": "critic (sev3)",
+   "change": "Symmetric chip names; phone 'Email window (Oct 23–Jan 24)' / 'Discord window (Jan–Sep 24)'; card labels match.",
+   "verified": true,
+   "verification": "Verified on desktop and iPhone 13 (pressed chip text checked)."
+  },
+  {
+   "location": "build_page.py NAMES",
+   "lens": "data (sev2)",
+   "change": "Russian official name added so the 'resistance' chip is not placed inside it.",
+   "verified": true,
+   "verification": "Verified in build_page.py line 579; build passes."
+  },
+  {
+   "location": "Build, smoke test, commit",
+   "lens": "process",
+   "change": "Rebuilt with new assertions; Playwright 390/1280; commit 0d93a82.",
+   "verified": true,
+   "verification": "Verified: build passes (VERIFY stripped, rename dates asserted)."
+  },
+  {
+   "location": "#crosslang #xrHd",
+   "lens": "design (sev4)",
+   "change": "Claim and sentence voice on separate lines; line two names the glossed word ('“massacre” (טבח) in this sentence: stated as fact'); .vb2 outline chips; line dropped when no glossed word.",
+   "verified": true,
+   "verification": "Verified on all 26 moments: e.g. moment 13 '“massacre” (טבח) in this sentence: stated as fact', moment 18 '“resistance” (مقاومة) in this sentence: stated as fact'; vb2 chips are outline-only (.vb.vb2 transparent, ink-2 border); moments without a glossed word show no second line."
+  },
+  {
+   "location": "#crosslang #xrPair Both / Replay",
+   "lens": "design (sev4)",
+   "change": "Spaces between adjacent struck/inserted runs; height held during Replay; >60% new words drawn as underline.",
+   "verified": true,
+   "verification": "Verified: in Both mode on moment 1 the join regex /[a-z][A-Z]|[.!?][a-z]/ finds 0 matches at 1280 and on iPhone 13."
+  },
+  {
+   "location": "#crosslang #xmFig on phone",
+   "lens": "design (sev4)",
+   "change": "Inline key above the grid; 'Now only' default below 600px; right-edge fade; live 'swipe for N more claims →' cue; wrapping headers/labels; n/a as '–' in the small square.",
+   "verified": true,
+   "verification": "Verified on iPhone 13: mode 'Now only', mask-image set on #xmScroll, cue 'swipe for 4 more claims →', inline key rendered (screenshot)."
+  },
+  {
+   "location": "#crosslang #xmFig rings",
+   "lens": "design (sev3)",
+   "change": "▲/▼ chevrons for direction on the voice ladder, in key, caption and aria-labels.",
+   "verified": true,
+   "verification": "Verified: 29 cells 'moved toward Wikipedia’s own voice', 4 'moved away' in aria-labels; caption 'A ring marks a cell that changed: ▲ toward…, ▼ away'."
+  },
+  {
+   "location": "#crosslang #xrLang",
+   "lens": "design (sev3)",
+   "change": "Mono legend line under the language row; disabled buttons 40% opacity, no hatch; active chip scrolled into view.",
+   "verified": true,
+   "verification": "Verified: #xrLangK legend renders; disabled opacity 0.4."
+  },
+  {
+   "location": "Page-wide colour meaning",
+   "lens": "design (sev4)",
+   "change": "#when dots ink-2 (other conflicts grey-violet); #board filled ink diamond and grey-violet outlined square; threshold in ink; claim rules/gloss underlines ink-2; 7 Oct rule dashed red.",
+   "verified": true,
+   "verification": "Verified: #when circle fills are ink-2 (rgb 57,66,74) and grey-violet only; #board legend reads 'diamond: weighted and matched together' and 'outlined square: probability sample'; legend 'red dashed line: 7 October 2023'."
+  },
+  {
+   "location": "#zionism #ziCtl / #oct7 #o7Ctl on phone",
+   "lens": "ui (sev4)",
+   "change": "Control after the card; IntersectionObserver .stuck; one-row 66px stuck state; Play pauses under 20% visibility.",
+   "verified": true,
+   "verification": "Verified at 390x664: .stuck true, 66px tall, stays stuck while the card is centred (top 590); Play advances while visible (56→58 in 3 s)."
+  },
+  {
+   "location": "#ziChart / #o7Chart labels",
+   "lens": "ui (sev4)",
+   "change": "Labels above the playhead with sheet halo; phone phase strip numbers only; '7 Oct' above the plot; 26%/5% readouts beside their box.",
+   "verified": true,
+   "verification": "Verified in screenshots (light and dark): phase strip shows numbers on phone, labels have a halo. Residual: the badge leader lines still cross the red '7 Oct' label on phone (cosmetic)."
+  },
+  {
+   "location": "#organised bloc cards and headline strip",
+   "lens": "ui (sev4)",
+   "change": "Stacked window rows; auto-fit minmax(380px,1fr); fixed 262px value column.",
+   "verified": true,
+   "verification": "Verified: bloc grid at 1280 is 598px + 598px."
+  },
+  {
+   "location": "#organised .org-null (.fig)",
+   "lens": "ui (sev3)",
+   "change": "align-content:start on .fig.",
+   "verified": true,
+   "verification": "Verified: .org-null align-content start; paragraph 12px under the title."
+  },
+  {
+   "location": "#organised #net Network view",
+   "lens": "ux (sev4/3)",
+   "change": "'Low-confidence group' label; Bloc B caption; #netDet under graphs and sticky on phone; nodes/links focusable with aria-labels, Enter/Space opens.",
+   "verified": true,
+   "verification": "Verified: hull labels 'Bloc A' and 'Low-confidence group'; caption renders; 17/17 nodes and 17 links tabindex=0; Enter on a node fills #netDet; #netDet position sticky on phone."
+  },
+  {
+   "location": "#organised #net Groups with Comparison",
+   "lens": "ux (sev3)",
+   "change": "Data-computed no-group message; chips disabled with explanation; strip legend hidden.",
+   "verified": true,
+   "verification": "Verified: all 5 chips disabled, caption 'No groups on comparison pages…'."
+  },
+  {
+   "location": "Focus restore and aria",
+   "lens": "ux (sev3)",
+   "change": "Focus kept on re-render (#netView/#netSide/#netPre, #xrLang, #xrSlot); #trMore focuses first new card; #brRange aria-valuetext.",
+   "verified": true,
+   "verification": "Verified by keyboard: Enter on #netSide Comparison/Topic, #netPre, #netView keeps focus on the pressed button; ArrowRight in #xrLang keeps focus on the new language; #trMore moves focus to the first new card. #brRange aria-valuetext present but read '30 November 2026' (a future date) at the default position: repaired, see verifier_repairs."
+  },
+  {
+   "location": "#crosslang #xwGG",
+   "lens": "design (sev3)",
+   "change": "Ink-2 bars, English 2px ink rule, how-to line, matrix row order with native names, hatched no-article rows, shared day axis.",
+   "verified": true,
+   "verification": "Verified (screenshot and text): he/de/ru 'no article linked' ('none' on phone), axis 0/250/500/750/1000 days (0/500/1000 on phone)."
+  },
+  {
+   "location": "#oct7 card / #palestine Hamas trace ', )'",
+   "lens": "ux (sev3)",
+   "change": "Empty romanization slot replaced at build; assertion added.",
+   "verified": true,
+   "verification": "Verified: no ', )' or '( )' in the rendered text; the Hamas card reads 'حركة المقاومة الإسلامية, [romanization not in this re…'."
+  },
+  {
+   "location": "#sixty",
+   "lens": "design (sev3)",
+   "change": "3 × 2 grid at ≥1000px; inline quotes in body sans; phone cards stretch with 'Read more' pinned.",
+   "verified": true,
+   "verification": "Verified: grid columns 3 × 395px at 1280; phone cards all 571px."
+  },
+  {
+   "location": "#ppSide / #xrTime at 390px; chips and segs",
+   "lens": "ui (sev3)",
+   "change": "Short phone labels with full aria-label; one-row grid ≤600px; selected chips ink-filled; segs ≥40px at ≤600px.",
+   "verified": false,
+   "verification": "Partly verified: labels, one-row layout and ink-filled selected chips hold; #xrTime measured 36px on phone because the later '.xr-time .seg button{min-height:36px}' rule won. Repaired to 40px."
+  },
+  {
+   "location": "Phone scrollers #ziMoments, #o7Moments, #netPre, #xrArts",
+   "lens": "ui (sev3)",
+   "change": "Right-edge fade masks.",
+   "verified": true,
+   "verification": "Verified: mask-image set on all four on iPhone 13."
+  },
+  {
+   "location": "#reach 'Few pages, much of the reading'",
+   "lens": "ui (sev3)",
+   "change": "Phone label above bar; 170px desktop label column; swatch inline.",
+   "verified": true,
+   "verification": "Verified in CSS (.rch-row.rp 170px; phone grid rows)."
+  },
+  {
+   "location": "#oct7 #o7Art tabs",
+   "lens": "ux (sev2)",
+   "change": "#o7Live announces the new article on tab change.",
+   "verified": true,
+   "verification": "Verified: 'October 7: 131 changes to the first sentence. Showing change 70 of 131, 27 Nov 2023.'"
+  },
+  {
+   "location": "#charge #ppCard on phone",
+   "lens": "ux (sev2)",
+   "change": "First 6 sentences + 'Show all N' (aria-expanded); sticky '↑ Back to the chart' focusing the opening bar.",
+   "verified": true,
+   "verification": "Verified: 'Show all 8' → 'Show the first 6'; Back returns focus to the bar ('Israel / Jews, Genocide, now…')."
+  },
+  {
+   "location": ".btn.sm.unfold",
+   "lens": "ui (sev2)",
+   "change": "Restyled to match details.stats, ≥40px.",
+   "verified": true,
+   "verification": "Verified: all phone unfold buttons 40px."
+  },
+  {
+   "location": "#key scrolly on phone",
+   "lens": "ui (sev3)",
+   "change": "Opaque step cards, 28svh chart, 44px .go links.",
+   "verified": true,
+   "verification": "Verified: step background opaque, .go links 44px on phone; scrolly activates steps 0–4 in all four contexts."
+  }
+ ],
+ "deferred_fixes": [
+  {
+   "location": "ArbCom primary-page verification (Jan 2024 PIA motions, Dec 2024 case, 25 Apr 2025 motion, PIA5)",
+   "reason": "en.wikipedia.org blocked from this session (proxy 403). VERIFY notes stripped and items marked 'as reported'; card 5 headline and section H2 rest on the same notices and must be verified or reworded together before publication.",
+   "severity": 5,
+   "by": "content fixer"
+  },
+  {
+   "location": "#charge Israel/Jews numerator: pre-modern/individual flag and alternative shares (20.6/20.4/23.6%)",
+   "reason": "Needs a new perp_codes flag and perp_results.json entry; the figures are a reviewer recompute, not a source file.",
+   "severity": 3,
+   "by": "content fixer"
+  },
+  {
+   "location": "#xmFig glyphs for 'captive' (Arabic hostages) and 'label' (Polish genocide)",
+   "reason": "Glyph/legend/ring rendering for the design side; content side done.",
+   "severity": 3,
+   "by": "content fixer"
+  },
+  {
+   "location": "#oct7 three-card then/now strip",
+   "reason": "New component placement; quotes already in the #oct7 deck.",
+   "severity": 3,
+   "by": "content fixer"
+  },
+  {
+   "location": "#board scoreboard/three-ways chart into a drawer; #organised length trims",
+   "reason": "Structural moves of existing charts; text-level redundancy reduced.",
+   "severity": 3,
+   "by": "content fixer"
+  },
+  {
+   "location": "Hero H1 rewrite, phone masthead line, byline/AI-coding disclosure",
+   "reason": "Owner brand decision; byline needs owner input.",
+   "severity": 3,
+   "by": "content fixer"
+  },
+  {
+   "location": "Rename 'Bloc A/B' to 'Group A/B'",
+   "reason": "Names come from network.json; rename with the data file.",
+   "severity": 2,
+   "by": "content fixer"
+  },
+  {
+   "location": "Italian and Spanish genocide-article rename ticks",
+   "reason": "Move logs ambiguous; need a read by hand. Drawn without a tick and captioned.",
+   "severity": 2,
+   "by": "content fixer"
+  },
+  {
+   "location": "English ICJ 'plausible intent' revisions (17 Mar–5 May 2024) read by hand",
+   "reason": "Not in langs.json and Wikipedia unreachable; labelled as a pattern flag not read by hand.",
+   "severity": 2,
+   "by": "content fixer"
+  },
+  {
+   "location": "#xrPair build assertion on Both-mode innerText",
+   "reason": "Checked in Playwright instead (0 joins); a Python assertion would duplicate client-side token logic.",
+   "severity": 2,
+   "by": "design fixer"
+  },
+  {
+   "location": "#xrPair Hebrew inline gloss splitting 'בארץ ישראל' on phone; language-switch morph capped at 600ms",
+   "reason": "Needs a separate visual pass.",
+   "severity": 2,
+   "by": "design fixer"
+  },
+  {
+   "location": "#net selection kept across time-chip changes; Arrow-key navigation",
+   "reason": "Needs stored selection state across re-render.",
+   "severity": 2,
+   "by": "design fixer"
+  },
+  {
+   "location": "#key scrolly IntersectionObserver rootMargin",
+   "reason": "Measured: cards already start below the figure at activation; retuning risks the scrolly.",
+   "severity": 2,
+   "by": "design fixer"
+  },
+  {
+   "location": "#sixty body clamp to 5 lines; then/now label unification in #palestine/#reads",
+   "reason": "Editorial call for the owner.",
+   "severity": 2,
+   "by": "design fixer"
+  },
+  {
+   "location": "#zionism/#oct7 card scrollIntoView on phone taps; phase buttons to first key move; '9–16 Oct 2023' phase dates",
+   "reason": "Changes stepping behaviour across two figures; pinned control removes the scroll-back need.",
+   "severity": 2,
+   "by": "design fixer"
+  },
+  {
+   "location": "#organised #orgXw stat pair; 1× line; #orgPeriods legend spacing",
+   "reason": "Stat pair is new content; 1× line not reproduced.",
+   "severity": 2,
+   "by": "design fixer"
+  },
+  {
+   "location": "#board '-0.8' label collision; #reach bars rescaled to 0–20%",
+   "reason": "Lower severity; rescale needs a note rewrite.",
+   "severity": 2,
+   "by": "design fixer"
+  },
+  {
+   "location": "Bloc A/B rename, running-order and editorial items",
+   "reason": "Owner decisions.",
+   "severity": 2,
+   "by": "design fixer"
+  }
+ ],
+ "verification": {
+  "build": "python build_page.py → scratchpad/qa/r4_after.html (11.5 MB, assertions pass). After verifier repairs, rebuilt to scratchpad/qa/r4_final.html. Tested as viewport-wrapped copies (*_wrapped.html), because the raw build has no meta viewport.",
+  "fixes_claimed": 42,
+  "fixes_verified": 41,
+  "fixes_partly_landed": [
+   "#ppSide / #xrTime at 390px; chips and segs"
+  ],
+  "verifier_repairs": [
+   {
+    "file": "wikitrends/page_template.html",
+    "location": "#breathe #brRange aria-valuetext (brMove)",
+    "problem": "The new aria-valuetext announced '30 November 2026: the first sentence as it read that day' at the default 'Today' position, a date after the 5 November 2026 text snapshot (the track runs 60 days past the last data month).",
+    "change": "Dates at or after 5 Nov 2026 now read '5 November 2026: the latest text we hold, the first sentence as it reads now'.",
+    "verified": "r4_final: aria-valuetext '5 November 2026: the latest text we hold…' at 1280 and on iPhone 13."
+   },
+   {
+    "file": "wikitrends/page_template.html",
+    "location": "#xrTime buttons at ≤600px",
+    "problem": "Claimed ≥40px phone seg height; measured 36px because '.xr-time .seg button{min-height:36px}' overrode the seg rule.",
+    "change": "Added min-height:40px to the existing '#ppSide button,#xrTime button' phone rule (ID specificity wins).",
+    "verified": "r4_final: #xrTime 40px on iPhone 13; desktop unchanged at 36px."
+   }
+  ],
+  "regressions": {
+   "contexts": "iPhone 13 (wrapped, 390px) and 1280x900, light and dark; plus a keyboard focus pass at 1280.",
+   "console_errors": 0,
+   "horizontal_overflow_px": {
+    "iphone13_light": 0,
+    "iphone13_dark": 0,
+    "desk1280_light": 0,
+    "desk1280_dark": 0
+   },
+   "page_height_px": {
+    "iphone13": 61870,
+    "desk1280": 53605
+   },
+   "zionism_timeline": "Prev/Next 56↔57, last jump chip → 292, phase 2 → 56, Play advances while visible (56→58 in 3 s), pinned control 66px on phone.",
+   "oct7_tabs": "All three tabs switch and Next steps (Hamas change 13 of 120; October 7 87 of 131; Gaza genocide 42 of 247), aria-pressed follows, #o7Live announces the article.",
+   "charge_bars": "40 of 40 sampled bars open #ppCard; side seg keeps state; Show all / Back to the chart work on phone.",
+   "organised_network": "Groups/Network/Table switch (17 nodes in Network; 4 table rows); node click and Enter fill #netDet; time chips and Topic/Comparison respond and keep focus.",
+   "crosslang": "88 matrix cells; a cell opens its reader moment; 26 moments step; Both mode has 0 word joins.",
+   "scrolly": "#key steps 0–4 activate in all four contexts (one iPhone-light run showed a timing flake at step 0; rerun twice on r4_after and r4_final: 0,1,2,3,4).",
+   "regressions_found": [
+    "#brRange aria-valuetext announced a future date (introduced this round; repaired)",
+    "#xrTime phone seg 36px, below the claimed 40px (repaired)"
+   ],
+   "residuals_not_repaired": [
+    "#o7Chart on phone: the jump-badge leader lines still cross the red '7 Oct' label (cosmetic, pre-existing)",
+    "The Spanish 'un ataque de represalia' sentence now appears both in the visible #crosslang line and inside its drawer (redundant, accurate)"
+   ]
+  },
+  "number_check": {
+   "method": "Numeric tokens from the rendered text (Playwright, 1280, all <details> open) and from the static HTML with scripts/styles stripped, r4_before vs r4_after; sentence-level diff in scratchpad/qa/r4_verify/numdiff.txt.",
+   "appeared": {
+    "+0.15, +4.35, +5.98, +1.98, −0.40, +4.29, 9,177": "SYNTHESIS.md line 134 (#news ranges)",
+    "1.34, 1.17, 0.054, 1.01": "SYNTHESIS.md lines 98 and 188 (#when insertion result)",
+    "0.014, 0.001 (with 135/104.6, 925/579)": "crosswiki/cards.md line 69",
+    "107,141, 78, 11 Wikipedias, 1,000 shuffles": "crosswiki/cards.md lines 3 and 9",
+    "8,175 (with 153)": "crosswiki/cards.md line 57",
+    "2,047 (sum of arriving classes), 0.0005, 204, 414": "crosswiki/cards.md line 153",
+    "6 of 26, 2.3, p = 0.02, 9 failed attempts": "crosswiki/cards.md line 165",
+    "French 1→12, Spanish 3→10, Arabic 8→15": "crosswiki/cards.md line 45",
+    "10.3%, 121": "sampling/mass3_results.md",
+    "2.0 (times, Discord window)": "already on the page (#sixty card 5, #orgPeriods); orgs/org_tests",
+    "+4, +300, +321, +379, +499 days": "computed from the creation dates in crosswiki/cards.md (replaced timestamp-based +5, +301, +322, +380, +500)",
+    "rename dates 3 Jul 2024, 26 Jun 2024, 14 Jul 2024, 8 Nov 2024, 18 Dec 2025, 26 Apr 2026, 21 Aug 2024; phone rename offsets +180/+187/+198/+315/+720/+849 d": "crosswiki/cards.md 'Renames since 2021' and chart_data/logs.json; offsets computed from those dates (checked)",
+    "9 sentences (July 2023) → 23": "angle/OCT7.md line 40 and the existing #oct7 text",
+    "250, 750, 1000 (days)": "axis ticks"
+   },
+   "disappeared": {
+    "11%, 10%, 9%, 7%, 5%, 4%, 3%, 2%, 1%, 0%": "the removed marker-heuristic exposure bullet",
+    "+5, +301, +322, +380, +500": "timestamp day counts replaced by date-based ones",
+    "−0.3, −2.7, +1.7 (#board bottom line)": "moved out of the bottom line; −0.3 still in the #board figures",
+    "25%, 70%, 74% (duplicate Russia/Turkey sentence in #charge drawer)": "deleted duplicate; '2 of 8 to 14 of 19 (25% to 74%)' kept",
+    "'about 16 … per 1,000' and 'about 7' (#when bottom line)": "rates remain in the #when deck (16.0, 15.9, 7)"
+   },
+   "unjustified_numbers": []
+  },
+  "console_errors": 0
+ },
+ "reviews": [
+  {
+   "lens": "data",
+   "subscores": {
+    "number_accuracy": 7,
+    "quote_accuracy": 9,
+    "claim_strength_matches_evidence": 6,
+    "sampling_honesty": 8,
+    "internal_consistency": 5
+   },
+   "overall": 6.5,
+   "strengths": [
+    "Every round-3 data fix landed and held. I checked each one: the #reads Israel card header and the denial note; the #charge bottom line (23.6% to 26.4% share, flat); the restored #crosslang genocide scope; the #palestine trace header ('12 lasting changes … of 73'); the English hostages cell drawn as 'outside'; the #organised 48-of-216 wording; #oct7 'by 31 October 2026'; the counts on #sixty card 4 and in the #charge More (2 of 8 → 14 of 19); the card 6 headline; and the 43/42 vs 44/41 Zionism note.",
+    "The core-vs-long-tail sampling claims match mass3_results.md to the decimal: Top 10.3% vs 4.4% (+5.9, 0.9 to 11.2); Mid 1.5% vs 0.0%; Low 0.5/0.4; No grade 0.3/0.6; all-population 0.9% vs 0.5% (+0.4); 446 articles (277 to 616); view share 30.5/19.1 and 4.8/4.6; Low plus ungraded 80.1%; the 219 NA/unrated articles; random baseline −0.06 and +2.60/+2.25. The null pre-registered result is stated in the hero, #sixty and #limits.",
+    "The quotes and translations are strong. All 15 translations I sampled (3 Hebrew, 3 Arabic, 2 Russian, and one each of German, French, Spanish, Italian, Portuguese, Dutch and Polish) are accurate and close to literal, and hedges are kept (Italian 'sarebbero' becomes 'would be'; Dutch 'zouden hebben gelegen' becomes 'are said to have lain'). The three #xmFind sentences match langs.json.",
+    "The new build assertion in crosswiki_data() ties all 17 cross-wiki prose numbers to chart_data. I checked each against cards.md: 281/284 accounts, 153 vs 106, 135 vs 104.6, 925 vs 579, 50%/28% with 204/414, 26/6/2.3/9, 69% of 103 vs 58%, the court dates, and the Gaza-genocide creation dates.",
+    "My independent recode of perp_codes (seed 20261108, 40 rows) agreed on the perpetrator in 38 of 40 and on voice in 40 of 40. The 'Own voice' column of the matrix holds where it uses hand-coded langs.json voice. The 7 October column matches all 10 editions' quoted sentences, and the court column correctly flags ar, it, fr and ru, with es as a 'legal' report and he as a court case."
+   ],
+   "issues": [
+    {
+     "severity": 5,
+     "location": "#crosslang > More 'language by language' > ul.xw-facts, bullet 'How many readers met “genocide” as fact' (page_template.html ~1307; numbers from build_page.py crosswiki_data expo)",
+     "problem": "These shares come from the cross-wiki marker heuristic, not from the hand-coded voice the page uses everywhere else. That heuristic counts any sentence with 'genocide' and no attribution word as own voice (crosswiki/cards.md, Voice card caveat: 'a marker heuristic, not a coded reading'). So the bullet contradicts the page's own headline and grid. It says 4% of Hebrew readers met genocide 'as fact', yet the H2 and the matrix (§) say Hebrew mentions it only as South Africa's court case. That court-case sentence carries no attribution marker, which is how it gets counted. French shows 9% while its grid cell is attributed (“→“), Dutch 7% while it is disputed (?), and Portuguese only 1% although Portuguese is one of the three editions the H2 says state it as fact. An Israeli outlet could quote 'Hebrew Wikipedia told readers Israel commits genocide', which would be false by this page's own coding. The key-article sets also differ by edition (en 8, he 6, it 5; cards.md 'What the cross-wiki tier covers'), so the shares are not comparable.",
+     "fix": "Remove the bullet, or recompute it from hand-coded voice: the langs.json headline_claim 'latest' per Gaza genocide (else Gaza war) article, weighted by that article's views. If kept as is, retitle it 'How many readers met a “genocide” sentence with no attribution word' and add: 'Word-marker heuristic, not our coding: it counts court-case and reported mentions too, such as Hebrew’s South Africa suit, and each edition’s key-article set differs.' Then drop the Hebrew figure, or footnote it: 'Hebrew: the court-case sentence only.' Also add the cross-check to the build's chk list so the bullet cannot disagree with cells['gen'].",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 4,
+     "location": "#crosslang #xmFig, 'The hostages' column, rows de, fr (both dates) and es, pt (now); build_page.py HOS (line ~451)",
+     "problem": "German and French are drawn '– → –', and Spanish and Portuguese now '–'. Under the meta voice_codes, 'absent' means 'not in the held text and 0 in the full-lead count'. The cross-wiki data newly added to the same section say otherwise (crosswiki/chart_data/narrative.json → hostages, October 7 attacks, 2026-11-08). German has 3 hostage mentions (first at sentence 9 of 19; 2 at sentence 8 of 13 in Oct 2024). French has 1 (9 of 14). Spanish has 1 (6 of 11). Portuguese has 2 (8 of 10). For an Israeli audience the grid wrongly shows German and French omitting the hostages. This is the same error that was fixed for English in round 3.",
+     "fix": "HOS['de'] = ('outside','outside', ('October 7 attacks','k_hostages'), 'Beyond the 1,200 characters we hold: the attack article’s opening section mentions the hostages 3 times now, first at sentence 9 of 19 (2 times in Oct 2024, sentence 8 of 13). The Gaza war article names “freeing the hostages” as Israel’s aim.'). HOS['fr'] = ('outside','outside', …, 'Beyond the text we hold: 1 mention, sentence 9 of 14 (sentence 8 of 9 in Oct 2024).'). HOS['es'] = ('fact','outside', …), with the note ending 'now at sentence 6 of 11, beyond the text we hold'. HOS['pt'] = ('fact','outside', …, '… now at sentence 8 of 10, beyond the text we hold'). Source: narrative.json hostages. The footer 'then 6 now 4' is unchanged.",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang #xmFig, Arabic row, 'The hostages' cell ('– → “'), plus its HOS['ar'] note",
+     "problem": "The 'captive' state renders with the attributed glyph (striped, quote mark: 'attributed to someone'). The legend has no entry for it. Arabic states the capture in its own voice: 'كما أسروا عددًا من الجنود والمدنيين واقتادوهم لغزة', 'and they captured a number of soldiers and civilians and led them to Gaza' (langs.json October 7 attacks/ar/k_hostages). The note's 'A prisoner-of-war word, not the Arabic word for hostages' is interpretive: أسر means to take captive, and Arab media often call the hostages أسرى. Rounds 2 and 3 both deferred this.",
+     "fix": "Render 'captive' as the solid own-voice square with a small corner mark. Add the legend entry '◩ named in own voice without the word “hostage”'. Note: 'Now: “they captured a number of soldiers and civilians and led them to Gaza” (asarū, took captive); the word for hostages, rahā’in, is not used.'",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 3,
+     "location": "#news, More 'what this means' paragraph ('On the core crawl this holds on both of our ranges; on the wider set of core articles the coarser range crosses zero')",
+     "problem": "This is the wrong way round. The figure above is captioned 'core crawl: 9,177 opening paragraphs'. On exactly that set the project-level range crosses zero: unfiltered +2.22 {−0.47, +4.78}, residual +1.98 {−0.40, +4.29}. Both ranges exclude zero only on the relevant subset: residual +4.35 [+2.20, +6.69] {+0.15, +5.98} (SYNTHESIS.md line 134; confidence line 135: 'on the full set the project CI crosses zero, while on the relevant subset both CIs exclude zero'). The page's own rule ('Where our two kinds of range disagree, we have called the result suggestive') makes the 89% headline in #news suggestive on the charted set.",
+     "fix": "Replace with: 'On the articles most related to the conflict, this holds on both of our ranges (+4.35 per 10,000 words; project range +0.15 to +5.98). On all 9,177 core opening paragraphs, the coarser project range crosses zero (+1.98; −0.40 to +4.29), so there it is suggestive.' In the bottom line, change 'about 80 to 90% … remains' to '… remains (suggestive on the full core crawl; clear on the conflict-related subset)'.",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 3,
+     "location": "#limits, 'Limitations and what this cannot tell us' list, 'Languages.' item (page_template.html line 1624)",
+     "problem": "'English and Portuguese moved. Nine other languages showed no clear change' contradicts the #crosslang H2. That H2 says Spanish and Arabic, as well as Portuguese, now state genocide as fact. It also contradicts the newly integrated cross-wiki result, which has high confidence: article-term cells present on 6 Oct 2023 → now went French 1→12, Spanish 3→10, Arabic 8→15, Italian 2→6 (crosswiki/cards.md 'After 7 October: which editions moved with English'). The SYNTHESIS source (D10, line 94) is scoped to vocabulary rates per 1,000 lead words: 'English and Portuguese leads moved; most others did not detectably'.",
+     "fix": "'Languages. Measured as vocabulary per word, only the English and Portuguese opening sections rose clearly. Sentence by sentence, Spanish and Arabic now also state genocide as fact, and in most editions more key articles carry a critical term than before the war (French 1 to 12, Spanish 3 to 10, Arabic 8 to 15).'",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 3,
+     "location": "#organised #orgXw ('Across languages, different hands … A campaign by the same accounts across editions would leave exactly that signature. It is not there.'); bottom line ('no account carried a term across languages'); More bullets 'Across languages: same news, not same accounts' and 'Sources made wording stick'; closing deck 'some was fixed by formal community decisions'",
+     "problem": "These lines overstate the evidence. (a) The expected count by chance is itself 0.0 (null_p95 0.0, p = 1.0; crosswiki_accounts.json), so this null cannot tell a small campaign from none. The match is on global (SUL) usernames in the opening sections of 78 key-article editions only (cards.md caveat: 'with few events the tests have little power'). (b) Different accounts moving the same term in different editions is above chance: 135 vs 104.6 within a day (p 0.014) and 925 vs 579 within a week (p 0.001). 'That fits a shared news trigger' is not tested; cards.md notes that the time-shift null removes news timing too, so the excess fits a news trigger or different people answering one call. (c) 'Sources made wording stick' and 'fixed by formal community decisions' are causal. The data show an association (50% vs 28%) and a low-confidence 6 vs 2.3.",
+     "fix": "#orgXw: 'None of the 281 accounts that inserted a critical term in the 78 key-article editions we track did so in a second edition, nor did any of the 284 that removed one (same global username; opening sections only). The same accounts carrying a term across languages would show here; this test could not see campaigns run through separate local accounts.' Bottom line: '… and, in the editions we track, no account carried a term from one language to another.' Bullet: '… That fits a shared news trigger, a ruling or report every edition covers. It would also fit different people acting on the same call; this test cannot tell them apart.' Headings: 'Wording that lasted more often came with a new source' and 'Some wordings settled soon after a formal discussion closed'. Closing deck: '… and some settled within a month of a formal community decision closing.'",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 3,
+     "location": "#charge para 1, chart row 'Israel / Jews (150 topic articles)', and the methods paragraph (deferred from round 3)",
+     "problem": "The 'Israel, Israelis, Jews or Zionists as the one doing the harm' numerator still includes rows from outside the modern conflict. My 40-row sample hit one again: uid 1160, Kristallnacht, where Herschel Grynszpan is coded as perpetrator 'Jews/Zionists/Yishuv'. The deferral reason was that no source number existed. I recomputed from perp_codes.jsonl (topic rows, article-weighted, any clause with perp_code I or J), which reproduces the page: 23.7 / 24.1 / 26.4%, 108 / 109 / 164. I then excluded the 11 biblical and ancient rows (uids 755, 950, 951, 1039, 1065, 1094, 1115, 1228, 1404, 1408, 1865) and the Spinoza herem and Grynszpan rows (1457, 1464, 1149, 1160). That gives 20.6% → 20.4% → 23.6% (102 → 103 → 158 sentences): the same rise of about +3 points.",
+     "fix": "Add a pre-modern/individual flag to perp_codes for these 15 uids and write the alternative shares to perp_results.json. Then add to the #charge More and the chart footnote: 'The count includes biblical and ancient episodes (the conquest of Canaan, the Jewish revolts against Rome), Spinoza’s expulsion and Herschel Grynszpan’s assassination of vom Rath. Without them the share is 20.6%, 20.4% and 23.6%, the same rise.' The flag and perp_results.json entry make the numbers source-backed.",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang bottom line ('Dutch and Polish pulled back (their rows in the grid)'); #xmFig Polish genocide cell",
+     "problem": "Polish genocide is coded attributed → 'label' (langs.json Gaza genocide/pl headline_claim). The grid draws 'label' with the same striped quote glyph as 'attributed', and draws no ring, so the Polish row shows no change. The pointer to the grid holds for Dutch only. The More text is accurate: 'a term in circulation', while Israel's 'series of crimes' is stated in its own voice.",
+     "fix": "Give 'label' its own glyph and legend entry ('≈ named as a term in use') so the change ring appears. Or reword: 'Dutch pulled back (its row in the grid); Polish now calls genocide “a term in circulation” for crimes it says, in its own voice, Israel committed.'",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang xw-facts bullet 'Hamas: where “terror” sits' vs #oct7 'Where the terror designation sits' chart and #sixty card 2",
+     "problem": "The same English 2021 position appears two ways. #oct7 and #sixty say 'sentence 5 of 20' (OCT7.md). The new bullet says 'sentence 5 of 21' (narrative.json splitter). 'The furthest move toward the end of any edition' also ignores Arabic, which went from none to 6 of 6 (the last sentence).",
+     "fix": "Use one count: 'English moved it from sentence 5 of 20 to 22 of 23, the furthest move toward the end of any edition that had one in 2021'. Or footnote: 'counts from a different sentence splitter; #oct7 gives 5 of 20'.",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang xw-facts bullet 'Court rulings overstated' ('Russian that it found Israel guilty (the July 2024 opinion did neither)'); HOS/ICJ note for Arabic",
+     "problem": "Russian says the court 'признал Израиль виновным в нарушении Статьи 3' ('found Israel guilty of violating Article 3'). The July 2024 advisory opinion did find a breach of CERD Article 3. What overstates it is the verdict word 'guilty' for a non-binding opinion. 'Did neither' reads as if the court found nothing. Separately, the Arabic ICJ note still quotes the July 2024 wording ('was acting under') while the cell is the 2026 text ('سعت', 'strove'; langs.json k_icj latest). This was deferred in round 3.",
+     "fix": "Bullet: '…; French says the court recognised a policy of apartheid, and Russian that it “found Israel guilty” of breaching Article 3. The July 2024 opinion found a breach of that article, in a non-binding opinion, and named neither apartheid nor guilt.' Arabic note: 'Now: the ICJ “found that Israel strove, under a reasonable [or: plausible] intent, to commit acts of genocide” (2024: “was acting under…”). The January 2024 order made no finding on intent.'",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 2,
+     "location": "#xrFig reader, Russian Hamas, first sentence, 2021 copy (R.langs.arts.Hamas.ru.sl.s1.L.f, chars 47–60); build_page.py NAMES",
+     "problem": "The 'resistance' gloss chip sits on сопротивления inside the group's official name, «Исламское движение сопротивления» (Islamic Resistance Movement). Round 3 fixed the identical problem for Arabic only: NAMES = {'ar': …}. Of the KEY chips on the page (27 in this build), this is the only false positive I found. The rest are literal and not loaded.",
+     "fix": "Add \"ru\": ([\"Исламское движение сопротивления\"], [\"Islamic Resistance Movement\"]) to NAMES. Add a build assertion that no 'res' chip falls inside a NAMES span for any language.",
+     "verdict": "CONFIRMED"
+    },
+    {
+     "severity": 1,
+     "location": "#crosslang figure 'When each Wikipedia opened a “Gaza genocide” article' (#xwGG); xw-facts 'Who moved first' bullet",
+     "problem": "The day counts disagree with the dates printed next to them, because days_after_english is computed from timestamps. 29 Dec 2023 → 2 Jan 2024 is 4 days but shows '+5 d'. Spanish shows 301 (the dates give 300), Italian 322 (321), Polish 380 (379), Dutch 500 (499). The 'Who moved first' bullet also drops the cards.md caveat that a page created after 2021 counts its creation as entry. English created the Gaza genocide article first, which pushes up the 69% English-first share.",
+     "fix": "In drawXwGG, compute n from the displayed dates: (Date(d) − Date(en)) / 86400000. Or label the axis 'days after English, by timestamp'. Append to the bullet: 'A page created after 2021 counts its creation as the entry date, which favours English, the first to open several of these articles.'",
+     "verdict": "CONFIRMED"
+    }
+   ],
+   "notes": "Build: /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_data.html (11.5 MB; assertions pass, including the new cross-wiki number check). Wrapped copy: r4_data_wrapped.html in the same folder. Screenshots are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_data/: iPhone 13 and 1280, light and dark, for top, sixty, charge, oct7, palestine, crosslang, organised, reads, reach, news and limits, plus xmfig, xmfind, xwgg and orgxw. There were no console errors in any of the four contexts. Expanded page text is in r4_data_text.txt; the scripts are in r4_data_scripts/.\n\nWhat changed since round 3: commit 92decce (cross-wiki integration). It added the five xw-facts bullets, the #xwGG creation chart, #orgXw, three More bullets in #organised, and a rewritten bottom line and deck there. Issues 1, 2 (made detectable by the new data), 5, 9, 10 and 12 come from this commit. Issues 3 and 7 are round-2/3 deferrals. Issues 4 and 6 (#news ranges, #limits languages) are older text that the new material now contradicts or that no earlier round caught.\n\nPerpetrator/victim recode: seed 20261108, 40 uniform rows across topic and comparison. Perpetrator agreed in 38 of 40. The two disagreements: uid 1160 (Grynszpan coded as 'Jews' doing the harm) and uid 2328 (Bloody Sunday, 'police opened a murder investigation', coded British side A although the sentence names no agent; this is inconsistent with the passive-equals-unclear rule applied to uids 3, 11, 1331, 1995 and 2323). Voice agreed in 40 of 40.\n\nSampling claims all match mass3_results.md and random_baseline.md (see strengths). The one sampling-honesty problem is the inverted range statement in #news (issue 4).\n\n#crosslang checks:\n- Quotes: the xmFind and moment-1 texts match langs.json exactly.\n- Translations: 15 of 15 spot-checks are accurate.\n- Matrix columns: the 7 October column is right for all 10 editions; the hostages column is wrong for de/fr/es/pt and shows the wrong glyph for ar; the court column is right (ar, it, fr overstated; ru defensible as overstated but the bullet wording needs fixing; es legal; he court case; pl disputed).\n- Footer counts: recomputed from the cells, they all match (0→4, 0→5, 0→4, 3→6, 4→5, 2→2, 6→4, 1→4).\n- Gloss chips: 27 KEY chips render in this build (fewer than the ~30 the brief expected). The Hebrew, Arabic and Russian glosses are literal and not loaded. כיבוש is never used in a 'conquest' sense in the held text. The one false positive is the Russian proper name (issue 11). The cosmetic duplicate Hebrew genocide gloss is unchanged.\n\nNot re-verified this round: Tigray counts, ArbCom primary pages (still snippet-only per the VERIFY comments), the #checks shuffle figures, and Hamas '23.1M'."
+  },
+  {
+   "lens": "design",
+   "subscores": {
+    "visual_hierarchy": 7,
+    "typography": 8,
+    "colour_meaning_and_consistency": 5,
+    "chart_clarity_and_annotation": 7,
+    "dark_mode": 8,
+    "overall_polish_vs_top_desks": 6,
+    "language_barrier_visuals": 6.5
+   },
+   "overall": 6.5,
+   "strengths": [
+    "Several round-3 fixes have landed and hold up in the screenshots. #charge now labels Israel's genocide 'now' bar '7+1', which matches the H2 and the deck, and its how-to reads 'Each row has its own scale (its maximum is under the charge name)'. In #crosslang moment 18 (Arabic, Hamas), the مقاومة gloss sits only on the descriptor, and the glossary card now says 'Also part of the group's official name… here it is used as a description'. #organised runs full width at 1280, and the new #orgXw paragraph sits cleanly in the part-3 column.",
+    "The hierarchy is still FT-grade. Each section runs eyebrow, then a finding-led serif H2, a ruled 'Bottom line', the deck, then one boxed figure with 'How to read this'. The hero H1 is quote-led and holds at 1280 and on an iPhone 13 in both colour schemes. I found no dark-mode breakage. Amber/blue diff fills, the hatched attributed bars, the teal/grey-violet topic/comparison pair and the bloc cards all keep contrast on the #111 ground.",
+    "The #zionism and #oct7 step timelines are still top-desk work: phase cards over a phase band, numbered jump badges repeated on the chart, a dated diff card ('Key word moved / This wording lasted / Later undone?'), and amber/blue before/after panels that also read well in dark mode.",
+    "#xmFig carries voice by glyph, not hue: solid with a dot, striped with a quote mark, dashed with ?, §, '…', n/a. Small 'then' and large 'now' squares sit in each cell, a ring marks change, and 'then N / now N' totals sit at the foot of each column. This is the right encoding for a reader who can't read the scripts, and it reads the same in light and dark.",
+    "#xrFig handles RTL faithfully. Hebrew and Arabic sit right-aligned. Gloss chips follow the glossed word in reading order (left of טבח, left of الإبادة الجماعية). Linked underlines mirror the English. Single-copy moments switch to 'Only copy · Oct 2026' with an explanation. The glossary cards carry connotation, not just a translation (רצח עם: 'used for the Holocaust; maximal moral weight. The loanword is not used')."
+   ],
+   "issues": [
+    {
+     "severity": 4,
+     "location": "#crosslang > #xrFig header #xrHd: the secondary label 'this sentence’s own wording: …' (moments 13 Hebrew Oct 7, 14 German Oct 7, 16 Arabic Oct 7, 18 Arabic Hamas, 3 Spanish Gaza war, 9 Dutch Zionism, 19 Russian Hamas, 23 French West Bank)",
+     "problem": "The round-3 fix made the claim chips correct, but the visual result still invites the same misreading. The claim chips ('later in the lead, not quoted', 'not in our text') are faint dashed outlines. The secondary chips on the same line are solid black 'stated as fact' pills, the most salient marks in the header. Skimmed or screenshotted, moment 13 reads 'Gaza genocide named in the attack article … stated as fact → stated as fact' for the Hebrew October 7 article. Moment 18 reads 'Terrorist label … stated as fact → stated as fact' for Arabic Hamas. The secondary label also never says what is stated. Here it is massacre (טבח) or resistance (مقاومة). This is the residual the round-3 verifier flagged, and for an Israeli-media audience it is a screenshot risk.",
+     "fix": "Put the secondary label on its own line and name the key word with its gloss: '“massacre” (טבח) in this sentence: stated as fact' / '“resistance” (مقاومة) in this sentence: stated as fact'. Take the word from the glossary entry already attached to the moment (xrGloss). Render these chips in the small outline style at ink-2, never as the solid black pill. The solid pill is reserved for the claim named on line one. When no glossed key word exists, drop the secondary label entirely rather than print a bare 'stated as fact'."
+    },
+    {
+     "severity": 4,
+     "location": "#crosslang > #xrFig 'Both, marked' view and Replay (#xrPair, #xrTime). Round-3 deferred item, still open.",
+     "problem": "Re-measured on moment 1 (Arabic, Gaza genocide). (a) In 'Both, marked', adjacent del/ins runs still have no space between them. The English reads 'Israel has been accusedThe genocide', 'committing crimesGaza is', 'war.between Israel and Hamas'. The Arabic reads 'الشعبالإبادة' and 'غزة.خلال'. (b) During Replay the figure height jumps 719 → 698 → 733px at 150/500/2200ms. At 500ms the header already reads 'OCT 2026' and 'Now · Oct 2026' is pressed while the struck Jul-2024 sentence is still on screen. (c) In 'Now', about 85% of the Arabic sentence is filled blue, so the one word that matters (الإبادة الجماعية) doesn't stand out. This is the core 'morph transition' promise of the section.",
+     "fix": "(a) In the Both renderer, emit a space (or U+2009) between any adjacent </del><ins> or </ins><del>, and after sentence-final punctuation before a new run. Add a build assertion that innerText of #xrPair in Both mode never matches /[a-z][A-Z]|[.!?][a-z]/. (b) Set #xrPair min-height to max(then, now) before the morph starts and release it on end. Flip the header date and aria-pressed in the same requestAnimationFrame as the text swap. (c) When more than 60% of tokens are new, draw the bulk as a 1px blue underline and keep the filled blue only for glossed key words."
+    },
+    {
+     "severity": 4,
+     "location": "#crosslang > #xmFig on iPhone 13 (390px), made worse by commit 92decce",
+     "problem": "The latest commit shortened the 'How to read this' line to 'the key below the grid gives the marks' and moved the glyph key under the 11 language rows. On phone that key is about 1,100px below the first row, so a reader meets ●, “, ?, §, …, n/a with nothing on screen to decode them. The round-3 phone problems are also still there. Only 3 of the 8 columns are visible. The fourth header is cut to 'O (W' with no fade or swipe cue. The 'n/a' glyph spills out of the small square ('n/a n/a' in German, Italian and Polish apartheid). The article sub-labels under the column names are dropped.",
+     "fix": "Above the grid, restore a one-line inline key with glyph swatches: '● own voice · “ attributed · ? disputed · § court case only · – not in our text · … later in the section · n/a no article'. Keep the full sentence key below. Below 600px, default #xmMode to 'Now only' so about 5 columns fit. Add a right-edge fade mask on #xmScroll and a mono cue under the header: 'swipe for 5 more claims →'. In the small square, render n/a as a centred '–' over the hatch, with aria-label 'no article'."
+    },
+    {
+     "severity": 4,
+     "location": "Page-wide colour meaning: #when event dots, #board, #xrLang buttons, #xmFig column rules and gloss underlines. Round-3 deferred palette item, still open, plus one new conflict.",
+     "problem": "council/ux.md 4.2 fixes the meanings: red dashed = 7 Oct only, blue = added, amber = removed, hollow ring = what chance gives. Still broken: (1) #when event dots are red for Military, blue for Legal & UN and amber-ish for Humanitarian. (2) The #board 'blue diamond' still uses 'added' blue. Its teal hollow ring means 'probability sample', which clashes with both teal = topic and ring = chance. (3) #xrLang hatches the disabled buttons (Hebrew, Deutsch, Русский on Gaza genocide), but in #xmFig the same hatch means 'attributed'. (4) The #xmFig column top rules and the gloss underlines use an unkeyed per-claim palette: pink genocide close to --war red, ink for the 7 October column (ink = selection or playhead), orange hostages close to amber.",
+     "fix": "(1) Draw #when event dots in ink-2 and separate types by the existing rows. Keep red only for the 7 Oct rule. (2) Draw the #board diamond as a larger filled ink diamond, with the legend 'diamond: weighted and matched together'. Draw the probability-sample marker as a filled grey-violet square outline, not a teal ring. (3) Show disabled #xrLang buttons at 40% opacity with no hatch. (4) Make the column rules and gloss underlines neutral ink-2 at 2px. Alternatively, keep the hues but add the key line 'Underline colour = the claim column it belongs to', move genocide to violet and hostages to a desaturated slate."
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang > new figure .xw-gg #xwGG ('When each Wikipedia opened a “Gaza genocide” article'), added in commit 92decce",
+     "problem": "The new chart breaks the section's own grammar. (a) Bars are --topic teal, which elsewhere means 'Israel/Jewish-topic article', not 'another edition'. (b) It has no 'How to read this' line, which council 4.2 requires for every chart. (c) The rows run English, French, Arabic… and omit Hebrew, German and Russian, which the caption says 'have none'. The matrix directly above leads with Hebrew and uses n/a for exactly this. (d) The track runs to the latest creation (Dutch, +500 d), so the full bar means nothing, and there is no date axis, so 'Jan 2024' cannot be read against events.",
+     "fix": "Draw the bars in ink-2 grey, with English as the ink sliver. Add 'How to read this: each bar is the days after English opened its article; dates at right.' Use the #xmFig row order (Hebrew, Arabic first). Add Hebrew, German and Russian rows with the hatched n/a square and the label 'no article linked'. Replace the arbitrary full track with a shared date axis from Dec 2023 to May 2025 with year ticks. Optionally move the figure directly under #xmFig's genocide column, which it explains, rather than after the reader."
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang > #xmFig: ring 'marks a cell that changed'",
+     "problem": "The section's story is direction: Spanish, Portuguese and Arabic moved toward own voice, while Dutch and Polish pulled back (the Bottom line says 'their rows in the grid'). The ring is identical for both. Dutch genocide “→?, German Hamas ●→“ and English Hamas “→… carry the same ring as Arabic “→●. A reader who can't read the scripts cannot see who pulled back without decoding glyph pairs cell by cell.",
+     "fix": "Add a small corner chevron inside the ring: ▲ at the top-right when the 'now' voice is stronger on the ladder (absent < … < § < ? < “ < ●), ▼ at the bottom-right when it is weaker. Keep it ink, with no colour. Add one key line: 'Ring with ▲: moved toward Wikipedia's own voice; ▼: moved away.' The cell aria-label gains 'moved toward own voice' or 'moved away'."
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang > #xrLang language buttons",
+     "problem": "Each language name carries a ●, ○ or dotted ◌ after it. These are the claim's voice in that language and the fastest cross-language read in the reader, but there is no legend. The round-3 fix (3) asked for one, and it is still absent: no element follows #xrLang.",
+     "fix": "Directly under the language row, add a mono 11px line: '● stated as fact · ○ attributed or disputed · ◌ later in the section or not in our text · faded: no article'. Mirror the meaning in each button's aria-label, which already carries the voice text."
+    },
+    {
+     "severity": 3,
+     "location": "#oct7 Hamas step chart (#o7 figure), desktop 1280 and iPhone 13. Deferred in rounds 1-3.",
+     "problem": "The playhead and the red 7 Oct line still cut through the row labels: '“militant” in t|he definition', '“political” in|the definition', 'every change to| the first sentence'. On phone: 'mil|itant', '…wi|th a militant/military wing'. The red '7 Oct' label sits on top of 'views / month' at both widths.",
+     "fix": "Draw the row labels on a layer above the cursor and war lines, with the 2px background halo already used by the .zi-fig text (paint-order: stroke; stroke: var(--card); stroke-width: 4px). Move 'views / month' to the right end of the views band, and set the '7 Oct' label to the right of the rule, below the badges."
+    },
+    {
+     "severity": 3,
+     "location": "#oct7 diff card BEFORE/AFTER panels and the #palestine Hamas trace (stored Hamas revisions)",
+     "problem": "In the screenshot-ready card, 'Hamas (an acronym of حركة المقاومة الإسلامية, ) is a…' shows an empty romanization slot ', )' (visible at change 10, 9 Oct 2023, in both colour schemes). The round-3 verifier noted this pre-existing residual, which is in the same class as the fixed 'acronym from )'. It is the kind of glitch that looks like a transcription error in a TV screenshot.",
+     "fix": "Apply the same output-step rewrite in build_page.py as for 'acronym from )': replace ', )' after an Arabic run with ', [romanization not in this revision’s text])', and add a build assertion that no ', )' reaches the page."
+    },
+    {
+     "severity": 3,
+     "location": "#sixty at 1280. Deferred in rounds 2-3.",
+     "problem": "The grid is still 4 + 2, leaving two empty cells to the right of row 2. Card heights run from about 400px to about 600px. Card 2's body sets the Hamas quote in serif while every other body is sans, so it reads like a style break.",
+     "fix": "Set grid-template-columns: repeat(3, minmax(0,1fr)) at 1000px and up (3 × 2). Clamp the bodies to 5 lines above the existing 'Read more ↓'. Set the card 2 quote in the body sans with curly quotes, as card 1 does."
+    },
+    {
+     "severity": 2,
+     "location": "#when (heatmap vs week-by-week chart) and #board scoreboard / 'three honest ways' chart",
+     "problem": "The 7 Oct rule is solid red in the #when heatmap and dashed red in the chart below it. Council 4.2 says red dashed. The #board scoreboard draws a red vertical 'needs 2' threshold rule, a second red meaning. In the 'Judaism minus comparison' row, the '-0.8' end label collides with the dashed '0' line label.",
+     "fix": "Make the heatmap rule dashed (stroke-dasharray 3 3) to match. Draw the scoreboard threshold in ink with a mono 'needs 2' label, keeping red for 7 Oct. Move the end labels that would overlap the zero line to the left end of their range line, or nudge them 6px below."
+    },
+    {
+     "severity": 2,
+     "location": "#reach 'Few pages, much of the reading' bars (phone and desktop) and #organised bloc cards at 1280",
+     "problem": "#reach bars still run from 0 to 100% while the largest value is 15%, so 3.9% against 1.5% barely shows. On phone the labels wrap to three lines ('core / crawl · / articles'). The 'Live wars only' swatch sits orphaned on its own line above its heading. In #organised, the two bloc cards occupy two of three grid columns at 1280, leaving a 400px empty column. The new strongest cross-language result (#orgXw: none of 281 inserters and 284 removers acted in a second language) is prose only.",
+     "fix": "#reach: scale the bars from 0 to 20% with a mono '20%' end tick, change the note to 'Bars run from 0 to 20%', shorten the labels to 'core · articles' and 'all · reading' with the population in the group header, and put the swatch inline with its heading. #organised: use repeat(2, minmax(0,1fr)) for the bloc cards. Give #orgXw a stat pair in the existing .org-tests card style, '0 of 281 inserters · 0 of 284 removers edited a second language' (numbers already on the page, from the cross-wiki aggregates)."
+    }
+   ],
+   "notes": "Build: python build_page.py → /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_design.html (11.5 MB). Wrapped copy: /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_design_wrapped.html. Section screenshots (iPhone 13 and 1280, light and dark, 0 console errors, 0px horizontal overflow, page heights 59,537px phone and 52,463px desktop) are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_design/. Viewport shots are in its vp/ folder, the reader moments 1-26, Both view and replay frames in xr/. Scripts are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_design_scripts/. Full-element screenshots draw the sticky header and step controls mid-section; that is a capture artifact, so layout judgements use the viewport shots. Confirmed fixed since round 3: the #charge '7+1' label and the 'own scale' how-to, the مقاومة gloss scoped to the descriptor, the #orgRec grid, and the #xrHd claim chips now taken from headline_claim. Still open from the round-3 deferred list: #xrFig replay and Both spacing, the page-wide palette, #oct7 label layering, #xmFig on phone, #sixty grid, #reach scale. New in commit 92decce: the #xwGG chart (teal misuse, no how-to, missing no-article rows) and the move of the #xmFig glyph key below the grid, which hurts phone readers. Nothing I recommend introduces a new number; the only numbers quoted (281, 284) are already on the page."
+  },
+  {
+   "lens": "ui",
+   "subscores": {
+    "component_consistency": 6,
+    "spacing_and_alignment": 5,
+    "labels_and_affordances": 6,
+    "phone_layout_390": 5,
+    "desktop_layout_1280": 6,
+    "no_overflow_or_overlap": 5
+   },
+   "overall": 5.5,
+   "strengths": [
+    "The round-3 sev-5 fix to #organised held. At 1280 the three H3s span the full 1208px. .org-tests shows two 597px cards side by side, and the section is 3,952px tall, down from about 7,000 of broken grid. None of the 4 contexts has page-level horizontal overflow (scrollWidth equals the viewport at 390 and at 1280) or script errors; the only error is the blocked web-font request.",
+    "The new cross-wiki material uses the existing design language rather than inventing new styles. The #crosslang 'language by language' facts reuse .short-row (a 3-column grid on desktop, stacked on phone). The new 'When each Wikipedia opened a \"Gaza genocide\" article' figure reuses the #reach .rch bar rows. #orgXw uses the bold-lead deck. Every new block sits behind the same '+ MORE' summary.",
+    "Two round-3 #palestine fixes landed. On phone the two 1948 quote cards and their caption stay visible while the section is folded. The fold button now says what it hides: 'Show the edit-by-edit trace ↓'. The xm-keep rule was also extended to the #crosslang drawers, so phone readers keep them.",
+    "The #xmFig matrix, the #xmFind quote cards and the bilingual #xrFig reader are strong in light and dark mode. The glyph grammar holds: solid with a dot, striped with a quote mark, dashed with '?', '§' and '…'. Status chips are filled or outlined to match. Arabic and Hebrew render correctly right to left, with gloss chips.",
+    "Every section uses the same scaffolding: the CONTENT/PROCESS layer chip, a finding-led H2, a ruled 'Bottom line', figure cards with a 'How to read this' line and a mono legend. One Prev/Play/Next stepper serves #zionism, #oct7 and #xrFig. Dark mode covers every new element, including the hatched ratio track and the white English sliver in the new figure."
+   ],
+   "issues": [
+    {
+     "severity": 4,
+     "location": "#zionism #ziCtl and #oct7 #o7Ctl on iPhone 13 (pinned stepper), plus the blank block under the 'Key moves: …' note in #ziFig and #o7Fig",
+     "problem": "Deferred for 3 rounds and still open (probe/phone_ziChart_vp.png, probe/phonedark_o7Chart_vp.png). The pinned control takes 140px of a 664px viewport, and the sticky nav takes 47px more, so 28% of the screen is chrome. It covers the lower lanes of the chart it drives, including the 're-establishment' lane and the 'every first-sentence change' strip. In page flow, the control's empty placeholder leaves a blank block of about 160px between the 'Key moves' note and the '5 Jun 2024 · change 56 of 292' card. It reads as a rendering hole.",
+     "fix": "Add a compact stuck state. An IntersectionObserver sentinel toggles .stuck on #ziCtl/#o7Ctl. In that state, hide the 'key move 6 of 96 · phase 2, tug of war' line and the 'change 1 … 292' row, and set the Prev/Play/Next height to 36px. The control becomes about 64px tall. Collapse the in-flow placeholder to height:0 when the control is not stuck, or render the control in place and stick it only while #ziChart/#o7Chart is on screen. Verify at 390x664 that the 'every first-sentence change' strip is visible while the control is pinned."
+    },
+    {
+     "severity": 4,
+     "location": "#ziChart and #o7Chart SVG on phone: lane labels, cursor, phase strip, top annotations",
+     "problem": "Still open from round 3, and visible in all four phone screenshots. (1) The black cursor, white in dark mode, is drawn over the lane labels: 'colonization|', 'every first-sentence change', 'mi|litant', 'wi|th', 'po|litical', 'te|rrorist', 'host|ages', '2021|'. In dark mode it is a white line through white text. (2) The phase strip still truncates: '1 Stable | 2 | 3 Mostly in | 4' in #zionism, and '1 | ¦2 | 3 Tug of war | 4 Settled' in #oct7. (3) In #o7Chart, '7 Oct' sits directly under 'views / month' and collides with the 10.0M bar. (4) In #ziChart, the '26%' and '5%' tooltip labels sit on top of the lane bars.",
+     "fix": "Paint the label layer after the cursor layer. Give every lane label a 3px var(--sheet) halo (paint-order:stroke; stroke:var(--sheet); stroke-width:3px). Phase strip: below 600px use number-only labels with min-width 22px per cell; the names are already in the phase cards just above. Move '7 Oct' to the right of its line, 14px below the 'views / month' baseline. Put the 26%/5% readouts above the lane (y = laneTop − 4) with the same halo."
+    },
+    {
+     "severity": 4,
+     "location": "#organised bloc cards (Bloc A, Bloc B, low-confidence group) and the headline strip, phone and desktop",
+     "problem": "Deferred since round 1. Each window row puts 'Share of activity in the war-onset window (Oct 2023–Jan 2024)' in a ~110px column, so it wraps to 8 lines on phone and 4 at 1280. The stat line floats top-right and the dumbbell sits alone below. At 1280 the two bloc cards fill only x=36 to 837, leaving the right third (837 to 1244) empty for about 900px. In the headline strip, the value text ('2 found · 0.3 by chance') follows the bar in the topic card but is right-aligned in the comparison card, so the two 'same scale' cards do not line up.",
+     "fix": "Stack each window row: the label on one full-width line, renamed to match the time chips ('War-onset window (Oct 2023–Jan 2024)' and 'Discord window (Jan–Sep 2024)'), then the stat line, then a full-width dumbbell. On desktop, set the bloc container to grid-template-columns:repeat(auto-fit,minmax(380px,1fr)) so the two cards share the 1208px. In both strip cards, use one grid: 'label 150px | bar 1fr | value 230px right-aligned'."
+    },
+    {
+     "severity": 3,
+     "location": "#organised part 2, .org-tests: '.fig.org-null' ('The footprint test, in one line') and the #orgPeriods ratio chart",
+     "problem": "This appeared once the grid fix landed. At 1280, .org-null is stretched to the chart's 382px height. Because .fig is display:grid with the default align-content:stretch, the free space goes into the title's row, so the paragraph starts about 140px below the title and ~300px of the card is blank. On phone, the dashed 1× reference line runs past the last bar and through the legend text ('top|ic insertions'). The legend's last item ('hatched track: …') sits directly against the 'Descriptive, and confounded…' caption with no gap.",
+     "fix": "Add '.org-null{align-content:start}' (or set align-content:start on .fig page-wide). Stop the 1× line at the bottom of the last bar (y2 = last row bottom), not at the container's height. Add margin-top:10px to the caption under the legend, which is the spacing every other .fig uses between legend and cap."
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang new figure #xwGG ('When each Wikipedia opened a \"Gaza genocide\" article', drawXwGG)",
+     "problem": "New this round. Language names differ from the components right above. The matrix writes 'Español / Spanish · es', the #xrLang tiles write 'Español es', this figure writes 'Spanish'. The full-width grey track suggests a 0–100% share, but the bars count days (0 to 500). English, the reference, is a 0.8% black sliver that reads as 'smallest'. The three editions with no article (German, Hebrew, Russian) appear only in the caption, while the matrix gives them an 'n/a' tile.",
+     "fix": "Label rows like the matrix ('Español · es', with the native name first in var(--display) and the English name in mono) or like the tiles, but pick one. Drop the grey track, or add a 0 / 250 / 500 days tick row under the last bar. Draw English as a 2px ink rule labelled '29 Dec 2023 · first' instead of a bar. Add three muted rows at the bottom ('Deutsch · de', 'עברית · he', 'Русский · ru') with the matrix's hatched n/a tile and the text 'no article'."
+    },
+    {
+     "severity": 3,
+     "location": "#ppSide (#charge) and #xrTime (#crosslang reader) at 390px",
+     "problem": "Open since round 1. Both 3-option segmented controls still wrap to two rows ('Israel / Jews | Hamas / Palestinians', then 'Other disputes'; 'Then · Jul 2024 | Now · Oct 2026', then 'Both, marked'). This leaves an empty right cell and a doubled left border (the probe reports rows:2 for both).",
+     "fix": "Below 600px use phone labels: 'Israel', 'Hamas', 'Other' (the column header 'ISRAEL / JEWS' already names the full side) and 'Then · 2024', 'Now · 2026', 'Both'. As a backstop, set .seg{display:grid;grid-template-columns:repeat(3,1fr)} at ≤600px, with white-space:normal inside each button."
+    },
+    {
+     "severity": 3,
+     "location": "Horizontal scrollers on phone: #ziMoments, #o7Moments (Jump to), #netPre (time chips), #xrArts (article chips), #xmScroll (matrix), plus #xrLang and the matrix's sticky language column",
+     "problem": "Open since round 2. Only #xrLang has the fade mask. The others cut hard at the edge: 'Busiest week: 2', 'First \"terrorist\" 10', 'War onset (Oct 20', 'October 7'. The matrix shows 3.5 of 8 claims, and the 4th header reads 'O (W'. The #xrLang tiles start at x=13 while the card border is at x=16, so they poke 3px past the card. In the sticky column, 'Portuguese · pt' still runs into the first tile, so 'pt' touches the small quote-mark tile.",
+     "fix": "Move the #xrLang mask (mask-image:linear-gradient(90deg,#000 85%,transparent)) to a shared .hscroll class and add it to every scroller listed. Set each in-card scroller's margin-inline to exactly minus the card padding (-16px) and its padding-inline to 16px. Add a cap under #xmScroll on phone: 'Swipe for the other 4 claims →'. In .xm-l on phone, show only the English name ('Portuguese') or allow white-space:normal."
+    },
+    {
+     "severity": 3,
+     "location": "Control components page-wide: .seg, jump chips (#ziMoments, #o7Moments), time chips (#netPre), article chips (#xrArts), language tiles (#xrLang)",
+     "problem": "Still at least three selected-state idioms. Jump and time chips show 'selected' as a 2px outline. Article chips and segs use an ink fill. Language tiles are filled or hatched. Phone seg heights still vary: 40px (#ziMode, #o7Art, #ppSide), 36 (#xrTime), 29 (#xmMode, #xrSlot, #netView, #netSide, #winSeg, #partF) and 25 (#kPart). Most are below the 40px touch target that the main steppers meet.",
+     "fix": "Use one selected style for every chip and seg: background var(--ink), color var(--sheet). Pills can keep their shape, but selected becomes filled, not outlined. Use one size token: .seg button, .chip {min-height:40px} at ≤600px and 31px above, with 12.5px text."
+    },
+    {
+     "severity": 3,
+     "location": "#key scrolly on iPhone 13 (figure.sticky.fig and the step cards)",
+     "problem": "Still open (probe/phone_key_0.3.png). Step card '2 / 5 · Every comparison article' covers the bottom third of the sticky chart, where the 90 comparison lines cluster near 0–10 and the x-axis sits, while about 650 device pixels of empty viewport sit below the card. '↑ 9 articles go above the top' is still drawn across the 7 Oct and ICJ rules.",
+     "fix": "On phone, make step cards rest below the figure: give .steps padding-top equal to the sticky figure's height plus 8px, or set the IntersectionObserver rootMargin to '-400px 0px 0px 0px' so each card activates once it is below the chart. Set the card background to var(--sheet) at full opacity. Move the 'above the top' note to a left-aligned cap line under the chart title."
+    },
+    {
+     "severity": 3,
+     "location": "#reach second figure ('Few pages, much of the reading'), phone, and the 'Live wars only' group header",
+     "problem": "Still open from round 3. Row labels sit in a ~70px column and wrap to 3–4 lines ('all / 141,000 / · / articles', with an orphan '·' on its own line). The 'Live wars only' swatch sits alone on a line above its heading. Nearby, the new #xwGG figure, which uses the same .rch rows, gets labels right with a 92px column, so the two figures now look different.",
+     "fix": "Phone: grid-template-areas:'lab val' 'bar bar', putting the label on one line above its bar. Desktop: widen the label column to 170px. Write labels with a non-breaking space before the separator ('all 141,000 · articles'). For the group header, use display:flex;align-items:flex-start, with margin-top:4px on the swatch."
+    },
+    {
+     "severity": 2,
+     "location": "Disclosure affordances: .btn.sm.unfold (#palestine, #sourcing, #xlcounts, #vocab, #ratchet, #organic) against details.stats '+ MORE'; and #organised's last deck ('…formal community decisions (More, above; appendix: …)')",
+     "problem": "The fold button is still an outlined rounded sans button, 27px tall, while every other disclosure is the '+' box with a mono-caps label. The page now has two idioms for 'show more'. The new closing deck in #organised points to a drawer as 'More, above', but there are three 'More' drawers above it in that section.",
+     "fix": "Restyle .unfold to match details.stats>summary: the 18px '+' box, 'SHOW' in 600 mono caps, the label in mono ink-3, a full-width hairline above and below, min-height 40px. Rewrite the pointer to name the drawer: '(under “the two blocs; other languages; what made wording stick”, above; appendix: Signals of coordination)'."
+    },
+    {
+     "severity": 2,
+     "location": "#sixty cards (desktop .cards grid; phone #cards scroller), #palestine and #reads then/now quote cards",
+     "problem": "(1) At 1280, .cards auto-fit makes 4 columns, so the six cards fall 4+2 with two empty cells (round-3 deferred '3x2 grid'). (2) Inside cards 1 and 2 the quoted text switches mid-paragraph from sans to 15px serif, so card 2's body is mostly serif and cards 3–6 are all sans. (3) On phone, the scroller is as tall as the tallest card, so a ~150px blank sits under card 1 before 'Swipe for more →'. (4) Then/now labels are styled differently: '2021' is bold sans with a grey sans quote, while 'Now' is 11px mono with an ink serif quote.",
+     "fix": "Set .cards{grid-template-columns:repeat(3,1fr)} at ≥1000px. Render inline quotes inside .card bodies in the body sans, keeping the curly quotes; the serif is for the before/after text blocks. Give #cards .card align-self:stretch with the 'Read more' link pinned to the bottom (margin-top:auto), so the scroller holds no blank. Use one label style for both sides ('THEN · 2021' / 'NOW · 2026', mono 11px caps) and one quote face, using colour, not typeface, to mark the side that is now."
+    }
+   ],
+   "notes": "My overall score is 5.5, up from 5 in round 3, but most of the remaining issues are phone layout items deferred from earlier rounds.\n\n**How I checked.** I built and wrapped the page (r4_ui.html and r4_ui_wrapped.html in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/), then looked at it in Playwright on iPhone 13 and at desktop 1280, in light and dark mode. Screenshots are tiled by section in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_ui/{phone_light,phone_dark,desk_light,desk_dark}/. Opened drawers, pinned-stepper viewport shots and the #key scrolly shots are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_ui/probe/. The two scripts that made them are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_ui_scripts/ (shoot.js and probe.js). The automated checks (overflow, seg heights, layout) are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_ui/report_*.json. In the full-page clips the sticky nav sometimes appears mid-image; that comes from the screenshot method, not the page.\n\n**Which round-3 fixes landed.**\n- The #orgRec grid closure works. No page-level overflow anywhere.\n- The #palestine fold now keeps the quote cards visible and the button label is relabelled, but the button was not restyled to match the '+ MORE' summaries.\n- Phone page height is 59,838px, up from 56,175 in round 3, mostly because of the new cross-wiki material in #organised (phone section height 7,128px).\n\n**Still open from earlier rounds.** These are listed again with exact fixes because they are visibly unchanged:\n- the phone stepper and its chart label collisions;\n- the bloc window rows;\n- the #ppSide and #xrTime wrapping;\n- hard-cut horizontal scrollers and inconsistent chip/seg selected states;\n- the #key scrolly card covering the chart;\n- the #reach labels;\n- the #sixty grid.\n\n**New this round.**\n- The footprint card has a big empty space (a grid alignment-stretch bug).\n- The ratio chart's dashed 1× line runs through its legend.\n- The new 'Gaza genocide article' figure uses different language names from the matrix and the reader, and its track has no axis.\n- The closing deck in #organised points to 'More, above' when there are three drawers above it.\n\nThe #xmFind quote text has no literal double spaces in its innerText. The wide gaps between some words come from padded word spans, which is minor and not listed. I did not edit any files."
+  },
+  {
+   "lens": "ux",
+   "subscores": {
+    "discoverability": 7,
+    "clarity_of_what_each_interaction_shows": 6,
+    "control_responsiveness": 7,
+    "mobile_usability": 5,
+    "accessibility": 5,
+    "interaction_adds_understanding": 8
+   },
+   "overall": 6,
+   "strengths": [
+    "#zionism stepper is still the best piece on the page. Prev/Next (56→57→58→57), all 5 jump chips (56, 92, 93, 119, 292), 4 phases, Key moves/Every change, Normal/Slow, Play/Pause (aria-pressed toggles) and Arrow/Home/End/Space on #ziChart all respond at once. #ziLive reads each change in full ('Change 93 of 292, 30 Jun 2024: “re-establishment” comes out, “colonial” or “colonization” goes in, later undone. Lasted 1 day.'). Focus ring: 2px solid.",
+    "The round-3 #netPre fix holds and now teaches something. Each time chip writes a real caption from window_share and expected_window_share ('Discord window (Jan–Sep 2024): Bloc A made 21% of its activity here (chance 23%, p 0.532)…'). In Network view it fades edges outside the window to 0.08 opacity (3, 4 and 11 of 17 edges for Before / Discord / After sanctions). The 'militant wing' label (change 97) and the Hamas card are correct.",
+    "#crosslang: all 88 matrix squares open their reader moment, by mouse, by tap and by Enter. Focus stays on the cell. Prev/Next/Replay step through 26 moments. When it settles, Hebrew renders dir=rtl with start alignment and the gloss box ('בית לאומי לעם היהודי' = “a national home for the Jewish people”, Balfour note). 'Both, marked' gives a clear bilingual diff at 1280.",
+    "#charge: all 63 bars are real buttons with sentence-length aria-labels, and Enter opens #ppCard. On phone a bar tap scrolls the card into view (top 60px). Switching #ppSide keeps the same charge and period for the new side ('Hamas / Palestinians · Ethnic cleansing / expulsion · Jan 2021'). That is a good comparison affordance.",
+    "Robust: 0 page errors and 0px horizontal overflow in all four contexts (iPhone 13 and 1280, light and dark). prefers-reduced-motion CSS is present, and Play under reduced motion steps discretely with no animation. #tierFig stays static with a complete role=img label. The new #xwGG chart has a full aria-label listing every date."
+   ],
+   "issues": [
+    {
+     "severity": 4,
+     "location": "#zionism #ziFig and #oct7 #o7Fig on iPhone 13 (.zi-ctl, #ziCard, #oct7 .zi-card). Deferred in round 3, still open.",
+     "problem": "Unchanged since round 3. After chip 3 the chart is scrolled out of view, and #ziCard starts at 694px in a 664px viewport, under the bottom-sticky control at 516-656px. Scroll down to read the before/after card and the control is no longer sticky: it sits in flow above the card (screenshot ip_l_zi_card.png). So every Next needs a scroll back up. Play keeps running after you scroll 1,500px away (aria-pressed stays true).",
+     "fix": "Make .zi-ctl the last child of #ziFig/#o7Fig, after the card, so bottom:8px sticky holds while any part of the figure is on screen, including while you read the card. At 600px or less, compact it to one row about 60px tall: [‹] [▶] [›] plus '93/292 · 30 Jun 2024', with the strip and without the 'change 1 … 292' labels. On a phone chip, phase or Next tap, call #ziCard.scrollIntoView({block:'nearest', behavior: RM?'auto':'smooth'}). Pause Play when an IntersectionObserver reports the figure under 20% visible."
+    },
+    {
+     "severity": 4,
+     "location": "#organised #net Network view: the hull labels in the topic SVG (page_template.html ~3805: h.c.confidence==='low'?'low':…)",
+     "problem": "The topic graph labels its two rings 'Bloc A' and 'low'. Groups view, directly above, shows two cards named Bloc A and Bloc B. Most readers will take the second ring for Bloc B. It is not: it is the low-confidence group that 'chance also produces', and Bloc B is not drawn at all (that note sits only inside the Bloc B card in Groups view). In a section whose credibility rests on not over-reading groups, a bare 'low' tag next to a named bloc invites exactly that misreading. On phone, 'low' is the only text near the ring.",
+     "fix": "Change the label to 'Low-confidence group' (the card title already used in Groups) and draw it in --ink-3. Add one caption line under 'TOPIC ARTICLES': 'Bloc B is not drawn: it was found by the insertions-only test, and this graph shows the all-edits test. See Groups.' Keep the dotted ring, so confidence is shown in text and in line style."
+    },
+    {
+     "severity": 3,
+     "location": "#organised #net, Groups view with Articles = Comparison",
+     "problem": "The panel reads 'No group of three or more passes the strict test here. Chance alone produces groups like the ones below.' Nothing is below except 'Plus 3 linked pairs, too small to test as a group.' and the activity-strip legend. The five time chips stay active and change only the caption, because there are no strips to shade. The sentence points at nothing, and the controls look broken.",
+     "fix": "Reword to: 'No group of three or more passes the strict test here, and none appears even at low confidence. 3 linked pairs, against 0.3 by chance (95% of shuffled worlds ≤ 1).' The numbers are the counts already in the comparison headline strip. In this state, set the #netPre chips to aria-disabled with the caption 'No groups on comparison pages, so there is no activity to compare with the windows.' Hide the strip legend."
+    },
+    {
+     "severity": 3,
+     "location": "Re-rendering controls: #netView, #netSide, #netPre, #xrLang (ArrowRight), #trMore. Also #breathe #brRange.",
+     "problem": "Fourth round open. Measured again: keyboard focus falls to <body> after every #netPre chip (including Enter on a chip), after Comparison, after Network view, after ArrowRight in #xrLang, and after #trMore, which removes itself. #brRange (0-2159) still has no aria-valuetext, so screen readers say '2157' and not a date.",
+     "fix": "Before re-rendering, save document.activeElement.dataset (v or l). Afterwards, call querySelector(`[data-v=\"${v}\"]`).focus({preventScroll:true}). For #trMore, give the first new row tabindex=-1 and focus it before removing the button. On #brRange input, set aria-valuetext to '14 March 2024: the first sentence as it read that day'."
+    },
+    {
+     "severity": 3,
+     "location": "#organised #net Network view: circle.nd, line.ed, #netDet",
+     "problem": "Nodes and edges are still unreachable by keyboard. Tab goes from 'After sanctions' straight to the 'Signals of coordination' link, with 0 [tabindex] in the SVG. So the observed-vs-chance facts in edge tips ('A11 – A2: shared 3 articles; chance gives 0.5 … p 0.010') exist only for mouse and touch users. Picking any time chip resets #netDet to its placeholder, which loses the selected node or edge. On iPhone, #netDet sits at 1357px in a 664px viewport, more than a screen below the graph the reader just tapped.",
+     "fix": "Give circle.nd and line.ed tabindex=0, role=button and an aria-label equal to the #netDet text. Enter or Space selects, and Arrow keys move in community order. Keep the current selection when a chip changes, and append the window effect ('this link’s co-activity falls outside the window'). Move #netDet directly under the topic SVG. On 600px or less, make it a sticky bottom sheet (max-height 30vh) while the graph is on screen."
+    },
+    {
+     "severity": 3,
+     "location": "#oct7 Hamas card, BEFORE and AFTER (default chip 1, change 10 of 120), and the #palestine Hamas trace",
+     "problem": "The first thing a reader sees on the Hamas tab is quoted text that reads 'Hamas (an acronym of حركة المقاومة الإسلامية, ) is a…'. The text is billed as exact, but the romanization after the comma is empty. The round-3 verifier logged this as a residual (15 stored revisions). It is on the default view at 1280 and on phone.",
+     "fix": "Apply the same treatment as the 'acronym from )' fix. In build_page.py, replace ', )' after the Arabic name with ', [romanization not in this revision’s text])' in a muted span. Extend the build assertion to fail on any rendered quote that matches /,\\s*\\)/ or /\\(\\s*\\)/."
+    },
+    {
+     "severity": 3,
+     "location": "#key scrolly on iPhone 13 (#kChart with the active .step)",
+     "problem": "Still open. The active card covers the bottom of the sticky chart by 60-93px at every step. At step 5 it hides the x-axis year labels just as the card asks the reader to compare −0.6 (Jul 2023) with −0.3 (Oct 2026) on that axis (ip_l_key_mid.png). 'Show in chart' and 'Explore this →' are 16px-tall text links.",
+     "fix": "At 600px or less, make the chart sticky at top:48px with max-height 52vh, and give each .step margin-top:58vh so the card starts below the axis. Or reserve padding-bottom equal to the card overlap inside #kChart. Give the .go links min-height 44px (padding 12px 0)."
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang #xmScroll and #xrLang on iPhone 13",
+     "problem": "The matrix is still 700px wide in a 332px box. Only Genocide, Zionism as colonization and Apartheid are visible, the 4th header is clipped to 'O (W', and there is no mask and no cue (computed mask-image: none). #xrLang is 1165px in 364px: the active 'עברית' chip is clipped at the left edge and Deutsch at the right. The ●/○/◌ dots on the language chips still have no visible key. Their meaning ('Hebrew, genocide: court case only') is only in the aria-label.",
+     "fix": "Add mask-image: linear-gradient(to left, transparent, #000 32px) to #xmScroll, #xrLang and #xrArts. Add scroll-padding-inline:16px, and scrollIntoView the active chip with inline:'nearest'. Under the matrix, on phone only: 'Swipe for 5 more claims →'. Above the chips, one line: '● stated as fact · ○ attributed · ◌ not in the lead, for the claim shown'."
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang #xrPair, Hebrew original with inline gloss chip (Zionism, Now and Both views)",
+     "problem": "On phone, the inline English gloss chip 'a national home for the Jewish people' sits inside the RTL line. It splits 'בארץ ישראל': 'בארץ' is stranded at the left end of one line and 'ישראל' starts the next (ip_d_he_settled.png). The same gloss is repeated in the box below. A language switch also morphs for about 1.5-2s. A screenshot or a fast reader at 1.2s sees half-collapsed words ('people' at about 2px).",
+     "fix": "At 600px or less, drop the inline gloss chips from the original column and keep only the underline plus the gloss box below. The underline already links the two. Or render the gloss under the phrase as ruby-style text with display:block inside an inline-block wrapper, so it never takes a line slot. Cap the language-switch morph at 600ms, and skip it on a language change (keep it for Replay)."
+    },
+    {
+     "severity": 2,
+     "location": "#oct7 #o7Art tabs, #o7Live, phase cards; #zionism phase buttons in Key moves mode",
+     "problem": "Switching tabs still leaves the previous article in the live region: on the October 7 tab, #o7Live reads 'Hamas, change 13 of 120…'. The tabs have no aria-controls, and each tab click scrolls the page up about 570px at 1280. Hamas phase 2 still reads 'Oct 2023 to Oct 2023'. In Key moves mode, phase buttons land on non-key changes (#zionism Phase 1 → change 1 and Phase 3 → change 190, both 'not a key move'), so the next Next jumps unexpectedly.",
+     "fix": "On tab change, write to #o7Live: 'October 7 attacks: 131 changes to the first sentence. Showing change 70 of 131, 27 Nov 2023, “armed incursions” in.' Scroll only if the figure top is above the viewport (block:'nearest'). Write phase dates as '9–16 Oct 2023'. In Key moves mode, have a phase button jump to the first key move inside that phase."
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang .xw-gg #xwGG ('When each Wikipedia opened a “Gaza genocide” article'), new this round",
+     "problem": "German, Hebrew and Russian appear only in the caption ('have none'). The chart itself shows 8 rows, so the three missing editions, the ones an Israeli reader cares most about, are invisible in the graphic. It also sits between the quote reader and its 'More' drawer with no link to either. The matrix above already encodes 'no article' as an n/a hatch.",
+     "fix": "Add three rows at the bottom: Hebrew, German, Russian, with the bar track in the matrix's n/a hatch and the value 'no article' (on phone, 'none'). Make each existing row a button that opens #xrFig at that language's Gaza genocide moment (aria-label 'Spanish: article opened 24 Oct 2024, 301 days after English. Read its first sentence'). Change the caption to 'days after English; tap a row to read its first sentence'."
+    },
+    {
+     "severity": 2,
+     "location": "#charge #ppCard on iPhone 13",
+     "problem": "Still open. A bar tap scrolls the card into view, but the card is 922px tall for one cell, and up to 55 sentences for Israel / Occupation / now. There is no way back to the grid, so picking a second bar takes several screens of scrolling up. #ppSide wraps 'Other disputes' to a second row.",
+     "fix": "Show the first 6 sentences, then a 'Show all 55' button with aria-expanded. Add a sticky '↑ Back to the chart' button at the card's top right that scrolls to #ppFig and focuses the bar that opened the card. Shorten the seg labels on phone to 'Israel / Jews · Hamas / Pal. · Others', or let it scroll horizontally on one row."
+    }
+   ],
+   "notes": "I tested in Playwright Chromium on iPhone 13 emulation and at 1280x900, light and dark, plus reduced-motion runs. I used build r4_ux.html, wrapped with a viewport meta as r4_ux_wrapped.html. There were 0 page errors and 0px horizontal overflow in all four contexts.\n\nExercised:\n- #zionism: Prev, Next, Play/Pause, 5 chips, 4 phases, Key moves/Every change, speed, Arrow/Home/End/Space, Tab order.\n- #oct7: all 3 tabs and every chip (6/6/5), Next, phases.\n- #charge: bars by tap and by Enter, and the side seg on phone (on desktop all sides show, so the seg is hidden).\n- #organised: Groups/Network/Table, Topic/Comparison, all 5 presets in Groups and Network, node and edge clicks at the edge midpoint (desktop edge hits work at a 6px offset), Tab reach.\n- #key: 5 steps, Show in chart, Full text/Opening paragraph.\n- #tierFig: static.\n- #crosslang: 3 matrix modes, cell by click and by Enter, Prev/Next/Replay, Then/Now/Both, article and language switching including Hebrew RTL, linked highlights (11 lit on hover), xmFind buttons.\n- Also #trace, #breathe, the board tiles, and the Data lab handoff and back.\n\nRound-3 fixes that held: the #netPre captions and edge fades, the 'militant wing' label, the acronym placeholder, and the #xrHd labels.\n\nSince round 3 there have been no UX fixes. The deferred UX items are all still open: the phone stepper, focus restore, network keyboard and #netDet placement, #key overlap, the #xmScroll cue, the dot key, the o7 live region, and the #ppCard back button.\n\nNew with the cross-wiki commit 92decce:\n- The #xwGG chart (static, good aria-label, but it omits he/de/ru from the graphic).\n- The xw-facts list and #orgXw (text only).\n- The 'Tap any square' deck line was removed. Discoverability now rests on the figure cap 'Each square opens its sentence', which is enough.\n\nTwo new problems in #organised:\n- The Network view's 'low' hull label reads as Bloc B.\n- The Comparison Groups view points to groups 'below' that do not exist.\n\nScreenshots are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_ux/. Key files: ip_l_zi_after_chip3.png, ip_l_zi_card.png, ip_d_o7_after_tab.png, ip_l_net_graph.png, dk_l_net_graph.png, dk_l_net_groups_comp.png, dk_l_net_groups_discord.png, ip_l_key_mid.png, ip_l_xm_matrix.png, ip_d_xr_he_zion.png (mid-morph), ip_d_he_settled.png, dk_l_he_both.png, ip_l_xwgg.png, ip_d_pp_fig.png, dk_d_oct7.png (the Hamas ', )' is visible in the card). Scripts are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_ux_scripts/. No repository files were edited."
+  },
+  {
+   "lens": "newsroom",
+   "subscores": {
+    "headline_strength": 8,
+    "first_screen_story_clarity": 6,
+    "newsworthiness_israeli_audience": 9,
+    "quotability": 8,
+    "segment_readiness": 6,
+    "credibility_under_attack": 6,
+    "narrative_led_headlines_and_bottom_lines": 8,
+    "bottom_line_quality": 7
+   },
+   "overall": 7,
+   "strengths": [
+    "Nine of the eleven main-line H2s lead with Israel's story, not with Wikipedia mechanics, and each rests on an exact quote shown in its own section. Examples: #zionism ('re-establishment' to 'a Jewish homeland through colonization'), #charge ('began committing genocide'), #oct7 ('armed incursions … The hostages have never been in it'), #palestine ('1948 now has a perpetrator') and #crosslang (Hebrew carries it only as South Africa's court case). This meets the owner's 'Wikipedia is the vessel' rule.",
+    "Several round-3 fixes really landed (checked in the 1280 and iPhone 13 renders). The sexual-violence then/now wording is now in the visible #oct7 deck. The genocide bar reads '7+1', and #ppCard reads 'Charges 7 in 7 articles · plus 1 denial'. The #zionism deck uses one count, 44 in and 41 out, and the timeline note explains its 43/42. #sixty card 1 now carries the attributed October 7 genocide claim against Israelis. The #palestine bottom line now has the asymmetry: Jews 'fled or were expelled from Arab states' with no one named.",
+    "The #reads box ('What the world now reads') has seven dated then/now cards, with a counter-example card ('Moved the other way'). It is the single best on-air graphic. A presenter can read any card verbatim, and the closing sentence says what changed in the labels and the verbs.",
+    "Calibration that will survive a hostile segment is built into the copy. Israel's denial follows the genocide line, and the page notes that the Netanyahu article has none. Crimea and Cyprus are given as parallels on occupation. The 'Moved the other way' 1948 card is there. 'Not detected is not did not happen' is spelled out. The new cross-wiki finding, that none of 281 inserting accounts carried a term into a second language, is a strong and quotable anti-conspiracy fact that also protects the piece from the 'you're alleging a campaign' attack.",
+    "The page has angles no Israeli outlet has run. 'Militant' left Hamas's definition 5 days after the attack. October 7 is 'armed incursions' in the first sentence, while the article's own short description and the Be'eri article say 'massacre'. The Nakba wording went from 'by Israel' to 'by Zionists'. Spanish Wikipedia calls October 7 'un ataque de represalia'. Of key English-article views since October 7, 11% met an opening that states the genocide as fact."
+   ],
+   "issues": [
+    {
+     "severity": 5,
+     "location": "#organised part 1 ('What Wikipedia's own bodies found, on both sides'), the #organised deck, and #sixty card 5 ('Canvassing is documented on both sides…'). The built HTML carries 13 <!--VERIFY …--> comments.",
+     "problem": "The 'documented on both sides' claim is the page's main defence and the most quotable process fact. Every ArbCom item behind it (the January 2024 PIA canvassing motions, the December 2024 Tech for Palestine Discord sanctions, the 25 April 2025 site bans, the Project Esther deck) was read only as a search-engine snippet. ORGS.md lines 6-7 say 'Nothing here is FULLTEXT. Every line needs checking against the primary page before publication', and line 71 says 'no snippet showing that ArbCom found a mailing list'. The item was deferred in round 1 and is still open after three rounds. The VERIFY comments ship in the page source ('snippet-only; motion text and count (2 or 3) unverified'). A hostile media-watch site that opens view-source will screenshot them. A TV desk cannot put 'Wikipedia's own court confirmed…' on air on this basis.",
+     "fix": "Before publication, fetch the primary ArbCom pages: the PIA canvassing motions of 4-20 Jan 2024, the December 2024 case and remedies, and the 25 Apr 2025 motion. Confirm each date, count and quoted phrase ('encouraging other users to game the extended confirmed restriction'; 'additional evidence of off-wiki coordination independent of the Tech4Palestine Discord server'), and link each bullet to its primary page. Add a build assertion that fails if '<!--VERIFY' reaches the output. Any item you cannot verify should be reworded as reported, e.g. 'according to ArbCom's published notices, as reported by [outlet]', and dropped from #sixty card 5."
+    },
+    {
+     "severity": 4,
+     "location": "Hero dek (#deck), sentence 4: 'since July 2023 one in ten Top-importance articles on Israel, Palestine and Jewish topics took on this vocabulary'",
+     "problem": "'This vocabulary' points back to the two quotes just given: genocide and 'through colonization'. The 10.3% is any gain in the whole critical lexicon (genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion; #reach glossary). A critic can say the page claims that one in ten core articles now accuse Israel of genocide. This is the round-2 'took on the vocabulary' overclaim again, in milder form. The dek also never names October 7's hostages or 1948, the two stories an Israeli viewer meets first.",
+     "fix": "Replace the dek with this, using only verified page content: 'English Wikipedia is the text millions of people, and the AI tools built on it, read first; its Israel article had 4.6 million views in the last 12 months. That article now says, in Wikipedia's own voice: “After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.” The next sentence is Israel's denial. Zionism is now a movement for “a Jewish homeland through colonization”; 1948 is “the ethnic cleansing of Palestinian Arabs by Zionists”; and the hostages have never been in the first sentence of the October 7 article. The change sits in the pages people read first: one in ten of the subject's Top-importance articles gained terms such as genocide, apartheid, occupation or colonial in their opening paragraph, against 4.4% on other conflicts. The test we wrote down first, an average over all articles, found no rise.' Before keeping 'and the AI tools built on it', check that the claim is sourced. If it is not, cut it: round 2 removed it as unsourced."
+    },
+    {
+     "severity": 3,
+     "location": "Hero H1, phone masthead and desktop sticky bar",
+     "problem": "The H1 opens with two strong quotes, then trails into 'How the reference the world reads now tells Israel’s story.' That tail is abstract, never names Wikipedia, and pushes the H1 to six lines on iPhone 13. The deferral as an 'owner decision' has run two rounds. 'WIKIPEDIA FRAMING DRIFT' appears in both the sticky bar and the masthead at 1280. On phone, the two masthead lines plus the kicker push the H1 to about y=210 of 664. There is still no byline or sentence-coding disclosure, and 'who made this?' is the first question a TV booker asks.",
+     "fix": "H1: 'Wikipedia now says Israel “began committing genocide” and that Zionism came “through colonization”'. Keep the kicker 'How English Wikipedia retold Israel’s story, 2021–2026'. Under 600px, hide the second masthead line ('ENGLISH WIKIPEDIA · 1 JAN 2021 – 5 NOV 2026'), which repeats the kicker and the published line. Append to the published line: 'Sentences coded by AI readers and checked by hand (How far to trust this).'"
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang 'More: language by language' drawer, bullet 'Hamas: where “terror” sits', set against the #oct7 Hamas deck, the #oct7 designation figure and #sixty card 2",
+     "problem": "The new cross-wiki bullet says English moved the terror sentence 'from sentence 5 of 21 to 22 of 23'. #oct7, its figure and #sixty card 2 say '5 of 20' (OCT7.md lines 39 and 228). The two numbers come from two sentence splitters (crosswiki/cards.md line 105 against OCT7.md). On a page whose defence is exactness, two denominators for the same Hamas fact is exactly what a critic posts.",
+     "fix": "In the drawer, write 'English moved it from sentence 5 of 20 to 22 of 23 (our English count; other editions split by punctuation, so their counts are approximate)'. Or drop the denominators in the drawer only: 'English moved it from sentence 5 to sentence 22, the second-to-last; Russian moved it to sentence 1; German keeps it first.' Do not change the OCT7.md figures."
+    },
+    {
+     "severity": 3,
+     "location": "#oct7 deck, the 'Further down, the opening section says…' paragraph and the 'Hamas.' paragraph, before the timeline figure",
+     "problem": "On iPhone 13 the reader meets about 330 words in three paragraphs, roughly three screens, before the first #oct7 visual. The then/now strip has been deferred twice. Producers need the October 7 then/now as a graphic: the sexual-violence wording, the first sentence and the hostages. It is the most-watched Israeli angle and it is not segment-ready.",
+     "fix": "Reuse the #reads card component (the same .rd cards, Then/Now labels and dated eyebrow) as a three-card strip directly under the first #oct7 deck paragraph. (1) FIRST SENTENCE · 23 OCT 2023 → SINCE 8 OCT 2026: 'A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas…' → 'a series of coordinated armed incursions…'. (2) SEXUAL VIOLENCE · 1 JAN 2024 → 2 NOV 2026: 'Israel and international media have reported rape and sexual assault by Hamas fighters' → 'Numerous sources have reported dozens of cases of rape and sexual assault' (no perpetrator named). (3) HOSTAGES: 'never in the first sentence in 107 versions' → now sentence 9: '251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip'. Then cut the 'Further down…' paragraph to its last sentence (short description and Be'eri). Sources: OCT7.md lines 88-125; chart_data/oct7_06_oct7_lead_then_now.json."
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang header (commit 92decce removed the visible deck sentence) and #oct7",
+     "problem": "Two of the strongest Israeli lines sit only in a collapsed drawer or a gloss chip. (a) Round 3 added a visible sentence: Spanish Wikipedia opens its Gaza-war article by calling October 7 'un ataque de represalia'. The cross-wiki integration (92decce) deleted it. It now survives only as a chip inside the morphing Spanish card, which many readers will not parse. (b) The new cross-wiki finding on how October 7 is named sits in the drawer only: English 'incursion' only; Hebrew attack, massacre and terror; German, French, Italian and Dutch include terror. That comparison is the natural proof for the #oct7 H2, and #oct7 does not mention it.",
+     "fix": "(a) Append to the #crosslang bottom line: '…; and Spanish opens its Gaza-war article by calling October 7 “un ataque de represalia”, a retaliatory attack.' (b) Add one sentence after the first #oct7 deck paragraph: 'Other editions choose differently: in their first sentences now, Hebrew calls it an attack, a massacre and terror, and German, French, Italian and Dutch use terror; English says only “incursions” (by our word list; Other languages ↓).' Source: crosswiki/cards.md line 129."
+    },
+    {
+     "severity": 3,
+     "location": "#news bottom line",
+     "problem": "The line still leads with mechanics and a range: 'Set aside every opening-paragraph sentence about events since 2022 and about 80 to 90% of the extra change … remains (depending on how the comparison pages are weighted)'. This was deferred in round 3. The section's best evidence is the West Bank then/now card, and it is not in the bottom line.",
+     "fix": "'Not just the war: in the core articles, most of the new wording retells the land and its history, as when the West Bank went from “a landlocked territory” to “the larger of the two Palestinian territories … that make up Palestine”.' Leave the 80 to 90% range and its weighting note in the deck and the figure, where they already are. Do not claim the Hebrew name was removed: the 2026 quote is elided."
+    },
+    {
+     "severity": 3,
+     "location": "#board bottom line",
+     "problem": "The line opens with '−0.3 per 10,000 words, range −2.7 to +1.7', which a newsroom reader cannot use. It was deferred in round 3. This bottom line is the page's honesty statement and must be readable on air.",
+     "fix": "'Across the whole subject the average article did not change, so the test we registered in advance was not supported; the shift is in the core pages people read most, and there it held up on data we had sealed until the end.' Keep −0.3 and the ranges in the deck."
+    },
+    {
+     "severity": 2,
+     "location": "#palestine bottom line",
+     "problem": "'Palestinians were now driven out by' is an awkward tense. The sentence names three articles in a parenthesis and runs to 55 words, so a presenter cannot read it aloud.",
+     "fix": "'Wikipedia’s 1948 now names who drove the Palestinians out, “Zionists” or “Zionist forces”, in three of its four key articles, while the Jews who “fled or were expelled from Arab states” still have no one named.' Move the 'one 1948 article removed its agent' clause into the deck. The #reads 'Moved the other way' card already shows it."
+    },
+    {
+     "severity": 2,
+     "location": "#reach bottom line and #when bottom line",
+     "problem": "#reach carries four numbers (one in ten, 4.4%, 5.9, 0.9-11.2, plus 80%). Its parenthesis '(Israel, Netanyahu, Palestine, Zionism, Hamas)' implies that these five pages are the 10.3% sample, but they come from a separate pageview list. #when carries two rates and two dates. 'The new first sentences of … Israel' also invites readers to think the genocide line is Israel's first sentence, when it is at the end of paragraph 2.",
+     "fix": "#reach: 'The new language sits in the pages the world reads first on Israel, from Netanyahu and Israel to Zionism and Hamas, and in one in ten of the subject’s most important articles; the thousands of minor pages moved no more than other conflicts’.' #when: 'The rewrite came in one wave with the fighting of 2023 and 2024, not with the court rulings; the pace is back to pre-war levels, but the new wording of Zionism and Israel has held since late summer 2026.'"
+    },
+    {
+     "severity": 2,
+     "location": "#reads H2 'What the world now reads: seven opening sentences, then and now', and its position after #organised",
+     "problem": "The Israel card is labelled 'opening section (end of paragraph 2)', so 'seven opening sentences' is still inaccurate. The box is the most segment-ready graphic, but it sits at about y=27,600 at 1280, after the process sections. Keeping it as the closing summary was a reasonable call, but skimmers and producers never reach it.",
+     "fix": "Retitle it 'What the world now reads: seven sentences, then and now'. Leave it where it is. Add one jump link at the end of the hero dek, after 'We start with one sentence.': 'Or see all seven, then and now ↓' (anchor #reads). Add the same link under the #sixty footnote."
+    },
+    {
+     "severity": 2,
+     "location": "#organised 'More: the two blocs; other languages; what made wording stick' drawer, bullet 'Across languages: same news, not same accounts'",
+     "problem": "'That fits a shared news trigger, a ruling or report every edition covers' sits awkwardly against the #when H2 and P10 ('Battles bring editors; courts and reports do not'). A critic will quote the two lines side by side.",
+     "fix": "'That fits a shared news trigger that every edition covers, such as a battle or a ruling; this test does not say which.'"
+    }
+   ],
+   "notes": "DESK VERDICT: We would run this as a lead weekend digital feature, plus a 60-90 second TV explainer built from three graphics: the #zionism chips (re-establishment struck out, colonization added), the #oct7 Hamas timeline with the 'Militant → military' chip, and the #reads box. The hard condition is issue 1: verify the ArbCom items against primary pages and strip the VERIFY comments. Until then the 'documented on both sides' line cannot go on air as Wikipedia's own finding.\n\nSUGGESTED HEADLINE: Wikipedia now says Israel “began committing genocide” and that Zionism came “through colonization”\n\nSUGGESTED DEK: A revision-by-revision study of English Wikipedia, 2021-2026. 1948 is now “ethnic cleansing … by Zionists”, Hamas lost “militant” five days after October 7, and the hostages have never been in the first sentence of the October 7 article. The change sits in the most-read pages; the average article did not move.\n\nSUGGESTED FIRST THREE PARAGRAPHS (verified page content only):\n(1) The Israel article on English Wikipedia, read 4.6 million times in the last 12 months, now states in Wikipedia's own voice: “After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.” The next sentence is Israel's denial. In January 2021 and in July 2023, none of the 150 most-read opening sections on the subject charged Israel with genocide. Today seven sentences do, and two of them, in the Israel and Benjamin Netanyahu articles, say it as fact. The Netanyahu article carries no denial.\n(2) The rewrite reaches the subject's foundations. In 2021 Wikipedia defined Zionism as “the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel”. It is now a movement “to establish and support a Jewish homeland through colonization in the region of Palestine”. Since June 2024 “colonial” or “colonization” was written into that sentence 44 times and taken out 41 times, and 37 of those removals were undone. The Nakba is now “the ethnic cleansing of Palestinian Arabs by Zionists”, while the 1948 Palestine war article still says, naming no one, that “Hundreds of thousands of Jews fled or were expelled from Arab states”.\n(3) October 7 itself is “a series of coordinated armed incursions” in the article's first sentence. Across 107 versions, “massacre” stood there for about an hour in total and the hostages never, although the article's own short description says “armed incursions and massacres”. The change is concentrated: one in ten of the subject's most important articles gained terms such as genocide, apartheid or colonial, against 4.4% on other conflicts, while the thousands of minor pages did not move. Wikipedia's arbitration committee documented organised canvassing on both sides [after primary-page check]. Our tests found no campaign footprint, though they could only have seen a large one, and no account carried a term from one language edition to another.\n\nBOTTOM-LINE VERDICTS:\n- Good as is: zionism, charge, oct7, crosslang (add the Spanish clause), organised (the new cross-language clause strengthens it), reads, limits.\n- Acceptable: against. Optional tweak: 'Not everything moved one way: Jewish ties to the land were kept, and the settlements article added Israel’s position, “but Israel disputes this”.' The current wording leads the counter-trend example with 'illegal under international law'.\n- Replace (exact text in the issues): news, board, palestine, reach, when.\n\nNARRATIVE-LED CHECK: 9 of 11 main H2s lead with Israel's story. #when ('One wave: editing rose…') and #board are process headlines, which is acceptable for those sections. The #reach H2 ('The articles the world reads first on Israel changed') is borderline mechanics and acceptable.\n\nROUND-3 CHECK:\n- Landed: the visible sexual-violence wording in #oct7; '7+1' and 'Charges 7 in 7 articles · plus 1 denial'; the #zionism 44/41 count with the 43/42 note; the #sixty card 1 attributed October 7 claim; the #palestine asymmetry; the #against, #reach and #when rewrites (partly; they are still number-heavy); the #reads retitle and bottom line.\n- Regressed: the visible Spanish 'un ataque de represalia' sentence, removed in 92decce.\n- Still open: H1, masthead/byline/chips, the #news and #board bottom lines, #reads placement, the #oct7 then/now strip, and the ArbCom primary-page check (open since round 1).\n\nMinor point, not ranked: in the #sixty cards, the quoted text switches mid-sentence to the serif quote face (card 1's parenthesis; card 2's whole body is serif while cards 3-4 are sans). It looks uneven on the TV-grab graphic. Use the sans body face and keep only the curly quotes.\n\nNo console errors in any of the four contexts.\n\nFiles:\n- Screenshots: /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_newsroom/ (ip_light_*, ip_dark_*, dk_light_*, dk_dark_*)\n- Text dump: /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_newsroom/dk_text.txt\n- Section structure: /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_newsroom/struct.json\n- Script: /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_newsroom_scripts/shoot.js"
+  },
+  {
+   "lens": "critic",
+   "subscores": {
+    "defensibility": 7,
+    "balance_of_evidence": 7,
+    "caveat_placement": 6,
+    "causal_restraint": 6,
+    "transparency_of_method": 7
+   },
+   "overall": 6.5,
+   "strengths": [
+    "The round-3 critic fixes landed. The hero dek and the #sixty footnote now state the failed pre-registered average test. Card 5 carries the ratio definition (0.5x / 3.4x / 2.0x), the war-tempo caveat and ArbCom's no-start-date clause. Card 4 is framed 'for Israel as for Russia in Crimea and Turkey in Cyprus' (2 of 8 to 14 of 19). Card 2 says 'militant' became 'military' and came back three times. Card 1 quotes the full sentence. #reads has a seventh card that moved the other way, and the antisemitism bullet in #against is marked 'we did not code'.",
+    "#charge leads with the result that most annoys the 'hit piece' critic: Israel's share of harm sentences 23.6% to 24.1% to 26.4% (range -1.9 to +8.3). It also gives Hamas-side killing counts (8 to 8 to 23) beside Israel's (9 to 10 to 26), dated outside findings, Israel's denial quoted inline, and two counter-example quotes inside the chart.",
+    "#oct7 gives each critic their facts. For the pro-Israel side: 'armed incursions', the hostages never in the first sentence, the designation at 22 of 23, and the sexual-violence sentence that no longer names a perpetrator. For the Wikipedia defender: the short description 'armed incursions and massacres', the Be'eri example, the Hannibal line, the nine-armed-groups comparison, and the terror-vocabulary fall marked 'suggestive'.",
+    "The #organised ledger separates DOCUMENTED, ALLEGED and NOT SHOWN for both sides: ArbCom January 2024 pro-Israel, December 2024 pro-Palestinian, the WMF calling the ADL's conclusions 'troubling and flawed', Project Esther as 'a plan is not an operation'. The network panel carries 'Timing is not attribution', 'Not shown: who these accounts are', and a 'what this can and cannot show' box.",
+    "Method transparency on the English core is excellent. #board prints the pre-registered rule and its failure (4,228 of 5,000 shuffles), the sealed-half replication (+3.6 pp) and the probability sample. The coding is called a self-check with a 39/40 re-check. The regexes and exclusions are published, including the 76 false Nakba/expulsion matches."
+   ],
+   "issues": [
+    {
+     "severity": 4,
+     "location": "#organised header deck, 3rd paragraph ('...when topic insertions ran at 3.4 times the comparison rate (chart below), before the documented pro-Palestinian channel opened in January 2024; the pro-Israel email canvassing...'). Regression from commit 92decce.",
+     "problem": "The cross-wiki commit deleted two round-3 fixes from the visible deck: the ratio context '(0.5 times before the war, 2.0 times while the Discord channel was active)' and '(ArbCom's April 2025 finding of other coordination gives no start date)'. The ArbCom clause now sits only in the caption of the collapsed 'alleged, disputed or not shown' drawer. So the main text again exonerates by timing ('before the channel opened'). It also hides that topic insertions still ran at twice the comparison rate during the Discord window. That is the first line of the whitewash critic's attack, and it was the round-3 sev-4 item.",
+     "fix": "Restore the deck sentence to: '...when topic insertions ran at 3.4 times the comparison rate (0.5 times before the war; 2.0 times while the Discord channel was active; chart below), before the documented pro-Palestinian channel opened in January 2024 (ArbCom's April 2025 finding of other coordination gives no start date); the pro-Israel email canvassing ArbCom found dates from the same weeks but aimed the other way.' Keep the clause in the drawer caption as well."
+    },
+    {
+     "severity": 4,
+     "location": "#organised #orgXw ('Across languages, different hands. ... A campaign by the same accounts across editions would leave exactly that signature. It is not there.') and the #organised bottom line ('...and no account carried a term across languages').",
+     "problem": "This overclaims, and it has been promoted to the bottom line. (1) The null expectation is itself 0 (crosswiki_accounts.json and cards.md: 'chance 0.0, p=1.0'). The test cannot separate anything from chance; it is a descriptive zero. (2) The documented canvassing (Tech4Palestine Discord, the pro-Israel email list) was about English Wikipedia, so a cross-language same-account signature was never the expected footprint. (3) Accounts are matched by SUL username, so separate accounts per wiki are invisible by design. 'It is not there' is the rhetorical form of 'not detected' that ANGLE.md forbids. The whitewash critic will call it a straw man knocked down in the bottom line.",
+     "fix": "Replace with: 'Across languages. None of the 281 accounts that inserted a critical term in our 11 editions did so under the same username in a second edition, nor did any of the 284 that removed one. That rules out one kind of campaign, the same accounts working several editions. It says nothing about canvassing within English Wikipedia, which is what ArbCom documented, or about different accounts per edition.' Cut 'and no account carried a term across languages' from the bottom line, or write 'and no single account inserted a term in two languages'."
+    },
+    {
+     "severity": 4,
+     "location": "#organised 'More' drawer, bullet 'Across languages: same news, not same accounts' (135 vs 104.6 within a day; 925 vs 579 within a week).",
+     "problem": "This is a causal reading of a result its own null cannot interpret that way. The null shifts each account's timeline by 3 to 21 days, or 14 to 90, which also strips out news timing. So 'beyond chance' covers both news-driven and coordinated synchrony. cards.md says so: 'News also synchronises editions ... the time-shift null removes news timing too, so a flagged cluster is a lead to read, not proof', and 'Synchrony across editions beyond chance is what coordination would look like.' The heading 'same news' and 'That fits a shared news trigger' pick the exculpatory reading, and 'High confidence' sits right after the interpretation. A pro-Israel critic quotes cards.md against the page.",
+     "fix": "Heading: 'Across languages: in step more than chance, by different accounts.' Body: 'Different accounts in different editions made the same change within a day of each other 135 times, against 104.6 by chance (p = 0.014), and within a week 925 times, against 579 (p = 0.001). A ruling or report that every edition covers produces this; so would coordination among different accounts. Our null shifts timelines, which removes news timing too, so it cannot tell the two apart. The same account never did this in any window.' Put 'High confidence' only on the measured counts."
+    },
+    {
+     "severity": 4,
+     "location": "#crosslang 'More: language by language', bullet 'How many readers met \"genocide\" as fact' (English 11% ... Hebrew 4% ... German 0%).",
+     "problem": "This uses a different, weaker method than the rest of the section and contradicts the H2. The exposure voice is a word-list and attribution-marker heuristic over the whole opening section (cards.md: 'a marker heuristic, not a coded reading'). It does not distinguish whose genocide is meant. It reports Hebrew readers meeting genocide 'stated as fact' 4% of the time, while the H2, the bottom line and the matrix say Hebrew mentions it 'only as South Africa's court case' (§). LANGS.md says Hebrew, German and Russian set October 7 beside the Holocaust, so the Hebrew hits may concern Hamas or the Holocaust. A critic from either side can say the page counts genocide against Israelis as genocide 'stated as fact' about Israel, or that the page contradicts itself.",
+     "fix": "Either cut the bullet, or relabel it: 'How many readers met an unattributed \"genocide\" sentence (word-list estimate, any target). Of key-article views since 7 October 2023, the share whose opening section had a \"genocide\" sentence with no attribution word: ...'. Then add: 'This counts any target. In Hebrew the hits are [name the article/sentence], not the Gaza-war sentence above.' Better: recompute restricted to Israel-as-perpetrator sentences before publishing."
+    },
+    {
+     "severity": 4,
+     "location": "#crosslang 'More: language by language', bullet 'Court rulings overstated, still in the lead' (and the matrix column 'COURT RULING OVERSTATED', then 1 → now 4).",
+     "problem": "It asserts factual errors in other editions on the strength of a regex flag, then admits 'each needs a reading by hand', with no sentence quoted (ANGLE.md evidence rule). '(the July 2024 opinion did neither)' is attackable from the pro-Palestinian side. The source note (cards.md) says the opinion 'found a breach of CERD Article 3 without saying whether it was segregation or apartheid'. Article 3 prohibits 'racial segregation and apartheid'. Dropping that makes the page itself overstate.",
+     "fix": "Heading: 'Court rulings possibly overstated (flagged by word pattern; not yet read by hand).' Rewrite the French/Russian clause: 'French says the court recognised apartheid; the July 2024 advisory opinion found a breach of CERD Article 3, the ban on racial segregation and apartheid, without saying which. Russian says the court found Israel guilty; that opinion is non-binding and gives no verdict.' Before publishing, hand-read the 4 'now' cells and quote each sentence in its matrix reader, or drop the column."
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang 'More' bullet 'Hamas: where \"terror\" sits' ('English moved it from sentence 5 of 21 to 22 of 23, the furthest move toward the end of any edition') vs #oct7 Hamas paragraph, the #oct7 position chart and #sixty card 2 ('sentence 5 of 20').",
+     "problem": "One fact, two numbers on the same page: OCT7.md lines 39 and 64 say 5 of 20, and the crosswiki splitter says 5/21. The first number a critic checks will not reconcile. 'The furthest move ... of any edition' also drops the caveat #oct7 gives: the lead went from 20 to 9 sentences (5 of 9 in July 2023) and then to 23 (154 to 525 words), which pushes any sentence later.",
+     "fix": "Use 'sentence 5 of 20' (OCT7.md 39) in the crosslang bullet, or add '(our cross-language splitter counts 21)'. Append: '; the English opening section also grew, from 9 sentences in July 2023 to 23, which pushes any sentence later.'"
+    },
+    {
+     "severity": 3,
+     "location": "#sixty card 4 body ('Since the July 2024 ICJ advisory opinion, editors have a court to cite.'), repeated in the #charge 'More' drawer; conflicts with the #when bottom line and body ('followed the fighting, not the courts'; after legal events 'new critical vocabulary showed no rise at all').",
+     "problem": "The page tells two incompatible causal stories. Card 4 implies the ICJ opinion drove the own-voice occupation shift (18 of 35 in July 2023 to 44 of 55 now), but no data shows when within that window the shift happened. #when says legal events moved nothing (SYNTHESIS line 188: 1.01x short window, 0.96x long). The defender reads card 4 as 'editors followed the court'; the hit-piece critic cites #when to say the court explains nothing. Either way the page contradicts itself.",
+     "fix": "Card 4 body: 'The ICJ's July 2024 advisory opinion called the occupation unlawful; we did not test whether this shift followed it, and across all topic articles legal events did not raise new critical wording (#when). Against Russia and Turkey: 2 of 8 to 14 of 19 (25% to 74%), on small counts.' Make the same change in the #charge drawer, and delete its duplicated sentence 'Occupation charged to Russia ... went 25%, 70%, 74%'."
+    },
+    {
+     "severity": 3,
+     "location": "#limits list item 'Languages. English and Portuguese moved. Nine other languages showed no clear change.' (page_template.html ~1624); and #method, which has no cross-wiki method paragraph.",
+     "problem": "The limits box contradicts the #crosslang H2 and bottom line (Spanish, Portuguese and Arabic now state genocide in their own voice; Dutch and Polish pulled back). It also contradicts the new cross-wiki counts (cells present French 1 to 12, Spanish 3 to 10, Arabic 8 to 15; cards.md 'After 7 October'). SYNTHESIS D10 scopes that statement to lead word rates against each edition's comparison. Method also says nothing about the new tier: 78 language editions, per-language word lists, voice by marker heuristic, account matching by SUL username, 1,000-draw nulls. A critic will say the cross-language claims are unsourced.",
+     "fix": "Change the limits item to: 'Languages. On word rates in opening sections, only English and Portuguese rose clearly against their own comparison (SYNTHESIS D10); read sentence by sentence, Spanish, Portuguese and Arabic now state genocide in their own voice and Dutch and Polish pulled back. All cross-language results are exploratory.' In #method add one paragraph: 'Other languages: opening sections of 78 language editions of the key articles in 11 Wikipedias, 107,141 revisions since 2021; terms by a word list per language; own voice by the absence of an attribution word (a heuristic, unlike the hand-read English coding); accounts matched by global username; chance from 1,000 shuffles.'"
+    },
+    {
+     "severity": 3,
+     "location": "#organised 'More' bullet 'Sources made wording stick', and the closing #organised paragraph 'How the story settled: lasting wording came with a new source half the time...'.",
+     "problem": "(1) 'Made ... stick' is causal; the data is an association (50% vs 28%, labels permuted). (2) The source classes are asymmetric. 'Arab and Palestinian press and pro-Palestinian outlets' lumps news with advocacy (101), while 'Israeli press' (92) is kept apart from 'pro-Israel advocacy' (8). The pro-Palestinian critic sees Al Jazeera filed with activists; the pro-Israel critic sees advocacy hidden inside 'press'. (3) The units are unclear. The 2,047 domains are domain arrivals, not insertions (622 insertions), and 'other 1,254' is most of them. (4) The closing paragraph mixes 11-edition figures into an English section, and it reads as 'sourced, therefore legitimate'.",
+     "fix": "Heading: 'Lasting wording more often arrived with a source.' Body: 'In the 11 editions, insertions that lasted brought a new source domain 50% of the time, reverted ones 28% (204 lasted, 414 reverted; p = 0.0005); an association, not proof that the source decided it. The 2,047 new domains (one insertion can bring several): Western wire services and papers 298, rights groups and the UN 221, Arab and Palestinian press 101 (including pro-Palestinian outlets), Israeli press 92, scholarly 73, pro-Israel advocacy 8, unclassified 1,254.' Better: split both press classes from advocacy symmetrically. Closing paragraph: 'Across the 11 editions, wording that lasted more often arrived with a new source (50%, against 28% for reverted wording); in English, 6 of 26 lasting wordings settled soon after a formal community decision (chance 2.3).'"
+    },
+    {
+     "severity": 3,
+     "location": "#organised network time chips (#netPre: 'War onset (Oct 2023–Jan 2024)' vs 'Discord window (Jan–Sep 2024)'), the #netWinC caption, and the bloc-card labels 'Share of activity in the war-onset window' / 'in the Discord window'.",
+     "problem": "The naming is asymmetric. The pro-Palestinian canvassing window is named after the channel. The pro-Israel email-canvassing window (ArbCom: about October 2023 to January 2024) is named neutrally, 'War onset'. The pro-Palestinian critic will say the chips brand one side and hide the other. Next to blocs where '66% of their edits add critical terms', the labels steer readers toward a conspiracy reading of one side only.",
+     "fix": "Chips: 'War onset · pro-Israel email canvassing (Oct 2023–Jan 2024)' and 'Discord channel · pro-Palestinian canvassing (Jan–Sep 2024)'. On phone, use 'Email window (Oct 23–Jan 24)' / 'Discord window (Jan–Sep 24)'. Change the bloc-card labels to match: 'Share of activity in the war-onset / email window'. Also finish the deferred 'Bloc' → 'Group' rename in the same pass."
+    },
+    {
+     "severity": 3,
+     "location": "Hero dek ('since July 2023 one in ten Top-importance articles on Israel, Palestine and Jewish topics took on this vocabulary, against 4.4% on other conflicts').",
+     "problem": "'This vocabulary' comes straight after the 'Israel began committing genocide' and 'through colonization' quotes, so readers take it to mean those charges against Israel. The measure counts genocide, apartheid, ethnic cleansing, occupation, colonial and Nakba/expulsion 'wherever they appear and whoever they are about' (#reach drawer), so a Jewish-history article gaining 'genocide' about the Holocaust counts. The basis is 121 sampled Top articles, about 12 gainers, with a gap range of +0.9 to +11.2. The defender will call the hero sentence a bait-and-switch.",
+     "fix": "Change to: 'since July 2023 about one in ten Top-importance articles on Israel, Palestine and Jewish topics (10.3% of 121 sampled) gained words such as occupation, genocide, apartheid or colonial in their opening paragraph, about any party, against 4.4% on other conflicts; the long tail moved no more than elsewhere.'"
+    },
+    {
+     "severity": 3,
+     "location": "#when bottom line ('The new vocabulary arrived in one wave that followed the fighting, not the courts') and the body paragraph 'Edits rose after battles, not after court rulings...'.",
+     "problem": "This is partly open from round 3. The bottom line makes a claim about vocabulary, but the only escalation evidence on the page is edit volume (+17%). The insertion result (SYNTHESIS line 188: 1.34x, p = 0.001 short window; 1.17x, p = 0.054 over 13 weeks; rated suggestive, with a Nagorno-Karabakh placebo among the top five) is still missing. 'Followed the fighting' is therefore stronger than what the page shows.",
+     "fix": "After the 17% sentence add: 'New critical terms in opening paragraphs also rose after escalations, 1.34 times in the three weeks after (p = 0.001) and 1.17 times over 13 weeks (p = 0.054), a suggestive result: a placebo, the Nagorno-Karabakh offensive, ranks among the strongest single events. After legal events they did not move (1.01 times).' Bottom line: 'The new vocabulary arrived in one wave alongside the fighting (suggestive), and did not rise after court rulings...'."
+    }
+   ],
+   "notes": "Build: python build_page.py → /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_critic.html (11.5 MB, assertions pass). The viewport-wrapped copy is /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_critic_wrapped.html. Screenshots: per-section captures for iPhone 13 light/dark and 1280 light/dark in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_critic/, plus the network view with the War-onset chip (desk_light_net_network_waronset.png, phone_dark_net_network_waronset.png). 0 console errors in all four contexts. Rendered text dump: /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_critic_scripts/text.txt.\n\nWhat changed since round 3: the only new commit is 92decce, 'Cross-wiki findings integrated'. It is where most new attack surface comes from: issues 1-5 and 8-10, the #organised deck regression and the new cross-wiki claims in #crosslang and #organised. The English-core findings and the round-3 critic fixes otherwise hold up: hero null, card 5 kicker, card 4 comparison, card 2 'military', the #reads seventh card, the terror-vocabulary drawer, the #oct7 short description and Be'eri, and the neutral antisemitism bullet.\n\nChecked and fine: the German 0% exposure matches exposure.json (own_voice absent; cards.md says 'n/a'). The Gaza-genocide creation dates match cards.md. The 281/284/153/106/135/925/579/50/28/26/6/69 figures match chart_data, and build_page.py asserts them.\n\nLower-priority items not listed for budget:\n- #sixty card 2's giant '5 days' still suggests permanence. The kicker fixes it, but a headline of '“Militant” → “military” in 5 days' would be harder to clip out of context.\n- #against H2 'Not one-sided' rests on the settlements clause. The flow figures in the same section (223 in / 61 out, against comparison 125 / 73) are the stronger, fairer evidence and could carry the H2: 'Lopsided, not one-sided'.\n- Bloc A/B → Group A/B is still deferred from round 3.\n- I did not re-verify the Nakba dating against ratchet.json. The fs_timeline I sampled lists a non-ethnic-cleansing variant on 2026-07-17, which may be a variant-index misreading on my part. I suggest the data lens re-check 'by Zionists since 6 July 2026' and 'perpetrator named 10 August 2025' against the #trace entries (8 Aug 2025, 28 Feb 2026).\n\nPrivacy: no editor is named anywhere. Accounts are letters or A1… only."
+  },
+  {
+   "lens": "whole",
+   "subscores": {
+    "narrative_arc": 7.5,
+    "flow_between_sections": 6.5,
+    "redundancy": 5.5,
+    "length_and_pacing": 6,
+    "core_finding_lands": 8,
+    "zionism_charge_oct7_organised_connect": 6,
+    "coherence_of_tone": 8,
+    "evidence_anchoring": 7,
+    "narrative_focus": 7.5,
+    "skimmability": 7
+   },
+   "overall": 7,
+   "strengths": [
+    "The core finding now lands at every skim layer. The hero dek has 'one in ten Top-importance articles … against 4.4% … the long tail moved no more than elsewhere' and the failed pre-registered test. The #reach H2 reads 'The articles the world reads first on Israel changed; the long tail did not'. #sixty card 6 and the #board H2 repeat it. This fixes the round-3 regression.",
+    "The narrative H2s for #zionism, #charge, #oct7, #palestine and #crosslang each rest on an exact, dated then/now quote in their own section. #oct7 now shows the massacres, the toll, the hostages (sentences 4, 7 and 9) and the sexual-violence wording in visible text. This is the 'Wikipedia is the vessel' direction done well.",
+    "#reads works as a real ending. It has seven dated then/now cards, a narrative bottom line ('the change is in the labels and the verbs') and a card that moved the other way. It reads well in both colour schemes and on phone.",
+    "The tone stays sober and Israeli-newsroom readable. Counter-examples sit inside #charge, #against is labelled 'lopsided, not one-sided', canvassing is shown on both sides, and #limits says plainly that 'not detected' is not 'did not happen'.",
+    "The renders are clean. In all four contexts (iPhone 13 and 1280, light and dark) there are no console errors and no horizontal overflow. The new #xmFind Spanish/Arabic/Hebrew cards make the cross-language claim checkable on the spot, with gloss chips and translations."
+   ],
+   "issues": [
+    {
+     "severity": 5,
+     "location": "#crosslang, new figure .xw-gg ('When each Wikipedia opened a “Gaza genocide” article', drawXwGG)",
+     "problem": "Factual misreading. The figure says English opened a 'Gaza genocide' article on 29 Dec 2023, French 5 days later, and so on. The source caveat (patterns/crosswiki/cards.md line 183) says 'Creation = first revision of the current page (its history follows renames)'. These pages began under allegation titles: English 'Allegations of genocide in the 2023 Israeli attack on Gaza' until 3 Jul 2024, French 'Allégations…/Risque de génocide…' until 8 Nov 2024, Portuguese 'Alegações…' until 14 Jul 2024, Arabic 'مزاعم…' (allegations) until 26 Jun 2024, Dutch 'Verdenking van genocide' until 18 Dec 2025, Polish 'Zarzuty ludobójstwa' until 26 Apr 2026. The page contradicts itself: the #reads Gaza genocide card quotes the 1 Jan 2024 text as 'Allegations have been made…'. Critics would quote this chart first. It also has no sentence saying what it shows.",
+     "fix": "Retitle the figure 'When each Wikipedia’s genocide article was created, and when its title dropped “allegations”'. Caption: 'days after English; German, Hebrew and Russian have none; created under an allegations title, renamed later'. Add a second marker per row for the rename date, taken from the 'Renames since 2021' list in cards.md: English 3 Jul 2024, Portuguese 14 Jul 2024, Arabic 26 Jun 2024 (to 'genocide in the war', then 'الإبادة الجماعية لغزة' on 21 Aug 2024), French 8 Nov 2024, Dutch 18 Dec 2025, Polish 26 Apr 2026. Italian and Spanish need checking by hand before they are drawn. Add one line above the figure: 'In every edition that has one, the article began as “allegations of genocide”; English dropped “allegations” from its title on 3 July 2024, Polish only in April 2026.' This turns an error into one of the strongest narrative findings on the page."
+    },
+    {
+     "severity": 4,
+     "location": "#organised: bottom line ('…and no account carried a term across languages') and #orgXw ('Across languages, different hands … A campaign by the same accounts across editions would leave exactly that signature. It is not there.')",
+     "problem": "This overclaims a test with no power. cards.md line 57 gives expected-by-chance = 0.0 for both inserters and removers, with p = 1.0. Even by chance, no account would carry a term across languages. Only 153 of 8,175 accounts edit in two or more languages at all. Promoting a null that cannot discriminate into the bottom line, and phrasing it rhetorically ('It is not there'), reads as exculpatory. It also breaks the page's own 'not detected ≠ did not happen' rule, which the source caveat repeats.",
+     "fix": "Bottom line: 'Wikipedia’s arbitration committee documented off-wiki canvassing on both sides of this subject; our data show regulars returning to the same pages, not a campaign footprint, and the footprint test could only have seen a very large effect.' This drops the cross-language clause. #orgXw: 'Across languages, different hands. None of the 281 accounts that inserted a critical term in our 11 editions did so in a second language, nor did any of the 284 that removed one. Few editors work in two languages (153 of 8,175 on the same key article), so this rules out one set of accounts running all editions, not separate groups in each.' Source: cards.md 'The same accounts across editions'."
+    },
+    {
+     "severity": 4,
+     "location": "#when, H2 and bottom line, plus the deck's evidence paragraph",
+     "problem": "(a) The bottom line ('one wave … the pace of new wording has fallen back … first sentences of Zionism and Israel have stood since…') leads a skimmer to think the retelling is over. Yet the page's own dated record shows the most-read first sentences changing late: the Nakba named 'Zionists' on 6 Jul 2026, Zionism settled on 'colonization' on 27 Aug 2026, October 7 became 'armed incursions' on 8 Oct 2026, and the Hamas designation became 'Several countries' by 31 Oct 2026. Volume fell; the defining sentences kept moving. (b) The claim that the new vocabulary 'followed the fighting' is backed in the visible deck only by edits (+17%). The insertion result exists (SYNTHESIS line 188: critical-term insertions 1.34x after military escalations, p = 0.001; legal events 1.01x) but is not shown. (c) 'editing rose' in the H2 is Wikipedia mechanics.",
+     "fix": "H2: 'One wave with the fighting, not the court rulings. The volume has fallen back; the defining sentences kept changing into late 2026.' Bottom line: 'New critical wording arrived after October 7 and followed the battles, not the ICJ or UN; its pace peaked in 2024 and is back near the pre-war rate, but the first sentences people read were settled late: the Nakba “by Zionists” in July 2026, Zionism “through colonization” in August, October 7 “armed incursions” in October.' Add to the deck after the 17% sentence: 'New critical terms in topic opening paragraphs also rose, to 1.34 times the usual rate in the weeks after escalations; after rulings and reports, 1.01 times (suggestive).'"
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang More 'language by language', the new ul.xw-facts",
+     "problem": "Three internal inconsistencies came in with commit 92decce. (1) 'English moved it from sentence 5 of 21 to 22 of 23' (cards.md splitter) contradicts '5 of 20' in #oct7 and #sixty card 2 (OCT7.md line 39). (2) 'German 0%' in the exposure list: the source (cards.md line 201) says 'German n/a'. build_page.py's .get('own_voice',0) turns n/a into 0. (3) 'Hebrew 4%' of key-article views met genocide 'in that Wikipedia’s own voice'. This sits under an H2 saying Hebrew mentions it 'only as South Africa’s court case', and the voice call here is a marker heuristic, not the coded reading.",
+     "fix": "(1) Use the page's figure, '5 of 20', or say 'sentence 5 (2021) to 22 of 23'. (2) Print 'German: no article in the data' and fix expo in build_page.py so a missing value renders 'n/a', not 0. (3) Add after the list: 'Voice here is detected by marker words, not hand-coded; the Hebrew share comes from a mention beyond the Gaza-war article (the October 7 article’s opening section), not from the sentence quoted above.' Otherwise drop Hebrew from the list until it is read by hand."
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang More, bullet 'Court rulings overstated, still in the lead'",
+     "problem": "The page publishes a pattern-flagged claim that it admits is unverified: 'Flagged by word pattern; each needs a reading by hand.' Accuracy is non-negotiable. Yet this is one of the most important points for Israeli media: encyclopedias misstating what the ICJ ruled, and English carrying the 'plausible intent' claim from 17 Mar to 5 May 2024.",
+     "fix": "Read the five flagged sentences by hand (Arabic, Italian, French and Russian current text; English 17 Mar to 5 May 2024 revisions) before publishing. If they hold, keep the bullet without the 'needs a reading' clause and add one visible line under the #crosslang bottom line, e.g. 'Four editions still misstate the court in their opening section: Arabic says the ICJ found plausible intent; its January 2024 order made no finding of intent.' Sources: cards.md line 141 and its 'What the courts said' notes. If they do not hold, cut the bullet."
+    },
+    {
+     "severity": 3,
+     "location": "#organised, last deck before the hand-off ('How the story settled: lasting wording came with a new source half the time (reverted wording, 28%), and some was fixed by formal community decisions (More, above…)')",
+     "problem": "This is a new orphan topic at the end of the 'organised?' section. It leaves out its scope: the 50% vs 28% figure is for 11 editions, not English. It states the low-confidence RfC result (6 of 26 against 2.3) as plain fact. Its only evidence sits in a collapsed More. It also breaks the section's arc, which should end on 'what this can and cannot show'.",
+     "fix": "Move it to the end of #when, which is about how the wording arrived and settled, and scope it: 'Across the 11 editions, wording that lasted came with a new source 50% of the time, against 28% for wording that was reverted (204 and 414 insertions); in English, 6 of 26 lasting wordings settled within 30 days of a formal discussion closing, against 2.3 by chance (low confidence).' Source: cards.md lines 153 and following, plus the rfc card. End #organised on the 'What this can and cannot show' box, then the hand-off."
+    },
+    {
+     "severity": 3,
+     "location": "#news, H2 and bottom line (open since round 3)",
+     "problem": "'most of the extra change is about older history and the land' and 'as added sentences about older history and the land' overclaim. The residual is defined only as 'not about events since 2022' (SYNTHESIS P4), and the deck itself says 'history, places and people'. A skimmer takes away 'Wikipedia rewrote Jewish history', which the section does not show.",
+     "fix": "H2: 'Not just the war: in the core articles, most of the extra change rewrote older history, places and people'. Bottom line: 'Set aside every opening-paragraph sentence about events since 2022 and 80 to 90% of the extra change in the core articles remains: it went into history, places and people (place articles gaining critical terms rose from 1.6% to 4.6% a year), not just the war. Across the whole topic there is no such shift.'"
+    },
+    {
+     "severity": 3,
+     "location": "#board, bottom line and the main-line scoreboard / 'Same data, three honest ways to count' chart (deferred in round 3)",
+     "problem": "The bottom line is still jargon for the trust section ('−0.3 per 10,000 words, range −2.7 to +1.7'). The 27-tile scoreboard and the five-estimator chart keep about 2,850px of researcher material on phone in the main line, at the point where the reader wants a verdict.",
+     "fix": "Bottom line: 'Our pre-registered test of the average article found no rise, and we say so; the change we report is in the core, most-read articles, and it held on a half of them we had sealed until the end (+3.6 points) and in a probability sample of the whole subject (+5.9 points at Top importance).' Collapse the scoreboard grid and the three-ways chart into a 'More · the scoreboard and the estimators' drawer. Keep the '0 of 3 main tests…' summary bar visible."
+    },
+    {
+     "severity": 3,
+     "location": "Running order #charge → #oct7 → #palestine → #crosslang → #against (no hand-offs; deferred in round 3)",
+     "problem": "The four narrative sections, which are the heart of the story, sit back to back with no connective tissue. Italic hand-offs exist only from #against onward. The reader never sees why the next section follows, and the Zionism, charge, October 7 and 1948 sections never read as one retelling until #reads.",
+     "fix": "Add <p class=handoff> lines in the existing style. End of #charge: 'The charge became genocide. The attack that began the war is told more softly.' End of #oct7: 'October 7’s first sentence names no massacre. 1948’s now names a perpetrator.' End of #palestine: 'That is English. The other Wikipedias, Hebrew and Arabic included, do not tell one story.' End of #crosslang: 'Not everything moved one way.'"
+    },
+    {
+     "severity": 3,
+     "location": "#organised length and page-wide redundancy",
+     "problem": "#organised is the longest main section: 7,015px on iPhone 13 and 3,827px at 1280, larger than in round 3 after the new cross-language paragraph and three more More bullets. The 3.4x / 0.5x / 2.0x ratios appear in #sixty card 5, the part-2 chart and its note. Across the main line, 'began committing genocide' appears 7 times, 'through colonization' 9 and 'Discord' 11. #sixty cards 1 to 3 repeat the H2s of #charge, #oct7 and #palestine almost word for word.",
+     "fix": "Move the network 'How to read this' paragraph, the 'Why lines here' note and the two Bloc cards with their window bars into a 'More · the two blocs' drawer. Keep the found-vs-chance tiles, the network and 'What this can and cannot show' visible. Trim each #sixty card body to one line that adds something its section's H2 lacks: card 1 the Netanyahu 'orchestrating' quote, card 2 the 8,236,474 views that month, card 3 the agentless Jewish exodus."
+    },
+    {
+     "severity": 2,
+     "location": "#sixty card 3 kicker ('Three of the four 1948 articles quoted in this report now name the agent…')",
+     "problem": "The denominator is authored: the four articles are the ones we chose to quote. Round 2 removed this pattern elsewhere, and the #palestine bottom line no longer uses it. It also misses the asymmetry, which is the point that matters most to an Israeli reader.",
+     "fix": "'The Nakba, the 1948 Palestine war and the 1948 Arab–Israeli War now name “Zionists” or “Zionist forces”; the same war’s Jewish refugees “fled or were expelled from Arab states” with no one named. One article, on the expulsion and flight, removed its agent.'"
+    },
+    {
+     "severity": 2,
+     "location": "#organised More, bullet 'Across languages: same news, not same accounts'",
+     "problem": "The interpretation is one-sided. Different accounts in different editions made the same change within a day 135 times against 104.6 by chance, and within a week 925 against 579. The page says 'That fits a shared news trigger', but the source's 'So what' (cards.md, 'Same-day moves') says synchrony beyond chance 'is what coordination would look like'. The test cannot tell the two apart.",
+     "fix": "Replace with 'A shared news trigger, a ruling or report every edition covers, produces this; so would coordination across editions; the test cannot tell them apart, and no cluster passed the stricter check (0 flagged).'"
+    }
+   ],
+   "notes": "I built /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_whole.html and wrapped it as /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_whole/wrapped.html. Screenshots are in /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/qa/r4_whole/, covering iPhone 13 and 1280, light and dark: one top-of-section shot per section (e.g. phone_light_organised_top.png), plus x_*_hero.png, x_*_xw-gg.png, x_*_orgXw.png, x_*_reads.png, x_*_xmFind.png, x_*_sixty.png and x_*_orgend.png. The visible text is in body.txt and main.txt, and the H1/H2/H3 headings, bottom lines and hand-offs are in heads.txt. There are no console errors and no overflow. Page height is 59,539px on phone and 52,463px at 1280; the main line ends at about 46,000px on phone and 32,500px at 1280.\n\nWhat changed since round 3: commit 92decce (cross-wiki findings) came after the round-3 fixes. It added the .xw-gg figure (issue 1, sev 5), the #orgXw paragraph and new bottom-line clause (issue 2), the xw-facts bullets (issues 4 and 5), the 'How the story settled' line (issue 6) and the sync bullet (issue 12). It also moved the Spanish 'un ataque de represalia' sentence out of the #crosslang header into the More drawer; the #xmFind Spanish card still shows it, so the evidence stays visible.\n\nRound-3 fixes I checked as landed: the core finding in the hero; the #reach H2 and bottom line; the #reads narrative bottom line and seventh card; the visible #oct7 sentences 4, 7 and 9; the inline settlements quote in #against; the 37-of-41 qualifier in #zionism; the asymmetry bottom line in #palestine.\n\nStill open from round 3: the #news and #board bottom lines, the narrative-section hand-offs, the 'Few pages…' block in #reach and the #organised length.\n\nSkimmability, reading headlines and bottom lines only: the story now reads correctly from Zionism through #reads. The misleading lines are #when (it implies the change is over; the replacement is in issue 3), #news (overclaim; issue 7), #board (jargon; issue 8) and #organised (the zero-power clause; issue 2). #sixty has no bottom line, but as a card summary it needs none.\n\nNarrative focus: good, except the #when H2 ('editing rose') and #sixty card 5, which lead on Wikipedia mechanics.\n\nEvidence-anchoring violations: issue 1 (the chart contradicts #reads), issue 3b (the insertion evidence is not shown), issue 6 (the claim points to a collapsed More and gives no scope), and issues 4 and 5 (internal contradictions and an unverified claim).\n\nThree cuts:\n1. Move the #board scoreboard and the three-ways chart into More.\n2. Move the #organised Bloc cards, the network how-to and 'Why lines here' into More.\n3. Move the #reach 'Few pages, much of the reading' block and its second set of rates (3.9%, 15%, 14.1%) into More; they blur the 10.3% headline.\n\nThree additions:\n1. Turn .xw-gg into an 'allegations → genocide' title timeline (issue 1). It is the strongest new narrative point the cross-wiki data offers.\n2. Add one dated chronology line in #when that ties the story sections together: 'Hamas lost “militant” 12 Oct 2023; “ethnic cleansing” entered the Nakba 5 Mar 2024; “colonial” first entered Zionism 5 Jun 2024; “genocide” entered Israel for good 4 May 2025; the Nakba named “Zionists” 6 Jul 2026; Zionism settled 27 Aug 2026; October 7 became “armed incursions” 8 Oct 2026.' Every date is already on the page.\n3. Add hand-offs between #charge, #oct7, #palestine, #crosslang and #against (issue 9). If the hand-check holds, also add the court-misstatement line (issue 5).\n\nI edited no project files."
+  }
+ ]
+}
