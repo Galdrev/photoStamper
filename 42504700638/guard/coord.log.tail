@@ -1,7 +1,3 @@
-[hb coord] coord-0 571/959 el=34.5m eta=23.5m req=3568 429=102 5xx=0 retries=102 fail=0
-[hb coord] coord-0 582/959 el=35.0m eta=22.7m req=3612 429=105 5xx=0 retries=105 fail=0
-[hb coord] coord-0 591/959 el=35.5m eta=22.1m req=3670 429=105 5xx=0 retries=105 fail=0
-[hb coord] coord-0 599/959 el=36.0m eta=21.6m req=3715 429=108 5xx=0 retries=108 fail=0
 [hb coord] coord-0 612/959 el=36.5m eta=20.7m req=3772 429=108 5xx=0 retries=108 fail=0
 [hb coord] coord-0 620/959 el=37.0m eta=20.2m req=3818 429=111 5xx=0 retries=111 fail=0
 [hb coord] coord-0 630/959 el=37.5m eta=19.6m req=3880 429=111 5xx=0 retries=111 fail=0
@@ -38,3 +34,7 @@
 [hb coord] coord-0 917/959 el=53.0m eta=2.4m req=5610 429=135 5xx=0 retries=135 fail=0
 [hb coord] coord-0 930/959 el=53.5m eta=1.7m req=5675 429=136 5xx=0 retries=136 fail=0
 [hb coord] coord-0 938/959 el=54.0m eta=1.2m req=5730 429=136 5xx=0 retries=136 fail=0
+[hb coord] coord-0 948/959 el=54.7m eta=0.6m req=5816 429=136 5xx=0 retries=136 fail=0
+[hb coord] coord-0 952/959 el=55.0m eta=0.4m req=5850 429=136 5xx=0 retries=136 fail=0
+[hb coord] coord-0-done 959/959 el=55.4m eta=Nonem req=5897 429=136 5xx=0 retries=136 fail=0
+coord shard 0: 4121 revisions, revision-level error share 0.000%
