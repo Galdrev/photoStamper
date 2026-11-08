@@ -66,3 +66,9 @@ Owner asked whether the hero title is good English. It is not: "Zionism, “thro
 - Settlements quote "though" vs "but": quote it verbatim from the stored text.
 - Nakba "by Zionists since 6 July 2026": a same-day revert on 17 July 2026; state the date range correctly.
 - Crawl vs deep-panel discrepancy in the "lasted 30 days" and "attributed" shares: use one source per number and name it.
+
+## 10. Guarding results go into #organised (from patterns/guard/cards.md, results.json, arbcom.md)
+- NEW, strongest: talk-page voting blocs. In 217 RfC / move / deletion discussions on 254 core+Top+High topic articles, 26 voter pairs agree beyond chance (chance 0.44); 4 blocs (6, 6, 4, 3 accounts) vote together 89–100% of the time vs ~50% by chance (chance gives 0.01 blocs); 28.7% of voting pairs agree ≥80% vs 11.6% by chance. 3 of the 6 regularly voting linked-pair accounts sit in blocs (chance 0.32). Say plainly: camp-like voting, not by itself proof of off-wiki coordination; comparison talk pages have too few repeat voters to compare. Bloc direction is not coded: don't imply which side.
+- Revert guarding: inconclusive. Removals of critical terms are reverted by a narrower set of accounts (top 10 make 41% vs 23% for additions; 22 points more than on comparison articles) but not faster. Small sample (227 reverts). At most one clause, as "suggestive".
+- Tag-teaming: no topic-specific excess. Overlap: a small core of very active accounts does everything in both directions. One line or evidence room.
+- ArbCom, now from the PRIMARY pages: the PIA5 final decision records a ban (9 Dec 2024) for off-wiki misconduct in the topic area; a proposed finding (11 Jan 2025) that an editor made edits requested by an off-wiki blogger. No item says which side. So: drop "on both sides" everywhere; state only what the decision says, cite the case page, no names.
