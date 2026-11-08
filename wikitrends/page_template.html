@@ -1035,7 +1035,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <h2 id="sixtyH">What the encyclopedia now says: six findings</h2>
   <div class="cards" id="cards"></div>
   <p class="cap cards-hint">Swipe for more →</p>
-  <p class="cap col cards-note">The numbers in cards 5 and 6 are counts across thousands of articles; weighting and sampling can move them (see <a href="#board">How far to trust this</a>). The sentences in cards 1 to 4 are the encyclopedia’s exact text on the dates given; no weighting changes them. Leads change daily: every quote is dated.</p>
+  <p class="cap col cards-note">The numbers in cards 1 and 6 are estimates across thousands of articles, with the ranges given in the report (see <a href="#board">How far to trust this</a>). The sentences in cards 2 to 5 are the encyclopedia’s exact text on the dates given; no sampling changes them. Leads change daily: every quote is dated.</p>
 </section>
 
 <div class="band" id="andyet">
@@ -2756,13 +2756,13 @@ function drawWave(){
 }
 function drawNews(){
   const host=$("#newsFig");if(!host)return;
-  host.innerHTML=`<div class="fig-h" style="margin-bottom:10px"><span class="fig-t">Where the extra change in opening paragraphs sits, compared with similar articles, after July 2023</span><span class="cap">9,177 opening paragraphs seen at all three dates</span></div>
+  host.innerHTML=`<div class="fig-h" style="margin-bottom:10px"><span class="fig-t">Where the extra change in opening paragraphs sits, compared with similar articles, after July 2023</span><span class="cap">core crawl: 9,177 opening paragraphs seen at all three dates</span></div>
    <div class="news-bar" role="img" aria-label="About 80 to 90% of the extra lead change is in sentences about older history; the rest is in sentences about recent events"><div style="flex:81;background:var(--topic)">about 80 to 90%</div><div style="flex:8;background:var(--topic);opacity:.45"></div><div style="flex:11;background:var(--s1)"></div></div>
    <div class="news-lab" style="margin-top:6px"><div><b>Older history and the land</b><br>about 80 to 90% of the extra change</div><div><b>Recent events</b><br>the rest</div></div>
    <p class="cap" style="margin-top:8px">The sample gives 89%; weighting the comparison pages in ways that do not lean on one village gives 81% to 84%, so the lighter band marks the range. Before the war, the same comparison showed no difference.</p>`;
   $("#newsQ").innerHTML=`<blockquote><span class="w"><i style="background:var(--topic)"></i>Older history and the land · West Bank, 2021 and 2026</span><span class="cap"><b>2021</b> “The West Bank (... HaGadah HaMa'aravit or Yehuda VeShomron) is a landlocked territory near the Mediterranean coast of Western Asia, bordered by Jordan ... and by Israel to the south, west and north.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “... is the larger of the two Palestinian territories (the other being the Gaza Strip) that make up Palestine.”</span></blockquote>
    <blockquote><span class="w"><i style="background:var(--s1)"></i>Recent events · Israel, as of 4 Nov 2026 · one of two opening sections that state the charge in Wikipedia’s own voice. The next sentence gives the denial.</span><span class="s">“After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza. Israel has denied that its actions constitute genocide.”</span></blockquote>`;
-  $("#mNews").innerHTML=`<b>What this means:</b> the war did not mainly produce war coverage. It sent editors back to retell 1897 to 1948 and to rename the land, by adding sentences rather than deleting others. On the articles most relevant to the topic this holds on both of our ranges; on the full set the coarser range crosses zero.`;
+  $("#mNews").innerHTML=`<b>What this means:</b> the war did not mainly produce war coverage. It sent editors back to retell 1897 to 1948 and to rename the land, by adding sentences rather than deleting others. In the core crawl, on the articles most relevant to the topic, this holds on both of our ranges; on the full core set the coarser range crosses zero. Across the whole population of 49,000 articles there is no extra change left to split.`;
 }
 function drawSpread(){
   const host=$("#spreadGrid");if(!host)return;const T="--topic",C="--comp";

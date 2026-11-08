@@ -1,5 +1,17 @@
 [
  {
+  "headline": "The core moved; the long tail did not. The more central the article, the more its opening paragraph changed.",
+  "number": "10.3%",
+  "unit": "of the Top-importance Israel, Palestine and Jewish-topic articles gained critical vocabulary in their opening paragraph since July 2023; other conflict regions 4.4%",
+  "body": "Mid importance: 1.5% against none. Low-importance and ungraded pages, about 80% of the 49,000 topic articles, moved no more than elsewhere; across all of them the gap is 0.4 points, within the margin of error. Articles on Judaism did not move. The wave ran through 2024, about 16 new critical terms per 1,000 edits against about 7 before the war, and was back to 5 to 6 by 2026.",
+  "topic_value": 10.3,
+  "comparison_value": 4.4,
+  "compare_label": "Top importance: topic vs other conflict regions",
+  "unsigned": true,
+  "value_suffix": "%",
+  "link_anchor": "reach"
+ },
+ {
   "headline": "[[q|Israel began committing genocide.]] Two of the most-read opening sections now say it in Wikipedia’s own voice.",
   "number": "0 → 0 → 8",
   "unit": "sentences charging Israel with genocide in the 150 most-read opening sections: Jan 2021, Jul 2023, now (5 Nov 2026)",
@@ -28,17 +40,10 @@
   "link_anchor": "palestine"
  },
  {
-  "headline": "Most articles did not change; the few that did carry much of the reading, as on other live wars.",
-  "number": "3.9%",
-  "unit": "of the 4,642 sampled articles gained critical vocabulary in their opening paragraph; weighted to the four projects’ real size, about [[MASS3:card_articles_w|2.5%]]",
-  "body": "Those pages carry 15% of topic reading in the sample, about [[MASS3:card_views_w|14%, range 8 to 20]] weighted; other live wars show 14.1%. Articles on Judaism did not move. The wave ran through 2024, about 16 new critical terms per 1,000 edits against about 7 before the war, and was back to 5 to 6 by 2026.",
-  "link_anchor": "reach"
- },
- {
   "headline": "Off-wiki canvassing is documented on both sides. The surge came before the Discord channel.",
   "number": "3.4×",
   "unit": "topic insertions of critical terms against comparison, in the 16 weeks after 7 Oct 2023; 2.0× while the channel was active",
-  "body": "Wikipedia’s arbitration committee found pro-Israel email canvassing (January 2024) and sanctioned editing after off-wiki canvassing on a pro-Palestinian Discord channel (December 2024, April 2025).[[verify|ArbCom items read from search snippets only; check primary pages (ORGS.md section 5)]] Our footprint tests could not tell any campaign from chance; they could only have seen very large effects. Since the war, 9.1% of edits came from accounts with under 500 edits (comparison 17.2%); the topic bars newcomers by rule.",
+  "body": "Wikipedia’s arbitration committee found pro-Israel email canvassing (January 2024) and sanctioned editing after off-wiki canvassing on a pro-Palestinian Discord channel (December 2024, April 2025).[[verify|ArbCom items read from search snippets only; check primary pages (ORGS.md section 5)]] In our data, two small groups of four long-standing accounts moved together on the same articles beyond chance (14 linked pairs, where chance gives about 2). None edited in step, no wording was pasted across articles, and their timing matches neither documented window clearly. Our footprint tests could only have seen very large effects.",
   "link_anchor": "organised"
  }
 ]
