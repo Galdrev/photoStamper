@@ -449,19 +449,19 @@ def langs_data():
           "nl": ("none", "fact", "s1", "“a coordinated surprise attack by the militant movement Hamas”; now “surprise attack or terror attack”."),
           "ru": ("none", "none", "s1", "“The invasion of Israel”. A later sentence calls it “the largest act of Palestinian terrorism in history”.")}
     HOS = {"he": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“the abduction of 251 civilians and soldiers – among them elderly people, women, children and babies”."),
-           "ar": ("absent", "captive", ("October 7 attacks", "k_hostages"), "Now: “they captured a number of soldiers and civilians”. A prisoner-of-war word, not the Arabic word for hostages."),
+           "ar": ("absent", "captive", ("October 7 attacks", "k_hostages"), "Now: “they captured a number of soldiers and civilians and led them to Gaza” (asarū, took captive), stated in Arabic Wikipedia’s own voice; the word for hostages, rahā’in, is not used."),
            "en": ("outside", "outside", ("Gaza war", "k_hostages"), "In the attack article’s opening section, beyond the 1,200 characters we hold: sentence 9 of 16 now reads “251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip” (sentence 7 of 11 in January 2024). The Gaza war article says “251 were taken hostage”."),
-           "de": ("absent", "absent", ("Gaza war", "k_hostages"), "Not in the text we hold of the attack article. The Gaza war article names “freeing the hostages” as Israel’s aim."),
-           "fr": ("absent", "absent", ("October 7 attacks", "s1"), "Not in the 1,200 characters we hold, at either date, of the attack article or of the Gaza war article."),
-           "es": ("fact", "absent", ("October 7 attacks", "k_hostages"), "2024: “Israeli soldiers and civilians, including women and children, were taken as hostages”. Not in the 2026 text we hold; it may appear later in the opening section, beyond the text we hold."),
+           "de": ("not_held", "outside", ("Gaza war", "k_hostages"), "Beyond the 1,200 characters we hold: the attack article’s opening section mentions the hostages 3 times now, first at sentence 9 of 19 (October 2024: 2 times, first at sentence 8 of 13; sentences counted by punctuation; our January 2024 copy does not reach that far). The Gaza war article names “freeing the hostages” as Israel’s aim."),
+           "fr": ("not_held", "outside", ("October 7 attacks", "s1"), "Beyond the 1,200 characters we hold: the attack article’s opening section mentions the hostages once now, at sentence 9 of 14 (October 2024: sentence 8 of 9; sentences counted by punctuation; our January 2024 copy does not reach that far)."),
+           "es": ("fact", "outside", ("October 7 attacks", "k_hostages"), "2024: “Israeli soldiers and civilians, including women and children, were taken as hostages”. Now at sentence 6 of 11 of the opening section (counted by punctuation), beyond the text we hold."),
            "it": ("fact", "fact", ("October 7 attacks", "s1"), "Now in the first sentence: “the kidnapping of about 250 of them”. In 2024 a later sentence in the text we hold (not in our translated set)."),
-           "pt": ("fact", "absent", ("October 7 attacks", "s1"), "2024: hostages named later in the text we hold (that sentence is not in our translated set). Not in the 2026 text we hold; it may appear later in the opening section, beyond the text we hold."),
+           "pt": ("fact", "outside", ("October 7 attacks", "s1"), "2024: hostages named later in the text we hold (that sentence is not in our translated set). Now 2 mentions, the first at sentence 8 of 10 of the opening section (counted by punctuation), beyond the text we hold."),
            "nl": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“An estimated 250–255 people were taken prisoner and transferred to Gaza as hostages”. The 2024 copy says the same with 200–250."),
            "ru": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“another 251 were taken hostage” (2024: 242).")}
-    ICJ = {"ar": ("fact", "fact", ("Gaza genocide", "k_icj"), "The ICJ “found that Israel was acting under a reasonable [or: plausible] intent to commit acts of genocide”. The January 2024 order made no finding on intent."),
+    ICJ = {"ar": ("fact", "fact", ("Gaza genocide", "k_icj"), "Now: the ICJ “found that Israel strove, under a reasonable [or: plausible] intent, to commit acts of genocide” (2024: “was acting under a reasonable [or: plausible] intent”). The January 2024 order made no finding on intent."),
            "it": ("legal", "fact", ("Gaza genocide", "k_icj"), "2025: the court asked Israel to «prevent possible genocidal acts». 2026: the court “deemed Israel's actions in Gaza «plausibly genocidal»”, a phrase the court did not use."),
-           "ru": ("absent", "fact", ("Israeli apartheid", "k_icj"), "The ICJ “found Israel guilty”: verdict wording for a non-binding advisory opinion."),
-           "fr": ("absent", "fact", ("Israeli apartheid", "k_icj"), "“The Court recognises that Israel” is “conducting a policy of apartheid”. The 2024 opinion found a breach of CERD Article 3 without saying whether it was segregation or apartheid."),
+           "ru": ("absent", "fact", ("Israeli apartheid", "k_icj"), "The court “found Israel guilty of violating Article 3” of the convention against racial discrimination: verdict wording for a non-binding advisory opinion, which gives no verdict of guilt."),
+           "fr": ("absent", "fact", ("Israeli apartheid", "k_icj"), "“The Court recognises that Israel” is “conducting a policy of apartheid”. The 2024 opinion found a breach of CERD Article 3, which bans racial segregation and apartheid, without saying which."),
            "es": ("absent", "legal", ("Israeli apartheid", "k_icj"), "Reports the 2024 opinion under article 3. Not one of the four overstatements we found."),
            "he": ("absent", "legal", ("Gaza war", "k_genocide"), "“South Africa filed a suit against Israel at the International Court of Justice (ICJ) for genocide”: the case, reported as a case."),
            "pl": ("absent", "disputed", ("Gaza genocide", "k_courts"), "Stresses that only courts can rule on genocide.")}
@@ -575,7 +575,8 @@ def langs_data():
         return "oth"
     # an organisation's own name is not the encyclopedia's framing: "Islamic Resistance Movement" (the source of the
     # acronym Hamas) gets no gloss or underline; the chip stays on the descriptor ("a Palestinian, resistance, ... movement")
-    NAMES = {"ar": (["حركة المقاومة الإسلامية"], ["Islamic Resistance Movement"])}
+    NAMES = {"ar": (["حركة المقاومة الإسلامية"], ["Islamic Resistance Movement"]),
+             "ru": (["Исламское движение сопротивления"], ["Islamic Resistance Movement"])}
     def name_spans(s, names):
         return [(m.start(), m.end()) for nm in names for m in re.finditer(re.escape(nm), s, flags=re.I)]
     def find_tr(tr, gloss, skip=()):
@@ -700,9 +701,26 @@ def crosswiki_data():
         return None
     J = lambda n: json.load(open(os.path.join(D, n + ".json")))
     gg = J("creation").get("Gaza genocide") or {}
-    created = sorted(([l, v["created"], v.get("days_after_english") or 0] for l, v in gg.items()), key=lambda r: r[1])
+    # days from the printed dates (the source counts from timestamps, so 29 Dec -> 2 Jan showed +5)
+    import datetime as _dt
+    _d = lambda x: _dt.date.fromisoformat(x[:10])
+    en0 = _d(gg["en"]["created"])
+    # the date each edition's article dropped its "allegations" / "risk" / "suspicion" / "accusations" title, from the
+    # move log ("Renames since 2021" in crosswiki/cards.md). Italian and Spanish are not drawn: their move history is unclear.
+    RENAMED = {"en": ("English", "2024-07-03"), "ar": ("Arabic", "2024-06-26"), "pt": ("Portuguese", "2024-07-14"),
+               "fr": ("French", "2024-11-08"), "nl": ("Dutch", "2025-12-18"), "pl": ("Polish", "2026-04-26")}
+    cards = open(os.path.join(PAT, "crosswiki", "cards.md")).read()
+    for l, (nm, dt) in RENAMED.items():
+        assert f"{nm} {dt} '" in cards, f"rename date not in cards.md: {l} {dt}"
+    created = sorted(([l, v["created"], (_d(v["created"]) - en0).days,
+                       RENAMED[l][1] if l in RENAMED else None,
+                       (_d(RENAMED[l][1]) - en0).days if l in RENAMED else None] for l, v in gg.items()), key=lambda r: r[1])
     E = J("exposure")
-    expo = {l: round(100 * ((v.get("after_war") or {}).get("genocide") or {}).get("own_voice", 0)) for l, v in E.items()}
+    # n/a (no article) stays None, not 0
+    def _ov(v):
+        g = ((v.get("after_war") or {}).get("genocide") or {}).get("own_voice")
+        return None if g is None else round(100 * g)
+    expo = {l: _ov(v) for l, v in E.items()}
     A, S, Y, SR, RF = J("crosswiki_accounts"), J("sync"), J("diffusion"), J("sources"), J("rfc")
     # the static prose quotes these numbers: fail the build if the data moved under it
     chk = [(A["insert"]["accounts"], 281), (A["insert"]["same_family_2plus_languages"]["observed"], 0), (A["remove"]["accounts"], 284),
@@ -721,7 +739,9 @@ res["xw"] = crosswiki_data()
 
 tk_p = os.path.join(HERE, "notes", "takeaways.json")
 if os.path.exists(tk_p):
-    res["takeaways"] = json.load(open(tk_p))
+    # [[verify|...]] notes are for the desk; strip them so they never reach the page source
+    res["takeaways"] = json.loads(re.sub(r"\[\[verify\|[^\]]*\]\]", "", open(tk_p).read()))
+    assert "[[verify" not in json.dumps(res["takeaways"]), "verify note left in takeaways"
 
 # Quotes are shown as exact text: decode HTML entities copied from wikitext (&nbsp;, &ndash;, &#702;) so the
 # page's esc() renders them as characters, not as "&nbsp;". langs is skipped: its character spans index the raw text.
@@ -754,5 +774,8 @@ html = (tpl.replace("<!--FINDINGS-->", findings)
                         # 9 stored Hamas revisions lost the Arabic name in "(an Arabic acronym from ...)": never show an empty parenthesis
                         .replace("acronym from )", "acronym from [Arabic name not in this revision\\u2019s text])")))
 assert "acronym from )" not in html, "empty Arabic parenthesis in a rendered quote"
+# editor notes (<!--VERIFY ...-->) stay in the template for the desk; they must never ship in the page source
+html = re.sub(r"<!--VERIFY:[^>]*?-->", "", html)
+assert "<!--VERIFY" not in html, "an editor VERIFY note reached the output"
 open(sys.argv[1], "w").write(html)
 print(f"wrote {sys.argv[1]} ({len(html)/1e6:.1f} MB)")
