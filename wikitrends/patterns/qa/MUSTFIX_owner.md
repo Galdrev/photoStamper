@@ -8,3 +8,15 @@
      - Drop "lopsided, not one-sided".
      - Move the Jewish-ties point out of this section. If kept elsewhere, state it as mixed evidence with both directions' numbers.
 2. **General rule:** never present a non-change as counter-evidence. Every balance or "not one-sided" claim must show real opposite-direction edits together with their proportion against the main direction.
+
+3. **Cut non-informative content; scope to where the story lives** (owner, 2026-11-08).
+   - The trend is clear in some kinds of articles and absent in others. The core and high-importance articles and the conflict, history and identity articles (Zionism, Israel, 1948/Nakba, October 7, Hamas, the Gaza war, the charges) are where it lives. The long tail of low-importance pages (villages, minor people, unrelated topics) doesn't change and isn't interesting.
+   - State the scope once, up front, in plain words: the story is about the articles that carry the narrative, the ones people actually read.
+   - REMOVE from the story layer the material that shows only non-change and adds nothing to the narrative:
+     - population-wide averages as headline framing;
+     - low-tier bars presented as findings;
+     - the Judaism-null-as-balance point;
+     - repeated "no difference" statements;
+     - comparisons that only show nothing happened.
+   - Keep honesty with ONE short line in the trust box (e.g. "Across all 49,000 articles in these projects, most are short pages that never changed; averaged over them, the change is no larger than in other conflicts' articles"). Put the full population analysis in the evidence room.
+   - Do not delete evidence files. Move material out of the story, and drop it from the page only if it truly adds nothing.
