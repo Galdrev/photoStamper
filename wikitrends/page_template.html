@@ -172,7 +172,7 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .seg .ps{display:none}
 @media (max-width:600px){.seg button{min-height:40px}.pick{min-height:40px}
   .seg .pl{display:none}.seg .ps{display:inline}
-  #ppSide,#xrTime{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);width:100%}#ppSide button,#xrTime button{white-space:normal;line-height:1.2}}
+  #ppSide,#xrTime{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);width:100%}#ppSide button,#xrTime button{white-space:normal;line-height:1.2;min-height:40px}}
 .seg button+button{border-left:1px solid var(--rule)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 select{min-width:0;text-overflow:ellipsis}
@@ -2521,7 +2521,7 @@ function brRender(k,flash){
   $("#brMeta").innerHTML=flash?`<b>A wording that was undone</b> · live from ${ds(e.t)}${nx?` to ${ds(nx.t)}`:""}`:
     `<b>${k===BR.ev.length-1?"Today":ds(e.t)}</b> · ${BR.mode==="revision"?`wording ${e.id+1} of ${BR.n}`:`version ${e.id+1} of ${BR.n}`}${nx?`, live until ${ds(nx.t)}`:", live now"}${tx.exact?"":" · this wording was short-lived and its text was not kept, so the last kept wording is shown"} · ${wc(ops,"-")} words removed and ${wc(ops,"+")} added since ${dlabT(BR.ev[0].t)}${ex?` · <b>${pct(ex.share)}</b> of page views while it was live (${big(ex.views)})`:""}`}
 function brMove(t,user){
-  {const rg=$("#brRange"),d=new Date(t),FM=["January","February","March","April","May","June","July","August","September","October","November","December"];if(rg)rg.setAttribute("aria-valuetext",`${d.getUTCDate()} ${FM[d.getUTCMonth()]} ${d.getUTCFullYear()}: the first sentence as it read that day`)}
+  {const rg=$("#brRange"),SNAP=Date.UTC(2026,10,5),late=t>=SNAP,d=new Date(late?SNAP:t),FM=["January","February","March","April","May","June","July","August","September","October","November","December"];if(rg)rg.setAttribute("aria-valuetext",`${d.getUTCDate()} ${FM[d.getUTCMonth()]} ${d.getUTCFullYear()}: ${late?"the latest text we hold, the first sentence as it reads now":"the first sentence as it read that day"}`)}
   const prev=BR.prevT==null?t:BR.prevT;BR.cur=t;BR.prevT=t;brThumb();const k=brLive(t);
   clearTimeout(BR.flashT);
   if(user&&!RM.matches){const lo=Math.min(prev,t),hi=Math.max(prev,t);const crossed=BR.ev.filter((e,i)=>e.rv&&e.s!=null&&e.t>lo&&e.t<=hi&&i!==k);
