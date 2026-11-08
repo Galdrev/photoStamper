@@ -1,0 +1,139 @@
+{
+ "events": 940,
+ "accounts": 479,
+ "windows": {
+  "1h": {
+   "same_account_cross_language_pairs": {
+    "observed": 0,
+    "expected_by_chance": 0.0,
+    "null_p95": 0.0,
+    "p": 1.0
+   },
+   "cross_account_cross_language_pairs": {
+    "observed": 11,
+    "expected_by_chance": 5.26,
+    "null_p95": 10.0,
+    "p": 0.031
+   },
+   "cross_account_same_article_pairs": {
+    "observed": 1,
+    "expected_by_chance": 1.147,
+    "null_p95": 3.0,
+    "p": 0.6593
+   },
+   "null": "each account-language timeline shifted by a random 1-7 days (either sign, wrapped)"
+  },
+  "1d": {
+   "same_account_cross_language_pairs": {
+    "observed": 0,
+    "expected_by_chance": 0.0,
+    "null_p95": 0.0,
+    "p": 1.0
+   },
+   "cross_account_cross_language_pairs": {
+    "observed": 135,
+    "expected_by_chance": 104.565,
+    "null_p95": 126.0,
+    "p": 0.014
+   },
+   "cross_account_same_article_pairs": {
+    "observed": 31,
+    "expected_by_chance": 21.891,
+    "null_p95": 30.0,
+    "p": 0.05
+   },
+   "null": "each account-language timeline shifted by a random 3-21 days (either sign, wrapped)"
+  },
+  "1w": {
+   "same_account_cross_language_pairs": {
+    "observed": 0,
+    "expected_by_chance": 0.0,
+    "null_p95": 0.0,
+    "p": 1.0
+   },
+   "cross_account_cross_language_pairs": {
+    "observed": 925,
+    "expected_by_chance": 579.256,
+    "null_p95": 637.05,
+    "p": 0.001
+   },
+   "cross_account_same_article_pairs": {
+    "observed": 205,
+    "expected_by_chance": 123.833,
+    "null_p95": 146.0,
+    "p": 0.001
+   },
+   "null": "each account-language timeline shifted by a random 14-90 days (either sign, wrapped)"
+  }
+ },
+ "campaigns": {
+  "clusters": [
+   {
+    "family": "occupation",
+    "direction": "insert",
+    "languages": [
+     "en",
+     "it",
+     "pt"
+    ],
+    "n_languages": 3,
+    "n_accounts": 4,
+    "events": 4,
+    "span_hours": 42.1,
+    "articles": [
+     "Gaza war"
+    ],
+    "first": "2023-10-07",
+    "creations": 1,
+    "p_selection_calibrated": 0.0769,
+    "confidence": "low"
+   },
+   {
+    "family": "apartheid",
+    "direction": "remove",
+    "languages": [
+     "en",
+     "es",
+     "fr"
+    ],
+    "n_languages": 3,
+    "n_accounts": 3,
+    "events": 3,
+    "span_hours": 41.0,
+    "articles": [
+     "Israel"
+    ],
+    "first": "2023-11-05",
+    "creations": 0,
+    "p_selection_calibrated": 0.5754,
+    "confidence": "low"
+   },
+   {
+    "family": "apartheid",
+    "direction": "insert",
+    "languages": [
+     "en",
+     "es",
+     "fr"
+    ],
+    "n_languages": 3,
+    "n_accounts": 3,
+    "events": 3,
+    "span_hours": 47.4,
+    "articles": [
+     "Israel"
+    ],
+    "first": "2023-11-05",
+    "creations": 0,
+    "p_selection_calibrated": 0.6783,
+    "confidence": "low"
+   }
+  ],
+  "n_clusters": 3,
+  "expected_clusters_by_chance": 1.28,
+  "null_p95_clusters": 3.0,
+  "p_count": 0.1493,
+  "flagged": 0,
+  "null": "timelines shifted 7-60 days; each cluster's score (languages, accounts, tightness) against the best cluster of every null world"
+ }
+}

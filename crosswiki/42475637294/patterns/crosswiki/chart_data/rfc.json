@@ -1,0 +1,257 @@
+{
+ "rfc_rm_items": {
+  "rfc_open_or_undated": 70,
+  "rfc_closed_dated": 56,
+  "rm_open_or_undated": 38,
+  "rm_closed_dated": 23
+ },
+ "sticks": 26,
+ "settled_within_30d_after_close": {
+  "observed": 6,
+  "expected_by_chance": 2.3,
+  "null_p95": 5.0,
+  "p": 0.0202
+ },
+ "by_attrition": 9,
+ "no_close_no_failed_attempts": 11,
+ "stick_list": [
+  {
+   "article": "Zionism",
+   "family": "colonial",
+   "kind": "insert",
+   "date": "2025-06-20",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.050545994230042066
+  },
+  {
+   "article": "Zionism",
+   "family": "genocide",
+   "kind": "remove",
+   "date": "2024-12-15",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.050545994230042066
+  },
+  {
+   "article": "Israel",
+   "family": "colonial",
+   "kind": "remove",
+   "date": "2025-09-18",
+   "after_close": false,
+   "failed_attempts_before": 2,
+   "p_window": 0.029305368308755256
+  },
+  {
+   "article": "Israel",
+   "family": "ethnic_cleansing",
+   "kind": "remove",
+   "date": "2025-10-25",
+   "after_close": false,
+   "failed_attempts_before": 1,
+   "p_window": 0.029305368308755256
+  },
+  {
+   "article": "Gaza war",
+   "family": "colonial",
+   "kind": "remove",
+   "date": "2023-10-13",
+   "after_close": true,
+   "failed_attempts_before": 0,
+   "p_window": 0.15042506605734715
+  },
+  {
+   "article": "Gaza war",
+   "family": "genocide",
+   "kind": "insert",
+   "date": "2024-11-12",
+   "after_close": false,
+   "failed_attempts_before": 4,
+   "p_window": 0.15042506605734715
+  },
+  {
+   "article": "Gaza war",
+   "family": "apartheid",
+   "kind": "remove",
+   "date": "2023-12-06",
+   "after_close": true,
+   "failed_attempts_before": 0,
+   "p_window": 0.15042506605734715
+  },
+  {
+   "article": "Gaza war",
+   "family": "occupation",
+   "kind": "insert",
+   "date": "2025-11-15",
+   "after_close": false,
+   "failed_attempts_before": 2,
+   "p_window": 0.15042506605734715
+  },
+  {
+   "article": "Gaza war",
+   "family": "ethnic_cleansing",
+   "kind": "remove",
+   "date": "2023-10-15",
+   "after_close": true,
+   "failed_attempts_before": 0,
+   "p_window": 0.15042506605734715
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "colonial",
+   "kind": "remove",
+   "date": "2025-11-04",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.1955122570748764
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "genocide",
+   "kind": "insert",
+   "date": "2025-12-26",
+   "after_close": false,
+   "failed_attempts_before": 2,
+   "p_window": 0.1955122570748764
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "apartheid",
+   "kind": "remove",
+   "date": "2026-05-04",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.1955122570748764
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "occupation",
+   "kind": "remove",
+   "date": "2026-05-04",
+   "after_close": false,
+   "failed_attempts_before": 2,
+   "p_window": 0.1955122570748764
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "ethnic_cleansing",
+   "kind": "remove",
+   "date": "2025-12-31",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.1955122570748764
+  },
+  {
+   "article": "Nakba",
+   "family": "colonial",
+   "kind": "remove",
+   "date": "2024-05-09",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.0
+  },
+  {
+   "article": "Nakba",
+   "family": "genocide",
+   "kind": "remove",
+   "date": "2024-03-03",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.0
+  },
+  {
+   "article": "Nakba",
+   "family": "occupation",
+   "kind": "remove",
+   "date": "2023-12-24",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.0
+  },
+  {
+   "article": "Nakba",
+   "family": "ethnic_cleansing",
+   "kind": "insert",
+   "date": "2026-07-17",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.0
+  },
+  {
+   "article": "Hamas",
+   "family": "colonial",
+   "kind": "remove",
+   "date": "2023-12-17",
+   "after_close": true,
+   "failed_attempts_before": 2,
+   "p_window": 0.052498328720611456
+  },
+  {
+   "article": "Hamas",
+   "family": "genocide",
+   "kind": "remove",
+   "date": "2024-10-03",
+   "after_close": false,
+   "failed_attempts_before": 2,
+   "p_window": 0.052498328720611456
+  },
+  {
+   "article": "Hamas",
+   "family": "occupation",
+   "kind": "insert",
+   "date": "2024-09-30",
+   "after_close": false,
+   "failed_attempts_before": 2,
+   "p_window": 0.052498328720611456
+  },
+  {
+   "article": "October 7 attacks",
+   "family": "genocide",
+   "kind": "insert",
+   "date": "2024-06-28",
+   "after_close": true,
+   "failed_attempts_before": 1,
+   "p_window": 0.0693082135977169
+  },
+  {
+   "article": "October 7 attacks",
+   "family": "occupation",
+   "kind": "insert",
+   "date": "2024-06-28",
+   "after_close": true,
+   "failed_attempts_before": 2,
+   "p_window": 0.0693082135977169
+  },
+  {
+   "article": "Israeli apartheid",
+   "family": "colonial",
+   "kind": "remove",
+   "date": "2023-07-21",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.043958052463132884
+  },
+  {
+   "article": "Israeli apartheid",
+   "family": "occupation",
+   "kind": "insert",
+   "date": "2023-01-11",
+   "after_close": false,
+   "failed_attempts_before": 1,
+   "p_window": 0.043958052463132884
+  },
+  {
+   "article": "Israeli apartheid",
+   "family": "ethnic_cleansing",
+   "kind": "remove",
+   "date": "2024-08-05",
+   "after_close": false,
+   "failed_attempts_before": 0,
+   "p_window": 0.043958052463132884
+  }
+ ],
+ "other_language_moves_within_30d_after_english_close": {
+  "observed": 154,
+  "expected_by_chance": 192.33
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "same_article_2plus_languages": {
+  "accounts": 8175,
+  "accounts_in_2plus_languages": 195,
+  "share_of_all": 0.0187,
+  "share_of_multilingual": 0.7846,
+  "observed": 153,
+  "expected_by_chance": 106.005,
+  "null_p95": 116.0,
+  "p": 0.001
+ },
+ "insert": {
+  "accounts": 281,
+  "accounts_in_2plus_languages": 0,
+  "same_family_2plus_languages": {
+   "share_of_all": 0.0,
+   "observed": 0,
+   "expected_by_chance": 0.0,
+   "null_p95": 0.0,
+   "p": 1.0
+  },
+  "same_family_same_article_2plus_languages": {
+   "share_of_all": 0.0,
+   "observed": 0,
+   "expected_by_chance": 0.0,
+   "null_p95": 0.0,
+   "p": 1.0
+  }
+ },
+ "remove": {
+  "accounts": 284,
+  "accounts_in_2plus_languages": 0,
+  "same_family_2plus_languages": {
+   "share_of_all": 0.0,
+   "observed": 0,
+   "expected_by_chance": 0.0,
+   "null_p95": 0.0,
+   "p": 1.0
+  },
+  "same_family_same_article_2plus_languages": {
+   "share_of_all": 0.0,
+   "observed": 0,
+   "expected_by_chance": 0.0,
+   "null_p95": 0.0,
+   "p": 1.0
+  }
+ },
+ "profiles": {
+  "cross_wiki_term_accounts": {
+   "accounts": 0,
+   "median_global_age_years_at_first_event": null,
+   "median_global_edit_count": null,
+   "share_home_english": 0.0,
+   "share_home_other_studied_language": 0.0,
+   "share_local_unattached": 0.0,
+   "median_attached_wikis": null
+  },
+  "single_language_term_accounts": {
+   "accounts": 479,
+   "median_global_age_years_at_first_event": 5.8,
+   "median_global_edit_count": 10000.0,
+   "share_home_english": 0.292,
+   "share_home_other_studied_language": 0.651,
+   "share_local_unattached": 0.01,
+   "median_attached_wikis": 67.0
+  }
+ }
+}

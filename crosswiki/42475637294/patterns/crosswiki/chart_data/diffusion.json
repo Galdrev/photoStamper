@@ -1,0 +1,2386 @@
+{
+ "cells_with_2plus_dated": 32,
+ "pairs_with_english": 103,
+ "leader": {
+  "en": {
+   "first_in_cells": 9,
+   "expected_by_chance": 6.35,
+   "p_high": 0.0839
+  },
+  "de": {
+   "first_in_cells": 3,
+   "expected_by_chance": 2.28,
+   "p_high": 0.4066
+  },
+  "fr": {
+   "first_in_cells": 6,
+   "expected_by_chance": 5.48,
+   "p_high": 0.4925
+  },
+  "es": {
+   "first_in_cells": 6,
+   "expected_by_chance": 5.03,
+   "p_high": 0.3417
+  },
+  "it": {
+   "first_in_cells": 1,
+   "expected_by_chance": 1.02,
+   "p_high": 0.7083
+  },
+  "nl": {
+   "first_in_cells": 3,
+   "expected_by_chance": 5.01,
+   "p_high": 0.974
+  },
+  "ru": {
+   "first_in_cells": 1,
+   "expected_by_chance": 1.4,
+   "p_high": 0.8482
+  },
+  "he": {
+   "first_in_cells": 0,
+   "expected_by_chance": 0.62,
+   "p_high": 1.0
+  },
+  "ar": {
+   "first_in_cells": 2,
+   "expected_by_chance": 2.94,
+   "p_high": 0.953
+  },
+  "pl": {
+   "first_in_cells": 0,
+   "expected_by_chance": 0.59,
+   "p_high": 1.0
+  },
+  "pt": {
+   "first_in_cells": 1,
+   "expected_by_chance": 1.27,
+   "p_high": 0.8262
+  }
+ },
+ "english_first_share": {
+  "observed": 0.689,
+  "expected_by_chance": 0.58,
+  "p_high": 0.019
+ },
+ "follow_within_90d_share": {
+  "observed": 0.165,
+  "expected_by_chance": 0.11,
+  "p_high": 0.0559
+ },
+ "lags_vs_english": {
+  "fr": {
+   "n": 16,
+   "median_days": 32.6,
+   "q25": -153.8,
+   "q75": 385.6,
+   "share_after_english": 0.688
+  },
+  "ar": {
+   "n": 9,
+   "median_days": 110.0,
+   "q25": -142.8,
+   "q75": 208.5,
+   "share_after_english": 0.556
+  },
+  "pl": {
+   "n": 7,
+   "median_days": 176.2,
+   "q25": -2.5,
+   "q75": 316.7,
+   "share_after_english": 0.714
+  },
+  "pt": {
+   "n": 7,
+   "median_days": 124.4,
+   "q25": -124.4,
+   "q75": 497.1,
+   "share_after_english": 0.714
+  },
+  "de": {
+   "n": 8,
+   "median_days": 2.5,
+   "q25": -54.8,
+   "q75": 176.4,
+   "share_after_english": 0.5
+  },
+  "es": {
+   "n": 15,
+   "median_days": 158.6,
+   "q25": -332.1,
+   "q75": 513.1,
+   "share_after_english": 0.667
+  },
+  "nl": {
+   "n": 14,
+   "median_days": 117.7,
+   "q25": 6.6,
+   "q75": 474.7,
+   "share_after_english": 0.786
+  },
+  "it": {
+   "n": 12,
+   "median_days": 87.7,
+   "q25": -6.8,
+   "q75": 272.0,
+   "share_after_english": 0.75
+  },
+  "ru": {
+   "n": 6,
+   "median_days": 130.0,
+   "q25": -11.0,
+   "q75": 428.4,
+   "share_after_english": 0.667
+  },
+  "he": {
+   "n": 9,
+   "median_days": 274.7,
+   "q25": 186.3,
+   "q75": 870.3,
+   "share_after_english": 0.778
+  }
+ },
+ "english_had_it_before_2021_other_entered_later": 17,
+ "cells": [
+  {
+   "article": "Gaza genocide",
+   "family": "apartheid",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2025-11-04",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "colonial",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2025-11-04",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "in",
+     "date": "2025-02-24",
+     "lag_vs_english_days": -253.1
+    },
+    "nl": {
+     "status": "in",
+     "date": "2025-06-01",
+     "lag_vs_english_days": -156.0
+    },
+    "pl": {
+     "status": "in",
+     "date": "2025-09-09",
+     "lag_vs_english_days": -56.3
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "ethnic_cleansing",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2025-12-31",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2025-02-08",
+     "lag_vs_english_days": -325.6
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "in",
+     "date": "2026-08-29",
+     "lag_vs_english_days": 241.8
+    },
+    "nl": {
+     "status": "in",
+     "date": "2025-06-01",
+     "lag_vs_english_days": -212.2
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "genocide",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2024-04-17",
+     "lag_vs_english_days": 110.0
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-12-29",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2024-10-24",
+     "lag_vs_english_days": 300.6
+    },
+    "fr": {
+     "status": "in",
+     "date": "2024-01-02",
+     "lag_vs_english_days": 4.7
+    },
+    "it": {
+     "status": "in",
+     "date": "2024-11-14",
+     "lag_vs_english_days": 321.7
+    },
+    "nl": {
+     "status": "in",
+     "date": "2025-05-11",
+     "lag_vs_english_days": 499.5
+    },
+    "pl": {
+     "status": "in",
+     "date": "2025-01-11",
+     "lag_vs_english_days": 379.7
+    },
+    "pt": {
+     "status": "in",
+     "date": "2024-05-01",
+     "lag_vs_english_days": 124.4
+    }
+   }
+  },
+  {
+   "article": "Gaza genocide",
+   "family": "occupation",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2024-11-11",
+     "lag_vs_english_days": -142.8
+    },
+    "en": {
+     "status": "in",
+     "date": "2025-04-03",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2025-10-16",
+     "lag_vs_english_days": 196.2
+    },
+    "fr": {
+     "status": "in",
+     "date": "2024-10-22",
+     "lag_vs_english_days": -163.0
+    },
+    "it": {
+     "status": "in",
+     "date": "2025-02-24",
+     "lag_vs_english_days": -37.9
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "in",
+     "date": "2025-09-26",
+     "lag_vs_english_days": 176.2
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Gaza war",
+   "family": "apartheid",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-10-13",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "in",
+     "date": "2024-01-13",
+     "lag_vs_english_days": 92.1
+    },
+    "nl": {
+     "status": "in",
+     "date": "2024-03-11",
+     "lag_vs_english_days": 149.7
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Gaza war",
+   "family": "colonial",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-10-13",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2025-04-13",
+     "lag_vs_english_days": 548.0
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "in",
+     "date": "2025-06-13",
+     "lag_vs_english_days": 609.0
+    },
+    "nl": {
+     "status": "in",
+     "date": "2023-10-18",
+     "lag_vs_english_days": 5.1
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Gaza war",
+   "family": "ethnic_cleansing",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2025-02-14",
+     "lag_vs_english_days": 488.0
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-10-15",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "in",
+     "date": "2024-07-08",
+     "lag_vs_english_days": 266.6
+    },
+    "it": {
+     "status": "in",
+     "date": "2024-08-14",
+     "lag_vs_english_days": 303.2
+    },
+    "nl": {
+     "status": "in",
+     "date": "2024-03-11",
+     "lag_vs_english_days": 147.6
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Gaza war",
+   "family": "genocide",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2024-05-10",
+     "lag_vs_english_days": 208.5
+    },
+    "de": {
+     "status": "in",
+     "date": "2023-10-14",
+     "lag_vs_english_days": -0.6
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-10-15",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2023-12-21",
+     "lag_vs_english_days": 67.2
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-11-03",
+     "lag_vs_english_days": 19.0
+    },
+    "he": {
+     "status": "in",
+     "date": "2024-04-18",
+     "lag_vs_english_days": 186.3
+    },
+    "it": {
+     "status": "in",
+     "date": "2024-01-06",
+     "lag_vs_english_days": 83.4
+    },
+    "nl": {
+     "status": "in",
+     "date": "2024-01-11",
+     "lag_vs_english_days": 87.9
+    },
+    "pl": {
+     "status": "in",
+     "date": "2023-11-11",
+     "lag_vs_english_days": 27.2
+    },
+    "pt": {
+     "status": "in",
+     "date": "2024-08-18",
+     "lag_vs_english_days": 308.2
+    },
+    "ru": {
+     "status": "in",
+     "date": "2024-01-12",
+     "lag_vs_english_days": 89.0
+    }
+   }
+  },
+  {
+   "article": "Gaza war",
+   "family": "occupation",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2024-04-29",
+     "lag_vs_english_days": 204.6
+    },
+    "de": {
+     "status": "in",
+     "date": "2023-10-13",
+     "lag_vs_english_days": 5.7
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-10-07",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2024-03-06",
+     "lag_vs_english_days": 150.2
+    },
+    "fr": {
+     "status": "in",
+     "date": "2025-05-12",
+     "lag_vs_english_days": 582.4
+    },
+    "he": {
+     "status": "in",
+     "date": "2024-07-08",
+     "lag_vs_english_days": 274.7
+    },
+    "it": {
+     "status": "in",
+     "date": "2023-10-08",
+     "lag_vs_english_days": 0.6
+    },
+    "nl": {
+     "status": "in",
+     "date": "2023-10-18",
+     "lag_vs_english_days": 11.1
+    },
+    "pl": {
+     "status": "in",
+     "date": "2024-06-17",
+     "lag_vs_english_days": 253.8
+    },
+    "pt": {
+     "status": "in",
+     "date": "2023-10-07",
+     "lag_vs_english_days": 0.1
+    },
+    "ru": {
+     "status": "in",
+     "date": "2024-03-26",
+     "lag_vs_english_days": 171.0
+    }
+   }
+  },
+  {
+   "article": "Hamas",
+   "family": "apartheid",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2024-10-03",
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Hamas",
+   "family": "colonial",
+   "languages": {
+    "ar": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-12-14",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2022-07-20",
+     "lag_vs_english_days": -511.8
+    },
+    "it": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2025-06-28",
+     "lag_vs_english_days": 562.2
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Hamas",
+   "family": "ethnic_cleansing",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Hamas",
+   "family": "genocide",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-10-09",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2025-09-27",
+     "lag_vs_english_days": 718.4
+    },
+    "fr": {
+     "status": "in",
+     "date": "2024-05-19",
+     "lag_vs_english_days": 223.0
+    },
+    "it": {
+     "status": "in",
+     "date": "2023-12-13",
+     "lag_vs_english_days": 64.9
+    },
+    "nl": {
+     "status": "in",
+     "date": "2024-01-05",
+     "lag_vs_english_days": 87.5
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "in",
+     "date": "2025-08-25",
+     "lag_vs_english_days": 685.9
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Hamas",
+   "family": "occupation",
+   "languages": {
+    "ar": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "in",
+     "date": "2021-08-10",
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2024-04-24",
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "in",
+     "date": "2025-05-27",
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "in",
+     "date": "2023-11-19",
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "in",
+     "date": "2023-10-17",
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israel",
+   "family": "apartheid",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "in",
+     "date": "2023-12-26",
+     "lag_vs_english_days": 824.4
+    },
+    "en": {
+     "status": "in",
+     "date": "2021-09-22",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2023-11-05",
+     "lag_vs_english_days": 773.4
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-11-07",
+     "lag_vs_english_days": 775.4
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2022-10-27",
+     "lag_vs_english_days": 400.2
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "in",
+     "date": "2024-09-08",
+     "lag_vs_english_days": 1081.7
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israel",
+   "family": "colonial",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "in",
+     "date": "2025-03-12",
+     "lag_vs_english_days": -102.1
+    },
+    "en": {
+     "status": "in",
+     "date": "2025-06-22",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2022-02-14",
+     "lag_vs_english_days": -1224.0
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-10-10",
+     "lag_vs_english_days": -620.3
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israel",
+   "family": "ethnic_cleansing",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2024-05-09",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2022-02-14",
+     "lag_vs_english_days": -815.5
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-12-10",
+     "lag_vs_english_days": -150.8
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israel",
+   "family": "genocide",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "in",
+     "date": "2025-03-12",
+     "lag_vs_english_days": 493.5
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-11-04",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2021-05-05",
+     "lag_vs_english_days": -912.9
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-11-07",
+     "lag_vs_english_days": 2.3
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2025-09-19",
+     "lag_vs_english_days": 684.8
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "in",
+     "date": "2023-02-28",
+     "lag_vs_english_days": -248.8
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israel",
+   "family": "occupation",
+   "languages": {
+    "ar": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "in",
+     "date": "2023-12-26",
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2021-09-24",
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-11-11",
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "in",
+     "date": "2025-09-06",
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israeli apartheid",
+   "family": "apartheid",
+   "languages": {
+    "ar": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2022-02-18",
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "in",
+     "date": "2025-10-14",
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israeli apartheid",
+   "family": "colonial",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2022-02-18",
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israeli apartheid",
+   "family": "ethnic_cleansing",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2024-08-05",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israeli apartheid",
+   "family": "genocide",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2025-08-30",
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israeli apartheid",
+   "family": "occupation",
+   "languages": {
+    "ar": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2022-02-18",
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "in",
+     "date": "2025-10-14",
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Israeli-occupied territories",
+   "family": "apartheid",
+   "languages": {}
+  },
+  {
+   "article": "Israeli-occupied territories",
+   "family": "colonial",
+   "languages": {}
+  },
+  {
+   "article": "Israeli-occupied territories",
+   "family": "ethnic_cleansing",
+   "languages": {}
+  },
+  {
+   "article": "Israeli-occupied territories",
+   "family": "genocide",
+   "languages": {}
+  },
+  {
+   "article": "Israeli-occupied territories",
+   "family": "occupation",
+   "languages": {}
+  },
+  {
+   "article": "Nakba",
+   "family": "apartheid",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2024-02-23",
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-11-10",
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Nakba",
+   "family": "colonial",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2023-12-30",
+     "lag_vs_english_days": 996.9
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2021-04-07",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2025-06-23",
+     "lag_vs_english_days": 1537.9
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "in",
+     "date": "2024-07-15",
+     "lag_vs_english_days": 1195.0
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Nakba",
+   "family": "ethnic_cleansing",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2021-12-20",
+     "lag_vs_english_days": -506.9
+    },
+    "de": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-05-11",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2023-10-17",
+     "lag_vs_english_days": 158.6
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-11-10",
+     "lag_vs_english_days": 183.4
+    },
+    "he": {
+     "status": "in",
+     "date": "2024-03-19",
+     "lag_vs_english_days": 313.5
+    },
+    "it": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2025-02-06",
+     "lag_vs_english_days": 636.9
+    },
+    "pl": {
+     "status": "in",
+     "date": "2024-10-21",
+     "lag_vs_english_days": 529.5
+    },
+    "pt": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "in",
+     "date": "2024-10-06",
+     "lag_vs_english_days": 514.2
+    }
+   }
+  },
+  {
+   "article": "Nakba",
+   "family": "genocide",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "in",
+     "date": "2024-05-12",
+     "lag_vs_english_days": 70.7
+    },
+    "en": {
+     "status": "in",
+     "date": "2024-03-03",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2023-03-30",
+     "lag_vs_english_days": -338.6
+    },
+    "fr": {
+     "status": "in",
+     "date": "2025-01-28",
+     "lag_vs_english_days": 331.5
+    },
+    "he": {
+     "status": "in",
+     "date": "2026-07-21",
+     "lag_vs_english_days": 870.3
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Nakba",
+   "family": "occupation",
+   "languages": {
+    "ar": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2021-04-02",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2023-10-17",
+     "lag_vs_english_days": 927.1
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-11-10",
+     "lag_vs_english_days": 951.9
+    },
+    "he": {
+     "status": "in",
+     "date": "2026-07-21",
+     "lag_vs_english_days": 1935.5
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "in",
+     "date": "2023-10-12",
+     "lag_vs_english_days": 922.9
+    }
+   }
+  },
+  {
+   "article": "October 7 attacks",
+   "family": "apartheid",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2026-10-25",
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "in",
+     "date": "2025-01-11",
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "October 7 attacks",
+   "family": "colonial",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2024-01-03",
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "in",
+     "date": "2024-01-16",
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2023-10-25",
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "October 7 attacks",
+   "family": "ethnic_cleansing",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "it": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "in",
+     "date": "2023-11-09",
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "October 7 attacks",
+   "family": "genocide",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "in",
+     "date": "2023-10-14",
+     "lag_vs_english_days": -149.9
+    },
+    "en": {
+     "status": "in",
+     "date": "2024-03-12",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "in",
+     "date": "2025-01-14",
+     "lag_vs_english_days": 307.9
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "in",
+     "date": "2023-11-03",
+     "lag_vs_english_days": -130.3
+    },
+    "it": {
+     "status": "in",
+     "date": "2024-02-12",
+     "lag_vs_english_days": -29.0
+    },
+    "nl": {
+     "status": "in",
+     "date": "2024-01-20",
+     "lag_vs_english_days": -52.4
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "in",
+     "date": "2023-11-09",
+     "lag_vs_english_days": -124.1
+    }
+   }
+  },
+  {
+   "article": "October 7 attacks",
+   "family": "occupation",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2023-10-07",
+     "lag_vs_english_days": -45.4
+    },
+    "de": {
+     "status": "in",
+     "date": "2023-10-13",
+     "lag_vs_english_days": -39.1
+    },
+    "en": {
+     "status": "in",
+     "date": "2023-11-21",
+     "lag_vs_english_days": null
+    },
+    "es": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2024-01-06",
+     "lag_vs_english_days": 46.2
+    },
+    "he": {
+     "status": "in",
+     "date": "2023-10-11",
+     "lag_vs_english_days": -41.3
+    },
+    "it": {
+     "status": "in",
+     "date": "2024-08-09",
+     "lag_vs_english_days": 261.6
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "in",
+     "date": "2023-10-08",
+     "lag_vs_english_days": -44.3
+    }
+   }
+  },
+  {
+   "article": "Palestine",
+   "family": "apartheid",
+   "languages": {}
+  },
+  {
+   "article": "Palestine",
+   "family": "colonial",
+   "languages": {}
+  },
+  {
+   "article": "Palestine",
+   "family": "ethnic_cleansing",
+   "languages": {}
+  },
+  {
+   "article": "Palestine",
+   "family": "genocide",
+   "languages": {}
+  },
+  {
+   "article": "Palestine",
+   "family": "occupation",
+   "languages": {}
+  },
+  {
+   "article": "Zionism",
+   "family": "apartheid",
+   "languages": {
+    "ar": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2024-10-22",
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Zionism",
+   "family": "colonial",
+   "languages": {
+    "ar": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-10-22",
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "in",
+     "date": "2024-12-14",
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "in",
+     "date": "2025-09-21",
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Zionism",
+   "family": "ethnic_cleansing",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2026-07-05",
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "in",
+     "date": "2025-10-14",
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "in",
+     "date": "2024-06-17",
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Zionism",
+   "family": "genocide",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2024-02-18",
+     "lag_vs_english_days": -300.4
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "in",
+     "date": "2024-12-15",
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2023-09-19",
+     "lag_vs_english_days": -452.1
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "in",
+     "date": "2024-11-12",
+     "lag_vs_english_days": -32.3
+    },
+    "pt": {
+     "status": "in",
+     "date": "2024-03-27",
+     "lag_vs_english_days": -262.1
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  },
+  {
+   "article": "Zionism",
+   "family": "occupation",
+   "languages": {
+    "ar": {
+     "status": "in",
+     "date": "2021-04-06",
+     "lag_vs_english_days": null
+    },
+    "de": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "en": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "fr": {
+     "status": "in",
+     "date": "2021-01-06",
+     "lag_vs_english_days": null
+    },
+    "he": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "nl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pl": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "pt": {
+     "status": "pre",
+     "date": null,
+     "lag_vs_english_days": null
+    },
+    "ru": {
+     "status": "never",
+     "date": null,
+     "lag_vs_english_days": null
+    }
+   }
+  }
+ ]
+}
