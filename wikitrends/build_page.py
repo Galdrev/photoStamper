@@ -391,11 +391,52 @@ res["perp"] = perp_data()
 
 # Coordination network (analyze_coord.py -> patterns/coord/chart_data/network.json). Inlined when present; WT_NETWORK overrides
 # the path (used to test the component on a synthetic file). Slimmed: no per-community profiles or raw alignment tables.
+# QA r7: the #organised deck and #ev-organised quote the accounts that changed first sentences on 3+ key articles. Recompute
+# them from the traced changes (data/bisect.json, the coordination.py C7 block) and fail the build if the page's figures drift:
+# all traced changes (reverted included): 9 accounts, 48 of 216; lasting changes only: 8 accounts, 45 of 208; comparison
+# key articles: 15 articles, 91 traced changes, no account on 3+.
+def lead_author_counts():
+    bp = os.path.join(HERE, "data", "bisect.json")
+    if not os.path.exists(bp):
+        return None
+    sys.path.insert(0, HERE)
+    from corpus import KEY_ARTICLES, KEY_ARTICLES_CONTROL
+    tr = json.load(open(bp)); out = {}
+    for g, titles in (("topic", KEY_ARTICLES), ("comparison", KEY_ARTICLES_CONTROL)):
+        for lab, keep in (("all", lambda c: True), ("lasting", lambda c: not c.get("reverted"))):
+            ch = [(t, c) for t in titles for c in tr.get(t, []) if keep(c) and c.get("editor")]
+            arts, n = {}, Counter()
+            for t, c in ch:
+                arts.setdefault(c["editor"], set()).add(t); n[c["editor"]] += 1
+            three = [e for e in arts if len(arts[e]) >= 3]
+            out[(g, lab)] = (sum(t in tr for t in titles), len(ch), len(three), sum(n[e] for e in three))
+    return out
+def _lead_check():
+    """Final pass: the #organised '48 of 216' and the comparison denominator, recomputed from data/bisect.json and
+    cross-checked against data/results.json coordination.lead_authors (coordination.py C7, lasting changes only)."""
+    _la = lead_author_counts()
+    if not _la:
+        return None
+    assert _la[("topic", "all")] == (25, 216, 9, 48) and _la[("topic", "lasting")] == (25, 208, 8, 45) \
+        and _la[("comparison", "all")] == (15, 91, 0, 0), f"#organised lead-author counts changed: {_la}"
+    rp = os.path.join(HERE, "data", "results.json")
+    if os.path.exists(rp):
+        LA = (json.load(open(rp)).get("coordination") or {}).get("lead_authors") or {}
+        t, c = LA.get("topic") or {}, LA.get("comparison") or {}
+        assert (t.get("articles"), t.get("changes"), t.get("editors_on_3plus_articles")) == (25, 208, 9) \
+            and (c.get("articles"), c.get("editors_on_3plus_articles")) == (15, 0) and c.get("changes", 0) <= 91, \
+            f"results.json lead_authors disagrees with the #organised figures: {LA}"
+    for _t in ("made 48 of the 216 traced changes", "15 comparison key articles (91 traced changes)"):
+        assert _t in open(os.path.join(HERE, "page_template.html")).read(), f"#organised deck no longer quotes: {_t}"
+    return _la
+
+
 def network_data():
     p = os.environ.get("WT_NETWORK") or os.path.join(PAT, "coord", "chart_data", "network.json")
     if not os.path.exists(p):
         return None
     N = json.load(open(p))
+    _lead_check()
     keep_c = ("id", "size", "density", "strength", "n_articles", "articles", "direction", "active", "inserted_phrases", "confidence",
               "significance", "window_share", "expected_window_share", "post_sanction_drop", "members", "weekly")
     keep_e = ("source", "target", "weight", "basis", "observed", "null_mean", "null_p95", "p", "same_direction_share",
@@ -462,33 +503,6 @@ if res["network"] and res["network"].get("topic") and not os.environ.get("WT_NET
     _pairs = [tuple(sorted((_cl(_nd[e["source"]]), _cl(_nd[e["target"]])))) for e in _T["edges"]]
     assert (len(_pairs), _pairs.count(("add", "rem")), _pairs.count(("add", "add")), _pairs.count(("add", "mix")), _pairs.count(("mix", "rem"))) \
         == (14, 7, 3, 3, 1), f"#organised adder/remover link counts changed: {_pairs}"
-
-# QA r7: the #organised deck and #ev-organised quote the accounts that changed first sentences on 3+ key articles. Recompute
-# them from the traced changes (data/bisect.json, the coordination.py C7 block) and fail the build if the page's figures drift:
-# all traced changes (reverted included): 9 accounts, 48 of 216; lasting changes only: 8 accounts, 45 of 208; comparison
-# key articles: 15 articles, 91 traced changes, no account on 3+.
-def lead_author_counts():
-    bp = os.path.join(HERE, "data", "bisect.json")
-    if not os.path.exists(bp):
-        return None
-    sys.path.insert(0, HERE)
-    from corpus import KEY_ARTICLES, KEY_ARTICLES_CONTROL
-    tr = json.load(open(bp)); out = {}
-    for g, titles in (("topic", KEY_ARTICLES), ("comparison", KEY_ARTICLES_CONTROL)):
-        for lab, keep in (("all", lambda c: True), ("lasting", lambda c: not c.get("reverted"))):
-            ch = [(t, c) for t in titles for c in tr.get(t, []) if keep(c) and c.get("editor")]
-            arts, n = {}, Counter()
-            for t, c in ch:
-                arts.setdefault(c["editor"], set()).add(t); n[c["editor"]] += 1
-            three = [e for e in arts if len(arts[e]) >= 3]
-            out[(g, lab)] = (sum(t in tr for t in titles), len(ch), len(three), sum(n[e] for e in three))
-    return out
-_la = lead_author_counts()
-if _la:
-    assert _la[("topic", "all")] == (25, 216, 9, 48) and _la[("topic", "lasting")] == (25, 208, 8, 45) \
-        and _la[("comparison", "all")] == (15, 91, 0, 0), f"#organised lead-author counts changed: {_la}"
-    for _t in ("made 48 of the 216 traced changes", "15 comparison key articles (91 traced changes)"):
-        assert _t in open(os.path.join(HERE, "page_template.html")).read(), f"#organised deck no longer quotes: {_t}"
 
 # Sampling audit: unweighted vs design-weighted vs matched (patterns/sampling/chart_data/03_weighted_vs_unweighted.json)
 _a = _j("sampling", "chart_data", "03_weighted_vs_unweighted.json")
@@ -986,6 +1000,37 @@ def _against_check():
     assert not bad, f"#against quotes not found in the stored text: {bad}"
     return n
 print(f"#against: {_against_check()} quotes found in the stored text")
+
+# Final pass (must-fix 11): every ArbCom quote in the story's #organised bottom line, the evidence-room bottom line and the
+# #orgRec table must be verbatim from the primary-source extract (patterns/guard/arbcom_named.md), and no evidence
+# submitter named there may appear on the page.
+def _arbcom_check():
+    src = open(os.path.join(PAT, "guard", "arbcom_named.md")).read()
+    norm = lambda t: re.sub(r"\s+", " ", t.replace("\u2019", "'"))
+    src = norm(src)
+    parts = []
+    for sid in ('id="organised"', 'id="ev-organised"'):
+        sec = tpl[tpl.index(sid):]
+        sec = sec[:sec.index("</section>")]
+        if sid == 'id="ev-organised"':
+            bl = sec.index("Bottom line")
+            sec = sec[sec.index('id="orgRec"'):sec.index('<div class="org-col">')] + sec[bl:sec.index("</p>", bl)]
+        else:
+            sec = sec[:sec.index('</p>', sec.index('Bottom line'))]
+        parts.append(re.sub(r"<[^>]+>", "", sec))
+    n, bad = 0, []
+    for t in parts:
+        for q in re.findall(r"“([^”]+)”", t):
+            if q.startswith(("the re-establishment", "re-establishment")):
+                continue
+            n += 1
+            if norm(q).strip() not in src:
+                bad.append(q)
+    assert not bad, f"ArbCom quotes not verbatim from arbcom_named.md: {bad}"
+    for who in ("Smallangryplanet", "Aquillion", "Zero0000", "Nableezy", "CaptainEek", "Elli"):
+        assert not re.search(r"\b%s\b" % who, re.sub(r"<!--.*?-->", "", tpl, flags=re.S)), f"page names a non-sanctioned account: {who}"
+    return n
+print(f"ArbCom: {_arbcom_check()} quotes verbatim from arbcom_named.md")
 labdir = os.path.join(HERE, "lab")
 lab_html = open(os.path.join(labdir, "lab.html")).read() if os.path.exists(os.path.join(labdir, "lab.html")) else ""
 lab_css = open(os.path.join(labdir, "lab.css")).read() if os.path.exists(os.path.join(labdir, "lab.css")) else ""
