@@ -20,3 +20,10 @@
      - comparisons that only show nothing happened.
    - Keep honesty with ONE short line in the trust box (e.g. "Across all 49,000 articles in these projects, most are short pages that never changed; averaged over them, the change is no larger than in other conflicts' articles"). Put the full population analysis in the evidence room.
    - Do not delete evidence files. Move material out of the story, and drop it from the page only if it truly adds nothing.
+
+## 4. Drop the court-ruling contrast and the research-process narration; lead with what events changed (owner, round 4)
+- Remove the "battles, not the court rulings" framing everywhere (headline, bottom line, FAQ "Is it just the war?", talking points). Courts are not part of the story.
+- Instead show the interesting part: when a battle or major event happened (Oct 7, ground invasion, Rafah, Lebanon, Iran, ceasefires), what changed right after it in WORDING and in the ORDER/arrangement of the opening (e.g. Hamas designation moved from sentence 5 to 22; "militant" -> "political organisation with a military wing"; new first sentences of Zionism/Israel). Event -> concrete wording/reordering change, anchored to diffs and the edit timeline.
+- No claims about a "general population" of articles: it is not well defined and cannot be. Remove population-wide averages, the pre-registered average test, Horvitz-Thompson/population figures, and any "the average didn't move" framing from the story layer. Scope = the core, high-importance conflict/history/identity articles where the narrative lives.
+- This is not academia: do not narrate the research process (holdout halves, withdrawn measures, pre-specification, BH, resampling methods) in the story. Keep one honesty line in the trust box and move the rest to the evidence room/method appendix, or cut it if irrelevant. Not lying; cleaning noise.
+- Use these cuts to shorten the page: the story layer must hit <=20 phone screens.
