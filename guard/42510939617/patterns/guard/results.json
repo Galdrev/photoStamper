@@ -1,0 +1,1303 @@
+{
+ "meta": {
+  "generated": "2026-11-08T19:34:58Z",
+  "articles": {
+   "topic": 254,
+   "comparison": 254
+  },
+  "articles_by_tier": {
+   "topic": {
+    "High": 82,
+    "Top": 55,
+    "core": 117
+   },
+   "comparison": {
+    "High": 82,
+    "Top": 110,
+    "core": 62
+   }
+  },
+  "revisions_thousands": {
+   "topic": 614.2,
+   "comparison": 844.0
+  },
+  "histories_truncated": 0,
+  "collection": {
+   "budget_min": 240.0,
+   "topic_in_plan": 254,
+   "topic_resolved": 254,
+   "matched_pairs": 254,
+   "articles": {
+    "topic": 254,
+    "comparison": 254
+   },
+   "history": {
+    "done": 508,
+    "errors": 0,
+    "skipped_budget": 0,
+    "truncated": 0
+   },
+   "talk": {
+    "articles_done": 508,
+    "errors": 0,
+    "skipped_budget": 0,
+    "discussions": 545,
+    "talk_pages": 2845,
+    "kinds": {
+     "rm": 328,
+     "afd": 22,
+     "rfc": 195
+    }
+   },
+   "leads": {
+    "reverts_needing_direction": 26872,
+    "revisions_needed": 48496,
+    "revisions_measured": 48496,
+    "batches_done": 970,
+    "errors": 0,
+    "skipped_budget": 0
+   },
+   "requests": 5571,
+   "failures": 0,
+   "elapsed_min": 56.4
+  },
+  "coord_recomputed": {
+   "available": true,
+   "edges": 14,
+   "accounts": 11,
+   "articles_collected": 959,
+   "articles_expected": 959,
+   "complete": true
+  },
+  "bootstrap": 1000,
+  "permutations": 1000,
+  "vote_null_draws": 1000,
+  "calibration_worlds": 100
+ },
+ "q1_revert_guarding": {
+  "definition": {
+   "identity_radius": 15,
+   "fast_hours": 24.0,
+   "direction_window_from": "2021-01-01",
+   "concentration": "share of reverts by the 5 / 10 most active reverting accounts and Gini over reverting accounts, both groups rarefied to the same number of reverts",
+   "accounts": "registered, non-bot reverting accounts (IP / temporary accounts and bots are counted in the totals below but not in account statistics)"
+  },
+  "totals": {
+   "reverts": 242632,
+   "reverts_by_bots": 10449,
+   "reverts_by_ip_or_temp": 15038,
+   "kinds": {
+    "identity": 214588,
+    "summary": 21547,
+    "undo": 6446,
+    "restore": 51
+   },
+   "reverts_since_2021": 27327,
+   "direction_measured": 27220,
+   "direction_measured_share_of_window": 0.996,
+   "directions": {
+    "topic": {
+     "none": 9339,
+     "add": 274,
+     "remove": 233
+    },
+    "comparison": {
+     "none": 17049,
+     "remove": 180,
+     "add": 145
+    }
+   }
+  },
+  "all_history": {
+   "sample": "full history",
+   "reverts_topic": 86503,
+   "reverts_comparison": 130642,
+   "articles_topic": 244,
+   "articles_comparison": 239,
+   "reverting_accounts_topic": 10402,
+   "reverting_accounts_comparison": 16219,
+   "rarefied_to": 86503,
+   "median_h": {
+    "topic": 0.434,
+    "comparison": 0.327,
+    "topic_ci95": [
+     0.34,
+     0.553
+    ],
+    "comparison_ci95": [
+     0.26,
+     0.418
+    ],
+    "difference": 0.107,
+    "difference_ci95": [
+     -0.03,
+     0.246
+    ],
+    "p_label_permutation": 0.1089,
+    "null_difference_mean": 0.001
+   },
+   "fast24": {
+    "topic": 0.93,
+    "comparison": 0.938,
+    "topic_ci95": [
+     0.919,
+     0.938
+    ],
+    "comparison_ci95": [
+     0.929,
+     0.945
+    ],
+    "difference": -0.008,
+    "difference_ci95": [
+     -0.02,
+     0.004
+    ],
+    "p_label_permutation": 0.1808,
+    "null_difference_mean": 0.0
+   },
+   "top5": {
+    "topic": 0.101,
+    "comparison": 0.041,
+    "topic_ci95": [
+     0.09,
+     0.117
+    ],
+    "comparison_ci95": [
+     0.038,
+     0.058
+    ],
+    "difference": 0.061,
+    "difference_ci95": [
+     0.04,
+     0.073
+    ],
+    "p_label_permutation": 0.001,
+    "null_difference_mean": -0.0
+   },
+   "top10": {
+    "topic": 0.155,
+    "comparison": 0.064,
+    "topic_ci95": [
+     0.142,
+     0.175
+    ],
+    "comparison_ci95": [
+     0.062,
+     0.09
+    ],
+    "difference": 0.091,
+    "difference_ci95": [
+     0.061,
+     0.107
+    ],
+    "p_label_permutation": 0.001,
+    "null_difference_mean": -0.0
+   },
+   "gini": {
+    "topic": 0.786,
+    "comparison": 0.731,
+    "topic_ci95": [
+     0.762,
+     0.789
+    ],
+    "comparison_ci95": [
+     0.72,
+     0.743
+    ],
+    "difference": 0.055,
+    "difference_ci95": [
+     0.029,
+     0.058
+    ],
+    "p_label_permutation": 0.001,
+    "null_difference_mean": 0.0
+   }
+  },
+  "since_2021": {
+   "sample": "since 2021",
+   "reverts_topic": 9272,
+   "reverts_comparison": 16406,
+   "articles_topic": 225,
+   "articles_comparison": 221,
+   "reverting_accounts_topic": 1909,
+   "reverting_accounts_comparison": 3168,
+   "rarefied_to": 9272,
+   "median_h": {
+    "topic": 1.523,
+    "comparison": 1.116,
+    "topic_ci95": [
+     1.08,
+     2.181
+    ],
+    "comparison_ci95": [
+     0.845,
+     1.468
+    ],
+    "difference": 0.407,
+    "difference_ci95": [
+     -0.168,
+     1.069
+    ],
+    "p_label_permutation": 0.1279,
+    "null_difference_mean": -0.009
+   },
+   "fast24": {
+    "topic": 0.859,
+    "comparison": 0.871,
+    "topic_ci95": [
+     0.826,
+     0.889
+    ],
+    "comparison_ci95": [
+     0.856,
+     0.884
+    ],
+    "difference": -0.012,
+    "difference_ci95": [
+     -0.048,
+     0.021
+    ],
+    "p_label_permutation": 0.4116,
+    "null_difference_mean": 0.0
+   },
+   "top5": {
+    "topic": 0.102,
+    "comparison": 0.083,
+    "topic_ci95": [
+     0.089,
+     0.13
+    ],
+    "comparison_ci95": [
+     0.076,
+     0.13
+    ],
+    "difference": 0.018,
+    "difference_ci95": [
+     -0.028,
+     0.041
+    ],
+    "p_label_permutation": 0.1429,
+    "null_difference_mean": 0.0
+   },
+   "top10": {
+    "topic": 0.165,
+    "comparison": 0.142,
+    "topic_ci95": [
+     0.149,
+     0.203
+    ],
+    "comparison_ci95": [
+     0.132,
+     0.196
+    ],
+    "difference": 0.023,
+    "difference_ci95": [
+     -0.031,
+     0.053
+    ],
+    "p_label_permutation": 0.1668,
+    "null_difference_mean": -0.0
+   },
+   "gini": {
+    "topic": 0.687,
+    "comparison": 0.639,
+    "topic_ci95": [
+     0.647,
+     0.706
+    ],
+    "comparison_ci95": [
+     0.627,
+     0.672
+    ],
+    "difference": 0.048,
+    "difference_ci95": [
+     -0.0,
+     0.055
+    ],
+    "p_label_permutation": 0.001,
+    "null_difference_mean": 0.0
+   }
+  },
+  "by_direction_topic_vs_comparison": {
+   "remove": {
+    "sample": "reverts of critical-term removes",
+    "reverts_topic": 227,
+    "reverts_comparison": 172,
+    "articles_topic": 41,
+    "articles_comparison": 35,
+    "reverting_accounts_topic": 91,
+    "reverting_accounts_comparison": 120,
+    "rarefied_to": 172,
+    "median_h": {
+     "topic": 1.131,
+     "comparison": 0.084,
+     "topic_ci95": [
+      0.569,
+      1.683
+     ],
+     "comparison_ci95": [
+      0.037,
+      0.347
+     ],
+     "difference": 1.047,
+     "difference_ci95": [
+      0.453,
+      1.608
+     ],
+     "p_label_permutation": 0.012,
+     "null_difference_mean": 0.021
+    },
+    "fast24": {
+     "topic": 0.907,
+     "comparison": 0.942,
+     "topic_ci95": [
+      0.854,
+      0.944
+     ],
+     "comparison_ci95": [
+      0.877,
+      0.975
+     ],
+     "difference": -0.034,
+     "difference_ci95": [
+      -0.093,
+      0.034
+     ],
+     "p_label_permutation": 0.3047,
+     "null_difference_mean": -0.001
+    },
+    "top5": {
+     "topic": 0.261,
+     "comparison": 0.169,
+     "topic_ci95": [
+      0.238,
+      0.395
+     ],
+     "comparison_ci95": [
+      0.146,
+      0.345
+     ],
+     "difference": 0.093,
+     "difference_ci95": [
+      -0.054,
+      0.202
+     ],
+     "p_label_permutation": 0.041,
+     "null_difference_mean": 0.001
+    },
+    "top10": {
+     "topic": 0.417,
+     "comparison": 0.256,
+     "topic_ci95": [
+      0.401,
+      0.594
+     ],
+     "comparison_ci95": [
+      0.256,
+      0.5
+     ],
+     "difference": 0.161,
+     "difference_ci95": [
+      -0.035,
+      0.273
+     ],
+     "p_label_permutation": 0.01,
+     "null_difference_mean": 0.002
+    },
+    "gini": {
+     "topic": 0.427,
+     "comparison": 0.26,
+     "topic_ci95": [
+      0.334,
+      0.487
+     ],
+     "comparison_ci95": [
+      0.229,
+      0.451
+     ],
+     "difference": 0.166,
+     "difference_ci95": [
+      -0.028,
+      0.187
+     ],
+     "p_label_permutation": 0.006,
+     "null_difference_mean": 0.002
+    }
+   },
+   "add": {
+    "sample": "reverts of critical-term adds",
+    "reverts_topic": 260,
+    "reverts_comparison": 135,
+    "articles_topic": 67,
+    "articles_comparison": 38,
+    "reverting_accounts_topic": 154,
+    "reverting_accounts_comparison": 87,
+    "rarefied_to": 135,
+    "median_h": {
+     "topic": 0.836,
+     "comparison": 0.357,
+     "topic_ci95": [
+      0.489,
+      1.425
+     ],
+     "comparison_ci95": [
+      0.191,
+      1.614
+     ],
+     "difference": 0.478,
+     "difference_ci95": [
+      -0.797,
+      1.046
+     ],
+     "p_label_permutation": 0.1698,
+     "null_difference_mean": 0.017
+    },
+    "fast24": {
+     "topic": 0.923,
+     "comparison": 0.874,
+     "topic_ci95": [
+      0.878,
+      0.957
+     ],
+     "comparison_ci95": [
+      0.789,
+      0.931
+     ],
+     "difference": 0.049,
+     "difference_ci95": [
+      -0.026,
+      0.136
+     ],
+     "p_label_permutation": 0.1728,
+     "null_difference_mean": -0.002
+    },
+    "top5": {
+     "topic": 0.152,
+     "comparison": 0.193,
+     "topic_ci95": [
+      0.148,
+      0.269
+     ],
+     "comparison_ci95": [
+      0.193,
+      0.411
+     ],
+     "difference": -0.04,
+     "difference_ci95": [
+      -0.207,
+      0.034
+     ],
+     "p_label_permutation": 0.1938,
+     "null_difference_mean": -0.002
+    },
+    "top10": {
+     "topic": 0.257,
+     "comparison": 0.304,
+     "topic_ci95": [
+      0.259,
+      0.415
+     ],
+     "comparison_ci95": [
+      0.327,
+      0.579
+     ],
+     "difference": -0.046,
+     "difference_ci95": [
+      -0.252,
+      0.024
+     ],
+     "p_label_permutation": 0.2947,
+     "null_difference_mean": -0.002
+    },
+    "gini": {
+     "topic": 0.236,
+     "comparison": 0.285,
+     "topic_ci95": [
+      0.206,
+      0.357
+     ],
+     "comparison_ci95": [
+      0.28,
+      0.435
+     ],
+     "difference": -0.049,
+     "difference_ci95": [
+      -0.165,
+      0.028
+     ],
+     "p_label_permutation": 0.2408,
+     "null_difference_mean": -0.002
+    }
+   }
+  },
+  "removal_vs_addition": {
+   "topic": {
+    "group": "topic",
+    "reverts_of_removals": 227,
+    "reverts_of_additions": 260,
+    "articles": 72,
+    "accounts_reverting_removals": 91,
+    "accounts_reverting_additions": 154,
+    "rarefied_to": 227,
+    "median_h": {
+     "reverts_of_removals": 1.131,
+     "reverts_of_additions": 0.836,
+     "removals_ci95": [
+      0.616,
+      1.694
+     ],
+     "additions_ci95": [
+      0.489,
+      1.423
+     ],
+     "difference": 0.296,
+     "difference_ci95": [
+      -0.34,
+      1.013
+     ],
+     "p_direction_permutation": 0.8681
+    },
+    "fast24": {
+     "reverts_of_removals": 0.907,
+     "reverts_of_additions": 0.923,
+     "removals_ci95": [
+      0.853,
+      0.942
+     ],
+     "additions_ci95": [
+      0.884,
+      0.959
+     ],
+     "difference": -0.016,
+     "difference_ci95": [
+      -0.076,
+      0.037
+     ],
+     "p_direction_permutation": 0.3117
+    },
+    "top5": {
+     "reverts_of_removals": 0.251,
+     "reverts_of_additions": 0.136,
+     "removals_ci95": [
+      0.247,
+      0.389
+     ],
+     "additions_ci95": [
+      0.141,
+      0.243
+     ],
+     "difference": 0.115,
+     "difference_ci95": [
+      0.051,
+      0.195
+     ],
+     "p_direction_permutation": 0.003
+    },
+    "top10": {
+     "reverts_of_removals": 0.41,
+     "reverts_of_additions": 0.229,
+     "removals_ci95": [
+      0.401,
+      0.577
+     ],
+     "additions_ci95": [
+      0.24,
+      0.379
+     ],
+     "difference": 0.181,
+     "difference_ci95": [
+      0.087,
+      0.269
+     ],
+     "p_direction_permutation": 0.001
+    },
+    "gini": {
+     "reverts_of_removals": 0.47,
+     "reverts_of_additions": 0.307,
+     "removals_ci95": [
+      0.384,
+      0.514
+     ],
+     "additions_ci95": [
+      0.282,
+      0.411
+     ],
+     "difference": 0.163,
+     "difference_ci95": [
+      0.026,
+      0.176
+     ],
+     "p_direction_permutation": 0.001
+    }
+   },
+   "comparison": {
+    "group": "comparison",
+    "reverts_of_removals": 172,
+    "reverts_of_additions": 135,
+    "articles": 46,
+    "accounts_reverting_removals": 120,
+    "accounts_reverting_additions": 87,
+    "rarefied_to": 135,
+    "median_h": {
+     "reverts_of_removals": 0.084,
+     "reverts_of_additions": 0.357,
+     "removals_ci95": [
+      0.037,
+      0.242
+     ],
+     "additions_ci95": [
+      0.211,
+      1.805
+     ],
+     "difference": -0.273,
+     "difference_ci95": [
+      -1.605,
+      -0.138
+     ],
+     "p_direction_permutation": 0.005
+    },
+    "fast24": {
+     "reverts_of_removals": 0.942,
+     "reverts_of_additions": 0.874,
+     "removals_ci95": [
+      0.888,
+      0.975
+     ],
+     "additions_ci95": [
+      0.791,
+      0.939
+     ],
+     "difference": 0.068,
+     "difference_ci95": [
+      -0.002,
+      0.14
+     ],
+     "p_direction_permutation": 0.022
+    },
+    "top5": {
+     "reverts_of_removals": 0.169,
+     "reverts_of_additions": 0.193,
+     "removals_ci95": [
+      0.15,
+      0.344
+     ],
+     "additions_ci95": [
+      0.195,
+      0.385
+     ],
+     "difference": -0.024,
+     "difference_ci95": [
+      -0.164,
+      0.059
+     ],
+     "p_direction_permutation": 0.6164
+    },
+    "top10": {
+     "reverts_of_removals": 0.263,
+     "reverts_of_additions": 0.304,
+     "removals_ci95": [
+      0.259,
+      0.496
+     ],
+     "additions_ci95": [
+      0.328,
+      0.554
+     ],
+     "difference": -0.04,
+     "difference_ci95": [
+      -0.196,
+      0.044
+     ],
+     "p_direction_permutation": 0.4016
+    },
+    "gini": {
+     "reverts_of_removals": 0.227,
+     "reverts_of_additions": 0.285,
+     "removals_ci95": [
+      0.216,
+      0.431
+     ],
+     "additions_ci95": [
+      0.283,
+      0.437
+     ],
+     "difference": -0.058,
+     "difference_ci95": [
+      -0.136,
+      0.043
+     ],
+     "p_direction_permutation": 0.2398
+    }
+   },
+   "topic_minus_comparison": {
+    "median_h": {
+     "difference_in_differences": 0.569,
+     "ci95": [
+      -0.069,
+      2.074
+     ]
+    },
+    "fast24": {
+     "difference_in_differences": -0.084,
+     "ci95": [
+      -0.183,
+      0.006
+     ]
+    },
+    "top5": {
+     "difference_in_differences": 0.139,
+     "ci95": [
+      0.038,
+      0.303
+     ]
+    },
+    "top10": {
+     "difference_in_differences": 0.221,
+     "ci95": [
+      0.094,
+      0.403
+     ]
+    },
+    "gini": {
+     "difference_in_differences": 0.221,
+     "ci95": [
+      0.029,
+      0.264
+     ]
+    }
+   }
+  }
+ },
+ "q2_tag_team": {
+  "definition": "a tag-team sequence = 2+ reverts toward the same version (same sha1 restored) of one article by 2+ different registered non-bot accounts, consecutive reverts no more than W hours apart",
+  "null": "reverter labels shuffled among the reverts of the same article and calendar month (who reverts in that article-month is kept; who reverts toward which version is broken), 500 draws",
+  "W24h": {
+   "sequences_topic": 9663,
+   "sequences_comparison": 15668,
+   "per_article": {
+    "topic": 39.602,
+    "comparison": 65.556,
+    "difference": -25.954,
+    "difference_ci95": [
+     -46.83,
+     -7.379
+    ],
+    "p_label_permutation": 0.023
+   },
+   "per_1000_reverts": {
+    "topic": 111.707,
+    "comparison": 119.931,
+    "difference": -8.224,
+    "difference_ci95": [
+     -20.195,
+     3.17
+    ],
+    "p_label_permutation": 0.1758
+   },
+   "recurrence_topic": {
+    "sequences": 9663,
+    "sequences_null_mean": 11940.0,
+    "sequences_null_ci95": [
+     11889.475,
+     11996.05
+    ],
+    "pairs_2plus_articles": {
+     "observed": 1385.0,
+     "null_mean": 1948.318,
+     "null_p95": 2003.05,
+     "p_upper": 1.0,
+     "excess_over_null": -563.318
+    },
+    "pairs_3plus_articles": {
+     "observed": 430.0,
+     "null_mean": 580.694,
+     "null_p95": 608.0,
+     "p_upper": 1.0,
+     "excess_over_null": -150.694
+    },
+    "accounts_in_3plus_pairs": {
+     "observed": 202,
+     "null_mean": 237.148,
+     "null_p95": 251.05,
+     "p_upper": 1.0,
+     "excess_over_null": -35.148
+    },
+    "share_of_sequences_with_a_3plus_pair": {
+     "observed": 0.207,
+     "null_mean": 0.22,
+     "null_p95": 0.226,
+     "p_upper": 1.0,
+     "excess_over_null": -0.013
+    },
+    "significant_recurrent_pairs": {
+     "rule": "pair shares sequences on 3+ distinct articles and p<0.01 against that pair's own shuffle distribution",
+     "observed": 19,
+     "expected_by_chance_mean": 9.64,
+     "expected_p95": 15.0,
+     "accounts": 31,
+     "groups_3plus_accounts": {
+      "count": 2,
+      "sizes": [
+       8,
+       3
+      ]
+     }
+    }
+   },
+   "recurrence_comparison": {
+    "sequences": 15668,
+    "sequences_null_mean": 19149.1,
+    "sequences_null_ci95": [
+     19084.475,
+     19217.05
+    ],
+    "pairs_2plus_articles": {
+     "observed": 1507.0,
+     "null_mean": 1806.548,
+     "null_p95": 1866.05,
+     "p_upper": 1.0,
+     "excess_over_null": -299.548
+    },
+    "pairs_3plus_articles": {
+     "observed": 323.0,
+     "null_mean": 358.08,
+     "null_p95": 385.0,
+     "p_upper": 0.996,
+     "excess_over_null": -35.08
+    },
+    "accounts_in_3plus_pairs": {
+     "observed": 233,
+     "null_mean": 236.852,
+     "null_p95": 253.0,
+     "p_upper": 0.6667,
+     "excess_over_null": -3.852
+    },
+    "share_of_sequences_with_a_3plus_pair": {
+     "observed": 0.08,
+     "null_mean": 0.075,
+     "null_p95": 0.08,
+     "p_upper": 0.0519,
+     "excess_over_null": 0.004
+    },
+    "significant_recurrent_pairs": {
+     "rule": "pair shares sequences on 3+ distinct articles and p<0.01 against that pair's own shuffle distribution",
+     "observed": 25,
+     "expected_by_chance_mean": 11.96,
+     "expected_p95": 19.0,
+     "accounts": 47,
+     "groups_3plus_accounts": {
+      "count": 2,
+      "sizes": [
+       4,
+       3
+      ]
+     }
+    }
+   }
+  },
+  "W72h": {
+   "sequences_topic": 11223,
+   "sequences_comparison": 18140,
+   "per_article": {
+    "topic": 45.996,
+    "comparison": 75.9,
+    "difference": -29.904,
+    "difference_ci95": [
+     -51.893,
+     -6.548
+    ],
+    "p_label_permutation": 0.009
+   },
+   "per_1000_reverts": {
+    "topic": 129.741,
+    "comparison": 138.853,
+    "difference": -9.112,
+    "difference_ci95": [
+     -18.77,
+     0.881
+    ],
+    "p_label_permutation": 0.0799
+   },
+   "recurrence_topic": {
+    "sequences": 11223,
+    "sequences_null_mean": 13477.3,
+    "sequences_null_ci95": [
+     13422.0,
+     13527.525
+    ],
+    "pairs_2plus_articles": {
+     "observed": 1857.0,
+     "null_mean": 2489.446,
+     "null_p95": 2544.0,
+     "p_upper": 1.0,
+     "excess_over_null": -632.446
+    },
+    "pairs_3plus_articles": {
+     "observed": 557.0,
+     "null_mean": 765.946,
+     "null_p95": 796.05,
+     "p_upper": 1.0,
+     "excess_over_null": -208.946
+    },
+    "accounts_in_3plus_pairs": {
+     "observed": 253,
+     "null_mean": 290.346,
+     "null_p95": 305.0,
+     "p_upper": 1.0,
+     "excess_over_null": -37.346
+    },
+    "share_of_sequences_with_a_3plus_pair": {
+     "observed": 0.229,
+     "null_mean": 0.246,
+     "null_p95": 0.251,
+     "p_upper": 1.0,
+     "excess_over_null": -0.016
+    },
+    "significant_recurrent_pairs": {
+     "rule": "pair shares sequences on 3+ distinct articles and p<0.01 against that pair's own shuffle distribution",
+     "observed": 21,
+     "expected_by_chance_mean": 11.12,
+     "expected_p95": 17.0,
+     "accounts": 32,
+     "groups_3plus_accounts": {
+      "count": 4,
+      "sizes": [
+       9,
+       3,
+       3,
+       3
+      ]
+     }
+    }
+   },
+   "recurrence_comparison": {
+    "sequences": 18140,
+    "sequences_null_mean": 21517.7,
+    "sequences_null_ci95": [
+     21448.475,
+     21595.0
+    ],
+    "pairs_2plus_articles": {
+     "observed": 1938.0,
+     "null_mean": 2284.236,
+     "null_p95": 2343.05,
+     "p_upper": 1.0,
+     "excess_over_null": -346.236
+    },
+    "pairs_3plus_articles": {
+     "observed": 422.0,
+     "null_mean": 473.276,
+     "null_p95": 501.0,
+     "p_upper": 0.998,
+     "excess_over_null": -51.276
+    },
+    "accounts_in_3plus_pairs": {
+     "observed": 282,
+     "null_mean": 294.608,
+     "null_p95": 312.0,
+     "p_upper": 0.8862,
+     "excess_over_null": -12.608
+    },
+    "share_of_sequences_with_a_3plus_pair": {
+     "observed": 0.093,
+     "null_mean": 0.09,
+     "null_p95": 0.094,
+     "p_upper": 0.1577,
+     "excess_over_null": 0.003
+    },
+    "significant_recurrent_pairs": {
+     "rule": "pair shares sequences on 3+ distinct articles and p<0.01 against that pair's own shuffle distribution",
+     "observed": 25,
+     "expected_by_chance_mean": 12.76,
+     "expected_p95": 19.0,
+     "accounts": 45,
+     "groups_3plus_accounts": {
+      "count": 5,
+      "sizes": [
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     }
+    }
+   }
+  }
+ },
+ "q3_voting_blocs": {
+  "definition": "!votes (support / oppose / include / exclude / keep / delete / option X...) in RfC, requested-move and AfD discussions on the talk pages (and archives) of the scoped articles; one stance per account per discussion; accounts with 3+ votes in the group, discussions with 3+ such voters",
+  "null": "stances permuted among the voters of each discussion, 1000 draws; significant pair: p<0.01 and 3+ agreements; blocs: Louvain on significant pairs, 3+ accounts; 100 calibration worlds",
+  "topic": {
+   "group": "topic",
+   "discussions_with_3plus_regular_voters": 217,
+   "discussion_kinds": {
+    "afd": 9,
+    "rm": 115,
+    "rfc": 93
+   },
+   "regular_voters": 351,
+   "pairs_with_3plus_shared_discussions": 1520,
+   "significant_agreement_pairs": {
+    "observed": 26,
+    "expected_by_chance_mean": 0.44,
+    "expected_p95": 2.0,
+    "calibration_worlds": 100
+   },
+   "share_of_pairs_agreeing_80pct_plus": {
+    "observed": 0.287,
+    "null_mean": 0.116,
+    "null_ci95": [
+     0.102,
+     0.133
+    ],
+    "p_upper": 0.001
+   },
+   "mean_pair_agreement": {
+    "observed": 0.512,
+    "null_mean": 0.506
+   },
+   "blocs": {
+    "count": 4,
+    "sizes": [
+     6,
+     6,
+     4,
+     3
+    ],
+    "expected_by_chance_mean": 0.01,
+    "expected_p95": 0.0,
+    "detail": [
+     {
+      "size": 6,
+      "within_bloc_agreement": 0.97,
+      "null_mean": 0.528,
+      "null_ci95": [
+       0.436,
+       0.634
+      ],
+      "p_upper": 0.001
+     },
+     {
+      "size": 6,
+      "within_bloc_agreement": 0.892,
+      "null_mean": 0.527,
+      "null_ci95": [
+       0.459,
+       0.599
+      ],
+      "p_upper": 0.001
+     },
+     {
+      "size": 4,
+      "within_bloc_agreement": 1.0,
+      "null_mean": 0.476,
+      "null_ci95": [
+       0.324,
+       0.647
+      ],
+      "p_upper": 0.001
+     },
+     {
+      "size": 3,
+      "within_bloc_agreement": 0.933,
+      "null_mean": 0.465,
+      "null_ci95": [
+       0.2,
+       0.667
+      ],
+      "p_upper": 0.001
+     }
+    ]
+   }
+  },
+  "comparison": {
+   "group": "comparison",
+   "discussions_with_3plus_regular_voters": 92,
+   "discussion_kinds": {
+    "rm": 65,
+    "rfc": 24,
+    "afd": 3
+   },
+   "regular_voters": 128,
+   "pairs_with_3plus_shared_discussions": 46,
+   "significant_agreement_pairs": {
+    "observed": 0,
+    "expected_by_chance_mean": 0.0,
+    "expected_p95": 0.0,
+    "calibration_worlds": 100
+   },
+   "share_of_pairs_agreeing_80pct_plus": {
+    "observed": 0.348,
+    "null_mean": 0.261,
+    "null_ci95": [
+     0.152,
+     0.391
+    ],
+    "p_upper": 0.1069
+   },
+   "mean_pair_agreement": {
+    "observed": 0.618,
+    "null_mean": 0.656
+   },
+   "blocs": {
+    "count": 0,
+    "sizes": [],
+    "expected_by_chance_mean": 0.0,
+    "expected_p95": 0.0,
+    "detail": []
+   }
+  },
+  "overlap_with_coord_edges": {
+   "coord_edges": 14,
+   "coord_edges_that_are_voting_pairs_with_3plus_shared": 4,
+   "of_which_significant_agreement_pairs": 0,
+   "expected_significant_by_chance": 0.07,
+   "coord_accounts_among_regular_voters": 6,
+   "coord_accounts_in_voting_blocs": 3,
+   "expected_in_blocs_by_chance": 0.32,
+   "expected_p95": 1.0,
+   "p_upper": 0.003
+  }
+ },
+ "q4_overlap": {
+  "definition": "fast reverter = registered non-bot account with 2+ reverts, within 24 h, of topic-article edits that removed (or, as contrast, added) lead critical terms (measured sample since 2021)",
+  "null": "1000 random sets of the same size from all registered topic reverters, matched on revert-count decile",
+  "remove": {
+   "fast_reverters": 33,
+   "coord_edge_accounts": {
+    "set_size": 11,
+    "overlap": 5,
+    "expected_mean": 0.24,
+    "expected_p95": 1.0,
+    "p_upper": 0.001
+   },
+   "voting_bloc_members": {
+    "set_size": 19,
+    "overlap": 8,
+    "expected_mean": 0.36,
+    "expected_p95": 1.0,
+    "p_upper": 0.001
+   },
+   "recurrent_tag_team_accounts": {
+    "set_size": 31,
+    "overlap": "<3",
+    "expected_mean": 0.81,
+    "expected_p95": 2.0,
+    "p_upper": 0.1858
+   }
+  },
+  "add": {
+   "fast_reverters": 44,
+   "coord_edge_accounts": {
+    "set_size": 11,
+    "overlap": 7,
+    "expected_mean": 0.29,
+    "expected_p95": 1.0,
+    "p_upper": 0.001
+   },
+   "voting_bloc_members": {
+    "set_size": 19,
+    "overlap": 8,
+    "expected_mean": 0.42,
+    "expected_p95": 2.0,
+    "p_upper": 0.001
+   },
+   "recurrent_tag_team_accounts": {
+    "set_size": 31,
+    "overlap": "<3",
+    "expected_mean": 0.9,
+    "expected_p95": 3.0,
+    "p_upper": 0.2278
+   }
+  }
+ },
+ "arbcom": {
+  "pages": {
+   "PIA5 case": {
+    "found": true,
+    "earliest_date": "17 August 2024",
+    "latest_date": "23 January 2026"
+   },
+   "PIA5 proposed decision": {
+    "found": true,
+    "earliest_date": "9 December 2024",
+    "latest_date": "24 January 2025"
+   },
+   "PIA4 case": {
+    "found": true,
+    "earliest_date": "25 April 2019",
+    "latest_date": "19 June 2026"
+   },
+   "PIA5 evidence": {
+    "found": true,
+    "earliest_date": "3 January 2008",
+    "latest_date": "21 December 2024"
+   }
+  },
+  "items": [
+   {
+    "page": "PIA5 case",
+    "kind": "finding of fact",
+    "source": "case page (final decision)",
+    "title": "Editor 21 banned",
+    "date": "9 December 2024",
+    "quote": "16) Editor 21 was banned from editing the English Wikipedia by the Arbitration Committee on 9 December 2024 for off-wiki misconduct relating to the PIA topic area.",
+    "remedy_type": null,
+    "side": "not stated in the text",
+    "keywords": [
+     "off-wiki"
+    ]
+   },
+   {
+    "page": "PIA5 proposed decision",
+    "kind": "finding of fact",
+    "source": "proposed decision (may not have passed)",
+    "title": "Editor 21 banned",
+    "date": "9 December 2024",
+    "quote": "16) Editor 21 was banned from editing the English Wikipedia by the Arbitration Committee on 9 December 2024 for off-wiki misconduct relating to the PIA topic area.",
+    "remedy_type": null,
+    "side": "not stated in the text",
+    "keywords": [
+     "off-wiki"
+    ]
+   },
+   {
+    "page": "PIA5 proposed decision",
+    "kind": "finding of fact",
+    "source": "proposed decision (may not have passed)",
+    "title": "Editor 25 behavior",
+    "date": "11 January 2025",
+    "quote": "[redacted] Editor 25 has engaged in disruptive behavior in the PIA topic area, including making specific edits after an off-wiki blogger requested those edits be made (Editor 98 evidence). This comes after they were unblocked by the Arbitration Committee in September 2024, following a January 2024 ArbCom block. In ...",
+    "remedy_type": null,
+    "side": "not stated in the text",
+    "keywords": [
+     "off-wiki"
+    ]
+   },
+   {
+    "page": "PIA5 proposed decision",
+    "kind": "remedy",
+    "source": "proposed decision (may not have passed)",
+    "title": "(heading withheld: may contain an unredacted name)",
+    "date": "12 January 2025",
+    "quote": "20) A [redacted] Subcommittee of the Arbitration Committee is set up for the purposes of resolving conduct disputes within the area of conflict that are too complex for the Arbitration Enforcement noticeboard, but do not require the action of the whole committee. The subcommittee is to be made up of at least 2, but ...",
+    "remedy_type": "editing restriction",
+    "side": "not stated in the text",
+    "keywords": [
+     "mailing list"
+    ]
+   }
+  ],
+  "editors_redacted": 99,
+  "headings_withheld": 1,
+  "redaction_leak_check": "passed"
+ },
+ "verdicts": {
+  "q1": "inconclusive: one guarding signature (speed or concentration) beyond chance, not both",
+  "q2": "no evidence of topic-specific tag-teaming: some pairs recur beyond the shuffle null, but the excess is no larger than on the comparison articles",
+  "q3": "supports bloc voting: more high-agreement pairs and voting blocs than the stance permutation produces (consistent co-voting; on its own this is also what two honest camps produce, it is not proof of off-wiki coordination)",
+  "q4": "inconclusive: fast reverters of critical-term removals overlap coord_edge_accounts, voting_bloc_members beyond matched random sets, but so do fast reverters of critical-term additions: a shared core of very active topic-area accounts, not removal-specific guarding",
+  "q5": "primary source: 4 findings / remedies mention off-wiki coordination, canvassing, Discord, email or proxying (see arbcom.md)"
+ }
+}
