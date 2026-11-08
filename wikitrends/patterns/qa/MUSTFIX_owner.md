@@ -33,3 +33,10 @@
 - Each change in the step-through timeline gets a visual encoding of its essence, from patterns/zionism/change_codes.json (blind double-coded): direction (more vs less critical of Israel/Zionism, or wording only), voice (stated as fact vs attributed), claim type (checkable fact vs contested characterisation). The key highlight: contested characterisation stated as fact.
 - Reader-facing labels are NOT fixed by the owner or by me: the newsroom/editorial agent picks them from change_codes.json "label_options". They must be precise, non-loaded and defensible (no "hostile"; no "alleged" when "attributed" is meant).
 - Keep the stepper's mechanic and look; add the encoding (colour/mark per change, a small legend, and the per-step live text naming the category).
+
+## 6. Tooltips on symbol grids, so the reader never loses their place (owner, round 5)
+- In the language voice grid (#crosslang: the "-> " squares with quote marks, dots, "...", n/a, the ▲/▼ rings) and every similar symbol-based visual (Zionism/Oct 7 stepper marks, network nodes/edges, charge bars, reach rows, scrolly markers), hovering or keyboard-focusing an item shows a tooltip IN PLACE:
+  (a) what the symbol means in plain words (e.g. "attributed -> stated as fact, moved toward Wikipedia's own voice");
+  (b) the source: the exact sentence quoted (original language + English rendering for non-English, RTL where needed), its date/version.
+- Clicking must not jump or scroll away. On touch, a tap opens an anchored popover with a close button; the existing "open the full sentence" panel stays as a secondary action inside the tooltip.
+- Accessible: role="tooltip"/aria-describedby, Esc closes, works at 390px without overflowing the viewport (flip/clamp position).
