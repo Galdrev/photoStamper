@@ -163,6 +163,14 @@ details.stats>.in{display:grid;gap:14px;padding-bottom:18px}
 .findings ul,.findings ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
 .band{margin-top:120px;border-top:3px double var(--ink);padding-top:16px;display:grid;gap:10px;max-width:70ch}
 .band h2{font-size:clamp(26px,3.4vw,36px)}
+.hero .scope{font:400 15px/1.5 var(--body);color:var(--ink-2);max-width:68ch;margin:6px 0 2px;padding:10px 14px;border-left:3px solid var(--topic);background:var(--sheet)}
+.ev-band{margin-top:28px}.ev-part{margin-top:72px}
+.ev-toc{margin:4px 0 0;padding-left:20px;display:grid;gap:8px;font:400 14px/1.55 var(--body);color:var(--ink-2)}
+.kst{font:400 12px/1.45 var(--mono);color:var(--muted);margin:8px 0 0}
+.trust-line{border-left:3px solid var(--ink-2);padding-left:12px}
+#organised #net>.zi-how,#organised #netWinC,#organised .net-strip,#organised .net-ctl:has(#netPre),#organised #net>details.stats,#organised #net .caveat{display:none}
+.zi-opts .o:has(#ziSpeed){display:none}
+.keyd{margin-top:2px}
 
 /* controls */
 .controls{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
@@ -624,7 +632,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
      cards travel through the free band below it, about one screen apart, so every step has
      a moment where the whole chart and the whole active card are on screen together */
   .scrolly .sticky{order:-1;top:calc(env(safe-area-inset-top,0px) + 46px);background:var(--paper);padding-block:4px 6px;margin-inline:-4px;padding-inline:4px;max-height:58vh;max-height:58svh;box-sizing:border-box}
-  .scrolly .steps,#stepsK{gap:80vh;gap:80svh;padding-block:22vh 46vh;padding-block:22svh 46svh;position:relative;z-index:3}
+  .scrolly .steps{gap:80vh;gap:80svh;padding-block:22vh 46vh;padding-block:22svh 46svh;position:relative;z-index:3}
+  #scK .sticky{z-index:6;box-shadow:0 8px 10px -8px rgb(0 0 0/.18)}
+  #stepsK{gap:16vh;gap:16svh;padding-block:4vh 16vh;padding-block:4svh 16svh;position:relative;z-index:3}
   .step{box-shadow:0 6px 24px rgb(0 0 0/.10);background:var(--sheet)}
   .step .go{min-height:44px;padding:12px 0}
   #trend,#es{height:clamp(230px,34vh,320px)!important}
@@ -1173,15 +1183,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <div id="tip" hidden></div>
 <div id="gloss" role="tooltip" hidden></div>
-<nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The report</a><a href="#lab" id="tabLab" aria-current="false">Data lab</a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
+<nav class="tabs" aria-label="Views"><div class="tabs-in"><a href="#report" id="tabReport" aria-current="page">The story</a><a href="#evidence" id="tabEv" aria-current="false">Evidence room</a><a href="#lab" id="tabLab" aria-current="false">Data lab</a><span class="tabs-name">Wikipedia Framing Drift</span></div></nav>
 <div class="wrap">
 <div id="view-report">
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; a revision study</span><span id="mastRange">English Wikipedia · 1 Jan 2021 – 5 Nov 2026</span></div>
 
 <header class="hero">
-  <div class="eyebrow">How English Wikipedia retold Israel’s story, 2021–2026</div>
+  <div class="eyebrow">How the world’s reference retold Israel’s story, 2021–2026</div>
   <h1>Zionism, “through colonization”. Israel “began committing genocide”. How the reference the world reads now tells Israel’s story.</h1>
-  <p class="deck" id="deck">English Wikipedia is the text millions of people read first; its Israel article had 4.6 million views in the last 12 months. That article now says, in Wikipedia’s own voice: “After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.” The next sentence is Israel’s denial. Zionism is now a movement for “a Jewish homeland through colonization”; the Nakba is “the ethnic cleansing of Palestinian Arabs by Zionists”; and the hostages have never been in the first sentence of the October 7 article. The change sits in the pages people read first: since July 2023 about one in ten of the subject’s Top-importance articles (10.3% of 121 sampled) gained terms such as genocide, apartheid, occupation or colonial in their opening paragraph, about any party, against 4.4% on other conflicts; the long tail moved no more than elsewhere. The test we wrote down first, an average over all articles, found no rise (<a href="#board">How far to trust this</a>). We start with one sentence. <a href="#reads">Or see all seven, then and now ↓</a></p>
+  <p class="deck" id="deck">English Wikipedia is the text millions of people read first; its Israel article had 4.6 million views in the last 12 months. That article now says, in Wikipedia’s own voice: “After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.” The next sentence is Israel’s denial. Zionism is “a Jewish homeland through colonization”; the Nakba is “the ethnic cleansing of Palestinian Arabs by Zionists”; Hamas is “a political organisation with a military wing”. Many of these lines moved in the weeks after battles.</p>
+  <p class="scope"><b>What this covers.</b> The core articles that carry the narrative and that people actually read: Zionism, Israel, 1948 and the Nakba, October 7, Hamas, the Gaza war and the charges against Israel. The long tail of short pages on villages and minor figures is not where the story is. Every quote is exact and dated; the charts behind it are in the <a href="#evidence">evidence room</a>.</p>
   <p class="cap">Published 8 November 2026 · Wikipedia text as of 5 November 2026 · Opening sections change daily; every quote is dated.</p>
 </header>
 
@@ -1189,20 +1200,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <header>
     <div class="eyebrow"><span class="layer">CONTENT</span>One sentence, 292 edits</div>
     <h2 id="ziH">Zionism was the “re-establishment” of a Jewish state. Now it is “a Jewish homeland through colonization”.</h2>
-    <p class="means bl"><b>Bottom line:</b> The encyclopedia’s one-line answer to “what is Zionism?” no longer calls it a return; it now says a homeland “through colonization”, and nearly every attempt to take that word out was undone (37 of the 41 removals whose before-and-after text is stored).</p>
-    <p class="deck">In January 2021 English Wikipedia defined Zionism as a movement for “the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel”. Today it is “an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine”. Where both versions of the sentence are stored, “colonial” or “colonization” was written into the first sentence 44 times and taken out 41 times, all since June 2024; 37 of those 41 removals were undone, and the word has stood since 27 August 2026.</p>
-    <p class="deck">The chips are the article’s own words, removed or added. Then step through the timeline, one edit at a time.</p>
+    <p class="means bl"><b>Bottom line:</b> The encyclopedia’s one-line answer to “what is Zionism?” no longer calls it a return; it says a homeland “through colonization”, and nearly every attempt to take that word out was undone (37 of the 41 removals whose before-and-after text is stored).</p>
+    <p class="deck">In January 2021 it spoke of “the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel”. Where both versions are stored, “colonial” or “colonization” was written into it 44 times and taken out 41 times, all since June 2024; the current wording has stood since 27 August 2026. Below, the words that went and came; then step through every change.</p>
   </header>
   <div class="zi-sum" id="ziSum"></div>
-  <div class="wow-grid" id="ziPair"></div>
-  <div class="wow-key"><span><del>amber, struck through</del> = words in 2021 that are gone now</span><span><ins>blue</ins> = words that are new since 2021</span></div>
-  <details class="stats zi-rest" id="ziRest"><summary>The rest of the opening section <span id="ziRestN"></span></summary><div class="in"></div></details>
   <figure class="fig zi-fig" id="ziFig" style="margin:0">
     <div class="fig-h"><span class="fig-t">Every change to the first sentence, 2021 to now</span><span class="cap">Step, play, or tap the chart. Arrow keys work too.</span></div>
     <p class="zi-how"><b>How to read this:</b> time runs left to right; the blue bar shows when “colonial” or “colonization” was in the first sentence, each gap a removal; the vertical line is the change shown below.</p>
     <ol class="zi-phases" id="ziPhases" aria-label="Phases, computed from the changes"></ol>
     <div class="chart" id="ziChart" tabindex="0" role="group" aria-label="Timeline of first-sentence changes to the Zionism article. Left and right arrow keys step through changes; space plays or pauses."></div>
-    <div class="legend" id="ziKey"></div>
+    <details class="stats keyd"><summary>Full key <span>every mark in the chart</span></summary><div class="in"><div class="legend" id="ziKey"></div></div></details>
     <div class="zi-jumps"><span class="lab" id="ziJumpL">Jump to</span><ul id="ziMoments" aria-labelledby="ziJumpL"></ul></div>
     <div class="zi-opts">
       <div class="o"><span class="lab" id="ziModeL">Step through</span><div class="seg" id="ziMode" role="group" aria-labelledby="ziModeL"><button type="button" data-v="key" aria-pressed="true">Key moves</button><button type="button" data-v="all" aria-pressed="false">Every change</button></div></div>
@@ -1221,37 +1228,159 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <i class="zi-sent" aria-hidden="true"></i>
     <p class="zi-sr" id="ziLive" aria-live="polite" aria-atomic="true"></p>
   </figure>
-  <p class="means" id="ziMeans"></p>
   <button class="inlab" type="button" data-intent='{"lab":"flip","title":"Zionism"}'>Drag through every version of this sentence in the data lab →</button>
+</section>
+
+<section class="sec" id="after" aria-labelledby="afH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>After the battles</div>
+    <h2 id="afH">After the battles, the opening lines moved: Hamas lost “militant” five days after October 7, and October 7 became “armed incursions” within nine weeks</h2>
+    <p class="means bl"><b>Bottom line:</b> In the weeks after the big escalations the definitions of Hamas, October 7, the Nakba, Zionism and the Gaza war changed (dated below); most first tries bounced, and today’s wordings settled in 2025 and 2026. Timing, not proof of cause.</p>
+    <p class="deck">Pale bars: new critical terms (genocide, apartheid, occupation, colonial, ethnic cleansing, Nakba) written each week into the opening paragraphs of 4,642 core Israel, Palestine and Jewish-history articles; solid: the part still there a week later. Red lines: battles. Each card is one battle and what changed after it.</p>
+  </header>
+  <div class="scrolly" id="scK">
+    <div class="steps" id="stepsK"></div>
+    <figure class="sticky fig kfig" style="margin:0">
+      <div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="cap" id="kSub"></span></div>
+      <div class="chart" id="kChart" style="height:clamp(270px,48vh,420px)"></div>
+      <div class="legend" id="kKey"></div>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="charge" aria-labelledby="chargeH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>The charge</div>
+    <h2 id="chargeH">Israel “began committing genocide”: a charge absent in 2021 is now stated as fact in the encyclopedia’s own voice</h2>
+    <p class="means bl"><b>Bottom line:</b> Among the 150 most-read opening sections that existed in 2021, no sentence charged Israel with genocide in January 2021 or July 2023; seven do now, two in Wikipedia’s own voice: Israel and Benjamin Netanyahu (quoted below).</p>
+    <p class="deck">“Genocide” has stood in the Israel article since 4 May 2025; eight earlier insertions from November 2023 did not last, the longest 18.9 days. Killing charges rose on both sides, against Israel from 9 to 26 sentences and against Hamas or Palestinians from 8 to 23, so the share of harm sentences naming Israel moved little (23.6% to 26.4%). What changed is the charge.</p>
+  </header>
+  <div class="news-q">
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Israel, opening section, now · Wikipedia’s own voice</span><span class="s">“After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.”</span><span class="cap">The next sentence: “Israel has denied that its actions constitute genocide.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Benjamin Netanyahu, opening section, now · no denial</span><span class="s">“Netanyahu's government has been orchestrating the Gaza genocide, culminating in the South Africa v. Israel case before the International Court of Justice (ICJ) in December 2023”</span></blockquote>
+  </div>
+  <p class="cap">Every charge, side and voice, sentence by sentence: <a href="#ppFig">the charge chart in the evidence room</a>.</p>
+</section>
+
+<section class="sec" id="oct7" aria-labelledby="o7H">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>October 7, Hamas and the hostages</div>
+    <h2 id="o7H">October 7 is “armed incursions” in the first sentence. The hostages have never been in it. Hamas’s terror designation moved to the end.</h2>
+    <p class="means bl"><b>Bottom line:</b> The facts of October 7 are in the opening section, but its first sentence calls the attack “a series of coordinated armed incursions”; Hamas’s terror-designation sentence went from sentence 5 to 22 of 23 (chart below).</p>
+    <p class="deck">Across 107 versions of October 7’s first sentence, “massacre” stood for about an hour in total, “terror” for 0.2 days, the hostages never; they are in sentence 9. By 31 October 2026 the designation sentence named no country: “Several countries have designated Hamas as a terrorist organisation.” (The edit is days old and may be reverted.)</p>
+  </header>
+    <figure class="fig" style="margin:0"><div class="fig-h"><span class="fig-t">Where the terror designation sits in the Hamas opening section</span><span class="cap">0 = first word, 1 = last word</span></div><div id="o7Pos"></div></figure>
+  <p class="cap">Every change to the Hamas, October 7 and Gaza genocide first sentences, step by step, is in the <a href="#o7Fig">evidence room</a>.</p>
+</section>
+
+<section class="sec" id="palestine" aria-labelledby="palH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>1948 and the Nakba</div>
+    <h2 id="palH">1948 now has a perpetrator: the Nakba is “the ethnic cleansing of Palestinian Arabs by Zionists”, in Wikipedia’s own voice</h2>
+    <p class="means bl"><b>Bottom line:</b> Wikipedia’s 1948 now names who drove the Palestinians out, “Zionists” or “Zionist forces”, in the Nakba, 1948 Palestine war and 1948 Arab–Israeli War articles, while the Jews who “fled or were expelled from Arab states” still have no one named.</p>
+    <p class="deck">In 2023 the 1948 Palestine war said “During the war, around 700,000 Palestinian Arabs were displaced.” It now says “During the war, Zionist forces conquered about 78% of the former territory of the mandate, causing the expulsion and flight of over 700,000 Palestinians.” The same article still says “Hundreds of thousands of Jews fled or were expelled from Arab states”, with no agent. The Nakba’s first sentence has said “by Zionists” since 6 July 2026.</p>
+  </header>
+  <div class="news-q">
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba, 2021 and 2026 · The 2021 version also took a position.</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.”</span></blockquote>
+  </div>
+</section>
+
+<section class="sec" id="crosslang">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>Other languages <span class="xchip">Exploratory</span></div>
+    <h2>Outside English, “genocide” is now stated as fact in Spanish, Portuguese and Arabic. Hebrew’s Gaza-war article mentions it only as South Africa’s court case.</h2>
+    <p class="means bl"><b>Bottom line:</b> The other Wikipedias do not tell one story: on genocide, Spanish, Portuguese and Arabic now use their own voice, as English does, Dutch pulled back, and Hebrew reports only South Africa’s case; on Zionism, “colonization” entered five editions and stayed out of six, Hebrew among them. </p>
+    <p class="deck">Spanish also opens its Gaza-war article by calling October 7 “un ataque de represalia”, a retaliatory attack.</p>
+  </header>
+  <figure class="fig xm-keep" id="xmFig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">How each Wikipedia voices eight claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Each square opens its sentence.</span></div>
+    <p class="zi-how"><b>How to read this:</b> in each cell the small square is the first copy and the large square is now (October 2026); the full key is below the grid.</p>
+    <p class="xm-ik" id="xmIK" aria-hidden="true"></p>
+    <div class="xm-opts"><span class="lab" id="xmModeL">Show</span><div class="seg" id="xmMode" role="group" aria-labelledby="xmModeL"><button type="button" data-v="both" aria-pressed="true">Then → now</button><button type="button" data-v="now" aria-pressed="false">Now only</button><button type="button" data-v="then" aria-pressed="false">Then only</button></div><span class="cap">A ring marks a cell that changed: ▲ toward Wikipedia’s own voice, ▼ away from it.</span></div>
+    <div class="xm-scroll hscroll" id="xmScroll"></div>
+    <p class="xm-swipe" id="xmSwipe" aria-hidden="true" hidden></p>
+    <details class="stats keyd"><summary>Full key <span>every square and mark</span></summary><div class="in"><div class="legend xm-legend" id="xmKey"></div></div></details>
+    <details class="stats"><summary>Our coding <span>each column</span></summary><div class="in">
+    <p class="cap" id="xmNote"></p>
+</div></details>
+  </figure>
+  <p class="cap">A square opens its sentence, in the original with our translation, in the evidence room’s reader.</p>
+</section>
+
+<section class="sec" id="against" aria-labelledby="agH">
+  <header>
+    <div class="eyebrow">The other direction</div>
+    <h2 id="agH">Some edits went the other way, far fewer</h2>
+    <p class="means bl"><b>Bottom line:</b> For every critical term that left a topic opening paragraph, almost four came in (61 out, 223 in). The ones that went the other way are real edits, listed here with their dates.</p>
+  </header>
+  <ul class="short-row">
+    <li><b>1948 Palestinian expulsion and flight.</b> In 2023 its first sentence said Palestinian Arabs “were expelled or fled from their homes by Zionist militias”; since May 2025 it says they “were expelled or fled from their homes”, and names the paramilitaries in the next sentence.</li>
+    <li><b>Israeli settlement.</b> 2021: “... built in violation of international law on lands occupied by Israel ...”. 2026: “The international community considers Israeli settlements to be illegal under international law, but Israel disputes this.”</li>
+    <li><b>Antisemitism.</b> Mentioned in 54 topic opening paragraphs, up from 37, including the Israel article (we did not code what those sentences say).</li>
+    <li><b>Zionism as settler colonialism.</b> The attribution was pulled back from “its founders and early leaders, as well as several scholars” to “some scholars”, edit summary “more NPOV”.</li>
+  </ul>
+</section>
+
+<section class="sec" id="organised" aria-labelledby="orgSH">
+  <header>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>Organised or organic?</div>
+    <h2 id="orgSH">A few small groups of veteran editors kept returning to the same pages. Our tests found no campaign footprint.</h2>
+    <p class="means bl"><b>Bottom line:</b> Nine accounts made 48 of the 216 traced first-sentence changes on the 25 key articles (on comparison key articles, none). Wikipedia’s arbitration committee is reported to have sanctioned off-wiki canvassing on both sides; we could not check its case pages, and our tests could only see a very large campaign.</p>
+    <p class="deck">The graph links anonymous accounts (A1, A2…) that changed critical terms on the same articles more often than chance: 14 linked pairs on topic pages, where chance gives about 2. None edited within 10 minutes of another; no sentence was pasted into five or more articles. Regulars with shared watchlists look like this; so would a coordinated group. No account is identified.</p>
+  </header>
+  <div id="net"><!--NETWORK: build_page.py inlines patterns/coord/chart_data/network.json as R.network when present; otherwise this renders the "analysis running" placeholder--></div>
+  <p class="cap">What ArbCom is reported to have found, our timing tests and every caveat: <a href="#orgRec">in the evidence room</a>.</p>
+</section>
+
+<section class="sec" id="trust" aria-labelledby="trustH">
+  <header>
+    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>How far to trust this</div>
+    <h2 id="trustH">This measures what the encyclopedia says, not whether it is true</h2>
+    <p class="means bl"><b>Bottom line:</b> Every quote is exact and dated; the counts show what changed, where and when, not who is right or why any editor acted.</p>
+  </header>
+  <p class="deck col trust-line"><b>One honest limit.</b> Across all 49,000 articles in these projects, most are short pages whose opening paragraphs gained no critical term; averaged over all of them, the change is no larger than in other conflicts’ articles. The story is in the core pages above.</p>
+  <section class="canbox" aria-label="What this study can and can't tell you">
+    <div class="yes"><h3>What this study can tell you</h3><ul>
+      <li>Whether critical vocabulary (genocide, apartheid, colonial…) became more common in these articles, and whether Jewish-history vocabulary (homeland, indigenous, antisemitism…) did too.</li>
+      <li>Whether that change was bigger than in articles about other countries and conflicts.</li>
+      <li>When the wording changed, and in which sentences.</li></ul></div>
+    <div class="no"><h3>What it can’t tell you</h3><ul>
+      <li>It measures how wording changed. It does not check whether the wording is true.</li>
+      <li>It can’t tell who is right about the conflict.</li>
+      <li>Patterns in who edits, and when, are not proof that people worked together.</li></ul></div>
+  </section>
+  <p class="cap"><a href="#evidence">Open the evidence room</a>: every chart in full, the method, the samples, the checks, and the results we dropped.</p>
+</section>
+
+</div>
+<div id="view-evidence" hidden>
+<div class="band ev-band" id="evidence-top">
+  <div class="eyebrow">Evidence room</div>
+  <h2>The evidence behind the story</h2>
+  <p class="deck">Part 1 goes deeper into each section of the story, with every chart in full. Part 2 is how it was measured: samples, method, checks, and what we dropped.</p>
+  <ol class="ev-toc">
+    <li><a href="#ev1">Part 1 · Deeper into the story</a>: <a href="#ev-zionism">Zionism</a> · <a href="#ppFig">the charge</a> · <a href="#o7Fig">October 7 and Hamas</a> · <a href="#ev-1948">1948</a> · <a href="#ev-xl">languages</a> · <a href="#ev-against">the other direction</a> · <a href="#reads">seven sentences</a> · <a href="#when">timing</a> · <a href="#news">history, places, people</a> · <a href="#ev-organised">organised or organic</a></li>
+    <li><a href="#ev2">Part 2 · Method and checks</a>: <a href="#board">the full record</a> · <a href="#reach">core and long tail</a> · <a href="#limits">samples and limits</a> · <a href="#method">method</a> · <a href="#checks">checks</a> · <a href="#ledger">every article</a></li>
+  </ol>
+</div>
+
+<div class="band ev-part" id="ev1"><div class="eyebrow">Part 1</div><h2>Deeper into the story</h2></div>
+
+<section class="sec" id="ev-zionism" aria-labelledby="evZiH">
+  <header><div class="eyebrow">Zionism</div><h2 id="evZiH">Both versions word by word, the rest of the opening section, and how changes were counted</h2></header>
+  <div class="wow-grid" id="ziPair"></div>
+  <div class="wow-key"><span><del>amber, struck through</del> = words in 2021 that are gone now</span><span><ins>blue</ins> = words that are new since 2021</span></div>
+  <details class="stats zi-rest" id="ziRest"><summary>The rest of the opening section <span id="ziRestN"></span></summary><div class="in"></div></details>
+  <p class="means" id="ziMeans"></p>
   <details class="stats"><summary>More <span>the fight, and how changes were counted</span></summary><div class="in">
   <p class="cap" id="ziNote"></p>
     <p>The 2021 version also took a position: “re-establishment” is the movement’s own account of a return; the word left the first sentence for the last time on 9 July 2024. Almost every removal of “colonization” was undone: 37 of the 41 removals we can check, where both versions of the sentence were kept. The current wording is as of 5 November 2026. The article was edited by 455 different accounts between January 2021 and November 2026. The sentence did not settle until almost three years after October 2023. It is not the only sentence that changed.</p>
 </div></details>
 </section>
 
-<section class="sixty" id="sixty" aria-labelledby="sixtyH">
-  <div class="eyebrow">Key findings</div>
-  <h2 id="sixtyH">What the encyclopedia now says: six findings</h2>
-  <div class="cards" id="cards"></div>
-  <p class="cap cards-hint">Swipe for more →</p>
-  <p class="cap col cards-note">Cards 1 to 4 are exact, dated sentences; 5 and 6 are estimates with ranges, from a second stage that was not pre-registered. The pre-registered average test found no rise (<a href="#board">How far to trust this</a>).</p>
-</section>
-
-<section class="sec" id="charge" aria-labelledby="chargeH">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>The charge <span class="xchip">150 most-read articles that existed in 2021 · exact sentences</span></div>
-    <h2 id="chargeH">Israel “began committing genocide”: a charge absent in 2021 is now stated as fact. The share of blame barely moved.</h2>
-    <p class="means bl"><b>Bottom line:</b> Israel’s share of the blame barely moved (23.6% to 26.4%) even as every side drew more harm sentences; what changed is the charge. Genocide, absent in 2021 and in July 2023, is now stated as fact in the opening sections of Israel and Benjamin Netanyahu.</p>
-    <p class="deck">We coded every sentence about violence, harm, displacement, legal charges or rights in the 150 most-read opening sections that existed in January 2021, at three dates: January 2021, July 2023 and now (5 November 2026). The share that names Israel, Israelis, Jews or Zionists as the one doing the harm was 23.6%, 24.1% and 26.4%: a change of +2.8 points (range −1.9 to +8.3), inside the margin of error. The charge changed. Genocide: 0 sentences in 2021, 0 in July 2023, 7 now, plus Israel’s denial. Two are in Wikipedia’s own voice. In the Israel article the next sentence is “Israel has denied that its actions constitute genocide.” The Netanyahu article says “Netanyahu's government has been orchestrating the Gaza genocide, culminating in the South Africa v. Israel case before the International Court of Justice (ICJ) in December 2023” and carries no denial.</p>
-  </header>
-  <details class="stats"><summary>More <span>apartheid, killing, labels, occupation, attribution</span></summary><div class="in">
-    <p>Newer articles such as October 7 attacks, Gaza war and Gaza genocide are not in this count; the next section covers them. These are simply the most-read pages, so Hitler, the Holocaust and Anne Frank sit next to Israel, Hamas and Gaza.</p>
-    <p>The word “genocide” has stood in the Israel article since 4 May 2025; eight earlier insertions from November 2023 did not last, the longest 18.9 days. Until October 2026 the denial read “Israel and its allies, including the United States, deny...”; the United States has since been dropped. Five sentences attribute the charge to scholars, international lawyers or rights groups; two of those use verbs that present it as settled (Palestine: “recognised as constituting genocide ... by a growing scholarly consensus”; Gaza–Israel conflict: “Many scholarly sources and international organizations have concluded”). Apartheid: 0, 1, 4 sentences, one in Wikipedia’s own voice. Apartheid is an older layer: across the topic articles the word rose 39% from 2021 to 2023 and 7% after. Killing and massacre charges rose on both sides: against Israel 9, 10 and 26 sentences; against Hamas or Palestinians 8, 8 and 23, nearly all in Wikipedia’s own voice. The encyclopedia did not stop saying that Hamas kills Israelis. What faded on that side is the label: one overview article’s “terrorist attacks by Palestinian militants” became “Palestinian political violence”. Own-voice “terrorist” is not reserved for one side: Baruch Goldstein is now “a Jewish terrorist and mass murderer”. Among these 150, no sentence charges Hamas or Palestinians with genocide or apartheid at any date. Outside them, the October 7 attacks article, created in 2023, carries an attributed one: “Some have alleged that the attack was an act of genocide or a genocidal massacre against Israelis.”</p>
-    <p>Occupation is more often stated in Wikipedia’s own voice: 16 of 35 occupation charges against Israel in 2021, 18 of 35 in July 2023 and 44 of 55 now (46%, 51%, 80%). The same move happened to Russia in Crimea and Turkey in northern Cyprus, on small counts (2 of 8, 7 of 10, 14 of 19: 25%, 70%, 74%). Many of the new ones are history (the 1967 war, Suez) and events of 2024 to 2026; the legal-status sentences that changed are in the West Bank and Israel opening sections (“under Israeli occupation, which is illegal under international law”; “Israel's illegal occupation of the Palestinian territories”). We did not test whether this shift followed the ICJ’s July 2024 advisory opinion; across all topic articles, legal events did not raise new critical wording (<a href="#when">Timing</a>). The 50 most-read articles on other disputes (Ukraine, Karabakh, Northern Ireland, Kosovo, Cyprus, Kashmir) gained no new genocide charge against any state; their 5 genocide sentences are historical. This is context, not a matched control: none has a war on the Gaza scale with an ICJ genocide case.</p>
-<p class="means"><b>What this means:</b> genocide went from absent to stated as fact in the Israel and Netanyahu opening sections, which no other dispute we compared saw. Stating genocide in Wikipedia’s own voice is common on atrocity articles (of 11 we checked by hand, an anecdote, not a sample, 4 did so in 2023 and 9 do now); Gaza differs in speed and reach, not in the label itself. “Own voice” is a coding judgement on exact sentences; it says what the encyclopedia states, not who is right.</p>
-    <p>New critical terms were attributed more often than the old ones: across the 10,000-article crawl the share with a source named rose from 21% to 25% in topic articles, while comparison articles stayed at 17%. Still, three in four loaded words are stated in Wikipedia’s own voice. A few flagship opening sentences later dropped the attribution, as Gaza genocide did (next section).</p>
-    <p class="cap">Counts are exact sentences in 150 opening sections (topic: the most-read articles that existed in January 2021, so October 7 attacks, Gaza war and Gaza genocide are not included) and 50 (other disputes, side A: the state named first, mostly Russia, Azerbaijan or Turkey). The coding was done and checked by the same coder, an AI model reading every sentence, on 100 re-checked rows: 98% precision on who is named, 99% on voice. That is a self-check, not an independent second coder; a separate QA re-check of 40 random rows agreed on 39 of 40 for voice. The chart counts sentences; a sentence can hold two charges, so our clause counts for killing now run one higher (27 against Israel, 24 against Hamas or Palestinians). Leads change daily; “now” is the last revision before 5 November 2026.</p>
-</div></details>
+<section class="sec" id="ev-charge" aria-labelledby="evChH">
+  <header><div class="eyebrow">The charge</div><h2 id="evChH">Who is charged with what, and in whose voice</h2>
+    <p class="deck">We coded every sentence about violence, harm, displacement, legal charges or rights in the 150 most-read opening sections that existed in January 2021, at three dates: January 2021, July 2023 and now (5 November 2026). The share that names Israel, Israelis, Jews or Zionists as the one doing the harm was 23.6%, 24.1% and 26.4%: a change of +2.8 points (range −1.9 to +8.3). Genocide: 0 sentences in 2021, 0 in July 2023, 7 now, plus Israel’s denial.</p></header>
   <figure class="fig pp" id="ppFig" style="margin:0">
     <div class="fig-h"><span class="fig-t">Who is charged with what, and in whose voice: sentences in the opening sections, 2021 · July 2023 · now</span><span class="cap">Tap a bar to read the sentences behind it.</span></div>
     <p class="zi-how"><b>How to read this:</b> rows are charges, columns sides; the three bars in each cell are January 2021, July 2023 and now. Solid: Wikipedia’s own voice. Pale and striped: attributed, or a denial. Each row has its own scale (its maximum is under the charge name); the bars in a row share it.</p>
@@ -1266,27 +1395,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <blockquote><span class="w"><i style="background:var(--ink-2)"></i>Counter-example · Gaza–Israel conflict, now · Wikipedia’s own voice</span><span class="s">“On 7 October 2023, Palestinian militants attacked Israel, killing 1,195 people (mostly civilians), committing war crimes, taking hostages, and beginning the Gaza war.”</span></blockquote>
     <blockquote><span class="w"><i style="background:var(--ink-2)"></i>Counter-example · 1948 Palestine war, now</span><span class="s">“During the war, massacres and acts of terror were conducted by both sides.”</span></blockquote>
   </div>
-  <p class="handoff">The charge became genocide. The attack that began the war became “armed incursions”.</p>
+  <details class="stats"><summary>More <span>apartheid, killing, labels, occupation, attribution</span></summary><div class="in">
+    <p>Newer articles such as October 7 attacks, Gaza war and Gaza genocide are not in this count; the next section covers them. These are simply the most-read pages, so Hitler, the Holocaust and Anne Frank sit next to Israel, Hamas and Gaza.</p>
+    <p>The word “genocide” has stood in the Israel article since 4 May 2025; eight earlier insertions from November 2023 did not last, the longest 18.9 days. Until October 2026 the denial read “Israel and its allies, including the United States, deny...”; the United States has since been dropped. Five sentences attribute the charge to scholars, international lawyers or rights groups; two of those use verbs that present it as settled (Palestine: “recognised as constituting genocide ... by a growing scholarly consensus”; Gaza–Israel conflict: “Many scholarly sources and international organizations have concluded”). Apartheid: 0, 1, 4 sentences, one in Wikipedia’s own voice. Apartheid is an older layer: across the topic articles the word rose 39% from 2021 to 2023 and 7% after. Killing and massacre charges rose on both sides: against Israel 9, 10 and 26 sentences; against Hamas or Palestinians 8, 8 and 23, nearly all in Wikipedia’s own voice. The encyclopedia did not stop saying that Hamas kills Israelis. What faded on that side is the label: one overview article’s “terrorist attacks by Palestinian militants” became “Palestinian political violence”. Own-voice “terrorist” is not reserved for one side: Baruch Goldstein is now “a Jewish terrorist and mass murderer”. Among these 150, no sentence charges Hamas or Palestinians with genocide or apartheid at any date. Outside them, the October 7 attacks article, created in 2023, carries an attributed one: “Some have alleged that the attack was an act of genocide or a genocidal massacre against Israelis.”</p>
+    <p>Occupation is more often stated in Wikipedia’s own voice: 16 of 35 occupation charges against Israel in 2021, 18 of 35 in July 2023 and 44 of 55 now (46%, 51%, 80%). The same move happened to Russia in Crimea and Turkey in northern Cyprus, on small counts (2 of 8, 7 of 10, 14 of 19: 25%, 70%, 74%). Many of the new ones are history (the 1967 war, Suez) and events of 2024 to 2026; the legal-status sentences that changed are in the West Bank and Israel opening sections (“under Israeli occupation, which is illegal under international law”; “Israel's illegal occupation of the Palestinian territories”). The 50 most-read articles on other disputes (Ukraine, Karabakh, Northern Ireland, Kosovo, Cyprus, Kashmir) gained no new genocide charge against any state; their 5 genocide sentences are historical. This is context, not a matched control: none has a war on the Gaza scale with an ICJ genocide case.</p>
+<p class="means"><b>What this means:</b> genocide went from absent to stated as fact in the Israel and Netanyahu opening sections, which no other dispute we compared saw. Stating genocide in Wikipedia’s own voice is common on atrocity articles (of 11 we checked by hand, an anecdote, not a sample, 4 did so in 2023 and 9 do now); Gaza differs in speed and reach, not in the label itself. “Own voice” is a coding judgement on exact sentences; it says what the encyclopedia states, not who is right.</p>
+    <p>New critical terms were attributed more often than the old ones: across the 10,000-article crawl the share with a source named rose from 21% to 25% in topic articles, while comparison articles stayed at 17%. Still, three in four loaded words are stated in Wikipedia’s own voice. A few flagship opening sentences later dropped the attribution, as Gaza genocide did (next section).</p>
+    <p class="cap">Counts are exact sentences in 150 opening sections (topic: the most-read articles that existed in January 2021, so October 7 attacks, Gaza war and Gaza genocide are not included) and 50 (other disputes, side A: the state named first, mostly Russia, Azerbaijan or Turkey). The coding was done and checked by the same coder, an AI model reading every sentence, on 100 re-checked rows: 98% precision on who is named, 99% on voice. That is a self-check, not an independent second coder; a separate QA re-check of 40 random rows agreed on 39 of 40 for voice. The chart counts sentences; a sentence can hold two charges, so our clause counts for killing now run one higher (27 against Israel, 24 against Hamas or Palestinians). Leads change daily; “now” is the last revision before 5 November 2026.</p>
+</div></details>
 </section>
 
-<section class="sec" id="oct7" aria-labelledby="o7H">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>October 7, Hamas and the hostages</div>
-    <h2 id="o7H">October 7 is “armed incursions” in the first sentence. The hostages have never been in it.</h2>
-    <p class="means bl"><b>Bottom line:</b> The facts of October 7, the toll, the hostages and the massacres, are in the opening section, but its first sentence calls the attack “a series of coordinated armed incursions”, and the hostages have never reached that sentence.</p>
-    <p class="deck">The encyclopedia’s one-line answer to “what was October 7?” is “a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups” (since 8 October 2026). Across 107 versions, “massacre” stood in that first sentence for about an hour in total, “terror” for 0.2 days, the death toll for 1.2 days, and the hostages never. Other editions choose differently: in their first sentences now, Hebrew calls it an attack, a massacre and terror, and German, French, Italian and Dutch use terror; English says only “incursions” (by our word list; <a href="#crosslang">Other languages</a>).</p>
-    <p class="deck">Further down, the opening section says Hamas was “massacring civilians in 21 communities” (sentence 4), that “at least 1,195 people were killed” (sentence 7) and that “251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip” (sentence 9). It once said “Israel and international media have reported rape and sexual assault by Hamas fighters” (1 January 2024); it now says “Numerous sources have reported dozens of cases of rape and sexual assault”, naming no perpetrator (2 November 2026). The article’s own short description, shown in search results and apps, says “2023 armed incursions and massacres in Israel”, and sub-articles such as Be’eri massacre say “massacre” in their first sentence: the main sentence is a choice, not a lack of sources.</p>
-    <p class="deck">Hamas. “Militant” left the definition on 12 October 2023, replaced by “military”, five days after the attack, in the month the article was read 8,236,474 times. Hamas is now “a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades”. “Terrorist” was written into the definition five times; the longest lasted about 2.4 hours. The sentence naming the countries that designate Hamas a terrorist organisation moved from sentence 5 of 20 (2021) to sentence 22 of 23 (October 2026), and by 31 October 2026 named no country (the edit falls between 1 and 31 October and may be reverted): “Several countries have designated Hamas as a terrorist organisation.” Neither the Hamas nor the Israel opening section mentions the hostages.</p>
-  </header>
-  <details class="stats"><summary>More <span>sexual violence, Hannibal, the Gaza war, Gaza genocide</span></summary><div class="in">
-    <p>The killing is described plainly in the second paragraph of the October 7 article (“massacring civilians in 21 communities”), and the opening section gives the toll (at least 1,195 killed), the hostages (251) and that the governments of 44 countries described the attack as terrorism. On 1 January 2024 the opening section said “Israel and international media have reported rape and sexual assault by Hamas fighters with documentary footage and photographs, which Hamas has denied.” On 2 November 2026 it says “Numerous sources have reported dozens of cases of rape and sexual assault.” That sentence no longer names who committed them. It now also says the IDF used the Hannibal Directive that day, which “may have led to at least 13 Israeli civilian deaths”. In October 2026 a clause calling Israel’s response genocide was removed from sentence 2. Since 26 May 2025 the Gaza war’s first sentence has named Hamas for less than two days in total; Hamas, the toll and the hostages are in sentence 2. The same day, the October 7 article’s title dropped “Hamas-led”. We found nothing linking the two edits, and the shorter title matches common usage.</p>
-    <p>Hamas: “militant” left on 12 October 2023 and came back three times (1 to 2 August 2024; 19 to 31 August 2024, as “militant wing”; 12 to 18 February 2025); it has been absent from the whole opening section since 11 December 2025. The five “terrorist” insertions add up to under six hours in three years. “Resistance movement” got in once, on 1 August 2024, and was gone the next day. The “Several countries” edit is days old and may be reverted.</p>
-<p>Gaza genocide. The first sentence went from “Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians” (1 January 2024), through “accused” and “according to”, to Wikipedia’s own voice. The current sentence has stood since 26 September 2025: “The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.” Since then, 10 edits tried to bring back attribution; each was gone within 45 minutes.</p>
-    <p>Gaza genocide: short-lived own-voice wordings came and went from July 2024. Before the own-voice step, the first sentence had named each outside finding as it appeared: Amnesty International (December 2024), Human Rights Watch (December 2024), B’Tselem (July 2025), the International Association of Genocide Scholars (August 2025) and the UN Commission of Inquiry (16 September 2025). The opening section still gives Israel’s view near its end: “Israel and its supporters maintain that its actions do not constitute genocide”. The reverted attribution attempts read, for example, “has been described by most scholars as” and “the alleged ongoing”. The genocide charge against Hamas for October 7 stays attributed: “Some have alleged that the attack was an act of genocide or a genocidal massacre against Israelis.”</p>
-<p class="means"><b>What this means:</b> the facts about October 7 are in the opening sections, often in fuller form than in 2024. What moved is their place and their grammar: the first sentence says “armed incursions” and leaves out the hostages; Hamas is a political organisation first; the designation is near the end; and the genocide charge against Israel is stated as fact in the Gaza genocide, Israel and Netanyahu articles, while the one against Hamas is “alleged”.</p>
-    <p>Nine armed groups, chosen by hand, not a sample: “terrorist” also left the first sentences of Islamic State, al-Shabaab and Boko Haram, so that word follows Wikipedia-wide style on contentious labels. Hamas, Hezbollah and Palestinian Islamic Jihad are now introduced as political or paramilitary bodies, while Islamic State and al-Qaeda are still introduced as militant organisations, and their designations sit in the last fifth of the opening section. Hamas and Hezbollah do also run political parties.</p>
-    <p>Across topic opening sections, terror vocabulary fell by about a fifth after July 2023 (−24% and −19% in our two article samples) while comparison pages stayed flat; Hamas alone lost 47 mentions. Suggestive: the fall sits in a few articles.</p>
-</div></details>
+<section class="sec" id="ev-oct7" aria-labelledby="evO7H">
+  <header><div class="eyebrow">October 7, Hamas and the hostages</div><h2 id="evO7H">Every change to three first sentences, and how Hamas compares with eight other armed groups</h2>
+    <p class="deck">Hamas. “Militant” left the definition on 12 October 2023, replaced by “military”, five days after the attack, in the month the article was read 8,236,474 times. “Terrorist” was written into the definition five times; the longest lasted about 2.4 hours. Neither the Hamas nor the Israel opening section mentions the hostages.</p></header>
   <figure class="fig zi-fig st" id="o7Fig" style="margin:0">
     <div class="fig-h"><span class="fig-t" id="o7T">Every change to the first sentence</span><span class="cap">Step, play, or tap the chart. Arrow keys work too.</span></div>
     <div class="zi-opts"><div class="o"><span class="lab" id="o7ArtL">Article</span><div class="seg st-tabs" id="o7Art" role="group" aria-labelledby="o7ArtL"><button type="button" data-v="0" aria-pressed="true">Hamas</button><button type="button" data-v="1" aria-pressed="false">October 7</button><button type="button" data-v="2" aria-pressed="false">Gaza genocide</button></div></div><p class="cap" id="o7ArtHelp"></p></div>
@@ -1316,25 +1437,25 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="cap" id="o7Note"></p>
 </div></details>
   <div class="grid2 o7-side">
-    <figure class="fig" style="margin:0"><div class="fig-h"><span class="fig-t">Where the terror designation sits in the Hamas opening section</span><span class="cap">0 = first word, 1 = last word</span></div><div id="o7Pos"></div></figure>
     <figure class="fig" style="margin:0"><div class="fig-h"><span class="fig-t">Nine armed groups: first “terror” mention, 2021 and now</span><span class="cap">Share of the way into the opening section</span></div><div id="o7Grp"></div></figure>
   </div>
   <p class="deck col">“Terrorist” also left the first sentences of Islamic State, al-Shabaab and Boko Haram; what sets Hamas, Hezbollah and Palestinian Islamic Jihad apart is “militant”, and their designations sit in the last fifth of the opening section.</p>
-  <p class="handoff">October 7’s first sentence names no massacre. 1948’s now names a perpetrator.</p>
+  <details class="stats"><summary>More <span>sexual violence, Hannibal, the Gaza war, Gaza genocide</span></summary><div class="in">
+    <p>The killing is described plainly in the second paragraph of the October 7 article (“massacring civilians in 21 communities”), and the opening section gives the toll (at least 1,195 killed), the hostages (251) and that the governments of 44 countries described the attack as terrorism. On 1 January 2024 the opening section said “Israel and international media have reported rape and sexual assault by Hamas fighters with documentary footage and photographs, which Hamas has denied.” On 2 November 2026 it says “Numerous sources have reported dozens of cases of rape and sexual assault.” That sentence no longer names who committed them. It now also says the IDF used the Hannibal Directive that day, which “may have led to at least 13 Israeli civilian deaths”. In October 2026 a clause calling Israel’s response genocide was removed from sentence 2. Since 26 May 2025 the Gaza war’s first sentence has named Hamas for less than two days in total; Hamas, the toll and the hostages are in sentence 2. The same day, the October 7 article’s title dropped “Hamas-led”. We found nothing linking the two edits, and the shorter title matches common usage.</p>
+    <p>Hamas: “militant” left on 12 October 2023 and came back three times (1 to 2 August 2024; 19 to 31 August 2024, as “militant wing”; 12 to 18 February 2025); it has been absent from the whole opening section since 11 December 2025. The five “terrorist” insertions add up to under six hours in three years. “Resistance movement” got in once, on 1 August 2024, and was gone the next day. The “Several countries” edit is days old and may be reverted.</p>
+<p>Gaza genocide. The first sentence went from “Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians” (1 January 2024), through “accused” and “according to”, to Wikipedia’s own voice. The current sentence has stood since 26 September 2025: “The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.” Since then, 10 edits tried to bring back attribution; each was gone within 45 minutes.</p>
+    <p>Gaza genocide: short-lived own-voice wordings came and went from July 2024. Before the own-voice step, the first sentence had named each outside finding as it appeared: Amnesty International (December 2024), Human Rights Watch (December 2024), B’Tselem (July 2025), the International Association of Genocide Scholars (August 2025) and the UN Commission of Inquiry (16 September 2025). The opening section still gives Israel’s view near its end: “Israel and its supporters maintain that its actions do not constitute genocide”. The reverted attribution attempts read, for example, “has been described by most scholars as” and “the alleged ongoing”. The genocide charge against Hamas for October 7 stays attributed: “Some have alleged that the attack was an act of genocide or a genocidal massacre against Israelis.”</p>
+<p class="means"><b>What this means:</b> the facts about October 7 are in the opening sections, often in fuller form than in 2024. What moved is their place and their grammar: the first sentence says “armed incursions” and leaves out the hostages; Hamas is a political organisation first; the designation is near the end; and the genocide charge against Israel is stated as fact in the Gaza genocide, Israel and Netanyahu articles, while the one against Hamas is “alleged”.</p>
+    <p>Nine armed groups, chosen by hand, not a sample: “terrorist” also left the first sentences of Islamic State, al-Shabaab and Boko Haram, so that word follows Wikipedia-wide style on contentious labels. Hamas, Hezbollah and Palestinian Islamic Jihad are now introduced as political or paramilitary bodies, while Islamic State and al-Qaeda are still introduced as militant organisations, and their designations sit in the last fifth of the opening section. Hamas and Hezbollah do also run political parties.</p>
+    <p>Across topic opening sections, terror vocabulary fell by about a fifth after July 2023 (−24% and −19% in our two article samples) while comparison pages stayed flat; Hamas alone lost 47 mentions. Suggestive: the fall sits in a few articles.</p>
+</div></details>
 </section>
 
-<section class="sec" id="palestine" aria-labelledby="palH">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>1948 and the Nakba</div>
-    <h2 id="palH">1948 now has a perpetrator: the Nakba is “the ethnic cleansing of Palestinian Arabs by Zionists”, in Wikipedia’s own voice</h2>
-    <p class="means bl"><b>Bottom line:</b> Wikipedia’s 1948 now names who drove the Palestinians out, “Zionists” or “Zionist forces”, in the Nakba, 1948 Palestine war and 1948 Arab–Israeli War articles, while the Jews who “fled or were expelled from Arab states” still have no one named.</p>
-    <p class="deck">In 2023 the 1948 Palestine war said “During the war, around 700,000 Palestinian Arabs were displaced.” It now says “During the war, Zionist forces conquered about 78% of the former territory of the mandate, causing the expulsion and flight of over 700,000 Palestinians.” The same article still writes the Jewish side of 1948 with no agent: “Hundreds of thousands of Jews fled or were expelled from Arab states”. In the Nakba article, “ethnic cleansing” entered Wikipedia’s own voice on 5 March 2024; the perpetrator was named on 10 August 2025, worded “by Israel” from 30 December 2025 and “by Zionists” from 6 July 2026. Both versions of its first sentence are below; the 2021 version also took a position. One 1948 article, on the expulsion and flight, went the other way and removed its agent.</p>
-  </header>
-  <div class="news-q xm-keep">
-    <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba, 2021 and 2026 · The 2021 version also took a position.</span><span class="cap"><b>2021</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">2026</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations.”</span></blockquote>
+<section class="sec" id="ev-1948" aria-labelledby="ev48H">
+  <header><div class="eyebrow">1948 and the Nakba</div><h2 id="ev48H">The other 1948 articles, the links and categories, and the revision where each first sentence changed</h2></header>
+  <div class="news-q">
     <blockquote><span class="w"><i style="background:var(--topic)"></i>1948 Arab–Israeli War, 2021 and now · the agent is named</span><span class="cap"><b>2021</b> “Around 700,000 Palestinian Arabs fled or were expelled from their homes in the area that became Israel...”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “In April 1948, Zionist forces launched an offensive codenamed Plan Dalet, during which they conquered and depopulated cities, villages, and territories in Mandatory Palestine in preparation for the establishment of a Jewish state.”</span></blockquote>
   </div>
-  <p class="cap xm-keep">Both moved toward a named agent. The 1948 Palestinian expulsion and flight article went the other way (under “More”).</p>
   <details class="stats xm-keep"><summary>More <span>links, categories, places, and the pull-back</span></summary><div class="in">
     <p>The Israel article stayed agentless: “Most Palestinian Arabs fled or were expelled during the Nakba.” In the Nakba article “was” became “is” in June 2024, and the article gained an infobox whose type field begins “Genocide, ethnic cleansing, forced displacement, dispossession, mass killing, settler colonialism”.</p>
     <p>The re-telling spread along links and categories. Topic articles linking to Nakba/1948 went from 114 to 127 to 223 across the three snapshots. The categories most often added to topic pages since July 2023 were “1948 Palestinian expulsion and flight” (16), “Zionist political violence” (11) and “Israeli massacres of Palestinians” (10). Of the 60 place articles that gained critical vocabulary, 35 gained Nakba/expulsion wording. The Gaza Strip’s opening paragraph now says that, under Egyptian control after 1948, the territory “became a refuge for Palestinians who fled or were expelled by Zionist forces in the Nakba”. The West Bank is now “the larger of the two Palestinian territories (the other being the Gaza Strip) that make up Palestine”.</p>
@@ -1343,42 +1464,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </div>
     <p>It was not a sweep, and it did not run through every Palestinian article. The 1948 expulsion article went the other way: in 2023 its first sentence said Palestinian Arabs “were expelled or fled from their homes by Zionist militias”; since May 2025 it says they “were expelled or fled from their homes”, and names the paramilitaries in the next sentence. How 1948 departures are described, forced or fled, is not measured here; that measure failed its precision check and was withdrawn.</p>
 </div></details>
-  <p class="cap xm-keep" id="trIntro">Below: the single <button class="gl" type="button" data-g="revision">revision</button> where each first sentence changed. Accounts are letters, restarting per article; no editor is named.</p>
+  <p class="cap" id="trIntro">Below: the single <button class="gl" type="button" data-g="revision">revision</button> where each first sentence changed. Accounts are letters, restarting per article; no editor is named.</p>
   <div class="picks" id="trPicks"></div>
   <div class="fig" id="trace"></div>
   <p class="means" id="mTrace"></p>
-  <p class="handoff">That is English. The other Wikipedias, Hebrew and Arabic included, do not tell one story.</p>
 </section>
 
-<section class="sec" id="crosslang">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span><span class="layer process">PROCESS</span>Other languages <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2>Outside English, “genocide” is now stated as fact in Spanish, Portuguese and Arabic. Hebrew’s Gaza-war article mentions it only as South Africa’s court case.</h2>
-    <p class="means bl"><b>Bottom line:</b> On genocide, the other Wikipedias do not tell one story: Spanish, Portuguese and Arabic now state it in their own voice, as English does; Dutch pulled back (its row in the grid), and Polish now calls genocide “a term in circulation” while stating in its own voice that Israel committed “a series of crimes”; Hebrew’s Gaza-war article reports it only as South Africa’s court case (the three sentences are below).</p>
-    <p class="deck">October 7 is told differently too: Spanish opens its Gaza-war article by calling it “un ataque de represalia”, a retaliatory attack.</p>
-  </header>
-  <details class="stats xm-keep"><summary>More <span>language by language</span></summary><div class="in">
-    <p>In their “Gaza genocide” articles, Spanish, Portuguese and Arabic now define the genocide in their own voice, as English does. French calls it a designation “defended by the majority of genocide and international-law experts”, Italian “a definition”. Dutch moved the other way (“may or may not have committed”); Polish now calls genocide “a term in circulation”, while stating in its own voice that Israel committed “a series of crimes” against Palestinians. Spanish opens its Gaza war article by calling October 7 “un ataque de represalia” (a retaliatory attack). Hebrew has no article linked to the English “Gaza genocide” article, and its Gaza-war article mentions genocide once, as South Africa’s suit at the ICJ; the Hebrew October 7 article’s opening section has one more genocide mention, beyond the text we hold. “Colonization” entered the opening section of the Zionism article, in each Wikipedia’s own voice, in English, Arabic, Portuguese, Italian and Dutch; it is in the definition itself in English, Arabic and Portuguese. Hebrew, German, French, Spanish, Polish and Russian kept it out. Arabic turned apartheid from “an accusation” into “a confirmed fact”, though three sentences later it still calls it “this accusation”.</p>
-    <ul class="short-row xw-facts">
-      <li><b>Hamas: where “terror” sits.</b> The first sentence with a terror word, 2021 and now: English moved it from sentence 5 of 20 to 22 of 23 (our English count; the other editions are split by punctuation, so their counts are approximate), and the English opening section also grew, from 9 sentences in July 2023 to 23, which pushes any sentence later; Russian moved it up, from 3 of 5 to 1 of 29; German keeps it first (1 of 15).</li>
-      <li><b>How 7 October is named.</b> In the first sentence now, by our word list: English “incursion” only; Hebrew attack, massacre and terror; German, French, Italian and Dutch include terror; Russian incursion and operation.</li>
-      <li><b>Court rulings overstated, still in the lead.</b> Four editions say more than the court did; each sentence is quoted in the grid’s last column. Arabic says the ICJ “found that Israel strove, under a reasonable [or: plausible] intent, to commit acts of genocide”; its January 2024 order made no finding of intent. Italian says the court deemed Israel’s actions «plausibly genocidal», a phrase no ICJ ruling uses. French says “The Court recognises that Israel” is “conducting a policy of apartheid”; the July 2024 advisory opinion found a breach of CERD Article 3, the ban on racial segregation and apartheid, without saying which. Russian says the court “found Israel guilty of violating Article 3”: verdict wording for a non-binding opinion that gives no verdict. A word-pattern flag also caught the intent claim in English from 17 March to 5 May 2024, when it was removed; that one we have not read by hand.</li>
-      <li><b>Who moved first. Low confidence.</b> Where English and another edition both added the same term after 2021, English moved first in 69% of 103 pairs, against 58% by chance. A page created after 2021 counts its creation as the entry date, which favours English, the first to open a “Gaza genocide” article.</li>
-    </ul>
-</div></details>
-  <div class="xm-find xm-keep" id="xmFind" aria-label="The three sentences behind the headline"></div>
-  <figure class="fig xm-keep" id="xmFig" style="margin:0">
-    <div class="fig-h"><span class="fig-t">How each Wikipedia voices eight claims, then and now</span><span class="cap">Rows: languages, Hebrew and Arabic first. Each square opens its sentence.</span></div>
-    <p class="zi-how"><b>How to read this:</b> in each cell the small square is the first copy and the large square is now (October 2026); the full key is below the grid.</p>
-    <p class="xm-ik" id="xmIK" aria-hidden="true"></p>
-    <div class="xm-opts"><span class="lab" id="xmModeL">Show</span><div class="seg" id="xmMode" role="group" aria-labelledby="xmModeL"><button type="button" data-v="both" aria-pressed="true">Then → now</button><button type="button" data-v="now" aria-pressed="false">Now only</button><button type="button" data-v="then" aria-pressed="false">Then only</button></div><span class="cap">A ring marks a cell that changed: ▲ toward Wikipedia’s own voice, ▼ away from it.</span></div>
-    <div class="xm-scroll hscroll" id="xmScroll"></div>
-    <p class="xm-swipe" id="xmSwipe" aria-hidden="true" hidden></p>
-    <div class="legend xm-legend" id="xmKey"></div>
-    <details class="stats"><summary>Our coding <span>each column</span></summary><div class="in">
-    <p class="cap" id="xmNote"></p>
-</div></details>
-  </figure>
+<section class="sec" id="ev-xl" aria-labelledby="evXlH">
+  <header><div class="eyebrow">Other languages</div><h2 id="evXlH">In their own words: every sentence, original and translation; the genocide article’s titles; language by language</h2></header>
   <figure class="fig xr xm-keep" id="xrFig" style="margin:0" aria-labelledby="xrMomT">
     <div class="fig-h"><span class="fig-t">In their own words: the sentence, then and now</span><span class="cap">Tap or hover a marked word to light up its counterpart in the other column.</span></div>
     <div class="zi-ctl" id="xrCtl" role="group" aria-label="Step through the key cross-language moments">
@@ -1398,101 +1491,62 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="xr-note" id="xrNote"></p>
     <p class="zi-sr" id="xrLive" aria-live="polite" aria-atomic="true"></p>
   </figure>
+  <div class="xm-find xm-keep" id="xmFind" aria-label="The three sentences behind the headline"></div>
   <p class="deck col xm-keep">The genocide article itself began as an allegation. Before their renames, six editions titled it as a charge: “allegations of genocide” in English, Portuguese, Arabic and French (French then “risk of genocide”), “suspicion of genocide” in Dutch, “accusations of genocide” in Polish; English dropped “allegations” from its title on 3 July 2024, Polish only on 26 April 2026.</p>
   <figure class="fig xm-keep xw-gg" style="margin:0">
     <div class="fig-h"><span class="fig-t">When each Wikipedia’s genocide article was created, and when its title dropped “allegations”</span><span class="cap">days after English; German, Hebrew and Russian have none; tick: the title drops “allegations”</span></div>
     <div id="xwGG"></div>
     <p class="cap">Bar: creation of the page now titled as a genocide (its history follows renames). Tick: the move that took “allegations” (or “risk”, “suspicion”, “accusations”) out of the title, from each wiki’s move log; Arabic’s first new title was “genocide in the war”, then “الإبادة الجماعية لغزة” (the genocide of Gaza) from 21 August 2024. Italian and Spanish are drawn without a tick: their title history is not yet checked by hand.</p>
   </figure>
+  <details class="stats xm-keep"><summary>More <span>language by language</span></summary><div class="in">
+    <p>In their “Gaza genocide” articles, Spanish, Portuguese and Arabic now define the genocide in their own voice, as English does. French calls it a designation “defended by the majority of genocide and international-law experts”, Italian “a definition”. Dutch moved the other way (“may or may not have committed”); Polish now calls genocide “a term in circulation”, while stating in its own voice that Israel committed “a series of crimes” against Palestinians. Spanish opens its Gaza war article by calling October 7 “un ataque de represalia” (a retaliatory attack). Hebrew has no article linked to the English “Gaza genocide” article, and its Gaza-war article mentions genocide once, as South Africa’s suit at the ICJ; the Hebrew October 7 article’s opening section has one more genocide mention, beyond the text we hold. “Colonization” entered the opening section of the Zionism article, in each Wikipedia’s own voice, in English, Arabic, Portuguese, Italian and Dutch; it is in the definition itself in English, Arabic and Portuguese. Hebrew, German, French, Spanish, Polish and Russian kept it out. Arabic turned apartheid from “an accusation” into “a confirmed fact”, though three sentences later it still calls it “this accusation”.</p>
+    <ul class="short-row xw-facts">
+      <li><b>Hamas: where “terror” sits.</b> The first sentence with a terror word, 2021 and now: English moved it from sentence 5 of 20 to 22 of 23 (our English count; the other editions are split by punctuation, so their counts are approximate), and the English opening section also grew, from 9 sentences in July 2023 to 23, which pushes any sentence later; Russian moved it up, from 3 of 5 to 1 of 29; German keeps it first (1 of 15).</li>
+      <li><b>How 7 October is named.</b> In the first sentence now, by our word list: English “incursion” only; Hebrew attack, massacre and terror; German, French, Italian and Dutch include terror; Russian incursion and operation.</li>
+      <li><b>Court rulings overstated, still in the lead.</b> Four editions say more than the court did; each sentence is quoted in the grid’s last column. Arabic says the ICJ “found that Israel strove, under a reasonable [or: plausible] intent, to commit acts of genocide”; its January 2024 order made no finding of intent. Italian says the court deemed Israel’s actions «plausibly genocidal», a phrase no ICJ ruling uses. French says “The Court recognises that Israel” is “conducting a policy of apartheid”; the July 2024 advisory opinion found a breach of CERD Article 3, the ban on racial segregation and apartheid, without saying which. Russian says the court “found Israel guilty of violating Article 3”: verdict wording for a non-binding opinion that gives no verdict. A word-pattern flag also caught the intent claim in English from 17 March to 5 May 2024, when it was removed; that one we have not read by hand.</li>
+      <li><b>Who moved first. Low confidence.</b> Where English and another edition both added the same term after 2021, English moved first in 69% of 103 pairs, against 58% by chance. A page created after 2021 counts its creation as the entry date, which favours English, the first to open a “Gaza genocide” article.</li>
+    </ul>
+</div></details>
   <details class="stats xm-keep"><summary>More <span>reading the sentences</span></summary><div class="in">
     <p class="means xm-keep" id="xrMeans"><b>What this means:</b> English is not alone, and it is not followed everywhere. On genocide, Spanish, Portuguese and Arabic moved from “accused” to a definition in their own voice, as English did; Dutch moved the other way and Polish now calls genocide “a term in circulation”; Hebrew’s Gaza-war article reports only South Africa’s court case. On Zionism, “colonization” entered the opening section in five editions, in the definition itself in three (English, Arabic, Portuguese), and stayed out of six, Hebrew among them. Every square above opens the exact sentence it rests on.</p>
     <p class="cap xm-keep" style="max-width:90ch"><b>How to read the sentences:</b> they are quoted exactly from each Wikipedia’s opening section, at the first and the latest quarterly copy. We hold the first 1,200 characters; words beyond that are counted but not quoted. Translations are ours, kept close to literal; square brackets mark our additions. Amber, struck through: words removed. Blue: words added, marked in the original and in our translation. The coloured underline and the small English label mark a key word and our gloss of it.</p>
-    <p class="cap">The vocabulary counts by language are in the appendix: <a href="#xlcounts">Did other languages follow? The counts</a>.</p>
+    <p class="cap">The vocabulary counts by language are in Part 2: <a href="#xlcounts">Did other languages follow? The counts</a>.</p>
 </div></details>
-  <p class="handoff">Not everything moved one way.</p>
 </section>
 
-<section class="sec" id="against" aria-labelledby="agH">
-  <header>
-    <div class="eyebrow">Against the trend</div>
-    <h2 id="agH">Not one-sided: Jewish ties to the land were kept, and Israel’s position was added to the settlements sentence</h2>
-    <p class="means bl"><b>Bottom line:</b> The change was lopsided, not one-sided: Jewish ties to the land were kept, and the settlement article now says settlements are illegal under international law, “but Israel disputes this”.</p>
-  </header>
+<section class="sec" id="ev-against" aria-labelledby="evAgH">
+  <header><div class="eyebrow">The other direction</div><h2 id="evAgH">Jewish ties to the land: mixed evidence, both directions</h2></header>
   <ul class="short-row">
-    <li>Antisemitism is mentioned in 54 topic opening paragraphs, up from 37, including the Israel article; we did not code what those sentences say.</li>
-    <li>61 critical terms left topic opening paragraphs, against 223 that entered (comparison: 73 out, 125 in).</li>
-    <li>The Israeli settlement article now adds Israel’s position: “The international community considers Israeli settlements to be illegal under international law, but Israel disputes this.”</li>
-    <li>Jewish ties to the land were not cut: in hand-coded pairs, Jewish belonging claims were strengthened in 11 and weakened in 6, and Jewish names for the land rose from 11 to 19.</li>
-    <li>Jewish-history content was kept: articles that gained critical terms did not lose Jewish-history terms (correlation −0.03).</li>
+    <li><b>Weakened.</b> “Homeland” in first sentences went from 5 to 1, a few flagship sentences, some of them style clean-ups; Zionism’s first sentence lost “re-establishment” (last on 9 July 2024).</li>
+    <li><b>Strengthened.</b> In hand-coded pairs of before-and-after opening sections, Jewish belonging claims were strengthened in 11 and weakened in 6 (small and exploratory); Jewish names for the land rose from 11 to 19.</li>
+    <li><b>Proportion, all directions.</b> 61 critical terms left topic opening paragraphs while 223 entered.</li>
   </ul>
-  <details class="stats"><summary>More <span>settlements; settler colonialism</span></summary><div class="in">
+</section>
+
+<section class="sec" id="reads" aria-labelledby="readsH">
+  <header>
+    <div class="eyebrow">All seven sentences</div>
+    <h2 id="readsH">What the world now reads: seven sentences, then and now</h2>
+    <p class="means bl"><b>Bottom line:</b> Side by side, the change is in the labels and the verbs: Zionism “through colonization”, Israel “began committing genocide”, the Nakba “by Zionists”, Hamas a “political organisation”, October 7 “armed incursions”; one 1948 article moved the other way.</p>
+  </header>
   <div class="news-q">
-    <blockquote><span class="w"><i style="background:var(--muted)"></i>Israeli settlement · 2021</span><span class="s">“... built in violation of international law on lands occupied by Israel ...”</span></blockquote>
-    <blockquote><span class="w"><i style="background:var(--ink-2)"></i>Israeli settlement · 2026</span><span class="s">“... The international community considers Israeli settlements to be illegal under international law, but Israel disputes this.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Zionism · 1 January 2021 → since 27 August 2026</span><span class="cap"><b>Then</b> “… espouses the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel …”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “Zionism is an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine …”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Israel, opening section (end of paragraph 2) · July 2023 → “genocide” since 4 May 2025</span><span class="cap"><b>Then</b> no sentence charging Israel with genocide (none in the 150 most-read opening sections).</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.” The next sentence: “Israel has denied that its actions constitute genocide.” Wording as of 5 November 2026; on 1 October 2026 the denial read “Israel and its allies, including the United States, deny...”.</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Hamas · 1 January 2021 → since 29 November 2025</span><span class="cap"><b>Then</b> “… is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “… is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>October 7 attacks · 23 October 2023 → since 8 October 2026</span><span class="cap"><b>Then</b> “A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip onto bordering areas in Israel …”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “On October 7, 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba · 24 December 2021 → since 6 July 2026</span><span class="cap"><b>Then</b> “The Nakba … was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings …”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--topic)"></i>Gaza genocide · 1 January 2024 → since 26 September 2025</span><span class="cap"><b>Then</b> “Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.”</span></blockquote>
+    <blockquote><span class="w"><i style="background:var(--muted)"></i>Moved the other way · 1948 Palestinian expulsion and flight · July 2023 → no agent since May 2025</span><span class="cap"><b>Then</b> “In 1948 more than 700,000 Palestinian Arabs ... were expelled or fled from their homes by Zionist militias, during the 1948 Palestine war.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “During the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.” (This exact wording since 19 March 2026.)</span></blockquote>
   </div>
-  <ul class="short-row">
-    <li><i>Zionism as settler colonialism</i> was pulled back from “its founders and early leaders, as well as several scholars” to “some scholars”, with the edit summary “more NPOV”.</li>
-  </ul>
-  </div></details>
-  <p class="handoff">That is what the encyclopedia now says. Is it confined to a few famous pages, or the whole subject?</p>
-</section>
-
-<section class="sec" id="reach" aria-labelledby="reachH">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>Core and long tail <span class="xchip">Probability sample · 48,974 + 141,356 articles</span></div>
-    <h2 id="reachH">The articles the world reads first on Israel changed; the long tail did not</h2>
-    <p class="means bl"><b>Bottom line:</b> The new language sits in the pages the world reads first on Israel, from Netanyahu and Israel to Zionism and Hamas, and in one in ten of the subject’s Top-importance articles (gap over other conflicts 5.9 points, range 0.9 to 11.2); the Low-importance and ungraded pages, about 80% of the topic, moved no more than other conflicts’.</p>
-    <p class="deck">The most-read topic pages whose opening paragraph gained critical vocabulary: Benjamin Netanyahu (7.0M views), Israel (4.6M), Palestine (2.4M), Zionism (1.8M) and Hamas (1.3M).</p>
-    <p class="deck">Wikipedia’s editors grade every article Top, High, Mid or Low importance. We drew 3,000 of the 48,974 articles the Israel, Palestine, Judaism and Jewish history WikiProjects assess, and 3,000 of the 141,356 assessed by nine WikiProjects on other conflict regions, weighted back to each group’s true size. Bars: the share whose opening paragraph gained critical vocabulary, July 2023 to November 2026; thin lines are 95% ranges.</p>
-  </header>
-  <figure class="fig" id="tierFig" style="margin:0">
-    <div class="fig-h"><span class="fig-t">Share of articles whose opening paragraph gained critical vocabulary, by importance grade</span><span class="cap">Jul 2023 → Nov 2026 · weighted to the full populations</span></div>
-    <div id="tierChart"></div>
-    <div class="legend" id="tierKey"></div>
-    <details class="stats"><summary>Notes <span>grades and counts</span></summary><div class="in">
-    <p class="cap" id="tierCap"></p>
-</div></details>
-  </figure>
-  <details class="stats"><summary>More <span>the whole population; the reading share</span></summary><div class="in">
-    <p>Across all 49,000 articles, 0.9% gained, against 0.5% for the other regions: a gap of 0.4 points (range about 0 to 0.9), within the margin of error, yet about 446 articles (range 277 to 616). Israel and Palestine articles carry it: they gained at 1.2%, Judaism articles at 0.3% (a gap of 0.9 points, range 0.2 to 1.5). The one test we wrote down before collecting data, an average over articles, found no rise; it is in <a href="#key">the appendix</a>.</p>
-    <p>In the Top grade of the probability sample, the pages that gained carry 30.5% of Top-grade topic reading, against 19.1% for the other regions; that gap is too uncertain to call. Across all 49,000 articles they carry 4.8% of reading, against 4.6%: the same. The five most-read gainers are Benjamin Netanyahu (7.0M views), Israel (4.6M), Palestine (2.4M), Zionism (1.8M) and Hamas (1.3M).</p>
-</div></details>
-  <p class="cap short-def"><i>Critical vocabulary:</i> genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion, counted wherever they appear and whoever they are about. We counted Jewish-history vocabulary (homeland, indigenous, antisemitism) the same way.</p>
-  <p class="means" id="mTier"></p>
-  <header style="margin-top:36px">
-    <h3 class="o-h">Few pages, much of the reading, as in other live wars</h3>
-    <p class="deck">In our crawl of 4,642 core topic articles, 3.9% gained critical vocabulary in the opening paragraph, and those pages carry 15% of the last 12 months’ reading (comparison articles: 1.5% and 5%). Against the live wars alone (Ukraine, Russia, Armenia, Azerbaijan) the reading share is 14.1%: other live wars show the same tilt toward their most-read pages. What is specific to this subject is what the core opening paragraphs now say.</p>
-  </header>
-  <figure class="fig" style="margin:0"><div id="reachFig"></div></figure>
-  <details class="stats"><summary>More <span>the reading share</span></summary><div class="in">
-    <p class="means" id="mReach"></p>
-</div></details>
-  <p class="handoff">Is this just the war being written up?</p>
-</section>
-
-<section class="sec" id="news" aria-labelledby="newsH">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>News or drift</div>
-    <h2 id="newsH">Not just the war: in the core articles, most of the extra change rewrote older history, places and people</h2>
-    <p class="means bl"><b>Bottom line:</b> Most of the new wording in the core articles retells the land and its past, not the war, as when the West Bank went from “a landlocked territory” to “the larger of the two Palestinian territories (the other being the Gaza Strip) that make up Palestine” (about 80 to 90% of the extra change; clear on the conflict-related articles, suggestive on the full core crawl). Across the whole topic there is no such shift.</p>
-    <p class="deck">After July 2023 the extra change in critical vocabulary in the opening paragraphs of the core crawl, topic minus comparison, was +2.22 per 10,000 words; without the sentences about recent events it was +1.98. Before the war the same comparison showed no difference. Other wars get their own vocabulary waves, but theirs stayed inside the war articles; here the change left them for history, places and people: place articles gaining critical terms went from 1.6% a year before the war to 4.6% after.</p>
-  </header>
-  <details class="stats"><summary>More <span>random Wikipedia, the whole population, Tigray</span></summary><div class="in">
-    <p>Against a random sample of all English Wikipedia articles, which did not drift at all (−0.06), the core topic change is +2.6 per 10,000 words, and +2.25 without the recent-event sentences. Across the full population of 49,000 topic articles the picture is different: against other conflict regions the extra change is −0.37 per 10,000 words, with a range of −1.55 to +0.83. The long tail moved no more than other conflicts did. Tigray’s critical hits went 0, 1, 8, 12, 19, 21 over six quarters and then stayed flat, and did not spread to Ethiopian history or place pages.</p>
-</div></details>
-  <figure class="fig" style="margin:0"><div id="newsFig"></div></figure>
-  <div class="news-q" id="newsQ"></div>
-  <details class="stats"><summary>More <span>what this means</span></summary><div class="in">
-    <p class="means" id="mNews"></p>
-</div></details>
+  <p class="cap">Exact text on the dates given; first sentences checked against the stored revision history. The Israel card quotes the end of paragraph 2: 4 May 2025 is when “genocide” entered for good, not the date of this exact wording. “Now” dates the start of the current run, brief reverted edits excepted; text as of 5 November 2026.</p>
 </section>
 
 <section class="sec" id="when" aria-labelledby="whenH">
   <header>
     <div class="eyebrow"><span class="layer process">PROCESS</span>Timing</div>
-    <h2 id="whenH">One wave with the fighting, not the court rulings. The volume has fallen back; the defining sentences kept changing into late 2026.</h2>
-    <p class="means bl"><b>Bottom line:</b> New critical wording arrived after October 7 in one wave alongside the battles (suggestive), not after the court rulings; its pace peaked in 2024 and is back near the pre-war rate (chart below), but the first sentences people read were settled late: the Nakba “by Zionists” from July 2026, Zionism “through colonization” from August.</p>
-    <p class="deck">New critical terms per 1,000 topic edits ran at about 7 before the war, 13.5 in late 2023, and 16.0 and 15.9 through 2024. Then the rate fell to 10.8 and 8.2 in 2025, and to 5.1 and 5.9 in 2026, at or below the pre-war rate. Volume fell, but the defining sentences kept moving: the Nakba’s “by Zionists” has stood since 6 July 2026, Zionism’s “through colonization” since 27 August, Israel’s first sentence since 4 September and October 7’s current first sentence since 8 October 2026. Whether the wave was organised, and how its timing sits against the documented canvassing windows, is the next section.</p>
+    <h2 id="whenH">Timing in detail: one wave with the fighting; the volume fell back, the defining sentences kept changing into late 2026</h2>
+    <p class="means bl"><b>Bottom line:</b> New critical wording arrived after October 7 in one wave alongside the battles (suggestive); its pace peaked in 2024 and is back near the pre-war rate (chart below), but the first sentences people read were settled late: the Nakba “by Zionists” from July 2026, Zionism “through colonization” from August.</p>
+    <p class="deck">New critical terms per 1,000 topic edits ran at about 7 before the war, 13.5 in late 2023, and 16.0 and 15.9 through 2024. Then the rate fell to 10.8 and 8.2 in 2025, and to 5.1 and 5.9 in 2026, at or below the pre-war rate. Volume fell, but the defining sentences kept moving: the Nakba’s “by Zionists” has stood since 6 July 2026, Zionism’s “through colonization” since 27 August, Israel’s first sentence since 4 September and October 7’s current first sentence since 8 October 2026.</p>
     <p class="deck">Below, week by week: editing on top, new critical vocabulary in topic opening paragraphs below, and each real-world event as a dot by type. Tap a dot.</p>
   </header>
   <figure class="stream" style="margin:0" aria-label="Every edit to every article in the study, by week">
@@ -1515,30 +1569,46 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="fig-h"><span class="fig-t">How often an edit added critical vocabulary, by half-year</span><span class="cap">the 4,642 sampled topic opening paragraphs, counted as new terms for every 1,000 edits</span></div>
     <div id="waveStrip"></div>
   </div>
-  <p class="means" id="mWhen"><b>Edits and new wording rose after battles, not after court rulings.</b> In the three weeks after each of the 24 military escalations, topic edits rose 17% against the six weeks before, far more than after 2,000 random dates (event windows overlap, so single events cannot be separated). New critical terms in topic opening paragraphs also rose after escalations, 1.34 times the usual rate in the three weeks after (p = 0.001) and 1.17 times over 13 weeks (p = 0.054), a suggestive result: a placebo, the Nagorno-Karabakh offensive, ranks among the strongest single events. After the 25 legal and institutional events (ICJ orders, ICC, UN votes, rights reports, recognitions) editing was slightly below usual, and new critical terms did not move (1.01 times).</p>
-  <p class="deck col"><b>How the wording settled.</b> Across the 11 editions we track, wording that lasted more often arrived with a new source (50% of 204 lasting insertions, against 28% of 414 reverted ones), an association rather than proof; in English, 6 of 26 lasting wordings settled within 30 days of a formal discussion closing, against 2.3 by chance (low confidence; details under <a href="#organised">Organised or organic?</a>, More).</p>
-  <p class="handoff">The rewriting followed the war’s tempo. Was it also organised?</p>
+  <p class="means" id="mWhen"><b>Edits and new wording rose after battles.</b> In the three weeks after each of the 24 military escalations, topic edits rose 17% against the six weeks before, far more than after 2,000 random dates (event windows overlap, so single events cannot be separated). New critical terms in topic opening paragraphs also rose after escalations, 1.34 times the usual rate in the three weeks after (p = 0.001) and 1.17 times over 13 weeks (p = 0.054), a suggestive result: a placebo, the Nagorno-Karabakh offensive, ranks among the strongest single events.</p>
+  <p class="deck col"><b>How the wording settled.</b> Across the 11 editions we track, wording that lasted more often arrived with a new source (50% of 204 lasting insertions, against 28% of 414 reverted ones), an association rather than proof; in English, 6 of 26 lasting wordings settled within 30 days of a formal discussion closing, against 2.3 by chance (low confidence; details under <a href="#ev-organised">Organised or organic: the full record</a>, More).</p>
 </section>
 
-<section class="sec" id="organised" aria-labelledby="orgH">
+<section class="sec" id="news" aria-labelledby="newsH">
   <header>
-    <div class="eyebrow"><span class="layer process">PROCESS</span>Organised or organic? <span class="xchip">Exploratory · not pre-registered</span></div>
-    <h2 id="orgH">Canvassing is documented on both sides. Our tests found no campaign footprint, and could only have seen a large one.</h2>
-    <p class="means bl"><b>Bottom line:</b> Wikipedia’s arbitration committee documented off-wiki canvassing on both sides of this subject, according to its published notices; our data show regulars returning to the same pages, not a campaign footprint, and the footprint test could only have seen a very large effect.</p>
-    <p class="deck">The edits were made by long-standing accounts, in small groups per page, with insertions and removals done by different hands, and a pool of regulars moving across the hot pages: 9 accounts made 48 of the 216 traced first-sentence changes on the 25 key articles by changing 3 or more of them; on the comparison key articles no account did. Our data cannot see off-wiki channels; it can see timing and footprint. The wave of critical wording began in the 16 weeks after 7 October 2023, when topic insertions ran at 3.4 times the comparison rate (0.5 times before the war; 2.0 times while the Discord channel was active; chart below), before the documented pro-Palestinian channel opened in January 2024 (ArbCom’s April 2025 finding of other coordination gives no start date); the pro-Israel email canvassing ArbCom found dates from the same weeks but aimed the other way.<!--VERIFY: ArbCom findings read from search snippets only (ORGS.md section 5); check the primary pages before publication--></p>
+    <div class="eyebrow"><span class="layer">CONTENT</span>News or drift</div>
+    <h2 id="newsH">Not just the war: in the core articles, most of the extra change rewrote older history, places and people</h2>
+    <p class="means bl"><b>Bottom line:</b> Most of the new wording in the core articles retells the land and its past, not the war, as when the West Bank went from “a landlocked territory” to “the larger of the two Palestinian territories (the other being the Gaza Strip) that make up Palestine” (about 80 to 90% of the extra change; clear on the conflict-related articles, suggestive on the full core crawl).</p>
+    <p class="deck">After July 2023 the extra change in critical vocabulary in the opening paragraphs of the core crawl, topic minus comparison, was +2.22 per 10,000 words; without the sentences about recent events it was +1.98. Before the war the same comparison showed no difference. Other wars get their own vocabulary waves, but theirs stayed inside the war articles; here the change left them for history, places and people: place articles gaining critical terms went from 1.6% a year before the war to 4.6% after.</p>
+  </header>
+  <details class="stats"><summary>More <span>random Wikipedia, the whole population, Tigray</span></summary><div class="in">
+    <p>Against a random sample of all English Wikipedia articles, which did not drift at all (−0.06), the core topic change is +2.6 per 10,000 words, and +2.25 without the recent-event sentences. Across the full population of 49,000 topic articles the picture is different: against other conflict regions the extra change is −0.37 per 10,000 words, with a range of −1.55 to +0.83. The long tail moved no more than other conflicts did. Tigray’s critical hits went 0, 1, 8, 12, 19, 21 over six quarters and then stayed flat, and did not spread to Ethiopian history or place pages.</p>
+</div></details>
+  <figure class="fig" style="margin:0"><div id="newsFig"></div></figure>
+  <div class="news-q" id="newsQ"></div>
+  <details class="stats"><summary>More <span>what this means</span></summary><div class="in">
+    <p class="means" id="mNews"></p>
+</div></details>
+</section>
+
+<section class="sec" id="ev-organised" aria-labelledby="orgH">
+  <header>
+    <div class="eyebrow"><span class="layer process">PROCESS</span>Organised or organic?</div>
+    <h2 id="orgH">Organised or organic: the full record</h2>
+    <p class="means bl"><b>Bottom line:</b> As reported in the press and in search summaries of its notices, Wikipedia’s arbitration committee (ArbCom) sanctioned editors for off-wiki canvassing on both sides of this subject; we could not open its case pages to check. Our own data show regulars returning to the same pages, not a campaign footprint, and the footprint test could only have seen a very large effect.</p>
+    <p class="deck">The edits were made by long-standing accounts, in small groups per page, with insertions and removals done by different hands, and a pool of regulars moving across the hot pages: 9 accounts made 48 of the 216 traced first-sentence changes on the 25 key articles by changing 3 or more of them; on the comparison key articles no account did. Our data cannot see off-wiki channels; it can see timing and footprint. The wave of critical wording began in the 16 weeks after 7 October 2023, when topic insertions ran at 3.4 times the comparison rate (0.5 times before the war; 2.0 times while the Discord channel was active; chart below), before the pro-Palestinian Discord channel opened in January 2024, as reported (ArbCom’s April 2025 finding of other coordination, as reported, gives no start date); the pro-Israel email canvassing reported from ArbCom’s January 2024 motions dates from the same weeks but aimed the other way.<!--VERIFY: ArbCom findings read from search snippets only (ORGS.md section 5); check the primary pages before publication--></p>
     <p class="deck">No campaign, exposure or sanction date leaves a mark we can tell from chance, but that test has low power: it could only have seen the ratio fall to 0.20 times or rise to 4.2 times. “Not detected” means the test could not see it, not that it did not happen.</p>
   </header>
 
-  <h3 class="o-h">1 · What Wikipedia’s own bodies found, on both sides</h3>
+  <h3 class="o-h">1 · What ArbCom found, as reported</h3>
   <div class="org-rec" id="orgRec">
-    <div class="org-col"><div class="org-lab">Documented by Wikipedia’s arbitration committee (ArbCom)</div><ul>
-      <li><span class="tag d">Documented</span><span><b>January 2024, pro-Israel.</b> Email canvassing for a pro-Israel viewpoint and proxy editing for a banned editor, dating from about October 2023; two editors found most likely to have taken part.<!--VERIFY: snippet-only; motion text and count (2 or 3) unverified (ORGS.md #7, section 5.3)--></span></li>
-      <li><span class="tag d">Documented</span><span><b>December 2024, pro-Palestinian.</b> Editors sanctioned for editing after canvassing requests on the Tech for Palestine Discord channel and for “encouraging other users to game the extended confirmed restriction”; one site-banned, one topic-banned.<!--VERIFY: snippet-only; exact dates and counts (ORGS.md #8, section 5.4)--></span></li>
-      <li><span class="tag d">Documented</span><span><b>25 April 2025.</b> Two more site bans on “additional evidence of off-wiki coordination independent of the Tech4Palestine Discord server”.<!--VERIFY: snippet-only (ORGS.md section 3)--></span></li>
-      <li><span class="tag d">Documented</span><span><b>23 January 2025, both camps.</b> About eight indefinite topic bans (reported as 6 “pro-Palestinian” and 2 “pro-Israel”) on conduct grounds; not a coordination finding.<!--VERIFY: snippet-only; PIA5 remedies and counts (ORGS.md section 5.1)--></span></li>
+    <div class="org-col"><div class="org-lab">ArbCom notices, as reported (not checked against the case pages)</div><ul>
+      <li><span class="tag a">As reported</span><span><b>January 2024, pro-Israel.</b> Email canvassing for a pro-Israel viewpoint and proxy editing for a banned editor, dating from about October 2023; two editors found most likely to have taken part.<!--VERIFY: snippet-only; motion text and count (2 or 3) unverified (ORGS.md #7, section 5.3)--></span></li>
+      <li><span class="tag a">As reported</span><span><b>December 2024, pro-Palestinian.</b> Editors sanctioned for editing after canvassing requests on the Tech for Palestine Discord channel and for “encouraging other users to game the extended confirmed restriction”; one site-banned, one topic-banned.<!--VERIFY: snippet-only; exact dates and counts (ORGS.md #8, section 5.4)--></span></li>
+      <li><span class="tag a">As reported</span><span><b>25 April 2025.</b> Two more site bans on “additional evidence of off-wiki coordination independent of the Tech4Palestine Discord server”.<!--VERIFY: snippet-only (ORGS.md section 3)--></span></li>
+      <li><span class="tag a">As reported</span><span><b>23 January 2025, both camps.</b> About eight indefinite topic bans (reported as 6 “pro-Palestinian” and 2 “pro-Israel”) on conduct grounds; not a coordination finding.<!--VERIFY: snippet-only; PIA5 remedies and counts (ORGS.md section 5.1)--></span></li>
     </ul></div>
   </div>
-  <p class="cap col">As reported: we read ArbCom’s notices and the press coverage of them through search summaries and could not open the full motion texts, so dates, counts and quoted phrases are as reported. No editor is named.</p>
+  <p class="cap col">As reported: we read ArbCom’s notices and the press coverage of them through search summaries; Wikipedia’s case pages were not reachable from our research environment, so we could not open the motion texts. Dates, counts and quoted phrases are as reported, not verified. No editor is named.</p>
   <details class="stats"><summary>More <span>alleged, disputed or not shown; earlier programmes</span></summary><div class="in">
     <div class="org-col" style="max-width:none"><div class="org-lab">Alleged, disputed, or not shown</div><ul>
       <li><span class="tag a">Alleged</span><span>That about 40 editors (Pirate Wires) or about 30 (ADL) acted as one group. ArbCom sanctioned individuals and adopted neither figure; the Wikimedia Foundation called the ADL’s conclusions “troubling and flawed”.<!--VERIFY: snippet-only (ORGS.md sections 2 and 4)--></span></li>
@@ -1546,7 +1616,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li><span class="tag x">Likely error</span><span>“8,000 articles” appears to be the Discord server’s roughly 8,000 members.<!--VERIFY: Pirate Wires text unchecked (ORGS.md section 5.5)--></span></li>
     </ul></div>
     <ul class="short-row">
-      <li><span class="tag d">Documented</span> <b>Earlier, pro-Israel.</b> CAMERA’s “Isra-pedia” mailing list in 2008 (leaked; admins sanctioned five accounts) and the Yesha Council and My Israel “Zionist editing” course in 2010 (about 50 attendees).<!--VERIFY: snippet-only (ORGS.md #1, #2)--></li>
+      <li><span class="tag a">As reported</span> <b>Earlier, pro-Israel.</b> CAMERA’s “Isra-pedia” mailing list in 2008 (leaked; admins sanctioned five accounts) and the Yesha Council and My Israel “Zionist editing” course in 2010 (about 50 attendees).<!--VERIFY: snippet-only (ORGS.md #1, #2)--></li>
       <li><span class="tag u">Not shown</span> Israeli government Wikipedia editing in 2021 to 2026: no reputable report found. The 2025 contracts concern web and AI content, not Wikipedia.<!--VERIFY: snippet-only (ORGS.md #19)--></li>
       <li><span class="tag u">Not shown</span> A plan is not an operation: the Heritage Foundation’s leaked “Project Esther” deck (January 2025) planned to “identify and target” editors; its execution is not shown.<!--VERIFY: snippet-only (ORGS.md #17)--></li>
     </ul>
@@ -1563,55 +1633,35 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
   <h3 class="o-h">3 · Accounts that move together, measured against chance</h3>
   <p class="deck col">We tested every pair of the 697 accounts whose critical-term edits we can see in topic opening paragraphs (847 on comparison pages) against chance. On topic pages 14 pairs moved together beyond chance, each on at least three of the same articles, where chance gives about 2 (5 at most in 95% of shuffled worlds); on comparison pages 3 pairs, against 0.28, and no group.</p>
-  <p class="deck col" id="orgXw"><b>Across languages.</b> None of the 281 accounts that inserted a critical term in the key articles of our 11 editions did so under the same global username in a second edition, nor did any of the 284 that removed one (opening sections only). Few editors work in two languages at all (153 of 8,175 on the same key article), and even by chance no account would have carried a term across, so this is a description, not a test. It rules out one kind of campaign, the same accounts working several editions. It says nothing about canvassing within English Wikipedia, which is what ArbCom documented, or about separate accounts in each edition.</p>
+  <p class="deck col" id="orgXw"><b>Across languages.</b> None of the 281 accounts that inserted a critical term in the key articles of our 11 editions did so under the same global username in a second edition, nor did any of the 284 that removed one (opening sections only). Few editors work in two languages at all (153 of 8,175 on the same key article), and even by chance no account would have carried a term across, so this is a description, not a test. It rules out one kind of campaign, the same accounts working several editions. It says nothing about canvassing within English Wikipedia, which is what ArbCom’s notices are reported to describe, or about separate accounts in each edition.</p>
   <details class="stats"><summary>More <span>the two blocs; other languages; what made wording stick</span></summary><div class="in">
   <p class="means"><b>What this means:</b> a few small sets of experienced editors kept returning to the same contested pages, more often than chance explains. Subject regulars with shared watchlists look like this, and so would a coordinated group; this test cannot tell them apart. It found none of the tighter signatures of a campaign: edits in step, pasted wording, or a burst inside a documented canvassing window.</p>
     <ul class="short-row">
       <li><b>Bloc A: four accounts, adding and removing.</b> 23 articles; 45 insertions and 23 removals of critical terms. None of 200 shuffled worlds made a group this large and tight. Medium confidence.</li>
       <li><b>Bloc B: four accounts, found when we test insertions alone.</b> 114 insertions across 53 articles. 1 of 200 shuffled worlds made a group like it. Medium confidence. A test on insertions alone cannot see what the same accounts removed.</li>
-      <li><b>What the blocs are not.</b> No member edited within 10 minutes of another; on the same article, members came a median of 14 days (A) and 66 days (B) apart. No sentence was pasted into five or more articles, on topic or comparison pages; the Nakba wording on 17 Palestinian village pages came from 15 accounts, piecemeal. The test on removals alone found no bloc. All eight accounts are long-standing (median account age about 3 years in A and 6 in B), and none has under 500 edits, which the Arab–Israeli restriction requires; ArbCom’s December 2024 case concerned gaming that threshold.</li>
-      <li><b>Timing, low confidence.</b> Bloc A made 41% of its edits in the war’s first months (October 2023 to January 2024, also the period of the pro-Israel email canvassing ArbCom found), against 18% for matched sets of random accounts (p = 0.02 to 0.04), and 21% in the pro-Palestinian Discord window (January to September 2024), against 23%. Bloc B: 34% against 15% (p = 0.05), and 29% against 24%. No result passes our strict level (p &lt; 0.01), and the email window is also the first months of the war, when all accounts edited more. Being active in a window does not make a group part of what ArbCom found.</li>
+      <li><b>What the blocs are not.</b> No member edited within 10 minutes of another; on the same article, members came a median of 14 days (A) and 66 days (B) apart. No sentence was pasted into five or more articles, on topic or comparison pages; the Nakba wording on 17 Palestinian village pages came from 15 accounts, piecemeal. The test on removals alone found no bloc. All eight accounts are long-standing (median account age about 3 years in A and 6 in B), and none has under 500 edits, which the Arab–Israeli restriction requires; ArbCom’s December 2024 case, as reported, concerned gaming that threshold.</li>
+      <li><b>Timing, low confidence.</b> Bloc A made 41% of its edits in the war’s first months (October 2023 to January 2024, also the period of the reported pro-Israel email canvassing), against 18% for matched sets of random accounts (p = 0.02 to 0.04), and 21% in the pro-Palestinian Discord window (January to September 2024), against 23%. Bloc B: 34% against 15% (p = 0.05), and 29% against 24%. No result passes our strict level (p &lt; 0.01), and the email window is also the first months of the war, when all accounts edited more. Being active in a window does not make a group part of what ArbCom is reported to have found.</li>
     </ul>
     <ul class="short-row">
       <li><b>Across languages: in step more than chance, by different accounts.</b> Different accounts in different editions made the same change (the same term, added or removed) within a day of each other 135 times, against 104.6 by chance (p = 0.014), and within a week 925 times, against 579 (p = 0.001); high confidence in the counts. A battle, ruling or report that every edition covers produces this; so would coordination among different accounts. Our null shifts each account’s timeline, which removes news timing too, so it cannot tell the two apart, and no cluster passed the stricter check (0 flagged). The same account never did this, in any window. 153 accounts edited the same key article in two or more languages (chance 106); none carried a term across. No cross-language bloc: no two accounts linked by term edits (chance 0); on talk pages 8 cross-language pairs, against 2.7 by chance, and no group of three or more. Low confidence.</li>
       <li><b>Lasting wording more often arrived with a source.</b> In the 11 editions, insertions that lasted brought a new source domain 50% of the time, reverted ones 28% (204 lasted, 414 reverted; p = 0.0005): an association, not proof that the source decided it. The 2,047 new domains (one insertion can bring several): Western wire services and papers 298, rights groups and the UN 221, Arab and Palestinian press including pro-Palestinian outlets 101, Israeli press 92, scholarly 73, pro-Israel advocacy 8, unclassified 1,254. Our source classes file pro-Palestinian outlets with the Arab press but keep pro-Israel advocacy apart from the Israeli press. Domains only.</li>
       <li><b>Some wordings settled soon after a formal discussion closed.</b> Of 26 English wordings that lasted 90 days or more, 6 settled within 30 days after a formal discussion (an RfC or a move request) closed, against 2.3 by chance (p = 0.02). 9 lasted after earlier failed attempts, with no close nearby. Low confidence.</li>
     </ul>
-  <p class="cap">The data cannot see talk-page and RfC votes, where canvassing is usually alleged, accounts that were never caught, or text outside the opening section. Three results point the predicted way (the January 2024 motions, PIA5, the April 2025 bans) and none survives correction for 13 tests.</p>
+  <p class="cap">The data cannot see talk-page and RfC votes, where canvassing is usually alleged, accounts that were never caught, or text outside the opening section. Three results point the predicted way (around the reported January 2024 motions, PIA5 and April 2025 bans) and none survives correction for 13 tests.</p>
 </div></details>
-  <div id="net"><!--NETWORK: build_page.py inlines patterns/coord/chart_data/network.json as R.network when present; otherwise this renders the "analysis running" placeholder--></div>
 
-  <p class="handoff">Here is what the world’s reference now reads, sentence by sentence. Then: how far to trust it.</p>
 </section>
 
-<section class="sec" id="reads" aria-labelledby="readsH">
-  <header>
-    <div class="eyebrow"><span class="layer">CONTENT</span>What the world now reads</div>
-    <h2 id="readsH">What the world now reads: seven sentences, then and now</h2>
-    <p class="means bl"><b>Bottom line:</b> Side by side, the change is in the labels and the verbs: Zionism “through colonization”, Israel “began committing genocide”, the Nakba “by Zionists”, Hamas a “political organisation”, October 7 “armed incursions”; one 1948 article moved the other way.</p>
-  </header>
-  <div class="news-q">
-    <blockquote><span class="w"><i style="background:var(--topic)"></i>Zionism · 1 January 2021 → since 27 August 2026</span><span class="cap"><b>Then</b> “… espouses the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel …”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “Zionism is an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine …”</span></blockquote>
-    <blockquote><span class="w"><i style="background:var(--topic)"></i>Israel, opening section (end of paragraph 2) · July 2023 → “genocide” since 4 May 2025</span><span class="cap"><b>Then</b> no sentence charging Israel with genocide (none in the 150 most-read opening sections).</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “After the Hamas-led October 7 attacks, Israel began committing genocide against Palestinians in Gaza.” The next sentence: “Israel has denied that its actions constitute genocide.” Wording as of 5 November 2026; on 1 October 2026 the denial read “Israel and its allies, including the United States, deny...”.</span></blockquote>
-    <blockquote><span class="w"><i style="background:var(--topic)"></i>Hamas · 1 January 2021 → since 29 November 2025</span><span class="cap"><b>Then</b> “… is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “… is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades.”</span></blockquote>
-    <blockquote><span class="w"><i style="background:var(--topic)"></i>October 7 attacks · 23 October 2023 → since 8 October 2026</span><span class="cap"><b>Then</b> “A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip onto bordering areas in Israel …”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “On October 7, 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups.”</span></blockquote>
-    <blockquote><span class="w"><i style="background:var(--topic)"></i>Nakba · 24 December 2021 → since 6 July 2026</span><span class="cap"><b>Then</b> “The Nakba … was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings …”</span></blockquote>
-    <blockquote><span class="w"><i style="background:var(--topic)"></i>Gaza genocide · 1 January 2024 → since 26 September 2025</span><span class="cap"><b>Then</b> “Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.”</span></blockquote>
-    <blockquote><span class="w"><i style="background:var(--muted)"></i>Moved the other way · 1948 Palestinian expulsion and flight · July 2023 → no agent since May 2025</span><span class="cap"><b>Then</b> “In 1948 more than 700,000 Palestinian Arabs ... were expelled or fled from their homes by Zionist militias, during the 1948 Palestine war.”</span><span class="s"><b style="font:600 11px var(--mono)">Now</b> “During the 1948 Palestine war, more than 700,000 Palestinian Arabs – about half of Mandatory Palestine's predominantly Arab population – were expelled or fled from their homes.” (This exact wording since 19 March 2026.)</span></blockquote>
-  </div>
-  <p class="cap">Exact text on the dates given; first sentences checked against the stored revision history. The Israel card quotes the end of paragraph 2: 4 May 2025 is when “genocide” entered for good, not the date of this exact wording. “Now” dates the start of the current run, brief reverted edits excepted; text as of 5 November 2026.</p>
-  <p class="handoff">How far should you trust all of this?</p>
-</section>
-
+<div class="band ev-part" id="ev2"><div class="eyebrow">Part 2</div><h2>Method and checks</h2></div>
 <section class="sec" id="board" aria-labelledby="boardH">
   <header>
-    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>How far to trust this</div>
+    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>The full record</div>
     <h2 id="boardH">The test we wrote down first found no average rise. The change sits in the core pages people read most.</h2>
     <p class="means bl"><b>Bottom line:</b> Across the whole subject the average article did not change, so the test we registered in advance was not supported, and we say so; the shift we report is in the core pages people read most, and there it held on a half of the articles we had sealed until the end (+3.6 points) and at Top importance in a probability sample of the whole subject.</p>
     <p class="deck">Before seeing the data we wrote down three main tests, six other ways to run each, and a rule for what would count as support. By that rule the hypothesis is not supported: for the full-text test, an extra change at least as large as the real one turned up in 4,228 of 5,000 label shuffles. Everything above comes from a second, not pre-registered stage on the full crawl. Its main result, that more topic than comparison articles gained critical vocabulary after October 2023, replicated on the half of the articles we had sealed until the end (+3.6 percentage points, range 1.7 to 5.6), and a later probability sample of the whole subject confirms the gap at Top importance (+5.9 points, range 0.9 to 11.2) and finds none in the long tail. <b>Wikipedia as a whole shows no drift:</b> in a random sample of 2,466 English Wikipedia articles, opening paragraphs changed by −0.06 critical terms per 10,000 words after July 2023.</p>
   </header>
   <details class="stats"><summary>More <span>replication tiers, the baseline, the scoreboard</span></summary><div class="in">
-    <p>The sealed-half replication is for the Top, High and Mid articles of our first crawl. The probability sample covers all 48,974 topic articles and 141,356 articles on other conflict regions; over the whole population the gap is +0.4 points, within the margin of error. In the random sample of Wikipedia virtually no article gained (0.0%). Against that baseline, topic articles gained 0.9 points more often (range 0.5 to 1.2) and articles on other conflict regions 0.5 points more (0.2 to 0.8): contested subjects moved, the encyclopedia at large did not. Where our two kinds of range disagree, we have called the result suggestive. Below are the scoreboard, how weighting changes the sizes, and the earlier results we withdrew; the pre-registered test itself and the checks against edits reported in the news are in the <a href="#key">appendix</a>. In the scoreboard, each tile is one of the six other ways to run a test: the dot is the estimate and the line is its range. Select a tile for the details.</p>
+    <p>The sealed-half replication is for the Top, High and Mid articles of our first crawl. The probability sample covers all 48,974 topic articles and 141,356 articles on other conflict regions; over the whole population the gap is +0.4 points, within the margin of error. In the random sample of Wikipedia virtually no article gained (0.0%). Against that baseline, topic articles gained 0.9 points more often (range 0.5 to 1.2) and articles on other conflict regions 0.5 points more (0.2 to 0.8): contested subjects moved, the encyclopedia at large did not. Where our two kinds of range disagree, we have called the result suggestive. Below are the scoreboard, how weighting changes the sizes, and the earlier results we withdrew; the checks against edits reported in the news are <a href="#checks">below</a>. In the scoreboard, each tile is one of the six other ways to run a test: the dot is the estimate and the line is its range. Select a tile for the details.</p>
 </div></details>
   <div id="boardWrap"></div>
   <figure class="fig" id="wvu" style="margin:0">
@@ -1644,23 +1694,40 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <button class="inlab" type="button" data-intent='{"lab":"shuffle","test":"P2"}'>Shuffle it yourself →</button>
 </section>
 
-
-<section class="sec" id="limits" aria-label="What this can and cannot tell you">
-  <header><div class="eyebrow">What this can and cannot tell you</div><h2>This measures what the encyclopedia says, not whether it is true</h2>
-    <p class="means bl"><b>Bottom line:</b> Word counts and coded sentences show what changed, where and when; they cannot show who is right about the conflict, and patterns in who edits are not proof that people worked together.</p>
+<section class="sec" id="reach" aria-labelledby="reachH">
+  <header>
+    <div class="eyebrow"><span class="layer">CONTENT</span>Core and long tail <span class="xchip">Probability sample · 48,974 + 141,356 articles</span></div>
+    <h2 id="reachH">The articles the world reads first on Israel changed; the long tail did not</h2>
+    <p class="means bl"><b>Bottom line:</b> The new language sits in the pages the world reads first on Israel, from Netanyahu and Israel to Zionism and Hamas, and in one in ten of the subject’s Top-importance articles (gap over other conflicts 5.9 points, range 0.9 to 11.2); the Low-importance and ungraded pages, about 80% of the topic, moved no more than other conflicts’.</p>
+    <p class="deck">The most-read topic pages whose opening paragraph gained critical vocabulary: Benjamin Netanyahu (7.0M views), Israel (4.6M), Palestine (2.4M), Zionism (1.8M) and Hamas (1.3M).</p>
+    <p class="deck">Wikipedia’s editors grade every article Top, High, Mid or Low importance. We drew 3,000 of the 48,974 articles the Israel, Palestine, Judaism and Jewish history WikiProjects assess, and 3,000 of the 141,356 assessed by nine WikiProjects on other conflict regions, weighted back to each group’s true size. Bars: the share whose opening paragraph gained critical vocabulary, July 2023 to November 2026; thin lines are 95% ranges.</p>
   </header>
-  <details class="stats"><summary>What this study can and cannot tell you <span>in six lines</span></summary><div class="in">
-  <section class="canbox" aria-label="What this study can and can't tell you">
-    <div class="yes"><h3>What this study can tell you</h3><ul>
-      <li>Whether critical vocabulary (genocide, apartheid, colonial…) became more common in these articles, and whether Jewish-history vocabulary (homeland, indigenous, antisemitism…) did too.</li>
-      <li>Whether that change was bigger than in articles about other countries and conflicts.</li>
-      <li>When the wording changed, and in which sentences.</li></ul></div>
-    <div class="no"><h3>What it can’t tell you</h3><ul>
-      <li>It measures how wording changed. It does not check whether the wording is true.</li>
-      <li>It can’t tell who is right about the conflict.</li>
-      <li>Patterns in who edits, and when, are not proof that people worked together.</li></ul></div>
-  </section>
-  </div></details>
+  <figure class="fig" id="tierFig" style="margin:0">
+    <div class="fig-h"><span class="fig-t">Share of articles whose opening paragraph gained critical vocabulary, by importance grade</span><span class="cap">Jul 2023 → Nov 2026 · weighted to the full populations</span></div>
+    <div id="tierChart"></div>
+    <div class="legend" id="tierKey"></div>
+    <details class="stats"><summary>Notes <span>grades and counts</span></summary><div class="in">
+    <p class="cap" id="tierCap"></p>
+</div></details>
+  </figure>
+  <details class="stats"><summary>More <span>the whole population; the reading share</span></summary><div class="in">
+    <p>Across all 49,000 articles, 0.9% gained, against 0.5% for the other regions: a gap of 0.4 points (range about 0 to 0.9), within the margin of error, yet about 446 articles (range 277 to 616). Israel and Palestine articles carry it: they gained at 1.2%, Judaism articles at 0.3% (a gap of 0.9 points, range 0.2 to 1.5). The one test we wrote down before collecting data, an average over articles, found no rise (<a href="#board">the full record</a>).</p>
+    <p>In the Top grade of the probability sample, the pages that gained carry 30.5% of Top-grade topic reading, against 19.1% for the other regions; that gap is too uncertain to call. Across all 49,000 articles they carry 4.8% of reading, against 4.6%: the same. The five most-read gainers are Benjamin Netanyahu (7.0M views), Israel (4.6M), Palestine (2.4M), Zionism (1.8M) and Hamas (1.3M).</p>
+</div></details>
+  <p class="cap short-def"><i>Critical vocabulary:</i> genocide, apartheid, ethnic cleansing, occupation, colonial, Nakba/expulsion, counted wherever they appear and whoever they are about. We counted Jewish-history vocabulary (homeland, indigenous, antisemitism) the same way.</p>
+  <p class="means" id="mTier"></p>
+  <header style="margin-top:36px">
+    <h3 class="o-h">Few pages, much of the reading, as in other live wars</h3>
+    <p class="deck">In our crawl of 4,642 core topic articles, 3.9% gained critical vocabulary in the opening paragraph, and those pages carry 15% of the last 12 months’ reading (comparison articles: 1.5% and 5%). Against the live wars alone (Ukraine, Russia, Armenia, Azerbaijan) the reading share is 14.1%: other live wars show the same tilt toward their most-read pages. What is specific to this subject is what the core opening paragraphs now say.</p>
+  </header>
+  <figure class="fig" style="margin:0"><div id="reachFig"></div></figure>
+  <details class="stats"><summary>More <span>the reading share</span></summary><div class="in">
+    <p class="means" id="mReach"></p>
+</div></details>
+</section>
+
+<section class="sec" id="limits" aria-label="Samples, limits and glossary">
+  <header><div class="eyebrow">Samples and limits</div><h2>How we chose the articles, and what would change our conclusions</h2></header>
   <details class="stats"><summary>How we chose the articles <span>three samples, two limits</span></summary><div class="in">
   <aside class="chose" id="chose" aria-labelledby="choseH">
     <h3 id="choseH">How we chose the articles</h3>
@@ -1701,6 +1768,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </ul></div></details>
   </div>
   <div class="short-more"><!--FINDINGS--></div>
+
 </section>
 
 <section class="sec" id="method">
@@ -1720,29 +1788,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="cap">Patterns are case-insensitive regular expressions. Exclusions (in amber) are subtracted.</p>
     <div class="lex" id="lex"></div>
   </div></details>
-</section>
-
-<div class="band" id="appendix">
-  <div class="eyebrow">Appendix</div>
-  <h2>The rest of the evidence: every word, every article, every check</h2>
-  <p class="deck">These sections hold the parts of the record that did not change, or that changed the same way in comparison articles. They are here so the main line can be checked.</p>
-</div>
-
-<section class="sec" id="key" aria-labelledby="keyH">
-  <header>
-    <div class="eyebrow"><span class="layer epistemics">SOURCES</span>The rule we wrote down first</div>
-    <h2 id="keyH">A few pages, not the whole topic: the average article did not move</h2>
-    <p class="deck">Across 332 topic and 90 comparison articles followed every quarter, the extra change in critical vocabulary in the full text was −0.30 per 10,000 words, with a range of −2.7 to +1.7. That is why this report counts pages and readers, not averages: a change in a few hundred opening paragraphs is invisible in an average over many articles. Scroll to build the chart one layer at a time; each line shows how often critical vocabulary appears, checked every three months.</p>
-  </header>
-  <div class="scrolly" id="scK">
-    <div class="steps" id="stepsK"></div>
-    <figure class="sticky fig kfig" style="margin:0">
-      <div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="seg" id="kPart" role="group" aria-label="Text measured"><button data-v="full" aria-pressed="true">Full text</button><button data-v="lead" aria-pressed="false">Opening paragraph</button></span></div>
-      <div class="chart" id="kChart" style="height:clamp(270px,48vh,420px)"></div>
-      <div class="legend" id="kKey"></div>
-    </figure>
-  </div>
-  <p class="means" id="mKey"></p>
 </section>
 
 <section class="sec" id="checks">
@@ -2145,7 +2190,7 @@ function miniBars(c){const t=c.topic_value,o=c.comparison_value;if(t==null)retur
   else rows=[["Topic articles",t,"--topic"],["Comparison articles",o,"--comp"]],cap=lab;
   const mx=Math.max(...rows.map(r=>Math.abs(r[1]||0)),1e-9),f=v=>(c.unsigned?(v<0?"−":""):(v>0?"+":v<0?"−":""))+Math.abs(v)+(c.value_suffix||"");
   return `<div class="mini2">${cap?`<p class="cap" style="font:11px/1.35 var(--mono)">${esc(cap)}</p>`:""}${rows.map(([n,v,col])=>`<div><span>${esc(n)}</span><span class="bar" style="width:${Math.max(1,Math.abs(v||0)/mx*100)}%;background:var(${col})"></span><span>${esc(f(v))}</span></div>`).join("")}</div>`}
-function drawCards(){
+function drawCards(){if(!$("#cards"))return;
   const T=Array.isArray(R.takeaways)?R.takeaways.filter(Boolean):[];
   if(!T.length){$("#sixty").hidden=true;return}$("#sixty").hidden=false;
   $("#cards").innerHTML=T.slice(0,6).map(c=>{
@@ -2199,7 +2244,7 @@ function scrolly(host,steps,apply){
   els.forEach((e,i)=>e.querySelector(".go").onclick=()=>set(i));
   els[0].classList.add("on");
   if(!("IntersectionObserver" in window))return;
-  let io;const mk=()=>{io&&io.disconnect();const ph=innerWidth<=900;io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)set(+en.target.dataset.i)})},{rootMargin:ph?"-60% 0px -12% 0px":"-45% 0px -45% 0px"});els.forEach(e=>io.observe(e))};
+  let io;const mk=()=>{io&&io.disconnect();const ph=innerWidth<=900;io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)set(+en.target.dataset.i)})},{rootMargin:ph?"-78% 0px -21% 0px":"-45% 0px -45% 0px"});els.forEach(e=>io.observe(e))};
   mk();let w=innerWidth;addEventListener("resize",()=>{if((w<=900)!==(innerWidth<=900)){w=innerWidth;mk()}});
 }
 
@@ -2452,7 +2497,7 @@ function drawTerr(){
 }
 
 /* ---------- phone: fold the deep exploratory sections behind one tap ---------- */
-const FOLD_REDRAW={ratchet:()=>drawRatchet(),crosslang:()=>drawXL(),vocab:()=>{drawTrend();drawMinis()},palestine:()=>S.trace&&traceDraw(S.trace),organic:drawCoord,sourcing:drawExplore};
+const FOLD_REDRAW={ratchet:()=>drawRatchet(),vocab:()=>{drawTrend();drawMinis()},organic:drawCoord,sourcing:drawExplore};
 const FOLD_LAB={palestine:["Show the edit-by-edit trace ↓","Hide the edit-by-edit trace ↑"]};
 function foldPhone(){if(!isPhone())return;
   const fb=$("#findingsBody"),fm=$("#findingsMore");if(fb&&fm&&fb.scrollHeight>520){fb.classList.add("capped");fm.hidden=false;fm.onclick=()=>{fb.classList.remove("capped");fm.hidden=true}}Object.keys(FOLD_REDRAW).forEach(id=>{const sec=document.getElementById(id);if(!sec||sec.querySelector(".unfold"))return;
@@ -2543,149 +2588,87 @@ function brCompare(){
   $('.br-mini[data-k="a"]',box).innerHTML=brStripSVG(BR.ev,W,40);$('.br-mini[data-k="b"]',box).innerHTML=brStripSVG(ce.ev,W,40)}
 
 /* ---------- headline 1: the most important chart ---------- */
-const K={step:3,part:"full",vis:{rise:1,threads:1,mean:1,fold:0},raf:0,data:{},hover:null,steps:null};
-function keyData(part){
-  if(K.data[part]!==undefined)return K.data[part];
-  const tT=tr("treatment",part),tC=tr("control",part),P=didRow(part==="lead"?"P1":"P2");
-  if(!tT||!tC||!tT.length||tT.every(r=>r.critical_rate==null)){K.data[part]=null;return null}
-  const f=R.first||R.dates[0];
-  const own=g=>R.articles.filter(a=>a.group===g&&a.primary).map(a=>{const ser=part==="lead"?a.lcrit_series:a.crit_series,ds=a.crit_series_dates;if(!ser||!ds)return null;
-    const i0=ds.indexOf(f),v0=i0<0?null:ser[i0],v1=ser.at(-1);return {a,pts:ds.map((d,i)=>[ym(d),ser[i]]),ch:v0!=null&&v1!=null?v1-v0:null}}).filter(Boolean);
-  const threads=own("control"),tops=own("treatment");
-  // dots: the exported per-article changes; titles attached only when they match the article order exactly
-  const match=(arr,ex)=>{const m=arr.filter(t=>t.ch!=null);return ex&&m.length===ex.length&&m.every((t,i)=>Math.abs(t.ch-ex[i])<.01)?m:null};
-  const dotsOf=(arr,ex)=>{if(ex&&ex.length){const m=match(arr,ex);return ex.map((v,i)=>({v,a:m?m[i].a:null}))}return arr.filter(t=>t.ch!=null).map(t=>({v:t.ch,a:t.a}))};
-  const dT=dotsOf(tops,P&&P.changes_t),dC=dotsOf(threads,P&&P.changes_c);
-  const allY=[...tT,...tC].map(r=>r.critical_rate).filter(v=>v!=null),thY=threads.flatMap(t=>t.pts.map(p=>p[1])).filter(v=>v!=null);
-  const yMax=niceMax(Math.max(...allY,quant(thY,.9)||0)*1.08);
-  const over=threads.filter(t=>t.pts.some(p=>p[1]!=null&&p[1]>yMax)).length;
-  const fv=[...dT,...dC].map(d=>d.v);if(P)fv.push(P.lo,P.hi,P.did);
-  let x0=Math.min(0,quant(fv,.02)),x1=Math.max(0,quant(fv,.98));if(P){x0=Math.min(x0,P.lo,P.did);x1=Math.max(x1,P.hi,P.did)}
-  const pad=(x1-x0)*.06||1;x0-=pad;x1+=pad;
-  const out=[...dT,...dC].filter(d=>d.v<x0||d.v>x1).length;
-  return K.data[part]={part,P,topic:tT.map(r=>[ym(r.date),r.critical_rate]),comp:tC.map(r=>[ym(r.date),r.critical_rate]),nT:tT[0].n,nC:tC[0].n,threads,dT,dC,yMax,over,fx:[x0,x1],out}}
+/* ---------- story scrolly: the battles and what changed in the wording after each (R.v3 weekly series, 4,642 core topic opening paragraphs).
+   Dates and quotes: patterns/angle/OCT7.md, patterns/events/cards.md (EV3, EV7), the #zionism/#palestine/#oct7 sections. Timing only, not cause. */
+const K={step:-1,dom:null,raf:0};
+const KD=s=>Date.parse(s+"T00:00:00Z");
+const K_END="2026-11-05";
+const K_STEPS=[
+ {k:"7 October 2023",win:["2023-09-01","2024-01-20"],ev:[["2023-10-07","7 Oct attack"]],ch:[["2023-10-09","Hamas: “political” added"],["2023-10-12","Hamas: “militant” → “military”"]],
+  h:"Two days after the attack, Hamas’s definition dropped “fundamentalist” and added “political”; on 12 October “militant” became “military”. “Terrorist” was written in five times; the longest stay was about 2.4 hours."},
+ {k:"The ground war and the truce",win:["2023-10-15","2024-02-20"],ev:[["2023-10-27","Ground invasion"],["2023-11-24","Truce"],["2023-12-01","Fighting resumes"]],ch:[["2023-11-27","Oct 7: “attacks” → “incursions”"],["2023-12-09","Oct 7: “armed incursions”"]],
+  h:"During the November truce, October 7’s first sentence went from “coordinated attacks” to “coordinated incursions” (27 November); a week after the fighting resumed, “armed incursions” (9 December), the wording ever since. Between the October 2023 and January 2024 copies, Hamas’s opening section tripled in length and its “terror” mentions fell from four to one."},
+ {k:"2024: Rafah and Lebanon",win:["2024-04-01","2024-12-15"],ev:[["2024-05-06","Rafah offensive"],["2024-09-27","Nasrallah killed"],["2024-10-01","Lebanon invasion"]],ch:[["2024-06-06","Nakba: “is the ethnic cleansing”"],["2024-10-02","Zionism: “through the colonization”"]],
+  h:"A month into the Rafah offensive, the Nakba’s first sentence became “the ethnic cleansing of Palestinians through their violent displacement and dispossession…” (6 June; it lasted 93 days, and the phrase is back today). Five days after Nasrallah’s killing, Zionism became a movement for “a Jewish state through the colonization of a land outside Europe” (2 October; it lasted 47 days)."},
+ {k:"May–June 2025",win:["2025-04-10","2025-08-01"],ev:[["2025-05-16","Gaza offensive"],["2025-06-13","Iran war"]],ch:[["2025-05-26","Gaza war: Hamas out of sentence 1"],["2025-06-22","Zionism: “colonization of Palestine”"]],
+  h:"Ten days into the May offensive, the Gaza war’s first sentence stopped naming Hamas (26 May 2025); the same day the October 7 article’s title dropped “Hamas-led”. During the war with Iran, Zionism read “a Jewish homeland through the colonization of Palestine” (22 June)."},
+ {k:"2025–2026: the definitions set",win:["2025-08-15",K_END],ev:[["2025-10-10","Ceasefire"],["2026-02-28","Iran war"]],ch:[["2025-09-26","Gaza genocide: own voice"],["2025-11-29","Hamas: today’s definition"],["2026-07-06","Nakba: “by Zionists”"],["2026-08-27","Zionism: today’s sentence"],["2026-10-08","Oct 7: today’s sentence"]],
+  h:"New terms slowed to the pre-war pace, but the defining sentences settled now: Gaza genocide in Wikipedia’s own voice (September 2025), Hamas a “political organisation with a military wing” (November 2025), the Nakba “by Zionists” (July 2026), Zionism “through colonization” (August 2026). Timing, not proof of cause."}];
+const kW=()=>{const V=R.v3;return {V,w0:KD(V.week0),wk:7*864e5,ins:V.ins,ins7:V.ins7||[]}};
+function kWin(i){return i<0||!K_STEPS[i]?[KD(R.v3.week0),KD(K_END)]:K_STEPS[i].win.map(KD)}
+function kStat(d,lab){const {w0,wk,ins,ins7}=kW(),i=Math.floor((KD(d)-w0)/wk);if(i<6||i+2>=ins.length)return "";
+  const a=ins[i]+ins[i+1]+ins[i+2],a7=(ins7[i]||0)+(ins7[i+1]||0)+(ins7[i+2]||0),b=(ins.slice(i-6,i).reduce((s,v)=>s+v,0))/6;
+  return `Three weeks from ${esc(lab)} (${v3d(d)}): <b>${a}</b> new terms, <b>${a7}</b> still there a week later; the six weeks before averaged ${fmt(b,1)} a week.`}
+function kPre(){const {w0,wk,ins}=kW(),n=Math.floor((KD("2023-10-07")-w0)/wk);return ins.slice(0,n).reduce((s,v)=>s+v,0)/n}
 function keyInit(){
-  const host=$("#scK");if(!host)return;
-  if(!keyData("full")&&!keyData("lead")){host.outerHTML=`<div class="note">The group trend lines are not in this build yet.</div>`;$("#mKey").innerHTML="";return}
-  seg($("#kPart"),v=>{K.part=v;keyText();drawKey(true)});
-  keyText();drawKey(true);
-  const ch=$("#kChart");
-  ch.addEventListener("pointermove",keyHover);ch.addEventListener("pointerdown",keyHover);ch.addEventListener("pointerleave",()=>{K.hover=null;if(K.step!==5){hideTip();drawKey(true)}});
-  ch.addEventListener("click",e=>{const h=keyPick(e);if(h&&h.a)openDrawer(h.a.title,{actions:[{label:"Explore it in the data lab",run:a=>openInLab({lab:"flip",title:a.title})}]})});
+  const host=$("#stepsK");if(!host)return;
+  if(!R.v3||!R.v3.ins){$("#scK").outerHTML=`<div class="note">The weekly series is not in this build.</div>`;return}
+  const N=K_STEPS.length;
+  host.innerHTML=K_STEPS.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${N} · ${esc(s.k)}</span><p>${s.h}</p><p class="kst">${kStat(s.ev[0][0],s.ev[0][1])}</p><button class="go" type="button">Show in chart</button></div>`).join("");
+  scrolly(host,K_STEPS.map((_,i)=>({st:{kStep:i}})),()=>keyGo(S.kStep));
+  $$(".step",host).forEach(e=>e.classList.remove("on"));
+  drawKey();
+  const ch=$("#kChart");ch.addEventListener("pointermove",keyHover);ch.addEventListener("pointerdown",keyHover);ch.addEventListener("pointerleave",hideTip);
 }
-function keyText(){
-  const D=keyData(K.part);setSeg($("#kPart"),K.part);
-  const host=$("#stepsK");if(!D){host.innerHTML=`<div class="note">No trend for this part of the text.</div>`;return}
-  const f=R.dates[0],l=R.dates.at(-1),P=D.P,where=K.part==="lead"?"opening paragraphs":"articles";
-  const up=D.threads.filter(t=>t.ch!=null&&t.ch>0).length,nn=D.threads.filter(t=>t.ch!=null).length;
-  const T='<span class="sw" style="background:var(--topic)"></span>topic articles',Cg='<span class="sw" style="background:var(--comp)"></span>comparison';
-  const steps=[
-    {k:"The topic articles",h:`The teal line is the ${D.nT} ${T}. In ${dlab(f)} they used words like “colonial”, “apartheid” and “genocide” <b>${fmt(D.topic[0][1],1)}</b> times per 10,000 words of their ${where}. By ${dlab(l)} the rate was <b>${fmt(D.topic.at(-1)[1],1)}</b>. The scale starts at zero, so the height of the line is the real level.`},
-    {k:"Every comparison article",h:`Each thin grey line is one of the ${D.threads.length} ${Cg} articles. They cover other countries, conflicts and religions. ${nn?`${up} of ${nn} use these words more now than in ${dlab(f)}.`:""} Some move a lot. That is why we compare averages. Select a line to open its article.`},
-    {k:"The comparison average",h:`Their average went from <b>${fmt(D.comp[0][1],1)}</b> to <b>${fmt(D.comp.at(-1)[1],1)}</b>. The question is not whether the teal line rose. It is whether the teal line rose <i>more</i> than this grey one. The red dashed line marks 7 October 2023; the other dashed line, labelled “ICJ”, marks the ICJ genocide case, January 2024.`},
-    P?{k:"Fold it into one number",h:`Now each article becomes a dot. The dot shows how much that article changed from ${dlab(f)} to ${dlab(l)}. On average the topic articles changed by <b>${sgn(P.treat,1)}</b> and the comparison articles by <b>${sgn(P.control,1)}</b>. The difference is the extra change: <b>${sgn(P.did,1)}</b> per 10,000 words. This is the test we fixed in advance, ${P.id}. The soft band is the range we’re fairly sure about: ${sgn(P.lo,1)} to ${sgn(P.hi,1)}. ${P.lo<=0&&P.hi>=0?"It includes zero, so this could be chance.":"It stays clear of zero."}`,lab:true}:{k:"One number",h:"The pre-registered estimate for this measure is not in this build."}];
-  const es=keyES(),er=es.at(-1),pre=es.filter(r=>r.date<=(R.pre_war||"2023-07")).at(-1);
-  if(er)steps.push({k:"Over time",h:`When did it happen? Here we measure the extra change at every saved copy of the articles. Each copy is compared with ${dlab(f)}. Before the war, by ${pre?dlab(pre.date):"mid-2023"}, the extra change was <b>${pre?sgn(pre.did,1):"–"}</b>. By ${dlab(er.date)} it was <b>${sgn(er.did,1)}</b>. The range we’re fairly sure about is ${sgn(er.lo,1)} to ${sgn(er.hi,1)}. ${er.lo<=0&&er.hi>=0?"The shaded range still crosses zero.":"The shaded range stays clear of zero."}`,shadow:true});
-  if(K.built&&$$(".step",host).length===steps.length){$$(".step",host).forEach((e,i)=>{e.querySelector(".k").textContent=`${i+1} / ${steps.length} · ${steps[i].k}`;e.querySelector("p").innerHTML=steps[i].h})}
-  else{K.built=true;host.innerHTML=steps.map((s,i)=>`<div class="step" data-i="${i}"><span class="k">${i+1} / ${steps.length} · ${s.k}</span><p>${s.h}</p><button class="go" type="button">Show in chart</button>${s.shadow?`<button class="inlab" type="button" data-intent='{"lab":"shadow"}'>Explore this →</button>`:""}${s.lab?`<button class="inlab" type="button" data-lab>Shuffle it yourself in the data lab →</button>`:""}</div>`).join("");
-  const lb=$("[data-lab]",host);if(lb)lb.onclick=()=>openInLab({lab:"shuffle",test:P?P.id:"P2"});
-  K.steps=steps.map((_,i)=>({st:{kStep:i+1}}));
-  scrolly(host,K.steps,()=>keyGo(S.kStep));}
-  $$(".step",host).forEach(e=>e.classList.toggle("on",+e.dataset.i===K.step-1));
-  $("#mKey").innerHTML=P?`<b>What this means:</b> the topic articles ${P.treat>=0?"gained":"lost"} ${fmt(Math.abs(P.treat),1)} of these words per 10,000, and the comparison articles ${P.control>=0?"gained":"lost"} ${fmt(Math.abs(P.control),1)}. The extra change is ${sgn(P.did,1)}. It comes from ${P.n_t} topic articles and ${P.n_c} comparison articles. ${P.lo<=0&&P.hi>=0?"Its range crosses zero, so we can’t tell it apart from chance.":"Its range stays clear of zero."}`:"";
-}
-const KT={1:{rise:1,threads:0,mean:0,fold:0},2:{rise:1,threads:1,mean:0,fold:0},3:{rise:1,threads:1,mean:1,fold:0},4:{rise:1,threads:1,mean:1,fold:1},5:{rise:1,threads:1,mean:1,fold:1}};
 function keyGo(n){
-  const prev=K.step;K.step=n;$$("#stepsK .step").forEach(e=>e.classList.toggle("on",+e.dataset.i===n-1));
-  const from={...K.vis},to={...KT[n]};if(n===1&&prev!==1)from.rise=0;
-  cancelAnimationFrame(K.raf);
-  if(RM.matches||n===5||prev===5){K.vis=to;drawKey(true);return}
-  const D=n===4||prev===4?1100:700,t0=performance.now();
-  const stepF=now=>{const t=Math.min(1,(now-t0)/D),e=ease(t);for(const k in to)K.vis[k]=from[k]+(to[k]-from[k])*e;drawKey(t===1);if(t<1)K.raf=requestAnimationFrame(stepF)};
-  K.raf=requestAnimationFrame(stepF)}
-function keyGeom(){
-  const el=$("#kChart"),D=keyData(K.part);if(!el||!D)return null;const W=Math.max(260,el.clientWidth),H=el.clientHeight||320,ph=isPhone();
-  const m={l:ph?34:42,r:ph?12:128,t:34,b:30};
-  const t0=ym(R.dates[0]),t1=ym(R.dates.at(-1));
-  const x=lin(t0,t1,m.l,W-m.r),y=lin(0,D.yMax,H-m.b,m.t);
-  const fx=lin(D.fx[0],D.fx[1],m.l,W-(ph?12:28)),fxc=v=>fx(clamp(v,D.fx[0],D.fx[1]));
-  /* phone: the pinned chart is short, so spread the three fold rows over the whole plot height
-     (row labels sit 26px above the top row and 30px below the bottom row) instead of a third of it */
-  const fT=40,fC=H-m.b-28,mid=ph?(fT+fC)/2:(m.t+H-m.b)/2+6,gap=ph?Math.min(56,(fC-fT)/2):Math.min(56,(H-m.t-m.b)/3.3),yT=mid-gap,yB=mid,yC=mid+gap;
-  return {el,D,W,H,ph,m,x,y,fx,fxc,yT,yB,yC,t0,t1}}
-const jit=i=>(((i*2654435761)>>>0)%1000)/1000-.5;
-function keyES(){const rows=((R.event_study||{})[`${K.part}:critical_rate`]||[]).map(r=>({...r})),P=didRow(K.part==="lead"?"P1":"P2"),l=rows.at(-1);
-  if(P&&l&&l.date===(R.last||R.dates.at(-1))){l.did=P.did;l.lo=P.lo;l.hi=P.hi}return rows}
-function drawKeyES(){
-  const el=$("#kChart"),rows=keyES();el._cfg=null;
-  $("#kTitle").textContent=`Extra change over time, per 10,000 words of ${K.part==="lead"?"the opening paragraph":"the full text"}`;
-  if(!rows.length){el.innerHTML=`<div class="note">No estimates over time for this choice.</div>`;$("#kKey").innerHTML="";return}
-  const pts=[[ym(R.dates[0]),0],...rows.map(r=>[ym(r.date),r.did])],rb=[[ym(R.dates[0]),0,0],...rows.map(r=>[ym(r.date),r.lo,r.hi])];
-  chart(el,{series:[{key:"es",label:"Extra change",color:"--topic",pts,ribbon:rb,width:2.4}],zeroBase:false,endLabels:true,labelW:isPhone()?0:100,vfmt:v=>sgn(v,2),xDomain:[ym(R.dates[0]),ym(R.dates.at(-1))],war:false,marks:[{t:WAR,label:"7 Oct 2023",color:"--war",anchor:"end",row:0},{t:ICJ,label:isPhone()?"ICJ case":"ICJ case, Jan 2024",color:"--ink",row:0}],animate:false,aria:"Extra change over time, with 7 October 2023 and the ICJ case of January 2024 marked",xlab:t=>"Copy of "+dlabT(t)});
-  $("#kKey").innerHTML=`<span class="key"><i class="ln" style="background:var(--topic)"></i>extra change, topic minus comparison</span><span class="key"><i style="background:var(--topic-soft);border:1px solid var(--topic)"></i>range we’re fairly sure about</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i class="dash"></i>ICJ case, Jan 2024</span>`}
-function drawKey(final){
-  if(K.step===5){drawKeyES();return}
-  const G=keyGeom();if(!G)return;const {el,D,W,H,ph,m,x,y,fxc,yT,yB,yC}=G,V=K.vis,f=ease(clamp(V.fold,0,1)),f2=clamp((V.fold-.55)/.45,0,1);
-  const mix=(a,b)=>a+(b-a)*f,P=D.P;
-  $("#kTitle").textContent=V.fold>.5?`Change per 10,000 words, ${dlab(R.dates[0])} → ${dlab(R.dates.at(-1))}`:`Critical vocabulary per 10,000 words of ${K.part==="lead"?"the opening paragraph":"article text"}`;
-  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(V.fold>.5&&P?`Extra change ${sgn(P.did,2)} per 10,000 words, range ${sgn(P.lo,2)} to ${sgn(P.hi,2)}`:"Loaded-word rate over time: topic articles, each comparison article and the comparison average")}"><defs><clipPath id="kClip"><rect x="0" y="${m.t-2}" width="${W}" height="${H-m.t-m.b+2}"/></clipPath></defs>`;
-  // time frame (fades out as it folds)
-  const fa=1-f;
-  if(fa>.01){s+=`<g style="opacity:${fa}">`;
-    for(const v of ticks(0,D.yMax,4)){const yy=y(v);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text class="ax" x="${m.l-6}" y="${yy+3.5}" text-anchor="end">${fmt(v,0)}</text>`}
-    s+=yearTicks(x,G.t0,G.t1,H-m.b,ph);
-    [[WAR,ph?"7 Oct":"7 Oct 2023","--war",m.t-20],[ICJ,ph?"ICJ":"ICJ case, Jan 2024","--ink",m.t-7]].forEach(([t,l,c,ty])=>{const xx=x(t);s+=`<line x1="${xx}" x2="${xx}" y1="${ty+3}" y2="${H-m.b}" style="stroke:var(${c});stroke-width:1.25;stroke-dasharray:3 3"/><text class="ax" x="${t===ICJ?xx+4:xx-4}" y="${ty}" text-anchor="${t===ICJ?"start":"end"}" style="fill:var(${c})">${l}</text>`});
-    s+=`</g>`}
-  // fold frame (fades in)
-  if(f>.01&&P){s+=`<g style="opacity:${f}">`;const fx=G.fx;
-    for(const v of ticks(D.fx[0],D.fx[1],ph?4:6)){if(v<D.fx[0]||v>D.fx[1])continue;const xx=fx(v);s+=`<line x1="${xx}" x2="${xx}" y1="${yT-22}" y2="${H-m.b}" style="stroke:var(${v===0?"--muted":"--faint"});${v===0?"stroke-width:1.25":""}"/><text class="ax" x="${xx}" y="${H-m.b+15}" text-anchor="middle">${v>0?"+":""}${+v.toFixed(2)}</text>`}
-    s+=`<text class="rl" x="${m.l}" y="${yT-26}">TOPIC ARTICLES · ${D.dT.length}</text><text class="rl" x="${m.l}" y="${yC+30}">COMPARISON · ${D.dC.length}</text>`;
-    s+=`</g>`}
+  const from=K.dom||kWin(K.step),to=kWin(n);K.step=n;cancelAnimationFrame(K.raf);
+  if(RM.matches){K.dom=to;drawKey();return}
+  const t0=performance.now(),D=750;
+  const f=now=>{const t=Math.min(1,(now-t0)/D),e=ease(t);K.dom=[from[0]+(to[0]-from[0])*e,from[1]+(to[1]-from[1])*e];drawKey();if(t<1)K.raf=requestAnimationFrame(f)};
+  K.raf=requestAnimationFrame(f)}
+function kTicks(d0,d1,ph){const span=(d1-d0)/864e5,out=[];
+  if(span>900){for(let y=2021;y<=2026;y++){const t=Date.UTC(y,0,1);if(t>=d0&&t<=d1)out.push([t,ph?"’"+String(y).slice(2):String(y)])}return out}
+  const step=span<170?1:span<330?2:3,a=new Date(d0);let y=a.getUTCFullYear(),m=a.getUTCMonth()+1;
+  for(;;){if(m>11){m-=12;y++}const t=Date.UTC(y,m,1);if(t>d1)break;if(m%step===0)out.push([t,MON[m]+(m===0||!out.length?" ’"+String(y).slice(2):"")]);m++}
+  return out}
+function drawKey(){
+  const el=$("#kChart");if(!el||!R.v3||!R.v3.ins)return;
+  const {V,w0,wk,ins,ins7}=kW(),W=Math.max(260,el.clientWidth),H=el.clientHeight||300,ph=isPhone();
+  const [d0,d1]=K.dom||kWin(K.step),S0=K_STEPS[K.step];
+  const fs=ph?10:11,cw=fs*.56;
+  // labels for the active step: battles (red) and wording changes (ink), packed into rows above the plot
+  const labs=[];if(S0){S0.ev.forEach(([d,l])=>labs.push({t:KD(d),l,c:"--war"}));S0.ch.forEach(([d,l])=>labs.push({t:KD(d),l,c:"--ink"}))}
+  labs.sort((a,b)=>a.t-b.t);
+  const mL=ph?26:34,mR=ph?8:14,x=t=>mL+(W-mL-mR)*(t-d0)/(d1-d0);
+  const rows=[];labs.forEach(o=>{const xx=x(o.t),w=o.l.length*cw+6,right=xx<W*.6;o.a=right?"start":"end";o.x0=right?xx:xx-w;o.x1=right?xx+w:xx;
+    let r=rows.findIndex(e=>e<o.x0-4);if(r<0){r=rows.length;rows.push(-1e9)}rows[r]=o.x1;o.r=r});
+  const rh=fs+4,mT=12+Math.max(1,rows.length)*rh,mB=22,y0=H-mB;
+  const ymx=niceMax(Math.max(...ins)),y=v=>y0-(y0-mT)*v/ymx;
+  let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(S0?`${S0.k}: weekly new critical terms in core opening paragraphs, with ${S0.ev.map(e=>e[1]).join(", ")} marked, and the wording changes ${S0.ch.map(c=>c[1]+" on "+v3d(c[0])).join("; ")}`:"Weekly new critical terms in the opening paragraphs of 4,642 core articles, 2021 to 2026, with battles and escalations marked")}"><defs><clipPath id="kClip"><rect x="${mL}" y="0" width="${W-mL-mR}" height="${H}"/></clipPath></defs>`;
+  ticks(0,ymx,ph?2:3).forEach(v=>{const yy=y(v);s+=`<line x1="${mL}" x2="${W-mR}" y1="${yy}" y2="${yy}" style="stroke:var(${v===0?"--muted":"--faint"})"/><text class="ax" x="${mL-5}" y="${yy+3.5}" text-anchor="end">${v}</text>`});
+  kTicks(d0,d1,ph).forEach(([t,l])=>{const xx=x(t);if(xx<mL||xx>W-mR)return;s+=`<line x1="${xx}" x2="${xx}" y1="${y0}" y2="${y0+4}" style="stroke:var(--muted)"/><text class="ax" x="${xx+2}" y="${H-6}">${l}</text>`});
   s+=`<g clip-path="url(#kClip)">`;
-  // comparison threads -> comparison dots
-  if(V.threads>.01){const op=(.26*V.threads)*(1-f)+.42*f;
-    D.threads.forEach((t,i)=>{const hv=K.hover&&K.hover.a===t.a;let d="",pen=false;const tx=t.ch==null?null:fxc(t.ch),ty=yC+jit(i)*22;
-      if(f>.98&&tx!=null){s+=`<circle cx="${tx}" cy="${ty}" r="${hv?4.5:2.6}" style="fill:var(--comp);opacity:${hv?1:op}"/>`;return}
-      for(const p of t.pts){if(p[1]==null){pen=false;continue}const px=tx==null?x(p[0]):mix(x(p[0]),tx),py=tx==null?y(p[1]):mix(y(p[1]),ty);d+=(pen?"L":"M")+px.toFixed(1)+","+py.toFixed(1);pen=true}
-      if(d)s+=`<path d="${d}" style="fill:none;stroke:var(${hv?"--ink":"--comp"});stroke-width:${hv?2:1};opacity:${hv?1:op*(tx==null?1-f:1)};stroke-linejoin:round"/>`})}
+  if(S0){const t=KD(S0.ev[0][0]);s+=`<rect x="${x(t)}" y="${mT}" width="${Math.max(1,x(t+3*wk)-x(t))}" height="${y0-mT}" style="fill:var(--war);opacity:.08"/>`}
+  const pxw=x(w0+wk)-x(w0),gap=pxw>5?1:0;
+  ins.forEach((v,i)=>{const t=w0+i*wk;if(t<d0-wk||t>d1)return;const bx=x(t),bw=Math.max(.8,pxw-gap);
+    if(v)s+=`<rect x="${bx.toFixed(1)}" y="${y(v).toFixed(1)}" width="${bw.toFixed(2)}" height="${(y0-y(v)).toFixed(1)}" style="fill:var(--topic);opacity:.3"/>`;
+    const d=ins7[i];if(d)s+=`<rect x="${bx.toFixed(1)}" y="${y(d).toFixed(1)}" width="${bw.toFixed(2)}" height="${(y0-y(d)).toFixed(1)}" style="fill:var(--topic)"/>`});
+  const hot=new Set(S0?S0.ev.map(e=>e[0]):[]);
+  (V.events||[]).forEach(e=>{if(e.t!=="military_escalation"&&e.t!=="ceasefire_deal")return;const t=KD(e.d);if(t<d0||t>d1)return;const xx=x(t),on=hot.has(e.d),mil=e.t==="military_escalation";
+    s+=`<line x1="${xx}" x2="${xx}" y1="${mT}" y2="${y0}" style="stroke:var(${mil?"--war":"--muted"});stroke-width:${on?1.6:1};opacity:${on?1:mil?.35:.5};${mil?"":"stroke-dasharray:2 3"}"/>`});
+  if(S0)S0.ch.forEach(([d])=>{const xx=x(KD(d));s+=`<line x1="${xx}" x2="${xx}" y1="${mT}" y2="${y0}" style="stroke:var(--ink);stroke-width:1.2;stroke-dasharray:3 2"/><path d="M${xx} ${y0-5} l4 4 l-4 4 l-4 -4z" transform="translate(0 -4)" style="fill:var(--ink)"/>`});
   s+=`</g>`;
-  // topic dots fade in with the fold
-  if(f>.01&&P)D.dT.forEach((d,i)=>{s+=`<circle cx="${fxc(d.v)}" cy="${yT+jit(i+7)*22}" r="${K.hover&&K.hover.a&&K.hover.a===d.a?4.5:2.2}" style="fill:var(--topic);opacity:${.38*f}"/>`});
-  // comparison mean line -> comparison mean tick
-  const line=(pts,yr,tgtX,tgtY,color,w,o)=>{if(o<=.01)return "";let d="",pen=false;for(const p of pts){if(p[1]==null){pen=false;continue}const px=P?mix(x(p[0]),tgtX):x(p[0]),py=P?mix(yr(p[1]),tgtY):yr(p[1]);d+=(pen?"L":"M")+px.toFixed(1)+","+py.toFixed(1);pen=true}return `<path d="${d}" style="fill:none;stroke:var(${color});stroke-width:${w};opacity:${o};stroke-linejoin:round;stroke-linecap:round"/>`};
-  s+=line(D.comp,y,P?fxc(P.control):0,yC,"--comp",2.6,V.mean);
-  const ry=v=>y(v*V.rise);
-  s+=line(D.topic,ry,P?fxc(P.treat):0,yT,"--topic",2.8,1);
-  if(f<.5&&!ph){const ends=[];if(V.mean>.05)ends.push([y(D.comp.at(-1)[1]),"Comparison average",D.comp.at(-1)[1],"--comp",V.mean*(1-2*f)]);ends.push([ry(D.topic.at(-1)[1]),"Topic articles",D.topic.at(-1)[1],"--topic",1-2*f]);
-    ends.sort((a,b)=>a[0]-b[0]);for(let i=1;i<ends.length;i++)if(ends[i][0]-ends[i-1][0]<28)ends[i][0]=ends[i-1][0]+28;
-    for(const e of ends)s+=`<g style="opacity:${e[4]}"><text class="lbl" x="${W-m.r+8}" y="${e[0]-2}" style="fill:var(${e[3]})">${e[1]}</text><text x="${W-m.r+8}" y="${e[0]+11}">${fmt(e[2]*(e[3]==="--topic"?V.rise:1),1)} per 10,000 words</text></g>`}
-  if(f<.5&&V.threads>.5&&D.over)s+=`<text class="ax" x="${W-m.r}" y="${m.t+10}" text-anchor="end" style="opacity:${V.threads*(1-2*f)}">↑ ${D.over} article${D.over===1?"":"s"} go above the top</text>`;
-  // group means + the one bar
-  if(f>.01&&P){
-    [[P.treat,yT,"--topic","topic avg"],[P.control,yC,"--comp","comparison avg"]].forEach(([v,yy,c,l])=>{const xx=fxc(v);s+=`<line x1="${xx}" x2="${xx}" y1="${yy-14}" y2="${yy+14}" style="stroke:var(--ink);stroke-width:2;opacity:${f}"/><text class="ax" x="${xx+5}" y="${yy-16}" style="opacity:${f};fill:var(--ink-2)">${l} ${sgn(v,1)}</text>`});
-    if(f2>0){const z=fxc(0),b=fxc(P.did*f2),lo=fxc(P.lo),hi=fxc(P.hi),col=P.did>=0?"--inc":"--dec";
-      s+=`<rect x="${lo}" y="${yB-15}" width="${Math.max(1,hi-lo)}" height="30" rx="3" style="fill:var(${col});opacity:${.16*f2}"/>`;
-      s+=`<rect x="${Math.min(z,b)}" y="${yB-8}" width="${Math.max(1.5,Math.abs(b-z))}" height="16" rx="1.5" style="fill:var(${col});opacity:${f2}"/>`;
-      const lx=Math.max(z,b,hi)+8,right=lx<W-150;
-      s+=`<g style="opacity:${f2}"><text class="big" x="${right?lx:Math.min(z,b,lo)-8}" y="${yB+9}" text-anchor="${right?"start":"end"}">${sgn(P.did,1)}</text><text class="ax" x="${right?lx:Math.min(z,b,lo)-8}" y="${yB+24}" text-anchor="${right?"start":"end"}">range ${sgn(P.lo,1)} to ${sgn(P.hi,1)}</text></g>`;
-      s+=`<text class="rl" x="${m.l}" y="${yB-20}" style="opacity:${f2}">EXTRA CHANGE · ${P.id}</text>`}}
-  if(f>.5&&D.out)s+=`<text class="ax" x="${W-12}" y="${H-4}" text-anchor="end" style="opacity:${f}">${D.out} dots ${ph?"at the edges":"beyond the edges are drawn at the edge"}</text>`;
+  labs.forEach(o=>{const yy=10+o.r*rh+fs;s+=`<line x1="${x(o.t)}" x2="${x(o.t)}" y1="${yy+2}" y2="${mT}" style="stroke:var(${o.c});opacity:.5"/><text x="${x(o.t)+(o.a==="start"?3:-3)}" y="${yy}" text-anchor="${o.a}" style="font:600 ${fs}px var(--mono);fill:var(${o.c});paint-order:stroke;stroke:var(--sheet);stroke-width:3px">${esc(o.l)}</text>`});
   el.innerHTML=s+`</svg>`;
-  const kk=$("#kKey");
-  kk.innerHTML=V.fold>.5?`<span class="key"><i style="border-radius:50%;background:var(--topic);opacity:.6"></i>one topic article’s change</span><span class="key"><i style="border-radius:50%;background:var(--comp);opacity:.7"></i>one comparison article’s change</span><span class="key"><i style="background:var(--${P&&P.did<0?"dec":"inc"})"></i>extra change, from zero</span><span class="key"><i style="background:var(--${P&&P.did<0?"dec":"inc"});opacity:.25"></i>range we’re fairly sure about</span>`
-    :`<span class="key"><i class="ln" style="background:var(--topic)"></i>topic articles, average (${D.nT})</span>${V.threads>.5?`<span class="key"><i class="ln" style="background:var(--comp);opacity:.45;height:1px"></i>one comparison article</span>`:""}${V.mean>.5?`<span class="key"><i class="ln" style="background:var(--comp)"></i>comparison average (${D.nC})</span>`:""}<span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i class="dash"></i>ICJ case, Jan 2024</span>`;
+  $("#kTitle").textContent=S0?`${S0.k}: new critical terms, week by week`:"New critical terms in core opening paragraphs, week by week, 2021–2026";
+  $("#kSub").textContent=S0?"4,642 core articles · shaded: three weeks from the first event marked":`4,642 core articles · before 7 October 2023: ${fmt(kPre(),1)} new terms a week`;
+  $("#kKey").innerHTML=`<span class="key"><i style="background:var(--topic);opacity:.3"></i>written in that week</span><span class="key"><i style="background:var(--topic)"></i>still there a week later</span><span class="key" style="color:var(--war)"><i class="ln" style="background:var(--war)"></i>battle or escalation</span><span class="key"><i class="dash"></i>ceasefire</span>${S0?`<span class="key"><i style="background:var(--ink);transform:rotate(45deg);width:7px;height:7px"></i>a wording change, dated</span>`:""}`;
 }
-function keyPick(e){
-  if(K.step===5)return null;const G=keyGeom();if(!G)return null;const r=G.el.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top,D=G.D;
-  if(K.vis.fold>.5){let best=null,bd=14;D.threads.forEach((t,i)=>{if(t.ch==null)return;const d=Math.hypot(G.fxc(t.ch)-px,G.yC+jit(i)*22-py);if(d<bd){bd=d;best={a:t.a,v:t.ch,g:"comparison"}}});
-    D.dT.forEach((t,i)=>{if(!t.a)return;const d=Math.hypot(G.fxc(t.v)-px,G.yT+jit(i+7)*22-py);if(d<bd){bd=d;best={a:t.a,v:t.v,g:"topic"}}});return best}
-  if(K.vis.threads<.5)return null;
-  let best=null,bd=18;
-  D.threads.forEach(th=>{let near=null,nd=1e9;th.pts.forEach(p=>{if(p[1]==null)return;const dx=Math.abs(G.x(p[0])-px);if(dx<nd){nd=dx;near=p}});if(!near||nd>40)return;const d=Math.abs(G.y(near[1])-py);if(d<bd){bd=d;best={a:th.a,v:near[1],t:near[0],g:"comparison"}}});
-  return best}
-function keyHover(e){if(K.step===5)return;const h=keyPick(e);const changed=(h&&h.a)!==(K.hover&&K.hover.a);K.hover=h;if(changed)drawKey(true);
-  if(!h){hideTip();return}
-  showTip(`<b>${esc(h.a.title)}</b><div class="r"><span>${h.g==="topic"?"topic":"comparison"} article</span><span>${esc(subName(h.a.subgroup))}</span></div><div class="r"><span>${h.t?dlabT(h.t):"change"}</span><span>${h.t?fmt(h.v,1)+" per 10,000 words":sgn(h.v,1)}</span></div><div class="r" style="opacity:.7"><span>select to open</span></div>`,e.clientX,e.clientY)}
+function keyHover(e){const el=$("#kChart");if(!el||!R.v3)return;const {V,w0,wk,ins,ins7}=kW(),r=el.getBoundingClientRect(),W=Math.max(260,el.clientWidth),ph=isPhone(),mL=ph?26:34,mR=ph?8:14;
+  const [d0,d1]=K.dom||kWin(K.step),t=d0+(e.clientX-r.left-mL)/(W-mL-mR)*(d1-d0),i=Math.floor((t-w0)/wk);
+  if(i<0||i>=ins.length||t<d0||t>d1){hideTip();return}
+  const ws=w0+i*wk,evs=(V.events||[]).filter(v=>{const q=KD(v.d);return q>=ws&&q<ws+wk&&(v.t==="military_escalation"||v.t==="ceasefire_deal")});
+  showTip(`<b>Week of ${v3d(new Date(ws).toISOString().slice(0,10))}</b><div class="r"><span>new critical terms</span><span>${ins[i]}</span></div><div class="r"><span>still there a week later</span><span>${ins7[i]??"–"}</span></div>${evs.map(v=>`<div class="r" style="opacity:.8"><span>${esc(v.l)}</span></div>`).join("")}`,e.clientX,e.clientY)}
 
 /* ---------- headline 2: where the real one lands (2-line summary; strips live in the stats) ---------- */
 function drawChanceSum(){
@@ -2950,7 +2933,7 @@ function xmInit(){
     const A=(D.arts[c.a]||{})[b.dataset.l];if(!A){XR.note=null;return}
     const s=c.s&&A.sl[c.s]?c.s:"s1";const mi=D.moments.findIndex(m=>m[0]===c.a&&m[1]===b.dataset.l&&m[2]===s);
     $$("#xmScroll .xm-c").forEach(x=>x.setAttribute("aria-current",String(x===b)));
-    xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:b.dataset.k,c},anim:true,scroll:true})});
+    const go=()=>xrOpen({a:c.a,l:b.dataset.l,s,mi,note:{k:b.dataset.k,c},anim:true,scroll:true});if(inEv("xrFig")&&VIEW!=="evidence"){location.hash="#xrFig";setTimeout(go,150)}else go()});
   xrInit()}
 function xmDraw(){
   const D=R.langs,host=$("#xmScroll"),order=D.order,cols=D.cols;
@@ -3153,7 +3136,7 @@ function drawTable(){
   A=shown;
   $("#rows").innerHTML=A.map(a=>`<tr tabindex="0" data-t="${esc(a.title)}" class="${a.title===S.sel?"sel":""}"><td>${esc(a.title)}${a.created_in_window?` <span class="chip" title="Created during the period; not in the main test">new</span>`:""}</td><td><span class="chip ${a.group}">${GROUP[a.group]||a.group}</span></td><td>${(a.edits||0).toLocaleString("en-US")}</td><td>${(a.editors||0).toLocaleString("en-US")}</td><td>${fmt(a.crit0)}</td><td>${fmt(a.crit1)}</td><td class="${a.dcrit>.05?"up":a.dcrit<-.05?"dn":""}">${a.dcrit==null?"–":sgn(a.dcrit)}</td><td>${fmt(a.conn0)}</td><td>${fmt(a.conn1)}</td><td>${a.lead_changed??"–"}</td><td>${spark(a.crit_series,a.crit_series_dates)}</td></tr>`).join("");
 }
-function openArticle(t){const hc=$("#howchecked");if(hc)hc.open=true;S.sel=t;showDetail(t);drawTable();$("#detail").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
+function openArticle(t){if(VIEW!=="evidence"){location.hash="#ledger";setTimeout(()=>openArticle(t),80);return}const hc=$("#howchecked");if(hc)hc.open=true;S.sel=t;showDetail(t);drawTable();$("#detail").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"})}
 function leadDiffHTML(d){
   const out=[];for(let i=0;i<d.length;i++){const x=d[i];
     if(x.t==="-"){let j=i;while(j<d.length&&d[j].t==="-")j++;let k=j;while(k<d.length&&d[k].t==="+")k++;const dels=d.slice(i,j),adds=d.slice(j,k);
@@ -3217,22 +3200,26 @@ function openDrawer(t,opts={}){const a=R.articles.find(x=>x.title===t);if(!a)ret
 function closeDrawer(){const d=$("#drawer");if(!d||d.hidden)return;d.hidden=true;if(DRAWER_FROM&&DRAWER_FROM.focus)try{DRAWER_FROM.focus({preventScroll:true})}catch(e){}}
 
 /* ---------- routing: #report (default), #lab, #playground (older name for the lab) ---------- */
-const VIEWS=["#report","#lab","#playground"];
-let LAB_INIT=false,STALE={report:false,lab:false};
+const VIEWS=["#report","#evidence","#lab","#playground"];
+let LAB_INIT=false,STALE={report:false,lab:false,ev:false},VIEW="report";
+const inEv=id=>{const el=id&&document.getElementById(id);return !!(el&&el.closest("#view-evidence"))};
+const viewOf=()=>{const h=location.hash,id=h.slice(1);if(isLab())return "lab";if(h==="#evidence"||inEv(id))return "evidence";if(!h||h==="#report"||document.getElementById(id))return "report";return VIEW};
 const isLab=()=>location.hash==="#lab"||location.hash==="#playground";
 function labCall(k){const L=window.WFD&&WFD.lab;if(L&&typeof L[k]==="function")safe(L[k].bind(L),WFD.labIntent);document.dispatchEvent(new CustomEvent("wfd:lab-"+k,{detail:WFD.labIntent}))}
-function route(){const lab=isLab(),v=$("#view-lab");$("#view-report").hidden=lab;v.hidden=!lab;
-  $("#tabReport").setAttribute("aria-current",lab?"false":"page");$("#tabLab").setAttribute("aria-current",lab?"page":"false");if(!lab)closeDrawer();
-  if(lab){if(!v.firstElementChild)v.innerHTML=`<div class="note" style="margin-top:40px">The data lab is not in this build.</div>`;
+function route(){const v=viewOf(),lab=v==="lab",ev=v==="evidence";VIEW=v;
+  $("#view-report").hidden=v!=="report";$("#view-evidence").hidden=!ev;$("#view-lab").hidden=!lab;
+  $("#tabReport").setAttribute("aria-current",v==="report"?"page":"false");$("#tabEv").setAttribute("aria-current",ev?"page":"false");$("#tabLab").setAttribute("aria-current",lab?"page":"false");if(!lab)closeDrawer();
+  if(lab){const L=$("#view-lab");if(!L.firstElementChild)L.innerHTML=`<div class="note" style="margin-top:40px">The data lab is not in this build.</div>`;
     if(!LAB_INIT){LAB_INIT=true;labCall("init")}else{if(STALE.lab){STALE.lab=false;labCall("redraw")}if(WFD.labIntent)labCall("intent")}}
-  else if(STALE.report){STALE.report=false;HM=null;redrawAll()}}
+  else if(v==="report"&&STALE.report){STALE.report=false;HM=null;redrawAll()}
+  else if(ev&&STALE.ev){STALE.ev=false;HM=null;redrawAll()}}
 let _lastSec=null;document.addEventListener("pointerdown",e=>{const s=e.target.closest&&e.target.closest("section[id]");if(s)_lastSec=s.id},true);document.addEventListener("keydown",e=>{const s=e.target.closest&&e.target.closest("section[id]");if(s)_lastSec=s.id},true);
 function openInLab(spec){spec=Object.assign({},spec||{});if(!spec.from){const a=document.activeElement,s=a&&a.closest&&a.closest("section[id]");spec.from=(s&&s.id)||_lastSec||""}WFD.labIntent=spec;if(isLab())route();else location.hash="#lab"}
 let REPORT_TARGET=null;
 function scrollToReport(id){const el=document.getElementById(id);if(!el)return;const fold=el.closest&&el.closest("details:not([open])");if(fold)fold.open=true;
   requestAnimationFrame(()=>requestAnimationFrame(()=>{el.scrollIntoView({behavior:"auto",block:"start"});
     setTimeout(()=>{const t=el.getBoundingClientRect().top;if(t<0||t>120)el.scrollIntoView({behavior:"auto",block:"start"})},250)}))}
-function openInReport(id){if(!isLab()){scrollToReport(id);return}REPORT_TARGET=id||null;location.hash="#report"}
+function openInReport(id){if(inEv(id)){location.hash="#"+id;return}if(VIEW==="report"){scrollToReport(id);return}REPORT_TARGET=id||null;location.hash="#report"}
 
 /* ---------- v3: the twist at full scale (mass2). Numbers are those of patterns/SYNTHESIS.md ---------- */
 const V3TYPES=[["military_escalation","Military","Military","--ink-2"],["legal_institutional","Legal & UN","Legal","--ink-2"],["ceasefire_deal","Ceasefire","Truce","--ink-2"],["social_global","Social","Social","--ink-2"],["humanitarian_media","Humanitarian & media","Humanit.","--ink-2","Humanitarian"],["comparison","Other conflicts","Other","--comp"]];
@@ -3863,8 +3850,8 @@ function drawPeriods(){
    <p class="cap">Descriptive, and confounded by the war’s tempo. The step from 2.0 to 1.8 is small next to the fall from the war-onset peak. The pro-Israel email canvassing ArbCom found dates from about October 2023 to January 2024, inside the 3.44 row.</p>`}
 
 /* ---------- #organised: the coordination network (analyze_coord.py network.json), groups first ---------- */
-const NET={view:"groups",side:"topic",preset:"all",sel:null};
-const NET_WIN={email_canvassing:["2023-10-01","2024-01-21","War onset; also the pro-Israel email canvassing ArbCom found (Jan 2024)"],tfp_discord:["2024-01-01","2024-10-01","Discord channel (pro-Palestinian), sanctioned Dec 2024"]};
+const NET={view:"network",side:"topic",preset:"all",sel:null};
+const NET_WIN={email_canvassing:["2023-10-01","2024-01-21","War onset; also the pro-Israel email canvassing reported from ArbCom’s Jan 2024 motions"],tfp_discord:["2024-01-01","2024-10-01","Discord channel (pro-Palestinian), sanctions reported Dec 2024"]};
 const NET_SANC=[["2024-12-09","Dec 2024 sanctions"],["2025-04-25","Apr 2025 site bans"]];
 const NET_PRE=[["all","All 2021–26",null,null],["pre","Before 7 Oct 2023","2021-01-01","2023-10-07"],["email",isPhone()?"Email window (Oct 23–Jan 24)":"War onset · pro-Israel email canvassing (Oct 2023–Jan 2024)","2023-10-01","2024-01-21"],["discord",isPhone()?"Discord window (Jan–Sep 24)":"Discord channel · pro-Palestinian canvassing (Jan–Sep 2024)","2024-01-01","2024-10-01"],["after","After sanctions (Dec 2024 on)","2024-12-09","2026-11-05"]];
 const netOrder=G=>(G.communities||[]).filter(c=>c.size>=3).sort((a,b)=>({high:0,medium:1,low:2}[a.confidence]??3)-({high:0,medium:1,low:2}[b.confidence]??3)||b.size-a.size||a.id-b.id);
@@ -3880,7 +3867,7 @@ function netWinCap(G){const P=NET_PRE.find(p=>p[0]===NET.preset);if(!P||!P[2])re
 function netOverlap(a,b){const P=NET_PRE.find(p=>p[0]===NET.preset);if(!P||!P[2])return true;return !(b<P[2]||a>P[3])}
 function netPlaceholder(host){
   host.innerHTML=`<div class="net-ph" role="note"><span class="chip">Analysis running</span>
-   <p><b>The coordination network is not in this build yet.</b> The analysis that builds it is still running. When it finishes, this space shows accounts whose critical-term edits cluster in time across different articles, measured against chance, side by side with the comparison articles and with both documented windows marked: the pro-Israel email canvassing (October 2023 to January 2024) and the pro-Palestinian Discord channel (January to September 2024).</p>
+   <p><b>The coordination network is not in this build yet.</b> The analysis that builds it is still running. When it finishes, this space shows accounts whose critical-term edits cluster in time across different articles, measured against chance, side by side with the comparison articles and with both reported windows marked: the pro-Israel email canvassing (October 2023 to January 2024) and the pro-Palestinian Discord channel (January to September 2024).</p>
    <ul><li>Chance will be shown next to every count: the same accounts with their whole timelines shifted by 1 to 7 days, 1,000 times.</li><li>Accounts appear only as A1, A2…, reset for each network. No account is named, sized or labelled.</li><li>A group of accounts that edit together is not an organisation, a side or a channel. Shared watchlists and breaking news produce the same pattern.</li></ul>
    <p class="cap">What we already know: no pair of accounts edited within 30 minutes of each other on five or more articles, before or after the war, in either group; 9 accounts changed the first sentence of 3 or more key articles, against none on comparison key articles.</p></div>`}
 function netStrip(N){
@@ -3944,12 +3931,12 @@ function drawNet(){
   const ae=document.activeElement,fk=ae&&host.contains(ae)&&ae.dataset&&ae.dataset.v!=null&&ae.closest("[id]")?[ae.closest("[id]").id,ae.dataset.v]:null;
   const allE=["topic","comparison"].flatMap(g=>(N[g]&&N[g].edges)||[]),nT=allE.filter(e=>e.basis==="t30").length,nS=allE.length-nT;
   let h=`<p class="zi-how"><b>How to read this:</b> a line links two accounts that moved together more often than chance allows: they changed critical terms on the same articles (chance: the same edits reshuffled across articles, keeping how active each account is and how popular each article is), or on different articles within 30 minutes of each other (chance: each account’s whole timeline shifted by 1 to 7 days). ${nT?`${nS} of the ${allE.length} lines are shared articles and ${nT} are timing.`:`All ${allE.length} lines here are shared articles; no timing link passed.`} A group is a cluster of such lines. Expected-by-chance counts come from ${(((N.topic||N.comparison).counts.expected_by_chance)||{}).null_worlds||"many"} shuffled worlds. Accounts are A1, A2…, and the labels restart in each network: A3 in one is not A3 in the other.</p>`;
-  h+=netStrip(N);
+  h+=`<div class="net-strip">${netStrip(N)}</div>`;
   h+=`<div class="net-ctl"><div class="o"><span class="lab" id="netViewL">View</span><div class="seg" id="netView" role="group" aria-labelledby="netViewL">${[["groups","Groups"],["network","Network"],["table","Table"]].map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.view===v}">${l}</button>`).join("")}</div></div>
     <div class="o"${NET.view==="network"&&!ph?' hidden':""}><span class="lab" id="netSideL">Articles</span><div class="seg" id="netSide" role="group" aria-labelledby="netSideL">${[["topic","Topic"],["comparison","Comparison"]].filter(([v])=>N[v]).map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${NET.side===v}">${l}</button>`).join("")}</div></div></div>
    <div class="net-ctl"><span class="lab" id="netPreL">Time</span><ul class="tchips" id="netPre" aria-labelledby="netPreL">${NET_PRE.map(([v,l])=>`<li><button type="button" data-v="${v}" aria-pressed="${NET.preset===v}">${esc(l)}</button></li>`).join("")}</ul></div>
    <p class="means" id="netWinC" aria-live="polite">${netWinCap(G)}</p>
-   <p class="cap">A time chip shades its window in every activity strip and, above, sets each group’s share of activity in it against chance; in the network view a link whose co-activity falls wholly outside the window fades. Both documented windows are hatched in every activity strip: the pro-Israel email canvassing ArbCom found (October 2023 to January 2024) and the pro-Palestinian Discord channel it sanctioned editing from (January to September 2024).</p>`;
+   <details class="stats"><summary>Notes <span>time chips and the hatched windows</span></summary><div class="in"><p class="cap">A time chip shades its window in every activity strip and, above, sets each group’s share of activity in it against chance; in the network view a link whose co-activity falls wholly outside the window fades. Both windows reported from ArbCom’s notices (not checked against its case pages) are hatched in every activity strip: the pro-Israel email canvassing (October 2023 to January 2024) and the pro-Palestinian Discord channel (January to September 2024).</p></div></details>`;
   if(NET.view==="groups"){const C=netOrder(G),
       strong=C.filter(c=>c.confidence!=="low").concat(G.extra_blocs||[]),low=C.filter(c=>c.confidence==="low"),pairs=(G.communities||[]).filter(c=>c.size<3).length,W=ph?320:340;
     const ex=(G.counts||{}).expected_by_chance||{},ne=(G.edges||[]).length,none=!strong.length&&!low.length;
@@ -3957,14 +3944,14 @@ function drawNet(){
     if(none){NET.noGroups=true}
     if(low.length)h+=`<details class="stats"${strong.length?"":" open"}><summary>Groups chance also produces <span>${low.length} low-confidence group${low.length===1?"":"s"}, listed so nothing is hidden</span></summary><div class="in"><div class="gcards">${low.map((c,i)=>netCard(c,strong.length+i,W)).join("")}</div></div></details>`;
     if(pairs&&!(none&&pairs===ne))h+=`<p class="cap">Plus ${pairs} linked pair${pairs===1?"":"s"}, too small to test as a group.</p>`;
-    if(!none)h+=`<div class="legend"><span class="key"><i style="border:1.5px solid var(--ink-2);background:none"></i><i style="border:1.5px dashed var(--ink-2);background:none"></i><i style="border:1.5px dotted var(--muted);background:none"></i>solid, dashed, dotted border: high, medium, low confidence</span><span class="key"><i style="background:var(--add-bd)"></i><i style="background:var(--del-bd)"></i>blue / amber cells: share of the group’s edits that add / remove critical terms</span><span class="key"><i style="background:repeating-linear-gradient(45deg,var(--rule) 0 2px,transparent 2px 5px)"></i>hatched: the two documented windows</span><span class="key"><i style="border-radius:50%;border:2px solid var(--muted);background:none"></i><i style="border-radius:50%;background:var(--ink);margin-left:-2px"></i>ring: chance, with its 95% range; dot: what the group did</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: sanction dates</span></div>`}
+    if(!none)h+=`<div class="legend"><span class="key"><i style="border:1.5px solid var(--ink-2);background:none"></i><i style="border:1.5px dashed var(--ink-2);background:none"></i><i style="border:1.5px dotted var(--muted);background:none"></i>solid, dashed, dotted border: high, medium, low confidence</span><span class="key"><i style="background:var(--add-bd)"></i><i style="background:var(--del-bd)"></i>blue / amber cells: share of the group’s edits that add / remove critical terms</span><span class="key"><i style="background:repeating-linear-gradient(45deg,var(--rule) 0 2px,transparent 2px 5px)"></i>hatched: the two reported windows</span><span class="key"><i style="border-radius:50%;border:2px solid var(--muted);background:none"></i><i style="border-radius:50%;background:var(--ink);margin-left:-2px"></i>ring: chance, with its 95% range; dot: what the group did</span><span class="key" style="color:var(--war)"><i class="dash"></i>7 Oct 2023</span><span class="key"><i style="width:2px;height:12px;background:var(--ink-2)"></i>tick: sanction dates</span></div>`}
   else if(NET.view==="network"){const W=ph?Math.max(280,host.clientWidth-24):Math.max(300,Math.floor((host.clientWidth-36)/2));
     const xb=((N.topic||{}).extra_blocs||[]).filter(b=>(b.test||b.basis)==="insert").map(b=>netName(b,0));
     h+=`<div class="net-graphs">${["topic","comparison"].filter(g=>N[g]).map(g=>`<div class="net-g" data-g="${g}"><h4>${g==="topic"?"Topic articles":"Comparison articles"}</h4>${g==="topic"&&xb.length?`<p class="cap net-xb">${esc(xb.join(", "))} is not drawn: it was found by the insertions-only test, and this graph shows the all-edits test. See Groups.</p>`:""}${netGraph(g,N[g],W)}</div>`).join("")}</div>
      <div class="net-det" id="netDet" aria-live="polite">Tap or tab to an account or a line for its numbers, each next to what chance gives.</div>
      <div class="legend"><span class="key"><i style="border-radius:50%;background:var(--add-bd)"></i>blue: an account that mostly adds critical terms</span><span class="key"><i style="border-radius:50%;background:var(--del-bd)"></i>amber: mostly removes them</span><span class="key"><i style="border-radius:50%;background:var(--mid)"></i>grey: mixed</span><span>Size: number of edits. Line: linked beyond chance (darker = further beyond chance; thicker = timing, thinner = shared articles). Ring: a group, drawn solid, dashed or dotted by confidence. Same scale on both sides.</span></div>`}
   else h+=netTable(G);
-  h+=`<p class="cap col"><b>Why lines here, when the 30-minute test found no recurring pairs?</b> That test asked for the same pair editing within 30 minutes of each other on five or more articles, and found none. A line here needs only three shared articles beyond what chance gives: a looser, statistical link, and not a sign of editing in step.</p>
+  h+=`<details class="stats"><summary>Why lines here <span>when the 30-minute test found none</span></summary><div class="in"><p class="cap col"><b>Why lines here, when the 30-minute test found no recurring pairs?</b> That test asked for the same pair editing within 30 minutes of each other on five or more articles, and found none. A line here needs only three shared articles beyond what chance gives: a looser, statistical link, and not a sign of editing in step.</p></div></details>
    <div class="caveat" role="note"><h3>What this can and cannot show</h3><ul><li>Shared watchlists, subject expertise and breaking news produce the same pattern as organised editing.</li><li>Beyond chance is not proof of coordination, and a group is not an organisation, a side or the Discord channel.</li><li>We do not identify accounts. Nothing here links a group to any sentence quoted on this page.</li></ul></div>`;
   host.innerHTML=h;
   if(fk){const f=$(`#${fk[0]} [data-v="${fk[1]}"]`);if(f)f.focus({preventScroll:true})}
@@ -3999,9 +3986,10 @@ function drawAudit(){
 
 /* ---------- init ---------- */
 const safe=(f,...a)=>{try{f(...a)}catch(e){console.error(f.name,e)}};
-function redrawAll(){safe(drawReach);safe(drawXwGG);safe(drawTier);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey,true);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawZi);safe(drawO7);safe(drawCharge);safe(drawNet);safe(drawAudit)}
+function redrawAll(){safe(drawReach);safe(drawXwGG);safe(drawTier);safe(drawWhen);safe(drawWave);safe(drawSpread);safe(drawHero,false);safe(drawBreathe);safe(drawKey);safe(drawChance,true);safe(drawBoard);safe(drawTrend);safe(drawMinis);safe(drawHeat);safe(drawRatchet);safe(drawDyn);safe(drawCoord);safe(drawExplore);safe(drawXL);safe(drawZi);safe(drawO7);safe(drawCharge);safe(drawNet);safe(drawAudit)}
 function init(){
   if(!R){$("#deck").textContent="Data not loaded yet. Run analyze.py, then build_page.py.";return}
+  const EVV=$("#view-evidence");if(EVV)EVV.hidden=false;
   safe(drawLede);safe(drawBreathe);safe(drawCards);safe(ziInit);safe(o7Init);safe(chargeInit);safe(drawPeriods);safe(drawNet);safe(drawAudit);
   const fs=$("#frameSel");["critical_rate","connection_rate",...(R.frames||[])].forEach(k=>fs.append(new Option(LABEL[k]||k,k)));
   fs.onchange=()=>{S.frame=fs.value;drawTrend()};
@@ -4023,11 +4011,11 @@ function init(){
   document.addEventListener("click",e=>{const b=e.target.closest("[data-intent]");if(!b)return;e.preventDefault();let it=null;try{it=JSON.parse(b.dataset.intent)}catch(x){}openInLab(it)});
   const ts=$("#testStats");if(ts)ts.addEventListener("toggle",()=>{if(ts.open)safe(drawChance,true)});
   safe(foldPhone);safe(xmInit);
-  const re=()=>{if(isLab()){STALE.report=true;labCall("redraw")}else{STALE.lab=LAB_INIT;HM=null;redrawAll()}};
+  const re=()=>{if(isLab()){STALE.report=STALE.ev=true;labCall("redraw")}else{STALE.lab=LAB_INIT;if(VIEW==="report")STALE.ev=true;else STALE.report=true;HM=null;redrawAll()}};
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;re()},150)});
-  addEventListener("hashchange",()=>{const h=location.hash,was=$("#view-report").hidden;route();if(VIEWS.includes(h)||h===""){if(REPORT_TARGET&&!isLab()){const id=REPORT_TARGET;REPORT_TARGET=null;scrollToReport(id)}else if(was!==isLab())scrollTo(0,0)}else{const el=document.getElementById(h.slice(1));if(el)el.scrollIntoView()}});
+  addEventListener("hashchange",()=>{const h=location.hash,was=VIEW;route();if(VIEWS.includes(h)||h===""){if(REPORT_TARGET&&VIEW==="report"){const id=REPORT_TARGET;REPORT_TARGET=null;scrollToReport(id)}else if(was!==VIEW)scrollTo(0,0)}else if(document.getElementById(h.slice(1)))scrollToReport(h.slice(1))});
   if(isLab())STALE.report=true;
-  route();
+  route();{const h=location.hash.slice(1);if(h&&!VIEWS.includes("#"+h)&&document.getElementById(h))scrollToReport(h)}
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change",re);
   new MutationObserver(re).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 }
