@@ -1,0 +1,81 @@
+name: wikitrends-guard
+# launch 2026-11-08
+# Revert guarding / tag teams / talk-page voting blocs / overlap with the coord network / ArbCom primary source
+# (wikitrends/guard.py + analyze_guard.py), in ONE job, with the coord collector (wikitrends/coord.py) re-run in the same
+# job so the coord edges are recomputed under the same salt (old hashes are never stored or reused).
+# Scope: 254 topic articles (curated core + mass3 Israel / Palestine Top and High) and 254 matched comparison articles.
+# Requests are not knowable offline (full histories); guard.py is time-budgeted: histories until 55% of GUARD_BUDGET_MIN,
+# talk pages until 75%, lead measurements (random order) until 100%, and reports what it covered. coord.py runs in
+# parallel (~6-7k requests, ~2 h alone). Both processes are rate-limited at WT_RPS 2.
+# Salt: one random value made in this job (openssl rand), masked, kept in env only: never a file, output or artifact.
+# Privacy: raw data (histories with hashed accounts, revids, votes, coord.json.gz) stays on the runner and is deleted.
+# Only patterns/guard/{results.json, cards.md, arbcom.md} are published, after the privacy gate passes.
+on:
+  push:
+    branches: [wikitrends-guard]
+permissions:
+  contents: write
+concurrency: wikitrends-guard
+defaults:
+  run:
+    shell: bash
+env:
+  WT_RPS: '2'
+  COORD_THREADS: '3'
+  GUARD_THREADS: '3'
+  GUARD_BUDGET_MIN: '240'
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy networkx
+      - name: Offline self-tests (mocked API, planted signals, redaction, publication gate)
+        working-directory: wikitrends
+        run: |
+          set -o pipefail
+          WT_JOB=guard-test python test_guard.py 2>&1 | grep -v '^\[hb' | tail -40
+          WT_JOB=coord-test python test_coord.py collector 2>&1 | grep -v '^\[hb' | tail -15
+      - name: One run-wide salt (masked, env only)
+        run: |
+          SALT=$(openssl rand -hex 24)
+          echo "::add-mask::$SALT"
+          echo "WT_SALT=$SALT" >> "$GITHUB_ENV"
+      - name: Plan (offline)
+        working-directory: wikitrends
+        run: python coord.py plan && python guard.py plan
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh guard 180 > /tmp/status.log 2>&1 &
+      - name: Collect (coord in the background, guard in the foreground; both on the runner only)
+        working-directory: wikitrends
+        run: |
+          set +e
+          ( WT_JOB=coord timeout 285m python coord.py shard --shard 0 --of 1 > logs/coord.log 2>&1; echo $? > logs/coord.rc ) &
+          WT_JOB=guard timeout 285m python guard.py collect 2>&1 | grep -v '^\[hb' | tee logs/guard.log
+          grc=${PIPESTATUS[0]}
+          wait
+          echo "coord collector exit code: $(cat logs/coord.rc)"; tail -5 logs/coord.log
+          exit $grc
+      - name: Merge coord (a failure leaves the overlap tests unavailable, not the run)
+        working-directory: wikitrends
+        run: python coord.py merge 2>&1 | tail -30 | tee logs/coord_merge.log || echo "::warning::coord merge incomplete"
+      - name: Analyze (Q1-Q4, coord edges recomputed with the same salt) + privacy gate
+        working-directory: wikitrends
+        run: python analyze_guard.py 2>&1 | tee logs/guard_analyze.log; exit ${PIPESTATUS[0]}
+      - name: Privacy gate on everything that will be published
+        working-directory: wikitrends
+        run: python analyze_guard.py --scan patterns/guard
+      - name: Discard raw data before publishing
+        if: always()
+        working-directory: wikitrends
+        run: rm -rf data/guard data/coord data/coord.json.gz data/coord_summary.json
+      - name: Upload aggregate outputs as artifact
+        uses: actions/upload-artifact@v4
+        with: {name: guard-cards, path: wikitrends/patterns/guard/, retention-days: 14}
+      - name: Push aggregate outputs to the data-only branch (wikitrends-data/guard/<run_id>)
+        working-directory: wikitrends
+        run: ../.github/scripts/push_data.sh guard patterns/guard
