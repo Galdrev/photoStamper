@@ -774,6 +774,10 @@ html = (tpl.replace("<!--FINDINGS-->", findings)
                         # 9 stored Hamas revisions lost the Arabic name in "(an Arabic acronym from ...)": never show an empty parenthesis
                         .replace("acronym from )", "acronym from [Arabic name not in this revision\\u2019s text])")))
 assert "acronym from )" not in html, "empty Arabic parenthesis in a rendered quote"
+# 15 stored Hamas revisions (and a few other leads) lost the romanization after an Arabic name: "(… الإسلامية, )".
+# Never show an empty slot: say what is missing, as for "acronym from )" above
+html = re.sub(r"(\\u06[0-9a-f]{2}),{1,2} \)", lambda m: m.group(1) + ", [romanization not in this revision\\u2019s text])", html)
+assert not re.search(r"\\u06[0-9a-f]{2},{1,2} \)", html), "empty romanization slot after an Arabic name in a rendered quote"
 # editor notes (<!--VERIFY ...-->) stay in the template for the desk; they must never ship in the page source
 html = re.sub(r"<!--VERIFY:[^>]*?-->", "", html)
 assert "<!--VERIFY" not in html, "an editor VERIFY note reached the output"
