@@ -1,0 +1,1316 @@
+{
+ "round": 2,
+ "date": "2026-11-08",
+ "branch": "wiki-framing-research",
+ "commits": {
+  "fixes": "c32c9b5",
+  "verifier_repairs": "0884b62"
+ },
+ "scores": {
+  "data": {
+   "overall": 7,
+   "subscores": {
+    "number_accuracy": 8,
+    "quote_accuracy": 8,
+    "claim_strength_matches_evidence": 6,
+    "sampling_honesty": 8,
+    "internal_consistency": 7
+   }
+  },
+  "design": {
+   "overall": 6.5,
+   "subscores": {
+    "visual_hierarchy": 6,
+    "typography": 7,
+    "colour_meaning_and_consistency": 6,
+    "chart_clarity_and_annotation": 7,
+    "dark_mode": 7,
+    "overall_polish_vs_top_desks": 6,
+    "language_barrier_visuals": 6
+   }
+  },
+  "ui": {
+   "overall": 5,
+   "subscores": {
+    "component_consistency": 6,
+    "spacing_and_alignment": 5,
+    "labels_and_affordances": 6,
+    "phone_layout_390": 4,
+    "desktop_layout_1280": 5,
+    "no_overflow_or_overlap": 5
+   }
+  },
+  "ux": {
+   "overall": 6,
+   "subscores": {
+    "discoverability": 7,
+    "clarity_of_what_each_interaction_shows": 6,
+    "control_responsiveness": 7,
+    "mobile_usability": 5,
+    "accessibility": 5,
+    "interaction_adds_understanding": 8
+   }
+  },
+  "newsroom": {
+   "overall": 7,
+   "subscores": {
+    "headline_strength": 7,
+    "first_screen_story_clarity": 6,
+    "newsworthiness_israeli_audience": 9,
+    "quotability": 8,
+    "segment_readiness": 6,
+    "credibility_under_attack": 7,
+    "narrative_led_headlines_and_bottom_lines": 6,
+    "bottom_line_quality": 5
+   }
+  },
+  "critic": {
+   "overall": 6.5,
+   "subscores": {
+    "defensibility": 7,
+    "balance_of_evidence": 6,
+    "caveat_placement": 6,
+    "causal_restraint": 7,
+    "transparency_of_method": 8
+   }
+  },
+  "whole": {
+   "overall": 5.5,
+   "subscores": {
+    "narrative_arc": 6,
+    "flow_between_sections": 5,
+    "redundancy": 4,
+    "length_and_pacing": 3,
+    "core_finding_lands": 7,
+    "zionism_charge_oct7_organised_connect": 5,
+    "coherence_of_tone": 7,
+    "evidence_anchoring": 6,
+    "narrative_focus": 6,
+    "skimmability": 4
+   }
+  }
+ },
+ "mean": 6.21,
+ "mean_round_1": 6.5,
+ "scoring_note": "Scores are the reviewers' grades of the build before round-2 fixes (r2_before.html). UI fell 6.5 -> 5 and design polish fell mainly from the #xmFind defect introduced in commit 8b36700, now fixed.",
+ "top_issues": [
+  {
+   "rank": 1,
+   "lenses": [
+    "design",
+    "ui",
+    "ux",
+    "whole",
+    "data",
+    "critic"
+   ],
+   "severity": 5,
+   "issue": "#xmFind class collision: lead cross-language quotes render one uppercase mono word per line (cards about 2,100px).",
+   "status": "fixed"
+  },
+  {
+   "rank": 2,
+   "lenses": [
+    "whole"
+   ],
+   "severity": 5,
+   "issue": "Main line about 12,800 words against a 6,000-word target.",
+   "status": "partly fixed (structural cuts); prose trims deferred"
+  },
+  {
+   "rank": 3,
+   "lenses": [
+    "newsroom",
+    "whole"
+   ],
+   "severity": 4,
+   "issue": "Section H2s are questions/labels and bottom lines describe mechanics; #limits has no H2.",
+   "status": "fixed"
+  },
+  {
+   "rank": 4,
+   "lenses": [
+    "critic",
+    "whole"
+   ],
+   "severity": 4,
+   "issue": "#charge deck claims attribution was 'dropped' in Israel/Netanyahu with no attributed version in the data.",
+   "status": "fixed"
+  },
+  {
+   "rank": 5,
+   "lenses": [
+    "newsroom"
+   ],
+   "severity": 4,
+   "issue": "Omitted sexual-violence change in the October 7 opening section (no longer names Hamas).",
+   "status": "fixed"
+  },
+  {
+   "rank": 6,
+   "lenses": [
+    "newsroom",
+    "critic"
+   ],
+   "severity": 4,
+   "issue": "Nakba editor trace: verbatim edit summaries and diff links risk unmasking pseudonymous editors.",
+   "status": "fixed (rendered view); verifier flagged the bot account in the count"
+  },
+  {
+   "rank": 7,
+   "lenses": [
+    "critic"
+   ],
+   "severity": 4,
+   "issue": "Genocide asymmetry framed as grammar only; outside findings and atrocity-set context missing.",
+   "status": "fixed"
+  },
+  {
+   "rank": 8,
+   "lenses": [
+    "ux"
+   ],
+   "severity": 4,
+   "issue": "Raw HTML entities (&nbsp;) inside 'exact' quotes in #ppCard drawers.",
+   "status": "fixed (langs quote data excluded; 3 tokens deferred)"
+  },
+  {
+   "rank": 9,
+   "lenses": [
+    "data"
+   ],
+   "severity": 4,
+   "issue": "#crosslang hostages column confuses 'not held' with 'absent' (English mentions 251 hostages in sentence 9).",
+   "status": "deferred"
+  },
+  {
+   "rank": 10,
+   "lenses": [
+    "design",
+    "ux"
+   ],
+   "severity": 4,
+   "issue": "#xmFig wording says 'dark square' while dark mode renders it light; '…' cells announced as absent.",
+   "status": "fixed"
+  },
+  {
+   "rank": 11,
+   "lenses": [
+    "critic",
+    "whole",
+    "data"
+   ],
+   "severity": 3,
+   "issue": "Hero dek overclaims ('took on the vocabulary') versus 10.3% of Top articles; unsourced AI-assistant claim.",
+   "status": "fixed"
+  },
+  {
+   "rank": 12,
+   "lenses": [
+    "critic",
+    "newsroom"
+   ],
+   "severity": 4,
+   "issue": "#oct7 Gaza-war/title edits tied by date without OCT7.md caveat; #palestine 'biggest change' overgeneralises.",
+   "status": "fixed"
+  }
+ ],
+ "fixes_applied": [
+  {
+   "location": "#crosslang > #xmFind cards; page_template.html CSS .xm-q header rule and xmFind()",
+   "lens": "design+ui+ux+whole+data+critic (merged 6)",
+   "change": "Header span 'w' -> 'qh', rule '.xm-q > .qh'; word tokens inline; bdiAr() wraps Arabic in #oct7/#zionism before/after panels.",
+   "verified": true,
+   "verification": "Verified. Cards 464/464/464px at 1280 and 494/364/310px on iPhone 13 (before 2,104 and 2,125/1,241/1,242). Hebrew reads 'ב-29 בדצמבר 2023, על רקע הלחימה...'. #crosslang 5,043px at 1280, 5,995px on phone. #o7BA contains <bdi lang=ar dir=rtl> for the Hamas acronym and renders in order. #ziBA holds no Arabic at the default step, so no bdi there (nothing to wrap)."
+  },
+  {
+   "location": "Every main section header",
+   "lens": "owner+newsroom+whole",
+   "change": "'Bottom line:' (.means.bl) under each H2; finding-led H2s; #limits H2.",
+   "verified": true,
+   "verification": "Verified. 13 .means.bl lines (zionism, charge, oct7, palestine, crosslang, against, reach, news, when, organised, board, checks, limits). All listed H2s state findings; #limits H2 'This measures what the encyclopedia says, not whether it is true'. #checks bottom line (4 tested, 2 found, 2 timing misses) is consistent with #mValid."
+  },
+  {
+   "location": "Running order; #andyet band; #breathe; #organised parts 4-5",
+   "lens": "whole",
+   "change": "Reorder; hand-offs; PATTERN folded into #reach; #breathe to appendix; data-lab button in #zionism; parts 4-5 to #organic.",
+   "verified": true,
+   "verification": "Verified. DOM order: zionism, sixty, charge, oct7, palestine, crosslang, against, reach, news, when, organised, board, key, checks, limits, method, then appendix (breathe ... organic, ledger). Hand-offs present at end of #against, #reach, #when, #organised. 'Drag through every version ... in the data lab →' present in #zionism. Phone page 74,937 -> 71,580px; desktop 57,896 -> 59,302px (new bottom lines and captions)."
+  },
+  {
+   "location": "#charge deck, para 2, coder note, 'What this means'",
+   "lens": "critic+whole+newsroom",
+   "change": "Evidence-based deck; killing counts both sides; coder note; label shift and Goldstein; factive verbs; 39/40; atrocity-set anecdote.",
+   "verified": true,
+   "verification": "Verified. 'dropped the attribution' remains only in para 4 for Gaza genocide (correct). Counts 9/10/26 and 8/8/23 sentences match PERP.md line 58 and the data reviewer's perp_codes recount (clause counts 27/24 explained). Goldstein, 'Palestinian political violence' (PERP.md 135, 177), factive quotes (PERP.md 48), '39 of 40' (round_1.json), '4 did so in 2023 and 9 do now ... anecdote' (SYNTHESIS line 179) all present."
+  },
+  {
+   "location": "#oct7 deck paras 2 and 4, closer",
+   "lens": "newsroom+critic",
+   "change": "Sexual-violence then/now; Gaza-war/title caveat; dated outside findings; Israel's view; closer names three articles.",
+   "verified": true,
+   "verification": "Verified. Quotes match oct7_06 json (1 Jan 2024 / 2 Nov 2026). Caveat 'We found nothing linking the two edits' present. Findings dated per events/cards.md line 106 (Amnesty Dec 2024, HRW Dec 2024, B'Tselem Jul 2025, IAGS Aug 2025, UN COI 16 Sep 2025). Israel's view quoted from OCT7.md line 188. Closer: 'Gaza genocide, Israel and Netanyahu articles'."
+  },
+  {
+   "location": "#palestine deck and Nakba editor trace",
+   "lens": "critic+newsroom (privacy)",
+   "change": "Deck rewritten; summaries, diff links and minute timestamps removed; per-article count line.",
+   "verified": true,
+   "verification": "Verified. 'biggest change' gone; trace rows show date, letter, bytes, tag and sentence only; no 'view the edit' in #trace (the 6 remaining are #checks masked-reading examples, not editor links); minute timestamps gone. Verifier repair: count now says 'accounts' and flags the Monkbot template-upkeep bot."
+  },
+  {
+   "location": "Hero H1 and dek",
+   "lens": "whole+data+newsroom",
+   "change": "'the reference the world reads'; 4.6M views; one-in-ten wording.",
+   "verified": true,
+   "verification": "Verified. 4.6 million = 4,617,834 (mass2/cards.md line 137). 'AI assistant' gone. 10.3% vs 4.4%, gap 5.9, range 0.9-11.2 (mass3_results.md); five most-read gainers listed."
+  },
+  {
+   "location": "build_page.py (quote data)",
+   "lens": "ux",
+   "change": "html.unescape on embedded quote data; build assertion.",
+   "verified": true,
+   "verification": "Verified. 0 '&nbsp;'/'&ndash;' in rendered text; build passes. langs data excluded by design (3 tokens, deferred)."
+  },
+  {
+   "location": "#xmFig how-to, legend, footer, notes; #xrFig caption; NOTE/MOM",
+   "lens": "design+ux+data",
+   "change": "Mode-neutral wording; '?', '§', '…' described; '…' aria-label; 'no article linked'; Hebrew October 7 note; understatement note; caption dedupe.",
+   "verified": true,
+   "verification": "Verified. No 'dark square' text in #crosslang; legend 'solid, dot: stated as fact'; footer 'Stated as fact'; '…' cells announced 'later in the opening section, beyond the 1,200 characters we hold'; 'No Gaza-genocide article' gone page-wide; Hebrew genocide cell shows caption once and a distinct 'Why this square' note."
+  },
+  {
+   "location": "#crosslang deck, What this means, vocabulary sub-deck, #mXL",
+   "lens": "data+critic",
+   "change": "Definition-itself wording; Polish crimes; Dutch; Spanish 'ataque de represalia'; Arabic 'this accusation'; 'Less than English, and unevenly'; per 10,000; rate note.",
+   "verified": true,
+   "verification": "Verified. All phrases present; +2.4/+2.7/+0.6 per 10,000 equal +0.24/+0.27/+0.06 per 1,000 (when_where_what/cards.md line 239; SYNTHESIS D10)."
+  },
+  {
+   "location": "#when deck",
+   "lens": "critic+whole",
+   "change": "ICJ 482-to-466 sentence removed; settled dates; Discord/email paragraph with 0.5x.",
+   "verified": true,
+   "verification": "Verified. 'fight cooled' and 466 gone (482 remains only in the #reach population table). 0.5x = 0.51 (orgs/tests.md line 61); Israel first sentence 4 Sep 2026 (when_where_what/cards.md line 129)."
+  },
+  {
+   "location": "#organised deck, bloc bullets, closer, co-edit means, network chips",
+   "lens": "critic+whole",
+   "change": "88 vs 208; pre-war co-edit gap; 'War onset' label; 500-edit restriction and Dec 2024 gaming; closer de-duplicated.",
+   "verified": true,
+   "verification": "Verified. Chip reads 'War onset (Oct 2023–Jan 2024)' and toggles; 88/208 in deck and appendix; 1.58/0.56/0.72/0.35 match the chart; 500-edit and gaming sentence present."
+  },
+  {
+   "location": "#sixty cards 2-6 (notes/takeaways.json)",
+   "lens": "newsroom+critic+whole",
+   "change": "New big numbers and headlines.",
+   "verified": true,
+   "verification": "Verified. Big numbers: '0 → 0 → 7', '5 days', '“by Zionists”', '46% → 80%', '3.4×', '10.3%'. 16/35=45.7%, 44/55=80%; 2/8=25%, 14/19=73.7%; 7 Oct -> 12 Oct = 5 days; kicker 0.5x/3.4x/2.0x (orgs/tests.md)."
+  },
+  {
+   "location": "#news, #reach, #checks dynamic lines",
+   "lens": "critic+whole",
+   "change": "#news example; wording; #mTier; #mReach; #mValid misses explained.",
+   "verified": true,
+   "verification": "Verified. Example 'GAZA WAR, FIRST SENTENCE SINCE 16 OCT 2025' (OCT7.md line 206); 'sent editors back' and 'full core set' gone; 'readers reach first'; 'what sets this subject apart'; #mValid explains both misses as timing."
+  },
+  {
+   "location": "#key step 3 copy; lab/lab.js:197",
+   "lens": "design+ui",
+   "change": "'red dashed line' / 'labelled ICJ'; 'thin range line'.",
+   "verified": true,
+   "verification": "Verified in rendered step 3 and lab/lab.js line 197."
+  }
+ ],
+ "deferred_fixes": [
+  {
+   "location": "Main-line length cut to under 6,000 words",
+   "lens": "whole",
+   "severity": 5,
+   "reason": "Structural cuts done (#breathe and #organised parts 4-5 to appendix, PATTERN into #reach); prose trims (#against to four bullets, crosslang vocabulary block to one paragraph) need their own editing pass."
+  },
+  {
+   "location": "#crosslang hostages column recode (en outside, de/fr/es/pt not_held)",
+   "lens": "data",
+   "severity": 4,
+   "reason": "New tile state, legend entry and recoded HOS cells; data change to make with the coders."
+  },
+  {
+   "location": "#crosslang Russian ICJ recode to legal",
+   "lens": "data",
+   "severity": 3,
+   "reason": "LANGS.md bottom line 7 codes it as an overstatement; recoding contradicts the source and needs a second reading."
+  },
+  {
+   "location": "#crosslang Arabic 'captive' glyph and ICJ ar caption date",
+   "lens": "data",
+   "severity": 2,
+   "reason": "New glyph or legend state and caption edits validated by check_quotes."
+  },
+  {
+   "location": "Crosslang langs S.o/S.t entity decoding (3 tokens)",
+   "lens": "ux",
+   "severity": 2,
+   "reason": "Character spans index the raw strings; unescaping would shift highlights."
+  },
+  {
+   "location": "#xlWrap dumbbells; per-claim palette; #news/#when/#palestine colour meanings; #board diamond and labels",
+   "lens": "design",
+   "severity": 4,
+   "reason": "Chart redraws; text accuracy and bottom lines prioritised."
+  },
+  {
+   "location": "#oct7/#zionism label layering, phase cells, 7 Oct label; compact sticky controls",
+   "lens": "ui+design",
+   "severity": 4,
+   "reason": "SVG layout work in two chart functions."
+  },
+  {
+   "location": "Phone UI: matrix 'Now only' default and fade masks, .seg wrapping, #xrLang key and wrap, #organised bloc rows, #key scrolly card, #sixty grid and carousel, #xrFig replay height and over-highlighting",
+   "lens": "ui+ux+design",
+   "severity": 4,
+   "reason": "Layout and interaction changes needing their own visual QA pass."
+  },
+  {
+   "location": "Keyboard focus restore, #net preset feedback, network focus, tier-chart zero-count text, #breathe aria-valuetext",
+   "lens": "ux",
+   "severity": 3,
+   "reason": "JS interaction work needing keyboard testing."
+  },
+  {
+   "location": "#oct7 three-row then/now strip",
+   "lens": "newsroom",
+   "severity": 3,
+   "reason": "New component; sexual-violence and hostages rows added to prose instead."
+  },
+  {
+   "location": "Masthead and byline, CONTENT/PROCESS/SOURCES chips, population-name glossary",
+   "lens": "newsroom+whole",
+   "severity": 2,
+   "reason": "Publisher/byline not in source files; site-wide renames are a broader editorial change."
+  },
+  {
+   "location": "#charge genocide bar '8' vs '7 + 1' and #ppCard 'Sentences 8 in 7 articles'",
+   "lens": "newsroom",
+   "severity": 3,
+   "reason": "Not addressed by the fixer this round (noted by verifier)."
+  },
+  {
+   "location": "Closing 'What the world's reference now says' box",
+   "lens": "whole",
+   "severity": 3,
+   "reason": "New component; not addressed this round."
+  }
+ ],
+ "verification": {
+  "build": "python build_page.py -> scratchpad/qa/r2_after.html (11.5 MB); after the verifier repair rebuilt to scratchpad/qa/r2_final.html. Tested as viewport-wrapped copies (*_wrapped.html), since the raw build has no meta viewport.",
+  "fixes_claimed": 15,
+  "fixes_verified": 15,
+  "verifier_repairs": [
+   {
+    "file": "wikitrends/page_template.html",
+    "location": "#palestine first-sentence trace (traceDraw: figure title and #mTrace)",
+    "problem": "'10 different editors made the 12 changes' counted the Monkbot template-upkeep bot as an editor (critic round 2; carried from round 1). With edit summaries hidden, readers could not see that one of the ten is a bot.",
+    "change": "Counts now say 'accounts'; bot accounts are detected from the stored edit summary ([[User:...bot]]) and flagged: Nakba 'by 10 accounts ... 10 different accounts (one of them a bot) made the 12 changes; none made more than 2'. West Bank likewise; Zionism has no bot and reads '14 different accounts'.",
+    "source": "data/bisect.json (Monkbot task 20 edits on Nakba 2024-10-21, West Bank, Hamas, IDF)",
+    "commit": "0884b62"
+   }
+  ],
+  "regressions": {
+   "contexts": [
+    "iPhone 13 light",
+    "iPhone 13 dark",
+    "1280 light",
+    "1280 dark"
+   ],
+   "console_errors": 0,
+   "horizontal_overflow_px": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "zionism_timeline": "Prev/Next step 56 -> 57 -> 56; last jump chip lands on change 292 (27 Aug 2026); phase buttons and Play advance; 5 chips, 4 phases.",
+   "oct7_tabs": "Hamas / October 7 / Gaza genocide tabs switch with aria-pressed; Next advances (Hamas change 13 with amber/blue diff; October 7 change 87; Gaza change 42); Arabic acronym wrapped in <bdi>.",
+   "charge_bars": "40 of 40 enabled bars open #ppCard with sentences; Side control switches.",
+   "organised_network": "Groups / Network (17 nodes) / Table views render; node click fills #netDet; 'War onset (Oct 2023–Jan 2024)' preset toggles; Topic/Comparison toggles.",
+   "crosslang": "88 matrix cells; cell click opens its reader moment; #xmFind cards 464px (1280) and 310-494px (phone).",
+   "scrolly": "Steps 1-4 activate in order in all contexts and step 0 on desktop. On phone the first step can report a stale step on first scroll (seen in r2_before too; pre-existing timing).",
+   "font_note": "No console errors when fonts load; with fonts blocked the only error is the font request.",
+   "found": "No regressions."
+  },
+  "number_check": {
+   "method": "Numeric tokens from visible text (Playwright innerText after scroll; plus script/style-stripped static HTML) of r2_before.html vs r2_after.html, plus a sentence-level diff of numeric sentences (61 new, 49 gone; lists in scratchpad/qa/r2_verify/new_sents.txt and gone_sents.txt).",
+   "appeared": [
+    {
+     "number": "0.5× (pre-war topic/comparison insertion ratio)",
+     "source": "patterns/orgs/tests.md line 61 (0.51, 2023-01-01 to 7 Oct 2023)",
+     "justified": true
+    },
+    {
+     "number": "39 (39 of 40 voice re-check)",
+     "source": "patterns/qa/round_1.json (seed 1108 recode)",
+     "justified": true
+    },
+    {
+     "number": "+2.4 / +2.7 / +0.6 per 10,000 (static)",
+     "source": "same values as +0.24/+0.27/+0.06 per 1,000; when_where_what/cards.md line 239; SYNTHESIS D10",
+     "justified": true
+    },
+    {
+     "number": "88 against 208 (static)",
+     "source": "data/results.json coordination.lead_authors; already in the #organised chart",
+     "justified": true
+    },
+    {
+     "number": "−0.3, range −2.7 to +1.7 (static, #board bottom line)",
+     "source": "existing #board P-test text; SYNTHESIS",
+     "justified": true
+    },
+    {
+     "number": "9, 10, 26 / 8, 8, 23 killing sentences; 27 / 24 clauses",
+     "source": "angle/PERP.md lines 58, 125; perp_codes recount",
+     "justified": true
+    },
+    {
+     "number": "4.6 million views",
+     "source": "mass2/cards.md line 137 (4,617,834)",
+     "justified": true
+    },
+    {
+     "number": "4 of 11 -> 9 of 11 atrocity articles",
+     "source": "SYNTHESIS.md line 179 (M11, anecdote)",
+     "justified": true
+    },
+    {
+     "number": "Dec 2024, Dec 2024, Jul 2025, Aug 2025, 16 Sep 2025 (outside findings)",
+     "source": "events/cards.md line 106",
+     "justified": true
+    },
+    {
+     "number": "1 Jan 2024 / 2 Nov 2026 (sexual-violence quotes)",
+     "source": "angle/chart_data/oct7_06_oct7_lead_then_now.json; OCT7.md lines 120, 125",
+     "justified": true
+    },
+    {
+     "number": "5 days; 46% → 80%; 2 of 8 to 14 of 19",
+     "source": "OCT7.md (7 -> 12 Oct 2023); PERP.md 16/35, 44/55, line 74",
+     "justified": true
+    },
+    {
+     "number": "37 of 41 removals (#zionism bottom line)",
+     "source": "who/WHO.md line 30",
+     "justified": true
+    },
+    {
+     "number": "about 16 per 1,000 peak; pre-war about 7",
+     "source": "SYNTHESIS.md lines 72, 107",
+     "justified": true
+    },
+    {
+     "number": "Israel first sentence since 4 September 2026",
+     "source": "when_where_what/cards.md line 129",
+     "justified": true
+    },
+    {
+     "number": "16 Oct 2025 (Gaza war first sentence)",
+     "source": "angle/OCT7.md line 206",
+     "justified": true
+    },
+    {
+     "number": "54, up from 37 (antisemitism)",
+     "source": "story_sources_langs/cards.json line 886",
+     "justified": true
+    },
+    {
+     "number": "1.58 / 0.56 / 0.72 / 0.35",
+     "source": "existing co-editing chart values",
+     "justified": true
+    },
+    {
+     "number": "2.8 points (blame share)",
+     "source": "23.6 -> 26.4 (PERP.md; council/journalism.md line 58)",
+     "justified": true
+    }
+   ],
+   "disappeared": [
+    {
+     "number": "466 (and that use of 482)",
+     "reason": "ICJ 'fight cooled' sentence removed (critic/whole); 482 remains in the #reach population table",
+     "justified": true
+    },
+    {
+     "number": "+0.06 / +0.27 / +0.24 per 1,000",
+     "reason": "converted to per 10,000",
+     "justified": true
+    },
+    {
+     "number": "02, 05 (UTC minutes)",
+     "reason": "minute timestamps removed from the Nakba trace (privacy)",
+     "justified": true
+    },
+    {
+     "number": "+1.5 points (range 0.5 to 2.8) Mid sentence; 3.6 sealed-half points; Judaism −0.2 (range −0.7 to +0.3); 362 static",
+     "reason": "removed with the PATTERN band fold and #reach rewrite; Mid 1.5% vs none of 362 and the tier chart values remain",
+     "justified": true
+    },
+    {
+     "number": "8,236,474 on card 2",
+     "reason": "moved off the card; still in #oct7 paragraph",
+     "justified": true
+    }
+   ],
+   "unjustified": []
+  },
+  "screens_and_scripts": "scratchpad/qa/r2_verify/ (reg.js, reg_before.json, reg_after.json, reg_final.json, nums.py, text.js, *.rendered.txt, xmfind_1280.png, o7ba.png)"
+ },
+ "reviews": [
+  {
+   "lens": "data",
+   "overall": 7,
+   "subscores": {
+    "number_accuracy": 8,
+    "quote_accuracy": 8,
+    "claim_strength_matches_evidence": 6,
+    "sampling_honesty": 8,
+    "internal_consistency": 7
+   },
+   "strengths": [
+    "Round-1 data fixes landed: agentless 62%/51%/38% rate gone; card 3 '3 of 4'; genocide 0 -> 0 -> 7 plus denial (2 own voice / 5 attributed / 1 denial); no denial in Netanyahu; Mid '362 sampled'; Top 'n=121'; Zionism 43/42 with 455 article-wide; Discord timing correct; deep-panel chart labelled as a different tier.",
+    "Every core number recomputed matches source: perp_codes harm sentences 390/391/508, Israel/Jews perpetrator 108/109/164, occupation 16/35 -> 18/35 -> 44/55, genocide 8 = 5+2+1, Hamas-side killing 8/8/23 sentences (24 clause-charges); mass3 Top 10.3 vs 4.4 [+0.9, +11.2], Mid 1.5 vs 0.0, overall +0.4 [-0.0, +0.9], view shares 4.8 vs 4.6, populations 48,974 / 141,356, Low+ungraded 80.0%; random baseline 0.0% and -0.06.",
+    "All 333 langs.json quotes are exact substrings of data/crosslang.json at the stated date and revid; 15+ non-English translations re-read and faithful; attribution markers rendered correctly.",
+    "Matrix footer counts reproduce exactly (genocide 0->4, colonization 0->5, apartheid 0->4, occupation 3->6, 7 October 4->5, Hamas terrorist 2->2, hostages 6->4, court 1->4); all 10 '7 October' codes agree with the quoted sentences.",
+    "Independent recode of 40 perp_codes rows (seed 2611): perpetrator 40/40, voice 39/40. Sampling scope stated in hero, card 6, #reach, #news, #limits; #crosslang flagged exploratory."
+   ],
+   "issues": [
+    {
+     "severity": 4,
+     "location": "#crosslang matrix 'The hostages' column; HOS dict (en, de, fr; es/pt now)",
+     "problem": "Column depends on the 1,200-character cut, so 'not held' looks like 'absent'; English shown '– → –' although OCT7.md line 124 has the 251 hostages sentence 9; es/pt drawn as dropped.",
+     "fix": "Recode en to outside -> outside; not_held state for de/fr and es/pt now; drop 'changed' ring; footer 'in the text we hold'.",
+     "status": "deferred (new tile state; recode with coders)"
+    },
+    {
+     "severity": 4,
+     "location": "#xmFind lead cards; '.xm-q .w' rule",
+     "problem": "Class collision: word tokens get the header style (flex, uppercase, mono); quotes render one word per line.",
+     "fix": "Rename header class or scope '.xm-q > .w'.",
+     "status": "fixed (header span renamed 'qh', rule '.xm-q > .qh'; cards 464px at 1280, 310-494px on iPhone 13)"
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang 'Court ruling overstated', ru cell; legend 'four editions'; moment 22",
+     "problem": "Russian reports the Article 3 finding the court did make, in verdict wording; Spanish reports the same finding and is coded legal.",
+     "fix": "Recode ru now to legal; three editions; footer court 1 -> 3.",
+     "status": "deferred (LANGS.md bottom line 7 codes it as overstatement; needs second reading)"
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang lede para 1; bottom line",
+     "problem": "'Colonization entered the Zionism definition' in five editions, but only three in the definition itself (LANGS.md); pt 'then' cell rests on k_colonial not s1.",
+     "fix": "Reword to opening section / definition itself in en, ar, pt; point pt (and ru Hamas) cells at the slot carrying the 'then' code.",
+     "status": "fixed (wording); cell slot pointer not changed"
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang H2, lede, matrix note, Hebrew card",
+     "problem": "Claim checked only for the Hebrew Gaza-war article; Hebrew October 7 article has one genocide mention beyond held text; 'no Gaza-genocide article' stronger than 'no article linked to English Gaza genocide'.",
+     "fix": "Scope H2 to Hebrew's Gaza-war article; 'no article linked'; add Hebrew October 7 note.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "Hero dek sentence 5",
+     "problem": "'Most important, most-read articles took on the vocabulary' overclaims 10.3%; term list narrower than the measure.",
+     "fix": "One-in-ten wording with full term list and range.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang lede 'Dutch and Polish moved the other way'",
+     "problem": "Polish now states 'a series of crimes' by Israel in own voice.",
+     "fix": "Split Dutch and Polish wording.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang ICJ/ar note and moment 21 caption",
+     "problem": "Quotes the Jul 2024 sentence while the 'now' 2026 sentence is shown.",
+     "fix": "Quote the 2026 text or date-prefix.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang hostages ar cell; HOS note ar",
+     "problem": "'captive' drawn with the attributed glyph; note mislabels أسروا as a prisoner-of-war word.",
+     "fix": "Fact glyph with 'w' badge or new legend state; fix note text.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang lede and NOTE apa/ar",
+     "problem": "Omits LANGS.md caveat that Arabic still says 'this accusation' three sentences later.",
+     "fix": "Append the caveat.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "#crosslang vocabulary paragraph and #mXL",
+     "problem": "Units switch to per 1,000; 63% vs average 40% hides Italian 60%, French 56%, Hebrew 53%; per-10k rise counts cut leads.",
+     "fix": "Per 10,000 (+2.4/+2.7/+0.6); per-language counts; note rate rises when text is cut.",
+     "status": "partly fixed (units and 'rate can rise' note; per-language counts not added)"
+    },
+    {
+     "severity": 2,
+     "location": "#sixty card 4 body; #key '90 comparison' vs #when '84'",
+     "problem": "25% -> 74% printed without counts; comparison sizes 90 vs 84 unexplained.",
+     "fix": "'2 of 8 to 14 of 19'; #when legend explains 84 + 6 shocked pages.",
+     "status": "partly fixed (counts added; 84 vs 90 legend not changed)"
+    }
+   ],
+   "notes": "Built to scratchpad/qa/r2_data.html; screenshots in scratchpad/qa/r2_data/. No console errors or horizontal overflow in 4 contexts. Recode seed 2611: perpetrator 40/40, voice 39/40 (disagreement: 2021 Crimea referendum sentence). Gloss chips accurate; minor: 'massacre' coloured as terror; two glosses for רצח עם; 'clear (purify)' gloss for טיהור not rendered. Not re-verified: Tigray counts; ArbCom primary pages (deferred from round 1)."
+  },
+  {
+   "lens": "design",
+   "overall": 6.5,
+   "subscores": {
+    "visual_hierarchy": 6,
+    "typography": 7,
+    "colour_meaning_and_consistency": 6,
+    "chart_clarity_and_annotation": 7,
+    "dark_mode": 7,
+    "overall_polish_vs_top_desks": 6,
+    "language_barrier_visuals": 6
+   },
+   "strengths": [
+    "Amber/blue diff grammar holds everywhere, including #oct7 (round-1 fix) and the new #xrFig, where it marks words in the Arabic and Hebrew originals and the translation.",
+    "#xmFig is a strong small multiple: voice by glyph not colour, then/now squares, change rings, column totals, sticky language column, every cell opens its sentence.",
+    "#xrFig handles RTL well: right-aligned Arabic/Hebrew, unbroken highlights, inline gloss chip, glossary card for רצח עם; Hebrew genocide cell lands on a faithful moment.",
+    "Teal = topic, grey-violet = comparison hold across sections; red reserved for 7 Oct.",
+    "Type system and dark-mode tokens hold in four contexts; round-1 fixes present (bottom-pinned step control, 'solid vertical line', #oct7 diff)."
+   ],
+   "issues": [
+    {
+     "severity": 5,
+     "location": "#xmFind cards; page_template.html line 810",
+     "problem": "'.xm-q .w' hits every word span: one uppercase mono word per line, cards 2,112px at 1280; Hebrew bidi broken; Arabic acronym in #oct7 Hamas panel renders out of order.",
+     "fix": "Scope to '.xm-q > .w'; wrap the Arabic acronym in <bdi>.",
+     "status": "fixed (class 'qh'; bdiAr() wraps Arabic in #oct7/#zionism before/after)"
+    },
+    {
+     "severity": 4,
+     "location": "#xmFig dark mode: how-to, legend, 'Dark squares' row",
+     "problem": "Own-voice squares render light in dark mode while copy says 'dark square'; how-to describes striped for disputed/court; 'n/a' overflows on phone.",
+     "fix": "Mode-neutral wording; legend 'filled, dot'; summary 'Stated as fact'; smaller n/a.",
+     "status": "fixed (wording, legend, footer, how-to); n/a phone overflow deferred"
+    },
+    {
+     "severity": 4,
+     "location": "#xlWrap heat stripes",
+     "problem": "Two-cell sequential blue ramp hides differences, collides with blue = added; row order differs from matrix.",
+     "fix": "Dumbbells on a shared axis in ink/grey; matrix row order.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#xmFig column header colours and gloss underlines",
+     "problem": "Third categorical palette without a key; genocide pink near --war red; hostages orange near amber --del.",
+     "fix": "Neutral underline/rules, or a legend line and palette shift.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#xrFig Replay morph",
+     "problem": "Figure grows mid-animation; time toggle shows 'Now' while 'then' sentence is on screen.",
+     "fix": "Min-height during transition; switch aria-pressed at swap; collapse width.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#xrFig 'Now' view for whole-sentence rewrites",
+     "problem": "About 90% of words highlighted, key change lost.",
+     "fix": "Underline-only style above 60% new; keep fill for glossed key words.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#xrFig Hebrew moment",
+     "problem": "Same sentence shown three times (caption, second line, 'Why this square').",
+     "fix": "Show once; dedupe moment captions vs cell notes.",
+     "status": "fixed (caption shows m[4] only; 'Why this square' skipped when it duplicates)"
+    },
+    {
+     "severity": 3,
+     "location": "Page-wide colour meaning (#news split bar, #when event dots, #palestine squares)",
+     "problem": "Amber/red/blue carry second meanings; #palestine squares unkeyed.",
+     "fix": "Grey-violet/hatched for Recent events; ink event dots; key or remove squares.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#oct7 Hamas step-through chart",
+     "problem": "Labels overprinted by cursor/7 Oct line; 'views / month' collides; no '2' phase label.",
+     "fix": "Label layer above data with background; move labels; phase chip.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "#key scrolly step 3",
+     "problem": "Copy says 'solid line' for a dashed ICJ marker.",
+     "fix": "'red dashed line' / 'dashed line labelled ICJ'.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "#board three-ways chart",
+     "problem": "Blue diamond unexplained; labels far from marks.",
+     "fix": "Explain or remove diamond; labels beside marks.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "#sixty grid at 1280",
+     "problem": "4 + 2 grid with orphan cells; card heights 420-740px; card 2 big number is a date.",
+     "fix": "3 x 2 grid; cap card bodies; card 2 number from text.",
+     "status": "partly fixed (card 2 big number now '5 days'; grid deferred)"
+    }
+   ],
+   "notes": "Screenshots in scratchpad/qa/r2_design/; scripts in scratchpad/qa/r2_design_scripts/. No overflow, zero console errors. Fixing the #xmFind selector was expected to take language-barrier visuals to about 8. Still open from round 1: colour-meaning cleanup, #when raw counts, text walls, #board chart, #sixty grid, Hamas label layering, #xlWrap ramp."
+  },
+  {
+   "lens": "ui",
+   "overall": 5,
+   "subscores": {
+    "component_consistency": 6,
+    "spacing_and_alignment": 5,
+    "labels_and_affordances": 6,
+    "phone_layout_390": 4,
+    "desktop_layout_1280": 5,
+    "no_overflow_or_overlap": 5
+   },
+   "strengths": [
+    "No page-level horizontal overflow (390/390, 1280/1280); no script errors.",
+    "Claim matrix reuses house components, sticky language column on phone, text glyphs carry meaning; dark mode themed.",
+    "Bilingual reader handles RTL with linked highlights, gloss chips and 'rev' links.",
+    "Round-1 fixes landed: #oct7 diff colours, bottom-only sticky control, no Q-codes, 'solid vertical line'.",
+    "Data lab keeps a repeatable card structure with Exploratory tags and pre-registered outline."
+   ],
+   "issues": [
+    {
+     "severity": 5,
+     "location": "#xmFind cards; page_template.html:810",
+     "problem": "Class collision renders every quote word on its own uppercase mono line; about 4,600px of fragments in every viewport.",
+     "fix": "Scope '.xm-q > .w' or rename header span to 'qh'.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "#oct7 and #zionism step-through charts at 390px",
+     "problem": "Phase 2 sliver hidden; labels cut; cursor over row labels; '7 Oct' over 'views / month'.",
+     "fix": "Reorder label layer; min phase-cell width with key; move annotations.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#ppSide and #xrTime at 390px",
+     "problem": "Segmented controls wrap to two rows.",
+     "fix": "Grid seg on phone; shorter labels.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#ziCtl / #o7Ctl pinned state",
+     "problem": "Pinned control is 140px on phone, covers axis and seg.",
+     "fix": "Compact stuck state via sentinel.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#xrLang language buttons",
+     "problem": "Dot/ring grammar with no visible key; differs from matrix squares.",
+     "fix": "Reuse matrix glyph; caption line.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#xmScroll, #xrLang, #xrArts at 390px",
+     "problem": "Wide scrollers without cue; headers cut.",
+     "fix": "Fade mask and 'Swipe for more' cap; wrap article chips.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#organised bloc cards",
+     "problem": "Row labels squeezed to 90px; dumbbell without axis; empty grid column; 13,677px phone height.",
+     "fix": "Stacked rows with axis; auto-fit grid; fold parts 4-5.",
+     "status": "partly fixed (parts 4-5 moved to appendix #organic); bloc layout deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#board dot-and-whisker panels at 390px",
+     "problem": "Value labels overprint marks.",
+     "fix": "Right-aligned value column or haloed labels.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "Control components page-wide",
+     "problem": "Three selected-state idioms (.seg, .pick, .lx-seg).",
+     "fix": "One ink-fill selected style; matching radius.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "Data lab card 1, lab/lab.js:197",
+     "problem": "'black range line' is near-white in dark mode.",
+     "fix": "'thin range line'.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "#sixty cards",
+     "problem": "4 + 2 orphan grid at 1280; about 120px blank under phone carousel.",
+     "fix": "3 + 3 grid; stretch cards; move swipe cue.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "#xmFig matrix header",
+     "problem": "Coloured column rules without key; ragged header heights.",
+     "fix": "Uniform rules; shorter header.",
+     "status": "deferred"
+    }
+   ],
+   "notes": "Build scratchpad/qa/r2_ui.html; screenshots scratchpad/qa/r2_ui/; geometry in r2_ui/report.json. Score fell 6.5 -> 5 mainly from the #xmFind defect introduced in 8b36700 (one-selector fix). Round-1 deferred UI items still open: #charge Side wrap, #organised bloc squeeze, phase-cell/label layering, #sixty orphan cells, four disclosure idioms."
+  },
+  {
+   "lens": "ux",
+   "overall": 6,
+   "subscores": {
+    "discoverability": 7,
+    "clarity_of_what_each_interaction_shows": 6,
+    "control_responsiveness": 7,
+    "mobile_usability": 5,
+    "accessibility": 5,
+    "interaction_adds_understanding": 8
+   },
+   "strengths": [
+    "#crosslang quote reader: morph, 'Both, marked', gloss chips, linked highlights, correct RTL, reduced-motion respected.",
+    "All 88 #xmFig squares are buttons with sentence aria-labels and open their own reader moment.",
+    "#zionism stepper still best in class (Prev/Next/Play, jump chips, phases, arrow keys, aria-live); bottom-only sticky control holds on iPhone.",
+    "#oct7 uses one grammar for three articles; Gaza tab opens on change 39; October 7 views note present.",
+    "No console errors and 0px overflow in four contexts; #charge bars open #ppCard with exact sentences."
+   ],
+   "issues": [
+    {
+     "severity": 5,
+     "location": "#xmFind headline quotes; CSS line 810",
+     "problem": "Each word a block, uppercase 10.5px mono; #crosslang 8,646px on phone.",
+     "fix": "Child combinator or renamed label class.",
+     "status": "fixed (#crosslang 5,995px on phone, 5,043px at 1280)"
+    },
+    {
+     "severity": 4,
+     "location": "#ppCard drawers; Al-Shabaab definition",
+     "problem": "Raw HTML entities (&nbsp;) in 'exact' quotes, 11 strings.",
+     "fix": "html.unescape quote data; build assertion.",
+     "status": "fixed (all non-langs quote data unescaped; assertion added; langs excluded, 3 tokens deferred)"
+    },
+    {
+     "severity": 4,
+     "location": "#xmScroll on iPhone",
+     "problem": "Only 3 of 8 columns visible; clipped cue; sticky column bleed.",
+     "fix": "'Now only' default on phone; fade mask and caption; opaque sticky header.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#xrMomC and #xrNote from a matrix square",
+     "problem": "Caption says the same thing three times.",
+     "fix": "Caption = m[4]; dedupe note.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#xrLang, #netPre/#netView/#netSide, matrix cell click",
+     "problem": "Keyboard focus lost after rebuilds; #netDet resets.",
+     "fix": "Restore focus after re-render; focus #xrMomT after scroll.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#organised #netPre time chips",
+     "problem": "No visible feedback in Groups view.",
+     "fix": "Draw window band on .astrip; live caption.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#xrLang dots and #xrArts chips on phone",
+     "problem": "Dot grammar unexplained; hidden scrollers.",
+     "fix": "Glyph key line; wrap on phone or fade mask.",
+     "status": "deferred"
+    },
+    {
+     "severity": 3,
+     "location": "#key scrolly on iPhone, step 3",
+     "problem": "Active step card covers the chart.",
+     "fix": "Sticky chart with cards scrolling below.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "#xmFig legend, tfoot, how-to in dark mode",
+     "problem": "'Dark square' wording backwards in dark mode.",
+     "fix": "'Solid square' wording.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "#xmScroll aria-labels for '…' cells",
+     "problem": "'…' announced as 'not in the text we hold'.",
+     "fix": "Separate 'later in the opening section, beyond the 1,200 characters' phrase.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "#breathe #brRange",
+     "problem": "No aria-valuetext; legend compares with 2021 not chosen day.",
+     "fix": "aria-valuetext; caption rewording.",
+     "status": "deferred"
+    },
+    {
+     "severity": 2,
+     "location": "#organised network; #reach #tierFig",
+     "problem": "Nodes/edges not focusable, edges hard to tap; tooltip pointer-only; '0.0% (0.0%-0.0%)' for zero counts.",
+     "fix": "Hit lines, tabindex and roles; focus tooltips; zero-count wording.",
+     "status": "deferred"
+    }
+   ],
+   "notes": "Playwright Chromium, iPhone 13 and 1280, light/dark, plus reduced motion; 0 page errors, 0px overflow. Round-1 fixes holding: bottom-only sticky .zi-ctl, Gaza chip -> change 39, October 7 views note, #ppCard scroll margin, #oct7 diff colours. Still open: #net chip feedback and focus, phone scrolly card, #brRange aria-valuetext, full-height 'now' outline in #charge. Screenshots scratchpad/qa/r2_ux/; scripts scratchpad/qa/r2_ux_scripts/."
+  },
+  {
+   "lens": "newsroom",
+   "overall": 7,
+   "subscores": {
+    "headline_strength": 7,
+    "first_screen_story_clarity": 6,
+    "newsworthiness_israeli_audience": 9,
+    "quotability": 8,
+    "segment_readiness": 6,
+    "credibility_under_attack": 7,
+    "narrative_led_headlines_and_bottom_lines": 6,
+    "bottom_line_quality": 5
+   },
+   "strengths": [
+    "Round-1 hero fix landed: quote-led H1 ('through colonization', 'began committing genocide'), denial and date in dek; title, masthead and published line agree.",
+    "Quotes exact, dated, revision-tied; #zionism before/after diff works as a TV graphic.",
+    "Calibration holds on air: denial beside the charge, Netanyahu has no denial, Russia/Crimea and Turkey/Cyprus parallels, 'not detected is not did not happen', ArbCom ledger for both sides.",
+    "#oct7 has two broadcast-ready charts (Hamas designation position; October 7 timeline with empty hostages lane).",
+    "#crosslang H2 leads with the narrative and has a strong Israeli angle; calibrated bottom line."
+   ],
+   "issues": [
+    {
+     "severity": 4,
+     "location": "#oct7 paragraph 2",
+     "problem": "Sexual-violence sentence no longer names Hamas (oct7_06 json) but 'rape'/'sexual' appear nowhere.",
+     "fix": "Insert the 1 Jan 2024 / 2 Nov 2026 then/now quotes.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "#palestine Nakba editor trace",
+     "problem": "Verbatim edit summaries and diff links one click from account names; bottom line singles out 'editor B'.",
+     "fix": "Remove links and summaries; 'Revision IDs are in the data file'; new bottom line.",
+     "status": "fixed (rendered view); verifier also relabelled the count as accounts with the bot flagged"
+    },
+    {
+     "severity": 4,
+     "location": "Section H2s (#charge, #oct7, #palestine, #organised, #news, #when, #reach, #against)",
+     "problem": "Questions or labels instead of findings.",
+     "fix": "Narrative-first H2s (wording supplied).",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "Section bottom lines",
+     "problem": "Mechanics, number stacks, jargon; no story about Israel.",
+     "fix": "Narrative bottom lines per section (wording supplied).",
+     "status": "fixed (13 'Bottom line:' lines)"
+    },
+    {
+     "severity": 3,
+     "location": "#sixty card 3 big number '3 of 4'",
+     "problem": "Denominator set by authors' choice of quotes.",
+     "fix": "Big number '“by Zionists”' with dated kicker.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#sixty card 2 big number '12 Oct 2023'",
+     "problem": "Date as number; 8,236,474 views beside it reads causal; hostages buried.",
+     "fix": "'5 days'; hostages in headline.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "Hero H1 and dek",
+     "problem": "'world's first reference' unsupported; dek 190 words with six stats; reads as 'all' articles.",
+     "fix": "Reword H1; trim dek.",
+     "status": "partly fixed (H1 'the reference the world reads'; 4.6M views; one-in-ten wording; dek not shortened)"
+    },
+    {
+     "severity": 3,
+     "location": "#charge para 3 and #oct7 para 3",
+     "problem": "Omits Hamas-side killing 8 -> 23, Goldstein 'Jewish terrorist', 'Palestinian political violence'.",
+     "fix": "Add the three counter-evidence items.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#charge grid genocide bar '8'",
+     "problem": "Bar reads 8 while prose says 7 + denial.",
+     "fix": "Label '7 + 1'; card 'CHARGES 7 ... plus 1 denial'.",
+     "status": "deferred (not addressed; #ppCard still 'Sentences 8 in 7 articles')"
+    },
+    {
+     "severity": 3,
+     "location": "#oct7 segment readiness",
+     "problem": "Four paragraphs before first visual; no then/now strip; sticky bar covers how-to on phone.",
+     "fix": "Three-row then/now card.",
+     "status": "deferred (rows added to prose instead)"
+    },
+    {
+     "severity": 3,
+     "location": "#sixty card 4 '16 → 44'",
+     "problem": "Counts from different totals; headline leads with caveat.",
+     "fix": "'46% → 80%' with counts in kicker.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "Masthead, chips, #oct7 units, phone carousel",
+     "problem": "Codename masthead, no byline; CMS-like chips; mixed units; blank space under carousel.",
+     "fix": "Publication name and AI-coding disclosure; remove chips; uniform units; carousel sizing.",
+     "status": "deferred"
+    }
+   ],
+   "notes": "Desk verdict: would run as a lead digital feature plus a 60-90 second explainer after issues 1-4. Suggested headline: 'Wikipedia now says, in its own voice, that Israel \"began committing genocide\"'. Minor data note: October 7 tab says 131 changes, OCT7.md line 91 says 132. Screenshots scratchpad/qa/r2_newsroom/; text dump r2_newsroom/dk_nb.txt; structure r2_newsroom/struct.json."
+  },
+  {
+   "lens": "critic",
+   "overall": 6.5,
+   "subscores": {
+    "defensibility": 7,
+    "balance_of_evidence": 6,
+    "caveat_placement": 6,
+    "causal_restraint": 7,
+    "transparency_of_method": 8
+   },
+   "strengths": [
+    "All round-1 critic fixes on the page: genocide 0 -> 0 -> 7 plus denial; selection rule disclosed with October 7 'Some have alleged'; 'documented campaigns'/'firmly' gone; Bloc B '100%' removed; 2021 wordings labelled.",
+    "#organised separates documented / alleged / likely error / not shown; ArbCom on both sides; WMF response to ADL; chance counts and detection limits beside each test.",
+    "#charge answers 'singling out' in its body: flat blame share (23.6 -> 26.4), Russia/Turkey occupation 25 -> 74%, counter-examples, every sentence opens from a bar.",
+    "#board puts the pre-registered null first (4,228 of 5,000 shuffles) and lists dropped claims.",
+    "#against and #oct7 report moves the other way (settlements, settler colonialism trimmed, expulsion article lost agent, genocide clause removed, Hannibal Directive)."
+   ],
+   "issues": [
+    {
+     "severity": 4,
+     "location": "#oct7 closer and Gaza genocide paragraph; #charge 'What this means'",
+     "problem": "Asymmetry presented as grammar alone; no outside genocide findings named; atrocity-set context buried in #sourcing.",
+     "fix": "Dated outside findings with Israel's view; atrocity-set line (anecdote) in #charge.",
+     "status": "fixed (Amnesty, HRW, B'Tselem, IAGS, UN COI dated per events/cards.md; Israel's view quoted; 4 of 11 -> 9 of 11 labelled anecdote)"
+    },
+    {
+     "severity": 4,
+     "location": "#charge deck",
+     "problem": "'Dropped the attribution' unsupported: Israel/Netanyahu go 0 -> 0 -> own voice.",
+     "fix": "State own voice in Israel and Netanyahu.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "#charge para 2-3 vs 'Massacre / killing' row",
+     "problem": "Hamas-side 8 -> 8 -> 23 not in prose; 23 vs 24 unexplained.",
+     "fix": "Add parallel counts; explain sentence vs clause counts.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "#oct7 para 2 last sentence",
+     "problem": "Two edits tied by date imply coordination; OCT7.md caveat missing.",
+     "fix": "Add 'nothing linking the two edits' caveat.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "#palestine deck",
+     "problem": "'Biggest change in the story' overgeneralises from the Nakba article.",
+     "fix": "Name Nakba, two war articles, and the two that do not.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "#crosslang quote cards",
+     "problem": "One word per line rendering; 'ataque de represalia' not in prose.",
+     "fix": "Scope word classes; add Spanish phrase to deck.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#when para 3; card 5; #organised deck",
+     "problem": "Pairing the critical-term surge with pro-Israel email canvassing implies false balance; no 0.5x baseline.",
+     "fix": "Pre-war 0.5x; email canvassing 'aimed the other way'.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#organised bloc cards, chips, card 5",
+     "problem": "Email-window label ties bloc to pro-Israel finding; '14 pairs' attached to two groups; removals test omitted; 500-edit reassurance.",
+     "fix": "'War onset' label; one group on all edits, one on insertions; removals none; 500/30 rule and Dec 2024 gaming.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#organised part 4 and co-editing 'What this means'",
+     "problem": "9 accounts vs none ignores smaller comparison set (88 vs 208); pre-war gap larger.",
+     "fix": "Add 88 vs 208; pre-war 1.58 vs 0.56.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#crosslang vocabulary heading",
+     "problem": "'Mostly not' contradicts deck and 40%; units switch; court column one-directional.",
+     "fix": "'Less than English, and unevenly'; per 10,000; understatement note.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#charge para 2 and genocide drawer",
+     "problem": "Two 'attributed' sentences use factive verbs; no independent second coder.",
+     "fix": "Name the factive verbs; cite 39/40 QA re-check.",
+     "status": "fixed (prose and coder note; FACTIVE sub-badge not added)"
+    },
+    {
+     "severity": 3,
+     "location": "#news deck and What this means",
+     "problem": "Flat 'Not'; causal 'sent editors back'.",
+     "fix": "'Mostly not' with range caveat; descriptive wording.",
+     "status": "fixed"
+    }
+   ],
+   "notes": "Build scratchpad/qa/r2_critic.html; screenshots scratchpad/qa/r2_critic/ (desk_light_crosslang_wait.png shows the cross-language bug). Still open from round 1: Nakba chart privacy (now fixed in the rendered view) and bot counted among '10 editors' (verifier repair this round); card 2 timing reading (fixed with '5 days'). Smaller: Breivik listed as a topic article in masked-reading examples; antisemitism mentions counted as counter-trend."
+  },
+  {
+   "lens": "whole",
+   "overall": 5.5,
+   "subscores": {
+    "narrative_arc": 6,
+    "flow_between_sections": 5,
+    "redundancy": 4,
+    "length_and_pacing": 3,
+    "core_finding_lands": 7,
+    "zionism_charge_oct7_organised_connect": 5,
+    "coherence_of_tone": 7,
+    "evidence_anchoring": 6,
+    "narrative_focus": 6,
+    "skimmability": 4
+   },
+   "strengths": [
+    "Hero is about the narrative with quote-led H1, denial and dates.",
+    "Round-1 contradictions gone from the main line.",
+    "#charge and #oct7 remain the best journalism: exact dated quotes, counter-examples, calibrated 'What this means'.",
+    "Core-vs-long-tail finding lands in #reach with honest labels.",
+    "Tone serious and consistent; #crosslang H2 is the model for other headlines."
+   ],
+   "issues": [
+    {
+     "severity": 5,
+     "location": "#crosslang quote cards and Arabic reader",
+     "problem": "Word-per-line uppercase mono; section about 8,600px on iPhone.",
+     "fix": "Scope token classes.",
+     "status": "fixed"
+    },
+    {
+     "severity": 5,
+     "location": "Whole main line",
+     "problem": "About 12,800 words (target about 6,000); grew with #crosslang.",
+     "fix": "Move #breathe to lab; fold PATTERN into #reach; #organised parts 4-5 to appendix; trim #crosslang and #against.",
+     "status": "partly fixed (three structural cuts done; prose trims deferred)"
+    },
+    {
+     "severity": 4,
+     "location": "#charge dek",
+     "problem": "'Dropped the attribution' unsupported (OCT7.md line 194).",
+     "fix": "Own-voice wording for Israel and Netanyahu.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "Hero dek sentence 5",
+     "problem": "Overclaims; term list mismatched.",
+     "fix": "One-in-ten wording with five most-read gainers.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "Section H2s; #limits has no H2",
+     "problem": "Eight question/label H2s; #limits headless.",
+     "fix": "Finding-led H2s; #limits H2.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "Bottom lines #zionism, #when, #palestine, #news, #board, #checks",
+     "problem": "Missing, off-topic or overclaiming; #checks misses unexplained.",
+     "fix": "Narrative bottom lines; explain #checks misses.",
+     "status": "fixed"
+    },
+    {
+     "severity": 4,
+     "location": "Running order",
+     "problem": "Arc breaks after #oct7; narrative sections split by statistical ones; no hand-offs; no closing section.",
+     "fix": "Reorder; add hand-offs; closing box.",
+     "status": "fixed (reorder and four hand-offs); closing 'what the world now reads' box deferred"
+    },
+    {
+     "severity": 3,
+     "location": "Hero AI claim; #reach 'matters most'; #palestine 'biggest change'; #when ICJ 482 -> 466; card 2",
+     "problem": "Evidence-anchoring violations.",
+     "fix": "Source or drop; reword; delete ICJ sentence; card 2 number.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "#sixty cards 5 and 6 headlines",
+     "problem": "Mechanics rather than narrative.",
+     "fix": "Narrative headlines; relabel 3.4x.",
+     "status": "fixed"
+    },
+    {
+     "severity": 3,
+     "location": "Repeated facts across sections",
+     "problem": "Genocide quote, 10.3/4.4, Discord timing repeated; 43/42 vs 44/41.",
+     "fix": "One home per fact; replace #news example.",
+     "status": "partly fixed (#news example replaced; #mTier repeat removed; part 4 to appendix; Discord sentence de-duplicated in closer)"
+    },
+    {
+     "severity": 3,
+     "location": "#zionism H2",
+     "problem": "Leaves out 're-establishment'; 'Jewish state became homeland' misleading.",
+     "fix": "'re-establishment' -> 'through colonization' H2.",
+     "status": "fixed"
+    },
+    {
+     "severity": 2,
+     "location": "Main-line vocabulary and kicker chips",
+     "problem": "Five population names and lab tokens; 'SOURCES' chip mislabels trust sections.",
+     "fix": "Two defined names; move lab tokens; 'TRUST' chip.",
+     "status": "deferred"
+    }
+   ],
+   "notes": "Build scratchpad/qa/r2_whole.html; screenshots scratchpad/qa/r2_whole/; text r2_whole/body.txt. No console errors, 0px overflow; page height 75,054px iPhone / 57,954px 1280 (after fixes: 71,580 / 59,302). Proposed additions: closing 'What the world's reference now says' box; narrative bottom line on every section (done); reconciliation sentence in #sixty footnote."
+  }
+ ]
+}
