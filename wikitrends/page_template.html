@@ -625,9 +625,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
      a moment where the whole chart and the whole active card are on screen together */
   .scrolly .sticky{order:-1;top:calc(env(safe-area-inset-top,0px) + 46px);background:var(--paper);padding-block:4px 6px;margin-inline:-4px;padding-inline:4px;max-height:58vh;max-height:58svh;box-sizing:border-box}
   .scrolly .steps,#stepsK{gap:80vh;gap:80svh;padding-block:22vh 46vh;padding-block:22svh 46svh;position:relative;z-index:3}
-  .step{box-shadow:0 6px 24px rgb(0 0 0/.10);background:color-mix(in srgb,var(--sheet) 94%,transparent);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .step{box-shadow:0 6px 24px rgb(0 0 0/.10);background:var(--sheet)}
+  .step .go{min-height:44px;padding:12px 0}
   #trend,#es{height:clamp(230px,34vh,320px)!important}
-  #kChart{height:clamp(170px,31vh,260px)!important;height:clamp(170px,31svh,260px)!important}
+  #kChart{height:clamp(160px,28vh,240px)!important;height:clamp(160px,28svh,240px)!important}
   .scrolly .fig{gap:6px;padding:7px 10px}
   .scrolly .fig-h{gap:4px 12px}
   .scrolly .fig-t{font-size:13.5px}
@@ -791,6 +792,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .zi-facts dd{margin:0;font:14px/1.4 var(--body);color:var(--ink)}
 .zi-facts dd del,.zi-facts dd ins{font:400 15px var(--display)}
 #ppCard{scroll-margin-top:60px}
+.pp-back{position:sticky;bottom:10px;justify-self:end;min-height:40px;padding:0 14px;border:1px solid var(--ink-2);border-radius:20px;background:var(--sheet);font:500 12.5px var(--mono);color:var(--ink);cursor:pointer;box-shadow:0 4px 14px rgb(0 0 0/.12)}
 .zi-fig svg text:not(.pl):not(.bd):not(.phd):not(.tt){paint-order:stroke;stroke:var(--sheet);stroke-width:3px;stroke-linejoin:round}
 .zi-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;margin:-1px;padding:0;border:0}
 .zi-ba{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
@@ -3839,12 +3841,15 @@ function ppCard(){
   const P=R.perp,[sd,code,d]=PP.sel.split("|"),name=(P.charges.find(c=>c[0]===code)||[,""])[1],[n,own]=P.cells[PP.sel]||[0,0],L=P.receipts[PP.sel]||[];
   const arts=new Set(L.map(x=>x[0])).size,VL={own:"own voice",att:"attributed",den:"denial or dispute"};
   $("#ppCard").innerHTML=`<div class="hd"><p class="zi-hd1"><b>${esc(PP_SIDE[sd])} · ${esc(name)} · ${d==="now"?"now (last revision before 5 Nov 2026)":esc(PP_DL[d])}</b> · English Wikipedia, opening sections</p><dl class="zi-facts"><div><dt>${/genocide/i.test(name)&&L.some(x=>x[2]==="den")?"Charges":"Sentences"}</dt><dd>${(()=>{const nd=/genocide/i.test(name)?L.filter(x=>x[2]==="den").length:0;return nd?`${n-nd} in ${ziN(arts,"article")} · plus ${nd} denial${nd===1?"":"s"}`:`${n} in ${ziN(arts,"article")}`})()}</dd></div><div><dt>Wikipedia’s own voice</dt><dd>${own}</dd></div>${L.length?`<div><dt>Attributed</dt><dd>${L.filter(x=>x[2]==="att").length}</dd></div><div><dt>Denials</dt><dd>${L.filter(x=>x[2]==="den").length}</dd></div>`:`<div><dt>Attributed or denied</dt><dd>${n-own}</dd></div>`}</dl></div>
-   ${L.length?`<ul class="rc">${L.map(([t,s,v])=>`<li><span class="w"><span>${esc(t)}</span><span class="vchip ${v}">${VL[v]}</span></span><span class="s">“${esc(s)}”</span></li>`).join("")}</ul>`:`<p class="cap">No sentence at this date.</p>`}`;
+   ${L.length?`<ul class="rc" id="ppRc">${L.map(([t,s,v],i)=>`<li${i>=6&&!PP.all?" hidden":""}><span class="w"><span>${esc(t)}</span><span class="vchip ${v}">${VL[v]}</span></span><span class="s">“${esc(s)}”</span></li>`).join("")}</ul>${L.length>6?`<button type="button" class="more-btn" id="ppAll" aria-expanded="${!!PP.all}" aria-controls="ppRc">${PP.all?"Show the first 6":`Show all ${L.length}`}</button>`:""}`:`<p class="cap">No sentence at this date.</p>`}
+   ${isPhone()?`<button type="button" class="pp-back" id="ppBack">↑ Back to the chart</button>`:""}`;
+  const ab=$("#ppAll");if(ab)ab.onclick=()=>{PP.all=!PP.all;ppCard();if(!PP.all)$("#ppCard").scrollIntoView({block:"nearest"})};
+  const bb=$("#ppBack");if(bb)bb.onclick=()=>{const t=$(`#ppGrid .pp-bar[data-k="${PP.sel}"]`)||$("#ppGrid");($("#ppFig")||$("#ppGrid")).scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"start"});if(t.focus)t.focus({preventScroll:true})};
   $$("#ppGrid .pp-bar").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.k===PP.sel)));
 }
 function chargeInit(){
   const g=$("#ppGrid");if(!g)return;
-  g.addEventListener("click",e=>{const b=e.target.closest(".pp-bar");if(!b||b.disabled)return;PP.sel=b.dataset.k;ppCard();if(isPhone())$("#ppCard").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"nearest"})});
+  g.addEventListener("click",e=>{const b=e.target.closest(".pp-bar");if(!b||b.disabled)return;PP.sel=b.dataset.k;PP.all=false;ppCard();if(isPhone())$("#ppCard").scrollIntoView({behavior:RM.matches?"auto":"smooth",block:"nearest"})});
   seg($("#ppSide"),v=>{PP.side=v;const [,c,d]=PP.sel.split("|"),k=`${v}|${c}|${d}`;if((R.perp.cells[k]||[0])[0])PP.sel=k;drawCharge()});
   drawCharge();
 }
