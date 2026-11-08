@@ -192,7 +192,7 @@ Folder: `patterns/story_sources_langs/`. Chart data in `chart_data/`. Ranked by 
 **Nakba** (critical)
 - THEN (2021-12-24): "The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs."
 - NOW (2026-07-06): "The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings, along with the destruction of their society and the suppression of their culture, identity, political rights, and national aspirations."
-- 'ethnic cleansing' in Wikipedia's voice from 2024-04-24; perpetrator named 2025-12 ('by Israel'), then 'by Zionists' (2026-07, 'Plan Dalet ... was executed before the declaration'). Past tense 'was' -> present 'is'.
+- 'ethnic cleansing' in Wikipedia's voice from 2024-03-05 (briefly removed 2024-04-07/08, both removals reverted); past tense 'was' -> present 'is' on 2024-06-06. Perpetrator first named, and stuck, on 2025-08-10 ('is the Israeli ethnic cleansing of Palestinian Arabs'); worded 'by Israel' from 2025-12-30 and 'by Zionists' from 2026-07-06 ('Plan Dalet ... was executed before the declaration'). Source: data/ratchet.json, Nakba fs_timeline.
 
 **1948 Palestinian expulsion and flight** (other way)
 - THEN (2023-07-07): "In 1948 more than 700,000 Palestinian Arabs ... were expelled or fled from their homes by Zionist militias, during the 1948 Palestine war."
