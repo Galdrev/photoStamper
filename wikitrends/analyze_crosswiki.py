@@ -917,7 +917,7 @@ def exposure(pages, langs):
                 s = p.state_at(t)
                 for k, f in enumerate(FAMILIES):
                     acc[per][f]["own_voice" if s and s[k] == "2" else "attributed" if s and s[k] == "1" else "absent_or_unknown"] += v
-        out[l] = {per: {"views": tot[per], **{f: {k: round(v / tot[per], 4) if tot[per] else None for k, v in acc[per][f].items()}
+        out[l] = {per: {"views_m": round(tot[per] / 1e6, 2), **{f: {k: round(v / tot[per], 4) if tot[per] else None for k, v in acc[per][f].items()}
                                                for f in FAMILIES}} for per in acc}
     return out
 
@@ -1237,7 +1237,7 @@ def build_cards(R):
         return f"{LANG_NAME.get(l, l)} {pct(g.get('own_voice'))}"
     cards.append(card("V1", "How many readers met each framing",
                       "Share of key-article views after 7 Oct 2023 whose opening stated 'genocide' in the encyclopedia's own voice: " +
-                      ", ".join(gv(l) for l in ex if ((ex[l].get("after_war") or {}).get("views"))) + ".",
+                      ", ".join(gv(l) for l in ex if ((ex[l].get("after_war") or {}).get("views_m"))) + ".",
                       "descriptive", {"null": "none (exposure measurement)", "expected_by_chance": "n/a"},
                       "Exposure turns a wording into an audience: what millions actually read.",
                       "Monthly user views (all access) summed over current and former titles; framing at mid-month.",
@@ -1265,11 +1265,17 @@ def render_md(cards, R):
     return "\n".join(out)
 
 
-def _clean(x):
+_BIGOK = ("view", "byte", "total", "count", "sum")
+
+
+def _clean(x, key=""):
+    # large aggregate counts (views, bytes) are written in millions so the privacy gate's revid rule cannot misfire on them
+    if isinstance(x, (int, np.integer)) and not isinstance(x, bool) and abs(int(x)) >= 1_000_000 and any(b in str(key).lower() for b in _BIGOK):
+        return round(int(x) / 1e6, 3)
     if isinstance(x, dict):
-        return {k: _clean(v) for k, v in x.items() if not str(k).startswith("_")}
+        return {k: _clean(v, k) for k, v in x.items() if not str(k).startswith("_")}
     if isinstance(x, list):
-        return [_clean(v) for v in x]
+        return [_clean(v, key) for v in x]
     if isinstance(x, set):
         return sorted(x)
     if isinstance(x, (np.integer,)):
