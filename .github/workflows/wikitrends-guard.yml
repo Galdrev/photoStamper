@@ -1,5 +1,5 @@
 name: wikitrends-guard
-# launch 2026-11-08
+# launch 2026-11-08 (run 2: stricter ArbCom redaction)
 # Revert guarding / tag teams / talk-page voting blocs / overlap with the coord network / ArbCom primary source
 # (wikitrends/guard.py + analyze_guard.py), in ONE job, with the coord collector (wikitrends/coord.py) re-run in the same
 # job so the coord edges are recomputed under the same salt (old hashes are never stored or reused).
