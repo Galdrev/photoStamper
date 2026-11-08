@@ -926,7 +926,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 #crosslang.folded>.xm-keep{display:grid!important}
 @media (max-width:900px){.xm-find{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:640px){
-  .xm{min-width:610px}
+  .xm{min-width:700px}
+  .xm-c{gap:3px;padding:6px 0;overflow:hidden}
+  .xm-c .ar{display:none}
+  .tl{width:17px;height:17px;font-size:9px}
+  .tl.big{width:26px;height:26px;font-size:12px}
+  .xm tfoot td{font-size:10px}
   .xm .xm-l{width:88px;padding-right:6px;box-shadow:6px 0 6px -6px rgb(0 0 0/.25)}
   .xm tbody th bdi{font-size:14px}
   .xm thead th{font-size:9.5px;padding:0 2px 6px}
