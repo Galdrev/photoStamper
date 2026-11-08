@@ -1,0 +1,23 @@
+coord merged: {
+ "generated": "2026-11-08T19:34:46Z",
+ "n_articles_expected": 959,
+ "n_articles": 959,
+ "n_revisions": 4121,
+ "revision_error_share": 0.0,
+ "diff_status": {
+  "ok": 4121
+ },
+ "rev_state": {
+  "ok": 4121
+ },
+ "user_hidden": 0,
+ "anon": 902,
+ "accounts": 1448,
+ "accounts_missing": 0,
+ "inserted_sentences": 2835,
+ "removed_sentences": 2458,
+ "by_group": {
+  "topic": 531,
+  "comparison": 428
+ }
+}

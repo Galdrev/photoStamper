@@ -1,0 +1,6 @@
+guard arbcom: 4 pages, 4 items, leak check passed
+guard scope: {'topic': 254, 'comparison': 254} (254/254 topic resolved)
+guard history: {'done': 508, 'errors': 0, 'skipped_budget': 0, 'truncated': 0}, revisions 1458207
+guard talk: {'articles_done': 508, 'errors': 0, 'skipped_budget': 0, 'discussions': 545, 'talk_pages': 2845, 'kinds': {'rm': 328, 'afd': 22, 'rfc': 195}}
+guard leads: {'reverts_needing_direction': 26872, 'revisions_needed': 48496, 'revisions_measured': 48496, 'batches_done': 970, 'errors': 0, 'skipped_budget': 0}
+guard collect done in 56.4 min, 5571 requests
