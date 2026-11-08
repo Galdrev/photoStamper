@@ -450,12 +450,12 @@ def langs_data():
           "ru": ("none", "none", "s1", "“The invasion of Israel”. A later sentence calls it “the largest act of Palestinian terrorism in history”.")}
     HOS = {"he": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“the abduction of 251 civilians and soldiers – among them elderly people, women, children and babies”."),
            "ar": ("absent", "captive", ("October 7 attacks", "k_hostages"), "Now: “they captured a number of soldiers and civilians”. A prisoner-of-war word, not the Arabic word for hostages."),
-           "en": ("absent", "absent", ("Gaza war", "k_hostages"), "Not in the 1,200 characters we hold of the attack article. The Gaza war article says “251 were taken hostage”."),
+           "en": ("outside", "outside", ("Gaza war", "k_hostages"), "In the attack article’s opening section, beyond the 1,200 characters we hold: sentence 9 of 16 now reads “251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip” (sentence 7 of 11 in January 2024). The Gaza war article says “251 were taken hostage”."),
            "de": ("absent", "absent", ("Gaza war", "k_hostages"), "Not in the text we hold of the attack article. The Gaza war article names “freeing the hostages” as Israel’s aim."),
            "fr": ("absent", "absent", ("October 7 attacks", "s1"), "Not in the 1,200 characters we hold, at either date, of the attack article or of the Gaza war article."),
-           "es": ("fact", "absent", ("October 7 attacks", "k_hostages"), "2024: “Israeli soldiers and civilians, including women and children, were taken as hostages”. Not in the 2026 text we hold."),
+           "es": ("fact", "absent", ("October 7 attacks", "k_hostages"), "2024: “Israeli soldiers and civilians, including women and children, were taken as hostages”. Not in the 2026 text we hold; it may appear later in the opening section, beyond the text we hold."),
            "it": ("fact", "fact", ("October 7 attacks", "s1"), "Now in the first sentence: “the kidnapping of about 250 of them”. In 2024 a later sentence in the text we hold (not in our translated set)."),
-           "pt": ("fact", "absent", ("October 7 attacks", "s1"), "2024: hostages named later in the text we hold (that sentence is not in our translated set). Not in the 2026 text we hold."),
+           "pt": ("fact", "absent", ("October 7 attacks", "s1"), "2024: hostages named later in the text we hold (that sentence is not in our translated set). Not in the 2026 text we hold; it may appear later in the opening section, beyond the text we hold."),
            "nl": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“An estimated 250–255 people were taken prisoner and transferred to Gaza as hostages”. The 2024 copy says the same with 200–250."),
            "ru": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“another 251 were taken hostage” (2024: 242).")}
     ICJ = {"ar": ("fact", "fact", ("Gaza genocide", "k_icj"), "The ICJ “found that Israel was acting under a reasonable [or: plausible] intent to commit acts of genocide”. The January 2024 order made no finding on intent."),
@@ -536,10 +536,13 @@ def langs_data():
     def tr_pool(a, l):
         X = ARTS.get(a, {}).get(l) or {}
         return " ".join(v["tr"] for S in (X.get("slots") or {}).values() for v in (S.get("first"), S.get("latest")) if v)
+    # English text beyond the 1,200 characters held is checked against the dated October 7 study (patterns/angle/OCT7.md)
+    _o7p = os.path.join(HERE, "patterns", "angle", "OCT7.md")
+    EXT = open(_o7p).read() if os.path.exists(_o7p) else ""
     def check_quotes(text, pools, where):
         for q in re.findall(r"“([^”]+)”", text or ""):
             for piece in q.rstrip(".").split(" … "):
-                if not any(piece in p for p in pools):
+                if not any(piece in p for p in pools) and not (where.endswith("/en") and EXT and f'"{piece}' in EXT):
                     raise SystemExit(f"langs: quote not in our translations ({where}): {piece!r}")
     for k, row in cells.items():
         for l, c in row.items():
@@ -557,7 +560,7 @@ def langs_data():
                   ("תפיסה לוחמתית", "belligerent occupation", "occ"), ("כיבוש", "occupation", "occ"), ("ארגון טרור", "terror organisation", "ter"),
                   ("ארגוני הטרור", "the terror organisations", "ter"), ("ארגוני טרור", "terror organisations", "ter"), ("טבח", "massacre", "ter"), ("חטיפת", "abduction", "hos")],
            "ar": [("الإبادة الجماعية", "the genocide", "gen"), ("إبادة جماعية", "genocide", "gen"), ("التطهير العرقي", "ethnic cleansing", "ec"),
-                  ("الفصل العنصري", "apartheid (lit. racial separation)", "apa"), ("استعمار", "colonization", "col"), ("الاحتلال", "the occupation", "occ"),
+                  ("الفصل العنصري", "apartheid (lit. racial separation)", "apa"), ("استعمار", "colonial / colonization", "col"), ("الاحتلال", "the occupation", "occ"),
                   ("احتلال", "occupation", "occ"), ("المقاومة", "the resistance", "res"), ("مقاومة", "resistance", "res"), ("إرهابية", "terrorist", "ter"),
                   ("مجزرة", "massacre", "ter"), ("أسروا", "took captive", "hos"), ("أسَرُوا", "took captive", "hos")],
            "ru": [("геноцид", "genocide", "gen"), ("апартеид", "apartheid", "apa"), ("террористическая", "terrorist", "ter"), ("терроризма", "terrorism", "ter"),
@@ -570,16 +573,23 @@ def langs_data():
             if re.search(p, g):
                 return c
         return "oth"
-    def find_tr(tr, gloss):
+    # an organisation's own name is not the encyclopedia's framing: "Islamic Resistance Movement" (the source of the
+    # acronym Hamas) gets no gloss or underline; the chip stays on the descriptor ("a Palestinian, resistance, ... movement")
+    NAMES = {"ar": (["حركة المقاومة الإسلامية"], ["Islamic Resistance Movement"])}
+    def name_spans(s, names):
+        return [(m.start(), m.end()) for nm in names for m in re.finditer(re.escape(nm), s, flags=re.I)]
+    def find_tr(tr, gloss, skip=()):
         cands = [gloss, re.sub(r"\s*\(.*?\)", "", gloss), gloss.strip("'\"“”")]
         cands += [re.sub(r"^(the|a|an) ", "", c, flags=re.I) for c in list(cands)]
+        cands += [x for c in list(cands) if " / " in c for x in c.split(" / ")]
         for c in cands:
             c = c.strip().strip("'\"“”").strip()
             if len(c) < 3:
                 continue
-            i = tr.lower().find(c.lower())
-            if i >= 0:
-                return [i, i + len(c)]
+            for mm in re.finditer(re.escape(c), tr, flags=re.I):
+                i = mm.start()
+                if not any(a <= i < b for a, b in skip):
+                    return [i, i + len(c)]
         return None
     def toks(s, spans, flag):
         cuts = sorted({0, len(s)} | {p for sp in spans for p in (sp["start"], sp["end"])})
@@ -643,12 +653,18 @@ def langs_data():
                 for w, v in (("f", f), ("n", n)):
                     if not v:
                         continue
+                    nmo, nmt = NAMES.get(l, ([], []))
+                    so, st = name_spans(v["orig"], nmo), name_spans(v["tr"], nmt)
+                    inname = lambda i: any(a <= i < b for a, b in so)
                     for t in v.get("terms") or []:
-                        i = v["orig"].find(t["orig"])
+                        i = next((mm.start() for mm in re.finditer(re.escape(t["orig"]), v["orig"]) if not inname(mm.start())), -1)
                         if i < 0:
                             continue
                         lid += 1
-                        links[w].append([i, i + len(t["orig"]), find_tr(v["tr"], t["gloss"]), t["gloss"], cat(t["gloss"] + " " + (t.get("connotation") or "")[:0]), "t%d" % lid, t.get("connotation") or ""])
+                        cn = t.get("connotation") or ""
+                        if so and cat(t["gloss"]) == "res" and cn:
+                            cn = cn.rstrip() + " Also part of the group’s official name (Islamic Resistance Movement); here it is used as a description."
+                        links[w].append([i, i + len(t["orig"]), find_tr(v["tr"], t["gloss"], st), t["gloss"], cat(t["gloss"] + " " + (t.get("connotation") or "")[:0]), "t%d" % lid, cn])
                     for j, c in enumerate(kc):
                         o_, g_ = (c["from_orig"], c["from_gloss"]) if w == "f" else (c["to_orig"], c["to_gloss"])
                         i = v["orig"].find(o_) if o_ and "(" not in o_[:1] else -1
@@ -659,10 +675,10 @@ def langs_data():
                     for o_, g_, c_ in KEY.get(l, []):
                         for mm in re.finditer(re.escape(o_), v["orig"], flags=re.I):
                             i, j = mm.start(), mm.end()
-                            if any(x[0] < j and i < x[1] for x in links[w]):
+                            if any(x[0] < j and i < x[1] for x in links[w]) or inname(i):
                                 continue
                             lid += 1
-                            links[w].append([i, j, find_tr(v["tr"], g_), g_, c_, "d%d" % lid, ""])
+                            links[w].append([i, j, find_tr(v["tr"], g_, st), g_, c_, "d%d" % lid, ""])
                 meta = {w: {"d": v["date"], "r": v["revid"], "v": v["voice"], "tr": 1 if v.get("truncated") else 0, "nt": v.get("note")}
                         for w, v in (("f", f), ("n", n)) if v}
                 sl[s] = {"m": meta, "o": rec["o"], "t": rec["t"], "L": links, "u": 1 if d.get("unchanged") else 0}
@@ -706,6 +722,9 @@ lab_css = open(os.path.join(labdir, "lab.css")).read() if os.path.exists(os.path
 lab_js = open(os.path.join(labdir, "lab.js")).read() if os.path.exists(os.path.join(labdir, "lab.js")) else ""
 tpl = (tpl.replace("<!--LAB-->", lab_html).replace("/*LABCSS*/", lab_css).replace("/*LABJS*/", lab_js))
 html = (tpl.replace("<!--FINDINGS-->", findings)
-           .replace("/*DATA*/null", json.dumps(res, separators=(",", ":")).replace("</", "<\\/")))
+           .replace("/*DATA*/null", json.dumps(res, separators=(",", ":")).replace("</", "<\\/")
+                        # 9 stored Hamas revisions lost the Arabic name in "(an Arabic acronym from ...)": never show an empty parenthesis
+                        .replace("acronym from )", "acronym from [Arabic name not in this revision\\u2019s text])")))
+assert "acronym from )" not in html, "empty Arabic parenthesis in a rendered quote"
 open(sys.argv[1], "w").write(html)
 print(f"wrote {sys.argv[1]} ({len(html)/1e6:.1f} MB)")
