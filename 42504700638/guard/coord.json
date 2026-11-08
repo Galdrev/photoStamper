@@ -1,0 +1,23 @@
+{
+ "job": "coord",
+ "stage": "coord-0",
+ "done": 60,
+ "total": 959,
+ "elapsed_min": 2.5,
+ "eta_min": 38.1,
+ "rps_limit": 2.0,
+ "req_per_s": 1.79,
+ "avg_latency_s": 0.07,
+ "requests": 273,
+ "ok": 267,
+ "http_429": 6,
+ "http_5xx": 0,
+ "api_errors": 0,
+ "retries": 6,
+ "failures": 0,
+ "bytes": 4493426,
+ "retry_after_max": 10,
+ "retry_after_sum": 57,
+ "article_errors": 0,
+ "updated": "2026-11-08T17:26:30Z"
+}
