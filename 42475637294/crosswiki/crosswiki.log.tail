@@ -1,8 +1,3 @@
-crosswiki: 82 pages ({'en': 8, 'ar': 8, 'de': 6, 'es': 8, 'fr': 8, 'he': 7, 'it': 7, 'nl': 8, 'pl': 7, 'pt': 8, 'ru': 7}), 0 reused, 82 to do
-[hb crosswiki] crosswiki 0/82 el=37.1m eta=Nonem req=96 429=0 5xx=0 retries=96 fail=12
-ar Zionism: 314 revisions, 2 talk, 13 term events, mode=full lead requests=5
-de Zionism: 428 revisions, 115 talk, 0 term events, mode=full lead requests=8
-[hb crosswiki] crosswiki 2/82 el=37.6m eta=1504.3m req=158 429=0 5xx=0 retries=96 fail=12
 ERR es RuntimeError move log API error invalidtitle
 [hb crosswiki] crosswiki 2/82 el=38.1m eta=1523.7m req=215 429=0 5xx=0 retries=96 fail=12
 he Zionism: 391 revisions, 29 talk, 2 term events, mode=full lead requests=6
@@ -37,3 +32,9 @@ ru Israel: 736 revisions, 280 talk, 0 term events, mode=full lead requests=14
 [hb crosswiki] crosswiki 19/82 el=43.8m eta=145.1m req=871 429=0 5xx=0 retries=96 fail=12
 [hb crosswiki] crosswiki 19/82 el=44.1m eta=146.2m req=909 429=0 5xx=0 retries=96 fail=12
 [hb crosswiki] crosswiki 19/82 el=45.1m eta=149.5m req=1020 429=0 5xx=0 retries=96 fail=12
+ar Gaza war: 1651 revisions, 113 talk, 22 term events, mode=full lead requests=31
+[hb crosswiki] crosswiki 20/82 el=46.1m eta=142.9m req=1140 429=0 5xx=0 retries=96 fail=12
+en Gaza war: 20929 revisions, 17884 talk, 68 term events, mode=ratchet lead requests=3
+[hb crosswiki] crosswiki 21/82 el=47.1m eta=136.8m req=1257 429=0 5xx=0 retries=96 fail=12
+de Gaza war: 6737 revisions, 2950 talk, 17 term events, mode=grid lead requests=94
+[hb crosswiki] crosswiki 22/82 el=48.1m eta=131.2m req=1322 429=0 5xx=0 retries=96 fail=12
