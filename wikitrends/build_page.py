@@ -257,7 +257,23 @@ def zionism_codes():
     D = C["summary"]["by_change"]["direction"]
     L = C["summary"]["by_days_live"]["direction"]
     K = C["kappa"]
+    # QA r6: the story uses the codebook's headline cell (own voice, disputed description), not the all-changes days, which a
+    # different time measure reverses. "Gone within a day" = days_live <= 1 (the next edit of any kind came that day or the next).
+    HL = {}
+    for d in ("more_critical", "less_critical"):
+        X = [c for c in cc if (c["direction"], c["voice"], c["claim_type"]) == (d, "own_voice", "contested_characterisation")]
+        HL[d] = (len(X), sum(c["days_live"] <= 1 for c in X), sum(c["days_live"] for c in X), sum(c["regime_days"] or 0 for c in X),
+                 sum(c["revert"] for c in X))
+    # the static #ev-zionism paragraph and the #zionism bottom line quote these: fail the build if the coding moved under them
+    assert HL == {"more_critical": (78, 47, 336, 650, 27), "less_critical": (70, 64, 38, 74, 48)}, f"Zionism headline cell changed: {HL}"
+    assert (D["more_critical"]["n"], D["less_critical"]["n"], D["uncodable"]["n"], L["more_critical"]["n"], L["less_critical"]["n"],
+            C["summary"]["by_regime_days"]["direction"]["more_critical"]["n"], C["summary"]["by_regime_days"]["direction"]["less_critical"]["n"]) \
+        == (88, 77, 37, 386, 96, 700, 885), "Zionism all-changes table changed: update #ev-zionism"
+    assert round(10 * HL["less_critical"][1] / HL["less_critical"][0]) == 9 and round(10 * HL["more_critical"][1] / HL["more_critical"][0]) == 6, \
+        "'nine in ten' / 'six in ten' in the #zionism bottom line no longer hold"
     return {"c": [[c["direction"], c["voice"], c["claim_type"]] for c in cc],
+            "hl_more": HL["more_critical"][0], "hl_less": HL["less_critical"][0],
+            "hl_more_1d": HL["more_critical"][1], "hl_less_1d": HL["less_critical"][1],
             "more": D["more_critical"]["n"], "less": D["less_critical"]["n"], "uncod": D["uncodable"]["n"],
             "days_more": L["more_critical"]["n"], "days_less": L["less_critical"]["n"],
             "kappa": [round(min(v["kappa"] for v in K.values()), 2), round(max(v["kappa"] for v in K.values()), 2)]}
@@ -316,7 +332,24 @@ def oct7_data():
     groups = [{"a": g["article"], "t0": g["then"].get("terror_word_offset_share"), "t1": g["now"].get("terror_word_offset_share"),
                "m1": g["now"].get("fs_has_militant"), "fs0": g["then"].get("first_sentence", "")[:400], "fs1": g["now"].get("first_sentence", "")[:400],
                "d0": g["then"].get("date"), "d1": (g["now"].get("date") or "")[:10]} for g in grp.get("groups", [])]
-    return {"tabs": out, "designation": pos.get("position_of_first_terror_mention"), "groups": groups}
+    # QA r6: the blue square ("Initially, Hamas was discreetly supported by Israel...") is drawn from each row's own copy of the
+    # Hamas opening section, not hard-coded to the last row: share of the way in by words, None where the sentence is absent.
+    des = pos.get("position_of_first_terror_mention")
+    if des:
+        import gzip
+        M2 = json.load(gzip.open(os.path.join(HERE, "data", "mass2_leads.json.gz")))
+        h2 = M2["leads"].get("Hamas") or []
+        lj = {v["rev1"]: v["lead1"] for v in json.load(open(os.path.join(HERE, "data", "leads.json"))) if v["title"] == "Hamas"}
+        lj.update({v["rev0"]: v["lead0"] for v in json.load(open(os.path.join(HERE, "data", "leads.json"))) if v["title"] == "Hamas"})
+        copy = {"2021-01-01": h2[0] if h2 else None, "2023-07-01": h2[1] if len(h2) > 1 else None, "2026-10-31": h2[2] if len(h2) > 2 else None}
+        SUP = "Initially, Hamas was discreetly supported by Israel"
+        for r in des:
+            t = lj.get(r["rev"]) or copy.get(r["date"])
+            assert t, f"no stored Hamas copy for designation row {r['date']}"
+            i = t.find(SUP)
+            r["sup_share"] = None if i < 0 else round(len(t[:i].split()) / len(t.split()), 3)
+        assert [r["sup_share"] is not None for r in des] == [False, False, True, True], [r["sup_share"] for r in des]
+    return {"tabs": out, "designation": des, "groups": groups}
 
 
 res["oct7"] = oct7_data()
@@ -421,6 +454,14 @@ def network_data():
 
 
 res["network"] = network_data()
+# QA r6: the #organised deck quotes how many topic links join an adder to a remover (netDir thresholds in the page:
+# over 0.6 of an account's critical-term edits are insertions = adds, under 0.4 = removes, else mixed)
+if res["network"] and res["network"].get("topic") and not os.environ.get("WT_NETWORK"):
+    _T = res["network"]["topic"]; _nd = {n["id"]: n.get("insert_share") for n in _T["nodes"]}
+    _cl = lambda v: "mix" if v is None else "add" if v > 0.6 else "rem" if v < 0.4 else "mix"
+    _pairs = [tuple(sorted((_cl(_nd[e["source"]]), _cl(_nd[e["target"]])))) for e in _T["edges"]]
+    assert (len(_pairs), _pairs.count(("add", "rem")), _pairs.count(("add", "add")), _pairs.count(("add", "mix")), _pairs.count(("mix", "rem"))) \
+        == (14, 7, 3, 3, 1), f"#organised adder/remover link counts changed: {_pairs}"
 
 # Sampling audit: unweighted vs design-weighted vs matched (patterns/sampling/chart_data/03_weighted_vs_unweighted.json)
 _a = _j("sampling", "chart_data", "03_weighted_vs_unweighted.json")
@@ -502,7 +543,10 @@ def langs_data():
             ("occ", "he"): "“belligerent occupation,” the Israeli legal term, and now “a territory in the Land of Israel.”",
             ("apa", "ar"): "“an accusation directed against” Israeli policy became “a confirmed fact in” it."}
 
-    cells, need = {}, set()
+    TERM = {"gen": "genocide", "col": "colonial", "apa": "apartheid", "occ": "occupation"}
+    NOTE[("col", "en")] = ("In 2021, colonialism appeared only as the critics’ view, beyond the text we hold "
+                           "(“Critics of Zionism view it as a colonialist, racist and exceptionalist ideology”).")
+    cells, need, fixed = {}, set(), []
     for k, lab, arts in COLS:
         for l in ORDER:
             c = None
@@ -518,21 +562,43 @@ def langs_data():
                     a = "Gaza genocide" if ARTS["Gaza genocide"].get(l, {}).get("slots") else "Gaza war"
                     c = {"f": "none", "n": "none", "a": a, "s": "s1", "x": "None of the four overstatements we found (Arabic, Italian, Russian, French)."}
             else:
+                term = TERM.get(k)
                 for a in arts:
                     X = ARTS[a].get(l) or {}
                     hc = X.get("headline_claim")
                     if hc and X.get("slots"):
                         c = {"f": hc.get("first") or "na", "n": hc.get("latest") or "na", "a": a, "s": hc.get("evidence_slot"), "x": NOTE.get((k, l))}
+                        # QA r6: "absent" means 0 in the full-lead count too; a term counted beyond the text we hold is "outside"
+                        for w, side in (("f", "first"), ("n", "latest")):
+                            fl = ((X.get(side) or {}).get("term_counts_full_lead") or {}).get(term) if term else None
+                            if c[w] == "absent" and fl:
+                                c[w] = "outside"
+                                fixed.append((k, l, side))
                         break
                 if c is None:
                     X = ARTS[arts[0]].get(l) or {}
-                    c = {"f": "na", "n": "na", "a": arts[0], "s": None,
-                         "x": "No article in this language." if not X.get("slots") else "Not coded: no sentence held for this claim."}
+                    cnt = [((X.get(side) or {}).get("term_counts_full_lead") or {}).get(term) for side in ("first", "latest")] if term else [None]
+                    exists = bool(X.get("slots")) or bool((X.get("first") or {}).get("revid"))
+                    if exists and term and cnt == [0, 0]:
+                        # QA r6: uncoded, but the term is in neither full opening section: that is "absent", not "no article"
+                        c = {"f": "absent", "n": "absent", "a": arts[0], "s": None, "x": f"No {term.replace('_', ' ')} term in this edition’s opening section, in either copy."}
+                    else:
+                        c = {"f": "na", "n": "na", "a": arts[0], "s": None,
+                             "x": "No article in this language." if not exists else "Not coded: no sentence held for this claim."}
             if c["s"] and not ((ARTS[c["a"]].get(l) or {}).get("slots") or {}).get(c["s"]):
                 raise SystemExit(f"langs: matrix cell {k}/{l} points at missing slot {c['a']}/{c['s']}")
             if c["s"]:
                 need.add((c["a"], l, c["s"]))
             cells.setdefault(k, {})[l] = c
+    # mechanical check: no "absent" square where the full opening section counts the column's term
+    for k, term in TERM.items():
+        arts = next(x[2] for x in COLS if x[0] == k)
+        for l, c in cells[k].items():
+            X = ARTS[c["a"]].get(l) or {}
+            for w, side in (("f", "first"), ("n", "latest")):
+                if c[w] == "absent":
+                    assert not ((X.get(side) or {}).get("term_counts_full_lead") or {}).get(term), f"langs: {k}/{l} {side} coded absent but counted in the full lead"
+    print(f"langs: absent -> outside where the full lead counts the term: {fixed}")
 
     MOM = [("Gaza genocide", "ar", "s1", "Arabic: from accusation to definition", "In 2024 the Arabic article said Israel “has been accused of committing crimes of genocide.” Now it opens: “The genocide of Gaza is the systematic, deliberate and ongoing destruction.”"),
            ("Gaza war", "he", "k_genocide", "Hebrew: genocide only as a court case", "Hebrew has no article linked to English Gaza genocide. Its Gaza war article mentions genocide once, as South Africa’s suit at the ICJ."),
@@ -568,10 +634,12 @@ def langs_data():
     # English text beyond the 1,200 characters held is checked against the dated October 7 study (patterns/angle/OCT7.md)
     _o7p = os.path.join(HERE, "patterns", "angle", "OCT7.md")
     EXT = open(_o7p).read() if os.path.exists(_o7p) else ""
+    # ... and against the full stored English opening sections (data/leads.json), for text beyond the held characters
+    EN_FULL = " ".join(v[k] for v in json.load(open(os.path.join(HERE, "data", "leads.json"))) for k in ("lead0", "lead1"))
     def check_quotes(text, pools, where):
         for q in re.findall(r"“([^”]+)”", text or ""):
             for piece in q.rstrip(".,").split(" … "):  # American style: a period or comma may sit inside the quote
-                if not any(piece in p for p in pools) and not (where.endswith("/en") and EXT and f'"{piece}' in EXT):
+                if not any(piece in p for p in pools) and not (where.endswith("/en") and ((EXT and f'"{piece}' in EXT) or piece in EN_FULL)):
                     raise SystemExit(f"langs: quote not in our translations ({where}): {piece!r}")
     for k, row in cells.items():
         for l, c in row.items():
@@ -854,6 +922,37 @@ def _kcheck():
 
 if os.path.exists(os.path.join(HERE, "data", "ratchet.json")):
     print(f"K_STEPS: {_kcheck()} dated wording changes checked against ratchet.json")
+
+# QA r6: every quote in the story's #against list must be a substring of stored text for its article (mass2 snapshots,
+# leads.json copies, every stored first sentence). A wrong "though/but" or an invented clause fails the build.
+def _against_check():
+    import gzip
+    sec = tpl[tpl.index('<section class="sec" id="against"'):]
+    sec = sec[:sec.index("</section>")]
+    M2 = json.load(gzip.open(os.path.join(HERE, "data", "mass2_leads.json.gz")))["leads"]
+    LJ = json.load(open(os.path.join(HERE, "data", "leads.json")))
+    RA = json.load(open(os.path.join(HERE, "data", "ratchet.json")))["articles"]
+    def corpus(title):
+        T = [x or "" for x in M2.get(title, [])]
+        T += [v[k] for v in LJ if v["title"] == title for k in ("lead0", "lead1")]
+        T += [v.get("s") or "" for v in (RA.get(title) or {}).get("fs_variants", [])]
+        return [re.sub(r"\s+", " ", t.replace("\u2019", "'")) for t in T]
+    bad, n = [], 0
+    for li in re.findall(r"<li>(.*?)</li>", sec, re.S):
+        title = re.sub(r"\s*\(.*\)$", "", re.sub(r"<[^>]+>", "", re.search(r"<b>(.*?)</b>", li).group(1)).rstrip("."))
+        C = corpus(title)
+        assert C, f"#against item without stored text: {title}"
+        for q in re.findall(r"“([^”]+)”", li):
+            for part in q.split("…"):
+                part = re.sub(r"\s+", " ", part.replace("\u2019", "'")).strip(" ,.;")
+                if not part:
+                    continue
+                n += 1
+                if not any(part in t for t in C):
+                    bad.append((title, part))
+    assert not bad, f"#against quotes not found in the stored text: {bad}"
+    return n
+print(f"#against: {_against_check()} quotes found in the stored text")
 labdir = os.path.join(HERE, "lab")
 lab_html = open(os.path.join(labdir, "lab.html")).read() if os.path.exists(os.path.join(labdir, "lab.html")) else ""
 lab_css = open(os.path.join(labdir, "lab.css")).read() if os.path.exists(os.path.join(labdir, "lab.css")) else ""
