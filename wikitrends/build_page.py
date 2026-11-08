@@ -465,41 +465,41 @@ def langs_data():
     # matrix: column -> article / evidence; manual codings carry a note and the slot that shows the evidence
     COLS = [("gen", "Genocide", ["Gaza genocide", "Gaza war"]), ("col", "Zionism as colonization", ["Zionism"]),
             ("apa", "Apartheid", ["Israeli apartheid"]), ("occ", "Occupation (West Bank)", ["West Bank"]),
-            ("o7", "7 October called terror or massacre", ["October 7 attacks"]), ("ter", "Hamas called terrorist", ["Hamas"]),
+            ("o7", "October 7 called terror or massacre", ["October 7 attacks"]), ("ter", "Hamas called terrorist", ["Hamas"]),
             ("hos", "The hostages", ["October 7 attacks"]), ("icj", "Court ruling overstated", ["Gaza genocide", "Israeli apartheid", "Gaza war"])]
-    O7 = {"he": ("fact", "fact", "s1", "Title and first sentence: “massacre”, carried out by “the Palestinian terror organisations”."),
-          "ar": ("none", "none", "s1", "“an extended military operation” by “the Palestinian resistance factions”; now aimed “against the Israeli occupation”."),
-          "en": ("none", "none", "s1", "“a series of coordinated armed incursions” by “Palestinian militant groups”. A later sentence says “massacring civilians”."),
-          "de": ("fact", "fact", "s1", "“The Hamas terror attack”; now also “the largest massacre and crime against humanity against Jews since the Holocaust”."),
-          "fr": ("fact", "fact", "s1", "“a series of coordinated terrorist attacks”; now “a series of Palestinian terrorist attacks”."),
-          "es": ("none", "none", "s1", "“the name used by the Palestinian Islamist militant group Hamas”; now “a series of coordinated attacks”. A later sentence says the militiamen “massacred civilians”."),
-          "it": ("fact", "fact", "s1", "“terrorist attacks and massacres of civilians”; now “a series of terrorist attacks by armed groups”."),
-          "pt": ("none", "none", "s1", "“A series of coordinated attacks”; now “coordinated attacks [atentados]”, a sharper noun."),
-          "nl": ("none", "fact", "s1", "“a coordinated surprise attack by the militant movement Hamas”; now “surprise attack or terror attack”."),
-          "ru": ("none", "none", "s1", "“The invasion of Israel”. A later sentence calls it “the largest act of Palestinian terrorism in history”.")}
-    HOS = {"he": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“the abduction of 251 civilians and soldiers – among them elderly people, women, children and babies”."),
+    O7 = {"he": ("fact", "fact", "s1", "Title and first sentence: “massacre,” carried out by “the Palestinian terror organisations.”"),
+          "ar": ("none", "none", "s1", "“an extended military operation” by “the Palestinian resistance factions”; now aimed “against the Israeli occupation.”"),
+          "en": ("none", "none", "s1", "“a series of coordinated armed incursions” by “Palestinian militant groups.” A later sentence says “massacring civilians.”"),
+          "de": ("fact", "fact", "s1", "“The Hamas terror attack”; now also “the largest massacre and crime against humanity against Jews since the Holocaust.”"),
+          "fr": ("fact", "fact", "s1", "“a series of coordinated terrorist attacks”; now “a series of Palestinian terrorist attacks.”"),
+          "es": ("none", "none", "s1", "“the name used by the Palestinian Islamist militant group Hamas”; now “a series of coordinated attacks.” A later sentence says the militiamen “massacred civilians.”"),
+          "it": ("fact", "fact", "s1", "“terrorist attacks and massacres of civilians”; now “a series of terrorist attacks by armed groups.”"),
+          "pt": ("none", "none", "s1", "“A series of coordinated attacks”; now “coordinated attacks [atentados],” a sharper noun."),
+          "nl": ("none", "fact", "s1", "“a coordinated surprise attack by the militant movement Hamas”; now “surprise attack or terror attack.”"),
+          "ru": ("none", "none", "s1", "“The invasion of Israel.” A later sentence calls it “the largest act of Palestinian terrorism in history.”")}
+    HOS = {"he": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“the abduction of 251 civilians and soldiers – among them elderly people, women, children and babies.”"),
            "ar": ("absent", "captive", ("October 7 attacks", "k_hostages"), "Now: “they captured a number of soldiers and civilians and led them to Gaza” (asarū, took captive), stated in Arabic Wikipedia’s own voice; the word for hostages, rahā’in, is not used."),
-           "en": ("outside", "outside", ("Gaza war", "k_hostages"), "In the attack article’s opening section, beyond the 1,200 characters we hold: sentence 9 of 16 now reads “251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip” (sentence 7 of 11 in January 2024). The Gaza war article says “251 were taken hostage”."),
+           "en": ("outside", "outside", ("Gaza war", "k_hostages"), "In the attack article’s opening section, beyond the 1,200 characters we hold: sentence 9 of 16 now reads “251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip” (sentence 7 of 11 in January 2024). The Gaza war article says “251 were taken hostage.”"),
            "de": ("not_held", "outside", ("Gaza war", "k_hostages"), "Beyond the 1,200 characters we hold: the attack article’s opening section mentions the hostages 3 times now, first at sentence 9 of 19 (October 2024: 2 times, first at sentence 8 of 13; sentences counted by punctuation; our January 2024 copy does not reach that far). The Gaza war article names “freeing the hostages” as Israel’s aim."),
            "fr": ("not_held", "outside", ("October 7 attacks", "s1"), "Beyond the 1,200 characters we hold: the attack article’s opening section mentions the hostages once now, at sentence 9 of 14 (October 2024: sentence 8 of 9; sentences counted by punctuation; our January 2024 copy does not reach that far)."),
-           "es": ("fact", "outside", ("October 7 attacks", "k_hostages"), "2024: “Israeli soldiers and civilians, including women and children, were taken as hostages”. Now at sentence 6 of 11 of the opening section (counted by punctuation), beyond the text we hold."),
-           "it": ("fact", "fact", ("October 7 attacks", "s1"), "Now in the first sentence: “the kidnapping of about 250 of them”. In 2024 a later sentence in the text we hold (not in our translated set)."),
+           "es": ("fact", "outside", ("October 7 attacks", "k_hostages"), "2024: “Israeli soldiers and civilians, including women and children, were taken as hostages.” Now at sentence 6 of 11 of the opening section (counted by punctuation), beyond the text we hold."),
+           "it": ("fact", "fact", ("October 7 attacks", "s1"), "Now in the first sentence: “the kidnapping of about 250 of them.” In 2024 a later sentence in the text we hold (not in our translated set)."),
            "pt": ("fact", "outside", ("October 7 attacks", "s1"), "2024: hostages named later in the text we hold (that sentence is not in our translated set). Now 2 mentions, the first at sentence 8 of 10 of the opening section (counted by punctuation), beyond the text we hold."),
-           "nl": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“An estimated 250–255 people were taken prisoner and transferred to Gaza as hostages”. The 2024 copy says the same with 200–250."),
+           "nl": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“An estimated 250–255 people were taken prisoner and transferred to Gaza as hostages.” The 2024 copy says the same with 200–250."),
            "ru": ("fact", "fact", ("October 7 attacks", "k_hostages"), "“another 251 were taken hostage” (2024: 242).")}
     ICJ = {"ar": ("fact", "fact", ("Gaza genocide", "k_icj"), "Now: the ICJ “found that Israel strove, under a reasonable [or: plausible] intent, to commit acts of genocide” (2024: “was acting under a reasonable [or: plausible] intent”). The January 2024 order made no finding on intent."),
-           "it": ("legal", "fact", ("Gaza genocide", "k_icj"), "2025: the court asked Israel to «prevent possible genocidal acts». 2026: the court “deemed Israel's actions in Gaza «plausibly genocidal»”, a phrase the court did not use."),
+           "it": ("legal", "fact", ("Gaza genocide", "k_icj"), "2025: the court asked Israel to «prevent possible genocidal acts». 2026: the court “deemed Israel's actions in Gaza «plausibly genocidal»,” a phrase the court did not use."),
            "ru": ("absent", "fact", ("Israeli apartheid", "k_icj"), "The court “found Israel guilty of violating Article 3” of the convention against racial discrimination: verdict wording for a non-binding advisory opinion, which gives no verdict of guilt."),
-           "fr": ("absent", "fact", ("Israeli apartheid", "k_icj"), "“The Court recognises that Israel” is “conducting a policy of apartheid”. The 2024 opinion found a breach of CERD Article 3, which bans racial segregation and apartheid, without saying which."),
+           "fr": ("absent", "fact", ("Israeli apartheid", "k_icj"), "“The Court recognises that Israel” is “conducting a policy of apartheid.” The 2024 opinion found a breach of CERD Article 3, which bans racial segregation and apartheid, without saying which."),
            "es": ("absent", "legal", ("Israeli apartheid", "k_icj"), "Reports the 2024 opinion under article 3. Not one of the four overstatements we found."),
            "he": ("absent", "legal", ("Gaza war", "k_genocide"), "“South Africa filed a suit against Israel at the International Court of Justice (ICJ) for genocide”: the case, reported as a case."),
            "pl": ("absent", "disputed", ("Gaza genocide", "k_courts"), "Stresses that only courts can rule on genocide.")}
     NOTE = {("ter", "en"): "Beyond the 1,200 characters we hold. The designation now sits at the end of the opening section, attributed (see the Hamas timeline above).",
-            ("ter", "ar"): "No terror word in the text we hold; Hamas is “a Palestinian, resistance, popular, Islamic, national movement”.",
+            ("ter", "ar"): "No terror word in the text we hold; Hamas is “a Palestinian, resistance, popular, Islamic, national movement.”",
             ("gen", "he"): "No article linked to English Gaza genocide, so this square reads the Gaza war article: the court-case clause is its only genocide mention. The Hebrew October 7 article has one more genocide mention, beyond the text we hold.",
             ("gen", "de"): "No article linked to English Gaza genocide. The Gaza war article has 3 genocide mentions, all beyond the text we hold.",
             ("gen", "ru"): "No article linked to English Gaza genocide. The Gaza war article mentions genocide only beyond the text we hold.",
-            ("occ", "he"): "“belligerent occupation”, the Israeli legal term, and now “a territory in the Land of Israel”.",
+            ("occ", "he"): "“belligerent occupation,” the Israeli legal term, and now “a territory in the Land of Israel.”",
             ("apa", "ar"): "“an accusation directed against” Israeli policy became “a confirmed fact in” it."}
 
     cells, need = {}, set()
@@ -534,32 +534,32 @@ def langs_data():
                 need.add((c["a"], l, c["s"]))
             cells.setdefault(k, {})[l] = c
 
-    MOM = [("Gaza genocide", "ar", "s1", "Arabic: from accusation to definition", "In 2024 the Arabic article said Israel “has been accused of committing crimes of genocide”. Now it opens: “The genocide of Gaza is the systematic, deliberate and ongoing destruction”."),
-           ("Gaza war", "he", "k_genocide", "Hebrew: genocide only as a court case", "Hebrew has no article linked to English Gaza genocide. Its Gaza-war article mentions genocide once, as South Africa’s suit at the ICJ."),
-           ("Gaza war", "es", "s1", "Spanish: “a genocide in Gaza by Israel”", "The first sentence of the Spanish Gaza-war article now says the war “has unleashed a genocide in Gaza by Israel”, and calls 7 October “a retaliatory attack”."),
-           ("Gaza genocide", "es", "s1", "Spanish: the same move in the genocide article", "From “have accused Israel of carrying out a «genocide against the Palestinian people»” to “The Palestinian genocide in Gaza is the systematic and continuing destruction”."),
-           ("Gaza genocide", "pt", "s1", "Portuguese: from “accused” to “is”", "From “has been accused of genocide” to “is the intentional and systematic destruction, ongoing”."),
-           ("Gaza genocide", "nl", "s1", "Dutch moved the other way", "From “Israel is committing genocide”, attributed to organisations and experts, to a genocide “that Israel may or may not have committed”."),
+    MOM = [("Gaza genocide", "ar", "s1", "Arabic: from accusation to definition", "In 2024 the Arabic article said Israel “has been accused of committing crimes of genocide.” Now it opens: “The genocide of Gaza is the systematic, deliberate and ongoing destruction.”"),
+           ("Gaza war", "he", "k_genocide", "Hebrew: genocide only as a court case", "Hebrew has no article linked to English Gaza genocide. Its Gaza war article mentions genocide once, as South Africa’s suit at the ICJ."),
+           ("Gaza war", "es", "s1", "Spanish: “a genocide in Gaza by Israel”", "The first sentence of the Spanish Gaza war article now says the war “has unleashed a genocide in Gaza by Israel,” and calls October 7 “a retaliatory attack.”"),
+           ("Gaza genocide", "es", "s1", "Spanish: the same move in the genocide article", "From “have accused Israel of carrying out a «genocide against the Palestinian people»” to “The Palestinian genocide in Gaza is the systematic and continuing destruction.”"),
+           ("Gaza genocide", "pt", "s1", "Portuguese: from “accused” to “is”", "From “has been accused of genocide” to “is the intentional and systematic destruction, ongoing.”"),
+           ("Gaza genocide", "nl", "s1", "Dutch moved the other way", "From “Israel is committing genocide,” attributed to organizations and experts, to a genocide “that Israel may or may not have committed.”"),
            ("Zionism", "ar", "s1", "Arabic: Zionism “by colonizing a land outside Europe”", "Colonialism moved from the critics’ sentence into the definition, with “the war of ethnic cleansing of Palestine” and “a Jewish ethnocracy” in the same sentence."),
-           ("Zionism", "he", "s1", "Hebrew: the Balfour wording", "Hebrew kept colonization out and moved the other way: “a Jewish state” became “a national home for the Jewish people”."),
-           ("Zionism", "nl", "k_colonial", "Dutch: colonisation in place of Zionism", "Herzl “gave the impetus to organised Zionism” became “gave the impetus to the organised colonisation of Palestine”."),
-           ("Israeli apartheid", "ar", "s1", "Arabic: “an accusation” became “a confirmed fact”", "Apartheid is no longer “an accusation directed against Israeli policy” but “a confirmed fact in Israeli policy”."),
+           ("Zionism", "he", "s1", "Hebrew: the Balfour wording", "Hebrew kept colonization out and moved the other way: “a Jewish state” became “a national home for the Jewish people.”"),
+           ("Zionism", "nl", "k_colonial", "Dutch: colonisation in place of Zionism", "Herzl “gave the impetus to organised Zionism” became “gave the impetus to the organised colonisation of Palestine.”"),
+           ("Israeli apartheid", "ar", "s1", "Arabic: “an accusation” became “a confirmed fact”", "Apartheid is no longer “an accusation directed against Israeli policy” but “a confirmed fact in Israeli policy.”"),
            ("Israeli apartheid", "he", "k_dispute", "Hebrew: the claims are “in dispute”", "Hebrew keeps apartheid attributed: “The degree of correctness of these claims is in dispute among scholars, jurists and statesmen.”"),
            ("Israeli apartheid", "pt", "s1", "Portuguese: apartheid “and in Israel”", "Portuguese states apartheid as fact and extends it from “the Palestinian territories occupied by Israel” to Israel itself."),
-           ("October 7 attacks", "he", "s1", "Hebrew: from “surprise attack” to “massacre”", "Hebrew retitled the article: “The surprise attack on Israel” is now “The Seventh of October massacre”."),
-           ("October 7 attacks", "de", "s1", "German: “since the Holocaust”", "German says in its own voice that it was “the largest massacre and crime against humanity against Jews since the Holocaust”."),
-           ("October 7 attacks", "es", "k_genocide", "Spanish: the attack as the start of a genocide", "From “marked the start of the 2023 war between Israel and Hamas” to “marked the start of the Gaza war and of the Palestinian genocide in Gaza”."),
-           ("October 7 attacks", "ar", "s1", "Arabic: aimed “against the Israeli occupation”", "The operation of “the Palestinian resistance factions” is now aimed “against the Israeli occupation”."),
-           ("Hamas", "he", "s1", "Hebrew: “terror organisation”, in its own voice", "Terror stays first: Hamas “is a Palestinian Sunni-Islamist terror organisation that also operates as a political movement”."),
-           ("Hamas", "ar", "s1", "Arabic: “resistance”", "Arabic calls Hamas “a Palestinian, resistance, popular, Islamic, national movement”. The text we hold has no terror word."),
-           ("Hamas", "ru", "s1", "Russian: “terrorist” enters the definition", "The only edition where “terrorist” entered the definition in its own voice: “a Palestinian Islamist Sunni terrorist political and military resistance organisation”."),
-           ("Hamas", "de", "s1", "German: from its own voice to “41 states”", "From “a Sunni-Islamist Palestinian terrorist organisation” to an organisation “classified internationally by 41 states as a terrorist association”."),
-           ("Gaza genocide", "ar", "k_icj", "Arabic: a finding the court did not make", "The Arabic article says the ICJ “found that Israel was acting under a reasonable [or: plausible] intent to commit acts of genocide”. The order found only that some of South Africa’s claimed rights were plausible."),
+           ("October 7 attacks", "he", "s1", "Hebrew: from “surprise attack” to “massacre”", "Hebrew retitled the article: “The surprise attack on Israel” is now “The Seventh of October massacre.”"),
+           ("October 7 attacks", "de", "s1", "German: “since the Holocaust”", "German says in its own voice that it was “the largest massacre and crime against humanity against Jews since the Holocaust.”"),
+           ("October 7 attacks", "es", "k_genocide", "Spanish: the attack as the start of a genocide", "From “marked the start of the 2023 war between Israel and Hamas” to “marked the start of the Gaza war and of the Palestinian genocide in Gaza.”"),
+           ("October 7 attacks", "ar", "s1", "Arabic: aimed “against the Israeli occupation”", "The operation of “the Palestinian resistance factions” is now aimed “against the Israeli occupation.”"),
+           ("Hamas", "he", "s1", "Hebrew: “terror organisation,” in its own voice", "Terror stays first: Hamas “is a Palestinian Sunni-Islamist terror organisation that also operates as a political movement.”"),
+           ("Hamas", "ar", "s1", "Arabic: “resistance”", "Arabic calls Hamas “a Palestinian, resistance, popular, Islamic, national movement.” The text we hold has no terror word."),
+           ("Hamas", "ru", "s1", "Russian: “terrorist” enters the definition", "The only edition where “terrorist” entered the definition in its own voice: “a Palestinian Islamist Sunni terrorist political and military resistance organisation.”"),
+           ("Hamas", "de", "s1", "German: from its own voice to “41 states”", "From “a Sunni-Islamist Palestinian terrorist organisation” to an organisation “classified internationally by 41 states as a terrorist association.”"),
+           ("Gaza genocide", "ar", "k_icj", "Arabic: a finding the court did not make", "The Arabic article says the ICJ “found that Israel was acting under a reasonable [or: plausible] intent to commit acts of genocide.” The order found only that some of South Africa’s claimed rights were plausible."),
            ("Israeli apartheid", "ru", "k_icj", "Russian: “found Israel guilty”", "Verdict wording for a non-binding advisory opinion."),
            ("West Bank", "fr", "s1", "French: “illegally occupied by Israel since 1967”", "French now puts the illegal occupation in the first sentence, as fact."),
-           ("West Bank", "he", "s1", "Hebrew: “a territory in the Land of Israel”", "Hebrew keeps “belligerent occupation” and now calls the area “a territory in the Land of Israel”. English now places the same land in Palestine."),
-           ("Nakba", "pl", "s1", "Polish: “carried out by Israelis”", "Polish states 1948 as ethnic cleansing and names “Israelis” as the perpetrators: “the ethnic cleansings carried out by Israelis on Palestinian Arabs”."),
-           ("Nakba", "he", "k_ec", "Hebrew: one school’s view", "Hebrew gives ethnic cleansing as the view of “Palestinian historiography and scholars of the critical approach”, and labels the Israeli view “the Zionist-establishment narrative”.")]
+           ("West Bank", "he", "s1", "Hebrew: “a territory in the Land of Israel”", "Hebrew keeps “belligerent occupation” and now calls the area “a territory in the Land of Israel.” English now places the same land in Palestine."),
+           ("Nakba", "pl", "s1", "Polish: “carried out by Israelis”", "Polish states 1948 as ethnic cleansing and names “Israelis” as the perpetrators: “the ethnic cleansings carried out by Israelis on Palestinian Arabs.”"),
+           ("Nakba", "he", "k_ec", "Hebrew: one school’s view", "Hebrew gives ethnic cleansing as the view of “Palestinian historiography and scholars of the critical approach,” and labels the Israeli view “the Zionist-establishment narrative.”")]
 
     # every “…” inside our notes and captions must be our exact translation of that article × language
     def tr_pool(a, l):
@@ -570,7 +570,7 @@ def langs_data():
     EXT = open(_o7p).read() if os.path.exists(_o7p) else ""
     def check_quotes(text, pools, where):
         for q in re.findall(r"“([^”]+)”", text or ""):
-            for piece in q.rstrip(".").split(" … "):
+            for piece in q.rstrip(".,").split(" … "):  # American style: a period or comma may sit inside the quote
                 if not any(piece in p for p in pools) and not (where.endswith("/en") and EXT and f'"{piece}' in EXT):
                     raise SystemExit(f"langs: quote not in our translations ({where}): {piece!r}")
     for k, row in cells.items():
