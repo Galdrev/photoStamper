@@ -1,0 +1,31 @@
+name: wikitrends-arbcom
+# Fetch raw wikitext of public ArbCom case pages (PIA4, PIA5, PIA5 proposed decision) and push them to wikitrends-data/arbcom/.
+on:
+  push:
+    branches: [wikitrends-arbcom]
+permissions:
+  contents: write
+concurrency: wikitrends-arbcom
+env:
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch raw wikitext
+        run: |
+          set -euo pipefail
+          mkdir -p wikitrends/arbcom
+          UA="wikitrends-research/1.0 (https://github.com/${GITHUB_REPOSITORY}; ArbCom public-record fetch)"
+          for t in \
+            "Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5" \
+            "Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5/Proposed_decision" \
+            "Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_4"; do
+            f="wikitrends/arbcom/$(echo "$t" | sed 's#^Wikipedia:Arbitration/Requests/Case/##; s#/#__#g').wikitext"
+            curl -sSf --retry 3 -A "$UA" -o "$f" "https://en.wikipedia.org/w/index.php?title=${t}&action=raw"
+            wc -c "$f"
+          done
+      - name: Push to wikitrends-data
+        run: .github/scripts/push_data.sh arbcom 'arbcom/*.wikitext'
