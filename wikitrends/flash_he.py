@@ -223,8 +223,11 @@ def build(C, out_path):
     out = ('<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n'
            '<html lang="he" dir="rtl">\n' + out)
     assert out.startswith('<!DOCTYPE html><meta charset="utf-8"><meta name="viewport"') and '<html lang="he" dir="rtl">' in out[:200]
-    open(out_path, "w").write(out)
+    if out_path:
+        open(out_path, "w").write(out)
     print(f"flash he: {len(I['template'])} template, {len(I['lib'])} library and {len(I['slots'])} figure strings; "
           f"{len(QH)} original quotes identical to the English page; {len(blocks)} quote blocks with our translation; "
           f"{len(nums(vis))} numbers, all on the English page; vetoes and scope line checked")
-    print(f"wrote {out_path} ({len(out)/1e6:.2f} MB)")
+    if out_path:
+        print(f"wrote {out_path} ({len(out)/1e6:.2f} MB)")
+    return out

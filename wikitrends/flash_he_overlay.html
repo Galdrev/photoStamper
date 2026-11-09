@@ -56,6 +56,8 @@ html[dir="rtl"] :is(.fl-strip,.fl-meter,#kChart,.br-strip,#brRange,.xg-ax){direc
 html[dir="rtl"] #xwGG .rch{direction:ltr}
 html[dir="rtl"] #xwGG .rch-row>span:first-child,html[dir="rtl"] #xwGG .rch-row .v{direction:rtl;text-align:right}
 html[dir="rtl"] .fl-strip text{unicode-bidi:plaintext}
+html[dir="rtl"] .fl-fb .fl-strip text.fbh{fill:var(--ink-2);font-family:var(--body)}
+html[dir="rtl"] .fl-fb .fb-k i{margin-right:0;margin-left:4px}
 /* the language grid reads right to left: languages on the right */
 html[dir="rtl"] .xm .xm-l{left:auto;right:0;text-align:right;padding:0 0 0 10px}
 html[dir="rtl"] .xm tfoot th{text-align:right}
@@ -128,8 +130,14 @@ const HE_COL=/*HE_COL*/{};
 if(R&&R.langs)R.langs.cols.forEach(c=>{if(HE_COL[c[0]])c[1]=HE_COL[c[0]]});
 GLOSS.top=["ערך מוביל","150 פתיחי הערכים הנקראים ביותר בנושא שהיו קיימים ב־2021, שנבדקו בינואר 2021 וביולי 2023."];
 /* the play sheet: the research instruments stay in English, inside a Hebrew frame */
-$$(".fs-pane").forEach(p=>{p.setAttribute("lang","en");p.setAttribute("dir","ltr")});
+$$(".fs-pane").forEach(p=>{if(p.dataset.k==="tr")return;p.setAttribute("lang","en");p.setAttribute("dir","ltr")});
 {const b=$("#flSheetB"),n=document.createElement("p");n.className="fs-he";n.id="fsHe";n.textContent="בגרסה הזאת הכלי מוצג באנגלית בלבד, בלי תרגום לעברית. זהו הכלי המלא של מהדורת המחקר, בשפת המקור שלו: כל גרסה, כל תאריך וכל ציטוט כפי שנשמרו.";if(b)b.prepend(n)}
+/* the word trail (data-k="tr") is a flash instrument with Hebrew chrome; only its sentence box is English, so the English-only note is hidden there */
+{const os=openSheet;openSheet=function(k,...a){const r=os(k,...a);const n=$("#fsHe");if(n)n.hidden=k==="tr";return r}}
+/* the fight lanes: each label stays the original English phrase, left to right; our Hebrew translation of the phrase sits at the other end of the row */
+const FB_HE={"colonization":"קולוניזציה","land outside":"ארץ מחוץ לאירופה","Palestine, a region":"פלסטין, אזור","Land of Israel":"ארץ ישראל",
+  "Jewish history":"ההיסטוריה היהודית","homeland":"מולדת","Jewish people":"העם היהודי","Jewish state":"מדינה יהודית"};
+const fbHe=l=>{if(FB_HE[l])return FB_HE[l];console.error("fight lane without a Hebrew translation: "+l);return ""};
 
 /* ---------- share images, Hebrew: right to left, with every English quote kept left to right and our translation under it ---------- */
 function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="נוסח ויקיפדיה נכון ל־5 בנובמבר 2026 · המהדורה המקוצרת, סחף המסגור בוויקיפדיה",src=$(".mast a").href;

@@ -1,8 +1,10 @@
 """Build the flash edition of the report.
 
-Usage: python build_flash.py OUT.html            (English)
-       python build_flash.py --lang he OUT.html  (Hebrew: flash_he.py, strings in flash_i18n_he.json; the English
-                                                  page is built and checked first, in memory)
+Usage: python build_flash.py OUT.html              (English)
+       python build_flash.py --lang he OUT.html    (Hebrew: flash_he.py, strings in flash_i18n_he.json; the English
+                                                    page is built and checked first, in memory)
+       python build_flash.py --bilingual OUT.html  (ONE page, English and Hebrew, with a עברית / English switch: flash_bi.py;
+                                                    both pages are built and checked as above, then packed together)
 
 The flash edition is a separate page (page_flash_template.html) on the research edition's data, design and chart code:
   * the research build (build_page.py) runs first, unchanged, with all its assertions; its output goes to a temporary file
@@ -23,6 +25,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 PAT = os.path.join(HERE, "patterns")
 RESEARCH_URL = "https://claude.ai/artifact/6NCLCkohWsfvKwz9MtCTPv"
 LANG = "en"
+if "--bilingual" in sys.argv:
+    sys.argv.remove("--bilingual")
+    LANG = "bi"
 if "--lang" in sys.argv:
     _i = sys.argv.index("--lang")
     LANG = sys.argv[_i + 1]
@@ -239,6 +244,39 @@ COMPUTED = {"13.7": "kStat(), #after step 1 (printed in the research scrolly); t
 _gg = {(r[0], r[4]) for r in R["xw"]["gg"]}
 assert ("en", 187) in _gg and ("pl", 849) in _gg and ("en", "2024-07-03") in {(r[0], r[3]) for r in R["xw"]["gg"]}, "title-rename days changed"
 vis = " ".join(text.values())
+# merge r1, item 3: the reach figure. Every number in it is taken from patterns/exposure/exposure.json (daily Wikimedia pageviews,
+# run 42651558741) and rebuilt here; the build fails if the page drifts from the file. Views = window views_total; share = the
+# critical-wording view share (Gaza genocide: own voice); the surge window is 7 Oct - 31 Dec 2023.
+EXP = json.load(open(os.path.join(PAT, "exposure", "exposure.json")))["articles"]
+_W = {a: EXP[a]["windows"]["last_12_months"] for a in EXP}
+assert all(w["from"] == "20251109" and w["to"] == "20261108" for w in _W.values()), "exposure window changed (the page says 9 Nov 2025 - 8 Nov 2026)"
+assert "9 Nov 2025 – 8 Nov 2026 (daily sums)" in tpl
+_mil = lambda v: f"{v/1e6:.1f}"
+_pc = lambda s: "100%" if s == 1 else f"{s*100:.1f}%"
+_crit = {a: (_W[a]["view_share"]["own_voice"] if a == "Gaza genocide" else _W[a]["critical"]["view_share"]) for a in _W}
+_ord = sorted(_W, key=lambda a: -_W[a]["views_total"])
+_mx = _W[_ord[0]]["views_total"]
+EXP_NUMS = set()
+for a in _ord:
+    v = _W[a]["views_total"]
+    row = (f'<li><span class="n">{a}</span><span class="t"><span class="b" style="width:{round(100*v/_mx,1)}%"><i style="width:{round(100*_crit[a],1)}%"></i></span></span>'
+           f'<span class="v">{_mil(v)} million · <b>{_pc(_crit[a])}</b></span></li>')
+    assert row in tpl, f"reach figure row does not match exposure.json: {a}"
+    EXP_NUMS |= {_mil(v), _pc(_crit[a]).rstrip("%")}
+_sw = {a: EXP[a]["windows"]["surge_7_oct_to_31_dec_2023"] for a in EXP}
+for frag in (f'({_pc(_W["Israel"]["hero_exact_phrase"]["now"]["view_share"])} met “began committing genocide”)',
+             f'(the other {_pc(_W["Nakba"]["view_share"]["ec_other"])} met another “ethnic cleansing” wording)',
+             f'Israel, {_mil(_sw["Israel"]["views_total"])} million views, {_pc(_sw["Israel"]["softer"]["view_share"])} with no genocide charge',
+             f'Hamas, {_mil(_sw["Hamas"]["views_total"])} million, none with “political organisation”)',
+             "Page views, not unique readers"):
+    assert frag in tpl, f"reach figure text does not match exposure.json: {frag}"
+    EXP_NUMS |= set(n.rstrip("%") for n in re.findall(r"\d[\d.]*%?", frag))
+assert _sw["Hamas"]["view_share"]["political_org"] == 0, "the surge line says none"
+assert sum(1 for a in _ord if _crit[a] >= 0.95) == 5 and _crit["Nakba"] < 0.5, "'nearly every view ... except Nakba' must hold"
+for n in EXP_NUMS:
+    COMPUTED[n] = "exposure.json (merge r1 reach figure), asserted above"
+COMPUTED.update({"2025": "exposure window", "2026": "exposure window"})
+print(f"flash: reach figure: {len(_ord)} rows and the surge line match exposure.json")
 nums = set(re.findall(r"(?<![\w.])\d[\d,]*(?:\.\d+)?", vis))
 missing = sorted(n for n in nums if n not in COMPUTED and not re.search(r"(?<![\d,.])" + re.escape(n) + r"(?![\d])", rtpl))
 assert not missing, f"numbers on the flash page that the research edition does not print: {missing}"
@@ -262,7 +300,7 @@ assert "In the Israel article, the next sentence: “Israel has denied that its 
 # fact check r2: the Hebrew "terror organisation" is not new (Hebrew said it in 2021), so it gets the neutral mark, never the
 # added-word blue; the close heading names the list it heads (most-read gainers of critical vocabulary, research #reach)
 assert '<b class="mk">ארגון טרור</b>' in tpl and 'class="tnm"' not in tpl, "Hebrew mirror: neutral mark only"
-assert "opening sections gained critical vocabulary</h2>" in tpl and "how many people read" not in tpl, "close heading / transition wording"
+assert "How many page views met the new wording</h2>" in tpl and "how many people read" not in tpl, "close heading / transition wording"
 assert "Other words changed too" in tpl, "#breathe caption must say that other words changed"
 assert "23 Oct 2023 → since 9 Dec 2023" in tpl and "Their first lines" not in tpl and "· first lines, then" not in tpl, "hero stack dates or header"
 assert 'data-share="flRw"' in tpl and 'data-share="c5vs"' in tpl and "foot:[" in tpl and "scope" in tpl[tpl.index("function shSpec"):], "share cards carry the scope line"
@@ -334,6 +372,13 @@ for art, terms in JSQ.items():
         probe = t.replace("(military) ", "military ") if "(military)" in t else t
         assert "“" + t + "”" in fjs or "“" + t.capitalize() + "”" in fjs, f"flash script no longer quotes {t}"
         assert any(probe.lower() in c.lower() for c in C), f"script quote not in the stored {art} text: {t}"
+# merge r1: the fight-lane gloss "land outside" + "(of) Europe" holds for every stored Zionism wording that has the phrase; the longer
+# phrase "a land outside of Europe" does not hold for every lane interval (some wordings say "a land outside Europe"), so the label stays short
+_zv = [norm(v.get("s") or "") for v in RA["Zionism"]["fs_variants"]]
+_lo = [s for s in _zv if "land outside" in s.lower()]
+assert _lo and all(re.search(r"land outside (of )?Europe", s, re.I) for s in _lo), "fight-lane gloss: every 'land outside' wording continues '(of) Europe'"
+assert any("land outside Europe" in s for s in _lo) and any("land outside of Europe" in s for s in _lo), "both 'outside Europe' and 'outside of Europe' occur (so the long label would not hold)"
+assert 'const FB_GL={"land outside":{g:"(of) Europe",re:/land outside (of )?Europe/i}};' in tpl
 _jsq = {q for q in re.findall(r"“([^”]+)”", fjs) if not re.search(r'[$"|+]', q)}  # skip code that builds quote marks
 _jsq -= {x for v in JSQ.values() for x in v} | {t.capitalize() for v in JSQ.values() for t in v}
 assert not _jsq, f"an unchecked quote in the flash script: {_jsq}"
@@ -373,16 +418,20 @@ out = (body.replace("/*RESEARCH_CSS*/", css)
           .replace("/*RESEARCH_JS*/", lib.replace("const R=/*DATA*/null;", "const R=" + data + ";", 1))
           .replace("@@R@@", RESEARCH_URL))
 assert "@@R@@" not in out and "/*RESEARCH_" not in out and "<!--R:" not in out
+assert out.count(data) == 1 and out.count(css) == 1, "the data and the research CSS are in the page once (merge r1: the build comment used to receive a second copy)"
 for k in SLOTS:
     assert out.count(f'id="{k}"') == 1, f"#{k} must appear exactly once"
 out = re.sub(r"<!--VERIFY:[^>]*?-->", "", out)
 # a standalone page: doctype, charset and viewport first (the research edition gets the same wrapper when published)
 out = '<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n' + out
-if LANG == "he":
+if LANG in ("he", "bi"):
     import flash_he
-    flash_he.build(dict(tpl=tpl, lib=lib, css=css, SLOTS=SLOTS, data=data, R=R, RESEARCH_URL=RESEARCH_URL, text=text, vis=vis,
+    he_out = flash_he.build(dict(tpl=tpl, lib=lib, css=css, SLOTS=SLOTS, data=data, R=R, RESEARCH_URL=RESEARCH_URL, text=text, vis=vis,
                         _Text=_Text, norm=norm, quotes=quotes, corpus=corpus, all_corpus=all_corpus, VETO=VETO, SPIN=SPIN,
-                        COMPUTED=COMPUTED, en_out=out), sys.argv[1])
+                        COMPUTED=COMPUTED, en_out=out), sys.argv[1] if LANG == "he" else None)
+    if LANG == "bi":
+        import flash_bi
+        flash_bi.build(out, he_out, data, sys.argv[1])
     sys.exit(0)
 open(sys.argv[1], "w").write(out)
 print(f"wrote {sys.argv[1]} ({len(out)/1e6:.2f} MB)")

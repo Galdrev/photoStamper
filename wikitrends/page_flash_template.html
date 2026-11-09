@@ -5,8 +5,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <!--
-  FLASH EDITION v2 (visual-first). Built by build_flash.py: the research edition's CSS (/*RESEARCH_CSS*/), its chart/diff/tooltip
-  library (/*RESEARCH_JS*/) and the markup of its interactives (<!-#-R:id-#-> slots: #breathe and #xmFig inline; #ziFig, #o7Fig and
+  FLASH EDITION v2 (visual-first). Built by build_flash.py: the research edition's CSS (the RESEARCH_CSS slot), its chart/diff/tooltip
+  library (the RESEARCH_JS slot) and the markup of its interactives (<!-#-R:id-#-> slots: #breathe and #xmFig inline; #ziFig, #o7Fig and
   #xrFig inside <template>s for the play sheet) are copied in from page_template.html at build time; R is a slice of the research data.
   Card list: patterns/flash/BUILD_v2.md. Every curly-quoted string in this file is checked against the stored texts by build_flash.py.
 -->
@@ -154,7 +154,7 @@ details.fl-full .news-q{margin-top:4px}
 .fl-fb .fb-h{font:400 13px/1.35 var(--body);color:var(--ink-2);margin:0}.fl-fb .fb-h b{color:var(--ink);font-weight:600}
 .fl-fb .fb-k{font:400 11.5px/1.4 var(--body);color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:2px 12px}
 .fl-fb .fb-k i{display:inline-block;width:14px;height:7px;border-radius:2px;vertical-align:1px;margin-right:4px}
-.fl-fb .fl-strip text.ln{font-size:11px}.fl-fb .fbn{fill:var(--ink);font-weight:600}
+.fl-fb .fl-strip text.ln{font-size:11px}.fl-fb .fbn{fill:var(--ink);font-weight:600}.fl-fb .fbg{fill:var(--muted)}#xmTip .h .g{color:var(--muted);font-weight:400}
 .fl-fb g.fbl{cursor:pointer;outline:none}.fl-fb g.fbl:focus-visible>rect:first-child,.fl-fb g.fbl.on>rect:first-child{fill:var(--faint)!important}
 .fl-fb g.fbl.pl .bar{animation:fbpulse .6s ease-out}@keyframes fbpulse{0%{opacity:.2}100%{opacity:1}}
 .fl-fb .fl-play{justify-self:start;margin-top:2px}
@@ -285,6 +285,11 @@ details.fl-full .news-q{margin-top:4px}
 .fl-score .bar .o{background:var(--del-bd);color:#fff;text-align:right;padding-right:6px;white-space:nowrap}
 .fl-score .cp{font:400 14px/1.45 var(--body);color:var(--ink);margin:0}
 .fl-score .cp b{font-weight:600}
+.fl-score .fl-exb li{grid-template-columns:minmax(0,32%) minmax(0,1fr) auto;gap:8px}
+.fl-exb .t{display:block;min-width:0}.fl-exb .b{display:block;height:16px;background:var(--faint);border-radius:2px;overflow:hidden}
+.fl-exb .b i{display:block;height:100%;background:var(--topic)}
+.fl-exb .v{font:600 11.5px/1.2 var(--mono);color:var(--ink-2);white-space:nowrap}.fl-exb .v b{color:var(--ink)}
+.fl-ex .ex-k{font:400 12px/1.4 var(--body);color:var(--muted);margin:0}.fl-ex .ex-k summary{cursor:pointer;color:var(--ink-2);font-weight:500}.fl-ex .ex-k p{margin:4px 0 0}.fl-ex .ex-n{font:400 12px/1.35 var(--body);color:var(--muted);margin:0}
 .fl-other{display:grid;gap:6px;border-left:3px solid var(--muted);padding:2px 0 2px 12px}
 .fl-other .k{font:600 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .fl-other p{font:400 14.5px/1.45 var(--body);color:var(--ink);margin:0}
@@ -534,15 +539,19 @@ details.fl-full .news-q{margin-top:4px}
 
 <section class="fc fl-close" id="close" aria-labelledby="clH">
   <div class="eyebrow">Reach and the count</div>
-  <h2 id="clH">The most-read pages whose opening sections gained critical vocabulary</h2>
-  <figure class="fl-score" style="margin:0" aria-labelledby="whyK"><p class="cp" id="whyK">Views, past 12 months:</p>
-    <ul class="fl-bars">
-      <li>Benjamin Netanyahu<span class="b" style="width:60%"><span>7.0 million</span></span></li>
-      <li>Israel<span class="b" style="width:39.4%"><span>4.6 million</span></span></li>
-      <li>Palestine<span class="b" style="width:20.6%"><span>2.4 million</span></span></li>
-      <li>Zionism<span class="b" style="width:15.4%"><span>1.8 million</span></span></li>
-      <li>Hamas<span class="b" style="width:11.1%"><span>1.3 million</span></span></li>
-    </ul></figure>
+  <h2 id="clH">How many page views met the new wording</h2>
+  <figure class="fl-score fl-ex" style="margin:0" aria-labelledby="whyK"><p class="cp" id="whyK">Page views of the six articles above, 9 Nov 2025 – 8 Nov 2026 (daily sums). The dark part of each bar, and the %, is the share of those views that met the critical wording:</p>
+    <ul class="fl-bars fl-exb">
+      <li><span class="n">Israel</span><span class="t"><span class="b" style="width:100.0%"><i style="width:100.0%"></i></span></span><span class="v">5.1 million · <b>100%</b></span></li>
+      <li><span class="n">Zionism</span><span class="t"><span class="b" style="width:41.5%"><i style="width:99.9%"></i></span></span><span class="v">2.1 million · <b>99.9%</b></span></li>
+      <li><span class="n">October 7 attacks</span><span class="t"><span class="b" style="width:39.7%"><i style="width:100.0%"></i></span></span><span class="v">2.0 million · <b>100%</b></span></li>
+      <li><span class="n">Gaza genocide</span><span class="t"><span class="b" style="width:33.3%"><i style="width:99.3%"></i></span></span><span class="v">1.7 million · <b>99.3%</b></span></li>
+      <li><span class="n">Hamas</span><span class="t"><span class="b" style="width:28.9%"><i style="width:95.1%"></i></span></span><span class="v">1.5 million · <b>95.1%</b></span></li>
+      <li><span class="n">Nakba</span><span class="t"><span class="b" style="width:12.2%"><i style="width:30.3%"></i></span></span><span class="v">0.6 million · <b>30.3%</b></span></li>
+    </ul>
+    <details class="ex-k"><summary>What counts as the critical wording</summary><p data-q="en:Israel|en:Zionism|en:Nakba|en:October 7 attacks|en:Hamas|en:Gaza genocide">Israel, “genocide” in the opening section (92.6% met “began committing genocide”); Zionism, “colonization” in the first sentence; October 7, “armed incursions”; Gaza genocide, genocide in Wikipedia’s own voice; Hamas, “political organisation with a military wing”; Nakba, “ethnic cleansing … by Zionists” (the other 69.7% met another “ethnic cleansing” wording).</p></details>
+    <p class="cp ex-s"><b>The surge.</b> From 7 Oct to 31 Dec 2023 most views met the older wording (Israel, 9.3 million views, 99.1% with no genocide charge; Hamas, 10.2 million, none with “political organisation”); in the past 12 months nearly every view met the new wording, except Nakba’s “by Zionists”.</p>
+    <p class="ex-n">Page views, not unique readers: one person can count many times.</p></figure>
   <figure class="fl-score" style="margin:0" aria-labelledby="scK"><p class="cp" id="scK"><b>The count.</b> For every critical term taken out of these opening paragraphs, almost four went in.</p>
     <div class="row"><span class="lab">These opening paragraphs · critical terms</span><div class="bar" role="img" aria-label="223 in, 61 out"><span class="i" style="flex:223">223 in</span><span class="o" style="flex:61">61 out</span></div></div>
     <div class="row"><span class="lab">Comparison pages (other countries, conflicts and religions)</span><div class="bar" role="img" aria-label="125 in, 73 out"><span class="i" style="flex:125">125 in</span><span class="o" style="flex:73">73 out</span></div></div>
@@ -551,7 +560,7 @@ details.fl-full .news-q{margin-top:4px}
       <p data-q="en:October 7 attacks"><b>October 7 attacks.</b> On 1 October 2026 its second sentence called Israel’s response <span data-tn="r7:a">“actions scholars have concluded constitute genocide”</span>; by 2 November the clause was gone. The removal is recent and may be undone.</p></div>
   </figure>
   <p class="fl-honest">The change sits in the core articles people read, while the long tail of short pages barely changed.</p>
-  <p class="fl-dinner"><span class="fl-k">In short</span>Before the war, none of the most-read Wikipedia openings on the subject charged Israel with genocide; now the article on Israel says, in Wikipedia’s voice, that Israel “began committing genocide,” Zionism is “a Jewish homeland through colonization,” and, in every copy we hold, the Israel and Hamas opening sections do not mention the hostages.</p>
+  <p class="fl-dinner"><span class="fl-k">In short</span>Before the war, none of the most-read Wikipedia openings on the subject charged Israel with genocide; now the article on Israel says, in Wikipedia’s voice, that Israel “began committing genocide”; the Zionism article calls Zionism “a Jewish homeland through colonization”; and, in every copy we hold, the Israel and Hamas opening sections do not mention the hostages.</p>
   <p class="fl-ev"><a class="fl-big" href="@@R@@" target="_blank" rel="noopener">Read the full research edition →</a><a href="@@R@@#reads" target="_blank" rel="noopener">Every quote, dated →</a></p>
 </section>
 <p class="cap fl-foot">Flash edition · published 9 November 2026 · Wikipedia text as of 5 November 2026 · every quote is exact and dated; the evidence, method and limits are in the <a href="@@R@@" target="_blank" rel="noopener">research edition</a>.</p>
@@ -753,6 +762,10 @@ function trInit(){if(!BR.ev)drawBreathe();brEnsure();const el=$("#brTr"),rg=$("#
    out, though it was in Jan 2021; a tick = one change. A shared cursor follows the sweep and the drag, each count runs to the cursor
    date, and a lane pulses when its phrase flips. Tap a lane for its dated history. */
 const FB={key:null,L:null,k:-1,words:0};
+/* merge r1: a muted gloss after a lane label whose short phrase reads cryptic. The gloss is shown only if every stored wording that has the
+   phrase continues it with the gloss's words ("a land outside of Europe" / "a land outside Europe": the "of" varies, so it is in brackets);
+   checked at build time (build_flash.py) and again here at load (console.error otherwise) */
+const FB_GL={"land outside":{g:"(of) Europe",re:/land outside (of )?Europe/i}};
 const FB_STOP=new Set("a an the of and or to in on by for at as is was be its it that this with from through which what whose but also into while where who whom".split(" "));
 const FB_HEDGE=new Set("roughly corresponding corresponds aimed aiming region area outside central late known seeks sought".split(" "));
 const fbKey=w=>w.toLowerCase().replace(/^[“”"'‘’(\[]+/,"").replace(/[“”"'‘’)\].,;:!?]+$/,"");
@@ -774,20 +787,21 @@ function fbBuild(){const ev=BR.ev,K=ev.length,SW=ev.map((e,k)=>brText(k).s),U=[.
       for(let x=0;x+G.length<=I.length;x++)if(G.every((w,y)=>I[x+y][0]===w)){l.lab=T.slice(I[x][1],I[x+G.length-1][1]+1).join(" ").replace(/^[“”"'‘’(\[]+|[“”"'‘’)\].,;:!?]+$/g,"");break}}
     if(!l.lab)l.lab=l.g;
     const sp=[];l.p.forEach((v,k)=>{if(!v)return;const a=ev[k].t,b=k+1<K?ev[k+1].t:BR.t1;if(sp.length&&sp.at(-1)[1]===a)sp.at(-1)[1]=b;else sp.push([a,b])});l.sp=sp});
+  L.forEach(l=>{const G=FB_GL[l.lab];if(G&&SW.some((s,k)=>l.p[k]&&!G.re.test(s)))console.error("fight lane gloss does not hold: "+l.lab)});
   Object.assign(FB,{key:BR.title+"|"+K,L,K,words,k:-1});
   L.forEach((l,i)=>Object.defineProperty(FT,"fbl"+i,{configurable:true,enumerable:true,get:()=>fbHist(i,FB.k<0?K-1:FB.k)}));
   window.__fb={words,fought:R.length,lanes:L.map(l=>({lab:l.lab,g:l.g,f:l.f,s:l.s,sp:l.sp,ch:l.ch}))}}
 const fbN=(l,k)=>{let f=0;while(f<l.ch.length&&l.ch[f]<=k)f++;return f};
 function fbHist(i,k){const l=FB.L[i],c=l.ch.filter(x=>x<=k),f=c.length,inn=n=>(l.p[0]?n%2===1:n%2===0)?"in":"out";
   const S=c.map((x,n)=>`${inn(n)} ${brDs(BR.ev[x].t)}`),seq=f>6?[...S.slice(0,2),"…",...S.slice(-3)]:S;
-  return `<span class="h">“${esc(l.lab)}”</span><p>${l.p[0]?"In Jan 2021":"Not in Jan 2021"}${f?" → "+seq.map(esc).join(" → "):", no change yet"}</p><p class="src">(${f} changes${f?`; last ${esc(brDs(BR.ev[c.at(-1)].t))}`:""})</p>`}
+  return `<span class="h">“${esc(l.lab)}”${FB_GL[l.lab]?` <span class="g">${FB_GL[l.lab].g}</span>`:""}</span><p>${l.p[0]?"In Jan 2021":"Not in Jan 2021"}${f?" → "+seq.map(esc).join(" → "):", no change yet"}</p><p class="src">(${f} changes${f?`; last ${esc(brDs(BR.ev[c.at(-1)].t))}`:""})</p>`}
 function fbDraw(){const host=$("#fbS");if(!host||!FB.L)return;const W=Math.max(250,host.clientWidth),ph=isPhone(),m={l:4,r:6},t0=BR.t0,t1=BR.t1,x=t=>m.l+(W-m.l-m.r)*(Math.min(t1,Math.max(t0,t))-t0)/(t1-t0);
   const lh=ph?29:27,y0=6,H=y0+FB.L.length*lh+16,bH=7;let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="group" aria-label="The ${FB.L.length} most-fought phrases of the Zionism first sentence, 2021 to now: when each was in the sentence, and each change">`;
   for(let yr=new Date(t0).getUTCFullYear()+1;yr<=new Date(t1).getUTCFullYear();yr++){const xx=x(Date.UTC(yr,0,1));s+=`<line x1="${xx}" x2="${xx}" y1="${y0}" y2="${H-14}" style="stroke:var(--faint)"/><text x="${xx+3}" y="${H-3}">${ph?"’"+String(yr).slice(2):yr}</text>`}
   if(WAR>t0){const wx=x(WAR);s+=`<line x1="${wx}" x2="${wx}" y1="${y0}" y2="${H-14}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/>`}
   FB.L.forEach((l,i)=>{const y=y0+i*lh,by=y+13,base=!!l.p[0];
-    s+=`<g class="mk fbl" data-i="${i}" data-ft="fbl${i}" tabindex="0" role="button" aria-label="${esc(l.lab)}: in or out ${l.f} times; show the dates"><rect x="0" y="${y}" width="${W}" height="${lh}" style="fill:transparent"/>`;
-    s+=`<text class="ln" x="${m.l}" y="${y+9}">“${esc(l.lab)}” <tspan class="fbn">⇄${l.f}</tspan></text><g class="bar"><rect x="${m.l}" y="${by}" width="${W-m.l-m.r}" height="${bH}" rx="2" style="fill:var(--faint)"/>`;
+    s+=`<g class="mk fbl" data-i="${i}" data-ft="fbl${i}" tabindex="0" role="button" aria-label="${esc(l.lab)}${FB_GL[l.lab]?" "+FB_GL[l.lab].g:""}: in or out ${l.f} times; show the dates"><rect x="0" y="${y}" width="${W}" height="${lh}" style="fill:transparent"/>`;
+    s+=`<text class="ln" x="${m.l}" y="${y+9}" lang="en">“${esc(l.lab)}”${FB_GL[l.lab]?` <tspan class="fbg">${FB_GL[l.lab].g}</tspan>`:""} <tspan class="fbn">⇄${l.f}</tspan></text><g class="bar"><rect x="${m.l}" y="${by}" width="${W-m.l-m.r}" height="${bH}" rx="2" style="fill:var(--faint)"/>`;
     if(base){let a=t0;[...l.sp,[t1,t1]].forEach(([p,q])=>{if(p>a)s+=`<line class="out" x1="${x(a).toFixed(1)}" x2="${x(p).toFixed(1)}" y1="${by+bH/2}" y2="${by+bH/2}" style="stroke:var(--del-bd);stroke-width:2"/>`;a=Math.max(a,q)})}
     l.sp.forEach(([p,q])=>{const xa=x(p),xb=Math.max(xa+1.2,x(q));s+=`<rect class="in" x="${xa.toFixed(1)}" y="${by}" width="${(xb-xa).toFixed(1)}" height="${bH}" style="fill:var(${base?"--muted":"--add-bd"})"/>`});
     l.ch.forEach(k=>{s+=`<rect class="tk" x="${(x(BR.ev[k].t)-.6).toFixed(1)}" y="${by-3}" width="1.2" height="${bH+6}" style="fill:var(--ink)"/>`});
@@ -796,7 +810,7 @@ function fbDraw(){const host=$("#fbS");if(!host||!FB.L)return;const W=Math.max(2
   $("#fbH").innerHTML=`<b>${FB.words} words fought over</b> since Jan 2021 · the ${FB.L.length} most-fought phrases`;fbSync()}
 function fbSync(){const c=$("#fbCur");if(!c||!FB.L)return;const xx=FB.x(BR.cur==null?BR.t1:BR.cur).toFixed(1);c.setAttribute("x1",xx);c.setAttribute("x2",xx);
   const k=brLive(BR.cur==null?BR.t1:BR.cur),kp=FB.k;if(k===kp)return;FB.k=k;
-  $$("#fbS g.fbl").forEach((g,i)=>{const l=FB.L[i],f=fbN(l,k),t=$(".fbn",g);if(t.textContent!=="⇄"+f)t.textContent="⇄"+f;g.setAttribute("aria-label",`${l.lab}: in or out ${f} times by ${brDs(BR.ev[k].t)}; show the dates`);
+  $$("#fbS g.fbl").forEach((g,i)=>{const l=FB.L[i],f=fbN(l,k),t=$(".fbn",g);if(t.textContent!=="⇄"+f)t.textContent="⇄"+f;g.setAttribute("aria-label",`${l.lab}${FB_GL[l.lab]?" "+FB_GL[l.lab].g:""}: in or out ${f} times by ${brDs(BR.ev[k].t)}; show the dates`);
     if(!RM.matches&&BRS.running&&kp>=0&&k>kp&&f>fbN(l,kp)){g.classList.remove("pl");void g.getBoundingClientRect();g.classList.add("pl")}})}
 const brRender1=brRender;brRender=function(k,flash){brRender1(k,flash);if(FB.L)safe(fbSync)};
 const flBreathe1=flBreathe;flBreathe=function(){flBreathe1();if(!BR.ev)return;if(FB.key!==BR.title+"|"+BR.ev.length)fbBuild();fbDraw();
@@ -1052,7 +1066,11 @@ function flInit(){
   nearView($("#flXm"),()=>safe(flXm));
   nearView($("#flK"),()=>safe(flKey));
   safe(sheetWire);
-  let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;ftHide();flDraw();$$(".fl-mo").forEach(el=>{el.style.minHeight="";const t=el._t;safe(flMoBuild,el);if(t==="n")flMoTo(el,"n",false)})},150)});
+  let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;flRedraw()},150)});
 }
+/* merge r1: the redraw a resize triggers, and the clean-up before the page is taken out of the document. The bilingual page
+   (build_flash.py --bilingual) calls these when the reader switches language: the outgoing language leaves, the returning one redraws. */
+function flRedraw(){ftHide();flDraw();$$(".fl-mo").forEach(el=>{el.style.minHeight="";const t=el._t;safe(flMoBuild,el);if(t==="n")flMoTo(el,"n",false)})}
+function flLeave(){ftHide();if(typeof xmTipHide==="function"&&XMT.b)xmTipHide();hideTip();const d=$("#flSheet");if(d&&d.open)safe(closeSheet);const g=$("#gloss");if(g)g.hidden=true}
 flInit();
 </script>
