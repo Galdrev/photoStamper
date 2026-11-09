@@ -149,3 +149,21 @@ The pacing in row 8, per animation:
   - At 5 points of the sweep (25 Dec 2021 to 6 Apr 2025), the marked set equals the key-word diff against Jan 2021. This is checked independently from token counts, with no other marks present.
   - The #breathe box height is constant through the sweep.
 - **Length:** 9.70 phone screens. Build: `scratchpad/flash/impact2d/index.html`.
+
+## r2e: #breathe full diff by default, key-word emphasis (owner feedback)
+- **Default:** the full diff against Jan 2021 at every step of the sweep, the drag and the rest state. Every removed word is struck amber and every added word is blue, all persistent. The diff is rendered one element per word, so the marks stay put and build up as time moves forward. New marks fade in over 250 ms.
+- **Emphasis layer, not a filter:** the key words carry `.kw`, a bold weight with a solid amber or blue fill:
+  - removed "re-establishment" and "state";
+  - added colonial/colonization.
+- **Caption:** "Every word removed since Jan 2021 is struck; every word added is blue. The key words, “re-establishment”, “state” and “colonization”, are bold."
+- **Toggle:** "Key words only" (aria-pressed) switches to the old filtered view, with its own caption.
+- **Box:**
+  - Its height is fixed at the tallest full-diff wording. It is recomputed only when the reader toggles. A bug in which the height style survived a re-measure is fixed.
+  - The phone font inside the box is 15.5 px, which keeps the box at 245 px, about 1.2× the previous 205 px.
+  - The pacing is unchanged (about 14 s, with dwells at the key-word changes).
+- **Smoke** (`impact2e/smoke.js`): **399 pass, 0 fail**, 5 contexts plus the hosted mock.
+  - At rest and at 5 sweep points, deleting the struck words from the box gives exactly that day's stored wording, and deleting the blue words gives exactly the Jan 2021 wording.
+  - Only the key words, and all of them, carry the emphasis.
+  - The box height stays at 245 px through the sweep.
+  - "Key words only" shows at most 3 marks.
+- **Length:** 9.72 phone screens; 9.59 at 1280. Build: `scratchpad/flash/impact2e/index.html`.
