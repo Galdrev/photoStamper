@@ -19,3 +19,11 @@
 
 ## Focus catchers (owner, for the cut rounds)
 - Every then/now in the flash edition shows WHAT changed at a glance: a one-line punch («“Allegations have been made” → “intentional, systematic destruction … carried out by Israel”») plus inline highlighted changed words (blue added, amber removed). Full text is secondary. Applies to tooltips, cards and carousel slides. See MUSTFIX_owner.md item 12.
+
+## Queued after the Hebrew v1 build lands (owner, morph slides in "The charge, everywhere")
+- The slow then->now morph is beautiful, but the reader has no way to actually inspect the change. Add reader controls to every morph slide (Arabic, Spanish, ...) and similar then/now visuals:
+  - a segmented control: Then · Now · Both (Both = then above, now below, aligned), plus a scrub slider between then and now that the reader can drag;
+  - tap/hover on any highlighted phrase shows what it replaced (the old phrase, plus its English rendering);
+  - the English rendering line follows the same state.
+- Bugs seen in the owner's screenshot (dark mode, Arabic slide): an English gloss chip "the genocide" sits inside the Arabic sentence and breaks the RTL line (move glosses below the line or into the tooltip); large empty space above and below the slide content (the fixed carousel height is too tall for this slide: vertically centre the content or size the carousel to the tallest real slide).
+- Apply to both the English and the Hebrew builds.
