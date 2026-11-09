@@ -458,6 +458,53 @@ for _k, (_v, _s) in _ch.items():  # numbers inside the seven quoted charge sente
         COMPUTED[_n] = f"inside the quoted {_k} charge sentence (treemap tooltip)"
 print(f"flash: treemap: 150 openings, 7 with the charge ({sum(r[2]==2 for r in TM_ROWS)} as fact) get {100*_share:.1f}% of their views, Nov 2025 - Oct 2026")
 
+# final round, step 5 (patterns/flash/FACTCHECK_merge.md): the numbers the page computes at run time, recomputed here from the same
+# stored data, so a data change cannot move them unseen. (1) The fight lanes (#flFb, the page's fbBuild): 100 fought-over words since
+# Jan 2021 in the Zionism first sentence, and the 8 lanes with their change counts. (2) The treemap share, to the decimal (12.4%).
+def _fb_recount(RA):
+    vt = {v["id"]: v["s"] for v in RA["fs_variants"]}
+    ev = sorted(((x[0], vt.get(x[1])) for x in RA["fs_timeline"]), key=lambda e: e[0])
+    base = next(e[1] for e in ev if e[1])
+    SW = []
+    for k in range(len(ev)):
+        SW.append(next((ev[i][1] for i in range(k, -1, -1) if ev[i][1] is not None), base))
+    K = len(SW); U = list(dict.fromkeys(SW)); st = [U.index(x) for x in SW]
+    STOP = set("a an the of and or to in on by for at as is was be its it that this with from through which what whose but also into while where who whom".split())
+    HEDGE = set("roughly corresponding corresponds aimed aiming region area outside central late known seeks sought".split())
+    key = lambda w: re.sub(r'[“”"\'‘’)\].,;:!?]+$', "", re.sub(r'^[“”"\'‘’(\[]+', "", w.lower()))
+    UK = [[k for k in (key(w) for w in x.split()) if k] for x in U]; US = [" " + " ".join(T) + " " for T in UK]
+    C = {" ".join(T[x:x + n]) for T in UK for n in (1, 2, 3) for x in range(len(T) - n + 1) if T[x] not in STOP and T[x + n - 1] not in STOP}
+    MIN = {"b": 0, "r": 1, "a": 1, "g": 2}; Rr = []
+    for g in C:
+        up = [1 if " " + g + " " in x else 0 for x in US]; pp = [up[u] for u in st]; ch = [k for k in range(1, K) if pp[k] != pp[k - 1]]
+        stt = ("b" if pp[-1] else "r") if pp[0] else ("a" if pp[-1] else "g")
+        if len(ch) >= 2 and len(ch) > MIN[stt]:
+            Rr.append({"g": g, "p": pp, "f": len(ch)})
+    Rr.sort(key=lambda r: (-r["f"], -len(r["g"].split()), r["g"]))
+    stem = lambda g: [re.sub(r"^re-", "", w)[:6] for w in g.split() if w not in STOP]
+    ham = lambda x, y: sum(a != b for a, b in zip(x, y)); nw = lambda g: len(g.split())
+    Ls = []
+    for r in Rr:
+        if all(w in HEDGE or w in STOP for w in r["g"].split()):
+            continue
+        S = stem(r["g"])
+        if any(any(x in S for x in q["S"]) or ham(q["p0"], r["p"]) <= K * .12 for q in Ls):
+            continue
+        c = r
+        for x in Rr:
+            if nw(x["g"]) > nw(c["g"]) and (" " + r["g"] + " ") in (" " + x["g"] + " ") and x["f"] >= r["f"] * .8 and ham(x["p"], r["p"]) <= K * .08:
+                c = x
+        Ls.append(dict(c, S=list(set(S + stem(c["g"]))), p0=r["p"]))
+        if len(Ls) >= 8:
+            break
+    Ls.sort(key=lambda l: -l["f"])
+    return sum(1 for r in Rr if " " not in r["g"]), [(l["g"], l["f"]) for l in Ls]
+_fbw, _fbl = _fb_recount(R["ratchet"]["articles"]["Zionism"])
+assert (_fbw, _fbl) == (100, [("colonization", 81), ("land outside", 54), ("palestine a region", 40), ("land of israel", 40), ("jewish history", 37),
+                              ("homeland", 35), ("jewish people", 35), ("jewish state", 29)]), f"fight lanes recount: {_fbw} {_fbl}"
+assert round(100 * _share, 1) == 12.4, f"treemap share {_share:.4f}"
+print(f"flash: fight lanes recounted: {_fbw} words fought over, lanes " + ", ".join(f"{g} {f}" for g, f in _fbl))
+
 # final round, step 2: the Data lab tab. lab/lab_flash.py is a slim, flash-only fork of the research lab (it reads lab.html, lab.js and
 # lab.css and never writes them, so the research edition is unchanged). Its data: only the flash's articles (the six hero articles and
 # the treemap's 150 openings), only the flipbook and the language prism; parsed and run on the first visit to the tab.
