@@ -63,6 +63,10 @@
    "    <p class=\"rw-n\" data-q=\"en:Israel\"><span class=\"he-p\">בערך על ישראל, המשפט הבא:</span> <span class=\"he-q\" dir=\"ltr\" lang=\"en\">“Israel has denied that its actions constitute genocide.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״ישראל הכחישה שמעשיה מהווים רצח עם.״</span></p>"
   ],
   [
+   "    <p class=\"tc\" id=\"flTilesC\">The 150 most-read opening sections that existed in 2021. Jan 2021 and Jul 2023: none charged Israel with genocide. <b>Now 7 of 150 do</b>, two as fact, and they got <b>12%</b> of the views of all 150 (Nov 2025 – Oct 2026).</p>",
+   "    <p class=\"tc\" id=\"flTilesC\">150 פתיחי הערכים הנקראים ביותר שהיו קיימים ב־2021. בינואר 2021 וביולי 2023: אף אחד לא האשים את ישראל ברצח עם. <b>היום 7 מתוך 150 מאשימים</b>, שניים מהם כעובדה, והם קיבלו <b>12%</b> מהצפיות בכל 150 הערכים (נובמבר 2025 – אוקטובר 2026).</p>"
+  ],
+  [
    "  <p class=\"fl-scope\">This report measures how the wording of the core articles people read changed, not whether it is true, and does not assess the conduct of the war or of any government.</p>",
    "  <p class=\"fl-scope\">הדוח מודד איך השתנה הנוסח של ערכי הליבה שאנשים קוראים, ולא אם מה שכתוב בו נכון, ואינו שופט את ניהול המלחמה או את התנהלותה של ממשלה כלשהי.</p>"
   ],
@@ -663,28 +667,28 @@
    "    <p class=\"ex-n\">צפיות בדף, לא קוראים ייחודיים: אדם אחד יכול להיספר פעמים רבות.</p></figure>"
   ],
   [
-   "    <div class=\"tg\" id=\"flTg\" role=\"img\" aria-label=\"150 squares, one per most-read opening section. In January 2021 and July 2023 none charged Israel with genocide. Now seven do; two of them state it as fact.\"></div>",
-   "    <div class=\"tg\" id=\"flTg\" role=\"img\" aria-label=\"150 ריבועים, אחד לכל פתיח ערך מהנקראים ביותר. בינואר 2021 וביולי 2023 אף אחד מהם לא האשים את ישראל ברצח עם. היום שבעה מאשימים; שניים מהם קובעים זאת כעובדה.\"></div>"
+   "    <div class=\"seg tm-seg\" id=\"flTmSeg\" role=\"group\" aria-label=\"Show the openings as of\"><button type=\"button\" data-v=\"0\" aria-pressed=\"false\">Jan 2021</button><button type=\"button\" data-v=\"1\" aria-pressed=\"false\">Jul 2023</button><button type=\"button\" data-v=\"2\" aria-pressed=\"true\">Now</button></div>",
+   "    <div class=\"seg tm-seg\" id=\"flTmSeg\" role=\"group\" aria-label=\"הצגת הפתיחים נכון ל־\"><button type=\"button\" data-v=\"0\" aria-pressed=\"false\">ינואר 2021</button><button type=\"button\" data-v=\"1\" aria-pressed=\"false\">יולי 2023</button><button type=\"button\" data-v=\"2\" aria-pressed=\"true\">היום</button></div>"
   ],
   [
-   "    <p class=\"tc\" id=\"flTilesC\">The 150 most-read opening sections that existed in 2021. Jan 2021 and Jul 2023: none charged Israel with genocide. Now seven do, two as fact.</p>",
-   "    <p class=\"tc\" id=\"flTilesC\">150 פתיחי הערכים הנקראים ביותר שהיו קיימים ב־2021. בינואר 2021 וביולי 2023: אף אחד לא האשים את ישראל ברצח עם. היום שבעה מאשימים, שניים מהם כעובדה.</p>"
+   "    <div class=\"tm\" id=\"flTg\" role=\"group\" aria-label=\"150 tiles, one per most-read opening section, sized by page views. In January 2021 and July 2023 none charged Israel with genocide. Now seven do; two of them state it as fact.\"></div>",
+   "    <div class=\"tm\" id=\"flTg\" role=\"group\" aria-label=\"150 אריחים, אחד לכל פתיח ערך מהנקראים ביותר, בגודל לפי מספר הצפיות. בינואר 2021 וביולי 2023 אף אחד מהם לא האשים את ישראל ברצח עם. היום שבעה מאשימים; שניים מהם קובעים זאת כעובדה.\"></div>"
   ],
   [
-   "    <div class=\"tl2\" aria-hidden=\"true\"><span><i class=\"k\" style=\"background:var(--faint)\"></i>no charge</span><span><i class=\"k\" style=\"border:1.5px solid var(--ink-2)\"></i>charge, attributed</span><span><i class=\"k\" style=\"background:var(--topic)\"></i><b>stated as fact</b></span></div>",
-   "    <div class=\"tl2\" aria-hidden=\"true\"><span><i class=\"k\" style=\"background:var(--faint)\"></i>אין האשמה</span><span><i class=\"k\" style=\"border:1.5px solid var(--ink-2)\"></i>האשמה, מיוחסת לאחרים</span><span><i class=\"k\" style=\"background:var(--topic)\"></i><b>נקבע כעובדה</b></span></div>"
+   "    <div class=\"tl2\" aria-hidden=\"true\"><span><i class=\"k\" style=\"background:var(--faint)\"></i>no charge</span><span><i class=\"k\" style=\"border:1.5px solid var(--ink-2)\"></i>charge, attributed</span><span><i class=\"k\" style=\"background:var(--topic)\"></i><b>stated as fact</b></span><span>area = page views, Nov 2025 – Oct 2026 (monthly sums from our crawl) · tap a tile</span></div>",
+   "    <div class=\"tl2\" aria-hidden=\"true\"><span><i class=\"k\" style=\"background:var(--faint)\"></i>אין האשמה</span><span><i class=\"k\" style=\"border:1.5px solid var(--ink-2)\"></i>האשמה, מיוחסת לאחרים</span><span><i class=\"k\" style=\"background:var(--topic)\"></i><b>נקבע כעובדה</b></span><span>השטח = צפיות בדף, נובמבר 2025 – אוקטובר 2026 (סכומים חודשיים מהסריקה שלנו) · הקישו על אריח</span></div>"
   ],
   [
-   "FT.tf0=\"<span class=\\\"h\\\">Israel · opening section</span><span class=\\\"pn\\\">Stated as fact, in Wikipedia’s own voice</span>\";FT.tf1=\"<span class=\\\"h\\\">Benjamin Netanyahu · opening section</span><span class=\\\"pn\\\">Stated as fact, in Wikipedia’s own voice</span>\";",
-   "FT.tf0=\"<span class=\\\"h\\\">ישראל · פתיח הערך</span><span class=\\\"pn\\\">נקבע כעובדה, בקולה של ויקיפדיה</span>\";FT.tf1=\"<span class=\\\"h\\\">בנימין נתניהו · פתיח הערך</span><span class=\\\"pn\\\">נקבע כעובדה, בקולה של ויקיפדיה</span>\";"
+   "const TM_T={views:v=>v>=1e6?`${(v/1e6).toFixed(1)} million views`:`${Math.round(v/1e3)},000 views`,win:\"Nov 2025 – Oct 2026\",st:[\"No genocide charge in the opening section\",\"The charge, attributed to others\",\"Stated as fact, in Wikipedia’s own voice\"],then:\"In Jan 2021 and Jul 2023: no charge\",lab:(t,s)=>`${t}: ${[\"no charge\",\"charge, attributed\",\"stated as fact\"][s]}`};",
+   "const TM_T={views:v=>v>=1e6?`${(v/1e6).toFixed(1)} מיליון צפיות`:`${Math.round(v/1e3)},000 צפיות`,win:\"נובמבר 2025 – אוקטובר 2026\",st:[\"אין האשמה ברצח עם בפתיח הערך\",\"ההאשמה, מיוחסת לאחרים\",\"נקבע כעובדה, בקולה של ויקיפדיה\"],then:\"בינואר 2021 וביולי 2023: אין האשמה\",lab:(t,s)=>`${t}: ${[\"אין האשמה\",\"האשמה, מיוחסת לאחרים\",\"נקבע כעובדה\"][s]}`};"
   ],
   [
-   "F=[[8,\"Israel\"],[60,\"Benjamin Netanyahu\"]]",
-   "F=[[8,\"ישראל\"],[60,\"בנימין נתניהו\"]]"
+   "    FT[\"tm\"+i]=`<span class=\"h\" lang=\"en\">${esc(r[0])}</span><span class=\"pn\">${TM_T.views(r[1])}, ${TM_T.win}</span><p>${TM_T.st[r[2]]}</p>${r[3]?`<p class=\"src\" lang=\"en\">“${esc(r[3])}”</p>`:\"\"}${r[2]?`<p class=\"src\">${TM_T.then}</p>`:\"\"}`;",
+   "    FT[\"tm\"+i]=`<span class=\"h\" lang=\"en\">${esc(r[0])}</span><span class=\"pn\">${TM_T.views(r[1])}, ${TM_T.win}</span><p>${TM_T.st[r[2]]}</p>${r[3]?`<p class=\"src\" lang=\"en\">“${esc(r[3])}”</p><p class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״${HE_TM[r[0]]||\"\"}״</p>`:\"\"}${r[2]?`<p class=\"src\">${TM_T.then}</p>`:\"\"}`;"
   ],
   [
-   "aria-label=\"${esc(F[f][1])}: stated as fact\"",
-   "aria-label=\"${esc(F[f][1])}: נקבע כעובדה\""
+   "const MO_T={f:\"Then\",n:\"Now\",b:\"Both\",show:\"Show the sentence\",scrub:\"Drag from then to now\",add:\"Added\",rem:\"Removed\",repl:\"in place of\",by:\"replaced by\",chg:\"Changed\",en:\"In English:\",nothing:\"nothing was removed here\"};",
+   "const MO_T={f:\"אז\",n:\"היום\",b:\"שניהם\",show:\"הצגת המשפט\",scrub:\"גררו מאז ועד היום\",add:\"נוסף\",rem:\"הוסר\",repl:\"במקום\",by:\"והוחלף ב־\",chg:\"שונה\",en:\"באנגלית:\",nothing:\"כאן לא הוסר דבר\"};"
   ]
  ],
  "lib": [

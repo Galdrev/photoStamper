@@ -79,7 +79,9 @@ html[dir="rtl"] #tip,html[dir="rtl"] #xmTip,html[dir="rtl"] #gloss{direction:rtl
 .fs-pane[lang="en"]{direction:ltr;text-align:left}
 .fs-he{font:400 13.5px/1.45 var(--body);color:var(--ink-2);margin:0 0 10px;padding:8px 10px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px}
 /* the morph slides: our translation follows the state of the sentence (then / now) */
-.car-s:has(.fl-mo .xr-s.st-n) .he-mo[data-st="f"],.car-s:has(.fl-mo .xr-s.st-f) .he-mo[data-st="n"]{opacity:.62}
+/* merge r1: the translation follows the reader's choice (Then, Now, the scrub position); Both shows both */
+.car-s:has(.fl-mo[data-v="n"]) .he-mo[data-st="f"],.car-s:has(.fl-mo[data-v="f"]) .he-mo[data-st="n"]{display:none}
+html[dir="rtl"] .fl-mo .seg button+button{border-left:0;border-right:1px solid var(--rule)}
 .he-mo{font-size:13.5px}
 @media (max-width:600px){
   .he-tr{font-size:13.5px;line-height:1.36;margin-top:1px}
@@ -137,6 +139,15 @@ $$(".fs-pane").forEach(p=>{if(p.dataset.k==="tr")return;p.setAttribute("lang","e
 /* the fight lanes: each label stays the original English phrase, left to right; our Hebrew translation of the phrase sits at the other end of the row */
 const FB_HE={"colonization":"קולוניזציה","land outside":"ארץ מחוץ לאירופה","Palestine, a region":"פלסטין, אזור","Land of Israel":"ארץ ישראל",
   "Jewish history":"ההיסטוריה היהודית","homeland":"מולדת","Jewish people":"העם היהודי","Jewish state":"מדינה יהודית"};
+/* the treemap: our Hebrew translation of each of the seven charge sentences (the English original is shown above it in the tooltip) */
+const HE_TM={"Israel":"אחרי המתקפות בהובלת חמאס ב־7 באוקטובר, ישראל החלה לבצע רצח עם נגד פלסטינים בעזה.",
+  "Benjamin Netanyahu":"ממשלת נתניהו מתזמרת את רצח העם בעזה, תהליך שהגיע לשיאו בתיק דרום אפריקה נ׳ ישראל בבית הדין הבין־לאומי לצדק (ICJ) בדצמבר 2023.",
+  "Palestine":"בעקבות המתקפות של חמאס בישראל ב־7 באוקטובר 2023, שבהן נהרגו 1195 בני אדם, פתחה ישראל במבצע צבאי רחב היקף בעזה, שבו נהרגו יותר מ־72,000 פלסטינים, ושגרם לעקירה המונית של האוכלוסייה, למשבר הומניטרי ולרעב ברצועת עזה; המעשים האלה הוכרו כרצח עם נגד העם הפלסטיני בידי קונצנזוס מחקרי הולך וגדל.",
+  "Gaza Strip":"פעולות אלה תוארו בידי חוקרים, מומחים למשפט בין־לאומי וארגוני זכויות אדם כרצח עם נגד העם הפלסטיני.",
+  "Israeli–Palestinian conflict":"פעולותיה של ישראל בעזה במלחמה הזאת תוארו בידי מומחים למשפט בין־לאומי, חוקרי רצח עם וארגוני זכויות אדם כרצח עם.",
+  "Israel Defense Forces":"פעולותיו ומדיניותו של צה״ל בשטחים הפלסטיניים ספגו ביקורת נרחבת, עם האשמות בדיכוי, באפליה ממוסדת, בהרג שלא כדין ובפגיעה שיטתית בזכויות הפלסטינים, וארגוני זכויות אדם וחוקרים רבים מאשימים את צה״ל ברצח עם.",
+  "Gaza–Israel conflict":"מקורות מחקריים וארגונים בין־לאומיים רבים הגיעו למסקנה שפעולותיה של ישראל בעזה מהוות רצח עם."};
+if(R&&R.tm)R.tm.rows.forEach(r=>{if(r[2]&&!HE_TM[r[0]])console.error("treemap charge sentence without a Hebrew translation: "+r[0])});
 const fbHe=l=>{if(FB_HE[l])return FB_HE[l];console.error("fight lane without a Hebrew translation: "+l);return ""};
 
 /* ---------- share images, Hebrew: right to left, with every English quote kept left to right and our translation under it ---------- */

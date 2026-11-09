@@ -273,6 +273,8 @@ for frag in (f'({_pc(_W["Israel"]["hero_exact_phrase"]["now"]["view_share"])} me
     EXP_NUMS |= set(n.rstrip("%") for n in re.findall(r"\d[\d.]*%?", frag))
 assert _sw["Hamas"]["view_share"]["political_org"] == 0, "the surge line says none"
 assert sum(1 for a in _ord if _crit[a] >= 0.95) == 5 and _crit["Nakba"] < 0.5, "'nearly every view ... except Nakba' must hold"
+COMPUTED["12%"] = "treemap headline, computed from data/mass2.json (asserted below)"
+COMPUTED["12"] = COMPUTED["12%"]
 for n in EXP_NUMS:
     COMPUTED[n] = "exposure.json (merge r1 reach figure), asserted above"
 COMPUTED.update({"2025": "exposure window", "2026": "exposure window"})
@@ -408,6 +410,44 @@ assert not [v for v in VETO if v in slow], "vetoed wording in a sliced research 
 for who in ("Smallangryplanet", "Aquillion", "Zero0000", "Nableezy", "CaptainEek", "Elli", "AndreJustAndre", "Ïvana"):
     assert who.lower() not in slow, f"a sliced research figure names an account: {who}"
 print("flash: research interactives sliced: " + ", ".join(f"#{k} ({len(v)//1000} kB)" for k, v in SLOTS.items()))
+
+# merge r1, item 4: the treemap of the 150 most-read opening sections (patterns/angle/PERP.md: the 150 most-viewed topic-group
+# articles of the mass crawl, views summed Jan 2021 - Oct 2026, with a lead at all three dates). Tile area = views in the last 12
+# stored months (Nov 2025 - Oct 2026, data/mass2.json monthly user views; exposure.json has daily views for the six hero articles
+# only, so the treemap uses the crawl's monthly sums and says so). The charge per tile comes from patterns/angle/perp_codes.jsonl:
+# a sentence that charges Israel with genocide (clause perpetrator I, charge G), own voice or attributed, never the denial.
+_MS = json.load(open(os.path.join(HERE, "data", "mass2.json")))
+_mon = lambda a: ((a.get("pageviews") or {}).get("monthly") or {})
+_tot = lambda a: sum(x or 0 for x in (_mon(a).get("views") or []))
+_set = [a for a in _MS["articles"] if a["group"] == "topic" and a["title"] in M2 and len(M2[a["title"]]) >= 3 and all(M2[a["title"]][i] for i in range(3))]
+_set = sorted(_set, key=lambda a: -_tot(a))[:150]
+assert len(_set) == 150 and _mon(_set[0])["start"] == "202101" and len(_mon(_set[0])["views"]) == 70, "treemap: 150 articles, monthly views Jan 2021 - Oct 2026"
+assert _tot(next(a for a in _set if a["title"] == "Israel")) == 42920851, "treemap set: Israel's views since 2021 as in PERP.md (42.9M)"
+_PC = [json.loads(l) for l in open(os.path.join(PAT, "angle", "perp_codes.jsonl"))]
+assert {r["title"] for r in _PC if r["group"] == "topic"} <= {a["title"] for a in _set}, "treemap set = the coded 150"
+_ch = {}
+for r in _PC:
+    if r["group"] != "topic":
+        continue
+    for c in r["clauses"]:
+        for g in c["charges"]:
+            if c["perp_code"] == "I" and g["code"] == "G" and g["voice"] != "denied_or_disputed":
+                assert r["date"] == "now", f"a genocide charge against Israel before the war: {r['title']} {r['date']}"
+                v = 2 if g["voice"] == "wikipedia_voice" else 1
+                if v > _ch.get(r["title"], (0,))[0]:
+                    _ch[r["title"]] = (v, r["text"])
+assert len(_ch) == 7 and sorted(k for k, v in _ch.items() if v[0] == 2) == ["Benjamin Netanyahu", "Israel"], f"treemap: 7 charged, 2 as fact: {_ch}"
+for k, (v, s) in _ch.items():
+    assert norm(s) in norm(M2[k][2]), f"treemap: the charge sentence is not in the stored {k} lead"
+_l12 = lambda a: sum(_mon(a)["views"][-12:])
+TM_ROWS = sorted([[a["title"], _l12(a), _ch.get(a["title"], (0, ""))[0], _ch.get(a["title"], (0, ""))[1]] for a in _set], key=lambda r: -r[1])
+_share = sum(r[1] for r in TM_ROWS if r[2]) / sum(r[1] for r in TM_ROWS)
+assert f"<b>Now 7 of 150 do</b>, two as fact, and they got <b>{round(100*_share)}%</b> of the views of all 150 (Nov 2025 – Oct 2026)." in tpl, f"treemap headline: {_share:.4f}"
+R["tm"] = {"rows": TM_ROWS}
+for _k, (_v, _s) in _ch.items():  # numbers inside the seven quoted charge sentences (tile tooltips; the Hebrew overlay translates them)
+    for _n in re.findall(r"(?<![\w.])\d[\d,]*(?:\.\d+)?", _s):
+        COMPUTED[_n] = f"inside the quoted {_k} charge sentence (treemap tooltip)"
+print(f"flash: treemap: 150 openings, 7 with the charge ({sum(r[2]==2 for r in TM_ROWS)} as fact) get {100*_share:.1f}% of their views, Nov 2025 - Oct 2026")
 
 # 5. assemble
 data = json.dumps(R, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
