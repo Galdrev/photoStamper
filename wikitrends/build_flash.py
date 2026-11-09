@@ -41,6 +41,18 @@ css = rtpl[rtpl.index("<style>") + len("<style>"):rtpl.index("</style>")].replac
 js0 = rtpl.index("<script>\nconst R=/*DATA*/null;") + len("<script>\n")
 lib = rtpl[js0:rtpl.index("/* ---------- init ---------- */", js0)]
 assert lib.startswith("const R=/*DATA*/null;") and "function drawKey(" in lib and "function o7Data(" in lib and "function tnApply(" in lib
+# v2.1, no-courts rule: the language-grid legend, call-out and state words drop the court-case symbol and label (flash copy only)
+for a, b in (('<span class="key">${xTile("legal","")}§: reported only as a court case</span>', ""),
+             ('["legal","court case only"],', ""),
+             ('${fa.length&&he?"; ":""}${he?"he → court case only":""}', ""),
+             (' (for example, moved later in the section, or now reported as a court case)', ' (for example, moved later in the section)'),
+             ('A:"attributed, disputed or a court case"', 'A:"attributed or disputed"'),
+             # the grid's coding note names only the five flash columns and drops the court-ruling pointer
+             (" Whether an edition overstates a court ruling is in the evidence room, with its sentences.", ""),
+             ("Genocide, colonization, apartheid, occupation and the Hamas label", "Genocide, colonization, apartheid and the Hamas label"),
+             ("The October 7 and hostages columns are our reading", "The October 7 column is our reading")):
+    assert lib.count(a) == 1, f"no-courts patch target changed in page_template.html: {a[:50]}"
+    lib = lib.replace(a, b)
 
 # 3. the data slice
 ARTS = ["Zionism", "Hamas", "October 7 attacks", "Gaza genocide"]
@@ -59,6 +71,23 @@ LANGS_R = {
     "cols": [c for c in _L["cols"] if c[0] in XM_COLS], "cells": {k: _L["cells"][k] for k in XM_COLS}, "arts": _arts,
     "moments": [m for m in _L["moments"] if m[0] in _arts and m[1] in _arts[m[0]] and m[2] in _arts[m[0]][m[1]]["sl"]],
 }
+# v2.1, no-courts rule: the legal code ("reported only as a court case") is folded into "attributed" in the flash display
+# only (langs.json and the research edition keep it); the moment and cell texts lose the court-case label
+def _fold(o):
+    if isinstance(o, dict):
+        return {k: _fold(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_fold(v) for v in o]
+    if o == "legal":
+        return "attributed"
+    if isinstance(o, str):
+        return (o.replace("Hebrew: genocide only as a court case", "Hebrew: the Gaza war article does not state the charge")
+                 .replace("the court-case clause is its only genocide mention", "this attributed clause is its only genocide mention"))
+    return o
+LANGS_R = {k: (v if k == "voice" else _fold(v)) for k, v in LANGS_R.items()}
+LANGS_R["voice"] = {k: v for k, v in LANGS_R["voice"].items() if k != "legal"}
+_lj = json.dumps(LANGS_R, ensure_ascii=False)
+assert '"legal"' not in _lj and "court case" not in _lj.lower() and "court-case" not in _lj.lower(), "the flash grid must not carry the court-case code or label"
 R = {
     "zionism": res["zionism"], "oct7": res["oct7"], "v3": res["v3"], "xw": res["xw"],
     "langs": LANGS_R,
@@ -256,6 +285,10 @@ SLOTS = {k: cut(k) for k in ("breathe", "xmFig", "tierFig", "ziFig", "o7Fig", "x
 for k in SLOTS:
     assert tpl.count(f"<!--R:{k}-->") == 1, f"slot for #{k} missing in the flash template"
 assert "xmIcj" not in "".join(SLOTS.values()) and "Court ruling" not in "".join(SLOTS.values()), "the court grid stays out of the flash"
+_vis_courts = re.sub(r"<[^>]+>", " ", SLOTS["xmFig"]).lower()
+assert "court" not in _vis_courts, "the sliced language grid must not mention courts"
+assert not any(x in lib for x in ("reported only as a court case", '["legal","court case only"]', "he → court case only", "or a court case\"", "overstates a court ruling")), \
+    "the flash language-grid legend must not carry the court-case symbol or label"
 _sl = _Text()
 _sl.feed(re.sub(r"<!--.*?-->", "", "".join(SLOTS.values())))
 slow = " ".join("".join(v) for v in _sl.buckets.values()).lower()

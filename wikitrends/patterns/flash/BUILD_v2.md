@@ -218,3 +218,19 @@ The smoke, measuring and contact-sheet scripts are copied there as well.
 - **Artifact anchors.** Whether claude.ai passes `#anchor` into the artifact iframe is still untested.
 - **Publishing.** v2 is not yet published as an artifact (PLAN step 6).
 - **Length.** 9.48 screens leaves almost no room for growth. Anything added should come with a cut.
+
+## v2.1: fidelity re-check and the no-courts legend (messaging agent)
+- **Hero label:** "since 4 May 2025" → "now". 4 May 2025 dates the word "genocide", not this exact wording (research #reads note). The Israel poster now reads "then · “genocide” since".
+- **Card 3 focus label:** "Oct 2023 → now" → "Oct 2023 / Jan 2024 → now". The rape-sentence "then" is the 1 Jan 2024 copy.
+- **Card 5 headline:** "Of October 7, it says “Some have alleged.”" → "Of genocide on October 7, …". The old wording could be read as Wikipedia doubting the attack itself.
+- **Carousel B, Hamas slide:** "The words … was gone" → "were gone" (grammar).
+- **No-courts rule, flash display only:**
+  - the legal code (§) is folded into "attributed" in the grid data (`_fold` in build_flash.py);
+  - removed from the flash copy of the grid JS: the "§ court case only" legend entries (inline and full key), the "he → court case only" call-out, and "or now reported as a court case" in the ring key;
+  - the A-state wording is now "attributed or disputed";
+  - from the coding note: the court-ruling pointer, and the occupation and hostages columns the flash does not show;
+  - the Hebrew moment title is now "the Gaza war article does not state the charge";
+  - build assertions: no "legal" code or "court case" text in R.langs, no court-case strings in the flash grid JS, no "court" in the sliced grid.
+  - langs.json and the research edition are unchanged.
+- **Re-check:** every other headline, caption, tooltip string, poster date, morph sentence and sheet entry point matches the stored text and the binding vetoes and fixes. One standing exception: Ïvana is still named once, on the owner's instruction, against PLAN rule 5.
+- **Measured:** 9.48 screens on the phone (390×844, fonts loaded) and 9.61 at 1280. The smoke test (282 checks, 5 contexts) gives 282 pass and 0 fail: 0 console errors and 0 overflow. Build: `scratchpad/flash/v3/index.html`.
