@@ -148,6 +148,7 @@ details.fl-full .news-q{margin-top:4px}
 .fl-mir .bdr{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
 .fl-mir .s.he{font-family:var(--display);text-align:right}
 .fl-mir .tr{font:400 13.5px/1.4 var(--body);color:var(--ink-2)}
+.fl-mir .mk{background:var(--faint);color:var(--ink);border-radius:2px;padding:0 .08em;font-weight:600}
 .fl-mir ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em;font-weight:500}
 .fl-ctx{font:400 13px/1.42 var(--body);color:var(--muted);margin:0;max-width:62ch}
 /* ---------- the swipe carousel: scroll-snap with a peek, a fixed height, a one-time nudge, dots on the slide; no library ---------- */
@@ -376,7 +377,7 @@ details.fl-full .news-q{margin-top:4px}
   <h2 id="c1H" class="fl-hd" data-q="en:Zionism">Zionism was the “<del>re-establishment</del>” of a Jewish state. Now it is “a Jewish homeland <ins>through colonization</ins>.”</h2>
   <div class="fl-moment" id="flBr">
     <!--R:breathe-->
-    <div class="br-fk" data-q="en:Zionism"><span class="fl-hint" id="brHint" hidden>◀ Drag through time ▶</span><button type="button" class="rw-btn" id="brPP" hidden>❚❚ Pause</button><button type="button" class="rw-btn" id="brAll" aria-pressed="false">Show every changed word</button><span class="br-kw" id="brKw">Marked: “re-establishment” and “state” (gone), “colonization” (new). Other changes read as plain text.</span></div>
+    <div class="br-fk" data-q="en:Zionism"><span class="fl-hint" id="brHint" hidden>◀ Drag through time ▶</span><button type="button" class="rw-btn" id="brPP" hidden>❚❚ Pause</button><button type="button" class="rw-btn" id="brAll" aria-pressed="false">Show every changed word</button><span class="br-kw" id="brKw">Marked: “re-establishment” and “state” (out), “colonial” or “colonization” (in). Other words changed too; the button shows them all.</span></div>
   </div>
   <p class="fl-body" data-q="en:Zionism">Of the 41 removals of “colonization” we can check, 37 were undone.</p>
   <button type="button" class="fl-play" data-sheet="zi">Every change, step by step</button>
@@ -410,7 +411,7 @@ details.fl-full .news-q{margin-top:4px}
   <h2 id="c4H" class="fl-hd" data-q="en:Hamas">In 2021 Wikipedia called Hamas “<del>militant</del>.” Now it is a “<ins>political organisation with a military wing</ins>.”</h2>
   <div class="fl-vs fl-mir" id="c4vs">
     <blockquote class="mi" data-q="en:Hamas"><span class="bd">English</span><span class="w">Hamas · first sentence · since 29 Nov 2025</span><span class="s">“… is a Sunni Islamist Palestinian nationalist <ins>political organisation with a military wing</ins> known as the al-Qassam Brigades.”</span></blockquote>
-    <blockquote class="mi" data-q="he:Hamas"><span class="bdr"><span class="bd">עברית · Hebrew</span><span class="xchip">Exploratory</span></span><span class="w">Hebrew Wikipedia · now (Oct 2026)</span><span class="s he" lang="he" dir="rtl">“חַמַאס (בערבית: حماس) הוא <ins class="tnm">ארגון טרור</ins> פלסטיני אסלאמיסטי-סוני הפועל גם כתנועה פוליטית.”</span><span class="tr">“Hamas (in Arabic: حماس) is a Palestinian Sunni-Islamist <ins class="tnm">terror organisation</ins> that also operates as a political movement.”</span></blockquote>
+    <blockquote class="mi" data-q="he:Hamas"><span class="bdr"><span class="bd">עברית · Hebrew</span><span class="xchip">Exploratory</span></span><span class="w">Hebrew Wikipedia · now (Oct 2026)</span><span class="s he" lang="he" dir="rtl">“חַמַאס (בערבית: حماس) הוא <b class="mk">ארגון טרור</b> פלסטיני אסלאמיסטי-סוני הפועל גם כתנועה פוליטית.”</span><span class="tr">“Hamas (in Arabic: حماس) is a Palestinian Sunni-Islamist <b class="mk">terror organisation</b> that also operates as a political movement.”</span></blockquote>
   </div>
   <figure class="fig fl-pos" style="margin:0;gap:8px"><div class="fig-h"><span class="fig-t">Its terror designation moved from sentence 5 to sentence 22</span></div><div id="flPos"></div></figure>
   <p class="fl-body">Hebrew Wikipedia puts it the other way around, as it already did in 2021. In English, “militant” left on 12 October 2023, five days after the attack. It came back three times, last in February 2025.</p>
@@ -485,12 +486,12 @@ details.fl-full .news-q{margin-top:4px}
   </figure>
   <p class="fl-fact"><b>Our count:</b> in 217 formal talk-page discussions, four groups of 3 to 6 accounts voted together 89 to 100% of the time, against about half by chance.</p>
   <p class="fl-body">That is camp voting, not proof of coordination; we did not code which side each group took, nor tie either finding to the edits above.</p>
-    <p class="fl-next">Last: how many people read these pages, and the overall count.</p>
+    <p class="fl-next">Last: how often these pages are read, and the overall count.</p>
 </section>
 
 <section class="fc fl-close" id="close" aria-labelledby="clH">
   <div class="eyebrow">Reach and the count</div>
-  <h2 id="clH">The most-read pages whose opening sections changed</h2>
+  <h2 id="clH">The most-read pages whose opening sections gained critical vocabulary</h2>
   <figure class="fl-score" style="margin:0" aria-labelledby="whyK"><p class="cp" id="whyK">Views, past 12 months:</p>
     <ul class="fl-bars">
       <li>Benjamin Netanyahu<span class="b" style="width:60%"><span>7.0 million</span></span></li>
@@ -763,16 +764,16 @@ function progInit(){const b=$("#flProg");if(!b)return;let q=0;const f=()=>{q=0;c
 /* ---------- impact r1: save a card as an image. Every word is read from the page itself (the build verifies it); the image always carries the dates, the voice labels, the scope line and the source. ---------- */
 function shSegs(el){const out=[];const walk=(n,k)=>{if(n.nodeType===3){const t=n.textContent.replace(/\s+/g," ");if(t)out.push({t,k});return}
   if(n.nodeType!==1||n.classList.contains("zi-sr")||n.matches("button,.rw-h,.rw-b,.d"))return;
-  const kk=n.tagName==="DEL"?"del":n.classList.contains("att")?"att":n.tagName==="INS"?"ins":n.classList.contains("ar")||n.classList.contains("fl-ar")?"ar":k;n.childNodes.forEach(c=>walk(c,kk))};walk(el,"");
+  const kk=n.tagName==="DEL"?"del":n.classList.contains("att")?"att":n.classList.contains("mk")?"mk":n.tagName==="INS"?"ins":n.classList.contains("ar")||n.classList.contains("fl-ar")?"ar":k;n.childNodes.forEach(c=>walk(c,kk))};walk(el,"");
   return out}
 function shWrap(ctx,segs,maxW,x0,y0,lh,fontOf){const words=[];segs.forEach(s=>s.t.split(/(\s+)/).forEach(w=>{if(w)words.push({w,k:s.k})}));
   let x=x0,y=y0;const ops=[];words.forEach(o=>{ctx.font=fontOf(o.k);const ww=ctx.measureText(o.w).width;if(/^\s+$/.test(o.w)){if(x>x0)ops.push({...o,x,y,ww});x+=ww;return}
     if(x+ww>x0+maxW&&x>x0){x=x0;y+=lh}ops.push({...o,x,y,ww});x+=ww});return {ops,y}}
 function shDraw(ctx,ops,fontOf,lh){const C=SHC;ops.forEach(o=>{ctx.font=fontOf(o.k);
-  if(o.k==="ins"||o.k==="del"||o.k==="att"){ctx.fillStyle=o.k==="ins"?C.addBg:C.delBg;ctx.fillRect(o.x,o.y-lh*0.74,o.ww+1,lh*0.94)}
+  if(o.k==="ins"||o.k==="del"||o.k==="att"||o.k==="mk"){ctx.fillStyle=o.k==="ins"?C.addBg:o.k==="mk"?C.mkBg:C.delBg;ctx.fillRect(o.x,o.y-lh*0.74,o.ww+1,lh*0.94)}
   ctx.fillStyle=o.k==="ins"?C.add:o.k==="del"||o.k==="att"?C.del:o.k==="ar"?C.mut:C.ink;ctx.fillText(o.w,o.x,o.y);
   if(o.k==="del"&&!/^\s+$/.test(o.w)){ctx.fillRect(o.x,o.y-lh*0.26,o.ww,3)}})}
-const SHC={bg:"#f6f5f1",ink:"#16191b",ink2:"#3d4448",mut:"#6b7378",rule:"#d9d6cf",add:"#1b4fb3",addBg:"#dce7fb",del:"#7a5200",delBg:"#fbe9c4"};
+const SHC={bg:"#f6f5f1",ink:"#16191b",ink2:"#3d4448",mut:"#6b7378",rule:"#d9d6cf",add:"#1b4fb3",addBg:"#dce7fb",del:"#7a5200",delBg:"#fbe9c4",mkBg:"#e9e6df"};
 function shRtl(ctx,text,maxW,xr,y0,lh,font,draw){ctx.font=font;const W=text.split(/\s+/);let line="",y=y0;const L=[];W.forEach(w=>{const t=line?line+" "+w:w;if(ctx.measureText(t).width>maxW&&line){L.push(line);line=w}else line=t});if(line)L.push(line);
   if(draw){ctx.save();ctx.direction="rtl";ctx.textAlign="right";ctx.fillStyle=SHC.ink;L.forEach((l,i)=>ctx.fillText(l,xr,y0+i*lh));ctx.restore()}return y0+(L.length-1)*lh}
 function shCard(spec){const W=1080,H=1350,P=72,cv=document.createElement("canvas");cv.width=W;cv.height=H;const ctx=cv.getContext("2d"),C=SHC;
@@ -780,12 +781,12 @@ function shCard(spec){const W=1080,H=1350,P=72,cv=document.createElement("canvas
   ctx.fillStyle=C.bg;ctx.fillRect(0,0,W,H);ctx.textBaseline="alphabetic";
   ctx.fillStyle=C.mut;ctx.font=`600 24px ${Mo}`;ctx.fillText(spec.kicker.toUpperCase(),P,P+10);
   const tf=()=>`500 46px ${D}`;let y=P+78;const t=shWrap(ctx,[{t:spec.title,k:""}],W-2*P,P,y,56,tf);shDraw(ctx,t.ops,tf,56);y=t.y+40;
-  const fit=sz=>{let yy=y;spec.rows.forEach(r=>{yy+=36;if(r.rtl)yy=shRtl(ctx,r.rtl,W-2*P,W-P,yy+sz+6,sz*1.3,`400 ${sz}px ${D}`,false)+sz*0.5;const w=shWrap(ctx,r.segs,W-2*P,P,yy+sz+6,sz*1.25,k=>`${k==="ins"?600:400} ${sz}px ${D}`);yy=w.y+sz*0.6});return yy};
+  const fit=sz=>{let yy=y;spec.rows.forEach(r=>{yy+=36;if(r.rtl)yy=shRtl(ctx,r.rtl,W-2*P,W-P,yy+sz+6,sz*1.3,`400 ${sz}px ${D}`,false)+sz*0.5;const w=shWrap(ctx,r.segs,W-2*P,P,yy+sz+6,sz*1.25,k=>`${k==="ins"||k==="mk"?600:400} ${sz}px ${D}`);yy=w.y+sz*0.6});return yy};
   let sz=spec.size||44;const fH=H-P-200-Math.max(0,spec.foot.length-2)*60;while(sz>22&&fit(sz)>fH)sz-=2;
   spec.rows.forEach(r=>{ctx.strokeStyle=C.rule;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,y);ctx.lineTo(W-P,y);ctx.stroke();y+=36;
     ctx.fillStyle=C.ink2;ctx.font=`600 21px ${Mo}`;ctx.fillText(r.label.toUpperCase(),P,y);
     if(r.rtl)y=shRtl(ctx,r.rtl,W-2*P,W-P,y+sz+6,sz*1.3,`400 ${sz}px ${D}`,true)+sz*0.5;
-    const fo=k=>`${k==="ins"?600:400} ${sz}px ${D}`,w=shWrap(ctx,r.segs,W-2*P,P,y+sz+6,sz*1.25,fo);shDraw(ctx,w.ops,fo,sz*1.25);y=w.y+sz*0.6});
+    const fo=k=>`${k==="ins"||k==="mk"?600:400} ${sz}px ${D}`,w=shWrap(ctx,r.segs,W-2*P,P,y+sz+6,sz*1.25,fo);shDraw(ctx,w.ops,fo,sz*1.25);y=w.y+sz*0.6});
   let fy=H-P-150-Math.max(0,spec.foot.length-2)*60;ctx.strokeStyle=C.ink;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,fy);ctx.lineTo(W-P,fy);ctx.stroke();fy+=36;
   spec.foot.forEach((f,i)=>{const fo=()=>`${i?400:500} ${i?20:22}px ${B}`;const w=shWrap(ctx,[{t:f,k:""}],W-2*P,P,fy,i?28:30,fo);ctx.fillStyle=i?C.mut:C.ink2;w.ops.forEach(o=>{ctx.font=fo();ctx.fillText(o.w,o.x,o.y)});fy=w.y+(i?30:34)});
   return cv}
@@ -800,7 +801,7 @@ function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="Wikiped
       foot:[$("#c3 .fl-body").textContent.trim(),scope,stamp+" · "+src]}}
   if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
     return {file:"wikipedia-hamas-english-hebrew.png",kicker:"Wikipedia · Hamas, English and Hebrew",title:$("#c4H").textContent.trim(),size:40,
-      rows:[{label:"English Wikipedia · "+$(".w",en).textContent.trim(),segs:shSegs($(".s",en))},{label:"Hebrew Wikipedia · now (Oct 2026) · our translation",rtl:$(".s",he).textContent.trim(),segs:shSegs($(".tr",he))}],
+      rows:[{label:"English Wikipedia · "+$(".w",en).textContent.trim(),segs:shSegs($(".s",en))},{label:"Hebrew Wikipedia · now (Oct 2026) · exploratory · our translation",rtl:$(".s",he).textContent.trim(),segs:shSegs($(".tr",he))}],
       foot:[$("#c4 .fl-body").textContent.trim(),$("#c4 .fl-ctx").textContent.trim(),scope,stamp+" · "+src]}}
   if(id==="c5vs"){const v=$("#c5 .fl-vs");return {file:"wikipedia-two-voices.png",kicker:"English Wikipedia · the genocide charge, two voices",title:$("#c5H").textContent.trim(),size:52,
     rows:$$("blockquote",v).map(b=>({label:$(".bd",b).textContent.trim()+" · "+$(".w",b).textContent.trim(),segs:shSegs($(".s",b))})),foot:["The Gaza genocide article reports Israel's denial in the last paragraph of its opening section.",$("#c5own").textContent.trim(),scope,stamp+" · "+src]}}}

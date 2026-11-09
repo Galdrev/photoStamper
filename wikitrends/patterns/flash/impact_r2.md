@@ -111,3 +111,23 @@ The pacing in row 8, per animation:
   1. Animate the #breathe height instead of holding it (about −150 px).
   2. Reorder carousel 1 so a quote slide leads.
   3. Consider merging card 3's "What changed" box into its lane, now that the share image carries it.
+
+## Fact check (messaging agent)
+- **Card 4 context line: OK.**
+  - "terrorist" left the first sentences of al-Shabaab (2021: "a terrorist, jihadist fundamentalist group") and Boko Haram (2021: "a jihadist terrorist organization"); both now say "militant". Islamic State's first sentence had it in stored variants, for example in 2023, and its latest has none.
+  - "Hamas’s first sentence did not have it in 2021" is exact (2021: "fundamentalist but pragmatic, militant, and nationalist organization"). The five later insertions were all reverted.
+  - "in line with Wikipedia-wide style" is the research edition's own wording.
+  - Withholding the contrast clause was right: Hezbollah went from "political party and militant group" to "political party with an active paramilitary wing", and the research edition groups PIJ with Hamas as political or paramilitary.
+- **Card 5 own-voice line: OK.** Both quotes are verbatim in the 2 Nov 2026 copy (rev 1383458606).
+- **Hamas mirror: FIXED.**
+  - The Hebrew quote, the translation (the stored `tr`) and both dates are exact.
+  - But "ארגון טרור" / "terror organisation" was marked in the added-word blue. Hebrew already said it in 2021, so blue implied a change. It now gets a neutral mark (`b.mk`, faint background, ink), on the page and in the share image.
+  - The Hamas image's Hebrew label now carries "exploratory" (messaging F8).
+- **#breathe caption: FIXED.**
+  - The default view drops the other removed words and leaves the other added words unmarked. The old caption ("Other changes read as plain text") did not say that.
+  - It also named only "colonization", while the sweep marks "colonial" too.
+  - New caption: "Marked: “re-establishment” and “state” (out), “colonial” or “colonization” (in). Other words changed too; the button shows them all." The toggle is unchanged and works.
+- **Close heading: FIXED.** "The most-read pages whose opening sections changed" was not exact: the October 7 article (1.6M views) changed but is not in the list. It is now "…whose opening sections gained critical vocabulary" (research #reach).
+- **Card 7 transition: FIXED.** "how many people read these pages" is now "how often these pages are read". The figures are views, not people.
+- **Share images: OK.** The October 7 and Hamas images carry the scope line, the date stamp and the source URL. The hostage row keeps its scopes, with sentence 9's “251 …”, and the Hebrew renders right to left with the quote marks placed correctly.
+- **Measured:** 9.70 phone screens (9.65 with reduced motion) and 9.46 at 1280. The smoke test gives 391 pass and 0 fail. Build: `scratchpad/flash/impact2c/index.html`.

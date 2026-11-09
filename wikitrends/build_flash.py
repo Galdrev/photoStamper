@@ -251,6 +251,11 @@ for title, then, now in RW_ROWS:
 assert "In the Israel article, the next sentence: “Israel has denied that its actions constitute genocide.”" in tpl, "hero stack: the denial line must stay"
 # fact check r1: each stack row dates its own phrase ("coordinated armed incursions" since 9 Dec 2023, not the 8 Oct 2026
 # full-sentence date); the stack header says "opening lines" because the Israel row is in the opening section
+# fact check r2: the Hebrew "terror organisation" is not new (Hebrew said it in 2021), so it gets the neutral mark, never the
+# added-word blue; the close heading names the list it heads (most-read gainers of critical vocabulary, research #reach)
+assert '<b class="mk">ארגון טרור</b>' in tpl and 'class="tnm"' not in tpl, "Hebrew mirror: neutral mark only"
+assert "opening sections gained critical vocabulary</h2>" in tpl and "how many people read" not in tpl, "close heading / transition wording"
+assert "Other words changed too" in tpl, "#breathe caption must say that other words changed"
 assert "23 Oct 2023 → since 9 Dec 2023" in tpl and "Their first lines" not in tpl and "· first lines, then" not in tpl, "hero stack dates or header"
 assert 'data-share="flRw"' in tpl and 'data-share="c5vs"' in tpl and "foot:[" in tpl and "scope" in tpl[tpl.index("function shSpec"):], "share cards carry the scope line"
 print(f"flash: hero stack, {len(RW_ROWS)} rows, now phrases current and then phrases gone in the 5 Nov 2026 copies")
