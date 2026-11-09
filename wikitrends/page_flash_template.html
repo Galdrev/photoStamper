@@ -142,6 +142,11 @@ details.fl-full .news-q{margin-top:4px}
 .br-fk{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
 .br-kw{font:400 12.5px/1.35 var(--body);color:var(--muted);flex:1 1 220px}
 .br-kw[hidden]{display:none}
+#flBr #brS.anim ins{animation:none}
+#flBr #brS{overflow:hidden}
+#flBr #brS .nw{animation:brfade .25s ease-out both}
+@keyframes brfade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){#flBr #brS .nw{animation:none}}
 #flBr:not(.all) #breathe .br-key span:nth-child(-n+2){display:none}
 .fl-mir blockquote.mi{border-top:4px solid var(--ink-2)}
 .fl-mir .bd{background:var(--faint);color:var(--ink)}
@@ -571,20 +576,31 @@ const BRS={raf:0,done:false,running:false,paused:false,clk:0,K:null};
 /* impact r2: by default only the words that carry the change are marked (the removed "re-establishment" and "state", the added
    colonial/colonization wording); every other removed word is left out and every other added word reads as plain text, so the line
    reads as the sentence of that day. "Show every changed word" restores the research edition's full diff. Text is never altered. */
-const BRF={all:false,k:-1};
-const BR_DEL=/re-establishment|^state\s*$/,BR_INS=/coloni/i;
-function brFocusHTML(ops){return ops.map(o=>o.t==="="?esc(o.s):o.t==="-"?(BR_DEL.test(o.s)?`<del>${esc(o.s.trimEnd())}</del>${sp(o.s)}`:""):(BR_INS.test(o.s)?`<ins>${esc(o.s.trimEnd())}</ins>${sp(o.s)}`:esc(o.s))).join("")}
+const BRF={all:false,k:-1,h:null};
+/* r2d: ONE baseline everywhere. Every step of the sweep and the drag marks the wording of that day against the Jan 2021 wording
+   (BR.base), never against the previous step. In key-word mode the marks are word tokens: removed "re-establishment" / "state"
+   (struck amber), added colonial/colonization words (blue); all other removed words are left out and all other added words read
+   plain, identically at every step and at rest. Newly appearing marks fade in (250 ms); the box height is fixed. */
+const BKD=[/re-establishment/i,/^state[^\w]*$/i],BKI=/coloni/i;
+function brFocusHTML(ops){return ops.map(o=>{if(o.t==="=")return esc(o.s);const T=o.s.split(/(\s+)/);
+  if(o.t==="-")return T.filter(w=>/\S/.test(w)&&BKD.some(r=>r.test(w))).map(w=>`<del>${esc(w)}</del> `).join("");
+  return T.map(w=>/\S/.test(w)&&BKI.test(w)?`<ins>${esc(w)}</ins>`:esc(w)).join("")}).join("").replace(/ {2,}/g," ")}
+function brMarkup(k){const o=wdiff(BR.base,brText(k).s);return BRF.all?renderW(o):brFocusHTML(o)}
+const brKey=m=>m.tagName+"|"+m.textContent.trim();
+function brMarks(el){const prev=new Map();$$("del,ins",el).forEach(m=>{const q=brKey(m);prev.set(q,(prev.get(q)||0)+1)});return prev}
+function brPaint(el,html,prev){const key=brKey;
+  el.innerHTML=html;const seen=new Map();$$("del,ins",el).forEach(m=>{const q=key(m),n=(seen.get(q)||0)+1;seen.set(q,n);if(n>(prev.get(q)||0)&&!RM.matches)m.classList.add("nw")})}
 const brRender0=brRender;
-brRender=function(k,flash){brRender0(k,flash);if(BRS.running){const b=$("#brMeta b");if(b)b.textContent=brDs(BR.cur)}
-  if(BRF.all||flash){BRF.k=-1;return}const el=$("#brS");if(el&&(BRF.k!==k||BR.lastId===null)){BRF.k=k;el.innerHTML=brFocusHTML(wdiff(BR.base,brText(k).s))}};
+brRender=function(k,flash){const el=$("#brS");if(!el)return;const prev=brMarks(el),before=el.innerHTML;brRender0(k,flash);if(BRS.running){const b=$("#brMeta b");if(b)b.textContent=brDs(BR.cur)}
+  if(flash){BRF.k=-1;BRF.h="flash";return}const h=brMarkup(k);if(BRF.k===k&&BRF.h===h&&el.innerHTML===before)return;BRF.k=k;BRF.h=h;el.classList.toggle("anim",false);el.classList.toggle("flash",false);brPaint(el,h,prev)};
 function brHold(){const el=$("#brS");if(!el||!BR.ev)return;const cur=el.innerHTML;let H=0;el.style.minHeight="";
-  const seen=new Set();BR.ev.forEach((e,i)=>{const nx=BR.ev[i+1];if(e.s==null||seen.has(e.s)||(nx&&nx.t-e.t<864e5))return;seen.add(e.s);const o=wdiff(BR.base,e.s);el.innerHTML=BRF.all?renderW(o):brFocusHTML(o);H=Math.max(H,el.offsetHeight)});
-  el.innerHTML=cur;el.style.minHeight=H+"px"}
+  const seen=new Set();BR.ev.forEach((e,i)=>{if(e.s==null||seen.has(e.s))return;seen.add(e.s);const o=wdiff(BR.base,e.s);el.innerHTML=BRF.all?renderW(o):brFocusHTML(o);H=Math.max(H,el.offsetHeight)});
+  el.innerHTML=cur;el.style.minHeight=el.style.height=H+"px"}
 function flBreathe(){if(!$("#breathe"))return;
   if(BR.cur==null&&!RM.matches)BR.cur=Date.UTC(2021,0,1);
   drawBreathe();brHold();
   const b=$("#brAll");if(b&&!b._w){b._w=1;b.onclick=()=>{BRF.all=!BRF.all;b.setAttribute("aria-pressed",String(BRF.all));b.textContent=BRF.all?"Mark only the key words":"Show every changed word";
-    $("#brKw").hidden=BRF.all;$("#flBr").classList.toggle("all",BRF.all);BR.lastId=null;BRF.k=-1;brRender(brLive(BR.cur),false);brHold()}}}
+    $("#brKw").hidden=BRF.all;$("#flBr").classList.toggle("all",BRF.all);BR.lastId=null;BRF.k=-1;BRF.h=null;brRender(brLive(BR.cur),false);brHold()}}}
 /* impact r2: the sweep's plan. Stops = the dates where the marked key words change (clustered so there are at most 14 stops);
    each stop dwells 0.6-1 s; the travel between stops is quick and proportional to calendar time; total about 13.5 s. */
 function brPlan(){const E=BR.ev,t0=BR.t0,t1=BR.t1,key=[];let prev=null;

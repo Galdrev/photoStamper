@@ -131,3 +131,21 @@ The pacing in row 8, per animation:
 - **Card 7 transition: FIXED.** "how many people read these pages" is now "how often these pages are read". The figures are views, not people.
 - **Share images: OK.** The October 7 and Hamas images carry the scope line, the date stamp and the source URL. The hostage row keeps its scopes, with sentence 9's “251 …”, and the Hebrew renders right to left with the quote marks placed correctly.
 - **Measured:** 9.70 phone screens (9.65 with reduced motion) and 9.46 at 1280. The smoke test gives 391 pass and 0 fail. Build: `scratchpad/flash/impact2c/index.html`.
+
+## r2d: #breathe consistent baseline marks, no jumps (owner bug report)
+- **Bug:** during the sweep, marks popped in and out and the sentence jumped. There were three causes:
+  - The key-word filter kept or dropped whole diff ops. Ops are re-chunked as the alignment shifts (for example "espouses the re-establishment of" in one step, "re-establishment" alone in the next), so the marked span changed shape from step to step.
+  - The research renderer's `.anim` class re-animated every `ins` on each wording change.
+  - The height hold skipped wordings that were live for less than a day.
+- **Fix:**
+  - Every step of the sweep, the drag and the rest state is marked against the **Jan 2021 wording** (`BR.base`), never against the previous step.
+  - Key-word mode now marks word **tokens**: removed "re-establishment" / "state", and added colonial/colonization words. Other removed words are left out and other added words read plain, identically at every step.
+  - "Show every changed word" switches the whole sweep to the full diff against the same baseline.
+  - Newly appearing marks fade in over 250 ms. Only marks that were not on screen at the previous step fade, and there is no width animation.
+  - The research `.anim` animation is off.
+  - The box height is fixed (height and min-height) at the tallest of **all** stored wordings in the current mode.
+  - The pacing is unchanged (about 14 s).
+- **Smoke** (`impact2d/smoke.js`): **399 pass, 0 fail**, 5 contexts plus the hosted mock.
+  - At 5 points of the sweep (25 Dec 2021 to 6 Apr 2025), the marked set equals the key-word diff against Jan 2021. This is checked independently from token counts, with no other marks present.
+  - The #breathe box height is constant through the sweep.
+- **Length:** 9.70 phone screens. Build: `scratchpad/flash/impact2d/index.html`.
