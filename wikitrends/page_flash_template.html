@@ -1,5 +1,6 @@
 <title>Flash: how English Wikipedia now tells Israel’s story, 2021–2026</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How English Wikipedia’s opening lines on Israel, Zionism, 1948, October 7, Hamas and the genocide charge changed from 2021 to 2026, in exact, dated quotes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
@@ -86,7 +87,7 @@ details.fl-full .news-q{margin-top:4px}
 #flXm .fig-h,#flXm .zi-how,#flXm .xm-call,#flXm details,#flXm .xm-opts>.cap{display:none!important}
 #flXm .xm{min-width:0}
 #flXm .xm thead th small{display:none}
-#flXm .xm.flip .tl.nw{animation:xmflip .55s cubic-bezier(.2,.8,.3,1.2) both;animation-delay:calc(var(--r,0)*70ms)}
+#flXm .xm.flip .tl.nw{animation:xmflip .6s cubic-bezier(.2,.8,.3,1.2) both;animation-delay:calc(var(--r,0)*250ms)}
 @keyframes xmflip{0%{transform:rotateY(90deg) scale(.6);opacity:.2}100%{transform:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){#flXm .xm.flip .tl.nw{animation:none}}
 /* card 5: two sentences, one voice each */
@@ -113,18 +114,20 @@ details.fl-full .news-q{margin-top:4px}
 .rw .a{display:flex;justify-content:space-between;gap:2px 10px;flex-wrap:wrap;font:600 10.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
 .rw .a .d{font-weight:500;color:var(--muted);letter-spacing:.02em;text-transform:none}
 .rw .p{font:400 19px/1.32 var(--display);color:var(--ink)}
-.rw del{color:var(--del-ink);background:var(--del-bg);text-decoration:line-through;text-decoration-thickness:1.5px;border-radius:2px;padding:0 .06em;transition:text-decoration-color .35s ease,background-color .35s ease,color .35s ease}
-.rw ins{color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .06em;font-weight:500;background-image:linear-gradient(var(--add-bg),var(--add-bg));background-repeat:no-repeat;background-size:100% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .7s cubic-bezier(.3,.7,.2,1),color .45s ease}
+.rw del{color:var(--del-ink);background:var(--del-bg);text-decoration:line-through;text-decoration-thickness:1.5px;border-radius:2px;padding:0 .06em;transition:text-decoration-color .45s ease,background-color .45s ease,color .45s ease}
+.rw ins{color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .06em;font-weight:500;background-image:linear-gradient(var(--add-bg),var(--add-bg));background-repeat:no-repeat;background-size:100% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .8s cubic-bezier(.3,.7,.2,1),color .5s ease}
 .rw .ar{font:500 15px var(--body);color:var(--muted);padding:0 .3em}
 .fl-rw.pre li:not(.go) del{text-decoration-color:transparent;background-color:transparent;color:var(--ink)}
 .fl-rw.pre li:not(.go) ins{background-size:0% 100%;color:transparent}
 .fl-rw.pre li:not(.go) .ar{opacity:0}
-.fl-rw.pre li.go ins{transition-delay:.35s}
+.fl-rw.pre li.go ins{transition-delay:.5s}
 .rw-n{font:400 13.5px/1.4 var(--body);color:var(--ink-2);margin:0}
 @media (min-width:601px){.rw .p{font-size:22px}}
 @media (prefers-reduced-motion:reduce){.rw del,.rw ins{transition:none}}
 /* impact r1: the then/now headlines light up as they arrive (highlighting only; the text never changes) */
-.fl-hd ins,.fl-hd del{background-image:linear-gradient(var(--hl),var(--hl));background-repeat:no-repeat;background-size:100% 100%;transition:background-size .9s cubic-bezier(.3,.7,.2,1),text-decoration-color .6s ease .5s}
+.fl-hd ins,.fl-hd del{background-image:linear-gradient(var(--hl),var(--hl));background-repeat:no-repeat;background-size:100% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.fl-hd del{transition:background-size .6s cubic-bezier(.3,.7,.2,1),text-decoration-color .5s ease .3s}
+.fl-hd ins{transition:background-size .9s cubic-bezier(.3,.7,.2,1) .9s}
 .fl-hd ins,.fl-hd del{background-color:transparent}.fl-hd ins{--hl:var(--add-bg)}.fl-hd del{--hl:var(--del-bg)}
 .fl-hd.pre ins,.fl-hd.pre del{background-size:0% 100%}
 .fl-hd.pre del{text-decoration-color:transparent}
@@ -135,6 +138,18 @@ details.fl-full .news-q{margin-top:4px}
 #flXm .xm tfoot th{color:var(--ink);font-weight:600}
 #flXm .xm tfoot td{background:var(--add-bg);color:var(--ink-2)}
 #flXm .xm tfoot td b{font:600 18px/1.1 var(--display);color:var(--add-ink)}
+/* impact r2 */
+.br-fk{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.br-kw{font:400 12.5px/1.35 var(--body);color:var(--muted);flex:1 1 220px}
+.br-kw[hidden]{display:none}
+#flBr:not(.all) #breathe .br-key span:nth-child(-n+2){display:none}
+.fl-mir blockquote.mi{border-top:4px solid var(--ink-2)}
+.fl-mir .bd{background:var(--faint);color:var(--ink)}
+.fl-mir .bdr{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+.fl-mir .s.he{font-family:var(--display);text-align:right}
+.fl-mir .tr{font:400 13.5px/1.4 var(--body);color:var(--ink-2)}
+.fl-mir ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em;font-weight:500}
+.fl-ctx{font:400 13px/1.42 var(--body);color:var(--muted);margin:0;max-width:62ch}
 /* ---------- the swipe carousel: scroll-snap with a peek, a fixed height, a one-time nudge, dots on the slide; no library ---------- */
 .car{display:grid;gap:8px;min-width:0}
 .car-h{display:flex;justify-content:space-between;align-items:center;gap:10px}
@@ -173,6 +188,7 @@ details.fl-full .news-q{margin-top:4px}
 .fl-mo .xr-s.tr{font:400 14px/1.5 var(--body);color:var(--ink-2)}
 .fl-mo .mt{display:flex;align-items:center;gap:8px;font:600 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .fl-mo .mt b{color:var(--ink)}
+.fl-mo .xr-s .w{transition-duration:.55s}
 .fl-mo .rp{border:1px solid var(--rule);background:var(--sheet);border-radius:999px;font:600 11px var(--mono);color:var(--ink);padding:5px 9px;cursor:pointer;min-height:30px}
 /* Israel vs Netanyahu */
 .fl-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
@@ -321,7 +337,7 @@ details.fl-full .news-q{margin-top:4px}
   .fc>h2{font-size:19.5px;line-height:1.15}
   .fl-page .hero h1{font-size:25px}
   .fl-tiles{padding:8px 10px;gap:6px}.fl-tiles .tc{font-size:13.5px;line-height:1.35}
-  .fl-rw{padding:9px 11px;gap:6px}.rw li{padding:6px 0}.rw .p{font-size:16.5px;line-height:1.27}.rw .a{font-size:9.5px}.rw .ar{font-size:13px}.rw-h{font-size:12.5px}.rw-n{font-size:12.5px;line-height:1.35}
+  .fl-rw{padding:9px 11px;gap:6px}.rw li{padding:6px 0}.rw .p{font-size:16.5px;line-height:1.27}.rw .a{font-size:9.5px}.rw .ar{font-size:13px}.rw-h{font-size:12.5px}.rw-n{font-size:12.5px;line-height:1.35}.fl-ctx{font-size:12.5px;line-height:1.38}.fl-mir .tr{font-size:12.5px;line-height:1.36}.br-kw{font-size:11.5px}
 }
 </style>
 <div class="fl-prog" id="flProg" aria-hidden="true"></div>
@@ -360,7 +376,7 @@ details.fl-full .news-q{margin-top:4px}
   <h2 id="c1H" class="fl-hd" data-q="en:Zionism">Zionism was the “<del>re-establishment</del>” of a Jewish state. Now it is “a Jewish homeland <ins>through colonization</ins>.”</h2>
   <div class="fl-moment" id="flBr">
     <!--R:breathe-->
-    <span class="fl-hint" id="brHint" hidden>◀ Drag through time ▶</span>
+    <div class="br-fk" data-q="en:Zionism"><span class="fl-hint" id="brHint" hidden>◀ Drag through time ▶</span><button type="button" class="rw-btn" id="brPP" hidden>❚❚ Pause</button><button type="button" class="rw-btn" id="brAll" aria-pressed="false">Show every changed word</button><span class="br-kw" id="brKw">Marked: “re-establishment” and “state” (gone), “colonization” (new). Other changes read as plain text.</span></div>
   </div>
   <p class="fl-body" data-q="en:Zionism">Of the 41 removals of “colonization” we can check, 37 were undone.</p>
   <button type="button" class="fl-play" data-sheet="zi">Every change, step by step</button>
@@ -385,26 +401,28 @@ details.fl-full .news-q{margin-top:4px}
   <figure class="fl-lane" data-q="en:October 7 attacks"><span class="w">October 7 attacks · first sentence · Oct 2023 → now</span><div class="fl-strip" id="stO7" data-tab="1"></div>
     <p class="cp"><b>Israel and Hamas opening sections:</b> none, in every copy we hold since 2021. October 7’s <b>sentence 9:</b> “251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip”</p></figure>
   <p class="fl-body" data-q="en:October 7 attacks">The opening still says “massacring civilians in 21 communities,” and the first sentence names Hamas, later on.</p>
-  <button type="button" class="fl-play" data-sheet="o7" data-tab="1">Play the October 7 sentence</button>
+  <p class="fl-acts"><button type="button" class="fl-play" data-sheet="o7" data-tab="1">Play the October 7 sentence</button><button type="button" class="rw-btn" data-share="c3" aria-label="Save this card as an image">Save as image</button></p>
   <p class="fl-next">The group that carried out the attack got a new definition too.</p>
 </section>
 
 <section class="fc" id="c4" aria-labelledby="c4H">
   <div class="eyebrow fl-ey"><span><b>4</b> Hamas, English and Hebrew</span><span class="ey-ev"><a href="@@R@@#o7Fig" target="_blank" rel="noopener">Evidence →</a><a href="@@R@@#ev-xl" target="_blank" rel="noopener">Languages →</a></span></div>
   <h2 id="c4H" class="fl-hd" data-q="en:Hamas">In 2021 Wikipedia called Hamas “<del>militant</del>.” Now it is a “<ins>political organisation with a military wing</ins>.”</h2>
-  <div class="news-q one">
-    <blockquote data-q="he:Hamas"><span class="w"><i style="background:var(--muted)"></i>עברית · Hebrew Wikipedia · now (Oct 2026) <span class="xchip">Other languages · exploratory</span></span><span class="s" lang="he" dir="rtl">“חַמַאס (בערבית: حماس) הוא <ins class="tnm">ארגון טרור</ins> פלסטיני אסלאמיסטי-סוני הפועל גם כתנועה פוליטית.”</span><span class="tr">“Hamas (in Arabic: حماس) is a Palestinian Sunni-Islamist <ins class="tnm">terror organisation</ins> that also operates as a political movement.”</span></blockquote>
+  <div class="fl-vs fl-mir" id="c4vs">
+    <blockquote class="mi" data-q="en:Hamas"><span class="bd">English</span><span class="w">Hamas · first sentence · since 29 Nov 2025</span><span class="s">“… is a Sunni Islamist Palestinian nationalist <ins>political organisation with a military wing</ins> known as the al-Qassam Brigades.”</span></blockquote>
+    <blockquote class="mi" data-q="he:Hamas"><span class="bdr"><span class="bd">עברית · Hebrew</span><span class="xchip">Exploratory</span></span><span class="w">Hebrew Wikipedia · now (Oct 2026)</span><span class="s he" lang="he" dir="rtl">“חַמַאס (בערבית: حماس) הוא <ins class="tnm">ארגון טרור</ins> פלסטיני אסלאמיסטי-סוני הפועל גם כתנועה פוליטית.”</span><span class="tr">“Hamas (in Arabic: حماس) is a Palestinian Sunni-Islamist <ins class="tnm">terror organisation</ins> that also operates as a political movement.”</span></blockquote>
   </div>
   <figure class="fig fl-pos" style="margin:0;gap:8px"><div class="fig-h"><span class="fig-t">Its terror designation moved from sentence 5 to sentence 22</span></div><div id="flPos"></div></figure>
   <p class="fl-body">Hebrew Wikipedia puts it the other way around, as it already did in 2021. In English, “militant” left on 12 October 2023, five days after the attack. It came back three times, last in February 2025.</p>
-  <button type="button" class="fl-play" data-sheet="o7" data-tab="0">Play the Hamas sentence</button>
+  <p class="fl-ctx" data-q="en:Islamic State|en:Al-Shabaab (militant group)|en:Boko Haram">Context: in line with Wikipedia-wide style on contentious labels, “terrorist” left the first sentences of Islamic State, al-Shabaab and Boko Haram. Hamas’s first sentence did not have it in 2021.</p>
+  <p class="fl-acts"><button type="button" class="fl-play" data-sheet="o7" data-tab="0">Play the Hamas sentence</button><button type="button" class="rw-btn" data-share="c4vs" aria-label="Save the English and Hebrew definitions as an image">Save as image</button></p>
   <p class="fl-next">How do the other Wikipedias put it?</p>
 </section>
 
 <section class="fc" id="cx" aria-labelledby="cxH">
   <div class="eyebrow">Other languages <span class="xchip">Exploratory</span></div>
   <div class="fl-moment" id="flXm">
-    <h2 class="fl-mt" id="cxH">Eleven Wikipedias, five claims: our first copy, then now <span class="fl-hint" id="xmHint">Tap a square</span></h2>
+    <h2 class="fl-mt" id="cxH">Eleven Wikipedias, five claims: our first copy, then now <span class="fl-hint" id="xmHint">Tap a square</span><button type="button" class="rw-btn" id="xmRp" hidden>▶ Replay the flip</button></h2>
     <!--R:xmFig-->
   </div>
   <p class="fl-next">Then came the charge itself.</p>
@@ -433,6 +451,7 @@ details.fl-full .news-q{margin-top:4px}
     </div>
     <div class="car-ctl"><button type="button" class="car-p" aria-label="Previous slide">‹</button><div class="car-dots" role="group" aria-label="Choose a slide"></div><button type="button" class="car-x" aria-label="Next slide">›</button></div>
   </div>
+  <p class="fl-ctx" id="c5own" data-q="en:October 7 attacks">The October 7 article states the killings in Wikipedia’s own voice: “massacring civilians in 21 communities”; “at least 1,195 people were killed by the attacks” (2 Nov 2026 copy).</p>
     <p class="fl-next">How did these lines get there? In four first sentences, the history shows which wording stayed and which was taken out.</p>
 </section>
 
@@ -466,13 +485,13 @@ details.fl-full .news-q{margin-top:4px}
   </figure>
   <p class="fl-fact"><b>Our count:</b> in 217 formal talk-page discussions, four groups of 3 to 6 accounts voted together 89 to 100% of the time, against about half by chance.</p>
   <p class="fl-body">That is camp voting, not proof of coordination; we did not code which side each group took, nor tie either finding to the edits above.</p>
-    <p class="fl-next">What a reader opening these pages finds today:</p>
+    <p class="fl-next">Last: how many people read these pages, and the overall count.</p>
 </section>
 
 <section class="fc fl-close" id="close" aria-labelledby="clH">
-  <div class="eyebrow">What the openings say now</div>
-  <h2 id="clH">These openings once said “re-establishment” (2021), “militant” (2021) and “coordinated attacks” (October 2023). Now they say “colonization,” “ethnic cleansing … by Zionists” and “genocide.”</h2>
-  <figure class="fl-score" style="margin:0" aria-labelledby="whyK"><p class="cp" id="whyK"><b>Reach.</b> The most-read pages whose opening sections changed (views, past 12 months):</p>
+  <div class="eyebrow">Reach and the count</div>
+  <h2 id="clH">The most-read pages whose opening sections changed</h2>
+  <figure class="fl-score" style="margin:0" aria-labelledby="whyK"><p class="cp" id="whyK">Views, past 12 months:</p>
     <ul class="fl-bars">
       <li>Benjamin Netanyahu<span class="b" style="width:60%"><span>7.0 million</span></span></li>
       <li>Israel<span class="b" style="width:39.4%"><span>4.6 million</span></span></li>
@@ -541,32 +560,63 @@ function flTiles(){const g=$("#flTg");if(!g)return;const N=150,A=[17,44,71,98,12
   g.innerHTML=Array.from({length:N},(_,i)=>{const f=F.findIndex(x=>x[0]===i);return f>=0?`<i data-k="f" data-ft="tf${f}" tabindex="0" aria-label="${esc(F[f][1])}: stated as fact"></i>`:A.includes(i)?`<i data-k="a"></i>`:`<i></i>`}).join("");
   const T=$$("i[data-k]",g),end=()=>T.forEach(t=>t.classList.add("a",t.dataset.k));
   if(RM.matches){end();return}
-  onView(g,()=>{T.forEach((t,i)=>setTimeout(()=>{t.classList.add(t.dataset.k==="f"?"a":t.dataset.k,"pop");setTimeout(()=>t.classList.remove("pop"),300)},300+i*140));
-    setTimeout(()=>T.filter(t=>t.dataset.k==="f").forEach((t,i)=>setTimeout(()=>{t.classList.add("f","pop");setTimeout(()=>t.classList.remove("pop"),300)},i*240)),300+T.length*140+350)})}
+  const tm=[];g.addEventListener("pointerdown",()=>{tm.forEach(clearTimeout);end()},{passive:true});
+  onView(g,()=>{window.__tiles0=performance.now();T.forEach((t,i)=>tm.push(setTimeout(()=>{t.classList.add(t.dataset.k==="f"?"a":t.dataset.k,"pop");setTimeout(()=>t.classList.remove("pop"),350)},400+i*600)));
+    T.filter(t=>t.dataset.k==="f").forEach((t,i)=>tm.push(setTimeout(()=>{t.classList.add("f","pop");setTimeout(()=>t.classList.remove("pop"),350);if(i)window.__tilesDur=performance.now()-window.__tiles0},400+T.length*600+300+i*800)))})}
 
 /* ---------- card 1: #breathe, the Zionism sentence rewriting itself; one sweep 2021 -> now, then the finger ---------- */
 brRelease=function(){};/* the research edition's comparison box stays in the research edition */
-const BRS={raf:0,done:false};
+const BRS={raf:0,done:false,running:false,paused:false,clk:0,K:null};
+/* impact r2: by default only the words that carry the change are marked (the removed "re-establishment" and "state", the added
+   colonial/colonization wording); every other removed word is left out and every other added word reads as plain text, so the line
+   reads as the sentence of that day. "Show every changed word" restores the research edition's full diff. Text is never altered. */
+const BRF={all:false,k:-1};
+const BR_DEL=/re-establishment|^state\s*$/,BR_INS=/coloni/i;
+function brFocusHTML(ops){return ops.map(o=>o.t==="="?esc(o.s):o.t==="-"?(BR_DEL.test(o.s)?`<del>${esc(o.s.trimEnd())}</del>${sp(o.s)}`:""):(BR_INS.test(o.s)?`<ins>${esc(o.s.trimEnd())}</ins>${sp(o.s)}`:esc(o.s))).join("")}
+const brRender0=brRender;
+brRender=function(k,flash){brRender0(k,flash);if(BRS.running){const b=$("#brMeta b");if(b)b.textContent=brDs(BR.cur)}
+  if(BRF.all||flash){BRF.k=-1;return}const el=$("#brS");if(el&&(BRF.k!==k||BR.lastId===null)){BRF.k=k;el.innerHTML=brFocusHTML(wdiff(BR.base,brText(k).s))}};
+function brHold(){const el=$("#brS");if(!el||!BR.ev)return;const cur=el.innerHTML;let H=0;el.style.minHeight="";
+  const seen=new Set();BR.ev.forEach((e,i)=>{const nx=BR.ev[i+1];if(e.s==null||seen.has(e.s)||(nx&&nx.t-e.t<864e5))return;seen.add(e.s);const o=wdiff(BR.base,e.s);el.innerHTML=BRF.all?renderW(o):brFocusHTML(o);H=Math.max(H,el.offsetHeight)});
+  el.innerHTML=cur;el.style.minHeight=H+"px"}
 function flBreathe(){if(!$("#breathe"))return;
   if(BR.cur==null&&!RM.matches)BR.cur=Date.UTC(2021,0,1);
-  drawBreathe();
-  /* hold the height of the longest wording, so the sweep never moves the page */
-  const el=$("#brS");if(el&&BR.ev){const cur=el.innerHTML;let best="",bl=0;BR.ev.forEach(e=>{if(e.s==null)return;const h=renderW(wdiff(BR.base,e.s));const l=h.replace(/<[^>]+>/g,"").length;if(l>bl){bl=l;best=h}});
-    el.style.minHeight="";el.innerHTML=best;const H=el.offsetHeight;el.innerHTML=cur;el.style.minHeight=H+"px"}}
-function brSweep(){if(BRS.done)return;BRS.done=true;const hint=$("#brHint");
-  if(RM.matches){brMove(BR.t1,false);hint.hidden=false;return}
-  const t0=BR.t0,t1=BR.t1,D=5200,s0=performance.now();
-  const stop=()=>{cancelAnimationFrame(BRS.raf);hint.hidden=false};
-  const rg=$("#brRange");["pointerdown","keydown","touchstart"].forEach(ev=>rg.addEventListener(ev,()=>{cancelAnimationFrame(BRS.raf);hint.hidden=true},{once:true,passive:true}));
-  const f=now=>{const p=Math.min(1,(now-s0)/D),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;brMove(t0+(t1-t0)*e,false);$("#brRange").value=Math.round((BR.cur-t0)/864e5);if(p<1)BRS.raf=requestAnimationFrame(f);else stop()};
+  drawBreathe();brHold();
+  const b=$("#brAll");if(b&&!b._w){b._w=1;b.onclick=()=>{BRF.all=!BRF.all;b.setAttribute("aria-pressed",String(BRF.all));b.textContent=BRF.all?"Mark only the key words":"Show every changed word";
+    $("#brKw").hidden=BRF.all;$("#flBr").classList.toggle("all",BRF.all);BR.lastId=null;BRF.k=-1;brRender(brLive(BR.cur),false);brHold()}}}
+/* impact r2: the sweep's plan. Stops = the dates where the marked key words change (clustered so there are at most 14 stops);
+   each stop dwells 0.6-1 s; the travel between stops is quick and proportional to calendar time; total about 13.5 s. */
+function brPlan(){const E=BR.ev,t0=BR.t0,t1=BR.t1,key=[];let prev=null;
+  E.forEach((e,i)=>{const h=brFocusHTML(wdiff(BR.base,brText(i).s));if(prev!==null&&h!==prev&&e.t>t0)key.push(e.t);prev=h});
+  let win=45*864e5,stops;for(let g=0;g<40;g++){stops=[];let cs=null;key.forEach(t=>{if(cs==null||t-cs>win){stops.push(t);cs=t}else stops[stops.length-1]=t});if(stops.length<=14)break;win*=1.4}
+  const dwell=Math.min(1000,Math.max(600,10000/Math.max(1,stops.length))),travel=Math.max(3500,13500-stops.length*dwell),span=t1-t0;
+  const K=[[0,t0]];let c=0,last=t0;stops.forEach(t=>{const tt=Math.min(t1,t+36e5);c+=Math.max(120,travel*(tt-last)/span);K.push([c,tt]);c+=dwell;K.push([c,tt]);last=tt});
+  c+=Math.max(120,travel*(t1-last)/span);K.push([c,t1]);K.push([c+700,t1]);return K}
+const brDs=t=>{const d=new Date(t);return `${d.getUTCDate()} ${MON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
+function brPP(st){const b=$("#brPP");if(!b)return;b.hidden=RM.matches;b.dataset.st=st;b.textContent=st==="run"?"❚❚ Pause":st==="pause"?"▶ Play":"▶ Replay";b.setAttribute("aria-label",st==="run"?"Pause the sweep through time":st==="pause"?"Continue the sweep":"Replay the sweep from 2021")}
+function brStop(user){cancelAnimationFrame(BRS.raf);const was=BRS.running;BRS.running=false;BRS.paused=false;if(was&&!user){brMove(BR.t1,false);$("#brRange").value=Math.round((BR.t1-BR.t0)/864e5)}
+  if(was||user){window.__brSweep=Object.assign(window.__brSweep||{},{end:performance.now(),user:!!user})}brPP("end");$("#brHint").hidden=false}
+function brRun(){const K=BRS.K||(BRS.K=brPlan()),rg=$("#brRange");cancelAnimationFrame(BRS.raf);BRS.running=true;BRS.paused=false;BRS.c0=performance.now()-(BRS.clk||0);brPP("run");$("#brHint").hidden=true;
+  const f=now=>{if(!BRS.running||BRS.paused)return;const c=now-BRS.c0;BRS.clk=c;let i=1;while(i<K.length-1&&K[i][0]<c)i++;const [ca,ta]=K[i-1],[cb,tb]=K[i];const t=cb>ca?ta+(tb-ta)*Math.min(1,Math.max(0,(c-ca)/(cb-ca))):tb;
+    brMove(t,false);rg.value=Math.round((BR.cur-BR.t0)/864e5);if(c<K.at(-1)[0])BRS.raf=requestAnimationFrame(f);else{BRS.clk=0;brStop(false)}};
   BRS.raf=requestAnimationFrame(f)}
+function brSweep(){if(BRS.done)return;BRS.done=true;const hint=$("#brHint"),rg=$("#brRange"),pp=$("#brPP");
+  if(RM.matches){brMove(BR.t1,false);hint.hidden=false;return}
+  /* any touch, drag or key on the strip hands control to the reader at once */
+  ["pointerdown","keydown","touchstart"].forEach(ev=>rg.addEventListener(ev,()=>{if(BRS.running||BRS.paused){BRS.clk=0;brStop(true);hint.hidden=true}},{passive:true}));
+  pp.onclick=()=>{const st=pp.dataset.st;if(st==="run"){BRS.paused=true;cancelAnimationFrame(BRS.raf);brPP("pause")}else if(st==="pause"){brRun()}else{BRS.clk=0;window.__brSweep={start:performance.now()};brRun()}};
+  window.__brSweep={start:performance.now()};BRS.clk=0;brRun()}
 
 /* ---------- the language grid: our first copy, then now (#xmFig, the research grid; tap a square for its sentence) ---------- */
 function flXm(){if(!R.langs||!$("#xmScroll"))return;
   XM.mode=RM.matches?"now":"then";setSeg($("#xmMode"),XM.mode);xmDraw();$$("#xmScroll tbody tr").forEach((tr,i)=>tr.style.setProperty("--r",i));
   seg($("#xmMode"),v=>{XM.mode=v;$("#xmScroll .xm").className="xm m-"+v;$("#xmScroll").dispatchEvent(new Event("scroll"))});
   xmTipWire($("#xmScroll"),b=>{const D=R.langs,c=D.cells[b.dataset.k][b.dataset.l],A=(D.arts[c.a]||{})[b.dataset.l];if(!A)return;const s=c.s&&A.sl[c.s]?c.s:"s1";openSheet("xr",{a:c.a,l:b.dataset.l,s,note:{k:b.dataset.k,c}},b)});
-  if(!RM.matches)onView($("#xmScroll"),()=>setTimeout(()=>{const t=$("#xmScroll .xm");XM.mode="now";setSeg($("#xmMode"),"now");t.className="xm m-now flip";setTimeout(()=>t.classList.remove("flip"),1800)},900))}
+  if(!RM.matches){const rp=$("#xmRp");rp.onclick=()=>xmFlip(true);$("#xmScroll").addEventListener("pointerdown",()=>{clearTimeout(XMF.a);clearTimeout(XMF.b)},{passive:true});onView($("#xmScroll"),()=>{XMF.a=setTimeout(()=>xmFlip(false),900)})}}
+const XMF={a:0,b:0};
+function xmFlip(again){const t=$("#xmScroll .xm"),rp=$("#xmRp");clearTimeout(XMF.a);clearTimeout(XMF.b);if(!t)return;
+  const go=()=>{XM.mode="now";setSeg($("#xmMode"),"now");t.className="xm m-now flip";window.__xmFlip=performance.now();const n=$$("#xmScroll tbody tr").length;XMF.b=setTimeout(()=>{t.classList.remove("flip");rp.hidden=false},n*250+700)};
+  if(again){XM.mode="then";setSeg($("#xmMode"),"then");t.className="xm m-then";rp.hidden=true;XMF.a=setTimeout(go,700)}else go()}
 
 /* ---------- Hamas designation: the #o7Pos rows for 2021 and 1 Oct 2026 ---------- */
 function flPos(){const P=R.oct7&&R.oct7.designation,host=$("#flPos");if(!host||!P)return;const rows=[P[0],P.find(p=>p.date==="2026-10-01")||P[2]];
@@ -623,7 +673,7 @@ function flMoBuild(el){const [a,l,s]=el.dataset.mo.split("|"),A=R.langs&&R.langs
 function flMoAria(el){const t=el._t;$$(".xr-s .w",el).forEach(w=>{const h=w.matches(t==="n"?".k1,.k4":".k2,.k5");if(h){w.setAttribute("aria-hidden","true")}else w.removeAttribute("aria-hidden")})}
 function flMoTo(el,t,anim){const ps=$$(".xr-s",el),S=el._S;if(!S)return;
   ps.forEach(p=>{const out=$$(t==="n"?".k1,.k4":".k2,.k5",p),inn=$$(t==="n"?".k2,.k5":".k1,.k4",p);$$(".w",p).forEach(w=>{w.style.setProperty("--d","0s");w.style.setProperty("--d2","0s")});
-    if(anim&&!RM.matches){const so=out.length>1?400/(out.length-1):0,base=out.length?500:0,si=inn.length>1?(900-base)/(inn.length-1):0;
+    if(anim&&!RM.matches){const so=out.length>1?1000/(out.length-1):0,base=out.length?1200:0,si=inn.length>1?1100/(inn.length-1):0;el._dur=base+(inn.length>1?1100:0)+550;
       out.forEach((w,i)=>{w.style.setProperty("--d",(i*so)+"ms");w.style.setProperty("--d2",(i*so+120)+"ms")});inn.forEach((w,i)=>{w.style.setProperty("--d2",(base+i*si)+"ms");w.style.setProperty("--d",(base+i*si+120)+"ms")})}});
   void el.offsetWidth;ps.forEach(p=>{p.classList.remove("st-f","st-n");p.classList.add("st-"+t)});el._t=t;flMoAria(el);
   const lb=$(".lb",el);if(lb)lb.textContent=(t==="n"?"Now · ":"Then · ")+dlab(S.m[t].d)}
@@ -695,9 +745,12 @@ const RW={tm:[]};
 function rwPlay(){const f=$("#flRw");if(!f)return;const L=$$(".rw li",f),rp=$("#rwRp");RW.tm.forEach(clearTimeout);RW.tm=[];
   if(RM.matches){f.classList.remove("pre");L.forEach(l=>l.classList.remove("go"));if(rp)rp.hidden=true;return}
   L.forEach(l=>l.classList.remove("go"));f.classList.add("pre");void f.offsetWidth;
-  L.forEach((l,i)=>RW.tm.push(setTimeout(()=>l.classList.add("go"),500+i*650)));
-  RW.tm.push(setTimeout(()=>{f.classList.remove("pre");L.forEach(l=>l.classList.remove("go"));if(rp)rp.hidden=false},500+L.length*650+1200))}
-function rwInit(){const f=$("#flRw");if(!f)return;const rp=$("#rwRp");if(rp)rp.onclick=()=>{rp.hidden=true;rwPlay()};
+  RW.t0=performance.now();L.forEach((l,i)=>RW.tm.push(setTimeout(()=>l.classList.add("go"),500+i*RW_STEP)));
+  RW.tm.push(setTimeout(rwEnd,500+L.length*RW_STEP+900))}
+const RW_STEP=1200;
+function rwEnd(){const f=$("#flRw"),rp=$("#rwRp");RW.tm.forEach(clearTimeout);RW.tm=[];if(!f)return;const was=f.classList.contains("pre");f.classList.remove("pre");$$(".rw li",f).forEach(l=>l.classList.remove("go"));if(rp)rp.hidden=RM.matches;if(was)window.__rwDur=performance.now()-RW.t0}
+function rwInit(){const f=$("#flRw");if(!f)return;const rp=$("#rwRp");if(rp)rp.onclick=e=>{e.stopPropagation();rp.hidden=true;rwPlay()};
+  f.addEventListener("pointerdown",e=>{if(f.classList.contains("pre")&&!e.target.closest("button"))rwEnd()});
   if(RM.matches)return;f.classList.add("pre");onView(f,rwPlay)}
 
 /* ---------- impact r1: the then/now headlines light up as they arrive ---------- */
@@ -710,7 +763,7 @@ function progInit(){const b=$("#flProg");if(!b)return;let q=0;const f=()=>{q=0;c
 /* ---------- impact r1: save a card as an image. Every word is read from the page itself (the build verifies it); the image always carries the dates, the voice labels, the scope line and the source. ---------- */
 function shSegs(el){const out=[];const walk=(n,k)=>{if(n.nodeType===3){const t=n.textContent.replace(/\s+/g," ");if(t)out.push({t,k});return}
   if(n.nodeType!==1||n.classList.contains("zi-sr")||n.matches("button,.rw-h,.rw-b,.d"))return;
-  const kk=n.tagName==="DEL"?"del":n.classList.contains("att")?"att":n.tagName==="INS"?"ins":n.classList.contains("ar")?"ar":k;n.childNodes.forEach(c=>walk(c,kk))};walk(el,"");
+  const kk=n.tagName==="DEL"?"del":n.classList.contains("att")?"att":n.tagName==="INS"?"ins":n.classList.contains("ar")||n.classList.contains("fl-ar")?"ar":k;n.childNodes.forEach(c=>walk(c,kk))};walk(el,"");
   return out}
 function shWrap(ctx,segs,maxW,x0,y0,lh,fontOf){const words=[];segs.forEach(s=>s.t.split(/(\s+)/).forEach(w=>{if(w)words.push({w,k:s.k})}));
   let x=x0,y=y0;const ops=[];words.forEach(o=>{ctx.font=fontOf(o.k);const ww=ctx.measureText(o.w).width;if(/^\s+$/.test(o.w)){if(x>x0)ops.push({...o,x,y,ww});x+=ww;return}
@@ -720,15 +773,18 @@ function shDraw(ctx,ops,fontOf,lh){const C=SHC;ops.forEach(o=>{ctx.font=fontOf(o
   ctx.fillStyle=o.k==="ins"?C.add:o.k==="del"||o.k==="att"?C.del:o.k==="ar"?C.mut:C.ink;ctx.fillText(o.w,o.x,o.y);
   if(o.k==="del"&&!/^\s+$/.test(o.w)){ctx.fillRect(o.x,o.y-lh*0.26,o.ww,3)}})}
 const SHC={bg:"#f6f5f1",ink:"#16191b",ink2:"#3d4448",mut:"#6b7378",rule:"#d9d6cf",add:"#1b4fb3",addBg:"#dce7fb",del:"#7a5200",delBg:"#fbe9c4"};
+function shRtl(ctx,text,maxW,xr,y0,lh,font,draw){ctx.font=font;const W=text.split(/\s+/);let line="",y=y0;const L=[];W.forEach(w=>{const t=line?line+" "+w:w;if(ctx.measureText(t).width>maxW&&line){L.push(line);line=w}else line=t});if(line)L.push(line);
+  if(draw){ctx.save();ctx.direction="rtl";ctx.textAlign="right";ctx.fillStyle=SHC.ink;L.forEach((l,i)=>ctx.fillText(l,xr,y0+i*lh));ctx.restore()}return y0+(L.length-1)*lh}
 function shCard(spec){const W=1080,H=1350,P=72,cv=document.createElement("canvas");cv.width=W;cv.height=H;const ctx=cv.getContext("2d"),C=SHC;
   const D="Newsreader, Georgia, serif",B="'Libre Franklin', Arial, sans-serif",Mo="'JetBrains Mono', monospace";
   ctx.fillStyle=C.bg;ctx.fillRect(0,0,W,H);ctx.textBaseline="alphabetic";
   ctx.fillStyle=C.mut;ctx.font=`600 24px ${Mo}`;ctx.fillText(spec.kicker.toUpperCase(),P,P+10);
   const tf=()=>`500 46px ${D}`;let y=P+78;const t=shWrap(ctx,[{t:spec.title,k:""}],W-2*P,P,y,56,tf);shDraw(ctx,t.ops,tf,56);y=t.y+40;
-  const fit=sz=>{let yy=y;spec.rows.forEach(r=>{yy+=36;const w=shWrap(ctx,r.segs,W-2*P,P,yy+sz+6,sz*1.25,k=>`${k==="ins"?600:400} ${sz}px ${D}`);yy=w.y+sz*0.6});return yy};
-  let sz=spec.size||44;while(sz>22&&fit(sz)>H-P-200)sz-=2;
+  const fit=sz=>{let yy=y;spec.rows.forEach(r=>{yy+=36;if(r.rtl)yy=shRtl(ctx,r.rtl,W-2*P,W-P,yy+sz+6,sz*1.3,`400 ${sz}px ${D}`,false)+sz*0.5;const w=shWrap(ctx,r.segs,W-2*P,P,yy+sz+6,sz*1.25,k=>`${k==="ins"?600:400} ${sz}px ${D}`);yy=w.y+sz*0.6});return yy};
+  let sz=spec.size||44;const fH=H-P-200-Math.max(0,spec.foot.length-2)*60;while(sz>22&&fit(sz)>fH)sz-=2;
   spec.rows.forEach(r=>{ctx.strokeStyle=C.rule;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,y);ctx.lineTo(W-P,y);ctx.stroke();y+=36;
     ctx.fillStyle=C.ink2;ctx.font=`600 21px ${Mo}`;ctx.fillText(r.label.toUpperCase(),P,y);
+    if(r.rtl)y=shRtl(ctx,r.rtl,W-2*P,W-P,y+sz+6,sz*1.3,`400 ${sz}px ${D}`,true)+sz*0.5;
     const fo=k=>`${k==="ins"?600:400} ${sz}px ${D}`,w=shWrap(ctx,r.segs,W-2*P,P,y+sz+6,sz*1.25,fo);shDraw(ctx,w.ops,fo,sz*1.25);y=w.y+sz*0.6});
   let fy=H-P-150-Math.max(0,spec.foot.length-2)*60;ctx.strokeStyle=C.ink;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,fy);ctx.lineTo(W-P,fy);ctx.stroke();fy+=36;
   spec.foot.forEach((f,i)=>{const fo=()=>`${i?400:500} ${i?20:22}px ${B}`;const w=shWrap(ctx,[{t:f,k:""}],W-2*P,P,fy,i?28:30,fo);ctx.fillStyle=i?C.mut:C.ink2;w.ops.forEach(o=>{ctx.font=fo();ctx.fillText(o.w,o.x,o.y)});fy=w.y+(i?30:34)});
@@ -737,13 +793,33 @@ function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="Wikiped
   if(id==="flRw"){const f=$("#flRw");return {file:"wikipedia-first-lines.png",kicker:"English Wikipedia · opening lines, then and now",title:$("#flRwH").textContent.trim().replace(/:$/,"."),
     rows:$$(".rw li",f).map(li=>({label:$(".a",li).firstChild.textContent.trim()+" · "+$(".d",li).textContent.trim(),segs:shSegs($(".p",li))})),
     foot:[$(".rw-n",f).textContent.trim(),scope,stamp+" · "+src]}}
+  if(id==="c3"){const p=$("#c3 .fl"),G=[[]];[...p.children].forEach(c=>{if(c.matches(".fl-k"))return;if(c.matches(".fl-sep")){G.push([]);return}G.at(-1).push(c)});
+    const lab=["October 7 attacks · first sentence · Oct 2023 → now","October 7 attacks · opening section · Jan 2024 → now"];
+    return {file:"wikipedia-october-7.png",kicker:"English Wikipedia · October 7 and the hostages",title:$("#c3H").textContent.trim(),size:40,
+      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>shSegs(c))})).concat([{label:"The hostages",segs:shSegs($("#c3 .fl-lane .cp"))}]),
+      foot:[$("#c3 .fl-body").textContent.trim(),scope,stamp+" · "+src]}}
+  if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
+    return {file:"wikipedia-hamas-english-hebrew.png",kicker:"Wikipedia · Hamas, English and Hebrew",title:$("#c4H").textContent.trim(),size:40,
+      rows:[{label:"English Wikipedia · "+$(".w",en).textContent.trim(),segs:shSegs($(".s",en))},{label:"Hebrew Wikipedia · now (Oct 2026) · our translation",rtl:$(".s",he).textContent.trim(),segs:shSegs($(".tr",he))}],
+      foot:[$("#c4 .fl-body").textContent.trim(),$("#c4 .fl-ctx").textContent.trim(),scope,stamp+" · "+src]}}
   if(id==="c5vs"){const v=$("#c5 .fl-vs");return {file:"wikipedia-two-voices.png",kicker:"English Wikipedia · the genocide charge, two voices",title:$("#c5H").textContent.trim(),size:52,
-    rows:$$("blockquote",v).map(b=>({label:$(".bd",b).textContent.trim()+" · "+$(".w",b).textContent.trim(),segs:shSegs($(".s",b))})),foot:["The Gaza genocide article reports Israel's denial in the last paragraph of its opening section.",scope,stamp+" · "+src]}}}
+    rows:$$("blockquote",v).map(b=>({label:$(".bd",b).textContent.trim()+" · "+$(".w",b).textContent.trim(),segs:shSegs($(".s",b))})),foot:["The Gaza genocide article reports Israel's denial in the last paragraph of its opening section.",$("#c5own").textContent.trim(),scope,stamp+" · "+src]}}}
+/* impact r2: inside the claude.ai artifact viewer, plain download links, blob saves and navigator.share are blocked; saving goes through
+   the downloads capability. The Save buttons stay hidden until claude.use("downloads") resolves to a handle. Without window.claude
+   (a local file), the old path below is the fallback. */
+const SH={dl:null,host:!!(window.claude&&typeof window.claude.use==="function")};
+function shInit(){if(!SH.host)return;$$("[data-share]").forEach(b=>b.hidden=true);
+  try{Promise.resolve(window.claude.use("downloads")).then(d=>{if(d){SH.dl=d;$$("[data-share]").forEach(b=>b.hidden=false)}}).catch(()=>{})}catch(e){}}
+function shMsg(btn,t){if(!btn)return;const o=btn.dataset.lab||(btn.dataset.lab=btn.textContent);btn.textContent=t;setTimeout(()=>btn.textContent=o,1800)}
 async function shSave(id,btn){const spec=shSpec(id);if(!spec)return;try{if(document.fonts&&document.fonts.ready)await document.fonts.ready}catch(e){}
-  const cv=shCard(spec);const blob=await new Promise(r=>cv.toBlob(r,"image/png"));if(!blob)return;const file=new File([blob],spec.file,{type:"image/png"});
+  const cv=shCard(spec);const blob=await new Promise(r=>cv.toBlob(r,"image/png"));if(!blob)return;
+  if(SH.host){if(!SH.dl)return;try{await SH.dl.save({filename:spec.file,data:blob});shMsg(btn,"Saved ✓")}catch(e){
+      if(e&&(e.name==="NotAllowedError"||e.name==="AbortError")){shMsg(btn,"Not saved");return}
+      try{await SH.dl.save({filename:spec.file,data:new Uint8Array(await blob.arrayBuffer())});shMsg(btn,"Saved ✓")}catch(e2){shMsg(btn,"Not saved")}}return}
+  const file=new File([blob],spec.file,{type:"image/png"});
   if(TOUCH&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:spec.title});return}catch(e){if(e&&e.name==="AbortError")return}}
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=spec.file;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.parentNode.removeChild(a)},1500);
-  if(btn){const t=btn.textContent;btn.textContent="Saved ✓";setTimeout(()=>btn.textContent=t,1800)}}
+  shMsg(btn,"Saved ✓")}
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-share]");if(b){e.preventDefault();shSave(b.dataset.share,b)}});
 
 function flDraw(){safe(flPos);safe(drawXwGG);$$(".fl-strip[data-tab]").forEach(h=>safe(flO7,h));safe(flZi,$("#stZI"));safe(flNk,$("#stNK"));
@@ -751,7 +827,7 @@ function flDraw(){safe(flPos);safe(drawXwGG);$$(".fl-strip[data-tab]").forEach(h
   if(K.dom!==undefined&&$("#kChart svg"))safe(drawKey)}
 function flInit(){
   if(!R)return;
-  safe(flTiles);flDraw();safe(tnApply);safe(rwInit);safe(hdInit);safe(progInit);
+  safe(flTiles);flDraw();safe(tnApply);safe(rwInit);safe(hdInit);safe(progInit);safe(shInit);
   $$(".fl-mo").forEach(el=>safe(flMoBuild,el));
   $$(".car").forEach(c=>safe(carInit,c));
   const c1=$("#car1");if(c1)c1.addEventListener("slide",e=>{const s=$$(".car-s",c1)[e.detail],m=s&&$(".fl-mo",s);if(m&&!m._played){m._played=1;flMoPlay(m,false)}});

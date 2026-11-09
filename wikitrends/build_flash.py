@@ -255,6 +255,35 @@ assert "23 Oct 2023 → since 9 Dec 2023" in tpl and "Their first lines" not in 
 assert 'data-share="flRw"' in tpl and 'data-share="c5vs"' in tpl and "foot:[" in tpl and "scope" in tpl[tpl.index("function shSpec"):], "share cards carry the scope line"
 print(f"flash: hero stack, {len(RW_ROWS)} rows, now phrases current and then phrases gone in the 5 Nov 2026 copies")
 
+# impact r2: the two credibility lines (owner decision)
+# (1) card 4: "terrorist" left the first sentences of Islamic State, al-Shabaab and Boko Haram; Hamas's 2021 first sentence did not have it.
+#     No contrast clause: the research edition's nine-groups comparison shows Hezbollah and PIJ were also reframed as political or
+#     paramilitary bodies, so "only Hamas became a political organisation" is not supported and must not appear.
+_fs = lambda t: re.split(r"(?<=[a-z\)])\.\s", re.sub(r"\s+", " ", (t or "").strip()), 1)[0].lower()
+_isv = {v["id"]: v.get("s") or "" for v in RA["Islamic State"]["fs_variants"]}
+_ist = [_isv.get(i, "") for _, i, *_ in RA["Islamic State"]["fs_timeline"]]
+assert any("terrorist" in x.lower() for x in _ist) and "terror" not in [x for x in _ist if x][-1].lower(), "Islamic State: terrorist once in, now out of the first sentence"
+for _t in ("Al-Shabaab (militant group)", "Boko Haram"):
+    _v = next(v for v in LJ if v["title"] == _t)
+    assert "terrorist" in _fs(_v["lead0"]) and "terror" not in _fs(_v["lead1"]), f"{_t}: terrorist in the 2021 first sentence, not now"
+assert "terror" not in _fs(M2["Hamas"][0]), "Hamas: no terrorist in the 2021 first sentence"
+_grp = {g["article"]: g for g in json.load(open(os.path.join(PAT, "angle", "chart_data", "oct7_02_designated_groups.json")))["groups"]}
+assert "political" in _grp["Hezbollah"]["now"]["first_sentence"] or "paramilitary" in _grp["Hezbollah"]["now"]["first_sentence"], "Hezbollah reframing check"
+assert "Context: in line with Wikipedia-wide style on contentious labels, “terrorist” left the first sentences of Islamic State, al-Shabaab and Boko Haram. Hamas’s first sentence did not have it in 2021." in tpl
+assert not re.search(r"no other (group|armed group)|only hamas", low if "low" in dir() else vis.lower()), "no unsupported contrast clause"
+# (2) card 5: the killings in Wikipedia's own voice, from the latest stored October 7 copy (2 Nov 2026)
+_o7 = norm(M2["October 7 attacks"][-1])
+for _q in ("massacring civilians in 21 communities", "at least 1,195 people were killed by the attacks"):
+    assert _q in _o7, f"card 5 own-voice quote not in the latest October 7 copy: {_q}"
+assert 'id="c5own"' in tpl and tpl.index('id="c5own"') > tpl.index('id="car1"') and tpl.index('id="c5own"') < tpl.index('id="c6"'), "the own-voice line is card 5's last line"
+# card 4 mirror: the English definition is the latest stored Hamas first sentence
+assert norm("is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades") in norm(M2["Hamas"][-1])
+# share cards: five, each carrying the scope line (shSpec reads .fl-scope); the saves go through claude.use("downloads") when hosted
+for _id in ("flRw", "c3", "c4vs", "c5vs"):
+    assert f'data-share="{_id}"' in tpl and f'id==="{_id}"' in tpl, f"share card {_id}"
+assert 'window.claude.use("downloads")' in tpl and "window.claude.downloads" not in tpl, "downloads capability via use() only"
+print("flash: credibility lines verified (three groups' terrorist removal; October 7 own-voice toll), share cards and downloads wired")
+
 # the messaging check's vetoes and the no-names rule
 low = vis.lower()
 VETO = ["afterthought", "the world reads first", "64 of", "47 of", "336", "650", "386", "both sides", "in 2021 / before the war",
