@@ -44,15 +44,50 @@ assert lib.startswith("const R=/*DATA*/null;") and "function drawKey(" in lib an
 
 # 3. the data slice
 ARTS = ["Zionism", "Hamas", "October 7 attacks", "Gaza genocide"]
+# v2: the language grid (#xmFig) shows five claims; the court column and the court moments stay in the research edition
+XM_COLS = ["gen", "col", "apa", "o7", "ter"]
+_L = res["langs"]
+XM_ARTS = sorted({c["a"] for k in XM_COLS for c in _L["cells"][k].values() if c and c.get("a")})
+_arts = {}
+for a in XM_ARTS:
+    _arts[a] = {}
+    for l, A in _L["arts"][a].items():
+        A = dict(A, sl={s: v for s, v in A["sl"].items() if s != "k_icj"})
+        _arts[a][l] = A
+LANGS_R = {
+    "order": _L["order"], "voice": _L["voice"], "missing": {a: v for a, v in _L["missing"].items() if a in _arts},
+    "cols": [c for c in _L["cols"] if c[0] in XM_COLS], "cells": {k: _L["cells"][k] for k in XM_COLS}, "arts": _arts,
+    "moments": [m for m in _L["moments"] if m[0] in _arts and m[1] in _arts[m[0]] and m[2] in _arts[m[0]][m[1]]["sl"]],
+}
 R = {
     "zionism": res["zionism"], "oct7": res["oct7"], "v3": res["v3"], "xw": res["xw"],
-    "langs": {"order": (res.get("langs") or {}).get("order")},
-    "ratchet": {"articles": {t: res["ratchet"]["articles"][t] for t in ARTS}},
+    "langs": LANGS_R,
+    "ratchet": {"articles": {t: res["ratchet"]["articles"][t] for t in ARTS + ["Nakba"]}},
     "articles": [{k: a.get(k) for k in ("title", "pv_monthly", "w_edits")} for a in res["articles"] if a["title"] in ARTS],
     "week0": res.get("week0"), "n_weeks": res.get("n_weeks"),
+    "dates": res["dates"], "mass3": res["mass3"],
 }
 assert len(R["articles"]) == len(ARTS), "a flash article is missing from the research data"
 assert [r["date"] for r in R["oct7"]["designation"]][::3] == ["2021-01-01", "2026-10-31"], "Hamas designation rows changed"
+# v2 data slices, checked
+_d1 = next(r for r in R["oct7"]["designation"] if r["date"] == "2026-10-01")
+assert _d1["sentence"] == "22 of 23" and _d1["quote"].startswith("Australia, Canada, ") and _d1["quote"].endswith(
+    ", and the European Union have designated Hamas as a terrorist organisation."), "the 1 Oct 2026 Hamas designation row changed"
+assert R["dates"][-1] == "2026-10" and set(R["mass3"]) >= {"overall", "tiers"}, "dates or mass3 changed"
+assert len(LANGS_R["order"]) == 11, "the language grid has eleven editions (the card says so)"
+assert [c[0] for c in LANGS_R["cols"]] == XM_COLS and "icj" not in LANGS_R["cells"], "the court column must stay out"
+assert not any(m[2] == "k_icj" for m in LANGS_R["moments"]) and not any(x in (m[3] + m[4]).lower() for m in LANGS_R["moments"] for x in ("did not make", "found israel guilty")), "court moments must stay out"
+for a, l, s in (("Gaza genocide", "ar", "s1"), ("Gaza war", "es", "s1"), ("Gaza war", "he", "k_genocide")):
+    S = LANGS_R["arts"][a][l]["sl"][s]
+    assert S["m"].get("n"), f"morph slide sentence missing: {a} {l} {s}"
+    assert (a, l, s) == ("Gaza war", "he", "k_genocide") or S["m"].get("f"), f"morph slide needs a then copy: {a} {l} {s}"
+_nk = R["ratchet"]["articles"]["Nakba"]
+_nkv = {v["id"]: v.get("s") or "" for v in _nk["fs_variants"]}
+_nkl = [_nkv.get(i, "") for _, i, _ in _nk["fs_timeline"]]
+for term in ("destruction of Palestinian society", "ethnic cleansing", "by Zionists"):
+    assert any(term in s for s in _nkl), f"Nakba lane term not in the stored first sentences: {term}"
+assert "by Zionists" in [s for s in _nkl if s][-1], "the Nakba first sentence now says by Zionists"
+print(f"flash: R.langs sliced to {len(_arts)} articles, {len(LANGS_R['moments'])} moments, columns {XM_COLS}")
 
 tpl = open(os.path.join(HERE, "page_flash_template.html")).read()
 
@@ -193,12 +228,53 @@ rtl_bad = [t[:40] for t, rtl in page.runs if not rtl and
 assert not rtl_bad, f"Hebrew or Arabic text without dir=rtl: {rtl_bad}"
 print(f"flash: {sum(1 for t, r in page.runs if r)} right-to-left runs, all inside dir=rtl")
 
+# 4b. quoted words that the flash's own script draws (lane labels, tooltip heads): each must be stored text of its article
+fjs = tpl[tpl.index("/* ---------- flash edition ---------- */"):]
+JSQ = {"Zionism": ["colonial", "colonization", "re-establishment"], "Hamas": ["militant", "terrorist", "political organisation with a (military) wing"],
+       "October 7 attacks": ["armed incursions", "massacre"], "Nakba": ["the destruction of Palestinian society", "ethnic cleansing", "by Zionists"]}
+for art, terms in JSQ.items():
+    C = corpus("en:" + art)
+    for t in terms:
+        probe = t.replace("(military) ", "military ") if "(military)" in t else t
+        assert "“" + t + "”" in fjs or "“" + t.capitalize() + "”" in fjs, f"flash script no longer quotes {t}"
+        assert any(probe.lower() in c.lower() for c in C), f"script quote not in the stored {art} text: {t}"
+_jsq = {q for q in re.findall(r"“([^”]+)”", fjs) if not re.search(r'[$"|+]', q)}  # skip code that builds quote marks
+_jsq -= {x for v in JSQ.values() for x in v} | {t.capitalize() for v in JSQ.values() for t in v}
+assert not _jsq, f"an unchecked quote in the flash script: {_jsq}"
+
+# 4c. the research edition's interactives, sliced from page_template.html by id (outer HTML, balanced tags)
+def cut(rid):
+    m = re.search(r'<(figure|section)\b[^>]*\bid="%s"' % re.escape(rid), rtpl)
+    assert m, f"research markup not found: #{rid}"
+    tag, i, depth = m.group(1), m.start(), 0
+    for t in re.finditer(r"<(/?)%s\b[^>]*>" % tag, rtpl[i:]):
+        depth += -1 if t.group(1) else 1
+        if depth == 0:
+            return rtpl[i:i + t.end()]
+    raise AssertionError(f"unbalanced #{rid}")
+SLOTS = {k: cut(k) for k in ("breathe", "xmFig", "tierFig", "ziFig", "o7Fig", "xrFig")}
+for k in SLOTS:
+    assert tpl.count(f"<!--R:{k}-->") == 1, f"slot for #{k} missing in the flash template"
+assert "xmIcj" not in "".join(SLOTS.values()) and "Court ruling" not in "".join(SLOTS.values()), "the court grid stays out of the flash"
+_sl = _Text()
+_sl.feed(re.sub(r"<!--.*?-->", "", "".join(SLOTS.values())))
+slow = " ".join("".join(v) for v in _sl.buckets.values()).lower()
+assert not [v for v in VETO if v in slow], "vetoed wording in a sliced research figure"
+for who in ("Smallangryplanet", "Aquillion", "Zero0000", "Nableezy", "CaptainEek", "Elli", "AndreJustAndre", "Ïvana"):
+    assert who.lower() not in slow, f"a sliced research figure names an account: {who}"
+print("flash: research interactives sliced: " + ", ".join(f"#{k} ({len(v)//1000} kB)" for k, v in SLOTS.items()))
+
 # 5. assemble
 data = json.dumps(R, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
-out = (tpl.replace("/*RESEARCH_CSS*/", css)
+body = tpl
+for k, v in SLOTS.items():
+    body = body.replace(f"<!--R:{k}-->", v)
+out = (body.replace("/*RESEARCH_CSS*/", css)
           .replace("/*RESEARCH_JS*/", lib.replace("const R=/*DATA*/null;", "const R=" + data + ";", 1))
           .replace("@@R@@", RESEARCH_URL))
-assert "@@R@@" not in out and "/*RESEARCH_" not in out
+assert "@@R@@" not in out and "/*RESEARCH_" not in out and "<!--R:" not in out
+for k in SLOTS:
+    assert out.count(f'id="{k}"') == 1, f"#{k} must appear exactly once"
 out = re.sub(r"<!--VERIFY:[^>]*?-->", "", out)
 # a standalone page: doctype, charset and viewport first (the research edition gets the same wrapper when published)
 out = '<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n' + out
