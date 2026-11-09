@@ -458,11 +458,33 @@ for _k, (_v, _s) in _ch.items():  # numbers inside the seven quoted charge sente
         COMPUTED[_n] = f"inside the quoted {_k} charge sentence (treemap tooltip)"
 print(f"flash: treemap: 150 openings, 7 with the charge ({sum(r[2]==2 for r in TM_ROWS)} as fact) get {100*_share:.1f}% of their views, Nov 2025 - Oct 2026")
 
+# final round, step 2: the Data lab tab. lab/lab_flash.py is a slim, flash-only fork of the research lab (it reads lab.html, lab.js and
+# lab.css and never writes them, so the research edition is unchanged). Its data: only the flash's articles (the six hero articles and
+# the treemap's 150 openings), only the flipbook and the language prism; parsed and run on the first visit to the tab.
+sys.path.insert(0, os.path.join(HERE, "lab"))
+import lab_flash
+LAB_TITLES = sorted(set(_HERO6) | {r[0] for r in TM_ROWS})
+LAB_D = lab_flash.data(res, LAB_TITLES)
+LAB_JSON = json.dumps(LAB_D, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+LAB_BLOCK = '<script type="application/json" id="flLabData">' + LAB_JSON + "</script>"
+assert len(LAB_JSON.encode()) < 1.0e6, f"slim lab data: {len(LAB_JSON.encode())/1e6:.2f} MB"
+assert "</script" not in lab_flash.js("en") + lab_flash.js("he")
+_lab_en = re.sub(r"<[^>]*>", " ", lab_flash.html("en")).lower()
+assert not [v for v in VETO if v in _lab_en], f"vetoed wording in the lab markup: {[v for v in VETO if v in _lab_en]}"
+for _k in ("<!--LAB-->", "/*FLLABCSS*/", "/*LABJS*/", "<!--LABDATA-->"):
+    assert tpl.count(_k) == 1, f"lab slot {_k}"
+def lab_fill(body, lang):
+    return (body.replace("<!--LAB-->", lab_flash.html(lang)).replace("/*FLLABCSS*/", lab_flash.css(lang))
+                .replace("/*LABJS*/", lab_flash.js(lang)).replace("<!--LABDATA-->", LAB_BLOCK))
+print(f"flash: data lab: {len(LAB_D['ratchet']['articles'])} flipbook and {len(LAB_D['crosslang']['articles'])} prism articles "
+      f"({len(LAB_JSON.encode())/1e6:.2f} MB of data, {len(lab_flash.js('en'))//1000} kB of code)")
+
 # 5. assemble
 data = json.dumps(R, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 body = tpl
 for k, v in SLOTS.items():
     body = body.replace(f"<!--R:{k}-->", v)
+body = lab_fill(body, "en")
 out = (body.replace("/*RESEARCH_CSS*/", css)
           .replace("/*RESEARCH_JS*/", lib.replace("const R=/*DATA*/null;", "const R=" + data + ";", 1))
           .replace("@@R@@", RESEARCH_URL))
@@ -477,7 +499,7 @@ if LANG in ("he", "bi"):
     import flash_he
     he_out = flash_he.build(dict(tpl=tpl, lib=lib, css=css, SLOTS=SLOTS, data=data, R=R, RESEARCH_URL=RESEARCH_URL, text=text, vis=vis,
                         _Text=_Text, norm=norm, quotes=quotes, corpus=corpus, all_corpus=all_corpus, VETO=VETO, SPIN=SPIN,
-                        COMPUTED=COMPUTED, en_out=out), sys.argv[1] if LANG == "he" else None)
+                        COMPUTED=COMPUTED, en_out=out, lab_fill=lab_fill, lab_check=lab_flash.check_he), sys.argv[1] if LANG == "he" else None)
     if LANG == "bi":
         import flash_bi
         flash_bi.build(out, he_out, data, sys.argv[1])

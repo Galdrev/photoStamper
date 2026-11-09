@@ -14,6 +14,11 @@
 /*RESEARCH_CSS*/
 /* ---------- flash edition: a phone-first single column, same tokens, same components ---------- */
 .fl-page{max-width:760px;margin:0 auto}
+/* final round: the tabs (Flash / Data lab) and the lab view; the lab's own CSS (wikitrends/lab via lab/lab_flash.py) follows */
+.fl-tabs{position:static}.fl-tabs .tabs-in{max-width:760px;min-height:38px;gap:4px 20px}.fl-tabs a{font-size:13.5px}
+#view-lab .fl-page{padding-top:6px}
+@media print{.fl-tabs{display:none}}
+/*FLLABCSS*/
 .fl-page .mast{margin-bottom:4px}
 .fl-page .hero{padding-top:22px;gap:14px}
 .fl-page .hero h1{font-size:clamp(30px,4.6vw,46px);max-width:none}
@@ -335,7 +340,7 @@ details.fl-full .news-q{margin-top:4px}
 .fs-x:focus-visible{outline:2px solid var(--add-bd);outline-offset:2px}
 .fs-body{overflow:auto;padding:14px 16px 24px;flex:1 1 auto;overscroll-behavior:contain}
 .fs-body .fig{margin:0}
-.fs-src{font:500 12.5px var(--body);margin:14px 0 0}
+.fs-src{font:500 12.5px var(--body);margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 18px}
 .fs-body .zi-ctl{bottom:0}
 .fs-body #ziCodes{display:none!important}/* the 64-of-70 pair stays out of the flash (messaging F2) */
 @media (max-width:600px){.fl-sheet{width:100vw;height:100dvh;max-height:none;border-radius:0}
@@ -415,7 +420,8 @@ details.fl-full .news-q{margin-top:4px}
 <div id="gloss" role="tooltip" hidden></div>
 <div id="xmTip" role="tooltip" hidden></div>
 <a class="skip" href="#c1">Skip to the cards</a>
-<div class="wrap"><main class="fl-page" id="view-report">
+<nav class="tabs fl-tabs" aria-label="Views"><div class="tabs-in"><a href="#flash" id="tabFlash" aria-current="page">Flash</a><a href="#lab" id="tabLab" aria-current="false">Data lab</a></div></nav>
+<div class="wrap" id="view-flash"><main class="fl-page" id="view-report">
 <div class="mast"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; flash edition</span><span><a href="@@R@@" target="_blank" rel="noopener">Full research ↗</a></span></div>
 
 <header class="hero" id="top">
@@ -591,6 +597,8 @@ details.fl-full .news-q{margin-top:4px}
 <p class="cap fl-foot">Flash edition · published 9 November 2026 · Wikipedia text as of 5 November 2026 · every quote is exact and dated; the evidence, method and limits are in the <a href="@@R@@" target="_blank" rel="noopener">research edition</a>.</p>
 <div hidden aria-hidden="true"><div id="ziPair"></div><span id="ziRestN"></span><div id="ziRest"><div class="in"></div></div><div id="ziSumRest"></div><div id="ziSum"></div><p id="mTier"></p><p id="o7Note"></p><p id="ziMeans"></p><p id="ziNote"></p></div>
 </main></div>
+<div class="wrap" id="view-lab" hidden><div class="fl-page"><!--LAB--></div></div>
+<!--LABDATA-->
 
 <dialog class="fl-sheet" id="flSheet" aria-labelledby="flSheetT">
   <div class="fs-bar"><h2 id="flSheetT">Play</h2><button type="button" class="fs-x" id="flSheetX" aria-label="Close">Close ✕</button></div>
@@ -599,7 +607,7 @@ details.fl-full .news-q{margin-top:4px}
     <div class="fs-pane" data-k="o7" hidden></div>
     <div class="fs-pane" data-k="xr" hidden></div>
     <div class="fs-pane" data-k="tr" hidden></div>
-    <p class="fs-src"><a id="flSheetSrc" href="@@R@@#ziFig" target="_blank" rel="noopener">Open this in the research edition ↗</a><a hidden href="@@R@@#o7Fig" target="_blank" rel="noopener">o7</a></p>
+    <p class="fs-src"><a id="flSheetSrc" href="@@R@@#ziFig" target="_blank" rel="noopener">Open this in the research edition ↗</a><a hidden href="@@R@@#o7Fig" target="_blank" rel="noopener">o7</a><a id="flSheetLab" href="#lab" data-lab="{}">Explore in the Data lab →</a></p>
   </div>
 </dialog>
 <template id="tpl-zi"><!--R:ziFig--></template>
@@ -1018,7 +1026,7 @@ const SHEET_A={zi:"ziFig",o7:"o7Fig",xr:"xrFig",tr:"breathe"};
 function openSheet(k,arg,opener){const dlg=$("#flSheet");if(!dlg||!R)return;ftHide();if(XMT.b)xmTipHide();hideTip();
   SHEET.k=k;SHEET.opener=opener||document.activeElement;
   const pane=$(`.fs-pane[data-k="${k}"]`,dlg);$$(".fs-pane",dlg).forEach(p=>p.hidden=p!==pane);
-  $("#flSheetT").textContent=SHEET_T[k];const src=$("#flSheetSrc");src.href=src.href.replace(/#.*$/,"#"+SHEET_A[k]);
+  $("#flSheetT").textContent=SHEET_T[k];const src=$("#flSheetSrc");src.href=src.href.replace(/#.*$/,"#"+SHEET_A[k]);flSheetLab(k);
   /* tooltips must live in the top layer with the dialog */
   ["#tip","#xmTip","#gloss"].forEach(s=>{const e=$(s);if(e)dlg.appendChild(e)});
   if(!dlg.open)dlg.showModal();
@@ -1032,6 +1040,9 @@ function openSheet(k,arg,opener){const dlg=$("#flSheet");if(!dlg||!R)return;ftHi
   if(k==="xr"){const D=R.langs,o=typeof arg==="string"?(([a,l,s])=>({a,l,s}))(arg.split("|")):arg||{a:D.moments[0][0],l:D.moments[0][1],s:D.moments[0][2]};
     const mi=D.moments.findIndex(m=>m[0]===o.a&&m[1]===o.l&&m[2]===o.s);xrOpen({a:o.a,l:o.l,s:o.s,mi,note:o.note||null,anim:true});setTimeout(()=>xrReplay(),RM.matches?0:450)}
   $("#flSheetX").focus({preventScroll:true})}
+/* the sheet's "Every version, in the Data lab" link: the flipbook on the sheet's article, or the language prism */
+function flSheetLab(k){const a=$("#flSheetLab");if(!a)return;const t=k==="o7"?["Hamas","October 7 attacks","Gaza genocide"][O7.tab||0]:"Zionism";
+  a.dataset.lab=JSON.stringify(k==="xr"?{lab:"prism"}:{lab:"flip",title:t})}
 function closeSheet(){const dlg=$("#flSheet");if(!dlg.open)return;dlg.close()}
 function sheetWire(){const dlg=$("#flSheet");if(!dlg)return;
   $("#flSheetX").onclick=closeSheet;
@@ -1130,6 +1141,25 @@ document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest
 function flDraw(){if($("#flTg i"))safe(flTiles);safe(flPos);safe(drawXwGG);$$(".fl-strip[data-tab]").forEach(h=>safe(flO7,h));safe(flZi,$("#stZI"));safe(flNk,$("#stNK"));
   if(BR.ev)safe(flBreathe);if($("#xmScroll .xm"))safe(()=>{const m=XM.mode;xmDraw();$("#xmScroll .xm").className="xm m-"+m;$$("#xmScroll tbody tr").forEach((tr,i)=>tr.style.setProperty("--r",i))});
   if(K.dom!==undefined&&$("#kChart svg"))safe(drawKey)}
+/* final round: the Data lab tab. #lab shows the lab; any other hash shows the flash. The lab's code and its slim data
+   (lab/lab_flash.py) load on the first visit; the flash's scroll position is kept for the way back. */
+const FLX={labIntent:null};let LXB=false,FLY=0,FLB=null;
+const flIsLab=()=>location.hash==="#lab";
+function flLabBoot(){if(LXB)return;LXB=true;const el=document.getElementById("flLabData");const R=el?JSON.parse(el.textContent):null;
+/*LABJS*/
+}
+FLX.openInReport=id=>{FLB=id||null;location.hash="#flash"};
+function flRoute(){const W=$("#view-flash"),L=$("#view-lab");if(!W||!L)return;const lab=flIsLab(),was=!L.hidden;
+  $("#tabFlash").setAttribute("aria-current",lab?"false":"page");$("#tabLab").setAttribute("aria-current",lab?"page":"false");
+  if(lab===was){if(lab&&FLX.labIntent&&FLX.lab)FLX.lab.intent(FLX.labIntent);return}
+  if(lab){FLY=scrollY;safe(flLeave);W.hidden=true;L.hidden=false;scrollTo({top:0,behavior:"instant"});safe(flLabBoot);if(FLX.lab)safe(()=>FLX.lab.init(FLX.labIntent))}
+  else{L.hidden=true;W.hidden=false;const t=FLB&&document.getElementById(FLB),h=location.hash.length>1&&document.getElementById(location.hash.slice(1));FLB=null;
+    requestAnimationFrame(()=>{safe(flRedraw);const e=t||h;if(e)e.scrollIntoView({behavior:"instant",block:"start"});else scrollTo({top:FLY,behavior:"instant"})})}}
+function flLabGo(it){const s=SHEET.opener&&SHEET.opener.closest&&SHEET.opener.closest("section[id]");FLX.labIntent=Object.assign({from:s?s.id:""},it||{});
+  if($("#flSheet").open)closeSheet();if(flIsLab())flRoute();else location.hash="#lab"}
+function flTabsInit(){addEventListener("hashchange",flRoute);
+  document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-lab]");if(!b)return;e.preventDefault();if(b.id==="flSheetLab")flSheetLab(SHEET.k);let it={};try{it=JSON.parse(b.dataset.lab)}catch(x){}flLabGo(it)});
+  flRoute()}
 function flInit(){
   if(!R)return;
   safe(flTiles);flDraw();safe(tnApply);safe(rwInit);safe(hdInit);safe(progInit);safe(shInit);
@@ -1139,12 +1169,12 @@ function flInit(){
   nearView($("#flBr"),()=>{safe(flBreathe);onView($("#brS"),()=>setTimeout(brSweep,400))});
   nearView($("#flXm"),()=>safe(flXm));
   nearView($("#flK"),()=>safe(flKey));
-  safe(sheetWire);
+  safe(sheetWire);safe(flTabsInit);
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;flRedraw()},150)});
 }
 /* merge r1: the redraw a resize triggers, and the clean-up before the page is taken out of the document. The bilingual page
    (build_flash.py --bilingual) calls these when the reader switches language: the outgoing language leaves, the returning one redraws. */
-function flRedraw(){ftHide();flDraw();$$(".fl-mo").forEach(el=>{el.style.minHeight="";const t=el._t;safe(flMoBuild,el);if(t==="n")flMoTo(el,"n",false)})}
+function flRedraw(){if(flIsLab()){flRoute();if(FLX.lab)safe(FLX.lab.redraw);return}flRoute();ftHide();flDraw();$$(".fl-mo").forEach(el=>{el.style.minHeight="";const t=el._t;safe(flMoBuild,el);if(t==="n")flMoTo(el,"n",false)})}
 function flLeave(){ftHide();if(typeof xmTipHide==="function"&&XMT.b)xmTipHide();hideTip();const d=$("#flSheet");if(d&&d.open)safe(closeSheet);const g=$("#gloss");if(g)g.hidden=true}
 flInit();
 </script>

@@ -209,6 +209,8 @@ def build(C, out_path):
     body = tpl
     for k, v in slots.items():
         body = body.replace(f"<!--R:{k}-->", v)
+    body = C["lab_fill"](body, "he")  # the Data lab tab, Hebrew chrome (lab/lab_flash.py)
+    n_lab = C["lab_check"](C["VETO"] + HE_VETO + C["SPIN"])
     i = body.index("</style>")
     body = body[:i] + hcss + body[i:]
     j = body.rindex("flInit();\n</script>")

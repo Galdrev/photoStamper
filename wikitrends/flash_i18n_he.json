@@ -19,6 +19,10 @@
    "<a class=\"skip\" href=\"#c1\">דילוג לכרטיסים</a>"
   ],
   [
+   "<nav class=\"tabs fl-tabs\" aria-label=\"Views\"><div class=\"tabs-in\"><a href=\"#flash\" id=\"tabFlash\" aria-current=\"page\">Flash</a><a href=\"#lab\" id=\"tabLab\" aria-current=\"false\">Data lab</a></div></nav>",
+   "<nav class=\"tabs fl-tabs\" aria-label=\"תצוגות\"><div class=\"tabs-in\"><a href=\"#flash\" id=\"tabFlash\" aria-current=\"page\">המהדורה המקוצרת</a><a href=\"#lab\" id=\"tabLab\" aria-current=\"false\">מעבדת נתונים</a></div></nav>"
+  ],
+  [
    "<div class=\"mast\"><span><b>Wikipedia Framing Drift</b> &nbsp;·&nbsp; flash edition</span><span><a href=\"@@R@@\" target=\"_blank\" rel=\"noopener\">Full research ↗</a></span></div>",
    "<div class=\"mast\"><span><b>סחף המסגור בוויקיפדיה</b> &nbsp;·&nbsp; המהדורה המקוצרת</span><span><a href=\"@@R@@\" target=\"_blank\" rel=\"noopener\">המחקר המלא (באנגלית) ↖</a></span></div>"
   ],
@@ -407,8 +411,8 @@
    "  <div class=\"fs-bar\"><h2 id=\"flSheetT\">הפעלה</h2><button type=\"button\" class=\"fs-x\" id=\"flSheetX\" aria-label=\"סגירה\">סגירה ✕</button></div>"
   ],
   [
-   "    <p class=\"fs-src\"><a id=\"flSheetSrc\" href=\"@@R@@#ziFig\" target=\"_blank\" rel=\"noopener\">Open this in the research edition ↗</a><a hidden href=\"@@R@@#o7Fig\" target=\"_blank\" rel=\"noopener\">o7</a></p>",
-   "    <p class=\"fs-src\"><a id=\"flSheetSrc\" href=\"@@R@@#ziFig\" target=\"_blank\" rel=\"noopener\">פתיחה במהדורת המחקר ↖</a><a hidden href=\"@@R@@#o7Fig\" target=\"_blank\" rel=\"noopener\">o7</a></p>"
+   "    <p class=\"fs-src\"><a id=\"flSheetSrc\" href=\"@@R@@#ziFig\" target=\"_blank\" rel=\"noopener\">Open this in the research edition ↗</a><a hidden href=\"@@R@@#o7Fig\" target=\"_blank\" rel=\"noopener\">o7</a><a id=\"flSheetLab\" href=\"#lab\" data-lab=\"{}\">Explore in the Data lab →</a></p>",
+   "    <p class=\"fs-src\"><a id=\"flSheetSrc\" href=\"@@R@@#ziFig\" target=\"_blank\" rel=\"noopener\">פתיחה במהדורת המחקר ↖</a><a hidden href=\"@@R@@#o7Fig\" target=\"_blank\" rel=\"noopener\">o7</a><a id=\"flSheetLab\" href=\"#lab\" data-lab=\"{}\">לחקירה במעבדת הנתונים ←</a></p>"
   ],
   [
    "function ftChange(lab,c){const a=c.before,b=c.after;return `<span class=\"h\">${esc(lab)} · ${esc(ziD(c.d))}</span>${a&&b?tnTip(a,b):\"\"}<div class=\"tn-more\">${b?`<span class=\"src\">The sentence after this edit</span><p class=\"o\">${esc(b.length>320?b.slice(0,320)+\"…\":b)}</p>`:`<p>The text of this version was not stored.</p>`}</div>`}",

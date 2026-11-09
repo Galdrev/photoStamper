@@ -128,6 +128,11 @@ def wrap(lang, P, data):
 
 def build(en_page, he_page, data, out_path):
     E, H = split_page(en_page), split_page(he_page)
+    # the slim Data lab data (an inert JSON block) is the same in both languages: once, outside the templates
+    lab = re.search(r'<script type="application/json" id="flLabData">.*?</script>', E["body"], flags=re.S).group(0)
+    assert E["body"].count(lab) == 1 and H["body"].count(lab) == 1, "the lab data is the same in both language pages"
+    E["body"], H["body"] = E["body"].replace(lab, ""), H["body"].replace(lab, "")
+    lab += "\n"
     # the switch goes into each masthead, before the research link
     for lang, P in (("en", E), ("he", H)):
         m = re.search(r'(<div class="mast"><span>.*?</span><span>)(<a href=)', P["body"])
@@ -146,11 +151,12 @@ def build(en_page, he_page, data, out_path):
            "<script>" + BOOT.replace("/*TITLES*/null", titles) + "</script>\n"
            '<template id="bi-en"><style>' + E["css"] + "</style>" + E["body"] + "</template>\n"
            '<template id="bi-he"><style>' + H["css"] + "</style>" + H["body"] + "</template>\n"
-           "<script>const __FLR=" + data + ";</script>\n"
+           "<script>const __FLR=" + data + ";</script>\n" + lab +
            "<script>" + wrap("en", E, data) + "</script>\n"
            "<script>" + wrap("he", H, data) + "</script>\n"
            "<body>\n<script>" + SWITCHER + "</script>\n")
     assert out.count(data) == 1, "the data is in the file once"
+    assert out.count('id="flLabData"') == 1, "the lab data is in the file once"
     assert out.startswith('<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">')
     for lang, P in (("en", E), ("he", H)):
         assert P["body"].count('class="lsw"') == 1
