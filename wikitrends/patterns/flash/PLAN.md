@@ -42,3 +42,8 @@
 - Tap a tile: the article name, its views, the exact charge sentence, own voice vs attributed.
 - Same honesty: counts unchanged (0, 0, 7, two as fact); the area encodes reach, said in a one-line key.
 - Both English and Hebrew; share-image variant if strong.
+
+## Owner: ONE artifact, Hebrew as a language option (not two artifacts)
+- Publish a single page (the existing flash artifact) with a language switch עברית / English in the masthead. Both languages are in the same HTML; switching sets <html lang dir>, swaps strings, mirrors the layout (RTL carousels etc.) and re-renders canvases and share images, without reloading. The default follows the browser language (he* -> Hebrew, else English); the choice is remembered in localStorage (try/catch) and via ?lang=he|en / #lang= for shareable links.
+- Implementation: build both language builds' string sets into one page (the English build + the Hebrew string table and overlay applied at runtime rather than at build time), or embed both rendered DOMs and toggle; choose the lighter, robust option. Charts and data are shared, not duplicated. All English and Hebrew assertions still run; the English rendering must equal the current English build.
+- Smoke: switch both ways at several scroll points; no console errors; the RTL carousels, #breathe and the fight lanes, the play sheet, the grid, share images in the active language, the Data lab tab label; 0 overflow in both.
