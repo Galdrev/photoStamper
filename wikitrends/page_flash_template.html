@@ -144,37 +144,47 @@ details.fl-full .news-q{margin-top:4px}
 .br-kw[hidden]{display:none}
 #flBr #brS.anim ins{animation:none}
 #flBr #brS{overflow:hidden}
-/* r3: the cumulative edit trail. States: base plain; removed struck amber; added blue; came and went struck, dashed blue outline.
-   Key words bold on top. The fights marker is neutral ink (no new hue), heavier as the count grows. */
-#breathe .br-s{box-sizing:border-box;position:relative}
-#breathe .br-s .bw.nw{animation:brfade .25s ease-out both}
+#flBr #brS .nw{animation:brfade .25s ease-out both}
 @keyframes brfade{from{opacity:0}to{opacity:1}}
-#breathe .br-s .bt{border-radius:2px;padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-#breathe .br-s .s-r>.bt,.br-kw .lg.s-r{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:2px}
-#breathe .br-s .s-a>.bt,.br-kw .lg.s-a{background:var(--add-bg);color:var(--add-hi)}
-#breathe .br-s .s-g>.bt,.br-kw .lg.s-g{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--del-bd);text-decoration-thickness:1.5px;outline:1px dashed var(--add-bd);outline-offset:-1px}
-#breathe .br-s .kw.s-r>.bt{font-weight:700;background:var(--del-bd);color:var(--paper);text-decoration-color:var(--paper)}
-#breathe .br-s .kw.s-a>.bt{font-weight:700;background:var(--add-bd);color:var(--paper)}
-#breathe .br-s .kw.s-g>.bt{font-weight:700;color:var(--del-ink);outline-width:1.5px}
-#breathe .br-s .s-b.kw>.bt,#breathe .br-s .s-p>.bt{font-weight:inherit}
-#breathe .br-s .st0.s-r>.bt::before,#breathe .br-s .st0.s-a>.bt::before,#breathe .br-s .st0.s-g>.bt::before{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-#breathe .br-s .st0.s-r>.bt::before{content:"removed: "}#breathe .br-s .st0.s-a>.bt::before{content:"added: "}#breathe .br-s .st0.s-g>.bt::before{content:"added, then removed: "}
-#breathe .br-s .bt.fp{animation:brpulse .7s ease-out}
+@media (prefers-reduced-motion:reduce){#flBr #brS .nw{animation:none}}
+#flBr #breathe .br-key span:nth-child(-n+2){display:none}
+#flBr #brS del.kw{font-weight:700;background:var(--del-bd);color:var(--paper);text-decoration-color:var(--paper)}
+#flBr #brS ins.kw{font-weight:700;background:var(--add-bd);color:var(--paper)}
+.fl-fb{display:grid;gap:5px;border-top:1px solid var(--rule);padding-top:10px;min-width:0}
+.fl-fb .fb-h{font:400 13px/1.35 var(--body);color:var(--ink-2);margin:0}.fl-fb .fb-h b{color:var(--ink);font-weight:600}
+.fl-fb .fb-k{font:400 11.5px/1.4 var(--body);color:var(--muted);margin:0;display:flex;flex-wrap:wrap;gap:2px 12px}
+.fl-fb .fb-k i{display:inline-block;width:14px;height:7px;border-radius:2px;vertical-align:1px;margin-right:4px}
+.fl-fb .fl-strip text.ln{font-size:11px}.fl-fb .fbn{fill:var(--ink);font-weight:600}
+.fl-fb g.fbl{cursor:pointer;outline:none}.fl-fb g.fbl:focus-visible>rect:first-child,.fl-fb g.fbl.on>rect:first-child{fill:var(--faint)!important}
+.fl-fb g.fbl.pl .bar{animation:fbpulse .6s ease-out}@keyframes fbpulse{0%{opacity:.2}100%{opacity:1}}
+.fl-fb .fl-play{justify-self:start;margin-top:2px}
+@media (prefers-reduced-motion:reduce){.fl-fb g.fbl.pl .bar{animation:none}}
+/* r4: the full cumulative edit trail, in the play sheet. States: base plain; removed struck amber; added blue; came and went struck, dashed blue outline.
+   Key words bold on top. The fights marker is neutral ink (no new hue), heavier as the count grows. */
+.fs-tr{box-sizing:border-box;position:relative;margin:0;font:400 16.5px/1.62 var(--display);color:var(--ink);overflow:hidden}
+@media (max-width:600px){.fs-tr{font-size:14.5px;line-height:1.55}}
+.tr-r{width:100%;margin:4px 0}.tr-k{font:400 12.5px/1.45 var(--body);color:var(--muted);margin:0}
+.fs-tr .bw.nw{animation:brfade .25s ease-out both}
+@keyframes brfade{from{opacity:0}to{opacity:1}}
+.fs-tr .bt{border-radius:2px;padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.fs-tr .s-r>.bt,.tr-k .lg.s-r{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:2px}
+.fs-tr .s-a>.bt,.tr-k .lg.s-a{background:var(--add-bg);color:var(--add-hi)}
+.fs-tr .s-g>.bt,.tr-k .lg.s-g{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--del-bd);text-decoration-thickness:1.5px;outline:1px dashed var(--add-bd);outline-offset:-1px}
+.fs-tr .kw.s-r>.bt{font-weight:700;background:var(--del-bd);color:var(--paper);text-decoration-color:var(--paper)}
+.fs-tr .kw.s-a>.bt{font-weight:700;background:var(--add-bd);color:var(--paper)}
+.fs-tr .kw.s-g>.bt{font-weight:700;color:var(--del-ink);outline-width:1.5px}
+.fs-tr .s-b.kw>.bt,.fs-tr .s-p>.bt{font-weight:inherit}
+.fs-tr .st0.s-r>.bt::before,.fs-tr .st0.s-a>.bt::before,.fs-tr .st0.s-g>.bt::before{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.fs-tr .st0.s-r>.bt::before{content:"removed: "}.fs-tr .st0.s-a>.bt::before{content:"added: "}.fs-tr .st0.s-g>.bt::before{content:"added, then removed: "}
+.fs-tr .bt.fp{animation:brpulse .7s ease-out}
 @keyframes brpulse{0%{box-shadow:0 0 0 3px var(--ink-2)}100%{box-shadow:0 0 0 0 transparent}}
-.br-fx,.br-kw .lg.fx{font:600 max(9px,.5em)/1 var(--mono);color:var(--ink-2);opacity:.6;margin-left:.08em;letter-spacing:0;cursor:help;white-space:nowrap}
-#breathe .br-fx{vertical-align:super}
+.br-fx,.tr-k .lg.fx{font:600 max(9px,.5em)/1 var(--mono);color:var(--ink-2);opacity:.6;margin-left:.08em;letter-spacing:0;cursor:help;white-space:nowrap}
+.fs-tr .br-fx{vertical-align:super}
 .br-fx[data-l="2"]{opacity:.85}.br-fx[data-l="3"]{opacity:1;font-weight:700;color:var(--ink)}
 .br-fx:focus-visible{outline:2px solid var(--add-bd);outline-offset:1px}
-.br-chip,.br-kw .lg.chip{font:600 max(10px,.55em)/1 var(--mono);color:var(--ink-2);background:var(--paper);border:1px dashed var(--add-bd);border-radius:999px;padding:.2em .45em;margin:0 .25em 0 0;vertical-align:.12em;cursor:pointer}
-.br-kw .lg{border-radius:2px;padding:0 .2em}.br-kw .lg.chip{cursor:default}.br-kw .lg.fx{font-size:.95em;opacity:1}
-@media (prefers-reduced-motion:reduce){#breathe .br-s .bw.nw,#breathe .br-s .bt.fp{animation:none}}
-#flBr #breathe .br-key span:nth-child(-n+2){display:none}
-/* the trail holds every word since 2021, so it sets smaller than the one-sentence version did */
-#flBr #breathe .br-s{font-size:clamp(16px,1.8vw,20px);line-height:1.55}
-@media (max-width:600px){#flBr #breathe .br-s{font-size:14px;line-height:1.5}}
-/* the trail is taller than a screen: the date and the time strip sit above it, and the strip stays in view while the trail scrolls by */
-#flBr #breathe .br-meta{order:1}#flBr #breathe .br-strip{order:2;position:sticky;top:0;z-index:3;background:var(--sheet);box-shadow:0 6px 6px -6px var(--rule)}
-#flBr #breathe .br-s{order:3}#flBr #breathe .br-key{order:4}
+.br-chip,.tr-k .lg.chip{font:600 max(10px,.55em)/1 var(--mono);color:var(--ink-2);background:var(--paper);border:1px dashed var(--add-bd);border-radius:999px;padding:.2em .45em;margin:0 .25em 0 0;vertical-align:.12em;cursor:pointer}
+.tr-k .lg{border-radius:2px;padding:0 .2em}.tr-k .lg.chip{cursor:default}.tr-k .lg.fx{font-size:.95em;opacity:1}
+@media (prefers-reduced-motion:reduce){.fs-tr .bw.nw,.fs-tr .bt.fp{animation:none}}
 .fl-mir blockquote.mi{border-top:4px solid var(--ink-2)}
 .fl-mir .bd{background:var(--faint);color:var(--ink)}
 .fl-mir .bdr{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
@@ -409,7 +419,8 @@ details.fl-full .news-q{margin-top:4px}
   <h2 id="c1H" class="fl-hd" data-q="en:Zionism">Zionism was the “<del>re-establishment</del>” of a Jewish state. Now it is “a Jewish homeland <ins>through colonization</ins>.”</h2>
   <div class="fl-moment" id="flBr">
     <!--R:breathe-->
-    <div class="br-fk" data-q="en:Zionism"><span class="fl-hint" id="brHint" hidden>◀ Drag through time ▶</span><button type="button" class="rw-btn" id="brPP" hidden>❚❚ Pause</button><button type="button" class="rw-btn" id="brAll" aria-pressed="false">Key words only</button><span class="br-kw" id="brKwF">Nothing leaves the trail: <span class="lg s-r">struck amber</span> removed since Jan 2021, <span class="lg s-a">blue</span> added, <span class="lg s-g">outlined</span> added, then removed; <span class="lg fx">⇄ n</span> = removed or restored n times; <span class="lg chip">+n</span> words live under an hour. Key words in bold.</span><span class="br-kw" id="brKw" hidden>Key words only: “re-establishment” and “state” (out), “colonial” or “colonization” (in), every time they came and went; the rest reads as that day’s sentence. Other words changed too.</span></div>
+    <div class="br-fk" data-q="en:Zionism"><span class="fl-hint" id="brHint" hidden>◀ Drag through time ▶</span><button type="button" class="rw-btn" id="brPP" hidden>❚❚ Pause</button><button type="button" class="rw-btn" id="brAll" aria-pressed="false">Key words only</button><span class="br-kw" id="brKwF">Every word removed since Jan 2021 is struck; every word added is blue. The key words, “re-establishment”, “state” and “colonization”, are bold.</span><span class="br-kw" id="brKw" hidden>Key words only: “re-establishment” and “state” (out), “colonial” or “colonization” (in). Other words changed too.</span></div>
+    <div class="fl-fb" id="flFb"><p class="fb-h" id="fbH"></p><p class="fb-k" aria-hidden="true"><span><i style="background:var(--add-bd)"></i>in, added since 2021</span><span><i style="background:var(--muted)"></i>in, as in Jan 2021</span><span><i style="height:2px;background:var(--del-bd)"></i>out, though in Jan 2021</span><span><i style="width:1.5px;height:11px;background:var(--ink)"></i>one change</span><span>⇄ n = removed or restored n times · tap a lane for its dates</span></p><div class="fl-strip" id="fbS"></div><button type="button" class="fl-play" data-sheet="tr">See every word that came and went →</button></div>
   </div>
   <p class="fl-body" data-q="en:Zionism">Of the 41 removals of “colonization” we can check, 37 were undone.</p>
   <button type="button" class="fl-play" data-sheet="zi">Every change, step by step</button>
@@ -553,10 +564,12 @@ details.fl-full .news-q{margin-top:4px}
     <div class="fs-pane" data-k="zi" hidden></div>
     <div class="fs-pane" data-k="o7" hidden></div>
     <div class="fs-pane" data-k="xr" hidden></div>
+    <div class="fs-pane" data-k="tr" hidden></div>
     <p class="fs-src"><a id="flSheetSrc" href="@@R@@#ziFig" target="_blank" rel="noopener">Open this in the research edition ↗</a><a hidden href="@@R@@#o7Fig" target="_blank" rel="noopener">o7</a></p>
   </div>
 </dialog>
 <template id="tpl-zi"><!--R:ziFig--></template>
+<template id="tpl-tr"><div class="fs-trw" style="display:grid;gap:6px"><p class="br-meta" id="brTrMeta"></p><input type="range" class="tr-r" id="brTrR" aria-label="Move through time: every word the first sentence has held, as it stood on that day"><p class="tr-k">Every word the Zionism first sentence has held since Jan 2021; nothing leaves the trail: <span class="lg s-r">struck amber</span> removed since Jan 2021, <span class="lg s-a">blue</span> added, <span class="lg s-g">outlined</span> added, then removed; <span class="lg fx">⇄ n</span> = removed or restored n times; <span class="lg chip">+n</span> words live under an hour, tap to show. Key words in bold.</p><div class="fs-tr" id="brTr"></div></div></template>
 <template id="tpl-o7"><!--R:o7Fig--></template>
 <template id="tpl-xr"><!--R:xrFig--></template>
 <script>
@@ -600,7 +613,40 @@ function flTiles(){const g=$("#flTg");if(!g)return;const N=150,A=[17,44,71,98,12
 /* ---------- card 1: #breathe, the Zionism sentence rewriting itself; one sweep 2021 -> now, then the finger ---------- */
 brRelease=function(){};/* the research edition's comparison box stays in the research edition */
 const BRS={raf:0,done:false,running:false,paused:false,clk:0,K:null};
-/* r3: the CUMULATIVE EDIT TRAIL (nothing disappears). Every stored wording from Jan 2021 on is merged, in date order, into ONE token
+/* impact r2: by default only the words that carry the change are marked (the removed "re-establishment" and "state", the added
+   colonial/colonization wording); every other removed word is left out and every other added word reads as plain text, so the line
+   reads as the sentence of that day. "Show every changed word" restores the research edition's full diff. Text is never altered. */
+const BRF={all:true,k:-1,h:null};
+/* r2d: ONE baseline everywhere. Every step of the sweep and the drag marks the wording of that day against the Jan 2021 wording
+   (BR.base), never against the previous step. In key-word mode the marks are word tokens: removed "re-establishment" / "state"
+   (struck amber), added colonial/colonization words (blue); all other removed words are left out and all other added words read
+   plain, identically at every step and at rest. Newly appearing marks fade in (250 ms); the box height is fixed. */
+const BKD=[/re-establishment/i,/^state[^\w]*$/i],BKI=/coloni/i;
+function brFocusHTML(ops){return ops.map(o=>{if(o.t==="=")return esc(o.s);const T=o.s.split(/(\s+)/);
+  if(o.t==="-")return T.filter(w=>/\S/.test(w)&&BKD.some(r=>r.test(w))).map(w=>`<del>${esc(w)}</del> `).join("");
+  return T.map(w=>/\S/.test(w)&&BKI.test(w)?`<ins>${esc(w)}</ins>`:esc(w)).join("")}).join("").replace(/ {2,}/g," ")}
+/* r2e: the DEFAULT is the full diff against Jan 2021, one element per word (so marks stay put and accumulate as time moves);
+   the key words get an emphasis class on top, not a filter. "Key words only" switches to the calm filtered view. */
+function brFullHTML(ops){return ops.map(o=>{if(o.t==="=")return esc(o.s);const tg=o.t==="-"?"del":"ins";
+  return o.s.split(/(\s+)/).map(w=>{if(!/\S/.test(w))return w;const kw=o.t==="-"?BKD.some(r=>r.test(w)):BKI.test(w);return `<${tg}${kw?' class="kw"':""}>${esc(w)}</${tg}>`}).join("")}).join("")}
+function brMarkup(k){const o=wdiff(BR.base,brText(k).s);return BRF.all?brFullHTML(o):brFocusHTML(o)}
+const brKey=m=>m.tagName+"|"+m.textContent.trim();
+function brMarks(el){const prev=new Map();$$("del,ins",el).forEach(m=>{const q=brKey(m);prev.set(q,(prev.get(q)||0)+1)});return prev}
+function brPaint(el,html,prev){const key=brKey;
+  el.innerHTML=html;const seen=new Map();$$("del,ins",el).forEach(m=>{const q=key(m),n=(seen.get(q)||0)+1;seen.set(q,n);if(n>(prev.get(q)||0)&&!RM.matches)m.classList.add("nw")})}
+const brRender0=brRender;
+brRender=function(k,flash){const el=$("#brS");if(!el)return;const prev=brMarks(el),before=el.innerHTML;brRender0(k,flash);if(BRS.running){const b=$("#brMeta b");if(b)b.textContent=brDs(BR.cur)}
+  if(flash){BRF.k=-1;BRF.h="flash";return}const h=brMarkup(k);if(BRF.k===k&&BRF.h===h&&el.innerHTML===before)return;BRF.k=k;BRF.h=h;el.classList.toggle("anim",false);el.classList.toggle("flash",false);brPaint(el,h,prev)};
+function brHold(){const el=$("#brS");if(!el||!BR.ev)return;const cur=el.innerHTML;let H=0;el.style.minHeight=el.style.height="";
+  const seen=new Set();BR.ev.forEach((e,i)=>{if(e.s==null||seen.has(e.s))return;seen.add(e.s);const o=wdiff(BR.base,e.s);el.innerHTML=BRF.all?brFullHTML(o):brFocusHTML(o);H=Math.max(H,el.offsetHeight)});
+  el.innerHTML=cur;el.style.minHeight=el.style.height=H+"px"}
+function flBreathe(){if(!$("#breathe"))return;
+  if(BR.cur==null&&!RM.matches)BR.cur=Date.UTC(2021,0,1);
+  drawBreathe();brHold();
+  const b=$("#brAll");if(b&&!b._w){b._w=1;b.onclick=()=>{BRF.all=!BRF.all;b.setAttribute("aria-pressed",String(!BRF.all));b.textContent=BRF.all?"Key words only":"Every changed word";
+    $("#brKw").hidden=BRF.all;$("#brKwF").hidden=!BRF.all;$("#flBr").classList.toggle("all",BRF.all);BR.lastId=null;BRF.k=-1;BRF.h=null;brRender(brLive(BR.cur),false);brHold()}}}
+/* r4: the full CUMULATIVE EDIT TRAIL now lives in the play sheet ("See every word that came and went"); the card keeps the sentence.
+   r3: the CUMULATIVE EDIT TRAIL (nothing disappears). Every stored wording from Jan 2021 on is merged, in date order, into ONE token
    sequence: each wording is aligned to the merged sequence with a word-level LCS (a match to a token live in the previous wording is
    preferred) and its unmatched words are inserted at their aligned places; presence is kept per token per step. The whole sweep uses
    this one sequence, so token positions are stable. At date D the box shows every token that has appeared by D, and a token never
@@ -613,12 +659,7 @@ const BRS={raf:0,done:false,running:false,paused:false,clk:0,K:null};
    token pulses at the moment it flips. Compact mode: came-and-went tokens live under 1 hour in total fold into a +n chip (tap to
    show). "Key words only" shows the same trail filtered to the key words: re-establishment / state (out), colonial / colonization (in),
    with every other word read plain as that day's sentence. The box height is fixed at the tallest step of the current mode. */
-const BRF={all:true};
-const BKD=[/re-establishment/i,/^state[^\w]*$/i],BKI=/coloni/i;
-function brFocusHTML(ops){return ops.map(o=>{if(o.t==="=")return esc(o.s);const T=o.s.split(/(\s+)/);
-  if(o.t==="-")return T.filter(w=>/\S/.test(w)&&BKD.some(r=>r.test(w))).map(w=>`<del>${esc(w)}</del> `).join("");
-  return T.map(w=>/\S/.test(w)&&BKI.test(w)?`<ins>${esc(w)}</ins>`:esc(w)).join("")}).join("").replace(/ {2,}/g," ")}
-const BRT={on:false,key:null,M:null,k:-1,c:null,v:null,open:new Set()};
+const BRT={key:null,M:null,k:-1,c:null,v:null,open:new Set()};
 const BR_SHORT=1/24;
 /* a word is fought over when it went in or out at least twice AND more often than its state alone implies (removed or added once:
    1 change; added, then removed: 2), i.e. at least one removal was undone or one restoration was taken back */
@@ -659,9 +700,9 @@ function brHist(i,k){const T=BRT,c=T.chg[i].filter(x=>x<=k),f=c.length;if(f<2)re
 function brView(el){return {el,W:$$(".bw",el),B:$$(".bw>.bt",el),C:$$(".br-chip",el),X:$$(".br-fx",el)}}
 function brDom(el){const T=BRT;let h="";for(let i=0;i<T.n;i++){const r=T.run[i];if(r>=0&&T.runs[r][0]===i)h+=`<button type="button" class="br-chip" data-r="${r}" hidden></button>`;
     h+=`<span class="bw" data-i="${i}"${r>=0?` data-r="${r}"`:""} hidden><span class="bt">${esc(T.M[i].w)}</span><sup class="br-fx" data-p="${i}" data-ft="brf${i}" tabindex="0" role="button" hidden></sup> </span>`}
-  el.innerHTML=h;T.v=brView(el);T.vm=BRF.all;T.k=-1}
+  el.innerHTML=h;T.v=brView(el);T.k=-1}
 /* paint one view (the box, or the hidden clone used to measure the height) at step k; returns the counts at k */
-function brPaintV(v,k){const T=BRT,a=T.pr[k],all=BRF.all,c={r:0,a:0,g:0,f:0,f2:0},vis=new Uint8Array(T.n),fl=new Int32Array(T.n),dst=[],nw=RM.matches?"":" nw";let prevSt="";
+function brPaintV(v,k){const T=BRT,a=T.pr[k],all=true,c={r:0,a:0,g:0,f:0,f2:0},vis=new Uint8Array(T.n),fl=new Int32Array(T.n),dst=[],nw=RM.matches?"":" nw";let prevSt="";
   for(let i=0;i<T.n;i++){const ap=T.k0[i]<=k,p=a[i];let st=T.b0[i]?(p?"b":"r"):(p?"a":"g");
     const f=ap?brNf(i,k):0,ct=f>=2&&f>BR_MIN[st];fl[i]=ct?f:0;
     if(ap){if(st==="r")c.r++;else if(st==="a")c.a++;else if(st==="g")c.g++;if(ct)c.f++;if(f>=2)c.f2++}
@@ -678,34 +719,88 @@ function brPaintV(v,k){const T=BRT,a=T.pr[k],all=BRF.all,c={r:0,a:0,g:0,f:0,f2:0
   v.C.forEach(ch=>{const r=+ch.dataset.r,I=T.runs[r],op=T.open.has(r),n=I.filter(j=>T.k0[j]<=k&&!a[j]).length,on=all&&(op?I.some(j=>T.k0[j]<=k):n>0);if(ch.hidden!==!on)ch.hidden=!on;
     if(on){const t=op?"−":"+"+n;if(ch.textContent!==t){ch.textContent=t;ch.setAttribute("aria-expanded",String(op));ch.setAttribute("aria-label",op?"Fold the words that were live for under an hour":`${n} more words, each live for under an hour in total: show them`)}}});
   return c}
-function brPaintT(k,force){const T=BRT,el=$("#brS");if(!T.M||!el)return T.c;
-  if(!T.v||T.v.el!==el||!el.contains(T.v.W[0])||T.vm!==BRF.all)brDom(el);
+function brPaintT(k,force){const T=BRT,el=$("#brTr");if(!T.M||!el)return T.c;
+  if(!T.v||T.v.el!==el||!el.contains(T.v.W[0])||false)brDom(el);
   if(!force&&T.k===k&&T.c)return T.c;const kp=T.k;T.c=brPaintV(T.v,k);
   if(!RM.matches&&BRS.running&&kp>=0&&k>kp)for(let i=0;i<T.n;i++)if(!T.v.W[i].hidden&&brNf(i,k)>brNf(i,kp)){const b=T.v.B[i];b.classList.remove("fp");void b.offsetWidth;b.classList.add("fp")}
   T.k=k;return T.c}
 function brMetaT(k,flash,c){const e=BR.ev[k],tx=brText(k),nx=BR.ev.find((x,i)=>i>k&&x.id!==e.id);
   const X=R.exposure&&R.exposure[BR.title],ex=X&&(X.variants||[]).find(v=>v.s&&tx.s&&v.s.slice(0,200)===tx.s.slice(0,200));
-  $("#brMeta").innerHTML=(flash?`<b>A wording that was undone</b> · live from ${brDs(e.t)}${nx?` to ${brDs(nx.t)}`:""}`:
+  $("#brTrMeta").innerHTML=(flash?`<b>A wording that was undone</b> · live from ${brDs(e.t)}${nx?` to ${brDs(nx.t)}`:""}`:
     `<b>${k===BR.ev.length-1?"Today":brDs(e.t)}</b> · wording ${e.id+1} of ${BR.n}${nx?`, live until ${brDs(nx.t)}`:", live now"}${tx.exact?"":" · this wording was short-lived and its text was not kept, so the last kept wording is shown"}`)+
     ` · ${c.r} words removed and ${c.a} added since ${dlabT(BR.ev[0].t)} · ${c.g} words came and went · ${c.f} words fought over${ex?` · <b>${pct(ex.share)}</b> of page views while it was live (${big(ex.views)})`:""}`}
-brRender=function(k,flash){const el=$("#brS");if(!el||!BR.ev||!BRT.on)return;brEnsure();el.classList.remove("anim");el.classList.toggle("flash",!!flash);BR.lastId=flash?null:BR.ev[k].id;
-  const c=brPaintT(k,false);brMetaT(k,flash,c);if(BRS.running){const b=$("#brMeta b");if(b)b.textContent=brDs(BR.cur)}};
 /* the fixed box height: the tallest step of the current mode, measured on a hidden clone (so the box itself never re-animates) */
-function brHold(){const el=$("#brS");if(!el||!BR.ev||!BRT.on)return;brEnsure();brPaintT(BRT.k>=0?BRT.k:brLive(BR.cur),true);
+function trHold(){const el=$("#brTr");if(!el||!BR.ev)return;brEnsure();brPaintT(BRT.k>=0?BRT.k:brLive(BR.cur),true);
   const c=el.cloneNode(true);c.removeAttribute("id");c.setAttribute("aria-hidden","true");
   c.style.cssText=`position:absolute;visibility:hidden;pointer-events:none;left:0;top:0;width:${el.getBoundingClientRect().width}px;height:auto;min-height:0`;
   el.parentNode.appendChild(c);const v=brView(c);let H=0;
   /* every view only grows with time except where a folded (under an hour) word is live, so in the full view the candidates are the
      last step and the steps with such a word live; the key-word view is measured at every distinct wording */
-  for(let j=0;j<BRT.K;j++){if(j<BRT.K-1&&BRT.SW[j]===BRT.SW[j+1])continue;if(BRF.all&&j<BRT.K-1&&!BRT.hc[j])continue;brPaintV(v,j);H=Math.max(H,c.offsetHeight)}
-  c.remove();el.style.minHeight=el.style.height=Math.ceil(H)+"px";window.__brH=Math.ceil(H)}
-function flBreathe(){if(!$("#breathe"))return;BRT.on=true;
-  if(BR.cur==null&&!RM.matches)BR.cur=Date.UTC(2021,0,1);
-  drawBreathe();brHold();
-  const el=$("#brS");if(el&&!el._w){el._w=1;el.addEventListener("animationend",e=>{if(e.target.classList.contains("fp"))e.target.classList.remove("fp")});el.addEventListener("click",e=>{const ch=e.target.closest(".br-chip");if(!ch)return;const r=+ch.dataset.r;if(BRT.open.has(r))BRT.open.delete(r);else BRT.open.add(r);brHold()})}
-  if(!BRT.fr&&document.fonts){BRT.fr=1;document.fonts.ready.then(()=>{if(BR.ev)brHold()})}
-  const b=$("#brAll");if(b&&!b._w){b._w=1;b.onclick=()=>{BRF.all=!BRF.all;b.setAttribute("aria-pressed",String(!BRF.all));b.textContent=BRF.all?"Key words only":"Every changed word";
-    $("#brKw").hidden=BRF.all;$("#brKwF").hidden=!BRF.all;$("#flBr").classList.toggle("all",BRF.all);brHold();brRender(brLive(BR.cur),false)}}}
+  for(let j=0;j<BRT.K;j++){if(j<BRT.K-1&&BRT.SW[j]===BRT.SW[j+1])continue;if(j<BRT.K-1&&!BRT.hc[j])continue;brPaintV(v,j);H=Math.max(H,c.offsetHeight)}
+  c.remove();el.style.minHeight=el.style.height=Math.ceil(H)+"px";window.__trH=Math.ceil(H)}
+function trGo(k){const c=brPaintT(k,false);brMetaT(k,false,c)}
+function trInit(){if(!BR.ev)drawBreathe();brEnsure();const el=$("#brTr"),rg=$("#brTrR");if(!el||!BRT.M)return;
+  rg.min=0;rg.max=BRT.K-1;rg.step=1;rg.value=BRT.K-1;rg.oninput=()=>trGo(+rg.value);
+  el.addEventListener("animationend",e=>{if(e.target.classList.contains("fp"))e.target.classList.remove("fp")});
+  el.addEventListener("click",e=>{const ch=e.target.closest(".br-chip");if(!ch)return;const r=+ch.dataset.r;if(BRT.open.has(r))BRT.open.delete(r);else BRT.open.add(r);trHold()});
+  BRT.v=null;trGo(BRT.K-1);trHold()}
+/* r4: the FIGHT BOARD under the sentence. Candidates are the 1-3-word phrases of every stored wording (no leading or trailing
+   stopword). A phrase is present at a step when its words stand together, in order, in that step's wording (case and edge punctuation
+   folded). Its changes are the steps where it went in or out; a phrase is FOUGHT OVER when it changed at least twice AND more often
+   than its state alone implies (added or removed once: 1 change; added, then removed: 2): the same definition as the full trail. The
+   board shows the 8 most-fought, one lane per idea (phrases sharing a word stem, or moving together, are merged; a longer phrase that
+   moves the same way gives the label), each a 2021 -> now strip: blue = in, added since 2021; grey = in, as in Jan 2021; amber line =
+   out, though it was in Jan 2021; a tick = one change. A shared cursor follows the sweep and the drag, each count runs to the cursor
+   date, and a lane pulses when its phrase flips. Tap a lane for its dated history. */
+const FB={key:null,L:null,k:-1,words:0};
+const FB_STOP=new Set("a an the of and or to in on by for at as is was be its it that this with from through which what whose but also into while where who whom".split(" "));
+const FB_HEDGE=new Set("roughly corresponding corresponds aimed aiming region area outside central late known seeks sought".split(" "));
+const fbKey=w=>w.toLowerCase().replace(/^[“”"'‘’(\[]+/,"").replace(/[“”"'‘’)\].,;:!?]+$/,"");
+function fbBuild(){const ev=BR.ev,K=ev.length,SW=ev.map((e,k)=>brText(k).s),U=[...new Set(SW)],ui=new Map(U.map((s,i)=>[s,i])),st=SW.map(s=>ui.get(s));
+  const UK=U.map(s=>brTok(s).map(fbKey).filter(Boolean)),US=UK.map(T=>" "+T.join(" ")+" "),C=new Set();
+  UK.forEach(T=>{for(let n=1;n<=3;n++)for(let x=0;x+n<=T.length;x++){const g=T.slice(x,x+n);if(FB_STOP.has(g[0])||FB_STOP.has(g[n-1]))continue;C.add(g.join(" "))}});
+  const MIN={b:0,r:1,a:1,g:2},R=[];
+  C.forEach(g=>{const q=" "+g+" ",up=US.map(s=>s.includes(q)?1:0),p=st.map(u=>up[u]),ch=[];for(let k=1;k<K;k++)if(p[k]!==p[k-1])ch.push(k);
+    const s=p[0]?(p[K-1]?"b":"r"):(p[K-1]?"a":"g");if(ch.length>=2&&ch.length>MIN[s])R.push({g,p,ch,s,f:ch.length})});
+  R.sort((a,b)=>b.f-a.f||b.g.split(" ").length-a.g.split(" ").length||(a.g<b.g?-1:1));
+  const words=R.filter(r=>!r.g.includes(" ")).length;
+  const stem=g=>g.split(" ").filter(w=>!FB_STOP.has(w)).map(w=>w.replace(/^re-/,"").slice(0,6)),ham=(x,y)=>{let d=0;for(let k=0;k<K;k++)if(x[k]!==y[k])d++;return d},nw=g=>g.split(" ").length;
+  const L=[];for(const r of R){if(r.g.split(" ").every(w=>FB_HEDGE.has(w)||FB_STOP.has(w)))continue;const S=stem(r.g);if(L.some(q=>q.S.some(x=>S.includes(x))||ham(q.p0,r.p)<=K*.12))continue;
+    let c=r;for(const x of R)if(nw(x.g)>nw(c.g)&&(" "+x.g+" ").includes(" "+r.g+" ")&&x.f>=r.f*.8&&ham(x.p,r.p)<=K*.08)c=x;
+    L.push({...c,S:[...new Set([...S,...stem(c.g)])],p0:r.p});if(L.length>=8)break}
+  L.sort((a,b)=>b.f-a.f);
+  /* label: the phrase as written in the latest wording that has it */
+  L.forEach(l=>{const G=l.g.split(" ");for(let k=K-1;k>=0&&!l.lab;k--){if(!l.p[k])continue;const T=brTok(SW[k]),I=T.map((w,i)=>[fbKey(w),i]).filter(x=>x[0]);
+      for(let x=0;x+G.length<=I.length;x++)if(G.every((w,y)=>I[x+y][0]===w)){l.lab=T.slice(I[x][1],I[x+G.length-1][1]+1).join(" ").replace(/^[“”"'‘’(\[]+|[“”"'‘’)\].,;:!?]+$/g,"");break}}
+    if(!l.lab)l.lab=l.g;
+    const sp=[];l.p.forEach((v,k)=>{if(!v)return;const a=ev[k].t,b=k+1<K?ev[k+1].t:BR.t1;if(sp.length&&sp.at(-1)[1]===a)sp.at(-1)[1]=b;else sp.push([a,b])});l.sp=sp});
+  Object.assign(FB,{key:BR.title+"|"+K,L,K,words,k:-1});
+  L.forEach((l,i)=>Object.defineProperty(FT,"fbl"+i,{configurable:true,enumerable:true,get:()=>fbHist(i,FB.k<0?K-1:FB.k)}));
+  window.__fb={words,fought:R.length,lanes:L.map(l=>({lab:l.lab,g:l.g,f:l.f,s:l.s,sp:l.sp,ch:l.ch}))}}
+const fbN=(l,k)=>{let f=0;while(f<l.ch.length&&l.ch[f]<=k)f++;return f};
+function fbHist(i,k){const l=FB.L[i],c=l.ch.filter(x=>x<=k),f=c.length,inn=n=>(l.p[0]?n%2===1:n%2===0)?"in":"out";
+  const S=c.map((x,n)=>`${inn(n)} ${brDs(BR.ev[x].t)}`),seq=f>6?[...S.slice(0,2),"…",...S.slice(-3)]:S;
+  return `<span class="h">“${esc(l.lab)}”</span><p>${l.p[0]?"In Jan 2021":"Not in Jan 2021"}${f?" → "+seq.map(esc).join(" → "):", no change yet"}</p><p class="src">(${f} changes${f?`; last ${esc(brDs(BR.ev[c.at(-1)].t))}`:""})</p>`}
+function fbDraw(){const host=$("#fbS");if(!host||!FB.L)return;const W=Math.max(250,host.clientWidth),ph=isPhone(),m={l:4,r:6},t0=BR.t0,t1=BR.t1,x=t=>m.l+(W-m.l-m.r)*(Math.min(t1,Math.max(t0,t))-t0)/(t1-t0);
+  const lh=ph?29:27,y0=6,H=y0+FB.L.length*lh+16,bH=7;let s=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="group" aria-label="The ${FB.L.length} most-fought phrases of the Zionism first sentence, 2021 to now: when each was in the sentence, and each change">`;
+  for(let yr=new Date(t0).getUTCFullYear()+1;yr<=new Date(t1).getUTCFullYear();yr++){const xx=x(Date.UTC(yr,0,1));s+=`<line x1="${xx}" x2="${xx}" y1="${y0}" y2="${H-14}" style="stroke:var(--faint)"/><text x="${xx+3}" y="${H-3}">${ph?"’"+String(yr).slice(2):yr}</text>`}
+  if(WAR>t0){const wx=x(WAR);s+=`<line x1="${wx}" x2="${wx}" y1="${y0}" y2="${H-14}" style="stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3"/>`}
+  FB.L.forEach((l,i)=>{const y=y0+i*lh,by=y+13,base=!!l.p[0];
+    s+=`<g class="mk fbl" data-i="${i}" data-ft="fbl${i}" tabindex="0" role="button" aria-label="${esc(l.lab)}: in or out ${l.f} times; show the dates"><rect x="0" y="${y}" width="${W}" height="${lh}" style="fill:transparent"/>`;
+    s+=`<text class="ln" x="${m.l}" y="${y+9}">“${esc(l.lab)}” <tspan class="fbn">⇄${l.f}</tspan></text><g class="bar"><rect x="${m.l}" y="${by}" width="${W-m.l-m.r}" height="${bH}" rx="2" style="fill:var(--faint)"/>`;
+    if(base){let a=t0;[...l.sp,[t1,t1]].forEach(([p,q])=>{if(p>a)s+=`<line class="out" x1="${x(a).toFixed(1)}" x2="${x(p).toFixed(1)}" y1="${by+bH/2}" y2="${by+bH/2}" style="stroke:var(--del-bd);stroke-width:2"/>`;a=Math.max(a,q)})}
+    l.sp.forEach(([p,q])=>{const xa=x(p),xb=Math.max(xa+1.2,x(q));s+=`<rect class="in" x="${xa.toFixed(1)}" y="${by}" width="${(xb-xa).toFixed(1)}" height="${bH}" style="fill:var(${base?"--muted":"--add-bd"})"/>`});
+    l.ch.forEach(k=>{s+=`<rect class="tk" x="${(x(BR.ev[k].t)-.6).toFixed(1)}" y="${by-3}" width="1.2" height="${bH+6}" style="fill:var(--ink)"/>`});
+    s+=`</g></g>`});
+  s+=`<line id="fbCur" x1="0" x2="0" y1="${y0}" y2="${H-14}" style="stroke:var(--ink);stroke-width:1.5"/></svg>`;host.innerHTML=s;FB.x=x;FB.k=-1;
+  $("#fbH").innerHTML=`<b>${FB.words} words fought over</b> since Jan 2021 · the ${FB.L.length} most-fought phrases`;fbSync()}
+function fbSync(){const c=$("#fbCur");if(!c||!FB.L)return;const xx=FB.x(BR.cur==null?BR.t1:BR.cur).toFixed(1);c.setAttribute("x1",xx);c.setAttribute("x2",xx);
+  const k=brLive(BR.cur==null?BR.t1:BR.cur),kp=FB.k;if(k===kp)return;FB.k=k;
+  $$("#fbS g.fbl").forEach((g,i)=>{const l=FB.L[i],f=fbN(l,k),t=$(".fbn",g);if(t.textContent!=="⇄"+f)t.textContent="⇄"+f;g.setAttribute("aria-label",`${l.lab}: in or out ${f} times by ${brDs(BR.ev[k].t)}; show the dates`);
+    if(!RM.matches&&BRS.running&&kp>=0&&k>kp&&f>fbN(l,kp)){g.classList.remove("pl");void g.getBoundingClientRect();g.classList.add("pl")}})}
+const brRender1=brRender;brRender=function(k,flash){brRender1(k,flash);if(FB.L)safe(fbSync)};
+const flBreathe1=flBreathe;flBreathe=function(){flBreathe1();if(!BR.ev)return;if(FB.key!==BR.title+"|"+BR.ev.length)fbBuild();fbDraw();
+  const s=$("#fbS");if(s&&!s._w){s._w=1;s.addEventListener("animationend",e=>{const g=e.target.closest&&e.target.closest("g.fbl");if(g)g.classList.remove("pl")})}};
 /* impact r2: the sweep's plan. Stops = the dates where the marked key words change (clustered so there are at most 14 stops);
    each stop dwells 0.6-1 s; the travel between stops is quick and proportional to calendar time; total about 13.5 s. */
 function brPlan(){const E=BR.ev,t0=BR.t0,t1=BR.t1,key=[];let prev=null;
@@ -830,8 +925,8 @@ function carInit(c){const vp=$(".car-vp",c),S=$$(".car-s",c),n=S.length,dots=$("
 
 /* ---------- the play sheet: the research edition's #ziFig, #o7Fig and #xrFig, on demand ---------- */
 const SHEET={k:null,opener:null,ready:{}};
-const SHEET_T={zi:"Zionism: every change to the first sentence",o7:"Hamas, October 7, Gaza genocide: every change",xr:"In their own words: the sentence, then and now"};
-const SHEET_A={zi:"ziFig",o7:"o7Fig",xr:"xrFig"};
+const SHEET_T={zi:"Zionism: every change to the first sentence",o7:"Hamas, October 7, Gaza genocide: every change",xr:"In their own words: the sentence, then and now",tr:"Zionism: every word that came and went"};
+const SHEET_A={zi:"ziFig",o7:"o7Fig",xr:"xrFig",tr:"breathe"};
 function openSheet(k,arg,opener){const dlg=$("#flSheet");if(!dlg||!R)return;ftHide();if(XMT.b)xmTipHide();hideTip();
   SHEET.k=k;SHEET.opener=opener||document.activeElement;
   const pane=$(`.fs-pane[data-k="${k}"]`,dlg);$$(".fs-pane",dlg).forEach(p=>p.hidden=p!==pane);
@@ -841,7 +936,7 @@ function openSheet(k,arg,opener){const dlg=$("#flSheet");if(!dlg||!R)return;ftHi
   if(!dlg.open)dlg.showModal();
   $("#flSheetB").scrollTop=0;
   if(!SHEET.ready[k]){pane.appendChild($("#tpl-"+k).content.cloneNode(true));SHEET.ready[k]=1;
-    if(k==="zi")safe(ziInit);if(k==="o7")safe(o7Init);if(k==="xr"){safe(xrInit);
+    if(k==="zi")safe(ziInit);if(k==="o7")safe(o7Init);if(k==="tr")safe(trInit);if(k==="xr"){safe(xrInit);
       /* guard for a research-edition hover bug: a marked word hovered outside its .x span would throw in the reader's light() */
       pane.addEventListener("pointerover",e=>{const w=e.target.closest&&e.target.closest("#xrPair .w");if(w&&/\bk[12]\b/.test(w.className)&&!e.target.closest(".x"))e.stopPropagation()},true)}safe(tnApply,pane)}
   if(k==="zi"){if(!RM.matches)setTimeout(()=>ziPlay(true),500)}
@@ -945,7 +1040,7 @@ async function shSave(id,btn){const spec=shSpec(id);if(!spec)return;try{if(docum
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-share]");if(b){e.preventDefault();shSave(b.dataset.share,b)}});
 
 function flDraw(){safe(flPos);safe(drawXwGG);$$(".fl-strip[data-tab]").forEach(h=>safe(flO7,h));safe(flZi,$("#stZI"));safe(flNk,$("#stNK"));
-  if(BR.ev&&BRT.on)safe(flBreathe);if($("#xmScroll .xm"))safe(()=>{const m=XM.mode;xmDraw();$("#xmScroll .xm").className="xm m-"+m;$$("#xmScroll tbody tr").forEach((tr,i)=>tr.style.setProperty("--r",i))});
+  if(BR.ev)safe(flBreathe);if($("#xmScroll .xm"))safe(()=>{const m=XM.mode;xmDraw();$("#xmScroll .xm").className="xm m-"+m;$$("#xmScroll tbody tr").forEach((tr,i)=>tr.style.setProperty("--r",i))});
   if(K.dom!==undefined&&$("#kChart svg"))safe(drawKey)}
 function flInit(){
   if(!R)return;
