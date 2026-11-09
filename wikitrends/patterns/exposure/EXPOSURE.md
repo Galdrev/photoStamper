@@ -70,6 +70,25 @@ What drives the gaps:
   1.1M views.
 - In the **last 12 months** no gap exceeds 5 points (largest: Nakba "by Zionists", 30% of views against 34% of time). Traffic is flat and the wordings are mostly settled.
 
+## Run 2: Benjamin Netanyahu and Palestine (the other two flash reach bars)
+
+Data: GitHub Actions run 42704500939 (`wikitrends-data:views/42704500939/views/`), the same workflow, endpoint
+(agent=user daily pageviews), window and method as run 1; the workflow takes the titles from `WT_TITLES`. `exposure.py`
+now reads both runs (`python exposure.py <run 1 dir> <run 2 dir>`); the six hero articles' entries are unchanged
+(checked equal to the run-1 file). The critical wording for both is "genocide" anywhere in the opening section, the
+test used for Israel.
+
+- **Benjamin Netanyahu**: last 12 months (9 Nov 2025 – 8 Nov 2026), **7.9M views (7,940,343), 100%** met "genocide" in
+  the opening section; 13.6% met the own-voice sentence "orchestrating the Gaza genocide", live since 29 Sep 2026.
+  "Genocide" has been in the opening section since 21 Mar 2024. Surge (7 Oct – 31 Dec 2023): 3.5M views, none with
+  "genocide". No page moves.
+- **Palestine**: last 12 months, **2.6M views (2,641,678), 100%** met "genocide" in the opening section; 41.0% met
+  "recognised as constituting genocide", live since 3 Jun 2026. "Genocide" entered the opening on 23 Dec 2024. The
+  article was "State of Palestine" until 7 Jan 2025 (views of that title count from the start, views of "Palestine"
+  from the move). Since 7 Oct 2023 the view share is 35% against a time share of 61% (the surge again).
+- The old flash bars (mass2 crawl, monthly) gave Netanyahu 7.0M and Palestine 2.4M; the daily sums are larger, as for
+  the six hero articles (see the caveat above).
+
 ## Method
 
 - **Views**: daily Wikimedia REST pageviews, `per-article/en.wikipedia/all-access/user/<Title>/daily/20210101/20261108`

@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-09",
- "source": "/tmp/claude-0/views_data",
+ "source": "/tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/views/r1 + /tmp/claude-0/-home-user-photoStamper/bb344c8a-11d1-57c4-b6a1-fd224fa30cfd/scratchpad/views/r2",
  "articles": {
   "Israel": {
    "rule_text": "opening section (section 0)",
@@ -1981,6 +1981,657 @@
     "1 Jan 2021 to first 2021 edit (2021-01-01): state from the Jan 2021 lead (leads.json rev0 997079588)"
    ]
   },
+  "Benjamin Netanyahu": {
+   "rule_text": "opening section (section 0)",
+   "categories": {
+    "genocide": "“genocide” in the opening section",
+    "no_genocide": "no “genocide” in the opening section",
+    "other": "none of the above (incl. parse artefacts)"
+   },
+   "critical": [
+    "genocide"
+   ],
+   "softer": "no_genocide",
+   "titles_views_main": {
+    "Benjamin Netanyahu": "start"
+   },
+   "hero_phrases": {
+    "now": "orchestrating the Gaza genocide",
+    "then": "no “genocide” anywhere in the opening section"
+   },
+   "n_redirect_titles_with_views": 66,
+   "last_day": "20261108",
+   "windows": {
+    "all_2021_now": {
+     "from": "20210101",
+     "to": "20261108",
+     "views_total": 27210111,
+     "views_total_incl_redirects": 27357738,
+     "days_covered": 2138.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "genocide": 0.6444,
+      "no_genocide": 0.3556,
+      "other": 0.0
+     },
+     "time_share": {
+      "genocide": 0.4501,
+      "no_genocide": 0.5499,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "genocide": 0.6442,
+      "no_genocide": 0.3558,
+      "other": 0.0
+     },
+     "views": {
+      "genocide": 17533997,
+      "no_genocide": 9676114,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.6444,
+      "time_share": 0.4501,
+      "views": 17533997
+     },
+     "softer": {
+      "view_share": 0.3556,
+      "time_share": 0.5499,
+      "views": 9676114
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0397,
+       "time_share": 0.0187,
+       "views": 1080880
+      },
+      "then": {
+       "view_share": 0.3556,
+       "time_share": 0.5499,
+       "views": 9676114
+      },
+      "neither": {
+       "view_share": 0.6047,
+       "time_share": 0.4314,
+       "views": 16453117
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": 19.4
+    },
+    "since_7_oct_2023": {
+     "from": "20231007",
+     "to": "20261108",
+     "views_total": 21893932,
+     "views_total_incl_redirects": 21999620,
+     "days_covered": 1129.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "genocide": 0.8009,
+      "no_genocide": 0.1991,
+      "other": 0.0
+     },
+     "time_share": {
+      "genocide": 0.8525,
+      "no_genocide": 0.1475,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "genocide": 0.8011,
+      "no_genocide": 0.1989,
+      "other": 0.0
+     },
+     "views": {
+      "genocide": 17533997,
+      "no_genocide": 4359935,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.8009,
+      "time_share": 0.8525,
+      "views": 17533997
+     },
+     "softer": {
+      "view_share": 0.1991,
+      "time_share": 0.1475,
+      "views": 4359935
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0494,
+       "time_share": 0.0354,
+       "views": 1080880
+      },
+      "then": {
+       "view_share": 0.1991,
+       "time_share": 0.1475,
+       "views": 4359935
+      },
+      "neither": {
+       "view_share": 0.7515,
+       "time_share": 0.817,
+       "views": 16453117
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": -5.2
+    },
+    "last_12_months": {
+     "from": "20251109",
+     "to": "20261108",
+     "views_total": 7940343,
+     "views_total_incl_redirects": 7988270,
+     "days_covered": 365.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "genocide": 1.0,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "time_share": {
+      "genocide": 1.0,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "genocide": 1.0,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "views": {
+      "genocide": 7940343,
+      "no_genocide": 0,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 1.0,
+      "time_share": 1.0,
+      "views": 7940343
+     },
+     "softer": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.1361,
+       "time_share": 0.1096,
+       "views": 1080880
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 0.8639,
+       "time_share": 0.8904,
+       "views": 6859463
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": 0.0
+    },
+    "surge_7_oct_to_31_dec_2023": {
+     "from": "20231007",
+     "to": "20231231",
+     "views_total": 3457918,
+     "views_total_incl_redirects": 3468854,
+     "days_covered": 86.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "genocide": 0.0,
+      "no_genocide": 1.0,
+      "other": 0.0
+     },
+     "time_share": {
+      "genocide": 0.0,
+      "no_genocide": 1.0,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "genocide": 0.0,
+      "no_genocide": 1.0,
+      "other": 0.0
+     },
+     "views": {
+      "genocide": 0,
+      "no_genocide": 3457918,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "softer": {
+      "view_share": 1.0,
+      "time_share": 1.0,
+      "views": 3457918
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "then": {
+       "view_share": 1.0,
+       "time_share": 1.0,
+       "views": 3457918
+      },
+      "neither": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": 0.0
+    }
+   },
+   "episodes_top_views_per_day": [
+    {
+     "cat": "genocide",
+     "hero": "now",
+     "from": "2026-09-29 23:49",
+     "to": "2026-11-09 00:00",
+     "days": 40.01,
+     "views": 1080880
+    },
+    {
+     "cat": "genocide",
+     "hero": "neither",
+     "from": "2024-03-21 14:23",
+     "to": "2026-09-29 23:49",
+     "days": 922.39,
+     "views": 16452922
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2021-01-02 20:06",
+     "to": "2024-03-21 13:25",
+     "days": 1173.72,
+     "views": 9669617
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2024-03-21 13:52",
+     "to": "2024-03-21 14:23",
+     "days": 0.02,
+     "views": 233
+    },
+    {
+     "cat": "genocide",
+     "hero": "neither",
+     "from": "2024-03-21 13:25",
+     "to": "2024-03-21 13:52",
+     "days": 0.02,
+     "views": 195
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2021-01-01 00:00",
+     "to": "2021-01-02 20:06",
+     "days": 1.84,
+     "views": 6264
+    }
+   ],
+   "n_state_changes": 6,
+   "moves": [],
+   "notes": [
+    "1 Jan 2021 to first 2021 edit (2021-01-02): state from the Jan 2021 lead (leads.json rev0 997164663)"
+   ]
+  },
+  "Palestine": {
+   "rule_text": "opening section (section 0)",
+   "categories": {
+    "genocide": "“genocide” in the opening section",
+    "no_genocide": "no “genocide” in the opening section",
+    "other": "none of the above (incl. parse artefacts)"
+   },
+   "critical": [
+    "genocide"
+   ],
+   "softer": "no_genocide",
+   "titles_views_main": {
+    "State of Palestine": "start",
+    "Palestine": "2025-01-07 20:06"
+   },
+   "hero_phrases": {
+    "now": "recognised as constituting genocide",
+    "then": "no “genocide” anywhere in the opening section"
+   },
+   "n_redirect_titles_with_views": 70,
+   "last_day": "20261108",
+   "windows": {
+    "all_2021_now": {
+     "from": "20210101",
+     "to": "20261108",
+     "views_total": 29946115,
+     "views_total_incl_redirects": 36301113,
+     "days_covered": 2138.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "genocide": 0.2409,
+      "no_genocide": 0.7591,
+      "other": 0.0
+     },
+     "time_share": {
+      "genocide": 0.3204,
+      "no_genocide": 0.6796,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "genocide": 0.2142,
+      "no_genocide": 0.7858,
+      "other": 0.0
+     },
+     "views": {
+      "genocide": 7214607,
+      "no_genocide": 22731508,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.2409,
+      "time_share": 0.3204,
+      "views": 7214607
+     },
+     "softer": {
+      "view_share": 0.7591,
+      "time_share": 0.6796,
+      "views": 22731508
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0361,
+       "time_share": 0.0742,
+       "views": 1082230
+      },
+      "then": {
+       "view_share": 0.7591,
+       "time_share": 0.6796,
+       "views": 22731508
+      },
+      "neither": {
+       "view_share": 0.2048,
+       "time_share": 0.2463,
+       "views": 6132378
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": -8.0
+    },
+    "since_7_oct_2023": {
+     "from": "20231007",
+     "to": "20261108",
+     "views_total": 20897787,
+     "views_total_incl_redirects": 25456397,
+     "days_covered": 1129.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "genocide": 0.3452,
+      "no_genocide": 0.6548,
+      "other": 0.0
+     },
+     "time_share": {
+      "genocide": 0.6068,
+      "no_genocide": 0.3932,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "genocide": 0.3054,
+      "no_genocide": 0.6946,
+      "other": 0.0
+     },
+     "views": {
+      "genocide": 7214607,
+      "no_genocide": 13683180,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.3452,
+      "time_share": 0.6068,
+      "views": 7214607
+     },
+     "softer": {
+      "view_share": 0.6548,
+      "time_share": 0.3932,
+      "views": 13683180
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0518,
+       "time_share": 0.1405,
+       "views": 1082230
+      },
+      "then": {
+       "view_share": 0.6548,
+       "time_share": 0.3932,
+       "views": 13683180
+      },
+      "neither": {
+       "view_share": 0.2934,
+       "time_share": 0.4663,
+       "views": 6132378
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": -26.2
+    },
+    "last_12_months": {
+     "from": "20251109",
+     "to": "20261108",
+     "views_total": 2641678,
+     "views_total_incl_redirects": 2769509,
+     "days_covered": 365.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "genocide": 1.0,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "time_share": {
+      "genocide": 1.0,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "genocide": 1.0,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "views": {
+      "genocide": 2641678,
+      "no_genocide": 0,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 1.0,
+      "time_share": 1.0,
+      "views": 2641678
+     },
+     "softer": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.4097,
+       "time_share": 0.4345,
+       "views": 1082230
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 0.5903,
+       "time_share": 0.5655,
+       "views": 1559448
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": 0.0
+    },
+    "surge_7_oct_to_31_dec_2023": {
+     "from": "20231007",
+     "to": "20231231",
+     "views_total": 8750428,
+     "views_total_incl_redirects": 11759202,
+     "days_covered": 86.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "genocide": 0.0,
+      "no_genocide": 1.0,
+      "other": 0.0
+     },
+     "time_share": {
+      "genocide": 0.0,
+      "no_genocide": 1.0,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "genocide": 0.0,
+      "no_genocide": 1.0,
+      "other": 0.0
+     },
+     "views": {
+      "genocide": 0,
+      "no_genocide": 8750428,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "softer": {
+      "view_share": 1.0,
+      "time_share": 1.0,
+      "views": 8750428
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "then": {
+       "view_share": 1.0,
+       "time_share": 1.0,
+       "views": 8750428
+      },
+      "neither": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": 0.0
+    }
+   },
+   "episodes_top_views_per_day": [
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2021-01-13 10:48",
+     "to": "2024-12-23 21:34",
+     "days": 1440.45,
+     "views": 22669221
+    },
+    {
+     "cat": "genocide",
+     "hero": "neither",
+     "from": "2025-04-17 10:13",
+     "to": "2026-06-03 09:32",
+     "days": 411.97,
+     "views": 4862597
+    },
+    {
+     "cat": "genocide",
+     "hero": "neither",
+     "from": "2024-12-23 21:34",
+     "to": "2025-04-17 09:51",
+     "days": 114.51,
+     "views": 1269781
+    },
+    {
+     "cat": "genocide",
+     "hero": "now",
+     "from": "2026-06-03 09:32",
+     "to": "2026-11-09 00:00",
+     "days": 158.6,
+     "views": 1082230
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2021-01-01 00:00",
+     "to": "2021-01-13 10:48",
+     "days": 12.45,
+     "views": 62122
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2025-04-17 09:51",
+     "to": "2025-04-17 10:13",
+     "days": 0.02,
+     "views": 165
+    }
+   ],
+   "n_state_changes": 6,
+   "moves": [
+    [
+     "2025-01-07T20:06:42Z",
+     "State of Palestine",
+     "Palestine"
+    ]
+   ],
+   "notes": [
+    "1 Jan 2021 to first 2021 edit (2021-01-13): state from the Jan 2021 lead (leads.json rev0 997255131)"
+   ]
+  },
   "Gaza genocide": {
    "rule_text": "first sentence",
    "categories": {
@@ -2654,6 +3305,38 @@
    "view_share": 0.6155,
    "time_share": 0.9476,
    "gap_points": -33.2
+  },
+  {
+   "article": "Benjamin Netanyahu",
+   "window": "all_2021_now",
+   "category": "critical",
+   "view_share": 0.6444,
+   "time_share": 0.4501,
+   "gap_points": 19.4
+  },
+  {
+   "article": "Benjamin Netanyahu",
+   "window": "all_2021_now",
+   "category": "softer",
+   "view_share": 0.3556,
+   "time_share": 0.5499,
+   "gap_points": -19.4
+  },
+  {
+   "article": "Palestine",
+   "window": "since_7_oct_2023",
+   "category": "critical",
+   "view_share": 0.3452,
+   "time_share": 0.6068,
+   "gap_points": -26.2
+  },
+  {
+   "article": "Palestine",
+   "window": "since_7_oct_2023",
+   "category": "softer",
+   "view_share": 0.6548,
+   "time_share": 0.3932,
+   "gap_points": 26.2
   },
   {
    "article": "Gaza genocide",

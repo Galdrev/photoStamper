@@ -247,7 +247,13 @@ vis = " ".join(text.values())
 # merge r1, item 3: the reach figure. Every number in it is taken from patterns/exposure/exposure.json (daily Wikimedia pageviews,
 # run 42651558741) and rebuilt here; the build fails if the page drifts from the file. Views = window views_total; share = the
 # critical-wording view share (Gaza genocide: own voice); the surge window is 7 Oct - 31 Dec 2023.
+# final round, step 1: Benjamin Netanyahu and Palestine are back (spin_review R3), from the same source (the same workflow and
+# endpoint, run 42704500939, the same window); their critical wording is "genocide" in the opening section, Israel's test.
 EXP = json.load(open(os.path.join(PAT, "exposure", "exposure.json")))["articles"]
+_HERO6 = ["Israel", "Zionism", "Nakba", "October 7 attacks", "Hamas", "Gaza genocide"]
+assert sorted(EXP) == sorted(_HERO6 + ["Benjamin Netanyahu", "Palestine"]), f"exposure.json articles: {sorted(EXP)}"
+assert all(EXP[a]["rule_text"] == "opening section (section 0)" and EXP[a]["critical"] == ["genocide"] for a in ("Benjamin Netanyahu", "Palestine"))
+assert EXP["Palestine"]["titles_views_main"] == {"State of Palestine": "start", "Palestine": "2025-01-07 20:06"}, "Palestine: views of the old title, then of the new one from the move"
 _W = {a: EXP[a]["windows"]["last_12_months"] for a in EXP}
 assert all(w["from"] == "20251109" and w["to"] == "20261108" for w in _W.values()), "exposure window changed (the page says 9 Nov 2025 - 8 Nov 2026)"
 assert "9 Nov 2025 – 8 Nov 2026 (daily sums)" in tpl
@@ -264,7 +270,10 @@ for a in _ord:
     assert row in tpl, f"reach figure row does not match exposure.json: {a}"
     EXP_NUMS |= {_mil(v), _pc(_crit[a]).rstrip("%")}
 _sw = {a: EXP[a]["windows"]["surge_7_oct_to_31_dec_2023"] for a in EXP}
-for frag in (f'({_pc(_W["Israel"]["hero_exact_phrase"]["now"]["view_share"])} met “began committing genocide”)',
+assert _ord[0] == "Benjamin Netanyahu" and tpl.count('<ul class="fl-bars fl-exb">') == 1 and tpl[tpl.index('<ul class="fl-bars fl-exb">'):].count("<li>", 0, tpl[tpl.index('<ul class="fl-bars fl-exb">'):].index("</ul>")) == 8, "reach figure: eight bars, Netanyahu (the largest) on top"
+assert "Page views of the six articles above and of Benjamin Netanyahu and Palestine, 9 Nov 2025 – 8 Nov 2026 (daily sums)." in tpl
+_hx = lambda a: _pc(_W[a]["hero_exact_phrase"]["now"]["view_share"])
+for frag in (f'({_hx("Israel")} of Israel’s views met “began committing genocide”, {_hx("Benjamin Netanyahu")} of Netanyahu’s “orchestrating the Gaza genocide”, {_hx("Palestine")} of Palestine’s “recognised as constituting genocide”)',
              f'(the other {_pc(_W["Nakba"]["view_share"]["ec_other"])} met another “ethnic cleansing” wording)',
              f'Israel, {_mil(_sw["Israel"]["views_total"])} million views, {_pc(_sw["Israel"]["softer"]["view_share"])} with no genocide charge',
              f'Hamas, {_mil(_sw["Hamas"]["views_total"])} million, none with “political organisation”)',
@@ -272,7 +281,7 @@ for frag in (f'({_pc(_W["Israel"]["hero_exact_phrase"]["now"]["view_share"])} me
     assert frag in tpl, f"reach figure text does not match exposure.json: {frag}"
     EXP_NUMS |= set(n.rstrip("%") for n in re.findall(r"\d[\d.]*%?", frag))
 assert _sw["Hamas"]["view_share"]["political_org"] == 0, "the surge line says none"
-assert sum(1 for a in _ord if _crit[a] >= 0.95) == 5 and _crit["Nakba"] < 0.5, "'nearly every view ... except Nakba' must hold"
+assert sum(1 for a in _ord if _crit[a] >= 0.95) == 7 and _crit["Nakba"] < 0.5, "'nearly every view ... except Nakba' must hold"
 COMPUTED["12%"] = "treemap headline, computed from data/mass2.json (asserted below)"
 COMPUTED["12"] = COMPUTED["12%"]
 for n in EXP_NUMS:

@@ -9,7 +9,8 @@ Inputs (data only; nothing in the page templates or build scripts is touched):
 Matching follows the flash edition: whitespace-normalised, curly apostrophes folded (build_flash.norm), substring tests on
 the first sentence as ratchet.py splits it (analyze.sentences on analyze.prose of section 0), Israel on the whole section 0.
 
-  python exposure.py <dir with views_daily.json.gz> -> exposure.json
+  python exposure.py <dir with views_daily.json.gz> [<dir of a later run> ...] -> exposure.json
+  (run 42651558741: the six hero articles; run 42704500939: Benjamin Netanyahu and Palestine, the other two reach bars)
 """
 import bisect, gzip, json, os, re, sys
 from datetime import datetime, timedelta, timezone
@@ -52,6 +53,13 @@ RULES = {
         ("political_org", "“political organisation with a military wing”", has(r"political organi[sz]ation with a military wing")),
         ("militant", "“militant” in the first sentence", has(r"\bmilitant")),
     ]},
+    # run 2 (the two other flash reach bars): the opening section, as for Israel; the charge in any voice (the treemap's test)
+    "Benjamin Netanyahu": {"text": "lead", "crit": "genocide", "soft": "no_genocide", "cats": [
+        ("genocide", "“genocide” in the opening section", has(r"genocid")),
+        ("no_genocide", "no “genocide” in the opening section", lambda s: True)]},
+    "Palestine": {"text": "lead", "crit": "genocide", "soft": "no_genocide", "cats": [
+        ("genocide", "“genocide” in the opening section", has(r"genocid")),
+        ("no_genocide", "no “genocide” in the opening section", lambda s: True)]},
     "Gaza genocide": {"text": "fs", "crit": "own_voice", "soft": "allegations", "cats": [
         ("allegations", "“Allegations have been made” / alleged", has(r"\ballegation|\balleged")),
         ("attributed", "attributed: “accused of”, “according to …”", has(ATTR)),
@@ -63,7 +71,8 @@ HERO = {"Israel": ("began committing genocide", None), "Zionism": ("a Jewish hom
         "Nakba": ("the ethnic cleansing of Palestinian Arabs by Zionists", "the destruction of Palestinian society"),
         "October 7 attacks": ("coordinated armed incursions", "coordinated attacks"),
         "Hamas": ("political organisation with a military wing", "militant"),
-        "Gaza genocide": ("carried out by Israel", "Allegations have been made")}
+        "Gaza genocide": ("carried out by Israel", "Allegations have been made"),
+        "Benjamin Netanyahu": ("orchestrating the Gaza genocide", None), "Palestine": ("recognised as constituting genocide", None)}
 
 
 def hero(title, text):
@@ -92,13 +101,17 @@ def day0(d):
     return datetime.strptime(d, "%Y%m%d").replace(tzinfo=UTC)
 
 
-def main(src):
-    V = json.load(gzip.open(os.path.join(src, "views_daily.json.gz")))["articles"]
+def main(*srcs):
+    V, SRC = {}, {}
+    for d in srcs:
+        for t, a in json.load(gzip.open(os.path.join(d, "views_daily.json.gz")))["articles"].items():
+            V[t], SRC[t] = a, d
+    src = " + ".join(srcs)
     L0 = {v["title"]: v for v in json.load(open(os.path.join(WT, "data", "leads.json")))}
     out = {"generated": datetime.now(UTC).strftime("%Y-%m-%d"), "source": src, "articles": {}}
     for title, rule in RULES.items():
         a = V[title]
-        texts = json.load(gzip.open(os.path.join(src, f"lead_{title.replace(' ', '_')}.json.gz"))) if rule["text"] == "lead" else {}
+        texts = json.load(gzip.open(os.path.join(SRC[title], f"lead_{title.replace(' ', '_')}.json.gz"))) if rule["text"] == "lead" else {}
         notes = []
         # state change points (t, cat): carry the last known state through hidden revisions
         pts, last = [], None
@@ -233,4 +246,4 @@ def main(src):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(*sys.argv[1:])
