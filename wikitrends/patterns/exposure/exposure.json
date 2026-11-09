@@ -1,0 +1,2707 @@
+{
+ "generated": "2026-11-09",
+ "source": "/tmp/claude-0/views_data",
+ "articles": {
+  "Israel": {
+   "rule_text": "opening section (section 0)",
+   "categories": {
+    "committing": "own voice: “began committing genocide” in the opening section",
+    "accusation": "“genocide” in the opening section as an accusation (“accusations that it has committed … genocide”)",
+    "no_genocide": "no “genocide” in the opening section",
+    "other": "none of the above (incl. parse artefacts)"
+   },
+   "critical": [
+    "committing",
+    "accusation"
+   ],
+   "softer": "no_genocide",
+   "titles_views_main": {
+    "Israel": "start"
+   },
+   "hero_phrases": {
+    "now": "began committing genocide",
+    "then": "no “genocide” anywhere in the opening section"
+   },
+   "n_redirect_titles_with_views": 50,
+   "last_day": "20261108",
+   "windows": {
+    "all_2021_now": {
+     "from": "20210101",
+     "to": "20261108",
+     "views_total": 43446337,
+     "views_total_incl_redirects": 44298269,
+     "days_covered": 2138.0,
+     "views_excluded_no_state": 86,
+     "view_share": {
+      "committing": 0.1083,
+      "accusation": 0.1143,
+      "no_genocide": 0.7774,
+      "other": 0.0
+     },
+     "time_share": {
+      "committing": 0.1537,
+      "accusation": 0.1208,
+      "no_genocide": 0.7255,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "committing": 0.1096,
+      "accusation": 0.1144,
+      "no_genocide": 0.776,
+      "other": 0.0
+     },
+     "views": {
+      "committing": 4704956,
+      "accusation": 4966134,
+      "no_genocide": 33775247,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.2226,
+      "time_share": 0.2745,
+      "views": 9671091
+     },
+     "softer": {
+      "view_share": 0.7774,
+      "time_share": 0.7255,
+      "views": 33775247
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.1078,
+       "time_share": 0.1532,
+       "views": 4682011
+      },
+      "then": {
+       "view_share": 0.7774,
+       "time_share": 0.7255,
+       "views": 33775247
+      },
+      "neither": {
+       "view_share": 0.1148,
+       "time_share": 0.1213,
+       "views": 4989080
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": -5.2
+    },
+    "since_7_oct_2023": {
+     "from": "20231007",
+     "to": "20261108",
+     "views_total": 27893561,
+     "views_total_incl_redirects": 28487417,
+     "days_covered": 1129.0,
+     "views_excluded_no_state": 71,
+     "view_share": {
+      "committing": 0.1687,
+      "accusation": 0.178,
+      "no_genocide": 0.6533,
+      "other": 0.0
+     },
+     "time_share": {
+      "committing": 0.2911,
+      "accusation": 0.2287,
+      "no_genocide": 0.4803,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "committing": 0.1704,
+      "accusation": 0.1779,
+      "no_genocide": 0.6517,
+      "other": 0.0
+     },
+     "views": {
+      "committing": 4704956,
+      "accusation": 4966134,
+      "no_genocide": 18222471,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.3467,
+      "time_share": 0.5197,
+      "views": 9671091
+     },
+     "softer": {
+      "view_share": 0.6533,
+      "time_share": 0.4803,
+      "views": 18222471
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.1679,
+       "time_share": 0.2901,
+       "views": 4682011
+      },
+      "then": {
+       "view_share": 0.6533,
+       "time_share": 0.4803,
+       "views": 18222471
+      },
+      "neither": {
+       "view_share": 0.1789,
+       "time_share": 0.2297,
+       "views": 4989080
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": -17.3
+    },
+    "last_12_months": {
+     "from": "20251109",
+     "to": "20261108",
+     "views_total": 5056470,
+     "views_total_incl_redirects": 5215240,
+     "days_covered": 365.0,
+     "views_excluded_no_state": 27,
+     "view_share": {
+      "committing": 0.9259,
+      "accusation": 0.0741,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "time_share": {
+      "committing": 0.8972,
+      "accusation": 0.1028,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "committing": 0.9262,
+      "accusation": 0.0738,
+      "no_genocide": 0.0,
+      "other": 0.0
+     },
+     "views": {
+      "committing": 4682011,
+      "accusation": 374459,
+      "no_genocide": 0,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 1.0,
+      "time_share": 1.0,
+      "views": 5056470
+     },
+     "softer": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.9259,
+       "time_share": 0.8972,
+       "views": 4682011
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 0.0741,
+       "time_share": 0.1028,
+       "views": 374459
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": 0.0
+    },
+    "surge_7_oct_to_31_dec_2023": {
+     "from": "20231007",
+     "to": "20231231",
+     "views_total": 9318740,
+     "views_total_incl_redirects": 9475437,
+     "days_covered": 86.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "committing": 0.0,
+      "accusation": 0.0091,
+      "no_genocide": 0.9909,
+      "other": 0.0
+     },
+     "time_share": {
+      "committing": 0.0,
+      "accusation": 0.0123,
+      "no_genocide": 0.9877,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "committing": 0.0,
+      "accusation": 0.0091,
+      "no_genocide": 0.9909,
+      "other": 0.0
+     },
+     "views": {
+      "committing": 0,
+      "accusation": 84786,
+      "no_genocide": 9233954,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.0091,
+      "time_share": 0.0123,
+      "views": 84786
+     },
+     "softer": {
+      "view_share": 0.9909,
+      "time_share": 0.9877,
+      "views": 9233954
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "then": {
+       "view_share": 0.9909,
+       "time_share": 0.9877,
+       "views": 9233954
+      },
+      "neither": {
+       "view_share": 0.0091,
+       "time_share": 0.0123,
+       "views": 84786
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": -0.3
+    }
+   },
+   "episodes_top_views_per_day": [
+    {
+     "cat": "accusation",
+     "hero": "neither",
+     "from": "2023-11-04 16:33",
+     "to": "2023-11-05 17:57",
+     "days": 1.06,
+     "views": 84786
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2023-03-30 09:55",
+     "to": "2023-11-04 16:33",
+     "days": 219.28,
+     "views": 9785631
+    },
+    {
+     "cat": "accusation",
+     "hero": "neither",
+     "from": "2025-05-04 00:45",
+     "to": "2025-06-23 09:12",
+     "days": 50.35,
+     "views": 1652426
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2021-01-02 20:42",
+     "to": "2021-07-14 11:16",
+     "days": 192.61,
+     "views": 5312766
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2023-11-05 17:57",
+     "to": "2024-05-19 15:22",
+     "days": 195.89,
+     "views": 5119893
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2024-08-25 16:01",
+     "to": "2024-11-20 21:48",
+     "days": 87.24,
+     "views": 2103046
+    },
+    {
+     "cat": "accusation",
+     "hero": "neither",
+     "from": "2024-08-25 01:56",
+     "to": "2024-08-25 16:01",
+     "days": 0.59,
+     "views": 13310
+    },
+    {
+     "cat": "accusation",
+     "hero": "neither",
+     "from": "2024-05-19 15:22",
+     "to": "2024-05-21 06:33",
+     "days": 1.63,
+     "views": 35452
+    },
+    {
+     "cat": "committing",
+     "hero": "neither",
+     "from": "2025-10-03 13:31",
+     "to": "2025-10-04 16:39",
+     "days": 1.13,
+     "views": 22945
+    },
+    {
+     "cat": "accusation",
+     "hero": "neither",
+     "from": "2025-06-23 09:13",
+     "to": "2025-10-03 13:31",
+     "days": 102.18,
+     "views": 1831401
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2024-05-21 06:33",
+     "to": "2024-08-18 01:46",
+     "days": 88.8,
+     "views": 1497824
+    },
+    {
+     "cat": "no_genocide",
+     "hero": "then",
+     "from": "2024-11-20 21:54",
+     "to": "2025-04-05 03:04",
+     "days": 135.22,
+     "views": 2153160
+    }
+   ],
+   "n_state_changes": 34,
+   "moves": [],
+   "notes": [
+    "1 Jan 2021 to first 2021 edit (2021-01-02): state from the Jan 2021 lead (leads.json rev0 996561656)"
+   ]
+  },
+  "Zionism": {
+   "rule_text": "first sentence",
+   "categories": {
+    "colonization": "“colonization” / “colonial” in the first sentence",
+    "re_establishment": "“re-establishment” (no colonization)",
+    "establishment": "“establishment of … homeland/state”, neither colonization nor re-establishment",
+    "other": "none of the above (incl. parse artefacts)"
+   },
+   "critical": [
+    "colonization"
+   ],
+   "softer": "re_establishment",
+   "titles_views_main": {
+    "Zionism": "start"
+   },
+   "hero_phrases": {
+    "now": "a Jewish homeland through colonization",
+    "then": "re-establishment"
+   },
+   "n_redirect_titles_with_views": 27,
+   "last_day": "20261108",
+   "windows": {
+    "all_2021_now": {
+     "from": "20210101",
+     "to": "20261108",
+     "views_total": 15261333,
+     "views_total_incl_redirects": 16245807,
+     "days_covered": 2138.0,
+     "views_excluded_no_state": 562,
+     "view_share": {
+      "colonization": 0.41,
+      "re_establishment": 0.0844,
+      "establishment": 0.5055,
+      "other": 0.0002
+     },
+     "time_share": {
+      "colonization": 0.412,
+      "re_establishment": 0.0737,
+      "establishment": 0.5141,
+      "other": 0.0002
+     },
+     "view_share_incl_redirects": {
+      "colonization": 0.4114,
+      "re_establishment": 0.0842,
+      "establishment": 0.5042,
+      "other": 0.0002
+     },
+     "views": {
+      "colonization": 6256517,
+      "re_establishment": 1287480,
+      "establishment": 7714249,
+      "other": 3088
+     },
+     "critical": {
+      "view_share": 0.41,
+      "time_share": 0.412,
+      "views": 6256517
+     },
+     "softer": {
+      "view_share": 0.0844,
+      "time_share": 0.0737,
+      "views": 1287480
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.1076,
+       "time_share": 0.1282,
+       "views": 1642322
+      },
+      "then": {
+       "view_share": 0.0889,
+       "time_share": 0.0784,
+       "views": 1356451
+      },
+      "neither": {
+       "view_share": 0.8035,
+       "time_share": 0.7934,
+       "views": 12262560
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.5057,
+      "time_share": 0.5142,
+      "views": 7717336
+     },
+     "gap_points_critical": -0.2
+    },
+    "since_7_oct_2023": {
+     "from": "20231007",
+     "to": "20261108",
+     "views_total": 11748429,
+     "views_total_incl_redirects": 12418962,
+     "days_covered": 1129.0,
+     "views_excluded_no_state": 562,
+     "view_share": {
+      "colonization": 0.5325,
+      "re_establishment": 0.0006,
+      "establishment": 0.4669,
+      "other": 0.0
+     },
+     "time_share": {
+      "colonization": 0.7803,
+      "re_establishment": 0.0009,
+      "establishment": 0.2189,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "colonization": 0.5381,
+      "re_establishment": 0.0006,
+      "establishment": 0.4613,
+      "other": 0.0
+     },
+     "views": {
+      "colonization": 6256517,
+      "re_establishment": 6798,
+      "establishment": 5484999,
+      "other": 116
+     },
+     "critical": {
+      "view_share": 0.5325,
+      "time_share": 0.7803,
+      "views": 6256517
+     },
+     "softer": {
+      "view_share": 0.0006,
+      "time_share": 0.0009,
+      "views": 6798
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.1398,
+       "time_share": 0.2427,
+       "views": 1642322
+      },
+      "then": {
+       "view_share": 0.0064,
+       "time_share": 0.0097,
+       "views": 75769
+      },
+      "neither": {
+       "view_share": 0.8538,
+       "time_share": 0.7476,
+       "views": 10030338
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.4669,
+      "time_share": 0.2189,
+      "views": 5485114
+     },
+     "gap_points_critical": -24.8
+    },
+    "last_12_months": {
+     "from": "20251109",
+     "to": "20261108",
+     "views_total": 2097617,
+     "views_total_incl_redirects": 2283245,
+     "days_covered": 365.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "colonization": 0.9988,
+      "re_establishment": 0.0,
+      "establishment": 0.0012,
+      "other": 0.0
+     },
+     "time_share": {
+      "colonization": 0.9983,
+      "re_establishment": 0.0,
+      "establishment": 0.0017,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "colonization": 0.9987,
+      "re_establishment": 0.0,
+      "establishment": 0.0013,
+      "other": 0.0
+     },
+     "views": {
+      "colonization": 2095013,
+      "re_establishment": 0,
+      "establishment": 2604,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.9988,
+      "time_share": 0.9983,
+      "views": 2095013
+     },
+     "softer": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.7829,
+       "time_share": 0.7508,
+       "views": 1642322
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 0.2171,
+       "time_share": 0.2492,
+       "views": 455295
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0012,
+      "time_share": 0.0017,
+      "views": 2604
+     },
+     "gap_points_critical": 0.1
+    },
+    "surge_7_oct_to_31_dec_2023": {
+     "from": "20231007",
+     "to": "20231231",
+     "views_total": 3238557,
+     "views_total_incl_redirects": 3399615,
+     "days_covered": 86.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "colonization": 0.0,
+      "re_establishment": 0.0,
+      "establishment": 1.0,
+      "other": 0.0
+     },
+     "time_share": {
+      "colonization": 0.0,
+      "re_establishment": 0.0,
+      "establishment": 1.0,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "colonization": 0.0,
+      "re_establishment": 0.0,
+      "establishment": 1.0,
+      "other": 0.0
+     },
+     "views": {
+      "colonization": 0,
+      "re_establishment": 0,
+      "establishment": 3238557,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "softer": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 1.0,
+       "time_share": 1.0,
+       "views": 3238557
+      }
+     },
+     "other_or_neither": {
+      "view_share": 1.0,
+      "time_share": 1.0,
+      "views": 3238557
+     },
+     "gap_points_critical": 0.0
+    }
+   },
+   "episodes_top_views_per_day": [
+    {
+     "cat": "colonization",
+     "hero": "neither",
+     "from": "2024-06-12 06:57",
+     "to": "2024-06-12 14:22",
+     "days": 0.31,
+     "views": 5466
+    },
+    {
+     "cat": "colonization",
+     "hero": "neither",
+     "from": "2025-07-07 19:44",
+     "to": "2025-07-10 21:28",
+     "days": 3.07,
+     "views": 51731
+    },
+    {
+     "cat": "colonization",
+     "hero": "neither",
+     "from": "2024-10-01 05:04",
+     "to": "2024-10-03 09:53",
+     "days": 2.2,
+     "views": 36736
+    },
+    {
+     "cat": "colonization",
+     "hero": "neither",
+     "from": "2024-06-11 20:48",
+     "to": "2024-06-12 06:35",
+     "days": 0.41,
+     "views": 6326
+    },
+    {
+     "cat": "establishment",
+     "hero": "neither",
+     "from": "2024-10-01 04:12",
+     "to": "2024-10-01 05:04",
+     "days": 0.04,
+     "views": 594
+    },
+    {
+     "cat": "not_article",
+     "hero": "not_article",
+     "from": "2025-06-20 09:25",
+     "to": "2025-06-20 10:16",
+     "days": 0.04,
+     "views": 545
+    },
+    {
+     "cat": "colonization",
+     "hero": "neither",
+     "from": "2024-09-16 22:09",
+     "to": "2024-10-01 04:12",
+     "days": 14.25,
+     "views": 172818
+    },
+    {
+     "cat": "establishment",
+     "hero": "neither",
+     "from": "2024-09-16 21:07",
+     "to": "2024-09-16 22:09",
+     "days": 0.04,
+     "views": 503
+    },
+    {
+     "cat": "colonization",
+     "hero": "neither",
+     "from": "2024-09-16 18:24",
+     "to": "2024-09-16 21:07",
+     "days": 0.11,
+     "views": 1313
+    },
+    {
+     "cat": "establishment",
+     "hero": "neither",
+     "from": "2024-06-06 10:46",
+     "to": "2024-06-06 12:28",
+     "days": 0.07,
+     "views": 826
+    },
+    {
+     "cat": "colonization",
+     "hero": "neither",
+     "from": "2025-06-20 10:16",
+     "to": "2025-07-07 19:30",
+     "days": 17.38,
+     "views": 204017
+    },
+    {
+     "cat": "establishment",
+     "hero": "neither",
+     "from": "2024-08-17 12:57",
+     "to": "2024-08-17 15:08",
+     "days": 0.09,
+     "views": 1050
+    }
+   ],
+   "n_state_changes": 111,
+   "moves": [],
+   "notes": [
+    "1 Jan 2021 to first 2021 edit (2021-01-08): state from the Jan 2021 lead (leads.json rev0 993403816)"
+   ]
+  },
+  "Nakba": {
+   "rule_text": "first sentence",
+   "categories": {
+    "ec_by_zionists": "“ethnic cleansing … by Zionists”",
+    "ec_other": "“ethnic cleansing” with another or no agent (by Israel, Israeli, none)",
+    "destruction": "“the destruction of Palestinian society” (no ethnic cleansing)",
+    "other": "none of the above (incl. parse artefacts)"
+   },
+   "critical": [
+    "ec_by_zionists"
+   ],
+   "softer": "destruction",
+   "titles_views_main": {
+    "An Nakba": "start",
+    "Nakba": "2021-04-03 01:08"
+   },
+   "hero_phrases": {
+    "now": "the ethnic cleansing of Palestinian Arabs by Zionists",
+    "then": "the destruction of Palestinian society"
+   },
+   "n_redirect_titles_with_views": 17,
+   "last_day": "20261108",
+   "windows": {
+    "all_2021_now": {
+     "from": "20210101",
+     "to": "20261108",
+     "views_total": 4424100,
+     "views_total_incl_redirects": 4432173,
+     "days_covered": 2046.0,
+     "views_excluded_no_state": 30,
+     "view_share": {
+      "ec_by_zionists": 0.0423,
+      "ec_other": 0.5049,
+      "destruction": 0.1511,
+      "other": 0.3017
+     },
+     "time_share": {
+      "ec_by_zionists": 0.0615,
+      "ec_other": 0.4165,
+      "destruction": 0.4162,
+      "other": 0.1058
+     },
+     "view_share_incl_redirects": {
+      "ec_by_zionists": 0.0424,
+      "ec_other": 0.5047,
+      "destruction": 0.1513,
+      "other": 0.3016
+     },
+     "views": {
+      "ec_by_zionists": 186989,
+      "ec_other": 2233576,
+      "destruction": 668634,
+      "other": 1334901
+     },
+     "critical": {
+      "view_share": 0.0423,
+      "time_share": 0.0615,
+      "views": 186989
+     },
+     "softer": {
+      "view_share": 0.1511,
+      "time_share": 0.4162,
+      "views": 668634
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0423,
+       "time_share": 0.0615,
+       "views": 186989
+      },
+      "then": {
+       "view_share": 0.1511,
+       "time_share": 0.4162,
+       "views": 668634
+      },
+      "neither": {
+       "view_share": 0.8066,
+       "time_share": 0.5223,
+       "views": 3568477
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.8066,
+      "time_share": 0.5223,
+      "views": 3568477
+     },
+     "gap_points_critical": -1.9
+    },
+    "since_7_oct_2023": {
+     "from": "20231007",
+     "to": "20261108",
+     "views_total": 3878073,
+     "views_total_incl_redirects": 3884073,
+     "days_covered": 1129.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "ec_by_zionists": 0.0482,
+      "ec_other": 0.5759,
+      "destruction": 0.061,
+      "other": 0.3149
+     },
+     "time_share": {
+      "ec_by_zionists": 0.1114,
+      "ec_other": 0.7549,
+      "destruction": 0.0061,
+      "other": 0.1277
+     },
+     "view_share_incl_redirects": {
+      "ec_by_zionists": 0.0483,
+      "ec_other": 0.576,
+      "destruction": 0.0609,
+      "other": 0.3148
+     },
+     "views": {
+      "ec_by_zionists": 186989,
+      "ec_other": 2233576,
+      "destruction": 236374,
+      "other": 1221135
+     },
+     "critical": {
+      "view_share": 0.0482,
+      "time_share": 0.1114,
+      "views": 186989
+     },
+     "softer": {
+      "view_share": 0.061,
+      "time_share": 0.0061,
+      "views": 236374
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0482,
+       "time_share": 0.1114,
+       "views": 186989
+      },
+      "then": {
+       "view_share": 0.061,
+       "time_share": 0.0061,
+       "views": 236374
+      },
+      "neither": {
+       "view_share": 0.8908,
+       "time_share": 0.8825,
+       "views": 3454710
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.8908,
+      "time_share": 0.8825,
+      "views": 3454710
+     },
+     "gap_points_critical": -6.3
+    },
+    "last_12_months": {
+     "from": "20251109",
+     "to": "20261108",
+     "views_total": 616286,
+     "views_total_incl_redirects": 617930,
+     "days_covered": 365.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "ec_by_zionists": 0.3034,
+      "ec_other": 0.6965,
+      "destruction": 0.0,
+      "other": 0.0001
+     },
+     "time_share": {
+      "ec_by_zionists": 0.3445,
+      "ec_other": 0.6554,
+      "destruction": 0.0,
+      "other": 0.0001
+     },
+     "view_share_incl_redirects": {
+      "ec_by_zionists": 0.3039,
+      "ec_other": 0.6961,
+      "destruction": 0.0,
+      "other": 0.0001
+     },
+     "views": {
+      "ec_by_zionists": 186989,
+      "ec_other": 429256,
+      "destruction": 0,
+      "other": 41
+     },
+     "critical": {
+      "view_share": 0.3034,
+      "time_share": 0.3445,
+      "views": 186989
+     },
+     "softer": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.3034,
+       "time_share": 0.3445,
+       "views": 186989
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 0.6966,
+       "time_share": 0.6555,
+       "views": 429297
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.6966,
+      "time_share": 0.6555,
+      "views": 429297
+     },
+     "gap_points_critical": -4.1
+    },
+    "surge_7_oct_to_31_dec_2023": {
+     "from": "20231007",
+     "to": "20231231",
+     "views_total": 1242870,
+     "views_total_incl_redirects": 1244341,
+     "days_covered": 86.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "ec_by_zionists": 0.0,
+      "ec_other": 0.0,
+      "destruction": 0.1902,
+      "other": 0.8098
+     },
+     "time_share": {
+      "ec_by_zionists": 0.0,
+      "ec_other": 0.0,
+      "destruction": 0.0801,
+      "other": 0.9199
+     },
+     "view_share_incl_redirects": {
+      "ec_by_zionists": 0.0,
+      "ec_other": 0.0,
+      "destruction": 0.1901,
+      "other": 0.8099
+     },
+     "views": {
+      "ec_by_zionists": 0,
+      "ec_other": 0,
+      "destruction": 236374,
+      "other": 1006496
+     },
+     "critical": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "softer": {
+      "view_share": 0.1902,
+      "time_share": 0.0801,
+      "views": 236374
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "then": {
+       "view_share": 0.1902,
+       "time_share": 0.0801,
+       "views": 236374
+      },
+      "neither": {
+       "view_share": 0.8098,
+       "time_share": 0.9199,
+       "views": 1006496
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.8098,
+      "time_share": 0.9199,
+      "views": 1006496
+     },
+     "gap_points_critical": 0.0
+    }
+   },
+   "episodes_top_views_per_day": [
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2023-10-13 21:16",
+     "to": "2024-03-05 23:27",
+     "days": 144.09,
+     "views": 1221046
+    },
+    {
+     "cat": "ec_other",
+     "hero": "neither",
+     "from": "2024-04-07 09:52",
+     "to": "2024-04-08 14:37",
+     "days": 1.2,
+     "views": 3415
+    },
+    {
+     "cat": "ec_other",
+     "hero": "neither",
+     "from": "2024-03-05 23:27",
+     "to": "2024-04-07 09:30",
+     "days": 32.42,
+     "views": 90702
+    },
+    {
+     "cat": "ec_other",
+     "hero": "neither",
+     "from": "2024-04-08 14:39",
+     "to": "2026-07-06 05:20",
+     "days": 818.61,
+     "views": 2139459
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2022-11-02 22:47",
+     "to": "2023-01-14 05:15",
+     "days": 72.27,
+     "views": 113732
+    },
+    {
+     "cat": "destruction",
+     "hero": "then",
+     "from": "2023-01-14 05:15",
+     "to": "2023-10-13 21:16",
+     "days": 272.67,
+     "views": 425796
+    },
+    {
+     "cat": "ec_by_zionists",
+     "hero": "now",
+     "from": "2026-07-17 21:55",
+     "to": "2026-11-09 00:00",
+     "days": 114.09,
+     "views": 172642
+    },
+    {
+     "cat": "ec_by_zionists",
+     "hero": "now",
+     "from": "2026-07-06 05:20",
+     "to": "2026-07-17 21:02",
+     "days": 11.65,
+     "views": 14347
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2024-04-07 09:30",
+     "to": "2024-04-07 09:52",
+     "days": 0.02,
+     "views": 44
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2026-07-17 21:02",
+     "to": "2026-07-17 21:55",
+     "days": 0.04,
+     "views": 41
+    },
+    {
+     "cat": "destruction",
+     "hero": "then",
+     "from": "2021-04-05 11:33",
+     "to": "2022-08-31 12:21",
+     "days": 513.03,
+     "views": 220878
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2022-08-31 12:21",
+     "to": "2022-08-31 14:23",
+     "days": 0.08,
+     "views": 32
+    }
+   ],
+   "n_state_changes": 18,
+   "moves": [
+    [
+     "2021-04-03T01:08:33Z",
+     "An Nakba",
+     "Nakba"
+    ]
+   ],
+   "notes": [
+    "no stored state before 2021-04-02 (first revision since 2021 in the history as it stands now): those days are excluded"
+   ]
+  },
+  "October 7 attacks": {
+   "rule_text": "first sentence",
+   "categories": {
+    "armed_incursions": "“armed incursions”",
+    "coordinated_attacks": "“coordinated attacks” (or other “attack(s)” wording, no incursions)",
+    "other": "none of the above (incl. parse artefacts)"
+   },
+   "critical": [
+    "armed_incursions"
+   ],
+   "softer": "coordinated_attacks",
+   "titles_views_main": {
+    "Operation Al-Aqsa Flood": "start",
+    "2023 Hamas attacks on Israel": "2023-10-12 19:18",
+    "2023 Hamas attack on Israel": "2023-10-22 18:49",
+    "October 7 Hamas attack on Israel": "2023-10-30 13:15",
+    "2023 Hamas-led attack on Israel": "2023-11-28 20:21",
+    "7 October attacks": "2024-06-22 16:35",
+    "7 October Hamas-led attack on Israel": "2024-10-10 19:06",
+    "October 7 Hamas-led attack on Israel": "2024-12-30 15:35",
+    "October 7 Attacks": "2025-05-26 13:08",
+    "October 7 attacks": "2025-05-26 13:13"
+   },
+   "hero_phrases": {
+    "now": "coordinated armed incursions",
+    "then": "coordinated attacks"
+   },
+   "n_redirect_titles_with_views": 105,
+   "last_day": "20261108",
+   "windows": {
+    "all_2021_now": {
+     "from": "20210101",
+     "to": "20261108",
+     "views_total": 8272504,
+     "views_total_incl_redirects": 8579266,
+     "days_covered": 1123.0,
+     "views_excluded_no_state": 31123,
+     "view_share": {
+      "armed_incursions": 0.8437,
+      "coordinated_attacks": 0.1477,
+      "other": 0.0086
+     },
+     "time_share": {
+      "armed_incursions": 0.9486,
+      "coordinated_attacks": 0.0471,
+      "other": 0.0044
+     },
+     "view_share_incl_redirects": {
+      "armed_incursions": 0.8366,
+      "coordinated_attacks": 0.1539,
+      "other": 0.0096
+     },
+     "views": {
+      "armed_incursions": 6979856,
+      "coordinated_attacks": 1221879,
+      "other": 70768
+     },
+     "critical": {
+      "view_share": 0.8437,
+      "time_share": 0.9486,
+      "views": 6979856
+     },
+     "softer": {
+      "view_share": 0.1477,
+      "time_share": 0.0471,
+      "views": 1221879
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.8437,
+       "time_share": 0.9486,
+       "views": 6979856
+      },
+      "then": {
+       "view_share": 0.1399,
+       "time_share": 0.0405,
+       "views": 1157317
+      },
+      "neither": {
+       "view_share": 0.0164,
+       "time_share": 0.0109,
+       "views": 135330
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0086,
+      "time_share": 0.0044,
+      "views": 70768
+     },
+     "gap_points_critical": -10.5
+    },
+    "since_7_oct_2023": {
+     "from": "20231007",
+     "to": "20261108",
+     "views_total": 8272504,
+     "views_total_incl_redirects": 8579266,
+     "days_covered": 1123.0,
+     "views_excluded_no_state": 31123,
+     "view_share": {
+      "armed_incursions": 0.8437,
+      "coordinated_attacks": 0.1477,
+      "other": 0.0086
+     },
+     "time_share": {
+      "armed_incursions": 0.9486,
+      "coordinated_attacks": 0.0471,
+      "other": 0.0044
+     },
+     "view_share_incl_redirects": {
+      "armed_incursions": 0.8366,
+      "coordinated_attacks": 0.1539,
+      "other": 0.0096
+     },
+     "views": {
+      "armed_incursions": 6979856,
+      "coordinated_attacks": 1221879,
+      "other": 70768
+     },
+     "critical": {
+      "view_share": 0.8437,
+      "time_share": 0.9486,
+      "views": 6979856
+     },
+     "softer": {
+      "view_share": 0.1477,
+      "time_share": 0.0471,
+      "views": 1221879
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.8437,
+       "time_share": 0.9486,
+       "views": 6979856
+      },
+      "then": {
+       "view_share": 0.1399,
+       "time_share": 0.0405,
+       "views": 1157317
+      },
+      "neither": {
+       "view_share": 0.0164,
+       "time_share": 0.0109,
+       "views": 135330
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0086,
+      "time_share": 0.0044,
+      "views": 70768
+     },
+     "gap_points_critical": -10.5
+    },
+    "last_12_months": {
+     "from": "20251109",
+     "to": "20261108",
+     "views_total": 2007781,
+     "views_total_incl_redirects": 2040544,
+     "days_covered": 365.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "armed_incursions": 1.0,
+      "coordinated_attacks": 0.0,
+      "other": 0.0
+     },
+     "time_share": {
+      "armed_incursions": 1.0,
+      "coordinated_attacks": 0.0,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "armed_incursions": 1.0,
+      "coordinated_attacks": 0.0,
+      "other": 0.0
+     },
+     "views": {
+      "armed_incursions": 2007781,
+      "coordinated_attacks": 0,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 1.0,
+      "time_share": 1.0,
+      "views": 2007781
+     },
+     "softer": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 1.0,
+       "time_share": 1.0,
+       "views": 2007781
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": 0.0
+    },
+    "surge_7_oct_to_31_dec_2023": {
+     "from": "20231007",
+     "to": "20231231",
+     "views_total": 1487389,
+     "views_total_incl_redirects": 1604195,
+     "days_covered": 80.4,
+     "views_excluded_no_state": 29004,
+     "view_share": {
+      "armed_incursions": 0.1309,
+      "coordinated_attacks": 0.8215,
+      "other": 0.0476
+     },
+     "time_share": {
+      "armed_incursions": 0.2813,
+      "coordinated_attacks": 0.6574,
+      "other": 0.0613
+     },
+     "view_share_incl_redirects": {
+      "armed_incursions": 0.126,
+      "coordinated_attacks": 0.8229,
+      "other": 0.0511
+     },
+     "views": {
+      "armed_incursions": 194742,
+      "coordinated_attacks": 1221879,
+      "other": 70768
+     },
+     "critical": {
+      "view_share": 0.1309,
+      "time_share": 0.2813,
+      "views": 194742
+     },
+     "softer": {
+      "view_share": 0.8215,
+      "time_share": 0.6574,
+      "views": 1221879
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.1309,
+       "time_share": 0.2813,
+       "views": 194742
+      },
+      "then": {
+       "view_share": 0.7781,
+       "time_share": 0.5663,
+       "views": 1157317
+      },
+      "neither": {
+       "view_share": 0.091,
+       "time_share": 0.1524,
+       "views": 135330
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0476,
+      "time_share": 0.0613,
+      "views": 70768
+     },
+     "gap_points_critical": -15.0
+    }
+   },
+   "episodes_top_views_per_day": [
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2023-10-07 05:28",
+     "to": "2023-10-07 09:57",
+     "days": 0.19,
+     "views": 5517
+    },
+    {
+     "cat": "coordinated_attacks",
+     "hero": "then",
+     "from": "2023-10-14 03:15",
+     "to": "2023-11-27 07:52",
+     "days": 44.19,
+     "views": 1129642
+    },
+    {
+     "cat": "coordinated_attacks",
+     "hero": "then",
+     "from": "2023-10-12 19:18",
+     "to": "2023-10-14 03:11",
+     "days": 1.33,
+     "views": 27675
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2023-12-04 15:38",
+     "to": "2023-12-09 09:19",
+     "days": 4.74,
+     "views": 65251
+    },
+    {
+     "cat": "coordinated_attacks",
+     "hero": "neither",
+     "from": "2023-11-27 07:52",
+     "to": "2023-12-04 15:38",
+     "days": 7.32,
+     "views": 64562
+    },
+    {
+     "cat": "armed_incursions",
+     "hero": "now",
+     "from": "2023-12-09 09:19",
+     "to": "2024-01-05 06:26",
+     "days": 26.88,
+     "views": 225513
+    },
+    {
+     "cat": "armed_incursions",
+     "hero": "now",
+     "from": "2024-01-05 06:27",
+     "to": "2024-01-05 07:31",
+     "days": 0.04,
+     "views": 282
+    },
+    {
+     "cat": "armed_incursions",
+     "hero": "now",
+     "from": "2024-06-28 15:38",
+     "to": "2026-11-09 00:00",
+     "days": 863.35,
+     "views": 5660272
+    },
+    {
+     "cat": "not_article",
+     "hero": "not_article",
+     "from": "2024-01-05 07:31",
+     "to": "2024-01-05 15:28",
+     "days": 0.33,
+     "views": 2079
+    },
+    {
+     "cat": "armed_incursions",
+     "hero": "now",
+     "from": "2024-01-05 15:28",
+     "to": "2024-06-26 01:12",
+     "days": 172.41,
+     "views": 1081143
+    },
+    {
+     "cat": "armed_incursions",
+     "hero": "now",
+     "from": "2024-06-26 01:15",
+     "to": "2024-06-28 15:30",
+     "days": 2.59,
+     "views": 12647
+    },
+    {
+     "cat": "not_article",
+     "hero": "not_article",
+     "from": "2023-10-07 09:57",
+     "to": "2023-10-12 19:18",
+     "days": 5.39,
+     "views": 22165
+    }
+   ],
+   "n_state_changes": 16,
+   "moves": [
+    [
+     "2023-10-12T19:18:34Z",
+     "Operation Al-Aqsa Flood",
+     "2023 Hamas attacks on Israel"
+    ],
+    [
+     "2023-10-12T20:00:20Z",
+     "2023 Hamas attacks on Israel",
+     "Operation Al-Aqsa Flood"
+    ],
+    [
+     "2023-10-22T18:49:25Z",
+     "Operation Al-Aqsa Flood",
+     "2023 Hamas attack on Israel"
+    ],
+    [
+     "2023-10-30T13:15:27Z",
+     "2023 Hamas attack on Israel",
+     "October 7 Hamas attack on Israel"
+    ],
+    [
+     "2023-10-30T13:36:41Z",
+     "October 7 Hamas attack on Israel",
+     "2023 Hamas attack on Israel"
+    ],
+    [
+     "2023-11-28T20:21:36Z",
+     "2023 Hamas attack on Israel",
+     "2023 Hamas-led attack on Israel"
+    ],
+    [
+     "2024-06-22T16:35:23Z",
+     "2023 Hamas-led attack on Israel",
+     "7 October attacks"
+    ],
+    [
+     "2024-07-09T14:13:45Z",
+     "7 October attacks",
+     "2023 Hamas-led attack on Israel"
+    ],
+    [
+     "2024-10-10T19:06:45Z",
+     "2023 Hamas-led attack on Israel",
+     "7 October Hamas-led attack on Israel"
+    ],
+    [
+     "2024-12-30T15:35:53Z",
+     "7 October Hamas-led attack on Israel",
+     "October 7 Hamas-led attack on Israel"
+    ],
+    [
+     "2025-05-26T13:08:46Z",
+     "October 7 Hamas-led attack on Israel",
+     "October 7 Attacks"
+    ],
+    [
+     "2025-05-26T13:13:05Z",
+     "October 7 Attacks",
+     "October 7 attacks"
+    ]
+   ],
+   "notes": [
+    "no stored state before 2023-10-07 (first revision since 2021 in the history as it stands now): those days are excluded"
+   ]
+  },
+  "Hamas": {
+   "rule_text": "first sentence",
+   "categories": {
+    "political_org": "“political organisation with a military wing”",
+    "militant": "“militant” in the first sentence",
+    "other": "none of the above (incl. parse artefacts)"
+   },
+   "critical": [
+    "political_org"
+   ],
+   "softer": "militant",
+   "titles_views_main": {
+    "Hamas": "start"
+   },
+   "hero_phrases": {
+    "now": "political organisation with a military wing",
+    "then": "militant"
+   },
+   "n_redirect_titles_with_views": 32,
+   "last_day": "20261108",
+   "windows": {
+    "all_2021_now": {
+     "from": "20210101",
+     "to": "20261108",
+     "views_total": 23115967,
+     "views_total_incl_redirects": 23253047,
+     "days_covered": 2137.8,
+     "views_excluded_no_state": 2067,
+     "view_share": {
+      "political_org": 0.2298,
+      "militant": 0.372,
+      "other": 0.3982
+     },
+     "time_share": {
+      "political_org": 0.3594,
+      "militant": 0.483,
+      "other": 0.1576
+     },
+     "view_share_incl_redirects": {
+      "political_org": 0.2295,
+      "militant": 0.3703,
+      "other": 0.4002
+     },
+     "views": {
+      "political_org": 5312139,
+      "militant": 8598893,
+      "other": 9204935
+     },
+     "critical": {
+      "view_share": 0.2298,
+      "time_share": 0.3594,
+      "views": 5312139
+     },
+     "softer": {
+      "view_share": 0.372,
+      "time_share": 0.483,
+      "views": 8598893
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.2298,
+       "time_share": 0.3594,
+       "views": 5312139
+      },
+      "then": {
+       "view_share": 0.372,
+       "time_share": 0.483,
+       "views": 8598893
+      },
+      "neither": {
+       "view_share": 0.3982,
+       "time_share": 0.1576,
+       "views": 9204935
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.3982,
+      "time_share": 0.1576,
+      "views": 9204935
+     },
+     "gap_points_critical": -13.0
+    },
+    "since_7_oct_2023": {
+     "from": "20231007",
+     "to": "20261108",
+     "views_total": 18624769,
+     "views_total_incl_redirects": 18754416,
+     "days_covered": 1128.8,
+     "views_excluded_no_state": 2067,
+     "view_share": {
+      "political_org": 0.2852,
+      "militant": 0.2206,
+      "other": 0.4942
+     },
+     "time_share": {
+      "political_org": 0.6807,
+      "militant": 0.0208,
+      "other": 0.2985
+     },
+     "view_share_incl_redirects": {
+      "political_org": 0.2845,
+      "militant": 0.2192,
+      "other": 0.4962
+     },
+     "views": {
+      "political_org": 5312139,
+      "militant": 4107695,
+      "other": 9204935
+     },
+     "critical": {
+      "view_share": 0.2852,
+      "time_share": 0.6807,
+      "views": 5312139
+     },
+     "softer": {
+      "view_share": 0.2206,
+      "time_share": 0.0208,
+      "views": 4107695
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.2852,
+       "time_share": 0.6807,
+       "views": 5312139
+      },
+      "then": {
+       "view_share": 0.2206,
+       "time_share": 0.0208,
+       "views": 4107695
+      },
+      "neither": {
+       "view_share": 0.4942,
+       "time_share": 0.2985,
+       "views": 9204935
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.4942,
+      "time_share": 0.2985,
+      "views": 9204935
+     },
+     "gap_points_critical": -39.5
+    },
+    "last_12_months": {
+     "from": "20251109",
+     "to": "20261108",
+     "views_total": 1463267,
+     "views_total_incl_redirects": 1473043,
+     "days_covered": 365.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "political_org": 0.951,
+      "militant": 0.0,
+      "other": 0.049
+     },
+     "time_share": {
+      "political_org": 0.9442,
+      "militant": 0.0,
+      "other": 0.0558
+     },
+     "view_share_incl_redirects": {
+      "political_org": 0.9507,
+      "militant": 0.0,
+      "other": 0.0493
+     },
+     "views": {
+      "political_org": 1391516,
+      "militant": 0,
+      "other": 71751
+     },
+     "critical": {
+      "view_share": 0.951,
+      "time_share": 0.9442,
+      "views": 1391516
+     },
+     "softer": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.951,
+       "time_share": 0.9442,
+       "views": 1391516
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 0.049,
+       "time_share": 0.0558,
+       "views": 71751
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.049,
+      "time_share": 0.0558,
+      "views": 71751
+     },
+     "gap_points_critical": 0.7
+    },
+    "surge_7_oct_to_31_dec_2023": {
+     "from": "20231007",
+     "to": "20231231",
+     "views_total": 10221774,
+     "views_total_incl_redirects": 10241002,
+     "days_covered": 86.0,
+     "views_excluded_no_state": 0,
+     "view_share": {
+      "political_org": 0.0,
+      "militant": 0.3845,
+      "other": 0.6155
+     },
+     "time_share": {
+      "political_org": 0.0,
+      "militant": 0.0524,
+      "other": 0.9476
+     },
+     "view_share_incl_redirects": {
+      "political_org": 0.0,
+      "militant": 0.3839,
+      "other": 0.6161
+     },
+     "views": {
+      "political_org": 0,
+      "militant": 3930145,
+      "other": 6291629
+     },
+     "critical": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "softer": {
+      "view_share": 0.3845,
+      "time_share": 0.0524,
+      "views": 3930145
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "then": {
+       "view_share": 0.3845,
+       "time_share": 0.0524,
+       "views": 3930145
+      },
+      "neither": {
+       "view_share": 0.6155,
+       "time_share": 0.9476,
+       "views": 6291629
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.6155,
+      "time_share": 0.9476,
+      "views": 6291629
+     },
+     "gap_points_critical": 0.0
+    }
+   },
+   "episodes_top_views_per_day": [
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2023-10-10 13:56",
+     "to": "2023-10-10 22:34",
+     "days": 0.36,
+     "views": 311626
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2023-10-10 12:00",
+     "to": "2023-10-10 13:48",
+     "days": 0.08,
+     "views": 65306
+    },
+    {
+     "cat": "militant",
+     "hero": "then",
+     "from": "2023-10-10 22:34",
+     "to": "2023-10-10 23:24",
+     "days": 0.03,
+     "views": 29808
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2023-10-10 23:24",
+     "to": "2023-10-11 19:36",
+     "days": 0.84,
+     "views": 592905
+    },
+    {
+     "cat": "militant",
+     "hero": "then",
+     "from": "2023-10-11 19:36",
+     "to": "2023-10-12 17:58",
+     "days": 0.93,
+     "views": 568021
+    },
+    {
+     "cat": "militant",
+     "hero": "then",
+     "from": "2023-10-12 18:20",
+     "to": "2023-10-12 19:12",
+     "days": 0.04,
+     "views": 21433
+    },
+    {
+     "cat": "militant",
+     "hero": "then",
+     "from": "2023-10-10 11:34",
+     "to": "2023-10-10 12:00",
+     "days": 0.02,
+     "views": 15555
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2023-10-12 17:58",
+     "to": "2023-10-12 18:20",
+     "days": 0.01,
+     "views": 8742
+    },
+    {
+     "cat": "militant",
+     "hero": "then",
+     "from": "2023-10-10 13:48",
+     "to": "2023-10-10 13:56",
+     "days": 0.01,
+     "views": 4477
+    },
+    {
+     "cat": "militant",
+     "hero": "then",
+     "from": "2024-08-01 06:01",
+     "to": "2024-08-01 08:30",
+     "days": 0.1,
+     "views": 7235
+    },
+    {
+     "cat": "other",
+     "hero": "neither",
+     "from": "2024-08-01 08:30",
+     "to": "2024-08-01 13:16",
+     "days": 0.2,
+     "views": 13927
+    },
+    {
+     "cat": "militant",
+     "hero": "then",
+     "from": "2024-08-01 13:16",
+     "to": "2024-08-02 06:52",
+     "days": 0.73,
+     "views": 41282
+    }
+   ],
+   "n_state_changes": 29,
+   "moves": [],
+   "notes": [
+    "1 Jan 2021 to first 2021 edit (2021-01-01): state from the Jan 2021 lead (leads.json rev0 997079588)"
+   ]
+  },
+  "Gaza genocide": {
+   "rule_text": "first sentence",
+   "categories": {
+    "allegations": "“Allegations have been made” / alleged",
+    "attributed": "attributed: “accused of”, “according to …”",
+    "own_voice": "own voice: genocide stated as fact (“carried out by Israel”)",
+    "other": "none of the above (incl. parse artefacts)"
+   },
+   "critical": [
+    "own_voice"
+   ],
+   "softer": "allegations",
+   "titles_views_main": {
+    "Allegations of genocide in the 2023 Israeli attack on Gaza": "start",
+    "Attempted genocide by Israel in their 2023 attack on Gaza": "2024-02-29 18:19",
+    "Gaza genocide": "2024-07-03 09:57",
+    "Make Israel Great Again": "2025-05-01 00:09"
+   },
+   "hero_phrases": {
+    "now": "carried out by Israel",
+    "then": "Allegations have been made"
+   },
+   "n_redirect_titles_with_views": 36,
+   "last_day": "20261108",
+   "windows": {
+    "all_2021_now": {
+     "from": "20210101",
+     "to": "20261108",
+     "views_total": 4273896,
+     "views_total_incl_redirects": 4340773,
+     "days_covered": 1045.8,
+     "views_excluded_no_state": 239,
+     "view_share": {
+      "allegations": 0.004,
+      "attributed": 0.468,
+      "own_voice": 0.5279,
+      "other": 0.0001
+     },
+     "time_share": {
+      "allegations": 0.0111,
+      "attributed": 0.5912,
+      "own_voice": 0.3974,
+      "other": 0.0003
+     },
+     "view_share_incl_redirects": {
+      "allegations": 0.0041,
+      "attributed": 0.4665,
+      "own_voice": 0.5294,
+      "other": 0.0001
+     },
+     "views": {
+      "allegations": 17083,
+      "attributed": 2000364,
+      "own_voice": 2256224,
+      "other": 225
+     },
+     "critical": {
+      "view_share": 0.5279,
+      "time_share": 0.3974,
+      "views": 2256224
+     },
+     "softer": {
+      "view_share": 0.004,
+      "time_share": 0.0111,
+      "views": 17083
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.519,
+       "time_share": 0.393,
+       "views": 2218228
+      },
+      "then": {
+       "view_share": 0.0002,
+       "time_share": 0.0047,
+       "views": 852
+      },
+      "neither": {
+       "view_share": 0.4808,
+       "time_share": 0.6023,
+       "views": 2054816
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.4681,
+      "time_share": 0.5915,
+      "views": 2000589
+     },
+     "gap_points_critical": 13.1
+    },
+    "since_7_oct_2023": {
+     "from": "20231007",
+     "to": "20261108",
+     "views_total": 4273896,
+     "views_total_incl_redirects": 4340773,
+     "days_covered": 1045.8,
+     "views_excluded_no_state": 239,
+     "view_share": {
+      "allegations": 0.004,
+      "attributed": 0.468,
+      "own_voice": 0.5279,
+      "other": 0.0001
+     },
+     "time_share": {
+      "allegations": 0.0111,
+      "attributed": 0.5912,
+      "own_voice": 0.3974,
+      "other": 0.0003
+     },
+     "view_share_incl_redirects": {
+      "allegations": 0.0041,
+      "attributed": 0.4665,
+      "own_voice": 0.5294,
+      "other": 0.0001
+     },
+     "views": {
+      "allegations": 17083,
+      "attributed": 2000364,
+      "own_voice": 2256224,
+      "other": 225
+     },
+     "critical": {
+      "view_share": 0.5279,
+      "time_share": 0.3974,
+      "views": 2256224
+     },
+     "softer": {
+      "view_share": 0.004,
+      "time_share": 0.0111,
+      "views": 17083
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.519,
+       "time_share": 0.393,
+       "views": 2218228
+      },
+      "then": {
+       "view_share": 0.0002,
+       "time_share": 0.0047,
+       "views": 852
+      },
+      "neither": {
+       "view_share": 0.4808,
+       "time_share": 0.6023,
+       "views": 2054816
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.4681,
+      "time_share": 0.5915,
+      "views": 2000589
+     },
+     "gap_points_critical": 13.1
+    },
+    "last_12_months": {
+     "from": "20251109",
+     "to": "20261108",
+     "views_total": 1681731,
+     "views_total_incl_redirects": 1718637,
+     "days_covered": 365.0,
+     "views_excluded_no_state": 7,
+     "view_share": {
+      "allegations": 0.0065,
+      "attributed": 0.0,
+      "own_voice": 0.9934,
+      "other": 0.0
+     },
+     "time_share": {
+      "allegations": 0.0042,
+      "attributed": 0.0,
+      "own_voice": 0.9958,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "allegations": 0.0065,
+      "attributed": 0.0,
+      "own_voice": 0.9935,
+      "other": 0.0
+     },
+     "views": {
+      "allegations": 10958,
+      "attributed": 59,
+      "own_voice": 1670714,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.9934,
+      "time_share": 0.9958,
+      "views": 1670714
+     },
+     "softer": {
+      "view_share": 0.0065,
+      "time_share": 0.0042,
+      "views": 10958
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 1.0,
+       "time_share": 1.0,
+       "views": 1681666
+      },
+      "then": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "neither": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 64
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 59
+     },
+     "gap_points_critical": -0.2
+    },
+    "surge_7_oct_to_31_dec_2023": {
+     "from": "20231007",
+     "to": "20231231",
+     "views_total": 318,
+     "views_total_incl_redirects": 557,
+     "days_covered": 2.9,
+     "views_excluded_no_state": 19,
+     "view_share": {
+      "allegations": 1.0,
+      "attributed": 0.0,
+      "own_voice": 0.0,
+      "other": 0.0
+     },
+     "time_share": {
+      "allegations": 1.0,
+      "attributed": 0.0,
+      "own_voice": 0.0,
+      "other": 0.0
+     },
+     "view_share_incl_redirects": {
+      "allegations": 1.0,
+      "attributed": 0.0,
+      "own_voice": 0.0,
+      "other": 0.0
+     },
+     "views": {
+      "allegations": 318,
+      "attributed": 0,
+      "own_voice": 0,
+      "other": 0
+     },
+     "critical": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "softer": {
+      "view_share": 1.0,
+      "time_share": 1.0,
+      "views": 318
+     },
+     "hero_exact_phrase": {
+      "now": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      },
+      "then": {
+       "view_share": 1.0,
+       "time_share": 1.0,
+       "views": 318
+      },
+      "neither": {
+       "view_share": 0.0,
+       "time_share": 0.0,
+       "views": 0
+      }
+     },
+     "other_or_neither": {
+      "view_share": 0.0,
+      "time_share": 0.0,
+      "views": 0
+     },
+     "gap_points_critical": 0.0
+    }
+   },
+   "episodes_top_views_per_day": [
+    {
+     "cat": "attributed",
+     "hero": "neither",
+     "from": "2025-09-17 05:18",
+     "to": "2025-09-17 08:29",
+     "days": 0.13,
+     "views": 2071
+    },
+    {
+     "cat": "own_voice",
+     "hero": "neither",
+     "from": "2025-09-21 01:53",
+     "to": "2025-09-24 00:37",
+     "days": 2.95,
+     "views": 43356
+    },
+    {
+     "cat": "own_voice",
+     "hero": "now",
+     "from": "2025-09-24 00:37",
+     "to": "2025-10-10 19:02",
+     "days": 16.77,
+     "views": 235382
+    },
+    {
+     "cat": "own_voice",
+     "hero": "now",
+     "from": "2026-11-07 10:14",
+     "to": "2026-11-09 00:00",
+     "days": 1.57,
+     "views": 20654
+    },
+    {
+     "cat": "own_voice",
+     "hero": "now",
+     "from": "2025-11-04 22:25",
+     "to": "2025-11-14 17:42",
+     "days": 9.8,
+     "views": 106715
+    },
+    {
+     "cat": "own_voice",
+     "hero": "now",
+     "from": "2025-10-10 19:24",
+     "to": "2025-10-21 17:46",
+     "days": 10.93,
+     "views": 116431
+    },
+    {
+     "cat": "attributed",
+     "hero": "neither",
+     "from": "2025-09-17 08:30",
+     "to": "2025-09-21 01:53",
+     "days": 3.72,
+     "views": 39255
+    },
+    {
+     "cat": "own_voice",
+     "hero": "neither",
+     "from": "2025-07-30 06:56",
+     "to": "2025-07-30 07:58",
+     "days": 0.04,
+     "views": 370
+    },
+    {
+     "cat": "own_voice",
+     "hero": "now",
+     "from": "2025-10-21 18:25",
+     "to": "2025-11-04 22:21",
+     "days": 14.16,
+     "views": 117947
+    },
+    {
+     "cat": "allegations",
+     "hero": "now",
+     "from": "2026-11-05 22:20",
+     "to": "2026-11-07 10:14",
+     "days": 1.5,
+     "views": 10812
+    },
+    {
+     "cat": "attributed",
+     "hero": "neither",
+     "from": "2025-07-30 07:58",
+     "to": "2025-09-17 05:01",
+     "days": 48.88,
+     "views": 324794
+    },
+    {
+     "cat": "attributed",
+     "hero": "neither",
+     "from": "2025-07-06 17:49",
+     "to": "2025-07-30 06:56",
+     "days": 23.55,
+     "views": 136901
+    }
+   ],
+   "n_state_changes": 80,
+   "moves": [
+    [
+     "2024-02-29T18:19:07Z",
+     "Allegations of genocide in the 2023 Israeli attack on Gaza",
+     "Attempted genocide by Israel in their 2023 attack on Gaza"
+    ],
+    [
+     "2024-02-29T20:58:46Z",
+     "Attempted genocide by Israel in their 2023 attack on Gaza",
+     "Allegations of genocide in the 2023 Israeli attack on Gaza"
+    ],
+    [
+     "2024-07-03T09:57:35Z",
+     "Allegations of genocide in the 2023 Israeli attack on Gaza",
+     "Gaza genocide"
+    ],
+    [
+     "2025-05-01T00:09:21Z",
+     "Gaza genocide",
+     "Make Israel Great Again"
+    ],
+    [
+     "2025-05-01T00:13:10Z",
+     "Make Israel Great Again",
+     "Gaza genocide"
+    ]
+   ],
+   "notes": [
+    "no stored state before 2023-12-29 (first revision since 2021 in the history as it stands now): those days are excluded"
+   ]
+  }
+ },
+ "flags_view_vs_time_over_10_points": [
+  {
+   "article": "Israel",
+   "window": "since_7_oct_2023",
+   "category": "committing",
+   "view_share": 0.1687,
+   "time_share": 0.2911,
+   "gap_points": -12.2
+  },
+  {
+   "article": "Israel",
+   "window": "since_7_oct_2023",
+   "category": "no_genocide",
+   "view_share": 0.6533,
+   "time_share": 0.4803,
+   "gap_points": 17.3
+  },
+  {
+   "article": "Israel",
+   "window": "since_7_oct_2023",
+   "category": "critical",
+   "view_share": 0.3467,
+   "time_share": 0.5197,
+   "gap_points": -17.3
+  },
+  {
+   "article": "Israel",
+   "window": "since_7_oct_2023",
+   "category": "softer",
+   "view_share": 0.6533,
+   "time_share": 0.4803,
+   "gap_points": 17.3
+  },
+  {
+   "article": "Zionism",
+   "window": "since_7_oct_2023",
+   "category": "establishment",
+   "view_share": 0.4669,
+   "time_share": 0.2189,
+   "gap_points": 24.8
+  },
+  {
+   "article": "Zionism",
+   "window": "since_7_oct_2023",
+   "category": "critical",
+   "view_share": 0.5325,
+   "time_share": 0.7803,
+   "gap_points": -24.8
+  },
+  {
+   "article": "Zionism",
+   "window": "since_7_oct_2023",
+   "category": "other_or_neither",
+   "view_share": 0.4669,
+   "time_share": 0.2189,
+   "gap_points": 24.8
+  },
+  {
+   "article": "Nakba",
+   "window": "all_2021_now",
+   "category": "other",
+   "view_share": 0.3017,
+   "time_share": 0.1058,
+   "gap_points": 19.6
+  },
+  {
+   "article": "Nakba",
+   "window": "all_2021_now",
+   "category": "softer",
+   "view_share": 0.1511,
+   "time_share": 0.4162,
+   "gap_points": -26.5
+  },
+  {
+   "article": "Nakba",
+   "window": "all_2021_now",
+   "category": "other_or_neither",
+   "view_share": 0.8066,
+   "time_share": 0.5223,
+   "gap_points": 28.4
+  },
+  {
+   "article": "Nakba",
+   "window": "since_7_oct_2023",
+   "category": "ec_other",
+   "view_share": 0.5759,
+   "time_share": 0.7549,
+   "gap_points": -17.9
+  },
+  {
+   "article": "Nakba",
+   "window": "since_7_oct_2023",
+   "category": "other",
+   "view_share": 0.3149,
+   "time_share": 0.1277,
+   "gap_points": 18.7
+  },
+  {
+   "article": "Nakba",
+   "window": "surge_7_oct_to_31_dec_2023",
+   "category": "other",
+   "view_share": 0.8098,
+   "time_share": 0.9199,
+   "gap_points": -11.0
+  },
+  {
+   "article": "Nakba",
+   "window": "surge_7_oct_to_31_dec_2023",
+   "category": "softer",
+   "view_share": 0.1902,
+   "time_share": 0.0801,
+   "gap_points": 11.0
+  },
+  {
+   "article": "Nakba",
+   "window": "surge_7_oct_to_31_dec_2023",
+   "category": "other_or_neither",
+   "view_share": 0.8098,
+   "time_share": 0.9199,
+   "gap_points": -11.0
+  },
+  {
+   "article": "October 7 attacks",
+   "window": "all_2021_now",
+   "category": "critical",
+   "view_share": 0.8437,
+   "time_share": 0.9486,
+   "gap_points": -10.5
+  },
+  {
+   "article": "October 7 attacks",
+   "window": "all_2021_now",
+   "category": "softer",
+   "view_share": 0.1477,
+   "time_share": 0.0471,
+   "gap_points": 10.1
+  },
+  {
+   "article": "October 7 attacks",
+   "window": "since_7_oct_2023",
+   "category": "critical",
+   "view_share": 0.8437,
+   "time_share": 0.9486,
+   "gap_points": -10.5
+  },
+  {
+   "article": "October 7 attacks",
+   "window": "since_7_oct_2023",
+   "category": "softer",
+   "view_share": 0.1477,
+   "time_share": 0.0471,
+   "gap_points": 10.1
+  },
+  {
+   "article": "October 7 attacks",
+   "window": "surge_7_oct_to_31_dec_2023",
+   "category": "critical",
+   "view_share": 0.1309,
+   "time_share": 0.2813,
+   "gap_points": -15.0
+  },
+  {
+   "article": "October 7 attacks",
+   "window": "surge_7_oct_to_31_dec_2023",
+   "category": "softer",
+   "view_share": 0.8215,
+   "time_share": 0.6574,
+   "gap_points": 16.4
+  },
+  {
+   "article": "Hamas",
+   "window": "all_2021_now",
+   "category": "other",
+   "view_share": 0.3982,
+   "time_share": 0.1576,
+   "gap_points": 24.1
+  },
+  {
+   "article": "Hamas",
+   "window": "all_2021_now",
+   "category": "critical",
+   "view_share": 0.2298,
+   "time_share": 0.3594,
+   "gap_points": -13.0
+  },
+  {
+   "article": "Hamas",
+   "window": "all_2021_now",
+   "category": "softer",
+   "view_share": 0.372,
+   "time_share": 0.483,
+   "gap_points": -11.1
+  },
+  {
+   "article": "Hamas",
+   "window": "all_2021_now",
+   "category": "other_or_neither",
+   "view_share": 0.3982,
+   "time_share": 0.1576,
+   "gap_points": 24.1
+  },
+  {
+   "article": "Hamas",
+   "window": "since_7_oct_2023",
+   "category": "other",
+   "view_share": 0.4942,
+   "time_share": 0.2985,
+   "gap_points": 19.6
+  },
+  {
+   "article": "Hamas",
+   "window": "since_7_oct_2023",
+   "category": "critical",
+   "view_share": 0.2852,
+   "time_share": 0.6807,
+   "gap_points": -39.5
+  },
+  {
+   "article": "Hamas",
+   "window": "since_7_oct_2023",
+   "category": "softer",
+   "view_share": 0.2206,
+   "time_share": 0.0208,
+   "gap_points": 20.0
+  },
+  {
+   "article": "Hamas",
+   "window": "since_7_oct_2023",
+   "category": "other_or_neither",
+   "view_share": 0.4942,
+   "time_share": 0.2985,
+   "gap_points": 19.6
+  },
+  {
+   "article": "Hamas",
+   "window": "surge_7_oct_to_31_dec_2023",
+   "category": "other",
+   "view_share": 0.6155,
+   "time_share": 0.9476,
+   "gap_points": -33.2
+  },
+  {
+   "article": "Hamas",
+   "window": "surge_7_oct_to_31_dec_2023",
+   "category": "softer",
+   "view_share": 0.3845,
+   "time_share": 0.0524,
+   "gap_points": 33.2
+  },
+  {
+   "article": "Hamas",
+   "window": "surge_7_oct_to_31_dec_2023",
+   "category": "other_or_neither",
+   "view_share": 0.6155,
+   "time_share": 0.9476,
+   "gap_points": -33.2
+  },
+  {
+   "article": "Gaza genocide",
+   "window": "all_2021_now",
+   "category": "attributed",
+   "view_share": 0.468,
+   "time_share": 0.5912,
+   "gap_points": -12.3
+  },
+  {
+   "article": "Gaza genocide",
+   "window": "all_2021_now",
+   "category": "critical",
+   "view_share": 0.5279,
+   "time_share": 0.3974,
+   "gap_points": 13.1
+  },
+  {
+   "article": "Gaza genocide",
+   "window": "all_2021_now",
+   "category": "other_or_neither",
+   "view_share": 0.4681,
+   "time_share": 0.5915,
+   "gap_points": -12.3
+  },
+  {
+   "article": "Gaza genocide",
+   "window": "since_7_oct_2023",
+   "category": "attributed",
+   "view_share": 0.468,
+   "time_share": 0.5912,
+   "gap_points": -12.3
+  },
+  {
+   "article": "Gaza genocide",
+   "window": "since_7_oct_2023",
+   "category": "critical",
+   "view_share": 0.5279,
+   "time_share": 0.3974,
+   "gap_points": 13.1
+  },
+  {
+   "article": "Gaza genocide",
+   "window": "since_7_oct_2023",
+   "category": "other_or_neither",
+   "view_share": 0.4681,
+   "time_share": 0.5915,
+   "gap_points": -12.3
+  }
+ ]
+}

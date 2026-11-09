@@ -1,0 +1,96 @@
+name: wikitrends-views
+# Daily per-article pageviews (agent=user) for the six flash hero articles, their former titles (page moves) and their
+# current redirects, plus the section-0 history of every revision since 2021 (timestamps, revert tag, move comments, lead
+# prose deduplicated). Used by wikitrends/patterns/exposure (view-weighted exposure to each first-sentence wording).
+# No usernames are stored. Pushes JSON to wikitrends-data/views/<run_id>/views/.
+on:
+  push:
+    branches: [wikitrends-views]
+permissions:
+  contents: write
+concurrency: wikitrends-views
+defaults:
+  run:
+    shell: bash
+env:
+  WT_RPS: '5'
+  WT_JOB: views
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  views:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Fetch lead histories and daily pageviews
+        working-directory: wikitrends
+        run: |
+          set -euo pipefail
+          mkdir -p views
+          cat > /tmp/views.py <<'EOF'
+          import gzip, hashlib, json, re, sys, urllib.parse
+          sys.path.insert(0, ".")
+          import analyze as A, fetch as F, wt_net
+          TITLES = ["Israel", "Zionism", "Nakba", "October 7 attacks", "Hamas", "Gaza genocide"]
+          START, END = "20210101", "20261108"
+          PV = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/{t}/daily/{a}/{b}"
+          MOVE = re.compile(r"moved page \[\[([^\]]+)\]\] to \[\[([^\]]+)\]\]")
+          def lead(title):
+              revs, texts, cont = [], {}, {}
+              while True:
+                  j = F.api(action="query", prop="revisions", titles=title, rvprop="ids|timestamp|tags|content|comment|size",
+                            rvslots="main", rvsection=0, rvdir="newer", rvstart="2021-01-01T00:00:00Z", rvlimit=50, redirects=1, **cont)
+                  p = j["query"]["pages"][0]
+                  for r in p.get("revisions", []):
+                      wt = r.get("slots", {}).get("main", {}).get("content")
+                      c = r.get("comment") or ""
+                      m = MOVE.search(c)
+                      row = {"revid": r["revid"], "ts": r["timestamp"], "reverted": "mw-reverted" in (r.get("tags") or [])}
+                      if m: row["move"] = [m.group(1), m.group(2)]
+                      if wt is None:
+                          row["hidden"] = True
+                      else:
+                          lp = A.prose(wt)
+                          h = hashlib.sha1(lp.encode()).hexdigest()[:12]
+                          texts.setdefault(h, lp); row["h"] = h
+                          s = A.sentences(lp); row["fs"] = (s[0] if s else "")[:400]
+                      revs.append(row)
+                  wt_net.heartbeat("lead " + title, len(revs), 0)
+                  if "continue" not in j: break
+                  cont = j["continue"]
+              return revs, texts
+          def redirects(title):
+              out, cont = [], {}
+              while True:
+                  j = F.api(action="query", prop="redirects", titles=title, rdnamespace=0, rdlimit="max", **cont)
+                  out += [r["title"] for r in j["query"]["pages"][0].get("redirects", [])]
+                  if "continue" not in j: break
+                  cont = j["continue"]
+              return out
+          def daily(t):
+              u = PV.format(t=urllib.parse.quote(t.replace(" ", "_"), safe=""), a=START, b=END)
+              j = wt_net.get_json(u, {}, ok404=True)
+              return {it["timestamp"][:8]: it["views"] for it in (j or {}).get("items", [])}
+          out = {"note": "agent=user daily views; lead = section 0 prose (analyze.prose) and first sentence (analyze.sentences) per revision since 2021", "articles": {}}
+          for t in TITLES:
+              revs, texts = lead(t)
+              moved = sorted({x for r in revs if "move" in r for x in r["move"]} - {t})
+              reds = redirects(t)
+              views = {t: daily(t)}
+              for x in sorted(set(moved) | set(reds)):
+                  v = daily(x)
+                  if v: views[x] = v
+              print(t, len(revs), "revs", len(texts), "leads", "moves", moved, len(reds), "redirects", len(views), "with views", flush=True)
+              out["articles"][t] = {"revisions": revs, "former_titles": moved, "redirects": reds, "views": views}
+              with gzip.open(f"views/lead_{t.replace(' ', '_')}.json.gz", "wt") as f:
+                  json.dump(texts, f)
+          with gzip.open("views/views_daily.json.gz", "wt") as f:
+              json.dump(out, f)
+          EOF
+          python /tmp/views.py
+          ls -la views
+      - name: Push to wikitrends-data
+        run: .github/scripts/push_data.sh views 'views/*'
