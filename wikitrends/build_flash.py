@@ -242,6 +242,12 @@ VETO = ["afterthought", "the world reads first", "64 of", "47 of", "336", "650",
         "before the war, these first lines", "documented"]
 hit = [v for v in VETO if v in low]
 assert not hit, f"vetoed wording on the flash page: {hit}"
+# spin-risk review (patterns/flash/spin_review.md): the scope line is in both editions, and no talking-point phrasing
+SCOPE = "does not assess the conduct of the war or of any government"
+assert SCOPE in vis and SCOPE in rtpl, "the scope line must be in both editions"
+SPIN = ["the world reads", "israel’s way", "why it matters", "the score.", "israel’s own article"]
+_rvis = re.sub(r"<[^>]+>", " ", re.sub(r"<script.*?</script>|<style.*?</style>", " ", rtpl, flags=re.S)).lower()
+assert not [v for v in SPIN if v in low or v in _rvis], f"spin-review wording back on a page: {[v for v in SPIN if v in low or v in _rvis]}"
 assert "undone within a day" not in low.replace("“colonial” was taken out and put back 10 times from november 2024 to august 2026; each removal was undone within a day", "") \
     .replace("from november 2024 each removal of “colonial” was undone within a day", ""), "\"undone within a day\" outside its Zionism scope"
 for who in ("Smallangryplanet", "Aquillion", "Zero0000", "Nableezy", "CaptainEek", "Elli", "AndreJustAndre"):
