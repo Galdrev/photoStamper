@@ -34,3 +34,11 @@
 - The flash "Every change" / "Explore" buttons may open the lab on the right article (data-intent {"lab":"flip","title":...}) instead of leaving the page.
 - Hebrew build: tab labels and lab UI chrome in Hebrew (proofread with the rest); data and quotes stay original.
 - Smoke: the tab switches, the lab loads with 0 console errors, and Back/history works, in both languages.
+
+## Queued: replace the 150-tile hero grid (owner: "this visual is meh")
+- Problem: 150 equal grey squares with 7 marked reads as "almost nothing", and doesn't show who reads them.
+- Replacement: a TREEMAP (or a proportional tile mosaic) of the same 150 most-read opening sections, each tile's AREA = its views (past 12 months; same view source as the Reach bars). Colour as now: stated as fact (solid teal), attributed (outlined), no charge (dim). Label the large tiles with the article name (Israel, Benjamin Netanyahu, Gaza war, ...).
+- Headline number computed from the data: "7 of 150 openings carry the charge, and they get X% of the views of all 150" (only if computable from stored views; otherwise keep counts only). A then -> now toggle (Jan 2021 / Jul 2023 / now) animates tiles lighting up (watchable pacing).
+- Tap a tile: the article name, its views, the exact charge sentence, own voice vs attributed.
+- Same honesty: counts unchanged (0, 0, 7, two as fact); the area encodes reach, said in a one-line key.
+- Both English and Hebrew; share-image variant if strong.
