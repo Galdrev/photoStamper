@@ -24,7 +24,9 @@ HE_VETO = ["מחשבה מאוחרת", "הערת אגב", "הערת שוליים"
            "רק כתביעה", "רק כתיק", "תיק משפטי בלבד",
            # v2 (three proofs, HE_FIXLOG.md): the sharpened, softened or ambiguous v1 renderings stay out
            "השמדה", "אינו מעריך", "יש שטענו", "מצד ישראל", "משקיעים רבות", "הצבעה במחנות", "לכלל הסגנון", "אך לא בקול",
-           "פיגועים", "עובדה מוכחת", "והפגיעה", "מתקפות 7 באוקטובר"]
+           "פיגועים", "עובדה מוכחת", "והפגיעה", "מתקפות 7 באוקטובר",
+           # final round (HE_FIXLOG2.md): "met" is passive (הוצג), not the views displaying; "abuses" of rights are הפרות
+           "הציגו את הנוסח", "הציגה את הנוסח", "הצפיות הציגו", "ובפגיעה שיטתית", "וחוקרים רבים מאשימים", "שבהן נהרגו 1195", "גררו מאז ועד היום"]
 # English UI leftovers that must not reach the Hebrew page (data-driven strings, checked in the Hebrew sides of the string map)
 HE_NO_EN = ["court case", '"n/a"', 'icj:"icj"', '<span class="pw">removed', '<span class="pw">added', "Our coding."]
 # dates: a no-break space between the day and the month ("7 באוקטובר" never splits across lines)

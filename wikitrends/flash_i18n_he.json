@@ -616,7 +616,7 @@
   ],
   [
    "    s+=`<text class=\"ln\" x=\"${m.l}\" y=\"${y+9}\" lang=\"en\">“${esc(l.lab)}”${FB_GL[l.lab]?` <tspan class=\"fbg\">${FB_GL[l.lab].g}</tspan>`:\"\"} <tspan class=\"fbn\">⇄${l.f}</tspan></text><g class=\"bar\"><rect x=\"${m.l}\" y=\"${by}\" width=\"${W-m.l-m.r}\" height=\"${bH}\" rx=\"2\" style=\"fill:var(--faint)\"/>`;",
-   "    s+=`<text class=\"ln\" x=\"${m.l}\" y=\"${y+9}\" lang=\"en\">“${esc(l.lab)}”${FB_GL[l.lab]?` <tspan class=\"fbg\">${FB_GL[l.lab].g}</tspan>`:\"\"} <tspan class=\"fbn\">⇄${l.f}</tspan></text><text class=\"ln fbh\" x=\"${W-m.r}\" y=\"${y+9}\" text-anchor=\"end\" direction=\"rtl\">${esc(fbHe(l.lab))}</text><g class=\"bar\"><rect x=\"${m.l}\" y=\"${by}\" width=\"${W-m.l-m.r}\" height=\"${bH}\" rx=\"2\" style=\"fill:var(--faint)\"/>`;"
+   "    s+=`<text class=\"ln\" x=\"${m.l}\" y=\"${y+9}\" lang=\"en\">“${esc(l.lab)}”${FB_GL[l.lab]?` <tspan class=\"fbg\">${FB_GL[l.lab].g}</tspan>`:\"\"} <tspan class=\"fbn\">⇄${l.f}</tspan></text><text class=\"ln fbh\" x=\"${W-m.r}\" y=\"${y+9}\" text-anchor=\"start\" direction=\"rtl\">${esc(fbHe(l.lab))}</text><g class=\"bar\"><rect x=\"${m.l}\" y=\"${by}\" width=\"${W-m.l-m.r}\" height=\"${bH}\" rx=\"2\" style=\"fill:var(--faint)\"/>`;"
   ],
   [
    "  $(\"#fbH\").innerHTML=`<b>${FB.words} words fought over</b> since Jan 2021 · the ${FB.L.length} most-fought phrases`;fbSync()}",
@@ -628,11 +628,11 @@
   ],
   [
    "  <h2 id=\"clH\">How many page views met the new wording</h2>",
-   "  <h2 id=\"clH\">כמה מהצפיות הציגו את הנוסח החדש</h2>"
+   "  <h2 id=\"clH\">בכמה מהצפיות הוצג הנוסח החדש</h2>"
   ],
   [
    "  <figure class=\"fl-score fl-ex\" style=\"margin:0\" aria-labelledby=\"whyK\"><p class=\"cp\" id=\"whyK\">Page views of the six articles above and of Benjamin Netanyahu and Palestine, 9 Nov 2025 – 8 Nov 2026 (daily sums). The dark part of each bar, and the %, is the share of those views that met the critical wording:</p>",
-   "  <figure class=\"fl-score fl-ex\" style=\"margin:0\" aria-labelledby=\"whyK\"><p class=\"cp\" id=\"whyK\">צפיות בדף בשישת הערכים שלמעלה ובערכים על בנימין נתניהו ועל פלסטין, 9 בנובמבר 2025 – 8 בנובמבר 2026 (סכום של צפיות יומיות). החלק הכהה של כל פס, והאחוז, הם חלק הצפיות שהציגו את הנוסח הביקורתי:</p>"
+   "  <figure class=\"fl-score fl-ex\" style=\"margin:0\" aria-labelledby=\"whyK\"><p class=\"cp\" id=\"whyK\">צפיות בדף בשישת הערכים שלמעלה ובערכים על בנימין נתניהו ועל פלסטין, 9 בנובמבר 2025 – 8 בנובמבר 2026 (סכום של צפיות יומיות). החלק הכהה של כל פס, והאחוז, הם חלק הצפיות שבהן הוצג הנוסח הביקורתי:</p>"
   ],
   [
    "      <li><span class=\"n\">Benjamin Netanyahu</span><span class=\"t\"><span class=\"b\" style=\"width:100.0%\"><i style=\"width:100.0%\"></i></span></span><span class=\"v\">7.9 million · <b>100%</b></span></li>",
@@ -668,7 +668,7 @@
   ],
   [
    "    <details class=\"ex-k\"><summary>What counts as the critical wording · the October 2023 surge</summary><p data-q=\"en:Israel|en:Benjamin Netanyahu|en:Palestine|en:Zionism|en:Nakba|en:October 7 attacks|en:Hamas|en:Gaza genocide\">Benjamin Netanyahu, Israel and Palestine, “genocide” in the opening section (92.6% of Israel’s views met “began committing genocide”, 13.6% of Netanyahu’s “orchestrating the Gaza genocide”, 41.0% of Palestine’s “recognised as constituting genocide”); Zionism, “colonization” in the first sentence; October 7, “armed incursions”; Gaza genocide, genocide in Wikipedia’s own voice; Hamas, “political organisation with a military wing”; Nakba, “ethnic cleansing … by Zionists” (the other 69.7% met another “ethnic cleansing” wording).</p><p class=\"ex-s\"><b>The surge.</b> From 7 Oct to 31 Dec 2023 most views met the older wording (Israel, 9.3 million views, 99.1% with no genocide charge; Hamas, 10.2 million, none with “political organisation”); in the past 12 months nearly every view met the new wording, except Nakba’s “by Zionists”.</p></details>",
-   "    <details class=\"ex-k\"><summary>מה נחשב לנוסח הביקורתי · גל הצפיות של אוקטובר 2023</summary><p data-q=\"en:Israel|en:Benjamin Netanyahu|en:Palestine|en:Zionism|en:Nakba|en:October 7 attacks|en:Hamas|en:Gaza genocide\">בנימין נתניהו, ישראל ופלסטין, <bdi lang=\"en\">“genocide”</bdi> (רצח עם) בפתיח הערך (92.6% מהצפיות בערך על ישראל הציגו את <bdi lang=\"en\">“began committing genocide”</bdi>, החלה לבצע רצח עם; 13.6% מהצפיות בערך על נתניהו, את <bdi lang=\"en\">“orchestrating the Gaza genocide”</bdi>, מתזמרת את רצח העם בעזה; 41.0% מהצפיות בערך על פלסטין, את <bdi lang=\"en\">“recognised as constituting genocide”</bdi>, הוכרו כרצח עם); ציונות, <bdi lang=\"en\">“colonization”</bdi> (קולוניזציה) במשפט הראשון; מתקפת 7 באוקטובר, <bdi lang=\"en\">“armed incursions”</bdi> (חדירות חמושות); רצח העם בעזה, רצח עם בקולה של ויקיפדיה; חמאס, <bdi lang=\"en\">“political organisation with a military wing”</bdi> (ארגון פוליטי בעל זרוע צבאית); נכבה, <bdi lang=\"en\">“ethnic cleansing … by Zionists”</bdi> (טיהור אתני … בידי ציונים; 69.7% האחרים הציגו נוסח אחר של <bdi lang=\"en\">“ethnic cleansing”</bdi>, טיהור אתני).</p><p class=\"ex-s\"><b>גל הצפיות.</b> מ־7 באוקטובר עד 31 בדצמבר 2023 רוב הצפיות הציגו את הנוסח הישן (ישראל, 9.3 מיליון צפיות, 99.1% מהן בלי האשמה ברצח עם; חמאס, 10.2 מיליון, ואף אחת מהן לא הציגה את <bdi lang=\"en\">“political organisation”</bdi>, ארגון פוליטי); ב־12 החודשים האחרונים כמעט כל צפייה הציגה את הנוסח החדש, חוץ מ־<bdi lang=\"en\">“by Zionists”</bdi> (בידי ציונים) בערך על הנכבה.</p></details>"
+   "    <details class=\"ex-k\"><summary>מה נחשב לנוסח הביקורתי · גל הצפיות של אוקטובר 2023</summary><p data-q=\"en:Israel|en:Benjamin Netanyahu|en:Palestine|en:Zionism|en:Nakba|en:October 7 attacks|en:Hamas|en:Gaza genocide\">בנימין נתניהו, ישראל ופלסטין, <bdi lang=\"en\">“genocide”</bdi> (רצח עם) בפתיח הערך (ב־92.6% מהצפיות בערך על ישראל הוצג <bdi lang=\"en\">“began committing genocide”</bdi>, החלה לבצע רצח עם; ב־13.6% מהצפיות בערך על נתניהו, <bdi lang=\"en\">“orchestrating the Gaza genocide”</bdi>, מתזמרת את רצח העם בעזה; ב־41.0% מהצפיות בערך על פלסטין, <bdi lang=\"en\">“recognised as constituting genocide”</bdi>, הוכרו כרצח עם); ציונות, <bdi lang=\"en\">“colonization”</bdi> (קולוניזציה) במשפט הראשון; מתקפת 7 באוקטובר, <bdi lang=\"en\">“armed incursions”</bdi> (חדירות חמושות); רצח העם בעזה, רצח עם בקולה של ויקיפדיה; חמאס, <bdi lang=\"en\">“political organisation with a military wing”</bdi> (ארגון פוליטי בעל זרוע צבאית); נכבה, <bdi lang=\"en\">“ethnic cleansing … by Zionists”</bdi> (טיהור אתני … בידי ציונים; ב־69.7% האחרים הוצג נוסח אחר של <bdi lang=\"en\">“ethnic cleansing”</bdi>, טיהור אתני).</p><p class=\"ex-s\"><b>גל הצפיות.</b> מ־7 באוקטובר עד 31 בדצמבר 2023 ברוב הצפיות הוצג הנוסח הישן (ישראל, 9.3 מיליון צפיות, 99.1% מהן בלי האשמה ברצח עם; חמאס, 10.2 מיליון, ובאף אחת מהן לא הוצג <bdi lang=\"en\">“political organisation”</bdi>, ארגון פוליטי); ב־12 החודשים האחרונים כמעט בכל צפייה הוצג הנוסח החדש, חוץ מ־<bdi lang=\"en\">“by Zionists”</bdi> (בידי ציונים) בערך על הנכבה.</p></details>"
   ],
   [
    "    <p class=\"ex-n\">Page views, not unique readers: one person can count many times.</p></figure>",
@@ -696,7 +696,7 @@
   ],
   [
    "const MO_T={f:\"Then\",n:\"Now\",b:\"Both\",show:\"Show the sentence\",scrub:\"Drag from then to now\",add:\"Added\",rem:\"Removed\",repl:\"in place of\",by:\"replaced by\",chg:\"Changed\",en:\"In English:\",nothing:\"nothing was removed here\"};",
-   "const MO_T={f:\"אז\",n:\"היום\",b:\"שניהם\",show:\"הצגת המשפט\",scrub:\"גררו מאז ועד היום\",add:\"נוסף\",rem:\"הוסר\",repl:\"במקום\",by:\"והוחלף ב־\",chg:\"שונה\",en:\"באנגלית:\",nothing:\"כאן לא הוסר דבר\"};"
+   "const MO_T={f:\"אז\",n:\"היום\",b:\"שניהם\",show:\"הצגת המשפט\",scrub:\"גררו בין אז להיום\",add:\"נוסף\",rem:\"הוסר\",repl:\"במקום\",by:\"והוחלף ב־\",chg:\"שונה\",en:\"באנגלית:\",nothing:\"כאן לא הוסר דבר\"};"
   ]
  ],
  "lib": [

@@ -54,7 +54,7 @@ def _sub(s, pairs, where):
 
 
 MISS_EN = ('Not in this edition: this view needs the full data set. <a href="' + LAB_URL + '" target="_blank" rel="noopener">See the full lab ↗</a>')
-MISS_HE = ('לא במהדורה הזאת: התצוגה הזאת דורשת את מערך הנתונים המלא. <a href="' + LAB_URL + '" target="_blank" rel="noopener">למעבדה המלאה (באנגלית) ↖</a>')
+MISS_HE = ('לא במהדורה הזאת: התצוגה דורשת את מערך הנתונים המלא. <a href="' + LAB_URL + '" target="_blank" rel="noopener">למעבדה המלאה (באנגלית) ↖</a>')
 
 JS_SLIM = [
     # one lab per language page: the flash page passes its own FLX object (the bilingual page runs two labs side by side)
@@ -146,7 +146,7 @@ JS_HE = [
     ('title="${E(r.t)}: ${r.n} of ${L.length} languages with data"', 'title="${E(r.t)}: יש נתונים ב־${r.n} מתוך ${L.length} שפות"'),
     ('title="${E(LNG[l]||l)}: no article, no data" aria-label="no data"', 'title="${E(LNG[l]||l)}: אין ערך, אין נתונים" aria-label="אין נתונים"'),
     ('<span>fell</span><i style="background:linear-gradient(90deg,var(--dec),var(--mid),var(--inc))"></i><span>rose</span><span>· change in loaded words per 10,000 words of opening paragraph, first to last snapshot</span>',
-     '<span>ירד</span><i style="background:linear-gradient(270deg,var(--dec),var(--mid),var(--inc))"></i><span>עלה</span><span>· השינוי במונחים ביקורתיים לכל 10,000 מילים של פסקת הפתיחה, מהתמונה הראשונה לאחרונה</span>'),
+     '<span>ירד</span><i style="background:linear-gradient(270deg,var(--dec),var(--mid),var(--inc))"></i><span>עלה</span><span>· השינוי במונחים ביקורתיים לכל 10,000 מילים של פסקת הפתיחה, מצילום המצב הראשון לאחרון</span>'),
     ('</i> no data (no article in that language)</span>', '</i> אין נתונים (אין ערך בשפה הזאת)</span>'),
     ('<span>· the small number after each title: languages with data · ${N(X.rows.length)} articles</span>', '<span>· המספר הקטן ליד כל שם ערך: השפות שיש בהן נתונים · ערכים: ${N(X.rows.length)}</span>'),
     ('aria-pressed="true">English minus ${E(LNG[S7.cmp]||S7.cmp)}</span>', 'aria-pressed="true">אנגלית פחות ${E(LNG[S7.cmp]||S7.cmp)}</span>'),
@@ -173,13 +173,13 @@ HTML_HE = [
     ('<b>Data lab</b> · <span id="lxViewsN">0</span> <span id="lxViewsW">views</span> explored',
      '<b>מעבדת נתונים</b> · תצוגות שנבדקו: <span id="lxViewsN">0</span><span id="lxViewsW"></span>'),
     ('The more you slice, the more chance patterns you’ll find.', 'ככל שפורסים את הנתונים ליותר פרוסות, כך מוצאים יותר דפוסים מקריים.'),
-    ('<div class="lx-eye">Data lab <span class="lx-x">Exploratory</span></div>', '<div class="lx-eye">מעבדת נתונים <span class="lx-x">גישוש</span></div>'),
-    ('<span class="lx-x">Exploratory</span>', '<span class="lx-x">גישוש</span>'),
+    ('<div class="lx-eye">Data lab <span class="lx-x">Exploratory</span></div>', '<div class="lx-eye">מעבדת נתונים <span class="lx-x">ראשוני</span></div>'),
+    ('<span class="lx-x">Exploratory</span>', '<span class="lx-x">ראשוני</span>'),
     ('<h1>Play with the evidence</h1>', '<h1>שחקו עם הראיות</h1>'),
     ('<p class="lx-deck">Hands-on views of the data behind the report, in a slim version: this edition carries the data for two of the seven, '
      'the definition flipbook and the language prism, for the articles in the flash edition. The other five need the full data set; they are in the '
      '<a href="' + LAB_URL + '" target="_blank" rel="noopener">full lab ↗</a>.</p>',
-     '<p class="lx-deck">תצוגות מעשיות של הנתונים שמאחורי הדוח, בגרסה מצומצמת: המהדורה הזאת כוללת את הנתונים לשתיים משבע התצוגות, '
+     '<p class="lx-deck">תצוגות אינטראקטיביות של הנתונים שמאחורי הדוח, בגרסה מצומצמת: המהדורה הזאת כוללת את הנתונים לשתיים משבע התצוגות, '
      'דפדפת ההגדרות ומנסרת השפות, לערכים שבמהדורה המקוצרת. חמש האחרות דורשות את מערך הנתונים המלא, והן ב'
      '<a href="' + LAB_URL + '" target="_blank" rel="noopener">מעבדה המלאה (באנגלית) ↖</a>.</p>'),
     ('<nav class="lx-index" aria-label="Labs" id="lxIndex">', '<nav class="lx-index" aria-label="התצוגות" id="lxIndex">'),
