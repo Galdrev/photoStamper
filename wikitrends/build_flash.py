@@ -1,6 +1,8 @@
 """Build the flash edition of the report.
 
-Usage: python build_flash.py OUT.html
+Usage: python build_flash.py OUT.html            (English)
+       python build_flash.py --lang he OUT.html  (Hebrew: flash_he.py, strings in flash_i18n_he.json; the English
+                                                  page is built and checked first, in memory)
 
 The flash edition is a separate page (page_flash_template.html) on the research edition's data, design and chart code:
   * the research build (build_page.py) runs first, unchanged, with all its assertions; its output goes to a temporary file
@@ -20,6 +22,12 @@ from html.parser import HTMLParser
 HERE = os.path.dirname(os.path.abspath(__file__))
 PAT = os.path.join(HERE, "patterns")
 RESEARCH_URL = "https://claude.ai/artifact/6NCLCkohWsfvKwz9MtCTPv"
+LANG = "en"
+if "--lang" in sys.argv:
+    _i = sys.argv.index("--lang")
+    LANG = sys.argv[_i + 1]
+    del sys.argv[_i:_i + 2]
+    assert LANG in ("en", "he"), f"unknown --lang {LANG}"
 
 # 1. the research build, unchanged (all its assertions run); keep its data
 _tmp = tempfile.NamedTemporaryFile(suffix=".html", delete=False).name
@@ -370,5 +378,11 @@ for k in SLOTS:
 out = re.sub(r"<!--VERIFY:[^>]*?-->", "", out)
 # a standalone page: doctype, charset and viewport first (the research edition gets the same wrapper when published)
 out = '<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n' + out
+if LANG == "he":
+    import flash_he
+    flash_he.build(dict(tpl=tpl, lib=lib, css=css, SLOTS=SLOTS, data=data, R=R, RESEARCH_URL=RESEARCH_URL, text=text, vis=vis,
+                        _Text=_Text, norm=norm, quotes=quotes, corpus=corpus, all_corpus=all_corpus, VETO=VETO, SPIN=SPIN,
+                        COMPUTED=COMPUTED, en_out=out), sys.argv[1])
+    sys.exit(0)
 open(sys.argv[1], "w").write(out)
 print(f"wrote {sys.argv[1]} ({len(out)/1e6:.2f} MB)")

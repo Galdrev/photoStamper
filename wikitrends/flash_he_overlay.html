@@ -1,0 +1,163 @@
+<!-- Hebrew flash edition: the layer build_flash.py --lang he adds on top of the English page.
+     The style block (id he-css) is appended after the flash CSS; the script block (id he-js) goes into the page's script just before flInit(),
+     so its function declarations replace the English ones of the same name (shSpec, shCard). No data logic and no chart code
+     lives here: dates, RTL mechanics, the Hebrew share cards and the Hebrew labels for data-driven strings only.
+     Strings: flash_i18n_he.json. Notes and glossary: patterns/flash/HE_TRANSLATION.md. -->
+<style id="he-css">
+/* ---------- Hebrew edition: type ---------- */
+html[lang="he"]{--display:"Frank Ruhl Libre","Newsreader",Georgia,serif;--body:"Heebo","Libre Franklin",Arial,sans-serif;--mono:"Heebo","JetBrains Mono",ui-monospace,monospace}
+html[lang="he"] [lang="en"],html[lang="he"] [lang="es"]{--display:"Newsreader","Iowan Old Style",Georgia,serif;--body:"Libre Franklin","Helvetica Neue",Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+html[lang="he"] [lang="ar"]{--display:"Noto Naskh Arabic","Newsreader",serif}
+/* Hebrew has no capitals and does not take tracking: labels drop the uppercase and the letter-spacing (English blocks keep theirs) */
+html[lang="he"] :is(.eyebrow,.mast,.fl .fl-k,.rw .a,.car-s>.w,.fl-lane>.w,.fl-vs .bd,.fl-vs blockquote>.w,.news-q .w,.fl-hint,.car-n,.fl-dinner .fl-k,.fl-other .k,.fl-pair .dn,.fl-mo .mt,.br-h,.xm thead th,.xchip,.fl-tiles .tl2,.rw-btn,.rw-st,#breathe .br-h){text-transform:none;letter-spacing:0}
+html[lang="he"] .hero h1,html[lang="he"] .fc>h2{letter-spacing:0}
+html[lang="he"] .fc>h2,html[lang="he"] .hero h1{font-weight:500}
+html[lang="he"] .fl-page .hero h1{line-height:1.12}
+html[lang="he"] .fl .fl-k,html[lang="he"] .rw .a,html[lang="he"] .car-s>.w,html[lang="he"] .fl-lane>.w,html[lang="he"] .fl-vs blockquote>.w{font-size:11.5px}
+/* ---------- quotes are evidence: the original in its own direction, our Hebrew translation directly under it ---------- */
+.he-tr{display:block;font:400 15px/1.45 var(--display);color:var(--ink-2);margin:2px 0 0}
+.he-tr .he-k{display:inline-block;font:600 10.5px/1.3 var(--body);color:var(--muted);background:var(--faint);border-radius:2px;padding:1px 5px;margin-left:6px;vertical-align:1px}
+.he-tr del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .06em}
+.he-tr ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .06em}
+.he-o{display:block;font:400 12.5px/1.4 var(--display);color:var(--muted);margin:1px 0 0;text-align:left;unicode-bidi:isolate}
+.he-o del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .06em}
+.he-o ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .06em}
+.fc>h2+.he-o,.fl-mt+.he-o{margin-top:-4px}
+[dir="ltr"]{text-align:left}
+.he-q[dir="ltr"]{display:block}
+/* the hero stack: the English pair animates on its own line; our translation runs right to left under it */
+.rw .p[dir="ltr"]{text-align:left}
+.rw .he-tr{font-size:15.5px;line-height:1.35}
+/* ---------- mirror the layout ---------- */
+html[dir="rtl"] .fl{border-left:1px solid var(--rule);border-right:3px solid var(--ink)}
+html[dir="rtl"] .fl-fact,html[dir="rtl"] .fl-honest{border-left:0;padding:2px 12px 2px 0}
+html[dir="rtl"] .fl-fact{border-right:2px solid var(--muted)}
+html[dir="rtl"] .fl-honest{border-right:2px dashed var(--muted)}
+html[dir="rtl"] .fl-other{border-left:0;border-right:3px solid var(--muted);padding:2px 12px 2px 0}
+html[dir="rtl"] .news-q .w .xchip{margin-left:0;margin-right:auto}
+html[dir="rtl"] .car-s>.w .fl-play.sm{margin-left:0;margin-right:auto}
+html[dir="rtl"] .fl-tiles .tl2 .k{margin-right:0;margin-left:4px}
+html[dir="rtl"] .fl-prog{left:auto;right:0;transform-origin:100% 50%}
+html[dir="rtl"] .fl-bars .b span{left:auto;right:calc(100% + 6px)}
+html[dir="rtl"] .fl-score .bar .i{padding-left:0;padding-right:6px}
+html[dir="rtl"] .fl-score .bar .o{text-align:left;padding-right:0;padding-left:6px}
+html[dir="rtl"] .skip{left:auto;right:8px}
+html[dir="rtl"] .fl-play{padding:0 10px 0 14px}
+html[dir="rtl"] .fl-play::before{padding-left:2px}
+html[dir="rtl"] details.fl-full summary::after{content:" ▾"}
+html[dir="rtl"] .car-s #xwGG .rch-row .v span{margin-left:0}
+@keyframes carnudge{0%,100%{transform:none}40%{transform:translateX(56px)}}
+/* charts and timelines keep time running left to right, as Hebrew news charts do; their labels are set right to left inside */
+html[dir="rtl"] :is(.fl-strip,.fl-meter,#kChart,.br-strip,#brRange,.xg-ax){direction:ltr}
+html[dir="rtl"] #xwGG .rch{direction:ltr}
+html[dir="rtl"] #xwGG .rch-row>span:first-child,html[dir="rtl"] #xwGG .rch-row .v{direction:rtl;text-align:right}
+html[dir="rtl"] .fl-strip text{unicode-bidi:plaintext}
+/* the language grid reads right to left: languages on the right */
+html[dir="rtl"] .xm .xm-l{left:auto;right:0;text-align:right;padding:0 0 0 10px}
+html[dir="rtl"] .xm tfoot th{text-align:right}
+html[dir="rtl"] .xm-c .dir,html[dir="rtl"] .xm-legend .dir{right:auto;left:-12px}
+html[dir="rtl"] .xm.m-now .xm-c.chg .tl.th{left:auto;right:calc(50% - 27px)}
+html[dir="rtl"] .xm-legend .nwr{margin-right:0;margin-left:8px}
+html[dir="rtl"] .xm-swipe{text-align:left}
+html[dir="rtl"] .seg button+button{border-left:0;border-right:1px solid var(--rule)}
+html[dir="rtl"] .hscroll:not(.at-end){-webkit-mask-image:linear-gradient(to right,transparent,#000 32px);mask-image:linear-gradient(to right,transparent,#000 32px)}
+html[dir="rtl"] #xmTip .go{text-align:right}
+html[dir="rtl"] #xmTip .x{right:auto;left:0}
+html[dir="rtl"] #xmTip.pin .h,html[dir="rtl"] #xmTip.pin .st{padding-right:0;padding-left:34px}
+html[dir="rtl"] .news-q .s .tn{margin-right:0;margin-left:6px}
+@media (max-width:600px){html[dir="rtl"] .xm .xm-l{padding:0 0 0 6px;box-shadow:-6px 0 6px -6px rgb(0 0 0/.25)}}
+/* tooltips read right to left; their quoted sentences keep their own direction */
+html[dir="rtl"] #tip,html[dir="rtl"] #xmTip,html[dir="rtl"] #gloss{direction:rtl;text-align:right}
+#tip [lang="en"],#xmTip [lang="en"]{direction:ltr;text-align:left;unicode-bidi:isolate}
+/* the play sheet holds the research edition's own instruments, in English */
+.fs-pane[lang="en"]{direction:ltr;text-align:left}
+.fs-he{font:400 13.5px/1.45 var(--body);color:var(--ink-2);margin:0 0 10px;padding:8px 10px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px}
+/* the morph slides: our translation follows the state of the sentence (then / now) */
+.car-s:has(.fl-mo .xr-s.st-n) .he-mo[data-st="f"],.car-s:has(.fl-mo .xr-s.st-f) .he-mo[data-st="n"]{display:none}
+.he-mo{font-size:13.5px}
+@media (max-width:600px){
+  .he-tr{font-size:13.5px;line-height:1.36;margin-top:1px}
+  .fl-vs .he-tr{font-size:13px;line-height:1.34}
+  .he-tr .he-k{font-size:9.5px;padding:0 4px;margin-left:4px}
+  .rw .he-tr{font-size:14px;line-height:1.3}
+  html[lang="he"] .rw .p{font-size:14.5px;line-height:1.22}
+  html[lang="he"] .rw li{padding:5px 0}
+  .he-o{font-size:11.5px;line-height:1.35}
+  .he-mo{font-size:12.5px}
+  html[lang="he"] .fl .fl-k,html[lang="he"] .rw .a,html[lang="he"] .car-s>.w,html[lang="he"] .fl-lane>.w,html[lang="he"] .fl-vs blockquote>.w{font-size:10.5px}
+  html[lang="he"] .fl-page .hero h1{font-size:26px;line-height:1.14}
+  html[lang="he"] .fc>h2{font-size:20.5px;line-height:1.18}
+  html[lang="he"] .fl-body,html[lang="he"] .fl-fact{line-height:1.4}
+  html[lang="he"] .car-s .cp{line-height:1.38}
+}
+</style>
+<script id="he-js">
+/* ---------- Hebrew edition ---------- */
+const HMON=["ינואר","פברואר","מרץ","אפריל","מאי","יוני","יולי","אוגוסט","ספטמבר","אוקטובר","נובמבר","דצמבר"];
+const HMS=["ינו׳","פבר׳","מרץ","אפר׳","מאי","יוני","יולי","אוג׳","ספט׳","אוק׳","נוב׳","דצמ׳"];
+const heDt=s=>typeof s==="number"||s instanceof Date?new Date(+s):new Date(String(s).length<=10?(String(s).length===7?s+"-01":s)+"T00:00:00Z":s);
+/* "7 באוקטובר 2023"; "אוקטובר 2023"; "7 באוק׳" */
+const heD=s=>{const d=heDt(s);return `${d.getUTCDate()} ב${HMON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
+const heMY=s=>{const d=heDt(s);return `${HMON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
+const heDs=s=>{const d=heDt(s);return `${d.getUTCDate()} ב${HMS[d.getUTCMonth()]}`};
+const HE_LANG={he:"עברית",ar:"ערבית",en:"אנגלית",de:"גרמנית",fr:"צרפתית",es:"ספרדית",it:"איטלקית",pt:"פורטוגזית",nl:"הולנדית",pl:"פולנית",ru:"רוסית"};
+const heLang=l=>HE_LANG[l]||l;
+/* the weekly chart's battles and ceasefires (R.v3.events): Hebrew labels, same facts, same numbers */
+const HE_EV=/*HE_EV*/{};
+const heEv=l=>HE_EV[l]||l;
+/* the language grid's coding notes (R.langs cells .x), in Hebrew; quoted words are our translation of the stored English rendering */
+const HE_X=/*HE_X*/{};
+const heX=x=>HE_X[x]||x;
+/* the grid's five column names (R.langs.cols labels; codes and cells untouched) */
+const HE_COL=/*HE_COL*/{};
+if(R&&R.langs)R.langs.cols.forEach(c=>{if(HE_COL[c[0]])c[1]=HE_COL[c[0]]});
+GLOSS.top=["ערך מוביל","150 פתיחי הערכים הנקראים ביותר בנושא שהיו קיימים ב־2021, שנבדקו בינואר 2021 וביולי 2023."];
+/* the play sheet: the research instruments stay in English, inside a Hebrew frame */
+$$(".fs-pane").forEach(p=>{p.setAttribute("lang","en");p.setAttribute("dir","ltr")});
+{const b=$("#flSheetB"),n=document.createElement("p");n.className="fs-he";n.id="fsHe";n.textContent="זהו הכלי המלא של מהדורת המחקר, בשפת המקור שלו (אנגלית): כל גרסה, כל תאריך וכל ציטוט כפי שנשמרו.";if(b)b.prepend(n)}
+
+/* ---------- share images, Hebrew: right to left, with every English quote kept left to right and our translation under it ---------- */
+function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="נוסח ויקיפדיה נכון ל־5 בנובמבר 2026 · המהדורה המקוצרת, סחף המסגור בוויקיפדיה",src=$(".mast a").href;
+  const tr=el=>el?el.textContent.replace(/^\s*תרגום שלנו\s*/,"").trim():"";
+  /* a Hebrew run inside an English line (the Israel row's "no charge") is drawn word by word left to right, so reverse its words */
+  const sgs=el=>shSegs(el).map(g=>/[\u05d0-\u05ea]/.test(g.t)?{...g,t:g.t.trim().split(/\s+/).reverse().join(" ")}:g);
+  if(id==="flRw"){const f=$("#flRw");return {file:"wikipedia-first-lines-he.png",kicker:"ויקיפדיה באנגלית · שורות הפתיחה, אז ועכשיו",title:$("#flRwH").textContent.trim().replace(/:$/,"."),size:36,
+    rows:$$(".rw li",f).map(li=>({label:$(".a",li).firstChild.textContent.trim()+" · "+$(".d",li).textContent.trim(),segs:sgs($(".p",li)),rtl:tr($(".he-tr",li))})),
+    foot:[{t:tr($(".rw-n .he-tr",f))},{t:$(".rw-n .he-q",f).textContent.trim(),ltr:1},{t:scope},{t:stamp+" · "+src}]}}
+  if(id==="c3"){const p=$("#c3 .fl"),G=[[]];[...p.children].forEach(c=>{if(c.matches(".fl-k,.he-tr"))return;if(c.matches(".fl-sep")){G.push([]);return}G.at(-1).push(c)});
+    const H=$$("#c3 .fl .he-tr").map(tr);
+    const lab=["7 באוקטובר · המשפט הראשון · אוקטובר 2023 ← היום","7 באוקטובר · פתיח הערך · ינואר 2024 ← היום"];
+    return {file:"wikipedia-october-7-he.png",kicker:"ויקיפדיה באנגלית · 7 באוקטובר והחטופים",title:$("#c3H").textContent.trim(),size:36,
+      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>sgs(c)),rtl:H[i]||""})).concat([{label:"החטופים",lead:$("#c3 .fl-lane .cp .he-p").textContent.trim(),segs:sgs($("#c3 .fl-lane .cp .he-q")),rtl:tr($("#c3 .fl-lane .cp .he-tr"))}]),
+      foot:[{t:$("#c3 .fl-body .he-p").textContent.trim()},{t:scope},{t:stamp+" · "+src}]}}
+  if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
+    return {file:"wikipedia-hamas-english-hebrew-he.png",kicker:"ויקיפדיה · חמאס, באנגלית ובעברית",title:$("#c4H").textContent.trim(),size:36,
+      rows:[{label:"ויקיפדיה באנגלית · "+$(".w",en).textContent.trim(),segs:sgs($(".s",en)),rtl:tr($(".he-tr",en))},{label:"ויקיפדיה בעברית · היום (אוקטובר 2026) · ראשוני",rtl:$(".s",he).textContent.trim(),big:1}],
+      foot:[{t:$("#c4 .fl-body .he-p").textContent.trim()},{t:$("#c4 .fl-ctx .he-p").textContent.trim()},{t:scope},{t:stamp+" · "+src}]}}
+  if(id==="c5vs"){const v=$("#c5 .fl-vs");return {file:"wikipedia-two-voices-he.png",kicker:"ויקיפדיה באנגלית · האשמת רצח העם, בשני קולות",title:$("#c5H").textContent.trim(),size:40,
+    rows:$$("blockquote",v).map(b=>({label:$(".bd",b).textContent.trim()+" · "+$(".w",b).textContent.trim(),segs:sgs($(".s",b)),rtl:tr($(".he-tr",b))})),
+    foot:[{t:"הערך ״רצח העם בעזה״ מביא את הכחשת ישראל בפסקה האחרונה של הפתיח שלו."},{t:$("#c5own .he-p").textContent.trim()},{t:scope},{t:stamp+" · "+src}]}}}
+/* right-to-left wrap for one Hebrew run; returns the y of the last line */
+function shRtlW(ctx,text,maxW,xr,y0,lh,font,col,draw){ctx.save();ctx.font=font;ctx.direction="rtl";ctx.textAlign="right";const W=String(text).split(/\s+/).filter(Boolean);let line="";const L=[];
+  W.forEach(w=>{const t=line?line+" "+w:w;if(ctx.measureText(t).width>maxW&&line){L.push(line);line=w}else line=t});if(line)L.push(line);
+  if(draw){ctx.fillStyle=col;L.forEach((l,i)=>ctx.fillText(l,xr,y0+i*lh))}ctx.restore();return y0+Math.max(0,L.length-1)*lh}
+function shCard(spec){spec={...spec,kicker:spec.kicker+" · השורות בעברית: תרגום שלנו"};const W=1080,H=1350,P=72,cv=document.createElement("canvas");cv.width=W;cv.height=H;const ctx=cv.getContext("2d"),C=SHC;
+  const DH="'Frank Ruhl Libre', Newsreader, serif",DE="Newsreader, Georgia, serif",B="Heebo, 'Libre Franklin', Arial, sans-serif";
+  ctx.fillStyle=C.bg;ctx.fillRect(0,0,W,H);ctx.textBaseline="alphabetic";
+  shRtlW(ctx,spec.kicker,W-2*P,W-P,P+12,30,`600 26px ${B}`,C.mut,true);
+  let y=P+80;y=shRtlW(ctx,spec.title,W-2*P,W-P,y,58,`500 46px ${DH}`,C.ink,true)+44;
+  const foot=spec.foot.filter(f=>f.t);
+  const fy0=H-P-foot.length*44-40;
+  const rowsAt=(sz,draw)=>{let yy=y;spec.rows.forEach(r=>{if(draw){ctx.strokeStyle=C.rule;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,yy);ctx.lineTo(W-P,yy);ctx.stroke()}yy+=34;
+      yy=shRtlW(ctx,r.label,W-2*P,W-P,yy,28,`600 21px ${B}`,C.ink2,draw);
+      if(r.lead)yy=shRtlW(ctx,r.lead,W-2*P,W-P,yy+sz*0.9+6,sz*0.95*1.3,`400 ${Math.round(sz*0.8)}px ${B}`,C.ink,draw);
+      if(r.segs&&r.segs.length){const fo=k=>`${k==="ins"||k==="mk"?600:400} ${sz}px ${DE}`,w=shWrap(ctx,r.segs,W-2*P,P,yy+sz+8,sz*1.25,fo);if(draw)shDraw(ctx,w.ops,fo,sz*1.25);yy=w.y}
+      if(r.rtl){const s2=r.big?Math.round(sz*1.05):Math.round(sz*0.8);yy=shRtlW(ctx,r.rtl,W-2*P,W-P,yy+s2+(r.segs?12:8),s2*1.32,`${r.big?500:400} ${s2}px ${DH}`,r.big?C.ink:C.ink2,draw)}
+      yy+=sz*0.55});return yy};
+  let sz=spec.size||40;while(sz>22&&rowsAt(sz,false)>fy0-10)sz-=2;rowsAt(sz,true);
+  let fy=fy0;ctx.strokeStyle=C.ink;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,fy);ctx.lineTo(W-P,fy);ctx.stroke();fy+=38;
+  foot.forEach((f,i)=>{const last=i>=foot.length-2,fs=last?20:22,lh=last?28:30,col=last?C.mut:C.ink2;
+    if(f.ltr){const fo=()=>`400 ${fs}px ${DE}`,w=shWrap(ctx,[{t:f.t,k:""}],W-2*P,P,fy,lh,fo);ctx.fillStyle=col;w.ops.forEach(o=>{ctx.font=fo();ctx.fillText(o.w,o.x,o.y)});fy=w.y+lh+4}
+    else fy=shRtlW(ctx,f.t,W-2*P,W-P,fy,lh,`${last?400:500} ${fs}px ${B}`,col,true)+lh+4});
+  return cv}
+</script>
