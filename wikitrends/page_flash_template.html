@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <!--
   FLASH EDITION v2 (visual-first). Built by build_flash.py: the research edition's CSS (/*RESEARCH_CSS*/), its chart/diff/tooltip
-  library (/*RESEARCH_JS*/) and the markup of its interactives (<!-#-R:id-#-> slots: #breathe, #xmFig, #tierFig inline; #ziFig, #o7Fig and
+  library (/*RESEARCH_JS*/) and the markup of its interactives (<!-#-R:id-#-> slots: #breathe and #xmFig inline; #ziFig, #o7Fig and
   #xrFig inside <template>s for the play sheet) are copied in from page_template.html at build time; R is a slice of the research data.
   Card list: patterns/flash/BUILD_v2.md. Every curly-quoted string in this file is checked against the stored texts by build_flash.py.
 -->
@@ -99,6 +99,42 @@ details.fl-full .news-q{margin-top:4px}
 .fl-vs .s{font:400 16.5px/1.42 var(--display);color:var(--ink)}
 .fl-vs ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .08em;font-weight:500}
 .fl-vs .att{background:var(--del-bg);color:var(--del-ink);border-radius:2px;padding:0 .08em}
+/* impact r1: the hero rewrite stack, six first lines, then -> now (final state by default; JS plays it once) */
+.fl-rw{margin:0;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:12px 14px;display:grid;gap:8px}
+.rw-h{display:flex;justify-content:space-between;align-items:flex-start;gap:8px 12px;flex-wrap:wrap;font:600 13px/1.35 var(--body);color:var(--ink)}
+.rw-b{display:flex;gap:6px;flex:none;align-items:center}
+.rw-btn{border:1px solid var(--rule);background:var(--paper);border-radius:999px;font:600 11px/1 var(--mono);color:var(--ink);padding:0 10px;min-height:30px;cursor:pointer}
+.rw-btn:focus-visible{outline:2px solid var(--add-bd);outline-offset:2px}
+.rw-btn[hidden]{display:none}
+.rw-st{align-self:center;font:500 10px/1.2 var(--mono);color:var(--muted);white-space:nowrap}
+.rw{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.rw li{display:grid;gap:2px;padding:7px 0;border-top:1px solid var(--faint)}
+.rw li:first-child{border-top:0;padding-top:2px}
+.rw .a{display:flex;justify-content:space-between;gap:2px 10px;flex-wrap:wrap;font:600 10.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.rw .a .d{font-weight:500;color:var(--muted);letter-spacing:.02em;text-transform:none}
+.rw .p{font:400 19px/1.32 var(--display);color:var(--ink)}
+.rw del{color:var(--del-ink);background:var(--del-bg);text-decoration:line-through;text-decoration-thickness:1.5px;border-radius:2px;padding:0 .06em;transition:text-decoration-color .35s ease,background-color .35s ease,color .35s ease}
+.rw ins{color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .06em;font-weight:500;background-image:linear-gradient(var(--add-bg),var(--add-bg));background-repeat:no-repeat;background-size:100% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .7s cubic-bezier(.3,.7,.2,1),color .45s ease}
+.rw .ar{font:500 15px var(--body);color:var(--muted);padding:0 .3em}
+.fl-rw.pre li:not(.go) del{text-decoration-color:transparent;background-color:transparent;color:var(--ink)}
+.fl-rw.pre li:not(.go) ins{background-size:0% 100%;color:transparent}
+.fl-rw.pre li:not(.go) .ar{opacity:0}
+.fl-rw.pre li.go ins{transition-delay:.35s}
+.rw-n{font:400 13.5px/1.4 var(--body);color:var(--ink-2);margin:0}
+@media (min-width:601px){.rw .p{font-size:22px}}
+@media (prefers-reduced-motion:reduce){.rw del,.rw ins{transition:none}}
+/* impact r1: the then/now headlines light up as they arrive (highlighting only; the text never changes) */
+.fl-hd ins,.fl-hd del{background-image:linear-gradient(var(--hl),var(--hl));background-repeat:no-repeat;background-size:100% 100%;transition:background-size .9s cubic-bezier(.3,.7,.2,1),text-decoration-color .6s ease .5s}
+.fl-hd ins,.fl-hd del{background-color:transparent}.fl-hd ins{--hl:var(--add-bg)}.fl-hd del{--hl:var(--del-bg)}
+.fl-hd.pre ins,.fl-hd.pre del{background-size:0% 100%}
+.fl-hd.pre del{text-decoration-color:transparent}
+@media (prefers-reduced-motion:reduce){.fl-hd ins,.fl-hd del{transition:none}}
+/* impact r1: reading progress, decorative */
+.fl-prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--add-bd);transform-origin:0 50%;transform:scaleX(0);z-index:60;pointer-events:none}
+/* impact r1: the language grid's answer row */
+#flXm .xm tfoot th{color:var(--ink);font-weight:600}
+#flXm .xm tfoot td{background:var(--add-bg);color:var(--ink-2)}
+#flXm .xm tfoot td b{font:600 18px/1.1 var(--display);color:var(--add-ink)}
 /* ---------- the swipe carousel: scroll-snap with a peek, a fixed height, a one-time nudge, dots on the slide; no library ---------- */
 .car{display:grid;gap:8px;min-width:0}
 .car-h{display:flex;justify-content:space-between;align-items:center;gap:10px}
@@ -193,14 +229,6 @@ details.fl-full .news-q{margin-top:4px}
 .fl-other{display:grid;gap:6px;border-left:3px solid var(--muted);padding:2px 0 2px 12px}
 .fl-other .k{font:600 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .fl-other p{font:400 14.5px/1.45 var(--body);color:var(--ink);margin:0}
-.fl-poster .pz{font:400 21px/1.42 var(--display);color:var(--ink);margin:0}
-.fl-poster .pz del{text-decoration-thickness:2px}
-.fl-poster .dr{font:600 22px/1.1 var(--mono);color:var(--ink);letter-spacing:-.02em}
-.fl-poster .dr small{display:block;font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-.fl-poster .src{display:none}
-.car-s #tierFig{background:none;border:0;padding:0;gap:6px}
-.car-s #tierFig details,.car-s #tierFig .fig-h .cap{display:none}
-.car-s #tierFig .fig-t{font-size:13px}
 .car-s #xwGG .zi-how{display:none}
 .fl-dinner{background:var(--sheet);border:1px solid var(--ink);border-radius:3px;padding:12px 14px;font:400 17px/1.45 var(--display);color:var(--ink);margin:0}
 .fl-dinner .fl-k{display:block;font:600 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
@@ -262,7 +290,6 @@ details.fl-full .news-q{margin-top:4px}
   .fl-pos{padding:10px}.fl-pos .pos-q{font-size:12.5px;margin-bottom:2px}.fl-pos .fig-t{font-size:12.5px}
   .fl-dinner{font-size:15.5px;padding:10px 12px}
   .fl-honest{font-size:13px}
-  .fl-poster .pz{font-size:18px}
   .fl-bars li{font-size:12.5px;grid-template-columns:minmax(0,38%) minmax(0,1fr)}
   .fl-other p{font-size:13.5px}
   .fl-score .cp{font-size:13.5px}
@@ -274,7 +301,6 @@ details.fl-full .news-q{margin-top:4px}
   #flXm .xm tbody th bdi{font-size:13px}#flXm .xm tbody th span{font-size:9px}#flXm .xm-ik{font-size:9.5px;gap:2px 8px}#flXm .xm-ik .tl{width:12px;height:12px}
   #flXm .seg button{padding:6px 9px;min-height:30px;font-size:12px}
   #flK #kChart{height:180px!important}#flK #kSub{display:none}#kCap{font-size:13px}
-  .car-s #tierFig .legend{font-size:9.5px;gap:2px 8px}
   .fl-score{gap:6px;padding:8px 10px}.fl-other p{font-size:13px;line-height:1.4}.fl-bars li{font-size:12px}.fl-bars .b{height:15px}
   .fl-dinner{font-size:14.5px;line-height:1.4}
   #breathe .br-s{font-size:17px;line-height:1.34}#breathe .br-key{font-size:10px;gap:2px 10px}
@@ -287,7 +313,6 @@ details.fl-full .news-q{margin-top:4px}
   .fl-pos .pos-row:first-child .pos-q{display:none}
   .fc{margin-top:16px;padding-top:9px}
   .fl-pair .q{font-size:12.5px;line-height:1.35}.fl-pair .dn{font-size:9.5px}
-  .car-s #tierFig .fig-h{display:none}
   #flXm .xm-opts .lab{display:none}
   #flXm .xm thead .ls{font-size:8.5px!important;line-height:1.15;overflow-wrap:anywhere;hyphens:auto}#flXm .xm thead th{padding:0 1px 6px}
   .fl-dinner{font-size:14px}
@@ -296,8 +321,10 @@ details.fl-full .news-q{margin-top:4px}
   .fc>h2{font-size:19.5px;line-height:1.15}
   .fl-page .hero h1{font-size:25px}
   .fl-tiles{padding:8px 10px;gap:6px}.fl-tiles .tc{font-size:13.5px;line-height:1.35}
+  .fl-rw{padding:9px 11px;gap:6px}.rw li{padding:6px 0}.rw .p{font-size:16.5px;line-height:1.27}.rw .a{font-size:9.5px}.rw .ar{font-size:13px}.rw-h{font-size:12.5px}.rw-n{font-size:12.5px;line-height:1.35}
 }
 </style>
+<div class="fl-prog" id="flProg" aria-hidden="true"></div>
 <div id="tip" hidden></div>
 <div id="gloss" role="tooltip" hidden></div>
 <div id="xmTip" role="tooltip" hidden></div>
@@ -308,7 +335,18 @@ details.fl-full .news-q{margin-top:4px}
 <header class="hero" id="top">
   <div class="eyebrow fl-ey"><span>Israel on Wikipedia, 2021–2026</span><span class="ey-ev"><a href="@@R@@#ev-charge" target="_blank" rel="noopener">Full evidence →</a></span></div>
   <h1>Before the war, no <button type="button" class="gl" data-g="top" aria-expanded="false">top article</button> charged Israel with genocide. Now the article on Israel does.</h1>
-  <div class="news-q hero-q" data-q="en:Israel"><blockquote><span class="w"><i style="background:var(--topic)"></i>Israel · opening section · now · Wikipedia’s own voice</span><span class="s">“After the Hamas-led October 7 attacks, Israel <ins>began committing genocide</ins> against Palestinians in Gaza.”</span><span class="cap">The next sentence: “Israel has denied that its actions constitute genocide.”</span></blockquote></div>
+  <figure class="fl-rw" id="flRw" aria-labelledby="flRwH">
+    <div class="rw-h"><span id="flRwH">Open these articles today. Their first lines, then and now:</span><span class="rw-b"><button type="button" class="rw-btn" id="rwRp" aria-label="Replay the rewrite" hidden>▶ Replay</button><button type="button" class="rw-btn" data-share="flRw" aria-label="Save these six lines as an image">Save as image</button><span class="rw-st">copy of 5 Nov 2026</span></span></div>
+    <ol class="rw">
+      <li data-q="en:Israel"><span class="a">Israel · opening section<span class="d">Jul 2023 → “genocide” since 4 May 2025</span></span><span class="p"><del>no genocide charge</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“began committing genocide”</ins></span></li>
+      <li data-q="en:Zionism"><span class="a">Zionism · first sentence<span class="d">1 Jan 2021 → since 27 Aug 2026</span></span><span class="p"><del>“re-establishment”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“a Jewish homeland through colonization”</ins></span></li>
+      <li data-q="en:Nakba"><span class="a">Nakba · first sentence<span class="d">24 Dec 2021 → since 6 Jul 2026</span></span><span class="p"><del>“the destruction of Palestinian society”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“the ethnic cleansing of Palestinian Arabs by Zionists”</ins></span></li>
+      <li data-q="en:October 7 attacks"><span class="a">October 7 attacks · first sentence<span class="d">23 Oct 2023 → since 8 Oct 2026</span></span><span class="p"><del>“coordinated attacks”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“coordinated armed incursions”</ins></span></li>
+      <li data-q="en:Hamas"><span class="a">Hamas · first sentence<span class="d">1 Jan 2021 → since 29 Nov 2025</span></span><span class="p"><del>“militant”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“political organisation with a military wing”</ins></span></li>
+      <li data-q="en:Gaza genocide"><span class="a">Gaza genocide · first sentence<span class="d">1 Jan 2024 → since 26 Sep 2025</span></span><span class="p"><del>“Allegations have been made”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“carried out by Israel”</ins></span></li>
+    </ol>
+    <p class="rw-n" data-q="en:Israel">In the Israel article, the next sentence: “Israel has denied that its actions constitute genocide.”</p>
+  </figure>
   <figure class="fl-tiles" id="flTiles" style="margin:0" aria-labelledby="flTilesC">
     <div class="tg" id="flTg" role="img" aria-label="150 squares, one per most-read opening section. In January 2021 and July 2023 none charged Israel with genocide. Now seven do; two of them state it as fact."></div>
     <p class="tc" id="flTilesC">The 150 most-read opening sections that existed in 2021. Jan 2021 and Jul 2023: none charged Israel with genocide. Now seven do, two as fact.</p>
@@ -380,6 +418,7 @@ details.fl-full .news-q{margin-top:4px}
     <blockquote class="own" data-q="en:Gaza genocide"><span class="bd">Own voice</span><span class="w">Gaza genocide · first sentence · since 26 Sep 2025</span><span class="s">“The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip <ins>carried out by Israel</ins> during the Gaza war.”</span></blockquote>
     <blockquote class="attr" data-q="en:October 7 attacks"><span class="bd">Attributed</span><span class="w">October 7 attacks · opening section · now</span><span class="s">“Some <span class="att">have alleged</span> that the attack was an act of genocide or a genocidal massacre against Israelis.”</span></blockquote>
   </div>
+  <p class="fl-acts" style="margin:-2px 0 0"><button type="button" class="rw-btn" data-share="c5vs" aria-label="Save these two sentences as an image">Save as image</button></p>
   <div class="car" id="car1" role="region" aria-roledescription="carousel" aria-label="The charge, everywhere">
     <div class="car-h"><span class="car-t">The charge, everywhere</span><span class="car-n" aria-live="polite"></span></div>
     <div class="car-vp" tabindex="0" aria-label="Slides; use the arrow keys or swipe">
@@ -441,19 +480,6 @@ details.fl-full .news-q{margin-top:4px}
       <li>Zionism<span class="b" style="width:15.4%"><span>1.8 million</span></span></li>
       <li>Hamas<span class="b" style="width:11.1%"><span>1.3 million</span></span></li>
     </ul></figure>
-  <div class="car" id="car3" role="region" aria-roledescription="carousel" aria-label="Every line, then and now">
-    <div class="car-h"><span class="car-t">Every line, then and now</span><span class="car-n" aria-live="polite"></span></div>
-    <div class="car-vp" tabindex="0" aria-label="Slides; use the arrow keys or swipe">
-      <div class="car-s fl-poster" role="group" aria-roledescription="slide" aria-label="Israel" data-q="en:Israel"><span class="w">Israel · opening section</span><div class="vis"><p class="pz"><del>no genocide charge</del> “After the Hamas-led October 7 attacks, Israel <ins>began committing genocide</ins> against Palestinians in Gaza.”</p></div><span class="dr">Jul 2023 → 4 May 2025<small>then · “genocide” since</small></span></div>
-      <div class="car-s fl-poster" role="group" aria-roledescription="slide" aria-label="Zionism" data-q="en:Zionism"><span class="w">Zionism · first sentence</span><div class="vis"><p class="pz" data-pz></p><span class="src pa">“… espouses the re-establishment of and support for a Jewish state in the territory defined as the historic Land of Israel …”</span><span class="src pb">“Zionism is an ethnic nationalist movement that emerged in late 19th-century Europe to establish and support a Jewish homeland through colonization in the region of Palestine …”</span></div><span class="dr">1 Jan 2021 → 27 Aug 2026<small>then · since</small></span></div>
-      <div class="car-s fl-poster" role="group" aria-roledescription="slide" aria-label="Nakba" data-q="en:Nakba"><span class="w">Nakba · first sentence</span><div class="vis"><p class="pz" data-pz></p><span class="src pa">“The Nakba … was the destruction of Palestinian society and homeland in 1948 …”</span><span class="src pb">“The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists …”</span></div><span class="dr">24 Dec 2021 → 6 Jul 2026<small>then · since</small></span></div>
-      <div class="car-s fl-poster" role="group" aria-roledescription="slide" aria-label="October 7" data-q="en:October 7 attacks"><span class="w">October 7 attacks · first sentence</span><div class="vis"><p class="pz" data-pz></p><span class="src pa">“A series of coordinated attacks, conducted by the Palestinian Islamist militant group Hamas, from the Gaza Strip onto bordering areas in Israel …”</span><span class="src pb">“On October 7, 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups.”</span></div><span class="dr">23 Oct 2023 → 8 Oct 2026<small>then · since</small></span></div>
-      <div class="car-s fl-poster" role="group" aria-roledescription="slide" aria-label="Hamas" data-q="en:Hamas"><span class="w">Hamas · first sentence</span><div class="vis"><p class="pz" data-pz></p><span class="src pa">“… is a Palestinian Sunni-Islamic fundamentalist but pragmatic, militant, and nationalist organization.”</span><span class="src pb">“… is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades.”</span></div><span class="dr">1 Jan 2021 → 29 Nov 2025<small>then · since</small></span></div>
-      <div class="car-s fl-poster" role="group" aria-roledescription="slide" aria-label="Gaza genocide" data-q="en:Gaza genocide"><span class="w">Gaza genocide · first sentence</span><div class="vis"><p class="pz" data-pz></p><span class="src pa">“Allegations have been made that the 2023 Israel–Hamas war constituted a genocide against the Palestinians.”</span><span class="src pb">“The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip carried out by Israel during the Gaza war.”</span></div><span class="dr">1 Jan 2024 → 26 Sep 2025<small>then · since</small></span></div>
-      <div class="car-s" role="group" aria-roledescription="slide" aria-label="Core and long tail"><span class="w">The core, not the long tail · share of articles whose opening gained critical vocabulary, by importance grade</span><div class="vis"><!--R:tierFig--></div><p class="cp">The change sits in the core articles people read, while the long tail of short pages barely changed.</p></div>
-    </div>
-    <div class="car-ctl"><button type="button" class="car-p" aria-label="Previous slide">‹</button><div class="car-dots" role="group" aria-label="Choose a slide"></div><button type="button" class="car-x" aria-label="Next slide">›</button></div>
-  </div>
   <figure class="fl-score" style="margin:0" aria-labelledby="scK"><p class="cp" id="scK"><b>The count.</b> For every critical term taken out of these opening paragraphs, almost four went in.</p>
     <div class="row"><span class="lab">These opening paragraphs · critical terms</span><div class="bar" role="img" aria-label="223 in, 61 out"><span class="i" style="flex:223">223 in</span><span class="o" style="flex:61">61 out</span></div></div>
     <div class="row"><span class="lab">Comparison pages (other countries, conflicts and religions)</span><div class="bar" role="img" aria-label="125 in, 73 out"><span class="i" style="flex:125">125 in</span><span class="o" style="flex:73">73 out</span></div></div>
@@ -461,6 +487,7 @@ details.fl-full .news-q{margin-top:4px}
       <p data-q="en:1948 Palestinian expulsion and flight"><b>1948 Palestinian expulsion and flight.</b> <span data-tn="r6:a">“by Zionist militias”</span> left its first sentence on 30 May 2025; the next sentence names “the Zionist paramilitaries Haganah, Irgun, and Lehi.”</p>
       <p data-q="en:October 7 attacks"><b>October 7 attacks.</b> On 1 October 2026 its second sentence called Israel’s response <span data-tn="r7:a">“actions scholars have concluded constitute genocide”</span>; by 2 November the clause was gone. The removal is recent and may be undone.</p></div>
   </figure>
+  <p class="fl-honest">The change sits in the core articles people read, while the long tail of short pages barely changed.</p>
   <p class="fl-dinner"><span class="fl-k">In short</span>Before the war, none of the most-read Wikipedia openings on the subject charged Israel with genocide; now the article on Israel says, in Wikipedia’s voice, that Israel “began committing genocide,” Zionism is “a Jewish homeland through colonization,” and, in every copy we hold, the Israel and Hamas opening sections do not mention the hostages.</p>
   <p class="fl-ev"><a class="fl-big" href="@@R@@" target="_blank" rel="noopener">Read the full research edition →</a><a href="@@R@@#reads" target="_blank" rel="noopener">Every quote, dated →</a></p>
 </section>
@@ -602,9 +629,6 @@ function flMoTo(el,t,anim){const ps=$$(".xr-s",el),S=el._S;if(!S)return;
   const lb=$(".lb",el);if(lb)lb.textContent=(t==="n"?"Now · ":"Then · ")+dlab(S.m[t].d)}
 function flMoPlay(el,replay){if(!el._S||!(el._S.m.f&&el._S.m.n))return;clearTimeout(el._tm);if(replay||el._t==="n"){flMoTo(el,"f",false)}el._tm=setTimeout(()=>flMoTo(el,"n",true),replay?350:600)}
 
-/* ---------- the close: posters, one merged then/now line per article (the #ziPair grammar) ---------- */
-function flPosters(){$$(".fl-poster").forEach(p=>{const z=$("[data-pz]",p),a=$(".pa",p),b=$(".pb",p);if(!z||!a||!b)return;const q=s=>s.textContent.replace(/^“|”$/g,"");z.innerHTML="“"+renderW(wdiff(q(a),q(b)))+"”"})}
-
 /* ---------- #kChart, stepped with chips (the research scrolly's keyGo, without the scroll) ---------- */
 function flKey(){const host=$("#kChips");if(!host||!R.v3)return;
   const cap0=$("#kCap").innerHTML,stat=i=>{const s=K_STEPS[i];return kStat(s.ev[0][0],s.ev[0][1],s.st)};
@@ -665,19 +689,75 @@ function sheetWire(){const dlg=$("#flSheet");if(!dlg)return;
     if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}});
   document.addEventListener("click",e=>{const b=e.target.closest("[data-sheet]");if(!b)return;e.preventDefault();openSheet(b.dataset.sheet,b.dataset.mo||b.dataset.tab,b)})}
 
+
+/* ---------- impact r1: the hero rewrite stack. The markup is the final state; this only plays it (old words, then the strike, then the new words). Each row carries its own dates; the rhythm is not a time axis. ---------- */
+const RW={tm:[]};
+function rwPlay(){const f=$("#flRw");if(!f)return;const L=$$(".rw li",f),rp=$("#rwRp");RW.tm.forEach(clearTimeout);RW.tm=[];
+  if(RM.matches){f.classList.remove("pre");L.forEach(l=>l.classList.remove("go"));if(rp)rp.hidden=true;return}
+  L.forEach(l=>l.classList.remove("go"));f.classList.add("pre");void f.offsetWidth;
+  L.forEach((l,i)=>RW.tm.push(setTimeout(()=>l.classList.add("go"),500+i*650)));
+  RW.tm.push(setTimeout(()=>{f.classList.remove("pre");L.forEach(l=>l.classList.remove("go"));if(rp)rp.hidden=false},500+L.length*650+1200))}
+function rwInit(){const f=$("#flRw");if(!f)return;const rp=$("#rwRp");if(rp)rp.onclick=()=>{rp.hidden=true;rwPlay()};
+  if(RM.matches)return;f.classList.add("pre");onView(f,rwPlay)}
+
+/* ---------- impact r1: the then/now headlines light up as they arrive ---------- */
+function hdInit(){if(RM.matches)return;$$(".fl-hd").forEach(h=>{if(h.getBoundingClientRect().top<innerHeight*0.75)return;h.classList.add("pre");onView(h,()=>setTimeout(()=>h.classList.remove("pre"),150))})}
+
+/* ---------- impact r1: reading progress ---------- */
+function progInit(){const b=$("#flProg");if(!b)return;let q=0;const f=()=>{q=0;const H=document.documentElement.scrollHeight-innerHeight;b.style.transform=`scaleX(${H>0?Math.min(1,scrollY/H).toFixed(4):0})`};
+  addEventListener("scroll",()=>{if(!q)q=requestAnimationFrame(f)},{passive:true});f()}
+
+/* ---------- impact r1: save a card as an image. Every word is read from the page itself (the build verifies it); the image always carries the dates, the voice labels, the scope line and the source. ---------- */
+function shSegs(el){const out=[];const walk=(n,k)=>{if(n.nodeType===3){const t=n.textContent.replace(/\s+/g," ");if(t)out.push({t,k});return}
+  if(n.nodeType!==1||n.classList.contains("zi-sr")||n.matches("button,.rw-h,.rw-b,.d"))return;
+  const kk=n.tagName==="DEL"?"del":n.classList.contains("att")?"att":n.tagName==="INS"?"ins":n.classList.contains("ar")?"ar":k;n.childNodes.forEach(c=>walk(c,kk))};walk(el,"");
+  return out}
+function shWrap(ctx,segs,maxW,x0,y0,lh,fontOf){const words=[];segs.forEach(s=>s.t.split(/(\s+)/).forEach(w=>{if(w)words.push({w,k:s.k})}));
+  let x=x0,y=y0;const ops=[];words.forEach(o=>{ctx.font=fontOf(o.k);const ww=ctx.measureText(o.w).width;if(/^\s+$/.test(o.w)){if(x>x0)ops.push({...o,x,y,ww});x+=ww;return}
+    if(x+ww>x0+maxW&&x>x0){x=x0;y+=lh}ops.push({...o,x,y,ww});x+=ww});return {ops,y}}
+function shDraw(ctx,ops,fontOf,lh){const C=SHC;ops.forEach(o=>{ctx.font=fontOf(o.k);
+  if(o.k==="ins"||o.k==="del"||o.k==="att"){ctx.fillStyle=o.k==="ins"?C.addBg:C.delBg;ctx.fillRect(o.x,o.y-lh*0.74,o.ww+1,lh*0.94)}
+  ctx.fillStyle=o.k==="ins"?C.add:o.k==="del"||o.k==="att"?C.del:o.k==="ar"?C.mut:C.ink;ctx.fillText(o.w,o.x,o.y);
+  if(o.k==="del"&&!/^\s+$/.test(o.w)){ctx.fillRect(o.x,o.y-lh*0.26,o.ww,3)}})}
+const SHC={bg:"#f6f5f1",ink:"#16191b",ink2:"#3d4448",mut:"#6b7378",rule:"#d9d6cf",add:"#1b4fb3",addBg:"#dce7fb",del:"#7a5200",delBg:"#fbe9c4"};
+function shCard(spec){const W=1080,H=1350,P=72,cv=document.createElement("canvas");cv.width=W;cv.height=H;const ctx=cv.getContext("2d"),C=SHC;
+  const D="Newsreader, Georgia, serif",B="'Libre Franklin', Arial, sans-serif",Mo="'JetBrains Mono', monospace";
+  ctx.fillStyle=C.bg;ctx.fillRect(0,0,W,H);ctx.textBaseline="alphabetic";
+  ctx.fillStyle=C.mut;ctx.font=`600 24px ${Mo}`;ctx.fillText(spec.kicker.toUpperCase(),P,P+10);
+  const tf=()=>`500 46px ${D}`;let y=P+78;const t=shWrap(ctx,[{t:spec.title,k:""}],W-2*P,P,y,56,tf);shDraw(ctx,t.ops,tf,56);y=t.y+40;
+  const fit=sz=>{let yy=y;spec.rows.forEach(r=>{yy+=36;const w=shWrap(ctx,r.segs,W-2*P,P,yy+sz+6,sz*1.25,k=>`${k==="ins"?600:400} ${sz}px ${D}`);yy=w.y+sz*0.6});return yy};
+  let sz=spec.size||44;while(sz>22&&fit(sz)>H-P-200)sz-=2;
+  spec.rows.forEach(r=>{ctx.strokeStyle=C.rule;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,y);ctx.lineTo(W-P,y);ctx.stroke();y+=36;
+    ctx.fillStyle=C.ink2;ctx.font=`600 21px ${Mo}`;ctx.fillText(r.label.toUpperCase(),P,y);
+    const fo=k=>`${k==="ins"?600:400} ${sz}px ${D}`,w=shWrap(ctx,r.segs,W-2*P,P,y+sz+6,sz*1.25,fo);shDraw(ctx,w.ops,fo,sz*1.25);y=w.y+sz*0.6});
+  let fy=H-P-150;ctx.strokeStyle=C.ink;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,fy);ctx.lineTo(W-P,fy);ctx.stroke();fy+=36;
+  spec.foot.forEach((f,i)=>{const fo=()=>`${i?400:500} ${i?20:22}px ${B}`;const w=shWrap(ctx,[{t:f,k:""}],W-2*P,P,fy,i?28:30,fo);ctx.fillStyle=i?C.mut:C.ink2;w.ops.forEach(o=>{ctx.font=fo();ctx.fillText(o.w,o.x,o.y)});fy=w.y+(i?30:34)});
+  return cv}
+function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="Wikipedia text as of 5 November 2026 · Flash edition, Wikipedia Framing Drift",src=$(".mast a").href;
+  if(id==="flRw"){const f=$("#flRw");return {file:"wikipedia-first-lines.png",kicker:"English Wikipedia · first lines, then and now",title:$("#flRwH").textContent.trim().replace(/:$/,"."),
+    rows:$$(".rw li",f).map(li=>({label:$(".a",li).firstChild.textContent.trim()+" · "+$(".d",li).textContent.trim(),segs:shSegs($(".p",li))})),
+    foot:[$(".rw-n",f).textContent.trim(),scope,stamp+" · "+src]}}
+  if(id==="c5vs"){const v=$("#c5 .fl-vs");return {file:"wikipedia-two-voices.png",kicker:"English Wikipedia · the genocide charge, two voices",title:$("#c5H").textContent.trim(),size:52,
+    rows:$$("blockquote",v).map(b=>({label:$(".bd",b).textContent.trim()+" · "+$(".w",b).textContent.trim(),segs:shSegs($(".s",b))})),foot:[scope,stamp+" · "+src]}}}
+async function shSave(id,btn){const spec=shSpec(id);if(!spec)return;try{if(document.fonts&&document.fonts.ready)await document.fonts.ready}catch(e){}
+  const cv=shCard(spec);const blob=await new Promise(r=>cv.toBlob(r,"image/png"));if(!blob)return;const file=new File([blob],spec.file,{type:"image/png"});
+  if(TOUCH&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:spec.title});return}catch(e){if(e&&e.name==="AbortError")return}}
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=spec.file;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.parentNode.removeChild(a)},1500);
+  if(btn){const t=btn.textContent;btn.textContent="Saved ✓";setTimeout(()=>btn.textContent=t,1800)}}
+document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-share]");if(b){e.preventDefault();shSave(b.dataset.share,b)}});
+
 function flDraw(){safe(flPos);safe(drawXwGG);$$(".fl-strip[data-tab]").forEach(h=>safe(flO7,h));safe(flZi,$("#stZI"));safe(flNk,$("#stNK"));
   if(BR.ev)safe(flBreathe);if($("#xmScroll .xm"))safe(()=>{const m=XM.mode;xmDraw();$("#xmScroll .xm").className="xm m-"+m;$$("#xmScroll tbody tr").forEach((tr,i)=>tr.style.setProperty("--r",i))});
-  if(K.dom!==undefined&&$("#kChart svg"))safe(drawKey);if($("#tierChart svg"))safe(drawTier)}
+  if(K.dom!==undefined&&$("#kChart svg"))safe(drawKey)}
 function flInit(){
   if(!R)return;
-  safe(flTiles);flDraw();safe(flPosters);safe(tnApply);
+  safe(flTiles);flDraw();safe(tnApply);safe(rwInit);safe(hdInit);safe(progInit);
   $$(".fl-mo").forEach(el=>safe(flMoBuild,el));
   $$(".car").forEach(c=>safe(carInit,c));
   const c1=$("#car1");if(c1)c1.addEventListener("slide",e=>{const s=$$(".car-s",c1)[e.detail],m=s&&$(".fl-mo",s);if(m&&!m._played){m._played=1;flMoPlay(m,false)}});
   nearView($("#flBr"),()=>{safe(flBreathe);onView($("#brS"),()=>setTimeout(brSweep,400))});
   nearView($("#flXm"),()=>safe(flXm));
   nearView($("#flK"),()=>safe(flKey));
-  nearView($("#car3"),()=>safe(drawTier));
   safe(sheetWire);
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;ftHide();flDraw();$$(".fl-mo").forEach(el=>{el.style.minHeight="";const t=el._t;safe(flMoBuild,el);if(t==="n")flMoTo(el,"n",false)})},150)});
 }

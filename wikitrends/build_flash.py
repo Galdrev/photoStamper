@@ -94,7 +94,7 @@ R = {
     "ratchet": {"articles": {t: res["ratchet"]["articles"][t] for t in ARTS + ["Nakba"]}},
     "articles": [{k: a.get(k) for k in ("title", "pv_monthly", "w_edits")} for a in res["articles"] if a["title"] in ARTS],
     "week0": res.get("week0"), "n_weeks": res.get("n_weeks"),
-    "dates": res["dates"], "mass3": res["mass3"],
+    "dates": res["dates"],
 }
 assert len(R["articles"]) == len(ARTS), "a flash article is missing from the research data"
 assert [r["date"] for r in R["oct7"]["designation"]][::3] == ["2021-01-01", "2026-10-31"], "Hamas designation rows changed"
@@ -102,7 +102,7 @@ assert [r["date"] for r in R["oct7"]["designation"]][::3] == ["2021-01-01", "202
 _d1 = next(r for r in R["oct7"]["designation"] if r["date"] == "2026-10-01")
 assert _d1["sentence"] == "22 of 23" and _d1["quote"].startswith("Australia, Canada, ") and _d1["quote"].endswith(
     ", and the European Union have designated Hamas as a terrorist organisation."), "the 1 Oct 2026 Hamas designation row changed"
-assert R["dates"][-1] == "2026-10" and set(R["mass3"]) >= {"overall", "tiers"}, "dates or mass3 changed"
+assert R["dates"][-1] == "2026-10", "dates changed"
 assert len(LANGS_R["order"]) == 11, "the language grid has eleven editions (the card says so)"
 assert [c[0] for c in LANGS_R["cols"]] == XM_COLS and "icj" not in LANGS_R["cells"], "the court column must stay out"
 assert not any(m[2] == "k_icj" for m in LANGS_R["moments"]) and not any(x in (m[3] + m[4]).lower() for m in LANGS_R["moments"] for x in ("did not make", "found israel guilty")), "court moments must stay out"
@@ -236,6 +236,22 @@ missing = sorted(n for n in nums if n not in COMPUTED and not re.search(r"(?<![\
 assert not missing, f"numbers on the flash page that the research edition does not print: {missing}"
 print(f"flash: {len(nums)} numbers, all printed by the research edition")
 
+# impact r1: the hero rewrite stack. Six rows in card order; each "now" phrase is in the latest stored copy (5 Nov 2026
+# crawl) and each "then" phrase is not; Israel had no "genocide" in its opening in Jan 2021 or Jul 2023; the denial line stays.
+RW_ROWS = re.findall(r'<li data-q="en:([^"]+)">.*?<del>(.*?)</del>.*?<ins>(.*?)</ins>', tpl[tpl.index('id="flRw"'):tpl.index('</figure>', tpl.index('id="flRw"'))], flags=re.S)
+assert [r[0] for r in RW_ROWS] == ["Israel", "Zionism", "Nakba", "October 7 attacks", "Hamas", "Gaza genocide"], f"hero stack rows changed: {RW_ROWS}"
+for title, then, now in RW_ROWS:
+    snaps = [norm(x or "") for x in M2[title]]
+    nw, th = norm(now).strip("“”"), norm(then).strip("“”")
+    assert nw in snaps[-1], f"hero stack: the now phrase is not in the latest {title} copy: {nw}"
+    if title == "Israel":
+        assert then == "no genocide charge" and not any("genocide" in x.lower() for x in snaps[:2]), "hero stack: Israel then"
+    else:
+        assert th not in snaps[-1], f"hero stack: the then phrase is still in the latest {title} copy: {th}"
+assert "In the Israel article, the next sentence: “Israel has denied that its actions constitute genocide.”" in tpl, "hero stack: the denial line must stay"
+assert 'data-share="flRw"' in tpl and 'data-share="c5vs"' in tpl and "foot:[" in tpl and "scope" in tpl[tpl.index("function shSpec"):], "share cards carry the scope line"
+print(f"flash: hero stack, {len(RW_ROWS)} rows, now phrases current and then phrases gone in the 5 Nov 2026 copies")
+
 # the messaging check's vetoes and the no-names rule
 low = vis.lower()
 VETO = ["afterthought", "the world reads first", "64 of", "47 of", "336", "650", "386", "both sides", "in 2021 / before the war",
@@ -287,7 +303,7 @@ def cut(rid):
         if depth == 0:
             return rtpl[i:i + t.end()]
     raise AssertionError(f"unbalanced #{rid}")
-SLOTS = {k: cut(k) for k in ("breathe", "xmFig", "tierFig", "ziFig", "o7Fig", "xrFig")}
+SLOTS = {k: cut(k) for k in ("breathe", "xmFig", "ziFig", "o7Fig", "xrFig")}
 for k in SLOTS:
     assert tpl.count(f"<!--R:{k}-->") == 1, f"slot for #{k} missing in the flash template"
 assert "xmIcj" not in "".join(SLOTS.values()) and "Court ruling" not in "".join(SLOTS.values()), "the court grid stays out of the flash"
