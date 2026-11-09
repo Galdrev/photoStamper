@@ -84,17 +84,30 @@ html[dir="rtl"] #tip,html[dir="rtl"] #xmTip,html[dir="rtl"] #gloss{direction:rtl
 html[dir="rtl"] .fl-mo .seg button+button{border-left:0;border-right:1px solid var(--rule)}
 .he-mo{font-size:13.5px}
 @media (max-width:600px){
-  .he-tr{font-size:13.5px;line-height:1.36;margin-top:1px}
+  .he-tr{font-size:13px;line-height:1.33;margin-top:1px}
   .fl-vs .he-tr{font-size:13px;line-height:1.34}
   .he-tr .he-k,.fl-pair .dn .he-k{font-size:9.5px;padding:0 4px;margin-left:4px}
-  .rw .he-tr{font-size:14px;line-height:1.3}
-  html[lang="he"] .rw .p{font-size:14.5px;line-height:1.22}
-  html[lang="he"] .rw li{padding:5px 0}
-  .he-o{font-size:11.5px;line-height:1.35}
-  .he-mo{font-size:12.5px}
+  .rw .he-tr{font-size:13px;line-height:1.28}
+  html[lang="he"] .rw .p{font-size:13.5px;line-height:1.22}
+  html[lang="he"] .rw li{padding:3px 0}
+  .he-o{font-size:10.5px;line-height:1.3;letter-spacing:-.005em}
+  .he-mo{font-size:12px;line-height:1.34}
   html[lang="he"] .fl .fl-k,html[lang="he"] .rw .a,html[lang="he"] .car-s>.w,html[lang="he"] .fl-lane>.w,html[lang="he"] .fl-vs blockquote>.w{font-size:10.5px}
   html[lang="he"] .fl-page .hero h1{font-size:26px;line-height:1.14}
-  html[lang="he"] .fc>h2{font-size:20.5px;line-height:1.18}
+  html[lang="he"] .fc>h2{font-size:19.5px;line-height:1.17}
+  /* final round (Hebrew length): the English originals a little smaller where our translation sits under them */
+  html[lang="he"] .fl-vs .s{font-size:13.5px;line-height:1.34}
+  html[lang="he"] .fl{font-size:13.5px;line-height:1.34}
+  html[lang="he"] .news-q .s{font-size:14px;line-height:1.36}
+  html[lang="he"] .fl-pair .q{font-size:12px;line-height:1.32}
+  html[lang="he"] .car-s .vis>.s[lang="he"]{font-size:17px!important;line-height:1.4}
+  html[lang="he"] .fl-mo .xr-s{font-size:12px;line-height:1.36}
+  /* the longer sentence of each pair gets the wider column (the row is as tall as its taller card) */
+  html[lang="he"] #c5 .fl-vs{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+  html[lang="he"] .fl-ey .ey-ev a{line-height:1.2}
+  html[lang="he"] #car1 .car-s{gap:5px}html[lang="he"] .fl-pair>div{padding:6px 7px;gap:4px}html[lang="he"] #car1 .vis{gap:5px}
+  html[lang="he"] .fl-vs blockquote>.w{font-size:9.5px;line-height:1.3}
+  html[lang="he"] .fl-vs .he-tr{font-size:12.5px;line-height:1.32}
   html[lang="he"] .fl-body,html[lang="he"] .fl-fact{line-height:1.4}
   html[lang="he"] .car-s .cp{line-height:1.38}
 }

@@ -102,10 +102,14 @@ def build(C, out_path):
     QE_orig = {qn(q) for src, t in en_text.items() for q in quotes(t)
                if src == "" or src == "arb" or src.startswith("en:") or is_rtl(q)}
     QH = {qn(q) for t in text.values() for q in quotes(t)}
-    assert QE_orig <= QH, f"Hebrew page: original quotes missing or altered: {sorted(QE_orig - QH)}"
+    # final round (Hebrew length): an originals line under a heading may go when the very next block shows the same words in the
+    # original, inside a longer quote; so every English original is on the Hebrew page, as a quote or inside a quoted original
+    _inside = {q for q in QE_orig - QH if any(q in x for x in QH)}
+    assert QE_orig - QH <= _inside, f"Hebrew page: original quotes missing or altered: {sorted(QE_orig - QH - _inside)}"
+    assert len(_inside) <= 6, f"Hebrew page: originals shown only inside longer quotes: {sorted(_inside)}"
     assert QH <= QE, f"Hebrew page: quotes that the English page does not carry: {sorted(QH - QE)}"
     # the English translations of Hebrew, Arabic and Spanish quotes are the only quotes dropped (they are replaced by our Hebrew)
-    dropped = QE - QH
+    dropped = QE - QH - _inside
     assert all(not src.startswith("en:") and src not in ("", "arb") for src, t in en_text.items() for q in quotes(t) if qn(q) in dropped), \
         "Hebrew page: only translations of non-English quotes may be dropped"
     # the hero stack: the same English then/now phrases, row by row (Israel's "then" is our own words, so it is Hebrew)
