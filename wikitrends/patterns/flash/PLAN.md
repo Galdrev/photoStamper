@@ -27,3 +27,10 @@
   - the English rendering line follows the same state.
 - Bugs seen in the owner's screenshot (dark mode, Arabic slide): an English gloss chip "the genocide" sits inside the Arabic sentence and breaks the RTL line (move glosses below the line or into the tooltip); large empty space above and below the slide content (the fixed carousel height is too tall for this slide: vertically centre the content or size the carousel to the tallest real slide).
 - Apply to both the English and the Hebrew builds.
+
+## Queued: Data lab tab in BOTH flash versions (owner)
+- Add the research edition's Data lab (wikitrends/lab/lab.html, lab.js, lab.css; wired in page_template.html via the tabs nav #tabLab, #view-lab and the shared surface ~line 4521) as a tab in the English and Hebrew flash editions: tabs "Flash" (default) and "Data lab".
+- Reuse the research lab code as is (build_flash.py inlines it, same way build_page.py does); lazy-init when the tab opens; the flash page's length at rest is unchanged.
+- The flash "Every change" / "Explore" buttons may open the lab on the right article (data-intent {"lab":"flip","title":...}) instead of leaving the page.
+- Hebrew build: tab labels and lab UI chrome in Hebrew (proofread with the rest); data and quotes stay original.
+- Smoke: the tab switches, the lab loads with 0 console errors, and Back/history works, in both languages.
