@@ -381,3 +381,16 @@ The vetoed v1 wordings (`HE_VETO`) are asserted absent across all of these.
 4. Proofread the new Hebrew strings above, especially the five new charge-sentence translations and «הציגו».
 5. The treemap has no share-image variant.
 6. Tile labels on the treemap are English article titles in both languages. These are the data. Hebrew names for the largest tiles would be a small addition.
+
+## Final round (after this file): status of the open items
+
+| # | Open item above | Final round |
+|---|---|---|
+| 1 | Data lab tab | Done. The owner chose a slim lab: flipbook and language prism, the flash's articles only, lazy. See `lab/lab_flash.py`. The other five views say "not in this edition" and link to the research lab. |
+| 2 | Hebrew length | 10.98 phone screens, measured by the smoke test (English 10.84). See `HE_FIXLOG2.md` §5 and the layout notes there. |
+| 3 | Netanyahu and Palestine bars | Back in the reach section, from the same daily-views source (run 42704500939). Their critical wording is "genocide" in the opening section. See `EXPOSURE.md`, "Run 2". |
+| 4 | Proofread the new Hebrew strings | Done in `HE_FIXLOG2.md`. «הציגו» became the passive «הוצג». Three charge sentences were corrected. The fight-lane translations were clipped on phones; that is fixed. |
+| 5 | Treemap share image | Still open. |
+| 6 | Hebrew tile labels | Still open. They are data, so they stay English. |
+
+All new numbers were recomputed from the raw sources in `FACTCHECK_merge.md`; nothing was wrong.
