@@ -138,3 +138,19 @@ Built: `scratchpad/flash/impact1/index.html` (1.98 MB). It begins with the DOCTY
   - the Nine-armed-groups context line for Hamas ("terrorist" also left Islamic State, al-Shabaab and Boko Haram: Wikipedia-wide style);
   - spin R4 (the October 7 toll in Wikipedia's own voice next to the two voices).
 - **The next biggest win** is #breathe's end state (change 8), then a share card for the hostages lane.
+
+## Fact check (messaging agent)
+- **Hero stack, October 7 row:** "23 Oct 2023 → since 8 Oct 2026" is now "→ since 9 Dec 2023". 8 Oct 2026 dates the whole sentence's exact wording. The row shows the phrase "coordinated armed incursions", which has stood since 9 Dec 2023: ratchet.json shows it in every stored first sentence since that date. A build assertion was added. Every other row's phrase date matches its own phrase, checked in ratchet.json:
+  - Zionism: last restored 27 Aug 2026;
+  - Nakba: 6 Jul 2026, apart from under an hour on 17 Jul;
+  - Hamas: back on 29 Nov 2025 after a 4–29 Nov 2025 gap;
+  - Gaza genocide: 26 Sep 2025, reverted attempts excepted;
+  - Israel: "genocide" since 4 May 2025.
+  The "then" dates are each phrase's own copy. The stagger runs in card order, not in time order, so it implies no simultaneity.
+- **Stack header and share kicker:** "first lines" is now "opening lines". The Israel row is in the opening section, not the first sentence.
+- **Share image "two voices":** it now carries one more unquoted footer line: "The Gaza genocide article reports Israel's denial in the last paragraph of its opening section." The image travels without the page. The footer block moves up 60 px for each line beyond two.
+- **Both images carry** the scope line, the date stamp and the source URL. Attributed text ("have alleged") is drawn amber and not struck.
+- **Headline highlights** (c1, c2, c4): every `del` and `ins` sits on the right words. OK.
+- **Language-grid answer row:** the numbers are computed by the grid (0→4, 0→5, 0→4, 4→5, 2→2) and the label is right. OK.
+- **Honesty caption in the close:** "The change sits in the core articles people read, while the long tail of short pages barely changed." Without the tier chart it is still the research wording ("…barely changed"). OK.
+- **Measured:** 9.51 phone screens and 9.45 at 1280. The smoke test gives 325 pass and 0 fail. Build: `scratchpad/flash/impact1c/index.html`.

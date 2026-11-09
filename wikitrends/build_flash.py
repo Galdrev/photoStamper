@@ -249,6 +249,9 @@ for title, then, now in RW_ROWS:
     else:
         assert th not in snaps[-1], f"hero stack: the then phrase is still in the latest {title} copy: {th}"
 assert "In the Israel article, the next sentence: “Israel has denied that its actions constitute genocide.”" in tpl, "hero stack: the denial line must stay"
+# fact check r1: each stack row dates its own phrase ("coordinated armed incursions" since 9 Dec 2023, not the 8 Oct 2026
+# full-sentence date); the stack header says "opening lines" because the Israel row is in the opening section
+assert "23 Oct 2023 → since 9 Dec 2023" in tpl and "Their first lines" not in tpl and "· first lines, then" not in tpl, "hero stack dates or header"
 assert 'data-share="flRw"' in tpl and 'data-share="c5vs"' in tpl and "foot:[" in tpl and "scope" in tpl[tpl.index("function shSpec"):], "share cards carry the scope line"
 print(f"flash: hero stack, {len(RW_ROWS)} rows, now phrases current and then phrases gone in the 5 Nov 2026 copies")
 

@@ -336,12 +336,12 @@ details.fl-full .news-q{margin-top:4px}
   <div class="eyebrow fl-ey"><span>Israel on Wikipedia, 2021–2026</span><span class="ey-ev"><a href="@@R@@#ev-charge" target="_blank" rel="noopener">Full evidence →</a></span></div>
   <h1>Before the war, no <button type="button" class="gl" data-g="top" aria-expanded="false">top article</button> charged Israel with genocide. Now the article on Israel does.</h1>
   <figure class="fl-rw" id="flRw" aria-labelledby="flRwH">
-    <div class="rw-h"><span id="flRwH">Open these articles today. Their first lines, then and now:</span><span class="rw-b"><button type="button" class="rw-btn" id="rwRp" aria-label="Replay the rewrite" hidden>▶ Replay</button><button type="button" class="rw-btn" data-share="flRw" aria-label="Save these six lines as an image">Save as image</button><span class="rw-st">copy of 5 Nov 2026</span></span></div>
+    <div class="rw-h"><span id="flRwH">Open these articles today. Their opening lines, then and now:</span><span class="rw-b"><button type="button" class="rw-btn" id="rwRp" aria-label="Replay the rewrite" hidden>▶ Replay</button><button type="button" class="rw-btn" data-share="flRw" aria-label="Save these six lines as an image">Save as image</button><span class="rw-st">copy of 5 Nov 2026</span></span></div>
     <ol class="rw">
       <li data-q="en:Israel"><span class="a">Israel · opening section<span class="d">Jul 2023 → “genocide” since 4 May 2025</span></span><span class="p"><del>no genocide charge</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“began committing genocide”</ins></span></li>
       <li data-q="en:Zionism"><span class="a">Zionism · first sentence<span class="d">1 Jan 2021 → since 27 Aug 2026</span></span><span class="p"><del>“re-establishment”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“a Jewish homeland through colonization”</ins></span></li>
       <li data-q="en:Nakba"><span class="a">Nakba · first sentence<span class="d">24 Dec 2021 → since 6 Jul 2026</span></span><span class="p"><del>“the destruction of Palestinian society”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“the ethnic cleansing of Palestinian Arabs by Zionists”</ins></span></li>
-      <li data-q="en:October 7 attacks"><span class="a">October 7 attacks · first sentence<span class="d">23 Oct 2023 → since 8 Oct 2026</span></span><span class="p"><del>“coordinated attacks”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“coordinated armed incursions”</ins></span></li>
+      <li data-q="en:October 7 attacks"><span class="a">October 7 attacks · first sentence<span class="d">23 Oct 2023 → since 9 Dec 2023</span></span><span class="p"><del>“coordinated attacks”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“coordinated armed incursions”</ins></span></li>
       <li data-q="en:Hamas"><span class="a">Hamas · first sentence<span class="d">1 Jan 2021 → since 29 Nov 2025</span></span><span class="p"><del>“militant”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“political organisation with a military wing”</ins></span></li>
       <li data-q="en:Gaza genocide"><span class="a">Gaza genocide · first sentence<span class="d">1 Jan 2024 → since 26 Sep 2025</span></span><span class="p"><del>“Allegations have been made”</del><span class="ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><ins>“carried out by Israel”</ins></span></li>
     </ol>
@@ -730,15 +730,15 @@ function shCard(spec){const W=1080,H=1350,P=72,cv=document.createElement("canvas
   spec.rows.forEach(r=>{ctx.strokeStyle=C.rule;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,y);ctx.lineTo(W-P,y);ctx.stroke();y+=36;
     ctx.fillStyle=C.ink2;ctx.font=`600 21px ${Mo}`;ctx.fillText(r.label.toUpperCase(),P,y);
     const fo=k=>`${k==="ins"?600:400} ${sz}px ${D}`,w=shWrap(ctx,r.segs,W-2*P,P,y+sz+6,sz*1.25,fo);shDraw(ctx,w.ops,fo,sz*1.25);y=w.y+sz*0.6});
-  let fy=H-P-150;ctx.strokeStyle=C.ink;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,fy);ctx.lineTo(W-P,fy);ctx.stroke();fy+=36;
+  let fy=H-P-150-Math.max(0,spec.foot.length-2)*60;ctx.strokeStyle=C.ink;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,fy);ctx.lineTo(W-P,fy);ctx.stroke();fy+=36;
   spec.foot.forEach((f,i)=>{const fo=()=>`${i?400:500} ${i?20:22}px ${B}`;const w=shWrap(ctx,[{t:f,k:""}],W-2*P,P,fy,i?28:30,fo);ctx.fillStyle=i?C.mut:C.ink2;w.ops.forEach(o=>{ctx.font=fo();ctx.fillText(o.w,o.x,o.y)});fy=w.y+(i?30:34)});
   return cv}
 function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="Wikipedia text as of 5 November 2026 · Flash edition, Wikipedia Framing Drift",src=$(".mast a").href;
-  if(id==="flRw"){const f=$("#flRw");return {file:"wikipedia-first-lines.png",kicker:"English Wikipedia · first lines, then and now",title:$("#flRwH").textContent.trim().replace(/:$/,"."),
+  if(id==="flRw"){const f=$("#flRw");return {file:"wikipedia-first-lines.png",kicker:"English Wikipedia · opening lines, then and now",title:$("#flRwH").textContent.trim().replace(/:$/,"."),
     rows:$$(".rw li",f).map(li=>({label:$(".a",li).firstChild.textContent.trim()+" · "+$(".d",li).textContent.trim(),segs:shSegs($(".p",li))})),
     foot:[$(".rw-n",f).textContent.trim(),scope,stamp+" · "+src]}}
   if(id==="c5vs"){const v=$("#c5 .fl-vs");return {file:"wikipedia-two-voices.png",kicker:"English Wikipedia · the genocide charge, two voices",title:$("#c5H").textContent.trim(),size:52,
-    rows:$$("blockquote",v).map(b=>({label:$(".bd",b).textContent.trim()+" · "+$(".w",b).textContent.trim(),segs:shSegs($(".s",b))})),foot:[scope,stamp+" · "+src]}}}
+    rows:$$("blockquote",v).map(b=>({label:$(".bd",b).textContent.trim()+" · "+$(".w",b).textContent.trim(),segs:shSegs($(".s",b))})),foot:["The Gaza genocide article reports Israel's denial in the last paragraph of its opening section.",scope,stamp+" · "+src]}}}
 async function shSave(id,btn){const spec=shSpec(id);if(!spec)return;try{if(document.fonts&&document.fonts.ready)await document.fonts.ready}catch(e){}
   const cv=shCard(spec);const blob=await new Promise(r=>cv.toBlob(r,"image/png"));if(!blob)return;const file=new File([blob],spec.file,{type:"image/png"});
   if(TOUCH&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:spec.title});return}catch(e){if(e&&e.name==="AbortError")return}}
