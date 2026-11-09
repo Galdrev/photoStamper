@@ -4,7 +4,7 @@
  "template": [
   [
    "<title>Flash: how English Wikipedia now tells Israel’s story, 2021–2026</title>",
-   "<title>בקצרה: כך מספרת היום ויקיפדיה באנגלית את סיפורה של ישראל, 2021–2026</title>"
+   "<title>המהדורה המקוצרת: כך מספרת היום ויקיפדיה באנגלית את סיפורה של ישראל, 2021–2026</title>"
   ],
   [
    "<meta name=\"description\" content=\"How English Wikipedia’s opening lines on Israel, Zionism, 1948, October 7, Hamas and the genocide charge changed from 2021 to 2026, in exact, dated quotes.\">",
@@ -32,7 +32,7 @@
   ],
   [
    "    <div class=\"rw-h\"><span id=\"flRwH\">Open these articles today. Their opening lines, then and now:</span><span class=\"rw-b\"><button type=\"button\" class=\"rw-btn\" id=\"rwRp\" aria-label=\"Replay the rewrite\" hidden>▶ Replay</button><button type=\"button\" class=\"rw-btn\" data-share=\"flRw\" aria-label=\"Save these six lines as an image\">Save as image</button><span class=\"rw-st\">copy of 5 Nov 2026</span></span></div>",
-   "    <div class=\"rw-h\"><span id=\"flRwH\">פתחו היום את הערכים האלה. שורות הפתיחה שלהם, אז ועכשיו:</span><span class=\"rw-b\"><button type=\"button\" class=\"rw-btn\" id=\"rwRp\" aria-label=\"הפעלה חוזרת של השכתוב\" hidden>▶ שוב</button><button type=\"button\" class=\"rw-btn\" data-share=\"flRw\" aria-label=\"שמירת שש השורות כתמונה\">שמירה כתמונה</button><span class=\"rw-st\">עותק מ־5 בנובמבר 2026</span></span></div>"
+   "    <div class=\"rw-h\"><span id=\"flRwH\">פתחו היום את הערכים האלה. שורות הפתיחה שלהם, אז ועכשיו:</span><span class=\"rw-b\"><button type=\"button\" class=\"rw-btn\" id=\"rwRp\" aria-label=\"הפעלה חוזרת של השכתוב\" hidden>▶ הפעלה חוזרת</button><button type=\"button\" class=\"rw-btn\" data-share=\"flRw\" aria-label=\"שמירת שש השורות כתמונה\">שמירה כתמונה</button><span class=\"rw-st\">עותק מ־5 בנובמבר 2026</span></span></div>"
   ],
   [
    "      <li data-q=\"en:Israel\"><span class=\"a\">Israel · opening section<span class=\"d\">Jul 2023 → “genocide” since 4 May 2025</span></span><span class=\"p\"><del>no genocide charge</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“began committing genocide”</ins></span></li>",
@@ -44,19 +44,19 @@
   ],
   [
    "      <li data-q=\"en:Nakba\"><span class=\"a\">Nakba · first sentence<span class=\"d\">24 Dec 2021 → since 6 Jul 2026</span></span><span class=\"p\"><del>“the destruction of Palestinian society”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“the ethnic cleansing of Palestinian Arabs by Zionists”</ins></span></li>",
-   "      <li data-q=\"en:Nakba\"><span class=\"a\">נכבה · המשפט הראשון<span class=\"d\">24 בדצמבר 2021 ← מאז 6 ביולי 2026</span></span><span class=\"p\" dir=\"ltr\" lang=\"en\"><del>“the destruction of Palestinian society”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“the ethnic cleansing of Palestinian Arabs by Zionists”</ins></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b><del>״ההרס של החברה הפלסטינית״</del> ← <ins>״הטיהור האתני של ערבים פלסטינים בידי ציונים״</ins></span></li>"
+   "      <li data-q=\"en:Nakba\"><span class=\"a\">נכבה · המשפט הראשון<span class=\"d\">24 בדצמבר 2021 ← מאז 6 ביולי 2026</span></span><span class=\"p\" dir=\"ltr\" lang=\"en\"><del>“the destruction of Palestinian society”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“the ethnic cleansing of Palestinian Arabs by Zionists”</ins></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b><del>״הרס החברה הפלסטינית״</del> ← <ins>״הטיהור האתני של ערבים פלסטינים בידי ציונים״</ins></span></li>"
   ],
   [
    "      <li data-q=\"en:October 7 attacks\"><span class=\"a\">October 7 attacks · first sentence<span class=\"d\">23 Oct 2023 → since 9 Dec 2023</span></span><span class=\"p\"><del>“coordinated attacks”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“coordinated armed incursions”</ins></span></li>",
-   "      <li data-q=\"en:October 7 attacks\"><span class=\"a\">7 באוקטובר · המשפט הראשון<span class=\"d\">23 באוקטובר 2023 ← מאז 9 בדצמבר 2023</span></span><span class=\"p\" dir=\"ltr\" lang=\"en\"><del>“coordinated attacks”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“coordinated armed incursions”</ins></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b><del>״מתקפות מתואמות״</del> ← <ins>״חדירות חמושות מתואמות״</ins></span></li>"
+   "      <li data-q=\"en:October 7 attacks\"><span class=\"a\">מתקפת 7 באוקטובר · המשפט הראשון<span class=\"d\">23 באוקטובר 2023 ← מאז 9 בדצמבר 2023</span></span><span class=\"p\" dir=\"ltr\" lang=\"en\"><del>“coordinated attacks”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“coordinated armed incursions”</ins></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b><del>״מתקפות מתואמות״</del> ← <ins>״חדירות חמושות מתואמות״</ins></span></li>"
   ],
   [
    "      <li data-q=\"en:Hamas\"><span class=\"a\">Hamas · first sentence<span class=\"d\">1 Jan 2021 → since 29 Nov 2025</span></span><span class=\"p\"><del>“militant”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“political organisation with a military wing”</ins></span></li>",
-   "      <li data-q=\"en:Hamas\"><span class=\"a\">חמאס · המשפט הראשון<span class=\"d\">1 בינואר 2021 ← מאז 29 בנובמבר 2025</span></span><span class=\"p\" dir=\"ltr\" lang=\"en\"><del>“militant”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“political organisation with a military wing”</ins></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b><del>״חמוש״</del> ← <ins>״ארגון פוליטי בעל זרוע צבאית״</ins></span></li>"
+   "      <li data-q=\"en:Hamas\"><span class=\"a\">חמאס · המשפט הראשון<span class=\"d\">1 בינואר 2021 ← מאז 29 בנובמבר 2025</span></span><span class=\"p\" dir=\"ltr\" lang=\"en\"><del>“militant”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“political organisation with a military wing”</ins></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b><del>״חמוש״</del> (<bdi lang=\"en\">militant</bdi>) ← <ins>״ארגון פוליטי בעל זרוע צבאית״</ins></span></li>"
   ],
   [
    "      <li data-q=\"en:Gaza genocide\"><span class=\"a\">Gaza genocide · first sentence<span class=\"d\">1 Jan 2024 → since 26 Sep 2025</span></span><span class=\"p\"><del>“Allegations have been made”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“carried out by Israel”</ins></span></li>",
-   "      <li data-q=\"en:Gaza genocide\"><span class=\"a\">רצח העם בעזה · המשפט הראשון<span class=\"d\">1 בינואר 2024 ← מאז 26 בספטמבר 2025</span></span><span class=\"p\" dir=\"ltr\" lang=\"en\"><del>“Allegations have been made”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“carried out by Israel”</ins></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b><del>״הועלו האשמות״</del> ← <ins>״שמבוצעת בידי ישראל״</ins></span></li>"
+   "      <li data-q=\"en:Gaza genocide\"><span class=\"a\">רצח העם בעזה · המשפט הראשון<span class=\"d\">1 בינואר 2024 ← מאז 26 בספטמבר 2025</span></span><span class=\"p\" dir=\"ltr\" lang=\"en\"><del>“Allegations have been made”</del><span class=\"ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><ins>“carried out by Israel”</ins></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b><del>״הועלו האשמות״</del> ← <ins>״…שמבוצע בידי ישראל״</ins></span></li>"
   ],
   [
    "    <p class=\"rw-n\" data-q=\"en:Israel\">In the Israel article, the next sentence: “Israel has denied that its actions constitute genocide.”</p>",
@@ -76,7 +76,7 @@
   ],
   [
    "  <p class=\"fl-scope\">This report measures how the wording of the core articles people read changed, not whether it is true, and does not assess the conduct of the war or of any government.</p>",
-   "  <p class=\"fl-scope\">הדוח מודד איך השתנה הנוסח של ערכי הליבה שאנשים קוראים, ולא אם הנוסח נכון, ואינו מעריך את ניהול המלחמה או את התנהלותה של ממשלה כלשהי.</p>"
+   "  <p class=\"fl-scope\">הדוח מודד איך השתנה הנוסח של ערכי הליבה שאנשים קוראים, ולא אם מה שכתוב בו נכון, ואינו שופט את ניהול המלחמה או את התנהלותה של ממשלה כלשהי.</p>"
   ],
   [
    "  <div class=\"eyebrow fl-ey\"><span><b>1</b> Zionism</span><span class=\"ey-ev\"><a href=\"@@R@@#ev-zionism\" target=\"_blank\" rel=\"noopener\">Full evidence →</a></span></div>",
@@ -88,7 +88,7 @@
   ],
   [
    "    <div class=\"br-fk\" data-q=\"en:Zionism\"><span class=\"fl-hint\" id=\"brHint\" hidden>◀ Drag through time ▶</span><button type=\"button\" class=\"rw-btn\" id=\"brPP\" hidden>❚❚ Pause</button><button type=\"button\" class=\"rw-btn\" id=\"brAll\" aria-pressed=\"false\">Key words only</button><span class=\"br-kw\" id=\"brKwF\">Every word removed since Jan 2021 is struck; every word added is blue. The key words, “re-establishment”, “state” and “colonization”, are bold.</span><span class=\"br-kw\" id=\"brKw\" hidden>Key words only: “re-establishment” and “state” (out), “colonial” or “colonization” (in). Other words changed too.</span></div>",
-   "    <div class=\"br-fk\" data-q=\"en:Zionism\"><span class=\"fl-hint\" id=\"brHint\" hidden>◀ גררו לאורך הזמן ▶</span><button type=\"button\" class=\"rw-btn\" id=\"brPP\" hidden>❚❚ השהיה</button><button type=\"button\" class=\"rw-btn\" id=\"brAll\" aria-pressed=\"false\">מילות המפתח בלבד</button><span class=\"br-kw\" id=\"brKwF\">כל מילה שהוסרה מאז ינואר 2021 מחוקה; כל מילה שנוספה בכחול. מילות המפתח מודגשות: <bdi lang=\"en\">“re-establishment”</bdi> (הקמה מחדש), <bdi lang=\"en\">“state”</bdi> (מדינה) ו־<bdi lang=\"en\">“colonization”</bdi> (קולוניזציה).</span><span class=\"br-kw\" id=\"brKw\" hidden>מילות המפתח בלבד: <bdi lang=\"en\">“re-establishment”</bdi> ו־<bdi lang=\"en\">“state”</bdi> (יצאו), <bdi lang=\"en\">“colonial”</bdi> או <bdi lang=\"en\">“colonization”</bdi> (נכנסו). גם מילים אחרות השתנו.</span></div>\n    <details class=\"fl-full he-zi\"><summary>תרגום שלנו: המשפט ב־2021 והיום</summary><span class=\"he-tr\"><b class=\"he-k\">ינואר 2021</b>״ציונות (צִיּוֹנוּת, על שם ציון) היא גם אידאולוגיה וגם תנועה לאומית בקרב העם היהודי, הדוגלת בהקמה מחדש של מדינה יהודית ובתמיכה בה, בשטח המוגדר כארץ ישראל ההיסטורית (החופף בקירוב את כנען, ארץ הקודש או אזור פלסטין).״</span><span class=\"he-tr\"><b class=\"he-k\">היום</b>״ציונות היא תנועה לאומית אתנית שצמחה באירופה בסוף המאה התשע־עשרה כדי להקים מולדת יהודית ולתמוך בה, באמצעות קולוניזציה באזור פלסטין, החופף בקירוב את ארץ ישראל ביהדות, שהיא עצמה מרכזית בהיסטוריה היהודית.״</span></details>"
+   "    <div class=\"br-fk\" data-q=\"en:Zionism\"><span class=\"fl-hint\" id=\"brHint\" hidden>◀ גררו לאורך הזמן ▶</span><button type=\"button\" class=\"rw-btn\" id=\"brPP\" hidden>❚❚ השהיה</button><button type=\"button\" class=\"rw-btn\" id=\"brAll\" aria-pressed=\"false\">מילות המפתח בלבד</button><span class=\"br-kw\" id=\"brKwF\">כל מילה שהוסרה מאז ינואר 2021 מסומנת בקו מחיקה; כל מילה שנוספה בכחול. מילות המפתח מודגשות: <bdi lang=\"en\">“re-establishment”</bdi> (הקמה מחדש), <bdi lang=\"en\">“state”</bdi> (מדינה) ו־<bdi lang=\"en\">“colonization”</bdi> (קולוניזציה).</span><span class=\"br-kw\" id=\"brKw\" hidden>מילות המפתח בלבד: <bdi lang=\"en\">“re-establishment”</bdi> ו־<bdi lang=\"en\">“state”</bdi> (יצאו), <bdi lang=\"en\">“colonial”</bdi> או <bdi lang=\"en\">“colonization”</bdi> (נכנסו). גם מילים אחרות השתנו.</span></div>\n    <details class=\"fl-full he-zi\"><summary>תרגום שלנו: המשפט ב־2021 והיום</summary><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו · ינואר 2021</b>״ציונות (צִיּוֹנוּת, על שם ציון) היא גם אידאולוגיה וגם תנועה לאומית בקרב העם היהודי, הדוגלת בהקמה מחדש של מדינה יהודית ובתמיכה בה, בשטח המוגדר כארץ ישראל ההיסטורית (החופף בקירוב את כנען, ארץ הקודש או אזור פלסטין).״</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו · היום</b>״ציונות היא תנועה לאומית־אתנית שצמחה באירופה בסוף המאה התשע־עשרה כדי להקים מולדת יהודית ולתמוך בה, באמצעות קולוניזציה באזור פלסטין, החופף בקירוב את ארץ ישראל ביהדות, ארץ שהיא עצמה מרכזית בהיסטוריה היהודית.״</span></details>"
   ],
   [
    "  <p class=\"fl-body\" data-q=\"en:Zionism\">Of the 41 removals of “colonization” we can check, 37 were undone.</p>",
@@ -100,7 +100,7 @@
   ],
   [
    "  <p class=\"fl-next\">The same kind of change reached 1948.</p>",
-   "  <p class=\"fl-next\">שינוי מאותו סוג הגיע גם ל־1948.</p>"
+   "  <p class=\"fl-next\">שינוי מאותו סוג הגיע גם לערכים על 1948.</p>"
   ],
   [
    "  <div class=\"eyebrow fl-ey\"><span><b>2</b> 1948 and the Nakba</span><span class=\"ey-ev\"><a href=\"@@R@@#ev-1948\" target=\"_blank\" rel=\"noopener\">Full evidence →</a></span></div>",
@@ -108,15 +108,15 @@
   ],
   [
    "  <h2 id=\"c2H\" class=\"fl-hd\" data-q=\"en:Nakba\">The Nakba was “<del>the destruction of Palestinian society</del>.” Now it is “<ins>the ethnic cleansing</ins> of Palestinian Arabs <ins>by Zionists</ins>.”</h2>",
-   "  <h2 id=\"c2H\" class=\"fl-hd\" data-q=\"en:Nakba\">הנכבה הייתה ״<del>ההרס של החברה הפלסטינית</del>״. היום היא ״<ins>הטיהור האתני</ins> של ערבים פלסטינים <ins>בידי ציונים</ins>״.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\" data-q=\"en:Nakba\">“<del>the destruction of Palestinian society</del>” → “<ins>the ethnic cleansing</ins> of Palestinian Arabs <ins>by Zionists</ins>”</p>"
+   "  <h2 id=\"c2H\" class=\"fl-hd\" data-q=\"en:Nakba\">הנכבה הייתה ״<del>הרס החברה הפלסטינית</del>״. היום היא ״<ins>הטיהור האתני</ins> של ערבים פלסטינים <ins>בידי ציונים</ins>״.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\" data-q=\"en:Nakba\">“<del>the destruction of Palestinian society</del>” → “<ins>the ethnic cleansing</ins> of Palestinian Arabs <ins>by Zionists</ins>”</p>"
   ],
   [
    "  <figure class=\"fl-lane\"><span class=\"w\">Nakba · first sentence · 2021 → now · tap a tick</span><div class=\"fl-strip\" id=\"stNK\"></div></figure>",
-   "  <figure class=\"fl-lane\"><span class=\"w\">נכבה · המשפט הראשון · 2021 ← היום · הקישו על סימון</span><div class=\"fl-strip\" id=\"stNK\"></div></figure>"
+   "  <figure class=\"fl-lane\"><span class=\"w\">נכבה · המשפט הראשון · 2021 ← היום · הקישו על קו</span><div class=\"fl-strip\" id=\"stNK\"></div></figure>"
   ],
   [
    "  <p class=\"fl-body\">Three 1948 articles now name, in Wikipedia’s own voice, who drove the Palestinians out: “Zionists” or “Zionist forces.” For the Jews who “fled or were expelled from Arab states,” no one is named.</p>",
-   "  <p class=\"fl-body\">שלושה ערכים על 1948 נוקבים היום, בקולה של ויקיפדיה, במי שגירש את הפלסטינים: ״ציונים״ או ״כוחות ציוניים״. על היהודים ש״נמלטו או גורשו ממדינות ערב״, לא נזכר שום גורם.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“Zionists” · “Zionist forces” · “fled or were expelled from Arab states”</span></p>"
+   "  <p class=\"fl-body\">שלושה ערכים על 1948 נוקבים היום, בקולה של ויקיפדיה, בשם מי שגירש את הפלסטינים: ״ציונים״ או ״כוחות ציוניים״. על היהודים ש״נמלטו או גורשו ממדינות ערב״ לא ננקב שום גורם.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“Zionists” · “Zionist forces” · “fled or were expelled from Arab states”</span></p>"
   ],
   [
    "  <details class=\"fl-full\"><summary>Both full sentences</summary><div class=\"news-q one\" data-q=\"en:Nakba\">",
@@ -124,11 +124,11 @@
   ],
   [
    "    <blockquote><span class=\"w\"><i style=\"background:var(--topic)\"></i>Nakba · Dec 2021 and since 6 Jul 2026 · the 2021 version also took a position</span><span class=\"s then\" data-tn=\"nk:a\"><b class=\"tn\">Then</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class=\"s\" data-tn=\"nk:b\"><b class=\"tn\">Now</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings …”</span></blockquote>",
-   "    <blockquote><span class=\"w\"><i style=\"background:var(--topic)\"></i>נכבה · דצמבר 2021 ומאז 6 ביולי 2026 · גם הנוסח של 2021 נקט עמדה</span><span class=\"s then\" data-tn=\"nk:a\" dir=\"ltr\" lang=\"en\"><b class=\"tn\" lang=\"he\">אז</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״הנכבה, הידועה גם בשם האסון הפלסטיני, הייתה ההרס של החברה והמולדת הפלסטיניות ב־1948, והעקירה הקבועה של רוב הערבים הפלסטינים.״</span><span class=\"s\" data-tn=\"nk:b\" dir=\"ltr\" lang=\"en\"><b class=\"tn\" lang=\"he\">היום</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings …”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״הנכבה (النَّكْبَة) היא הטיהור האתני של ערבים פלסטינים בידי ציונים, באמצעות עקירתם האלימה ונישולם מאדמה, מרכוש ומחפצים …״</span></blockquote>"
+   "    <blockquote><span class=\"w\"><i style=\"background:var(--topic)\"></i>נכבה · דצמבר 2021 ומאז 6 ביולי 2026 · גם הנוסח של 2021 נקט עמדה</span><span class=\"s then\" data-tn=\"nk:a\" dir=\"ltr\" lang=\"en\"><b class=\"tn\" lang=\"he\">אז</b> “The Nakba, also known as the Palestinian Catastrophe, was the destruction of Palestinian society and homeland in 1948, and the permanent displacement of a majority of the Palestinian Arabs.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״הנכבה, הידועה גם בשם האסון הפלסטיני, הייתה הרס החברה והמולדת הפלסטיניות ב־1948, והעקירה הקבועה של רוב הערבים הפלסטינים.״</span><span class=\"s\" data-tn=\"nk:b\" dir=\"ltr\" lang=\"en\"><b class=\"tn\" lang=\"he\">היום</b> “The Nakba (النَّكْبَة) is the ethnic cleansing of Palestinian Arabs by Zionists through their violent displacement and dispossession of land, property, and belongings …”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״הנכבה (النَّكْبَة) היא הטיהור האתני של ערבים פלסטינים בידי ציונים, באמצעות עקירתם האלימה ונישולם מאדמה, מרכוש ומחפצים …״</span></blockquote>"
   ],
   [
    "    <p class=\"fl-next\">And it reached October 7.</p>",
-   "    <p class=\"fl-next\">והשינוי הגיע גם ל־7 באוקטובר.</p>"
+   "    <p class=\"fl-next\">והשינוי הגיע גם לערך על מתקפת 7 באוקטובר.</p>"
   ],
   [
    "  <div class=\"eyebrow fl-ey\"><span><b>3</b> October 7 and the hostages</span><span class=\"ey-ev\"><a href=\"@@R@@#ev-oct7\" target=\"_blank\" rel=\"noopener\">Full evidence →</a></span></div>",
@@ -136,15 +136,15 @@
   ],
   [
    "  <h2 id=\"c3H\">Wikipedia’s first line on October 7 now says “coordinated armed incursions.” In 107 versions, it has never mentioned the hostages.</h2>",
-   "  <h2 id=\"c3H\">השורה הראשונה של ויקיפדיה על 7 באוקטובר מדברת היום על ״חדירות חמושות מתואמות״. ב־107 גרסאות היא מעולם לא הזכירה את החטופים.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\" data-q=\"en:October 7 attacks\">“coordinated armed incursions”</p>"
+   "  <h2 id=\"c3H\">השורה הראשונה של ויקיפדיה על 7 באוקטובר מדברת היום על ״חדירות חמושות מתואמות״. באף אחת מ־107 הגרסאות שלה לא הוזכרו החטופים.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\" data-q=\"en:October 7 attacks\">“coordinated armed incursions”</p>"
   ],
   [
    "  <p class=\"fl\" data-q=\"en:October 7 attacks\"><span class=\"fl-k\">What changed · Oct 2023 / Jan 2024 → now</span><span data-tn=\"fo:a\">“A series of coordinated attacks”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fo:b\">“a series of coordinated armed incursions”</span><span class=\"fl-sep\" aria-hidden=\"true\"></span><span data-tn=\"fr:a\">“rape and sexual assault by Hamas fighters”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fr:b\">“dozens of cases of rape and sexual assault.”</span></p>",
-   "  <p class=\"fl\" data-q=\"en:October 7 attacks\"><span class=\"fl-k\">מה השתנה · אוקטובר 2023 / ינואר 2024 ← היום</span><span class=\"he-q\" dir=\"ltr\" lang=\"en\"><span data-tn=\"fo:a\">“A series of coordinated attacks”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fo:b\">“a series of coordinated armed incursions”</span></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״<span data-tn=\"hfo:a\">סדרה של מתקפות מתואמות</span>״ ← ״<span data-tn=\"hfo:b\">סדרה של חדירות חמושות מתואמות</span>״</span><span class=\"fl-sep\" aria-hidden=\"true\"></span><span class=\"he-q\" dir=\"ltr\" lang=\"en\"><span data-tn=\"fr:a\">“rape and sexual assault by Hamas fighters”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fr:b\">“dozens of cases of rape and sexual assault.”</span></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״<span data-tn=\"hfr:a\">אונס ותקיפה מינית בידי לוחמי חמאס</span>״ ← ״<span data-tn=\"hfr:b\">עשרות מקרים של אונס ותקיפה מינית.</span>״</span></p>"
+   "  <p class=\"fl\" data-q=\"en:October 7 attacks\"><span class=\"fl-k\">מה השתנה · אוקטובר 2023 / ינואר 2024 ← היום</span><span class=\"he-q\" dir=\"ltr\" lang=\"en\"><span data-tn=\"fo:a\">“A series of coordinated attacks”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fo:b\">“a series of coordinated armed incursions”</span></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״<span data-tn=\"hfo:a\">סדרה של מתקפות מתואמות</span>״ ← ״<span data-tn=\"hfo:b\">סדרה של חדירות חמושות מתואמות</span>״</span><span class=\"fl-sep\" aria-hidden=\"true\"></span><span class=\"he-q\" dir=\"ltr\" lang=\"en\"><span data-tn=\"fr:a\">“rape and sexual assault by Hamas fighters”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fr:b\">“dozens of cases of rape and sexual assault.”</span></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״<span data-tn=\"hfr:a\">אונס ותקיפה מינית בידי לוחמי חמאס</span>״ ← ״<span data-tn=\"hfr:b\">עשרות מקרים של אונס ותקיפה מינית</span>״.</span></p>"
   ],
   [
    "  <figure class=\"fl-lane\" data-q=\"en:October 7 attacks\"><span class=\"w\">October 7 attacks · first sentence · Oct 2023 → now</span><div class=\"fl-strip\" id=\"stO7\" data-tab=\"1\"></div>",
-   "  <figure class=\"fl-lane\" data-q=\"en:October 7 attacks\"><span class=\"w\">7 באוקטובר · המשפט הראשון · אוקטובר 2023 ← היום</span><div class=\"fl-strip\" id=\"stO7\" data-tab=\"1\"></div>"
+   "  <figure class=\"fl-lane\" data-q=\"en:October 7 attacks\"><span class=\"w\">מתקפת 7 באוקטובר · המשפט הראשון · אוקטובר 2023 ← היום</span><div class=\"fl-strip\" id=\"stO7\" data-tab=\"1\"></div>"
   ],
   [
    "    <p class=\"cp\"><b>Israel and Hamas opening sections:</b> none, in every copy we hold since 2021. October 7’s <b>sentence 9:</b> “251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip”</p></figure>",
@@ -152,7 +152,7 @@
   ],
   [
    "  <p class=\"fl-body\" data-q=\"en:October 7 attacks\">The opening still says “massacring civilians in 21 communities,” and the first sentence names Hamas, later on.</p>",
-   "  <p class=\"fl-body\" data-q=\"en:October 7 attacks\"><span class=\"he-p\">הפתיח עדיין אומר ״תוך טבח באזרחים ב־21 יישובים״, והמשפט הראשון נוקב בשם חמאס, בהמשכו.</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“massacring civilians in 21 communities”</span></p>"
+   "  <p class=\"fl-body\" data-q=\"en:October 7 attacks\"><span class=\"he-p\">הפתיח עדיין אומר ״תוך טבח באזרחים ב־21 יישובים״, ושמו של חמאס מופיע בהמשך המשפט הראשון.</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“massacring civilians in 21 communities”</span></p>"
   ],
   [
    "  <p class=\"fl-acts\"><button type=\"button\" class=\"fl-play\" data-sheet=\"o7\" data-tab=\"1\">Play the October 7 sentence</button><button type=\"button\" class=\"rw-btn\" data-share=\"c3\" aria-label=\"Save this card as an image\">Save as image</button></p>",
@@ -168,7 +168,7 @@
   ],
   [
    "  <h2 id=\"c4H\" class=\"fl-hd\" data-q=\"en:Hamas\">In 2021 Wikipedia called Hamas “<del>militant</del>.” Now it is a “<ins>political organisation with a military wing</ins>.”</h2>",
-   "  <h2 id=\"c4H\" class=\"fl-hd\" data-q=\"en:Hamas\">ב־2021 ויקיפדיה הגדירה את חמאס ארגון ״<del>חמוש</del>״. היום הוא ״<ins>ארגון פוליטי בעל זרוע צבאית</ins>״.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\" data-q=\"en:Hamas\">“<del>militant</del>” → “<ins>political organisation with a military wing</ins>”</p>"
+   "  <h2 id=\"c4H\" class=\"fl-hd\" data-q=\"en:Hamas\">ב־2021 כינתה ויקיפדיה את חמאס ארגון ״<del>חמוש</del>״ (<bdi lang=\"en\">militant</bdi>). היום הוא ״<ins>ארגון פוליטי בעל זרוע צבאית</ins>״.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\" data-q=\"en:Hamas\">“<del>militant</del>” → “<ins>political organisation with a military wing</ins>”</p>"
   ],
   [
    "    <blockquote class=\"mi\" data-q=\"en:Hamas\"><span class=\"bd\">English</span><span class=\"w\">Hamas · first sentence · since 29 Nov 2025</span><span class=\"s\">“… is a Sunni Islamist Palestinian nationalist <ins>political organisation with a military wing</ins> known as the al-Qassam Brigades.”</span></blockquote>",
@@ -180,15 +180,15 @@
   ],
   [
    "  <figure class=\"fig fl-pos\" style=\"margin:0;gap:8px\"><div class=\"fig-h\"><span class=\"fig-t\">Its terror designation moved from sentence 5 to sentence 22</span></div><div id=\"flPos\"></div></figure>",
-   "  <figure class=\"fig fl-pos\" style=\"margin:0;gap:8px\"><div class=\"fig-h\"><span class=\"fig-t\">ההכרזה עליו כארגון טרור עברה ממשפט 5 למשפט 22</span></div><div id=\"flPos\"></div></figure>"
+   "  <figure class=\"fig fl-pos\" style=\"margin:0;gap:8px\"><div class=\"fig-h\"><span class=\"fig-t\">ההכרזה על חמאס כארגון טרור עברה ממשפט 5 למשפט 22</span></div><div id=\"flPos\"></div></figure>"
   ],
   [
    "  <p class=\"fl-body\">Hebrew Wikipedia puts it the other way around, as it already did in 2021. In English, “militant” left on 12 October 2023, five days after the attack. It came back three times, last in February 2025.</p>",
-   "  <p class=\"fl-body\"><span class=\"he-p\">ויקיפדיה בעברית מנסחת זאת הפוך, כפי שעשתה כבר ב־2021. באנגלית, ״חמוש״ יצא ב־12 באוקטובר 2023, חמישה ימים אחרי המתקפה. הוא חזר שלוש פעמים, לאחרונה בפברואר 2025.</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“militant”</span></p>"
+   "  <p class=\"fl-body\"><span class=\"he-p\">ויקיפדיה בעברית מנסחת זאת בסדר הפוך, כפי שעשתה כבר ב־2021. באנגלית, המילה <bdi lang=\"en\">militant</bdi> (״חמוש״) יצאה ב־12 באוקטובר 2023, חמישה ימים אחרי המתקפה. היא חזרה שלוש פעמים, לאחרונה בפברואר 2025.</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“militant”</span></p>"
   ],
   [
    "  <p class=\"fl-ctx\" data-q=\"en:Islamic State|en:Al-Shabaab (militant group)|en:Boko Haram\">Context: in line with Wikipedia-wide style on contentious labels, “terrorist” left the first sentences of Islamic State, al-Shabaab and Boko Haram. Hamas’s first sentence did not have it in 2021.</p>",
-   "  <p class=\"fl-ctx\" data-q=\"en:Islamic State|en:Al-Shabaab (militant group)|en:Boko Haram\"><span class=\"he-p\">הקשר: בהתאם לכלל הסגנון של ויקיפדיה כולה לגבי תוויות שנויות במחלוקת, המילה ״טרוריסטי״ יצאה מהמשפטים הראשונים של הערכים על המדינה האסלאמית, אל־שבאב ובוקו חראם. המשפט הראשון על חמאס לא כלל אותה ב־2021.</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“terrorist”</span></p>"
+   "  <p class=\"fl-ctx\" data-q=\"en:Islamic State|en:Al-Shabaab (militant group)|en:Boko Haram\"><span class=\"he-p\">הקשר: בהתאם להנחיות הסגנון של ויקיפדיה כולה לגבי תוויות שנויות במחלוקת, המילה ״טרוריסטי״ יצאה מהמשפטים הראשונים של הערכים על המדינה האסלאמית (דאעש), אל־שבאב ובוקו חראם. המשפט הראשון על חמאס לא כלל אותה ב־2021.</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“terrorist”</span></p>"
   ],
   [
    "  <p class=\"fl-acts\"><button type=\"button\" class=\"fl-play\" data-sheet=\"o7\" data-tab=\"0\">Play the Hamas sentence</button><button type=\"button\" class=\"rw-btn\" data-share=\"c4vs\" aria-label=\"Save the English and Hebrew definitions as an image\">Save as image</button></p>",
@@ -204,7 +204,7 @@
   ],
   [
    "    <h2 class=\"fl-mt\" id=\"cxH\">Eleven Wikipedias, five claims: our first copy, then now <span class=\"fl-hint\" id=\"xmHint\">Tap a square</span><button type=\"button\" class=\"rw-btn\" id=\"xmRp\" hidden>▶ Replay the flip</button></h2>",
-   "    <h2 class=\"fl-mt\" id=\"cxH\">אחת־עשרה ויקיפדיות, חמש טענות: העותק הראשון שלנו, ואחריו היום <span class=\"fl-hint\" id=\"xmHint\">הקישו על ריבוע</span><button type=\"button\" class=\"rw-btn\" id=\"xmRp\" hidden>▶ שוב</button></h2>"
+   "    <h2 class=\"fl-mt\" id=\"cxH\">אחת־עשרה ויקיפדיות, חמש טענות: אז (העותק הראשון שלנו) והיום <span class=\"fl-hint\" id=\"xmHint\">הקישו על ריבוע</span><button type=\"button\" class=\"rw-btn\" id=\"xmRp\" hidden>▶ הפעלה חוזרת</button></h2>"
   ],
   [
    "  <p class=\"fl-next\">Then came the charge itself.</p>",
@@ -216,19 +216,19 @@
   ],
   [
    "  <h2 id=\"c5H\">Wikipedia says genocide in Gaza is “carried out by Israel.” Of genocide on October 7, it says “Some have alleged.”</h2>",
-   "  <h2 id=\"c5H\">ויקיפדיה כותבת שרצח העם בעזה ״מבוצע בידי ישראל״. על רצח עם ב־7 באוקטובר היא כותבת ״יש שטענו״.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\">“carried out by Israel” · “Some have alleged”</p>"
+   "  <h2 id=\"c5H\">ויקיפדיה כותבת שרצח עם בעזה ״מבוצע בידי ישראל״. על רצח עם ב־7 באוקטובר היא כותבת ״יש הטוענים״.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\">“carried out by Israel” · “Some have alleged”</p>"
   ],
   [
    "  <p class=\"fl\" data-q=\"en:Gaza genocide\"><span class=\"fl-k\">What changed · Gaza genocide, 2024 → since 26 Sep 2025</span><span data-tn=\"fg:a\">“Allegations have been made”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fg:b\">“carried out by Israel”</span></p>",
-   "  <p class=\"fl\" data-q=\"en:Gaza genocide\"><span class=\"fl-k\">מה השתנה · רצח העם בעזה, 2024 ← מאז 26 בספטמבר 2025</span><span class=\"he-q\" dir=\"ltr\" lang=\"en\"><span data-tn=\"fg:a\">“Allegations have been made”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fg:b\">“carried out by Israel”</span></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״<span data-tn=\"hfg:a\">הועלו האשמות</span>״ ← ״<span data-tn=\"hfg:b\">שמבוצעת בידי ישראל</span>״</span></p>"
+   "  <p class=\"fl\" data-q=\"en:Gaza genocide\"><span class=\"fl-k\">מה השתנה · רצח העם בעזה, 2024 ← מאז 26 בספטמבר 2025</span><span class=\"he-q\" dir=\"ltr\" lang=\"en\"><span data-tn=\"fg:a\">“Allegations have been made”</span><span class=\"fl-ar\" aria-hidden=\"true\">→</span><span class=\"zi-sr\"> became </span><span data-tn=\"fg:b\">“carried out by Israel”</span></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״<span data-tn=\"hfg:a\">הועלו האשמות</span>״ ← ״<span data-tn=\"hfg:b\">…שמבוצע בידי ישראל</span>״</span></p>"
   ],
   [
    "    <blockquote class=\"own\" data-q=\"en:Gaza genocide\"><span class=\"bd\">Own voice</span><span class=\"w\">Gaza genocide · first sentence · since 26 Sep 2025</span><span class=\"s\">“The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip <ins>carried out by Israel</ins> during the Gaza war.”</span></blockquote>",
-   "    <blockquote class=\"own\" data-q=\"en:Gaza genocide\"><span class=\"bd\">בקולה של ויקיפדיה</span><span class=\"w\">רצח העם בעזה · המשפט הראשון · מאז 26 בספטמבר 2025</span><span class=\"s\" dir=\"ltr\" lang=\"en\">“The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip <ins>carried out by Israel</ins> during the Gaza war.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״רצח העם בעזה הוא ההשמדה המתמשכת, המכוונת והשיטתית של העם הפלסטיני ברצועת עזה, <ins>שמבוצעת בידי ישראל</ins> במהלך מלחמת עזה.״</span></blockquote>"
+   "    <blockquote class=\"own\" data-q=\"en:Gaza genocide\"><span class=\"bd\">בקולה של ויקיפדיה</span><span class=\"w\">רצח העם בעזה · המשפט הראשון · מאז 26 בספטמבר 2025</span><span class=\"s\" dir=\"ltr\" lang=\"en\">“The Gaza genocide is the ongoing, intentional, and systematic destruction of the Palestinian people in the Gaza Strip <ins>carried out by Israel</ins> during the Gaza war.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״רצח העם בעזה הוא ההרס המתמשך, המכוון והשיטתי של העם הפלסטיני ברצועת עזה, <ins>שמבוצע בידי ישראל</ins> במהלך מלחמת עזה.״</span></blockquote>"
   ],
   [
    "    <blockquote class=\"attr\" data-q=\"en:October 7 attacks\"><span class=\"bd\">Attributed</span><span class=\"w\">October 7 attacks · opening section · now</span><span class=\"s\">“Some <span class=\"att\">have alleged</span> that the attack was an act of genocide or a genocidal massacre against Israelis.”</span></blockquote>",
-   "    <blockquote class=\"attr\" data-q=\"en:October 7 attacks\"><span class=\"bd\">מיוחס לאחרים</span><span class=\"w\">מתקפות 7 באוקטובר · פתיח הערך · היום</span><span class=\"s\" dir=\"ltr\" lang=\"en\">“Some <span class=\"att\">have alleged</span> that the attack was an act of genocide or a genocidal massacre against Israelis.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״<span class=\"att\">יש שטענו</span> שהמתקפה הייתה מעשה של רצח עם או טבח בעל אופי של רצח עם נגד ישראלים.״</span></blockquote>"
+   "    <blockquote class=\"attr\" data-q=\"en:October 7 attacks\"><span class=\"bd\">מיוחס לאחרים</span><span class=\"w\">מתקפת 7 באוקטובר · פתיח הערך · היום</span><span class=\"s\" dir=\"ltr\" lang=\"en\">“Some <span class=\"att\">have alleged</span> that the attack was an act of genocide or a genocidal massacre against Israelis.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״<span class=\"att\">יש הטוענים</span> שהמתקפה הייתה מעשה של רצח עם או טבח בעל אופי של רצח עם נגד ישראלים.״</span></blockquote>"
   ],
   [
    "  <p class=\"fl-acts\" style=\"margin:-2px 0 0\"><button type=\"button\" class=\"rw-btn\" data-share=\"c5vs\" aria-label=\"Save these two sentences as an image\">Save as image</button></p>",
@@ -244,15 +244,15 @@
   ],
   [
    "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Titles\"><span class=\"w\">The genocide article’s title, by language <span class=\"xchip\">Exploratory</span></span><div class=\"vis\"><div id=\"xwGG\"></div></div><p class=\"cp\">English dropped “allegations” from the title on 3 July 2024 (+187 days); Polish on 26 April 2026 (+849 days).</p></div>",
-   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"כותרות\"><span class=\"w\">כותרת הערך על רצח העם, לפי שפה <span class=\"xchip\">ראשוני</span></span><div class=\"vis\"><div id=\"xwGG\"></div></div><p class=\"cp\">האנגלית הסירה מהכותרת את ״האשמות״ ב־3 ביולי 2024 (<bdi dir=\"ltr\">+187</bdi> ימים); הפולנית ב־26 באפריל 2026 (<bdi dir=\"ltr\">+849</bdi> ימים).<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“allegations”</span></p></div>"
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"כותרות\"><span class=\"w\">כותרת הערך על רצח העם, לפי שפה <span class=\"xchip\">ראשוני</span></span><div class=\"vis\"><div id=\"xwGG\"></div></div><p class=\"cp\">ויקיפדיה באנגלית הסירה את ״האשמות״ מהכותרת ב־3 ביולי 2024, 187 ימים אחרי פתיחת הערך באנגלית; ויקיפדיה בפולנית, ב־26 באפריל 2026, 849 ימים אחרי אותה פתיחה.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“allegations”</span></p></div>"
   ],
   [
    "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Arabic\" data-q=\"ar:Gaza genocide\"><span class=\"w\">العربية · Arabic · Gaza genocide · first sentence <span class=\"xchip\">Exploratory</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza genocide|ar|s1\">Open in the reader</button></span><div class=\"vis\"><div class=\"fl-mo\" data-mo=\"Gaza genocide|ar|s1\"></div></div><p class=\"cp\"><span data-tn=\"xa:a\">“Israel has been accused of committing crimes of genocide”</span> → <span data-tn=\"xa:b\">“The genocide of Gaza is the systematic, deliberate and ongoing destruction”</span></p></div>",
-   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"ערבית\" data-q=\"ar:Gaza genocide\"><span class=\"w\">العربية · ערבית · רצח העם בעזה · המשפט הראשון <span class=\"xchip\">ראשוני</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza genocide|ar|s1\">לכלי הקריאה</button></span><div class=\"vis\"><div class=\"fl-mo\" data-mo=\"Gaza genocide|ar|s1\" data-notr=\"1\"></div><p class=\"he-tr he-mo\" data-st=\"f\"><b class=\"he-k\">תרגום שלנו</b>״ישראל הואשמה בביצוע פשעים של רצח עם נגד העם הפלסטיני ברצועת עזה במהלך המלחמה בין ישראל לחמאס.״</p><p class=\"he-tr he-mo\" data-st=\"n\"><b class=\"he-k\">תרגום שלנו</b>״רצח העם של עזה הוא ההרס והפגיעה, השיטתיים, המכוונים והמתמשכים, בעם הפלסטיני ברצועת עזה, שישראל מבצעת במהלך מלחמת עזה.״</p></div><p class=\"cp\">״<span data-tn=\"hxa:a\">ישראל הואשמה בביצוע פשעים של רצח עם</span>״ ← ״<span data-tn=\"hxa:b\">רצח העם של עזה הוא ההרס והפגיעה, השיטתיים, המכוונים והמתמשכים</span>״</p></div>"
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"ערבית\" data-q=\"ar:Gaza genocide\"><span class=\"w\">العربية · ערבית · רצח העם בעזה · המשפט הראשון <span class=\"xchip\">ראשוני</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza genocide|ar|s1\">לכלי הקריאה</button></span><div class=\"vis\"><div class=\"fl-mo\" data-mo=\"Gaza genocide|ar|s1\" data-notr=\"1\"></div><p class=\"he-tr he-mo\" data-st=\"f\"><b class=\"he-k\">תרגום שלנו · אז</b>״ישראל הואשמה בביצוע פשעי רצח עם נגד העם הפלסטיני ברצועת עזה במהלך המלחמה בין ישראל לחמאס.״</p><p class=\"he-tr he-mo\" data-st=\"n\"><b class=\"he-k\">תרגום שלנו · היום</b>״רצח העם של עזה הוא ההרס של העם הפלסטיני ברצועת עזה והפיכתו למטרה, באופן שיטתי, מכוון ומתמשך, שישראל מבצעת במהלך מלחמת עזה.״</p></div><p class=\"cp\">״<span data-tn=\"hxa:a\">ישראל הואשמה בביצוע פשעי רצח עם</span>״ ← ״<span data-tn=\"hxa:b\">רצח העם של עזה הוא ההרס של העם הפלסטיני… והפיכתו למטרה, באופן שיטתי, מכוון ומתמשך</span>״</p></div>"
   ],
   [
    "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Spanish\" data-q=\"es:Gaza war\"><span class=\"w\">Español · Spanish · Gaza war · first sentence <span class=\"xchip\">Exploratory</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza war|es|s1\">Open in the reader</button></span><div class=\"vis\"><div class=\"fl-mo\" data-mo=\"Gaza war|es|s1\" data-notr=\"1\"></div></div><p class=\"cp\"><span data-tn=\"xs:a\">“launched a large attack against Israel”</span> → <span data-tn=\"xs:b\">“a retaliatory attack … that has unleashed a genocide in Gaza by Israel”</span></p></div>",
-   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"ספרדית\" data-q=\"es:Gaza war\"><span class=\"w\">Español · ספרדית · מלחמת עזה · המשפט הראשון <span class=\"xchip\">ראשוני</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza war|es|s1\">לכלי הקריאה</button></span><div class=\"vis\"><div class=\"fl-mo\" data-mo=\"Gaza war|es|s1\" data-notr=\"1\"></div><p class=\"he-tr he-mo\" data-st=\"f\"><b class=\"he-k\">תרגום שלנו</b>״מלחמת ישראל–עזה של 2023 היא עימות מזוין מתמשך שהחל ב־7 באוקטובר 2023, בזמן שהישראלים חגגו את חג הסוכות, כאשר קבוצות חמושות של מיליציונרים פלסטינים, בעיקר מחמאס ומהג׳יהאד האסלאמי הפלסטיני, פתחו במתקפה גדולה נגד ישראל מרצועת עזה, במטח רקטות ובפשיטת קומנדו במשאיות, באופנועים ובמצנחי רחיפה ממונעים.״</p><p class=\"he-tr he-mo\" data-st=\"n\"><b class=\"he-k\">תרגום שלנו</b>״מלחמת עזה היא עימות מזוין מתמשך שהחל במתקפת תגמול שביצעו חמאס ומיליציות אחרות נגד ישראל ב־7 באוקטובר 2023, ושחולל רצח עם בעזה מצד ישראל נגד האוכלוסייה האזרחית הפלסטינית.״</p></div><p class=\"cp\">״<span data-tn=\"hxs:a\">פתחו במתקפה גדולה נגד ישראל</span>״ ← ״<span data-tn=\"hxs:b\">מתקפת תגמול … שחולל רצח עם בעזה מצד ישראל</span>״</p></div>"
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"ספרדית\" data-q=\"es:Gaza war\"><span class=\"w\">Español · ספרדית · מלחמת עזה · המשפט הראשון <span class=\"xchip\">ראשוני</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza war|es|s1\">לכלי הקריאה</button></span><div class=\"vis\"><div class=\"fl-mo\" data-mo=\"Gaza war|es|s1\" data-notr=\"1\"></div><p class=\"he-tr he-mo\" data-st=\"f\"><b class=\"he-k\">תרגום שלנו · אז</b>״מלחמת ישראל–עזה של 2023 היא עימות מזוין מתמשך שהחל ב־7 באוקטובר 2023, בזמן שהישראלים חגגו את חג הסוכות, כאשר קבוצות חמושות של מיליציונרים פלסטינים, בעיקר מחמאס ומהג׳יהאד האסלאמי הפלסטיני, פתחו במתקפה גדולה נגד ישראל מרצועת עזה, במטח רקטות ובמתקפת קומנדו במשאיות, באופנועים ובמצנחי רחיפה ממונעים.״</p><p class=\"he-tr he-mo\" data-st=\"n\"><b class=\"he-k\">תרגום שלנו · היום</b>״מלחמת עזה היא עימות מזוין מתמשך שהחל במתקפת תגמול שביצעו חמאס ומיליציות אחרות נגד ישראל ב־7 באוקטובר 2023, ושחולל רצח עם בעזה בידי ישראל נגד האוכלוסייה האזרחית הפלסטינית.״</p></div><p class=\"cp\">״<span data-tn=\"hxs:a\">פתחו במתקפה גדולה נגד ישראל</span>״ ← ״<span data-tn=\"hxs:b\">עימות מזוין … ושחולל רצח עם בעזה בידי ישראל</span>״</p></div>"
   ],
   [
    "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Israel and Netanyahu\"><span class=\"w\">Opening sections · now · Wikipedia’s own voice</span><div class=\"vis\"><div class=\"fl-pair\">",
@@ -260,11 +260,11 @@
   ],
   [
    "        <div data-q=\"en:Israel\"><span class=\"nm\">Israel</span><span class=\"q\">“Israel <ins>began committing genocide</ins> against Palestinians in Gaza.”</span><span class=\"dn y\">Next sentence: “Israel has denied that its actions constitute genocide.”</span></div>",
-   "        <div data-q=\"en:Israel\"><span class=\"nm\">ישראל</span><span class=\"q\" dir=\"ltr\" lang=\"en\">“Israel <ins>began committing genocide</ins> against Palestinians in Gaza.”</span><span class=\"he-tr\">״ישראל <ins>החלה לבצע רצח עם</ins> נגד פלסטינים בעזה.״</span><span class=\"dn y\">המשפט הבא: ״ישראל הכחישה שמעשיה מהווים רצח עם.״<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“Israel has denied that its actions constitute genocide.”</span></span></div>"
+   "        <div data-q=\"en:Israel\"><span class=\"nm\">ישראל</span><span class=\"q\" dir=\"ltr\" lang=\"en\">“Israel <ins>began committing genocide</ins> against Palestinians in Gaza.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״ישראל <ins>החלה לבצע רצח עם</ins> נגד פלסטינים בעזה.״</span><span class=\"dn y\">המשפט הבא: <b class=\"he-k\">תרגום שלנו</b>״ישראל הכחישה שמעשיה מהווים רצח עם.״<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“Israel has denied that its actions constitute genocide.”</span></span></div>"
   ],
   [
    "        <div data-q=\"en:Benjamin Netanyahu\"><span class=\"nm\">Benjamin Netanyahu</span><span class=\"q\">“Netanyahu's government has been <ins>orchestrating the Gaza genocide</ins>, culminating in the South Africa v. Israel case before the International Court of Justice (ICJ) in December 2023.”</span><span class=\"dn n\">No denial</span></div>",
-   "        <div data-q=\"en:Benjamin Netanyahu\"><span class=\"nm\">בנימין נתניהו</span><span class=\"q\" dir=\"ltr\" lang=\"en\">“Netanyahu's government has been <ins>orchestrating the Gaza genocide</ins>, culminating in the South Africa v. Israel case before the International Court of Justice (ICJ) in December 2023.”</span><span class=\"he-tr\">״ממשלת נתניהו <ins>מתזמרת את רצח העם בעזה</ins>, תהליך שהגיע לשיאו בתיק דרום אפריקה נ׳ ישראל בבית הדין הבין־לאומי לצדק (ICJ) בדצמבר 2023.״</span><span class=\"dn n\">אין הכחשה</span></div>"
+   "        <div data-q=\"en:Benjamin Netanyahu\"><span class=\"nm\">בנימין נתניהו</span><span class=\"q\" dir=\"ltr\" lang=\"en\">“Netanyahu's government has been <ins>orchestrating the Gaza genocide</ins>, culminating in the South Africa v. Israel case before the International Court of Justice (ICJ) in December 2023.”</span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״ממשלת נתניהו <ins>מתזמרת את רצח העם בעזה</ins>, תהליך שהגיע לשיאו בתיק דרום אפריקה נ׳ ישראל בבית הדין הבין־לאומי לצדק (ICJ) בדצמבר 2023.״</span><span class=\"dn n\">אין הכחשה</span></div>"
   ],
   [
    "      </div></div><p class=\"cp\">The Israel article reports the denial in its next sentence; the Netanyahu article reports none.</p></div>",
@@ -272,35 +272,35 @@
   ],
   [
    "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Hebrew, the exception\" data-q=\"he:Gaza war\"><span class=\"w\">עברית · Hebrew, the exception <span class=\"xchip\">Exploratory</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza war|he|k_genocide\">Open in the reader</button></span><div class=\"vis\"><span class=\"s\" lang=\"he\" dir=\"rtl\" style=\"font-size:20px\">“דרום אפריקה הגישה תביעה נגד ישראל לבית הדין הבין-לאומי לצדק (ICJ) בגין רצח עם.”</span><span class=\"tr\">“South Africa filed a suit against Israel at the International Court of Justice (ICJ) for genocide.”</span></div><p class=\"cp\">Hebrew’s Gaza war article does not state the charge. It reports only South Africa’s case.</p></div>",
-   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"עברית, היוצאת מן הכלל\" data-q=\"he:Gaza war\"><span class=\"w\">עברית · היוצאת מן הכלל <span class=\"xchip\">ראשוני</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza war|he|k_genocide\">לכלי הקריאה</button></span><div class=\"vis\"><span class=\"s\" lang=\"he\" dir=\"rtl\" style=\"font-size:20px\">“דרום אפריקה הגישה תביעה נגד ישראל לבית הדין הבין-לאומי לצדק (ICJ) בגין רצח עם.”</span></div><p class=\"cp\">הערך העברי על מלחמת עזה אינו קובע את ההאשמה. הוא מדווח רק על התביעה של דרום אפריקה.</p></div>"
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"עברית, יוצאת הדופן\" data-q=\"he:Gaza war\"><span class=\"w\">עברית · יוצאת הדופן <span class=\"xchip\">ראשוני</span><button type=\"button\" class=\"fl-play sm\" data-sheet=\"xr\" data-mo=\"Gaza war|he|k_genocide\">לכלי הקריאה</button></span><div class=\"vis\"><span class=\"s\" lang=\"he\" dir=\"rtl\" style=\"font-size:20px\">“דרום אפריקה הגישה תביעה נגד ישראל לבית הדין הבין-לאומי לצדק (ICJ) בגין רצח עם.”</span></div><p class=\"cp\">הערך העברי על מלחמת עזה אינו קובע שמתבצע רצח עם. הוא מדווח רק על התביעה של דרום אפריקה.</p></div>"
   ],
   [
    "  <p class=\"fl-ctx\" id=\"c5own\" data-q=\"en:October 7 attacks\">The October 7 article states the killings in Wikipedia’s own voice: “massacring civilians in 21 communities”; “at least 1,195 people were killed by the attacks” (2 Nov 2026 copy).</p>",
-   "  <p class=\"fl-ctx\" id=\"c5own\" data-q=\"en:October 7 attacks\"><span class=\"he-p\">הערך על 7 באוקטובר מתאר את ההרג בקולה של ויקיפדיה: ״תוך טבח באזרחים ב־21 יישובים״; ״לפחות 1,195 בני אדם נהרגו במתקפות״ (עותק מ־2 בנובמבר 2026).</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“massacring civilians in 21 communities”; “at least 1,195 people were killed by the attacks”</span></p>"
+   "  <p class=\"fl-ctx\" id=\"c5own\" data-q=\"en:October 7 attacks\"><span class=\"he-p\">הערך על 7 באוקטובר מתאר את ההרג בקולה של ויקיפדיה: ״תוך טבח באזרחים ב־21 יישובים״; ״לפחות 1,195 בני אדם נהרגו כתוצאה מהמתקפות״ (עותק מ־2 בנובמבר 2026).</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“massacring civilians in 21 communities”; “at least 1,195 people were killed by the attacks”</span></p>"
   ],
   [
    "    <p class=\"fl-next\">How did these lines get there? In four first sentences, the history shows which wording stayed and which was taken out.</p>",
-   "    <p class=\"fl-next\">איך הגיעו לשם השורות האלה? בארבעה משפטים ראשונים, ההיסטוריה מראה איזה נוסח נשאר ואיזה הוצא.</p>"
+   "    <p class=\"fl-next\">איך הגיעו לשם השורות האלה? היסטוריית הגרסאות של ארבעה משפטים ראשונים מראה איזה נוסח נשאר ואיזה הוצא.</p>"
   ],
   [
    "  <div class=\"eyebrow fl-ey\"><span><b>6</b> How it got there</span><span class=\"ey-ev\"><a href=\"@@R@@#o7Fig\" target=\"_blank\" rel=\"noopener\">Evidence →</a><a href=\"@@R@@#when\" target=\"_blank\" rel=\"noopener\">Timing →</a></span></div>",
-   "  <div class=\"eyebrow fl-ey\"><span><b>6</b> איך זה קרה</span><span class=\"ey-ev\"><a href=\"@@R@@#o7Fig\" target=\"_blank\" rel=\"noopener\">ראיות ←</a><a href=\"@@R@@#when\" target=\"_blank\" rel=\"noopener\">תזמון ←</a></span></div>"
+   "  <div class=\"eyebrow fl-ey\"><span><b>6</b> איך זה הגיע לשם</span><span class=\"ey-ev\"><a href=\"@@R@@#o7Fig\" target=\"_blank\" rel=\"noopener\">ראיות ←</a><a href=\"@@R@@#when\" target=\"_blank\" rel=\"noopener\">תזמון ←</a></span></div>"
   ],
   [
    "  <h2 id=\"c6H\">Since September 2025, 10 edits tried to make the Gaza genocide sentence attributed again. Each was gone within 45 minutes.</h2>",
-   "  <h2 id=\"c6H\">מאז ספטמבר 2025, 10 עריכות ניסו להחזיר למשפט על רצח העם בעזה ניסוח מיוחס. כל אחת מהן נעלמה בתוך 45 דקות.</h2>"
+   "  <h2 id=\"c6H\">מאז ספטמבר 2025 ניסו עשר עריכות להחזיר ייחוס למשפט על רצח העם בעזה. כל אחת מהן נעלמה בתוך 45 דקות.</h2>"
   ],
   [
    "  <div class=\"car\" id=\"car2\" role=\"region\" aria-roledescription=\"carousel\" aria-label=\"How long a word lasts\">",
-   "  <div class=\"car\" id=\"car2\" role=\"region\" aria-roledescription=\"קרוסלה\" aria-label=\"כמה זמן מחזיקה מילה\">"
+   "  <div class=\"car\" id=\"car2\" role=\"region\" aria-roledescription=\"קרוסלה\" aria-label=\"כמה זמן שורדת מילה\">"
   ],
   [
    "    <div class=\"car-h\"><span class=\"car-t\">How long a word lasts</span><span class=\"car-n\" aria-live=\"polite\"></span></div>",
-   "    <div class=\"car-h\"><span class=\"car-t\">כמה זמן מחזיקה מילה</span><span class=\"car-n\" aria-live=\"polite\"></span></div>"
+   "    <div class=\"car-h\"><span class=\"car-t\">כמה זמן שורדת מילה</span><span class=\"car-n\" aria-live=\"polite\"></span></div>"
   ],
   [
    "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Gaza genocide\"><span class=\"w\">Gaza genocide · first sentence · Dec 2023 → now<button type=\"button\" class=\"fl-play sm\" data-sheet=\"o7\" data-tab=\"2\">Every change</button></span><div class=\"vis\"><div class=\"fl-strip\" id=\"stGG\" data-tab=\"2\"></div></div><p class=\"cp\" data-q=\"en:Gaza genocide\">Own voice since 26 September 2025. <b>10 edits</b> tried to bring back attribution (“alleged,” “described by most scholars as”); each was gone within 45 minutes.</p></div>",
-   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"רצח העם בעזה\"><span class=\"w\">רצח העם בעזה · המשפט הראשון · דצמבר 2023 ← היום<button type=\"button\" class=\"fl-play sm\" data-sheet=\"o7\" data-tab=\"2\">כל שינוי</button></span><div class=\"vis\"><div class=\"fl-strip\" id=\"stGG\" data-tab=\"2\"></div></div><p class=\"cp\" data-q=\"en:Gaza genocide\">בקולה של ויקיפדיה מאז 26 בספטמבר 2025. <b>10 עריכות</b> ניסו להחזיר את הייחוס (״לכאורה״, ״מתואר בידי רוב החוקרים כ־״); כל אחת נעלמה בתוך 45 דקות.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“alleged,” “described by most scholars as”</span></p></div>"
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"שקופית\" aria-label=\"רצח העם בעזה\"><span class=\"w\">רצח העם בעזה · המשפט הראשון · דצמבר 2023 ← היום<button type=\"button\" class=\"fl-play sm\" data-sheet=\"o7\" data-tab=\"2\">כל שינוי</button></span><div class=\"vis\"><div class=\"fl-strip\" id=\"stGG\" data-tab=\"2\"></div></div><p class=\"cp\" data-q=\"en:Gaza genocide\">בקולה של ויקיפדיה מאז 26 בספטמבר 2025. <b>10 עריכות</b> ניסו להחזיר את הייחוס (״לכאורה״, ״מתואר בידי רוב החוקרים כ…״); כל אחת נעלמה בתוך 45 דקות.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“alleged,” “described by most scholars as”</span></p></div>"
   ],
   [
    "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Hamas\"><span class=\"w\">Hamas · first sentence · 2021 → now<button type=\"button\" class=\"fl-play sm\" data-sheet=\"o7\" data-tab=\"0\">Every change</button></span><div class=\"vis\"><div class=\"fl-strip\" id=\"stHM\" data-tab=\"0\"></div></div><p class=\"cp\">“Terrorist” went in five times; the longest stay was about 2.4 hours. The words “resistance movement” got in once, on 1 August 2024, and were gone the next day.</p></div>",
@@ -312,7 +312,7 @@
   ],
   [
    "  <p class=\"fl-body\">These are four first sentences (October 7 is in card 3), not the whole subject. Across the 254 core, Top- and High-importance topic articles, reverts of edits that removed critical terms came no faster than reverts of edits that added them.</p>",
-   "  <p class=\"fl-body\">אלה ארבעה משפטים ראשונים (7 באוקטובר בכרטיס 3), לא הנושא כולו. בכל 254 ערכי הליבה וערכי החשיבות העליונה והגבוהה בנושא, שחזורים של עריכות שהסירו מונחים ביקורתיים לא הגיעו מהר יותר משחזורים של עריכות שהוסיפו אותם.</p>"
+   "  <p class=\"fl-body\">אלה ארבעה משפטים ראשונים (7 באוקטובר בכרטיס 3), לא הנושא כולו. בכל 254 ערכי הנושא שהם ערכי ליבה או שדורגו בחשיבות עליונה או גבוהה, שחזורים של עריכות שהסירו מונחים ביקורתיים לא הגיעו מהר יותר משחזורים של עריכות שהוסיפו אותם.</p>"
   ],
   [
    "  <figure class=\"fl-kf\" id=\"flK\" aria-label=\"When: new critical terms a week, after each battle\">",
@@ -328,7 +328,7 @@
   ],
   [
    "    <p id=\"kCap\">In the three weeks after October 7, <b>13.7</b> new critical terms a week, against <b>3.8</b> in the six weeks before. Timing gives a date, not a cause.</p></figure>",
-   "    <p id=\"kCap\">בשלושת השבועות שאחרי 7 באוקטובר נוספו <b>13.7</b> מונחים ביקורתיים חדשים בשבוע, לעומת <b>3.8</b> בשישה השבועות שלפני. התזמון נותן תאריך, לא סיבה.</p></figure>"
+   "    <p id=\"kCap\">בשלושת השבועות שאחרי 7 באוקטובר נוספו <b>13.7</b> מונחים ביקורתיים חדשים בשבוע, לעומת <b>3.8</b> בשישה השבועות שקדמו לו. התזמון מלמד על מועד, לא על סיבה.</p></figure>"
   ],
   [
    "    <p class=\"fl-next\">Wikipedia’s arbitrators have ruled on conduct in this topic.</p>",
@@ -340,27 +340,27 @@
   ],
   [
    "  <h2 id=\"c7H\" data-q=\"arb\">Wikipedia’s arbitrators found outside actors “heavily invested in influencing” its coverage of this topic. They named no side or country.</h2>",
-   "  <h2 id=\"c7H\" data-q=\"arb\">הבוררים של ויקיפדיה קבעו שגורמים חיצוניים ״משקיעים רבות בניסיון להשפיע״ על הסיקור שלה בנושא הזה. הם לא נקבו בשום צד ובשום מדינה.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\" data-q=\"arb\">“heavily invested in influencing”</p>"
+   "  <h2 id=\"c7H\" data-q=\"arb\">הבוררים של ויקיפדיה מצאו שלגורמים חיצוניים ״יש עניין רב בהשפעה״ על הסיקור שלה בנושא הזה. הם לא נקבו בשמו של צד או של מדינה כלשהם.</h2><p class=\"he-o\" dir=\"ltr\" lang=\"en\" data-q=\"arb\">“heavily invested in influencing”</p>"
   ],
   [
    "  <div class=\"news-q one\" data-q=\"arb\"><blockquote><span class=\"w\">Arbitration Committee · PIA5 · finding 10 · adopted 15–0 · 23 Jan 2025</span><span class=\"s\"><a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#Outside_influence\" target=\"_blank\" rel=\"noopener\">“Outside actors are heavily invested in influencing Wikipedia's coverage of the topic area”</a></span><span class=\"cap\">It also recorded that the account Ïvana was banned <a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#%C3%8Fvana_banned\" target=\"_blank\" rel=\"noopener\">“for off-wiki misconduct relating to the PIA topic area”</a> (finding 16, 9 Dec 2024).</span></blockquote></div>",
-   "  <div class=\"news-q one\" data-q=\"arb\"><blockquote><span class=\"w\">ועדת הבוררות של ויקיפדיה · PIA5 · ממצא 10 · התקבל ברוב של 15 מול 0 · 23 בינואר 2025</span><span class=\"s\" dir=\"ltr\" lang=\"en\"><a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#Outside_influence\" target=\"_blank\" rel=\"noopener\">“Outside actors are heavily invested in influencing Wikipedia's coverage of the topic area”</a></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״גורמים חיצוניים משקיעים רבות בניסיון להשפיע על הסיקור של ויקיפדיה בתחום הנושא״</span><span class=\"cap\">הוועדה גם רשמה שהחשבון <bdi lang=\"en\">Ïvana</bdi> הורחק ״בשל התנהגות פסולה מחוץ לוויקיפדיה הקשורה לתחום PIA״ (ממצא 16, 9 בדצמבר 2024).<span class=\"he-o\" dir=\"ltr\" lang=\"en\"><a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#%C3%8Fvana_banned\" target=\"_blank\" rel=\"noopener\">“for off-wiki misconduct relating to the PIA topic area”</a></span></span></blockquote></div>"
+   "  <div class=\"news-q one\" data-q=\"arb\"><blockquote><span class=\"w\">ועדת הבוררות של ויקיפדיה · PIA5 · ממצא 10 · התקבל 15 מול 0 · 23 בינואר 2025</span><span class=\"s\" dir=\"ltr\" lang=\"en\"><a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#Outside_influence\" target=\"_blank\" rel=\"noopener\">“Outside actors are heavily invested in influencing Wikipedia's coverage of the topic area”</a></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״לגורמים חיצוניים יש עניין רב בהשפעה על הסיקור של ויקיפדיה בתחום הנושא״</span><span class=\"cap\">הוועדה גם רשמה שהחשבון <bdi lang=\"en\">Ïvana</bdi> הורחק ״בשל התנהגות פסולה מחוץ לוויקיפדיה הקשורה לתחום הנושא PIA״ (הסכסוך הישראלי־פלסטיני) (ממצא 16, 9 בדצמבר 2024).<span class=\"he-o\" dir=\"ltr\" lang=\"en\"><a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#%C3%8Fvana_banned\" target=\"_blank\" rel=\"noopener\">“for off-wiki misconduct relating to the PIA topic area”</a></span></span></blockquote></div>"
   ],
   [
    "  <figure class=\"fl-meter\" role=\"img\" aria-label=\"Four groups of 3 to 6 accounts voted together 89 to 100% of the time; chance gives about half.\">",
-   "  <figure class=\"fl-meter\" role=\"img\" aria-label=\"ארבע קבוצות של 3 עד 6 חשבונות הצביעו יחד ב־89% עד 100% מהמקרים; מקריות נותנת כמחצית.\">"
+   "  <figure class=\"fl-meter\" role=\"img\" aria-label=\"ארבע קבוצות של 3 עד 6 חשבונות הצביעו באותו אופן ב־89% עד 100% מהמקרים; בהצבעה מקרית: כמחצית.\">"
   ],
   [
    "    <div class=\"lb\"><span style=\"left:0\">0%</span><span style=\"left:50%;transform:translateX(-50%)\">about half by chance</span><span style=\"right:0\"><b>89 to 100%</b></span></div>",
-   "    <div class=\"lb\"><span style=\"left:0\">0%</span><span style=\"left:50%;transform:translateX(-50%)\">כמחצית במקרה</span><span style=\"right:0\"><b>89%–100%</b></span></div>"
+   "    <div class=\"lb\"><span style=\"left:0\">0%</span><span style=\"left:50%;transform:translateX(-50%)\">כמחצית בהצבעה מקרית</span><span style=\"right:0\"><b>89%–100%</b></span></div>"
   ],
   [
    "  <p class=\"fl-fact\"><b>Our count:</b> in 217 formal talk-page discussions, four groups of 3 to 6 accounts voted together 89 to 100% of the time, against about half by chance.</p>",
-   "  <p class=\"fl-fact\"><b>הספירה שלנו:</b> ב־217 דיונים רשמיים בדפי שיחה, ארבע קבוצות של 3 עד 6 חשבונות הצביעו יחד ב־89% עד 100% מהמקרים, לעומת כמחצית במקרה.</p>"
+   "  <p class=\"fl-fact\"><b>הספירה שלנו:</b> ב־217 דיונים רשמיים בדפי שיחה, ארבע קבוצות של 3 עד 6 חשבונות הצביעו באותו אופן ב־89% עד 100% מהמקרים, לעומת כמחצית בהצבעה מקרית.</p>"
   ],
   [
    "  <p class=\"fl-body\">That is camp voting, not proof of coordination; we did not code which side each group took, nor tie either finding to the edits above.</p>",
-   "  <p class=\"fl-body\">זו הצבעה במחנות, לא הוכחה לתיאום; לא קידדנו לאיזה צד נטתה כל קבוצה, ולא קשרנו אף אחד מהממצאים לעריכות שלמעלה.</p>"
+   "  <p class=\"fl-body\">זו הצבעה לפי מחנות, לא הוכחה לתיאום; לא קידדנו באיזה צד צידדה כל קבוצה, ולא קשרנו אף אחד משני הממצאים לעריכות שלמעלה.</p>"
   ],
   [
    "    <p class=\"fl-next\">Last: how often these pages are read, and the overall count.</p>",
@@ -372,7 +372,7 @@
   ],
   [
    "  <h2 id=\"clH\">The most-read pages whose opening sections gained critical vocabulary</h2>",
-   "  <h2 id=\"clH\">הדפים הנקראים ביותר שבפתיח שלהם נוספה שפה ביקורתית</h2>"
+   "  <h2 id=\"clH\">הדפים הנקראים ביותר שלפתיח שלהם נוספו מונחים ביקורתיים</h2>"
   ],
   [
    "  <figure class=\"fl-score\" style=\"margin:0\" aria-labelledby=\"whyK\"><p class=\"cp\" id=\"whyK\">Views, past 12 months:</p>",
@@ -416,11 +416,11 @@
   ],
   [
    "      <p data-q=\"en:1948 Palestinian expulsion and flight\"><b>1948 Palestinian expulsion and flight.</b> <span data-tn=\"r6:a\">“by Zionist militias”</span> left its first sentence on 30 May 2025; the next sentence names “the Zionist paramilitaries Haganah, Irgun, and Lehi.”</p>",
-   "      <p data-q=\"en:1948 Palestinian expulsion and flight\"><b>הגירוש והבריחה של הפלסטינים ב־1948.</b> הצירוף ״בידי מיליציות ציוניות״ יצא מהמשפט הראשון ב־30 במאי 2025; המשפט הבא נוקב ב״ארגונים הצבאיים־למחצה הציוניים ההגנה, אצ״ל ולח״י״.<span class=\"he-o\" dir=\"ltr\" lang=\"en\"><span data-tn=\"r6:a\">“by Zionist militias”</span> · “the Zionist paramilitaries Haganah, Irgun, and Lehi.”</span></p>"
+   "      <p data-q=\"en:1948 Palestinian expulsion and flight\"><b>הגירוש והבריחה של הפלסטינים ב־1948.</b> הצירוף ״בידי מיליציות ציוניות״ יצא מהמשפט הראשון ב־30 במאי 2025; המשפט הבא נוקב בשמות ״ההגנה, האצ״ל והלח״י, הארגונים הצבאיים־למחצה הציוניים״.<span class=\"he-o\" dir=\"ltr\" lang=\"en\"><span data-tn=\"r6:a\">“by Zionist militias”</span> · “the Zionist paramilitaries Haganah, Irgun, and Lehi.”</span></p>"
   ],
   [
    "      <p data-q=\"en:October 7 attacks\"><b>October 7 attacks.</b> On 1 October 2026 its second sentence called Israel’s response <span data-tn=\"r7:a\">“actions scholars have concluded constitute genocide”</span>; by 2 November the clause was gone. The removal is recent and may be undone.</p></div>",
-   "      <p data-q=\"en:October 7 attacks\"><b>מתקפות 7 באוקטובר.</b> ב־1 באוקטובר 2026 המשפט השני כינה את תגובת ישראל ״פעולות שחוקרים הגיעו למסקנה שהן מהוות רצח עם״; עד 2 בנובמבר הפסוקית נעלמה. ההסרה טרייה, וייתכן שתבוטל.<span class=\"he-o\" dir=\"ltr\" lang=\"en\"><span data-tn=\"r7:a\">“actions scholars have concluded constitute genocide”</span></span></p></div>"
+   "      <p data-q=\"en:October 7 attacks\"><b>מתקפת 7 באוקטובר.</b> ב־1 באוקטובר 2026 המשפט השני כינה את תגובת ישראל ״פעולות שחוקרים הגיעו למסקנה שהן מהוות רצח עם״; עד 2 בנובמבר הפסוקית נעלמה. ההסרה טרייה, וייתכן שתבוטל.<span class=\"he-o\" dir=\"ltr\" lang=\"en\"><span data-tn=\"r7:a\">“actions scholars have concluded constitute genocide”</span></span></p></div>"
   ],
   [
    "  <p class=\"fl-honest\">The change sits in the core articles people read, while the long tail of short pages barely changed.</p>",
@@ -428,15 +428,15 @@
   ],
   [
    "  <p class=\"fl-dinner\"><span class=\"fl-k\">In short</span>Before the war, none of the most-read Wikipedia openings on the subject charged Israel with genocide; now the article on Israel says, in Wikipedia’s voice, that Israel “began committing genocide,” Zionism is “a Jewish homeland through colonization,” and, in every copy we hold, the Israel and Hamas opening sections do not mention the hostages.</p>",
-   "  <p class=\"fl-dinner\"><span class=\"fl-k\">בקצרה</span>לפני המלחמה, אף אחד מפתיחי הערכים הנקראים ביותר בוויקיפדיה בנושא לא האשים את ישראל ברצח עם; היום הערך על ישראל אומר, בקולה של ויקיפדיה, שישראל ״החלה לבצע רצח עם״, הציונות היא ״מולדת יהודית באמצעות קולוניזציה״, ובכל עותק שבידינו, פתיחי הערכים על ישראל ועל חמאס אינם מזכירים את החטופים.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“began committing genocide” · “a Jewish homeland through colonization”</span></p>"
+   "  <p class=\"fl-dinner\"><span class=\"fl-k\">בקצרה</span>לפני המלחמה, אף אחד מפתיחי הערכים הנקראים ביותר בוויקיפדיה בנושא לא האשים את ישראל ברצח עם; היום הערך על ישראל אומר, בקולה של ויקיפדיה, שישראל ״החלה לבצע רצח עם״; לפי הערך על הציונות, הציונות היא ״מולדת יהודית באמצעות קולוניזציה״; ובכל עותק שבידינו, פתיחי הערכים על ישראל ועל חמאס אינם מזכירים את החטופים.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“began committing genocide” · “a Jewish homeland through colonization”</span></p>"
   ],
   [
    "  <p class=\"fl-ev\"><a class=\"fl-big\" href=\"@@R@@\" target=\"_blank\" rel=\"noopener\">Read the full research edition →</a><a href=\"@@R@@#reads\" target=\"_blank\" rel=\"noopener\">Every quote, dated →</a></p>",
-   "  <p class=\"fl-ev\"><a class=\"fl-big\" href=\"@@R@@\" target=\"_blank\" rel=\"noopener\">למהדורת המחקר המלאה (באנגלית) ←</a><a href=\"@@R@@#reads\" target=\"_blank\" rel=\"noopener\">כל ציטוט, עם תאריך ←</a></p>"
+   "  <p class=\"fl-ev\"><a class=\"fl-big\" href=\"@@R@@\" target=\"_blank\" rel=\"noopener\">למהדורת המחקר המלאה (באנגלית) ←</a><a href=\"@@R@@#reads\" target=\"_blank\" rel=\"noopener\">כל הציטוטים, מתוארכים ←</a></p>"
   ],
   [
    "<p class=\"cap fl-foot\">Flash edition · published 9 November 2026 · Wikipedia text as of 5 November 2026 · every quote is exact and dated; the evidence, method and limits are in the <a href=\"@@R@@\" target=\"_blank\" rel=\"noopener\">research edition</a>.</p>",
-   "<p class=\"cap fl-foot\">המהדורה המקוצרת · פורסמה ב־9 בנובמבר 2026 · נוסח ויקיפדיה נכון ל־5 בנובמבר 2026 · כל ציטוט מדויק, מתוארך ובשפת המקור, ולצידו תרגום שלנו; הראיות, השיטה והמגבלות במהדורת המחקר (<a href=\"@@R@@\" target=\"_blank\" rel=\"noopener\">באנגלית</a>).</p>"
+   "<p class=\"cap fl-foot\">המהדורה המקוצרת · פורסמה ב־9 בנובמבר 2026 · נוסח ויקיפדיה נכון ל־5 בנובמבר 2026 · כל ציטוט מדויק, מתוארך ובשפת המקור; התרגומים לעברית הם שלנו; הראיות, השיטה והמגבלות במהדורת המחקר (<a href=\"@@R@@\" target=\"_blank\" rel=\"noopener\">באנגלית</a>).</p>"
   ],
   [
    "  <div class=\"fs-bar\"><h2 id=\"flSheetT\">Play</h2><button type=\"button\" class=\"fs-x\" id=\"flSheetX\" aria-label=\"Close\">Close ✕</button></div>",
@@ -460,7 +460,7 @@
   ],
   [
    "function ftChange(lab,c){const a=c.before,b=c.after;return `<span class=\"h\">${esc(lab)} · ${esc(ziD(c.d))}</span>${a&&b?tnTip(a,b):\"\"}<div class=\"tn-more\">${b?`<span class=\"src\">The sentence after this edit</span><p class=\"o\">${esc(b.length>320?b.slice(0,320)+\"…\":b)}</p>`:`<p>The text of this version was not stored.</p>`}</div>`}",
-   "function ftChange(lab,c){const a=c.before,b=c.after;return `<span class=\"h\">${esc(lab)} · ${esc(heD(c.d))}</span>${a&&b?`<div lang=\"en\" dir=\"ltr\">${tnTip(a,b)}</div>`:\"\"}<div class=\"tn-more\">${b?`<span class=\"src\">המשפט אחרי העריכה (במקור, באנגלית)</span><p class=\"o\" lang=\"en\" dir=\"ltr\">${esc(b.length>320?b.slice(0,320)+\"…\":b)}</p>`:`<p>הנוסח של הגרסה הזאת לא נשמר.</p>`}</div>`}"
+   "function ftChange(lab,c){const a=c.before,b=c.after;return `<span class=\"h\">${esc(lab)} · ${esc(heD(c.d))}</span>${a&&b?`<div lang=\"en\" dir=\"ltr\">${hePw(tnTip(a,b))}</div>`:\"\"}<div class=\"tn-more\">${b?`<span class=\"src\">המשפט אחרי העריכה (במקור, באנגלית)</span><p class=\"o\" lang=\"en\" dir=\"ltr\">${esc(b.length>320?b.slice(0,320)+\"…\":b)}</p>`:`<p>הנוסח של הגרסה הזאת לא נשמר.</p>`}</div>`}"
   ],
   [
    "b.textContent=BRF.all?\"Key words only\":\"Every changed word\";",
@@ -472,11 +472,11 @@
   ],
   [
    "b.textContent=st===\"run\"?\"❚❚ Pause\":st===\"pause\"?\"▶ Play\":\"▶ Replay\";b.setAttribute(\"aria-label\",st===\"run\"?\"Pause the sweep through time\":st===\"pause\"?\"Continue the sweep\":\"Replay the sweep from 2021\")",
-   "b.textContent=st===\"run\"?\"❚❚ השהיה\":st===\"pause\"?\"▶ המשך\":\"▶ שוב\";b.setAttribute(\"aria-label\",st===\"run\"?\"השהיית המעבר בזמן\":st===\"pause\"?\"המשך המעבר בזמן\":\"הפעלה חוזרת של המעבר מ־2021\")"
+   "b.textContent=st===\"run\"?\"❚❚ השהיה\":st===\"pause\"?\"▶ המשך\":\"▶ הפעלה חוזרת\";b.setAttribute(\"aria-label\",st===\"run\"?\"השהיית המעבר בזמן\":st===\"pause\"?\"המשך המעבר בזמן\":\"הפעלה חוזרת של המעבר מ־2021\")"
   ],
   [
    "host.innerHTML=`<div style=\"display:grid;gap:6px\">${rows.map(p=>`<div class=\"pos-row\"><span>${esc(dUTC(p.date))}<br><small>sentence ${esc(p.sentence)}</small></span><div class=\"pos-bar\" role=\"img\" aria-label=\"${esc(`${dUTC(p.date)}: designation sentence ${p.sentence}, ${Math.round(p.word_offset_share*100)}% of the way into the opening section`)}\"><span class=\"d\" style=\"left:${(p.word_offset_share*100).toFixed(1)}%\"></span></div><p class=\"pos-q\">“${esc(qq(p.quote))}”</p></div>`).join(\"\")}</div>`}",
-   "const HP={\"2021-01-01\":\"״קנדה, האיחוד האירופי, ישראל, יפן וארצות הברית מסווגות את חמאס כארגון טרור.״\",\"2026-10-01\":\"״אוסטרליה, קנדה, … והאיחוד האירופי הכריזו על חמאס כארגון טרור.״\"},sn=s=>String(s).replace(\" of \",\" מתוך \");\n  host.innerHTML=`<div style=\"display:grid;gap:6px\">${rows.map(p=>`<div class=\"pos-row\"><span>${esc(heD(p.date))}<br><small> · משפט ${esc(sn(p.sentence))}</small></span><div class=\"pos-bar\" role=\"img\" aria-label=\"${esc(`${heD(p.date)}: ההכרזה במשפט ${sn(p.sentence)}, ${Math.round(p.word_offset_share*100)}% מאורך הפתיח`)}\"><span class=\"d\" style=\"left:${(p.word_offset_share*100).toFixed(1)}%\"></span></div><p class=\"pos-q\" lang=\"en\" dir=\"ltr\">“${esc(qq(p.quote))}”</p>${HP[p.date]?`<p class=\"pos-q he-tr\"><b class=\"he-k\">תרגום שלנו</b>${esc(HP[p.date])}</p>`:\"\"}</div>`).join(\"\")}</div>`}"
+   "const HP={\"2021-01-01\":\"״קנדה, האיחוד האירופי, ישראל, יפן וארצות הברית מסווגות את חמאס כארגון טרור.״\",\"2026-10-01\":\"״אוסטרליה, קנדה, … והאיחוד האירופי הכריזו על חמאס כארגון טרור.״\"},sn=s=>String(s).replace(\" of \",\" מתוך \");\n  host.innerHTML=`<div style=\"display:grid;gap:6px\">${rows.map(p=>`<div class=\"pos-row\"><span>${esc(heD(p.date))}<br><small>משפט ${esc(sn(p.sentence))}</small></span><div class=\"pos-bar\" role=\"img\" aria-label=\"${esc(`${heD(p.date)}: ההכרזה במשפט ${sn(p.sentence)}, ${Math.round(p.word_offset_share*100)}% מאורך הפתיח`)}\"><span class=\"d\" style=\"left:${(p.word_offset_share*100).toFixed(1)}%\"></span></div><p class=\"pos-q\" lang=\"en\" dir=\"ltr\">“${esc(qq(p.quote))}”</p>${HP[p.date]?`<p class=\"pos-q he-tr\"><b class=\"he-k\">תרגום שלנו</b>${esc(HP[p.date])}</p>`:\"\"}</div>`).join(\"\")}</div>`}"
   ],
   [
    "s+=`<line x1=\"${wx}\" x2=\"${wx}\" y1=\"12\" y2=\"${H-14}\" style=\"stroke:var(--war);stroke-width:1.25;stroke-dasharray:3 3\"/>${spec.phases&&spec.phases.some(p=>p.hi)&&!ph?\"\":`<text x=\"${wx+4}\" y=\"9\" style=\"fill:var(--war)\">7 Oct 2023</text>`}`}",
@@ -504,7 +504,7 @@
   ],
   [
    "else{lanes=[{lab:\"“armed incursions”\",tone:\"add\",spans:o7SpansAll(D,\"incursions\")},{lab:\"“massacre” added: one dot per day it went in\",marks:blips(\"massacre\",\"“Massacre” goes in\")},{lab:\"hostages\",empty:`never in the first sentence, in ${T.n_wordings} wordings`}];aria=\"October 7 attacks first sentence: armed incursions, the days massacre went in, and the empty hostages lane\"}",
-   "else{lanes=[{lab:\"״חדירות חמושות״ (armed incursions)\",tone:\"add\",spans:o7SpansAll(D,\"incursions\")},{lab:\"״טבח״ (massacre) נוסף: נקודה לכל יום שבו נכנס\",marks:blips(\"massacre\",\"״טבח״ (massacre) נכנס\")},{lab:\"החטופים (hostages)\",empty:`אף פעם לא במשפט הראשון, ב־${T.n_wordings} נוסחים`}];aria=\"המשפט הראשון בערך מתקפות 7 באוקטובר: חדירות חמושות, הימים שבהם נכנסה המילה טבח, ושורת החטופים הריקה\"}"
+   "else{lanes=[{lab:\"״חדירות חמושות״ (armed incursions)\",tone:\"add\",spans:o7SpansAll(D,\"incursions\")},{lab:\"״טבח״ (massacre) נוסף: נקודה לכל יום שבו נכנס\",marks:blips(\"massacre\",\"״טבח״ (massacre) נכנס\")},{lab:\"החטופים (hostages)\",empty:`אף פעם לא במשפט הראשון, ב־${T.n_wordings} גרסאות`}];aria=\"המשפט הראשון בערך מתקפת 7 באוקטובר: חדירות חמושות, הימים שבהם נכנסה המילה טבח, ושורת החטופים הריקה\"}"
   ],
   [
    "html:ftChange(\"“Colonial” taken out\",c),aria:`“Colonial” taken out, ${ziD(c.d)}`}));",
@@ -520,7 +520,7 @@
   ],
   [
    "const NK_TERMS=[[\"destruction of Palestinian society\",\"“the destruction of Palestinian society”\",\"del\"],[\"ethnic cleansing\",\"“ethnic cleansing”\",\"add\"],[\"by Zionists\",\"“by Zionists”\",\"add\"]];",
-   "const NK_TERMS=[[\"destruction of Palestinian society\",\"״ההרס של החברה הפלסטינית״\",\"del\"],[\"ethnic cleansing\",\"״טיהור אתני״\",\"add\"],[\"by Zionists\",\"״בידי ציונים״\",\"add\"]];"
+   "const NK_TERMS=[[\"destruction of Palestinian society\",\"״הרס החברה הפלסטינית״\",\"del\"],[\"ethnic cleansing\",\"״טיהור אתני״\",\"add\"],[\"by Zionists\",\"״בידי ציונים״\",\"add\"]];"
   ],
   [
    "html:ftChange(\"Nakba, first sentence\",{d:e.d,before:p.s,after:e.s}),aria:`Change to the Nakba first sentence, ${ziD(e.d)}`})});",
@@ -532,11 +532,11 @@
   ],
   [
    "flStrip(host,{t0,t1,lanes,aria:\"Nakba first sentence: when the destruction of Palestinian society, ethnic cleansing and by Zionists were in it, and each change to those words\"})}",
-   "flStrip(host,{t0,t1,lanes,aria:\"המשפט הראשון בערך נכבה: מתי היו בו ההרס של החברה הפלסטינית, טיהור אתני ובידי ציונים, וכל שינוי במילים האלה\"})}"
+   "flStrip(host,{t0,t1,lanes,aria:\"המשפט הראשון בערך נכבה: מתי היו בו הרס החברה הפלסטינית, טיהור אתני ובידי ציונים, וכל שינוי במילים האלה\"})}"
   ],
   [
    "<b class=\"lb\">${two?\"Then · \"+dlab(S.m.f.d):\"Now · \"+dlab((S.m.n||S.m.f).d)}</b>${two?`<button type=\"button\" class=\"rp\" aria-label=\"Replay the change\">▶ Replay</button>`:\"\"}",
-   "<b class=\"lb\">${two?\"אז · \"+heMY(S.m.f.d):\"היום · \"+heMY((S.m.n||S.m.f).d)}</b>${two?`<button type=\"button\" class=\"rp\" aria-label=\"הפעלה חוזרת של השינוי\">▶ שוב</button>`:\"\"}"
+   "<b class=\"lb\">${two?\"אז · \"+heMY(S.m.f.d):\"היום · \"+heMY((S.m.n||S.m.f).d)}</b>${two?`<button type=\"button\" class=\"rp\" aria-label=\"הפעלה חוזרת של השינוי\">▶ הפעלה חוזרת</button>`:\"\"}"
   ],
   [
    "if(lb)lb.textContent=(t===\"n\"?\"Now · \":\"Then · \")+dlab(S.m[t].d)}",
@@ -714,7 +714,7 @@
   ],
   [
    "${ph?(n?`+${n} d`:\"first\")+(rd?`<br><span style=\"font-size:10.5px\">renamed +${rn} d</span>`:\"\"):(dd(d)+(n?` · +${n} d`:\" · first\"))+(rd?`<br><span style=\"font-size:11px\">renamed ${dd(rd)}</span>`:\"\")}",
-   "${ph?(n?`‎+${n} ימים`:\"ראשונה\")+(rd?`<br><span style=\"font-size:10.5px\">שם חדש ‎+${rn}</span>`:\"\"):(dd(d)+(n?` · ‎+${n} ימים`:\" · ראשונה\"))+(rd?`<br><span style=\"font-size:11px\">שם חדש ${dd(rd)}</span>`:\"\")}"
+   "${ph?(n?`‎+${n} ימים`:\"הראשונה\")+(rd?`<span style=\"font-size:10.5px\">שינוי שם ‎+${rn} ימים</span>`:\"\"):(dd(d)+(n?` · ‎+${n} ימים`:\" · הראשונה\"))+(rd?`<span style=\"font-size:11px\">שינוי שם ${dd(rd)}</span>`:\"\")}"
   ],
   [
    "${v}${v===mx?\" days\":\"\"}</span>",
@@ -722,7 +722,7 @@
   ],
   [
    "<p class=\"zi-how\" style=\"margin:0 0 8px\"><b>How to read this:</b> each bar is the days after English opened its article (29 December 2023, the thin black rule); the tick is the day the title dropped “allegations”; dates at right. Rows follow the grid above.</p>",
-   "<p class=\"zi-how\" style=\"margin:0 0 8px\"><b>איך לקרוא:</b> כל עמודה היא מספר הימים מאז שהאנגלית פתחה את הערך שלה (29 בדצמבר 2023, הקו השחור הדק); הסימון הוא היום שבו ״האשמות״ ירדה מהכותרת; התאריכים בצד. השורות לפי הטבלה שלמעלה.</p>"
+   "<p class=\"zi-how\" style=\"margin:0 0 8px\"><b>איך לקרוא:</b> כל עמודה היא מספר הימים מאז שנפתח הערך בוויקיפדיה באנגלית (29 בדצמבר 2023, הקו השחור הדק); הסימון הוא היום שבו ״האשמות״ ירדה מהכותרת; התאריכים בצד. השורות לפי הטבלה שלמעלה.</p>"
   ],
   [
    "aria-label=\"${esc(\"Genocide article created, and renamed: \"+X.gg.map(([l,d,n,r,rn])=>`${LANG[l]||l} ${dd(d)}${n?` (+${n} days)`:\"\"}${ren(r,rn)}`).join(\"; \")+\". Hebrew, German and Russian: no article linked.\")}\"",
@@ -730,7 +730,7 @@
   ],
   [
    "const XVB={fact:\"stated as fact\",attributed:\"attributed\",disputed:\"disputed in the same sentence\",denial:\"denial reported\",self:\"the group’s own words\",legal:\"court case only\",label:\"a term in use\",captive:\"named as captives\",none:\"no loaded term\",absent:\"not in the lead\",outside:\"later in the lead, not quoted\",not_held:\"not in our text\",na:\"no article\"};",
-   "const XVB={fact:\"נקבע כעובדה\",attributed:\"מיוחס לאחרים\",disputed:\"שנוי במחלוקת באותו משפט\",denial:\"מדווחת הכחשה\",self:\"בלשון הארגון עצמו\",legal:\"court case only\",label:\"מונח שבשימוש\",captive:\"מכונים שבויים\",none:\"אין מונח טעון\",absent:\"לא בפתיח\",outside:\"בהמשך הפתיח, לא מצוטט\",not_held:\"לא בטקסט שבידינו\",na:\"אין ערך\"};"
+   "const XVB={fact:\"נקבע כעובדה\",attributed:\"מיוחס לאחרים\",disputed:\"שנוי במחלוקת באותו משפט\",denial:\"מדווחת הכחשה\",self:\"בלשון הארגון עצמו\",legal:\"תביעה משפטית בלבד\",label:\"מונח שבשימוש\",captive:\"מכונים שבויים\",none:\"אין מונח טעון\",absent:\"לא בפתיח\",outside:\"בהמשך הפתיח, לא מצוטט\",not_held:\"לא בטקסט שבידינו\",na:\"אין ערך\"};"
   ],
   [
    "const XSTW={F:\"stated as fact\",A:\"attributed or disputed\",N:\"not in the text we hold\",X:\"no article\"};",
@@ -738,39 +738,39 @@
   ],
   [
    "hos:{F:\"hostages named\",A:\"named as captives\",N:\"not in the text we hold\"},o7:{F:\"terror or massacre in Wikipedia’s voice\",N:\"neither word in the first sentence\"}};",
-   "hos:{F:\"החטופים מוזכרים\",A:\"מכונים שבויים\",N:\"לא בטקסט שבידינו\"},o7:{F:\"טרור או טבח, בקולה של ויקיפדיה\",N:\"אף אחת מהמילים לא במשפט הראשון\"}};"
+   "hos:{F:\"מכונים בני ערובה\",A:\"מכונים שבויים\",N:\"לא בטקסט שבידינו\"},o7:{F:\"טרור או טבח, בקולה של ויקיפדיה\",N:\"אף אחת מהמילים לא במשפט הראשון\"}};"
   ],
   [
    "if(code===\"outside\")return \"later in the opening section, beyond the 1,200 characters we hold\";return (o||XSTW[s])+(code===\"legal\"&&k!==\"icj\"?\" (court case only)\":code===\"disputed\"?\" (disputed)\":\"\")}",
-   "if(code===\"outside\")return \"בהמשך הפתיח, מעבר ל־1,200 התווים שבידינו\";return (o||XSTW[s])+(code===\"legal\"&&k!==\"icj\"?\" (court case only)\":code===\"disputed\"?\" (שנוי במחלוקת)\":\"\")}"
+   "if(code===\"outside\")return \"בהמשך הפתיח, מעבר ל־1,200 התווים שבידינו\";return (o||XSTW[s])+(code===\"legal\"&&k!==\"icj\"?\" (תביעה משפטית בלבד)\":code===\"disputed\"?\" (שנוי במחלוקת)\":\"\")}"
   ],
   [
    "{const t=$(\"#xmFig .fig-t\");if(t)t.textContent=`How each language edition voices ${XNUM[cols.length]||cols.length} claims, then and now`}",
-   "{const t=$(\"#xmFig .fig-t\");if(t)t.textContent=`איך כל מהדורת שפה מנסחת ${cols.length} טענות, אז ועכשיו`}"
+   "{const t=$(\"#xmFig .fig-t\");if(t)t.textContent=`באיזה קול מציגה כל מהדורת שפה ${heNum(cols.length)} טענות, אז ועכשיו`}"
   ],
   [
    "const XSHORT={gen:\"Genocide\",col:\"Colonization\",apa:\"Apartheid\",occ:\"Occupation\",o7:\"Oct 7: terror\",ter:\"Hamas: terrorist\",hos:\"Hostages\",icj:\"Court overstated\"};",
-   "const XSHORT={gen:\"רצח עם\",col:\"קולוניזציה\",apa:\"אפרטהייד\",occ:\"כיבוש\",o7:\"7 באוק׳: טרור\",ter:\"חמאס: טרור\",hos:\"חטופים\",icj:\"icj\"};"
+   "const XSHORT={gen:\"רצח עם\",col:\"קולוניזציה\",apa:\"אפרטהייד\",occ:\"כיבוש\",o7:\"7 באוק׳: טרור\",ter:\"חמאס: טרוריסטי\",hos:\"חטופים\",icj:\"פסיקה מוגזמת\"};"
   ],
   [
    "const sub={gen:\"Gaza genocide article, else Gaza war\",col:\"Zionism\",apa:\"Israeli apartheid\",occ:\"West Bank\",o7:\"attack article, first sentence\",ter:\"Hamas\",hos:\"attack article · in the text we hold\",icj:\"ICJ, any article\"};",
-   "const sub={gen:\"הערך על רצח העם בעזה, ואם אין, מלחמת עזה\",col:\"ציונות\",apa:\"אפרטהייד ישראלי\",occ:\"הגדה המערבית\",o7:\"הערך על המתקפה, המשפט הראשון\",ter:\"חמאס\",hos:\"הערך על המתקפה · בטקסט שבידינו\",icj:\"icj\"};"
+   "const sub={gen:\"הערך על רצח העם בעזה, ואם אין, מלחמת עזה\",col:\"ציונות\",apa:\"אפרטהייד ישראלי\",occ:\"הגדה המערבית\",o7:\"הערך על המתקפה, המשפט הראשון\",ter:\"חמאס\",hos:\"הערך על המתקפה · בטקסט שבידינו\",icj:\"ICJ, כל ערך\"};"
   ],
   [
    "<caption class=\"zi-sr\">How each language edition voices ${XNUM[cols.length]||cols.length} claims, first copy and now</caption><thead><tr><th scope=\"col\" class=\"xm-l\">Language</th>",
-   "<caption class=\"zi-sr\">איך כל מהדורת שפה מנסחת ${cols.length} טענות, העותק הראשון והיום</caption><thead><tr><th scope=\"col\" class=\"xm-l\">שפה</th>"
+   "<caption class=\"zi-sr\">באיזה קול מציגה כל מהדורת שפה ${heNum(cols.length)} טענות, העותק הראשון והיום</caption><thead><tr><th scope=\"col\" class=\"xm-l\">שפה</th>"
   ],
   [
    "${l===\"en\"?`<span class=\"xi\">en · now = 1 Oct 2026</span>`:`<span class=\"xn\">${esc(xlab(l))}</span><span class=\"xi\"> · ${l}</span>`}",
-   "${l===\"en\"?`<span class=\"xi\">en · היום = 1 באוק׳ 2026</span>`:`<span class=\"xn\">${esc(heLang(l))}</span><span class=\"xi\"> · ${l}</span>`}"
+   "${l===\"en\"?`<span class=\"xn\">אנגלית</span><span class=\"xi\"> · היום = 1 באוק׳ 2026</span>`:l===\"he\"?`<span class=\"xi\">he</span>`:`<span class=\"xn\">${esc(heLang(l))}</span><span class=\"xi\"> · ${l}</span>`}"
   ],
   [
    "const nv=c.n===\"outside\"?\"moved later in the opening section\":c.n===\"legal\"?\"now reported as a court case\":\"changed, not a change of voice\";",
-   "const nv=c.n===\"outside\"?\"זז להמשך הפתיח\":c.n===\"legal\"?\"now reported as a court case\":\"השתנה, אך לא בקול\";"
+   "const nv=c.n===\"outside\"?\"זז להמשך הפתיח\":c.n===\"legal\"?\"מדווח היום כתביעה משפטית\":\"השתנה, בלי שינוי בקול\";"
   ],
   [
    "const al=`${xlab(l)}, ${lab}: first copy ${xStateText(k,c.f)}; now${l===\"en\"?\" (1 October 2026 copy)\":\"\"} ${xStateText(k,c.n)}${dv>0?\", moved toward Wikipedia’s own voice\":dv<0?\", moved away from Wikipedia’s own voice\":chg?`, ${nv}`:\"\"}.${c.n===\"na\"?\"\":\" Press Enter to show its sentence here.\"}`;",
-   "const al=`${heLang(l)}, ${lab}: בעותק הראשון ${xStateText(k,c.f)}; היום${l===\"en\"?\" (עותק מ־1 באוקטובר 2026)\":\"\"} ${xStateText(k,c.n)}${dv>0?\", התקרב לקולה של ויקיפדיה\":dv<0?\", התרחק מקולה של ויקיפדיה\":chg?`, ${nv}`:\"\"}.${c.n===\"na\"?\"\":\" Enter מציג כאן את המשפט.\"}`;"
+   "const al=`${heLang(l)}, ${lab}: בעותק הראשון ${xStateText(k,c.f)}; היום${l===\"en\"?\" (עותק מ־1 באוקטובר 2026)\":\"\"} ${xStateText(k,c.n)}${dv>0?\", התקרב לקולה של ויקיפדיה\":dv<0?\", התרחק מקולה של ויקיפדיה\":chg?`, ${nv}`:\"\"}.${c.n===\"na\"?\"\":\" לחיצה על אנטר מציגה כאן את המשפט.\"}`;"
   ],
   [
    "<tfoot><tr><th class=\"xm-l\">Stated as fact</th>${cols.map(([k])=>`<td>then ${cnt(k,\"f\")}<br>now <b>${cnt(k,\"n\")}</b></td>`).join(\"\")}",
@@ -786,7 +786,7 @@
   ],
   [
    "<span class=\"key\">${xTile(\"absent\",\"\")}empty: not in the text we hold</span><span class=\"key\">${xTile(\"outside\",\"\")}…: later in the opening section, beyond the 1,200 characters we hold</span><span class=\"key\">${xTile(\"captive\",\"\")}≈: named in other words (Arabic: “took captive,” not “hostages”; Italian and Polish genocide: presented as a name or term)</span><span class=\"key\">${xTile(\"na\",\"\")}gray, no border: no article in that language (drawn × in the small first-copy square)</span><span class=\"key\"><span class=\"nwr\">${xTile(\"fact\",\"\")}<span class=\"dir up\">▲</span></span>ring with ▲: moved toward Wikipedia’s own voice; ▼: moved away</span><span class=\"key\">ring alone: changed, not a change of voice (for example, moved later in the section)</span>`;",
-   "<span class=\"key\">${xTile(\"absent\",\"\")}ריק: לא בטקסט שבידינו</span><span class=\"key\">${xTile(\"outside\",\"\")}…: בהמשך הפתיח, מעבר ל־1,200 התווים שבידינו</span><span class=\"key\">${xTile(\"captive\",\"\")}≈: במילים אחרות (ערבית: ״לקחו בשבי״, לא ״בני ערובה״; רצח עם באיטלקית ובפולנית: מוצג כשם או כמונח)</span><span class=\"key\">${xTile(\"na\",\"\")}אפור, בלי מסגרת: אין ערך בשפה הזאת (× בריבוע הקטן של העותק הראשון)</span><span class=\"key\"><span class=\"nwr\">${xTile(\"fact\",\"\")}<span class=\"dir up\">▲</span></span>טבעת עם ▲: התקרב לקולה של ויקיפדיה; ▼: התרחק</span><span class=\"key\">טבעת לבד: השתנה, אך לא בקול (למשל, זז להמשך הפתיח)</span>`;"
+   "<span class=\"key\">${xTile(\"absent\",\"\")}ריק: לא בטקסט שבידינו</span><span class=\"key\">${xTile(\"outside\",\"\")}…: בהמשך הפתיח, מעבר ל־1,200 התווים שבידינו</span><span class=\"key\">${xTile(\"captive\",\"\")}≈: במילים אחרות (ערבית: ״לקחו בשבי״, לא ״בני ערובה״; רצח עם באיטלקית ובפולנית: מוצג כשם או כמונח)</span><span class=\"key\">${xTile(\"na\",\"\")}אפור, בלי מסגרת: אין ערך בשפה הזאת (× בריבוע הקטן של העותק הראשון)</span><span class=\"key\"><span class=\"nwr\">${xTile(\"fact\",\"\")}<span class=\"dir up\">▲</span></span>טבעת עם ▲: התקרב לקולה של ויקיפדיה; ▼: התרחק</span><span class=\"key\">טבעת לבד: השתנה, בלי שינוי בקול (למשל, זז להמשך הפתיח)</span>`;"
   ],
   [
    "[[\"fact\",\"own voice\"],[\"attributed\",\"attributed\"],[\"disputed\",\"disputed\"],[\"absent\",\"not in our text\"],[\"outside\",\"later in the section\"],[\"captive\",\"a term in use, or named as captives\"],[\"na\",\"no article (×)\"]]",
@@ -798,7 +798,7 @@
   ],
   [
    "XM_SHORT={gen:\"Genocide\",col:\"Colonization\",apa:\"Apartheid\",occ:\"Occupation\",o7:\"Oct 7: terror\",ter:\"Hamas: terrorist\",hos:\"Hostages\",icj:\"Court ruling overstated\"};",
-   "XM_SHORT={gen:\"רצח עם\",col:\"קולוניזציה\",apa:\"אפרטהייד\",occ:\"כיבוש\",o7:\"7 באוקטובר: טרור\",ter:\"חמאס: טרור\",hos:\"חטופים\",icj:\"icj\"};"
+   "XM_SHORT={gen:\"רצח עם\",col:\"קולוניזציה\",apa:\"אפרטהייד\",occ:\"כיבוש\",o7:\"7 באוקטובר: טרור\",ter:\"חמאס: טרוריסטי\",hos:\"חטופים\",icj:\"הצגה מוגזמת של פסיקת בית הדין\"};"
   ],
   [
    "function xmWord(k,code){if(code===\"outside\")return \"later in the opening section\";const s=xst(code),o=(XCOLW[k]||{})[s];if(o)return o;if(s===\"N\")return XSTW.N;if(s===\"X\")return \"no article\";return XVB[code]||code}",
@@ -806,7 +806,7 @@
   ],
   [
    "const st=chg?`${xmWord(k,c.f)} → ${xmWord(k,c.n)}`:`${xmWord(k,c.n)}, then and now`;\n  const dir=dv>0?\"moved toward Wikipedia’s own voice\":dv<0?\"moved away from Wikipedia’s own voice\":chg?(c.n===\"outside\"?\"moved later, not a change of voice\":c.n===\"legal\"?\"now reported as a court case\":\"changed, not a change of voice\"):\"\";",
-   "const st=chg?`${xmWord(k,c.f)} ← ${xmWord(k,c.n)}`:`${xmWord(k,c.n)}, אז ועכשיו`;\n  const dir=dv>0?\"התקרב לקולה של ויקיפדיה\":dv<0?\"התרחק מקולה של ויקיפדיה\":chg?(c.n===\"outside\"?\"זז להמשך, אך לא בקול\":c.n===\"legal\"?\"now reported as a court case\":\"השתנה, אך לא בקול\"):\"\";"
+   "const st=chg?`${xmWord(k,c.f)} ← ${xmWord(k,c.n)}`:`${xmWord(k,c.n)}, אז ועכשיו`;\n  const dir=dv>0?\"התקרב לקולה של ויקיפדיה\":dv<0?\"התרחק מקולה של ויקיפדיה\":chg?(c.n===\"outside\"?\"זז להמשך, בלי שינוי בקול\":c.n===\"legal\"?\"מדווח היום כתביעה משפטית\":\"השתנה, בלי שינוי בקול\"):\"\";"
   ],
   [
    "let h=`<button type=\"button\" class=\"x\" aria-label=\"Close\">×</button><span class=\"h\">${esc(xlab(l))} · ${esc(XM_SHORT[k]||k)}${c.a?` · ${esc(c.a)}`:\"\"}${en&&S&&S.m.n?\" · now = our 1 Oct 2026 copy\":\"\"}</span>`;",
@@ -814,15 +814,31 @@
   ],
   [
    "if(pn)head+=`<span class=\"tn-o\">${esc(xlab(l))}: ${pn}</span>`}}\n    else head=`<span class=\"pn\"><span class=\"pw\">This sentence did not change between ${dlab(S.m.f.d)} and ${dlab(S.m.n.d)}.</span></span>`}\n  h+=head+",
-   "if(pn)head+=`<span class=\"tn-o\">${esc(heLang(l))}: ${pn}</span>`}}\n    else head=`<span class=\"pn\"><span class=\"pw\">המשפט הזה לא השתנה בין ${heMY(S.m.f.d)} ל־${heMY(S.m.n.d)}.</span></span>`}\n  if(head&&!/class=\"pw\"/.test(head))head=`<div lang=\"en\" dir=\"ltr\">${head}</div>`;\n  h+=head+"
+   "if(pn)head+=`<span class=\"tn-o\">${esc(heLang(l))}: ${pn}</span>`}}\n    else head=`<span class=\"pn\"><span class=\"pw\">המשפט הזה לא השתנה בין ${heMY(S.m.f.d)} ל־${heMY(S.m.n.d)}.</span></span>`}\n  head=hePw(head);if(head&&!/class=\"pw\">המשפט/.test(head))head=`<div lang=\"en\" dir=\"ltr\">${head}</div>`;\n  h+=head+"
   ],
   [
    "if(T)h+=`<p class=\"tr\"><b>Our translation:</b> ${xmEx(T,x&&x[2]?x[2]:null,170,chg?\"k\":\"s\")}</p>`;\n    h+=`<span class=\"src\">${esc(xlab(l))} Wikipedia · ${esc(c.a)} · ${en&&w===\"n\"?\"our 1 Oct 2026 copy\":dlab(v.d)}${v.r?` · rev ${v.r}`:\"\"}</span>`;",
-   "if(T&&l!==\"he\")h+=`<p class=\"tr\"><b>התרגום שלנו לאנגלית:</b> <span lang=\"en\" dir=\"ltr\">${xmEx(T,x&&x[2]?x[2]:null,170,chg?\"k\":\"s\")}</span></p>`;\n    h+=`<span class=\"src\">ויקיפדיה ב${esc(heLang(l))} · <bdi lang=\"en\">${esc(c.a)}</bdi> · ${en&&w===\"n\"?\"העותק שלנו מ־1 באוק׳ 2026\":heMY(v.d)}${v.r?` · גרסה ${v.r}`:\"\"}</span>`;"
+   "if(T&&l!==\"he\")h+=`<p class=\"tr\"><b>התרגום שלנו (באנגלית בלבד):</b> <span lang=\"en\" dir=\"ltr\">${xmEx(T,x&&x[2]?x[2]:null,170,chg?\"k\":\"s\")}</span></p>`;\n    h+=`<span class=\"src\">ויקיפדיה ב${esc(heLang(l))} · <bdi lang=\"en\">${esc(c.a)}</bdi> · ${en&&w===\"n\"?\"העותק שלנו מ־1 באוק׳ 2026\":heMY(v.d)}${v.r?` · גרסה ${v.r}`:\"\"}</span>`;"
   ],
   [
    "h+=isPhone()?`<details class=\"then\"><summary><b>Then · ${dlab(S.m.f.d)}</b></summary><p>${tx}</p></details>`:`<p class=\"then\"><b>Then · ${dlab(S.m.f.d)}:</b> ${tx}</p>`}\n    if(en&&w===\"n\")h+=`<span class=\"src\">English opening sections have changed since this copy; the story above quotes the 5 November 2026 text.</span>`}\n  else if(c.x)h+=`<p class=\"why\">${esc(c.x)}</p>`;\n  else if(!A)h+=`<p class=\"why\">No article in this language is linked to the English article.</p>`;\n  if(A)h+=`<button type=\"button\" class=\"go\">Open the full sentence${S&&S.m.f&&S.m.n?\", then and now\":\"\"} →</button>`;",
    "h+=isPhone()?`<details class=\"then\"><summary><b>אז · ${heMY(S.m.f.d)}</b></summary><p lang=\"${en||!Tf?l:\"en\"}\" dir=\"${(en||!Tf)&&rtl?\"rtl\":\"ltr\"}\">${tx}</p></details>`:`<p class=\"then\"><b>אז · ${heMY(S.m.f.d)}:</b> <span lang=\"${en||!Tf?l:\"en\"}\" dir=\"${(en||!Tf)&&rtl?\"rtl\":\"ltr\"}\">${tx}</span></p>`}\n    if(en&&w===\"n\")h+=`<span class=\"src\">פתיחי הערכים באנגלית השתנו מאז העותק הזה; הכרטיסים למעלה מצטטים את נוסח 5 בנובמבר 2026.</span>`}\n  else if(c.x)h+=`<p class=\"why\">${esc(heX(c.x))}</p>`;\n  else if(!A)h+=`<p class=\"why\">אין בשפה הזאת ערך המקושר לערך באנגלית.</p>`;\n  if(A)h+=`<button type=\"button\" class=\"go\">למשפט המלא${S&&S.m.f&&S.m.n?\", אז ועכשיו\":\"\"}, בכלי הקריאה (באנגלית) ←</button>`;"
+  ],
+  [
+   "icj:{F:\"overstated, in Wikipedia’s voice\",A:\"court case reported\",N:\"no overstatement found\"}",
+   "icj:{F:\"הגזמה, בקולה של ויקיפדיה\",A:\"מדווחת תביעה משפטית\",N:\"לא נמצאה הגזמה\"}"
+  ],
+  [
+   "(/\\bth\\b/.test(cls)?\"×\":\"n/a\")",
+   "(/\\bth\\b/.test(cls)?\"×\":\"אין\")"
+  ],
+  [
+   "$(\"#xmNote\").innerHTML=`<b>Our coding.</b> Genocide, colonization, apartheid and the Hamas label use the voice codes in our language file. The October 7 column is our reading of the quoted sentences; each cell explains why when you open it. Hebrew, German and Russian have no article linked to the English “Gaza genocide” article, so their genocide cell reads the Gaza war article.`",
+   "$(\"#xmNote\").innerHTML=`<b>הקידוד שלנו.</b> עמודות רצח העם, הקולוניזציה והאפרטהייד ועמודת התווית של חמאס משתמשות בקודי הקול שבקובץ השפות שלנו. עמודת 7 באוקטובר היא הקריאה שלנו במשפטים המצוטטים; כל תא מסביר את הנימוק כשפותחים אותו. בעברית, בגרמנית וברוסית אין ערך המקושר לערך האנגלי <bdi lang=\"en\">Gaza genocide</bdi>, ולכן תא רצח העם שלהן קורא את הערך על מלחמת עזה.`"
+  ],
+  [
+   "if(x&&!en)h+=`<span class=\"gch\"><bdi lang=\"${l}\" dir=\"${rtl?\"rtl\":\"ltr\"}\">«${esc(O.s.slice(x[0],x[1]).trim())}»</bdi> = “${esc(String(x[3]).replace(/^[\"“]|[\"”]$/g,\"\"))}”</span>`;",
+   "if(x&&!en&&l!==\"he\"){const g=String(x[3]).replace(/^[\"“]|[\"”]$/g,\"\");h+=`<span class=\"gch\"><bdi lang=\"${l}\" dir=\"${rtl?\"rtl\":\"ltr\"}\">«${esc(O.s.slice(x[0],x[1]).trim())}»</bdi> = ${HE_G[g]?`״${esc(HE_G[g])}״`:`<bdi lang=\"en\">“${esc(g)}”</bdi>`}</span>`}"
   ]
  ],
  "slots": [
@@ -852,7 +868,7 @@
   ],
   [
    "<span class=\"fig-t\">How each language edition voices seven claims, then and now</span><span class=\"cap\">Rows: languages, Hebrew and Arabic first. Hover or tap a square to read its sentence.</span>",
-   "<span class=\"fig-t\">איך כל מהדורת שפה מנסחת את הטענות, אז ועכשיו</span><span class=\"cap\">שורות: שפות, עברית וערבית ראשונות. רחפו או הקישו על ריבוע כדי לקרוא את המשפט שלו.</span>"
+   "<span class=\"fig-t\">באיזה קול מציגה כל מהדורת שפה את הטענות, אז ועכשיו</span><span class=\"cap\">שורות: שפות, עברית וערבית ראשונות. רחפו או הקישו על ריבוע כדי לקרוא את המשפט שלו.</span>"
   ],
   [
    "<p class=\"zi-how\" id=\"xmHow\"><b>How to read this:</b> in each cell, the small square is our first copy and the large square is now (October 2026). The full key is below the grid.</p>",
@@ -868,7 +884,7 @@
   ],
   [
    "<span class=\"cap\">A ring marks a cell that changed: ▲ toward Wikipedia’s own voice, ▼ away from it. A ring alone marks a change other than voice.</span>",
-   "<span class=\"cap\">טבעת מסמנת תא שהשתנה: ▲ לכיוון קולה של ויקיפדיה, ▼ הרחק ממנו. טבעת לבד מסמנת שינוי שאינו בקול.</span>"
+   "<span class=\"cap\">טבעת מסמנת תא שהשתנה: ▲ לכיוון קולה של ויקיפדיה, ▼ הרחק ממנו. טבעת לבד מסמנת שינוי שאינו שינוי קול.</span>"
   ],
   [
    "<summary>Full key <span>every square and mark</span></summary>",
@@ -884,7 +900,7 @@
   "May 2021 Gaza ceasefire": "הפסקת האש בעזה, מאי 2021",
   "August 2022 Gaza clashes (Operation Breaking Dawn)": "העימות בעזה באוגוסט 2022 (מבצע ״עלות השחר״)",
   "Israeli Jenin incursion (July 2023)": "החדירה הישראלית לג׳נין (יולי 2023)",
-  "Hamas-led October 7 attacks on Israel": "מתקפות 7 באוקטובר על ישראל, בהובלת חמאס",
+  "Hamas-led October 7 attacks on Israel": "מתקפת 7 באוקטובר על ישראל, בהובלת חמאס",
   "Israel's Gaza ground invasion expands; UNGA ES-10/21 humanitarian truce resolution": "הפלישה הקרקעית של ישראל לעזה מתרחבת; החלטת העצרת הכללית של האו״ם ES-10/21 בדבר הפוגה הומניטרית",
   "Israeli raid on Al-Shifa Hospital": "הפשיטה הישראלית על בית החולים אל־שיפא",
   "First Gaza truce and hostage-prisoner exchange begins": "מתחילות ההפוגה הראשונה בעזה וחילופי החטופים והאסירים",
@@ -917,22 +933,22 @@
  "coding_notes": {
   "Beyond the 1,200 characters we hold. The designation now sits at the end of the opening section, attributed (see the Hamas timeline above).": "מעבר ל־1,200 התווים שבידינו. ההכרזה כארגון טרור נמצאת היום בסוף הפתיח, בייחוס לאחרים (ראו את ציר הזמן של חמאס למעלה).",
   "In 2021, colonialism appeared only as the critics’ view, beyond the text we hold (“Critics of Zionism view it as a colonialist, racist and exceptionalist ideology”).": "ב־2021 הקולוניאליזם הופיע רק כעמדת המבקרים, מעבר לטקסט שבידינו (״מבקרי הציונות רואים בה אידאולוגיה קולוניאליסטית, גזענית ואקספציונליסטית״; במקור: “Critics of Zionism view it as a colonialist, racist and exceptionalist ideology”).",
-  "No article in this language is linked to the English article on the October 7 attacks.": "אין בשפה הזאת ערך המקושר לערך באנגלית על מתקפות 7 באוקטובר.",
+  "No article in this language is linked to the English article on the October 7 attacks.": "אין בשפה הזאת ערך המקושר לערך באנגלית על מתקפת 7 באוקטובר.",
   "No article in this language.": "אין ערך בשפה הזאת.",
-  "No article linked to English Gaza genocide, so this square reads the Gaza war article: this attributed clause is its only genocide mention. The Hebrew October 7 article has one more genocide mention, beyond the text we hold.": "אין ערך המקושר לערך האנגלי Gaza genocide, ולכן הריבוע הזה קורא את הערך על מלחמת עזה: הפסוקית המיוחסת הזאת היא האזכור היחיד בו של רצח עם. בערך העברי על 7 באוקטובר יש עוד אזכור אחד של רצח עם, מעבר לטקסט שבידינו.",
-  "No article linked to English Gaza genocide. The Gaza war article has 3 genocide mentions, all beyond the text we hold.": "אין ערך המקושר לערך האנגלי Gaza genocide. בערך על מלחמת עזה יש 3 אזכורים של רצח עם, כולם מעבר לטקסט שבידינו.",
-  "No article linked to English Gaza genocide. The Gaza war article mentions genocide only beyond the text we hold.": "אין ערך המקושר לערך האנגלי Gaza genocide. הערך על מלחמת עזה מזכיר רצח עם רק מעבר לטקסט שבידינו.",
+  "No article linked to English Gaza genocide, so this square reads the Gaza war article: this attributed clause is its only genocide mention. The Hebrew October 7 article has one more genocide mention, beyond the text we hold.": "אין ערך המקושר לערך האנגלי “Gaza genocide”, ולכן הריבוע הזה קורא את הערך על מלחמת עזה: הפסוקית המיוחסת הזאת היא האזכור היחיד בו של רצח עם. בערך העברי על 7 באוקטובר יש עוד אזכור אחד של רצח עם, מעבר לטקסט שבידינו.",
+  "No article linked to English Gaza genocide. The Gaza war article has 3 genocide mentions, all beyond the text we hold.": "אין ערך המקושר לערך האנגלי “Gaza genocide”. בערך על מלחמת עזה יש 3 אזכורים של רצח עם, כולם מעבר לטקסט שבידינו.",
+  "No article linked to English Gaza genocide. The Gaza war article mentions genocide only beyond the text we hold.": "אין ערך המקושר לערך האנגלי “Gaza genocide”. הערך על מלחמת עזה מזכיר רצח עם רק מעבר לטקסט שבידינו.",
   "No terror word in the text we hold; Hamas is “a Palestinian, resistance, popular, Islamic, national movement.”": "אין מילת טרור בטקסט שבידינו; חמאס הוא ״תנועה פלסטינית, של התנגדות, עממית, אסלאמית, לאומית״.",
   "Title and first sentence: “massacre,” carried out by “the Palestinian terror organisations.”": "הכותרת והמשפט הראשון: ״טבח״, שביצעו ״ארגוני הטרור הפלסטיני״.",
-  "“A series of coordinated attacks”; now “coordinated attacks [atentados],” a sharper noun.": "״סדרה של מתקפות מתואמות״; היום ״פיגועים [atentados] מתואמים״, שם עצם חריף יותר.",
+  "“A series of coordinated attacks”; now “coordinated attacks [atentados],” a sharper noun.": "״סדרה של מתקפות מתואמות״; היום ״התקפות [atentados] מתואמות״, שם עצם חריף יותר.",
   "“The Hamas terror attack”; now also “the largest massacre and crime against humanity against Jews since the Holocaust.”": "״מתקפת הטרור של חמאס״; היום גם ״הטבח והפשע נגד האנושות הגדולים ביותר נגד יהודים מאז השואה״.",
   "“The invasion of Israel.” A later sentence calls it “the largest act of Palestinian terrorism in history.”": "״הפלישה לישראל״. משפט מאוחר יותר מכנה אותה ״מעשה הטרור הפלסטיני הגדול ביותר בהיסטוריה״.",
   "“a coordinated surprise attack by the militant movement Hamas”; now “surprise attack or terror attack.”": "״מתקפת פתע מתואמת של התנועה החמושה חמאס״; היום ״מתקפת פתע או מתקפת טרור״.",
   "“a series of coordinated armed incursions” by “Palestinian militant groups.” A later sentence says “massacring civilians.”": "״סדרה של חדירות חמושות מתואמות״ (“a series of coordinated armed incursions”) של ״קבוצות חמושות פלסטיניות״ (“Palestinian militant groups”). משפט מאוחר יותר אומר ״תוך טבח באזרחים״ (“massacring civilians”).",
   "“a series of coordinated terrorist attacks”; now “a series of Palestinian terrorist attacks.”": "״סדרה של מתקפות טרור מתואמות״; היום ״סדרה של מתקפות טרור פלסטיניות״.",
-  "“an accusation directed against” Israeli policy became “a confirmed fact in” it.": "״האשמה המופנית נגד״ המדיניות הישראלית הפכה ל״עובדה מוכחת״ בה.",
+  "“an accusation directed against” Israeli policy became “a confirmed fact in” it.": "״האשמה המופנית נגד״ המדיניות הישראלית הפכה ל״עובדה מבוססת״ בה.",
   "“an extended military operation” by “the Palestinian resistance factions”; now aimed “against the Israeli occupation.”": "״מבצע צבאי ממושך״ של ״פלגי ההתנגדות הפלסטיניים״; היום מכוון ״נגד הכיבוש הישראלי״.",
-  "“terrorist attacks and massacres of civilians”; now “a series of terrorist attacks by armed groups.”": "״מתקפות טרור וטבח באזרחים״; היום ״סדרה של מתקפות טרור של קבוצות חמושות״.",
+  "“terrorist attacks and massacres of civilians”; now “a series of terrorist attacks by armed groups.”": "״מתקפות טרור ומעשי טבח באזרחים״; היום ״סדרה של מתקפות טרור של קבוצות חמושות״.",
   "“the name used by the Palestinian Islamist militant group Hamas”; now “a series of coordinated attacks.” A later sentence says the militiamen “massacred civilians.”": "״השם שבו משתמשת הקבוצה האסלאמיסטית החמושה הפלסטינית חמאס״; היום ״סדרה של מתקפות מתואמות״. משפט מאוחר יותר אומר שאנשי המיליציה ״טבחו באזרחים״."
  },
  "columns": {

@@ -15,13 +15,22 @@ Notes, glossary and the full string map: patterns/flash/HE_TRANSLATION.md.
 import json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-HE_SCOPE = "הדוח מודד איך השתנה הנוסח של ערכי הליבה שאנשים קוראים, ולא אם הנוסח נכון, ואינו מעריך את ניהול המלחמה או את התנהלותה של ממשלה כלשהי."
+HE_SCOPE = "הדוח מודד איך השתנה הנוסח של ערכי הליבה שאנשים קוראים, ולא אם מה שכתוב בו נכון, ואינו שופט את ניהול המלחמה או את התנהלותה של ממשלה כלשהי."
 # Hebrew equivalents of the vetoed English wordings (messaging_check.md, spin_review.md, build_flash.py VETO and SPIN)
 HE_VETO = ["מחשבה מאוחרת", "הערת אגב", "הערת שוליים", "העולם קורא", "שהעולם קורא", "64 מתוך", "47 מתוך", "שני הצדדים", "משני הצדדים",
            "ב־2021 / לפני המלחמה", "לפני המלחמה, שורות הפתיחה האלה", "לפני המלחמה שורות הפתיחה", "מתועד", "מתועדים", "תיעד", "תועד",
            "לטובת ישראל", "בכיוון של ישראל", "למה זה חשוב", "מדוע זה חשוב", "התוצאה.", "הערך של ישראל עצמה", "הערך של ישראל עצמו",
            "הערך ״ישראל״ עצמו", "רק חמאס", "אף ארגון אחר", "אף קבוצה אחרת", "מצא את ישראל אשמה", "קבע שישראל אשמה", "נמצאה אשמה",
-           "רק כתביעה", "רק כתיק", "תיק משפטי בלבד"]
+           "רק כתביעה", "רק כתיק", "תיק משפטי בלבד",
+           # v2 (three proofs, HE_FIXLOG.md): the sharpened, softened or ambiguous v1 renderings stay out
+           "השמדה", "אינו מעריך", "יש שטענו", "מצד ישראל", "משקיעים רבות", "הצבעה במחנות", "לכלל הסגנון", "אך לא בקול",
+           "פיגועים", "עובדה מוכחת", "והפגיעה", "מתקפות 7 באוקטובר"]
+# English UI leftovers that must not reach the Hebrew page (data-driven strings, checked in the Hebrew sides of the string map)
+HE_NO_EN = ["court case", '"n/a"', 'icj:"icj"', '<span class="pw">removed', '<span class="pw">added', "Our coding."]
+# dates: a no-break space between the day and the month ("7 באוקטובר" never splits across lines)
+MONTHS = "ינואר|פברואר|מרץ|אפריל|מאי|יוני|יולי|אוגוסט|ספטמבר|אוקטובר|נובמבר|דצמבר|ינו׳|פבר׳|אפר׳|אוג׳|ספט׳|אוק׳|נוב׳|דצמ׳"
+DAY_MONTH = re.compile(r"(?<![\d.,])(\d{1,2}) (ב(?:%s))" % MONTHS)
+nb = lambda x: DAY_MONTH.sub("\\1\u00a0\\2", x)
 NUM = r"(?<![\w.])\d[\d,]*(?:\.\d+)?"
 nums = lambda x: {n.rstrip(",") for n in re.findall(NUM, x)}
 
@@ -38,6 +47,10 @@ def apply(text, pairs, where, exact_once=False):
 def build(C, out_path):
     """C: the English build's context (template, library, CSS, slots, data, checkers, the English page)."""
     I = json.load(open(os.path.join(HERE, "flash_i18n_he.json")))
+    for sec in ("template", "lib", "slots"):
+        I[sec] = [[en, nb(he)] for en, he in I[sec]]
+    for sec in ("events", "coding_notes", "columns"):
+        I[sec] = {k: nb(v) for k, v in I[sec].items()}
     ov = open(os.path.join(HERE, "flash_he_overlay.html")).read()
     hcss = ov[ov.index('<style id="he-css">') + len('<style id="he-css">'):ov.index("</style>", ov.index('<style id="he-css">'))]
     hjs = ov[ov.index('<script id="he-js">') + len('<script id="he-js">'):ov.index("</script>", ov.index('<script id="he-js">'))]
@@ -129,6 +142,10 @@ def build(C, out_path):
     he_all = vis + " " + " ".join(h for _, h in I["lib"] + I["slots"]) + " " + hjs + " " + " ".join(I["events"].values()) + " " + " ".join(I["coding_notes"].values())
     hit = [v for v in C["VETO"] if v in low] + [v for v in HE_VETO if v in he_all] + [v for v in C["SPIN"] if v in low]
     assert not hit, f"Hebrew page: vetoed wording: {hit}"
+    he_sides = " ".join(h for _, h in I["template"] + I["lib"] + I["slots"])
+    left = [v for v in HE_NO_EN if v in he_sides] + [v for v in HE_NO_EN if "pw" not in v and v in hjs]
+    assert not left, f"Hebrew page: English UI strings left in the Hebrew string map: {left}"
+    assert not DAY_MONTH.search(vis + " " + he_sides), f"Hebrew page: a date without a no-break space: {DAY_MONTH.search(vis + ' ' + he_sides).group(0)!r}"
     # "undone within a day" (בוטלה בתוך יום) is a Zionism result and stays in the Zionism slide
     assert he_all.count("בוטלה בתוך יום") == 1 and "המילה ״קולוניאלי״ הוצאה והוחזרה 10 פעמים מנובמבר 2024 עד אוגוסט 2026; כל הסרה בוטלה בתוך יום." in vis, "undone-within-a-day scope (Hebrew)"
     # the ten Gaza genocide attempts were "gone", not "undone"
@@ -139,15 +156,25 @@ def build(C, out_path):
 
     # (4) the lines whose strength must not change
     assert HE_SCOPE in vis, "the scope line (Hebrew)"
-    for must in ("הקשר: בהתאם לכלל הסגנון של ויקיפדיה כולה לגבי תוויות שנויות במחלוקת, המילה ״טרוריסטי״ יצאה מהמשפטים הראשונים של הערכים על המדינה האסלאמית, אל־שבאב ובוקו חראם. המשפט הראשון על חמאס לא כלל אותה ב־2021.",
-                 "הערך על 7 באוקטובר מתאר את ההרג בקולה של ויקיפדיה: ״תוך טבח באזרחים ב־21 יישובים״; ״לפחות 1,195 בני אדם נהרגו במתקפות״",
+    for must in ("הקשר: בהתאם להנחיות הסגנון של ויקיפדיה כולה לגבי תוויות שנויות במחלוקת, המילה ״טרוריסטי״ יצאה מהמשפטים הראשונים של הערכים על המדינה האסלאמית (דאעש), אל־שבאב ובוקו חראם. המשפט הראשון על חמאס לא כלל אותה ב־2021.",
+                 "הערך על 7 באוקטובר מתאר את ההרג בקולה של ויקיפדיה: ״תוך טבח באזרחים ב־21 יישובים״; ״לפחות 1,195 בני אדם נהרגו כתוצאה מהמתקפות״",
                  "“Israel has denied that its actions constitute genocide.”", "״ישראל הכחישה שמעשיה מהווים רצח עם.״",
-                 "המשפט הבא: ״ישראל הכחישה שמעשיה מהווים רצח עם.״", "אין הכחשה",
+                 "המשפט הבא: תרגום שלנו״ישראל הכחישה שמעשיה מהווים רצח עם.״", "אין הכחשה",
                  "השינוי מרוכז בערכי הליבה שאנשים קוראים, בעוד הזנב הארוך של הדפים הקצרים כמעט לא השתנה.",
-                 "זו הצבעה במחנות, לא הוכחה לתיאום", "התזמון נותן תאריך, לא סיבה.", "הם לא נקבו בשום צד ובשום מדינה.",
-                 "המילים ״תנועת התנגדות״ נכנסו פעם אחת", "הוא חזר שלוש פעמים, לאחרונה בפברואר 2025.",
-                 "ההסרה טרייה, וייתכן שתבוטל.", "אין אזכור לחטופים, בכל עותק שבידינו מאז 2021."):
-        assert must in vis, f"Hebrew page: a line that must keep its strength is missing: {must[:60]}"
+                 "זו הצבעה לפי מחנות, לא הוכחה לתיאום", "התזמון מלמד על מועד, לא על סיבה.", "הם לא נקבו בשמו של צד או של מדינה כלשהם.",
+                 "המילים ״תנועת התנגדות״ נכנסו פעם אחת", "היא חזרה שלוש פעמים, לאחרונה בפברואר 2025.",
+                 "ההסרה טרייה, וייתכן שתבוטל.", "אין אזכור לחטופים, בכל עותק שבידינו מאז 2021.",
+                 # v2: "destruction" is הרס, "Some have alleged" keeps its strength, the agent of "killed by" is kept
+                 "״רצח העם בעזה הוא ההרס המתמשך, המכוון והשיטתי של העם הפלסטיני ברצועת עזה, שמבוצע בידי ישראל במהלך מלחמת עזה.״",
+                 "על רצח עם ב־7 באוקטובר היא כותבת ״יש הטוענים״.", "״יש הטוענים שהמתקפה הייתה מעשה של רצח עם",
+                 "שישראל מבצעת במהלך מלחמת עזה.״", "הבוררים של ויקיפדיה מצאו שלגורמים חיצוניים ״יש עניין רב בהשפעה״",
+                 "בערך על ישראל, המשפט הבא:"):
+        assert nb(must) in vis, f"Hebrew page: a line that must keep its strength is missing: {must[:60]}"
+    # every translation is marked as ours, including the Israel and Netanyahu slide and both sides of the two morph slides
+    for lab in ('<span class="he-tr"><b class="he-k">תרגום שלנו</b>״ישראל <ins>החלה', '<span class="he-tr"><b class="he-k">תרגום שלנו</b>״ממשלת נתניהו',
+                '<span class="dn y">המשפט הבא: <b class="he-k">תרגום שלנו</b>״ישראל הכחישה'):
+        assert lab in tpl, f"Hebrew page: a translation without its label: {lab[:60]}"
+    assert tpl.count('<b class="he-k">תרגום שלנו · אז</b>') == 2 and tpl.count('<b class="he-k">תרגום שלנו · היום</b>') == 3, "morph slides: both sentences translated"
     assert '<b class="mk">ארגון טרור</b>' in tpl and 'class="tnm"' not in tpl, "Hebrew mirror: neutral mark only"
     assert "only hamas" not in low and not re.search(r"no other (group|armed group)", low)
     for _id in ("flRw", "c3", "c4vs", "c5vs"):

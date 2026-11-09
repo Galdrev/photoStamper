@@ -1,4 +1,6 @@
-# Flash edition, Hebrew v1: translation notes for the proofreaders
+# Flash edition, Hebrew: translation notes for the proofreaders
+
+> v2 applied the three proofs. Every decision, and every changed rendering, is in `HE_FIXLOG.md`, which takes precedence over this file where they differ.
 
 - **Build:** `cd wikitrends && python build_flash.py --lang he OUT.html`. The English page is built and checked first, in memory. `python build_flash.py OUT.html` without the flag is unchanged, and its output is byte-identical to the impact2e build (`cmp`).
 - **Files:**
@@ -58,8 +60,8 @@
 | version / wording / revision | גרסה / נוסח / גרסה (rev → "גרסה") | |
 | critical terms | מונחים ביקורתיים | |
 | Exploratory (chip) | **ראשוני** | It means "preliminary". "ניסיוני" sounds like an experiment. *Uncertain.* |
-| carried out by Israel | ״מבוצע בידי ישראל״ (headline, agreeing with רצח העם) / ״שמבוצעת בידי ישראל״ (the sentence, agreeing with ההשמדה) | The gender follows the antecedent. |
-| Some have alleged | ״יש שטענו״ | |
+| carried out by Israel | ״מבוצע בידי ישראל״ (headline) / ״שמבוצע בידי ישראל״ (the sentence, agreeing with ההרס) | v2: "destruction" is ההרס, never השמדה (HE_FIXLOG.md). |
+| Some have alleged | ״יש הטוענים״ | v2: keeps the strength of "alleged" (HE_FIXLOG.md, conflict 2). |
 | Allegations have been made | ״הועלו האשמות״ | "allegation" = an accusation of wrongdoing, so האשמה. "טענות" would soften. |
 | massacring civilians in 21 communities | ״תוך טבח באזרחים ב־21 יישובים״ | "communities" here means the kibbutzim and towns, which Israeli Hebrew calls יישובים. *Uncertain: the literal word is "קהילות".* |
 | fighters (Hamas fighters) | לוחמי חמאס | This is literal. "מחבלים" would sharpen. |
@@ -93,14 +95,14 @@
 
 | Line | Hebrew |
 |---|---|
-| Scope | **הדוח מודד איך השתנה הנוסח של ערכי הליבה שאנשים קוראים, ולא אם הנוסח נכון, ואינו מעריך את ניהול המלחמה או את התנהלותה של ממשלה כלשהי.** |
+| Scope | **הדוח מודד איך השתנה הנוסח של ערכי הליבה שאנשים קוראים, ולא אם מה שכתוב בו נכון, ואינו שופט את ניהול המלחמה או את התנהלותה של ממשלה כלשהי.** |
 | Honesty | השינוי מרוכז בערכי הליבה שאנשים קוראים, בעוד הזנב הארוך של הדפים הקצרים כמעט לא השתנה. |
 | Denial (hero) | בערך על ישראל, המשפט הבא: “Israel has denied that its actions constitute genocide.” ״ישראל הכחישה שמעשיה מהווים רצח עם.״ |
 | Denial (car1) | המשפט הבא: ״ישראל הכחישה…״ / Netanyahu: אין הכחשה |
-| Credibility 1 (Hamas context) | הקשר: בהתאם לכלל הסגנון של ויקיפדיה כולה לגבי תוויות שנויות במחלוקת, המילה ״טרוריסטי״ יצאה מהמשפטים הראשונים של הערכים על המדינה האסלאמית, אל־שבאב ובוקו חראם. המשפט הראשון על חמאס לא כלל אותה ב־2021. |
-| Credibility 2 (Oct 7, own voice) | הערך על 7 באוקטובר מתאר את ההרג בקולה של ויקיפדיה: ״תוך טבח באזרחים ב־21 יישובים״; ״לפחות 1,195 בני אדם נהרגו במתקפות״ (with the English originals under it) |
+| Credibility 1 (Hamas context) | הקשר: בהתאם להנחיות הסגנון של ויקיפדיה כולה לגבי תוויות שנויות במחלוקת, המילה ״טרוריסטי״ יצאה מהמשפטים הראשונים של הערכים על המדינה האסלאמית (דאעש), אל־שבאב ובוקו חראם. המשפט הראשון על חמאס לא כלל אותה ב־2021. |
+| Credibility 2 (Oct 7, own voice) | הערך על 7 באוקטובר מתאר את ההרג בקולה של ויקיפדיה: ״תוך טבח באזרחים ב־21 יישובים״; ״לפחות 1,195 בני אדם נהרגו כתוצאה מהמתקפות״ (with the English originals under it) |
 | Gone vs undone (F1/F7) | <ul><li>The 10 attempts were "נעלמה" (gone).</li><li>"בוטלה בתוך יום" (undone within a day) appears only in the Zionism slide, which is asserted.</li></ul> |
-| Camp voting | זו הצבעה במחנות, לא הוכחה לתיאום; לא קידדנו לאיזה צד נטתה כל קבוצה… |
+| Camp voting | זו הצבעה לפי מחנות, לא הוכחה לתיאום; לא קידדנו באיזה צד צידדה כל קבוצה… |
 
 The vetoed wordings' Hebrew equivalents are listed in `flash_he.py` (`HE_VETO`) and asserted absent: העולם קורא, שני הצדדים, מתועד, לטובת ישראל, למה זה חשוב, הערך של ישראל עצמה/עצמו, רק חמאס, 64 מתוך, 47 מתוך, and others.
 

@@ -11,12 +11,16 @@ html[lang="he"] [lang="ar"]{--display:"Noto Naskh Arabic","Newsreader",serif}
 /* Hebrew has no capitals and does not take tracking: labels drop the uppercase and the letter-spacing (English blocks keep theirs) */
 html[lang="he"] :is(.eyebrow,.mast,.fl .fl-k,.rw .a,.car-s>.w,.fl-lane>.w,.fl-vs .bd,.fl-vs blockquote>.w,.news-q .w,.fl-hint,.car-n,.fl-dinner .fl-k,.fl-other .k,.fl-pair .dn,.fl-mo .mt,.br-h,.xm thead th,.xchip,.fl-tiles .tl2,.rw-btn,.rw-st,#breathe .br-h){text-transform:none;letter-spacing:0}
 html[lang="he"] .hero h1,html[lang="he"] .fc>h2{letter-spacing:0}
+/* Hebrew has no italic (Frank Ruhl Libre and Heebo have none, so the browser would slant the letters): upright everywhere outside the English and Spanish blocks; the bridges and empty-lane notes are marked by colour and weight */
+html[lang="he"] :not([lang="en"],[lang="es"],[lang="en"] *,[lang="es"] *){font-style:normal}
+html[lang="he"] .fl-next{font-weight:500}
+html[lang="he"] .fl-strip text.em{font-weight:500}
 html[lang="he"] .fc>h2,html[lang="he"] .hero h1{font-weight:500}
 html[lang="he"] .fl-page .hero h1{line-height:1.12}
 html[lang="he"] .fl .fl-k,html[lang="he"] .rw .a,html[lang="he"] .car-s>.w,html[lang="he"] .fl-lane>.w,html[lang="he"] .fl-vs blockquote>.w{font-size:11.5px}
 /* ---------- quotes are evidence: the original in its own direction, our Hebrew translation directly under it ---------- */
 .he-tr{display:block;font:400 15px/1.45 var(--display);color:var(--ink-2);margin:2px 0 0}
-.he-tr .he-k{display:inline-block;font:600 10.5px/1.3 var(--body);color:var(--muted);background:var(--faint);border-radius:2px;padding:1px 5px;margin-left:6px;vertical-align:1px}
+.he-tr .he-k,.fl-pair .dn .he-k{display:inline-block;font:600 10.5px/1.3 var(--body);color:var(--muted);background:var(--faint);border-radius:2px;padding:1px 5px;margin-left:6px;vertical-align:1px}
 .he-tr del{background:var(--del-bg);color:var(--del-ink);text-decoration:line-through;text-decoration-thickness:1px;border-radius:2px;padding:0 .06em}
 .he-tr ins{background:var(--add-bg);color:var(--add-ink);text-decoration:none;border-radius:2px;padding:0 .06em}
 .he-o{display:block;font:400 12.5px/1.4 var(--display);color:var(--muted);margin:1px 0 0;text-align:left;unicode-bidi:isolate}
@@ -45,7 +49,7 @@ html[dir="rtl"] .skip{left:auto;right:8px}
 html[dir="rtl"] .fl-play{padding:0 10px 0 14px}
 html[dir="rtl"] .fl-play::before{padding-left:2px}
 html[dir="rtl"] details.fl-full summary::after{content:" ▾"}
-html[dir="rtl"] .car-s #xwGG .rch-row .v span{margin-left:0}
+html[dir="rtl"] .car-s #xwGG .rch-row .v span{margin-left:0;display:block}
 @keyframes carnudge{0%,100%{transform:none}40%{transform:translateX(56px)}}
 /* charts and timelines keep time running left to right, as Hebrew news charts do; their labels are set right to left inside */
 html[dir="rtl"] :is(.fl-strip,.fl-meter,#kChart,.br-strip,#brRange,.xg-ax){direction:ltr}
@@ -73,12 +77,12 @@ html[dir="rtl"] #tip,html[dir="rtl"] #xmTip,html[dir="rtl"] #gloss{direction:rtl
 .fs-pane[lang="en"]{direction:ltr;text-align:left}
 .fs-he{font:400 13.5px/1.45 var(--body);color:var(--ink-2);margin:0 0 10px;padding:8px 10px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px}
 /* the morph slides: our translation follows the state of the sentence (then / now) */
-.car-s:has(.fl-mo .xr-s.st-n) .he-mo[data-st="f"],.car-s:has(.fl-mo .xr-s.st-f) .he-mo[data-st="n"]{display:none}
+.car-s:has(.fl-mo .xr-s.st-n) .he-mo[data-st="f"],.car-s:has(.fl-mo .xr-s.st-f) .he-mo[data-st="n"]{opacity:.62}
 .he-mo{font-size:13.5px}
 @media (max-width:600px){
   .he-tr{font-size:13.5px;line-height:1.36;margin-top:1px}
   .fl-vs .he-tr{font-size:13px;line-height:1.34}
-  .he-tr .he-k{font-size:9.5px;padding:0 4px;margin-left:4px}
+  .he-tr .he-k,.fl-pair .dn .he-k{font-size:9.5px;padding:0 4px;margin-left:4px}
   .rw .he-tr{font-size:14px;line-height:1.3}
   html[lang="he"] .rw .p{font-size:14.5px;line-height:1.22}
   html[lang="he"] .rw li{padding:5px 0}
@@ -97,48 +101,61 @@ const HMON=["ינואר","פברואר","מרץ","אפריל","מאי","יוני
 const HMS=["ינו׳","פבר׳","מרץ","אפר׳","מאי","יוני","יולי","אוג׳","ספט׳","אוק׳","נוב׳","דצמ׳"];
 const heDt=s=>typeof s==="number"||s instanceof Date?new Date(+s):new Date(String(s).length<=10?(String(s).length===7?s+"-01":s)+"T00:00:00Z":s);
 /* "7 באוקטובר 2023"; "אוקטובר 2023"; "7 באוק׳" */
-const heD=s=>{const d=heDt(s);return `${d.getUTCDate()} ב${HMON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
+const heD=s=>{const d=heDt(s);return `${d.getUTCDate()}\u00a0ב${HMON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
 const heMY=s=>{const d=heDt(s);return `${HMON[d.getUTCMonth()]} ${d.getUTCFullYear()}`};
-const heDs=s=>{const d=heDt(s);return `${d.getUTCDate()} ב${HMS[d.getUTCMonth()]}`};
+const heDs=s=>{const d=heDt(s);return `${d.getUTCDate()}\u00a0ב${HMS[d.getUTCMonth()]}`};
 const HE_LANG={he:"עברית",ar:"ערבית",en:"אנגלית",de:"גרמנית",fr:"צרפתית",es:"ספרדית",it:"איטלקית",pt:"פורטוגזית",nl:"הולנדית",pl:"פולנית",ru:"רוסית"};
 const heLang=l=>HE_LANG[l]||l;
+/* numbers up to ten are spelled out in titles */
+const heNum=n=>({5:"חמש",7:"שבע"})[n]||n;
+/* the change punch inside an English tooltip line: its two state words are ours, in Hebrew */
+const hePw=h=>String(h).replace(/<span class="pw">removed<\/span>/g,'<span class="pw" lang="he" dir="rtl">הוסר</span>').replace(/<span class="pw">added<\/span>/g,'<span class="pw" lang="he" dir="rtl">נוסף</span>');
 /* the weekly chart's battles and ceasefires (R.v3.events): Hebrew labels, same facts, same numbers */
 const HE_EV=/*HE_EV*/{};
 const heEv=l=>HE_EV[l]||l;
 /* the language grid's coding notes (R.langs cells .x), in Hebrew; quoted words are our translation of the stored English rendering */
 const HE_X=/*HE_X*/{};
 const heX=x=>HE_X[x]||x;
+/* the grid's term glosses (R.langs, the stored English rendering of the marked words), in Hebrew; second-hand like the coding notes.
+   Hebrew terms get no gloss on the Hebrew page; a gloss missing here is shown in English, marked as English */
+const HE_G={"the genocide":"רצח העם","genocide":"רצח עם","by colonizing a land outside Europe":"בקולוניזציה של ארץ מחוץ לאירופה",
+  "apartheid (lit. racial separation)":"אפרטהייד (מילולית: הפרדה גזעית)","apartheid":"אפרטהייד","colonization":"קולוניזציה","colonisation of Palestine":"קולוניזציה של פלסטין",
+  "the largest massacre and crime against humanity against Jews since the Holocaust":"הטבח והפשע נגד האנושות הגדולים ביותר נגד יהודים מאז השואה",
+  "classified by 41 states as a terrorist association":"מסווג בידי 41 מדינות כהתאגדות טרוריסטית","the accusation that Israel commits the crime of apartheid":"ההאשמה שישראל מבצעת את פשע האפרטהייד",
+  "recognised by Western states as terrorist":"מוכר כטרוריסטי בידי מדינות המערב","terrorist":"טרוריסטי"};
 /* the grid's five column names (R.langs.cols labels; codes and cells untouched) */
 const HE_COL=/*HE_COL*/{};
 if(R&&R.langs)R.langs.cols.forEach(c=>{if(HE_COL[c[0]])c[1]=HE_COL[c[0]]});
 GLOSS.top=["ערך מוביל","150 פתיחי הערכים הנקראים ביותר בנושא שהיו קיימים ב־2021, שנבדקו בינואר 2021 וביולי 2023."];
 /* the play sheet: the research instruments stay in English, inside a Hebrew frame */
 $$(".fs-pane").forEach(p=>{p.setAttribute("lang","en");p.setAttribute("dir","ltr")});
-{const b=$("#flSheetB"),n=document.createElement("p");n.className="fs-he";n.id="fsHe";n.textContent="זהו הכלי המלא של מהדורת המחקר, בשפת המקור שלו (אנגלית): כל גרסה, כל תאריך וכל ציטוט כפי שנשמרו.";if(b)b.prepend(n)}
+{const b=$("#flSheetB"),n=document.createElement("p");n.className="fs-he";n.id="fsHe";n.textContent="בגרסה הזאת הכלי מוצג באנגלית בלבד, בלי תרגום לעברית. זהו הכלי המלא של מהדורת המחקר, בשפת המקור שלו: כל גרסה, כל תאריך וכל ציטוט כפי שנשמרו.";if(b)b.prepend(n)}
 
 /* ---------- share images, Hebrew: right to left, with every English quote kept left to right and our translation under it ---------- */
 function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="נוסח ויקיפדיה נכון ל־5 בנובמבר 2026 · המהדורה המקוצרת, סחף המסגור בוויקיפדיה",src=$(".mast a").href;
-  const tr=el=>el?el.textContent.replace(/^\s*תרגום שלנו\s*/,"").trim():"";
+  /* text of a Hebrew element; English runs inside it are isolated (LRI…PDI) so the canvas keeps their quote marks the right way round */
+  const tx=el=>{if(!el)return "";const c=el.cloneNode(true);c.querySelectorAll('[lang="en"]').forEach(e=>{e.textContent="\u2066"+e.textContent+"\u2069"});return c.textContent.trim()};
+  const tr=el=>el?tx(el).replace(/^\s*תרגום שלנו(\s*·\s*(אז|היום))?\s*/,"").trim():"";
   /* a Hebrew run inside an English line (the Israel row's "no charge") is drawn word by word left to right, so reverse its words */
   const sgs=el=>shSegs(el).map(g=>/[\u05d0-\u05ea]/.test(g.t)?{...g,t:g.t.trim().split(/\s+/).reverse().join(" ")}:g);
   if(id==="flRw"){const f=$("#flRw");return {file:"wikipedia-first-lines-he.png",kicker:"ויקיפדיה באנגלית · שורות הפתיחה, אז ועכשיו",title:$("#flRwH").textContent.trim().replace(/:$/,"."),size:36,
-    rows:$$(".rw li",f).map(li=>({label:$(".a",li).firstChild.textContent.trim()+" · "+$(".d",li).textContent.trim(),segs:sgs($(".p",li)),rtl:tr($(".he-tr",li))})),
-    foot:[{t:tr($(".rw-n .he-tr",f))},{t:$(".rw-n .he-q",f).textContent.trim(),ltr:1},{t:scope},{t:stamp+" · "+src}]}}
+    rows:$$(".rw li",f).map(li=>({label:$(".a",li).firstChild.textContent.trim()+" · "+tx($(".d",li)),segs:sgs($(".p",li)),rtl:tr($(".he-tr",li))})),
+    foot:[{t:$(".rw-n .he-p",f).textContent.trim()+" "+tr($(".rw-n .he-tr",f))},{t:$(".rw-n .he-q",f).textContent.trim(),ltr:1},{t:scope},{t:stamp+" · "+src}]}}
   if(id==="c3"){const p=$("#c3 .fl"),G=[[]];[...p.children].forEach(c=>{if(c.matches(".fl-k,.he-tr"))return;if(c.matches(".fl-sep")){G.push([]);return}G.at(-1).push(c)});
     const H=$$("#c3 .fl .he-tr").map(tr);
-    const lab=["7 באוקטובר · המשפט הראשון · אוקטובר 2023 ← היום","7 באוקטובר · פתיח הערך · ינואר 2024 ← היום"];
-    return {file:"wikipedia-october-7-he.png",kicker:"ויקיפדיה באנגלית · 7 באוקטובר והחטופים",title:$("#c3H").textContent.trim(),size:36,
-      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>sgs(c)),rtl:H[i]||""})).concat([{label:"החטופים",lead:$("#c3 .fl-lane .cp .he-p").textContent.trim(),segs:sgs($("#c3 .fl-lane .cp .he-q")),rtl:tr($("#c3 .fl-lane .cp .he-tr"))}]),
-      foot:[{t:$("#c3 .fl-body .he-p").textContent.trim()},{t:scope},{t:stamp+" · "+src}]}}
+    const lab=["מתקפת 7\u00a0באוקטובר · המשפט הראשון · אוקטובר 2023 ← היום","מתקפת 7\u00a0באוקטובר · פתיח הערך · ינואר 2024 ← היום"];
+    return {file:"wikipedia-october-7-he.png",kicker:"ויקיפדיה באנגלית · 7 באוקטובר והחטופים",title:tx($("#c3H")),size:36,
+      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>sgs(c)),rtl:H[i]||""})).concat([{label:"החטופים",lead:tx($("#c3 .fl-lane .cp .he-p")),segs:sgs($("#c3 .fl-lane .cp .he-q")),rtl:tr($("#c3 .fl-lane .cp .he-tr"))}]),
+      foot:[{t:tx($("#c3 .fl-body .he-p"))},{t:scope},{t:stamp+" · "+src}]}}
   if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
-    return {file:"wikipedia-hamas-english-hebrew-he.png",kicker:"ויקיפדיה · חמאס, באנגלית ובעברית",title:$("#c4H").textContent.trim(),size:36,
+    return {file:"wikipedia-hamas-english-hebrew-he.png",kicker:"ויקיפדיה · חמאס, באנגלית ובעברית",title:tx($("#c4H")),size:36,
       rows:[{label:"ויקיפדיה באנגלית · "+$(".w",en).textContent.trim(),segs:sgs($(".s",en)),rtl:tr($(".he-tr",en))},{label:"ויקיפדיה בעברית · היום (אוקטובר 2026) · ראשוני",rtl:$(".s",he).textContent.trim(),big:1}],
-      foot:[{t:$("#c4 .fl-body .he-p").textContent.trim()},{t:$("#c4 .fl-ctx .he-p").textContent.trim()},{t:scope},{t:stamp+" · "+src}]}}
-  if(id==="c5vs"){const v=$("#c5 .fl-vs");return {file:"wikipedia-two-voices-he.png",kicker:"ויקיפדיה באנגלית · האשמת רצח העם, בשני קולות",title:$("#c5H").textContent.trim(),size:40,
+      foot:[{t:tx($("#c4 .fl-body .he-p"))},{t:tx($("#c4 .fl-ctx .he-p"))},{t:scope},{t:stamp+" · "+src}]}}
+  if(id==="c5vs"){const v=$("#c5 .fl-vs");return {file:"wikipedia-two-voices-he.png",kicker:"ויקיפדיה באנגלית · האשמת רצח העם, בשני קולות",title:tx($("#c5H")),size:40,
     rows:$$("blockquote",v).map(b=>({label:$(".bd",b).textContent.trim()+" · "+$(".w",b).textContent.trim(),segs:sgs($(".s",b)),rtl:tr($(".he-tr",b))})),
-    foot:[{t:"הערך ״רצח העם בעזה״ מביא את הכחשת ישראל בפסקה האחרונה של הפתיח שלו."},{t:$("#c5own .he-p").textContent.trim()},{t:scope},{t:stamp+" · "+src}]}}}
+    foot:[{t:"הערך ״רצח העם בעזה״ מביא את הכחשת ישראל בפסקה האחרונה של הפתיח שלו."},{t:tx($("#c5own .he-p"))},{t:scope},{t:stamp+" · "+src}]}}}
 /* right-to-left wrap for one Hebrew run; returns the y of the last line */
-function shRtlW(ctx,text,maxW,xr,y0,lh,font,col,draw){ctx.save();ctx.font=font;ctx.direction="rtl";ctx.textAlign="right";const W=String(text).split(/\s+/).filter(Boolean);let line="";const L=[];
+function shRtlW(ctx,text,maxW,xr,y0,lh,font,col,draw){ctx.save();ctx.font=font;ctx.direction="rtl";ctx.textAlign="right";const W=String(text).split(/[ \t\n\r]+/).filter(Boolean);let line="";const L=[];
   W.forEach(w=>{const t=line?line+" "+w:w;if(ctx.measureText(t).width>maxW&&line){L.push(line);line=w}else line=t});if(line)L.push(line);
   if(draw){ctx.fillStyle=col;L.forEach((l,i)=>ctx.fillText(l,xr,y0+i*lh))}ctx.restore();return y0+Math.max(0,L.length-1)*lh}
 function shCard(spec){spec={...spec,kicker:spec.kicker+" · השורות בעברית: תרגום שלנו"};const W=1080,H=1350,P=72,cv=document.createElement("canvas");cv.width=W;cv.height=H;const ctx=cv.getContext("2d"),C=SHC;
@@ -147,7 +164,11 @@ function shCard(spec){spec={...spec,kicker:spec.kicker+" · השורות בעב�
   shRtlW(ctx,spec.kicker,W-2*P,W-P,P+12,30,`600 26px ${B}`,C.mut,true);
   let y=P+80;y=shRtlW(ctx,spec.title,W-2*P,W-P,y,58,`500 46px ${DH}`,C.ink,true)+44;
   const foot=spec.foot.filter(f=>f.t);
-  const fy0=H-P-foot.length*44-40;
+  /* the foot is measured first, so a long foot moves the rule up instead of running off the card */
+  const footAt=(draw,fy)=>{foot.forEach((f,i)=>{const last=i>=foot.length-2,fs=last?20:22,lh=last?28:30,col=last?C.mut:C.ink2;
+    if(f.ltr){const fo=()=>`400 ${fs}px ${DE}`,w=shWrap(ctx,[{t:f.t,k:""}],W-2*P,P,fy,lh,fo);if(draw){ctx.fillStyle=col;w.ops.forEach(o=>{ctx.font=fo();ctx.fillText(o.w,o.x,o.y)})}fy=w.y+lh+4}
+    else fy=shRtlW(ctx,f.t,W-2*P,W-P,fy,lh,`${last?400:500} ${fs}px ${B}`,col,draw)+lh+4});return fy};
+  const fy0=H-P-38-footAt(false,0)+32;
   const rowsAt=(sz,draw)=>{let yy=y;spec.rows.forEach(r=>{if(draw){ctx.strokeStyle=C.rule;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,yy);ctx.lineTo(W-P,yy);ctx.stroke()}yy+=34;
       yy=shRtlW(ctx,r.label,W-2*P,W-P,yy,28,`600 21px ${B}`,C.ink2,draw);
       if(r.lead)yy=shRtlW(ctx,r.lead,W-2*P,W-P,yy+sz*0.9+6,sz*0.95*1.3,`400 ${Math.round(sz*0.8)}px ${B}`,C.ink,draw);
@@ -156,8 +177,6 @@ function shCard(spec){spec={...spec,kicker:spec.kicker+" · השורות בעב�
       yy+=sz*0.55});return yy};
   let sz=spec.size||40;while(sz>22&&rowsAt(sz,false)>fy0-10)sz-=2;rowsAt(sz,true);
   let fy=fy0;ctx.strokeStyle=C.ink;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,fy);ctx.lineTo(W-P,fy);ctx.stroke();fy+=38;
-  foot.forEach((f,i)=>{const last=i>=foot.length-2,fs=last?20:22,lh=last?28:30,col=last?C.mut:C.ink2;
-    if(f.ltr){const fo=()=>`400 ${fs}px ${DE}`,w=shWrap(ctx,[{t:f.t,k:""}],W-2*P,P,fy,lh,fo);ctx.fillStyle=col;w.ops.forEach(o=>{ctx.font=fo();ctx.fillText(o.w,o.x,o.y)});fy=w.y+lh+4}
-    else fy=shRtlW(ctx,f.t,W-2*P,W-P,fy,lh,`${last?400:500} ${fs}px ${B}`,col,true)+lh+4});
+  footAt(true,fy);
   return cv}
 </script>
