@@ -1,5 +1,6 @@
 name: wikitrends-views
-# Daily per-article pageviews (agent=user) for the six flash hero articles, their former titles (page moves) and their
+# Daily per-article pageviews (agent=user) for the six flash hero articles (WT_TITLES: also Benjamin Netanyahu and Palestine,
+# the flash reach bars, run 2), their former titles (page moves) and their
 # current redirects, plus the section-0 history of every revision since 2021 (timestamps, revert tag, move comments, lead
 # prose deduplicated). Used by wikitrends/patterns/exposure (view-weighted exposure to each first-sentence wording).
 # No usernames are stored. Pushes JSON to wikitrends-data/views/<run_id>/views/.
@@ -15,6 +16,8 @@ defaults:
 env:
   WT_RPS: '5'
   WT_JOB: views
+  # '|'-separated; run 1 (42651558741) fetched the six hero articles; run 2 fetches the two other reach-bar articles
+  WT_TITLES: 'Benjamin Netanyahu|Palestine'
   GH_TOKEN: ${{ github.token }}
 jobs:
   views:
@@ -31,10 +34,10 @@ jobs:
           set -euo pipefail
           mkdir -p views
           cat > /tmp/views.py <<'EOF'
-          import gzip, hashlib, json, re, sys, urllib.parse
+          import gzip, hashlib, json, os, re, sys, urllib.parse
           sys.path.insert(0, ".")
           import analyze as A, fetch as F, wt_net
-          TITLES = ["Israel", "Zionism", "Nakba", "October 7 attacks", "Hamas", "Gaza genocide"]
+          TITLES = os.environ.get("WT_TITLES", "Israel|Zionism|Nakba|October 7 attacks|Hamas|Gaza genocide").split("|")
           START, END = "20210101", "20261108"
           PV = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/{t}/daily/{a}/{b}"
           MOVE = re.compile(r"moved page \[\[([^\]]+)\]\] to \[\[([^\]]+)\]\]")
