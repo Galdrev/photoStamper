@@ -1,0 +1,102 @@
+name: wikitrends-verify
+# Elsewhere-on-Wikipedia verification (wikitrends/patterns/trail/VERIFIED.md): for each candidate outside article, the raw
+# section-0 wikitext of the revision live on 1 Jan 2021 (or the article's first revision if it was created later) and of
+# the latest revision, plus the section-0 first-sentence history since 2021 (revid, timestamp, revert tag, page moves) so
+# that each wording change can be dated. No usernames or edit comments are stored (only "moved page [[A]] to [[B]]").
+# User-Agent: fetch.py's (no email address). Pushes JSON to wikitrends-data/verify/<run_id>/verify/.
+on:
+  push:
+    branches: [wikitrends-verify]
+permissions:
+  contents: write
+concurrency: wikitrends-verify
+defaults:
+  run:
+    shell: bash
+env:
+  WT_RPS: '5'
+  WT_JOB: verify
+  WT_TITLES: 'Comparisons between Israel and Nazi Germany|Criticism of Israel|Genocide|Settler colonialism|Sheikh Jarrah controversy|Gaza genocide recognition|Samaritans'
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Fetch then/now wikitext and first-sentence histories
+        working-directory: wikitrends
+        run: |
+          set -euo pipefail
+          mkdir -p verify
+          cat > /tmp/verify.py <<'EOF'
+          import gzip, hashlib, json, os, re, sys
+          sys.path.insert(0, ".")
+          import analyze as A, fetch as F, wt_net
+          TITLES = os.environ["WT_TITLES"].split("|")
+          FROM = "2021-01-01T00:00:00Z"
+          MOVE = re.compile(r"moved page \[\[([^\]]+)\]\] to \[\[([^\]]+)\]\]")
+          def one(title, **kw):
+              j = F.api(action="query", prop="revisions", titles=title, rvprop="ids|timestamp|content|size",
+                        rvslots="main", rvlimit=1, redirects=1, **kw)
+              p = j["query"]["pages"][0]
+              r = (p.get("revisions") or [None])[0]
+              if not r: return None
+              full = r.get("slots", {}).get("main", {}).get("content")
+              return {"revid": r["revid"], "ts": r["timestamp"], "size": r.get("size"), "wikitext": full}
+          def sec0(revid):
+              j = F.api(action="query", prop="revisions", revids=revid, rvprop="ids|timestamp|content",
+                        rvslots="main", rvsection=0)
+              r = j["query"]["pages"][0]["revisions"][0]
+              return r.get("slots", {}).get("main", {}).get("content")
+          def hist(title):
+              revs, texts, cont = [], {}, {}
+              while True:
+                  j = F.api(action="query", prop="revisions", titles=title, rvprop="ids|timestamp|tags|content|comment|size",
+                            rvslots="main", rvsection=0, rvdir="newer", rvstart=FROM, rvlimit=50, redirects=1, **cont)
+                  p = j["query"]["pages"][0]
+                  for r in p.get("revisions", []):
+                      wt = r.get("slots", {}).get("main", {}).get("content")
+                      m = MOVE.search(r.get("comment") or "")
+                      row = {"revid": r["revid"], "ts": r["timestamp"], "reverted": "mw-reverted" in (r.get("tags") or [])}
+                      if m: row["move"] = [m.group(1), m.group(2)]
+                      if wt is None:
+                          row["hidden"] = True
+                      else:
+                          lp = A.prose(A.split_lead(wt))
+                          h = hashlib.sha1(lp.encode()).hexdigest()[:12]
+                          texts.setdefault(h, lp); row["h"] = h
+                          s = A.sentences(lp); row["fs"] = (s[0] if s else "")[:600]
+                      revs.append(row)
+                  wt_net.heartbeat("hist " + title, len(revs), 0)
+                  if "continue" not in j: break
+                  cont = j["continue"]
+              return revs, texts
+          for t in TITLES:
+              then = one(t, rvstart=FROM, rvdir="older")
+              created = one(t, rvdir="newer")
+              now = one(t)
+              rec = {"title": t, "then_2021": None, "first_rev": None, "now": None}
+              for k, r in (("then_2021", then), ("first_rev", created), ("now", now)):
+                  if r:
+                      r["section0"] = sec0(r["revid"])
+                      r.pop("wikitext", None)
+                      rec[k] = r
+              revs, texts = hist(t)
+              rec["history"] = revs
+              rec["moves"] = [r["move"] for r in revs if "move" in r]
+              print(t, "then", then and then["ts"], "created", created and created["ts"], "now", now and now["ts"],
+                    len(revs), "revs", len(texts), "leads", "moves", rec["moves"], flush=True)
+              fn = t.replace(" ", "_")
+              with gzip.open(f"verify/{fn}.json.gz", "wt") as f:
+                  json.dump(rec, f)
+              with gzip.open(f"verify/leads_{fn}.json.gz", "wt") as f:
+                  json.dump(texts, f)
+          EOF
+          python /tmp/verify.py
+          ls -la verify
+      - name: Push to wikitrends-data
+        run: .github/scripts/push_data.sh verify 'verify/*'
