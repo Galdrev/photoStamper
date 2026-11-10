@@ -78,6 +78,13 @@ html[dir="rtl"] #tip,html[dir="rtl"] #xmTip,html[dir="rtl"] #gloss{direction:rtl
 /* the play sheet holds the research edition's own instruments, in English */
 .fs-pane[lang="en"]{direction:ltr;text-align:left}
 .fs-he{font:400 13.5px/1.45 var(--body);color:var(--ink-2);margin:0 0 10px;padding:8px 10px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px}
+/* fix log 3: the hostages moment. The English quote under the 251 stays left to right; our translation runs right to left under it */
+html[lang="he"] .fl-void .vo-k,html[lang="he"] .fl-void .vo-w,html[lang="he"] .fl-void .vo-ph{text-transform:none;letter-spacing:0;font-family:var(--body)}
+.fl-void .he-tr{color:var(--vm);font-size:13px;line-height:1.38}
+@media (max-width:600px){.fl-void .vo-q .he-tr{font-size:12px;line-height:1.32;margin-top:0}html[lang="he"] .fl-void .vo-q{font-size:12.5px;line-height:1.3}}.fl-void .he-tr .he-k{background:var(--vr);color:var(--vf)}
+.fl-void .vo-s[dir="ltr"],.fl-void .vo-oq [dir="ltr"]{text-align:left;unicode-bidi:isolate}
+.fl-void .vo-oq:has([dir="ltr"]){text-align:left;direction:ltr}
+html[dir="rtl"] .fl-void .vo-tk{margin-right:0;margin-left:6px}
 /* the morph slides: our translation follows the state of the sentence (then / now) */
 /* merge r1: the translation follows the reader's choice (Then, Now, the scrub position); Both shows both */
 .car-s:has(.fl-mo[data-v="n"]) .he-mo[data-st="f"],.car-s:has(.fl-mo[data-v="f"]) .he-mo[data-st="n"]{display:none}
@@ -177,8 +184,13 @@ function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="נוס�
     const H=$$("#c3 .fl .he-tr").map(tr);
     const lab=["מתקפת 7\u00a0באוקטובר · המשפט הראשון · אוקטובר 2023 ← היום","מתקפת 7\u00a0באוקטובר · פתיח הערך · ינואר 2024 ← היום"];
     return {file:"wikipedia-october-7-he.png",kicker:"ויקיפדיה באנגלית · 7 באוקטובר והחטופים",title:tx($("#c3H")),size:36,
-      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>sgs(c)),rtl:H[i]||""})).concat([{label:"החטופים",lead:tx($("#c3 .fl-lane .cp .he-p")),segs:sgs($("#c3 .fl-lane .cp .he-q")),rtl:tr($("#c3 .fl-lane .cp .he-tr"))}]),
+      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>sgs(c)),rtl:H[i]||""})).concat([{label:"החטופים · המשפט הראשון, בעשר ויקיפדיות",lead:tx(voSc())},{label:"מתקפת 7\u00a0באוקטובר · משפט 9",segs:sgs($("#c3m .vo-s")),rtl:tr($("#c3m .vo-hero .he-tr"))}]),
       foot:[{t:tx($("#c3 .fl-body .he-p"))},{t:scope},{t:stamp+" · "+src}]}}
+  if(id==="c3m"){const m=$("#c3m"),sc=voSc(),hb=sc.querySelector("b");if(hb)hb.parentNode.removeChild(hb);
+    return {void:1,rtl:1,file:"wikipedia-hostages-first-sentence-he.png",kicker:"ויקיפדיה · המשפט הראשון של הערך על 7 באוקטובר · החטופים · התרגום לעברית: שלנו",n:$(".vo-n",m).textContent.trim(),
+      qlab:tx($(".vo-w",m)),q:$(".vo-s",m).textContent.trim(),qtr:tr($(".vo-hero .he-tr",m)),
+      tiles:$$(".vo-t",m).map(b=>({nm:$(".vo-nm",b).textContent.trim(),has:!!b.dataset.has,fill:$(".vo-h",b).textContent.trim(),rtl:$(".vo-nm",b).dir==="rtl"})),
+      scb:$(".vo-sc b",m).textContent.trim(),sc:tx(sc).replace(/\s+/g," "),c:tx($(".vo-c",m)).replace(/\s+/g," "),foot:[scope,stamp+" · "+src]}}
   if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
     return {file:"wikipedia-hamas-english-hebrew-he.png",kicker:"ויקיפדיה · חמאס, באנגלית ובעברית",title:tx($("#c4H")),size:36,
       rows:[{label:"ויקיפדיה באנגלית · "+$(".w",en).textContent.trim(),segs:sgs($(".s",en)),rtl:tr($(".he-tr",en))},{label:"ויקיפדיה בעברית · היום (אוקטובר 2026) · ראשוני",rtl:$(".s",he).textContent.trim(),big:1}],

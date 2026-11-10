@@ -172,6 +172,7 @@ M2 = json.load(gzip.open(os.path.join(HERE, "data", "mass2_leads.json.gz")))["le
 LJ = json.load(open(os.path.join(HERE, "data", "leads.json")))
 RA = json.load(open(os.path.join(HERE, "data", "ratchet.json")))["articles"]
 LANGS = json.load(open(os.path.join(PAT, "langs", "langs.json")))["articles"]
+CLX = json.load(open(os.path.join(HERE, "data", "crosslang.json")))["articles"]  # fix log 3: quarterly copies, 1,200 characters each
 ARB = open(os.path.join(PAT, "guard", "arbcom_named.md")).read()
 
 
@@ -179,11 +180,12 @@ def en_corpus(title):
     T = [x or "" for x in M2.get(title, [])]
     T += [v[k] for v in LJ if v["title"] == title for k in ("lead0", "lead1")]
     T += [v.get("s") or "" for v in (RA.get(title) or {}).get("fs_variants", [])]
+    T += [x.get("lead") or "" for x in ((CLX.get(title) or {}).get("en") or {}).get("series", [])]
     return T
 
 
 def lang_corpus(lang, title):
-    T = []
+    T = [x.get("lead") or "" for x in ((CLX.get(title) or {}).get(lang) or {}).get("series", [])]
     for s in ((LANGS.get(title) or {}).get(lang) or {}).get("slots", {}).values():
         for w in ("first", "latest"):
             if s.get(w):
@@ -288,6 +290,87 @@ for n in EXP_NUMS:
     COMPUTED[n] = "exposure.json (merge r1 reach figure), asserted above"
 COMPUTED.update({"2025": "exposure window", "2026": "exposure window"})
 print(f"flash: reach figure: {len(_ord)} rows and the surge line match exposure.json")
+# fix log 3 (patterns/flash/FACTCHECK_hostages.md): card 3's hostages moment (#c3m). Every fact in it is recomputed here from the
+# stored copies: langs.json (each edition's October 7 first sentence, Oct 2026), data/crosslang.json (quarterly copies of each opening
+# section, first 1,200 characters), data/ratchet.json (all 107 English first sentences), data/mass2_leads.json.gz (the 2 Nov 2026 English
+# copy) and patterns/crosswiki/chart_data/narrative.json (full-section counts, 8 Nov 2026).
+HOST = {"en": r"hostage|captive|abduct|kidnap", "de": r"geisel|entführ|verschlepp", "fr": r"otage|enlev|kidnapp|captif", "es": r"rehén|rehenes|secuestr|cautiv",
+        "it": r"ostagg|rapiment|rapit[oiae]|sequestr", "pt": r"refém|reféns|sequestr|rapto", "nl": r"gijzel|ontvoer|gevangengenomen", "ru": r"заложни|похищ|пленн",
+        "he": r"חטופ|חטיפ|בני ערובה|שבוי", "ar": r"رهائن|رهين|أسرى|أسروا|مختطف|محتجز|خطف"}
+HOST = {k: re.compile(v, re.I) for k, v in HOST.items()}
+_O7L = LANGS["October 7 attacks"]
+VO_ORDER = [l for l in json.load(open(os.path.join(PAT, "langs", "langs.json")))["meta"]["lang_order"] if (_O7L.get(l) or {}).get("slots")]
+assert VO_ORDER == ["he", "ar", "en", "de", "fr", "es", "it", "pt", "nl", "ru"], f"October 7 editions held: {VO_ORDER} (Polish has no linked article)"
+_vo = tpl[tpl.index('<figure class="fl-void" id="c3m"'):tpl.index("</figure>", tpl.index('<figure class="fl-void" id="c3m"'))]
+assert re.findall(r'class="vo-t" data-l="(\w+)"', _vo) == VO_ORDER, "the moment shows the ten editions in the language-grid order"
+assert re.findall(r'data-l="(\w+)" data-has="1"', _vo) == ["it"], "only the Italian slot is filled"
+_en_fs = re.split(r"(?<=[a-z])\.\s", M2["October 7 attacks"][-1].strip(), maxsplit=1)[0] + "."
+_fs_now = {l: (_en_fs if l == "en" else _O7L[l]["slots"]["s1"]["latest"]["orig"]) for l in VO_ORDER}
+_has = [l for l in VO_ORDER if HOST[l].search(_fs_now[l])]
+assert _has == ["it"], f"first sentences with the hostages, latest copies: {_has}"
+assert all(_O7L[l]["slots"]["s1"]["latest"]["date"] == "2026-10" for l in VO_ORDER), "the latest first sentences are the October 2026 copies"
+_v107 = RA["October 7 attacks"]["fs_variants"]
+assert len(_v107) == 107 and not any(HOST["en"].search(v.get("s") or "") for v in _v107), "English: no hostages in any of the 107 first sentences"
+for l in VO_ORDER:  # each panel quotes the stored first sentence whole (the Arabic slot is the defining clause, marked with ellipses)
+    o = _html.escape(_fs_now[l]).replace("rapimento di circa 250 di questi", '<mark class="vo-m">rapimento di circa 250 di questi</mark>')
+    assert ("“… " + o + " …”" if l == "ar" else "“" + o + "”") in _vo, f"the {l} panel does not quote the stored first sentence"
+assert "<b>9 of 10.</b>" in _vo and "first sentence names no hostages in 9 of the 10 Wikipedias with an article on it" in _vo and len(VO_ORDER) - len(_has) == 9
+# Hebrew: the first sentence named "חטיפת אזרחים" in our quarterly copies from Oct 2024 to Oct 2025, and not since
+def _first(t):
+    t = t or ""
+    if re.match(r"\s*(mini|thumb|ממוזער)\|", t):
+        _i = [t.find(x) for x in ("מתקפת הפתע על ישראל", "טבח שבעה באוקטובר", "Der Terrorangriff", "Der Angriff", "Der Überfall") if t.find(x) >= 0]
+        t = t[min(_i):] if _i else t
+    return re.split(r"(?<=[.!?؟])[»”\"]?\s+", t, maxsplit=1)[0]
+_hq = {x["date"]: _first(x["lead"]) for x in CLX["October 7 attacks"]["he"]["series"]}
+assert sorted(d for d, f in _hq.items() if HOST["he"].search(f)) == ["2024-10", "2025-01", "2025-04", "2025-07", "2025-10"] and all("חטיפת אזרחים" in _hq[d] for d in ("2024-10", "2025-10")), \
+    f"Hebrew first sentence with the hostages: {[d for d, f in _hq.items() if HOST['he'].search(f)]}"
+assert "Italian’s does; Hebrew’s did, in our copies from October 2024 to October 2025." in _vo
+# Italian: the first sentence names them in every quarterly copy from April 2024 on
+_iq = {x["date"]: _first(x["lead"]) for x in CLX["October 7 attacks"]["it"]["series"]}
+assert sorted(d for d, f in _iq.items() if HOST["it"].search(f)) == sorted(d for d in _iq if d >= "2024-04"), "Italian first sentence: kidnapping since Apr 2024"
+# the other eight editions: no hostages in any quarterly first sentence we hold
+for l in ("ar", "en", "de", "fr", "es", "pt", "nl", "ru"):
+    _bad = [x["date"] for x in CLX["October 7 attacks"][l]["series"] if HOST[l].search(_first(x["lead"]))]
+    assert not _bad, f"{l}: hostages in a quarterly first sentence: {_bad}"
+# English: sentence 9 of the 2 Nov 2026 opening section is the only one with a hostage word
+_s = [x for x in re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", M2["October 7 attacks"][-1]).strip()) if x]
+assert [i + 1 for i, x in enumerate(_s) if HOST["en"].search(x)] == [9] and _s[8].startswith("251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip"), "English sentence 9"
+assert "though all ten opening sections mention them" in _vo and "English · only here: sentence 9 of the opening section" in _vo
+# "each of the ten opening sections mentions them": in the text we hold (latest copy), or in the full-section count (8 Nov 2026)
+_NW0 = json.load(open(os.path.join(PAT, "crosswiki", "chart_data", "narrative.json")))["hostages"]
+for l in VO_ORDER:
+    _held = bool(HOST[l].search(CLX["October 7 attacks"][l]["series"][-1]["lead"])) or (l == "en" and bool(HOST["en"].search(M2["October 7 attacks"][-1])))
+    assert _held or ((_NW0.get(l, {}).get("October 7 attacks") or {}).get("2026-11-08") or {}).get("mentions", 0) >= 1, f"{l}: the opening section does not mention the hostages"
+# English Israel and Hamas opening sections, every copy we hold: Israel none; Hamas none except our April and July 2024 copies
+_ih = lambda t: [x or "" for x in M2[t]] + [v[k] for v in LJ if v["title"] == t for k in ("lead0", "lead1")] + [x["lead"] for x in CLX[t]["en"]["series"]]
+assert not any(HOST["en"].search(x) for x in _ih("Israel")), "Israel opening section: a hostage word in a stored copy"
+assert [x["date"] for x in CLX["Hamas"]["en"]["series"] if HOST["en"].search(x["lead"])] == ["2024-04", "2024-07"] and \
+    not any(HOST["en"].search(x) for x in [y or "" for y in M2["Hamas"]] + [v[k] for v in LJ if v["title"] == "Hamas" for k in ("lead0", "lead1")]), "Hamas opening section copies"
+assert all("taking hostages back to Gaza" in x["lead"] for x in CLX["Hamas"]["en"]["series"] if x["date"] in ("2024-04", "2024-07"))
+assert "Israel’s opening section: none, in every copy we hold since 2021. Hamas’s: none now; our April and July 2024 copies said “taking hostages back to Gaza”." in tpl
+assert "in every copy we hold, the Israel and Hamas opening sections" not in tpl and "Israel and Hamas opening sections:</b> none, in every copy" not in tpl, \
+    "the old Israel-and-Hamas line overstated: our 2024 Hamas copies named the hostages"
+# "further on": the full-section counts (crosswiki, 8 Nov 2026) for the four editions whose mention is beyond the text we hold
+_NW = json.load(open(os.path.join(PAT, "crosswiki", "chart_data", "narrative.json")))["hostages"]
+for l, (a_, b_) in {"de": (9, 19), "fr": (9, 14), "es": (6, 11), "pt": (8, 10)}.items():
+    _c = _NW[l]["October 7 attacks"]["2026-11-08"]
+    assert (_c["first_sentence"], _c["sentences"]) == (a_, b_) and _c["mentions"] >= 1, f"{l}: full-section count changed: {_c}"
+    assert not any(HOST[l].search(x) for x in [CLX["October 7 attacks"][l]["series"][-1]["lead"]]), f"{l}: the mention is beyond the text we hold"
+    assert f"first in sentence {a_} of {b_} (our count, 8 Nov 2026)" in _vo
+for l in ("he", "ar", "nl", "ru"):  # the other "further on" quotes are the stored hostage sentences
+    assert "“" + _html.escape(_O7L[l]["slots"]["k_hostages"]["latest"]["orig"]) + "”" in _vo, f"{l}: further-on quote"
+# numbers inside the quoted stored sentences of the moment (panels): printed by the page from the stored text
+for _l in VO_ORDER:
+    for _t in [_fs_now[_l], _O7L[_l]["slots"]["s1"]["latest"]["tr"], ((_O7L[_l]["slots"].get("k_hostages") or {}).get("latest") or {}).get("orig", ""),
+               ((_O7L[_l]["slots"].get("k_hostages") or {}).get("latest") or {}).get("tr", "")]:
+        for _n in re.findall(r"(?<![\w.])\d[\d,]*(?:\.\d+)?", _t or ""):
+            COMPUTED.setdefault(_n, f"inside a quoted {_l} October 7 sentence (card 3 moment)")
+for _n in ("19", "14", "11", "10", "8", "9"):
+    COMPUTED.setdefault(_n, "crosswiki full-section counts (card 3 moment), asserted above")
+print(f"flash: hostages moment: first sentence without the hostages in {len(VO_ORDER) - len(_has)} of {len(VO_ORDER)} editions (latest copies); "
+      f"Italian names them; Hebrew did Oct 2024 - Oct 2025; English none in {len(_v107)} versions; sentence 9; Hamas 2024 copies named them")
+
 nums = set(re.findall(r"(?<![\w.])\d[\d,]*(?:\.\d+)?", vis))
 missing = sorted(n for n in nums if n not in COMPUTED and not re.search(r"(?<![\d,.])" + re.escape(n) + r"(?![\d])", rtpl))
 assert not missing, f"numbers on the flash page that the research edition does not print: {missing}"
@@ -341,7 +424,7 @@ assert 'id="c5own"' in tpl and tpl.index('id="c5own"') > tpl.index('id="car1"') 
 # card 4 mirror: the English definition is the latest stored Hamas first sentence
 assert norm("is a Sunni Islamist Palestinian nationalist political organisation with a military wing known as the al-Qassam Brigades") in norm(M2["Hamas"][-1])
 # share cards: five, each carrying the scope line (shSpec reads .fl-scope); the saves go through claude.use("downloads") when hosted
-for _id in ("flRw", "c3", "c4vs", "c5vs"):
+for _id in ("flRw", "c3", "c4vs", "c5vs", "c3m"):
     assert f'data-share="{_id}"' in tpl and f'id==="{_id}"' in tpl, f"share card {_id}"
 assert 'window.claude.use("downloads")' in tpl and "window.claude.downloads" not in tpl, "downloads capability via use() only"
 print("flash: credibility lines verified (three groups' terrorist removal; October 7 own-voice toll), share cards and downloads wired")

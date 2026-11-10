@@ -178,7 +178,7 @@ def build(C, out_path):
                  "השינוי מרוכז בערכי הליבה שאנשים קוראים, בעוד הזנב הארוך של הדפים הקצרים כמעט לא השתנה.",
                  "זו הצבעה לפי מחנות, לא הוכחה לתיאום", "התזמון מלמד על מועד, לא על סיבה.", "הם לא נקבו בשמו של צד או של מדינה כלשהם.",
                  "המילים ״תנועת התנגדות״ נכנסו פעם אחת", "היא חזרה שלוש פעמים, לאחרונה בפברואר 2025.",
-                 "ההסרה טרייה, וייתכן שתבוטל.", "אין אזכור לחטופים, בכל עותק שבידינו מאז 2021.",
+                 "ההסרה טרייה, וייתכן שתבוטל.", "פתיח הערך על ישראל: אין אזכור לחטופים, בכל עותק שבידינו מאז 2021.",
                  # v2: "destruction" is הרס, "Some have alleged" keeps its strength, the agent of "killed by" is kept
                  "״רצח העם בעזה הוא ההרס המתמשך, המכוון והשיטתי של העם הפלסטיני ברצועת עזה, שמבוצע בידי ישראל במהלך מלחמת עזה.״",
                  "על רצח עם ב־7 באוקטובר היא כותבת ״יש הטוענים״.", "״יש הטוענים שהמתקפה הייתה מעשה של רצח עם",
@@ -192,8 +192,19 @@ def build(C, out_path):
     assert tpl.count('<b class="he-k">תרגום שלנו · אז</b>') == 2 and tpl.count('<b class="he-k">תרגום שלנו · היום</b>') == 3, "morph slides: both sentences translated"
     assert '<b class="mk">ארגון טרור</b>' in tpl and 'class="tnm"' not in tpl, "Hebrew mirror: neutral mark only"
     assert "only hamas" not in low and not re.search(r"no other (group|armed group)", low)
-    for _id in ("flRw", "c3", "c4vs", "c5vs"):
+    for _id in ("flRw", "c3", "c4vs", "c5vs", "c3m"):
         assert f'data-share="{_id}"' in tpl and f'id==="{_id}"' in hjs, f"Hebrew share card {_id}"
+    # fix log 3: the hostages moment, in Hebrew. The scope lines keep their exact strength; each non-Hebrew first sentence has our
+    # translation under it; the old Israel-and-Hamas line ("in every copy we hold", which our 2024 Hamas copies contradict) is gone
+    for must in ("<b>9 מתוך 10.</b> בעותקים האחרונים שלנו (אוקטובר–נובמבר 2026), המשפט הראשון בערך על 7 באוקטובר אינו מזכיר חטופים ב־9 מתוך 10 הוויקיפדיות שיש בהן ערך עליו, אף שכל עשרת פתיחי הערכים מזכירים אותם.",
+                 "באיטלקית הוא מזכיר אותם; בעברית הזכיר, בעותקים מאוקטובר 2024 עד אוקטובר 2025.",
+                 "אנגלית · רק כאן: משפט 9 בפתיח הערך", "פתיח הערך על חמאס: אין אזכור כיום; בעותקים שלנו מאפריל ומיולי 2024 נכתב בו",
+                 "ובעותקים האחרונים שבידינו, פתיחי הערכים על ישראל ועל חמאס אינם מזכירים את החטופים."):
+        assert nb(must) in tpl, f"Hebrew page: a hostages-moment line is missing or changed: {must[:60]}"
+    assert "ובכל עותק שבידינו, פתיחי הערכים על ישראל ועל חמאס" not in tpl and "<b>פתיחי הערכים על ישראל ועל חמאס:</b>" not in tpl, "the old Israel-and-Hamas scope"
+    _vo = tpl[tpl.index('id="c3m"'):tpl.index("</figure>", tpl.index('id="c3m"'))]
+    assert _vo.count('class="vo-p"') == 10 and _vo.count('class="he-tr vo-tr"') == 9 and 'data-l="he" data-q="he:October 7 attacks" hidden><p class="vo-ph">ויקיפדיה בעברית' in _vo, "Hebrew moment panels: nine translations, Hebrew needs none"
+    assert _vo.count('class="vo-gap"') == 9 and _vo.count('aria-label="אין חטופים במשפט הזה"') == 9, "Hebrew moment: nine empty slots in the panels"
     assert 'window.claude.use("downloads")' in tpl and "window.claude.downloads" not in tpl + hjs, "downloads capability via use() only"
     assert "scope" in hjs[hjs.index("function shSpec"):] and "foot:[" in hjs, "Hebrew share cards carry the scope line"
     # the flash script quotes no English words that the English script did not (the English build checked those against the stored text)
@@ -202,6 +213,8 @@ def build(C, out_path):
     assert jq(fjs_he) <= jq(fjs_en), f"Hebrew script quotes: {jq(fjs_he) - jq(fjs_en)}"
     # no English words left in the visible Hebrew page outside the original quotes and their English-language blocks
     from html.parser import HTMLParser
+    # fix log 3: the hostages moment quotes the October 7 first sentence of ten editions in their own languages (lang-marked)
+    QUOTE_LANGS = ("en", "es", "ar", "de", "fr", "it", "pt", "nl", "ru")
     class _NoEn(HTMLParser):
         """visible text outside every lang="en" / lang="es" / lang="ar" element and outside script, style and template"""
         VOID = ("br", "meta", "link", "input", "img")
@@ -209,7 +222,7 @@ def build(C, out_path):
             super().__init__(convert_charrefs=True); self.st, self.out = [], []
         def handle_starttag(self, tag, a):
             if tag in self.VOID: return
-            a = dict(a); self.st.append((tag, a.get("lang") in ("en", "es", "ar") or tag in ("script", "style", "template")))
+            a = dict(a); self.st.append((tag, a.get("lang") in QUOTE_LANGS or tag in ("script", "style", "template")))
         def handle_endtag(self, tag):
             while self.st:
                 if self.st.pop()[0] == tag: break

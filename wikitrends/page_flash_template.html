@@ -279,6 +279,56 @@ details.fl-full .news-q{margin-top:4px}
 .fl-lane>.w{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .fl-lane .cp{font:400 14px/1.45 var(--body);color:var(--ink);margin:0}
 .fl-lane .cp b{font-weight:600}
+/* fix log 3: card 3's hostages moment. Full-bleed black in both schemes, built from the palette's own dark-scheme neutrals (no new
+   hue): the 251 of sentence 9, then the first sentence of each Wikipedia, its hostage slot an empty dashed hole, shown one by one */
+.fl-void{--vb:#0b0e10;--vf:#e7ebec;--vm:#8f9aa2;--vr:#2a3237;--vs:#151a1e;background:var(--vb);color:var(--vf);margin:0;padding:16px;display:grid;gap:12px;min-width:0;border-radius:4px}
+@media (min-width:601px){.fl-void{width:min(1000px,calc(100vw - 64px));margin-inline:calc((100% - min(1000px,calc(100vw - 64px)))/2);box-sizing:border-box;padding:22px 26px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fl-void{box-shadow:0 0 0 1px var(--vr)}}
+:root[data-theme="dark"] .fl-void{box-shadow:0 0 0 1px var(--vr)}
+.fl-void p{margin:0}
+.vo-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.vo-k{font:600 10.5px/1.35 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--vm)}
+.vo-sv.rw-btn{background:transparent;color:var(--vf);border-color:var(--vr);flex:none}
+.vo-hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;align-items:center}
+.vo-n{font:500 clamp(92px,26vw,176px)/.8 var(--display);letter-spacing:-.04em;color:var(--vf);font-variant-numeric:lining-nums}
+.vo-q{display:grid;gap:4px;font:400 15px/1.4 var(--display);color:var(--vf)}
+.vo-w,.vo-ph{font:600 9.5px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--vm)}
+.vo-ls{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px}
+.vo-t{appearance:none;background:none;border:0;color:var(--vf);display:grid;gap:5px;justify-items:stretch;padding:4px 2px;min-height:44px;width:100%;cursor:pointer;font:inherit;text-align:center;border-radius:3px}
+.vo-t:focus-visible{outline:2px solid var(--vf);outline-offset:2px}
+.vo-nm{font:500 11.5px/1.15 var(--body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vo-h{display:block;height:20px;border:1.5px dashed var(--vm);border-radius:3px;box-sizing:border-box}
+.vo-h.on{border:1.5px solid var(--vf);background:var(--vf);color:var(--vb);font:600 9.5px/17px var(--body);overflow:hidden;white-space:nowrap}
+.vo-t[aria-expanded="true"] .vo-h{border-color:var(--vf)}.vo-t[aria-expanded="true"] .vo-nm{text-decoration:underline;text-underline-offset:3px}
+.vo-sc{font:400 14px/1.45 var(--body);color:var(--vf)}.vo-sc b{font-weight:700}
+.vo-c{font:400 13px/1.45 var(--body);color:var(--vm);border-top:1px solid var(--vr);padding-top:9px}.vo-c b{color:var(--vf);font-weight:600}
+.vo-sh{background:var(--vs);border:1px solid var(--vr);border-radius:4px;padding:10px 12px}
+.vo-p{display:grid;gap:6px}.vo-p[hidden]{display:none}
+.vo-oq{font:400 16px/1.45 var(--display);color:var(--vf)}
+.vo-tr{font:400 13.5px/1.42 var(--display);color:var(--vm)}.vo-tk{font:600 9.5px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;margin-right:6px}
+.vo-f{font:400 13px/1.45 var(--body);color:var(--vm)}.vo-f b{color:var(--vf);font-weight:600}
+.vo-gap{display:inline-block;width:4.6em;height:1.05em;border:1.5px dashed var(--vm);border-radius:3px;vertical-align:-.15em;margin-inline-start:.35em}
+mark.vo-m{background:var(--vf);color:var(--vb);border-radius:2px;padding:0 .12em}
+/* the pacing: 251 first, then one language every 0.45 s, each showing its empty slot; a touch or reduced motion shows all at once */
+.fl-void.pre .vo-n,.fl-void.pre .vo-q,.fl-void.pre .vo-sc,.fl-void.pre .vo-c{opacity:0}
+.fl-void.pre .vo-ls li{opacity:0;transform:translateY(6px)}
+.fl-void.go .vo-n{opacity:1;transition:opacity 1.4s ease}
+.fl-void.go .vo-q{opacity:1;transition:opacity 1.1s ease .8s}
+.fl-void.go .vo-ls li{opacity:1;transform:none;transition:opacity 1s ease calc(1.8s + var(--i)*.45s),transform 1s ease calc(1.8s + var(--i)*.45s)}
+.fl-void.go .vo-sc{opacity:1;transition:opacity 1.2s ease 6.6s}
+.fl-void.go .vo-c{opacity:1;transition:opacity 1.2s ease 7.4s}
+.fl-void.done :is(.vo-n,.vo-q,.vo-sc,.vo-c,.vo-ls li){opacity:1;transform:none;transition:none}
+@media (prefers-reduced-motion:reduce){.fl-void :is(.vo-n,.vo-q,.vo-sc,.vo-c,.vo-ls li){opacity:1!important;transform:none!important;transition:none!important}}
+@media print{.fl-void{--vb:transparent;--vf:var(--ink);--vm:var(--muted);--vr:var(--rule);--vs:transparent}.fl-void :is(.vo-n,.vo-q,.vo-sc,.vo-c,.vo-ls li){opacity:1!important}}
+@media (max-width:600px){
+  .fl-void{margin-inline:-14px;border-radius:0;padding:10px 14px 11px;gap:7px}
+  .vo-k{font-size:9.5px}.vo-sv.rw-btn{min-height:26px}
+  .vo-ls{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px 6px}
+  .vo-hero{gap:2px 10px}.vo-n{font-size:78px}.vo-q{font-size:13px;line-height:1.32;gap:3px}
+  .vo-sc{font-size:13px;line-height:1.36}
+  .vo-t{min-height:30px;padding:1px;gap:3px}.vo-nm{font-size:11px}.vo-h{height:16px}.vo-h.on{line-height:13px;font-size:9px}
+  .vo-oq{font-size:15px}.vo-tr{font-size:13px}.vo-f{font-size:12.5px}
+}
 .fl-pos .pos-q{grid-column:1/-1}
 /* #kChart, stepped with chips */
 .fl-kf{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:10px 12px;display:grid;gap:8px;margin:0}
@@ -476,8 +526,24 @@ details.fl-full .news-q{margin-top:4px}
   <div class="eyebrow fl-ey"><span><b>3</b> October 7 and the hostages</span><span class="ey-ev"><a href="@@R@@#ev-oct7" target="_blank" rel="noopener">Full evidence →</a></span></div>
   <h2 id="c3H">Wikipedia’s first line on October 7 now says “coordinated armed incursions.” In 107 versions, it has never mentioned the hostages.</h2>
   <p class="fl" data-q="en:October 7 attacks"><span class="fl-k">What changed · Oct 2023 / Jan 2024 → now</span><span data-tn="fo:a">“A series of coordinated attacks”</span><span class="fl-ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><span data-tn="fo:b">“a series of coordinated armed incursions”</span><span class="fl-sep" aria-hidden="true"></span><span data-tn="fr:a">“rape and sexual assault by Hamas fighters”</span><span class="fl-ar" aria-hidden="true">→</span><span class="zi-sr"> became </span><span data-tn="fr:b">“dozens of cases of rape and sexual assault.”</span></p>
-  <figure class="fl-lane" data-q="en:October 7 attacks"><span class="w">October 7 attacks · first sentence · Oct 2023 → now</span><div class="fl-strip" id="stO7" data-tab="1"></div>
-    <p class="cp"><b>Israel and Hamas opening sections:</b> none, in every copy we hold since 2021. October 7’s <b>sentence 9:</b> “251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip”</p></figure>
+  <figure class="fl-void" id="c3m" aria-labelledby="c3mK">
+    <div class="vo-top"><p class="vo-k" id="c3mK">The hostages · the first sentence, in ten Wikipedias<span class="vo-tap"> · tap one</span></p><button type="button" class="rw-btn vo-sv" data-share="c3m" aria-label="Save the hostages moment as an image">Save as image</button></div>
+    <div class="vo-hero" data-q="en:October 7 attacks"><p class="vo-n" aria-hidden="true">251</p><p class="vo-q"><span class="vo-w">English · only here: sentence 9 of the opening section</span><span class="vo-s">“251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip”</span></p></div>
+    <ol class="vo-ls"><li style="--i:0"><button type="button" class="vo-t" data-l="he" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="he" dir="rtl">עברית</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">Hebrew: no hostages in the first sentence; show it</span></button></li><li style="--i:1"><button type="button" class="vo-t" data-l="ar" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="ar" dir="rtl">العربية</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">Arabic: no hostages in the first sentence; show it</span></button></li><li style="--i:2"><button type="button" class="vo-t" data-l="en" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="en">English</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">English: no hostages in the first sentence; show it</span></button></li><li style="--i:3"><button type="button" class="vo-t" data-l="de" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="de">Deutsch</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">German: no hostages in the first sentence; show it</span></button></li><li style="--i:4"><button type="button" class="vo-t" data-l="fr" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="fr">Français</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">French: no hostages in the first sentence; show it</span></button></li><li style="--i:5"><button type="button" class="vo-t" data-l="es" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="es">Español</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">Spanish: no hostages in the first sentence; show it</span></button></li><li style="--i:6"><button type="button" class="vo-t" data-l="it" data-has="1" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="it">Italiano</span><span class="vo-h on" aria-hidden="true" lang="it">rapimento</span><span class="zi-sr">Italian: the first sentence names them; show it</span></button></li><li style="--i:7"><button type="button" class="vo-t" data-l="pt" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="pt">Português</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">Portuguese: no hostages in the first sentence; show it</span></button></li><li style="--i:8"><button type="button" class="vo-t" data-l="nl" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="nl">Nederlands</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">Dutch: no hostages in the first sentence; show it</span></button></li><li style="--i:9"><button type="button" class="vo-t" data-l="ru" aria-expanded="false" aria-controls="c3mS"><span class="vo-nm" lang="ru">Русский</span><span class="vo-h" aria-hidden="true"></span><span class="zi-sr">Russian: no hostages in the first sentence; show it</span></button></li></ol>
+    <div class="vo-sh" id="c3mS" hidden>
+    <div class="vo-p" data-l="he" data-q="he:October 7 attacks" hidden><p class="vo-ph"><span lang="he" dir="rtl">עברית</span> · Hebrew Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="he" dir="rtl">“טבח שבעה באוקטובר היה מתקפת פתע רחבת היקף שביצעו ארגוני הטרור הפלסטיני מרצועת עזה נגד יעדים אזרחיים וצבאיים בישראל.”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “The Seventh of October massacre was a large-scale surprise attack carried out by the Palestinian terror organisations from the Gaza Strip against civilian and military targets in Israel.”</p><p class="vo-f"><b>Further on:</b> <span lang="he" dir="rtl">“פשעיהם כללו טבח המוני, התעללות פיזית, ומינית, ביזוי גופות, בזיזת רכוש וחטיפת 251 אזרחים וחיילים – ביניהם קשישים, נשים, ילדים ותינוקות.”</span> (“Their crimes included mass slaughter, physical and sexual abuse, desecration of bodies, looting of property and the abduction of 251 civilians and soldiers – among them elderly people, women, children and babies.”) Our copies from October 2024 to October 2025 had <span lang="he" dir="rtl">“חטיפת אזרחים”</span> (the abduction of civilians) in this first sentence.</p></div>
+    <div class="vo-p" data-l="ar" data-q="ar:October 7 attacks" hidden><p class="vo-ph"><span lang="ar" dir="rtl">العربية</span> · Arabic Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="ar" dir="rtl">“… تُشير جميعها إلى العملية العسكرية الممتدّة التي شنّتها فصائل المقاومة الفلسطينية في قطاع غزة بقيادة حركة حماس على الاحتلال الإسرائيلي …”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “… all refer to the extended military operation launched by the Palestinian resistance factions in the Gaza Strip, led by the Hamas movement, against the Israeli occupation …”</p><p class="vo-f">Part of the first sentence; the rest gives the operation’s names, the date and the reason its commander gave. <b>Further on:</b> <span lang="ar" dir="rtl">“كما أسروا عددًا من الجنود والمدنيين واقتادوهم لغَزَّة”</span> (“and they captured a number of soldiers and civilians and led them to Gaza”): “captured,” not the word for hostages.</p></div>
+    <div class="vo-p" data-l="en" data-q="en:October 7 attacks|en:Hamas|en:Israel" hidden><p class="vo-ph">English Wikipedia · first sentence · 2 Nov 2026</p><p class="vo-oq"><span class="vo-o" lang="en">“On October 7, 2023, a series of coordinated armed incursions from the blockaded Gaza Strip into the Gaza envelope of southern Israel were carried out by Hamas and several other Palestinian militant groups.”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-f"><b>Further on:</b> only in sentence 9, quoted above. Israel’s opening section: none, in every copy we hold since 2021. Hamas’s: none now; our April and July 2024 copies said “taking hostages back to Gaza”.</p></div>
+    <div class="vo-p" data-l="de" data-q="de:October 7 attacks" hidden><p class="vo-ph"><span lang="de">Deutsch</span> · German Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="de">“Der Terrorangriff der Hamas auf Israel 2023 (auch vereinfacht 7. Oktober) war mit 1195 überwiegend jüdischen Todesopfern das größte Massaker und Verbrechen gegen die Menschlichkeit an Juden seit dem Holocaust.”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “The Hamas terror attack on Israel 2023 (also simply 7 October) was, with 1195 predominantly Jewish fatalities, the largest massacre and crime against humanity against Jews since the Holocaust.”</p><p class="vo-f"><b>Further on,</b> beyond the 1,200 characters we hold: first in sentence 9 of 19 (our count, 8 Nov 2026).</p></div>
+    <div class="vo-p" data-l="fr" data-q="fr:October 7 attacks" hidden><p class="vo-ph"><span lang="fr">Français</span> · French Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="fr">“Lattaque du Hamas contre Israël d&#x27;octobre 2023 est une série d&#x27;attentats terroristes palestiniens contre des localités civiles et bases militaires israéliennes du pourtour de la bande de Gaza.”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “The Hamas attack against Israel of October 2023 is a series of Palestinian terrorist attacks [attentats] against Israeli civilian localities and military bases around the Gaza Strip.”</p><p class="vo-f"><b>Further on,</b> beyond the 1,200 characters we hold: first in sentence 9 of 14 (our count, 8 Nov 2026).</p></div>
+    <div class="vo-p" data-l="es" data-q="es:October 7 attacks" hidden><p class="vo-ph"><span lang="es">Español</span> · Spanish Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="es">“Los ataques del 7 de octubre contra Israel, como son conocidos internacionalmente y denominados así por medios de comunicación, organizaciones internacionales y gobiernos, denominados operación Inundación de Al-Aqsa por los palestinos, fueron una serie de ataques coordinados realizados por Hamás desde la Franja de Gaza en zonas fronterizas con Israel.”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “The 7 October attacks against Israel, as they are known internationally and so named by the media, international organisations and governments, named Operation Al-Aqsa Flood by the Palestinians, were a series of coordinated attacks carried out by Hamas from the Gaza Strip on border areas with Israel.”</p><p class="vo-f"><b>Further on,</b> beyond the 1,200 characters we hold: first in sentence 6 of 11 (our count, 8 Nov 2026).</p></div>
+    <div class="vo-p" data-l="it" data-q="it:October 7 attacks" hidden><p class="vo-ph"><span lang="it">Italiano</span> · Italian Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="it">“Lattacco di Hamas a Israele del 2023, ovvero Operazione Diluvio al-Aqṣā, è consistito in una serie di attacchi terroristici di gruppi armati, provenienti dalla Striscia di Gaza, con conseguente uccisione di almeno 1200 civili e militari israeliani, e nel <mark class="vo-m">rapimento di circa 250 di questi</mark>, avvenuto il 7 ottobre 2023 nel territorio di Israele, pianificato e operato da Ḥamās, con il sostegno di altre milizie palestinesi.”</span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “The 2023 Hamas attack on Israel, i.e. Operation Al-Aqsa Flood, consisted of a series of terrorist attacks by armed groups, coming from the Gaza Strip, with the consequent killing of at least 1200 Israeli civilians and soldiers, and the <mark class="vo-m">kidnapping of about 250 of them</mark>, which took place on 7 October 2023 on the territory of Israel, planned and operated by Hamas, with the support of other Palestinian militias.”</p><p class="vo-f">Here they are, in the first sentence.</p></div>
+    <div class="vo-p" data-l="pt" data-q="pt:October 7 attacks" hidden><p class="vo-ph"><span lang="pt">Português</span> · Portuguese Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="pt">“Os ataques de 7 de outubro de 2023 a Israel, ou simplesmente ataques de 7 de outubro, foram uma série de atentados coordenados e conduzidos pelo grupo militante islâmico palestino Hamas, da Faixa de Gaza, às áreas fronteiriças do sul de Israel, na manhã de sabá, data de vários feriados judaicos.”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “The 7 October 2023 attacks on Israel, or simply 7 October attacks, were a series of coordinated attacks [atentados] conducted by the Palestinian Islamic militant group Hamas, from the Gaza Strip, into the border areas of southern Israel, on the morning of the Sabbath, date of several Jewish holidays.”</p><p class="vo-f"><b>Further on,</b> beyond the 1,200 characters we hold: first in sentence 8 of 10 (our count, 8 Nov 2026).</p></div>
+    <div class="vo-p" data-l="nl" data-q="nl:October 7 attacks" hidden><p class="vo-ph"><span lang="nl">Nederlands</span> · Dutch Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="nl">“De Hamas-aanval in Israël in 2023 was een gecoördineerde verrassingsaanval of terreuraanslag door Hamas en andere gewapende groeperingen vanuit de Gazastrook op Israël.”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “The 2023 Hamas attack in Israel was a coordinated surprise attack or terror attack by Hamas and other armed groups from the Gaza Strip on Israel.”</p><p class="vo-f"><b>Further on:</b> <span lang="nl">“Naar schatting 250-255 personen werden gevangengenomen en als gijzelaars naar Gaza overgebracht.”</span> (“An estimated 250–255 people were taken prisoner and transferred to Gaza as hostages.”)</p></div>
+    <div class="vo-p" data-l="ru" data-q="ru:October 7 attacks" hidden><p class="vo-ph"><span lang="ru">Русский</span> · Russian Wikipedia · first sentence · Oct 2026</p><p class="vo-oq"><span class="vo-o" lang="ru">“Вторжение группировки ХАМАС в Израиль (названное ею операцией «Наводнение аль-Акса», ) началось 7 октября 2023 года, когда палестинские вооружённые группировки, возглавляемые ХАМАС, проникли на территорию Израиля из сектора Газа, прорвав пограничный барьер и войдя в близлежащие израильские населённые пункты и на военные объекты.”</span><span class="vo-gap" role="img" aria-label="no hostages in this sentence"></span></p><p class="vo-tr"><b class="vo-tk">Our translation</b> “The invasion of Israel by the HAMAS group (called by it Operation &quot;al-Aqsa Flood&quot;) began on 7 October 2023, when Palestinian armed groups led by HAMAS penetrated the territory of Israel from the Gaza Strip, breaking through the border barrier and entering nearby Israeli localities and military facilities.”</p><p class="vo-f"><b>Further on:</b> <span lang="ru">“Около 1200 израильтян были убиты (включая 364 участника музыкального фестиваля), ещё 251 были взяты в заложники.”</span> (“About 1200 Israelis were killed (including 364 participants of a music festival), another 251 were taken hostage.”)</p></div>
+    </div>
+    <p class="vo-sc"><b>9 of 10.</b> In our latest copies (Oct–Nov 2026), the October 7 article’s first sentence names no hostages in 9 of the 10 Wikipedias with an article on it, though all ten opening sections mention them. Italian’s does; Hebrew’s did, in our copies from October 2024 to October 2025.</p>
+  </figure>
   <p class="fl-body" data-q="en:October 7 attacks">The opening still says “massacring civilians in 21 communities,” and the first sentence names Hamas, later on.</p>
   <p class="fl-acts"><button type="button" class="fl-play" data-sheet="o7" data-tab="1">Play the October 7 sentence</button><button type="button" class="rw-btn" data-share="c3" aria-label="Save this card as an image">Save as image</button></p>
   <p class="fl-next">The group that carried out the attack got a new definition too.</p>
@@ -590,7 +656,7 @@ details.fl-full .news-q{margin-top:4px}
       <p data-q="en:October 7 attacks"><b>October 7 attacks.</b> On 1 October 2026 its second sentence called Israel’s response <span data-tn="r7:a">“actions scholars have concluded constitute genocide”</span>; by 2 November the clause was gone. The removal is recent and may be undone.</p></div>
   </figure>
   <p class="fl-honest">The change sits in the core articles people read, while the long tail of short pages barely changed.</p>
-  <p class="fl-dinner"><span class="fl-k">In short</span>Before the war, none of the most-read Wikipedia openings on the subject charged Israel with genocide; now the article on Israel says, in Wikipedia’s voice, that Israel “began committing genocide”; the Zionism article calls Zionism “a Jewish homeland through colonization”; and, in every copy we hold, the Israel and Hamas opening sections do not mention the hostages.</p>
+  <p class="fl-dinner"><span class="fl-k">In short</span>Before the war, none of the most-read Wikipedia openings on the subject charged Israel with genocide; now the article on Israel says, in Wikipedia’s voice, that Israel “began committing genocide”; the Zionism article calls Zionism “a Jewish homeland through colonization”; and, in our latest copies, the Israel and Hamas opening sections do not mention the hostages.</p>
   <p class="fl-ev"><a class="fl-big" href="@@R@@" target="_blank" rel="noopener">Read the full research edition →</a><a href="@@R@@#reads" target="_blank" rel="noopener">Every quote, dated →</a></p>
 </section>
 <p class="cap fl-foot">Flash edition · published 9 November 2026 · Wikipedia text as of 5 November 2026 · every quote is exact and dated; the evidence, method and limits are in the <a href="@@R@@" target="_blank" rel="noopener">research edition</a>.</p>
@@ -1111,8 +1177,13 @@ function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="Wikiped
   if(id==="c3"){const p=$("#c3 .fl"),G=[[]];[...p.children].forEach(c=>{if(c.matches(".fl-k"))return;if(c.matches(".fl-sep")){G.push([]);return}G.at(-1).push(c)});
     const lab=["October 7 attacks · first sentence · Oct 2023 → now","October 7 attacks · opening section · Jan 2024 → now"];
     return {file:"wikipedia-october-7.png",kicker:"English Wikipedia · October 7 and the hostages",title:$("#c3H").textContent.trim(),size:40,
-      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>shSegs(c))})).concat([{label:"The hostages",segs:shSegs($("#c3 .fl-lane .cp"))}]),
+      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>shSegs(c))})).concat([{label:"The hostages · first sentence, in ten Wikipedias",segs:shSegs(voSc())},{label:"October 7 attacks · sentence 9",segs:shSegs($("#c3m .vo-s"))}]),
       foot:[$("#c3 .fl-body").textContent.trim(),scope,stamp+" · "+src]}}
+  if(id==="c3m"){const m=$("#c3m"),sc=voSc(),hb=sc.querySelector("b");if(hb)hb.parentNode.removeChild(hb);
+    return {void:1,file:"wikipedia-hostages-first-sentence.png",kicker:"Wikipedia · the first sentence of the October 7 article · the hostages",n:$(".vo-n",m).textContent.trim(),
+      qlab:$(".vo-w",m).textContent.trim(),q:$(".vo-s",m).textContent.trim(),
+      tiles:$$(".vo-t",m).map(b=>({nm:$(".vo-nm",b).textContent.trim(),has:!!b.dataset.has,fill:$(".vo-h",b).textContent.trim(),rtl:$(".vo-nm",b).dir==="rtl"})),
+      scb:$(".vo-sc b",m).textContent.trim(),sc:sc.textContent.replace(/\s+/g," ").trim(),c:$(".vo-c",m).textContent.replace(/\s+/g," ").trim(),foot:[scope,stamp+" · "+src]}}
   if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
     return {file:"wikipedia-hamas-english-hebrew.png",kicker:"Wikipedia · Hamas, English and Hebrew",title:$("#c4H").textContent.trim(),size:40,
       rows:[{label:"English Wikipedia · "+$(".w",en).textContent.trim(),segs:shSegs($(".s",en))},{label:"Hebrew Wikipedia · now (Oct 2026) · exploratory · our translation",rtl:$(".s",he).textContent.trim(),segs:shSegs($(".tr",he))}],
@@ -1127,7 +1198,7 @@ function shInit(){if(!SH.host)return;$$("[data-share]").forEach(b=>b.hidden=true
   try{Promise.resolve(window.claude.use("downloads")).then(d=>{if(d){SH.dl=d;$$("[data-share]").forEach(b=>b.hidden=false)}}).catch(()=>{})}catch(e){}}
 function shMsg(btn,t){if(!btn)return;const o=btn.dataset.lab||(btn.dataset.lab=btn.textContent);btn.textContent=t;setTimeout(()=>btn.textContent=o,1800)}
 async function shSave(id,btn){const spec=shSpec(id);if(!spec)return;try{if(document.fonts&&document.fonts.ready)await document.fonts.ready}catch(e){}
-  const cv=shCard(spec);const blob=await new Promise(r=>cv.toBlob(r,"image/png"));if(!blob)return;
+  const cv=spec.void?shVoid(spec):shCard(spec);const blob=await new Promise(r=>cv.toBlob(r,"image/png"));if(!blob)return;
   if(SH.host){if(!SH.dl)return;try{await SH.dl.save({filename:spec.file,data:blob});shMsg(btn,"Saved ✓")}catch(e){
       if(e&&(e.name==="NotAllowedError"||e.name==="AbortError")){shMsg(btn,"Not saved");return}
       try{await SH.dl.save({filename:spec.file,data:new Uint8Array(await blob.arrayBuffer())});shMsg(btn,"Saved ✓")}catch(e2){shMsg(btn,"Not saved")}}return}
@@ -1136,6 +1207,46 @@ async function shSave(id,btn){const spec=shSpec(id);if(!spec)return;try{if(docum
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=spec.file;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.parentNode.removeChild(a)},1500);
   shMsg(btn,"Saved ✓")}
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-share]");if(b){e.preventDefault();shSave(b.dataset.share,b)}});
+
+/* ---------- fix log 3: card 3's hostages moment (#c3m). The 251 first, then one Wikipedia every 0.45 s, each showing the empty
+   hostage slot of its October 7 first sentence; tap a language for the sentence itself. Reduced motion: the final state at once. ---------- */
+function flVoid(){const m=$("#c3m");if(!m||m._w)return;m._w=1;const T=$$(".vo-t",m),S=$("#c3mS");
+  const fin=()=>{clearTimeout(m._t);m.classList.add("done")};
+  T.forEach(b=>b.addEventListener("click",()=>{fin();voShow(m,b.getAttribute("aria-expanded")==="true"?null:b.dataset.l)}));
+  m.addEventListener("keydown",e=>{if(e.key==="Escape"&&S&&!S.hidden){const b=T.find(x=>x.getAttribute("aria-expanded")==="true");voShow(m,null);if(b)b.focus()}});
+  if(RM.matches){m.classList.add("done");return}
+  m.classList.add("pre");onView(m,()=>{m.classList.add("go");window.__voGo=performance.now();m._t=setTimeout(()=>m.classList.add("done"),9000)})}
+function voShow(m,l){const S=$("#c3mS");if(!S)return;$$(".vo-t",m).forEach(b=>b.setAttribute("aria-expanded",String(b.dataset.l===l)));
+  $$(".vo-p",S).forEach(p=>p.hidden=p.dataset.l!==l);S.hidden=!l}
+/* the scope line without its "tap a language" hint (share images) */
+const voSc=()=>{const c=$("#c3m .vo-sc").cloneNode(true);c.querySelectorAll(".vo-tap").forEach(e=>e.parentNode.removeChild(e));return c};
+/* the moment's share image: black, the 251, the ten slots (Italian's filled), the scope line, the date and the source */
+function shVoid(spec){const W=1080,H=1350,P=72,cv=document.createElement("canvas");cv.width=W;cv.height=H;const ctx=cv.getContext("2d");
+  const V={bg:"#0b0e10",fg:"#e7ebec",mut:"#8f9aa2",rule:"#2a3237"},RT=!!spec.rtl;
+  const D=RT?"'Frank Ruhl Libre', Newsreader, serif":"Newsreader, Georgia, serif",DE="Newsreader, Georgia, serif",B=RT?"Heebo, 'Libre Franklin', Arial, sans-serif":"'Libre Franklin', Arial, sans-serif";
+  const lines=(t,maxW,font)=>{ctx.font=font;const L=[];let line="";String(t).split(/\s+/).filter(Boolean).forEach(w=>{const x=line?line+" "+w:w;if(ctx.measureText(x).width>maxW&&line){L.push(line);line=w}else line=x});if(line)L.push(line);return L};
+  const text=(t,y,font,lh,col,rtl,draw)=>{const L=lines(t,W-2*P,font);if(draw){ctx.save();ctx.font=font;ctx.fillStyle=col;ctx.direction=rtl?"rtl":"ltr";ctx.textAlign=rtl?"right":"left";L.forEach((l,i)=>ctx.fillText(l,rtl?W-P:P,y+i*lh));ctx.restore()}return y+(L.length-1)*lh};
+  const lay=(k,draw)=>{let y=P+14;
+    y=text(spec.kicker,y,`600 ${Math.round(22*k)}px ${B}`,30*k,V.mut,RT,draw)+Math.round(250*k);
+    if(draw){ctx.save();ctx.font=`500 ${Math.round(280*k)}px ${DE}`;ctx.fillStyle=V.fg;ctx.textAlign=RT?"right":"left";ctx.fillText(spec.n,RT?W-P+6:P-8,y);ctx.restore()}
+    y+=Math.round(44*k);y=text(spec.qlab,y,`600 ${Math.round(19*k)}px ${B}`,26*k,V.mut,RT,draw)+Math.round(40*k);
+    y=text(spec.q,y,`400 ${Math.round(31*k)}px ${DE}`,40*k,V.fg,false,draw);
+    if(spec.qtr)y=text(spec.qtr,y+Math.round(40*k),`400 ${Math.round(26*k)}px ${D}`,34*k,V.mut,true,draw);
+    y+=Math.round(44*k);const g=14,tw=(W-2*P-4*g)/5,th=Math.round(78*k);
+    spec.tiles.forEach((t,i)=>{const r=Math.floor(i/5),c=i%5,x=RT?W-P-(c+1)*tw-c*g:P+c*(tw+g),ty=y+r*(th+g);if(!draw)return;
+      ctx.save();ctx.font=`500 ${Math.round(21*k)}px ${B}`;ctx.fillStyle=V.fg;ctx.textAlign="center";ctx.direction=t.rtl?"rtl":"ltr";ctx.fillText(t.nm,x+tw/2,ty+22*k);
+      const hy=ty+34*k,hh=th-38*k;if(t.has){ctx.fillStyle=V.fg;ctx.fillRect(x+2,hy,tw-4,hh);ctx.fillStyle=V.bg;ctx.font=`600 ${Math.round(19*k)}px ${B}`;ctx.direction="ltr";ctx.fillText(t.fill,x+tw/2,hy+hh/2+7*k)}
+      else{ctx.strokeStyle=V.mut;ctx.lineWidth=2.5;ctx.setLineDash([9,7]);ctx.strokeRect(x+2,hy,tw-4,hh)}ctx.restore()});
+    y+=2*th+g+Math.round(56*k);
+    y=text(spec.scb,y,`700 ${Math.round(40*k)}px ${B}`,48*k,V.fg,RT,draw)+Math.round(38*k);
+    y=text(spec.sc,y,`400 ${Math.round(25*k)}px ${B}`,34*k,V.fg,RT,draw)+Math.round(42*k);
+    y=text(spec.c,y,`400 ${Math.round(21*k)}px ${B}`,29*k,V.mut,RT,draw);return y};
+  const fl=f=>lines(f,W-2*P,`400 19px ${B}`).length;const fh=spec.foot.reduce((a,f)=>a+fl(f)*26+10,0),fy0=H-P-fh+8;
+  let k=1;while(k>0.6&&lay(k,false)>fy0-40)k-=0.04;
+  ctx.fillStyle=V.bg;ctx.fillRect(0,0,W,H);ctx.textBaseline="alphabetic";lay(k,true);
+  ctx.strokeStyle=V.rule;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(P,fy0-24);ctx.lineTo(W-P,fy0-24);ctx.stroke();
+  let fy=fy0;spec.foot.forEach(f=>{fy=text(f,fy,`400 19px ${B}`,26,V.mut,RT,true)+36});
+  return cv}
 
 function flDraw(){if($("#flTg i"))safe(flTiles);safe(flPos);safe(drawXwGG);$$(".fl-strip[data-tab]").forEach(h=>safe(flO7,h));safe(flZi,$("#stZI"));safe(flNk,$("#stNK"));
   if(BR.ev)safe(flBreathe);if($("#xmScroll .xm"))safe(()=>{const m=XM.mode;xmDraw();$("#xmScroll .xm").className="xm m-"+m;$$("#xmScroll tbody tr").forEach((tr,i)=>tr.style.setProperty("--r",i))});
@@ -1161,7 +1272,7 @@ function flTabsInit(){addEventListener("hashchange",flRoute);
   flRoute()}
 function flInit(){
   if(!R)return;
-  safe(flTiles);flDraw();safe(tnApply);safe(rwInit);safe(hdInit);safe(progInit);safe(shInit);
+  safe(flTiles);flDraw();safe(tnApply);safe(rwInit);safe(hdInit);safe(progInit);safe(shInit);safe(flVoid);
   $$(".fl-mo").forEach(el=>safe(flMoBuild,el));
   $$(".car").forEach(c=>safe(carInit,c));
   const c1=$("#car1");if(c1)c1.addEventListener("slide",e=>{const s=$$(".car-s",c1)[e.detail],m=s&&$(".fl-mo",s);if(m&&!m._played){m._played=1;flMoPlay(m,false)}});
