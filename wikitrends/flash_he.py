@@ -26,7 +26,10 @@ HE_VETO = ["מחשבה מאוחרת", "הערת אגב", "הערת שוליים"
            "השמדה", "אינו מעריך", "יש שטענו", "מצד ישראל", "משקיעים רבות", "הצבעה במחנות", "לכלל הסגנון", "אך לא בקול",
            "פיגועים", "עובדה מוכחת", "והפגיעה", "מתקפות 7 באוקטובר",
            # final round (HE_FIXLOG2.md): "met" is passive (הוצג), not the views displaying; "abuses" of rights are הפרות
-           "הציגו את הנוסח", "הציגה את הנוסח", "הצפיות הציגו", "ובפגיעה שיטתית", "וחוקרים רבים מאשימים", "שבהן נהרגו 1195", "גררו מאז ועד היום"]
+           "הציגו את הנוסח", "הציגה את הנוסח", "הצפיות הציגו", "ובפגיעה שיטתית", "וחוקרים רבים מאשימים", "שבהן נהרגו 1195", "גררו מאז ועד היום",
+           # fix log 3 (HE_FIXLOG3.md): "armed incursions" is ״פשיטות חמושות״ (sudden, limited armed raids), not ״חדירות״ (penetration);
+           # ״פלישות״ (invasion) would sharpen the English. Incursion = פשיטה everywhere on the page, the Jenin event included.
+           "חדירות", "החדירה הישראלית", "פלישות חמושות"]
 # English UI leftovers that must not reach the Hebrew page (data-driven strings, checked in the Hebrew sides of the string map)
 HE_NO_EN = ["court case", '"n/a"', 'icj:"icj"', '<span class="pw">removed', '<span class="pw">added', "Our coding."]
 # dates: a no-break space between the day and the month ("7 באוקטובר" never splits across lines)
@@ -160,6 +163,12 @@ def build(C, out_path):
         assert not re.search(r"\b%s\b" % who, tpl), f"Hebrew page names an account: {who}"
     assert vis.count("Ïvana") == 1, "the Hebrew page names exactly one sanctioned account, once"
 
+    # fix log 3: the owner's correction of "armed incursions" reaches every place it is shown (H2, the what-changed pair, the hero
+    # stack row, the lanes, the reach key, the event labels, the grid's coding note)
+    for must in ("כתוב היום ״פשיטות חמושות מתואמות״", "<ins>״פשיטות חמושות מתואמות״</ins>", "…פשיטות חמושות מתואמות</span>", "(פשיטות חמושות)"):
+        assert nb(must) in tpl, f"Hebrew page: the incursions translation is missing: {must}"
+    assert "״פשיטות חמושות״ (armed incursions)" in tpl and "״מתקפות״ ← ״פשיטות״" in lib, "Hebrew lanes and event labels: פשיטות"
+    assert "״סדרה של פשיטות חמושות מתואמות״" in " ".join(I["coding_notes"].values()), "Hebrew grid note: פשיטות"
     # (4) the lines whose strength must not change
     assert HE_SCOPE in vis, "the scope line (Hebrew)"
     for must in ("הקשר: בהתאם להנחיות הסגנון של ויקיפדיה כולה לגבי תוויות שנויות במחלוקת, המילה ״טרוריסטי״ יצאה מהמשפטים הראשונים של הערכים על המדינה האסלאמית (דאעש), אל־שבאב ובוקו חראם. המשפט הראשון על חמאס לא כלל אותה ב־2021.",
