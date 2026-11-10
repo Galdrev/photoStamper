@@ -1,5 +1,5 @@
 name: wikitrends-trail
-# launch 2026-11-10
+# launch 2026-11-10 run 1
 # Editor trail (wikitrends/trail.py + analyze_trail.py), in ONE job: the top TRAIL_N critical-term lead editors of the
 # scoped topic articles (guard.py scope: curated core + Israel / Palestine Top and High) and of the 1:1 matched comparison
 # articles; their 2021-2026 contributions (namespace 0 in full, talk namespaces counted) via list=usercontribs; outside
