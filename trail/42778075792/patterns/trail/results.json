@@ -1,0 +1,2809 @@
+{
+ "meta": {
+  "generated": "2026-11-10T10:00:52Z",
+  "window": [
+   "2021-01-01T00:00:00Z",
+   "2026-11-10T07:50:32Z"
+  ],
+  "scope_articles": {
+   "topic": 254,
+   "comparison": 254
+  },
+  "histories": {
+   "done": 508,
+   "errors": 0,
+   "skipped_budget": 0,
+   "truncated": 0,
+   "revisions_thousands": {
+    "topic": 133.7,
+    "comparison": 138.8
+   }
+  },
+  "leads": {
+   "articles_done": 508,
+   "complete": 508,
+   "errors": 0,
+   "skipped_budget": 0,
+   "revisions_needed": 160662,
+   "revisions_measured": 160662,
+   "share_of_revisions_with_counts": 0.999
+  },
+  "contribs": {
+   "accounts_done": 80,
+   "errors": 0,
+   "skipped_budget": 0,
+   "truncated": 1,
+   "mainspace_edits_thousands": 794.3,
+   "distinct_titles": 300329
+  },
+  "assess": {
+   "titles": 300329,
+   "assessed": 300329,
+   "errors": 0,
+   "skipped_budget": 0
+  },
+  "discovery_measurement": {
+   "candidate_articles": {
+    "topic": 3599,
+    "comparison": 1965
+   },
+   "articles_done": 5564,
+   "errors": 0,
+   "skipped_budget": 0,
+   "revisions_measured": 139796,
+   "capped_articles": 15
+  },
+  "extras": {
+   "articles": 53,
+   "done": 53,
+   "errors": 0,
+   "skipped_budget": 0
+  },
+  "population_size": {
+   "topic": 40,
+   "comparison": 40
+  },
+  "population_target": 40,
+  "population_overlap_removed_from_comparison": "<3",
+  "requests": 20432,
+  "elapsed_min": 130.0,
+  "bootstrap": 2000,
+  "permutations": 2000
+ },
+ "population": {
+  "topic": {
+   "accounts": 40,
+   "critical_term_edits_in_scope_quartiles": [
+    10.0,
+    16.0,
+    27.25
+   ],
+   "mainspace_edits_2021_2026_quartiles": [
+    3465.75,
+    5383.0,
+    12181.75
+   ],
+   "contribution_lists_truncated": 0,
+   "assessed_share_of_edits_median": 1.0
+  },
+  "comparison": {
+   "accounts": 40,
+   "critical_term_edits_in_scope_quartiles": [
+    3.0,
+    4.0,
+    6.0
+   ],
+   "mainspace_edits_2021_2026_quartiles": [
+    351.25,
+    2175.5,
+    9602.75
+   ],
+   "contribution_lists_truncated": "<3",
+   "assessed_share_of_edits_median": 1.0
+  }
+ },
+ "patterns": {
+  "topic_concentration_ip": {
+   "what": "share of each account's 2021-2026 mainspace edits in Israel / Palestine articles (PageAssessments)",
+   "n_topic": 40,
+   "n_comparison": 40,
+   "stat": "mean",
+   "topic": 0.405,
+   "topic_ci95": [
+    0.325,
+    0.491
+   ],
+   "comparison": 0.025,
+   "comparison_ci95": [
+    0.015,
+    0.038
+   ],
+   "difference": 0.379,
+   "difference_ci95": [
+    0.298,
+    0.465
+   ],
+   "p_permutation": 0.0005,
+   "cliffs_delta": 0.95,
+   "cliffs_delta_ci95": [
+    0.892,
+    0.988
+   ],
+   "quartiles": {
+    "topic": [
+     0.158,
+     0.343,
+     0.623
+    ],
+    "comparison": [
+     0.005,
+     0.011,
+     0.027
+    ]
+   },
+   "distribution": {
+    "topic": [
+     {
+      "bin": "0-0.1",
+      "n": 7
+     },
+     {
+      "bin": "0.1-0.2",
+      "n": 5
+     },
+     {
+      "bin": "0.2-0.3",
+      "n": 5
+     },
+     {
+      "bin": "0.3-0.4",
+      "n": 4
+     },
+     {
+      "bin": "0.4-0.5",
+      "n": 5
+     },
+     {
+      "bin": "0.5-0.6",
+      "n": 3
+     },
+     {
+      "bin": "0.6-0.7",
+      "n": 4
+     },
+     {
+      "bin": "0.7-0.8",
+      "n": "<3"
+     },
+     {
+      "bin": "0.8-0.9",
+      "n": 3
+     },
+     {
+      "bin": "0.9-1",
+      "n": "<3"
+     }
+    ],
+    "comparison": [
+     {
+      "bin": "0-0.1",
+      "n": 38
+     },
+     {
+      "bin": "0.1-0.2",
+      "n": "<3"
+     },
+     {
+      "bin": "0.2-0.3",
+      "n": 0
+     },
+     {
+      "bin": "0.3-0.4",
+      "n": 0
+     },
+     {
+      "bin": "0.4-0.5",
+      "n": 0
+     },
+     {
+      "bin": "0.5-0.6",
+      "n": 0
+     },
+     {
+      "bin": "0.6-0.7",
+      "n": 0
+     },
+     {
+      "bin": "0.7-0.8",
+      "n": 0
+     },
+     {
+      "bin": "0.8-0.9",
+      "n": 0
+     },
+     {
+      "bin": "0.9-1",
+      "n": 0
+     }
+    ]
+   }
+  },
+  "topic_concentration_home": {
+   "what": "share of each account's mainspace edits in its own home topic (3 most frequent non-generic WikiProjects of the scoped articles where it made critical-term edits); the like-for-like comparison",
+   "n_topic": 40,
+   "n_comparison": 40,
+   "stat": "mean",
+   "topic": 0.909,
+   "topic_ci95": [
+    0.844,
+    0.959
+   ],
+   "comparison": 0.803,
+   "comparison_ci95": [
+    0.701,
+    0.887
+   ],
+   "difference": 0.106,
+   "difference_ci95": [
+    0.007,
+    0.221
+   ],
+   "p_permutation": 0.065,
+   "cliffs_delta": 0.126,
+   "cliffs_delta_ci95": [
+    -0.153,
+    0.359
+   ],
+   "quartiles": {
+    "topic": [
+     0.936,
+     0.972,
+     0.985
+    ],
+    "comparison": [
+     0.817,
+     0.961,
+     0.981
+    ]
+   },
+   "distribution": {
+    "topic": [
+     {
+      "bin": "0-0.1",
+      "n": 0
+     },
+     {
+      "bin": "0.1-0.2",
+      "n": "<3"
+     },
+     {
+      "bin": "0.2-0.3",
+      "n": "<3"
+     },
+     {
+      "bin": "0.3-0.4",
+      "n": "<3"
+     },
+     {
+      "bin": "0.4-0.5",
+      "n": 0
+     },
+     {
+      "bin": "0.5-0.6",
+      "n": 0
+     },
+     {
+      "bin": "0.6-0.7",
+      "n": 0
+     },
+     {
+      "bin": "0.7-0.8",
+      "n": 0
+     },
+     {
+      "bin": "0.8-0.9",
+      "n": 3
+     },
+     {
+      "bin": "0.9-1",
+      "n": 34
+     }
+    ],
+    "comparison": [
+     {
+      "bin": "0-0.1",
+      "n": "<3"
+     },
+     {
+      "bin": "0.1-0.2",
+      "n": "<3"
+     },
+     {
+      "bin": "0.2-0.3",
+      "n": "<3"
+     },
+     {
+      "bin": "0.3-0.4",
+      "n": "<3"
+     },
+     {
+      "bin": "0.4-0.5",
+      "n": "<3"
+     },
+     {
+      "bin": "0.5-0.6",
+      "n": 0
+     },
+     {
+      "bin": "0.6-0.7",
+      "n": "<3"
+     },
+     {
+      "bin": "0.7-0.8",
+      "n": 0
+     },
+     {
+      "bin": "0.8-0.9",
+      "n": "<3"
+     },
+     {
+      "bin": "0.9-1",
+      "n": 28
+     }
+    ]
+   }
+  },
+  "direction_consistency": {
+   "what": "accounts with >= 10 critical-term edits: share of those edits in the account's majority direction (0.5 = balanced, 1 = always one way)",
+   "n_topic": 39,
+   "n_comparison": 19,
+   "stat": "mean",
+   "topic": 0.703,
+   "topic_ci95": [
+    0.666,
+    0.739
+   ],
+   "comparison": 0.656,
+   "comparison_ci95": [
+    0.602,
+    0.715
+   ],
+   "difference": 0.047,
+   "difference_ci95": [
+    -0.02,
+    0.111
+   ],
+   "p_permutation": 0.1914,
+   "cliffs_delta": 0.229,
+   "cliffs_delta_ci95": [
+    -0.121,
+    0.552
+   ],
+   "majority_direction": {
+    "topic": {
+     "insert": 25,
+     "remove": 14
+    },
+    "comparison": {
+     "insert": 14,
+     "remove": 5
+    }
+   },
+   "share_at_least_0.8": {
+    "topic_k": 11,
+    "topic_n": 39,
+    "comparison_k": 4,
+    "comparison_n": 19,
+    "topic": 0.282,
+    "topic_ci95": [
+     0.165,
+     0.438
+    ],
+    "comparison": 0.211,
+    "comparison_ci95": [
+     0.085,
+     0.433
+    ],
+    "difference": 0.072,
+    "difference_ci95": [
+     -0.165,
+     0.282
+    ],
+    "p_permutation": 0.7421
+   },
+   "distribution": {
+    "topic": [
+     {
+      "bin": "0.5-0.6",
+      "n": 10
+     },
+     {
+      "bin": "0.6-0.7",
+      "n": 11
+     },
+     {
+      "bin": "0.7-0.8",
+      "n": 7
+     },
+     {
+      "bin": "0.8-0.9",
+      "n": 9
+     },
+     {
+      "bin": "0.9-1",
+      "n": "<3"
+     }
+    ],
+    "comparison": [
+     {
+      "bin": "0.5-0.6",
+      "n": 8
+     },
+     {
+      "bin": "0.6-0.7",
+      "n": 4
+     },
+     {
+      "bin": "0.7-0.8",
+      "n": 3
+     },
+     {
+      "bin": "0.8-0.9",
+      "n": 3
+     },
+     {
+      "bin": "0.9-1",
+      "n": "<3"
+     }
+    ]
+   },
+   "coin_flip_expectation": 0.588
+  },
+  "cross_article_persistence": {
+   "what": "number of distinct articles where the account's net critical-term change has the sign of its majority direction (scoped articles + outside articles edited by >= 3 accounts of its group)",
+   "n_topic": 40,
+   "n_comparison": 40,
+   "stat": "median",
+   "topic": 11.5,
+   "topic_ci95": [
+    8.0,
+    16.0
+   ],
+   "comparison": 2.0,
+   "comparison_ci95": [
+    1.0,
+    3.5
+   ],
+   "difference": 9.5,
+   "difference_ci95": [
+    5.5,
+    14.0
+   ],
+   "p_permutation": 0.0005,
+   "cliffs_delta": 0.742,
+   "cliffs_delta_ci95": [
+    0.568,
+    0.874
+   ],
+   "mean": {
+    "n_topic": 40,
+    "n_comparison": 40,
+    "stat": "mean",
+    "topic": 18.025,
+    "topic_ci95": [
+     12.925,
+     24.476
+    ],
+    "comparison": 3.975,
+    "comparison_ci95": [
+     2.825,
+     5.35
+    ],
+    "difference": 14.05,
+    "difference_ci95": [
+     8.799,
+     20.477
+    ],
+    "p_permutation": 0.0005,
+    "cliffs_delta": 0.742,
+    "cliffs_delta_ci95": [
+     0.576,
+     0.875
+    ]
+   },
+   "share_of_articles_same_direction": {
+    "n_topic": 39,
+    "n_comparison": 24,
+    "stat": "mean",
+    "topic": 0.721,
+    "topic_ci95": [
+     0.675,
+     0.766
+    ],
+    "comparison": 0.624,
+    "comparison_ci95": [
+     0.561,
+     0.688
+    ],
+    "difference": 0.097,
+    "difference_ci95": [
+     0.021,
+     0.174
+    ],
+    "p_permutation": 0.021,
+    "cliffs_delta": 0.355,
+    "cliffs_delta_ci95": [
+     0.078,
+     0.605
+    ]
+   },
+   "distribution": {
+    "topic": [
+     {
+      "bin": "0-1",
+      "n": 0
+     },
+     {
+      "bin": "1-2",
+      "n": "<3"
+     },
+     {
+      "bin": "2-3",
+      "n": 0
+     },
+     {
+      "bin": "3-5",
+      "n": 5
+     },
+     {
+      "bin": "5-10",
+      "n": 12
+     },
+     {
+      "bin": "10-20",
+      "n": 10
+     },
+     {
+      "bin": "20-50",
+      "n": 11
+     },
+     {
+      "bin": "50+",
+      "n": "<3"
+     }
+    ],
+    "comparison": [
+     {
+      "bin": "0-1",
+      "n": "<3"
+     },
+     {
+      "bin": "1-2",
+      "n": 15
+     },
+     {
+      "bin": "2-3",
+      "n": 6
+     },
+     {
+      "bin": "3-5",
+      "n": 5
+     },
+     {
+      "bin": "5-10",
+      "n": 9
+     },
+     {
+      "bin": "10-20",
+      "n": 4
+     },
+     {
+      "bin": "20-50",
+      "n": 0
+     },
+     {
+      "bin": "50+",
+      "n": 0
+     }
+    ]
+   }
+  },
+  "reinsertion_after_revert": {
+   "what": "share of reverted critical-term edits (scoped articles, reverted by another account) followed within 30 days by the same account moving the same article's critical count the same way again",
+   "topic_reverted": 166,
+   "topic_reinserted": 57,
+   "comparison_reverted": 66,
+   "comparison_reinserted": 44,
+   "accounts_with_reverts": {
+    "topic": 36,
+    "comparison": 25
+   },
+   "pooled": {
+    "topic": 0.343,
+    "comparison": 0.667,
+    "topic_ci95": [
+     0.257,
+     0.426
+    ],
+    "comparison_ci95": [
+     0.578,
+     0.75
+    ],
+    "difference": -0.324,
+    "difference_ci95": [
+     -0.445,
+     -0.204
+    ]
+   },
+   "per_account": {
+    "n_topic": 24,
+    "n_comparison": 8,
+    "stat": "mean",
+    "topic": 0.337,
+    "topic_ci95": [
+     0.251,
+     0.428
+    ],
+    "comparison": 0.663,
+    "comparison_ci95": [
+     0.583,
+     0.743
+    ],
+    "difference": -0.326,
+    "difference_ci95": [
+     -0.439,
+     -0.203
+    ],
+    "p_permutation": 0.0005,
+    "cliffs_delta": -0.766,
+    "cliffs_delta_ci95": [
+     -0.951,
+     -0.495
+    ]
+   }
+  },
+  "single_purpose": {
+   "what": "account is single-purpose if >= 50% of its 2021-2026 mainspace edits are in its home topic",
+   "threshold_0.5": {
+    "topic_k": 37,
+    "topic_n": 40,
+    "comparison_k": 32,
+    "comparison_n": 40,
+    "topic": 0.925,
+    "topic_ci95": [
+     0.801,
+     0.974
+    ],
+    "comparison": 0.8,
+    "comparison_ci95": [
+     0.652,
+     0.895
+    ],
+    "difference": 0.125,
+    "difference_ci95": [
+     -0.025,
+     0.275
+    ],
+    "p_permutation": 0.2004
+   },
+   "sensitivity_0.33": {
+    "topic_k": 38,
+    "topic_n": 40,
+    "comparison_k": 35,
+    "comparison_n": 40,
+    "topic": 0.95,
+    "topic_ci95": [
+     0.835,
+     0.986
+    ],
+    "comparison": 0.875,
+    "comparison_ci95": [
+     0.739,
+     0.945
+    ],
+    "difference": 0.075,
+    "difference_ci95": [
+     -0.05,
+     0.2
+    ],
+    "p_permutation": 0.4313
+   },
+   "sensitivity_0.75": {
+    "topic_k": 37,
+    "topic_n": 40,
+    "comparison_k": 30,
+    "comparison_n": 40,
+    "topic": 0.925,
+    "topic_ci95": [
+     0.801,
+     0.974
+    ],
+    "comparison": 0.75,
+    "comparison_ci95": [
+     0.598,
+     0.858
+    ],
+    "difference": 0.175,
+    "difference_ci95": [
+     0.025,
+     0.325
+    ],
+    "p_permutation": 0.0695
+   },
+   "ip_share_0.5": {
+    "topic_k": 14,
+    "topic_n": 40,
+    "comparison_k": 0,
+    "comparison_n": 40,
+    "topic": 0.35,
+    "topic_ci95": [
+     0.221,
+     0.505
+    ],
+    "comparison": 0.0,
+    "comparison_ci95": [
+     0.0,
+     0.088
+    ],
+    "difference": 0.35,
+    "difference_ci95": [
+     0.2,
+     0.5
+    ],
+    "p_permutation": 0.0005
+   }
+  },
+  "timing_vs_events": {
+   "what": "spike weeks of mainspace activity in the 0-14 days after calendar events (lift 1 = no more than the share of weeks those windows cover)",
+   "topic": {
+    "accounts_with_spikes": 39,
+    "spike_weeks": 2404,
+    "spike_weeks_in_event_windows": 1227,
+    "expected_share_of_weeks": 0.415,
+    "spike_lift": 1.23,
+    "spike_lift_ci95": [
+     1.057,
+     1.398
+    ],
+    "activity_lift": 1.059,
+    "activity_lift_ci95": [
+     0.94,
+     1.192
+    ],
+    "events": 77
+   },
+   "comparison": {
+    "accounts_with_spikes": 36,
+    "spike_weeks": 1504,
+    "spike_weeks_in_event_windows": 123,
+    "expected_share_of_weeks": 0.098,
+    "spike_lift": 0.834,
+    "spike_lift_ci95": [
+     0.69,
+     0.989
+    ],
+    "activity_lift": 0.818,
+    "activity_lift_ci95": [
+     0.66,
+     1.045
+    ],
+    "events": 10
+   },
+   "difference": {
+    "spike_lift_difference": 0.396,
+    "ci95": [
+     0.167,
+     0.62
+    ]
+   }
+  },
+  "talk_ratio": {
+   "what": "talk-namespace edits per mainspace edit, 2021-2026",
+   "n_topic": 40,
+   "n_comparison": 40,
+   "stat": "median",
+   "topic": 0.381,
+   "topic_ci95": [
+    0.234,
+    0.55
+   ],
+   "comparison": 0.385,
+   "comparison_ci95": [
+    0.25,
+    0.558
+   ],
+   "difference": -0.004,
+   "difference_ci95": [
+    -0.236,
+    0.237
+   ],
+   "p_permutation": 0.9885,
+   "cliffs_delta": -0.031,
+   "cliffs_delta_ci95": [
+    -0.276,
+    0.209
+   ]
+  }
+ },
+ "discovery": {
+  "topic": {
+   "candidate_articles": 3599,
+   "candidates_measured_3plus": 3594,
+   "articles_3plus_qualifying_editors": 53,
+   "articles_3plus_inserting_critical": 23,
+   "articles_3plus_removing_connection": 19,
+   "articles": [
+    {
+     "title": "Palestinian genocide allegations",
+     "distinct_editors_qualifying": 9,
+     "distinct_editors_inserting_critical": 7,
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 29,
+     "net_critical_insertions": 7,
+     "net_connection_change": 1,
+     "edits_measured": 594,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "genocide"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "Since its foundation in 1948, Israel has been accused of carrying out genocide against Palestinians during the Israeli–Palestinian conflict.",
+     "lead_critical_2021_vs_now": [
+      null,
+      20
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      1
+     ],
+     "monthly_views_last_12m": "5.5k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Death",
+      "Discrimination",
+      "Ethnic groups",
+      "Human rights",
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Law",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence gained genocide since 2021"
+    },
+    {
+     "title": "Palestinian political violence",
+     "distinct_editors_qualifying": 8,
+     "distinct_editors_inserting_critical": 4,
+     "distinct_editors_removing_connection": 5,
+     "distinct_editors_edited": 20,
+     "net_critical_insertions": 10,
+     "net_connection_change": -7,
+     "edits_measured": 119,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Palestinian political violence refers to acts of violence or terror motivated by Palestinian nationalism.",
+     "first_sentence_now": "As Palestinians have not had a fully recognized state with a regular army, much of Palestinian political violence in the context of the Israeli–Palestinian conflict has taken the form of insurgency.",
+     "lead_critical_2021_vs_now": [
+      0,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      9,
+      7
+     ],
+     "monthly_views_last_12m": "6.2k",
+     "projects": [
+      "British Empire",
+      "Crime and Criminal Biography",
+      "Israel",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "South Africa's genocide case against Israel",
+     "distinct_editors_qualifying": 6,
+     "distinct_editors_inserting_critical": 5,
+     "distinct_editors_removing_connection": 4,
+     "distinct_editors_edited": 17,
+     "net_critical_insertions": -1,
+     "net_connection_change": -4,
+     "edits_measured": 358,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "genocide"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "The Application of the Convention on the Prevention and Punishment of the Crime of Genocide in the Gaza Strip (South Africa v.",
+     "lead_critical_2021_vs_now": [
+      null,
+      7
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      1
+     ],
+     "monthly_views_last_12m": "15.7k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Death",
+      "Discrimination",
+      "Human rights",
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Law",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment",
+      "South Africa"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence gained genocide since 2021"
+    },
+    {
+     "title": "Legality of the Israeli occupation of Palestine",
+     "distinct_editors_qualifying": 5,
+     "distinct_editors_inserting_critical": 4,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 7,
+     "net_critical_insertions": 9,
+     "net_connection_change": 1,
+     "edits_measured": 66,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "occupation of the palestinian",
+      "self-determination"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "In 2024, the International Court of Justice advised the United Nations General Assembly that Israel's occupation of the Palestinian territories was unlawful because of its violations of the prohibition on acquiring territory by force and t…",
+     "lead_critical_2021_vs_now": [
+      null,
+      3
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      2
+     ],
+     "monthly_views_last_12m": "2.3k",
+     "projects": [
+      "Arab world",
+      "Human rights",
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Law",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence gained occupation of the palestinian, self-determination since 2021"
+    },
+    {
+     "title": "Samaritans",
+     "distinct_editors_qualifying": 5,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": 4,
+     "distinct_editors_edited": 11,
+     "net_critical_insertions": 3,
+     "net_connection_change": 4,
+     "edits_measured": 278,
+     "first_sentence_2021_terms": [
+      "israelites"
+     ],
+     "first_sentence_now_terms": [
+      "israelite",
+      "israelites"
+     ],
+     "first_sentence_2021": "The Samaritans (Samaritan Hebrew:, Shamerim ('Guardians/Keepers/Watchers (of the Torah)';, al-Sāmiriyyūn) are an ethnoreligious group originating from the Israelites (or Hebrews) of the Ancient Near East.",
+     "first_sentence_now": "Samaritans (ࠔࠌࠓࠉࠌ, Šåmerīm; שומרונים, Šomronim; سامريون, Sāmiriyyūn), often preferring to be called Israelite Samaritans, are an ethnoreligious group originating from the Hebrews and Israelites of the ancient Near East.",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      8,
+      7
+     ],
+     "monthly_views_last_12m": "40.7k",
+     "projects": [
+      "Ancient Near East",
+      "Assyria",
+      "Ethnic groups",
+      "Israel",
+      "Jewish history",
+      "Judaism",
+      "Palestine",
+      "Project-independent assessment",
+      "Religion"
+     ],
+     "note": "Jewish history / Judaism article; first sentence gained israelite since 2021"
+    },
+    {
+     "title": "Allegations of genocide in the October 7 attacks",
+     "distinct_editors_qualifying": 5,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 18,
+     "net_critical_insertions": -5,
+     "net_connection_change": 0,
+     "edits_measured": 184,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "genocidal",
+      "genocide"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "Allegations have been made that the October 7 attacks were conducted with genocidal intent toward Israelis, and that it constituted a genocide or a genocidal massacre (or a wave of such massacres).",
+     "lead_critical_2021_vs_now": [
+      null,
+      10
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      4
+     ],
+     "monthly_views_last_12m": "4.2k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Death",
+      "Discrimination",
+      "Ethnic groups",
+      "Human rights",
+      "Islam",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Jewish history",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; first sentence gained genocidal, genocide since 2021"
+    },
+    {
+     "title": "Settler colonialism",
+     "distinct_editors_qualifying": 5,
+     "distinct_editors_inserting_critical": 5,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 17,
+     "net_critical_insertions": -12,
+     "net_connection_change": -6,
+     "edits_measured": 184,
+     "first_sentence_2021_terms": [
+      "colonialism",
+      "colonized",
+      "settler colonialism"
+     ],
+     "first_sentence_now_terms": [
+      "colonialism",
+      "indigenous",
+      "settler colonialism"
+     ],
+     "first_sentence_2021": "Settler colonialism is a form of colonialism that seeks to replace the original population of the colonized territory with a new society of settlers.",
+     "first_sentence_now": "Settler colonialism is a process by which settlers exercise colonial rule over a land and its indigenous peoples, transforming the land, and eliminating and replacing its population with the society of the settlers.",
+     "lead_critical_2021_vs_now": [
+      20,
+      11
+     ],
+     "lead_connection_2021_vs_now": [
+      4,
+      2
+     ],
+     "monthly_views_last_12m": "9.8k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Death",
+      "Discrimination",
+      "Ethnic groups",
+      "History",
+      "Human rights",
+      "International relations",
+      "Philosophy",
+      "Politics",
+      "Project-independent assessment",
+      "Sociology"
+     ],
+     "note": "outside the Israel / Palestine WikiProjects; first sentence gained indigenous; lost colonized since 2021"
+    },
+    {
+     "title": "Francesca Albanese",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 15,
+     "net_critical_insertions": 10,
+     "net_connection_change": 4,
+     "edits_measured": 105,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": null,
+     "first_sentence_now": "Francesca Paola Albanese (born 1976 or 1977) is an Italian legal scholar and expert on human rights.",
+     "lead_critical_2021_vs_now": [
+      null,
+      8
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      2
+     ],
+     "monthly_views_last_12m": "27.0k",
+     "projects": [
+      "Biography",
+      "International relations",
+      "Italy",
+      "Law",
+      "Project-independent assessment",
+      "Women",
+      "Women's History"
+     ],
+     "note": "a person (BLP rules may apply); outside the Israel / Palestine WikiProjects; already in our wider corpus (below Top/High); article created after 2021"
+    },
+    {
+     "title": "Lions' Den (militant group)",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 6,
+     "net_connection_change": -1,
+     "edits_measured": 55,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "occupied west bank"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "The Lions' Den (عرين الأسود) is a Palestinian militant group operating in the Israeli-occupied West Bank.",
+     "lead_critical_2021_vs_now": [
+      null,
+      3
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "1.3k",
+     "projects": [
+      "Israel",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence gained occupied west bank since 2021"
+    },
+    {
+     "title": "ICC arrest warrants for Israeli leaders",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 4,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 9,
+     "net_critical_insertions": 6,
+     "net_connection_change": 1,
+     "edits_measured": 54,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "crimes against humanity",
+      "genocide",
+      "persecution",
+      "war crime",
+      "war crimes"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "On 21 November 2024, following an investigation of war crimes and crimes against humanity, the International Criminal Court (ICC) issued arrest warrants for two senior Israeli officials, Benjamin Netanyahu, the prime minister of Israel, an…",
+     "lead_critical_2021_vs_now": [
+      null,
+      10
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      1
+     ],
+     "monthly_views_last_12m": "9.4k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Law",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence gained crimes against humanity, genocide, persecution, war crime, war crimes since 2021"
+    },
+    {
+     "title": "Majdal Shams",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 4,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 2,
+     "net_connection_change": 0,
+     "edits_measured": 44,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Majdal Shams is a Druze town in the southern foothills of Mt.",
+     "first_sentence_now": "Majdal Shams (مجدل شمس; מג'דל שמס) is a Druze town in the Golan Heights region, Quneitra Governorate, Syria.",
+     "lead_critical_2021_vs_now": [
+      0,
+      3
+     ],
+     "lead_connection_2021_vs_now": [
+      0,
+      0
+     ],
+     "monthly_views_last_12m": "2.1k",
+     "projects": [
+      "Cities",
+      "Israel",
+      "Project-independent assessment",
+      "Syria"
+     ],
+     "note": "a specific place; first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "2025 Pahalgam attack",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 4,
+     "distinct_editors_edited": 5,
+     "net_critical_insertions": 0,
+     "net_connection_change": -10,
+     "edits_measured": 87,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "terrorist"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "The 2025 Pahalgam attack, also referred to as the 2025 Pahalgam massacre, was an Islamist terrorist attack on tourists by three armed militants near Pahalgam in Indian-administered Jammu and Kashmir in which 26 civilians were killed on 22 …",
+     "lead_critical_2021_vs_now": [
+      null,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      3
+     ],
+     "monthly_views_last_12m": "43.4k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "India",
+      "Islam",
+      "Law Enforcement",
+      "Military history",
+      "Project-independent assessment"
+     ],
+     "note": "outside the Israel / Palestine WikiProjects; first sentence gained terrorist since 2021"
+    },
+    {
+     "title": "United Nations Partition Plan for Palestine",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 4,
+     "distinct_editors_edited": 16,
+     "net_critical_insertions": 0,
+     "net_connection_change": 0,
+     "edits_measured": 125,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "The United Nations Partition Plan for Palestine was a proposal by the United Nations, which recommended a partition of Mandatory Palestine at the end of the British Mandate.",
+     "first_sentence_now": "The United Nations Partition Plan for Palestine was a proposal developed by the United Nations for the future government of Mandatory Palestine following the termination of the British Mandate.",
+     "lead_critical_2021_vs_now": [
+      0,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      1,
+      4
+     ],
+     "monthly_views_last_12m": "24.2k",
+     "projects": [
+      "British Empire",
+      "International relations",
+      "Israel",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Comparisons between Israel and Nazi Germany",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 4,
+     "distinct_editors_edited": 16,
+     "net_critical_insertions": -1,
+     "net_connection_change": -30,
+     "edits_measured": 98,
+     "first_sentence_2021_terms": [
+      "antisemitic",
+      "holocaust"
+     ],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Holocaust inversion is a phrase which is used to describe the portrayal of Jews as Nazis, crypto-Nazis, Nazi sympathizers, Holocaust perpetrators, or Holocaust \"copycats.\" Whether this discourse is antisemitic when it is related to anti-Zi…",
+     "first_sentence_now": "Comparisons between Israel and Nazi Germany occur frequently in the political discourse of anti-Zionism and as part of the broader criticism of Israel.",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      21,
+      5
+     ],
+     "monthly_views_last_12m": "7.0k",
+     "projects": [
+      "Austria",
+      "Discrimination",
+      "European history",
+      "Former countries",
+      "Germany",
+      "History",
+      "Israel",
+      "Jewish history",
+      "Judaism",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; already in our wider corpus (below Top/High); first sentence lost antisemitic, holocaust since 2021"
+    },
+    {
+     "title": "Arabs",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 4,
+     "distinct_editors_edited": 11,
+     "net_critical_insertions": -1,
+     "net_connection_change": -3,
+     "edits_measured": 229,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "The Arabs (singular Arab; singular, ISO 233: ‘arabī, Arabic pronunciation:, plural, ISO 233: ‘arab, Arabic pronunciation: ) are a Meta-ethnic group descended from nomadic pastoralists who travelled around the Arabian Peninsula and Syrian D…",
+     "first_sentence_now": "Arabs (عَرَب) are an ethnic group mainly inhabiting the Arab world in West Asia and North Africa.",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      3,
+      1
+     ],
+     "monthly_views_last_12m": "41.5k",
+     "projects": [
+      "Africa",
+      "Arab world",
+      "Egypt",
+      "Ethnic groups",
+      "Iraq",
+      "Lebanon",
+      "Morocco",
+      "Palestine",
+      "Project-independent assessment",
+      "Saudi Arabia",
+      "Syria",
+      "Western Asia",
+      "Yemen"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Nuseirat rescue and massacre",
+     "distinct_editors_qualifying": 4,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 4,
+     "distinct_editors_edited": 15,
+     "net_critical_insertions": -1,
+     "net_connection_change": -1,
+     "edits_measured": 146,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "hostages"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "On 8 June 2024, the Israel Defense Forces rescued four hostages from the Nuseirat refugee camp, and, during the operation, killed at least 276 Palestinians and injured over 698.",
+     "lead_critical_2021_vs_now": [
+      null,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      3
+     ],
+     "monthly_views_last_12m": "1.9k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence gained hostages since 2021"
+    },
+    {
+     "title": "Gaza genocide recognition",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 95,
+     "net_connection_change": 1,
+     "edits_measured": 15,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "genocide"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "Since October 2023, the government of Israel has been accused of committing genocide against the Palestinian population of the Gaza Strip by several states across the world.",
+     "lead_critical_2021_vs_now": [
+      null,
+      5
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "6.6k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Death",
+      "Disaster management",
+      "Discrimination",
+      "Ethnic groups",
+      "Human rights",
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Lists",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence gained genocide since 2021"
+    },
+    {
+     "title": "Gaza genocide denial",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 9,
+     "net_critical_insertions": 10,
+     "net_connection_change": 4,
+     "edits_measured": 66,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "genocide"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "Gaza genocide denial constitutes the efforts to deny that Israel is committing genocide against Palestinians during the Gaza war.",
+     "lead_critical_2021_vs_now": [
+      null,
+      6
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      1
+     ],
+     "monthly_views_last_12m": "10.3k",
+     "projects": [
+      "Alternative views",
+      "Crime and Criminal Biography",
+      "Death",
+      "Disaster management",
+      "Discrimination",
+      "Ethnic groups",
+      "Human rights",
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Palestine",
+      "Philosophy",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence gained genocide since 2021"
+    },
+    {
+     "title": "Sheikh Jarrah controversy",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 9,
+     "net_critical_insertions": 6,
+     "net_connection_change": -1,
+     "edits_measured": 197,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "ethnic cleansing",
+      "expulsion"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "The Sheikh Jarrah controversy, which has been described as a \"property/real estate dispute\" by the Israeli government and its supporters, and as an \"expulsion\", \"displacement\" or \"ethnic cleansing\" event and a matter of international law b…",
+     "lead_critical_2021_vs_now": [
+      null,
+      8
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "1.2k",
+     "projects": [
+      "Home Living",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Jewish history",
+      "Law",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; first sentence gained ethnic cleansing, expulsion since 2021"
+    },
+    {
+     "title": "Criticism of Israel",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 13,
+     "net_critical_insertions": 5,
+     "net_connection_change": 0,
+     "edits_measured": 76,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [
+      "israeli occupation",
+      "nakba",
+      "occupation of the west bank"
+     ],
+     "first_sentence_2021": "Criticism of the Israeli government, often referred to simply as criticism of Israel, is an ongoing subject of journalistic and scholarly commentary and research within the scope of international relations theory, expressed in terms of pol…",
+     "first_sentence_now": "Israel has faced international criticism since its establishment in 1948 relating to Zionist political violence and a variety of other issues, many of which are centered around human rights violations related to the Nakba and the Israeli o…",
+     "lead_critical_2021_vs_now": [
+      1,
+      6
+     ],
+     "lead_connection_2021_vs_now": [
+      1,
+      2
+     ],
+     "monthly_views_last_12m": "7.9k",
+     "projects": [
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Jewish history",
+      "Judaism",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; already in our wider corpus (below Top/High); first sentence gained israeli occupation, nakba, occupation of the west bank since 2021"
+    },
+    {
+     "title": "Genocide",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 5,
+     "net_connection_change": 0,
+     "edits_measured": 438,
+     "first_sentence_2021_terms": [
+      "genocide"
+     ],
+     "first_sentence_now_terms": [
+      "genocide"
+     ],
+     "first_sentence_2021": "Genocide is the intentional action to destroy a people—usually defined as an ethnic, national, racial, or religious group—in whole or in part.",
+     "first_sentence_now": "Genocide is the partial or total destruction of a human group, committed intentionally.",
+     "lead_critical_2021_vs_now": [
+      7,
+      20
+     ],
+     "lead_connection_2021_vs_now": [
+      1,
+      1
+     ],
+     "monthly_views_last_12m": "41.0k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Death",
+      "Discrimination",
+      "Ethnic groups",
+      "Human rights",
+      "International relations",
+      "Philosophy",
+      "Project-independent assessment"
+     ],
+     "note": "outside the Israel / Palestine WikiProjects; first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Causes of the 1948 Palestinian expulsion and flight",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 9,
+     "net_critical_insertions": 5,
+     "net_connection_change": 1,
+     "edits_measured": 120,
+     "first_sentence_2021_terms": [
+      "expelled"
+     ],
+     "first_sentence_now_terms": [
+      "expelled"
+     ],
+     "first_sentence_2021": "During the 1948 Palestine War in which the State of Israel was established, around 700,000 Palestinian Arabs or 85% of the total population of the territory Israel captured fled or were expelled from their homes by Israeli forces.",
+     "first_sentence_now": "During the 1948 Palestine war in which the State of Israel was established, around 700,000 Palestinian Arabs, or 85% of the total population of the territory Israel captured, were expelled or fled from their homes.",
+     "lead_critical_2021_vs_now": [
+      1,
+      4
+     ],
+     "lead_connection_2021_vs_now": [
+      0,
+      1
+     ],
+     "monthly_views_last_12m": "1.6k",
+     "projects": [
+      "Israel",
+      "Military history",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "People's Mojahedin Organization of Iran",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 5,
+     "net_connection_change": 6,
+     "edits_measured": 643,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "The People's Mujahedin Organization of Iran, or the Mujahedin-e-Khalq (abbreviated MEK, PMOI, or MKO), is an Iranian political-militant organization.",
+     "first_sentence_now": "The People's Mojahedin Organization of Iran (PMOI), also known as Mojahedin-e-Khalq (MEK) or Mojahedin-e-Khalq Organization (MKO; سازمان مجاهدین خلق ایران), is an Iranian dissident organisation.",
+     "lead_critical_2021_vs_now": [
+      0,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      3,
+      2
+     ],
+     "monthly_views_last_12m": "33.7k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Iran",
+      "Military history",
+      "Organizations",
+      "Politics",
+      "Project-independent assessment",
+      "Socialism"
+     ],
+     "note": "outside the Israel / Palestine WikiProjects; first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Racial conceptions of Jewish identity in Zionism",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 10,
+     "net_critical_insertions": 5,
+     "net_connection_change": 6,
+     "edits_measured": 749,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": null,
+     "first_sentence_now": "In the late 19th century, amid attempts to apply science to notions of race, some of the founders of Zionism (such as Max Nordau) sought to reformulate conceptions of Jewishness in terms of racial identity and the \"race science\" of the tim…",
+     "lead_critical_2021_vs_now": [
+      null,
+      3
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      5
+     ],
+     "monthly_views_last_12m": "637",
+     "projects": [
+      "Discrimination",
+      "Israel",
+      "Judaism",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment",
+      "Sociology"
+     ],
+     "note": "Jewish history / Judaism article; article created after 2021"
+    },
+    {
+     "title": "Yahya Sinwar",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 15,
+     "net_critical_insertions": 4,
+     "net_connection_change": -2,
+     "edits_measured": 122,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Yahya Sinwar (Yehiya Sinwar ) (born 1962) is the current Palestinian leader of Hamas in the Gaza Strip, having taken over from Ismail Haniyeh in February 2017.",
+     "first_sentence_now": "Yahya Ibrahim Hassan Sinwar (29 October 1962 – 16 October 2024) was a Palestinian politician and militant.",
+     "lead_critical_2021_vs_now": [
+      0,
+      4
+     ],
+     "lead_connection_2021_vs_now": [
+      2,
+      1
+     ],
+     "monthly_views_last_12m": "43.1k",
+     "projects": [
+      "Biography",
+      "Crime and Criminal Biography",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment"
+     ],
+     "note": "a person (BLP rules may apply); already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "East Jerusalem",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 10,
+     "net_critical_insertions": 4,
+     "net_connection_change": 0,
+     "edits_measured": 54,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "East Jerusalem or Eastern Jerusalem ( al-Quds al-Sharqit; ISO) is the sector of Jerusalem that was occupied by Jordan during the 1948 Arab–Israeli War, as opposed to the western sector of the city, West Jerusalem, which was occupied by Isr…",
+     "first_sentence_now": "East Jerusalem (القدس الشرقية; מִזְרַח יְרוּשָׁלַיִם) is the portion of Jerusalem east of the Green Line.",
+     "lead_critical_2021_vs_now": [
+      0,
+      4
+     ],
+     "lead_connection_2021_vs_now": [
+      0,
+      0
+     ],
+     "monthly_views_last_12m": "14.6k",
+     "projects": [
+      "Cities",
+      "Israel",
+      "Palestine",
+      "Project-independent assessment",
+      "Urban studies and planning"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Gaza war protests at universities",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 12,
+     "net_critical_insertions": 3,
+     "net_connection_change": -5,
+     "edits_measured": 123,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "genocide"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "During the Gaza war and genocide, protests on university campuses in solidarity with the Palestinians in Gaza escalated in April 2024, spreading in the United States and other countries, as part of wider Gaza war protests.",
+     "lead_critical_2021_vs_now": [
+      null,
+      3
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      2
+     ],
+     "monthly_views_last_12m": "2.0k",
+     "projects": [
+      "Anti-war",
+      "Discrimination",
+      "Espionage",
+      "Freedom of speech",
+      "Globalization",
+      "Higher education",
+      "Human rights",
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Law Enforcement",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment",
+      "Sociology",
+      "United States"
+     ],
+     "note": "first sentence gained genocide since 2021"
+    },
+    {
+     "title": "Iran–Israel proxy conflict",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 16,
+     "net_critical_insertions": 3,
+     "net_connection_change": -3,
+     "edits_measured": 115,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "The Iran–Israel proxy conflict, also known as the Iran–Israel proxy war or Iran–Israel Cold War, is an ongoing proxy war between Iran and Israel.",
+     "first_sentence_now": "Iran and Israel have been engaged in a proxy conflict since 1985.",
+     "lead_critical_2021_vs_now": [
+      0,
+      3
+     ],
+     "lead_connection_2021_vs_now": [
+      1,
+      0
+     ],
+     "monthly_views_last_12m": "39.2k",
+     "projects": [
+      "International relations",
+      "Iran",
+      "Israel",
+      "Military history",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "2024 Lebanon war",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 12,
+     "net_critical_insertions": 3,
+     "net_connection_change": 0,
+     "edits_measured": 160,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": null,
+     "first_sentence_now": "A war between Israel and Hezbollah took place in Lebanon for about 10 weeks in 2024 amid the Middle Eastern crisis.",
+     "lead_critical_2021_vs_now": [
+      null,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "2.5k",
+     "projects": [
+      "Death",
+      "Human rights",
+      "International relations",
+      "Israel",
+      "Lebanon",
+      "Military history",
+      "Project-independent assessment"
+     ],
+     "note": "already in our wider corpus (below Top/High); article created after 2021"
+    },
+    {
+     "title": "Ismail Haniyeh",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 11,
+     "net_critical_insertions": 3,
+     "net_connection_change": 0,
+     "edits_measured": 45,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Ismail Abdel Salam Ahmed Haniyeh (Ismaʻīl Haniyya; sometimes transliterated as Haniya, Haniyah or Hanieh;; born 29 January 1962) is a senior political leader of Hamas and formerly one of two disputed Prime Ministers of the Palestinian Nati…",
+     "first_sentence_now": "Ismail Haniyeh (إسماعيل هنية,; 29 January 1962 – 31 July 2024) was a Palestinian politician who served as third chairman of the Hamas Political Bureau from May 2017 until his assassination in July 2024.",
+     "lead_critical_2021_vs_now": [
+      0,
+      4
+     ],
+     "lead_connection_2021_vs_now": [
+      0,
+      0
+     ],
+     "monthly_views_last_12m": "24.7k",
+     "projects": [
+      "Biography",
+      "Crime and Criminal Biography",
+      "Islam",
+      "Israel Palestine Collaboration",
+      "Military history",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment"
+     ],
+     "note": "a person (BLP rules may apply); already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "National parks and nature reserves of Israel",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 4,
+     "net_critical_insertions": 3,
+     "net_connection_change": 0,
+     "edits_measured": 11,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "National parks of Israel are declared historic sites or nature reserves, which are mostly operated and maintained by the National Nature and Parks Authority.",
+     "first_sentence_now": "National parks of Israel are declared historic sites or nature reserves, which are mostly operated and maintained by the National Nature and Parks Authority.",
+     "lead_critical_2021_vs_now": [
+      1,
+      3
+     ],
+     "lead_connection_2021_vs_now": [
+      1,
+      1
+     ],
+     "monthly_views_last_12m": "577",
+     "projects": [
+      "Israel",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Plan Dalet",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 10,
+     "net_critical_insertions": 3,
+     "net_connection_change": 0,
+     "edits_measured": 121,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [
+      "jewish state"
+     ],
+     "first_sentence_2021": "Plan Dalet (Tokhnit dalet) was a plan worked out by the Haganah in Mandatory Palestine in March 1948.",
+     "first_sentence_now": "Plan Dalet (תוכנית ד', Tokhnit dalet \"Plan D\"; 1 April – 14 May, 1948) was a Zionist military plan executed during the 1948 Palestine war for the conquest of territory in Mandatory Palestine in preparation for the establishment of a Jewish…",
+     "lead_critical_2021_vs_now": [
+      3,
+      6
+     ],
+     "lead_connection_2021_vs_now": [
+      4,
+      4
+     ],
+     "monthly_views_last_12m": "4.7k",
+     "projects": [
+      "History",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence gained jewish state since 2021"
+    },
+    {
+     "title": "UNRWA and Israel",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 19,
+     "net_critical_insertions": 3,
+     "net_connection_change": 0,
+     "edits_measured": 315,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": null,
+     "first_sentence_now": "The relationship between the United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA) and Israel is a feature of the Israeli–Palestinian conflict.",
+     "lead_critical_2021_vs_now": [
+      null,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      1
+     ],
+     "monthly_views_last_12m": "888",
+     "projects": [
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment",
+      "Sociology"
+     ],
+     "note": "article created after 2021"
+    },
+    {
+     "title": "2023 Neve Yaakov shooting",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 9,
+     "net_critical_insertions": 2,
+     "net_connection_change": -1,
+     "edits_measured": 101,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "occupied west bank"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "On 27 January 2023, a Palestinian gunman killed at least seven civilians in the Israeli settlement of Neve Yaakov, in East Jerusalem, the occupied West Bank.",
+     "lead_critical_2021_vs_now": [
+      null,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "246",
+     "projects": [
+      "Crime and Criminal Biography",
+      "International relations",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Judaism",
+      "Law Enforcement",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; first sentence gained occupied west bank since 2021"
+    },
+    {
+     "title": "Globalize the intifada",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 2,
+     "net_connection_change": -1,
+     "edits_measured": 30,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "israeli occupation"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "\"Globalize the intifada\" is a slogan that has been used to advocate for international support of Palestinian resistance against Israeli occupation, as well as other issues that people see as tied to the Palestinian cause.",
+     "lead_critical_2021_vs_now": [
+      null,
+      2
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      3
+     ],
+     "monthly_views_last_12m": "7.9k",
+     "projects": [
+      "Freedom of speech",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence gained israeli occupation since 2021"
+    },
+    {
+     "title": "World Central Kitchen aid convoy attack",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 13,
+     "net_critical_insertions": 2,
+     "net_connection_change": 0,
+     "edits_measured": 173,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": null,
+     "first_sentence_now": "The World Central Kitchen aid convoy attack occurred on 1 April 2024, when Israeli drones targeted a three-car convoy belonging to World Central Kitchen (WCK) in the Gaza Strip, killing seven aid workers.",
+     "lead_critical_2021_vs_now": [
+      null,
+      2
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "2.7k",
+     "projects": [
+      "Death",
+      "Disaster management",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "article created after 2021"
+    },
+    {
+     "title": "Bethlehem",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 11,
+     "net_critical_insertions": 2,
+     "net_connection_change": 1,
+     "edits_measured": 79,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Bethlehem (\"House of Meat\"; Bet Leḥem,, \"House of Bread\";;; initially named after Canaanite fertility god Lehem) is a city in the central West Bank, Palestine, about south of Jerusalem.",
+     "first_sentence_now": "Bethlehem is a city in the West Bank, Palestine, located about south of Jerusalem, and the capital of the Bethlehem Governorate.",
+     "lead_critical_2021_vs_now": [
+      1,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      0,
+      1
+     ],
+     "monthly_views_last_12m": "44.8k",
+     "projects": [
+      "Arab world",
+      "Christianity",
+      "Cities",
+      "Classical Greece and Rome",
+      "Greece",
+      "Holidays",
+      "Israel",
+      "Jewish history",
+      "Judaism",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; a specific place; first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Legal Consequences arising from the Policies and Practices of Israel in the Occupied Palestinian Territory, including East Jerusalem",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 3,
+     "distinct_editors_removing_connection": 0,
+     "distinct_editors_edited": 7,
+     "net_critical_insertions": 2,
+     "net_connection_change": 1,
+     "edits_measured": 98,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "israeli occupation",
+      "occupation of the palestinian",
+      "occupied palestinian"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "The Legal Consequences arising from the Policies and Practices of Israel in the Occupied Palestinian Territory, including East Jerusalem (Request for Advisory Opinion) was a proceeding before the International Court of Justice (ICJ), the h…",
+     "lead_critical_2021_vs_now": [
+      null,
+      5
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      1
+     ],
+     "monthly_views_last_12m": "212",
+     "projects": [
+      "International relations",
+      "Israel",
+      "Law",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence gained israeli occupation, occupation of the palestinian, occupied palestinian since 2021"
+    },
+    {
+     "title": "January 2023 Jenin incursion",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 7,
+     "net_critical_insertions": 1,
+     "net_connection_change": -4,
+     "edits_measured": 111,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "occupied west bank"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "On 26 January 2023, the Israel Border Police and the Israeli army conducted an armed raid on the Jenin refugee camp, which is in Area A of the Israeli-occupied West Bank and under Palestinian civil authority.",
+     "lead_critical_2021_vs_now": [
+      null,
+      3
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      1
+     ],
+     "monthly_views_last_12m": "267",
+     "projects": [
+      "Death",
+      "Israel",
+      "Israel Palestine Collaboration",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "first sentence gained occupied west bank since 2021"
+    },
+    {
+     "title": "Zakaria Zubeidi",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 5,
+     "net_critical_insertions": 0,
+     "net_connection_change": -5,
+     "edits_measured": 62,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Zakaria Muhammad 'Abdelrahman Zubeidi (other spellings include Zakariyah Zbeidi, Zacharia and Zubaidi) (born 1976) is a former Palestinian militant leader, who recently ended his years on Israel's most-wanted list by handing over his guns …",
+     "first_sentence_now": "Zakaria Muhammad 'Abdelrahman Zubeidi (زكريا محمد عبد الرحمن الزبيدي; other spellings include Zakariyah Zbeidi, Zacharia and Zubaidi; born 1976) is the former Jenin chief of the Al-Aqsa Martyrs' Brigades.",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      1,
+      1
+     ],
+     "monthly_views_last_12m": "703",
+     "projects": [
+      "Biography",
+      "Crime and Criminal Biography",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "a person (BLP rules may apply); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "List of massacres in Palestine",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 0,
+     "net_connection_change": -1,
+     "edits_measured": 6,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "The following is a list of massacres that have occurred in the Palestinian territories since 1967.",
+     "first_sentence_now": "The following is a list of massacres that have occurred in Palestine (East Jerusalem, West Bank and the Gaza Strip) after the 1948 Palestine war.",
+     "lead_critical_2021_vs_now": [
+      0,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      2,
+      1
+     ],
+     "monthly_views_last_12m": "1.8k",
+     "projects": [
+      "Crime and Criminal Biography",
+      "Death",
+      "Disaster management",
+      "Law",
+      "Law Enforcement",
+      "Lists",
+      "Palestine",
+      "Project-independent assessment",
+      "Sociology"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Mohammed el-Kurd",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 8,
+     "net_critical_insertions": 0,
+     "net_connection_change": -1,
+     "edits_measured": 43,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "under occupation"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "Mohammed el-Kurd (محمد الكرد; born 15 May 1998) is a Palestinian writer, poet, and journalist who gained prominence for his descriptions of Palestinians' lives under occupation in East Jerusalem and the rest of the West Bank.",
+     "lead_critical_2021_vs_now": [
+      null,
+      4
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "2.8k",
+     "projects": [
+      "Biography",
+      "Human rights",
+      "Palestine",
+      "Poetry",
+      "Project-independent assessment"
+     ],
+     "note": "a person (BLP rules may apply); first sentence gained under occupation since 2021"
+    },
+    {
+     "title": "Yehud (Persian province)",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 0,
+     "net_connection_change": -1,
+     "edits_measured": 56,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Yehud, or Yehud Medinata, alternatively Yehud Medinta (Aramaic for Province of Judah), was the name retained and used by the Persian Achaemenid Empire for one of their administrative provinces, after it first being introduced by the Babylo…",
+     "first_sentence_now": "Yehud or Yehud Medinta (Biblical Aramaic:, \"the province of Judah\"), sometimes misread as Yehud Medinata, was an autonomous province of the Achaemenid Empire.",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      2,
+      9
+     ],
+     "monthly_views_last_12m": "1.9k",
+     "projects": [
+      "Ancient Near East",
+      "Former countries",
+      "Iran",
+      "Israel",
+      "Jewish history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Yavne",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 3,
+     "net_critical_insertions": 0,
+     "net_connection_change": 0,
+     "edits_measured": 22,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "Yavne or Yavneh is a city in the Central District of Israel.",
+     "first_sentence_now": "Yavne (יַבְנֶה) is a city in the Central District of Israel.",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      0,
+      2
+     ],
+     "monthly_views_last_12m": "2.3k",
+     "projects": [
+      "Cities",
+      "Israel",
+      "Judaism",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; a specific place; already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "1936–1939 Arab revolt in Palestine",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 13,
+     "net_critical_insertions": 0,
+     "net_connection_change": 1,
+     "edits_measured": 215,
+     "first_sentence_2021_terms": [],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "The 1936–1939 Arab revolt in Palestine, later came to be known as The Great Revolt or The Great Palestinian Revolt (Thawrat Filastin al-Kubra), was a nationalist uprising by Palestinian Arabs in Mandatory Palestine against the British admi…",
+     "first_sentence_now": "A popular uprising by Palestinian Arabs in Mandatory Palestine against the British administration, known as the Great Revolt, and later the Great Palestinian Revolt or the Palestinian Revolution, lasted from 1936 until 1939.",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      3,
+      2
+     ],
+     "monthly_views_last_12m": "14.7k",
+     "projects": [
+      "Arab world",
+      "British Empire",
+      "Israel",
+      "Jewish history",
+      "Military history",
+      "Palestine",
+      "Politics",
+      "Project-independent assessment",
+      "Sociology",
+      "United Kingdom"
+     ],
+     "note": "Jewish history / Judaism article; already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Bar Kokhba Revolt",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 10,
+     "net_critical_insertions": 0,
+     "net_connection_change": 1,
+     "edits_measured": 89,
+     "first_sentence_2021_terms": [
+      "judea"
+     ],
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": "The Bar Kokhba revolt (Mered Bar Kokhba) was a rebellion of the Jews of the Roman province of Judea, led by Simon bar Kokhba, against the Roman Empire.",
+     "first_sentence_now": "The Bar Kokhba Revolt (132–136 CE), also known as the Bar Kokhba War, the War of Betar, and the Third (or Second) Jewish–Roman War, was the last and most devastating of three major Jewish rebellions against the Roman Empire.",
+     "lead_critical_2021_vs_now": [
+      1,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      17,
+      8
+     ],
+     "monthly_views_last_12m": "9.0k",
+     "projects": [
+      "Ancient Near East",
+      "Classical Greece and Rome",
+      "Israel",
+      "Jewish history",
+      "Judaism",
+      "Military history",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; already in our wider corpus (below Top/High); first sentence lost judea since 2021"
+    },
+    {
+     "title": "Solomon's Temple",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": 0,
+     "net_connection_change": 4,
+     "edits_measured": 107,
+     "first_sentence_2021_terms": [
+      "first temple"
+     ],
+     "first_sentence_now_terms": [
+      "first temple"
+     ],
+     "first_sentence_2021": "According to the Biblical narrative, Solomon's Temple, also known as the First Temple, was a temple in Jerusalem (בֵּית־הַמִּקְדָּשׁ: Beit Ha-Miqdash) built under King Solomon's reign and completed in 957 BCE. The Temple was looted and the…",
+     "first_sentence_now": "Solomon's Temple, also known as the First Temple (בַּיִת רִאשׁוֹן), was a Temple in Jerusalem believed to have existed between the 10th and 6th centuries BCE. Its description is largely based on narratives in the Hebrew Bible, in which it …",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      5,
+      11
+     ],
+     "monthly_views_last_12m": "36.3k",
+     "projects": [
+      "Ancient Near East",
+      "Architecture",
+      "Bible",
+      "Christianity",
+      "Israel",
+      "Jewish history",
+      "Judaism",
+      "Palestine",
+      "Project-independent assessment",
+      "Religion"
+     ],
+     "note": "Jewish history / Judaism article; already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Second Temple",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": 0,
+     "distinct_editors_removing_connection": 3,
+     "distinct_editors_edited": 7,
+     "net_critical_insertions": 0,
+     "net_connection_change": 13,
+     "edits_measured": 45,
+     "first_sentence_2021_terms": [
+      "second temple"
+     ],
+     "first_sentence_now_terms": [
+      "second temple"
+     ],
+     "first_sentence_2021": "The Second Temple (בֵּית־הַמִּקְדָּשׁ הַשֵּׁנִי, Beit HaMikdash HaSheni) was the Jewish holy temple, which stood on the Temple Mount in Jerusalem, between c. 516 BCE and c. 70 CE. It gave name to the Second Temple period.",
+     "first_sentence_now": "The Second Temple was the temple in Jerusalem that replaced Solomon's Temple, which was destroyed during the Babylonian siege of Jerusalem in 587 BCE. The Second Temple was constructed either around 516 BCE or between 450 and 400 BCE and l…",
+     "lead_critical_2021_vs_now": [
+      0,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      10,
+      15
+     ],
+     "monthly_views_last_12m": "36.0k",
+     "projects": [
+      "Ancient Near East",
+      "Architecture",
+      "Classical Greece and Rome",
+      "Israel",
+      "Jewish history",
+      "Judaism",
+      "Project-independent assessment",
+      "Religion"
+     ],
+     "note": "Jewish history / Judaism article; already in our wider corpus (below Top/High); first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    },
+    {
+     "title": "Ancient Israel and Judah",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 9,
+     "net_critical_insertions": -1,
+     "net_connection_change": 0,
+     "edits_measured": 56,
+     "first_sentence_2021_terms": [
+      "israelite",
+      "kingdom of israel",
+      "kingdom of judah"
+     ],
+     "first_sentence_now_terms": [
+      "israelite"
+     ],
+     "first_sentence_2021": "The Kingdom of Israel and the Kingdom of Judah were two related Israelite kingdoms from the Iron Age period of the ancient Southern Levant.",
+     "first_sentence_now": "Ancient Israel and Judah were two Israelite kingdoms that existed in the Southern Levant during the Iron Age.",
+     "lead_critical_2021_vs_now": [
+      1,
+      0
+     ],
+     "lead_connection_2021_vs_now": [
+      10,
+      12
+     ],
+     "monthly_views_last_12m": "13.2k",
+     "projects": [
+      "Ancient Near East",
+      "Assyria",
+      "Former countries",
+      "History",
+      "Israel",
+      "Jewish history",
+      "Judaism",
+      "Military history",
+      "Palestine",
+      "Project-independent assessment"
+     ],
+     "note": "Jewish history / Judaism article; already in our wider corpus (below Top/High); first sentence lost kingdom of israel, kingdom of judah since 2021"
+    },
+    {
+     "title": "Double genocide theory",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 3,
+     "net_critical_insertions": -1,
+     "net_connection_change": 0,
+     "edits_measured": 28,
+     "first_sentence_2021_terms": [
+      "genocide",
+      "genocides",
+      "holocaust"
+     ],
+     "first_sentence_now_terms": [
+      "genocide",
+      "genocido",
+      "holocaust"
+     ],
+     "first_sentence_2021": "The double genocide theory is the idea that two genocides of equal severity occurred in Eastern Europe, the Nazi Holocaust against Jews and a second genocide that the Soviet Union committed against the local population.",
+     "first_sentence_now": "Double genocide theory (Dvigubo genocido požiūris) is a term used to refer to the claim that the atrocities committed by the Soviet Union against Eastern Europeans constitute a genocide that was equivalent in scale and nature to the Holoca…",
+     "lead_critical_2021_vs_now": [
+      3,
+      4
+     ],
+     "lead_connection_2021_vs_now": [
+      2,
+      3
+     ],
+     "monthly_views_last_12m": "1.9k",
+     "projects": [
+      "Alternative views",
+      "Crime and Criminal Biography",
+      "Death",
+      "Discrimination",
+      "Ethnic groups",
+      "History",
+      "Human rights",
+      "Project-independent assessment"
+     ],
+     "note": "outside the Israel / Palestine WikiProjects; first sentence gained genocido; lost genocides since 2021"
+    },
+    {
+     "title": "Majdal Shams attack",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 16,
+     "net_critical_insertions": -1,
+     "net_connection_change": 0,
+     "edits_measured": 191,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [
+      "occupied golan"
+     ],
+     "first_sentence_2021": null,
+     "first_sentence_now": "The Majdal Shams attack took place on 27 July 2024, when a rocket hit a soccer field in Majdal Shams in the Israeli-occupied Golan Heights.",
+     "lead_critical_2021_vs_now": [
+      null,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "1.9k",
+     "projects": [
+      "Death",
+      "Israel",
+      "Lebanon",
+      "Military history",
+      "Project-independent assessment",
+      "Syria"
+     ],
+     "note": "already in our wider corpus (below Top/High); first sentence gained occupied golan since 2021"
+    },
+    {
+     "title": "Demographic engineering",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 6,
+     "net_critical_insertions": -2,
+     "net_connection_change": -4,
+     "edits_measured": 48,
+     "first_sentence_2021_terms": null,
+     "first_sentence_now_terms": [],
+     "first_sentence_2021": null,
+     "first_sentence_now": "Demographic engineering is the deliberate effort to shift the ethnic balance of an area, especially when undertaken to create ethnically homogeneous populations.",
+     "lead_critical_2021_vs_now": [
+      null,
+      1
+     ],
+     "lead_connection_2021_vs_now": [
+      null,
+      0
+     ],
+     "monthly_views_last_12m": "964",
+     "projects": [
+      "Discrimination",
+      "Ethnic groups",
+      "Human rights",
+      "Project-independent assessment"
+     ],
+     "note": "outside the Israel / Palestine WikiProjects; article created after 2021"
+    },
+    {
+     "title": "Canadian Indian residential school system",
+     "distinct_editors_qualifying": 3,
+     "distinct_editors_inserting_critical": "<3",
+     "distinct_editors_removing_connection": "<3",
+     "distinct_editors_edited": 5,
+     "net_critical_insertions": -4,
+     "net_connection_change": -7,
+     "edits_measured": 28,
+     "first_sentence_2021_terms": [
+      "indigenous"
+     ],
+     "first_sentence_now_terms": [
+      "indigenous"
+     ],
+     "first_sentence_2021": "In Canada, the Indian residential school system was a network of boarding schools for Indigenous peoples.",
+     "first_sentence_now": "The Canadian Indian residential school system was a network of boarding schools for Indigenous peoples funded by the Canadian government's Department of Indian Affairs and administered by various Christian churches from the 19th to mid-20t…",
+     "lead_critical_2021_vs_now": [
+      1,
+      4
+     ],
+     "lead_connection_2021_vs_now": [
+      9,
+      8
+     ],
+     "monthly_views_last_12m": "15.7k",
+     "projects": [
+      "Canada",
+      "Christianity",
+      "Education",
+      "Indigenous peoples of North America",
+      "Project-independent assessment",
+      "Religion",
+      "Schools"
+     ],
+     "note": "outside the Israel / Palestine WikiProjects; first sentence key terms unchanged since 2021; the changes are elsewhere in the opening section"
+    }
+   ]
+  },
+  "comparison": {
+   "candidate_articles": 1965,
+   "candidates_measured_3plus": 1945,
+   "articles_3plus_qualifying_editors": 5,
+   "articles_3plus_inserting_critical": 4,
+   "articles_3plus_removing_connection": 1
+  }
+ },
+ "verdicts": {
+  "topic_concentration": "consistent with more concentrated topic interest than the comparison group (higher home-topic share). Concentrated interest is NOT by itself evidence of a vendetta",
+  "direction_consistency": "not distinguishable from the comparison group in how one-directional critical-term edits are",
+  "cross_article_persistence": "consistent with pushing the same direction across more articles than the comparison group",
+  "reinsertion": "the topic group re-inserts LESS after reverts than the comparison group",
+  "single_purpose": "not distinguishable from the comparison group in the share of single-purpose accounts",
+  "timing": "consistent with activity spikes tied more closely to news events than in the comparison group (news-driven editing, not by itself coordination)"
+ },
+ "suppressed": {
+  "cells_written_lt3": 64,
+  "paths": [
+   "meta/population_overlap_removed_from_comparison",
+   "population/comparison/contribution_lists_truncated",
+   "patterns/topic_concentration_ip/distribution/topic/7/n",
+   "patterns/topic_concentration_ip/distribution/topic/9/n",
+   "patterns/topic_concentration_ip/distribution/comparison/1/n",
+   "patterns/topic_concentration_home/distribution/topic/1/n",
+   "patterns/topic_concentration_home/distribution/topic/2/n",
+   "patterns/topic_concentration_home/distribution/topic/3/n",
+   "patterns/topic_concentration_home/distribution/comparison/0/n",
+   "patterns/topic_concentration_home/distribution/comparison/1/n",
+   "patterns/topic_concentration_home/distribution/comparison/2/n",
+   "patterns/topic_concentration_home/distribution/comparison/3/n",
+   "patterns/topic_concentration_home/distribution/comparison/4/n",
+   "patterns/topic_concentration_home/distribution/comparison/6/n",
+   "patterns/topic_concentration_home/distribution/comparison/8/n",
+   "patterns/direction_consistency/distribution/topic/4/n",
+   "patterns/direction_consistency/distribution/comparison/4/n",
+   "patterns/cross_article_persistence/distribution/topic/1/n",
+   "patterns/cross_article_persistence/distribution/topic/7/n",
+   "patterns/cross_article_persistence/distribution/comparison/0/n",
+   "discovery/topic/articles/3/distinct_editors_removing_connection",
+   "discovery/topic/articles/4/distinct_editors_inserting_critical",
+   "discovery/topic/articles/6/distinct_editors_removing_connection",
+   "discovery/topic/articles/7/distinct_editors_removing_connection",
+   "discovery/topic/articles/8/distinct_editors_removing_connection",
+   "discovery/topic/articles/17/distinct_editors_removing_connection",
+   "discovery/topic/articles/18/distinct_editors_removing_connection",
+   "discovery/topic/articles/20/distinct_editors_removing_connection",
+   "discovery/topic/articles/22/distinct_editors_removing_connection",
+   "discovery/topic/articles/23/distinct_editors_inserting_critical",
+   "discovery/topic/articles/23/distinct_editors_removing_connection",
+   "discovery/topic/articles/24/distinct_editors_inserting_critical",
+   "discovery/topic/articles/26/distinct_editors_inserting_critical",
+   "discovery/topic/articles/26/distinct_editors_removing_connection",
+   "discovery/topic/articles/27/distinct_editors_inserting_critical",
+   "discovery/topic/articles/27/distinct_editors_removing_connection",
+   "discovery/topic/articles/29/distinct_editors_inserting_critical",
+   "discovery/topic/articles/29/distinct_editors_removing_connection",
+   "discovery/topic/articles/31/distinct_editors_inserting_critical",
+   "discovery/topic/articles/31/distinct_editors_removing_connection",
+   "discovery/topic/articles/32/distinct_editors_inserting_critical",
+   "discovery/topic/articles/32/distinct_editors_removing_connection",
+   "discovery/topic/articles/33/distinct_editors_inserting_critical",
+   "discovery/topic/articles/33/distinct_editors_removing_connection",
+   "discovery/topic/articles/34/distinct_editors_inserting_critical",
+   "discovery/topic/articles/34/distinct_editors_removing_connection",
+   "discovery/topic/articles/36/distinct_editors_removing_connection",
+   "discovery/topic/articles/38/distinct_editors_inserting_critical",
+   "discovery/topic/articles/40/distinct_editors_inserting_critical",
+   "discovery/topic/articles/40/distinct_editors_removing_connection",
+   "discovery/topic/articles/41/distinct_editors_inserting_critical",
+   "discovery/topic/articles/41/distinct_editors_removing_connection",
+   "discovery/topic/articles/44/distinct_editors_inserting_critical",
+   "discovery/topic/articles/45/distinct_editors_inserting_critical",
+   "discovery/topic/articles/48/distinct_editors_inserting_critical",
+   "discovery/topic/articles/48/distinct_editors_removing_connection",
+   "discovery/topic/articles/49/distinct_editors_inserting_critical",
+   "discovery/topic/articles/49/distinct_editors_removing_connection",
+   "discovery/topic/articles/50/distinct_editors_inserting_critical",
+   "discovery/topic/articles/50/distinct_editors_removing_connection",
+   "discovery/topic/articles/51/distinct_editors_inserting_critical",
+   "discovery/topic/articles/51/distinct_editors_removing_connection",
+   "discovery/topic/articles/52/distinct_editors_inserting_critical",
+   "discovery/topic/articles/52/distinct_editors_removing_connection"
+  ],
+  "rule": "cells with 1-2 accounts are written <3; discovery articles need >= 3 distinct accounts; distributions are binned; no per-account rows, labels, edit counts, revision ids or article lists are published"
+ }
+}
