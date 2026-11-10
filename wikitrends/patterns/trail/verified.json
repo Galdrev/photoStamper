@@ -1,0 +1,862 @@
+{
+ "note": "Elsewhere on Wikipedia, hand verification (VERIFIED.md). Section 0 of the revision live on 1 Jan 2021 (or the first revision) and of the latest revision; texts are analyze.prose() of section 0, whitespace-normalised.",
+ "runs": [
+  "42847367759",
+  "42848274633"
+ ],
+ "articles": {
+  "Comparisons between Israel and Nazi Germany": {
+   "run": "42847367759",
+   "decision": "DROP",
+   "reason": "rename and rewrite: the 2021 article was “Holocaust inversion” (moved 7 Apr 2022); antisemitism and the Holocaust are in sentence 2 now, and the 2021 “antisemitic” was itself in sentence 2 (a sentence-split artefact)",
+   "then": {
+    "revid": 994022813,
+    "ts": "2020-12-13T19:07:08Z",
+    "first_sentence": "Holocaust inversion is a phrase which is used to describe the portrayal of Jews as Nazis, crypto-Nazis, Nazi sympathizers, Holocaust perpetrators, or Holocaust \"copycats.\" Whether this discourse is antisemitic when it is related to anti-Zionism is disputed.",
+    "sentences": [
+     "Holocaust inversion is a phrase which is used to describe the portrayal of Jews as Nazis, crypto-Nazis, Nazi sympathizers, Holocaust perpetrators, or Holocaust \"copycats.\" Whether this discourse is antisemitic when it is related to anti-Zionism is disputed.",
+     "According to Kenneth L.",
+     "Marcus, the aim of those who employ Holocaust inversion is to \"shock, silence, threaten, insulate, and legitimize\".",
+     "Even when it is frequently used, the use of Holocaust inversion is still shocking, which facilitates its repeated use.",
+     "He asserts that the tying together of Nazi motifs with Jewish conspiracy stereotypes has a chilling effect on Jewish supporters of Israel.",
+     "Furthermore, he says, by implying guilt, this discourse is threatening, because it implies a required punishment."
+    ],
+    "opening": "Holocaust inversion is a phrase which is used to describe the portrayal of Jews as Nazis, crypto-Nazis, Nazi sympathizers, Holocaust perpetrators, or Holocaust \"copycats.\" Whether this discourse is antisemitic when it is related to anti-Zionism is disputed. According to Kenneth L. Marcus, the aim of those who employ Holocaust inversion is to \"shock, silence, threaten, insulate, and legitimize\". Even when it is frequently used, the use of Holocaust inversion is still shocking, which facilitates its repeated use. He asserts that the tying together of Nazi motifs with Jewish conspiracy stereotypes has a chilling effect on Jewish supporters of Israel. Furthermore, he says, by implying guilt, this discourse is threatening, because it implies a required punishment. As this discourse is performed in the context of political criticism of Israel, it insulates those who use it from the resistance which most forms of racism face in post-WWII society. Finally, he states, inversion not only legitimizes anti-Israel activities, it also legitimizes anti-Jewish activities that would otherwise be hard to conduct. According to Bernard-Henri Lévy, this erodes societal safeguards allowing \"people to feel once again the desire and, above all, the right to burn all the synagogues they want, to attack boys wearing yarmulkes, to harass large number of rabbis... in order for anti-Semitism to be reborn on a large scale\". Professor David Feldman, director of the Pears Institute for the Study of Antisemitism argues that Holocaust inversion is often not antisemitic, because it is a commonly used rhetorical device “used in many arguments about many subjects, often light-mindedly, lacking any specifically antisemitic content” such as Israeli politicians who refer to each other as Nazis, and because the inversion (in relation to the 2014 Gaza war) is not motivated by an anti-Jewish subjectivity but by criticism of Israeli policy. Extrapolating from a 2011 study which found that a substantial minority of respondents agreed with the statement that \"Israel is carrying out a war of extermination against the Palestinians\", Manfred Gerstenfeld concluded that some 150 million, out of 400 million, EU citizens espouse a view that demonized Israel. According to Gerstenfeld, Holocaust inversion is a mainstream phenomenon in the European Union. In response to the phenomenon of Holocaust inversion, the Working Definition of Antisemitism (adopted by the International Holocaust Remembrance Alliance, the US state department, and others) includes several ways in which criticism of Israel may be antisemitic. In particular, the working definition includes the act of \"drawing comparison of contemporary Israeli policy to that of the Nazis\". Holocaust inversion may also be seen as a form of Holocaust revisionism, because it minimizes Nazi crimes. According to Bernard Lewis, the belief that the Nazis were no worse than Israel is has: \"brought welcome relief to many who had long borne a burden of guilt for the role which they, their families, their nations, or their churches had played in Hitler's crimes against the Jews, whether by participation or complicity, acquiescence or indifference\". In Austria, while overt antisemitism has been limited following the Holocaust, functionally equivalent discourse was able to rise under a new guise. In particular, the Freedom Party of Austria has used Holocaust inversion to delegitimize political opponents.",
+    "critical": 0,
+    "connection": 21
+   },
+   "created": null,
+   "now": {
+    "revid": 1384426373,
+    "ts": "2026-11-08T04:42:58Z",
+    "first_sentence": "Comparisons between Israel and Nazi Germany occur frequently in the political discourse of anti-Zionism and as part of the broader criticism of Israel.",
+    "sentences": [
+     "Comparisons between Israel and Nazi Germany occur frequently in the political discourse of anti-Zionism and as part of the broader criticism of Israel.",
+     "Given the legacy of the Holocaust, the nature of these comparisons, and particularly whether they constitute antisemitism, is a matter of fervent controversy.",
+     "Comparisons between Zionism and Nazism have been made by academics, politicians, journalists, and public figures, both Jewish and not, since before the establishment of Israel.",
+     "Some scholars suggest these comparisons can be rhetorical tools without any specific antisemitic intent, or that they can be an informed and necessary response to Israeli policies or actions.",
+     "Others state such comparisons lack historical and moral equivalence, risk inciting antisemitism and may serve as a form of Holocaust inversion, denial or minimisation.",
+     "During the 20th century, a wide variety of political figures and governments, especially those on the left, have invoked comparisons between Israel or Zionism, and Nazism."
+    ],
+    "opening": "Comparisons between Israel and Nazi Germany occur frequently in the political discourse of anti-Zionism and as part of the broader criticism of Israel. Given the legacy of the Holocaust, the nature of these comparisons, and particularly whether they constitute antisemitism, is a matter of fervent controversy. Comparisons between Zionism and Nazism have been made by academics, politicians, journalists, and public figures, both Jewish and not, since before the establishment of Israel. Some scholars suggest these comparisons can be rhetorical tools without any specific antisemitic intent, or that they can be an informed and necessary response to Israeli policies or actions. Others state such comparisons lack historical and moral equivalence, risk inciting antisemitism and may serve as a form of Holocaust inversion, denial or minimisation. During the 20th century, a wide variety of political figures and governments, especially those on the left, have invoked comparisons between Israel or Zionism, and Nazism. In the 21st century, politicians who have made such comparisons include Turkish president Recep Tayyip Erdoğan, Brazilian president Luiz Inácio Lula da Silva, Venezuelan president Hugo Chávez, Colombian president Gustavo Petro and others.",
+    "critical": 0,
+    "connection": 5
+   },
+   "moves": [
+    {
+     "ts": "2022-04-07T10:17:29Z",
+     "from": "Holocaust inversion",
+     "to": "Comparisons between Israel and Nazi Germany"
+    },
+    {
+     "ts": "2022-04-08T09:03:11Z",
+     "from": "Comparisons between Israel and Nazi Germany",
+     "to": "Holocaust inversion"
+    },
+    {
+     "ts": "2022-04-08T12:57:54Z",
+     "from": "Holocaust inversion",
+     "to": "Comparisons between Israel and Nazi Germany"
+    }
+   ],
+   "revisions_since_2021": 655,
+   "keys": {}
+  },
+  "Criticism of Israel": {
+   "run": "42847367759",
+   "decision": "KEEP",
+   "reason": "real rewrite: the 2021 second sentence became the first (1 Jul 2025) and gained the Nakba, the Israeli occupation and Zionist political violence",
+   "then": {
+    "revid": 996551777,
+    "ts": "2020-12-27T07:53:37Z",
+    "first_sentence": "Criticism of the Israeli government, often referred to simply as criticism of Israel, is an ongoing subject of journalistic and scholarly commentary and research within the scope of international relations theory, expressed in terms of political science.",
+    "sentences": [
+     "Criticism of the Israeli government, often referred to simply as criticism of Israel, is an ongoing subject of journalistic and scholarly commentary and research within the scope of international relations theory, expressed in terms of political science.",
+     "Within the scope of global aspirations for a community of nations, Israel has faced international criticism since its declaration of independence in 1948 relating to a variety of topics, both historical and contemporary.",
+     "The government of Israel has been criticized for issues regarding Israeli settlements in the Palestinian territories, its treatment of Palestinians, the conduct of the Israeli Defense Forces in the Arab-Israeli conflict, and the blockade of the Gaza Strip, with its impact on the economy of the Palestinian territories, the country's nuclear weapons arsenal, and its targeted killings program.",
+     "Other long-standing issues with ongoing consequences have also been criticized including: the refusal to allow post-war Palestinian refugees to return to their homes, and the prolonged occupation of territories gained in war and the construction of settlements therein.",
+     "Israel's status as a representative democracy has also been questioned because Israeli residents of the occupied territories are allowed to vote in Israel's elections while Palestinian residents are not.",
+     "Criticisms of Israeli policies come from several groups: primarily from activists, within Israel and worldwide, the United Nations and other non-governmental organizations including European churches, and mass media."
+    ],
+    "opening": "Criticism of the Israeli government, often referred to simply as criticism of Israel, is an ongoing subject of journalistic and scholarly commentary and research within the scope of international relations theory, expressed in terms of political science. Within the scope of global aspirations for a community of nations, Israel has faced international criticism since its declaration of independence in 1948 relating to a variety of topics, both historical and contemporary. The government of Israel has been criticized for issues regarding Israeli settlements in the Palestinian territories, its treatment of Palestinians, the conduct of the Israeli Defense Forces in the Arab-Israeli conflict, and the blockade of the Gaza Strip, with its impact on the economy of the Palestinian territories, the country's nuclear weapons arsenal, and its targeted killings program. Other long-standing issues with ongoing consequences have also been criticized including: the refusal to allow post-war Palestinian refugees to return to their homes, and the prolonged occupation of territories gained in war and the construction of settlements therein. Israel's status as a representative democracy has also been questioned because Israeli residents of the occupied territories are allowed to vote in Israel's elections while Palestinian residents are not. Criticisms of Israeli policies come from several groups: primarily from activists, within Israel and worldwide, the United Nations and other non-governmental organizations including European churches, and mass media. Media bias is often claimed by both sides of the debate. Since 2003, the UN has issued 232 resolutions with respect to Israel, 40% of all resolutions issued by the UN over the period and more than six times that of the second placed country, Sudan. Some critics of the Israeli government seek to delegitimize Israel's right to exist, which has led to an ongoing debate regarding at what point criticism of the Israeli government crosses the line to antisemitism. One of the effects of international criticism has been the impact on the social psychology of the Israeli Jewish public—according to a survey, more than half of Israelis believe \"the whole world is against us\", and three quarters of Israelis believe \"that no matter what Israel does or how far it goes towards resolving the conflict with the Palestinians, the world will continue to criticize Israel\".",
+    "critical": 1,
+    "connection": 1
+   },
+   "created": null,
+   "now": {
+    "revid": 1384749928,
+    "ts": "2026-11-09T23:04:01Z",
+    "first_sentence": "Israel has faced international criticism since its establishment in 1948 relating to Zionist political violence and a variety of other issues, many of which are centered around human rights violations related to the Nakba and the Israeli occupation of the West Bank and the Gaza Strip.",
+    "sentences": [
+     "Israel has faced international criticism since its establishment in 1948 relating to Zionist political violence and a variety of other issues, many of which are centered around human rights violations related to the Nakba and the Israeli occupation of the West Bank and the Gaza Strip.",
+     "Israel has been criticized for issues surrounding its establishment when most of Mandatory Palestine's Arab population fled or were expelled in 1948, the conduct of its armed forces in the Arab–Israeli conflict, establishment and expansion of illegal Israeli settlements in the Palestinian territories, its treatment of Palestinians, and the blockade of the Gaza Strip, with its impact on the economy of Palestine, the country's nuclear weapons program, and its targeted killings program.",
+     "Other criticized long-standing issues include: the refusal to allow post-war Palestinian refugees to return to their homes, and the prolonged occupation of territories gained in war and the construction of settlements therein.",
+     "Israel's status as a representative democracy has also been questioned because Israeli residents of the occupied territories are allowed to vote in Israel's elections while Palestinian residents are not, leading to accusations of apartheid.",
+     "Criticisms of Israeli policies come from several groups: primarily from activists, within Israel and worldwide, the United Nations and other non-governmental organizations including European churches, and mass media.",
+     "Media bias is often claimed by both critics and defenders of Israel."
+    ],
+    "opening": "Israel has faced international criticism since its establishment in 1948 relating to Zionist political violence and a variety of other issues, many of which are centered around human rights violations related to the Nakba and the Israeli occupation of the West Bank and the Gaza Strip. Israel has been criticized for issues surrounding its establishment when most of Mandatory Palestine's Arab population fled or were expelled in 1948, the conduct of its armed forces in the Arab–Israeli conflict, establishment and expansion of illegal Israeli settlements in the Palestinian territories, its treatment of Palestinians, and the blockade of the Gaza Strip, with its impact on the economy of Palestine, the country's nuclear weapons program, and its targeted killings program. Other criticized long-standing issues include: the refusal to allow post-war Palestinian refugees to return to their homes, and the prolonged occupation of territories gained in war and the construction of settlements therein. Israel's status as a representative democracy has also been questioned because Israeli residents of the occupied territories are allowed to vote in Israel's elections while Palestinian residents are not, leading to accusations of apartheid. Criticisms of Israeli policies come from several groups: primarily from activists, within Israel and worldwide, the United Nations and other non-governmental organizations including European churches, and mass media. Media bias is often claimed by both critics and defenders of Israel. Counter-criticisms include the assertion that some critics and their criticisms are aimed at delegitimizing Israel's right to exist which has led some to debate over the point at which criticism of Israel crosses the line into antisemitism. The term \"new antisemitism\" refers to criticisms deemed to have crossed this threshold.",
+    "critical": 6,
+    "connection": 2
+   },
+   "moves": [
+    {
+     "ts": "2023-07-16T10:36:54Z",
+     "from": "Criticism of the Israeli government",
+     "to": "Criticism of Israel"
+    }
+   ],
+   "revisions_since_2021": 322,
+   "keys": {
+    "human rights violations": {
+     "where": "fs",
+     "changes": [
+      {
+       "ts": "2021-01-15T17:07:58Z",
+       "revid": 1000561497,
+       "in": false
+      },
+      {
+       "ts": "2025-07-01T21:04:31Z",
+       "revid": 1298331589,
+       "in": true
+      }
+     ]
+    },
+    "Nakba": {
+     "where": "fs",
+     "changes": [
+      {
+       "ts": "2021-01-15T17:07:58Z",
+       "revid": 1000561497,
+       "in": false
+      },
+      {
+       "ts": "2025-12-31T07:26:08Z",
+       "revid": 1330414960,
+       "in": true
+      }
+     ]
+    },
+    "Zionist political violence": {
+     "where": "fs",
+     "changes": [
+      {
+       "ts": "2021-01-15T17:07:58Z",
+       "revid": 1000561497,
+       "in": false
+      },
+      {
+       "ts": "2026-10-14T21:59:30Z",
+       "revid": 1380289192,
+       "in": true
+      }
+     ]
+    }
+   }
+  },
+  "Gaza genocide recognition": {
+   "run": "42847367759",
+   "decision": "DROP",
+   "reason": "created 21 Aug 2025 as a split, renamed twice; the opening is attributed (“has been accused … by several states”) and centred on the ICJ case (court-centric)",
+   "then": null,
+   "created": {
+    "revid": 1307159893,
+    "ts": "2025-08-21T22:44:28Z",
+    "first_sentence": "In February 2024 the then-African Union Commission Chairperson Moussa Faki said: \"Gaza is being completely annihilated and its people are deprived of all their rights.",
+    "sentences": [
+     "In February 2024 the then-African Union Commission Chairperson Moussa Faki said: \"Gaza is being completely annihilated and its people are deprived of all their rights.",
+     "We denounce the Israeli operation, which has no parallel in the history of humanity.\" The official communiqué of the 38th summit of the African Union stated that \"Israel is committing genocide against the Palestinians and must be prosecuted internationally.\" In May 2025, after his retirement as an EU diplomat, Josep Borrell spoke out against Israel's actions: We're facing the largest ethnic cleansing operation since the end of the second world war in order to create a splendid holiday destination once all the millions of tonnes of rubble have been cleared from Gaza and the Palestinians have died or gone away.",
+     "Borrell also explicitly accused Israel of genocidal intent: We all know what's going on there, and we've all heard the objectives stated by Netanyahu's ministers, which are clear declarations of genocidal intent.",
+     "Seldom have I heard the leader of a state so clearly outline a plan that fits the legal definition of genocide.",
+     "On 26 March, Pakistan's OIC representative said that Israel's desire for a \"final solution to the Palestinian question is plain for all to see, as its forces encircle Rafah like vultures and its ravenous land grab continues unabated\".",
+     "In May 2024, the Organisation of Islamic Cooperation called on member states to end \"the export of weapons and ammunition used by its army to perpetrate the crime of genocide in Gaza\"."
+    ],
+    "opening": "In February 2024 the then-African Union Commission Chairperson Moussa Faki said: \"Gaza is being completely annihilated and its people are deprived of all their rights. We denounce the Israeli operation, which has no parallel in the history of humanity.\" The official communiqué of the 38th summit of the African Union stated that \"Israel is committing genocide against the Palestinians and must be prosecuted internationally.\" In May 2025, after his retirement as an EU diplomat, Josep Borrell spoke out against Israel's actions: We're facing the largest ethnic cleansing operation since the end of the second world war in order to create a splendid holiday destination once all the millions of tonnes of rubble have been cleared from Gaza and the Palestinians have died or gone away. Borrell also explicitly accused Israel of genocidal intent: We all know what's going on there, and we've all heard the objectives stated by Netanyahu's ministers, which are clear declarations of genocidal intent. Seldom have I heard the leader of a state so clearly outline a plan that fits the legal definition of genocide. On 26 March, Pakistan's OIC representative said that Israel's desire for a \"final solution to the Palestinian question is plain for all to see, as its forces encircle Rafah like vultures and its ravenous land grab continues unabated\". In May 2024, the Organisation of Islamic Cooperation called on member states to end \"the export of weapons and ammunition used by its army to perpetrate the crime of genocide in Gaza\". On 16 August 2025, 31 Arab and Islamic countries and the Arab League released a joint statement condemning \"Israel's crimes of aggression, genocide, and ethnic cleansing\" in Gaza, and highlighted the need to ensure access to humanitarian aid to \"halt the systematic starvation policy used by Israel as a weapon of genocide.\" Country Recognition of genocide Statement References The Ministry of Foreign Affairs condemned Israel's actions as genocide. In a speech before the UN General Assembly, President Abdelmadjid Tebboune asked \"[W]here is the global conscience that has become absent regarding the genocide being committed?\" Bangladesh backed South Africa's genocide case against Israel. In a statement, the Ministry of Foreign Affairs strongly condemned the Israeli bombardments on Gaza Strip for \"ethnic cleansing\" of Palestinians and urged the international community to take immediate and effective step to implement an unconditional ceasefire, protect the lives of civilians, and deliver humanitarian aid; it also affirmed its support for Palestinian self-determination and the establishment of an independent Palestinian state on the basis of the pre-1967 borders with East Jerusalem as its capital. Belgium has vowed to support the verdict of the ICJ in South Africa v. Israel. Foreign Minister Maxime Prévot said, \"As the foreign minister, it is not up to me to make such statements. But my personal opinion is that this is very close to genocide. I don't know what other horrors have yet to occur before that word can be used.\" On 22 October 2023, Prime Minister John Briceño accused the Israeli government of \"committing genocide against the Palestinian people.\" On 31 January 2025, Belize submitted a request to join South Africa's genocide case against Israel at the ICJ. President Luis Arce posted on X that he agreed with President Lula of Brazil concerning \"the truth about the genocide that is being committed against the brave Palestinian people\". On 8 October 2024, Bolivia submitted a request to join South Africa's genocide case against Israel at the ICJ. President Lula da Silva condemned Israel's actions as genocide, saying: \"What's happening in the Gaza Strip with the Palestinian people hasn't happened at any other moment in history. Actually, it has happened: when Hitler decided to kill the Jews.\" In June 2025, he accused Israel of carrying out \"premediated genocide\" in Gaza. On 14 July 2025, it was announced that Brazil would join South Africa's genocide case against Israel at the ICJ. Prime Minister Mark Carney seemingly agreed with a protester who said there was \"a genocide happening in Palestine\", but later said he had misheard the question. Former Prime Minister Justin Trudeau and Foreign Minister Melanie Joly neither endorsed nor rejected South Africa's case against Israel. Joly said she would watch the case \"very closely\" and Global Affairs Canada promised to abide by any decision the court reaches. President Gabriel Boric has condemned both Hamas and Israel's actions in Gaza, saying he refuses to choose between \"the terrorism of Hamas and the genocide that Israel is carrying out in Palestine\". On 12 October 2024, Chile submitted a request to join South Africa's genocide case against Israel at the ICJ. President Gustavo Petro posted on X in Spanish: \"It's called genocide, they do it to remove the Palestinian people from Gaza and take it over. The head of the state who carries out this genocide is a criminal against humanity. Their allies cannot talk about democracy.\" On 29 February 2024, Petro announced the country would cease importing Israeli arms in the wake of the Flour massacre. On 11 January 2024 the Cuban Ministry of Foreign Affairs expressed support for South Africa's genocide case against Israel at the ICJ, and on 31 March 2024, president Miguel Diaz-Canel stated that \"Cuba demands that the genocide stop now.\" On 22 June 2024, Cuba announced it would join South Africa's case at the ICJ. President Ismaïl Omar Guelleh said that Palestinians were being subjected to genocide during the war. Egypt registered to formally support South Africa's case, following Israel's seizure of the Rafah Border Crossing. In August 2025, President Abdel Fattah el-Sisi accused Israel of carrying out a \"systematic genocide\" in Gaza. In January 2024, then-Foreign Minister Stéphane Séjourné said that accusing Israel of genocide is \"to cross a moral threshold\", casting doubt on whether France would accept the ICJ's verdict in South Africa v. Israel. But France's UN Ambassador Nicolas de Rivière had previously said that France would \"see what [the ICJ] decide on this matter and we'll make sure that we'll support the outcome of the decision.\" Government spokesman rejected the genocide accusation. President Mohamed Irfaan Ali has called Israel's actions \"nothing short of genocide\". In a speech before the UN General Assembly on 25 September 2024, President Xiomara Castro called for \"an end to the genocide in Gaza\". Foreign Minister Péter Szijjártó described the genocide accusation as \"nonsense\". Speaking before the UN General Assembly on 23 September 2024, then-Foreign Minister Retno Marsudi said that \"the ongoing genocide by Israel must be stopped immediately\". Then-Foreign Minister Hossein Amir-Abdollahian condemned Israel's actions as genocide. On 8 May 2024, Prime Minister Mohammed Shia' Al Sudani said that Israel's war in Gaza is tantamount to genocide. On 7 November 2024, the Dáil Éireann passed a non-binding motion stating that \"genocide is being perpetrated before our eyes by Israel in Gaza\". On 11 December, Ireland announced that it was joining South Africa's genocide case against Israel at the ICJ; a request to join the case was submitted on 6 January 2025. During a debate in the Dáil Éireann in May 2025, Tánaiste and Foreign Minister Simon Harris spoke of \"the genocidal activity of the Netanyahu government\" in Gaza. In an interview on 11 January 2024, Foreign Minister Antonio Tajani said that, while Israel has targeted civilians during the war in Gaza, \"genocide is something else\". Foreign Minister Ayman Safadi said that Israel's actions met the legal definition of genocide. On 18 March 2024, Kyrgyzstan's government called on Israel and the U.S. to stop the \"madness and the genocide\" in Gaza. Then-Prime Minister Najib Mikati expressed concern \"with the ongoing genocide against the Palestinians\". In May 2024, Libya filed a declaration of intervention in South Africa's genocide case against Israel as it believes that Israel is committing genocide. Prime Minister Anwar Ibrahim condemned Israel's actions as genocide and associated the United States as being complicit. On 24 September 2024, President Mohamed Muizzu said before the UN General Assembly that \"the genocide by Israel in Gaza is a travesty of justice and the international system\". The government of Mauritania condemned Israel's actions and called on the international community to \"impose an immediate cessation of the genocide to which the Palestinian people are subjected\". In January 2024, President Hage Geingob of Namibia called Israel's actions in Gaza \"genocidal and gruesome\" and sharply criticised Germany's decision to back Israel in South Africa v. Israel, saying that Germany had an \"inability to draw lessons from its horrific history\", including the Herero and Nama Genocide in German Southwest Africa. Nicaragua has condemned Israel's accusations as genocide and accused Germany of complicity by exchanging weapons to Israel. In October 2024, Nicaragua severed diplomatic ties with Israel after its invasion of Lebanon, calling the Israeli government \"fascist\" and \"genocidal\", and Netanyahu \"the son of the Devil\". On 8 February 2024, Nicaragua submitted a request to join the ICJ's case against Israel at the ICJ, but withdrew the request on 3 April 2025. A Foreign Ministry spokesman said a bombing of a hospital during the war \"show[ed] that the U.S. is an accomplice who connived at and fostered Israel's genocide\". On 2 September 2024, Foreign Minister Espen Barth Eide said, \"We welcome the use of the ICJ, but leave to the court to assess whether the accusation of genocide is correct.\" The Foreign Ministry condemned Israel's actions as genocide. Then-Foreign Minister Jalil Abbas Jilani condemned Israel's actions as genocide. President Mahmoud Abbas condemned Israel's actions as genocide. Palestinian Ambassador to the United Nations Riyad Mansour said Israel's bombardment and siege of Gaza were \"nothing less than genocidal\". In a statement on 10 January 2024, the Ministry of Foreign Affairs rejected the accusations of genocide presented against Israel at the ICJ. The Ministry of Foreign Affairs called on the UN Security Council \"to take urgent action to prevent the Israeli occupation forces from storming Rafah and committing genocide in\" Rafah. Qatari emir Tamim bin Hamad Al Thani said Israel had committed \"a crime of genocide\". On 11 January 2024, the Prime Minister's office released a statement of support for South Africa's case against Israel at the ICJ, calling on the court to adopt provisional measures to \"prevent any further acts of genocide against the Palestinian people\". The statement also called on other countries to stop providing material support to Israel, accusing those who continue to do so of being \"complicit in genocide before our very eyes\". The Ministry of Foreign Affairs condemned the \"continued genocidal massacres against the Palestinian people at the hands of the Israeli war machine\". Prime Minister Ousmane Sonko condemned Israel's actions as genocide and accused other countries of complicity. In an address to the European Parliament on 21 May 2025, President Nataša Pirc Musar said: \"We are witnessing genocide in the West Bank. We are looking and keeping quiet.\" She later clarified that she meant Gaza, not the West Bank. The Ministry of Foreign Affairs urged \"swift action to halt Gaza genocide by Israel\". President Cyril Ramaphosa said, \"The fact that Palestinian deaths are not solely caused by bombardment and ground attacks, but also by disease and starvation, indicates a need to protect the group's right to exist\". In May 2025, Prime Minister Pedro Sánchez called Israel a \"genocidal state.\" Several government ministers have also publicly called Israel's warfare in Gaza genocide, including Second Deputy Prime Minister Yolanda Díaz, Defence Minister Margarita Robles, Youth Minister Sira Rego, and former Social Affairs Minister Ione Belarra. Foreign Minister José Manuel Albares previously said, \"Whether this is genocide or not, that is for the [[International Court of Justice|[World] court]] to decide, and Spain of course will support its decision.\" On 6 June 2024, Spain submitted a request for joining South Africa's genocide case against Israel at the ICJ. Then-President Bashar al-Assad condemned Israel's actions as genocide. According to Wafa, the Ministry of Foreign Affairs demanded an end to Israel's \"war of genocide\" in May 2024. President Recep Tayyip Erdoğan condemned Israel's actions as \"amounting to genocide\". On 9 February 2024, Foreign Minister Hakan Fidan said that the international community's silence on Israel's actions in Gaza were \"complicity in genocide\". On 7 August 2024, Turkey submitted a request to join South Africa's genocide case against Israel at the ICJ. The Foreign Office dismissed the accusation of genocide against Israel. Prime Minister Keir Starmer refused to call Israel's actions in Gaza \"genocide\". Northern Irish First Minister Michelle O'Neill and Scottish First Minister John Swinney both stated that Israel is committing genocide in Gaza, in July and August 2025 respectively. Then-Secretary of State Antony Blinken dismissed the genocide accusation as \"meritless\". President Joe Biden dismissed the accusation of genocide against Israel. A resolution adopted by the governing Broad Front coalition in June 2025 condemned the \"ethnic cleansing and genocide\" committed by Israel in Gaza, drawing criticism from some opposition parties as well as the Israeli embassy. Foreign Minister Mario Lubetkin maintained that he views the resolution \"positively\" and criticized the diplomatic intervention, while insisting on separating the actions of the Broad Front and the government. Lubetkin refrained from stating whether he or the government views the situation as a genocide or not, saying: \"Helping Palestine is helping Palestine, not the discussion about the term genocide or massacre.\" President Yamandú Orsi took a similar position, distancing himself from the statement and saying \"it's a declaration of a political force\" and \"the goverment is another thing [from the party]\". In November 2023, several witnesses to a speech by Pope Francis said that he called Israel's actions a genocide, but a Vatican spokesman denied this. Francis later called for an investigation \"to determine whether it fits into the technical definition [of genocide] formulated by jurists and international bodies\". President Nicolás Maduro condemned Israel's actions as genocide. The Ministry of Foreign Affairs condemned Israel's actions as \"war crimes and genocide\".",
+    "critical": 94,
+    "connection": 1
+   },
+   "now": {
+    "revid": 1383537837,
+    "ts": "2026-11-03T06:02:28Z",
+    "first_sentence": "Since October 2023, the government of Israel has been accused of committing genocide against the Palestinian population of the Gaza Strip by several states across the world.",
+    "sentences": [
+     "Since October 2023, the government of Israel has been accused of committing genocide against the Palestinian population of the Gaza Strip by several states across the world.",
+     "The government of South Africa formally accused the country of genocide in December that year in a case before the International Court of Justice, with 14 countries joining the case by December the next year.",
+     "Explicit state positions on the genocide include recognition, denial, or deferral to the ultimate result of the pending case.",
+     "Acts of genocide recognition in particular include acknowledgement of genocide in the adoption of laws, parliamentary resolutions, and official speeches."
+    ],
+    "opening": "Since October 2023, the government of Israel has been accused of committing genocide against the Palestinian population of the Gaza Strip by several states across the world. The government of South Africa formally accused the country of genocide in December that year in a case before the International Court of Justice, with 14 countries joining the case by December the next year. Explicit state positions on the genocide include recognition, denial, or deferral to the ultimate result of the pending case. Acts of genocide recognition in particular include acknowledgement of genocide in the adoption of laws, parliamentary resolutions, and official speeches.",
+    "critical": 5,
+    "connection": 0
+   },
+   "moves": [
+    {
+     "ts": "2025-08-21T22:45:23Z",
+     "from": "List of country positions on the Gaza genocide",
+     "to": "List of state positions on the Gaza genocide"
+    },
+    {
+     "ts": "2025-10-03T06:14:01Z",
+     "from": "List of state positions on the Gaza genocide",
+     "to": "Gaza genocide recognition"
+    }
+   ],
+   "revisions_since_2021": 241,
+   "keys": {}
+  },
+  "Genocide": {
+   "run": "42847367759",
+   "decision": "DROP",
+   "reason": "word-list artefact: the count is the article's own subject word; a general scholarly rewrite with no mention of Israel or Palestine in the opening",
+   "then": {
+    "revid": 996450724,
+    "ts": "2020-12-26T18:09:27Z",
+    "first_sentence": "Genocide is the intentional action to destroy a people—usually defined as an ethnic, national, racial, or religious group—in whole or in part.",
+    "sentences": [
+     "Genocide is the intentional action to destroy a people—usually defined as an ethnic, national, racial, or religious group—in whole or in part.",
+     "A term coined by Raphael Lemkin in his 1944 book Axis Rule in Occupied Europe, the hybrid word geno-cide is a combination of the Greek word genos (genos, \"race, people\") and the [[Latin suffix -caedo (\"act of killing\").",
+     "The United Nations Genocide Convention, which was established in 1948, defines genocide as \"acts committed with intent to destroy, in whole or in part, a national, ethnic, racial or religious group, as such\" including the killing of its members, causing serious bodily or mental harm to members of the group, deliberately imposing living conditions that seek to \"bring about its physical destruction in whole or in part\", preventing births, or forcibly transferring children out of the group to another group.",
+     "Prominent examples of genocides in history include the Holocaust, the Armenian Genocide, and the Rwandan genocide.",
+     "The Political Instability Task Force estimated that, between 1956 and 2016, a total of 43 genocides took place, causing the death of about 50&nbsp;million people.",
+     "The UNHCR estimated that a further 50&nbsp;million had been displaced by such episodes of violence up to 2008."
+    ],
+    "opening": "Genocide is the intentional action to destroy a people—usually defined as an ethnic, national, racial, or religious group—in whole or in part. A term coined by Raphael Lemkin in his 1944 book Axis Rule in Occupied Europe, the hybrid word geno-cide is a combination of the Greek word genos (genos, \"race, people\") and the [[Latin suffix -caedo (\"act of killing\"). The United Nations Genocide Convention, which was established in 1948, defines genocide as \"acts committed with intent to destroy, in whole or in part, a national, ethnic, racial or religious group, as such\" including the killing of its members, causing serious bodily or mental harm to members of the group, deliberately imposing living conditions that seek to \"bring about its physical destruction in whole or in part\", preventing births, or forcibly transferring children out of the group to another group. Prominent examples of genocides in history include the Holocaust, the Armenian Genocide, and the Rwandan genocide. The Political Instability Task Force estimated that, between 1956 and 2016, a total of 43 genocides took place, causing the death of about 50&nbsp;million people. The UNHCR estimated that a further 50&nbsp;million had been displaced by such episodes of violence up to 2008.",
+    "critical": 7,
+    "connection": 1
+   },
+   "created": null,
+   "now": {
+    "revid": 1383146448,
+    "ts": "2026-11-01T05:58:28Z",
+    "first_sentence": "Genocide is the partial or total destruction of a human group, committed intentionally.",
+    "sentences": [
+     "Genocide is the partial or total destruction of a human group, committed intentionally.",
+     "The popular view conceives of genocide as the large-scale killing of individuals, but in scholarly and legal fields, genocide occurs when the group itself is targeted.",
+     "Acts of genocide include killing as well as non-lethal acts such as preventing reproduction among the group, the forcible transfer of children to another group, and cultural genocide.",
+     "The term genocide was coined by Polish-Jewish lawyer Raphael Lemkin in the early 1940s.",
+     "Lemkin lobbied for genocide to be outlawed by international treaty, but the Genocide Convention restricted his initially broad definition to five specific acts \"committed with intent to destroy, in whole or in part, a national, ethnical, racial, or religious group, as such.\" Its definition remains contested by scholars and institutions across international law, history, sociology, and related fields.",
+     "Genocide has occurred throughout human history, even during prehistoric times."
+    ],
+    "opening": "Genocide is the partial or total destruction of a human group, committed intentionally. The popular view conceives of genocide as the large-scale killing of individuals, but in scholarly and legal fields, genocide occurs when the group itself is targeted. Acts of genocide include killing as well as non-lethal acts such as preventing reproduction among the group, the forcible transfer of children to another group, and cultural genocide. The term genocide was coined by Polish-Jewish lawyer Raphael Lemkin in the early 1940s. Lemkin lobbied for genocide to be outlawed by international treaty, but the Genocide Convention restricted his initially broad definition to five specific acts \"committed with intent to destroy, in whole or in part, a national, ethnical, racial, or religious group, as such.\" Its definition remains contested by scholars and institutions across international law, history, sociology, and related fields. Genocide has occurred throughout human history, even during prehistoric times. Most genocides have occurred during wartime, and they are particularly likely in situations of imperial expansion and power consolidation. It is associated with colonialism, especially settler colonialism, as well as with both world wars and repressive governments in the twentieth century. Despite efforts to end genocide, effective interventions have not occurred. The colloquial understanding of genocide is heavily influenced by the Holocaust as its archetype and is conceived as innocent victims being targeted for their ethnic identity alone rather than for any political reason. Genocide is widely considered to be the epitome of human evil and is often referred to as the \"crime of crimes\"; consequently, events are often denounced as genocide. It is most often a state crime, and most perpetrators are psychologically normal. Genocide typically occurs when the perpetrators believe themselves to be existentially under threat and is employed as a means to another end—often after other options have failed. The most common pattern of genocidal violence involves the killing of adult men and non-lethal violence, such as sexual assault and enslavement, of women and children. Other common means include forced displacement, land theft, and the destruction of cultural heritage. After genocide, denial and impunity for the perpetrators are common.",
+    "critical": 20,
+    "connection": 1
+   },
+   "moves": [],
+   "revisions_since_2021": 1300,
+   "keys": {}
+  },
+  "Samaritans": {
+   "run": "42847367759",
+   "decision": "DROP",
+   "reason": "no critical change; the first sentence gained “Israelite Samaritans”, a Jewish-history term, i.e. the other direction",
+   "then": {
+    "revid": 997396616,
+    "ts": "2020-12-31T08:40:05Z",
+    "first_sentence": "The Samaritans (Samaritan Hebrew:, Shamerim ('Guardians/Keepers/Watchers (of the Torah)';, al-Sāmiriyyūn) are an ethnoreligious group originating from the Israelites (or Hebrews) of the Ancient Near East.",
+    "sentences": [
+     "The Samaritans (Samaritan Hebrew:, Shamerim ('Guardians/Keepers/Watchers (of the Torah)';, al-Sāmiriyyūn) are an ethnoreligious group originating from the Israelites (or Hebrews) of the Ancient Near East.",
+     "Ancestrally, Samaritans claim descent from the tribe of Ephraim and tribe of Manasseh (two sons of Joseph) as well as from the Levites, who have links to ancient Samaria (now constituting the majority of the territory known as the West Bank) from the period of their entry into Canaan, while some Orthodox Jews suggest that it was from the beginning of the Babylonian captivity up to the Samaritan polity under the rule of Baba Rabba.",
+     "Samaritans used to include descendants whose ancestry was ascribed to the Benjamin tribe, but this line became extinct in the 1960s.",
+     "According to Samaritan tradition, the split between them and the Judean-led Southern Israelites began during the biblical time of the priest Eli when the Southern Israelites split off from the central Israelite tradition, as they perceive it.",
+     "In the Talmud, a central post-exilic religious text of Rabbinic Judaism, the Samaritans are called Cuthites or Cutheans (Kutim), referring to the ancient city of Kutha, geographically located in what is today Iraq.",
+     "Josephus's Wars of the Jews also refers to the Samaritans as the Cuthites."
+    ],
+    "opening": "The Samaritans (Samaritan Hebrew:, Shamerim ('Guardians/Keepers/Watchers (of the Torah)';, al-Sāmiriyyūn) are an ethnoreligious group originating from the Israelites (or Hebrews) of the Ancient Near East. Ancestrally, Samaritans claim descent from the tribe of Ephraim and tribe of Manasseh (two sons of Joseph) as well as from the Levites, who have links to ancient Samaria (now constituting the majority of the territory known as the West Bank) from the period of their entry into Canaan, while some Orthodox Jews suggest that it was from the beginning of the Babylonian captivity up to the Samaritan polity under the rule of Baba Rabba. Samaritans used to include descendants whose ancestry was ascribed to the Benjamin tribe, but this line became extinct in the 1960s. According to Samaritan tradition, the split between them and the Judean-led Southern Israelites began during the biblical time of the priest Eli when the Southern Israelites split off from the central Israelite tradition, as they perceive it. In the Talmud, a central post-exilic religious text of Rabbinic Judaism, the Samaritans are called Cuthites or Cutheans (Kutim), referring to the ancient city of Kutha, geographically located in what is today Iraq. Josephus's Wars of the Jews also refers to the Samaritans as the Cuthites. In the biblical account, however, Kuthah was one of several cities from which people were brought to Samaria, and they worshiped Nergal. Modern genetics partially support both the claims of the Samaritans and the account in the Hebrew Bible (and Talmud), suggesting that the genealogy of the Samaritans lies in some combination of these two accounts. This suggests that the Samaritans remained a genetically isolated population. The Samaritans are adherents of Samaritanism, a religion closely related to Judaism. Samaritans believe that their worship, which is based on the Samaritan Pentateuch, is the true religion of the ancient Israelites from before the Babylonian captivity, preserved by those who remained in the Land of Israel, as opposed to Judaism, which they see as a related but altered and amended religion, brought back by those returning from the Babylonian Captivity. The Samaritans believe that Mount Gerizim was the original Holy Place of Israel from the time that Joshua conquered Canaan. The major issue between Jews and Samaritans has always been the location of the Chosen Place to worship God: The Temple Mount of Moriah in Jerusalem according to Judaism or Mount Gerizim according to Samaritanism. Once a large community, the Samaritan population appears to have shrunk significantly in the wake of the bloody suppression of the Samaritan Revolts (mainly in 529 CE and 555 CE) against the Byzantine Empire. Conversion to Christianity under the Byzantines also reduced their numbers. Conversions to Islam took place as well, and by the mid–Middle Ages, Benjamin of Tudela estimated only around 1,900 Samaritans remained in Palestine and Syria. The present-day population has been consistently divided between Qiryat Luza on Mount Gerizim and the city of Holon, just outside Tel Aviv. Most Samaritans in Holon and Qiryat Luza today speak Hebrew and Arabic. For liturgical purposes, Samaritan Hebrew, Samaritan Aramaic, and Arabic are used, all written with the Samaritan alphabet, a variant of the Paleo-Hebrew alphabet, which is distinct from the Jewish Hebrew alphabet which is a stylized form of the Imperial Aramaic script. Hebrew and later Aramaic were languages in use by the Jewish and Samaritan inhabitants of Judea (the name by which Israel was known during part of the Second Temple era) before the Roman exile. Samaritans have a stand-alone religious status in Israel, and there are occasional conversions from Judaism to Samaritanism and vice versa due to marriages. While the Israeli Rabbinic authorities consider Samaritanism to be a branch of Judaism, the Chief Rabbinate of Israel requires Samaritans to officially go through a formal conversion to Judaism in order to be recognized as Halakhic Jews. One example is Israeli TV personality Sofi Tsedaka, who formally converted to Rabbinic Judaism at the age of 18. Samaritans with Israeli citizenship are obligated to undertake mandatory service in the Israel Defense Forces, while those with dual Israeli-Palestinian citizenship (living in Qiryat Luza) are generally exempted.",
+    "critical": 0,
+    "connection": 8
+   },
+   "created": null,
+   "now": {
+    "revid": 1384768862,
+    "ts": "2026-11-10T01:16:44Z",
+    "first_sentence": "Samaritans (ࠔࠌࠓࠉࠌ, Šåmerīm; שומרונים, Šomronim; سامريون, Sāmiriyyūn), often preferring to be called Israelite Samaritans, are an ethnoreligious group originating from the Hebrews and Israelites of the ancient Near East.",
+    "sentences": [
+     "Samaritans (ࠔࠌࠓࠉࠌ, Šåmerīm; שומרונים, Šomronim; سامريون, Sāmiriyyūn), often preferring to be called Israelite Samaritans, are an ethnoreligious group originating from the Hebrews and Israelites of the ancient Near East.",
+     "They are indigenous to Samaria, a historical region of ancient Israel and Judah.",
+     "They are adherents of Samaritanism, an Abrahamic, monotheistic, and ethnic religion that developed alongside Judaism.",
+     "The Samaritans identify as descendants of the Israelite tribes of Ephraim, Manasseh, and the priestly tribe of Levi.",
+     "They maintain that they represent the most authentic continuation of the Mosaic covenant.",
+     "In contemporary scholarship, the Samaritan community is generally understood to have emerged in Samaria from populations associated with the former northern Kingdom of Israel, alongside populations of Mesopotamian origin, with its distinctive identity taking shape during the Persian and Hellenistic periods."
+    ],
+    "opening": "Samaritans (ࠔࠌࠓࠉࠌ, Šåmerīm; שומרונים, Šomronim; سامريون, Sāmiriyyūn), often preferring to be called Israelite Samaritans, are an ethnoreligious group originating from the Hebrews and Israelites of the ancient Near East. They are indigenous to Samaria, a historical region of ancient Israel and Judah. They are adherents of Samaritanism, an Abrahamic, monotheistic, and ethnic religion that developed alongside Judaism. The Samaritans identify as descendants of the Israelite tribes of Ephraim, Manasseh, and the priestly tribe of Levi. They maintain that they represent the most authentic continuation of the Mosaic covenant. In contemporary scholarship, the Samaritan community is generally understood to have emerged in Samaria from populations associated with the former northern Kingdom of Israel, alongside populations of Mesopotamian origin, with its distinctive identity taking shape during the Persian and Hellenistic periods. The community developed in close but often contentious relationship with the Jewish people, who emerged primarily from the population of the southern Kingdom of Judah. Samaritans recognize only the Samaritan Torah as sacred scripture, rejecting most of the later Jewish canon as well as rabbinic tradition, and their central theological distinction from Judaism is the belief that Mount Gerizim, not the Temple Mount in Jerusalem, is God's chosen sanctuary. Their religion is centered on the hereditary high priesthood, strict observance of biblical law and festivals, and pilgrimages to Mount Gerizim, most famously the Passover sacrifice. In classical antiquity, the Samaritans were the principal population of Samaria, but their numbers were drastically reduced following a series of failed revolts and severe Byzantine repression in the 5th and 6th centuries CE. Their numbers declined further through Christianization under the Byzantines and gradual Islamization following the Muslim conquest of Syria. By the 12th century, Benjamin of Tudela estimated that only about 1,900 Samaritans remained in Palestine and Syria. Their numbers reached a record low of around 100 people during the early modern period, but their population has grown since, reaching around 900 people as of 2024; they are one of the world's smallest surviving ethnoreligious groups, concentrated mainly in Kiryat Luza on Mount Gerizim near Nablus (ancient Shechem) and in the neighborhood of Neve Pinchas in Holon near Tel Aviv.",
+    "critical": 0,
+    "connection": 7
+   },
+   "moves": [],
+   "revisions_since_2021": 1209,
+   "keys": {}
+  },
+  "Settler colonialism": {
+   "run": "42847367759",
+   "decision": "DROP",
+   "reason": "word-list artefact: “indigenous” is a general term here, not the Jewish-indigeneity frame; critical terms fell 20 -> 11; no Israel or Palestine in the opening",
+   "then": {
+    "revid": 996491101,
+    "ts": "2020-12-26T22:42:18Z",
+    "first_sentence": "Settler colonialism is a form of colonialism that seeks to replace the original population of the colonized territory with a new society of settlers.",
+    "sentences": [
+     "Settler colonialism is a form of colonialism that seeks to replace the original population of the colonized territory with a new society of settlers.",
+     "As with all forms of colonialism, it is based on exogenous domination, typically organized or supported by an imperial authority.",
+     "Settler colonialism is enacted by a variety of means ranging from violent depopulation of the previous inhabitants to more subtle, legal means such as assimilation or recognition of indigenous identity within a colonial framework.",
+     "Settler colonialism contrasts with exploitation colonialism, which entails a national economic policy of conquering a country to exploit its population as cheap or free labor and its natural resources as raw material.",
+     "Unlike other forms of colonialism, the imperial power does not always represent the same nationality as the settlers.",
+     "However, the colonizing authority generally views the settlers as racially superior to the previous inhabitants, which may give settlers' social movements and political demands greater legitimacy than those of colonized peoples in the eyes of the home colonies, whereas natural and human resources are the main motivation behind other forms of colonialism."
+    ],
+    "opening": "Settler colonialism is a form of colonialism that seeks to replace the original population of the colonized territory with a new society of settlers. As with all forms of colonialism, it is based on exogenous domination, typically organized or supported by an imperial authority. Settler colonialism is enacted by a variety of means ranging from violent depopulation of the previous inhabitants to more subtle, legal means such as assimilation or recognition of indigenous identity within a colonial framework. Settler colonialism contrasts with exploitation colonialism, which entails a national economic policy of conquering a country to exploit its population as cheap or free labor and its natural resources as raw material. Unlike other forms of colonialism, the imperial power does not always represent the same nationality as the settlers. However, the colonizing authority generally views the settlers as racially superior to the previous inhabitants, which may give settlers' social movements and political demands greater legitimacy than those of colonized peoples in the eyes of the home colonies, whereas natural and human resources are the main motivation behind other forms of colonialism. Despite the end of the European colonial empires, settler populations typically remain. In this way, settler colonialism lasts indefinitely, except in the rare event of complete evacuation or settler decolonization. Settler colonialism is generally discussed in terms of the one-way flow of British values, which overtake and repudiate the culture and history of the location in question. Transnational and global studies of settler colonialism often give more importance to the histories of British emigrants rather than of the displaced indigenous peoples. Legal proceedings in Australia and Canada have challenged settler rights, highlighting the lasting effects of colonial takeovers, and the continued displacement of Indigenous peoples at the start of the twenty-first century. In the United States, Western Australia and South Africa, governments used land allotment as a legal way to take possession of indigenous peoples' land.",
+    "critical": 20,
+    "connection": 4
+   },
+   "created": null,
+   "now": {
+    "revid": 1384059383,
+    "ts": "2026-11-06T09:42:01Z",
+    "first_sentence": "Settler colonialism is a process by which settlers exercise colonial rule over a land and its indigenous peoples, transforming the land, and eliminating and replacing its population with the society of the settlers.",
+    "sentences": [
+     "Settler colonialism is a process by which settlers exercise colonial rule over a land and its indigenous peoples, transforming the land, and eliminating and replacing its population with the society of the settlers.",
+     "Settler colonialism is a form of exogenous (of external origin) domination typically organized or supported by an imperial authority, which maintains a connection or control to the territory through the settlers.",
+     "As settler colonialism entails the creation of a new society on the conquered territory, it lasts indefinitely unless decolonisation occurs through departure of the settler population or through reforms to colonial structures, settler-indigenous compacts and reconciliation processes.",
+     "Settler colonial studies have often focused on English-speaking settler colonies in Australia and North America, which are close to the complete, prototypical form of settler colonialism.",
+     "However, settler colonialism is not restricted to any specific culture; it has been practiced by non-European nations like Japan, and among European cultures, as in the case of Ireland."
+    ],
+    "opening": "Settler colonialism is a process by which settlers exercise colonial rule over a land and its indigenous peoples, transforming the land, and eliminating and replacing its population with the society of the settlers. Settler colonialism is a form of exogenous (of external origin) domination typically organized or supported by an imperial authority, which maintains a connection or control to the territory through the settlers. As settler colonialism entails the creation of a new society on the conquered territory, it lasts indefinitely unless decolonisation occurs through departure of the settler population or through reforms to colonial structures, settler-indigenous compacts and reconciliation processes. Settler colonial studies have often focused on English-speaking settler colonies in Australia and North America, which are close to the complete, prototypical form of settler colonialism. However, settler colonialism is not restricted to any specific culture; it has been practiced by non-European nations like Japan, and among European cultures, as in the case of Ireland.",
+    "critical": 11,
+    "connection": 2
+   },
+   "moves": [],
+   "revisions_since_2021": 812,
+   "keys": {}
+  },
+  "Sheikh Jarrah controversy": {
+   "run": "42847367759",
+   "decision": "DROP",
+   "reason": "created 15 May 2021 (no 2021 version), wording settled since Sep 2021; both framings are attributed; a legal property dispute (court-centric)",
+   "then": null,
+   "created": {
+    "revid": 1023202464,
+    "ts": "2021-05-15T00:45:38Z",
+    "first_sentence": "In 1875, a group of pious bought some land just north of Jerusalem from Arab landowners.",
+    "sentences": [
+     "In 1875, a group of pious bought some land just north of Jerusalem from Arab landowners.",
+     "The land was believed to be the site of the tomb of Shimon HaTzadik, high priest of the 3rd century BCE. According to Ottoman documents presented by the settler organizations, Ottoman land registry records showed that the property was registered in the names of Rabbis Avraham Ashkenazi and Meir Auerbach.",
+     "A small religious community lived there."
+    ],
+    "opening": "In 1875, a group of pious bought some land just north of Jerusalem from Arab landowners. The land was believed to be the site of the tomb of Shimon HaTzadik, high priest of the 3rd century BCE. According to Ottoman documents presented by the settler organizations, Ottoman land registry records showed that the property was registered in the names of Rabbis Avraham Ashkenazi and Meir Auerbach. A small religious community lived there.",
+    "critical": 0,
+    "connection": 0
+   },
+   "now": {
+    "revid": 1368967502,
+    "ts": "2026-08-12T03:20:38Z",
+    "first_sentence": "The Sheikh Jarrah controversy, which has been described as a \"property/real estate dispute\" by the Israeli government and its supporters, and as an \"expulsion\", \"displacement\" or \"ethnic cleansing\" event and a matter of international law by Palestinians and their supporters, is a long-running legal and political dispute between Palestinians and Israelis over the ownership of certain properties and housing units in Sheikh Jarrah, East Jerusalem.",
+    "sentences": [
+     "The Sheikh Jarrah controversy, which has been described as a \"property/real estate dispute\" by the Israeli government and its supporters, and as an \"expulsion\", \"displacement\" or \"ethnic cleansing\" event and a matter of international law by Palestinians and their supporters, is a long-running legal and political dispute between Palestinians and Israelis over the ownership of certain properties and housing units in Sheikh Jarrah, East Jerusalem.",
+     "The evictions are considered a contributory cause of the 2021 Israel–Palestine crisis.",
+     "It has been described as a microcosm of the Israeli–Palestinian disputes over land since 1948, with academic Kristen Alff noting \"To describe dispossessions in Sheikh Jarrah as a \"real estate\" quarrel conceals the true history of land ownership in the regions – which is complicated, disputed and rarely decided in favor of Palestinians.\" In East Jerusalem, Israel's laws allow Jews to file claims over property held prior to 1948, but reject Palestinian claims over property that they owned prior to 1948 in Israel proper.",
+     "According to Middle East Eye, the dispute is part of the Israeli government's Holy Basin settlement strategy.",
+     "Aryeh King, a deputy mayor of Jerusalem and one of the founders of Ma'ale HaZeitim, an illegal settlement, told The New York Times that the eviction of Palestinian families was \"of course\" part of a municipal strategy to create \"layers of Jews\" throughout East Jerusalem.",
+     "Many Palestinian families in East Jerusalem have been affected by \"forced relocation processes or been involved in lengthy legal procedures to revoke an eviction order\"."
+    ],
+    "opening": "The Sheikh Jarrah controversy, which has been described as a \"property/real estate dispute\" by the Israeli government and its supporters, and as an \"expulsion\", \"displacement\" or \"ethnic cleansing\" event and a matter of international law by Palestinians and their supporters, is a long-running legal and political dispute between Palestinians and Israelis over the ownership of certain properties and housing units in Sheikh Jarrah, East Jerusalem. The evictions are considered a contributory cause of the 2021 Israel–Palestine crisis. It has been described as a microcosm of the Israeli–Palestinian disputes over land since 1948, with academic Kristen Alff noting \"To describe dispossessions in Sheikh Jarrah as a \"real estate\" quarrel conceals the true history of land ownership in the regions – which is complicated, disputed and rarely decided in favor of Palestinians.\" In East Jerusalem, Israel's laws allow Jews to file claims over property held prior to 1948, but reject Palestinian claims over property that they owned prior to 1948 in Israel proper. According to Middle East Eye, the dispute is part of the Israeli government's Holy Basin settlement strategy. Aryeh King, a deputy mayor of Jerusalem and one of the founders of Ma'ale HaZeitim, an illegal settlement, told The New York Times that the eviction of Palestinian families was \"of course\" part of a municipal strategy to create \"layers of Jews\" throughout East Jerusalem. Many Palestinian families in East Jerusalem have been affected by \"forced relocation processes or been involved in lengthy legal procedures to revoke an eviction order\". The property in Sheikh Jarrah in dispute includes the adjacent Shimon HaTzadik/Karm Al-Ja’ouni and Um Haroun (former Nahalat Shimon) compounds to the East and West respectively of the Nablus Road. In the former, the Palestinian residents of Sheikh Jarrah were refugees who received plots of land in a UNRWA lottery, relinquishing in return their refugee documents and accompanying rights. They have no right under Israeli law to repossess their pre-1948 homes in Haifa, Sarafand and Jaffa. The Palestinian view is that given Sheikh Jarrah's location beyond the Green Line or Israel proper, Israeli courts have no jurisdiction over land disputes in what is occupied territory according to international law, and that the displacement of people in occupied territory is a war crime under the Rome Statute. The United Nations Human Rights Office has said that as Sheikh Jarrah is in East Jerusalem, which is considered occupied territory, international humanitarian law prohibits the confiscation of private property and evictions of Palestinian families could constitute war crimes.",
+    "critical": 8,
+    "connection": 0
+   },
+   "moves": [
+    {
+     "ts": "2021-05-19T20:04:56Z",
+     "from": "Sheikh Jarrah property dispute",
+     "to": "Sheikh Jarrah eviction cases"
+    },
+    {
+     "ts": "2021-05-20T13:18:05Z",
+     "from": "Sheikh Jarrah eviction cases",
+     "to": "Sheikh Jarrah property dispute"
+    },
+    {
+     "ts": "2021-09-01T07:04:37Z",
+     "from": "Sheikh Jarrah property dispute",
+     "to": "Sheikh Jarrah dispute"
+    },
+    {
+     "ts": "2021-09-01T07:12:04Z",
+     "from": "Sheikh Jarrah dispute",
+     "to": "Sheikh Jarrah property dispute"
+    },
+    {
+     "ts": "2021-09-14T10:36:49Z",
+     "from": "Sheikh Jarrah property dispute",
+     "to": "Sheikh Jarrah controversy"
+    }
+   ],
+   "revisions_since_2021": 431,
+   "keys": {}
+  },
+  "Ancient Israel and Judah": {
+   "run": "42848274633",
+   "decision": "DROP",
+   "reason": "rename artefact: the article was “History of ancient Israel and Judah” until 20 Jan 2026 and its first sentence now names the title (“Ancient Israel and Judah were two Israelite kingdoms …”); both kingdoms are named in sentence 4",
+   "then": {
+    "revid": 995346184,
+    "ts": "2020-12-20T15:07:54Z",
+    "first_sentence": "The Kingdom of Israel and the Kingdom of Judah were two related Israelite kingdoms from the Iron Age period of the ancient Southern Levant.",
+    "sentences": [
+     "The Kingdom of Israel and the Kingdom of Judah were two related Israelite kingdoms from the Iron Age period of the ancient Southern Levant.",
+     "After an emergent and large polity was suddenly formed based on the Gibeon-Gibeah plateau and destroyed by Shoshenq I in the first half of 10th century BCE, a return to small city states was prevalent in the Southern Levant, but between 950 and 900 BCE another large polity emerged in the northern highlands with its capital eventually at Tirzah, that can be considered the precursor of the Kingdom of Israel, which was consolidated as an important regional power by the first half of the 9th century BCE, before falling to the Neo-Assyrian Empire in 722&nbsp;BCE. Israel's southern neighbor, the Kingdom of Judah, emerged in the second half of 9th century BCE, and later became a client state of first the Neo-Assyrian Empire and then the Neo-Babylonian Empire before a revolt against the latter led to its destruction in 586&nbsp;BCE. Following the fall of Babylon to the Achaemenid Empire under Cyrus the Great in 539 BCE, some Judean exiles returned to Jerusalem, inaugurating the formative period in the development of a distinctive Judahite identity in the province of Yehud Medinata.",
+     "During the Hellenistic classic period, Yehud was absorbed into the subsequent Hellenistic kingdoms that followed the conquests of Alexander the Great, but in the 2nd century&nbsp;BCE the Judaeans revolted against the Seleucid Empire and created the Hasmonean kingdom.",
+     "This, the last nominally independent kingdom of Israel, gradually lost its independence from 63&nbsp;BCE with its conquest by Pompey of Rome, becoming a Roman and later Parthian client kingdom.",
+     "Following the installation of client kingdoms under the Herodian dynasty, the Province of Judea was wracked by civil disturbances, which culminated in the First Jewish–Roman War, the destruction of the Second Temple, the emergence of Rabbinic Judaism and Early Christianity.",
+     "The name Judea (Iudaea) then ceased to be used by Greco-Romans."
+    ],
+    "opening": "The Kingdom of Israel and the Kingdom of Judah were two related Israelite kingdoms from the Iron Age period of the ancient Southern Levant. After an emergent and large polity was suddenly formed based on the Gibeon-Gibeah plateau and destroyed by Shoshenq I in the first half of 10th century BCE, a return to small city states was prevalent in the Southern Levant, but between 950 and 900 BCE another large polity emerged in the northern highlands with its capital eventually at Tirzah, that can be considered the precursor of the Kingdom of Israel, which was consolidated as an important regional power by the first half of the 9th century BCE, before falling to the Neo-Assyrian Empire in 722&nbsp;BCE. Israel's southern neighbor, the Kingdom of Judah, emerged in the second half of 9th century BCE, and later became a client state of first the Neo-Assyrian Empire and then the Neo-Babylonian Empire before a revolt against the latter led to its destruction in 586&nbsp;BCE. Following the fall of Babylon to the Achaemenid Empire under Cyrus the Great in 539 BCE, some Judean exiles returned to Jerusalem, inaugurating the formative period in the development of a distinctive Judahite identity in the province of Yehud Medinata. During the Hellenistic classic period, Yehud was absorbed into the subsequent Hellenistic kingdoms that followed the conquests of Alexander the Great, but in the 2nd century&nbsp;BCE the Judaeans revolted against the Seleucid Empire and created the Hasmonean kingdom. This, the last nominally independent kingdom of Israel, gradually lost its independence from 63&nbsp;BCE with its conquest by Pompey of Rome, becoming a Roman and later Parthian client kingdom. Following the installation of client kingdoms under the Herodian dynasty, the Province of Judea was wracked by civil disturbances, which culminated in the First Jewish–Roman War, the destruction of the Second Temple, the emergence of Rabbinic Judaism and Early Christianity. The name Judea (Iudaea) then ceased to be used by Greco-Romans. After the Bar Kochba revolt of 135 CE, the Romans expelled most Jews from the region and renamed it Palestine (Palaestiane).",
+    "critical": 1,
+    "connection": 10
+   },
+   "created": null,
+   "now": {
+    "revid": 1380468211,
+    "ts": "2026-10-15T22:00:18Z",
+    "first_sentence": "Ancient Israel and Judah were two Israelite kingdoms that existed in the Southern Levant during the Iron Age.",
+    "sentences": [
+     "Ancient Israel and Judah were two Israelite kingdoms that existed in the Southern Levant during the Iron Age.",
+     "Their history began with the early appearance of the Israelites in the central highlands of Samaria and Judea.",
+     "The earliest documented mention of \"Israel\" as a people appears on the Merneptah Stele, an ancient Egyptian inscription dating back to around 1208 BCE. Archaeological evidence suggests that ancient Israelite culture evolved from the pre-existing Canaanite civilization.",
+     "During the Iron Age II period, two Israelite kingdoms emerged, covering much of Canaan: the Kingdom of Israel in the north and the Kingdom of Judah in the south.",
+     "According to the Hebrew Bible, a \"United Monarchy\" consisting of Israel and Judah existed as early as the 11th century BCE, under the reigns of Saul, David, and Solomon; the great kingdom later was separated into two smaller kingdoms: Israel, containing the cities of Shechem and Samaria, in the north, and Judah, containing Jerusalem and Solomon's Temple, in the south.",
+     "The historicity of the United Monarchy is debated—as there are no archaeological remains of it that are accepted as consensus—but historians and archaeologists agree that Israel and Judah existed as separate kingdoms by and, respectively."
+    ],
+    "opening": "Ancient Israel and Judah were two Israelite kingdoms that existed in the Southern Levant during the Iron Age. Their history began with the early appearance of the Israelites in the central highlands of Samaria and Judea. The earliest documented mention of \"Israel\" as a people appears on the Merneptah Stele, an ancient Egyptian inscription dating back to around 1208 BCE. Archaeological evidence suggests that ancient Israelite culture evolved from the pre-existing Canaanite civilization. During the Iron Age II period, two Israelite kingdoms emerged, covering much of Canaan: the Kingdom of Israel in the north and the Kingdom of Judah in the south. According to the Hebrew Bible, a \"United Monarchy\" consisting of Israel and Judah existed as early as the 11th century BCE, under the reigns of Saul, David, and Solomon; the great kingdom later was separated into two smaller kingdoms: Israel, containing the cities of Shechem and Samaria, in the north, and Judah, containing Jerusalem and Solomon's Temple, in the south. The historicity of the United Monarchy is debated—as there are no archaeological remains of it that are accepted as consensus—but historians and archaeologists agree that Israel and Judah existed as separate kingdoms by and, respectively. The kingdoms' history is known in greater detail than that of other kingdoms in the Levant, primarily due to the selective narratives in the Books of Samuel, Kings, and Chronicles, which were included in the Bible. The northern Kingdom of Israel was destroyed around 720 BCE, when it was conquered by the Neo-Assyrian Empire. While the Kingdom of Judah remained intact during this time, it became a client state of first the Neo-Assyrian Empire and then the Neo-Babylonian Empire. However, Jewish revolts against the Babylonians led to the destruction of Judah in 586&nbsp;BCE, under the rule of Babylonian king Nebuchadnezzar II. According to the biblical account, the armies of Nebuchadnezzar II besieged Jerusalem between 589 and 586 BCE, which led to the destruction of Solomon's Temple and the exile of the Jews to Babylon; this event was also recorded in the Babylonian Chronicles. The exilic period saw the development of the Israelite religion towards a monotheistic Judaism. The exile ended with the fall of Babylon to the Achaemenid Empire. Subsequently, the Achaemenid king Cyrus the Great issued a proclamation known as the Edict of Cyrus, which authorized and encouraged exiled Jews to return to Judah. Cyrus' proclamation began the exiles' return to Zion, inaugurating the formative period in which a more distinctive Jewish identity developed in the Persian province of Yehud. During this time, the destroyed Solomon's Temple was replaced by the Second Temple, marking the beginning of the Second Temple period.",
+    "critical": 0,
+    "connection": 12
+   },
+   "moves": [
+    {
+     "ts": "2026-01-20T08:29:01Z",
+     "from": "History of ancient Israel and Judah",
+     "to": "Ancient Israel and Judah"
+    }
+   ],
+   "revisions_since_2021": 571,
+   "keys": {}
+  },
+  "Bar Kokhba Revolt": {
+   "run": "42848274633",
+   "decision": "DROP",
+   "reason": "a move: “Judea” left the first sentence but is in sentence 2 (“depopulation of Judea proper”)",
+   "then": {
+    "revid": 997255412,
+    "ts": "2020-12-30T18:10:51Z",
+    "first_sentence": "The Bar Kokhba revolt (Mered Bar Kokhba) was a rebellion of the Jews of the Roman province of Judea, led by Simon bar Kokhba, against the Roman Empire.",
+    "sentences": [
+     "The Bar Kokhba revolt (Mered Bar Kokhba) was a rebellion of the Jews of the Roman province of Judea, led by Simon bar Kokhba, against the Roman Empire.",
+     "Fought circa 132–136 CE, it was the last of three major Jewish–Roman wars, so it is also known as The Third Jewish–Roman War or The Third Jewish Revolt.",
+     "Some historians also refer to it as the Second Revolt of Judea, not counting the Kitos War (115–117 CE), which had only marginally been fought in Judea.",
+     "The revolt erupted as a result of religious and political tensions in Judea following on the failed First Revolt in 66–73 CE. These tensions were related to the establishment of a large Roman military presence in Judea, changes in administrative life and the economy, together with the outbreak and suppression of Jewish revolts from Mesopotamia to Libya and Cyrenaica.",
+     "The proximate reasons seem to be the construction of a new city, Aelia Capitolina, over the ruins of Jerusalem and the erection of a temple to Jupiter on the Temple Mount.",
+     "The Church Fathers and rabbinic literature emphasize the role of Rufus, governor of Judea, in provoking the revolt."
+    ],
+    "opening": "The Bar Kokhba revolt (Mered Bar Kokhba) was a rebellion of the Jews of the Roman province of Judea, led by Simon bar Kokhba, against the Roman Empire. Fought circa 132–136 CE, it was the last of three major Jewish–Roman wars, so it is also known as The Third Jewish–Roman War or The Third Jewish Revolt. Some historians also refer to it as the Second Revolt of Judea, not counting the Kitos War (115–117 CE), which had only marginally been fought in Judea. The revolt erupted as a result of religious and political tensions in Judea following on the failed First Revolt in 66–73 CE. These tensions were related to the establishment of a large Roman military presence in Judea, changes in administrative life and the economy, together with the outbreak and suppression of Jewish revolts from Mesopotamia to Libya and Cyrenaica. The proximate reasons seem to be the construction of a new city, Aelia Capitolina, over the ruins of Jerusalem and the erection of a temple to Jupiter on the Temple Mount. The Church Fathers and rabbinic literature emphasize the role of Rufus, governor of Judea, in provoking the revolt. In 132, the revolt led by Bar Kokhba quickly spread from central Judea across the country, cutting off the Roman garrison in Aelia Capitolina (Jerusalem). Quintus Tineius Rufus, the provincial governor at the time of the erupting uprising, was attributed with the failure to subdue its early phase. Rufus is last recorded in 132, the first year of the rebellion; whether he died or was replaced is uncertain. Despite arrival of significant Roman reinforcements from Syria, Egypt, and Arabia, initial rebel victories over the Romans established an independent state over most parts of Judea Province for over two years, as Simon bar Kokhba took the title of Nasi (\"prince\"). As well as leading the revolt, he was regarded by many Jews as the Messiah, who would restore their national independence. This setback, however, caused Emperor Hadrian to assemble a large-scale Roman force from across the Empire, which invaded Judea in 134 under the command of General Sextus Julius Severus. The Roman army was made up of six full legions with auxiliaries and elements from up to six additional legions, which finally managed to crush the revolt. The Bar Kokhba revolt resulted in the extensive depopulation of Judean communities, more so than during the First Jewish–Roman War of 70 CE. According to Cassius Dio, 580,000 Jews perished in the war and many more died of hunger and disease. In addition, many Judean war captives were sold into slavery. The Jewish communities of Judea were devastated to an extent which some scholars describe as a genocide. However, the Jewish population remained strong in other parts of Palestine, thriving in Galilee, Golan, Bet Shean Valley, and the eastern, southern, and western edges of Judea. Roman casualties were also considered heavy – XXII Deiotariana was disbanded after serious losses. In addition, some historians argue that Legio IX Hispana's disbandment in the mid-2nd century could have been a result of this war. In an attempt to erase any memory of Judea or Ancient Israel, Emperor Hadrian wiped the name off the map and replaced it with Syria Palaestina. However, there is only circumstantial evidence linking Hadrian with the name change and the precise date is not certain. The common view that the name change was intended to \"sever the connection of the Jews to their historical homeland\" is disputed. The Bar Kokhba revolt greatly influenced the course of Jewish history and the philosophy of the Jewish religion. Despite easing the persecution of Jews following Hadrian's death in 138 CE, the Romans barred Jews from Jerusalem, except for attendance in Tisha B'Av. Jewish messianism was abstracted and spiritualized, and rabbinical political thought became deeply cautious and conservative. The Talmud, for instance, refers to Bar Kokhba as \"Ben-Kusiba\", a derogatory term used to indicate that he was a false Messiah. It was also among the key events to differentiate Christianity as a religion distinct from Judaism. Although Jewish Christians regarded Jesus as the Messiah and did not support Bar Kokhba, they were barred from Jerusalem along with the other Jews.",
+    "critical": 1,
+    "connection": 17
+   },
+   "created": null,
+   "now": {
+    "revid": 1383659108,
+    "ts": "2026-11-04T00:36:11Z",
+    "first_sentence": "The Bar Kokhba Revolt (132–136 CE), also known as the Bar Kokhba War, the War of Betar, and the Third (or Second) Jewish–Roman War, was the last and most devastating of three major Jewish rebellions against the Roman Empire.",
+    "sentences": [
+     "The Bar Kokhba Revolt (132–136 CE), also known as the Bar Kokhba War, the War of Betar, and the Third (or Second) Jewish–Roman War, was the last and most devastating of three major Jewish rebellions against the Roman Empire.",
+     "Led by Simon bar Kokhba, the rebels established an independent Jewish state that lasted over three years before being crushed by the Romans, leading to the near-total depopulation of Judea proper, along with mass killings, enslavement, and displacement.",
+     "Resentment toward Roman rule and national aspirations remained high in the Roman province of Judaea following the First Jewish Revolt.",
+     "Around 130&nbsp;CE, Emperor Hadrian planned to rebuild Jerusalem as Aelia Capitolina, a Roman colonia dedicated to Jupiter, extinguishing hopes for the restoration of the Temple in Jerusalem.",
+     "This may have been accompanied by a ban on circumcision, though scholars differ on whether it preceded the mutiny or followed as punishment.",
+     "These measures prompted preparations for a guerrilla campaign, including the construction of underground complexes within villages."
+    ],
+    "opening": "The Bar Kokhba Revolt (132–136 CE), also known as the Bar Kokhba War, the War of Betar, and the Third (or Second) Jewish–Roman War, was the last and most devastating of three major Jewish rebellions against the Roman Empire. Led by Simon bar Kokhba, the rebels established an independent Jewish state that lasted over three years before being crushed by the Romans, leading to the near-total depopulation of Judea proper, along with mass killings, enslavement, and displacement. Resentment toward Roman rule and national aspirations remained high in the Roman province of Judaea following the First Jewish Revolt. Around 130&nbsp;CE, Emperor Hadrian planned to rebuild Jerusalem as Aelia Capitolina, a Roman colonia dedicated to Jupiter, extinguishing hopes for the restoration of the Temple in Jerusalem. This may have been accompanied by a ban on circumcision, though scholars differ on whether it preceded the mutiny or followed as punishment. These measures prompted preparations for a guerrilla campaign, including the construction of underground complexes within villages. Simon bar Kokhba was declared nasi of Israel, and his administration issued standardized weights and its own coinage. After an initial attempt to suppress the revolt by the provincial governor, Quintus Tineius Rufus, failed, Hadrian dispatched one of Rome's most capable generals, Sextus Julius Severus, supported by an unusually large concentration of forces drawn from across the empire. Following Severus's arrival in 133, the Romans systematically devastated towns and villages throughout the country. In 135, the stronghold of Betar fell and the Romans killed Simon bar Kokhba. Many rebels and refugees took shelter in natural caves in the Judaean Desert, but Roman troops besieged these hideouts, starving, killing, or capturing those inside. The consequences of the revolt were disastrous for Judea's Jewish population. Ancient and contemporary sources estimate that hundreds of thousands were killed, with many others enslaved and displaced. The Romans imposed harsh religious prohibitions, including bans on circumcision, Torah study and Sabbath observance, though these were largely lifted after Hadrian's death. More enduring was the renaming of the province from Judaea to Syria Palaestina, an act intended to sever the region's historical association with the Jewish people, and the exclusion of Jews from Jerusalem and its environs. Rabbinic Judaism adopted a non-revolutionary stance, and Jewish messianism became more abstract. The center of Jewish life shifted northwards to Galilee, while the growing diaspora communities, particularly in Babylonia, gained increasing prominence.",
+    "critical": 0,
+    "connection": 8
+   },
+   "moves": [
+    {
+     "ts": "2026-04-07T13:03:16Z",
+     "from": "Bar Kokhba revolt",
+     "to": "Bar Kokhba Revolt"
+    }
+   ],
+   "revisions_since_2021": 1084,
+   "keys": {}
+  },
+  "Causes of the 1948 Palestinian expulsion and flight": {
+   "run": "42848274633",
+   "decision": "KEEP",
+   "reason": "real change in sentence 2: from “great controversy” to “most scholars consider that the majority … were directly expelled” (15 Aug 2024)",
+   "then": {
+    "revid": 990147549,
+    "ts": "2020-11-23T02:04:41Z",
+    "first_sentence": "During the 1948 Palestine War in which the State of Israel was established, around 700,000 Palestinian Arabs or 85% of the total population of the territory Israel captured fled or were expelled from their homes by Israeli forces.",
+    "sentences": [
+     "During the 1948 Palestine War in which the State of Israel was established, around 700,000 Palestinian Arabs or 85% of the total population of the territory Israel captured fled or were expelled from their homes by Israeli forces.",
+     "The causes for this mass displacement is a matter of great controversy among historians, journalists, and commentators."
+    ],
+    "opening": "During the 1948 Palestine War in which the State of Israel was established, around 700,000 Palestinian Arabs or 85% of the total population of the territory Israel captured fled or were expelled from their homes by Israeli forces. The causes for this mass displacement is a matter of great controversy among historians, journalists, and commentators.",
+    "critical": 1,
+    "connection": 0
+   },
+   "created": null,
+   "now": {
+    "revid": 1379281874,
+    "ts": "2026-10-09T01:19:32Z",
+    "first_sentence": "During the 1948 Palestine war in which the State of Israel was established, around 700,000 Palestinian Arabs, or 85% of the total population of the territory Israel captured, were expelled or fled from their homes.",
+    "sentences": [
+     "During the 1948 Palestine war in which the State of Israel was established, around 700,000 Palestinian Arabs, or 85% of the total population of the territory Israel captured, were expelled or fled from their homes.",
+     "The causes of this mass displacement have been a matter of dispute, though today most scholars consider that the majority of Palestinians were directly expelled or else fled due to fear.",
+     "Causes of the exodus include direct expulsions by Israeli forces, destruction of Arab villages, psychological warfare including terrorism, dozens of massacres which caused many to flee out of fear, such as the widely publicized Deir Yassin massacre, crop burning, typhoid epidemics in some areas caused by Israeli well-poisoning, and the collapse of Palestinian leadership including the demoralizing impact of wealthier classes fleeing.",
+     "Many historians consider that the events of 1948 were an instance of ethnic cleansing."
+    ],
+    "opening": "During the 1948 Palestine war in which the State of Israel was established, around 700,000 Palestinian Arabs, or 85% of the total population of the territory Israel captured, were expelled or fled from their homes. The causes of this mass displacement have been a matter of dispute, though today most scholars consider that the majority of Palestinians were directly expelled or else fled due to fear. Causes of the exodus include direct expulsions by Israeli forces, destruction of Arab villages, psychological warfare including terrorism, dozens of massacres which caused many to flee out of fear, such as the widely publicized Deir Yassin massacre, crop burning, typhoid epidemics in some areas caused by Israeli well-poisoning, and the collapse of Palestinian leadership including the demoralizing impact of wealthier classes fleeing. Many historians consider that the events of 1948 were an instance of ethnic cleansing.",
+    "critical": 4,
+    "connection": 1
+   },
+   "moves": [
+    {
+     "ts": "2023-03-17T23:00:19Z",
+     "from": "Causes of the 1948 Palestinian exodus",
+     "to": "Causes of the 1948 expulsion and flight of Palestinians"
+    },
+    {
+     "ts": "2023-04-29T04:50:31Z",
+     "from": "Causes of the 1948 expulsion and flight of Palestinians",
+     "to": "Causes of the 1948 Palestinian expulsion and flight"
+    }
+   ],
+   "revisions_since_2021": 262,
+   "keys": {
+    "by Israeli forces": {
+     "where": "fs",
+     "changes": [
+      {
+       "ts": "2021-01-14T16:51:36Z",
+       "revid": 1000319844,
+       "in": true
+      },
+      {
+       "ts": "2024-06-24T17:07:29Z",
+       "revid": 1230777333,
+       "in": false
+      }
+     ]
+    },
+    "most scholars consider": {
+     "where": "lead",
+     "changes": [
+      {
+       "ts": "2021-01-14T16:51:36Z",
+       "revid": 1000319844,
+       "in": false
+      },
+      {
+       "ts": "2024-08-15T23:14:21Z",
+       "revid": 1240544511,
+       "in": true
+      }
+     ]
+    },
+    "great controversy": {
+     "where": "lead",
+     "changes": [
+      {
+       "ts": "2021-01-14T16:51:36Z",
+       "revid": 1000319844,
+       "in": true
+      },
+      {
+       "ts": "2024-06-24T04:11:15Z",
+       "revid": 1230689084,
+       "in": false
+      }
+     ]
+    }
+   }
+  },
+  "East Jerusalem": {
+   "run": "42848274633",
+   "decision": "DROP",
+   "reason": "legal-status wording (“under illegal occupation … according to international law”), close to the court framing the owner excluded; the Jordan clause moved to paragraph 2",
+   "then": {
+    "revid": 992714539,
+    "ts": "2020-12-06T18:50:17Z",
+    "first_sentence": "East Jerusalem or Eastern Jerusalem ( al-Quds al-Sharqit; ISO) is the sector of Jerusalem that was occupied by Jordan during the 1948 Arab–Israeli War, as opposed to the western sector of the city, West Jerusalem, which was occupied by Israel.",
+    "sentences": [
+     "East Jerusalem or Eastern Jerusalem ( al-Quds al-Sharqit; ISO) is the sector of Jerusalem that was occupied by Jordan during the 1948 Arab–Israeli War, as opposed to the western sector of the city, West Jerusalem, which was occupied by Israel.",
+     "Since the 1967 Arab–Israeli War, East Jerusalem has been considered occupied by Israel by the international community.",
+     "This area includes Jerusalem's Old City and some of the holiest sites of Judaism, Christianity, and Islam, such as the Temple Mount, Western Wall, Al-Aqsa Mosque, Dome of the Rock and the Church of the Holy Sepulchre, as well as a number of adjacent neighbourhoods.",
+     "Israeli and Palestinian definitions of it differ.",
+     "The Palestinian official position is based on the 1949 Armistice Agreements, while the Israeli position is based mainly on the current municipality boundaries of Jerusalem.",
+     "These were determined by a series of administrative enlargements decided by Israeli municipal authorities since the June 1967 Six-Day War."
+    ],
+    "opening": "East Jerusalem or Eastern Jerusalem ( al-Quds al-Sharqit; ISO) is the sector of Jerusalem that was occupied by Jordan during the 1948 Arab–Israeli War, as opposed to the western sector of the city, West Jerusalem, which was occupied by Israel. Since the 1967 Arab–Israeli War, East Jerusalem has been considered occupied by Israel by the international community. This area includes Jerusalem's Old City and some of the holiest sites of Judaism, Christianity, and Islam, such as the Temple Mount, Western Wall, Al-Aqsa Mosque, Dome of the Rock and the Church of the Holy Sepulchre, as well as a number of adjacent neighbourhoods. Israeli and Palestinian definitions of it differ. The Palestinian official position is based on the 1949 Armistice Agreements, while the Israeli position is based mainly on the current municipality boundaries of Jerusalem. These were determined by a series of administrative enlargements decided by Israeli municipal authorities since the June 1967 Six-Day War. Despite its name, East Jerusalem includes neighborhoods to the north, east and south of the Old City and, in the wider definition of the term, even on all these sides of West Jerusalem. The international community considers Israeli settlements in the West Bank, including East Jerusalem, to be illegal under international law. Israel disputes this interpretation. During the 1948 Arab–Israeli War, Jerusalem was contested between Jordan and Israel. At the cessation of hostilities, the two countries secretly negotiated a division of the city, with the eastern sector coming under Jordanian rule. This arrangement was formalized in the Rhodes Agreement in March 1949. David Ben-Gurion presented his party's assertion that \"Jewish Jerusalem is an organic, inseparable part of the State of Israel\" in December 1949, and, the following year, Jordan annexed East Jerusalem. These decisions were confirmed respectively in the Israeli Knesset in January 1950 and the Jordanian Parliament in April 1950. When occupied by Israel after the 1967 Six-Day War, East Jerusalem, with expanded borders, came under direct Israeli rule, though, according to Ian Lustick, never formally annexed. In a unanimous General Assembly resolution, the UN declared the measures changing the status of the city to be invalid. In the Palestine Liberation Organization (PLO)'s Palestinian Declaration of Independence of 1988, Jerusalem is stated to be the capital of the State of Palestine. In 2000, the Palestinian Authority passed a law proclaiming Jerusalem as its capital, and in October 2002, this law was approved by chairman Yasser Arafat. Since that time Israel has shut down all offices and NGO organisations connected to the PLO in East Jerusalem, saying that the Oslo Accords do not permit the Palestinian National Authority to operate in Jerusalem. The Organisation of Islamic Cooperation (OIC) recognised East Jerusalem as capital of the State of Palestine on 13 December 2017. The annual number of building permits granted for construction in Israeli settlements in East Jerusalem have expanded by 60% since Donald Trump became US president in 2017. Since 1991, Palestinians, who make up the majority of the residents in East Jerusalem, have only received 30% of building permits.",
+    "critical": 0,
+    "connection": 0
+   },
+   "created": null,
+   "now": {
+    "revid": 1378661048,
+    "ts": "2026-10-05T14:42:37Z",
+    "first_sentence": "East Jerusalem (القدس الشرقية; מִזְרַח יְרוּשָׁלַיִם) is the portion of Jerusalem east of the Green Line.",
+    "sentences": [
+     "East Jerusalem (القدس الشرقية; מִזְרַח יְרוּשָׁלַיִם) is the portion of Jerusalem east of the Green Line.",
+     "It was established formally by the armistice agreements at the end of the 1948 Palestine war.",
+     "It is considered to be the capital and part of the Palestinian territories according to international law by the United Nations and other intergovernmental organizations, and under illegal occupation by Israel.",
+     "Many states (e.g. Brazil, China, Russia, and all 57 members of the Organisation of Islamic Cooperation) recognize East Jerusalem as the capital of the State of Palestine, whereas other states (eg.",
+     "Finland, Ireland, Norway, Slovenia and Spain) see East Jerusalem as the future capital of Palestine while referring to it as \"an occupied territory\".",
+     "East Jerusalem includes the Old City and sites of religious significance to Muslims, Christians, and Jews."
+    ],
+    "opening": "East Jerusalem (القدس الشرقية; מִזְרַח יְרוּשָׁלַיִם) is the portion of Jerusalem east of the Green Line. It was established formally by the armistice agreements at the end of the 1948 Palestine war. It is considered to be the capital and part of the Palestinian territories according to international law by the United Nations and other intergovernmental organizations, and under illegal occupation by Israel. Many states (e.g. Brazil, China, Russia, and all 57 members of the Organisation of Islamic Cooperation) recognize East Jerusalem as the capital of the State of Palestine, whereas other states (eg. Finland, Ireland, Norway, Slovenia and Spain) see East Jerusalem as the future capital of Palestine while referring to it as \"an occupied territory\". East Jerusalem includes the Old City and sites of religious significance to Muslims, Christians, and Jews. After the 1948 war, the territory was held by Jordan, as opposed to West Jerusalem, which became part of the newly established State of Israel. In the 1967 Arab–Israeli War, Israel captured and occupied East Jerusalem, then unilaterally annexed it in 1980. In 2020, East Jerusalem had a population of 595,000 inhabitants, of whom 361,700 (61%) were Palestinian Arabs and 234,000 (39%) were Jewish settlers. Israeli settlements in East Jerusalem are illegal under international law and in the eyes of the international community. Jerusalem was envisaged as a separate, international city under the 1947 UN partition plan. It was, however, divided by the 1948 war that followed Israel's declaration of independence. As a result of the 1949 Armistice Agreements, the city's western half came under Israeli control, while its eastern half, containing the famed Old City, fell under Jordanian control, at the exception of Mount Scopus enclave. Israel occupied East Jerusalem during the 1967 Six-Day War; since then, the entire city has been under Israeli control. The 1980 Jerusalem Law declared unified Jerusalem the capital of Israel, formalizing the effective annexation of East Jerusalem. Palestinians and many in the international community consider East Jerusalem to be the future capital of the State of Palestine. The status of Jerusalem has been described as \"one of the most intractable issues in the Israeli–Palestinian conflict\", with conflicting claims to sovereignty over the city or parts of it, and access to its holy sites. Israeli and Palestinian definitions of East Jerusalem differ. Following the 1967 Six-Day War, Jerusalem's municipal boundaries were extended totaling an area three times the size of pre-war West Jerusalem. This includes several West Bank villages to the north, east and south of the Old City that are now considered neighborhoods of the city, as well as eight suburban neighborhoods that were built since then. The international community considers these neighborhoods illegal settlements, but the Israeli government disputes this. The Israeli position is based on the extended municipal boundaries, while the Palestinian position is based on the 1949 Agreements. East Jerusalem includes the Old City, which is home to many sites of seminal religious importance for the three major Abrahamic religions — Judaism, Christianity, and Islam, including the Temple Mount / Al-Aqsa, the Western Wall, the Dome of the Rock and the Church of the Holy Sepulchre. Arab residents of East Jerusalem are increasingly becoming integrated into Israeli society, in terms of education, citizenship, national service and other aspects.",
+    "critical": 4,
+    "connection": 0
+   },
+   "moves": [],
+   "revisions_since_2021": 244,
+   "keys": {}
+  },
+  "Majdal Shams": {
+   "run": "42848274633",
+   "decision": "DROP",
+   "reason": "a village (the owner's scope rule: the long tail of places is not the story), though the change is real (“governed by Israel” -> “Under Israeli occupation since 1967”; “Quneitra Governorate, Syria”)",
+   "then": {
+    "revid": 996336874,
+    "ts": "2020-12-26T00:18:02Z",
+    "first_sentence": "Majdal Shams is a Druze town in the southern foothills of Mt.",
+    "sentences": [
+     "Majdal Shams is a Druze town in the southern foothills of Mt.",
+     "Hermon, north of the Golan Heights (also known as the capital of Golan Heights).",
+     "The majority of residents are of Syrian-Druze origin.",
+     "Since the June 1967 Six-Day War, the village has been governed by Israel, first under martial law, but since the adoption of the 1981 Golan Heights Law under Israeli civil law, and incorporated into the Israeli system of local councils.",
+     "Majdal Shams is the largest of the four remaining Druze-Syrian communities on the Israeli-occupied side of Mount Hermon and the Golan Heights, together with Ein Qiniyye, Mas'ade and Buq'ata.",
+     "Geologically and geographically a distinction is made between the Golan Heights and Mount Hermon, the boundary being marked by the Sa'ar Stream; however, administratively usually they are lumped together."
+    ],
+    "opening": "Majdal Shams is a Druze town in the southern foothills of Mt. Hermon, north of the Golan Heights (also known as the capital of Golan Heights). The majority of residents are of Syrian-Druze origin. Since the June 1967 Six-Day War, the village has been governed by Israel, first under martial law, but since the adoption of the 1981 Golan Heights Law under Israeli civil law, and incorporated into the Israeli system of local councils. Majdal Shams is the largest of the four remaining Druze-Syrian communities on the Israeli-occupied side of Mount Hermon and the Golan Heights, together with Ein Qiniyye, Mas'ade and Buq'ata. Geologically and geographically a distinction is made between the Golan Heights and Mount Hermon, the boundary being marked by the Sa'ar Stream; however, administratively usually they are lumped together. Majdal Shams and Ein Qiniyye are on the Hermon side of the boundary, thus sitting on limestone, while Buq'ata and Mas'ade are on the Golan side, characterised by black volcanic rock (basalt).",
+    "critical": 0,
+    "connection": 0
+   },
+   "created": null,
+   "now": {
+    "revid": 1381385435,
+    "ts": "2026-10-22T02:47:39Z",
+    "first_sentence": "Majdal Shams (مجدل شمس; מג'דל שמס) is a Druze town in the Golan Heights region, Quneitra Governorate, Syria.",
+    "sentences": [
+     "Majdal Shams (مجدل شمس; מג'דל שמס) is a Druze town in the Golan Heights region, Quneitra Governorate, Syria.",
+     "Under Israeli occupation since 1967, it is located in the southern foothills of Mount Hermon.",
+     "In it had a population of.",
+     "Majdal Shams played a significant role in the Great Syrian Revolt of 1925–1927 that was led by Druze leader Sultan al-Atrash, who is commemorated by several monuments in the city.",
+     "Beginning in the 1930s, Majdal Shams became involved in political developments in nearby Mandatory Palestine, and supported the Arab Palestinians during the 1948 Arab–Israeli War.",
+     "Since the Six-Day War in 1967, Majdal Shams along with the broader Golan Heights have been under Israeli occupation, and were effectively annexed in 1981."
+    ],
+    "opening": "Majdal Shams (مجدل شمس; מג'דל שמס) is a Druze town in the Golan Heights region, Quneitra Governorate, Syria. Under Israeli occupation since 1967, it is located in the southern foothills of Mount Hermon. In it had a population of. Majdal Shams played a significant role in the Great Syrian Revolt of 1925–1927 that was led by Druze leader Sultan al-Atrash, who is commemorated by several monuments in the city. Beginning in the 1930s, Majdal Shams became involved in political developments in nearby Mandatory Palestine, and supported the Arab Palestinians during the 1948 Arab–Israeli War. Since the Six-Day War in 1967, Majdal Shams along with the broader Golan Heights have been under Israeli occupation, and were effectively annexed in 1981. The move was recognized by the United States in 2019, after having been lobbied by Israeli officials. Majdal Shams is the largest of the four remaining Syrian Druze communities in the Israeli-occupied territories of Golan Heights, the other three being Ein Qiniyye, Mas'ade, and Buq'ata. While the Golan Heights and Mount Hermon are administratively joined, they differ geologically and geographically, with their boundary being marked by the Sa'ar Stream; Majdal Shams and Ein Qiniyye sit on limestone on the Hermon side, while Buq'ata and Mas'ade are on the Golan side, which is characterized by black volcanic rock (i.e., basalt).",
+    "critical": 3,
+    "connection": 0
+   },
+   "moves": [],
+   "revisions_since_2021": 244,
+   "keys": {}
+  },
+  "Palestinian political violence": {
+   "run": "42848274633",
+   "decision": "KEEP",
+   "reason": "real change: “or terror(ism)” left the first sentence (10 Dec 2025), which now explains the violence as insurgency by a people without a state",
+   "then": {
+    "revid": 991829003,
+    "ts": "2020-12-02T01:11:18Z",
+    "first_sentence": "Palestinian political violence refers to acts of violence or terror motivated by Palestinian nationalism.",
+    "sentences": [
+     "Palestinian political violence refers to acts of violence or terror motivated by Palestinian nationalism.",
+     "These political objectives include self-determination in and sovereignty over Palestine, the \"liberation of Palestine\" and recognition of a Palestinian state, either in place of both Israel and the Palestinian territories, or solely in the Palestinian territories.",
+     "Periodically directed toward more limited goals such as the release of Palestinian prisoners in Israel, another key aim is to advance the Palestinian right of return.",
+     "Palestinian groups that have been involved in politically motivated violence include the Palestinian Liberation Organization (PLO), Fatah, the Popular Front for the Liberation of Palestine (PFLP), the Popular Front for the Liberation of Palestine – General Command (PFLP-GC), the Democratic Front for the Liberation of Palestine, the Abu Nidal Organization, the Palestinian Islamic Jihad, and Hamas.",
+     "The PLO officially renounced terrorism in 1988, and Fatah says it no longer engages in terrorism, although the Authority continues to incentivize terrorism by awarding large stipends to the families of Palestinians killed or arrested while committing acts of terrorism via the Palestinian Authority Martyr's Fund, payouts that absorb 7% of the Authority's national budget.",
+     "The PFLP-GC has been internationally inactive."
+    ],
+    "opening": "Palestinian political violence refers to acts of violence or terror motivated by Palestinian nationalism. These political objectives include self-determination in and sovereignty over Palestine, the \"liberation of Palestine\" and recognition of a Palestinian state, either in place of both Israel and the Palestinian territories, or solely in the Palestinian territories. Periodically directed toward more limited goals such as the release of Palestinian prisoners in Israel, another key aim is to advance the Palestinian right of return. Palestinian groups that have been involved in politically motivated violence include the Palestinian Liberation Organization (PLO), Fatah, the Popular Front for the Liberation of Palestine (PFLP), the Popular Front for the Liberation of Palestine – General Command (PFLP-GC), the Democratic Front for the Liberation of Palestine, the Abu Nidal Organization, the Palestinian Islamic Jihad, and Hamas. The PLO officially renounced terrorism in 1988, and Fatah says it no longer engages in terrorism, although the Authority continues to incentivize terrorism by awarding large stipends to the families of Palestinians killed or arrested while committing acts of terrorism via the Palestinian Authority Martyr's Fund, payouts that absorb 7% of the Authority's national budget. The PFLP-GC has been internationally inactive. The Abu Nidal organization all but dissolved on his death and exists only in name. Tactics have included hostage taking, plane hijackings, stone throwing, stabbing, shootings, and bombings. Several of these groups are considered terrorist organizations by the United States government, Canada and the European Union. Palestinian political violence has targeted Israelis, Palestinians, Lebanese, Jordanians, Egyptians, Americans and citizens of other countries. The attacks have taken place within and outside Israel and have been directed at both military and civilian targets. Israeli statistics state that 3,500 Israelis have been killed and 25,000 have been wounded as a result of Palestinian violence since the establishment of the state of Israel in 1948. These figures include soldiers as well as civilians, including those killed in exchanges of gunfire. Israeli statistics listing 'hostile terrorist attacks' also include incidents in which stones are thrown. Suicide bombings constituted just 0.5% of Palestinian attacks against Israelis in the first two years of the Al Aqsa Intifada, though this percentage accounted for half of the Israelis killed in that period. Personal grievances, trauma, or revenge against Israel are widely maintained to form an important element in motivating attacks against Israelis.",
+    "critical": 0,
+    "connection": 9
+   },
+   "created": null,
+   "now": {
+    "revid": 1383869304,
+    "ts": "2026-11-05T07:01:58Z",
+    "first_sentence": "As Palestinians have not had a fully recognized state with a regular army, much of Palestinian political violence in the context of the Israeli–Palestinian conflict has taken the form of insurgency.",
+    "sentences": [
+     "As Palestinians have not had a fully recognized state with a regular army, much of Palestinian political violence in the context of the Israeli–Palestinian conflict has taken the form of insurgency.",
+     "Common objectives of political violence by Palestinian groups include self-determination in or sovereignty over the region of Palestine, seeking a one-state solution, or the recognition of a Palestinian state.",
+     "This includes the objective of ending the Israeli occupation.",
+     "Goals also include the release of Palestinian prisoners held by Israel and recognition of the Palestinian right of return.",
+     "Palestinian groups that have been involved in politically motivated violence include the Palestine Liberation Organization (PLO), Fatah, the Popular Front for the Liberation of Palestine (PFLP), the Popular Front for the Liberation of Palestine – General Command (PFLP-GC), the Democratic Front for the Liberation of Palestine, the Abu Nidal Organization, the Palestinian Islamic Jihad, and Hamas.",
+     "Several of these groups are considered terrorist organizations by the governments of the United States, Canada, the United Kingdom, Japan, New Zealand and the European Union."
+    ],
+    "opening": "As Palestinians have not had a fully recognized state with a regular army, much of Palestinian political violence in the context of the Israeli–Palestinian conflict has taken the form of insurgency. Common objectives of political violence by Palestinian groups include self-determination in or sovereignty over the region of Palestine, seeking a one-state solution, or the recognition of a Palestinian state. This includes the objective of ending the Israeli occupation. Goals also include the release of Palestinian prisoners held by Israel and recognition of the Palestinian right of return. Palestinian groups that have been involved in politically motivated violence include the Palestine Liberation Organization (PLO), Fatah, the Popular Front for the Liberation of Palestine (PFLP), the Popular Front for the Liberation of Palestine – General Command (PFLP-GC), the Democratic Front for the Liberation of Palestine, the Abu Nidal Organization, the Palestinian Islamic Jihad, and Hamas. Several of these groups are considered terrorist organizations by the governments of the United States, Canada, the United Kingdom, Japan, New Zealand and the European Union. Attacks have taken place both within Israel and Palestine as well as internationally. They have been directed at both military targets and civilians of many countries. Tactics have included hostage taking, plane hijacking, boat hijacking, stone throwing, improvised explosive device, knife attacks, shooting sprees, attacks with vehicles, car bombs and assassinations. In the 1990s, groups seeking to stop Israeli-Palestinian negotiations began adopting suicide bombings, predominantly targeting civilians, which later peaked during the Second Intifada. In recent decades, violence has also included rocket attacks on Israeli urban centers. The October 7 attacks resulted in massacres and hostage-taking. Suicide bombings constituted 0.5% of Palestinian attacks against Israelis in the first two years of the Second Intifada, though this percentage accounted for half of the Israelis killed in that period. By 2026, a Palestinian minority of 27 percent supports armed struggle.",
+    "critical": 1,
+    "connection": 7
+   },
+   "moves": [],
+   "revisions_since_2021": 480,
+   "keys": {
+    "terror": {
+     "where": "fs",
+     "changes": [
+      {
+       "ts": "2021-03-05T12:42:30Z",
+       "revid": 1010432620,
+       "in": true
+      },
+      {
+       "ts": "2022-10-18T11:24:04Z",
+       "revid": 1116799340,
+       "in": false
+      },
+      {
+       "ts": "2023-11-19T16:57:35Z",
+       "revid": 1185891838,
+       "in": true
+      },
+      {
+       "ts": "2025-10-13T18:33:01Z",
+       "revid": 1316647775,
+       "in": false
+      },
+      {
+       "ts": "2025-10-13T19:51:09Z",
+       "revid": 1316658125,
+       "in": true
+      },
+      {
+       "ts": "2025-11-21T00:00:27Z",
+       "revid": 1323305670,
+       "in": false
+      },
+      {
+       "ts": "2025-11-23T06:47:35Z",
+       "revid": 1323695796,
+       "in": true
+      },
+      {
+       "ts": "2025-12-10T13:51:10Z",
+       "revid": 1326720518,
+       "in": false
+      }
+     ]
+    },
+    "insurgency": {
+     "where": "fs",
+     "changes": [
+      {
+       "ts": "2021-03-05T12:42:30Z",
+       "revid": 1010432620,
+       "in": false
+      },
+      {
+       "ts": "2025-12-10T13:51:10Z",
+       "revid": 1326720518,
+       "in": true
+      }
+     ]
+    }
+   }
+  },
+  "Plan Dalet": {
+   "run": "42848274633",
+   "decision": "KEEP",
+   "reason": "real change: from “a plan worked out by the Haganah” to “a Zionist military plan … for the conquest of territory” (4 Jun 2023), and the Nakba in sentence 2 (14 Aug 2024)",
+   "then": {
+    "revid": 991916313,
+    "ts": "2020-12-02T14:22:19Z",
+    "first_sentence": "Plan Dalet (Tokhnit dalet) was a plan worked out by the Haganah in Mandatory Palestine in March 1948.",
+    "sentences": [
+     "Plan Dalet (Tokhnit dalet) was a plan worked out by the Haganah in Mandatory Palestine in March 1948.",
+     "Its name was from the letter Dalet (ד), the fourth letter of the Hebrew alphabet.",
+     "Its purpose is much debated.",
+     "The plan was a set of guidelines to take control of Mandatory Palestine, declare a Jewish state, and defend its borders and people, including the Jewish population outside of the borders, 'before, and in anticipation of' the invasion by regular Arab armies.",
+     "According to the Israeli Yehoshafat Harkabi, \"Plan Dalet\" called for the conquest of Arab towns and villages inside and along the borders of the area allocated to the proposed Jewish State in the UN Partition Plan.",
+     "In case of resistance, the population of conquered villages was to be expelled outside the borders of the Jewish state."
+    ],
+    "opening": "Plan Dalet (Tokhnit dalet) was a plan worked out by the Haganah in Mandatory Palestine in March 1948. Its name was from the letter Dalet (ד), the fourth letter of the Hebrew alphabet. Its purpose is much debated. The plan was a set of guidelines to take control of Mandatory Palestine, declare a Jewish state, and defend its borders and people, including the Jewish population outside of the borders, 'before, and in anticipation of' the invasion by regular Arab armies. According to the Israeli Yehoshafat Harkabi, \"Plan Dalet\" called for the conquest of Arab towns and villages inside and along the borders of the area allocated to the proposed Jewish State in the UN Partition Plan. In case of resistance, the population of conquered villages was to be expelled outside the borders of the Jewish state. If no resistance was met, the residents could stay put, under military rule. The intent of Plan Dalet is subject to much controversy, with historians on one side asserting that it was entirely defensive, while other historians assert that the plan aimed at the expulsion, sometimes called an ethnic cleansing, on the grounds that this was an integral part of a planned strategy.",
+    "critical": 3,
+    "connection": 4
+   },
+   "created": null,
+   "now": {
+    "revid": 1369979005,
+    "ts": "2026-08-18T10:51:48Z",
+    "first_sentence": "Plan Dalet (תוכנית ד', Tokhnit dalet \"Plan D\"; 1 April – 14 May, 1948) was a Zionist military plan executed during the 1948 Palestine war for the conquest of territory in Mandatory Palestine in preparation for the establishment of a Jewish state.",
+    "sentences": [
+     "Plan Dalet (תוכנית ד', Tokhnit dalet \"Plan D\"; 1 April – 14 May, 1948) was a Zionist military plan executed during the 1948 Palestine war for the conquest of territory in Mandatory Palestine in preparation for the establishment of a Jewish state.",
+     "The plan was the blueprint for Israel's military operations, starting in March 1948 until the end of the war in early 1949, and so played a central role in the 1948 Palestinian expulsion and flight known as the Nakba.",
+     "The plan was requested by the Jewish Agency leader and later first prime minister of Israel David Ben-Gurion, and developed by the Haganah and finalized on March 10, 1948.",
+     "Historians describe Plan Dalet as the beginning of a new phase in the 1948 Palestine war in which Zionist forces shifted to an offensive strategy.",
+     "The plan was a set of guidelines to take control of Mandatory Palestine, declare a Jewish state, and defend its borders and people, including the Jewish population outside of the borders, \"before, and in anticipation of\" the invasion by regular Arab armies.",
+     "Plan Dalet specifically included gaining control of areas wherever Yishuv populations existed, including those outside the borders of the proposed Jewish state."
+    ],
+    "opening": "Plan Dalet (תוכנית ד', Tokhnit dalet \"Plan D\"; 1 April – 14 May, 1948) was a Zionist military plan executed during the 1948 Palestine war for the conquest of territory in Mandatory Palestine in preparation for the establishment of a Jewish state. The plan was the blueprint for Israel's military operations, starting in March 1948 until the end of the war in early 1949, and so played a central role in the 1948 Palestinian expulsion and flight known as the Nakba. The plan was requested by the Jewish Agency leader and later first prime minister of Israel David Ben-Gurion, and developed by the Haganah and finalized on March 10, 1948. Historians describe Plan Dalet as the beginning of a new phase in the 1948 Palestine war in which Zionist forces shifted to an offensive strategy. The plan was a set of guidelines to take control of Mandatory Palestine, declare a Jewish state, and defend its borders and people, including the Jewish population outside of the borders, \"before, and in anticipation of\" the invasion by regular Arab armies. Plan Dalet specifically included gaining control of areas wherever Yishuv populations existed, including those outside the borders of the proposed Jewish state. The plan's tactics involved laying siege to Palestinian Arab villages, bombing neighbourhoods of cities, forced expulsion of their inhabitants, and setting fields and houses on fire and detonating TNT in the rubble to prevent any return. Zionist military units possessed detailed lists of neighborhoods and villages to be destroyed and their Arab inhabitants expelled. One of the first and most well known operations of Plan Dalet was the Deir Yassin massacre. This strategy is subject to controversy, with some historians characterizing it as defensive, while others assert that it was an integral part of a planned strategy for the expulsion, sometimes called an ethnic cleansing, of the area's native inhabitants.",
+    "critical": 6,
+    "connection": 4
+   },
+   "moves": [],
+   "revisions_since_2021": 196,
+   "keys": {
+    "worked out by the Haganah": {
+     "where": "fs",
+     "changes": [
+      {
+       "ts": "2021-01-31T21:54:30Z",
+       "revid": 1004053733,
+       "in": true
+      },
+      {
+       "ts": "2023-05-24T16:45:43Z",
+       "revid": 1156790641,
+       "in": false
+      }
+     ]
+    },
+    "Zionist military plan": {
+     "where": "fs",
+     "changes": [
+      {
+       "ts": "2021-01-31T21:54:30Z",
+       "revid": 1004053733,
+       "in": false
+      },
+      {
+       "ts": "2023-06-04T15:47:42Z",
+       "revid": 1158521123,
+       "in": true
+      },
+      {
+       "ts": "2023-06-04T15:49:46Z",
+       "revid": 1158521401,
+       "in": false
+      },
+      {
+       "ts": "2023-06-04T16:03:17Z",
+       "revid": 1158522985,
+       "in": true
+      }
+     ]
+    },
+    "known as the Nakba": {
+     "where": "lead",
+     "changes": [
+      {
+       "ts": "2021-01-31T21:54:30Z",
+       "revid": 1004053733,
+       "in": false
+      },
+      {
+       "ts": "2024-08-14T12:53:20Z",
+       "revid": 1240263491,
+       "in": true
+      }
+     ]
+    }
+   }
+  }
+ }
+}
