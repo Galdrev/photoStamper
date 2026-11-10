@@ -95,3 +95,31 @@ Read on the rendered page (iPhone 13, light and dark), every panel open in turn,
 **RTL and type:** the English quote under the 251 and every Latin or Cyrillic original sit in `dir="ltr"` spans; Arabic and Hebrew originals in `dir="rtl"`; the mono kicker and labels drop the uppercase and tracking in Hebrew (Heebo); no italic; translation labels «תרגום שלנו» on every non-Hebrew sentence (nine). The build checks: no English outside lang-marked originals (it now exempts de, fr, it, pt, nl, ru originals as well as en, es, ar), nine translations, nine empty slots, the must-keep lines, and the vetoes.
 
 **Totals:** 25 rows; 9 changed (A, 4 of them drafts fixed before the first build), 16 kept.
+
+## 4. Smoke tests (final build)
+
+**Build:** `scratchpad/flash/hostages/index.html` (begins with `<!DOCTYPE html>`, the charset meta and the viewport meta). Rebuilt from this commit and compared with `cmp`: identical. Research edition: `build_page.py` output byte-identical to the pre-change build.
+
+**Suites** (`scratchpad/flash/hostages/smoke_core.js`, `smoke_bi.js`, `smoke_lab.js`; the extended copies also replace those in `flash/final/` and `flash/merge/`). New checks for the moment, in every configuration (iPhone 13 and 1280, light and dark, plus reduced motion, both languages):
+- ten editions in order, nine empty slots, only Italian filled; the 251 at ≥ 70 px on the black ground; the scope line ("9 of 10", Hebrew's 2024–25 copies);
+- at rest every slot shown; no overflow inside the block or the page;
+- pacing (replayed from the start): the 251 first with the slots hidden at 1.3 s, slots filling one by one at 2.6 s and 4.2 s, all ten by 9.3 s; the pacing starts only when the block is in view; reduced motion: static, no transitions;
+- each of the ten taps opens that language's panel only, inside the screen; nine panels show the empty slot, Italian marks “rapimento di circa 250 di questi”; our translation where needed; Esc and a second tap close it;
+- an **in-page recount**: of the ten sentences shown, only the Italian one matches the hostage words;
+- Hebrew: no English outside the originals, in the block and in every open panel;
+- the share image downloads `wikipedia-hostages-first-sentence(-he).png` (core and bilingual suites, in the active language);
+- vetoes extended: «חדירות», and the old "in every copy we hold, the Israel and Hamas …" wording.
+
+**Results:**
+
+| Suite | Pass | Fail |
+|---|---|---|
+| core (5 configurations × 2 languages) | 1193 | 0 |
+| bilingual | 308 | 0 |
+| Data lab | 185 | 0 |
+
+0 console errors or warnings and 0 horizontal overflow in every configuration.
+
+**Phone screens (smoke):** English 10.85 (reduced motion 10.83), Hebrew 10.99 (10.98); both ≤ 11.0. At 1280: English 10.52, Hebrew 11.30 (no target at 1280; before 10.40 / 11.18).
+
+**Screenshots:** `scratchpad/flash/hostages/moment_{en,he}_light.png` (the moment at rest, phone), `moment_{en,he}_tap_{he,it,en}.png` (panels), and the share images `wikipedia-hostages-first-sentence.png`, `wikipedia-hostages-first-sentence-he.png`.

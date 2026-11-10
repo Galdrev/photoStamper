@@ -394,3 +394,9 @@ The vetoed v1 wordings (`HE_VETO`) are asserted absent across all of these.
 | 6 | Hebrew tile labels | Still open. They are data, so they stay English. |
 
 All new numbers were recomputed from the raw sources in `FACTCHECK_merge.md`; nothing was wrong.
+
+## Fix log 3 (owner requests, after the final round)
+
+1. Hebrew "armed incursions" is «פשיטות חמושות» everywhere; «חדירות» is vetoed (`HE_FIXLOG3.md` §1).
+2. Card 3's hostages moment, both languages, with its share image (`HE_FIXLOG3.md` §2). Facts in `FACTCHECK_hostages.md`: the October 7 first sentence names no hostages in 9 of the 10 editions we hold (Italian does; Hebrew did in our Oct 2024 – Oct 2025 copies); all ten opening sections mention them. The old "Israel and Hamas … in every copy we hold" line overstated (our April and July 2024 English Hamas copies said "taking hostages back to Gaza"), and is corrected. **The research edition still carries the four-snapshot wording; the owner decides.**
+3. Smoke: core 1193/0, bilingual 308/0, lab 185/0; phone screens English 10.85, Hebrew 10.99 (`HE_FIXLOG3.md` §4).
