@@ -1,5 +1,5 @@
 name: wikitrends-verify
-# Elsewhere-on-Wikipedia verification (wikitrends/patterns/trail/VERIFIED.md): for each candidate outside article, the raw
+# Elsewhere-on-Wikipedia verification (run 2: seven further discovery-list candidates) (wikitrends/patterns/trail/VERIFIED.md): for each candidate outside article, the raw
 # section-0 wikitext of the revision live on 1 Jan 2021 (or the article's first revision if it was created later) and of
 # the latest revision, plus the section-0 first-sentence history since 2021 (revid, timestamp, revert tag, page moves) so
 # that each wording change can be dated. No usernames or edit comments are stored (only "moved page [[A]] to [[B]]").
@@ -16,7 +16,7 @@ defaults:
 env:
   WT_RPS: '5'
   WT_JOB: verify
-  WT_TITLES: 'Comparisons between Israel and Nazi Germany|Criticism of Israel|Genocide|Settler colonialism|Sheikh Jarrah controversy|Gaza genocide recognition|Samaritans'
+  WT_TITLES: 'Plan Dalet|Palestinian political violence|Causes of the 1948 Palestinian expulsion and flight|East Jerusalem|Bar Kokhba Revolt|Ancient Israel and Judah|Majdal Shams'
   GH_TOKEN: ${{ github.token }}
 jobs:
   verify:
