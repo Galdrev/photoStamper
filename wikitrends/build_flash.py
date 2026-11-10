@@ -540,15 +540,20 @@ _l12 = lambda a: sum(_mon(a)["views"][-12:])
 TM_ROWS = sorted([[a["title"], _l12(a), _ch.get(a["title"], (0, ""))[0], _ch.get(a["title"], (0, ""))[1]] for a in _set], key=lambda r: -r[1])
 _share = sum(r[1] for r in TM_ROWS if r[2]) / sum(r[1] for r in TM_ROWS)
 assert f"<b>Now 7 of the 150 most-read openings charge Israel with genocide</b>, two as fact, and they got <b>{100*_share:.1f}%</b> of the views of all 150. In Jan 2021 and Jul 2023, none did." in tpl, f"reach-bar headline: {_share:.4f}"
-assert "Views Nov 2025 – Oct 2026, monthly sums from our crawl." in tpl and "The 150 most-read opening sections that existed in 2021." in tpl
+assert "Shares of their views, Nov 2025 – Oct 2026 (monthly sums from our crawl)." in tpl and "The 150 most-read opening sections that existed in 2021." in tpl
 # v3 fix: the bar's labels and the list of seven are printed by the page (flTiles) from R.tm; recomputed here, so a data change fails
 _C7 = sorted([r for r in TM_ROWS if r[2]], key=lambda r: (-r[2], -r[1]))
-_v = lambda v: f"{v/1e6:.1f} million" if v >= 1e6 else f"{round(v/1e3)},000"
-assert [(r[0], _v(r[1]), r[2]) for r in _C7] == [("Benjamin Netanyahu", "7.0 million", 2), ("Israel", "4.6 million", 2), ("Palestine", "2.4 million", 1),
-    ("Israeli–Palestinian conflict", "1.0 million", 1), ("Gaza Strip", "816,000", 1), ("Israel Defense Forces", "745,000", 1), ("Gaza–Israel conflict", "155,000", 1)], \
+# follow-up: the list shows each opening's share of the 150 openings' views (the 12.4% source), not absolute views, so it never
+# competes with the reach section's daily-sum absolutes (exposure.json, 9 Nov 2025 - 8 Nov 2026)
+_tot150 = sum(r[1] for r in TM_ROWS)
+_v = lambda v: f"{100*v/_tot150:.1f}"
+assert [(r[0], _v(r[1]), r[2]) for r in _C7] == [("Benjamin Netanyahu", "5.2", 2), ("Israel", "3.4", 2), ("Palestine", "1.8", 1),
+    ("Israeli–Palestinian conflict", "0.8", 1), ("Gaza Strip", "0.6", 1), ("Israel Defense Forces", "0.6", 1), ("Gaza–Israel conflict", "0.1", 1)], \
     f"reach bar list: {[(r[0], _v(r[1]), r[2]) for r in _C7]}"
+assert all(abs(100*v/_tot150*10 % 1 - 0.5) > 0.001 for v in [r[1] for r in _C7]), "no share sits on a rounding edge (JS toFixed and Python agree)"
+assert "million" not in tpl[tpl.index("const TB_T="):tpl.index("const TM={")] and "TM_T.views(" not in tpl, "the reach bar prints no absolute views"
 assert len(TM_ROWS) - len(_C7) == 143 and f"{100*_share:.1f}" == "12.4"
-for _f in ('v:v=>v>=1e6?`${(v/1e6).toFixed(1)} million`:`${Math.round(v/1e3)},000`', 'now:(n,p)=>`${n} openings: ${p}% of the views`', 'rest:n=>`${n} other openings`',
+for _f in ('v:p=>`${p}%`,tip:', 'tip:p=>`${p}% of the 150 openings’ views`', 'now:(n,p)=>`${n} openings: ${p}% of the views`', 'rest:n=>`${n} other openings`',
            'TM.pct=(100*cv/tot).toFixed(1);TM.now=TB_T.now(C.length,TM.pct);', '.sort((x,y)=>y[0][2]-x[0][2]||y[0][1]-x[0][1])', 'hyphens:none'):
     assert _f in tpl, f"reach bar code changed: {_f}"
 assert not any(x in tpl[tpl.index(".fl-tiles{"):tpl.index("/* full-bleed moments")] for x in ("hyphens:auto", "overflow-wrap:anywhere", "word-break:break")), "no hyphenation, no mid-word breaks in the reach bar"

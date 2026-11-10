@@ -111,3 +111,20 @@ Read on the rendered page (iPhone 13, light and dark), in the string map (`flash
 0 console errors or warnings and 0 horizontal overflow in every configuration.
 
 **Phone screenshots** (`scratchpad/flash/v3fix/phone/`): `bar_{en,he}_{light,dark}.png`, `bar_{en,he}_jul2023.png`, `lanes_{en,he}_{light,dark}.png`, `lanes_en_all8.png`, `moment_{en,he}_{light,dark}.png`, and the share images `wikipedia-hostages-first-sentence.png`, `wikipedia-hostages-first-sentence-he.png`.
+
+## 6. Follow-up: shares in the bar's list, not absolute views; the then-label on one line
+
+**Why:** the list showed Netanyahu 7.0M and Israel 4.6M (monthly crawl sums, Nov 2025 – Oct 2026), while the reach section shows 7.9M and 5.1M (daily sums, 9 Nov 2025 – 8 Nov 2026). Two numbers for the same page cost trust.
+
+**Now:**
+- The list shows each opening's **share of the 150 openings' views**: Benjamin Netanyahu 5.2%, Israel 3.4%, Palestine 1.8%, Israeli–Palestinian conflict 0.8%, Gaza Strip 0.6%, Israel Defense Forces 0.6%, Gaza–Israel conflict 0.1%. It is the same monthly source as the 12.4% (the rounded shares add to 12.5%; the 12.4% is the exact total, rounded once). The tooltips say "5.2% of the 150 openings’ views, Nov 2025 – Oct 2026". The bar and its tooltips print **no absolute views**; absolutes appear only in the reach section (daily sums).
+- Caption: "The 150 most-read opening sections that existed in 2021. Shares of their views, Nov 2025 – Oct 2026 (monthly sums from our crawl). Tap a name for its sentence."
+- The then-labels are shorter, so they fit one line in both languages: "Jan 2021: no opening charged Israel with genocide" (Jul 2023 likewise). The label line is also kept to one line, so the bar no longer moves when the reader switches between Jan 2021, Jul 2023 and Now (the Hebrew Jul 2023 label used to wrap and push the bar down about 20 px).
+- Build: the seven shares are asserted from `data/mass2.json` (`5.2, 3.4, 1.8, 0.8, 0.6, 0.6, 0.1`). No share sits on a rounding edge, so JS `toFixed` and Python agree. The bar code holds no "million" and no `TM_T.views(`. Smoke: the list equals the shares computed from `R.tm`; the figure has no absolute views; the label line has one height and the bar one position in all three states.
+
+| # | String | Status | Reason |
+|---|---|---|---|
+| 22 | List value «5.2%» (the percent alone; the caption names what it is a share of) | A | The draft «5.2% מהצפיות» wrapped a name onto two lines in English; both languages use the bare percent under the caption. |
+| 23 | Tooltip «5.2% מהצפיות בכל 150 הפתיחים, נובמבר 2025 – אוקטובר 2026» | K | The same phrase as the headline («מהצפיות בכל ה־150»), with its referent spelled out. |
+| 24 | Caption «150 פתיחי הערכים הנקראים ביותר שהיו קיימים ב־2021. חלקו של כל אחד מהצפיות בהם, נובמבר 2025 – אוקטובר 2026 (סכומים חודשיים מהסריקה שלנו). הקישו על שם כדי לראות את המשפט.» | K | "Shares of their views" = «חלקו של כל אחד מהצפיות בהם»: the share of each one in the views of the 150. It names the source and the period, as the English does. |
+| 25 | Then-labels «ינואר 2021: אף פתיח לא האשים את ישראל ברצח עם» / «יולי 2023: …» | A | Was «אף אחד מ־150 הפתיחים…», which wrapped. «אף פתיח» keeps the same scope, because the headline and the caption say which 150. The verb and the object are unchanged. |

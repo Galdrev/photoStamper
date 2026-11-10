@@ -711,16 +711,16 @@
    "    <div class=\"tb-w\"><p class=\"tb-st\" id=\"flTbSt\"></p><div class=\"tb\" id=\"flTg\" role=\"group\" aria-label=\"פס אחד: הצפיות בדפים של 150 הפתיחים. היום שבעת הפתיחים שמאשימים את ישראל ברצח עם קיבלו 12.4% מהן; שניים מהם קובעים זאת כעובדה.\"></div></div>"
   ],
   [
-   "    <p class=\"tl2\">The 150 most-read opening sections that existed in 2021. Views Nov 2025 – Oct 2026, monthly sums from our crawl. Tap a name for its sentence.</p>",
-   "    <p class=\"tl2\">150 פתיחי הערכים הנקראים ביותר שהיו קיימים ב־2021. צפיות בנובמבר 2025 – אוקטובר 2026, סכומים חודשיים מהסריקה שלנו. הקישו על שם כדי לראות את המשפט.</p>"
+   "    <p class=\"tl2\">The 150 most-read opening sections that existed in 2021. Shares of their views, Nov 2025 – Oct 2026 (monthly sums from our crawl). Tap a name for its sentence.</p>",
+   "    <p class=\"tl2\">150 פתיחי הערכים הנקראים ביותר שהיו קיימים ב־2021. חלקו של כל אחד מהצפיות בהם, נובמבר 2025 – אוקטובר 2026 (סכומים חודשיים מהסריקה שלנו). הקישו על שם כדי לראות את המשפט.</p>"
   ],
   [
    "const TM_T={views:v=>v>=1e6?`${(v/1e6).toFixed(1)} million views`:`${Math.round(v/1e3)},000 views`,win:\"Nov 2025 – Oct 2026\",st:[\"No genocide charge in the opening section\",\"The charge, attributed to others\",\"Stated as fact, in Wikipedia’s own voice\"],then:\"In Jan 2021 and Jul 2023: no charge\",lab:(t,s)=>`${t}: ${[\"no charge\",\"charge, attributed\",\"stated as fact\"][s]}`};",
    "const TM_T={views:v=>v>=1e6?`${(v/1e6).toFixed(1)} מיליון צפיות`:`${Math.round(v/1e3)},000 צפיות`,win:\"נובמבר 2025 – אוקטובר 2026\",st:[\"אין האשמה ברצח עם בפתיח הערך\",\"ההאשמה, מיוחסת לאחרים\",\"נקבע כעובדה, בקולה של ויקיפדיה\"],then:\"בינואר 2021 וביולי 2023: אין האשמה\",lab:(t,s)=>`${t}: ${[\"אין האשמה\",\"האשמה, מיוחסת לאחרים\",\"נקבע כעובדה\"][s]}`};"
   ],
   [
-   "FT[\"tm\"+i]=`<span class=\"h\" lang=\"en\">${esc(r[0])}</span><span class=\"pn\">${TM_T.views(r[1])}, ${TM_T.win}</span><p>${TM_T.st[r[2]]}</p>${r[3]?`<p class=\"src\" lang=\"en\">“${esc(r[3])}”</p>`:\"\"}${r[2]?`<p class=\"src\">${TM_T.then}</p>`:\"\"}`",
-   "FT[\"tm\"+i]=`<span class=\"h\" lang=\"en\">${esc(r[0])}</span><span class=\"pn\">${TM_T.views(r[1])}, ${TM_T.win}</span><p>${TM_T.st[r[2]]}</p>${r[3]?`<p class=\"src\" lang=\"en\">“${esc(r[3])}”</p><p class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״${HE_TM[r[0]]||\"\"}״</p>`:\"\"}${r[2]?`<p class=\"src\">${TM_T.then}</p>`:\"\"}`"
+   "FT[\"tm\"+i]=`<span class=\"h\" lang=\"en\">${esc(r[0])}</span><span class=\"pn\">${TB_T.tip((100*r[1]/tot).toFixed(1))}, ${TM_T.win}</span><p>${TM_T.st[r[2]]}</p>${r[3]?`<p class=\"src\" lang=\"en\">“${esc(r[3])}”</p>`:\"\"}${r[2]?`<p class=\"src\">${TM_T.then}</p>`:\"\"}`",
+   "FT[\"tm\"+i]=`<span class=\"h\" lang=\"en\">${esc(r[0])}</span><span class=\"pn\">${TB_T.tip((100*r[1]/tot).toFixed(1))}, ${TM_T.win}</span><p>${TM_T.st[r[2]]}</p>${r[3]?`<p class=\"src\" lang=\"en\">“${esc(r[3])}”</p><p class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״${HE_TM[r[0]]||\"\"}״</p>`:\"\"}${r[2]?`<p class=\"src\">${TM_T.then}</p>`:\"\"}`"
   ],
   [
    "const MO_T={f:\"Then\",n:\"Now\",b:\"Both\",show:\"Show the sentence\",scrub:\"Drag from then to now\",add:\"Added\",rem:\"Removed\",repl:\"in place of\",by:\"replaced by\",chg:\"Changed\",en:\"In English:\",nothing:\"nothing was removed here\"};",
@@ -731,12 +731,12 @@
    "    <ol class=\"tb-ls\" id=\"flTl\" aria-label=\"שבעת הפתיחים שמאשימים את ישראל ברצח עם\"></ol>"
   ],
   [
-   "const TB_T={v:v=>v>=1e6?`${(v/1e6).toFixed(1)} million`:`${Math.round(v/1e3)},000`,tag:[\"no charge\",\"attributed\",\"stated as fact\"],",
-   "const TB_T={v:v=>v>=1e6?`${(v/1e6).toFixed(1)} מיליון`:`${Math.round(v/1e3)},000`,tag:[\"אין האשמה\",\"מיוחסת לאחרים\",\"נקבע כעובדה\"],"
+   "const TB_T={v:p=>`${p}%`,tip:p=>`${p}% of the 150 openings’ views`,tag:[\"no charge\",\"attributed\",\"stated as fact\"],",
+   "const TB_T={v:p=>`${p}%`,tip:p=>`${p}% מהצפיות בכל 150 הפתיחים`,tag:[\"אין האשמה\",\"מיוחסת לאחרים\",\"נקבע כעובדה\"],"
   ],
   [
-   "  now:(n,p)=>`${n} openings: ${p}% of the views`,rest:n=>`${n} other openings`,then:[\"Jan 2021: none of the 150 charged Israel with genocide\",\"Jul 2023: none of the 150 charged Israel with genocide\"],",
-   "  now:(n,p)=>`${n} פתיחים: ${p}% מהצפיות`,rest:n=>`${n} פתיחים אחרים`,then:[\"ינואר 2021: אף אחד מ־150 הפתיחים לא האשים את ישראל ברצח עם\",\"יולי 2023: אף אחד מ־150 הפתיחים לא האשים את ישראל ברצח עם\"],"
+   "  now:(n,p)=>`${n} openings: ${p}% of the views`,rest:n=>`${n} other openings`,then:[\"Jan 2021: no opening charged Israel with genocide\",\"Jul 2023: no opening charged Israel with genocide\"],",
+   "  now:(n,p)=>`${n} פתיחים: ${p}% מהצפיות`,rest:n=>`${n} פתיחים אחרים`,then:[\"ינואר 2021: אף פתיח לא האשים את ישראל ברצח עם\",\"יולי 2023: אף פתיח לא האשים את ישראל ברצח עם\"],"
   ],
   [
    "  restTip:n=>`<span class=\"h\">${n} other openings</span><p>No genocide charge in the opening section, then or now</p>`};",

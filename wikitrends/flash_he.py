@@ -210,7 +210,8 @@ def build(C, out_path):
     assert _vo.count('<span class="vo-h" aria-hidden="true">אין חטופים</span>') == 9 and '<span class="vo-hk">מזכיר אותם:</span> <span lang="it">rapimento</span>' in _vo, "Hebrew moment: the words in the slots"
     # v3 fix: the reach bar and the fight lanes, in Hebrew (numbers come from the same computed values as the English page)
     for must in ("<b>היום 7 מתוך 150 פתיחי הערכים הנקראים ביותר מאשימים את ישראל ברצח עם</b>, שניים מהם כעובדה, והם קיבלו <b>12.4%</b> מהצפיות בכל ה־150.",
-                 'tag:["אין האשמה","מיוחסת לאחרים","נקבע כעובדה"]', "now:(n,p)=>`${n} פתיחים: ${p}% מהצפיות`", "rest:n=>`${n} פתיחים אחרים`",
+                 'tag:["אין האשמה","מיוחסת לאחרים","נקבע כעובדה"]', "v:p=>`${p}%`,tip:p=>`${p}% מהצפיות בכל 150 הפתיחים`",
+                 "חלקו של כל אחד מהצפיות בהם, נובמבר 2025 – אוקטובר 2026 (סכומים חודשיים מהסריקה שלנו).", "now:(n,p)=>`${n} פתיחים: ${p}% מהצפיות`", "rest:n=>`${n} פתיחים אחרים`",
                  "hd:w=>`<b>המאבק על המילים:</b> מאז ינואר 2021 הוכנסו למשפט הזה והוצאו ממנו ${w} מילים, חלקן שוב ושוב.`", 'st:["בחוץ","בפנים"],gl:l=>fbHe(l.lab)',
                  "כל שורה היא ביטוי אחד לאורך זמן: כחול = במשפט, ריק = מחוץ למשפט; כל סימון הוא עריכה אחת."):
         assert nb(must) in tpl, f"Hebrew page: a v3-fix line is missing or changed: {must[:60]}"

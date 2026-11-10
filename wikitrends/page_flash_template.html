@@ -71,7 +71,7 @@ details.fl-full .news-q{margin-top:4px}
 .fl-tiles .tm-h{font:400 15px/1.4 var(--display);color:var(--ink);margin:0}.fl-tiles .tm-h b{font-weight:600}
 .fl-tiles .tm-seg{justify-self:start}.fl-tiles .tm-seg button{padding:5px 10px;min-height:28px}
 .fl-tiles .tb-w{display:grid;gap:2px;min-width:0}
-.fl-tiles .tb-st{position:relative;margin:0;font:600 12.5px/1.3 var(--body);color:var(--ink);padding-bottom:5px}
+.fl-tiles .tb-st{position:relative;margin:0;font:600 12.5px/1.3 var(--body);color:var(--ink);padding-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fl-tiles .tb-st i{position:absolute;inset-inline-start:0;bottom:0;height:5px;border:1.5px solid var(--ink);border-bottom:0;box-sizing:border-box;transition:opacity .3s ease}
 .fl-tiles .tb-st.off i{opacity:0}
 .fl-tiles .tb{display:flex;height:28px;border-radius:3px;overflow:hidden;background:var(--faint)}
@@ -520,7 +520,7 @@ mark.vo-m{background:var(--vf);color:var(--vb);border-radius:2px;padding:0 .12em
     <div class="seg tm-seg" id="flTmSeg" role="group" aria-label="Show the openings as of"><button type="button" data-v="0" aria-pressed="false">Jan 2021</button><button type="button" data-v="1" aria-pressed="false">Jul 2023</button><button type="button" data-v="2" aria-pressed="true">Now</button></div>
     <div class="tb-w"><p class="tb-st" id="flTbSt"></p><div class="tb" id="flTg" role="group" aria-label="One bar: the page views of the 150 openings. Now the seven that charge Israel with genocide got 12.4% of them; two state it as fact."></div></div>
     <ol class="tb-ls" id="flTl" aria-label="The seven openings that charge Israel with genocide"></ol>
-    <p class="tl2">The 150 most-read opening sections that existed in 2021. Views Nov 2025 – Oct 2026, monthly sums from our crawl. Tap a name for its sentence.</p>
+    <p class="tl2">The 150 most-read opening sections that existed in 2021. Shares of their views, Nov 2025 – Oct 2026 (monthly sums from our crawl). Tap a name for its sentence.</p>
   </figure>
   <p class="fl-scope">This report measures how the wording of the core articles people read changed, not whether it is true, and does not assess the conduct of the war or of any government.</p>
   </header>
@@ -741,8 +741,8 @@ function onView(el,f){if(!el)return;if(!("IntersectionObserver" in window)){f();
    each by views), the other 143 are one grey segment. Jan 2021 and Jul 2023 show every segment grey (no opening charged Israel with
    genocide then); "Now" fills the seven in, left to right, one every 0.7 s (about 4 s); the list under the bar follows. */
 const TM_T={views:v=>v>=1e6?`${(v/1e6).toFixed(1)} million views`:`${Math.round(v/1e3)},000 views`,win:"Nov 2025 – Oct 2026",st:["No genocide charge in the opening section","The charge, attributed to others","Stated as fact, in Wikipedia’s own voice"],then:"In Jan 2021 and Jul 2023: no charge",lab:(t,s)=>`${t}: ${["no charge","charge, attributed","stated as fact"][s]}`};
-const TB_T={v:v=>v>=1e6?`${(v/1e6).toFixed(1)} million`:`${Math.round(v/1e3)},000`,tag:["no charge","attributed","stated as fact"],
-  now:(n,p)=>`${n} openings: ${p}% of the views`,rest:n=>`${n} other openings`,then:["Jan 2021: none of the 150 charged Israel with genocide","Jul 2023: none of the 150 charged Israel with genocide"],
+const TB_T={v:p=>`${p}%`,tip:p=>`${p}% of the 150 openings’ views`,tag:["no charge","attributed","stated as fact"],
+  now:(n,p)=>`${n} openings: ${p}% of the views`,rest:n=>`${n} other openings`,then:["Jan 2021: no opening charged Israel with genocide","Jul 2023: no opening charged Israel with genocide"],
   restTip:n=>`<span class="h">${n} other openings</span><p>No genocide charge in the opening section, then or now</p>`};
 const TM={v:2,tm:[],L:null};
 function tmSet(v,play){const g=$("#flTg"),st=$("#flTbSt");if(!g)return;TM.v=v;TM.tm.forEach(clearTimeout);TM.tm=[];$$("#flTmSeg button").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.v===v)));
@@ -757,10 +757,10 @@ function tmSet(v,play){const g=$("#flTg"),st=$("#flTbSt");if(!g)return;TM.v=v;TM
 function flTiles(){const g=$("#flTg"),ls=$("#flTl");if(!g||!ls||!R.tm)return;const rows=R.tm.rows,tot=rows.reduce((s,r)=>s+r[1],0);
   const C=rows.map((r,i)=>[r,i]).filter(([r])=>r[2]).sort((x,y)=>y[0][2]-x[0][2]||y[0][1]-x[0][1]),cv=C.reduce((s,[r])=>s+r[1],0),nr=rows.length-C.length;
   TM.pct=(100*cv/tot).toFixed(1);TM.now=TB_T.now(C.length,TM.pct);
-  C.forEach(([r,i])=>{FT["tm"+i]=`<span class="h" lang="en">${esc(r[0])}</span><span class="pn">${TM_T.views(r[1])}, ${TM_T.win}</span><p>${TM_T.st[r[2]]}</p>${r[3]?`<p class="src" lang="en">“${esc(r[3])}”</p>`:""}${r[2]?`<p class="src">${TM_T.then}</p>`:""}`});
+  C.forEach(([r,i])=>{FT["tm"+i]=`<span class="h" lang="en">${esc(r[0])}</span><span class="pn">${TB_T.tip((100*r[1]/tot).toFixed(1))}, ${TM_T.win}</span><p>${TM_T.st[r[2]]}</p>${r[3]?`<p class="src" lang="en">“${esc(r[3])}”</p>`:""}${r[2]?`<p class="src">${TM_T.then}</p>`:""}`});
   FT.tmR=TB_T.restTip(nr);
   g.innerHTML=C.map(([r,i])=>`<i data-k="${r[2]===2?"f":"a"}" data-ft="tm${i}" style="width:${(100*r[1]/tot).toFixed(3)}%" tabindex="0" role="button" aria-label="${esc(TM_T.lab(r[0],r[2]))}"></i>`).join("")+`<i class="r" data-ft="tmR">${esc(TB_T.rest(nr))}</i>`;
-  ls.innerHTML=C.map(([r,i])=>`<li data-ft="tm${i}" data-k="${r[2]===2?"f":"a"}" tabindex="0" role="button"><i class="sw" aria-hidden="true"></i><span class="nm" lang="en" dir="ltr">${esc(r[0])}</span><span class="v">${TB_T.v(r[1])}</span><span class="tg">${TB_T.tag[0]}</span></li>`).join("");
+  ls.innerHTML=C.map(([r,i])=>`<li data-ft="tm${i}" data-k="${r[2]===2?"f":"a"}" tabindex="0" role="button"><i class="sw" aria-hidden="true"></i><span class="nm" lang="en" dir="ltr">${esc(r[0])}</span><span class="v">${TB_T.v((100*r[1]/tot).toFixed(1))}</span><span class="tg">${TB_T.tag[0]}</span></li>`).join("");
   const s=$("#flTmSeg");if(s&&!s._w){s._w=1;s.addEventListener("click",e=>{const b=e.target.closest("button");if(b)tmSet(+b.dataset.v,true)})}
   if(RM.matches||TM.L){tmSet(TM.v,false);TM.L=1;return}TM.L=1;tmSet(0,false);
   const I=[],stop=()=>{if(I.length||TM.tm.length){I.forEach(clearTimeout);I.length=0;tmSet(2,false)}};
