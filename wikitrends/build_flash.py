@@ -176,8 +176,12 @@ CLX = json.load(open(os.path.join(HERE, "data", "crosslang.json")))["articles"] 
 ARB = open(os.path.join(PAT, "guard", "arbcom_named.md")).read()
 
 
+VF = json.load(open(os.path.join(PAT, "trail", "verified.json")))["articles"]  # Elsewhere on Wikipedia: hand-verified then/now (VERIFIED.md)
+
+
 def en_corpus(title):
     T = [x or "" for x in M2.get(title, [])]
+    T += [(VF.get(title) or {}).get(k, {}).get("opening", "") for k in ("then", "now") if (VF.get(title) or {}).get(k)]
     T += [v[k] for v in LJ if v["title"] == title for k in ("lead0", "lead1")]
     T += [v.get("s") or "" for v in (RA.get(title) or {}).get("fs_variants", [])]
     T += [x.get("lead") or "" for x in ((CLX.get(title) or {}).get("en") or {}).get("series", [])]
@@ -375,6 +379,111 @@ for _n in ("19", "14", "11", "10", "8", "9"):
     COMPUTED.setdefault(_n, "crosswiki full-section counts (card 3 moment), asserted above")
 print(f"flash: hostages moment: first sentence without the hostages in {len(VO_ORDER) - len(_has)} of {len(VO_ORDER)} editions (latest copies); "
       f"Italian names them; Hebrew did Oct 2024 - Oct 2025; English none in {len(_v107)} versions; sentence 9; Hamas 2024 copies named them")
+
+# Elsewhere on Wikipedia (card 7, #cel). (a) The pattern visual #flEt: every number from patterns/trail/results.json (editor-trail run
+# 42778075792; aggregates only, cells of 1-2 accounts suppressed as <3). (b) The carousel #car3: the four KEEP articles of
+# patterns/trail/VERIFIED.md, each quote checked against verified.json (then = the copy live on 1 Jan 2021, now = latest) and the crawl
+# copies (data-q="en:...", above); each then-phrase is absent now and each now-phrase absent then; each date is the key phrase's own.
+TRR = json.load(open(os.path.join(PAT, "trail", "results.json")))
+_cel = tpl[tpl.index('<section class="fc" id="cel"'):tpl.index("</section>", tpl.index('<section class="fc" id="cel"'))]
+_ca, _ri = TRR["patterns"]["cross_article_persistence"], TRR["patterns"]["reinsertion_after_revert"]
+_md = TRR["patterns"]["direction_consistency"]["majority_direction"]["topic"]
+_disc = {g: TRR["discovery"][g]["articles_3plus_qualifying_editors"] for g in ("topic", "comparison")}
+assert (_ca["stat"], _ca["topic"], _ca["comparison"]) == ("median", 11.5, 2.0) and TRR["meta"]["population_size"] == {"topic": 40, "comparison": 40}
+assert _disc == {"topic": 53, "comparison": 5} and len(TRR["discovery"]["topic"]["articles"]) == 53
+assert "pushing the same direction across more articles" in TRR["verdicts"]["cross_article_persistence"] and "re-inserts LESS" in TRR["verdicts"]["reinsertion"]
+_pool = _ri["pooled"]
+assert (_ri["topic_reinserted"], _ri["topic_reverted"], _ri["comparison_reinserted"], _ri["comparison_reverted"]) == (57, 166, 44, 66)
+assert (round(100 * _pool["topic"]), round(100 * _pool["comparison"])) == (34, 67) and (round(100 * 57 / 166), round(100 * 44 / 66)) == (34, 67)
+assert _md == {"insert": 25, "remove": 14} and TRR["patterns"]["direction_consistency"]["n_topic"] == 39
+_EDG = [0, 1, 2, 3, 5, 10, 20, 50]
+_LAB = ["0", "1", "2", "3–4", "5–9", "10–19", "20–49", "50+"]
+assert all([b["bin"] for b in _ca["distribution"][g]] == ["0-1", "1-2", "2-3", "3-5", "5-10", "10-20", "20-50", "50+"] for g in ("topic", "comparison")), "trail bins changed"
+assert '<div class="et-ax" aria-hidden="true">' + " ".join(f"<span>{l}</span>" for l in _LAB) + "</div>" in _cel, "visual: bin labels"
+def _bars(dist):
+    o = ""
+    for b in dist:
+        n = b["n"]
+        o += ('<i class="lt"><b>&lt;3</b></i>' if n == "<3" else (f'<i style="--n:{n}"><b>{n}</b></i>' if n else '<i style="--n:0"></i>')) + " "
+    return o
+def _mark(m):  # integer counts: bin k holds lo..hi-1; the marker sits at the median's place among them
+    k = max(i for i, e in enumerate(_EDG) if e <= m); lo, hi = _EDG[k], (_EDG + [None])[k + 1]
+    return k, round((m - lo + 0.5) / (hi - lo), 2)
+for g, row, med in (("topic", "et-t", 11.5), ("comparison", "et-c", 2)):
+    k, f = _mark(med)
+    frag = _bars(_ca["distribution"][g]) + f'<span class="et-md" style="--i:{k};--f:{f:g}"></span></div>'.replace("--f:0.", "--f:.")
+    assert frag in _cel, f"visual: {g} bars or median marker do not match results.json: {frag}"
+    assert f"· median <b>{med:g}</b></span>" in _cel and f'<span class="et-o"><b>{_disc[g]}</b>outside articles</span>' in _cel
+    _al = re.search(r'<div class="et-row %s">.*?aria-label="([^"]+)"' % row, _cel, re.S).group(1)
+    _say = lambda n: "none" if n == 0 else ("fewer than 3" if n == "<3" else str(n))
+    _rng = ["0 articles", "1", "2", "3 to 4", "5 to 9", "10 to 19", "20 to 49", "50 or more"]
+    assert _al == "Accounts by number of articles: " + "; ".join(f"{r}, {_say(b['n'])}" for r, b in zip(_rng, _ca["distribution"][g])) + f". Median {med:g}.", f"visual aria-label {g}: {_al}"
+for frag in ("each pushed their usual way in a median of 11.5 articles; comparable editors elsewhere, in 2.</h2>",
+             "Most active editors, core Israel articles", "Most active editors, comparison articles (other conflicts, countries)",
+             "Consistent with a sustained push across many articles; it does not show coordination. After a revert, these editors made the same change again less often than the comparison group (34% vs 67%).",
+             "All four are among the 53 outside articles above (comparison editors: 5). We counted accounts, not authors: we did not check who wrote these lines.",
+             "Four outside articles, 2021 → now</span>", "Views a month: the mean of the past 12 months.", "the 40 accounts with the most critical-term edits",
+             "of the 39 topic accounts with 10 or more such edits, 25 mostly added critical terms and 14 mostly removed them.",
+             "(57 of 166; in the comparison group, 44 of 66)", "We read 14 of the outside articles by hand, then and now; these 4 hold up, and 10 were dropped"):
+    assert frag in _cel, f"card 7 text: {frag[:70]}"
+assert _cel.index('id="flEt"') < _cel.index('id="etHon"') < _cel.index('id="car3"') < _cel.index('id="celAll"') < _cel.index("How we counted</span></summary>"), "visual, honesty line, carousel, shared line"
+assert tpl.index('id="c6"') < tpl.index('id="cel"') < tpl.index('id="c7"'), "card 7 sits between card 6 and the arbitrators' card (whose 'nor tie either finding to the edits above' covers it)"
+_keep = sorted(t for t, a in VF.items() if a["decision"] == "KEEP")
+assert len(VF) == 14 and len(_keep) == 4 and sum(a["decision"] == "DROP" for a in VF.values()) == 10
+_slides = re.findall(r'<div class="car-s"[^>]*aria-label="([^"]+)" data-q="en:([^"]+)">(.*?)</p></div>\n', _cel)
+assert sorted(x[1] for x in _slides) == _keep and all(a == b for a, b, _ in _slides), f"carousel = the KEEP articles: {[x[1] for x in _slides]}"
+_TRV = {a["title"]: a for a in TRR["discovery"]["topic"]["articles"]}
+_strip = lambda h: norm(_html.unescape(re.sub(r"<[^>]+>", "", h)))
+for title, _, body in _slides:
+    A_ = VF[title]
+    th, nw = norm(A_["then"]["opening"]), norm(A_["now"]["opening"])
+    assert A_["then"]["ts"] < "2021-01-01" and A_["now"]["ts"] >= "2026-08", f"{title}: then = live on 1 Jan 2021, now = latest"
+    sq = [(a, re.sub(r'^<span class="el-k">[^<]*</span> ', "", b)) for a, b in re.findall(r'<span class="s( el-th)?">(.*?)</span>(?=<span class="s|</div>)', body)]
+    assert [bool(x[0]) for x in sq] == [True, False], f"{title}: one then and one now quote"
+    for kind, q in sq:
+        parts = [norm(x).strip(" ,.;:") for x in re.split("…", _strip(q).replace("“", "").replace("”", ""))]
+        for x in parts:
+            assert x in (th if kind else nw), f"{title}: quote not in the verified {'then' if kind else 'now'} opening: {x}"
+        for d in re.findall(r"<(del|ins)>(.*?)</\1>", q):
+            w = norm(d[1])
+            assert (w in th and w not in nw) if d[0] == "del" else (w in nw and w not in th), f"{title}: <{d[0]}> {w}"
+    assert f'<span class="w">{title} · <b>{_TRV[title]["monthly_views_last_12m"]}</b> views a month</span>' in body, f"{title}: monthly views (articles.md)"
+    assert _TRV[title]["distinct_editors_qualifying"] >= 3
+    COMPUTED[_TRV[title]["monthly_views_last_12m"].rstrip("k")] = f"monthly views of {title} (patterns/trail/articles.md)"
+# each date on a slide is the day its key phrase changed (verified.json key histories), and the phrases are where the slide says
+_K = {t: {k: v["changes"] for k, v in VF[t]["keys"].items()} for t in _keep}
+_day = lambda ts: f"{int(ts[8:10])} {['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][int(ts[5:7])-1]} {ts[:4]}"
+_last_in = lambda t, k: _day(_K[t][k][-1]["ts"])
+assert _K["Criticism of Israel"]["human rights violations"][-1]["in"] and _last_in("Criticism of Israel", "human rights violations") == "1 Jul 2025"
+assert _last_in("Criticism of Israel", "Nakba") == "31 Dec 2025" and _last_in("Criticism of Israel", "Zionist political violence") == "14 Oct 2026"
+assert VF["Criticism of Israel"]["then"]["sentences"][1].endswith("relating to a variety of topics, both historical and contemporary.") and \
+    VF["Criticism of Israel"]["now"]["sentences"][0].startswith("Israel has faced international criticism") and \
+    [m["from"] for m in VF["Criticism of Israel"]["moves"]] == ["Criticism of the Israeli government"] and VF["Criticism of Israel"]["moves"][0]["ts"][:7] == "2023-07"
+_pt = _K["Palestinian political violence"]["terror"]
+assert not _pt[-1]["in"] and _last_in("Palestinian political violence", "terror") == "10 Dec 2025" == _last_in("Palestinian political violence", "insurgency")
+assert {c["ts"][:4] for c in _pt[1:]} == {"2022", "2023", "2025"} and min(c["ts"][:4] for c in _pt[1:]) == "2022" and max(c["ts"][:4] for c in _pt) == "2025"
+assert "terror" in VF["Palestinian political violence"]["then"]["sentences"][0] and "terror" not in VF["Palestinian political violence"]["now"]["sentences"][0]
+assert "Several of these groups are considered terrorist organizations" in VF["Palestinian political violence"]["now"]["opening"]
+assert _last_in("Plan Dalet", "Zionist military plan") == "4 Jun 2023" and _last_in("Plan Dalet", "known as the Nakba") == "14 Aug 2024"
+assert "played a central role in the 1948 Palestinian expulsion and flight known as the Nakba" in VF["Plan Dalet"]["now"]["sentences"][1]
+_c48 = VF["Causes of the 1948 Palestinian expulsion and flight"]
+assert _last_in("Causes of the 1948 Palestinian expulsion and flight", "most scholars consider") == "15 Aug 2024"
+assert "great controversy" in _c48["then"]["sentences"][1] and "most scholars consider" in _c48["now"]["sentences"][1]
+assert "by Israeli forces" in _c48["then"]["sentences"][0] and "by Israeli forces" not in _c48["now"]["sentences"][0] and "direct expulsions by Israeli forces" in _c48["now"]["sentences"][2]
+for frag in ("The first sentence since 1 Jul 2025; “Nakba” since 31 Dec 2025, “Zionist political violence” since 14 Oct 2026. Title until Jul 2023: Criticism of the Israeli government.",
+             "Since 10 Dec 2025; “terror” went in and out of this sentence from 2022 to 2025. Paragraph 2 still says several groups “are considered terrorist organizations”.",
+             "Since 4 Jun 2023, before the war. Since 14 Aug 2024, sentence 2 adds that it “played a central role in the 1948 Palestinian expulsion and flight known as the Nakba”.",
+             "Since 15 Aug 2024. The first sentence’s “by Israeli forces” moved to sentence 3 (“direct expulsions by Israeli forces”).",
+             '<span class="el-k">Jan 2021 · sentence 2</span>', '<span class="el-k">Jan 2021 · first sentence</span>', '<span class="el-k">Now · first sentence</span>', '<span class="el-k">Now · sentence 2</span>'):
+    assert frag in _cel, f"carousel text: {frag[:60]}"
+# aggregates only: no account, label or per-account number on the card; no court framing; no coordination claim beyond "does not show"
+_celv = re.sub(r"<[^>]+>", " ", _cel).lower()
+assert not re.search(r"\b(coordinated|campaign|vendetta|brigade|cabal|sockpuppet|court|icj|ruling)\b", _celv), "card 7: vetoed framing"
+assert "does not show coordination" in _celv and "made these changes" not in _celv and "the same editors made" not in _celv
+for n in ("11.5", "53", "40", "39", "25", "14", "34", "67", "57", "166", "44", "66", "12", "15", "9", "6", "5", "4", "10", "11", "2", "3", "1", "0", "19", "20", "49", "50", "2022", "2023", "2024", "2025", "2026", "1948"):
+    COMPUTED.setdefault(n, "card 7 (Elsewhere on Wikipedia): patterns/trail/results.json or verified.json, asserted above")
+print(f"flash: card 7: pattern visual matches results.json (median 11.5 vs 2, 53 vs 5 outside articles, re-insertion 34% vs 67%); "
+      f"carousel = the {len(_keep)} KEEP articles of VERIFIED.md, quotes and dates checked against verified.json")
 
 nums = set(re.findall(r"(?<![\w.])\d[\d,]*(?:\.\d+)?", vis))
 missing = sorted(n for n in nums if n not in COMPUTED and not re.search(r"(?<![\d,.])" + re.escape(n) + r"(?![\d])", rtpl))

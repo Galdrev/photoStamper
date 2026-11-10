@@ -215,6 +215,19 @@ def build(C, out_path):
                  "hd:w=>`<b>המאבק על המילים:</b> מאז ינואר 2021 הוכנסו למשפט הזה והוצאו ממנו ${w} מילים, חלקן שוב ושוב.`", 'st:["בחוץ","בפנים"],gl:l=>fbHe(l.lab)',
                  "כל שורה היא ביטוי אחד לאורך זמן: כחול = במשפט, ריק = מחוץ למשפט; כל סימון הוא עריכה אחת."):
         assert nb(must) in tpl, f"Hebrew page: a v3-fix line is missing or changed: {must[:60]}"
+    # card 7, Elsewhere on Wikipedia (HE_FIXLOG5.md): the honest lines keep their strength; the four slides carry the English originals
+    # (he-o, the build's quote check above) under our translation; "outside articles" is outside our sample (not "off-topic")
+    for must in ("הנתון עולה בקנה אחד עם דחיפה מתמשכת בערכים רבים; הוא אינו מראה תיאום. אחרי ביטול, העורכים האלה חזרו על אותו שינוי לעיתים רחוקות יותר מקבוצת ההשוואה (34% לעומת 67%).",
+                 "ספרנו חשבונות, לא כותבים: לא בדקנו מי כתב את השורות.", "(אצל עורכי ההשוואה: 5)", "בחציון של 11.5 ערכים; עורכים דומים בנושאים אחרים: ב־2.",
+                 '<span class="et-o"><b>53</b>ערכים מחוץ למדגם</span>', '<span class="et-o"><b>5</b>ערכים מחוץ למדגם</span>',
+                 "25 הוסיפו בעיקר מונחים ביקורתיים ו־14 הסירו בעיקר", "(57 מתוך 166; בקבוצת ההשוואה, 44 מתוך 66)", "אף חשבון אינו מזוהה בשמו או מתויג.",
+                 "״מעשי אלימות <del>או טרור</del> שמניעם לאומיות פלסטינית״", "לבשה צורה של <ins>התקוממות</ins>״", "״נחשבות לארגוני טרור״",
+                 "<ins>הפרות של זכויות אדם הקשורות לנכבה ולכיבוש הישראלי</ins>״", "״<ins>תוכנית צבאית ציונית</ins> שהוצאה לפועל במהלך מלחמת 1948 <ins>לשם כיבוש שטחים</ins>״",
+                 "<ins>כיום רוב החוקרים סבורים שרוב הפלסטינים גורשו במישרין</ins> או שברחו מפחד״", "(״גירושים ישירים בידי כוחות ישראליים״)"):
+        assert nb(must) in tpl, f"Hebrew page: a card 7 line is missing or changed: {must[:60]}"
+    _cel = tpl[tpl.index('<section class="fc" id="cel"'):tpl.index('<section class="fc" id="c7"')]
+    assert _cel.count('class="he-o" dir="ltr" lang="en"') >= 11 and _cel.count('<b class="he-k">תרגום שלנו</b>') == 8, "Hebrew card 7: eight translations, each with its original"
+    assert "מחוץ לנושא" not in _cel and not re.search(r"\b(מתואם|קמפיין|בית המשפט|בית הדין)", _cel), "Hebrew card 7: wording"
     assert 'window.claude.use("downloads")' in tpl and "window.claude.downloads" not in tpl + hjs, "downloads capability via use() only"
     assert "scope" in hjs[hjs.index("function shSpec"):] and "foot:[" in hjs, "Hebrew share cards carry the scope line"
     # the flash script quotes no English words that the English script did not (the English build checked those against the stored text)

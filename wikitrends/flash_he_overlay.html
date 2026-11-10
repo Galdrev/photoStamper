@@ -47,11 +47,14 @@ html[dir="rtl"] .fl-score .bar .o{text-align:left;padding-right:0;padding-left:6
 html[dir="rtl"] .skip{left:auto;right:8px}
 html[dir="rtl"] .fl-play{padding:0 10px 0 14px}
 html[dir="rtl"] .fl-play::before{padding-left:2px}
-html[dir="rtl"] details.fl-full summary::after{content:" ▾"}
+html[dir="rtl"] details.fl-full summary::after{content:" ▾"}html[dir="rtl"] details.fl-full.et-how summary::after{content:none}
 html[dir="rtl"] .car-s #xwGG .rch-row .v span{margin-left:0;display:block}
 @keyframes carnudge{0%,100%{transform:none}40%{transform:translateX(56px)}}
 /* charts and timelines keep time running left to right, as Hebrew news charts do; their labels are set right to left inside */
 html[dir="rtl"] :is(.fl-strip,.fl-meter,#kChart,.br-strip,#brRange,.xg-ax){direction:ltr}
+/* card 7 (Elsewhere): the bins read 0 → 50+ left to right, as every chart on the page; the number column sits on the left */
+html[dir="rtl"] :is(.et-h,.et-ax){direction:ltr}html[dir="rtl"] .et-ax{margin-inline-end:0;margin-left:70px}html[dir="rtl"] .et-ax span:first-child{text-align:left}
+html[dir="rtl"] .et-o{text-align:left}html[lang="he"] #car3 .el-k{font-size:10.5px;letter-spacing:0}html[lang="he"] #car3 .s.el-he{font-size:13.5px;line-height:1.34}html[lang="he"] #car3 .he-o{font-size:11px;line-height:1.3;margin:0}html[lang="he"] #car3 .cp{font-size:12px;line-height:1.34}html[lang="he"] #car3 .car-s{flex-basis:92%}@media (max-width:600px){html[lang="he"] .fc{gap:4px}html[lang="he"] #car3 .car-s>.w{font-size:11px;letter-spacing:-.01em}html[lang="he"] .fl-et{gap:3px;padding:7px 10px}}html[lang="he"] #car3 .car-ctl{width:92%}html[lang="he"] #car3 .he-o del,html[lang="he"] #car3 .he-o ins{padding:0 .04em}
 html[dir="rtl"] #xwGG .rch{direction:ltr}
 html[dir="rtl"] #xwGG .rch-row>span:first-child,html[dir="rtl"] #xwGG .rch-row .v{direction:rtl;text-align:right}
 html[dir="rtl"] .fl-strip text{unicode-bidi:plaintext}

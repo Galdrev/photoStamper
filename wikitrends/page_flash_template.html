@@ -423,6 +423,32 @@ mark.vo-m{background:var(--vf);color:var(--vb);border-radius:2px;padding:0 .12em
 .fs-body #ziCodes{display:none!important}/* the 64-of-70 pair stays out of the flash (messaging F2) */
 @media (max-width:600px){.fl-sheet{width:100vw;height:100dvh;max-height:none;border-radius:0}
   @keyframes sheetin{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}.fs-body{padding:12px 12px 24px}}
+/* Elsewhere on Wikipedia (card 7): the editor-trail pattern visual (#flEt, aggregates only) and the outside-articles carousel (#car3) */
+.fl-et{display:grid;gap:4px;margin:0;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:8px 10px}
+.et-k{font:500 10px/1.35 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:0}
+.et-row{display:grid;grid-template-columns:minmax(0,1fr) 62px;gap:2px 8px;align-items:end}
+.et-n{grid-column:1/-1;font:600 12px/1.3 var(--body);color:var(--ink)}
+.et-n b{font:600 13px var(--mono);color:var(--add-ink);background:var(--add-bg);padding:0 4px;border-radius:2px}
+.et-h{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px;height:26px;align-items:end;border-bottom:1px solid var(--rule);margin-top:11px}
+.et-h i{display:block;position:relative;height:calc(var(--n,0)*26px/15);background:var(--add-bd);border-radius:2px 2px 0 0}
+.et-c .et-h i{background:var(--muted)}
+.et-h i.lt{height:3px;background:repeating-linear-gradient(90deg,var(--muted) 0 2px,transparent 2px 4px)}
+.et-h i b{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);padding:0 2px;text-align:center;font:600 9.5px/1.25 var(--mono);color:var(--muted);background:var(--sheet);z-index:1}
+.et-md{position:absolute;top:-10px;bottom:-4px;width:0;border-inline-start:2px solid var(--ink);inset-inline-start:calc((var(--i) + var(--f))*(100% - 21px)/8 + var(--i)*3px - 1px)}
+.et-md::before{content:"";position:absolute;top:0;inset-inline-start:-5px;border:4px solid transparent;border-top:5px solid var(--ink)}
+.et-o{font:400 10.5px/1.2 var(--body);color:var(--muted);text-align:end}
+.et-o b{display:block;font:600 21px/1 var(--display);color:var(--ink)}
+.et-ax{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px;font:500 9px/1.2 var(--mono);color:var(--muted);text-align:center;margin-inline-end:70px;margin-top:-2px}
+.et-ax span:first-child{text-align:start}
+#car3 .car-s{gap:4px}#car3 .car-s>.w{display:block;font:600 12px/1.3 var(--body);text-transform:none;letter-spacing:0;color:var(--ink-2)}#car3 .car-s>.w b{color:var(--ink);font-weight:600}
+#car3 .vis{align-content:start;gap:4px}
+#car3 .el-k{font:500 9.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-inline-end:2px;vertical-align:1px}
+#car3 .s{font-size:14.5px;line-height:1.36}
+#car3 .s.el-th{color:var(--ink-2)}
+#car3 .cp{font-size:12.5px;line-height:1.38;color:var(--ink-2)}
+.et-how p{margin:4px 0 0;font-size:13px;line-height:1.42}
+#kMore,.fl-pos-d{min-width:0;max-width:100%}#kMore>.fl-chips{margin:4px 0 6px}
+details.fl-full.et-how summary{font-weight:400;padding:0}details.fl-full.et-how summary::after{content:none}details.et-how .et-hs{font:600 12.5px var(--body);color:var(--ink-2);white-space:nowrap}details.et-how .et-hs::after{content:" ▾"}details.et-how[open] .et-hs::after{content:" ▴"}
 #xmTip{z-index:80}
 #xmTip .pn{font-size:15px}
 @media (max-width:600px){
@@ -479,6 +505,8 @@ mark.vo-m{background:var(--vf);color:var(--vb);border-radius:2px;padding:0 .12em
   #breathe .br-key span:nth-child(n+3){display:none}
   .fl-pos .pos-row:first-child .pos-q{display:none}
   .fc{margin-top:16px;padding-top:9px}
+  /* card 7 length budget (phone): a little less air between and inside the cards */
+  .fc{margin-top:12px;padding-top:8px;gap:5px}
   .fl-pair .q{font-size:12.5px;line-height:1.35}.fl-pair .dn{font-size:9.5px}
   #flXm .xm-opts .lab{display:none}
   #flXm .xm thead .ls{font-size:8.5px!important;line-height:1.15;overflow-wrap:anywhere;hyphens:auto}#flXm .xm thead th{padding:0 1px 6px}
@@ -584,7 +612,7 @@ mark.vo-m{background:var(--vf);color:var(--vb);border-radius:2px;padding:0 .12em
     <blockquote class="mi" data-q="en:Hamas"><span class="bd">English</span><span class="w">Hamas · first sentence · since 29 Nov 2025</span><span class="s">“… is a Sunni Islamist Palestinian nationalist <ins>political organisation with a military wing</ins> known as the al-Qassam Brigades.”</span></blockquote>
     <blockquote class="mi" data-q="he:Hamas"><span class="bdr"><span class="bd">עברית · Hebrew</span><span class="xchip">Exploratory</span></span><span class="w">Hebrew Wikipedia · now (Oct 2026)</span><span class="s he" lang="he" dir="rtl">“חַמַאס (בערבית: حماس) הוא <b class="mk">ארגון טרור</b> פלסטיני אסלאמיסטי-סוני הפועל גם כתנועה פוליטית.”</span><span class="tr">“Hamas (in Arabic: حماس) is a Palestinian Sunni-Islamist <b class="mk">terror organisation</b> that also operates as a political movement.”</span></blockquote>
   </div>
-  <figure class="fig fl-pos" style="margin:0;gap:8px"><div class="fig-h"><span class="fig-t">Its terror designation moved from sentence 5 to sentence 22</span></div><div id="flPos"></div></figure>
+  <details class="fl-full fl-pos-d"><summary>Its terror designation moved from sentence 5 to sentence 22</summary><figure class="fig fl-pos" style="margin:4px 0 0;gap:8px"><div id="flPos"></div></figure></details>
   <p class="fl-body">Hebrew Wikipedia puts it the other way around, as it already did in 2021. In English, “militant” left on 12 October 2023, five days after the attack. It came back three times, last in February 2025.</p>
   <p class="fl-ctx" data-q="en:Islamic State|en:Al-Shabaab (militant group)|en:Boko Haram">Context: in line with Wikipedia-wide style on contentious labels, “terrorist” left the first sentences of Islamic State, al-Shabaab and Boko Haram. Hamas’s first sentence did not have it in 2021.</p>
   <p class="fl-acts"><button type="button" class="fl-play" data-sheet="o7" data-tab="0">Play the Hamas sentence</button><button type="button" class="rw-btn" data-share="c4vs" aria-label="Save the English and Hebrew definitions as an image">Save as image</button></p>
@@ -641,20 +669,47 @@ mark.vo-m{background:var(--vf);color:var(--vb);border-radius:2px;padding:0 .12em
   </div>
   <p class="fl-body">These are four first sentences (October 7 is in card 3), not the whole subject. Across the 254 core, Top- and High-importance topic articles, reverts of edits that removed critical terms came no faster than reverts of edits that added them.</p>
   <figure class="fl-kf" id="flK" aria-label="When: new critical terms a week, after each battle">
+    <p id="kCap">In the three weeks after October 7, <b>13.7</b> new critical terms a week, against <b>3.8</b> in the six weeks before. Timing gives a date, not a cause.</p>
+    <details class="fl-full k-more" id="kMore"><summary>The weekly chart, battle by battle</summary>
     <div class="fl-chips" id="kChips" role="group" aria-label="Choose a period"></div>
     <div class="fig kfig" style="margin:0;gap:6px"><div class="fig-h"><span class="fig-t" id="kTitle"></span><span class="cap" id="kSub"></span></div><div class="chart" id="kChart" tabindex="0" aria-label="Weekly chart; hover or tap a week"></div><p class="k-notes" id="kNotes" hidden></p><div class="legend" id="kKey"></div></div>
-    <p id="kCap">In the three weeks after October 7, <b>13.7</b> new critical terms a week, against <b>3.8</b> in the six weeks before. Timing gives a date, not a cause.</p></figure>
-    <p class="fl-next">Wikipedia’s arbitrators have ruled on conduct in this topic.</p>
+    </details></figure>
+</section>
+
+<section class="fc" id="cel" aria-labelledby="celH">
+  <div class="eyebrow fl-ey"><span><b>7</b> Elsewhere on Wikipedia</span></div>
+  <h2 id="celH">The most active editors of these articles each pushed their usual way in a median of 11.5 articles; comparable editors elsewhere, in 2.</h2>
+  <figure class="fl-et" id="flEt" aria-labelledby="celH">
+    <div class="et-row et-t">
+      <span class="et-n">Most active editors, core Israel articles · median <b>11.5</b></span>
+      <div class="et-h" role="img" aria-label="Accounts by number of articles: 0 articles, none; 1, fewer than 3; 2, none; 3 to 4, 5; 5 to 9, 12; 10 to 19, 10; 20 to 49, 11; 50 or more, fewer than 3. Median 11.5."><i style="--n:0"></i> <i class="lt"><b>&lt;3</b></i> <i style="--n:0"></i> <i style="--n:5"><b>5</b></i> <i style="--n:12"><b>12</b></i> <i style="--n:10"><b>10</b></i> <i style="--n:11"><b>11</b></i> <i class="lt"><b>&lt;3</b></i> <span class="et-md" style="--i:5;--f:.2"></span></div>
+      <span class="et-o"><b>53</b>outside articles</span>
+    </div>
+    <div class="et-row et-c">
+      <span class="et-n">Most active editors, comparison articles (other conflicts, countries) · median <b>2</b></span>
+      <div class="et-h" role="img" aria-label="Accounts by number of articles: 0 articles, fewer than 3; 1, 15; 2, 6; 3 to 4, 5; 5 to 9, 9; 10 to 19, 4; 20 to 49, none; 50 or more, none. Median 2."><i class="lt"><b>&lt;3</b></i> <i style="--n:15"><b>15</b></i> <i style="--n:6"><b>6</b></i> <i style="--n:5"><b>5</b></i> <i style="--n:9"><b>9</b></i> <i style="--n:4"><b>4</b></i> <i style="--n:0"></i> <i style="--n:0"></i> <span class="et-md" style="--i:2;--f:.5"></span></div>
+      <span class="et-o"><b>5</b>outside articles</span>
+    </div>
+    <div class="et-ax" aria-hidden="true"><span>0</span> <span>1</span> <span>2</span> <span>3–4</span> <span>5–9</span> <span>10–19</span> <span>20–49</span> <span>50+</span></div>
+  </figure>
+  <p class="fl-body" id="etHon">Consistent with a sustained push across many articles; it does not show coordination. After a revert, these editors made the same change again less often than the comparison group (34% vs 67%).</p>
+  <div class="car" id="car3" role="region" aria-roledescription="carousel" aria-label="Four outside articles, 2021 → now">
+    <div class="car-h"><span class="car-t">Four outside articles, 2021 → now</span><span class="car-n" aria-live="polite"></span></div>
+    <div class="car-vp" tabindex="0" aria-label="Slides; use the arrow keys or swipe">
+      <div class="car-s" role="group" aria-roledescription="slide" aria-label="Criticism of Israel" data-q="en:Criticism of Israel"><span class="w">Criticism of Israel · <b>7.9k</b> views a month</span><div class="vis"><span class="s el-th"><span class="el-k">Jan 2021 · sentence 2</span> “relating to a variety of topics, <del>both historical and contemporary</del>”</span><span class="s"><span class="el-k">Now · first sentence</span> “relating to <ins>Zionist political violence</ins> … <ins>human rights violations related to the Nakba and the Israeli occupation</ins>”</span></div><p class="cp">The first sentence since 1 Jul 2025; “Nakba” since 31 Dec 2025, “Zionist political violence” since 14 Oct 2026. Title until Jul 2023: Criticism of the Israeli government.</p></div>
+      <div class="car-s" role="group" aria-roledescription="slide" aria-label="Palestinian political violence" data-q="en:Palestinian political violence"><span class="w">Palestinian political violence · <b>6.2k</b> views a month</span><div class="vis"><span class="s el-th"><span class="el-k">Jan 2021 · first sentence</span> “acts of violence <del>or terror</del> motivated by Palestinian nationalism”</span><span class="s"><span class="el-k">Now · first sentence</span> “As Palestinians have not had a fully recognized state with a regular army” … “has taken the form of <ins>insurgency</ins>”</span></div><p class="cp">Since 10 Dec 2025; “terror” went in and out of this sentence from 2022 to 2025. Paragraph 2 still says several groups “are considered terrorist organizations”.</p></div>
+      <div class="car-s" role="group" aria-roledescription="slide" aria-label="Plan Dalet" data-q="en:Plan Dalet"><span class="w">Plan Dalet · <b>4.7k</b> views a month</span><div class="vis"><span class="s el-th"><span class="el-k">Jan 2021 · first sentence</span> “a plan <del>worked out by the Haganah</del> … in March 1948”</span><span class="s"><span class="el-k">Now · first sentence</span> “a <ins>Zionist military plan</ins> executed during the 1948 Palestine war <ins>for the conquest of territory</ins>”</span></div><p class="cp">Since 4 Jun 2023, before the war. Since 14 Aug 2024, sentence 2 adds that it “played a central role in the 1948 Palestinian expulsion and flight known as the Nakba”.</p></div>
+      <div class="car-s" role="group" aria-roledescription="slide" aria-label="Causes of the 1948 Palestinian expulsion and flight" data-q="en:Causes of the 1948 Palestinian expulsion and flight"><span class="w">Causes of the 1948 Palestinian expulsion and flight · <b>1.6k</b> views a month</span><div class="vis"><span class="s el-th"><span class="el-k">Jan 2021 · sentence 2</span> “a matter of <del>great controversy among historians</del> …”</span><span class="s"><span class="el-k">Now · sentence 2</span> “a matter of dispute, though <ins>today most scholars consider that the majority of Palestinians were directly expelled</ins> or else fled due to fear”</span></div><p class="cp">Since 15 Aug 2024. The first sentence’s “by Israeli forces” moved to sentence 3 (“direct expulsions by Israeli forces”).</p></div>
+    </div>
+    <div class="car-ctl"><button type="button" class="car-p" aria-label="Previous slide">‹</button><div class="car-dots" role="group" aria-label="Choose a slide"></div><button type="button" class="car-x" aria-label="Next slide">›</button></div>
+  </div>
+  <details class="fl-full et-how"><summary><span class="fl-ctx" id="celAll">All four are among the 53 outside articles above (comparison editors: 5). We counted accounts, not authors: we did not check who wrote these lines.</span> <span class="et-hs">How we counted</span></summary><p>The most active editors are the 40 accounts with the most critical-term edits to the opening sections of the core, Top- and High-importance topic articles, 2021–2026; the comparison group is the 40 most active critical-term editors of matched articles on other conflicts, countries and ideologies. An account’s usual way is the direction most of its critical-term edits went: of the 39 topic accounts with 10 or more such edits, 25 mostly added critical terms and 14 mostly removed them. The bars count accounts by the number of articles (ours, and outside articles edited by 3 or more of its group) where the account’s net change went its usual way; a range with 1 or 2 accounts shows &lt;3. Outside articles are not among ours; the change counted there is adding critical terms or removing Jewish-history or Israeli-perspective terms in the opening section. After a revert: reverted critical-term edits on our articles that the same account followed, within 30 days, by moving the same article the same way again (57 of 166; in the comparison group, 44 of 66). Views a month: the mean of the past 12 months.</p><p>We read 14 of the outside articles by hand, then and now; these 4 hold up, and 10 were dropped (page moves or renames, word-list artefacts, legal framing, or no real change). No account is named or labelled. Concentrated interest is not by itself evidence of bad faith: many good-faith editors specialise.</p></details>
 </section>
 
 <section class="fc" id="c7" aria-labelledby="c7H">
-  <div class="eyebrow fl-ey"><span><b>7</b> From Wikipedia’s arbitrators</span><span class="ey-ev"><a href="@@R@@#ev-organised" target="_blank" rel="noopener">Full evidence →</a></span></div>
+  <div class="eyebrow fl-ey"><span><b>8</b> From Wikipedia’s arbitrators</span><span class="ey-ev"><a href="@@R@@#ev-organised" target="_blank" rel="noopener">Full evidence →</a></span></div>
   <h2 id="c7H" data-q="arb">Wikipedia’s arbitrators found outside actors “heavily invested in influencing” its coverage of this topic. They named no side or country.</h2>
   <div class="news-q one" data-q="arb"><blockquote><span class="w">Arbitration Committee · PIA5 · finding 10 · adopted 15–0 · 23 Jan 2025</span><span class="s"><a href="https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#Outside_influence" target="_blank" rel="noopener">“Outside actors are heavily invested in influencing Wikipedia's coverage of the topic area”</a></span><span class="cap">It also recorded that the account Ïvana was banned <a href="https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#%C3%8Fvana_banned" target="_blank" rel="noopener">“for off-wiki misconduct relating to the PIA topic area”</a> (finding 16, 9 Dec 2024).</span></blockquote></div>
-  <figure class="fl-meter" role="img" aria-label="Four groups of 3 to 6 accounts voted together 89 to 100% of the time; chance gives about half.">
-    <div class="tk"><span class="bnd" style="left:89%;right:0"></span><span class="ch" style="left:50%"></span></div>
-    <div class="lb"><span style="left:0">0%</span><span style="left:50%;transform:translateX(-50%)">about half by chance</span><span style="right:0"><b>89 to 100%</b></span></div>
-  </figure>
   <p class="fl-fact"><b>Our count:</b> in 217 formal talk-page discussions, four groups of 3 to 6 accounts voted together 89 to 100% of the time, against about half by chance.</p>
   <p class="fl-body">That is camp voting, not proof of coordination; we did not code which side each group took, nor tie either finding to the edits above.</p>
     <p class="fl-next">Last: how often these pages are read, and the overall count.</p>
@@ -1298,7 +1353,7 @@ function shVoid(spec){const W=1080,H=1350,P=72,cv=document.createElement("canvas
 
 function flDraw(){safe(flPos);safe(drawXwGG);$$(".fl-strip[data-tab]").forEach(h=>safe(flO7,h));safe(flZi,$("#stZI"));safe(flNk,$("#stNK"));
   if(BR.ev)safe(flBreathe);if($("#xmScroll .xm"))safe(()=>{const m=XM.mode;xmDraw();$("#xmScroll .xm").className="xm m-"+m;$$("#xmScroll tbody tr").forEach((tr,i)=>tr.style.setProperty("--r",i))});
-  if(K.dom!==undefined&&$("#kChart svg"))safe(drawKey)}
+  if(K.dom!==undefined&&$("#kChart svg")&&(!$("#kMore")||$("#kMore").open))safe(drawKey)}
 /* final round: the Data lab tab. #lab shows the lab; any other hash shows the flash. The lab's code and its slim data
    (lab/lab_flash.py) load on the first visit; the flash's scroll position is kept for the way back. */
 const FLX={labIntent:null};let LXB=false,FLY=0,FLB=null;
@@ -1326,7 +1381,8 @@ function flInit(){
   const c1=$("#car1");if(c1)c1.addEventListener("slide",e=>{const s=$$(".car-s",c1)[e.detail],m=s&&$(".fl-mo",s);if(m&&!m._played){m._played=1;flMoPlay(m,false)}});
   nearView($("#flBr"),()=>{safe(flBreathe);onView($("#brS"),()=>setTimeout(brSweep,400))});
   nearView($("#flXm"),()=>safe(flXm));
-  nearView($("#flK"),()=>safe(flKey));
+  /* length budget (card 7): the weekly chart opens on demand; it is built on the first open and redrawn on each later one */
+  const km=$("#kMore");if(km)km.addEventListener("toggle",()=>{if(!km.open)return;if(!km._k){km._k=1;safe(flKey)}else safe(drawKey)});
   safe(sheetWire);safe(flTabsInit);
   let rw=innerWidth,rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-rw)<2)return;rw=innerWidth;flRedraw()},150)});
 }

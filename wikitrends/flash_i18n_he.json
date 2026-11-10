@@ -223,8 +223,8 @@
    "    <blockquote class=\"mi\" data-q=\"he:Hamas\"><span class=\"bdr\"><span class=\"bd\">עברית</span><span class=\"xchip\">ראשוני</span></span><span class=\"w\">ויקיפדיה בעברית · היום (אוקטובר 2026)</span><span class=\"s he\" lang=\"he\" dir=\"rtl\">“חַמַאס (בערבית: حماس) הוא <b class=\"mk\">ארגון טרור</b> פלסטיני אסלאמיסטי-סוני הפועל גם כתנועה פוליטית.”</span></blockquote>"
   ],
   [
-   "  <figure class=\"fig fl-pos\" style=\"margin:0;gap:8px\"><div class=\"fig-h\"><span class=\"fig-t\">Its terror designation moved from sentence 5 to sentence 22</span></div><div id=\"flPos\"></div></figure>",
-   "  <figure class=\"fig fl-pos\" style=\"margin:0;gap:8px\"><div class=\"fig-h\"><span class=\"fig-t\">ההכרזה על חמאס כארגון טרור עברה ממשפט 5 למשפט 22</span></div><div id=\"flPos\"></div></figure>"
+   "  <details class=\"fl-full fl-pos-d\"><summary>Its terror designation moved from sentence 5 to sentence 22</summary><figure class=\"fig fl-pos\" style=\"margin:4px 0 0;gap:8px\"><div id=\"flPos\"></div></figure></details>",
+   "  <details class=\"fl-full fl-pos-d\"><summary>ההכרזה על חמאס כארגון טרור עברה ממשפט 5 למשפט 22</summary><figure class=\"fig fl-pos\" style=\"margin:4px 0 0;gap:8px\"><div id=\"flPos\"></div></figure></details>"
   ],
   [
    "  <p class=\"fl-body\">Hebrew Wikipedia puts it the other way around, as it already did in 2021. In English, “militant” left on 12 October 2023, five days after the attack. It came back three times, last in February 2025.</p>",
@@ -371,16 +371,12 @@
    "    <div class=\"fig kfig\" style=\"margin:0;gap:6px\"><div class=\"fig-h\"><span class=\"fig-t\" id=\"kTitle\"></span><span class=\"cap\" id=\"kSub\"></span></div><div class=\"chart\" id=\"kChart\" tabindex=\"0\" aria-label=\"תרשים שבועי; רחפו או הקישו על שבוע\"></div><p class=\"k-notes\" id=\"kNotes\" hidden></p><div class=\"legend\" id=\"kKey\"></div></div>"
   ],
   [
-   "    <p id=\"kCap\">In the three weeks after October 7, <b>13.7</b> new critical terms a week, against <b>3.8</b> in the six weeks before. Timing gives a date, not a cause.</p></figure>",
-   "    <p id=\"kCap\">בשלושת השבועות שאחרי 7 באוקטובר נוספו <b>13.7</b> מונחים ביקורתיים חדשים בשבוע, לעומת <b>3.8</b> בשישה השבועות שקדמו לו. התזמון מלמד על מועד, לא על סיבה.</p></figure>"
+   "    <p id=\"kCap\">In the three weeks after October 7, <b>13.7</b> new critical terms a week, against <b>3.8</b> in the six weeks before. Timing gives a date, not a cause.</p>",
+   "    <p id=\"kCap\">בשלושת השבועות שאחרי 7 באוקטובר נוספו <b>13.7</b> מונחים ביקורתיים חדשים בשבוע, לעומת <b>3.8</b> בשישה השבועות שקדמו לו. התזמון מלמד על מועד, לא על סיבה.</p>"
   ],
   [
-   "    <p class=\"fl-next\">Wikipedia’s arbitrators have ruled on conduct in this topic.</p>",
-   "    <p class=\"fl-next\">הבוררים של ויקיפדיה פסקו בשאלות של התנהלות בנושא הזה.</p>"
-  ],
-  [
-   "  <div class=\"eyebrow fl-ey\"><span><b>7</b> From Wikipedia’s arbitrators</span><span class=\"ey-ev\"><a href=\"@@R@@#ev-organised\" target=\"_blank\" rel=\"noopener\">Full evidence →</a></span></div>",
-   "  <div class=\"eyebrow fl-ey\"><span><b>7</b> מפי הבוררים של ויקיפדיה</span><span class=\"ey-ev\"><a href=\"@@R@@#ev-organised\" target=\"_blank\" rel=\"noopener\">כל הראיות ←</a></span></div>"
+   "  <div class=\"eyebrow fl-ey\"><span><b>8</b> From Wikipedia’s arbitrators</span><span class=\"ey-ev\"><a href=\"@@R@@#ev-organised\" target=\"_blank\" rel=\"noopener\">Full evidence →</a></span></div>",
+   "  <div class=\"eyebrow fl-ey\"><span><b>8</b> מפי הבוררים של ויקיפדיה</span><span class=\"ey-ev\"><a href=\"@@R@@#ev-organised\" target=\"_blank\" rel=\"noopener\">כל הראיות ←</a></span></div>"
   ],
   [
    "  <h2 id=\"c7H\" data-q=\"arb\">Wikipedia’s arbitrators found outside actors “heavily invested in influencing” its coverage of this topic. They named no side or country.</h2>",
@@ -389,14 +385,6 @@
   [
    "  <div class=\"news-q one\" data-q=\"arb\"><blockquote><span class=\"w\">Arbitration Committee · PIA5 · finding 10 · adopted 15–0 · 23 Jan 2025</span><span class=\"s\"><a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#Outside_influence\" target=\"_blank\" rel=\"noopener\">“Outside actors are heavily invested in influencing Wikipedia's coverage of the topic area”</a></span><span class=\"cap\">It also recorded that the account Ïvana was banned <a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#%C3%8Fvana_banned\" target=\"_blank\" rel=\"noopener\">“for off-wiki misconduct relating to the PIA topic area”</a> (finding 16, 9 Dec 2024).</span></blockquote></div>",
    "  <div class=\"news-q one\" data-q=\"arb\"><blockquote><span class=\"w\">ועדת הבוררות של ויקיפדיה · PIA5 · ממצא 10 · התקבל 15 מול 0 · 23 בינואר 2025</span><span class=\"s\" dir=\"ltr\" lang=\"en\"><a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#Outside_influence\" target=\"_blank\" rel=\"noopener\">“Outside actors are heavily invested in influencing Wikipedia's coverage of the topic area”</a></span><span class=\"he-tr\"><b class=\"he-k\">תרגום שלנו</b>״לגורמים חיצוניים יש עניין רב בהשפעה על הסיקור של ויקיפדיה בתחום הנושא״</span><span class=\"cap\">הוועדה גם רשמה שהחשבון <bdi lang=\"en\">Ïvana</bdi> הורחק ״בשל התנהגות פסולה מחוץ לוויקיפדיה הקשורה לתחום הנושא PIA״ (הסכסוך הישראלי־פלסטיני; ממצא 16, 9 בדצמבר 2024).<span class=\"he-o\" dir=\"ltr\" lang=\"en\"><a href=\"https://en.wikipedia.org/wiki/Wikipedia:Arbitration/Requests/Case/Palestine-Israel_articles_5#%C3%8Fvana_banned\" target=\"_blank\" rel=\"noopener\">“for off-wiki misconduct relating to the PIA topic area”</a></span></span></blockquote></div>"
-  ],
-  [
-   "  <figure class=\"fl-meter\" role=\"img\" aria-label=\"Four groups of 3 to 6 accounts voted together 89 to 100% of the time; chance gives about half.\">",
-   "  <figure class=\"fl-meter\" role=\"img\" aria-label=\"ארבע קבוצות של 3 עד 6 חשבונות הצביעו באותו אופן ב־89% עד 100% מהמקרים; בהצבעה מקרית: כמחצית.\">"
-  ],
-  [
-   "    <div class=\"lb\"><span style=\"left:0\">0%</span><span style=\"left:50%;transform:translateX(-50%)\">about half by chance</span><span style=\"right:0\"><b>89 to 100%</b></span></div>",
-   "    <div class=\"lb\"><span style=\"left:0\">0%</span><span style=\"left:50%;transform:translateX(-50%)\">כמחצית בהצבעה מקרית</span><span style=\"right:0\"><b>89%–100%</b></span></div>"
   ],
   [
    "  <p class=\"fl-fact\"><b>Our count:</b> in 217 formal talk-page discussions, four groups of 3 to 6 accounts voted together 89 to 100% of the time, against about half by chance.</p>",
@@ -765,6 +753,74 @@
   [
    "    <p class=\"vo-hl\">251 people were taken hostage on October&nbsp;7. In 9 of 10 Wikipedias, the article’s first sentence does not mention them.</p>",
    "    <p class=\"vo-hl\">ב־7 באוקטובר נחטפו 251 בני אדם. ב־9&nbsp;מתוך 10 ויקיפדיות, המשפט הראשון של הערך אינו מזכיר אותם.</p>"
+  ],
+  [
+   "    <details class=\"fl-full k-more\" id=\"kMore\"><summary>The weekly chart, battle by battle</summary>",
+   "    <details class=\"fl-full k-more\" id=\"kMore\"><summary>הגרף השבועי, קרב אחר קרב</summary>"
+  ],
+  [
+   "  <div class=\"eyebrow fl-ey\"><span><b>7</b> Elsewhere on Wikipedia</span></div>",
+   "  <div class=\"eyebrow fl-ey\"><span><b>7</b> במקומות אחרים בוויקיפדיה</span></div>"
+  ],
+  [
+   "  <h2 id=\"celH\">The most active editors of these articles each pushed their usual way in a median of 11.5 articles; comparable editors elsewhere, in 2.</h2>",
+   "  <h2 id=\"celH\">העורכים הפעילים ביותר בערכים האלה דחפו, כל אחד לכיוון הרגיל שלו, בחציון של 11.5 ערכים; עורכים דומים בנושאים אחרים: ב־2.</h2>"
+  ],
+  [
+   "      <span class=\"et-n\">Most active editors, core Israel articles · median <b>11.5</b></span>",
+   "      <span class=\"et-n\">הפעילים ביותר בערכי הליבה על ישראל · חציון <b>11.5</b></span>"
+  ],
+  [
+   "      <div class=\"et-h\" role=\"img\" aria-label=\"Accounts by number of articles: 0 articles, none; 1, fewer than 3; 2, none; 3 to 4, 5; 5 to 9, 12; 10 to 19, 10; 20 to 49, 11; 50 or more, fewer than 3. Median 11.5.\"><i style=\"--n:0\"></i> <i class=\"lt\"><b>&lt;3</b></i> <i style=\"--n:0\"></i> <i style=\"--n:5\"><b>5</b></i> <i style=\"--n:12\"><b>12</b></i> <i style=\"--n:10\"><b>10</b></i> <i style=\"--n:11\"><b>11</b></i> <i class=\"lt\"><b>&lt;3</b></i> <span class=\"et-md\" style=\"--i:5;--f:.2\"></span></div>",
+   "      <div class=\"et-h\" role=\"img\" aria-label=\"חשבונות לפי מספר הערכים: 0 ערכים, אין; 1, פחות מ־3; 2, אין; 3 עד 4, 5; 5 עד 9, 12; 10 עד 19, 10; 20 עד 49, 11; 50 ומעלה, פחות מ־3. חציון 11.5.\"><i style=\"--n:0\"></i> <i class=\"lt\"><b>&lt;3</b></i> <i style=\"--n:0\"></i> <i style=\"--n:5\"><b>5</b></i> <i style=\"--n:12\"><b>12</b></i> <i style=\"--n:10\"><b>10</b></i> <i style=\"--n:11\"><b>11</b></i> <i class=\"lt\"><b>&lt;3</b></i> <span class=\"et-md\" style=\"--i:5;--f:.2\"></span></div>"
+  ],
+  [
+   "      <span class=\"et-o\"><b>53</b>outside articles</span>",
+   "      <span class=\"et-o\"><b>53</b>ערכים מחוץ למדגם</span>"
+  ],
+  [
+   "      <span class=\"et-n\">Most active editors, comparison articles (other conflicts, countries) · median <b>2</b></span>",
+   "      <span class=\"et-n\">הפעילים ביותר בערכי ההשוואה (סכסוכים, מדינות) · חציון <b>2</b></span>"
+  ],
+  [
+   "      <div class=\"et-h\" role=\"img\" aria-label=\"Accounts by number of articles: 0 articles, fewer than 3; 1, 15; 2, 6; 3 to 4, 5; 5 to 9, 9; 10 to 19, 4; 20 to 49, none; 50 or more, none. Median 2.\"><i class=\"lt\"><b>&lt;3</b></i> <i style=\"--n:15\"><b>15</b></i> <i style=\"--n:6\"><b>6</b></i> <i style=\"--n:5\"><b>5</b></i> <i style=\"--n:9\"><b>9</b></i> <i style=\"--n:4\"><b>4</b></i> <i style=\"--n:0\"></i> <i style=\"--n:0\"></i> <span class=\"et-md\" style=\"--i:2;--f:.5\"></span></div>",
+   "      <div class=\"et-h\" role=\"img\" aria-label=\"חשבונות לפי מספר הערכים: 0 ערכים, פחות מ־3; 1, 15; 2, 6; 3 עד 4, 5; 5 עד 9, 9; 10 עד 19, 4; 20 עד 49, אין; 50 ומעלה, אין. חציון 2.\"><i class=\"lt\"><b>&lt;3</b></i> <i style=\"--n:15\"><b>15</b></i> <i style=\"--n:6\"><b>6</b></i> <i style=\"--n:5\"><b>5</b></i> <i style=\"--n:9\"><b>9</b></i> <i style=\"--n:4\"><b>4</b></i> <i style=\"--n:0\"></i> <i style=\"--n:0\"></i> <span class=\"et-md\" style=\"--i:2;--f:.5\"></span></div>"
+  ],
+  [
+   "      <span class=\"et-o\"><b>5</b>outside articles</span>",
+   "      <span class=\"et-o\"><b>5</b>ערכים מחוץ למדגם</span>"
+  ],
+  [
+   "  <p class=\"fl-body\" id=\"etHon\">Consistent with a sustained push across many articles; it does not show coordination. After a revert, these editors made the same change again less often than the comparison group (34% vs 67%).</p>",
+   "  <p class=\"fl-body\" id=\"etHon\">הנתון עולה בקנה אחד עם דחיפה מתמשכת בערכים רבים; הוא אינו מראה תיאום. אחרי ביטול, העורכים האלה חזרו על אותו שינוי לעיתים רחוקות יותר מקבוצת ההשוואה (34% לעומת 67%).</p>"
+  ],
+  [
+   "  <div class=\"car\" id=\"car3\" role=\"region\" aria-roledescription=\"carousel\" aria-label=\"Four outside articles, 2021 → now\">",
+   "  <div class=\"car\" id=\"car3\" role=\"region\" aria-roledescription=\"carousel\" aria-label=\"ארבעה ערכים מחוץ למדגם, 2021 ← היום\">"
+  ],
+  [
+   "    <div class=\"car-h\"><span class=\"car-t\">Four outside articles, 2021 → now</span><span class=\"car-n\" aria-live=\"polite\"></span></div>",
+   "    <div class=\"car-h\"><span class=\"car-t\">ארבעה ערכים מחוץ למדגם, 2021 ← היום</span><span class=\"car-n\" aria-live=\"polite\"></span></div>"
+  ],
+  [
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Criticism of Israel\" data-q=\"en:Criticism of Israel\"><span class=\"w\">Criticism of Israel · <b>7.9k</b> views a month</span><div class=\"vis\"><span class=\"s el-th\"><span class=\"el-k\">Jan 2021 · sentence 2</span> “relating to a variety of topics, <del>both historical and contemporary</del>”</span><span class=\"s\"><span class=\"el-k\">Now · first sentence</span> “relating to <ins>Zionist political violence</ins> … <ins>human rights violations related to the Nakba and the Israeli occupation</ins>”</span></div><p class=\"cp\">The first sentence since 1 Jul 2025; “Nakba” since 31 Dec 2025, “Zionist political violence” since 14 Oct 2026. Title until Jul 2023: Criticism of the Israeli government.</p></div>",
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"ביקורת על ישראל\" data-q=\"en:Criticism of Israel\"><span class=\"w\">ביקורת על ישראל · <b>7.9 אלף</b> צפיות בחודש</span><div class=\"vis\"><span class=\"s el-th el-he\"><span class=\"el-k\">ינואר 2021 · משפט 2</span> <b class=\"he-k\">תרגום שלנו</b>״בנוגע למגוון נושאים, <del>היסטוריים ועכשוויים כאחד</del>״</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“relating to a variety of topics, <del>both historical and contemporary</del>”</span><span class=\"s el-he\"><span class=\"el-k\">היום · המשפט הראשון</span> <b class=\"he-k\">תרגום שלנו</b>״בנוגע <ins>לאלימות פוליטית ציונית</ins> … <ins>הפרות של זכויות אדם הקשורות לנכבה ולכיבוש הישראלי</ins>״</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“relating to <ins>Zionist political violence</ins> … <ins>human rights violations related to the Nakba and the Israeli occupation</ins>”</span></div><p class=\"cp\">המשפט הפותח מאז 1 ביולי 2025; ״נכבה״ מאז 31 בדצמבר 2025, ״אלימות פוליטית ציונית״ מאז 14 באוקטובר 2026. עד יולי 2023 שם הערך היה ״ביקורת על ממשלת ישראל״ (<span lang=\"en\" dir=\"ltr\">Criticism of the Israeli government</span>).</p></div>"
+  ],
+  [
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Palestinian political violence\" data-q=\"en:Palestinian political violence\"><span class=\"w\">Palestinian political violence · <b>6.2k</b> views a month</span><div class=\"vis\"><span class=\"s el-th\"><span class=\"el-k\">Jan 2021 · first sentence</span> “acts of violence <del>or terror</del> motivated by Palestinian nationalism”</span><span class=\"s\"><span class=\"el-k\">Now · first sentence</span> “As Palestinians have not had a fully recognized state with a regular army” … “has taken the form of <ins>insurgency</ins>”</span></div><p class=\"cp\">Since 10 Dec 2025; “terror” went in and out of this sentence from 2022 to 2025. Paragraph 2 still says several groups “are considered terrorist organizations”.</p></div>",
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"אלימות פוליטית פלסטינית\" data-q=\"en:Palestinian political violence\"><span class=\"w\">אלימות פוליטית פלסטינית · <b>6.2 אלף</b> צפיות בחודש</span><div class=\"vis\"><span class=\"s el-th el-he\"><span class=\"el-k\">ינואר 2021 · המשפט הראשון</span> <b class=\"he-k\">תרגום שלנו</b>״מעשי אלימות <del>או טרור</del> שמניעם לאומיות פלסטינית״</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“acts of violence <del>or terror</del> motivated by Palestinian nationalism”</span><span class=\"s el-he\"><span class=\"el-k\">היום · המשפט הראשון</span> <b class=\"he-k\">תרגום שלנו</b>״מאחר שלפלסטינים לא הייתה מדינה מוכרת במלואה ובה צבא סדיר״ … ״לבשה צורה של <ins>התקוממות</ins>״</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“As Palestinians have not had a fully recognized state with a regular army” … “has taken the form of <ins>insurgency</ins>”</span></div><p class=\"cp\">מאז 10 בדצמבר 2025; ״טרור״ נכנס למשפט ויצא ממנו בין 2022 ל־2025. בפסקה השנייה עדיין כתוב שכמה מהקבוצות ״נחשבות לארגוני טרור״.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“are considered terrorist organizations”</span></p></div>"
+  ],
+  [
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Plan Dalet\" data-q=\"en:Plan Dalet\"><span class=\"w\">Plan Dalet · <b>4.7k</b> views a month</span><div class=\"vis\"><span class=\"s el-th\"><span class=\"el-k\">Jan 2021 · first sentence</span> “a plan <del>worked out by the Haganah</del> … in March 1948”</span><span class=\"s\"><span class=\"el-k\">Now · first sentence</span> “a <ins>Zionist military plan</ins> executed during the 1948 Palestine war <ins>for the conquest of territory</ins>”</span></div><p class=\"cp\">Since 4 Jun 2023, before the war. Since 14 Aug 2024, sentence 2 adds that it “played a central role in the 1948 Palestinian expulsion and flight known as the Nakba”.</p></div>",
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"תוכנית ד׳\" data-q=\"en:Plan Dalet\"><span class=\"w\">תוכנית ד׳ · <b>4.7 אלף</b> צפיות בחודש</span><div class=\"vis\"><span class=\"s el-th el-he\"><span class=\"el-k\">ינואר 2021 · המשפט הראשון</span> <b class=\"he-k\">תרגום שלנו</b>״תוכנית <del>שגיבשה ההגנה</del> … במרץ 1948״</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“a plan <del>worked out by the Haganah</del> … in March 1948”</span><span class=\"s el-he\"><span class=\"el-k\">היום · המשפט הראשון</span> <b class=\"he-k\">תרגום שלנו</b>״<ins>תוכנית צבאית ציונית</ins> שהוצאה לפועל במהלך מלחמת 1948 <ins>לשם כיבוש שטחים</ins>״</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“a <ins>Zionist military plan</ins> executed during the 1948 Palestine war <ins>for the conquest of territory</ins>”</span></div><p class=\"cp\">מאז 4 ביוני 2023, לפני המלחמה. מאז 14 באוגוסט 2024 מוסיף המשפט השני שהיא ״מילאה תפקיד מרכזי בגירוש ובבריחה של הפלסטינים ב־1948, הידועים בשם הנכבה״.<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“played a central role in the 1948 Palestinian expulsion and flight known as the Nakba”</span></p></div>"
+  ],
+  [
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"Causes of the 1948 Palestinian expulsion and flight\" data-q=\"en:Causes of the 1948 Palestinian expulsion and flight\"><span class=\"w\">Causes of the 1948 Palestinian expulsion and flight · <b>1.6k</b> views a month</span><div class=\"vis\"><span class=\"s el-th\"><span class=\"el-k\">Jan 2021 · sentence 2</span> “a matter of <del>great controversy among historians</del> …”</span><span class=\"s\"><span class=\"el-k\">Now · sentence 2</span> “a matter of dispute, though <ins>today most scholars consider that the majority of Palestinians were directly expelled</ins> or else fled due to fear”</span></div><p class=\"cp\">Since 15 Aug 2024. The first sentence’s “by Israeli forces” moved to sentence 3 (“direct expulsions by Israeli forces”).</p></div>",
+   "      <div class=\"car-s\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"סיבות הגירוש והבריחה של הפלסטינים ב־1948\" data-q=\"en:Causes of the 1948 Palestinian expulsion and flight\"><span class=\"w\">סיבות הגירוש והבריחה של הפלסטינים ב־1948 · <b>1.6 אלף</b> צפיות בחודש</span><div class=\"vis\"><span class=\"s el-th el-he\"><span class=\"el-k\">ינואר 2021 · משפט 2</span> <b class=\"he-k\">תרגום שלנו</b>״נושא <del>למחלוקת גדולה בקרב היסטוריונים</del> …״</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“a matter of <del>great controversy among historians</del> …”</span><span class=\"s el-he\"><span class=\"el-k\">היום · משפט 2</span> <b class=\"he-k\">תרגום שלנו</b>״נושא למחלוקת, אף ש<ins>כיום רוב החוקרים סבורים שרוב הפלסטינים גורשו במישרין</ins> או שברחו מפחד״</span><span class=\"he-o\" dir=\"ltr\" lang=\"en\">“a matter of dispute, though <ins>today most scholars consider that the majority of Palestinians were directly expelled</ins> or else fled due to fear”</span></div><p class=\"cp\">מאז 15 באוגוסט 2024. הצירוף ״בידי כוחות ישראליים״ עבר מהמשפט הראשון למשפט השלישי (״גירושים ישירים בידי כוחות ישראליים״).<span class=\"he-o\" dir=\"ltr\" lang=\"en\">“direct expulsions by Israeli forces”</span></p></div>"
+  ],
+  [
+   "  <details class=\"fl-full et-how\"><summary><span class=\"fl-ctx\" id=\"celAll\">All four are among the 53 outside articles above (comparison editors: 5). We counted accounts, not authors: we did not check who wrote these lines.</span> <span class=\"et-hs\">How we counted</span></summary><p>The most active editors are the 40 accounts with the most critical-term edits to the opening sections of the core, Top- and High-importance topic articles, 2021–2026; the comparison group is the 40 most active critical-term editors of matched articles on other conflicts, countries and ideologies. An account’s usual way is the direction most of its critical-term edits went: of the 39 topic accounts with 10 or more such edits, 25 mostly added critical terms and 14 mostly removed them. The bars count accounts by the number of articles (ours, and outside articles edited by 3 or more of its group) where the account’s net change went its usual way; a range with 1 or 2 accounts shows &lt;3. Outside articles are not among ours; the change counted there is adding critical terms or removing Jewish-history or Israeli-perspective terms in the opening section. After a revert: reverted critical-term edits on our articles that the same account followed, within 30 days, by moving the same article the same way again (57 of 166; in the comparison group, 44 of 66). Views a month: the mean of the past 12 months.</p><p>We read 14 of the outside articles by hand, then and now; these 4 hold up, and 10 were dropped (page moves or renames, word-list artefacts, legal framing, or no real change). No account is named or labelled. Concentrated interest is not by itself evidence of bad faith: many good-faith editors specialise.</p></details>",
+   "  <details class=\"fl-full et-how\"><summary><span class=\"fl-ctx\" id=\"celAll\">ארבעתם בין 53 הערכים שמחוץ למדגם שלמעלה (אצל עורכי ההשוואה: 5). ספרנו חשבונות, לא כותבים: לא בדקנו מי כתב את השורות.</span> <span class=\"et-hs\">איך ספרנו</span></summary><p>העורכים הפעילים ביותר הם 40 החשבונות שערכו הכי הרבה מונחים ביקורתיים בפתיחי ערכי הליבה וערכי הנושא בחשיבות עליונה וגבוהה, 2021–2026; קבוצת ההשוואה היא 40 העורכים הפעילים ביותר במונחים ביקורתיים בערכים מקבילים על סכסוכים, מדינות ואידאולוגיות אחרים. הכיוון הרגיל של חשבון הוא הכיוון שאליו הלכו רוב עריכותיו במונחים ביקורתיים: מתוך 39 החשבונות בקבוצת הנושא שערכו 10 עריכות כאלה או יותר, 25 הוסיפו בעיקר מונחים ביקורתיים ו־14 הסירו בעיקר. העמודות סופרות את החשבונות לפי מספר הערכים (שלנו, וערכים מחוץ למדגם שערכו 3 או יותר מקבוצתו) שבהם השינוי נטו של החשבון הלך לכיוון הרגיל שלו; טווח שיש בו חשבון אחד או שניים מסומן &lt;3. ערכים מחוץ למדגם הם ערכים שאינם בין הערכים שלנו; השינוי שנספר בהם הוא הוספת מונחים ביקורתיים או הסרת מונחים של היסטוריה יהודית או של נקודת מבט ישראלית בפתיח. אחרי ביטול: עריכות במונחים ביקורתיים בערכים שלנו שבוטלו, ושבתוך 30 יום אותו חשבון הזיז את אותו ערך שוב באותו כיוון (57 מתוך 166; בקבוצת ההשוואה, 44 מתוך 66). צפיות בחודש: הממוצע של 12 החודשים האחרונים.</p><p>קראנו 14 מהערכים שמחוץ למדגם, אז ועכשיו; ארבעת אלה עומדים בבדיקה, ו־10 הוצאו (העברות דף או שינויי שם, תוצרי לוואי של רשימת המילים, ניסוח משפטי, או שלא היה שינוי ממשי). אף חשבון אינו מזוהה בשמו או מתויג. עניין מרוכז אינו כשלעצמו ראיה לחוסר תום לב: עורכים רבים בתום לב מתמחים בנושא אחד.</p></details>"
   ]
  ],
  "lib": [
