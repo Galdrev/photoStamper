@@ -190,7 +190,7 @@ function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="נוס�
     return {void:1,rtl:1,file:"wikipedia-hostages-first-sentence-he.png",kicker:"ויקיפדיה · המשפט הראשון של הערך על 7 באוקטובר · החטופים · התרגום לעברית: שלנו",n:$(".vo-n",m).textContent.trim(),
       qlab:tx($(".vo-w",m)),q:$(".vo-s",m).textContent.trim(),qtr:tr($(".vo-hero .he-tr",m)),
       tiles:$$(".vo-t",m).map(b=>({nm:$(".vo-nm",b).textContent.trim(),has:!!b.dataset.has,fill:$(".vo-h",b).textContent.trim(),rtl:$(".vo-nm",b).dir==="rtl"})),
-      scb:$(".vo-sc b",m).textContent.trim(),sc:tx(sc).replace(/\s+/g," "),c:tx($(".vo-c",m)).replace(/\s+/g," "),foot:[scope,stamp+" · "+src]}}
+      scb:$(".vo-sc b",m).textContent.trim(),sc:tx(sc).replace(/\s+/g," "),c:tx($('.vo-p[data-l="en"] .vo-f',m)).replace(/\s+/g," "),foot:[scope,stamp+" · "+src]}}
   if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
     return {file:"wikipedia-hamas-english-hebrew-he.png",kicker:"ויקיפדיה · חמאס, באנגלית ובעברית",title:tx($("#c4H")),size:36,
       rows:[{label:"ויקיפדיה באנגלית · "+$(".w",en).textContent.trim(),segs:sgs($(".s",en)),rtl:tr($(".he-tr",en))},{label:"ויקיפדיה בעברית · היום (אוקטובר 2026) · ראשוני",rtl:$(".s",he).textContent.trim(),big:1}],

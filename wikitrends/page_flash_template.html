@@ -1183,7 +1183,7 @@ function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="Wikiped
     return {void:1,file:"wikipedia-hostages-first-sentence.png",kicker:"Wikipedia · the first sentence of the October 7 article · the hostages",n:$(".vo-n",m).textContent.trim(),
       qlab:$(".vo-w",m).textContent.trim(),q:$(".vo-s",m).textContent.trim(),
       tiles:$$(".vo-t",m).map(b=>({nm:$(".vo-nm",b).textContent.trim(),has:!!b.dataset.has,fill:$(".vo-h",b).textContent.trim(),rtl:$(".vo-nm",b).dir==="rtl"})),
-      scb:$(".vo-sc b",m).textContent.trim(),sc:sc.textContent.replace(/\s+/g," ").trim(),c:$(".vo-c",m).textContent.replace(/\s+/g," ").trim(),foot:[scope,stamp+" · "+src]}}
+      scb:$(".vo-sc b",m).textContent.trim(),sc:sc.textContent.replace(/\s+/g," ").trim(),c:$('.vo-p[data-l="en"] .vo-f',m).textContent.replace(/\s+/g," ").trim(),foot:[scope,stamp+" · "+src]}}
   if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
     return {file:"wikipedia-hamas-english-hebrew.png",kicker:"Wikipedia · Hamas, English and Hebrew",title:$("#c4H").textContent.trim(),size:40,
       rows:[{label:"English Wikipedia · "+$(".w",en).textContent.trim(),segs:shSegs($(".s",en))},{label:"Hebrew Wikipedia · now (Oct 2026) · exploratory · our translation",rtl:$(".s",he).textContent.trim(),segs:shSegs($(".tr",he))}],
