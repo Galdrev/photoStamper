@@ -284,8 +284,8 @@ for frag in (f'({_hx("Israel")} of Israel’s views met “began committing geno
     EXP_NUMS |= set(n.rstrip("%") for n in re.findall(r"\d[\d.]*%?", frag))
 assert _sw["Hamas"]["view_share"]["political_org"] == 0, "the surge line says none"
 assert sum(1 for a in _ord if _crit[a] >= 0.95) == 7 and _crit["Nakba"] < 0.5, "'nearly every view ... except Nakba' must hold"
-COMPUTED["12%"] = "treemap headline, computed from data/mass2.json (asserted below)"
-COMPUTED["12"] = COMPUTED["12%"]
+COMPUTED["12.4"] = "reach-bar headline (v3 fix: one 100% bar replaces the treemap), computed from data/mass2.json (asserted below)"
+COMPUTED["143"] = "reach bar: the 150 openings less the seven with the charge (asserted below)"
 for n in EXP_NUMS:
     COMPUTED[n] = "exposure.json (merge r1 reach figure), asserted above"
 COMPUTED.update({"2025": "exposure window", "2026": "exposure window"})
@@ -314,7 +314,12 @@ assert len(_v107) == 107 and not any(HOST["en"].search(v.get("s") or "") for v i
 for l in VO_ORDER:  # each panel quotes the stored first sentence whole (the Arabic slot is the defining clause, marked with ellipses)
     o = _html.escape(_fs_now[l]).replace("rapimento di circa 250 di questi", '<mark class="vo-m">rapimento di circa 250 di questi</mark>')
     assert ("“… " + o + " …”" if l == "ar" else "“" + o + "”") in _vo, f"the {l} panel does not quote the stored first sentence"
-assert "<b>9 of 10.</b>" in _vo and "first sentence names no hostages in 9 of the 10 Wikipedias with an article on it" in _vo and len(VO_ORDER) - len(_has) == 9
+# v3 fix (owner: "not really understood"): one plain headline leads the block; every slot says what it holds, in words
+assert len(VO_ORDER) - len(_has) == 9 and len(VO_ORDER) == 10
+assert '<p class="vo-hl">251 people were taken hostage on October&nbsp;7. In 9 of 10 Wikipedias, the article’s first sentence does not mention them.</p>' in _vo, "hostages headline"
+assert _vo.count('<span class="vo-h" aria-hidden="true">no hostages</span>') == 9 and '<span class="vo-h on" aria-hidden="true"><span class="vo-hk">names them:</span> <span lang="it">rapimento</span></span>' in _vo, "slot words"
+assert '<span class="vo-sc">Latest copies, Oct–Nov 2026, of the ten Wikipedias with an article on the attack.' in _vo, "hostages scope: latest copies, the ten editions with an article"
+assert "<b>9 of 10.</b>" not in _vo and "<b>" not in _vo[_vo.index('class="vo-fs"'):], "the long scope paragraph is gone"
 # Hebrew: the first sentence named "חטיפת אזרחים" in our quarterly copies from Oct 2024 to Oct 2025, and not since
 def _first(t):
     t = t or ""
@@ -325,7 +330,7 @@ def _first(t):
 _hq = {x["date"]: _first(x["lead"]) for x in CLX["October 7 attacks"]["he"]["series"]}
 assert sorted(d for d, f in _hq.items() if HOST["he"].search(f)) == ["2024-10", "2025-01", "2025-04", "2025-07", "2025-10"] and all("חטיפת אזרחים" in _hq[d] for d in ("2024-10", "2025-10")), \
     f"Hebrew first sentence with the hostages: {[d for d, f in _hq.items() if HOST['he'].search(f)]}"
-assert "Italian’s does; Hebrew’s did, in our copies from October 2024 to October 2025." in _vo
+assert "Hebrew’s first sentence named them in our copies from October 2024 to October 2025.</span></p>" in _vo
 # Italian: the first sentence names them in every quarterly copy from April 2024 on
 _iq = {x["date"]: _first(x["lead"]) for x in CLX["October 7 attacks"]["it"]["series"]}
 assert sorted(d for d, f in _iq.items() if HOST["it"].search(f)) == sorted(d for d in _iq if d >= "2024-04"), "Italian first sentence: kidnapping since Apr 2024"
@@ -336,7 +341,7 @@ for l in ("ar", "en", "de", "fr", "es", "pt", "nl", "ru"):
 # English: sentence 9 of the 2 Nov 2026 opening section is the only one with a hostage word
 _s = [x for x in re.split(r"(?<=[.!?])\s+", re.sub(r"\s+", " ", M2["October 7 attacks"][-1]).strip()) if x]
 assert [i + 1 for i, x in enumerate(_s) if HOST["en"].search(x)] == [9] and _s[8].startswith("251 Israeli and non-Israeli civilians and soldiers were taken as hostages to the Gaza Strip"), "English sentence 9"
-assert "though all ten opening sections mention them" in _vo and "English · only here: sentence 9 of the opening section" in _vo
+assert "<p class=\"vo-fs\"><span class=\"vo-fu\">The nine mention them further down the opening section; English, only in sentence&nbsp;9.</span>" in _vo and "English · only here: sentence 9 of the opening section" in _vo
 # "each of the ten opening sections mentions them": in the text we hold (latest copy), or in the full-section count (8 Nov 2026)
 _NW0 = json.load(open(os.path.join(PAT, "crosswiki", "chart_data", "narrative.json")))["hostages"]
 for l in VO_ORDER:
@@ -534,7 +539,19 @@ for k, (v, s) in _ch.items():
 _l12 = lambda a: sum(_mon(a)["views"][-12:])
 TM_ROWS = sorted([[a["title"], _l12(a), _ch.get(a["title"], (0, ""))[0], _ch.get(a["title"], (0, ""))[1]] for a in _set], key=lambda r: -r[1])
 _share = sum(r[1] for r in TM_ROWS if r[2]) / sum(r[1] for r in TM_ROWS)
-assert f"<b>Now 7 of 150 do</b>, two as fact, and they got <b>{round(100*_share)}%</b> of the views of all 150 (Nov 2025 – Oct 2026)." in tpl, f"treemap headline: {_share:.4f}"
+assert f"<b>Now 7 of the 150 most-read openings charge Israel with genocide</b>, two as fact, and they got <b>{100*_share:.1f}%</b> of the views of all 150. In Jan 2021 and Jul 2023, none did." in tpl, f"reach-bar headline: {_share:.4f}"
+assert "Views Nov 2025 – Oct 2026, monthly sums from our crawl." in tpl and "The 150 most-read opening sections that existed in 2021." in tpl
+# v3 fix: the bar's labels and the list of seven are printed by the page (flTiles) from R.tm; recomputed here, so a data change fails
+_C7 = sorted([r for r in TM_ROWS if r[2]], key=lambda r: (-r[2], -r[1]))
+_v = lambda v: f"{v/1e6:.1f} million" if v >= 1e6 else f"{round(v/1e3)},000"
+assert [(r[0], _v(r[1]), r[2]) for r in _C7] == [("Benjamin Netanyahu", "7.0 million", 2), ("Israel", "4.6 million", 2), ("Palestine", "2.4 million", 1),
+    ("Israeli–Palestinian conflict", "1.0 million", 1), ("Gaza Strip", "816,000", 1), ("Israel Defense Forces", "745,000", 1), ("Gaza–Israel conflict", "155,000", 1)], \
+    f"reach bar list: {[(r[0], _v(r[1]), r[2]) for r in _C7]}"
+assert len(TM_ROWS) - len(_C7) == 143 and f"{100*_share:.1f}" == "12.4"
+for _f in ('v:v=>v>=1e6?`${(v/1e6).toFixed(1)} million`:`${Math.round(v/1e3)},000`', 'now:(n,p)=>`${n} openings: ${p}% of the views`', 'rest:n=>`${n} other openings`',
+           'TM.pct=(100*cv/tot).toFixed(1);TM.now=TB_T.now(C.length,TM.pct);', '.sort((x,y)=>y[0][2]-x[0][2]||y[0][1]-x[0][1])', 'hyphens:none'):
+    assert _f in tpl, f"reach bar code changed: {_f}"
+assert not any(x in tpl[tpl.index(".fl-tiles{"):tpl.index("/* full-bleed moments")] for x in ("hyphens:auto", "overflow-wrap:anywhere", "word-break:break")), "no hyphenation, no mid-word breaks in the reach bar"
 R["tm"] = {"rows": TM_ROWS}
 for _k, (_v, _s) in _ch.items():  # numbers inside the seven quoted charge sentences (tile tooltips; the Hebrew overlay translates them)
     for _n in re.findall(r"(?<![\w.])\d[\d,]*(?:\.\d+)?", _s):
@@ -586,6 +603,12 @@ _fbw, _fbl = _fb_recount(R["ratchet"]["articles"]["Zionism"])
 assert (_fbw, _fbl) == (100, [("colonization", 81), ("land outside", 54), ("palestine a region", 40), ("land of israel", 40), ("jewish history", 37),
                               ("homeland", 35), ("jewish people", 35), ("jewish state", 29)]), f"fight lanes recount: {_fbw} {_fbl}"
 assert round(100 * _share, 1) == 12.4, f"treemap share {_share:.4f}"
+# v3 fix: the fight lanes show the top 4 of the 8 by default (Show all 8); the header and each count are in words, printed from the same
+# fbBuild counts recounted above
+assert len(_fbl) == 8 and "const FB_T={top:4," in tpl and "more:n=>`Show all ${n}`" in tpl and "less:n=>`Show the top ${n}`" in tpl
+assert "hd:w=>`<b>The fight over the words:</b> since Jan 2021, ${w} words were put in and taken out of this sentence, some again and again.`" in tpl
+assert "`put in or taken out <b class=\"fbn\" data-n=\"${f}\">${f}</b> times`" in tpl and "⇄" not in tpl[tpl.index('<div class="fl-fb"'):tpl.index("</div>", tpl.index('<div class="fl-fb"'))]
+assert "Each line is one phrase over time: blue = in the sentence, empty = out; every tick is one edit." in tpl and "removed or restored n times · tap a lane" not in tpl
 print(f"flash: fight lanes recounted: {_fbw} words fought over, lanes " + ", ".join(f"{g} {f}" for g, f in _fbl))
 
 # final round, step 2: the Data lab tab. lab/lab_flash.py is a slim, flash-only fork of the research lab (it reads lab.html, lab.js and

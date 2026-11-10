@@ -127,6 +127,8 @@ Items 4 and 6 touch the same files and functions (`flDraw`, the carousel), so th
 
 ## 4. Treemap
 
+> **Superseded (fix log 4, `HE_FIXLOG4.md` §1):** the owner found the treemap unreadable on an iPhone. It is replaced by one 100% bar of the same 150 openings' views (the seven charged segments coloured, the other 143 grey) and a list of the seven with views and voice. The set, the views, the 7 / 2 and the 12.4% below are unchanged and still asserted.
+
 **The set:** the same 150 opening sections as PERP.md: the 150 most-viewed topic-group articles of the mass crawl that have a lead at all three dates.
 - The build rebuilds the set and checks it against `perp_codes.jsonl`.
 - It also checks Israel's 42,920,851 views since 2021, the figure PERP.md gives.

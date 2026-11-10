@@ -196,8 +196,10 @@ def build(C, out_path):
         assert f'data-share="{_id}"' in tpl and f'id==="{_id}"' in hjs, f"Hebrew share card {_id}"
     # fix log 3: the hostages moment, in Hebrew. The scope lines keep their exact strength; each non-Hebrew first sentence has our
     # translation under it; the old Israel-and-Hamas line ("in every copy we hold", which our 2024 Hamas copies contradict) is gone
-    for must in ("<b>9 מתוך 10.</b> בעותקים האחרונים שלנו (אוקטובר–נובמבר 2026), המשפט הראשון בערך על 7 באוקטובר אינו מזכיר חטופים ב־9 מתוך 10 הוויקיפדיות שיש בהן ערך עליו, אף שכל עשרת פתיחי הערכים מזכירים אותם.",
-                 "באיטלקית הוא מזכיר אותם; בעברית הזכיר, בעותקים מאוקטובר 2024 עד אוקטובר 2025.",
+    # v3 fix (HE_FIXLOG4.md): the block leads with one plain headline; each slot says what it holds; the scope line is short and exact
+    for must in ("<p class=\"vo-hl\">ב־7 באוקטובר נחטפו 251 בני אדם. ב־9&nbsp;מתוך 10 ויקיפדיות, המשפט הראשון של הערך אינו מזכיר אותם.</p>",
+                 "<span class=\"vo-fu\">בתשע האחרות הם מוזכרים בהמשך פתיח הערך; באנגלית, רק במשפט&nbsp;9.</span>",
+                 "<span class=\"vo-sc\">לפי העותקים האחרונים שלנו (אוקטובר–נובמבר 2026) של עשר הוויקיפדיות שיש בהן ערך על המתקפה. בעברית, המשפט הראשון הזכיר אותם בעותקים שלנו מאוקטובר 2024 עד אוקטובר 2025.</span>",
                  "אנגלית · רק כאן: משפט 9 בפתיח הערך", "פתיח הערך על חמאס: אין אזכור כיום; בעותקים שלנו מאפריל ומיולי 2024 נכתב בו",
                  "ובעותקים האחרונים שבידינו, פתיחי הערכים על ישראל ועל חמאס אינם מזכירים את החטופים."):
         assert nb(must) in tpl, f"Hebrew page: a hostages-moment line is missing or changed: {must[:60]}"
@@ -205,6 +207,13 @@ def build(C, out_path):
     _vo = tpl[tpl.index('id="c3m"'):tpl.index("</figure>", tpl.index('id="c3m"'))]
     assert _vo.count('class="vo-p"') == 10 and _vo.count('class="he-tr vo-tr"') == 9 and 'data-l="he" data-q="he:October 7 attacks" hidden><p class="vo-ph">ויקיפדיה בעברית' in _vo, "Hebrew moment panels: nine translations, Hebrew needs none"
     assert _vo.count('class="vo-gap"') == 9 and _vo.count('aria-label="אין חטופים במשפט הזה"') == 9, "Hebrew moment: nine empty slots in the panels"
+    assert _vo.count('<span class="vo-h" aria-hidden="true">אין חטופים</span>') == 9 and '<span class="vo-hk">מזכיר אותם:</span> <span lang="it">rapimento</span>' in _vo, "Hebrew moment: the words in the slots"
+    # v3 fix: the reach bar and the fight lanes, in Hebrew (numbers come from the same computed values as the English page)
+    for must in ("<b>היום 7 מתוך 150 פתיחי הערכים הנקראים ביותר מאשימים את ישראל ברצח עם</b>, שניים מהם כעובדה, והם קיבלו <b>12.4%</b> מהצפיות בכל ה־150.",
+                 'tag:["אין האשמה","מיוחסת לאחרים","נקבע כעובדה"]', "now:(n,p)=>`${n} פתיחים: ${p}% מהצפיות`", "rest:n=>`${n} פתיחים אחרים`",
+                 "hd:w=>`<b>המאבק על המילים:</b> מאז ינואר 2021 הוכנסו למשפט הזה והוצאו ממנו ${w} מילים, חלקן שוב ושוב.`", 'st:["בחוץ","בפנים"],gl:l=>fbHe(l.lab)',
+                 "כל שורה היא ביטוי אחד לאורך זמן: כחול = במשפט, ריק = מחוץ למשפט; כל סימון הוא עריכה אחת."):
+        assert nb(must) in tpl, f"Hebrew page: a v3-fix line is missing or changed: {must[:60]}"
     assert 'window.claude.use("downloads")' in tpl and "window.claude.downloads" not in tpl + hjs, "downloads capability via use() only"
     assert "scope" in hjs[hjs.index("function shSpec"):] and "foot:[" in hjs, "Hebrew share cards carry the scope line"
     # the flash script quotes no English words that the English script did not (the English build checked those against the stored text)

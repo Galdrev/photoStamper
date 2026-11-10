@@ -40,7 +40,6 @@ html[dir="rtl"] .fl-honest{border-right:2px dashed var(--muted)}
 html[dir="rtl"] .fl-other{border-left:0;border-right:3px solid var(--muted);padding:2px 12px 2px 0}
 html[dir="rtl"] .news-q .w .xchip{margin-left:0;margin-right:auto}
 html[dir="rtl"] .car-s>.w .fl-play.sm{margin-left:0;margin-right:auto}
-html[dir="rtl"] .fl-tiles .tl2 .k{margin-right:0;margin-left:4px}
 html[dir="rtl"] .fl-prog{left:auto;right:0;transform-origin:100% 50%}
 html[dir="rtl"] .fl-bars .b span{left:auto;right:calc(100% + 6px)}
 html[dir="rtl"] .fl-score .bar .i{padding-left:0;padding-right:6px}
@@ -56,8 +55,15 @@ html[dir="rtl"] :is(.fl-strip,.fl-meter,#kChart,.br-strip,#brRange,.xg-ax){direc
 html[dir="rtl"] #xwGG .rch{direction:ltr}
 html[dir="rtl"] #xwGG .rch-row>span:first-child,html[dir="rtl"] #xwGG .rch-row .v{direction:rtl;text-align:right}
 html[dir="rtl"] .fl-strip text{unicode-bidi:plaintext}
-html[dir="rtl"] .fl-fb .fl-strip text.fbh{fill:var(--ink-2);font-family:var(--body)}
-html[dir="rtl"] .fl-fb .fb-k i{margin-right:0;margin-left:4px}
+/* v3 fix: the fight lanes. The phrase stays the original English, left to right; our Hebrew translation beside it; the state chip in Heebo */
+html[lang="he"] .fl-fb .fb-s{font-family:var(--body);letter-spacing:0;font-size:12px}
+html[lang="he"] .fl-fb .fbh{font-size:15px;color:var(--ink-2)}
+html[lang="he"] .fl-fb .fb-p .fbg{margin:0 0 0 5px}
+html[lang="he"] .fl-fb .fb-ax{direction:ltr}
+html[dir="rtl"] .fl-fb .fbl{direction:rtl}html[dir="rtl"] .fl-fb .fbh{order:-1}
+/* v3 fix: the reach bar: the bar and the list run right to left; the article names stay in the original, left to right */
+html[lang="he"] .fl-tiles .tb-ls .tg{font-family:var(--body);font-size:11.5px}
+html[lang="he"] .fl-tiles .tb-ls .nm{text-align:right;unicode-bidi:isolate}
 /* the language grid reads right to left: languages on the right */
 html[dir="rtl"] .xm .xm-l{left:auto;right:0;text-align:right;padding:0 0 0 10px}
 html[dir="rtl"] .xm tfoot th{text-align:right}
@@ -184,13 +190,12 @@ function shSpec(id){const scope=$(".fl-scope").textContent.trim(),stamp="נוס�
     const H=$$("#c3 .fl .he-tr").map(tr);
     const lab=["מתקפת 7\u00a0באוקטובר · המשפט הראשון · אוקטובר 2023 ← היום","מתקפת 7\u00a0באוקטובר · פתיח הערך · ינואר 2024 ← היום"];
     return {file:"wikipedia-october-7-he.png",kicker:"ויקיפדיה באנגלית · 7 באוקטובר והחטופים",title:tx($("#c3H")),size:36,
-      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>sgs(c)),rtl:H[i]||""})).concat([{label:"החטופים · המשפט הראשון, בעשר ויקיפדיות",lead:tx(voSc())},{label:"מתקפת 7\u00a0באוקטובר · משפט 9",segs:sgs($("#c3m .vo-s")),rtl:tr($("#c3m .vo-hero .he-tr"))}]),
+      rows:G.map((g,i)=>({label:lab[i],segs:g.flatMap(c=>sgs(c)),rtl:H[i]||""})).concat([{label:"החטופים · המשפט הראשון, בעשר ויקיפדיות",lead:tx($("#c3m .vo-hl"))+" "+tx(voSc())},{label:"מתקפת 7\u00a0באוקטובר · משפט 9",segs:sgs($("#c3m .vo-s")),rtl:tr($("#c3m .vo-hero .he-tr"))}]),
       foot:[{t:tx($("#c3 .fl-body .he-p"))},{t:scope},{t:stamp+" · "+src}]}}
-  if(id==="c3m"){const m=$("#c3m"),sc=voSc(),hb=sc.querySelector("b");if(hb)hb.parentNode.removeChild(hb);
-    return {void:1,rtl:1,file:"wikipedia-hostages-first-sentence-he.png",kicker:"ויקיפדיה · המשפט הראשון של הערך על 7 באוקטובר · החטופים · התרגום לעברית: שלנו",n:$(".vo-n",m).textContent.trim(),
-      qlab:tx($(".vo-w",m)),q:$(".vo-s",m).textContent.trim(),qtr:tr($(".vo-hero .he-tr",m)),
-      tiles:$$(".vo-t",m).map(b=>({nm:$(".vo-nm",b).textContent.trim(),has:!!b.dataset.has,fill:$(".vo-h",b).textContent.trim(),rtl:$(".vo-nm",b).dir==="rtl"})),
-      scb:$(".vo-sc b",m).textContent.trim(),sc:tx(sc).replace(/\s+/g," "),c:tx($('.vo-p[data-l="en"] .vo-f',m)).replace(/\s+/g," "),foot:[scope,stamp+" · "+src]}}
+  if(id==="c3m"){const m=$("#c3m");
+    return {void:1,rtl:1,file:"wikipedia-hostages-first-sentence-he.png",kicker:"ויקיפדיה · המשפט הראשון של הערך על 7 באוקטובר · החטופים · התרגום לעברית: שלנו",hl:tx($(".vo-hl",m)),n:$(".vo-n",m).textContent.trim(),
+      qlab:tx($(".vo-w",m)),q:$(".vo-s",m).textContent.trim(),qtr:tr($(".vo-hero .he-tr",m)),tiles:voTiles(m),
+      fu:tx($(".vo-fu",m)),sc:tx(voSc()).replace(/\s+/g," "),c:tx($('.vo-p[data-l="en"] .vo-f',m)).replace(/\s+/g," "),foot:[scope,stamp+" · "+src]}}
   if(id==="c4vs"){const v=$("#c4vs"),[en,he]=$$("blockquote",v);
     return {file:"wikipedia-hamas-english-hebrew-he.png",kicker:"ויקיפדיה · חמאס, באנגלית ובעברית",title:tx($("#c4H")),size:36,
       rows:[{label:"ויקיפדיה באנגלית · "+$(".w",en).textContent.trim(),segs:sgs($(".s",en)),rtl:tr($(".he-tr",en))},{label:"ויקיפדיה בעברית · היום (אוקטובר 2026) · ראשוני",rtl:$(".s",he).textContent.trim(),big:1}],
