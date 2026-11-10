@@ -1,0 +1,71 @@
+name: wikitrends-trail
+# launch 2026-11-10
+# Editor trail (wikitrends/trail.py + analyze_trail.py), in ONE job: the top TRAIL_N critical-term lead editors of the
+# scoped topic articles (guard.py scope: curated core + Israel / Palestine Top and High) and of the 1:1 matched comparison
+# articles; their 2021-2026 contributions (namespace 0 in full, talk namespaces counted) via list=usercontribs; outside
+# articles they changed (critical-term insertions / connection-term removals in the opening section); pattern metrics
+# against the comparison group. Requests are time-budgeted (TRAIL_BUDGET_MIN, phase shares in trail.py) and rate-limited.
+# Salt: one random value made in this job (openssl rand), masked, kept in env only: never a file, output or artifact.
+# Privacy: raw data (histories with hashed accounts, revids, contributions) stays on the runner and is deleted. Usernames
+# exist only in the collector's memory. Only patterns/trail/{results.json, articles.md, cards.md} are published, after the
+# privacy gate passes.
+on:
+  push:
+    branches: [wikitrends-trail]
+permissions:
+  contents: write
+concurrency: wikitrends-trail
+defaults:
+  run:
+    shell: bash
+env:
+  WT_RPS: '3'
+  TRAIL_THREADS: '4'
+  TRAIL_N: '40'
+  TRAIL_BUDGET_MIN: '285'
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  trail:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install requests numpy
+      - name: Offline self-tests (mocked API, planted patterns, null world, redaction, publication gate)
+        working-directory: wikitrends
+        run: |
+          set -o pipefail
+          WT_JOB=trail-test python test_trail.py 2>&1 | grep -v '^\[hb' | grep -v '^ok   .*: no ' | tail -60
+      - name: One run-wide salt (masked, env only)
+        run: |
+          SALT=$(openssl rand -hex 24)
+          echo "::add-mask::$SALT"
+          echo "WT_SALT=$SALT" >> "$GITHUB_ENV"
+      - name: Plan (offline)
+        working-directory: wikitrends
+        run: python trail.py plan
+      - name: Start live status reporter
+        run: mkdir -p wikitrends/logs && nohup .github/scripts/status_push.sh trail 180 > /tmp/status.log 2>&1 &
+      - name: Collect (on the runner only)
+        working-directory: wikitrends
+        run: |
+          set -o pipefail
+          WT_JOB=trail timeout 300m python trail.py collect 2>&1 | grep -v '^\[hb' | tee logs/trail.log
+      - name: Analyze + privacy gate
+        working-directory: wikitrends
+        run: python analyze_trail.py 2>&1 | tee logs/trail_analyze.log; exit ${PIPESTATUS[0]}
+      - name: Privacy gate on everything that will be published
+        working-directory: wikitrends
+        run: python analyze_trail.py --scan patterns/trail
+      - name: Discard raw data before publishing
+        if: always()
+        working-directory: wikitrends
+        run: rm -rf data/trail data/guard
+      - name: Upload aggregate outputs as artifact
+        uses: actions/upload-artifact@v4
+        with: {name: trail-cards, path: wikitrends/patterns/trail/, retention-days: 14}
+      - name: Push aggregate outputs to the data-only branch (wikitrends-data/trail/<run_id>)
+        working-directory: wikitrends
+        run: ../.github/scripts/push_data.sh trail patterns/trail
